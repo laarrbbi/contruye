@@ -1,0 +1,440 @@
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Controller, useForm } from 'react-hook-form'
+import { Layers, MoreHorizontal, Pencil, Plus, Trash2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Badge } from '@/components/ui/badge'
+import { Textarea } from '@/components/ui/textarea'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { formatPrice } from '@/lib/utils'
+import {
+  useAdminCourses,
+  useCreateCourse,
+  useDeleteCourse,
+  useUpdateCourse,
+  type AdminCourse,
+  type CoursePayload,
+  type CourseStatus,
+} from '@/api/admin'
+import { applyServerErrors, formatDate } from './lib'
+
+interface CourseFormValues {
+  title_fr: string
+  title_ar: string
+  description_fr: string
+  description_ar: string
+  slug: string
+  price_dzd: string
+  price_eur: string
+  status: CourseStatus
+}
+
+const emptyValues: CourseFormValues = {
+  title_fr: '',
+  title_ar: '',
+  description_fr: '',
+  description_ar: '',
+  slug: '',
+  price_dzd: '',
+  price_eur: '',
+  status: 'draft',
+}
+
+function courseToValues(course: AdminCourse): CourseFormValues {
+  return {
+    title_fr: course.title_fr,
+    title_ar: course.title_ar,
+    description_fr: course.description_fr ?? '',
+    description_ar: course.description_ar ?? '',
+    slug: course.slug,
+    price_dzd: String(course.price_dzd),
+    price_eur: course.price_eur === null ? '' : String(course.price_eur),
+    status: course.status,
+  }
+}
+
+function CourseFormDialog({
+  open,
+  course,
+  onOpenChange,
+}: {
+  open: boolean
+  course: AdminCourse | null
+  onOpenChange: (open: boolean) => void
+}) {
+  const { t } = useTranslation()
+  const createCourse = useCreateCourse()
+  const updateCourse = useUpdateCourse()
+  const [genericError, setGenericError] = useState<string | null>(null)
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    setError,
+    formState: { errors },
+  } = useForm<CourseFormValues>({ defaultValues: emptyValues })
+
+  useEffect(() => {
+    if (open) {
+      reset(course ? courseToValues(course) : emptyValues)
+      setGenericError(null)
+    }
+  }, [open, course, reset])
+
+  const isPending = createCourse.isPending || updateCourse.isPending
+
+  const onSubmit = (values: CourseFormValues) => {
+    setGenericError(null)
+    const payload: CoursePayload = {
+      title_fr: values.title_fr.trim(),
+      title_ar: values.title_ar.trim(),
+      description_fr: values.description_fr.trim() || null,
+      description_ar: values.description_ar.trim() || null,
+      price_dzd: Number(values.price_dzd),
+      price_eur: values.price_eur.trim() === '' ? null : Number(values.price_eur),
+      status: values.status,
+    }
+    const slug = values.slug.trim()
+    if (slug) payload.slug = slug
+
+    const options = {
+      onSuccess: () => onOpenChange(false),
+      onError: (error: unknown) => {
+        setGenericError(applyServerErrors(error, setError, t('common.error')))
+      },
+    }
+
+    if (course) {
+      updateCourse.mutate({ id: course.id, ...payload }, options)
+    } else {
+      createCourse.mutate(payload, options)
+    }
+  }
+
+  const frHasError = Boolean(errors.title_fr || errors.description_fr)
+  const arHasError = Boolean(errors.title_ar || errors.description_ar)
+
+  const fieldError = (message?: string) =>
+    message ? <p className="text-sm text-destructive">{message}</p> : null
+
+  return (
+    <Dialog open={open} onOpenChange={(next) => !isPending && onOpenChange(next)}>
+      <DialogContent className="max-w-xl">
+        <DialogHeader>
+          <DialogTitle>{course ? t('admin.courses.form.editTitle') : t('admin.courses.form.createTitle')}</DialogTitle>
+          <DialogDescription>{t('admin.courses.form.subtitle')}</DialogDescription>
+        </DialogHeader>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+          <Tabs defaultValue="fr">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="fr">
+                {t('admin.form.french')}
+                {frHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
+              </TabsTrigger>
+              <TabsTrigger value="ar">
+                {t('admin.form.arabic')}
+                {arHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="fr" className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="course-title-fr">{t('admin.courses.form.titleFr')}</Label>
+                <Input
+                  id="course-title-fr"
+                  dir="ltr"
+                  {...register('title_fr', { required: t('validation.required') })}
+                />
+                {fieldError(errors.title_fr?.message)}
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="course-description-fr">{t('admin.courses.form.descriptionFr')}</Label>
+                <Textarea id="course-description-fr" dir="ltr" rows={4} {...register('description_fr')} />
+                {fieldError(errors.description_fr?.message)}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="ar" className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="course-title-ar">{t('admin.courses.form.titleAr')}</Label>
+                <Input
+                  id="course-title-ar"
+                  dir="rtl"
+                  {...register('title_ar', { required: t('validation.required') })}
+                />
+                {fieldError(errors.title_ar?.message)}
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="course-description-ar">{t('admin.courses.form.descriptionAr')}</Label>
+                <Textarea id="course-description-ar" dir="rtl" rows={4} {...register('description_ar')} />
+                {fieldError(errors.description_ar?.message)}
+              </div>
+            </TabsContent>
+          </Tabs>
+
+          <div className="space-y-2">
+            <Label htmlFor="course-slug">{t('admin.courses.form.slug')}</Label>
+            <Input id="course-slug" dir="ltr" placeholder={t('admin.courses.form.slugHint')} {...register('slug')} />
+            {fieldError(errors.slug?.message)}
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="course-price-dzd">{t('admin.courses.form.priceDzd')}</Label>
+              <Input
+                id="course-price-dzd"
+                type="number"
+                min="0"
+                step="1"
+                dir="ltr"
+                {...register('price_dzd', {
+                  required: t('validation.required'),
+                  validate: (value) =>
+                    (value.trim() !== '' && Number(value) >= 0) || t('admin.form.invalidNumber'),
+                })}
+              />
+              {fieldError(errors.price_dzd?.message)}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="course-price-eur">{t('admin.courses.form.priceEur')}</Label>
+              <Input
+                id="course-price-eur"
+                type="number"
+                min="0"
+                step="1"
+                dir="ltr"
+                {...register('price_eur', {
+                  validate: (value) =>
+                    value.trim() === '' || Number(value) >= 0 || t('admin.form.invalidNumber'),
+                })}
+              />
+              {fieldError(errors.price_eur?.message)}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="course-status">{t('admin.courses.form.status')}</Label>
+            <Controller
+              control={control}
+              name="status"
+              render={({ field }) => (
+                <Select value={field.value} onValueChange={field.onChange}>
+                  <SelectTrigger id="course-status">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="draft">{t('admin.courses.status.draft')}</SelectItem>
+                    <SelectItem value="published">{t('admin.courses.status.published')}</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+            />
+            {fieldError(errors.status?.message)}
+          </div>
+
+          {genericError && <p className="text-sm text-destructive">{genericError}</p>}
+
+          <DialogFooter>
+            <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isPending}>
+              {t('common.cancel')}
+            </Button>
+            <Button type="submit" disabled={isPending}>
+              {isPending ? t('common.loading') : t('common.save')}
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+export function AdminCoursesPage() {
+  const { t, i18n } = useTranslation()
+  const navigate = useNavigate()
+  const { data: courses, isLoading, isError } = useAdminCourses()
+  const deleteCourse = useDeleteCourse()
+
+  const [dialogOpen, setDialogOpen] = useState(false)
+  const [editingCourse, setEditingCourse] = useState<AdminCourse | null>(null)
+  const [deleteTarget, setDeleteTarget] = useState<AdminCourse | null>(null)
+
+  const openCreate = () => {
+    setEditingCourse(null)
+    setDialogOpen(true)
+  }
+
+  const openEdit = (course: AdminCourse) => {
+    setEditingCourse(course)
+    setDialogOpen(true)
+  }
+
+  const confirmDelete = () => {
+    if (!deleteTarget) return
+    deleteCourse.mutate(deleteTarget.id, {
+      onSettled: () => setDeleteTarget(null),
+    })
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <h1 className="text-2xl font-bold">{t('admin.courses.title')}</h1>
+        <Button onClick={openCreate}>
+          <Plus className="h-4 w-4" />
+          {t('admin.courses.new')}
+        </Button>
+      </div>
+
+      {isLoading ? (
+        <p className="py-12 text-center text-muted-foreground">{t('common.loading')}</p>
+      ) : isError ? (
+        <p className="py-12 text-center text-destructive">{t('common.error')}</p>
+      ) : !courses || courses.length === 0 ? (
+        <div className="rounded-lg border border-dashed py-16 text-center text-muted-foreground">
+          <p>{t('admin.courses.empty')}</p>
+          <Button variant="outline" className="mt-4" onClick={openCreate}>
+            <Plus className="h-4 w-4" />
+            {t('admin.courses.new')}
+          </Button>
+        </div>
+      ) : (
+        <div className="rounded-lg border bg-card">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>{t('admin.courses.table.title')}</TableHead>
+                <TableHead>{t('admin.courses.table.price')}</TableHead>
+                <TableHead>{t('admin.courses.table.status')}</TableHead>
+                <TableHead className="text-center">{t('admin.courses.table.modules')}</TableHead>
+                <TableHead className="text-center">{t('admin.courses.table.lessons')}</TableHead>
+                <TableHead className="text-center">{t('admin.courses.table.enrollments')}</TableHead>
+                <TableHead>{t('admin.courses.table.createdAt')}</TableHead>
+                <TableHead className="w-12">
+                  <span className="sr-only">{t('admin.common.actions')}</span>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {courses.map((course) => (
+                <TableRow
+                  key={course.id}
+                  className="cursor-pointer"
+                  onClick={() => navigate(`/admin/courses/${course.id}/content`)}
+                >
+                  <TableCell className="font-medium">
+                    <div>{(i18n.language === 'ar' && course.title_ar) || course.title_fr}</div>
+                    <div className="text-xs text-muted-foreground">
+                      <span dir="ltr">/{course.slug}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {formatPrice(course.price_dzd, 'DZD', i18n.language)}
+                  </TableCell>
+                  <TableCell>
+                    <Badge variant={course.status === 'published' ? 'success' : 'secondary'}>
+                      {t(`admin.courses.status.${course.status}`)}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="text-center">{course.modules_count}</TableCell>
+                  <TableCell className="text-center">{course.lessons_count}</TableCell>
+                  <TableCell className="text-center">{course.enrollments_count}</TableCell>
+                  <TableCell className="whitespace-nowrap text-muted-foreground">
+                    {formatDate(course.created_at, i18n.language)}
+                  </TableCell>
+                  <TableCell onClick={(event) => event.stopPropagation()}>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon" aria-label={t('admin.common.actions')}>
+                          <MoreHorizontal className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => navigate(`/admin/courses/${course.id}/content`)}>
+                          <Layers className="h-4 w-4" />
+                          {t('admin.courses.manageContent')}
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => openEdit(course)}>
+                          <Pencil className="h-4 w-4" />
+                          {t('admin.common.edit')}
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                          className="text-destructive focus:text-destructive"
+                          onClick={() => setDeleteTarget(course)}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          {t('common.delete')}
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      )}
+
+      <CourseFormDialog open={dialogOpen} course={editingCourse} onOpenChange={setDialogOpen} />
+
+      <AlertDialog open={deleteTarget !== null} onOpenChange={(open) => !open && setDeleteTarget(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t('admin.courses.deleteConfirm', {
+                title: ((i18n.language === 'ar' && deleteTarget?.title_ar) || deleteTarget?.title_fr) ?? '',
+              })}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deleteCourse.isPending}>{t('common.cancel')}</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              disabled={deleteCourse.isPending}
+              onClick={(event) => {
+                event.preventDefault()
+                confirmDelete()
+              }}
+            >
+              {deleteCourse.isPending ? t('common.loading') : t('common.delete')}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </div>
+  )
+}

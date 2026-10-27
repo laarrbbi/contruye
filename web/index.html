@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!--
+      seo:start — on the public pages (/, /formations, /courses/…, and /ar,
+      /en) the server replaces everything down to seo:end with the page's own
+      title, description, canonical URL, language links and structured data
+      (api/app/Http/Controllers/SeoPageController.php). What remains here is
+      for the app's own screens and for 404s, which search engines must not
+      index.
+    -->
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="Formation en ligne : la promotion immobilière en Algérie, de la création de la société à la remise des clés."
+    />
+    <title>Ebni Academy — Formation Promotion Immobilière en Algérie</title>
+
+    <!--
+      Link previews (WhatsApp, Facebook, LinkedIn, X). Crawlers do not run the
+      SPA, so these are what a shared link shows. The image URL must be
+      absolute: VITE_SITE_URL is set from APP_URL by deploy/deploy.sh.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ebni Academy" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Ebni Academy — Formation Promotion Immobilière en Algérie" />
+    <meta
+      property="og:description"
+      content="Formation en ligne : la promotion immobilière en Algérie, de la création de la société à la remise des clés."
+    />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La promotion immobilière en Algérie, transmise par celui qui l'a exercée 16 ans."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- seo:end -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

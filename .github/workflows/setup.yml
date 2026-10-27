@@ -1,0 +1,134 @@
+# The local setup a newcomer follows, run from a fresh checkout: the same
+# commands as the README's "Running it", in the same order, then the preview
+# that GitHub Codespaces opens (make preview), signed into in a real browser.
+# The php image is built from php:8.3-fpm, a tag that moves to newer Debian
+# releases without a commit here, so this also runs every week: a package
+# that disappears from Debian shows up here before it stops someone's first
+# `docker compose up`.
+name: Setup
+
+on:
+  push:
+    paths:
+      - docker/**
+      - docker-compose.yml
+      - api/composer.json
+      - api/composer.lock
+      - api/.env.example
+      - Makefile
+      - .devcontainer/**
+      - .github/workflows/setup.yml
+      - .github/scripts/preview-signin.mjs
+  pull_request:
+    paths:
+      - docker/**
+      - docker-compose.yml
+      - api/composer.json
+      - api/composer.lock
+      - api/.env.example
+      - Makefile
+      - .devcontainer/**
+      - .github/workflows/setup.yml
+      - .github/scripts/preview-signin.mjs
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: setup-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Settings file
+        run: cp api/.env.example api/.env
+
+      # The runner's user is not uid 1000: the route docker-compose.yml
+      # documents for such a Linux user.
+      - name: Containers run as the checkout's owner
+        run: printf 'UID=%s\nGID=%s\n' "$(id -u)" "$(id -g)" > .env
+
+      - name: Build and start the containers
+        run: docker compose up -d --build
+
+      - name: Install the PHP dependencies and the app key
+        run: |
+          docker compose exec -T php composer install --no-interaction --no-progress
+          docker compose exec -T php php artisan key:generate
+
+      - name: Database with the demo data
+        run: |
+          docker compose exec -T php php artisan migrate --seed
+          docker compose exec -T php php artisan db:seed --class=DemoShowcaseSeeder
+
+      # Through nginx and php-fpm, as the browser reaches them: php-fpm writes
+      # compiled views, sessions and logs as www-data.
+      - name: The site answers
+        run: |
+          curl -fsS http://localhost:8000/api/courses | grep -q '"promotion-immobiliere-algerie"'
+          curl -fsS http://localhost:8000/ | grep -q 'rel="canonical"'
+
+      # The Vite dev server (localhost:5174) calls the API on another port:
+      # CORS has to allow it with credentials, and the session cookie has to
+      # carry the demo login.
+      - name: The demo admin can sign in from the dev server's origin
+        run: |
+          curl -fsS -D headers.txt -o /dev/null -c jar.txt -H 'Origin: http://localhost:5174' http://localhost:8000/sanctum/csrf-cookie
+          grep -qi '^access-control-allow-origin: http://localhost:5174' headers.txt
+          grep -qi '^access-control-allow-credentials: true' headers.txt
+          token=$(awk '$6 == "XSRF-TOKEN" { print $7 }' jar.txt | python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(sys.stdin.read().strip()))')
+          curl -fsS -b jar.txt -c jar.txt -o /dev/null \
+            -H 'Origin: http://localhost:5174' -H 'Referer: http://localhost:5174/login' \
+            -H 'Accept: application/json' -H "X-XSRF-TOKEN: $token" \
+            --json '{"email": "admin@example.dz", "password": "password"}' \
+            http://localhost:8000/api/login
+          curl -fsS -b jar.txt -H 'Origin: http://localhost:5174' -H 'Referer: http://localhost:5174/' -H 'Accept: application/json' \
+            http://localhost:8000/api/me | grep -q '"admin@example.dz"'
+
+      # It starts before the tables exist and restarts until they do.
+      - name: The queue worker runs
+        run: |
+          for attempt in $(seq 30); do
+            docker compose ps --status running --services | grep -qx queue && exit 0
+            sleep 2
+          done
+          exit 1
+
+      # The preview: the built app and Laravel on one address, routed like
+      # production. What GitHub Codespaces opens (.devcontainer).
+      - name: Preview on one address
+        run: make preview
+
+      - name: The preview answers like production
+        run: |
+          curl -fsS http://localhost:8080/ | grep -q '<link rel="canonical" href="http://localhost:8080/" />'
+          curl -fsS http://localhost:8080/ar | grep -q '<html lang="ar" dir="rtl">'
+          curl -fsS http://localhost:8080/login | grep -q '<meta name="robots" content="noindex" />'
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/nope)" = 404
+          curl -fsS http://localhost:8080/api/courses | grep -q '"promotion-immobiliere-algerie"'
+          # The app calls its own address, not a separate API port.
+          ! grep -rq 'localhost:8000' web/dist/assets
+
+      - name: A visitor signs in, in a real browser
+        run: |
+          mkdir -p /tmp/browser && cp .github/scripts/preview-signin.mjs /tmp/browser/
+          cd /tmp/browser
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+          node preview-signin.mjs
+
+      - name: Logs
+        if: failure()
+        run: |
+          docker compose ps
+          docker compose --profile preview logs --tail=80 php nginx queue preview
+          curl -s http://localhost:8000/ | grep -o '<title>[^<]*' | head -1 || true
+          ls -la api/storage/logs api/storage/framework/views | head -20 || true
+          tail -n 60 api/storage/logs/*.log || true

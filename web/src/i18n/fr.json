@@ -1,0 +1,1136 @@
+{
+  "app": {
+    "name": "Ebni Academy",
+    "tagline": "La formation de référence en promotion immobilière en Algérie",
+    "title": "Ebni Academy — Formation Promotion Immobilière en Algérie",
+    "metaDescription": "Formation en ligne : la promotion immobilière en Algérie, de la création de la société à la remise des clés."
+  },
+  "nav": {
+    "home": "Accueil",
+    "changeLanguage": "Changer de langue",
+    "myCourses": "Mes formations",
+    "myOrders": "Mes commandes",
+    "admin": "Administration",
+    "login": "Se connecter",
+    "register": "Créer un compte",
+    "logout": "Se déconnecter",
+    "modules": "modules",
+    "registerShort": "S'inscrire"
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "loginSubtitle": "Accédez à vos formations",
+    "registerTitle": "Créer un compte",
+    "registerSubtitle": "Rejoignez la formation",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "phone": "Téléphone mobile",
+    "phonePlaceholder": "05 50 12 34 56 ou +33 6 12 34 56 78",
+    "password": "Mot de passe",
+    "passwordConfirmation": "Confirmer le mot de passe",
+    "submitLogin": "Se connecter",
+    "submitRegister": "Créer mon compte",
+    "noAccount": "Pas encore de compte ?",
+    "haveAccount": "Déjà inscrit ?",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "forgotPasswordSubtitle": "Entrez votre adresse e-mail pour recevoir un lien de réinitialisation.",
+    "resetPasswordSubtitle": "Choisissez un nouveau mot de passe pour votre compte.",
+    "sendResetLink": "Envoyer le lien",
+    "resetLinkSent": "Si un compte existe avec cet e-mail, un lien de réinitialisation a été envoyé.",
+    "newPassword": "Nouveau mot de passe",
+    "passwordResetSuccess": "Votre mot de passe a été réinitialisé. Vous pouvez maintenant vous connecter.",
+    "backToLogin": "Retour à la connexion",
+    "resetLinkIncomplete": "Ce lien est incomplet. Demandez-en un nouveau : il vous sera envoyé par e-mail.",
+    "requestNewLink": "Recevoir un nouveau lien",
+    "invalidCredentials": "Identifiants incorrects."
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "email": "Adresse e-mail invalide",
+    "phone": "Numéro invalide : mobile algérien (05, 06, 07) ou numéro international commençant par +",
+    "passwordMin": "Au moins 10 caractères",
+    "passwordMatch": "Les mots de passe ne correspondent pas"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "close": "Fermer",
+    "durationHM": "{{h}} h {{m}} min",
+    "durationM": "{{m}} min",
+    "loadFailed": "Impossible de charger vos données. Vérifiez votre connexion.",
+    "retry": "Réessayer"
+  },
+  "footer": {
+    "copyright": "© {{year}} Ebni Academy",
+    "explore": "Explorer",
+    "courses": "Formations",
+    "contact": "Nous contacter",
+    "legal": {
+      "capital": "au capital de {{capital}}",
+      "rc": "RC {{rc}}",
+      "nif": "NIF {{nif}}"
+    }
+  },
+  "dashboard": {
+    "title": "Mes formations",
+    "empty": "Vous n'êtes inscrit à aucune formation pour le moment.",
+    "browseCourses": "Découvrir la formation",
+    "continue": "Continuer",
+    "start": "Commencer",
+    "progress": "{{percent}}% terminé",
+    "moduleAccess": "{{owned}} / {{total}} modules débloqués",
+    "unlockMore": "Débloquer plus de modules",
+    "wilayaTitle": "Ma wilaya",
+    "wilayaHelp": "Les partenaires recommandés seront filtrés sur cette wilaya."
+  },
+  "course": {
+    "enrollCta": "S'inscrire à la formation",
+    "accessCta": "Accéder à la formation",
+    "notFound": "Formation introuvable.",
+    "eurPrice": "ou {{price}} par carte internationale",
+    "pricing": {
+      "saveBadge": "-{{percent}} %",
+      "fullAccessNote": "Accès complet à toute la formation",
+      "fromPerModule": "ou à partir de {{price}} par module",
+      "alaCarteTitle": "Avancez à votre rythme, module par module",
+      "alaCarteBody": "Pas besoin de tout prendre d'un coup : achetez les modules à l'unité à partir de {{price}}, avec des remises qui augmentent selon le nombre de modules. Sélectionnez les 10 et l'accès complet s'applique automatiquement — au meilleur prix.",
+      "pickModulesCta": "Choisir mes modules"
+    },
+    "lessonsCount_one": "{{count}} leçon",
+    "lessonsCount_other": "{{count}} leçons",
+    "moduleHeading": "Module {{number}} — {{title}}",
+    "program": "Programme de la formation",
+    "emptyProgram": "Le programme détaillé sera bientôt disponible.",
+    "freePreview": "Aperçu gratuit",
+    "watchPreview": "Lecture",
+    "lifetimeAccess": "Accès à vie",
+    "stats": {
+      "lessons": "Leçons",
+      "duration": "Durée totale"
+    },
+    "bullets": {
+      "lifetime": "Accès illimité, à vie",
+      "devices": "Disponible sur téléphone, tablette et ordinateur"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "payment": {
+        "q": "Quels sont les moyens de paiement acceptés ?",
+        "a": "Vous pouvez payer par {{methods}}."
+      },
+      "access": {
+        "q": "Pendant combien de temps ai-je accès à la formation ?",
+        "a": "L'accès est à vie : une fois inscrit, vous pouvez regarder les leçons autant de fois que vous le souhaitez, sans limite de durée."
+      },
+      "mobile": {
+        "q": "Puis-je suivre la formation sur mon téléphone ?",
+        "a": "Oui, la plateforme fonctionne sur smartphone, tablette et ordinateur. Une simple connexion Internet suffit."
+      },
+      "abroad": {
+        "q": "Puis-je suivre la formation depuis la France ou l'étranger ?",
+        "a": "Oui. Tout se passe en ligne, avec un accès à vie sur téléphone, tablette ou ordinateur : vous suivez les modules où que vous viviez. Les démarches, les textes et les guichets étudiés sont ceux de l'Algérie, où le projet se réalise."
+      },
+      "invoice": {
+        "q": "Puis-je obtenir une facture ?",
+        "a": "Oui, une facture peut être établie sur demande après le paiement. Contactez notre équipe en indiquant la référence de votre commande."
+      },
+      "support": {
+        "q": "Comment contacter le support ?",
+        "a": "Notre équipe vous répond par e-mail et par téléphone/WhatsApp pendant les heures de bureau, et vous accompagne en cas de difficulté technique."
+      },
+      "whySelling": {
+        "q": "Pourquoi un promoteur vend-il son savoir-faire ?",
+        "a": "Parce qu'il est à la retraite. Il n'exerce plus, il n'est plus en concurrence avec vous, et il préfère transmettre ce que seize ans de métier lui ont appris plutôt que de le laisser disparaître."
+      },
+      "modules": {
+        "q": "Dois-je tout acheter d'un coup ?",
+        "a": "Non. Les modules s'achètent à l'unité, selon l'étape où vous en êtes. Les remises augmentent avec le nombre de modules, et l'accès complet reste l'option la moins chère au module."
+      },
+      "excel": {
+        "q": "Le modèle financier Excel est-il vraiment inclus ?",
+        "a": "Oui. C'est un fichier de finance de projet téléchargeable, à remplir avec vos propres chiffres."
+      },
+      "subcontractors": {
+        "q": "Les contacts de sous-traitants sont-ils transmis ?",
+        "a": "Oui, en direct. Ce sont des intervenants que le formateur a employés sur ses propres chantiers et retenus pour leur qualité et leur fiabilité. Il vous les transmet ; le choix et la relation contractuelle restent les vôtres."
+      },
+      "projectType": {
+        "q": "La formation convient-elle à mon type de projet ?",
+        "a": "Oui. Logement, mixte, commerce, santé, loisirs : la démarche administrative et financière est la même. Le formateur l'a appliquée sur des logements comme sur des cliniques, un centre commercial et un parc d'attractions."
+      }
+    }
+  },
+  "checkout": {
+    "title": "Finaliser l'inscription",
+    "scopeFull": "Accès complet",
+    "scopeModules": "Par modules",
+    "full": {
+      "title": "Accès complet à la formation",
+      "badge": "-{{percent}}%",
+      "bullets": {
+        "modules": "Les {{count}} modules du programme",
+        "lifetime": "Accès illimité, à vie",
+        "attachments": "Tous les documents et modèles téléchargeables"
+      }
+    },
+    "modules": {
+      "title": "Choisissez vos modules",
+      "owned": "Déjà acquis",
+      "fullOnly": "Accès complet uniquement",
+      "empty": "Sélectionnez au moins un module pour continuer.",
+      "selectedCount_one": "{{count}} module sélectionné",
+      "selectedCount_other": "{{count}} modules sélectionnés",
+      "tierTitle": "Remises par volume",
+      "tierPercent": "-{{percent}}%",
+      "tierMin": "dès {{min}} modules",
+      "tierHint_one": "Ajoutez {{count}} module pour bénéficier de -{{percent}}%",
+      "tierHint_other": "Ajoutez {{count}} modules pour bénéficier de -{{percent}}%"
+    },
+    "quote": {
+      "title": "Récapitulatif",
+      "subtotal": "Sous-total",
+      "tierDiscount": "Remise palier (-{{percent}}%)",
+      "coupon": "Coupon {{code}} (-{{percent}}%)",
+      "total": "Total",
+      "itemized": "Prix à l'unité : {{price}} —",
+      "savings": "vous économisez {{amount}}",
+      "upgradeTitle": "Pour {{delta}} de plus, débloquez TOUT le programme",
+      "upgradeSubtitle_one": "{{count}} module restant, inclus dans l'accès complet",
+      "upgradeSubtitle_other": "{{count}} modules restants, inclus dans l'accès complet",
+      "upgradeCta": "Passer à l'accès complet",
+      "upgradedNote": "Vous avez sélectionné tous les modules : l'accès complet vous est appliqué automatiquement (meilleur prix).",
+      "quoteError": "Impossible de calculer le prix. Vérifiez votre sélection."
+    },
+    "coupon": {
+      "label": "Code promo",
+      "placeholder": "Code promo",
+      "apply": "Appliquer",
+      "remove": "Retirer le code",
+      "invalid": "Ce code promo est invalide ou expiré.",
+      "applied": "Code {{code}} appliqué"
+    },
+    "method": {
+      "title": "Moyen de paiement",
+      "chargily": "CIB / Edahabia",
+      "chargilyHint": "Paiement en ligne en dinars (DZD)",
+      "stripe": "Carte internationale",
+      "stripeHint": "Visa / Mastercard, paiement en euros (EUR)",
+      "ccp": "Versement CCP",
+      "ccpHint": "Virement ou versement au bureau de poste",
+      "baridimob": "BaridiMob",
+      "baridimobHint": "Transfert depuis l'application BaridiMob",
+      "noneAvailable": "Le paiement en ligne n'est pas encore ouvert. Écrivez-nous et nous vous indiquerons comment réserver votre place."
+    },
+    "submit": {
+      "pay": "Payer {{amount}}",
+      "order": "Confirmer la commande",
+      "processing": "Traitement…"
+    },
+    "errors": {
+      "alreadyEnrolled": "Vous êtes déjà inscrit à cette formation.",
+      "goToCourse": "Accéder à la formation"
+    },
+    "manual": {
+      "title": "Instructions de paiement",
+      "subtitle": "Effectuez le versement puis envoyez votre reçu pour validation.",
+      "amount": "Montant à payer",
+      "ccpNumber": "Numéro CCP",
+      "ccpName": "Titulaire du compte",
+      "rip": "RIP BaridiMob",
+      "copy": "Copier",
+      "copied": "Copié !",
+      "purchasedModules": "Modules commandés",
+      "uploadTitle": "Envoyer le reçu de paiement",
+      "uploadHint": "JPG, PNG ou PDF — 5 Mo maximum",
+      "uploadChoose": "Choisir un fichier",
+      "uploadSubmit": "Envoyer le reçu",
+      "uploading": "Envoi en cours…",
+      "uploadTooLarge": "Le fichier dépasse 5 Mo.",
+      "uploadBadType": "Format non pris en charge (JPG, PNG ou PDF uniquement).",
+      "receiptSent": "Reçu envoyé — en attente de validation",
+      "receiptSentHint": "Notre équipe vérifie votre paiement. Vous recevrez un e-mail dès l'activation de votre accès.",
+      "uploadAnother": "Envoyer un autre reçu",
+      "rejectedTitle": "Paiement refusé",
+      "rejectedHint": "Corrigez le problème indiqué puis renvoyez un reçu.",
+      "paidTitle": "Paiement validé !",
+      "paidHint": "Votre accès est maintenant actif.",
+      "startCourse": "Commencer la formation",
+      "notFound": "Commande introuvable."
+    },
+    "success": {
+      "checking": "Confirmation du paiement en cours…",
+      "checkingHint": "Cela ne prend généralement que quelques secondes.",
+      "paidTitle": "Paiement confirmé — bienvenue !",
+      "paidHint": "Votre accès à la formation est maintenant actif.",
+      "start": "Commencer",
+      "timeoutTitle": "La confirmation prend plus de temps que prévu",
+      "timeoutHint": "Votre paiement est peut-être encore en cours de traitement. Actualisez dans un instant ou consultez vos commandes.",
+      "refresh": "Actualiser",
+      "viewOrders": "Voir mes commandes",
+      "failedTitle": "Le paiement n'a pas abouti",
+      "failedHint": "Aucun montant ne vous a été débité. Vous pouvez réessayer.",
+      "retry": "Réessayer",
+      "reviewTitle": "Commande en attente de validation",
+      "reviewHint": "Nous vérifions votre paiement. Vous recevrez un e-mail de confirmation."
+    },
+    "failure": {
+      "title": "Paiement annulé ou échoué",
+      "hint": "Aucun montant ne vous a été débité. Vous pouvez réessayer quand vous le souhaitez.",
+      "retry": "Réessayer le paiement",
+      "viewOrders": "Mes commandes"
+    },
+    "fallbackToManual": "Payer plutôt par {{method}}"
+  },
+  "orders": {
+    "title": "Mes commandes",
+    "empty": "Aucune commande pour le moment.",
+    "browse": "Découvrir la formation",
+    "orderNumber": "Commande n°{{id}}",
+    "scopeFull": "Accès complet",
+    "scopeModules_one": "{{count}} module",
+    "scopeModules_other": "{{count}} modules",
+    "sendReceipt": "Envoyer le reçu",
+    "viewInstructions": "Voir les instructions",
+    "access": "Accéder",
+    "status": {
+      "pending": "En attente de paiement",
+      "awaiting_review": "En cours de validation",
+      "paid": "Payée",
+      "failed": "Échouée",
+      "refunded": "Remboursée"
+    },
+    "method": {
+      "chargily": "CIB / Edahabia",
+      "stripe": "Carte internationale",
+      "manual_ccp": "CCP",
+      "manual_baridimob": "BaridiMob",
+      "cash": "Espèces"
+    },
+    "invoice": "Facture"
+  },
+  "player": {
+    "videoTitle": "Lecteur vidéo",
+    "loadingVideo": "Chargement de la vidéo…",
+    "lockedMessage": "Cette leçon est réservée aux étudiants inscrits. Inscrivez-vous à la formation pour y accéder.",
+    "videoError": "Impossible de charger la vidéo. Veuillez réessayer.",
+    "contents": "Contenu de la formation",
+    "showContents": "Programme",
+    "moduleLabel": "Module {{number}}",
+    "courseProgress": "Progression de la formation",
+    "progressPercent": "{{percent}}% terminé",
+    "completed": "Terminé",
+    "markComplete": "Marquer comme terminé",
+    "markIncomplete": "Marquer comme non terminé",
+    "previousLesson": "Leçon précédente",
+    "nextLesson": "Leçon suivante",
+    "attachments": "Documents de la leçon",
+    "download": "Télécharger",
+    "noLessons": "Aucune leçon disponible pour le moment.",
+    "notEnrolled": "Vous n'êtes pas inscrit à cette formation.",
+    "goToCourse": "Voir la formation",
+    "locked": "Verrouillé",
+    "lockedHeading": "Ce module est verrouillé",
+    "lockedBody": "Il ne fait pas partie de votre accès actuel. Débloquez-le pour lire cette leçon et le reste du module.",
+    "unlockModule": "Débloquer ce module",
+    "unlock": "Débloquer",
+    "lessonNotes": "Notes de la leçon",
+    "keyPoints": "Points clés",
+    "downloadReflexSheet": "Télécharger la fiche réflexe (PDF)",
+    "videoSoon": "Vidéo bientôt disponible",
+    "videoSoonHint": "Le contenu écrit de cette leçon est déjà disponible ci-dessous. La vidéo sera ajoutée prochainement.",
+    "fullClass": "Le cours complet",
+    "currentSection": "section en cours"
+  },
+  "admin": {
+    "title": "Administration",
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "courses": "Formations",
+      "coupons": "Coupons",
+      "orders": "Commandes",
+      "students": "Étudiants",
+      "soon": "bientôt",
+      "toggleMenu": "Ouvrir le menu",
+      "reviews": "Avis",
+      "campaigns": "Promotions",
+      "partners": "Partenaires",
+      "invoices": "Facturation",
+      "business": "Entreprise & contact"
+    },
+    "common": {
+      "actions": "Actions",
+      "edit": "Modifier",
+      "confirmDeleteTitle": "Êtes-vous sûr ?",
+      "pageOf": "Page {{page}} / {{total}}",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "form": {
+      "french": "Français",
+      "arabic": "Arabe",
+      "invalidNumber": "Nombre invalide"
+    },
+    "courses": {
+      "title": "Formations",
+      "new": "Nouvelle formation",
+      "empty": "Aucune formation pour le moment.",
+      "manageContent": "Gérer le contenu",
+      "deleteConfirm": "Supprimer la formation « {{title}} » ? Les modules, leçons et inscriptions associés seront également supprimés. Cette action est irréversible.",
+      "table": {
+        "title": "Titre",
+        "price": "Prix (DZD)",
+        "status": "Statut",
+        "modules": "Modules",
+        "lessons": "Leçons",
+        "enrollments": "Inscrits",
+        "createdAt": "Créée le"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "published": "Publiée"
+      },
+      "form": {
+        "createTitle": "Nouvelle formation",
+        "editTitle": "Modifier la formation",
+        "subtitle": "Renseignez les informations dans les deux langues.",
+        "titleFr": "Titre (français)",
+        "titleAr": "Titre (arabe)",
+        "descriptionFr": "Description (français)",
+        "descriptionAr": "Description (arabe)",
+        "slug": "Slug",
+        "slugHint": "Laisser vide pour le générer automatiquement",
+        "priceDzd": "Prix (DZD)",
+        "priceEur": "Prix (EUR, optionnel)",
+        "status": "Statut"
+      }
+    },
+    "content": {
+      "subtitle": "Glissez-déposez pour réorganiser les modules et les leçons.",
+      "back": "Retour aux formations",
+      "addModule": "Ajouter un module",
+      "editModule": "Modifier le module",
+      "moduleFormSubtitle": "Titre du module dans les deux langues.",
+      "deleteModuleConfirm": "Supprimer le module « {{title}} » et toutes ses leçons ? Cette action est irréversible.",
+      "noModules": "Aucun module pour le moment. Commencez par en ajouter un.",
+      "addLesson": "Ajouter une leçon",
+      "editLesson": "Modifier la leçon",
+      "lessonFormSubtitle": "Renseignez les informations de la leçon.",
+      "deleteLessonConfirm": "Supprimer la leçon « {{title}} » ? Cette action est irréversible.",
+      "noLessons": "Aucune leçon dans ce module.",
+      "lessonsCount_one": "{{count}} leçon",
+      "lessonsCount_other": "{{count}} leçons",
+      "dragToReorder": "Glisser pour réorganiser",
+      "freePreviewBadge": "Aperçu gratuit",
+      "form": {
+        "bunnyVideoId": "ID vidéo Bunny",
+        "durationMinutes": "Durée (minutes)",
+        "freePreview": "Leçon en aperçu gratuit",
+        "attachments": "Pièces jointes",
+        "attachmentName": "Nom",
+        "attachmentPath": "Chemin du fichier",
+        "addAttachment": "Ajouter",
+        "noAttachments": "Aucune pièce jointe.",
+        "lessonContent": "Contenu écrit de la leçon",
+        "contentFr": "Contenu (FR)",
+        "contentAr": "Contenu (AR)"
+      },
+      "partners": {
+        "manage": "Partenaires",
+        "title": "Partenaires du module",
+        "subtitle": "Visibles uniquement par les étudiants ayant acheté ce module.",
+        "add": "Ajouter un partenaire",
+        "choose": "Choisir…",
+        "noneAvailable": "Aucun partenaire disponible",
+        "empty": "Aucun partenaire attaché à ce module.",
+        "noteFr": "Note affichée (FR)",
+        "noteAr": "Note affichée (AR)",
+        "moveUp": "Monter",
+        "moveDown": "Descendre",
+        "count_one": "{{count}} partenaire",
+        "count_other": "{{count}} partenaires"
+      },
+      "needsValidation": "{{count}} à valider"
+    },
+    "coupons": {
+      "title": "Coupons",
+      "new": "Nouveau coupon",
+      "empty": "Aucun coupon pour le moment.",
+      "deleteConfirm": "Supprimer le coupon « {{code}} » ? Cette action est irréversible.",
+      "noLimit": "Illimité",
+      "never": "Sans expiration",
+      "expired": "Expiré",
+      "table": {
+        "code": "Code",
+        "percentOff": "Réduction",
+        "uses": "Utilisations",
+        "expiresAt": "Expire le"
+      },
+      "form": {
+        "createTitle": "Nouveau coupon",
+        "editTitle": "Modifier le coupon",
+        "subtitle": "Le code sera appliqué au moment du paiement.",
+        "code": "Code",
+        "percentOff": "Réduction (%)",
+        "maxUses": "Nombre max d'utilisations (optionnel)",
+        "expiresAt": "Date d'expiration (optionnel)",
+        "percentRange": "Entre 1 et 100"
+      }
+    },
+    "status": {
+      "pending": "En attente",
+      "awaiting_review": "À vérifier",
+      "paid": "Payée",
+      "failed": "Échouée",
+      "refunded": "Remboursée"
+    },
+    "method": {
+      "chargily": "Carte (Chargily)",
+      "stripe": "Carte internationale",
+      "manual_ccp": "CCP",
+      "manual_baridimob": "BaridiMob",
+      "cash": "Espèces"
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "revenueThisMonth": "Revenus ce mois-ci",
+      "students": "Étudiants",
+      "enrollments": "Inscriptions",
+      "enrollmentsThisMonth": "dont {{count}} ce mois-ci",
+      "completionRate": "Taux de complétion moyen",
+      "awaitingReview": "Paiements à vérifier",
+      "reviewNow": "À traiter maintenant",
+      "allClear": "Rien à vérifier",
+      "recentOrders": "Commandes récentes",
+      "viewAllOrders": "Voir toutes les commandes",
+      "noOrders": "Aucune commande pour le moment.",
+      "byMethod": "Par moyen de paiement",
+      "paidOfTotal": "{{paid}} payées / {{total}}",
+      "overdue": "{{count}} en attente depuis plus de {{hours}} h"
+    },
+    "orders": {
+      "title": "Commandes",
+      "export": "Exporter (CSV)",
+      "searchPlaceholder": "Rechercher par nom ou e-mail…",
+      "allStatuses": "Tous les statuts",
+      "allMethods": "Tous les moyens",
+      "empty": "Aucune commande ne correspond à ces filtres.",
+      "table": {
+        "customer": "Client",
+        "course": "Formation",
+        "amount": "Montant",
+        "method": "Moyen",
+        "status": "Statut",
+        "date": "Date"
+      },
+      "detail": {
+        "title": "Commande #{{id}}",
+        "scope": "Type d'achat",
+        "fullAccess": "Accès complet",
+        "modulesScope": "Modules à l'unité",
+        "discount": "Remise",
+        "createdAt": "Créée le",
+        "paidAt": "Payée le",
+        "modules": "Modules achetés",
+        "adminNote": "Note interne"
+      },
+      "actions": {
+        "approve": "Approuver",
+        "reject": "Rejeter",
+        "grant": "Accorder l'accès",
+        "viewReceipt": "Voir le reçu"
+      },
+      "reject": {
+        "title": "Rejeter le paiement",
+        "subtitle": "Le motif sera envoyé à l'étudiant par e-mail.",
+        "reason": "Motif du rejet",
+        "placeholder": "Ex. : reçu illisible, montant incorrect…"
+      },
+      "confirm": {
+        "approveTitle": "Approuver ce paiement ?",
+        "approveBody": "L'accès sera accordé à {{name}} et un e-mail de confirmation sera envoyé.",
+        "grantTitle": "Accorder l'accès manuellement ?",
+        "grantBody": "{{name}} sera inscrit(e) immédiatement (ex. paiement en espèces)."
+      },
+      "waitingHours": "depuis {{count}} h",
+      "waitingDays": "depuis {{count}} j"
+    },
+    "students": {
+      "title": "Étudiants",
+      "searchPlaceholder": "Rechercher par nom, e-mail ou téléphone…",
+      "empty": "Aucun étudiant trouvé.",
+      "table": {
+        "name": "Nom",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "enrollments": "Inscriptions",
+        "joined": "Inscrit le"
+      },
+      "detail": {
+        "phone": "Téléphone",
+        "joined": "Inscrit le",
+        "enrollments": "Inscriptions",
+        "noEnrollments": "Aucune inscription.",
+        "lessonsDone": "{{done}} / {{total}} leçons terminées",
+        "orders": "Commandes",
+        "noOrders": "Aucune commande.",
+        "fullAccess": "Accès complet",
+        "modulesOwned": "{{owned}} modules sur {{total}}"
+      }
+    },
+    "reviews": {
+      "title": "Avis",
+      "empty": "Aucun avis à modérer.",
+      "allStatuses": "Tous les avis",
+      "pendingBadge": "{{count}} en attente",
+      "table": {
+        "author": "Auteur",
+        "rating": "Note",
+        "review": "Avis",
+        "status": "Statut",
+        "date": "Date"
+      },
+      "actions": {
+        "approve": "Publier",
+        "reject": "Refuser",
+        "delete": "Supprimer"
+      },
+      "noteLabel": "Motif (interne, facultatif)",
+      "rejectTitle": "Refuser cet avis ?",
+      "rejectBody": "L'avis ne sera pas publié. Le texte de l'étudiant est conservé.",
+      "deleteConfirm": "Supprimer définitivement cet avis ?",
+      "authorNote": "Les avis sont écrits par les étudiants : vous pouvez les publier ou les refuser, jamais les modifier."
+    },
+    "campaigns": {
+      "title": "Promotions",
+      "new": "Nouvelle promotion",
+      "empty": "Aucune promotion pour le moment.",
+      "intro": "La date de fin est réelle : le compte à rebours affiché aux étudiants est cette date exacte, identique pour tous, et le prix remonte automatiquement quand elle est passée.",
+      "deleteConfirm": "Supprimer la promotion « {{label}} » ?",
+      "table": {
+        "label": "Nom",
+        "course": "Formation",
+        "discount": "Remise",
+        "endsAt": "Se termine le",
+        "state": "État"
+      },
+      "state": {
+        "running": "En cours",
+        "inactive": "Programmée",
+        "disabled": "Désactivée"
+      },
+      "form": {
+        "createTitle": "Nouvelle promotion",
+        "editTitle": "Modifier la promotion",
+        "subtitle": "Une remise limitée dans le temps, appliquée automatiquement au prix.",
+        "course": "Formation",
+        "labelFr": "Nom (FR)",
+        "labelAr": "Nom (AR) — facultatif",
+        "percentOff": "Remise (%)",
+        "percentRange": "Entre 1 et 90 %",
+        "startsAt": "Début (facultatif)",
+        "endsAt": "Fin",
+        "endsInFuture": "La date de fin doit être dans le futur.",
+        "isActive": "Active",
+        "deadlineNote": "Le compte à rebours pointe vers cette date exacte. Il ne se réinitialise jamais et le prix revient à la normale ensuite.",
+        "labelArHint": "Laissé vide, les visiteurs en arabe voient le nom français."
+      }
+    },
+    "partners": {
+      "title": "Partenaires",
+      "new": "Nouveau partenaire",
+      "empty": "Aucun partenaire pour le moment.",
+      "inactive": "Désactivé",
+      "searchPlaceholder": "Rechercher par nom ou wilaya…",
+      "intro": "Prestataires recommandés aux étudiants dans les modules concernés. Leurs coordonnées ne sont visibles que pour les modules achetés.",
+      "deleteConfirm": "Supprimer le partenaire « {{name}} » ?",
+      "table": {
+        "name": "Nom",
+        "category": "Catégorie",
+        "contact": "Contact",
+        "wilaya": "Wilayas d'intervention",
+        "modules": "Modules"
+      },
+      "form": {
+        "createTitle": "Nouveau partenaire",
+        "editTitle": "Modifier le partenaire",
+        "subtitle": "Un prestataire vérifié, rattaché ensuite aux modules concernés.",
+        "name": "Nom",
+        "category": "Catégorie",
+        "descriptionFr": "Description (FR)",
+        "descriptionAr": "Description (AR)",
+        "phone": "Téléphone",
+        "email": "E-mail",
+        "website": "Site web",
+        "wilaya": "Wilaya",
+        "isActive": "Actif"
+      },
+      "filterWilaya": "Filtrer par wilaya",
+      "allWilayas": "Toutes les wilayas",
+      "gapsTitle": "Aucun partenaire actif dans cette wilaya pour ces métiers :",
+      "coverage": {
+        "title": "Wilayas d'intervention",
+        "help": "Cochez chaque wilaya où ce partenaire intervient réellement.",
+        "national": "Couverture nationale",
+        "nationalHint": "Ce partenaire apparaîtra pour tous les apprenants, quelle que soit leur wilaya.",
+        "selected_one": "{{count}} wilaya sélectionnée",
+        "selected_other": "{{count}} wilayas sélectionnées",
+        "clear": "Tout décocher",
+        "searchPlaceholder": "Chercher une wilaya (nom ou numéro)…",
+        "noMatch": "Aucune wilaya ne correspond.",
+        "none": "Aucune wilaya"
+      }
+    },
+    "invoices": {
+      "nav": "Facturation",
+      "title": "Facturation",
+      "subtitle": "Informations de l'émetteur et factures établies — la facture est promise « sur demande » sur la page de vente.",
+      "listTitle": "Factures établies",
+      "searchPlaceholder": "N°, client, e-mail…",
+      "empty": "Aucune facture établie pour le moment. Ouvrez une commande payée pour établir sa facture.",
+      "seller": {
+        "title": "Informations de l'émetteur (mentions obligatoires)",
+        "complete": "Toutes les mentions obligatoires sont renseignées.",
+        "incomplete": "Champs obligatoires manquants :",
+        "saved": "Enregistré.",
+        "business_name": "Raison sociale",
+        "legal_form": "Forme juridique",
+        "capital": "Capital social",
+        "address": "Adresse du siège",
+        "rc": "Registre de commerce (RC)",
+        "nif": "Identifiant fiscal (NIF)",
+        "nis": "Identifiant statistique (NIS)",
+        "ai": "Article d'imposition (AI)",
+        "phone": "Téléphone",
+        "email": "E-mail",
+        "bank_details": "Coordonnées bancaires",
+        "edit": "Modifier l'identité de l'entreprise"
+      },
+      "table": {
+        "number": "N°",
+        "date": "Date",
+        "buyer": "Client",
+        "total": "Total TTC",
+        "download": "PDF",
+        "send": "Envoyer",
+        "sent": "Envoyée ✓"
+      },
+      "orderSection": {
+        "title": "Facture",
+        "create": "Établir la facture"
+      },
+      "form": {
+        "createTitle": "Établir la facture",
+        "editTitle": "Corriger la facture {{number}}",
+        "subtitle": "Nom et adresse du client sont obligatoires ; RC, NIF, NIS et AI uniquement pour les professionnels.",
+        "settingsIncomplete": "Complétez d'abord les informations de l'émetteur (raison sociale, RC, NIF, NIS, AI…) avant d'établir une facture.",
+        "goToSettings": "Compléter Entreprise & contact",
+        "buyerName": "Nom / raison sociale du client",
+        "buyerAddress": "Adresse du client",
+        "proSection": "Client professionnel (facultatif)",
+        "buyer_rc": "RC",
+        "buyer_nif": "NIF",
+        "buyer_nis": "NIS",
+        "buyer_ai": "AI",
+        "tvaRate": "Taux de TVA",
+        "tva_19": "19 % (taux normal)",
+        "tva_9": "9 % (taux réduit)",
+        "tva_0": "0 % (exonéré)",
+        "notes": "Note sur la facture (facultatif)",
+        "submit": "Établir la facture"
+      }
+    },
+    "business": {
+      "title": "Entreprise & contact",
+      "subtitle": "Qui vos acheteurs paient, et comment ils vous joignent. Ce qui est rempli ici apparaît sur le site ; ce qui est vide n'apparaît pas.",
+      "contactTitle": "Contact",
+      "contactHint": "Affiché dans le pied de page, la FAQ, la page de paiement et l'écran d'attente du paiement CCP. Commencez par WhatsApp : c'est là que vos acheteurs posent leurs questions.",
+      "legalTitle": "Identité légale",
+      "legalHint": "Obligatoire pour émettre des factures. Raison sociale, forme, capital, adresse, RC et NIF apparaissent aussi en pied de page. Le NIS, l'article d'imposition et le RIB restent sur les factures uniquement.",
+      "publicHint": "Visible sur le site",
+      "saved": "Enregistré. Le site est à jour.",
+      "fixErrors": "Corrigez les champs en rouge.",
+      "fields": {
+        "business_name": "Raison sociale",
+        "legal_form": "Forme juridique",
+        "capital": "Capital social",
+        "address": "Adresse du siège",
+        "rc": "Registre du commerce (RC)",
+        "nif": "Numéro d'identification fiscale (NIF)",
+        "nis": "Numéro d'identification statistique (NIS)",
+        "ai": "Article d'imposition (AI)",
+        "phone": "Téléphone",
+        "email": "E-mail",
+        "bank_details": "Coordonnées bancaires (RIB / CCP)",
+        "whatsapp": "Numéro WhatsApp",
+        "support_hours": "Horaires d'accueil"
+      },
+      "placeholders": {
+        "whatsapp": "0550 12 34 56",
+        "phone": "0550 12 34 56",
+        "email": "contact@votre-domaine.dz",
+        "support_hours": "Dim–Jeu, 9h–17h"
+      }
+    },
+    "cash": {
+      "title": "Paiement en espèces",
+      "open": "Enregistrer un paiement en espèces",
+      "scope": "Ce que l'étudiant a payé",
+      "full": "Accès complet",
+      "modules": "Modules",
+      "price": "Calculer le montant",
+      "toCollect": "Montant à encaisser :",
+      "confirm": "Confirmer l'encaissement de {{amount}}",
+      "recorded": "Paiement en espèces de {{amount}} enregistré. L'accès est ouvert et l'étudiant a été prévenu par e-mail."
+    }
+  },
+  "reviews": {
+    "title": "Avis des étudiants",
+    "empty": "Aucun avis pour le moment. Les avis proviennent uniquement d'étudiants inscrits.",
+    "beFirst": "Donner le premier avis",
+    "leaveOne": "Laisser un avis",
+    "editMine": "Modifier mon avis",
+    "verified": "Achat vérifié",
+    "count_one": "{{count}} avis",
+    "count_other": "{{count}} avis",
+    "studentsEnrolled_one": "{{count}} étudiant inscrit",
+    "studentsEnrolled_other": "{{count}} étudiants inscrits",
+    "pendingHint": "Votre avis a bien été reçu. Il sera publié après vérification par l'équipe.",
+    "status": {
+      "pending": "En attente de validation",
+      "approved": "Publié",
+      "rejected": "Non publié"
+    },
+    "form": {
+      "title": "Votre avis",
+      "subtitle": "Partagez votre expérience avec les futurs étudiants. Votre avis est publié après vérification.",
+      "rating": "Votre note",
+      "ratingRequired": "Choisissez une note.",
+      "body": "Votre commentaire (facultatif)",
+      "placeholder": "Ce que la formation vous a apporté, ce qui vous a le plus servi…",
+      "submit": "Envoyer mon avis"
+    },
+    "more": "Voir plus d'avis"
+  },
+  "campaign": {
+    "endsIn": "Se termine dans",
+    "days": "j",
+    "hours": "h",
+    "minutes": "min",
+    "seconds": "s"
+  },
+  "partners": {
+    "title": "Partenaires recommandés",
+    "intro": "Des prestataires vérifiés pour cette étape du circuit. Ebni ne perçoit aucune commission sur ces mises en relation.",
+    "website": "Site web",
+    "lockedTease_one": "{{count}} contact partenaire inclus dans ce module",
+    "lockedTease_other": "{{count}} contacts partenaires inclus dans ce module",
+    "category": {
+      "notaire": "Notaire",
+      "expert_comptable": "Expert-comptable",
+      "banque": "Banque",
+      "bureau_etudes": "Bureau d'études",
+      "marketing": "Marketing",
+      "consultant_agrement": "Consultant agrément",
+      "autre": "Autre"
+    },
+    "filterLabel": "Ma wilaya",
+    "allWilayas": "Toutes les wilayas",
+    "national": "Couverture nationale",
+    "noWilaya": "Wilaya non renseignée",
+    "noneInWilaya": "Aucun partenaire ne couvre cette wilaya pour l'instant.",
+    "showAll_one": "Voir le partenaire de toutes les wilayas",
+    "showAll_other": "Voir les {{count}} partenaires de toutes les wilayas",
+    "hiddenByFilter_one": "{{count}} autre partenaire hors de votre wilaya",
+    "hiddenByFilter_other": "{{count}} autres partenaires hors de votre wilaya",
+    "saveFailed": "Choix non enregistré sur votre profil.",
+    "loadingWilayas": "Chargement…"
+  },
+  "content": {
+    "legalBasis": "Base légale",
+    "expertTip": "Conseil d'or de l'expert",
+    "partnerNeeded": "Partenaire",
+    "partnerSoon": "Contact partenaire — bientôt disponible",
+    "noCommission": "Ebni ne perçoit aucune commission sur ces mises en relation."
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Formation en ligne — Algérie",
+      "title": "La promotion immobilière en Algérie, transmise par celui qui l'a exercée 16 ans.",
+      "body": "Ni consultant, ni cabinet, ni formateur professionnel : un promoteur algérien, 16 ans de métier, vous transmet son processus complet — de la création de la société de promotion à la remise des clés.",
+      "ctaPrimary": "Accéder à la formation complète",
+      "paymentNote": "Accès à vie : téléphone, tablette, ordinateur. En entier ou module par module.",
+      "ctaSecondary_one": "Voir le programme — {{modules}}, une leçon en aperçu gratuit",
+      "ctaSecondary_other": "Voir le programme — {{modules}}, {{count}} leçons en aperçu gratuit",
+      "ctaSecondaryNoPreview": "Voir le programme — {{modules}}"
+    },
+    "eyebrow": {
+      "trackRecord": "Son parcours",
+      "maze": "Le vrai obstacle",
+      "costOfError": "Le prix d'une erreur",
+      "method": "La méthode",
+      "projects": "Ses opérations",
+      "toolkit": "Ce que vous recevez",
+      "curriculum": "Le programme",
+      "modular": "Module par module",
+      "reviews": "Les avis",
+      "pricing": "Les tarifs",
+      "faq": "Vos questions",
+      "forWhom": "Pour qui",
+      "howItWorks": "Comment ça se passe"
+    },
+    "trackRecord": {
+      "title": "Ce qu'il a construit avant de l'enseigner.",
+      "intro": "Il ne commente pas le marché : il l'a fait. Chaque opération ci-dessous a été montée, financée, construite, vendue et livrée par lui, en Algérie.",
+      "logements": "logements livrés",
+      "cliniques": "cliniques",
+      "centre": "centre commercial",
+      "parc": "parc d'attractions",
+      "years": "ans de métier",
+      "body": "Seize ans, du premier terrain acheté à la dernière clé remise. Tout ce que vous apprendrez a d'abord été fait en vrai, sur ses opérations — réussites, retards, recours de voisinage, erreurs payées comptant.",
+      "attribution": "Ces chiffres sont le bilan personnel du formateur en tant que promoteur immobilier, tel qu'il le déclare. Ce n'est pas le bilan d'Ebni Academy.",
+      "one": "Un",
+      "eyebrowExperience": "Expérience",
+      "eyebrowDelivered": "Livré"
+    },
+    "whySelling": {
+      "label": "La question que vous vous posez",
+      "title": "« Pourquoi vendre son métier ? » — Parce qu'il est à la retraite.",
+      "p1": "Un homme d'affaires sérieux se la pose en premier, et elle est saine : personne ne donne un métier rentable à ses futurs concurrents.",
+      "p2": "Le formateur a pris sa retraite. Plus d'opérations à monter, plus de terrains à vous disputer, plus de marché à défendre. Il lui reste seize ans de méthode, de dossiers et de contacts — un savoir qui meurt s'il reste dans un tiroir.",
+      "p3": "C'est pourquoi cette formation dit ce qu'un promoteur en activité ne dirait jamais : où les dossiers bloquent réellement, ce qui coûte cher et quand, qui appeler et dans quel ordre.",
+      "lead": "Personne ne donne un métier rentable à ses futurs concurrents. La question est saine.",
+      "quote": "Il a pris sa retraite : plus d'opérations, plus de terrains à vous disputer, plus de marché à défendre.",
+      "k1": "Où les dossiers bloquent réellement",
+      "k2": "Ce qui coûte cher, et à quel moment",
+      "k3": "Qui appeler, et dans quel ordre",
+      "close": "Des choses qu'un promoteur en activité ne dirait jamais."
+    },
+    "maze": {
+      "title": "Le capital ne suffit pas. C'est l'administratif qui arrête les projets.",
+      "p1": "Vous avez les fonds, peut-être même le terrain. Ce qui bloque vient après : l'agrément de promoteur et l'inscription au tableau national, le FGCMPI, le permis de construire, les contrats de vente sur plan (VSP), les recours du voisinage, les assurances obligatoires, la réception et la livraison.",
+      "p2": "Rien de tout cela n'est un problème d'argent. C'est un problème d'ordre, de pièces et de délais : un dossier refusé pour une pièce manquante, un permis qui traîne une saison entière, une VSP mal rédigée, un voisin qui dépose un recours au mauvais moment, un sous-traitant qui quitte le chantier au gros œuvre.",
+      "p3": "Ce sont les véritables aléas du terrain. Ils ne sont écrits dans aucun texte officiel : ils s'apprennent en seize ans de métier — ou en les payant. Cette formation existe pour que vous ne les appreniez pas à vos frais.",
+      "lead": "Vous avez les fonds, peut-être le terrain. Ce qui bloque vient après.",
+      "b1": "Agrément & TNPI",
+      "b2": "FGCMPI",
+      "b3": "Permis de construire",
+      "b4": "Vente sur plan (VSP)",
+      "b5": "Recours du voisinage",
+      "b6": "Assurances obligatoires",
+      "b7": "Réception & livraison",
+      "close": "Pas des problèmes d'argent : d'ordre, de pièces et de délais. Ces aléas s'apprennent en seize ans de métier — ou en les payant."
+    },
+    "costOfError": {
+      "title": "Sur une opération, une erreur ne se paie pas en dinars. Elle se paie en mois.",
+      "e1": "Un dossier d'agrément à refaire : votre démarrage repoussé.",
+      "e2": "Un permis incomplet : une saison de chantier perdue, terrain déjà payé.",
+      "e3": "Une VSP mal rédigée : un encaissement qui manque quand la trésorerie en a besoin.",
+      "e4": "Un sous-traitant mal choisi : chantier à l'arrêt, budget à rouvrir.",
+      "p1": "Aucun de ces incidents n'est rare. Ce sont les points de blocage ordinaires du métier, et ils tombent tous avant que le premier appartement soit vendu.",
+      "p2": "Le prix de cette formation se compare donc à une chose simple : ce que vous coûterait d'apprendre une seule de ces étapes sur votre propre chantier, en temps réel, avec votre propre argent engagé.",
+      "close": "Le prix de cette formation ? Ce que vous coûterait une seule de ces étapes, apprise sur votre chantier."
+    },
+    "method": {
+      "title": "Le pas-à-pas complet : du terrain nu à la remise des clés.",
+      "intro": "L'ordre exact d'une opération de promotion, sans sauter d'étape :",
+      "s1": "Créer la société de promotion et obtenir l'agrément.",
+      "s2": "Choisir et sécuriser le terrain, vérifier le foncier et les servitudes.",
+      "s3": "Étudier la faisabilité et monter le financement.",
+      "s4": "Concevoir, déposer et obtenir le permis de construire.",
+      "s5": "Gérer le voisinage, les oppositions et les recours.",
+      "s6": "Souscrire les assurances obligatoires et adhérer au FGCMPI.",
+      "s7": "Lancer le chantier, choisir et tenir les sous-traitants.",
+      "s8": "Vendre sur plan (VSP) et encaisser selon l'avancement.",
+      "s9": "Réceptionner, livrer et gérer les garanties.",
+      "outro1": "À chaque étape : ce qu'il faut faire, dans quel ordre, avec quel document, et l'erreur qui coûte le plus cher à ce moment précis.",
+      "outro2": "Du permis au voisinage jusqu'aux assurances, rien n'est laissé de côté — et tout est traité par un homme qui l'a fait, pas par un théoricien.",
+      "close": "À chaque étape : quoi faire, dans quel ordre, avec quel document — et l'erreur qui coûte le plus cher à ce moment précis."
+    },
+    "anyProject": {
+      "title": "Tout type de projet. La mécanique ne change pas.",
+      "p1": "Logement collectif, promotion mixte, local commercial, équipement de santé, équipement de loisirs : l'agrément, le foncier, la faisabilité, le financement, le permis, les assurances, le chantier, la vente et la livraison suivent la même mécanique. Ce qui change, ce sont les volumes et les interlocuteurs — pas la démarche.",
+      "p2": "C'est exactement ce que montre le parcours du formateur : la même méthode lui a servi à livrer plus de 2 100 logements, deux cliniques, un centre commercial et un parc d'attractions.",
+      "p3": "Vous n'avez donc pas à chercher une formation « pour votre type de projet ». Vous appliquez le même processus au vôtre.",
+      "t1": "Logement collectif",
+      "t2": "Promotion mixte",
+      "t3": "Local commercial",
+      "t4": "Équipement de santé",
+      "t5": "Équipement de loisirs",
+      "close": "La même méthode a livré 2 100 logements, deux cliniques, un centre commercial et un parc d'attractions. Appliquez-la au vôtre.",
+      "imgDalle": "Coulage de dalle sur un chantier de logements collectifs",
+      "imgChantier": "Chantier en cours : échafaudages et équipes en sécurité",
+      "imgLivre": "Résidence Belle Vue (Mahelma, Alger) — projet livré"
+    },
+    "toolkit": {
+      "title": "Vous ne repartez pas avec des notes. Vous repartez avec les outils.",
+      "excelTitle": "Le modèle financier Excel",
+      "excelBody": "Un fichier de finance de projet téléchargeable, à remplir avec vos chiffres : foncier, construction, échéancier VSP, trésorerie mois par mois, marge finale. Testez votre opération avant d'engager un seul dinar.",
+      "papersTitle": "Les papiers à voir",
+      "papersBody": "Les pièces exigées à chaque étape : ce que l'administration attend, sous quelle forme, dans quel ordre les déposer.",
+      "templatesTitle": "Les modèles types",
+      "templatesBody": "Les documents et trames d'une opération réelle, tels qu'ils ont servi sur ses chantiers.",
+      "subsTitle": "Les sous-traitants en direct",
+      "subsBody": "Des intervenants que le formateur a employés sur ses chantiers et retenus pour leur fiabilité, transmis en contact direct — pas une liste trouvée en ligne.",
+      "footer": "Tout provient des opérations du formateur et vous est transmis tel qu'il l'a utilisé.",
+      "ficheAlt": "Fiche technique du modèle F5 : plan 3D et surfaces pièce par pièce",
+      "ficheCaption": "Exemple réel — fiche technique du modèle F5, Résidence Belle Vue (Mahelma, Alger), projet livré : surfaces pièce par pièce et plan 3D."
+    },
+    "curriculumIntro": {
+      "title": "{{modules}}, {{lessons}}. La profondeur est la preuve.",
+      "p1": "Le programme complet est détaillé ci-dessous, module par module et leçon par leçon. Vous voyez exactement ce qui est couvert avant d'acheter — et plusieurs leçons sont en aperçu gratuit : regardez-les, jugez vous-même le niveau de détail, puis décidez.",
+      "p2": "Société et agrément, foncier, faisabilité, finance de projet, permis de construire, voisinage et recours, chantier et sous-traitance, assurances obligatoires, FGCMPI, vente sur plan, réception, livraison : du premier rendez-vous à la remise des clés, tout est inclus.",
+      "lead": "Chaque module est détaillé ci-dessous, leçon par leçon.",
+      "leadPreview_one": "Chaque module est détaillé ci-dessous. Une leçon est en aperçu gratuit : jugez le niveau de détail avant d'acheter.",
+      "leadPreview_other": "Chaque module est détaillé ci-dessous. {{count}} leçons sont en aperçu gratuit : jugez le niveau de détail avant d'acheter."
+    },
+    "modular": {
+      "title": "Achetez l'étape où vous êtes bloqué. Ou le métier complet.",
+      "p1": "Pas besoin de tout prendre d'un coup : achetez module par module, selon l'étape où vous en êtes réellement.",
+      "c1": "Vous démarrez de zéro ? Commencez par la société et l'agrément.",
+      "c2": "Dossier bloqué en mairie ? Prenez le module permis de construire.",
+      "c3": "Vous montez votre financement ? Prenez la finance de projet, avec le modèle financier Excel.",
+      "c4": "Votre chantier démarre ? Prenez le module chantier et sous-traitance.",
+      "p2": "Les remises s'appliquent toutes seules à mesure que vous ajoutez des modules. Le meilleur prix est calculé automatiquement, vous n'avez rien à demander.",
+      "p3": "À partir d'un certain nombre de modules, l'accès complet devient simplement l'option la moins chère. C'est pour cela qu'il existe.",
+      "close": "Les remises s'appliquent toutes seules. Passé un certain nombre de modules, l'accès complet devient l'option la moins chère.",
+      "from": "À partir de {{price}} par module"
+    },
+    "pricing": {
+      "title": "Deux façons d'y accéder.",
+      "fullTitle": "Accès complet",
+      "fullBody": "Les {{modules}} modules, les {{lessons}} leçons, le modèle financier Excel, les documents types et les contacts de sous-traitants. Accès à vie. Le tarif le plus bas ramené au module, et de loin.",
+      "unitTitle": "À l'unité",
+      "unitBody": "Prenez l'étape où vous êtes bloqué, avancez à votre rythme, complétez plus tard.",
+      "payment": "Accès à vie : téléphone, tablette, ordinateur. Facture sur demande.",
+      "promoNote": "Le tarif promotionnel expire à la fin du compte à rebours. Ensuite, le prix barré redevient le prix.",
+      "upTo": "jusqu'à -{{percent}}%",
+      "unitTiers_one": "Remises automatiques dès {{count}} module.",
+      "unitTiers_other": "Remises automatiques dès {{count}} modules."
+    },
+    "socialProof": {
+      "title": "Ce qu'en disent ceux qui l'ont déjà suivie.",
+      "note": "Seuls ceux qui ont réellement acheté la formation peuvent laisser un avis. Aucun avis n'est rédigé, commandé ni corrigé par Ebni Academy."
+    },
+    "finalCta": {
+      "title": "16 ans de terrain. {{modules}}. À vous de construire.",
+      "p1": "+2 100 logements livrés, 2 cliniques, 1 centre commercial, 1 parc d'attractions : seize ans de métier d'un promoteur algérien. Il vous explique tout ici, étape par étape, documents et modèle financier compris.",
+      "p2": "Apprenez ces étapes sur votre premier chantier, chaque erreur au prix fort. Ou ici, avant de signer chez le notaire."
+    },
+    "faq": {
+      "subtitle": "Les questions que se posent les porteurs de projet avant de se lancer.",
+      "stillHaveQuestions": "Une autre question ?",
+      "expertHelp": "Le programme détaillé répond à la plupart des questions.",
+      "expertHelpPreview_one": "Le programme détaillé et la leçon en aperçu gratuit répondent à la plupart des questions.",
+      "expertHelpPreview_other": "Le programme détaillé et les leçons en aperçu gratuit répondent à la plupart des questions."
+    },
+    "gallery": {
+      "plan": "Fiche technique d'un F4 duplex : plans des deux niveaux, cotes et surfaces pièce par pièce.",
+      "render": "Rendu 3D d'une résidence avant travaux — l'image qui sert à vendre sur plan.",
+      "rotonde": "Structure d'un immeuble à façade courbe : poteaux, planchers et murs-rideaux en cours de pose.",
+      "coffrage": "Coffrage et ferraillage en cours sur un de ses chantiers.",
+      "dalle": "Coulage d'une dalle : l'étape où un retard coûte le plus cher.",
+      "sejour": "Séjour livré, finitions terminées : faux plafond, éclairage, chauffage.",
+      "piscine": "Piscine intérieure : un équipement de standing qui se décide au permis, pas à la fin.",
+      "parking": "Parking en sous-sol et boxes fermés, réceptionnés.",
+      "facades": "Façades achevées, avant remise des clés.",
+      "attribution": "Photos, plans et rendus de ses propres opérations, fournis par le formateur."
+    },
+    "counts": {
+      "modules_one": "{{count}} module",
+      "modules_other": "{{count}} modules"
+    },
+    "forWhom": {
+      "title": "Vous avez un projet. Il vous manque le circuit.",
+      "lead": "Elle s'adresse à ceux qui passent à l'acte, quel que soit leur point de départ.",
+      "p1Title": "Vous avez un terrain ou des fonds",
+      "p1Body": "Et vous voulez savoir comment se monte une opération de promotion de bout en bout, avant d'engager quoi que ce soit.",
+      "p2Title": "Vous êtes déjà dans le bâtiment",
+      "p2Body": "Entrepreneur, architecte, ingénieur, technicien : vous connaissez le chantier et voulez passer de l'autre côté, celui du promoteur.",
+      "p3Title": "Vous investissez depuis l'étranger",
+      "p3Body": "Vous préparez un projet en Algérie depuis la France ou ailleurs, et devez comprendre le circuit avant d'y engager vos fonds.",
+      "p4Title": "Vous êtes bloqué à une étape",
+      "p4Body": "Agrément, permis, vente sur plan, chantier : vous avancez déjà, et un seul module peut suffire."
+    },
+    "howItWorks": {
+      "title": "Trois étapes entre vous et la première leçon.",
+      "s1Title": "Choisissez",
+      "s1BodyModules": "La formation complète, ou seulement les modules dont vous avez besoin.",
+      "s1BodyFull": "La formation complète, en un seul achat.",
+      "s1Tiers": "Les remises s'appliquent toutes seules.",
+      "s2Title": "Payez",
+      "s2Card": "Par carte, l'accès s'ouvre dès que le paiement est confirmé.",
+      "s2Transfer": "Par {{methods}} : envoyez le reçu depuis votre espace, l'accès s'ouvre dès qu'il est vérifié.",
+      "s2Mail": "Un e-mail vous confirme l'ouverture de l'accès.",
+      "s3Title": "Apprenez",
+      "s3Body": "Sur téléphone, tablette ou ordinateur, à votre rythme et à vie. Une facture vous est établie sur demande."
+    }
+  },
+  "checklist": {
+    "title": "Checklist du module",
+    "subtitle": "Cochez chaque étape au fur et à mesure que vous l'exécutez sur votre propre projet.",
+    "myTasks": "Mes tâches",
+    "add": "Ajouter",
+    "addPlaceholder": "Ajouter une tâche…",
+    "deleteTask": "Supprimer la tâche",
+    "pageTitle": "Ma feuille de route",
+    "pageSubtitle": "Toutes les étapes du parcours, module par module — celles du cours et les vôtres.",
+    "overallProgress": "Progression globale",
+    "backToCourse": "Retour au cours",
+    "lockedTease_one": "{{count}} étape incluse dans ce module",
+    "lockedTease_other": "{{count}} étapes incluses dans ce module",
+    "saveFailed": "Modification non enregistrée — vérifiez votre connexion et réessayez."
+  },
+  "contact": {
+    "whatsapp": "WhatsApp",
+    "hours": "Horaires : {{hours}}",
+    "prefillGeneral": "Bonjour, j'ai une question sur la formation Ebni Academy.",
+    "prefillOrder": "Bonjour, je vous écris au sujet de ma commande n° {{id}}.",
+    "paymentHelpTitle": "Une question sur votre paiement ?",
+    "paymentHelpBody": "Écrivez-nous : votre numéro de commande est déjà dans le message.",
+    "beforePaying": "Une question avant de payer ?"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Cette adresse ne mène nulle part. Le lien est peut-être incomplet, ou la page a été déplacée.",
+    "home": "Retour à l'accueil"
+  },
+  "crash": {
+    "title": "Quelque chose s'est mal passé",
+    "body": "La page n'a pas pu s'afficher. Rechargez-la ; si le problème revient, revenez à l'accueil.",
+    "reload": "Recharger la page"
+  },
+  "seo": {
+    "home": {
+      "title": "Formation en promotion immobilière en Algérie",
+      "description": "Formation en ligne à la promotion immobilière en Algérie : agrément, terrain, permis de construire, construction, vente d'appartements sur plan. {{modules}} modules."
+    },
+    "catalog": {
+      "title": "Formations en promotion immobilière en Algérie",
+      "description": "Formations en ligne pour porteurs de projets immobiliers en Algérie : société de promotion, construction et vente de logements, jusqu'à la remise des clés."
+    }
+  },
+  "payments": {
+    "names": {
+      "chargily": "carte CIB ou Edahabia",
+      "manual_ccp": "versement CCP",
+      "manual_baridimob": "BaridiMob",
+      "stripe": "carte internationale (Visa, Mastercard)"
+    },
+    "short": {
+      "chargily": "CIB, Edahabia",
+      "manual_ccp": "CCP",
+      "manual_baridimob": "BaridiMob",
+      "stripe": "carte internationale"
+    },
+    "separator": ", ",
+    "or": "ou",
+    "sentence": "Paiement : {{methods}}.",
+    "cash": "Vous pouvez aussi régler en espèces : contactez-nous."
+  }
+}

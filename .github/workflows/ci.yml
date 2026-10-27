@@ -1,0 +1,100 @@
+# The constitution's quality gates, run on every push and pull request.
+# To make them block merges, mark the "api" and "web" checks as required in
+# GitHub → Settings → Branches → branch protection for main.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
+
+    services:
+      mysql:
+        # Docker Hub refused anonymous pulls from the runners (rate limit) and
+        # the job died before any test ran. The same official image, through
+        # Google's Docker Hub mirror.
+        image: mirror.gcr.io/library/mysql:8.0
+        env:
+          MYSQL_DATABASE: ebni_test
+          MYSQL_USER: ebni
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+
+    env:
+      # phpunit.xml names the docker-compose host; on the runner the service
+      # is published on localhost. An existing env var wins over phpunit.xml.
+      DB_HOST: 127.0.0.1
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql, bcmath, gd, zip, intl, exif, pcntl
+          coverage: none
+
+      - name: Grant the per-worker test databases
+        run: mysql -h 127.0.0.1 -uroot -proot < ../docker/mysql-test/01-parallel-testing.sql
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ hashFiles('api/composer.lock') }}
+
+      - run: composer install --no-interaction --no-progress --prefer-dist
+
+      - run: cp .env.example .env && php artisan key:generate
+
+      - name: Format (pint leaves no diff)
+        run: ./vendor/bin/pint --test
+
+      - name: Dependency advisories
+        run: composer audit
+
+      - name: Tests
+        run: php artisan test --parallel --processes=4
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+
+      - name: Build (tsc + vite)
+        run: npm run build
+
+      - name: Lint
+        run: npx eslint src
+
+      # Runtime dependencies only: what reaches the browser. Build tooling
+      # advisories (braces via tailwindcss 3, esbuild via vite 5) have no
+      # non-breaking fix and never ship.
+      - name: Dependency advisories
+        run: npm audit --omit=dev

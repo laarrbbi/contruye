@@ -1,0 +1,24 @@
+// GitHub Codespaces: the whole site, private to your GitHub account, on one
+// address. From the repository page: Code → Codespaces → Create codespace.
+// The first start builds everything (5–8 minutes), then the site opens in a
+// new tab. Demo logins: admin@example.dz / password, karim@example.dz / password.
+{
+  "name": "Ebni Academy preview",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" }
+  },
+  "hostRequirements": { "cpus": 2 },
+
+  // make setup, then the preview (make preview). The base image has no make.
+  "postCreateCommand": "sudo apt-get update -qq && sudo apt-get install -y -qq make && make preview",
+  // After the codespace was stopped and starts again.
+  "postStartCommand": "docker compose --profile preview up -d",
+
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "Ebni Academy", "onAutoForward": "openBrowser" }
+  },
+  "otherPortsAttributes": { "onAutoForward": "ignore" }
+}
