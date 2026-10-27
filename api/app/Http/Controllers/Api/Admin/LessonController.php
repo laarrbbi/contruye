@@ -40,7 +40,7 @@ class LessonController extends Controller
     public function destroy(Request $request, Lesson $lesson): Response
     {
         AuditLog::record($request->user(), 'lesson.deleted', $lesson, [
-            'title' => $lesson->title_fr,
+            'title' => $lesson->title_es,
             'module_id' => $lesson->module_id,
         ]);
 

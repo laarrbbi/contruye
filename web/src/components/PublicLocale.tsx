@@ -5,9 +5,9 @@ import { storedLocale } from '@/i18n/locales'
 import { localizedPath } from '@/i18n/paths'
 
 /**
- * Wraps the public pages of one language (/…, /ar/…, /en/…) and keeps the
- * interface in the URL's language. Someone who chose Arabic or English and
- * opens a French URL goes to the same page at their language's URL instead;
+ * Wraps the public pages of one language (/…, /en/…) and keeps the interface
+ * in the URL's language. Someone who chose English and opens a Spanish URL
+ * goes to the same page at their language's URL instead;
  * search engines store no choice, so they always get the page they asked for.
  */
 export function PublicLocale({ locale }: { locale: Locale }) {
@@ -15,7 +15,7 @@ export function PublicLocale({ locale }: { locale: Locale }) {
 
   const stored = storedLocale()
   const redirect =
-    locale === 'fr' && stored !== null && stored !== 'fr'
+    locale === 'es' && stored !== null && stored !== 'es'
       ? localizedPath(location.pathname, stored) + location.search + location.hash
       : null
 

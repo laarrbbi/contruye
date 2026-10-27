@@ -54,7 +54,7 @@ it('finds the strings it checks', function () use ($translatableLiterals) {
     // Guards the scanner itself: a regex that matched nothing would make the
     // next test pass vacuously.
     expect(count($translatableLiterals()))->toBeGreaterThan(50)
-        ->and($translatableLiterals())->toHaveKey('Your Ebni Academy invoice :number');
+        ->and($translatableLiterals())->toHaveKey('Your Construye Academy invoice :number');
 });
 
 it('has a French and an Arabic translation for every message the API sends', function () use ($translatableLiterals) {

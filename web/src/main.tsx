@@ -1,18 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-// Typographie du site : Poppins (géométrique rond, équivalent libre de
-// Circular) pour le latin, Cairo pour l'arabe. Auto-hébergées, graisses
-// limitées, font-display: swap — pas de requête tierce, pas de texte invisible.
+// The site's typeface: Poppins (a rounded geometric, a free equivalent of
+// Circular). Self-hosted, a few weights, font-display: swap — no third-party
+// request, no invisible text.
 import '@fontsource/poppins/latin-400.css'
 import '@fontsource/poppins/latin-500.css'
 import '@fontsource/poppins/latin-600.css'
 import '@fontsource/poppins/latin-700.css'
 import '@fontsource/poppins/latin-800.css'
-import '@fontsource/cairo/arabic-400.css'
-import '@fontsource/cairo/arabic-600.css'
-import '@fontsource/cairo/arabic-700.css'
-import '@fontsource/cairo/arabic-800.css'
 import i18n, { i18nReady } from './i18n'
 import './index.css'
 import App from './App'

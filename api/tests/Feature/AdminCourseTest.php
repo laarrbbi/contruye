@@ -42,7 +42,7 @@ it('forbids non-admins on every admin route', function () {
 
 it('lists courses with raw fields and counts for admins', function () {
     $admin = User::factory()->admin()->create();
-    $course = Course::factory()->draft()->create(['title_ar' => 'تكوين تجريبي']);
+    $course = Course::factory()->draft()->create(['title_en' => 'تكوين تجريبي']);
     $module = Module::factory()->for($course)->create(['order' => 1]);
     Lesson::factory()->for($module)->count(2)->create();
 
@@ -50,25 +50,25 @@ it('lists courses with raw fields and counts for admins', function () {
         ->getJson('/api/admin/courses')
         ->assertOk()
         ->assertJsonCount(1, 'data')
-        ->assertJsonPath('data.0.title_ar', 'تكوين تجريبي')
+        ->assertJsonPath('data.0.title_en', 'تكوين تجريبي')
         ->assertJsonPath('data.0.status', 'draft')
         ->assertJsonPath('data.0.modules_count', 1)
         ->assertJsonPath('data.0.lessons_count', 2)
         ->assertJsonPath('data.0.enrollments_count', 0);
 });
 
-it('creates a course with an auto-generated slug from title_fr', function () {
+it('creates a course with an auto-generated slug from title_es', function () {
     $admin = User::factory()->admin()->create();
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_fr' => 'Développement Web Complet',
-            'title_ar' => 'تطوير الويب الكامل',
+            'title_es' => 'Développement Web Complet',
+            'title_en' => 'تطوير الويب الكامل',
             'price_dzd' => 25000,
         ])
         ->assertCreated()
         ->assertJsonPath('data.slug', 'developpement-web-complet')
-        ->assertJsonPath('data.title_ar', 'تطوير الويب الكامل')
+        ->assertJsonPath('data.title_en', 'تطوير الويب الكامل')
         ->assertJsonPath('data.status', 'draft');
 
     $this->assertDatabaseHas('courses', [
@@ -82,8 +82,8 @@ it('creates a course with an explicit slug and status', function () {
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_fr' => 'Cours publié',
-            'title_ar' => 'دورة منشورة',
+            'title_es' => 'Cours publié',
+            'title_en' => 'دورة منشورة',
             'slug' => 'mon-slug-perso',
             'price_dzd' => 12000,
             'price_eur' => 60,
@@ -120,19 +120,19 @@ it('updates a course keeping its own slug', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/courses/{$course->id}", [
-            'title_fr' => 'Nouveau titre',
-            'title_ar' => 'عنوان جديد',
+            'title_es' => 'Nouveau titre',
+            'title_en' => 'عنوان جديد',
             'slug' => 'mon-cours',
             'price_dzd' => 30000,
             'status' => 'published',
         ])
         ->assertOk()
-        ->assertJsonPath('data.title_fr', 'Nouveau titre')
+        ->assertJsonPath('data.title_es', 'Nouveau titre')
         ->assertJsonPath('data.status', 'published');
 
     $this->assertDatabaseHas('courses', [
         'id' => $course->id,
-        'title_fr' => 'Nouveau titre',
+        'title_es' => 'Nouveau titre',
         'status' => 'published',
     ]);
 });
@@ -144,8 +144,8 @@ it('rejects an update whose slug belongs to another course', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/courses/{$course->id}", [
-            'title_fr' => 'Titre',
-            'title_ar' => 'عنوان',
+            'title_es' => 'Titre',
+            'title_en' => 'عنوان',
             'slug' => 'taken-slug',
             'price_dzd' => 1000,
         ])
@@ -164,14 +164,14 @@ it('deletes a course', function () {
     $this->assertDatabaseMissing('courses', ['id' => $course->id]);
 });
 
-it('returns 422 when title_ar is missing', function () {
+it('returns 422 when title_en is missing', function () {
     $admin = User::factory()->admin()->create();
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_fr' => 'Sans titre arabe',
+            'title_es' => 'Sans titre arabe',
             'price_dzd' => 5000,
         ])
         ->assertUnprocessable()
-        ->assertJsonValidationErrors(['title_ar']);
+        ->assertJsonValidationErrors(['title_en']);
 });

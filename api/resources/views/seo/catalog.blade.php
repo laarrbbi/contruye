@@ -8,12 +8,12 @@
         @foreach ($courses as $course)
             @php
                 $campaign = $course->activeCampaign();
-                $price = $campaign !== null ? $campaign->apply((int) $course->price_dzd) : (int) $course->price_dzd;
+                $price = $campaign !== null ? $campaign->apply((int) $course->price_eur) : (int) $course->price_eur;
             @endphp
             <li class="space-y-2">
                 <h2 class="text-xl font-bold"><a href="{{ $courseUrl($course) }}">{{ $course->localizedTitle($locale) }}</a></h2>
                 <p dir="auto" class="leading-relaxed text-muted-foreground">{{ $course->localizedDescription($locale) }}</p>
-                <p class="font-semibold">{{ Money::format($price, 'DZD', $locale) }}</p>
+                <p class="font-semibold">{{ Money::format($price, 'EUR', $locale) }}</p>
             </li>
         @endforeach
     </ul>

@@ -49,10 +49,10 @@ import {
 import { applyServerErrors, formatDate } from './lib'
 
 interface CourseFormValues {
-  title_fr: string
-  title_ar: string
-  description_fr: string
-  description_ar: string
+  title_es: string
+  title_en: string
+  description_es: string
+  description_en: string
   slug: string
   price_dzd: string
   price_eur: string
@@ -60,10 +60,10 @@ interface CourseFormValues {
 }
 
 const emptyValues: CourseFormValues = {
-  title_fr: '',
-  title_ar: '',
-  description_fr: '',
-  description_ar: '',
+  title_es: '',
+  title_en: '',
+  description_es: '',
+  description_en: '',
   slug: '',
   price_dzd: '',
   price_eur: '',
@@ -72,10 +72,10 @@ const emptyValues: CourseFormValues = {
 
 function courseToValues(course: AdminCourse): CourseFormValues {
   return {
-    title_fr: course.title_fr,
-    title_ar: course.title_ar,
-    description_fr: course.description_fr ?? '',
-    description_ar: course.description_ar ?? '',
+    title_es: course.title_es,
+    title_en: course.title_en,
+    description_es: course.description_es ?? '',
+    description_en: course.description_en ?? '',
     slug: course.slug,
     price_dzd: String(course.price_dzd),
     price_eur: course.price_eur === null ? '' : String(course.price_eur),
@@ -118,10 +118,10 @@ function CourseFormDialog({
   const onSubmit = (values: CourseFormValues) => {
     setGenericError(null)
     const payload: CoursePayload = {
-      title_fr: values.title_fr.trim(),
-      title_ar: values.title_ar.trim(),
-      description_fr: values.description_fr.trim() || null,
-      description_ar: values.description_ar.trim() || null,
+      title_es: values.title_es.trim(),
+      title_en: values.title_en.trim(),
+      description_es: values.description_es.trim() || null,
+      description_en: values.description_en.trim() || null,
       price_dzd: Number(values.price_dzd),
       price_eur: values.price_eur.trim() === '' ? null : Number(values.price_eur),
       status: values.status,
@@ -143,8 +143,8 @@ function CourseFormDialog({
     }
   }
 
-  const frHasError = Boolean(errors.title_fr || errors.description_fr)
-  const arHasError = Boolean(errors.title_ar || errors.description_ar)
+  const esHasError = Boolean(errors.title_es || errors.description_es)
+  const enHasError = Boolean(errors.title_en || errors.description_en)
 
   const fieldError = (message?: string) =>
     message ? <p className="text-sm text-destructive">{message}</p> : null
@@ -162,45 +162,45 @@ function CourseFormDialog({
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="fr">
                 {t('admin.form.french')}
-                {frHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
+                {esHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
               </TabsTrigger>
               <TabsTrigger value="ar">
                 {t('admin.form.arabic')}
-                {arHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
+                {enHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="fr" className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="course-title-fr">{t('admin.courses.form.titleFr')}</Label>
+                <Label htmlFor="course-title-fr">{t('admin.courses.form.titleEs')}</Label>
                 <Input
                   id="course-title-fr"
                   dir="ltr"
-                  {...register('title_fr', { required: t('validation.required') })}
+                  {...register('title_es', { required: t('validation.required') })}
                 />
-                {fieldError(errors.title_fr?.message)}
+                {fieldError(errors.title_es?.message)}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="course-description-fr">{t('admin.courses.form.descriptionFr')}</Label>
-                <Textarea id="course-description-fr" dir="ltr" rows={4} {...register('description_fr')} />
-                {fieldError(errors.description_fr?.message)}
+                <Label htmlFor="course-description-fr">{t('admin.courses.form.descriptionEs')}</Label>
+                <Textarea id="course-description-fr" dir="ltr" rows={4} {...register('description_es')} />
+                {fieldError(errors.description_es?.message)}
               </div>
             </TabsContent>
 
             <TabsContent value="ar" className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="course-title-ar">{t('admin.courses.form.titleAr')}</Label>
+                <Label htmlFor="course-title-ar">{t('admin.courses.form.titleEn')}</Label>
                 <Input
                   id="course-title-ar"
                   dir="rtl"
-                  {...register('title_ar', { required: t('validation.required') })}
+                  {...register('title_en', { required: t('validation.required') })}
                 />
-                {fieldError(errors.title_ar?.message)}
+                {fieldError(errors.title_en?.message)}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="course-description-ar">{t('admin.courses.form.descriptionAr')}</Label>
-                <Textarea id="course-description-ar" dir="rtl" rows={4} {...register('description_ar')} />
-                {fieldError(errors.description_ar?.message)}
+                <Label htmlFor="course-description-ar">{t('admin.courses.form.descriptionEn')}</Label>
+                <Textarea id="course-description-ar" dir="rtl" rows={4} {...register('description_en')} />
+                {fieldError(errors.description_en?.message)}
               </div>
             </TabsContent>
           </Tabs>
@@ -355,7 +355,7 @@ export function AdminCoursesPage() {
                   onClick={() => navigate(`/admin/courses/${course.id}/content`)}
                 >
                   <TableCell className="font-medium">
-                    <div>{(i18n.language === 'ar' && course.title_ar) || course.title_fr}</div>
+                    <div>{(i18n.language === 'ar' && course.title_en) || course.title_es}</div>
                     <div className="text-xs text-muted-foreground">
                       <span dir="ltr">/{course.slug}</span>
                     </div>
@@ -416,7 +416,7 @@ export function AdminCoursesPage() {
             <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
               {t('admin.courses.deleteConfirm', {
-                title: ((i18n.language === 'ar' && deleteTarget?.title_ar) || deleteTarget?.title_fr) ?? '',
+                title: ((i18n.language === 'ar' && deleteTarget?.title_en) || deleteTarget?.title_es) ?? '',
               })}
             </AlertDialogDescription>
           </AlertDialogHeader>

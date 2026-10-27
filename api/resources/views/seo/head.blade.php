@@ -8,7 +8,7 @@
     <link rel="alternate" hreflang="{{ $hreflang }}" href="{{ $href }}" />
 @endforeach
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Ebni Academy" />
+    <meta property="og:site_name" content="Construye Academy" />
     <meta property="og:locale" content="{{ $ogLocale }}" />
 @foreach ($ogLocaleAlternates as $alternate)
     <meta property="og:locale:alternate" content="{{ $alternate }}" />

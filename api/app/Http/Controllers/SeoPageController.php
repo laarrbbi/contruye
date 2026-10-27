@@ -28,9 +28,9 @@ use Illuminate\Support\Str;
 final class SeoPageController
 {
     /** The language switcher's names, as the app shows them. */
-    private const LANGUAGE_NAMES = ['fr' => 'Français', 'ar' => 'العربية', 'en' => 'English'];
+    private const LANGUAGE_NAMES = ['es' => 'Español', 'en' => 'English'];
 
-    private const OG_LOCALES = ['fr' => 'fr_FR', 'ar' => 'ar_AR', 'en' => 'en_US'];
+    private const OG_LOCALES = ['es' => 'es_ES', 'en' => 'en_GB'];
 
     // The language comes from the route's defaults (routes/seo.php), read by
     // name: Laravel passes route parameters by position, URL ones first.
@@ -50,10 +50,10 @@ final class SeoPageController
         app()->setLocale($locale);
 
         $courses = Course::published()->with('campaigns')->latest()->get();
-        $url = LocalizedUrl::to('/formations', $locale);
+        $url = LocalizedUrl::to('/cursos', $locale);
         $title = SpaStrings::get($locale, 'seo.catalog.title');
 
-        $head = $this->head($locale, '/formations', $title, SpaStrings::get($locale, 'seo.catalog.description'), [
+        $head = $this->head($locale, '/cursos', $title, SpaStrings::get($locale, 'seo.catalog.description'), [
             StructuredData::organization(),
             StructuredData::website(),
             StructuredData::itemList($courses->map(fn (Course $course) => $this->courseUrl($course, $locale))->all()),
@@ -65,7 +65,7 @@ final class SeoPageController
 
         $body = view('seo.catalog', [
             'locale' => $locale,
-            'header' => $this->header($locale, '/formations'),
+            'header' => $this->header($locale, '/cursos'),
             'courses' => $courses,
             'courseUrl' => fn (Course $course) => $this->courseUrl($course, $locale),
         ])->render();
@@ -98,10 +98,10 @@ final class SeoPageController
         $main = $courses->firstWhere('slug', config('seo.main_course'));
 
         $pages = collect([['path' => '/', 'lastmod' => $main?->updated_at]]);
-        $pages->push(['path' => '/formations', 'lastmod' => $courses->max('updated_at')]);
+        $pages->push(['path' => '/cursos', 'lastmod' => $courses->max('updated_at')]);
         foreach ($courses as $course) {
             if ($course->slug !== config('seo.main_course')) {
-                $pages->push(['path' => "/courses/{$course->slug}", 'lastmod' => $course->updated_at]);
+                $pages->push(['path' => "/cursos/{$course->slug}", 'lastmod' => $course->updated_at]);
             }
         }
 
@@ -126,7 +126,7 @@ final class SeoPageController
         CourseSocialProof::attach($course);
 
         $isMain = $slug === config('seo.main_course');
-        $path = $isMain ? '/' : "/courses/{$slug}";
+        $path = $isMain ? '/' : "/cursos/{$slug}";
         $url = LocalizedUrl::to($path, $locale);
         $faq = $isMain ? $this->faq($locale) : [];
 
@@ -141,7 +141,7 @@ final class SeoPageController
         if (! $isMain) {
             $nodes[] = StructuredData::breadcrumbs([
                 ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
-                ['name' => SpaStrings::get($locale, 'seo.catalog.title'), 'url' => LocalizedUrl::to('/formations', $locale)],
+                ['name' => SpaStrings::get($locale, 'seo.catalog.title'), 'url' => LocalizedUrl::to('/cursos', $locale)],
                 ['name' => $course->localizedTitle($locale), 'url' => $url],
             ]);
         }
@@ -237,7 +237,7 @@ final class SeoPageController
     {
         return $course->slug === config('seo.main_course')
             ? LocalizedUrl::to('/', $locale)
-            : LocalizedUrl::to("/courses/{$course->slug}", $locale);
+            : LocalizedUrl::to("/cursos/{$course->slug}", $locale);
     }
 
     /**
@@ -251,7 +251,7 @@ final class SeoPageController
         if ($locale !== null) {
             $html = (string) preg_replace(
                 '/<html\b[^>]*>/',
-                '<html lang="'.$locale.'" dir="'.($locale === 'ar' ? 'rtl' : 'ltr').'">',
+                '<html lang="'.$locale.'" dir="ltr">',
                 $html,
                 1,
             );
@@ -289,7 +289,7 @@ final class SeoPageController
         // page's head and content.
         Log::warning('SPA index not found for server-rendered pages', ['path' => $path]);
 
-        return '<!doctype html><html lang="fr"><head><meta charset="UTF-8" />'
+        return '<!doctype html><html lang="es"><head><meta charset="UTF-8" />'
             .'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
             .'<!-- seo:start --><!-- seo:end --></head><body><div id="root"></div></body></html>';
     }

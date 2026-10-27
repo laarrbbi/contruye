@@ -19,7 +19,7 @@ use Illuminate\Validation\Rule;
 /**
  * Cash paid at the office. The README always documented this flow, but no
  * code path could create a `cash` order: the admin could only grant an order
- * the student had placed online, which then read as CCP or card in the
+ * the student had placed online, which then read as a transfer or card in the
  * revenue by method.
  *
  * Priced by the same PricingService as checkout (tiers, campaigns, owned
@@ -51,7 +51,6 @@ class CashOrderController extends Controller
             $user,
             $data['scope'],
             array_map('intval', $data['module_ids'] ?? []),
-            'DZD',
             null,
         );
 
@@ -66,7 +65,7 @@ class CashOrderController extends Controller
                 'amount' => $quote['total'],
                 'discount_percent' => $quote['tier_percent'],
                 'pricing_snapshot' => PricingService::snapshot($quote),
-                'currency' => 'DZD',
+                'currency' => PricingService::CURRENCY,
                 'method' => 'cash',
                 'scope' => $quote['scope'],
                 'status' => 'pending',

@@ -58,7 +58,7 @@ export function ModulePartnersDialog({
       (module?.partners ?? [])
         .slice()
         .sort((a, b) => a.order - b.order)
-        .map((p) => ({ partner_id: p.partner_id, name: p.name, note_fr: p.note_fr, note_ar: p.note_ar })),
+        .map((p) => ({ partner_id: p.partner_id, name: p.name, note_es: p.note_es, note_en: p.note_en })),
     )
   }, [open, module])
 
@@ -68,7 +68,7 @@ export function ModulePartnersDialog({
     const id = Number(toAdd)
     const partner = (partners ?? []).find((p) => p.id === id)
     if (!partner) return
-    setRows((prev) => [...prev, { partner_id: partner.id, name: partner.name, note_fr: '', note_ar: '' }])
+    setRows((prev) => [...prev, { partner_id: partner.id, name: partner.name, note_es: '', note_en: '' }])
     setToAdd('')
   }
 
@@ -90,8 +90,8 @@ export function ModulePartnersDialog({
         moduleId: module.id,
         partners: rows.map((r) => ({
           partner_id: r.partner_id,
-          note_fr: r.note_fr?.trim() || null,
-          note_ar: r.note_ar?.trim() || null,
+          note_es: r.note_es?.trim() || null,
+          note_en: r.note_en?.trim() || null,
         })),
       },
       {
@@ -107,7 +107,7 @@ export function ModulePartnersDialog({
         <DialogHeader>
           <DialogTitle>{t('admin.content.partners.title')}</DialogTitle>
           <DialogDescription>
-            {module?.title_fr} — {t('admin.content.partners.subtitle')}
+            {module?.title_es} — {t('admin.content.partners.subtitle')}
           </DialogDescription>
         </DialogHeader>
 
@@ -182,21 +182,21 @@ export function ModulePartnersDialog({
                   </div>
                   <div className="grid gap-2 sm:grid-cols-2">
                     <Input
-                      placeholder={t('admin.content.partners.noteFr')}
-                      value={row.note_fr ?? ''}
+                      placeholder={t('admin.content.partners.noteEs')}
+                      value={row.note_es ?? ''}
                       onChange={(e) =>
                         setRows((prev) =>
-                          prev.map((r, i) => (i === index ? { ...r, note_fr: e.target.value } : r)),
+                          prev.map((r, i) => (i === index ? { ...r, note_es: e.target.value } : r)),
                         )
                       }
                     />
                     <Input
                       dir="rtl"
-                      placeholder={t('admin.content.partners.noteAr')}
-                      value={row.note_ar ?? ''}
+                      placeholder={t('admin.content.partners.noteEn')}
+                      value={row.note_en ?? ''}
                       onChange={(e) =>
                         setRows((prev) =>
-                          prev.map((r, i) => (i === index ? { ...r, note_ar: e.target.value } : r)),
+                          prev.map((r, i) => (i === index ? { ...r, note_en: e.target.value } : r)),
                         )
                       }
                     />

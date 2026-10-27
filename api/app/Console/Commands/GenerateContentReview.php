@@ -11,8 +11,8 @@ use Illuminate\Console\Command;
 
 /**
  * Produces `content-review.md` — the list of every course passage still
- * awaiting a partner notary / jurist sign-off, plus the partner slots that
- * have no real contact attached yet.
+ * awaiting the instructor's (or a partner notary / lawyer's) sign-off, plus
+ * the partner slots that have no real contact attached yet.
  *
  * Nothing is ever rewritten or removed by this command; it only reports.
  */
@@ -20,7 +20,7 @@ class GenerateContentReview extends Command
 {
     protected $signature = 'content:review {--path= : Where to write the report}';
 
-    protected $description = 'Generate the content-review report of passages flagged "A VALIDER"';
+    protected $description = 'Generate the content-review report of passages flagged "A VALIDAR"';
 
     public function handle(): int
     {
@@ -38,13 +38,13 @@ class GenerateContentReview extends Command
         $pendingCount = 0;
         $emptySlots = [];
 
-        $lines[] = '# Content review — passages à valider';
+        $lines[] = '# Revisión de contenido — pasajes por validar';
         $lines[] = '';
-        $lines[] = 'Rapport généré automatiquement pour la relecture par le notaire et le juriste partenaires.';
-        $lines[] = 'Chaque passage ci-dessous contient une mention « à vérifier / à confirmer / à verrouiller / à valider »';
-        $lines[] = 'et est affiché avec un badge **A VALIDER** côté administration (jamais côté élève).';
+        $lines[] = 'Informe generado automáticamente para la revisión del formador y de los profesionales colaboradores (notario, abogado).';
+        $lines[] = 'Cada pasaje contiene una mención «pendiente de validar / verificar / confirmar» o «por validar / verificar / confirmar»';
+        $lines[] = 'y se muestra con una etiqueta **A VALIDAR** en la administración (nunca al alumno).';
         $lines[] = '';
-        $lines[] = 'Aucun de ces passages n\'a été supprimé ni reformulé.';
+        $lines[] = 'Ninguno de estos pasajes se ha eliminado ni reformulado.';
         $lines[] = '';
         $lines[] = '---';
         $lines[] = '';
@@ -53,30 +53,30 @@ class GenerateContentReview extends Command
             /** @var Module $module */
             $moduleEntries = [];
 
-            if (ContentValidation::flags($module->description_fr)) {
-                $moduleEntries[] = ['source' => 'Description du module', 'text' => $module->description_fr];
+            if (ContentValidation::flags($module->description_es)) {
+                $moduleEntries[] = ['source' => 'Descripción del módulo', 'text' => $module->description_es];
             }
 
             foreach ($module->contentBlocks as $block) {
                 /** @var ContentBlock $block */
                 if ($block->needs_validation) {
-                    $moduleEntries[] = ['source' => "Bloc [{$block->type}]", 'text' => $block->body_fr];
+                    $moduleEntries[] = ['source' => "Bloque [{$block->type}]", 'text' => $block->body_es];
                 }
             }
 
             foreach ($module->lessons()->orderBy('order')->get() as $lesson) {
                 /** @var Lesson $lesson */
-                foreach (ContentValidation::pending($lesson->key_points_fr ?? []) as $point) {
-                    $moduleEntries[] = ['source' => "Leçon « {$lesson->title_fr} »", 'text' => $point];
+                foreach (ContentValidation::pending($lesson->key_points_es ?? []) as $point) {
+                    $moduleEntries[] = ['source' => "Lección «{$lesson->title_es}»", 'text' => $point];
                 }
 
-                if (ContentValidation::flags($lesson->content_fr)) {
-                    $moduleEntries[] = ['source' => "Leçon « {$lesson->title_fr} » (contenu)", 'text' => $lesson->content_fr];
+                if (ContentValidation::flags($lesson->content_es)) {
+                    $moduleEntries[] = ['source' => "Lección «{$lesson->title_es}» (contenido)", 'text' => $lesson->content_es];
                 }
 
                 foreach ($lesson->contentBlocks as $block) {
                     if ($block->needs_validation) {
-                        $moduleEntries[] = ['source' => "Leçon « {$lesson->title_fr} » — bloc [{$block->type}]", 'text' => $block->body_fr];
+                        $moduleEntries[] = ['source' => "Lección «{$lesson->title_es}» — bloque [{$block->type}]", 'text' => $block->body_es];
                     }
                 }
             }
@@ -85,7 +85,7 @@ class GenerateContentReview extends Command
             $attachedCategories = $module->partners->pluck('category')->all();
             foreach ($module->contentBlocks->where('type', 'partner_slot') as $slot) {
                 if (! in_array($slot->partner_category, $attachedCategories, true)) {
-                    $emptySlots[] = "Module {$module->order} — {$module->title_fr} : besoin « {$slot->partner_category} »";
+                    $emptySlots[] = "Módulo {$module->order} — {$module->title_es}: se necesita «{$slot->partner_category}»";
                 }
             }
 
@@ -94,7 +94,7 @@ class GenerateContentReview extends Command
             }
 
             $pendingCount += count($moduleEntries);
-            $lines[] = "## Module {$module->order} — {$module->title_fr}";
+            $lines[] = "## Módulo {$module->order} — {$module->title_es}";
             $lines[] = '';
 
             foreach ($moduleEntries as $entry) {
@@ -105,20 +105,20 @@ class GenerateContentReview extends Command
         }
 
         array_splice($lines, 8, 0, [
-            "**{$pendingCount} passage(s)** en attente de validation.",
+            "**{$pendingCount} pasaje(s)** pendientes de validación.",
             '',
         ]);
 
         $lines[] = '---';
         $lines[] = '';
-        $lines[] = '## Emplacements partenaires encore vides';
+        $lines[] = '## Huecos de colaboradores todavía vacíos';
         $lines[] = '';
-        $lines[] = 'Ces blocs affichent « Contact partenaire — bientôt disponible » côté élève.';
-        $lines[] = 'Aucun contact n\'est inventé : ils se remplissent en rattachant un partenaire réel au module.';
+        $lines[] = 'Estos bloques muestran «Contacto colaborador — disponible próximamente» al alumno.';
+        $lines[] = 'No se inventa ningún contacto: se rellenan vinculando un colaborador real al módulo.';
         $lines[] = '';
 
         if ($emptySlots === []) {
-            $lines[] = '_Tous les emplacements partenaires sont pourvus._';
+            $lines[] = '_Todos los huecos de colaboradores están cubiertos._';
         } else {
             foreach (array_unique($emptySlots) as $slot) {
                 $lines[] = "- {$slot}";
@@ -128,21 +128,21 @@ class GenerateContentReview extends Command
         $lines[] = '';
         $lines[] = '---';
         $lines[] = '';
-        $lines[] = '## Traduction arabe';
+        $lines[] = '## Traducción al inglés';
         $lines[] = '';
-        $lines[] = 'Le contenu v2.0 est en français uniquement : les clés arabes existent mais sont vides,';
-        $lines[] = 'et l\'affichage retombe sur le français en attendant une traduction humaine.';
+        $lines[] = 'El contenido está redactado solo en español: los campos en inglés existen pero están vacíos,';
+        $lines[] = 'y la interfaz en inglés muestra el texto en español hasta que exista una traducción humana.';
         $lines[] = '';
-        $missingAr = Module::whereNull('title_ar')->count();
-        $lines[] = "- Modules sans titre arabe : {$missingAr}";
-        $lines[] = '- Leçons sans titre arabe : '.Lesson::whereNull('title_ar')->count();
+        $missingEn = Module::whereNull('title_en')->count();
+        $lines[] = "- Módulos sin título en inglés: {$missingEn}";
+        $lines[] = '- Lecciones sin título en inglés: '.Lesson::whereNull('title_en')->count();
         $lines[] = '';
 
         file_put_contents($path, implode("\n", $lines)."\n");
 
         $this->info("Content review written to {$path}");
-        $this->line("  {$pendingCount} passage(s) à valider");
-        $this->line('  '.count(array_unique($emptySlots)).' emplacement(s) partenaire vide(s)');
+        $this->line("  {$pendingCount} pasaje(s) por validar");
+        $this->line('  '.count(array_unique($emptySlots)).' hueco(s) de colaborador vacío(s)');
 
         return self::SUCCESS;
     }

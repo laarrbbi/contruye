@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * A vetted service provider recommended alongside a module — the people a
- * promoter actually needs at that step of the circuit (notary, chartered
- * accountant, bank, design office…).
+ * promoter actually needs at that step of the circuit (notary, tax adviser,
+ * bank, architects, insurer, builder…).
  */
 class Partner extends Model
 {
@@ -19,20 +19,22 @@ class Partner extends Model
 
     /** Service categories along the promotion circuit. */
     public const CATEGORIES = [
-        'notaire',
-        'expert_comptable',
-        'banque',
-        'bureau_etudes',
+        'notario',
+        'asesor_fiscal',
+        'banco',
+        'arquitectura',
+        'aseguradora',
+        'constructora',
+        'abogado',
         'marketing',
-        'consultant_agrement',
-        'autre',
+        'otro',
     ];
 
     protected $fillable = [
         'name',
         'category',
-        'description_fr',
-        'description_ar',
+        'description_es',
+        'description_en',
         'website',
         'phone',
         'email',
@@ -52,18 +54,18 @@ class Partner extends Model
     public function modules(): BelongsToMany
     {
         return $this->belongsToMany(Module::class)
-            ->withPivot(['order', 'note_fr', 'note_ar'])
+            ->withPivot(['order', 'note_es', 'note_en'])
             ->withTimestamps();
     }
 
     /**
-     * The wilayas this partner actually operates in. Empty for a national
+     * The provinces this partner actually operates in. Empty for a national
      * partner, which covers them all — always read coverage through
-     * {@see coversWilaya()} rather than this relation alone.
+     * {@see coversProvince()} rather than this relation alone.
      */
-    public function wilayas(): BelongsToMany
+    public function provinces(): BelongsToMany
     {
-        return $this->belongsToMany(Wilaya::class)->orderBy('code');
+        return $this->belongsToMany(Province::class)->orderBy('code');
     }
 
     public function scopeActive(Builder $query): Builder
@@ -72,19 +74,19 @@ class Partner extends Model
     }
 
     /**
-     * Partners operating in a wilaya: those explicitly covering it, plus every
+     * Partners operating in a province: those explicitly covering it, plus every
      * national one.
      */
-    public function scopeInWilaya(Builder $query, int $wilayaId): Builder
+    public function scopeInProvince(Builder $query, int $provinceId): Builder
     {
         return $query->where(fn (Builder $inner) => $inner
             ->where('is_national', true)
-            ->orWhereHas('wilayas', fn (Builder $w) => $w->where('wilayas.id', $wilayaId)));
+            ->orWhereHas('provinces', fn (Builder $w) => $w->where('provinces.id', $provinceId)));
     }
 
-    public function coversWilaya(int $wilayaId): bool
+    public function coversProvince(int $provinceId): bool
     {
-        return $this->is_national || $this->wilayas->contains('id', $wilayaId);
+        return $this->is_national || $this->provinces->contains('id', $provinceId);
     }
 
     public function localizedDescription(?string $locale = null): ?string

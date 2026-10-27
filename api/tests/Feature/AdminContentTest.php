@@ -12,16 +12,16 @@ it('creates a module with an auto-incremented order', function () {
 
     $this->actingAs($admin)
         ->postJson("/api/admin/courses/{$course->id}/modules", [
-            'title_fr' => 'Module suivant',
-            'title_ar' => 'الوحدة التالية',
+            'title_es' => 'Module suivant',
+            'title_en' => 'الوحدة التالية',
         ])
         ->assertCreated()
         ->assertJsonPath('data.order', 4)
-        ->assertJsonPath('data.title_fr', 'Module suivant');
+        ->assertJsonPath('data.title_es', 'Module suivant');
 
     $this->assertDatabaseHas('modules', [
         'course_id' => $course->id,
-        'title_fr' => 'Module suivant',
+        'title_es' => 'Module suivant',
         'order' => 4,
     ]);
 });
@@ -32,11 +32,11 @@ it('updates and deletes a module', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/modules/{$module->id}", [
-            'title_fr' => 'Module renommé',
-            'title_ar' => 'وحدة معاد تسميتها',
+            'title_es' => 'Module renommé',
+            'title_en' => 'وحدة معاد تسميتها',
         ])
         ->assertOk()
-        ->assertJsonPath('data.title_fr', 'Module renommé');
+        ->assertJsonPath('data.title_es', 'Module renommé');
 
     $this->actingAs($admin)
         ->deleteJson("/api/admin/modules/{$module->id}")
@@ -52,8 +52,8 @@ it('creates a lesson with auto order, defaults and attachments', function () {
 
     $this->actingAs($admin)
         ->postJson("/api/admin/modules/{$module->id}/lessons", [
-            'title_fr' => 'Nouvelle leçon',
-            'title_ar' => 'درس جديد',
+            'title_es' => 'Nouvelle leçon',
+            'title_en' => 'درس جديد',
             'attachments' => [
                 ['name' => 'Support PDF', 'path' => 'attachments/support.pdf'],
             ],
@@ -66,7 +66,7 @@ it('creates a lesson with auto order, defaults and attachments', function () {
 
     $this->assertDatabaseHas('lessons', [
         'module_id' => $module->id,
-        'title_fr' => 'Nouvelle leçon',
+        'title_es' => 'Nouvelle leçon',
         'order' => 3,
     ]);
 });
@@ -77,8 +77,8 @@ it('rejects a lesson attachment without a path', function () {
 
     $this->actingAs($admin)
         ->postJson("/api/admin/modules/{$module->id}/lessons", [
-            'title_fr' => 'Leçon',
-            'title_ar' => 'درس',
+            'title_es' => 'Leçon',
+            'title_en' => 'درس',
             'attachments' => [['name' => 'Sans chemin']],
         ])
         ->assertUnprocessable()
@@ -91,14 +91,14 @@ it('updates and deletes a lesson', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/lessons/{$lesson->id}", [
-            'title_fr' => 'Leçon mise à jour',
-            'title_ar' => 'درس محدث',
+            'title_es' => 'Leçon mise à jour',
+            'title_en' => 'درس محدث',
             'bunny_video_id' => 'bunny-999',
             'duration_seconds' => 1234,
             'is_free_preview' => true,
         ])
         ->assertOk()
-        ->assertJsonPath('data.title_fr', 'Leçon mise à jour')
+        ->assertJsonPath('data.title_es', 'Leçon mise à jour')
         ->assertJsonPath('data.bunny_video_id', 'bunny-999')
         ->assertJsonPath('data.duration_seconds', 1234)
         ->assertJsonPath('data.is_free_preview', true);

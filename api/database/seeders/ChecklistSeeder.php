@@ -15,7 +15,7 @@ class ChecklistSeeder extends Seeder
 {
     public function run(): void
     {
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->first();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->first();
 
         if ($course === null) {
             $this->command?->error('Seed the curriculum first (CurriculumV2Seeder).');
@@ -37,8 +37,8 @@ class ChecklistSeeder extends Seeder
                 ChecklistItem::create([
                     'module_id' => $module->id,
                     'order' => $index + 1,
-                    'text_fr' => $text,
-                    'text_ar' => null, // human AR pass pending, same as the curriculum
+                    'text_es' => $text,
+                    'text_en' => null, // human EN pass pending, same as the curriculum
                 ]);
                 $created++;
             }

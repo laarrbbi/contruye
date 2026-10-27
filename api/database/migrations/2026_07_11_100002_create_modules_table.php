@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('order')->default(0);
-            $table->string('title_fr');
-            $table->string('title_ar');
+            $table->string('title_es');
+            $table->string('title_en')->nullable();
             $table->timestamps();
 
             $table->index(['course_id', 'order']);

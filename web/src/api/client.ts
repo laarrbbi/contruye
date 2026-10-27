@@ -25,7 +25,7 @@ api.interceptors.request.use(async (config) => {
   if (method !== 'get' && method !== 'head') {
     await ensureCsrf()
   }
-  const locale = localStorage.getItem('locale') ?? 'fr'
+  const locale = localStorage.getItem('locale') ?? 'es'
   config.headers['Accept-Language'] = locale
   return config
 })

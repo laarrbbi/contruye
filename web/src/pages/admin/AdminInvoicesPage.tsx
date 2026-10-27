@@ -80,7 +80,7 @@ function InvoiceRow({
         </p>
       </TableCell>
       <TableCell className="tabular-nums">
-        {formatPrice(invoice.total_ttc_c / 100, invoice.currency, i18n.language)}
+        {formatPrice(invoice.total_gross_c / 100, invoice.currency, i18n.language)}
       </TableCell>
       <TableCell>
         <div className="flex items-center justify-end gap-1">

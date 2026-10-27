@@ -11,8 +11,8 @@ export interface User {
   role: Role
   locale: Locale
   /** Where the learner is building — partner lists default to it. */
-  wilaya_id: number | null
-  wilaya?: { id: number; code: number; name: string } | null
+  province_id: number | null
+  province?: { id: number; code: number; name: string } | null
   created_at: string
 }
 

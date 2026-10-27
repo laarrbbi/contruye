@@ -57,7 +57,7 @@ class OrderController extends Controller
     public function uploadReceipt(UploadReceiptRequest $request, Order $order): OrderResource|JsonResponse
     {
         // Ownership is enforced by UploadReceiptRequest::authorize() (403).
-        if (! in_array($order->method, ['manual_ccp', 'manual_baridimob'], true)) {
+        if (! in_array($order->method, Order::MANUAL_METHODS, true)) {
             return response()->json([
                 'message' => __('This order does not accept receipt uploads.'),
             ], 422);

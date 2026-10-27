@@ -31,7 +31,7 @@ class CourseController extends Controller
         $data = $request->validated();
 
         if (empty($data['slug'])) {
-            $data['slug'] = $this->uniqueSlug($data['title_fr']);
+            $data['slug'] = $this->uniqueSlug($data['title_es']);
         }
 
         $course = Course::create($data);
@@ -62,7 +62,7 @@ class CourseController extends Controller
         }
 
         // Price and publication state are the two levers worth attributing.
-        $before = $course->only(['slug', 'status', 'price_dzd', 'price_eur']);
+        $before = $course->only(['slug', 'status', 'price_eur']);
         $course->update($data);
 
         AuditLog::record($request->user(), 'course.updated', $course, [

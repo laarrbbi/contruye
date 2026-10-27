@@ -10,7 +10,7 @@ export const PageTitleContext = createContext<(head: PageHead) => void>(() => {}
 
 /**
  * Names the current page in the browser tab, the history and what a screen
- * reader announces on navigation: "Connexion — Ebni Academy". Every page used
+ * reader announces on navigation: "Connexion — Construye Academy". Every page used
  * to carry the site's own title, so ten open tabs all read the same. Pages
  * that do not call this keep the site's title.
  *

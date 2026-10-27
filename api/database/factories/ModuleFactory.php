@@ -16,8 +16,8 @@ class ModuleFactory extends Factory
         return [
             'course_id' => Course::factory(),
             'order' => fake()->numberBetween(1, 20),
-            'title_fr' => 'Module — '.fake()->sentence(3),
-            'title_ar' => 'الوحدة — '.fake()->word(),
+            'title_es' => 'Module — '.fake()->sentence(3),
+            'title_en' => 'الوحدة — '.fake()->word(),
         ];
     }
 }

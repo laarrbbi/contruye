@@ -71,7 +71,7 @@ jobs:
       # compiled views, sessions and logs as www-data.
       - name: The site answers
         run: |
-          curl -fsS http://localhost:8000/api/courses | grep -q '"promotion-immobiliere-algerie"'
+          curl -fsS http://localhost:8000/api/courses | grep -q '"promocion-inmobiliaria-espana"'
           curl -fsS http://localhost:8000/ | grep -q 'rel="canonical"'
 
       # The Vite dev server (localhost:5174) calls the API on another port:
@@ -86,10 +86,10 @@ jobs:
           curl -fsS -b jar.txt -c jar.txt -o /dev/null \
             -H 'Origin: http://localhost:5174' -H 'Referer: http://localhost:5174/login' \
             -H 'Accept: application/json' -H "X-XSRF-TOKEN: $token" \
-            --json '{"email": "admin@example.dz", "password": "password"}' \
+            --json '{"email": "admin@example.es", "password": "password"}' \
             http://localhost:8000/api/login
           curl -fsS -b jar.txt -H 'Origin: http://localhost:5174' -H 'Referer: http://localhost:5174/' -H 'Accept: application/json' \
-            http://localhost:8000/api/me | grep -q '"admin@example.dz"'
+            http://localhost:8000/api/me | grep -q '"admin@example.es"'
 
       # It starts before the tables exist and restarts until they do.
       - name: The queue worker runs
@@ -111,7 +111,7 @@ jobs:
           curl -fsS http://localhost:8080/ar | grep -q '<html lang="ar" dir="rtl">'
           curl -fsS http://localhost:8080/login | grep -q '<meta name="robots" content="noindex" />'
           test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/nope)" = 404
-          curl -fsS http://localhost:8080/api/courses | grep -q '"promotion-immobiliere-algerie"'
+          curl -fsS http://localhost:8080/api/courses | grep -q '"promocion-inmobiliaria-espana"'
           # The app calls its own address, not a separate API port.
           ! grep -rq 'localhost:8000' web/dist/assets
 

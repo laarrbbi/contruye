@@ -13,60 +13,60 @@ class StudentSeeder extends Seeder
 {
     public function run(): void
     {
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->firstOrFail();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
 
-        $karim = User::query()->firstOrCreate(
-            ['email' => 'karim@example.dz'],
+        $javier = User::query()->firstOrCreate(
+            ['email' => 'javier@example.es'],
             [
-                'name' => 'Karim Benali',
-                'phone' => '0550123456',
+                'name' => 'Javier Morales',
+                'phone' => '612345678',
                 'password' => 'password',
                 'role' => 'student',
-                'locale' => 'fr',
+                'locale' => 'es',
                 'email_verified_at' => now(),
             ],
         );
 
-        $amel = User::query()->firstOrCreate(
-            ['email' => 'amel@example.dz'],
+        $lucia = User::query()->firstOrCreate(
+            ['email' => 'lucia@example.es'],
             [
-                'name' => 'Amel Cherif',
-                'phone' => '0661234567',
+                'name' => 'Lucía Fernández',
+                'phone' => '623456789',
                 'password' => 'password',
                 'role' => 'student',
-                'locale' => 'ar',
+                'locale' => 'en',
                 'email_verified_at' => now(),
             ],
         );
 
-        // Karim: paid Chargily order -> enrollment via markPaidAndEnroll()
+        // Javier: paid card order -> enrollment via markPaidAndEnroll()
         // (the only sanctioned path from payment to enrollment).
-        $karimOrder = Order::query()->firstOrCreate(
+        $javierOrder = Order::query()->firstOrCreate(
             [
-                'user_id' => $karim->id,
+                'user_id' => $javier->id,
                 'course_id' => $course->id,
-                'method' => 'chargily',
+                'method' => 'stripe',
             ],
             [
-                'amount' => 90000,
-                'currency' => 'DZD',
+                'amount' => 490,
+                'currency' => 'EUR',
                 'scope' => 'full',
                 'status' => 'pending',
-                'chargily_checkout_id' => '01'.Str::lower(Str::random(24)),
+                'stripe_session_id' => 'cs_test_'.Str::random(24),
             ],
         );
 
-        if ($karimOrder->status !== 'paid') {
-            $karimOrder->markPaidAndEnroll();
+        if ($javierOrder->status !== 'paid') {
+            $javierOrder->markPaidAndEnroll();
         }
 
-        // Karim's progress in module 1: 3 lessons done, the 4th in progress.
+        // Javier's progress in phase 1: 3 lessons done, the 4th in progress.
         $module1Lessons = $course->modules()->orderBy('order')->firstOrFail()
             ->lessons()->orderBy('order')->take(4)->get();
 
         foreach ($module1Lessons as $index => $lesson) {
             LessonProgress::query()->firstOrCreate(
-                ['user_id' => $karim->id, 'lesson_id' => $lesson->id],
+                ['user_id' => $javier->id, 'lesson_id' => $lesson->id],
                 $index < 3
                     ? [
                         'completed_at' => now()->subDays(3 - $index),
@@ -79,30 +79,30 @@ class StudentSeeder extends Seeder
             );
         }
 
-        // Amel: à-la-carte order for 3 modules (10% volume tier:
-        // 3 × 12 000 = 36 000 → 32 400), manual CCP awaiting review — NOT enrolled.
-        $amelOrder = Order::query()->firstOrCreate(
+        // Lucía: à-la-carte order for 3 phases (10% volume tier:
+        // 3 × 49 = 147 → 132), bank transfer awaiting review — NOT enrolled.
+        $luciaOrder = Order::query()->firstOrCreate(
             [
-                'user_id' => $amel->id,
+                'user_id' => $lucia->id,
                 'course_id' => $course->id,
-                'method' => 'manual_ccp',
+                'method' => 'manual_transfer',
             ],
             [
-                'amount' => 32400,
+                'amount' => 132,
                 'discount_percent' => 10,
-                'currency' => 'DZD',
+                'currency' => 'EUR',
                 'scope' => 'modules',
                 'status' => 'awaiting_review',
-                'receipt_path' => 'receipts/demo/amel-ccp.jpg',
+                'receipt_path' => 'receipts/demo/lucia-transferencia.jpg',
             ],
         );
 
-        if ($amelOrder->orderModules()->doesntExist()) {
+        if ($luciaOrder->orderModules()->doesntExist()) {
             $firstThreeModules = $course->modules()->orderBy('order')->take(3)->get();
             foreach ($firstThreeModules as $module) {
-                $amelOrder->orderModules()->create([
+                $luciaOrder->orderModules()->create([
                     'module_id' => $module->id,
-                    'unit_price' => $module->price_dzd ?? 12000,
+                    'unit_price' => $module->price_eur ?? 49,
                 ]);
             }
         }

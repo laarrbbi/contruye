@@ -25,7 +25,6 @@ class CourseResource extends JsonResource
             'slug' => $this->slug,
             'title' => $this->localizedTitle(),
             'description' => $this->localizedDescription(),
-            'price_dzd' => $this->price_dzd,
             'price_eur' => $this->price_eur,
             'module_discount_tiers' => $this->module_discount_tiers
                 ?: PricingService::DEFAULT_TIERS,

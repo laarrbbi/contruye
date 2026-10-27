@@ -15,7 +15,7 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
     Mail::fake();
 
     $admin = User::factory()->create(['role' => 'admin']);
-    $student = User::factory()->create(['email' => 'acheteur@example.dz']);
+    $student = User::factory()->create(['email' => 'acheteur@example.es']);
     $order = paidModulesOrder($student);
     completeSellerSettings();
 
@@ -25,10 +25,10 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
 
     $this->actingAs($admin)->postJson("/api/admin/invoices/{$invoice['id']}/send")
         ->assertOk()
-        ->assertJsonPath('message', 'Invoice sent to acheteur@example.dz.');
+        ->assertJsonPath('message', 'Invoice sent to acheteur@example.es.');
 
     // It must reach the buyer — not the admin who pressed the button.
-    Mail::assertQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo('acheteur@example.dz'));
+    Mail::assertQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo('acheteur@example.es'));
     Mail::assertNotQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo($admin->email));
 
     $entry = AuditLog::query()->where('action', 'invoice.sent')->latest('id')->first();
@@ -36,7 +36,7 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
     expect($entry)->not->toBeNull()
         ->and($entry->user_id)->toBe($admin->id)
         ->and($entry->meta['number'])->toBe($invoice['number'])
-        ->and($entry->meta['to'])->toBe('acheteur@example.dz');
+        ->and($entry->meta['to'])->toBe('acheteur@example.es');
 });
 
 it('refuses to send an invoice for anyone who is not an admin', function () {
@@ -85,9 +85,9 @@ it('reaches the buyer in their own language: subject, sentence and button', func
     completeSellerSettings();
 
     $expected = [
-        'fr' => ['Votre facture Ebni Academy', 'Veuillez trouver ci-joint votre facture', 'Mes commandes'],
+        'fr' => ['Votre facture Construye Academy', 'Veuillez trouver ci-joint votre facture', 'Mes commandes'],
         'ar' => ['فاتورتك من أكاديمية إبني', 'تجد في المرفق فاتورتك', 'طلباتي'],
-        'en' => ['Your Ebni Academy invoice', 'Please find attached your invoice', 'My orders'],
+        'en' => ['Your Construye Academy invoice', 'Please find attached your invoice', 'My orders'],
     ];
 
     foreach ($expected as $locale => [$subject, $sentence, $button]) {

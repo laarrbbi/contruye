@@ -1,9 +1,9 @@
 // GitHub Codespaces: the whole site, private to your GitHub account, on one
 // address. From the repository page: Code → Codespaces → Create codespace.
 // The first start builds everything (5–8 minutes), then the site opens in a
-// new tab. Demo logins: admin@example.dz / password, karim@example.dz / password.
+// new tab. Demo logins: admin@example.es / password, karim@example.es / password.
 {
-  "name": "Ebni Academy preview",
+  "name": "Construye Academy preview",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
@@ -18,7 +18,7 @@
 
   "forwardPorts": [8080],
   "portsAttributes": {
-    "8080": { "label": "Ebni Academy", "onAutoForward": "openBrowser" }
+    "8080": { "label": "Construye Academy", "onAutoForward": "openBrowser" }
   },
   "otherPortsAttributes": { "onAutoForward": "ignore" }
 }

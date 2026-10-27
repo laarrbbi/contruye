@@ -107,20 +107,20 @@ it('returns arabic titles when Accept-Language is ar', function () {
     $user = User::factory()->create();
     $course = Course::factory()->create([
         'slug' => 'arabic-course',
-        'title_fr' => 'Titre français',
-        'title_ar' => 'عنوان الدورة',
+        'title_es' => 'Titre français',
+        'title_en' => 'عنوان الدورة',
     ]);
     Enrollment::factory()->for($user)->for($course)->create();
 
     $module = Module::factory()->for($course)->create([
         'order' => 1,
-        'title_fr' => 'Module un',
-        'title_ar' => 'الوحدة الأولى',
+        'title_es' => 'Module un',
+        'title_en' => 'الوحدة الأولى',
     ]);
     Lesson::factory()->for($module)->create([
         'order' => 1,
-        'title_fr' => 'Leçon une',
-        'title_ar' => 'الدرس الأول',
+        'title_es' => 'Leçon une',
+        'title_en' => 'الدرس الأول',
     ]);
 
     $this->actingAs($user)

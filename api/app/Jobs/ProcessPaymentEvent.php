@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 /**
- * Processes a signature-verified payment webhook payload (Chargily or
- * Stripe). Safe to run multiple times for the same event: enrollment is
- * granted through Order::markPaidAndEnroll(), which is idempotent, and the
- * confirmation mail is only queued when that call actually transitions the
+ * Processes a signature-verified payment webhook payload (Stripe). Safe to
+ * run multiple times for the same event: enrollment is granted through
+ * Order::markPaidAndEnroll(), which is idempotent, and the confirmation mail is only queued when that call actually transitions the
  * order to paid — in the same transaction, so a retry after a failed queue
  * write still sends it.
  */
@@ -25,7 +24,7 @@ class ProcessPaymentEvent implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable;
 
     /**
-     * @param  'chargily'|'stripe'  $provider
+     * @param  'stripe'  $provider
      * @param  array<string, mixed>  $payload  decoded webhook payload / event
      */
     public function __construct(
@@ -37,14 +36,10 @@ class ProcessPaymentEvent implements ShouldQueue
     {
         $type = $this->payload['type'] ?? null;
 
-        // Chargily nests the checkout under `data`; Stripe under `data.object`.
-        $object = $this->provider === 'stripe'
-            ? ($this->payload['data']['object'] ?? [])
-            : ($this->payload['data'] ?? []);
+        // Stripe nests the checkout session under `data.object`.
+        $object = $this->payload['data']['object'] ?? [];
 
-        [$paidEvent, $failedEvent] = $this->provider === 'stripe'
-            ? ['checkout.session.completed', 'checkout.session.expired']
-            : ['checkout.paid', 'checkout.failed'];
+        [$paidEvent, $failedEvent] = ['checkout.session.completed', 'checkout.session.expired'];
 
         if (! is_array($object)) {
             $object = [];
@@ -105,8 +100,8 @@ class ProcessPaymentEvent implements ShouldQueue
 
     /**
      * The amount actually collected must equal what was owed, in the same
-     * currency. Without this, a signed event for a 1 DZD checkout would settle
-     * a 90 000 DZD order.
+     * currency. Without this, a signed event for a 1 € checkout would settle
+     * a 490 € order.
      *
      * @param  array<string, mixed>  $object
      */
@@ -126,8 +121,8 @@ class ProcessPaymentEvent implements ShouldQueue
             return true;
         }
 
-        // Stripe quotes minor units (cents); Chargily quotes whole dinars.
-        $expected = $this->provider === 'stripe' ? $order->amount * 100 : $order->amount;
+        // Stripe quotes minor units (cents); orders hold whole euros.
+        $expected = $order->amount * 100;
 
         return (int) $paid === (int) $expected;
     }
@@ -156,7 +151,7 @@ class ProcessPaymentEvent implements ShouldQueue
 
             // The order id travels in attacker-influenced metadata, so it must
             // also belong to the provider that signed this event — otherwise a
-            // Stripe webhook could settle a cash or CCP order.
+            // Stripe webhook could settle a cash or bank-transfer order.
             if ($order !== null && $this->belongsToProvider($order)) {
                 return $order;
             }
@@ -169,8 +164,6 @@ class ProcessPaymentEvent implements ShouldQueue
             return null;
         }
 
-        $column = $this->provider === 'stripe' ? 'stripe_session_id' : 'chargily_checkout_id';
-
-        return Order::query()->where($column, $externalId)->first();
+        return Order::query()->where('stripe_session_id', $externalId)->first();
     }
 }

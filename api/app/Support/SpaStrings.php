@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 
 /**
  * The SPA's translation files (web/src/i18n), read by the server so a page it
- * renders says exactly what the app says. French is the authored locale and
+ * renders says exactly what the app says. Spanish is the authored locale and
  * the fallback for any key missing elsewhere, as in the app.
  */
 final class SpaStrings
@@ -16,7 +16,7 @@ final class SpaStrings
 
     public static function get(string $locale, string $key): string
     {
-        $value = Arr::get(self::file($locale), $key) ?? Arr::get(self::file('fr'), $key);
+        $value = Arr::get(self::file($locale), $key) ?? Arr::get(self::file('es'), $key);
 
         return is_string($value) ? $value : $key;
     }

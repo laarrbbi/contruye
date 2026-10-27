@@ -63,7 +63,7 @@ export function AdminLayout() {
   const activeItem = [...navItems]
     .reverse()
     .find((item) => (item.end ? location.pathname === item.to : location.pathname.startsWith(item.to)))
-  // One title for every admin page: "Commandes · Administration — Ebni Academy".
+  // One title for every admin page: "Commandes · Administration — Construye Academy".
   usePageTitle(activeItem ? `${t(activeItem.labelKey)} · ${t('admin.title')}` : t('admin.title'))
 
   return (

@@ -13,7 +13,7 @@ Aucun de ces passages n'a été supprimé ni reformulé.
 ## Module 1 — Le métier, le marché et le business model
 
 - **Leçon « Le métier, le marché et le business model »**
-  > Le business model type communiqué par l'intervenant : terrain environ 25 % du coût (prévoir une marge de sécurité d'environ 10 % en plus sur ce poste), gestion et marketing 7 %, construction 68 % ; trésorerie de départ à sécuriser avant lancement (l'intervenant cite environ 35 % du chiffre d'affaires, ou un échéancier négocié avec le vendeur du terrain) ; marge brute cible annoncée autour de 50 %. À présenter comme ordres de grandeur d'un praticien, à valider par une étude de faisabilité par projet et par wilaya.
+  > Le business model type communiqué par l'intervenant : terrain environ 25 % du coût (prévoir une marge de sécurité d'environ 10 % en plus sur ce poste), gestion et marketing 7 %, construction 68 % ; trésorerie de départ à sécuriser avant lancement (l'intervenant cite environ 35 % du chiffre d'affaires, ou un échéancier négocié avec le vendeur du terrain) ; marge brute cible annoncée autour de 50 %. À présenter comme ordres de grandeur d'un praticien, à valider par une étude de faisabilité par projet et par province.
 
 ## Module 2 — Créer la société (le véhicule juridique)
 
@@ -26,7 +26,7 @@ Aucun de ces passages n'a été supprimé ni reformulé.
   > Pratique de guichet signalée par l'expert : déposer également une déclaration d'ouverture de chantier auprès de l'APC (certaines communes l'exigent ou la délivrent contre récépissé) — à confirmer localement au guichet unique, la date portée devant correspondre à celle du panneau.
 
 - **Leçon « 5.5 Le permis de construire modificatif »**
-  > Toute modification du projet en cours de réalisation touchant les éléments approuvés du permis — implantation, gabarit, vocation, façades (exactement ce que la commission de conformité vérifiera, art. 66 du décret 15-19) — ou la consistance du programme (nombre de logements, surfaces) doit être couverte par un permis modificatif AVANT exécution, instruit dans les mêmes formes et les mêmes délais que le permis initial, auprès du même guichet unique (délais d'instruction raccourcis par le décret 15-19 et ses réformes ; à confirmer auprès du guichet de la wilaya). Intégrer ce délai au planning : les travaux sur la partie modifiée ne peuvent pas démarrer avant l'obtention.
+  > Toute modification du projet en cours de réalisation touchant les éléments approuvés du permis — implantation, gabarit, vocation, façades (exactement ce que la commission de conformité vérifiera, art. 66 du décret 15-19) — ou la consistance du programme (nombre de logements, surfaces) doit être couverte par un permis modificatif AVANT exécution, instruit dans les mêmes formes et les mêmes délais que le permis initial, auprès du même guichet unique (délais d'instruction raccourcis par le décret 15-19 et ses réformes ; à confirmer auprès du guichet de la province). Intégrer ce délai au planning : les travaux sur la partie modifiée ne peuvent pas démarrer avant l'obtention.
 
 ## Module 12 — Piloter les chiffres
 

@@ -18,13 +18,13 @@ class InvoiceIssuedMail extends Mailable implements ShouldQueue
 
     public function __construct(public Invoice $invoice)
     {
-        $this->locale($invoice->order->user->locale ?: 'fr');
+        $this->locale($invoice->order->user->locale ?: 'es');
     }
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Your Ebni Academy invoice :number', ['number' => $this->invoice->number]),
+            subject: __('Your Construye Academy invoice :number', ['number' => $this->invoice->number]),
         );
     }
 

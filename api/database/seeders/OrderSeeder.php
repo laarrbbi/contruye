@@ -13,85 +13,85 @@ class OrderSeeder extends Seeder
 {
     public function run(): void
     {
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->firstOrFail();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
 
         $early20 = Coupon::query()->firstOrCreate(
             ['code' => 'EARLY20'],
             ['percent_off' => 20, 'max_uses' => 100, 'uses' => 0, 'expires_at' => now()->addMonths(2)],
         );
 
-        $bled50 = Coupon::query()->firstOrCreate(
-            ['code' => 'BLED50'],
+        $obra50 = Coupon::query()->firstOrCreate(
+            ['code' => 'OBRA50'],
             ['percent_off' => 50, 'max_uses' => 10, 'uses' => 0, 'expires_at' => null],
         );
 
-        $yacine = User::query()->firstOrCreate(
-            ['email' => 'yacine@example.dz'],
+        $pablo = User::query()->firstOrCreate(
+            ['email' => 'pablo@example.es'],
             [
-                'name' => 'Yacine Hamidi',
-                'phone' => '0770123456',
+                'name' => 'Pablo Ruiz',
+                'phone' => '634567890',
                 'password' => 'password',
                 'role' => 'student',
-                'locale' => 'fr',
+                'locale' => 'es',
                 'email_verified_at' => now(),
             ],
         );
 
-        $lina = User::query()->firstOrCreate(
-            ['email' => 'lina@example.dz'],
+        $marta = User::query()->firstOrCreate(
+            ['email' => 'marta@example.es'],
             [
-                'name' => 'Lina Mansouri',
-                'phone' => '0560123457',
+                'name' => 'Marta Gil',
+                'phone' => '645678901',
                 'password' => 'password',
                 'role' => 'student',
-                'locale' => 'ar',
+                'locale' => 'en',
                 'email_verified_at' => now(),
             ],
         );
 
-        // Pending Chargily checkout (started, never completed).
+        // Pending card checkout (started, never completed).
         Order::query()->firstOrCreate(
-            ['user_id' => $yacine->id, 'course_id' => $course->id, 'method' => 'chargily', 'status' => 'pending'],
+            ['user_id' => $pablo->id, 'course_id' => $course->id, 'method' => 'stripe', 'status' => 'pending'],
             [
-                'amount' => 90000,
-                'currency' => 'DZD',
-                'chargily_checkout_id' => '01'.Str::lower(Str::random(24)),
+                'amount' => 490,
+                'currency' => 'EUR',
+                'stripe_session_id' => 'cs_test_'.Str::random(24),
             ],
         );
 
-        // Failed Chargily payment.
+        // Failed card payment (the Stripe session expired).
         Order::query()->firstOrCreate(
-            ['user_id' => $lina->id, 'course_id' => $course->id, 'method' => 'chargily', 'status' => 'failed'],
+            ['user_id' => $marta->id, 'course_id' => $course->id, 'method' => 'stripe', 'status' => 'failed'],
             [
-                'amount' => $early20->apply(90000),
-                'currency' => 'DZD',
+                'amount' => $early20->apply(490),
+                'currency' => 'EUR',
                 'coupon_id' => $early20->id,
-                'chargily_checkout_id' => '01'.Str::lower(Str::random(24)),
+                'stripe_session_id' => 'cs_test_'.Str::random(24),
             ],
         );
 
-        // Refunded manual CCP order, with the admin's note.
+        // Refunded bank-transfer order, with the admin's note.
         Order::query()->firstOrCreate(
-            ['user_id' => $yacine->id, 'course_id' => $course->id, 'method' => 'manual_ccp', 'status' => 'refunded'],
+            ['user_id' => $pablo->id, 'course_id' => $course->id, 'method' => 'manual_transfer', 'status' => 'refunded'],
             [
-                'amount' => 90000,
-                'currency' => 'DZD',
-                'receipt_path' => 'receipts/demo/yacine-ccp.jpg',
-                'admin_note' => 'Double paiement détecté — remboursé par mandat CCP le '.now()->subDays(5)->format('d/m/Y').'.',
+                'amount' => 490,
+                'currency' => 'EUR',
+                'receipt_path' => 'receipts/demo/pablo-transferencia.jpg',
+                'admin_note' => 'Pago duplicado — devuelto por transferencia el '.now()->subDays(5)->format('d/m/Y').'.',
                 'paid_at' => now()->subDays(10),
             ],
         );
 
-        // Cash payment (in-office), discounted with BLED50, paid + enrolled
+        // Cash payment (in-office), discounted with OBRA50, paid + enrolled
         // through the one sanctioned path.
         $cashOrder = Order::query()->firstOrCreate(
-            ['user_id' => $lina->id, 'course_id' => $course->id, 'method' => 'cash'],
+            ['user_id' => $marta->id, 'course_id' => $course->id, 'method' => 'cash'],
             [
-                'amount' => $bled50->apply(90000),
-                'currency' => 'DZD',
-                'coupon_id' => $bled50->id,
+                'amount' => $obra50->apply(490),
+                'currency' => 'EUR',
+                'coupon_id' => $obra50->id,
                 'status' => 'pending',
-                'admin_note' => 'Réglé en espèces au bureau (Alger) — remise BLED50 appliquée.',
+                'admin_note' => 'Pagado en efectivo en la oficina — descuento OBRA50 aplicado.',
             ],
         );
 

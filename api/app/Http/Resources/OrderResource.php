@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
  * A student's own view of an order. `payment_instructions` only appears for
- * manual (CCP / BaridiMob) orders that are still actionable, so the frontend
+ * manual (bank transfer / Bizum) orders that are still actionable, so the frontend
  * can re-display the transfer details until the order is paid.
  */
 class OrderResource extends JsonResource
@@ -56,7 +56,7 @@ class OrderResource extends JsonResource
 
     public static function needsPaymentInstructions(Order $order): bool
     {
-        return in_array($order->method, ['manual_ccp', 'manual_baridimob'], true)
+        return in_array($order->method, Order::MANUAL_METHODS, true)
             && in_array($order->status, ['pending', 'awaiting_review', 'failed'], true);
     }
 
@@ -69,9 +69,12 @@ class OrderResource extends JsonResource
             'method' => $order->method,
             'amount' => $order->amount,
             'currency' => $order->currency,
-            'ccp_number' => config('services.manual_payment.ccp_number'),
-            'ccp_name' => config('services.manual_payment.ccp_name'),
-            'baridimob_rip' => config('services.manual_payment.baridimob_rip'),
+            // What the buyer writes as the transfer's concept or the Bizum
+            // note, so the owner can match the money to this order.
+            'reference' => $order->paymentReference(),
+            'iban' => config('services.manual_payment.iban'),
+            'holder' => config('services.manual_payment.holder'),
+            'bizum_phone' => config('services.manual_payment.bizum_phone'),
         ];
     }
 }

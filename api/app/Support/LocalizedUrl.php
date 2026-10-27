@@ -3,15 +3,15 @@
 namespace App\Support;
 
 /**
- * One URL per language for the public pages: French at the root (the
- * authored language and the main market), Arabic under /ar, English under
- * /en. The app reads the same prefixes (web/src/lib/localePath.ts).
+ * One URL per language for the public pages: Spanish at the root (the
+ * authored language and the market), English under /en. The app reads the
+ * same prefixes (web/src/i18n/paths.ts).
  */
 final class LocalizedUrl
 {
     public static function path(string $path, string $locale): string
     {
-        if ($locale === config('locales.default', 'fr')) {
+        if ($locale === config('locales.default', 'es')) {
             return $path;
         }
 
@@ -35,7 +35,7 @@ final class LocalizedUrl
         foreach (config('locales.supported') as $locale) {
             $links[$locale] = self::to($path, $locale);
         }
-        $links['x-default'] = self::to($path, config('locales.default', 'fr'));
+        $links['x-default'] = self::to($path, config('locales.default', 'es'));
 
         return $links;
     }

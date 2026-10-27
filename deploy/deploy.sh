@@ -3,7 +3,7 @@
 # Ship the current checkout. Run on the server, from anywhere, after pulling
 # the release:
 #
-#   cd /var/www/ebni && git pull && deploy/deploy.sh
+#   cd /var/www/construye && git pull && deploy/deploy.sh
 #
 # Order matters. Everything that can fail without touching the live site runs
 # first (dependencies, the secrets gate, the front-end build); only then does
@@ -97,5 +97,5 @@ fi
 if curl -fsS --max-time 10 "$APP_URL/" | grep -q 'rel="canonical"'; then
   echo "The home page is rendered for search engines. Deployed."
 else
-  fail "$APP_URL/ is not rendered by Laravel (no canonical link): install the current deploy/nginx/ebni.conf. Until then search engines are told not to index the site."
+  fail "$APP_URL/ is not rendered by Laravel (no canonical link): install the current deploy/nginx/construye.conf. Until then search engines are told not to index the site."
 fi

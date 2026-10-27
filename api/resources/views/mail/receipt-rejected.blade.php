@@ -8,8 +8,8 @@
         {!! __('We could not validate your payment receipt for :course.', ['course' => Bidi::isolate($course->localizedTitle())]) !!}
     </p>
 
-    {{-- The reason is typed by the admin, often in French: in an Arabic
-         e-mail it keeps its own direction on its own line. --}}
+    {{-- The reason is typed by the admin: whatever its script, it keeps
+         its own direction on its own line. --}}
     @php($reasonDir = Bidi::direction($reason))
     <div style="margin:0 0 24px;padding:12px 16px;background-color:#fef2f2;border-radius:8px;color:#991b1b;">
         <strong>{{ __('Reason:') }}</strong>

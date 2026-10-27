@@ -22,7 +22,6 @@ class QuoteRequest extends FormRequest
             'scope' => ['sometimes', Rule::in(['full', 'modules'])],
             'module_ids' => ['required_if:scope,modules', 'array', 'min:1'],
             'module_ids.*' => ['integer', 'distinct', 'exists:modules,id'],
-            'method' => ['sometimes', Rule::in(['chargily', 'stripe', 'manual_ccp', 'manual_baridimob'])],
             'coupon_code' => ['nullable', 'string', 'max:64'],
         ];
     }
@@ -38,10 +37,5 @@ class QuoteRequest extends FormRequest
     public function moduleIds(): array
     {
         return array_map('intval', $this->validated('module_ids', []));
-    }
-
-    public function currency(): string
-    {
-        return $this->validated('method') === 'stripe' ? 'EUR' : 'DZD';
     }
 }

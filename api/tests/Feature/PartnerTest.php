@@ -6,7 +6,7 @@ use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\Partner;
 use App\Models\User;
-use App\Models\Wilaya;
+use App\Models\Province;
 
 /** Course with two modules, each holding one lesson. */
 function partnerCourse(): Course
@@ -25,9 +25,9 @@ it('lists partners only for modules the student owns', function () {
     $course = partnerCourse();
     [$owned, $locked] = $course->modules()->orderBy('order')->get();
 
-    $partnerA = Partner::factory()->create(['name' => 'Notaire Bensalem', 'category' => 'notaire']);
-    $partnerB = Partner::factory()->create(['name' => 'Cabinet Compta DZ', 'category' => 'expert_comptable']);
-    $owned->partners()->attach($partnerA->id, ['order' => 1, 'note_fr' => 'Pour vos actes VSP']);
+    $partnerA = Partner::factory()->create(['name' => 'Notaire Bensalem', 'category' => 'notario']);
+    $partnerB = Partner::factory()->create(['name' => 'Cabinet Compta DZ', 'category' => 'asesor_fiscal']);
+    $owned->partners()->attach($partnerA->id, ['order' => 1, 'note_es' => 'Pour vos actes VSP']);
     $locked->partners()->attach($partnerB->id, ['order' => 1]);
 
     $student = User::factory()->create();
@@ -91,16 +91,16 @@ it('serves lesson content only for accessible or free-preview lessons', function
     [$owned, $locked] = $course->modules()->orderBy('order')->get();
 
     $ownedLesson = $owned->lessons()->first();
-    $ownedLesson->update(['content_fr' => 'Checklist du dossier CNRC', 'content_ar' => 'قائمة ملف CNRC']);
+    $ownedLesson->update(['content_es' => 'Checklist du dossier CNRC', 'content_en' => 'قائمة ملف CNRC']);
 
     $lockedLesson = $locked->lessons()->first();
-    $lockedLesson->update(['content_fr' => 'Contenu payant réservé']);
+    $lockedLesson->update(['content_es' => 'Contenu payant réservé']);
 
     $preview = Lesson::factory()->create([
         'module_id' => $locked->id,
         'order' => 2,
         'is_free_preview' => true,
-        'content_fr' => 'Extrait gratuit',
+        'content_es' => 'Extrait gratuit',
     ]);
 
     $student = User::factory()->create();
@@ -125,7 +125,7 @@ it('returns lesson content in the requested language', function () {
     $course = partnerCourse();
     $module = $course->modules()->orderBy('order')->first();
     $lesson = $module->lessons()->first();
-    $lesson->update(['content_fr' => 'Contenu FR', 'content_ar' => 'محتوى عربي']);
+    $lesson->update(['content_es' => 'Contenu FR', 'content_en' => 'محتوى عربي']);
 
     $student = User::factory()->create();
     Enrollment::factory()->create([
@@ -148,11 +148,11 @@ it('lets an admin manage partners and attach them to a module in order', functio
 
     $id = $this->actingAs($admin)->postJson('/api/admin/partners', [
         'name' => 'Étude Notariale Alger',
-        'category' => 'notaire',
-        'description_fr' => 'Actes VSP et livrets fonciers.',
-        'website' => 'https://notaire.example.dz',
+        'category' => 'notario',
+        'description_es' => 'Actes VSP et livrets fonciers.',
+        'website' => 'https://notaire.example.es',
         'phone' => '0550112233',
-        'wilaya_ids' => [Wilaya::where('code', 16)->value('id')],
+        'province_ids' => [Province::where('code', 16)->value('id')],
     ])->assertCreated()->json('data.id');
 
     // Unknown category is refused.
@@ -162,7 +162,7 @@ it('lets an admin manage partners and attach them to a module in order', functio
 
     // A malformed website is refused.
     $this->actingAs($admin)->postJson('/api/admin/partners', [
-        'name' => 'X', 'category' => 'banque', 'website' => 'not-a-url',
+        'name' => 'X', 'category' => 'banco', 'website' => 'not-a-url',
     ])->assertUnprocessable()->assertJsonValidationErrors(['website']);
 
     $second = Partner::factory()->create();
@@ -170,8 +170,8 @@ it('lets an admin manage partners and attach them to a module in order', functio
     // Attach both, in a deliberate order.
     $synced = $this->actingAs($admin)->putJson("/api/admin/modules/{$module->id}/partners", [
         'partners' => [
-            ['partner_id' => $second->id, 'note_fr' => 'Financement acquéreurs'],
-            ['partner_id' => $id, 'note_fr' => 'Actes de vente'],
+            ['partner_id' => $second->id, 'note_es' => 'Financement acquéreurs'],
+            ['partner_id' => $id, 'note_es' => 'Actes de vente'],
         ],
     ])->assertOk()->json('data');
 
@@ -196,15 +196,15 @@ it('lets an admin write lesson content in both languages', function () {
     $admin = User::factory()->create(['role' => 'admin']);
 
     $this->actingAs($admin)->putJson("/api/admin/lessons/{$lesson->id}", [
-        'title_fr' => $lesson->title_fr,
-        'title_ar' => $lesson->title_ar,
-        'content_fr' => 'Étapes détaillées du dépôt en wilaya.',
-        'content_ar' => 'خطوات الإيداع في الولاية.',
+        'title_es' => $lesson->title_es,
+        'title_en' => $lesson->title_en,
+        'content_es' => 'Étapes détaillées du dépôt en province.',
+        'content_en' => 'خطوات الإيداع في الولاية.',
     ])->assertOk()
-        ->assertJsonPath('data.content_fr', 'Étapes détaillées du dépôt en wilaya.')
-        ->assertJsonPath('data.content_ar', 'خطوات الإيداع في الولاية.');
+        ->assertJsonPath('data.content_es', 'Étapes détaillées du dépôt en province.')
+        ->assertJsonPath('data.content_en', 'خطوات الإيداع في الولاية.');
 
-    expect($lesson->fresh()->content_fr)->toBe('Étapes détaillées du dépôt en wilaya.');
+    expect($lesson->fresh()->content_es)->toBe('Étapes détaillées du dépôt en province.');
 });
 
 it('forbids partner management for non-admins', function () {
@@ -214,7 +214,7 @@ it('forbids partner management for non-admins', function () {
 
     $this->actingAs($student)->getJson('/api/admin/partners')->assertForbidden();
     $this->actingAs($student)->postJson('/api/admin/partners', [
-        'name' => 'X', 'category' => 'notaire',
+        'name' => 'X', 'category' => 'notario',
     ])->assertForbidden();
     $this->actingAs($student)->putJson("/api/admin/modules/{$module->id}/partners", ['partners' => []])
         ->assertForbidden();
@@ -285,12 +285,12 @@ it('exposes a module\'s partners to the admin content editor', function () {
     $module = $course->modules()->orderBy('order')->first();
     $admin = User::factory()->create(['role' => 'admin']);
     $partner = Partner::factory()->create(['name' => 'Notaire Test']);
-    $module->partners()->attach($partner->id, ['order' => 1, 'note_fr' => 'Note admin']);
+    $module->partners()->attach($partner->id, ['order' => 1, 'note_es' => 'Note admin']);
 
     $payload = collect($this->actingAs($admin)->getJson("/api/admin/courses/{$course->id}")->assertOk()
         ->json('data.modules'))->firstWhere('id', $module->id);
 
     expect($payload['partners'])->toHaveCount(1)
         ->and($payload['partners'][0]['name'])->toBe('Notaire Test')
-        ->and($payload['partners'][0]['note_fr'])->toBe('Note admin');
+        ->and($payload['partners'][0]['note_es'])->toBe('Note admin');
 });

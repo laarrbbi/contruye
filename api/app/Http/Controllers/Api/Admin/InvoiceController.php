@@ -73,7 +73,7 @@ class InvoiceController extends Controller
         }
 
         $data = $request->validated();
-        $computed = (new InvoiceBuilder)->build($order, (float) $data['tva_rate']);
+        $computed = (new InvoiceBuilder)->build($order, (float) $data['iva_rate']);
 
         $invoice = $this->retryOnSequenceRace(fn () => DB::transaction(function () use ($order, $data, $computed, $settings, $request) {
             // C20: two admins issuing for the same order serialize on its row.
@@ -87,7 +87,7 @@ class InvoiceController extends Controller
                 ], 422));
             }
 
-            // A facture issued at 00:30 in Algiers must carry that day's date
+            // A factura issued at 00:30 in Madrid must carry that day's date
             // and that year's sequence — in UTC it would still read as
             // yesterday, and on 1 January as last year.
             $issuedAt = $data['issued_at']
@@ -116,18 +116,15 @@ class InvoiceController extends Controller
                 'issued_at' => $issuedAt,
                 'buyer_name' => $data['buyer_name'],
                 'buyer_address' => $data['buyer_address'],
-                'buyer_rc' => $data['buyer_rc'] ?? null,
                 'buyer_nif' => $data['buyer_nif'] ?? null,
-                'buyer_nis' => $data['buyer_nis'] ?? null,
-                'buyer_ai' => $data['buyer_ai'] ?? null,
                 'seller' => $settings['seller'],
                 'lines' => $computed['lines'],
-                'tva_rate' => $computed['tva_rate'],
-                'subtotal_ht_c' => $computed['subtotal_ht_c'],
-                'discount_ht_c' => $computed['discount_ht_c'],
-                'total_ht_c' => $computed['total_ht_c'],
-                'tva_c' => $computed['tva_c'],
-                'total_ttc_c' => $computed['total_ttc_c'],
+                'iva_rate' => $computed['iva_rate'],
+                'subtotal_net_c' => $computed['subtotal_net_c'],
+                'discount_net_c' => $computed['discount_net_c'],
+                'total_net_c' => $computed['total_net_c'],
+                'iva_c' => $computed['iva_c'],
+                'total_gross_c' => $computed['total_gross_c'],
                 'currency' => $order->currency,
                 'payment_method_label' => InvoiceBuilder::paymentMethodLabel($order->method),
                 'payment_date' => $order->paid_at?->toDateString(),
@@ -178,30 +175,27 @@ class InvoiceController extends Controller
         $data = $request->validated();
 
         $before = $invoice->only([
-            'buyer_name', 'buyer_address', 'buyer_rc', 'buyer_nif', 'buyer_nis', 'buyer_ai',
-            'tva_rate', 'total_ht_c', 'tva_c', 'notes',
+            'buyer_name', 'buyer_address', 'buyer_nif',
+            'iva_rate', 'total_net_c', 'iva_c', 'notes',
         ]);
 
         $computed = (new InvoiceBuilder)->retotal(
             $invoice->lines,
-            (float) $data['tva_rate'],
-            $invoice->total_ttc_c,
+            (float) $data['iva_rate'],
+            $invoice->total_gross_c,
         );
 
         $invoice->update([
             'buyer_name' => $data['buyer_name'],
             'buyer_address' => $data['buyer_address'],
-            'buyer_rc' => $data['buyer_rc'] ?? null,
             'buyer_nif' => $data['buyer_nif'] ?? null,
-            'buyer_nis' => $data['buyer_nis'] ?? null,
-            'buyer_ai' => $data['buyer_ai'] ?? null,
             'lines' => $computed['lines'],
-            'tva_rate' => $computed['tva_rate'],
-            'subtotal_ht_c' => $computed['subtotal_ht_c'],
-            'discount_ht_c' => $computed['discount_ht_c'],
-            'total_ht_c' => $computed['total_ht_c'],
-            'tva_c' => $computed['tva_c'],
-            'total_ttc_c' => $computed['total_ttc_c'],
+            'iva_rate' => $computed['iva_rate'],
+            'subtotal_net_c' => $computed['subtotal_net_c'],
+            'discount_net_c' => $computed['discount_net_c'],
+            'total_net_c' => $computed['total_net_c'],
+            'iva_c' => $computed['iva_c'],
+            'total_gross_c' => $computed['total_gross_c'],
             'notes' => $data['notes'] ?? null,
         ]);
 

@@ -2,7 +2,7 @@ services:
   php:
     build:
       context: ./docker/php
-    container_name: ebni-php
+    container_name: construye-php
     # Runs as you, like `docker compose exec`: php-fpm can write the logs,
     # sessions and compiled views of a checkout your user owns, and what the
     # app or composer writes stays yours. On Linux, if `id -u` is not 1000,
@@ -16,18 +16,18 @@ services:
       # (api/config/seo.php reads ../web).
       - ./web:/var/www/web:ro
     environment:
-      PHP_IDE_CONFIG: serverName=ebni
+      PHP_IDE_CONFIG: serverName=construye
       # That user has no home in the image.
       COMPOSER_HOME: /tmp/composer
     depends_on:
       mysql:
         condition: service_healthy
     networks:
-      - ebni
+      - construye
 
   nginx:
     image: nginx:1.27-alpine
-    container_name: ebni-nginx
+    container_name: construye-nginx
     ports:
       - "8000:80"
     volumes:
@@ -36,14 +36,14 @@ services:
     depends_on:
       - php
     networks:
-      - ebni
+      - construye
 
   # The site as visitors get it, on one address: the built app (web/dist)
   # and Laravel behind the production routing. `make preview` builds the app
   # and starts this; GitHub Codespaces opens it.
   preview:
     image: nginx:1.27-alpine
-    container_name: ebni-preview
+    container_name: construye-preview
     profiles: ["preview"]
     ports:
       - "8080:8080"
@@ -53,16 +53,16 @@ services:
     depends_on:
       - php
     networks:
-      - ebni
+      - construye
 
   mysql:
     image: mysql:8.0
-    container_name: ebni-mysql
+    container_name: construye-mysql
     ports:
       - "33060:3306"
     environment:
-      MYSQL_DATABASE: ebni
-      MYSQL_USER: ebni
+      MYSQL_DATABASE: construye
+      MYSQL_USER: construye
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: root
     volumes:
@@ -73,14 +73,14 @@ services:
       timeout: 5s
       retries: 20
     networks:
-      - ebni
+      - construye
 
   mysql-test:
     image: mysql:8.0
-    container_name: ebni-mysql-test
+    container_name: construye-mysql-test
     environment:
-      MYSQL_DATABASE: ebni_test
-      MYSQL_USER: ebni
+      MYSQL_DATABASE: construye_test
+      MYSQL_USER: construye
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: root
     volumes:
@@ -94,18 +94,18 @@ services:
       timeout: 5s
       retries: 20
     networks:
-      - ebni
+      - construye
 
   redis:
     image: redis:7-alpine
-    container_name: ebni-redis
+    container_name: construye-redis
     networks:
-      - ebni
+      - construye
 
   queue:
     build:
       context: ./docker/php
-    container_name: ebni-queue
+    container_name: construye-queue
     # The same user as php: the worker writes the same logs.
     user: "${UID:-1000}:${GID:-1000}"
     working_dir: /var/www/api
@@ -118,11 +118,11 @@ services:
         condition: service_healthy
     restart: unless-stopped
     networks:
-      - ebni
+      - construye
 
 volumes:
   mysql-data:
 
 networks:
-  ebni:
+  construye:
     driver: bridge

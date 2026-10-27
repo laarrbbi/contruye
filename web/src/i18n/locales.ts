@@ -1,11 +1,10 @@
 /** Every locale the interface ships in, in switcher order. */
-export const LOCALES = ['fr', 'ar', 'en'] as const
+export const LOCALES = ['es', 'en'] as const
 export type Locale = (typeof LOCALES)[number]
 
 /** Endonyms: a language is always offered in its own language. */
 export const LOCALE_NAMES: Record<Locale, string> = {
-  fr: 'Français',
-  ar: 'العربية',
+  es: 'Español',
   en: 'English',
 }
 

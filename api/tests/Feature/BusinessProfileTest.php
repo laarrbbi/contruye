@@ -18,7 +18,7 @@ it('shows nothing until the owner has filled it in', function () {
 
 it('publishes identity and contact, and never the fiscal-only fields', function () {
     Setting::setValue('invoicing.seller', [
-        'business_name' => '[DÉMO] Ebni Academy',
+        'business_name' => '[DEMO] Construye Academy',
         'legal_form' => 'EURL',
         'capital' => '1 000 000 DA',
         'address' => 'Alger',
@@ -28,7 +28,7 @@ it('publishes identity and contact, and never the fiscal-only fields', function 
         'ai' => '16123456789',
         'phone' => '0550 12 34 56',
         'whatsapp' => '0661 22 33 44',
-        'email' => 'contact@example.dz',
+        'email' => 'contact@example.es',
         'bank_details' => 'CCP 0012345678 clé 90',
         'support_hours' => 'Dim–Jeu, 9h–17h',
     ]);

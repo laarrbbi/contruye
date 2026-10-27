@@ -8,21 +8,25 @@ export function cn(...inputs: ClassValue[]) {
 
 /**
  * Maps an interface locale to the BCP-47 tag used for numbers and dates.
- * Algeria is the market, so every variant is the local one — including
- * en-DZ, which keeps day-first dates and the local currency placement
- * rather than switching an Algerian buyer to US conventions.
+ * Spain is the market: Spanish is es-ES, and English is en-GB, which keeps
+ * day-first dates instead of switching a buyer in Spain to US conventions.
  */
 export function intlLocale(locale: string | undefined): string {
-  if (locale === 'ar') return 'ar-DZ'
-  if (locale === 'en') return 'en-DZ'
-  return 'fr-DZ'
+  if (locale === 'en') return 'en-GB'
+  return 'es-ES'
 }
 
-export function formatPrice(amount: number, currency: 'DZD' | 'EUR', locale: string) {
+/**
+ * Prices are whole euros. Grouping is forced so 1490 reads "1.490 €", as the
+ * server's e-mails and pages write it (App\Support\Money): browsers follow
+ * CLDR, which leaves four-digit Spanish amounts ungrouped.
+ */
+export function formatPrice(amount: number, currency: 'EUR', locale: string) {
   return new Intl.NumberFormat(intlLocale(locale), {
     style: 'currency',
     currency,
     maximumFractionDigits: 0,
+    useGrouping: 'always',
   }).format(amount)
 }
 

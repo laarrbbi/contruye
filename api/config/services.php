@@ -35,18 +35,8 @@ return [
         ],
     ],
 
-    'chargily' => [
-        // false switches card payments off on purpose (a CCP-only launch).
-        // Blank keys with this left on fail `app:check-secrets --strict`.
-        'enabled' => (bool) env('CHARGILY_ENABLED', true),
-        'api_key' => env('CHARGILY_API_KEY'),
-        'secret' => env('CHARGILY_SECRET'),
-        'base_url' => env('CHARGILY_BASE_URL', 'https://pay.chargily.net/test/api/v2'),
-        'test_mode' => env('CHARGILY_TEST_MODE', true),
-    ],
-
     'stripe' => [
-        // false switches euro payments off on purpose. Blank is not off.
+        // false switches card payments off on purpose. Blank is not off.
         'enabled' => (bool) env('STRIPE_ENABLED', true),
         'secret' => env('STRIPE_SECRET'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
@@ -59,9 +49,11 @@ return [
     ],
 
     'manual_payment' => [
-        'ccp_number' => env('PAYMENT_CCP_NUMBER'),
-        'ccp_name' => env('PAYMENT_CCP_NAME'),
-        'baridimob_rip' => env('PAYMENT_BARIDIMOB_RIP'),
+        // Bank transfer: the account the buyer sends the money to.
+        'iban' => env('PAYMENT_TRANSFER_IBAN'),
+        'holder' => env('PAYMENT_TRANSFER_HOLDER'),
+        // Bizum: the mobile number registered for Bizum on that account.
+        'bizum_phone' => env('PAYMENT_BIZUM_PHONE'),
     ],
 
 ];

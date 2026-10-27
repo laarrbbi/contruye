@@ -12,22 +12,24 @@ class Invoice extends Model
 
     /**
      * The seller fields that must be filled in the invoicing settings before
-     * any invoice can be issued — the mandatory mentions of the émetteur
-     * under Algerian invoicing rules (décret exécutif 05-468).
+     * any invoice can be issued — what the Reglamento de facturación (Real
+     * Decreto 1619/2012, art. 6) requires of the issuer: name or company
+     * name, NIF and address.
      */
     public const REQUIRED_SELLER_FIELDS = [
         'business_name',
-        'legal_form',
-        'capital',
-        'address',
-        'rc',
         'nif',
-        'nis',
-        'ai',
+        'address',
     ];
 
     public const SELLER_FIELDS = [
         ...self::REQUIRED_SELLER_FIELDS,
+        // A company (S.L., S.A.) prints its form and its Registro Mercantil
+        // entry on every document; a sole trader leaves both blank.
+        'legal_form',
+        'registry',
+        // Only when the owner chooses to show it; never required.
+        'capital',
         'phone',
         'email',
         'bank_details',
@@ -45,18 +47,15 @@ class Invoice extends Model
         'issued_at',
         'buyer_name',
         'buyer_address',
-        'buyer_rc',
         'buyer_nif',
-        'buyer_nis',
-        'buyer_ai',
         'seller',
         'lines',
-        'tva_rate',
-        'subtotal_ht_c',
-        'discount_ht_c',
-        'total_ht_c',
-        'tva_c',
-        'total_ttc_c',
+        'iva_rate',
+        'subtotal_net_c',
+        'discount_net_c',
+        'total_net_c',
+        'iva_c',
+        'total_gross_c',
         'currency',
         'payment_method_label',
         'payment_date',
@@ -71,12 +70,12 @@ class Invoice extends Model
             'payment_date' => 'date',
             'seller' => 'array',
             'lines' => 'array',
-            'tva_rate' => 'decimal:2',
-            'subtotal_ht_c' => 'integer',
-            'discount_ht_c' => 'integer',
-            'total_ht_c' => 'integer',
-            'tva_c' => 'integer',
-            'total_ttc_c' => 'integer',
+            'iva_rate' => 'decimal:2',
+            'subtotal_net_c' => 'integer',
+            'discount_net_c' => 'integer',
+            'total_net_c' => 'integer',
+            'iva_c' => 'integer',
+            'total_gross_c' => 'integer',
         ];
     }
 

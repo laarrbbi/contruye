@@ -21,8 +21,8 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 API="$ROOT/api"
-DEST="${BACKUP_DIR:-/var/backups/ebni}"
-SCRATCH="ebni_restore_drill"
+DEST="${BACKUP_DIR:-/var/backups/construye}"
+SCRATCH="construye_restore_drill"
 
 env_get() {
   grep -E "^$1=" "$API/.env" | tail -n1 | cut -d= -f2- | sed -E 's/^"(.*)"$/\1/; s/^'"'"'(.*)'"'"'$/\1/'

@@ -64,7 +64,7 @@ class StudentController extends Controller
             'created_at' => $user->created_at?->toISOString(),
             // One row per course, measured over the modules the student can
             // actually open. Per-module buyers used to get one row per module,
-            // each reading "0 / 34 leçons" against the whole course.
+            // each reading "0 / 34 lecciones" against the whole course.
             'enrollments' => $user->enrollments->groupBy('course_id')->map(function ($rows) use ($completedLessonIds) {
                 $first = $rows->sortBy('created_at')->first();
                 $course = $first->course;

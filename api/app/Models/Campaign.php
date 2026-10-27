@@ -22,8 +22,8 @@ class Campaign extends Model
 
     protected $fillable = [
         'course_id',
-        'label_fr',
-        'label_ar',
+        'label_es',
+        'label_en',
         'percent_off',
         'starts_at',
         'ends_at',

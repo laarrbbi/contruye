@@ -328,7 +328,7 @@ export function CheckoutPage() {
         <div className="container space-y-1 py-10">
           <h1 className="text-3xl font-extrabold">{t('checkout.title')}</h1>
           <p className="bidi-auto text-primary-foreground/75">
-            <Link to={`/courses/${course.slug}`} className="hover:underline">
+            <Link to={`/cursos/${course.slug}`} className="hover:underline">
               {course.title}
             </Link>
           </p>

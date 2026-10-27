@@ -32,7 +32,7 @@ class ModuleController extends Controller
     public function update(ModuleRequest $request, Module $module): AdminModuleResource
     {
         // Per-module prices feed every à-la-carte quote.
-        $before = $module->only(['title_fr', 'price_dzd', 'price_eur']);
+        $before = $module->only(['title_es', 'price_eur']);
         $module->update($request->validated());
 
         AuditLog::record($request->user(), 'module.updated', $module, [
@@ -53,7 +53,7 @@ class ModuleController extends Controller
             ], 422);
         }
 
-        AuditLog::record($request->user(), 'module.deleted', $module, ['title' => $module->title_fr]);
+        AuditLog::record($request->user(), 'module.deleted', $module, ['title' => $module->title_es]);
 
         $module->delete();
 

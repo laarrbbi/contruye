@@ -19,7 +19,6 @@ class ModuleResource extends JsonResource
             'id' => $this->id,
             'order' => $this->order,
             'title' => $this->localizedTitle(),
-            'price_dzd' => $this->price_dzd,
             'price_eur' => $this->price_eur,
             'is_owned' => $this->whenHas('is_owned', fn ($value) => (bool) $value),
             'lessons' => LessonResource::collection($this->whenLoaded('lessons')),

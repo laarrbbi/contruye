@@ -145,7 +145,7 @@ it('exposes the real campaign deadline on the public course payload', function (
     $campaign = Campaign::factory()->create([
         'course_id' => $course->id,
         'percent_off' => 15,
-        'label_fr' => 'Offre de lancement',
+        'label_es' => 'Offre de lancement',
         'ends_at' => now()->addDays(2),
     ]);
 
@@ -183,8 +183,8 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // Create
     $id = $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'Offre de rentrée',
-        'label_ar' => 'عرض الدخول',
+        'label_es' => 'Offre de rentrée',
+        'label_en' => 'عرض الدخول',
         'percent_off' => 20,
         'ends_at' => now()->addDays(5)->toISOString(),
     ])->assertCreated()->assertJsonPath('data.is_running', true)->json('data.id');
@@ -192,7 +192,7 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // A deadline in the past is refused — a countdown must be real.
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'x', 'label_ar' => 'x',
+        'label_es' => 'x', 'label_en' => 'x',
         'percent_off' => 20,
         'ends_at' => now()->subDay()->toISOString(),
     ])->assertUnprocessable()->assertJsonValidationErrors(['ends_at']);
@@ -200,14 +200,14 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // No end date at all is refused too.
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'x', 'label_ar' => 'x',
+        'label_es' => 'x', 'label_en' => 'x',
         'percent_off' => 20,
     ])->assertUnprocessable()->assertJsonValidationErrors(['ends_at']);
 
     // 100% off is out of range.
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'x', 'label_ar' => 'x',
+        'label_es' => 'x', 'label_en' => 'x',
         'percent_off' => 100,
         'ends_at' => now()->addDay()->toISOString(),
     ])->assertUnprocessable()->assertJsonValidationErrors(['percent_off']);
@@ -215,7 +215,7 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // Update + delete
     $this->actingAs($admin)->putJson("/api/admin/campaigns/{$id}", [
         'course_id' => $course->id,
-        'label_fr' => 'Offre de rentrée', 'label_ar' => 'عرض الدخول',
+        'label_es' => 'Offre de rentrée', 'label_en' => 'عرض الدخول',
         'percent_off' => 25,
         'ends_at' => now()->addDays(5)->toISOString(),
         'is_active' => false,
@@ -232,7 +232,7 @@ it('forbids campaign management for non-admins', function () {
     $this->actingAs($student)->getJson('/api/admin/campaigns')->assertForbidden();
     $this->actingAs($student)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'x', 'label_ar' => 'x',
+        'label_es' => 'x', 'label_en' => 'x',
         'percent_off' => 50,
         'ends_at' => now()->addDay()->toISOString(),
     ])->assertForbidden();
@@ -277,7 +277,7 @@ it('rejects a campaign window that could never run', function () {
 
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'Inversée', 'label_ar' => 'مقلوب',
+        'label_es' => 'Inversée', 'label_en' => 'مقلوب',
         'percent_off' => 20,
         'starts_at' => now()->addDays(9)->toISOString(),
         'ends_at' => now()->addDays(3)->toISOString(),
@@ -292,19 +292,19 @@ it('lets an admin edit a finished campaign without resurrecting the discount', f
     // Renaming / disabling a past promotion must not require a future end date.
     $this->actingAs($admin)->putJson("/api/admin/campaigns/{$ended->id}", [
         'course_id' => $course->id,
-        'label_fr' => 'Offre de printemps (terminée)',
-        'label_ar' => 'عرض الربيع (منتهٍ)',
+        'label_es' => 'Offre de printemps (terminée)',
+        'label_en' => 'عرض الربيع (منتهٍ)',
         'percent_off' => 20,
         'ends_at' => $ended->ends_at->toISOString(),
         'is_active' => false,
     ])->assertOk()->assertJsonPath('data.is_running', false);
 
-    expect($ended->fresh()->label_fr)->toBe('Offre de printemps (terminée)');
+    expect($ended->fresh()->label_es)->toBe('Offre de printemps (terminée)');
 
     // Creating a new campaign still demands a real, future deadline.
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'x', 'label_ar' => 'x',
+        'label_es' => 'x', 'label_en' => 'x',
         'percent_off' => 20,
         'ends_at' => now()->subDay()->toISOString(),
     ])->assertUnprocessable()->assertJsonValidationErrors(['ends_at']);
@@ -326,10 +326,10 @@ it('starts a promotion with no Arabic name; Arabic visitors read the French one'
 
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'Offre de lancement',
+        'label_es' => 'Offre de lancement',
         'percent_off' => 20,
         'ends_at' => now()->addDays(3)->toISOString(),
-    ])->assertCreated()->assertJsonPath('data.label_ar', null);
+    ])->assertCreated()->assertJsonPath('data.label_en', null);
 
     $this->withHeader('Accept-Language', 'ar')
         ->getJson("/api/courses/{$course->slug}")

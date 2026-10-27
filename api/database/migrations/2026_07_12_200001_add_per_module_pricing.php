@@ -8,11 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        if (! Schema::hasColumn('modules', 'price_dzd')) {
+        if (! Schema::hasColumn('modules', 'price_eur')) {
             Schema::table('modules', function (Blueprint $table) {
                 // Null = module not sold separately (full-access only).
-                $table->unsignedInteger('price_dzd')->nullable()->after('title_ar');
-                $table->unsignedInteger('price_eur')->nullable()->after('price_dzd');
+                $table->unsignedInteger('price_eur')->nullable()->after('title_en');
             });
         }
 
@@ -84,7 +83,7 @@ return new class extends Migration
         });
 
         Schema::table('modules', function (Blueprint $table) {
-            $table->dropColumn(['price_dzd', 'price_eur']);
+            $table->dropColumn('price_eur');
         });
     }
 };

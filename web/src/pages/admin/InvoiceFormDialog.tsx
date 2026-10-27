@@ -31,7 +31,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
 /** Algerian TVA rates: normal, réduit, exonéré. */
-const TVA_RATES = [19, 9, 0] as const
+const IVA_RATES = [19, 9, 0] as const
 
 export interface InvoiceFormTarget {
   /** Create mode: the paid order to invoice. */
@@ -60,7 +60,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
   const update = useUpdateInvoice()
 
   const editing = target?.invoice ?? null
-  const [form, setForm] = useState<InvoicePayload>({ buyer_name: '', buyer_address: '', tva_rate: 19 })
+  const [form, setForm] = useState<InvoicePayload>({ buyer_name: '', buyer_address: '', iva_rate: 19 })
   const [error, setError] = useState<string | null>(null)
   // Per field, under the field: one line at the bottom of a long form did not
   // say which of the two required fields was empty.
@@ -76,7 +76,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
       buyer_nif: editing?.buyer_nif ?? '',
       buyer_nis: editing?.buyer_nis ?? '',
       buyer_ai: editing?.buyer_ai ?? '',
-      tva_rate: editing?.tva_rate ?? 19,
+      iva_rate: editing?.iva_rate ?? 19,
       notes: editing?.notes ?? '',
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -209,18 +209,18 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="invoice-tva-rate">{t('admin.invoices.form.tvaRate')}</Label>
+              <Label htmlFor="invoice-iva-rate">{t('admin.invoices.form.ivaRate')}</Label>
               <Select
-                value={String(form.tva_rate)}
-                onValueChange={(value) => setForm((prev) => ({ ...prev, tva_rate: Number(value) }))}
+                value={String(form.iva_rate)}
+                onValueChange={(value) => setForm((prev) => ({ ...prev, iva_rate: Number(value) }))}
               >
-                <SelectTrigger id="invoice-tva-rate" className="w-[220px]">
+                <SelectTrigger id="invoice-iva-rate" className="w-[220px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {TVA_RATES.map((rate) => (
+                  {IVA_RATES.map((rate) => (
                     <SelectItem key={rate} value={String(rate)}>
-                      {t(`admin.invoices.form.tva_${rate}`)}
+                      {t(`admin.invoices.form.iva_${rate}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>

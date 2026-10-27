@@ -17,6 +17,9 @@ use Illuminate\Validation\ValidationException;
  */
 class PricingService
 {
+    /** The one currency the academy sells in. */
+    public const CURRENCY = 'EUR';
+
     /** Default volume tiers when the course doesn't define its own. */
     public const DEFAULT_TIERS = [
         ['min_modules' => 2, 'percent_off' => 5],
@@ -28,9 +31,10 @@ class PricingService
     /**
      * Build a full pricing quote.
      *
+     * Every price is in euros: courses and modules carry one price each.
+     *
      * @param  'full'|'modules'  $scope
      * @param  int[]  $moduleIds
-     * @param  'DZD'|'EUR'  $currency
      * @return array{
      *   scope: string, currency: string,
      *   items: list<array{module_id: int, title: string, unit_price: int}>,
@@ -49,17 +53,12 @@ class PricingService
         ?User $user,
         string $scope,
         array $moduleIds = [],
-        string $currency = 'DZD',
         ?Coupon $coupon = null,
     ): array {
-        $priceField = $currency === 'EUR' ? 'price_eur' : 'price_dzd';
+        $currency = self::CURRENCY;
+        $priceField = 'price_eur';
 
-        $fullPrice = $course->{$priceField};
-        if ($fullPrice === null) {
-            throw ValidationException::withMessages([
-                'method' => [__('This course cannot be paid by card in EUR.')],
-            ]);
-        }
+        $fullPrice = (int) $course->{$priceField};
 
         $modules = $course->modules()->get();
         $ownedModuleIds = $user ? $this->ownedModuleIds($user, $course) : collect();
@@ -91,12 +90,12 @@ class PricingService
             // Does the selection cover every module the student doesn't yet own?
             // If so, they are buying the rest of the course, and full access is a
             // valid way to price it — including full-access-only modules that have
-            // no à-la-carte price in this currency.
+            // no à-la-carte price.
             $remainingIds = $modules->pluck('id')->reject(fn ($id) => $ownedModuleIds->contains($id));
             $coversAllRemaining = $remainingIds->diff($selection->pluck('id'))->isEmpty();
 
-            // A partial (non-completing) selection must be individually sellable
-            // in this currency; a full-only module can only be bought via full access.
+            // A partial (non-completing) selection must be individually sellable;
+            // a full-only module can only be bought via full access.
             if (! $coversAllRemaining) {
                 $notSellable = $selection->first(fn (Module $m) => $m->{$priceField} === null);
                 if ($notSellable !== null) {

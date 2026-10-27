@@ -5,19 +5,19 @@ namespace App\Support;
 /**
  * The ways to pay, as the public pages name them: the complete offer planned
  * for launch, in the app's own words (web/src/i18n, "payments"). The owner
- * decided (constitution I, amended 2026-10-09) that the sales page presents
- * all four before every gateway is configured, since the gateways are wired
- * just before launch. The checkout still offers only the methods that can
+ * decided (constitution I, amendment inherited from Ebni) that the sales page
+ * presents all three before every gateway is configured, since the gateways
+ * are wired just before launch. The checkout still offers only the methods that can
  * take money (App\Services\PaymentMethods). The sales page words them the
  * same way (web/src/lib/payments.ts), so the page, its FAQ and its structured
  * data say the same thing.
  */
 final class PaymentWording
 {
-    /** Display order: the Algerian methods first, the international card last. */
-    private const ORDER = ['chargily', 'manual_ccp', 'manual_baridimob', 'stripe'];
+    /** Display order: the card first, then the two ways to pay from a bank app. */
+    private const ORDER = ['stripe', 'manual_transfer', 'manual_bizum'];
 
-    /** "carte CIB ou Edahabia, versement CCP, BaridiMob ou carte internationale (Visa, Mastercard)" */
+    /** "tarjeta bancaria (Visa, Mastercard), transferencia bancaria o Bizum" */
     public static function methods(string $locale): string
     {
         $names = array_map(fn (string $method) => SpaStrings::get($locale, "payments.names.{$method}"), self::ORDER);

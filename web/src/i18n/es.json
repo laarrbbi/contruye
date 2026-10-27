@@ -1,8 +1,8 @@
 {
   "app": {
-    "name": "Ebni Academy",
+    "name": "Construye Academy",
     "tagline": "La formation de référence en promotion immobilière en Algérie",
-    "title": "Ebni Academy — Formation Promotion Immobilière en Algérie",
+    "title": "Construye Academy — Formation Promotion Immobilière en Algérie",
     "metaDescription": "Formation en ligne : la promotion immobilière en Algérie, de la création de la société à la remise des clés."
   },
   "nav": {
@@ -67,7 +67,7 @@
     "retry": "Réessayer"
   },
   "footer": {
-    "copyright": "© {{year}} Ebni Academy",
+    "copyright": "© {{year}} Construye Academy",
     "explore": "Explorer",
     "courses": "Formations",
     "contact": "Nous contacter",
@@ -86,8 +86,8 @@
     "progress": "{{percent}}% terminé",
     "moduleAccess": "{{owned}} / {{total}} modules débloqués",
     "unlockMore": "Débloquer plus de modules",
-    "wilayaTitle": "Ma wilaya",
-    "wilayaHelp": "Les partenaires recommandés seront filtrés sur cette wilaya."
+    "provinceTitle": "Ma province",
+    "provinceHelp": "Les partenaires recommandés seront filtrés sur cette province."
   },
   "course": {
     "enrollCta": "S'inscrire à la formation",
@@ -399,10 +399,10 @@
         "createTitle": "Nouvelle formation",
         "editTitle": "Modifier la formation",
         "subtitle": "Renseignez les informations dans les deux langues.",
-        "titleFr": "Titre (français)",
-        "titleAr": "Titre (arabe)",
-        "descriptionFr": "Description (français)",
-        "descriptionAr": "Description (arabe)",
+        "titleEs": "Titre (français)",
+        "titleEn": "Titre (arabe)",
+        "descriptionEs": "Description (français)",
+        "descriptionEn": "Description (arabe)",
         "slug": "Slug",
         "slugHint": "Laisser vide pour le générer automatiquement",
         "priceDzd": "Prix (DZD)",
@@ -437,8 +437,8 @@
         "addAttachment": "Ajouter",
         "noAttachments": "Aucune pièce jointe.",
         "lessonContent": "Contenu écrit de la leçon",
-        "contentFr": "Contenu (FR)",
-        "contentAr": "Contenu (AR)"
+        "contentEs": "Contenu (FR)",
+        "contentEn": "Contenu (AR)"
       },
       "partners": {
         "manage": "Partenaires",
@@ -448,8 +448,8 @@
         "choose": "Choisir…",
         "noneAvailable": "Aucun partenaire disponible",
         "empty": "Aucun partenaire attaché à ce module.",
-        "noteFr": "Note affichée (FR)",
-        "noteAr": "Note affichée (AR)",
+        "noteEs": "Note affichée (FR)",
+        "noteEn": "Note affichée (AR)",
         "moveUp": "Monter",
         "moveDown": "Descendre",
         "count_one": "{{count}} partenaire",
@@ -629,8 +629,8 @@
         "editTitle": "Modifier la promotion",
         "subtitle": "Une remise limitée dans le temps, appliquée automatiquement au prix.",
         "course": "Formation",
-        "labelFr": "Nom (FR)",
-        "labelAr": "Nom (AR) — facultatif",
+        "labelEs": "Nom (FR)",
+        "labelEn": "Nom (AR) — facultatif",
         "percentOff": "Remise (%)",
         "percentRange": "Entre 1 et 90 %",
         "startsAt": "Début (facultatif)",
@@ -646,14 +646,14 @@
       "new": "Nouveau partenaire",
       "empty": "Aucun partenaire pour le moment.",
       "inactive": "Désactivé",
-      "searchPlaceholder": "Rechercher par nom ou wilaya…",
+      "searchPlaceholder": "Rechercher par nom ou province…",
       "intro": "Prestataires recommandés aux étudiants dans les modules concernés. Leurs coordonnées ne sont visibles que pour les modules achetés.",
       "deleteConfirm": "Supprimer le partenaire « {{name}} » ?",
       "table": {
         "name": "Nom",
         "category": "Catégorie",
         "contact": "Contact",
-        "wilaya": "Wilayas d'intervention",
+        "province": "Provinces d'intervention",
         "modules": "Modules"
       },
       "form": {
@@ -662,28 +662,28 @@
         "subtitle": "Un prestataire vérifié, rattaché ensuite aux modules concernés.",
         "name": "Nom",
         "category": "Catégorie",
-        "descriptionFr": "Description (FR)",
-        "descriptionAr": "Description (AR)",
+        "descriptionEs": "Description (FR)",
+        "descriptionEn": "Description (AR)",
         "phone": "Téléphone",
         "email": "E-mail",
         "website": "Site web",
-        "wilaya": "Wilaya",
+        "province": "Province",
         "isActive": "Actif"
       },
-      "filterWilaya": "Filtrer par wilaya",
-      "allWilayas": "Toutes les wilayas",
-      "gapsTitle": "Aucun partenaire actif dans cette wilaya pour ces métiers :",
+      "filterProvince": "Filtrer par province",
+      "allProvinces": "Toutes les provinces",
+      "gapsTitle": "Aucun partenaire actif dans cette province pour ces métiers :",
       "coverage": {
-        "title": "Wilayas d'intervention",
-        "help": "Cochez chaque wilaya où ce partenaire intervient réellement.",
+        "title": "Provinces d'intervention",
+        "help": "Cochez chaque province où ce partenaire intervient réellement.",
         "national": "Couverture nationale",
-        "nationalHint": "Ce partenaire apparaîtra pour tous les apprenants, quelle que soit leur wilaya.",
-        "selected_one": "{{count}} wilaya sélectionnée",
-        "selected_other": "{{count}} wilayas sélectionnées",
+        "nationalHint": "Ce partenaire apparaîtra pour tous les apprenants, quelle que soit leur province.",
+        "selected_one": "{{count}} province sélectionnée",
+        "selected_other": "{{count}} provinces sélectionnées",
         "clear": "Tout décocher",
-        "searchPlaceholder": "Chercher une wilaya (nom ou numéro)…",
-        "noMatch": "Aucune wilaya ne correspond.",
-        "none": "Aucune wilaya"
+        "searchPlaceholder": "Chercher une province (nom ou numéro)…",
+        "noMatch": "Aucune province ne correspond.",
+        "none": "Aucune province"
       }
     },
     "invoices": {
@@ -737,7 +737,7 @@
         "buyer_nif": "NIF",
         "buyer_nis": "NIS",
         "buyer_ai": "AI",
-        "tvaRate": "Taux de TVA",
+        "ivaRate": "Taux de TVA",
         "tva_19": "19 % (taux normal)",
         "tva_9": "9 % (taux réduit)",
         "tva_0": "0 % (exonéré)",
@@ -826,7 +826,7 @@
   },
   "partners": {
     "title": "Partenaires recommandés",
-    "intro": "Des prestataires vérifiés pour cette étape du circuit. Ebni ne perçoit aucune commission sur ces mises en relation.",
+    "intro": "Des prestataires vérifiés pour cette étape du circuit. Construye ne perçoit aucune commission sur ces mises en relation.",
     "website": "Site web",
     "lockedTease_one": "{{count}} contact partenaire inclus dans ce module",
     "lockedTease_other": "{{count}} contacts partenaires inclus dans ce module",
@@ -839,24 +839,24 @@
       "consultant_agrement": "Consultant agrément",
       "autre": "Autre"
     },
-    "filterLabel": "Ma wilaya",
-    "allWilayas": "Toutes les wilayas",
+    "filterLabel": "Ma province",
+    "allProvinces": "Toutes les provinces",
     "national": "Couverture nationale",
-    "noWilaya": "Wilaya non renseignée",
-    "noneInWilaya": "Aucun partenaire ne couvre cette wilaya pour l'instant.",
-    "showAll_one": "Voir le partenaire de toutes les wilayas",
-    "showAll_other": "Voir les {{count}} partenaires de toutes les wilayas",
-    "hiddenByFilter_one": "{{count}} autre partenaire hors de votre wilaya",
-    "hiddenByFilter_other": "{{count}} autres partenaires hors de votre wilaya",
+    "noProvince": "Province non renseignée",
+    "noneInProvince": "Aucun partenaire ne couvre cette province pour l'instant.",
+    "showAll_one": "Voir le partenaire de toutes les provinces",
+    "showAll_other": "Voir les {{count}} partenaires de toutes les provinces",
+    "hiddenByFilter_one": "{{count}} autre partenaire hors de votre province",
+    "hiddenByFilter_other": "{{count}} autres partenaires hors de votre province",
     "saveFailed": "Choix non enregistré sur votre profil.",
-    "loadingWilayas": "Chargement…"
+    "loadingProvinces": "Chargement…"
   },
   "content": {
     "legalBasis": "Base légale",
     "expertTip": "Conseil d'or de l'expert",
     "partnerNeeded": "Partenaire",
     "partnerSoon": "Contact partenaire — bientôt disponible",
-    "noCommission": "Ebni ne perçoit aucune commission sur ces mises en relation."
+    "noCommission": "Construye ne perçoit aucune commission sur ces mises en relation."
   },
   "landing": {
     "hero": {
@@ -893,7 +893,7 @@
       "parc": "parc d'attractions",
       "years": "ans de métier",
       "body": "Seize ans, du premier terrain acheté à la dernière clé remise. Tout ce que vous apprendrez a d'abord été fait en vrai, sur ses opérations — réussites, retards, recours de voisinage, erreurs payées comptant.",
-      "attribution": "Ces chiffres sont le bilan personnel du formateur en tant que promoteur immobilier, tel qu'il le déclare. Ce n'est pas le bilan d'Ebni Academy.",
+      "attribution": "Ces chiffres sont le bilan personnel du formateur en tant que promoteur immobilier, tel qu'il le déclare. Ce n'est pas le bilan d'Construye Academy.",
       "one": "Un",
       "eyebrowExperience": "Expérience",
       "eyebrowDelivered": "Livré"
@@ -1015,7 +1015,7 @@
     },
     "socialProof": {
       "title": "Ce qu'en disent ceux qui l'ont déjà suivie.",
-      "note": "Seuls ceux qui ont réellement acheté la formation peuvent laisser un avis. Aucun avis n'est rédigé, commandé ni corrigé par Ebni Academy."
+      "note": "Seuls ceux qui ont réellement acheté la formation peuvent laisser un avis. Aucun avis n'est rédigé, commandé ni corrigé par Construye Academy."
     },
     "finalCta": {
       "title": "16 ans de terrain. {{modules}}. À vous de construire.",
@@ -1089,7 +1089,7 @@
   "contact": {
     "whatsapp": "WhatsApp",
     "hours": "Horaires : {{hours}}",
-    "prefillGeneral": "Bonjour, j'ai une question sur la formation Ebni Academy.",
+    "prefillGeneral": "Bonjour, j'ai une question sur la formation Construye Academy.",
     "prefillOrder": "Bonjour, je vous écris au sujet de ma commande n° {{id}}.",
     "paymentHelpTitle": "Une question sur votre paiement ?",
     "paymentHelpBody": "Écrivez-nous : votre numéro de commande est déjà dans le message.",

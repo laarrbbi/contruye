@@ -24,9 +24,9 @@ final class StructuredData
         $organization = [
             '@type' => 'Organization',
             '@id' => $base.'/#organization',
-            'name' => 'Ebni Academy',
+            'name' => 'Construye Academy',
             'url' => $base.'/',
-            'logo' => $base.'/ebni-logo.png',
+            'logo' => $base.'/construye-logo.png',
         ];
 
         if ($profile['business_name'] !== null) {
@@ -36,7 +36,7 @@ final class StructuredData
             $organization['address'] = [
                 '@type' => 'PostalAddress',
                 'streetAddress' => $profile['address'],
-                'addressCountry' => 'DZ',
+                'addressCountry' => 'ES',
             ];
         }
 
@@ -59,7 +59,7 @@ final class StructuredData
             '@type' => 'WebSite',
             '@id' => self::base().'/#website',
             'url' => self::base().'/',
-            'name' => 'Ebni Academy',
+            'name' => 'Construye Academy',
             'inLanguage' => config('locales.supported'),
             'publisher' => ['@id' => self::base().'/#organization'],
         ];
@@ -67,8 +67,8 @@ final class StructuredData
 
     /**
      * The course with its price today: the running promotion included, with
-     * the date it ends. A currency is offered only when a payment method that
-     * takes it is switched on (a CCP-only launch offers no euro price).
+     * the date it ends. The offer is published only while at least one
+     * payment method can take money.
      *
      * @return array<string, mixed>
      */
@@ -77,8 +77,7 @@ final class StructuredData
         $campaign = $course->activeCampaign();
         $offers = [];
         $currencies = [
-            'DZD' => self::anyAvailable(['chargily', 'manual_ccp', 'manual_baridimob']) ? $course->price_dzd : null,
-            'EUR' => PaymentMethods::isAvailable('stripe') ? $course->price_eur : null,
+            'EUR' => self::anyAvailable(PaymentMethods::ALL) ? $course->price_eur : null,
         ];
         foreach ($currencies as $currency => $price) {
             if ($price === null) {
@@ -105,8 +104,8 @@ final class StructuredData
             'description' => (string) $course->localizedDescription($locale),
             'url' => $url,
             'image' => self::base().'/og-image.jpg',
-            // The material is written in French; Arabic once modules carry it.
-            'inLanguage' => $course->modules->contains(fn (Module $module) => filled($module->description_ar)) ? ['fr', 'ar'] : 'fr',
+            // The material is written in Spanish; English once modules carry it.
+            'inLanguage' => $course->modules->contains(fn (Module $module) => filled($module->description_en)) ? ['es', 'en'] : 'es',
             'provider' => ['@id' => self::base().'/#organization'],
             'hasCourseInstance' => array_filter([
                 '@type' => 'CourseInstance',

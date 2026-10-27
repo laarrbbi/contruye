@@ -1,17 +1,17 @@
 import type { TFunction } from 'i18next'
 import type { CheckoutMethod } from '@/api/orders'
 
-/** Display order: the Algerian methods first, the international card last. */
-const ORDER: readonly CheckoutMethod[] = ['chargily', 'manual_ccp', 'manual_baridimob', 'stripe']
+/** Display order: the card first, then the two ways to pay from a bank app. */
+const ORDER: readonly CheckoutMethod[] = ['stripe', 'manual_transfer', 'manual_bizum']
 
 /** Paid by transfer: access opens once the owner has checked the receipt. */
-export const TRANSFER_METHODS: readonly CheckoutMethod[] = ['manual_ccp', 'manual_baridimob']
+export const TRANSFER_METHODS: readonly CheckoutMethod[] = ['manual_transfer', 'manual_bizum']
 
 /**
  * The complete payment offer planned for launch, named for a sentence:
- * "carte CIB ou Edahabia, versement CCP, BaridiMob ou carte internationale
- * (Visa, Mastercard)". The owner decided (constitution I, amended 2026-10-09)
- * that the sales page presents all four before every gateway is configured,
+ * "tarjeta bancaria (Visa, Mastercard), transferencia bancaria o Bizum". The
+ * owner decided (constitution I, amendment inherited from Ebni) that the sales
+ * page presents all three before every gateway is configured,
  * since the gateways are wired just before launch; the checkout still offers
  * only those that can take money (GET /checkout/methods). The server words
  * them the same way (App\Support\PaymentWording), so the page, its FAQ and

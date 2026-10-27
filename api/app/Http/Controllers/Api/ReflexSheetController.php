@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 /**
- * Printable "fiche réflexe" for a lesson (module 13.2 — accident grave ou
- * mortel sur le chantier). The sheet is meant to be printed and posted in the
- * site's base de vie, so it is offered as a downloadable PDF in addition to
- * the on-screen lesson.
+ * Printable "ficha de actuación" for a lesson (phase 7 — accidente grave o
+ * mortal en obra). The sheet is meant to be printed and posted in the site
+ * huts (casetas de obra), so it is offered as a downloadable PDF in addition
+ * to the on-screen lesson.
  *
  * Same access gate as the lesson itself: it is paid content.
  */
@@ -25,7 +25,7 @@ class ReflexSheetController extends Controller
     {
         $this->authorizeLessonAccess($request->user(), $lesson, allowFreePreview: true);
 
-        // C56: only lessons the instructor wrote as a fiche réflexe have one.
+        // C56: only lessons the instructor wrote as a ficha de actuación have one.
         // The player offers the download on has_reflex_sheet; any other id
         // used to render a "fiche" out of an ordinary lesson.
         abort_unless($lesson->is_reflex_sheet, 404);
@@ -58,7 +58,7 @@ class ReflexSheetController extends Controller
             'legal' => $legal,
         ])->setPaper('a4');
 
-        $filename = 'fiche-reflexe-'.$lesson->id.'.pdf';
+        $filename = 'ficha-actuacion-'.$lesson->id.'.pdf';
 
         return $pdf->download($filename);
     }

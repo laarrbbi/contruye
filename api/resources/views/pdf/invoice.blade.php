@@ -1,14 +1,16 @@
 @php
-    $symbol = $invoice->currency === 'DZD' ? 'DA' : '€';
-    $money = fn (int $centimes) => number_format($centimes / 100, 2, ',', ' ').' '.$symbol;
+    $symbol = $invoice->currency === 'EUR' ? '€' : $invoice->currency;
+    // Spanish notation: 1.490,00 € (the space before the symbol never breaks).
+    $money = fn (int $centimes) => number_format($centimes / 100, 2, ',', '.')."\u{00A0}".$symbol;
     $seller = $invoice->seller;
-    $rate = rtrim(rtrim(number_format((float) $invoice->tva_rate, 2, ',', ' '), '0'), ',');
+    $field = fn (string $key) => trim((string) ($seller[$key] ?? ''));
+    $rate = rtrim(rtrim(number_format((float) $invoice->iva_rate, 2, ',', ' '), '0'), ',');
 @endphp
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Facture {{ $invoice->number }}</title>
+    <title>Factura {{ $invoice->number }}</title>
     <style>
         @page { margin: 16mm 15mm; }
         body { font-family: DejaVu Sans, sans-serif; font-size: 9.5pt; color: #1c2434; line-height: 1.45; }
@@ -53,14 +55,14 @@
     <table class="layout top">
         <tr>
             <td>
-                <div class="brand">EBNI <span>ACADEMY</span></div>
-                <div class="brand-sub">Formation en promotion immobilière</div>
+                <div class="brand">CONSTRUYE <span>ACADEMY</span></div>
+                <div class="brand-sub">Formación en promoción inmobiliaria</div>
             </td>
             <td class="doc-title">
-                <h1>Facture</h1>
+                <h1>Factura</h1>
                 <div class="doc-meta">
-                    N° <strong>{{ $invoice->number }}</strong><br>
-                    Date d'émission : {{ $invoice->issued_at->format('d/m/Y') }}
+                    N.º <strong>{{ $invoice->number }}</strong><br>
+                    Fecha de expedición: {{ $invoice->issued_at->format('d/m/Y') }}
                 </div>
             </td>
         </tr>
@@ -69,41 +71,34 @@
     <table class="layout">
         <tr>
             <td class="party">
-                <h2>Émetteur</h2>
-                <div class="name">{{ $seller['business_name'] }}</div>
-                <div class="row">{{ $seller['legal_form'] }} au capital de {{ $seller['capital'] }}</div>
-                <div class="row">{{ $seller['address'] }}</div>
-                {{-- One identifier per line: paired in a narrow column, "NIF :" ended
+                <h2>Emisor</h2>
+                <div class="name">{{ $field('business_name') }}</div>
+                @if ($field('legal_form') !== '')
+                    <div class="row">{{ $field('legal_form') }}@if ($field('capital') !== '') — capital social {{ $field('capital') }}@endif</div>
+                @endif
+                <div class="row">{{ $field('address') }}</div>
+                {{-- One identifier per line: paired in a narrow column, "NIF:" ended
                      a line with its number on the next. --}}
-                <div class="row"><strong>RC :</strong> {{ $seller['rc'] }}</div>
-                <div class="row"><strong>NIF :</strong> {{ $seller['nif'] }}</div>
-                <div class="row"><strong>NIS :</strong> {{ $seller['nis'] }}</div>
-                <div class="row"><strong>AI :</strong> {{ $seller['ai'] }}</div>
-                @if ($seller['phone'] !== '' || $seller['email'] !== '')
+                <div class="row"><strong>NIF:</strong> {{ $field('nif') }}</div>
+                @if ($field('registry') !== '')
+                    <div class="row">{{ $field('registry') }}</div>
+                @endif
+                @if ($field('phone') !== '' || $field('email') !== '')
                     <div class="row">
-                        {{ $seller['phone'] }}@if ($seller['phone'] !== '' && $seller['email'] !== '') — @endif{{ $seller['email'] }}
+                        {{ $field('phone') }}@if ($field('phone') !== '' && $field('email') !== '') — @endif{{ $field('email') }}
                     </div>
                 @endif
-                @if ($seller['bank_details'] !== '')
-                    <div class="row"><strong>Banque :</strong> {{ $seller['bank_details'] }}</div>
+                @if ($field('bank_details') !== '')
+                    <div class="row"><strong>IBAN:</strong> {{ $field('bank_details') }}</div>
                 @endif
             </td>
             <td style="width: 2%;"></td>
             <td class="party">
-                <h2>Client</h2>
+                <h2>Cliente</h2>
                 <div class="name">{{ $invoice->buyer_name }}</div>
                 <div class="row">{{ $invoice->buyer_address }}</div>
-                @if ($invoice->buyer_rc)
-                    <div class="row"><strong>RC :</strong> {{ $invoice->buyer_rc }}</div>
-                @endif
                 @if ($invoice->buyer_nif)
-                    <div class="row"><strong>NIF :</strong> {{ $invoice->buyer_nif }}</div>
-                @endif
-                @if ($invoice->buyer_nis)
-                    <div class="row"><strong>NIS :</strong> {{ $invoice->buyer_nis }}</div>
-                @endif
-                @if ($invoice->buyer_ai)
-                    <div class="row"><strong>AI :</strong> {{ $invoice->buyer_ai }}</div>
+                    <div class="row"><strong>NIF:</strong> {{ $invoice->buyer_nif }}</div>
                 @endif
             </td>
         </tr>
@@ -112,10 +107,10 @@
     <table class="lines">
         <thead>
             <tr>
-                <th>Désignation</th>
-                <th class="num">Qté</th>
-                <th class="num">PU HT</th>
-                <th class="num">Total HT</th>
+                <th>Concepto</th>
+                <th class="num">Cant.</th>
+                <th class="num">Precio unit.</th>
+                <th class="num">Importe</th>
             </tr>
         </thead>
         <tbody>
@@ -123,8 +118,8 @@
                 <tr>
                     <td>{{ $line['designation'] }}</td>
                     <td class="num">{{ $line['quantity'] }}</td>
-                    <td class="num">{{ $money($line['unit_ht_c']) }}</td>
-                    <td class="num">{{ $money($line['total_ht_c']) }}</td>
+                    <td class="num">{{ $money($line['unit_net_c']) }}</td>
+                    <td class="num">{{ $money($line['total_net_c']) }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -132,42 +127,44 @@
 
     <table class="totals">
         <tr>
-            <td>Total HT</td>
-            <td class="num">{{ $money($invoice->subtotal_ht_c) }}</td>
+            <td>Suma</td>
+            <td class="num">{{ $money($invoice->subtotal_net_c) }}</td>
         </tr>
-        @if ($invoice->discount_ht_c > 0)
+        @if ($invoice->discount_net_c > 0)
             <tr>
-                <td>Remise</td>
-                <td class="num">- {{ $money($invoice->discount_ht_c) }}</td>
-            </tr>
-            <tr>
-                <td>Net HT</td>
-                <td class="num">{{ $money($invoice->total_ht_c) }}</td>
+                <td>Descuento</td>
+                <td class="num">- {{ $money($invoice->discount_net_c) }}</td>
             </tr>
         @endif
         <tr>
-            <td>TVA ({{ $rate }} %)</td>
-            <td class="num">{{ $money($invoice->tva_c) }}</td>
+            <td>Base imponible</td>
+            <td class="num">{{ $money($invoice->total_net_c) }}</td>
+        </tr>
+        <tr>
+            <td>IVA ({{ $rate }} %)</td>
+            <td class="num">{{ $money($invoice->iva_c) }}</td>
         </tr>
         <tr class="grand">
-            <td>Total TTC</td>
-            <td class="num">{{ $money($invoice->total_ttc_c) }}</td>
+            <td>Total factura</td>
+            <td class="num">{{ $money($invoice->total_gross_c) }}</td>
         </tr>
     </table>
 
     <div class="words">
-        Arrêtée la présente facture à la somme de : <strong>{{ $amountInWords }}</strong>.
+        Importe total en letra: <strong>{{ $amountInWords }}</strong>.
     </div>
 
     <div class="payment">
-        <strong>Mode de règlement :</strong> {{ $invoice->payment_method_label }}
+        <strong>Forma de pago:</strong> {{ $invoice->payment_method_label }}
         @if ($invoice->payment_date)
-            — réglée le {{ $invoice->payment_date->format('d/m/Y') }}
+            — pagada el {{ $invoice->payment_date->format('d/m/Y') }}
         @endif
     </div>
 
-    @if ((float) $invoice->tva_rate === 0.0)
-        <div class="notes">TVA non applicable — opération exonérée.</div>
+    @if ((float) $invoice->iva_rate === 0.0)
+        {{-- The exemption must be cited on the invoice (RD 1619/2012, art. 6.1.j):
+             the admin writes the article in the notes below. --}}
+        <div class="notes">Operación exenta de IVA.</div>
     @endif
 
     @if ($invoice->notes)
@@ -175,8 +172,8 @@
     @endif
 
     <div class="footer">
-        {{ $seller['business_name'] }} — {{ $seller['legal_form'] }} au capital de {{ $seller['capital'] }} —
-        <span class="nowrap">RC {{ $seller['rc'] }}</span> — <span class="nowrap">NIF {{ $seller['nif'] }}</span> — <span class="nowrap">NIS {{ $seller['nis'] }}</span> — <span class="nowrap">AI {{ $seller['ai'] }}</span>
+        {{ $field('business_name') }}@if ($field('legal_form') !== '') — {{ $field('legal_form') }}@endif —
+        <span class="nowrap">NIF {{ $field('nif') }}</span>@if ($field('registry') !== '') — {{ $field('registry') }}@endif
     </div>
 </body>
 </html>

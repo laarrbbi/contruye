@@ -8,9 +8,9 @@ use App\Models\User;
  * C32: orders_by_method is a JSON object even before the first order.
  */
 it('matches the typed text literally, wildcards included', function (string $endpoint) {
-    $admin = User::factory()->admin()->create(['name' => 'Admin', 'email' => 'admin@ebni.test']);
-    $percent = User::factory()->create(['name' => 'Remise 100% Karim', 'email' => 'karim@ebni.test']);
-    $plain = User::factory()->create(['name' => 'Amel Cherif', 'email' => 'amel@ebni.test']);
+    $admin = User::factory()->admin()->create(['name' => 'Admin', 'email' => 'admin@construye.test']);
+    $percent = User::factory()->create(['name' => 'Remise 100% Karim', 'email' => 'karim@construye.test']);
+    $plain = User::factory()->create(['name' => 'Amel Cherif', 'email' => 'amel@construye.test']);
     Order::factory()->for($percent)->create();
     Order::factory()->for($plain)->create();
 

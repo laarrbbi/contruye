@@ -20,16 +20,16 @@ it('attributes every price lever an admin can pull', function () {
 
     // Course price and publication state.
     $this->actingAs($actor)->putJson("/api/admin/courses/{$course->id}", [
-        'title_fr' => $course->title_fr,
-        'title_ar' => $course->title_ar,
+        'title_es' => $course->title_es,
+        'title_en' => $course->title_en,
         'price_dzd' => 120000,
         'status' => 'published',
     ])->assertOk();
 
     // Per-module price, which every à-la-carte quote is built from.
     $this->actingAs($actor)->putJson("/api/admin/modules/{$module->id}", [
-        'title_fr' => 'Module renommé',
-        'title_ar' => $module->title_ar,
+        'title_es' => 'Module renommé',
+        'title_en' => $module->title_en,
         'price_dzd' => 30000,
     ])->assertOk();
 
@@ -63,8 +63,8 @@ it('attributes every price lever an admin can pull', function () {
 it('records deletions of catalogue content with enough to identify what was lost', function () {
     $actor = admin();
     $course = Course::factory()->create();
-    $module = Module::factory()->for($course)->create(['order' => 1, 'title_fr' => 'Module supprimé']);
-    $lesson = Lesson::factory()->for($module)->create(['order' => 1, 'title_fr' => 'Leçon supprimée']);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'title_es' => 'Module supprimé']);
+    $lesson = Lesson::factory()->for($module)->create(['order' => 1, 'title_es' => 'Leçon supprimée']);
 
     $this->actingAs($actor)->deleteJson("/api/admin/lessons/{$lesson->id}")->assertNoContent();
     $this->actingAs($actor)->deleteJson("/api/admin/modules/{$module->id}")->assertNoContent();
@@ -99,16 +99,16 @@ it('attributes promotions and the seller block every facture is printed from', f
 
     $campaignId = $this->actingAs($actor)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_fr' => 'Rentrée 2026',
-        'label_ar' => 'الدخول 2026',
+        'label_es' => 'Rentrée 2026',
+        'label_en' => 'الدخول 2026',
         'percent_off' => 30,
         'ends_at' => now()->addWeek()->toISOString(),
     ])->assertCreated()->json('data.id');
 
     $this->actingAs($actor)->putJson("/api/admin/campaigns/{$campaignId}", [
         'course_id' => $course->id,
-        'label_fr' => 'Rentrée 2026',
-        'label_ar' => 'الدخول 2026',
+        'label_es' => 'Rentrée 2026',
+        'label_en' => 'الدخول 2026',
         'percent_off' => 50,
         'ends_at' => now()->addWeek()->toISOString(),
     ])->assertOk();
@@ -118,7 +118,7 @@ it('attributes promotions and the seller block every facture is printed from', f
     // The émetteur block is a fiscal identity: an RC or NIF correction has to
     // be attributable even though it edits a settings row and not a model.
     $this->actingAs($actor)->putJson('/api/admin/invoicing/settings', [
-        'business_name' => 'Ebni Academy',
+        'business_name' => 'Construye Academy',
         'legal_form' => 'EURL',
         'capital' => '1 000 000 DA',
         'address' => 'Alger',
@@ -162,7 +162,7 @@ it('records the money path: invoices issued and corrected, campaigns changed', f
     // A campaign moves the advertised price of the whole course.
     $campaignId = $this->actingAs($actor)->postJson('/api/admin/campaigns', [
         'course_id' => $order->course_id,
-        'label_fr' => 'Rentrée', 'label_ar' => 'الدخول',
+        'label_es' => 'Rentrée', 'label_en' => 'الدخول',
         'percent_off' => 25,
         'ends_at' => now()->addDays(10)->toIso8601String(),
         'is_active' => true,

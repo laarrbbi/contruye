@@ -1,4 +1,4 @@
-# Deploying Ebni Academy
+# Deploying Construye Academy
 
 One Ubuntu server, one domain. Nginx serves the built SPA and passes `/api`, `/sanctum` and `/up`
 to Laravel on PHP-FPM; MySQL holds the data; Supervisor keeps the queue worker running. The SPA
@@ -13,9 +13,9 @@ self-signed certificate and a placeholder domain, so certbot and DNS were not pa
 |---|---|
 | `deploy/deploy.sh` | Ships the current checkout. Stops before touching the live site if anything is wrong. |
 | `api/.env.production.example` | The production `.env`, with every value the deploy gate checks. |
-| `deploy/nginx/ebni.conf` | The vhost: TLS, SPA routing, Laravel routes, cache and security headers, including a Content-Security-Policy on HTML pages. |
-| `deploy/supervisor/ebni-queue.conf` | The queue worker (payment webhooks and every e-mail). |
-| `deploy/php/99-ebni.ini` | PHP upload limits: Ubuntu's 2 MB default refuses most receipt photos. |
+| `deploy/nginx/construye.conf` | The vhost: TLS, SPA routing, Laravel routes, cache and security headers, including a Content-Security-Policy on HTML pages. |
+| `deploy/supervisor/construye-queue.conf` | The queue worker (payment webhooks and every e-mail). |
+| `deploy/php/99-construye.ini` | PHP upload limits: Ubuntu's 2 MB default refuses most receipt photos. |
 | `deploy/backup.sh` | Nightly dump of the database and the private files (CCP receipts, attachments). |
 | `deploy/restore-drill.sh` | Restores the latest backup into a scratch database and compares it with live. |
 
@@ -28,8 +28,8 @@ sudo apt install nginx mysql-server php8.3-fpm php8.3-cli php8.3-mysql php8.3-mb
   php8.3-xml php8.3-curl php8.3-zip php8.3-gd php8.3-intl php8.3-bcmath \
   composer supervisor certbot python3-certbot-nginx rsync git unzip
 # Node 22 for the front-end build (nodesource or nvm), then:
-sudo mkdir -p /var/www/ebni && sudo chown "$USER":www-data /var/www/ebni
-git clone https://github.com/laarrbbi/ebni.git /var/www/ebni
+sudo mkdir -p /var/www/construye && sudo chown "$USER":www-data /var/www/construye
+git clone https://github.com/laarrbbi/construye.git /var/www/construye
 ```
 
 PHP upload limits. Ubuntu's PHP refuses any upload over 2 MB before Laravel sees it, and buyers
@@ -37,8 +37,8 @@ send CCP and BaridiMob receipts of up to 5 MB (a phone photo is often 3–4 MB).
 buyer gets "Le fichier reçu n'a pas pu être téléversé" and cannot finish paying:
 
 ```bash
-sudo cp /var/www/ebni/deploy/php/99-ebni.ini /etc/php/8.3/fpm/conf.d/
-sudo cp /var/www/ebni/deploy/php/99-ebni.ini /etc/php/8.3/cli/conf.d/
+sudo cp /var/www/construye/deploy/php/99-construye.ini /etc/php/8.3/fpm/conf.d/
+sudo cp /var/www/construye/deploy/php/99-construye.ini /etc/php/8.3/cli/conf.d/
 sudo systemctl reload php8.3-fpm
 php-fpm8.3 -i | grep -E 'upload_max_filesize|post_max_size'   # 10M, 12M
 ```
@@ -46,16 +46,16 @@ php-fpm8.3 -i | grep -E 'upload_max_filesize|post_max_size'   # 10M, 12M
 Database:
 
 ```sql
-CREATE DATABASE ebni CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'ebni'@'localhost' IDENTIFIED BY '<a long random password>';
-GRANT ALL PRIVILEGES ON ebni.* TO 'ebni'@'localhost';
+CREATE DATABASE construye CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'construye'@'localhost' IDENTIFIED BY '<a long random password>';
+GRANT ALL PRIVILEGES ON construye.* TO 'construye'@'localhost';
 ```
 
 Environment: copy the template and fill every blank. The comments in the file say what each
 value is for and where to find it.
 
 ```bash
-cd /var/www/ebni/api
+cd /var/www/construye/api
 cp .env.production.example .env
 php artisan key:generate
 ```
@@ -70,9 +70,9 @@ TLS first, then Nginx. The vhost names the certificate files, so `nginx -t` fail
 exist. Certbot answers its challenge through the stock default site:
 
 ```bash
-sudo certbot certonly --nginx -d example.dz -d www.example.dz
-sudo cp /var/www/ebni/deploy/nginx/ebni.conf /etc/nginx/sites-available/ebni   # replace example.dz
-sudo ln -s /etc/nginx/sites-available/ebni /etc/nginx/sites-enabled/
+sudo certbot certonly --nginx -d example.es -d www.example.es
+sudo cp /var/www/construye/deploy/nginx/construye.conf /etc/nginx/sites-available/construye   # replace example.es
+sudo ln -s /etc/nginx/sites-available/construye /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
 ```
@@ -80,7 +80,7 @@ sudo nginx -t && sudo systemctl reload nginx
 The queue worker:
 
 ```bash
-sudo cp /var/www/ebni/deploy/supervisor/ebni-queue.conf /etc/supervisor/conf.d/
+sudo cp /var/www/construye/deploy/supervisor/construye-queue.conf /etc/supervisor/conf.d/
 sudo supervisorctl reread && sudo supervisorctl update
 ```
 
@@ -101,19 +101,19 @@ Then deploy (section 2). After the first deploy has created the tables, install 
 the admin account:
 
 ```bash
-cd /var/www/ebni/api && php artisan app:install
+cd /var/www/construye/api && php artisan app:install
 ```
 
-`app:install` seeds the 58 wilayas, the instructor's curriculum and checklists, and one admin. It
+`app:install` seeds the 58 provinces, the instructor's curriculum and checklists, and one admin. It
 asks for the owner's real e-mail and a password of 12 characters or more. **Never run
-`db:seed` or `migrate --seed` here.** The default seeder creates `admin@example.dz` with the
+`db:seed` or `migrate --seed` here.** The default seeder creates `admin@example.es` with the
 password `password`, invented students with paid orders, and coupons whose codes are public. It
 now refuses to run in production, and so do the showcase and benchmark seeders.
 
 ## 2. Every deploy
 
 ```bash
-cd /var/www/ebni && git pull && PHP_FPM_SERVICE=php8.3-fpm deploy/deploy.sh
+cd /var/www/construye && git pull && PHP_FPM_SERVICE=php8.3-fpm deploy/deploy.sh
 ```
 
 In this order:
@@ -156,14 +156,14 @@ and `STRIPE_ENABLED=false`. Blank keys with the switch left on fail the deploy o
 blank is not the same as off.
 
 Webhook URLs to register with the providers:
-- Chargily: `https://example.dz/api/webhooks/chargily`
-- Stripe: `https://example.dz/api/webhooks/stripe`
+- Chargily: `https://example.es/api/webhooks/chargily`
+- Stripe: `https://example.es/api/webhooks/stripe`
 
 ## 4. Backups
 
 ```bash
 # as the deploy user, in crontab -e
-30 2 * * * BACKUP_RSYNC_TARGET=backup@other-host:/backups/ebni /var/www/ebni/deploy/backup.sh >> /var/log/ebni-backup.log 2>&1
+30 2 * * * BACKUP_RSYNC_TARGET=backup@other-host:/backups/construye /var/www/construye/deploy/backup.sh >> /var/log/construye-backup.log 2>&1
 ```
 
 Each night this writes `db-<time>.sql.gz` (a consistent InnoDB snapshot taken without locking the
@@ -197,11 +197,11 @@ After the first deploy, once DNS points at the server:
 
 1. **Google Search Console**: add a *Domain* property and verify it with the DNS TXT record it gives
    (or a *URL prefix* property with `GOOGLE_SITE_VERIFICATION` in `.env`). Submit
-   `https://example.dz/sitemap.xml`. Use *URL inspection* on `/`, `/ar` and `/en`: the rendered page
+   `https://example.es/sitemap.xml`. Use *URL inspection* on `/`, `/ar` and `/en`: the rendered page
    must be in French, Arabic and English respectively.
 2. **Bing Webmaster Tools**: import the site from Search Console (or verify with
    `BING_SITE_VERIFICATION`) and submit the same sitemap.
-3. **Link previews**: paste `https://example.dz/` into the Facebook Sharing Debugger and the LinkedIn
+3. **Link previews**: paste `https://example.es/` into the Facebook Sharing Debugger and the LinkedIn
    Post Inspector once, so they cache the current card.
 4. **Google Business Profile**, if the business receives people at an address: same name, address and
    phone as in *Entreprise & contact*.

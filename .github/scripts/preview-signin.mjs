@@ -17,7 +17,7 @@ await page.goto(`${BASE}/`, { waitUntil: 'networkidle' })
 await page.getByRole('heading', { level: 1 }).first().waitFor()
 
 await page.goto(`${BASE}/login`, { waitUntil: 'networkidle' })
-await page.fill('input[type=email]', 'karim@example.dz')
+await page.fill('input[type=email]', 'karim@example.es')
 await page.fill('input[type=password]', 'password')
 await page.click('button[type=submit]')
 await page.waitForURL((url) => !url.pathname.startsWith('/login'), { timeout: 15000 })
@@ -30,4 +30,4 @@ if (errors.length > 0) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log('The sales page renders; karim@example.dz signs in and reaches the course.')
+console.log('The sales page renders; karim@example.es signs in and reaches the course.')

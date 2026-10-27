@@ -1,4 +1,4 @@
-# Ebni Academy Constitution
+# Construye Academy Constitution
 
 The rules below are not preferences. Each one exists because breaking it either misleads a buyer,
 destroys a record someone is legally required to keep, or gives away something that was paid for.
@@ -19,7 +19,7 @@ the instructor actually supplied or the database actually holds.
   real review lands — never a placeholder score.
 - No countdown that resets, no "12 people are viewing this", no testimonial that was not written.
 - `landing.trackRecord.attribution` states that the track record is the instructor's own and not
-  Ebni Academy's. **That sentence does not change.**
+  Construye Academy's. **That sentence does not change.**
 - Project imagery is the instructor's own work. If provenance cannot be established, the image does
   not ship — and neither does a number describing a project we cannot attribute.
 
@@ -79,7 +79,7 @@ A missing secret disables a capability. It never weakens a check.
 
 ### VI. Demo data announces itself
 
-Every seeded entity a human could mistake for real is prefixed `[DÉMO]`. The showcase seeder is
+Every seeded entity a human could mistake for real is prefixed `[DEMO]`. The showcase seeder is
 opt-in and never wired into the default seed. Credentials stay placeholders until the explicit
 final step of the project.
 

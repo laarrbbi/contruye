@@ -17,13 +17,12 @@ class StoreCourseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_fr' => ['required', 'string', 'max:255'],
-            'title_ar' => ['required', 'string', 'max:255'],
+            'title_es' => ['required', 'string', 'max:255'],
+            'title_en' => ['nullable', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'alpha_dash', 'unique:courses,slug'],
-            'description_fr' => ['nullable', 'string'],
-            'description_ar' => ['nullable', 'string'],
-            'price_dzd' => ['required', 'integer', 'min:0'],
-            'price_eur' => ['nullable', 'integer', 'min:0'],
+            'description_es' => ['nullable', 'string'],
+            'description_en' => ['nullable', 'string'],
+            'price_eur' => ['required', 'integer', 'min:0'],
             'module_discount_tiers' => ['sometimes', 'nullable', 'array', 'max:8'],
             'module_discount_tiers.*.min_modules' => ['required', 'integer', 'min:2', 'distinct'],
             'module_discount_tiers.*.percent_off' => ['required', 'integer', 'between:1,99'],

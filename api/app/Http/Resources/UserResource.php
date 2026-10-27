@@ -20,12 +20,12 @@ class UserResource extends JsonResource
             'role' => $this->role,
             'locale' => $this->locale,
             // Where the learner is building: partner lists default to it.
-            'wilaya' => $this->whenLoaded('wilaya', fn () => [
-                'id' => $this->wilaya->id,
-                'code' => $this->wilaya->code,
-                'name' => $this->wilaya->localizedName(),
+            'province' => $this->whenLoaded('province', fn () => [
+                'id' => $this->province->id,
+                'code' => $this->province->code,
+                'name' => $this->province->localizedName(),
             ]),
-            'wilaya_id' => $this->wilaya_id,
+            'province_id' => $this->province_id,
             'created_at' => $this->created_at?->toISOString(),
         ];
     }

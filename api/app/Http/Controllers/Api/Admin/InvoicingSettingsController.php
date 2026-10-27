@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 /**
  * The business identity, kept in one place.
  *
- * The seller (émetteur) block printed on every invoice — raison sociale,
- * forme juridique, capital, adresse, RC, NIF, NIS, article d'imposition — is
- * mandatory for issuance. The same block, plus the WhatsApp number and support
+ * The seller (emisor) block printed on every invoice — razón social, NIF and
+ * domicilio, plus the legal form and Registro Mercantil entry of a company —
+ * must be complete before anything is issued. The same block, plus the WhatsApp number and support
  * hours, feeds the public site through BusinessProfile, which exposes only the
  * identity and contact subset.
  */
@@ -32,7 +32,7 @@ class InvoicingSettingsController extends Controller
         // dead WhatsApp button on every page of the site.
         $dialable = function (string $attribute, mixed $value, \Closure $fail): void {
             if (is_string($value) && trim($value) !== '' && BusinessProfile::international($value) === null) {
-                $fail(__('Enter a valid phone number, for example 0550 12 34 56.'));
+                $fail(__('Enter a valid phone number, for example 612 34 56 78.'));
             }
         };
 

@@ -16,11 +16,10 @@ class Module extends Model
     protected $fillable = [
         'course_id',
         'order',
-        'title_fr',
-        'title_ar',
-        'description_fr',
-        'description_ar',
-        'price_dzd',
+        'title_es',
+        'title_en',
+        'description_es',
+        'description_en',
         'price_eur',
     ];
 
@@ -28,7 +27,6 @@ class Module extends Model
     {
         return [
             'order' => 'integer',
-            'price_dzd' => 'integer',
             'price_eur' => 'integer',
         ];
     }
@@ -56,7 +54,7 @@ class Module extends Model
     public function partners(): BelongsToMany
     {
         return $this->belongsToMany(Partner::class)
-            ->withPivot(['order', 'note_fr', 'note_ar'])
+            ->withPivot(['order', 'note_es', 'note_en'])
             ->withTimestamps()
             ->orderBy('module_partner.order');
     }

@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * One of the 58 official Algerian wilayas. Reference data: rows are seeded
- * from the official découpage and never edited from the admin.
+ * One of the 52 Spanish provinces (Ceuta and Melilla included). Reference
+ * data: rows are seeded from the INE list and never edited from the admin.
  */
-class Wilaya extends Model
+class Province extends Model
 {
     use HasLocalizedAttributes;
 
     public $timestamps = false;
 
-    protected $fillable = ['code', 'name_fr', 'name_ar'];
+    protected $fillable = ['code', 'name_es', 'name_en'];
 
     protected function casts(): array
     {

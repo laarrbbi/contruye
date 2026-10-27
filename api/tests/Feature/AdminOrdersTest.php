@@ -229,7 +229,7 @@ it('returns 404 when the order has no receipt', function () {
 it('renders the payment mails in both locales', function () {
     $order = Order::factory()->paid()->create();
 
-    expect((new PaymentConfirmedMail($order))->render())->toContain('Ebni Academy');
+    expect((new PaymentConfirmedMail($order))->render())->toContain('Construye Academy');
 
     $order->user->update(['locale' => 'ar']);
     $order->refresh();

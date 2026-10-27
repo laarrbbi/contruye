@@ -31,7 +31,7 @@ it('round-trips seller settings and reports missing required fields', function (
         ->assertJsonPath('missing', Invoice::REQUIRED_SELLER_FIELDS);
 
     $this->actingAs($admin)->putJson('/api/admin/invoicing/settings', [
-        'business_name' => '[DÉMO] Ebni Academy',
+        'business_name' => '[DEMO] Construye Academy',
         'legal_form' => 'EURL',
     ])->assertOk()->assertJsonPath('complete', false);
 
@@ -41,7 +41,7 @@ it('round-trips seller settings and reports missing required fields', function (
         ->assertOk()
         ->assertJsonPath('complete', true)
         ->assertJsonPath('missing', [])
-        ->assertJsonPath('seller.business_name', '[DÉMO] Ebni Academy');
+        ->assertJsonPath('seller.business_name', '[DEMO] Construye Academy');
 });
 
 it('refuses to invoice unpaid orders, incomplete settings, and duplicates', function () {
@@ -89,14 +89,14 @@ it('computes the HT/TVA breakdown from TTC amounts, exactly', function () {
 
     // 3 lines at 12 000 TTC → unit HT = round(1 200 000 / 1.19) = 1 008 403 c.
     expect($data['lines'])->toHaveCount(3)
-        ->and($data['lines'][0]['unit_ht_c'])->toBe(1008403)
-        ->and($data['subtotal_ht_c'])->toBe(3 * 1008403)
+        ->and($data['lines'][0]['unit_net_c'])->toBe(1008403)
+        ->and($data['subtotal_net_c'])->toBe(3 * 1008403)
         // Remise TTC 3 600 → HT 302 521 c.
-        ->and($data['discount_ht_c'])->toBe(302521)
-        ->and($data['total_ht_c'])->toBe(3 * 1008403 - 302521)
+        ->and($data['discount_net_c'])->toBe(302521)
+        ->and($data['total_net_c'])->toBe(3 * 1008403 - 302521)
         // HT + TVA must equal the TTC actually paid, to the centime.
-        ->and($data['total_ht_c'] + $data['tva_c'])->toBe(3240000)
-        ->and($data['total_ttc_c'])->toBe(3240000)
+        ->and($data['total_net_c'] + $data['iva_c'])->toBe(3240000)
+        ->and($data['total_gross_c'])->toBe(3240000)
         ->and($data['number'])->toBe('FAC-'.now()->year.'-00001');
 });
 
@@ -142,9 +142,9 @@ it('bills full-access orders at the agreed price without fabricating a remise', 
         ->json('data');
 
     expect($data['lines'])->toHaveCount(1)
-        ->and($data['lines'][0]['unit_ttc_c'])->toBe(4500000)
-        ->and($data['discount_ht_c'])->toBe(0)
-        ->and($data['total_ht_c'] + $data['tva_c'])->toBe(4500000);
+        ->and($data['lines'][0]['unit_gross_c'])->toBe(4500000)
+        ->and($data['discount_net_c'])->toBe(0)
+        ->and($data['total_net_c'] + $data['iva_c'])->toBe(4500000);
 });
 
 it('corrects from the stored snapshot even when the order lines are gone', function () {
@@ -178,8 +178,8 @@ it('corrects from the stored snapshot even when the order lines are gone', funct
     expect($updated['lines'])->toHaveCount(3)
         ->and(array_column($updated['lines'], 'designation'))
         ->toBe(array_column($created['lines'], 'designation'))
-        ->and($updated['total_ht_c'])->toBe($created['total_ht_c'])
-        ->and($updated['tva_c'])->toBe($created['tva_c']);
+        ->and($updated['total_net_c'])->toBe($created['total_net_c'])
+        ->and($updated['iva_c'])->toBe($created['iva_c']);
 
     // And a fresh order in the same broken state refuses to invoice rather
     // than fabricate an "accès complet" line.
@@ -222,7 +222,7 @@ it('lets the admin correct an invoice without touching number or date', function
             'buyer_name' => 'SARL Promo-Bat',
             'buyer_rc' => '16/00-7654321 B 26',
             'buyer_nif' => '002616987654321',
-            'tva_rate' => 0,
+            'iva_rate' => 0,
         ]))
         ->assertOk()
         ->json('data');
@@ -231,8 +231,8 @@ it('lets the admin correct an invoice without touching number or date', function
         ->and($updated['issued_at'])->toBe($created['issued_at'])
         ->and($updated['buyer_name'])->toBe('SARL Promo-Bat')
         // 0 % TVA → HT equals TTC.
-        ->and($updated['tva_c'])->toBe(0)
-        ->and($updated['total_ht_c'])->toBe(3240000);
+        ->and($updated['iva_c'])->toBe(0)
+        ->and($updated['total_net_c'])->toBe(3240000);
 });
 
 it('serves the PDF to the buyer and the admin, and to nobody else', function () {
@@ -323,7 +323,7 @@ it('dates an invoice by the Algiers calendar, not UTC', function () {
         ->postJson("/api/admin/orders/{$order->id}/invoice", [
             'buyer_name' => 'Karim Benali',
             'buyer_address' => 'Alger',
-            'tva_rate' => 19,
+            'iva_rate' => 19,
         ])
         ->assertCreated()
         ->json('data');
@@ -347,14 +347,14 @@ it('freezes the seller block into the invoice at issuance', function () {
     // The émetteur block is COPIED onto the document, not referenced.
     $invoice = Invoice::query()->findOrFail($created['id']);
 
-    expect($invoice->seller['business_name'])->toBe('[DÉMO] Ebni Academy')
+    expect($invoice->seller['business_name'])->toBe('[DEMO] Construye Academy')
         ->and($invoice->seller['rc'])->toBe('16/00-1234567 B 26')
         ->and($invoice->seller['nif'])->toBe('002616123456789');
 
     // The company re-registers and moves. Correcting the settings must never
     // rewrite a numbered document that has already been handed to a buyer.
     $this->actingAs($admin)->putJson('/api/admin/invoicing/settings', [
-        'business_name' => 'Ebni Academy SPA',
+        'business_name' => 'Construye Academy SPA',
         'legal_form' => 'SPA',
         'capital' => '5 000 000 DA',
         'address' => 'Nouvelle adresse, Oran',
@@ -365,18 +365,18 @@ it('freezes the seller block into the invoice at issuance', function () {
     ])->assertOk()->assertJsonPath('seller.rc', '31/00-9999999 B 26');
 
     expect($invoice->fresh()->seller['rc'])->toBe('16/00-1234567 B 26')
-        ->and($invoice->fresh()->seller['business_name'])->toBe('[DÉMO] Ebni Academy');
+        ->and($invoice->fresh()->seller['business_name'])->toBe('[DEMO] Construye Academy');
 
     // And what is printed reads from that snapshot, not from the live settings.
     $html = view('pdf.invoice', [
         'invoice' => $invoice->fresh()->load(['order.user', 'order.course']),
-        'amountInWords' => FrenchNumberSpeller::amountInWords($invoice->total_ttc_c, $invoice->currency),
+        'amountInWords' => FrenchNumberSpeller::amountInWords($invoice->total_gross_c, $invoice->currency),
     ])->render();
 
     expect($html)->toContain('16/00-1234567 B 26')
-        ->and($html)->toContain('[DÉMO] Ebni Academy')
+        ->and($html)->toContain('[DEMO] Construye Academy')
         ->and($html)->not->toContain('31/00-9999999 B 26')
-        ->and($html)->not->toContain('Ebni Academy SPA');
+        ->and($html)->not->toContain('Construye Academy SPA');
 
     // A correction on the invoice must not quietly re-pull the new block either.
     $this->actingAs($admin)
@@ -529,7 +529,7 @@ it('audits the issuance and the correction of a numbered facture', function () {
     $this->actingAs($admin)
         ->putJson("/api/admin/invoices/{$created['id']}", invoicePayload([
             'buyer_name' => 'SARL Promo-Bat',
-            'tva_rate' => 9,
+            'iva_rate' => 9,
         ]))
         ->assertOk();
 
@@ -546,7 +546,7 @@ it('audits the issuance and the correction of a numbered facture', function () {
     expect($corrected)->not->toBeNull()
         ->and($corrected->meta['before']['buyer_name'])->toBe('Karim Benali')
         ->and($corrected->meta['after']['buyer_name'])->toBe('SARL Promo-Bat')
-        ->and((float) $corrected->meta['before']['tva_rate'])->toBe(19.0)
-        ->and((float) $corrected->meta['after']['tva_rate'])->toBe(9.0)
-        ->and($corrected->meta['before']['tva_c'])->not->toBe($corrected->meta['after']['tva_c']);
+        ->and((float) $corrected->meta['before']['iva_rate'])->toBe(19.0)
+        ->and((float) $corrected->meta['after']['iva_rate'])->toBe(9.0)
+        ->and($corrected->meta['before']['iva_c'])->not->toBe($corrected->meta['after']['iva_c']);
 });

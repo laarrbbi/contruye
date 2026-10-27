@@ -16,13 +16,13 @@ class WelcomeMail extends Mailable implements ShouldQueue
 
     public function __construct(public User $user)
     {
-        $this->locale($user->locale ?? 'fr');
+        $this->locale($user->locale ?? 'es');
     }
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Welcome to Ebni Academy', locale: $this->locale),
+            subject: __('Welcome to Construye Academy', locale: $this->locale),
         );
     }
 

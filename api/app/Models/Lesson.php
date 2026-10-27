@@ -15,15 +15,15 @@ class Lesson extends Model
     protected $fillable = [
         'module_id',
         'order',
-        'title_fr',
-        'title_ar',
+        'title_es',
+        'title_en',
         'bunny_video_id',
         'duration_seconds',
         'is_free_preview',
-        'content_fr',
-        'content_ar',
-        'key_points_fr',
-        'key_points_ar',
+        'content_es',
+        'content_en',
+        'key_points_es',
+        'key_points_en',
         'is_reflex_sheet',
         'attachments',
     ];
@@ -35,8 +35,8 @@ class Lesson extends Model
             'duration_seconds' => 'integer',
             'is_free_preview' => 'boolean',
             'attachments' => 'array',
-            'key_points_fr' => 'array',
-            'key_points_ar' => 'array',
+            'key_points_es' => 'array',
+            'key_points_en' => 'array',
             'is_reflex_sheet' => 'boolean',
         ];
     }

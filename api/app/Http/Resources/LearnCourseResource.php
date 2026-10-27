@@ -72,7 +72,6 @@ class LearnCourseResource extends JsonResource
                 'title' => $module->localizedTitle(),
                 'description' => $module->localizedDescription(),
                 'is_locked' => ! $this->isAccessible($module),
-                'price_dzd' => $module->price_dzd,
                 'price_eur' => $module->price_eur,
                 // Partner contact details are a paid perk: only listed for
                 // modules the student actually owns. Locked modules expose
@@ -89,10 +88,11 @@ class LearnCourseResource extends JsonResource
                             'phone' => $partner->phone,
                             'email' => $partner->email,
                             'is_national' => $partner->is_national,
-                            'wilayas' => $this->wilayas($partner),
-                            'note' => app()->getLocale() === 'ar'
-                                ? $partner->pivot->note_ar
-                                : $partner->pivot->note_fr,
+                            'provinces' => $this->provinces($partner),
+                            // English once written, the authored Spanish meanwhile.
+                            'note' => app()->getLocale() === 'en' && filled($partner->pivot->note_en)
+                                ? $partner->pivot->note_en
+                                : $partner->pivot->note_es,
                         ])->values()
                     : [],
                 'partners_count' => $module->partners->where('is_active', true)->count(),
@@ -189,7 +189,7 @@ class LearnCourseResource extends JsonResource
                         'email' => $partner->email,
                         'website' => $partner->website,
                         'is_national' => $partner->is_national,
-                        'wilayas' => $this->wilayas($partner),
+                        'provinces' => $this->provinces($partner),
                     ])->values()->all();
                 $payload['partners_count'] = $module->partners
                     ->where('is_active', true)
@@ -204,17 +204,17 @@ class LearnCourseResource extends JsonResource
     }
 
     /**
-     * The wilayas a partner covers, for the student-side filter. A national
+     * The provinces a partner covers, for the student-side filter. A national
      * partner sends an empty list — `is_national` is what makes it match.
      *
      * @return list<array{id: int, code: int, name: string}>
      */
-    private function wilayas(Partner $partner): array
+    private function provinces(Partner $partner): array
     {
-        return $partner->wilayas->map(fn ($wilaya) => [
-            'id' => $wilaya->id,
-            'code' => $wilaya->code,
-            'name' => $wilaya->localizedName(),
+        return $partner->provinces->map(fn ($province) => [
+            'id' => $province->id,
+            'code' => $province->code,
+            'name' => $province->localizedName(),
         ])->values()->all();
     }
 

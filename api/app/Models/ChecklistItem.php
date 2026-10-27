@@ -20,8 +20,8 @@ class ChecklistItem extends Model
     protected $fillable = [
         'module_id',
         'order',
-        'text_fr',
-        'text_ar',
+        'text_es',
+        'text_en',
     ];
 
     protected function casts(): array
@@ -42,7 +42,7 @@ class ChecklistItem extends Model
         return $this->belongsToMany(User::class, 'checklist_item_user')->withTimestamps();
     }
 
-    /** Falls back to French while the Arabic translation is pending. */
+    /** Falls back to Spanish while the English translation is pending. */
     public function localizedText(?string $locale = null): string
     {
         return (string) $this->localizedValue('text', $locale);

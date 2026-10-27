@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call([
-            WilayaSeeder::class,
+            ProvinceSeeder::class,
             AdminSeeder::class,
             CurriculumV2Seeder::class,
             ChecklistSeeder::class,

@@ -24,7 +24,7 @@ class InvoicePdf
 
     public static function filename(Invoice $invoice): string
     {
-        return 'facture-'.$invoice->number.'.pdf';
+        return 'factura-'.$invoice->number.'.pdf';
     }
 
     private static function make(Invoice $invoice)
@@ -33,8 +33,8 @@ class InvoicePdf
 
         return Pdf::loadView('pdf.invoice', [
             'invoice' => $invoice,
-            'amountInWords' => FrenchNumberSpeller::amountInWords(
-                $invoice->total_ttc_c,
+            'amountInWords' => SpanishNumberSpeller::amountInWords(
+                $invoice->total_gross_c,
                 $invoice->currency,
             ),
         ])->setPaper('a4');

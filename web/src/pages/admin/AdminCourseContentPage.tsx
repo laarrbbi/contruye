@@ -69,8 +69,8 @@ import { ModulePartnersDialog } from './ModulePartnersDialog'
 // ---------------------------------------------------------------------------
 
 interface ModuleFormValues {
-  title_fr: string
-  title_ar: string
+  title_es: string
+  title_en: string
 }
 
 function ModuleFormDialog({
@@ -95,11 +95,11 @@ function ModuleFormDialog({
     reset,
     setError,
     formState: { errors },
-  } = useForm<ModuleFormValues>({ defaultValues: { title_fr: '', title_ar: '' } })
+  } = useForm<ModuleFormValues>({ defaultValues: { title_es: '', title_en: '' } })
 
   useEffect(() => {
     if (open) {
-      reset({ title_fr: module?.title_fr ?? '', title_ar: module?.title_ar ?? '' })
+      reset({ title_es: module?.title_es ?? '', title_en: module?.title_en ?? '' })
       setGenericError(null)
     }
   }, [open, module, reset])
@@ -111,8 +111,8 @@ function ModuleFormDialog({
     // Empty means 'not translated yet', which is null — not an empty string
     // that would defeat the French fallback.
     const payload = {
-      title_fr: values.title_fr.trim(),
-      title_ar: values.title_ar.trim() || null,
+      title_es: values.title_es.trim(),
+      title_en: values.title_en.trim() || null,
     }
     const options = {
       onSuccess: () => onOpenChange(false),
@@ -136,14 +136,14 @@ function ModuleFormDialog({
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
           <div className="space-y-2">
-            <Label htmlFor="module-title-fr">{t('admin.courses.form.titleFr')}</Label>
-            <Input id="module-title-fr" dir="ltr" {...register('title_fr', { required: t('validation.required') })} />
-            {errors.title_fr && <p className="text-sm text-destructive">{errors.title_fr.message}</p>}
+            <Label htmlFor="module-title-fr">{t('admin.courses.form.titleEs')}</Label>
+            <Input id="module-title-fr" dir="ltr" {...register('title_es', { required: t('validation.required') })} />
+            {errors.title_es && <p className="text-sm text-destructive">{errors.title_es.message}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="module-title-ar">{t('admin.courses.form.titleAr')}</Label>
-            <Input id="module-title-ar" dir="rtl" {...register('title_ar')} />
-            {errors.title_ar && <p className="text-sm text-destructive">{errors.title_ar.message}</p>}
+            <Label htmlFor="module-title-ar">{t('admin.courses.form.titleEn')}</Label>
+            <Input id="module-title-ar" dir="rtl" {...register('title_en')} />
+            {errors.title_en && <p className="text-sm text-destructive">{errors.title_en.message}</p>}
           </div>
 
           {genericError && <p className="text-sm text-destructive">{genericError}</p>}
@@ -167,36 +167,36 @@ function ModuleFormDialog({
 // ---------------------------------------------------------------------------
 
 interface LessonFormValues {
-  title_fr: string
-  title_ar: string
+  title_es: string
+  title_en: string
   bunny_video_id: string
   duration_minutes: string
   is_free_preview: boolean
-  content_fr: string
-  content_ar: string
+  content_es: string
+  content_en: string
   attachments: { name: string; path: string }[]
 }
 
 const emptyLessonValues: LessonFormValues = {
-  title_fr: '',
-  title_ar: '',
+  title_es: '',
+  title_en: '',
   bunny_video_id: '',
   duration_minutes: '',
   is_free_preview: false,
-  content_fr: '',
-  content_ar: '',
+  content_es: '',
+  content_en: '',
   attachments: [],
 }
 
 function lessonToValues(lesson: AdminLesson): LessonFormValues {
   return {
-    title_fr: lesson.title_fr,
-    title_ar: lesson.title_ar,
+    title_es: lesson.title_es,
+    title_en: lesson.title_en,
     bunny_video_id: lesson.bunny_video_id ?? '',
     duration_minutes: lesson.duration_seconds ? String(Math.round(lesson.duration_seconds / 60)) : '',
     is_free_preview: lesson.is_free_preview,
-    content_fr: lesson.content_fr ?? '',
-    content_ar: lesson.content_ar ?? '',
+    content_es: lesson.content_es ?? '',
+    content_en: lesson.content_en ?? '',
     attachments: (lesson.attachments ?? []).map((a) => ({ name: a.name, path: a.path })),
   }
 }
@@ -248,14 +248,14 @@ function LessonFormDialog({
       .map((a) => ({ name: a.name.trim(), path: a.path.trim() }))
       .filter((a) => a.name !== '' || a.path !== '')
     const payload: LessonPayload = {
-      title_fr: values.title_fr.trim(),
-      title_ar: values.title_ar.trim() || null,
+      title_es: values.title_es.trim(),
+      title_en: values.title_en.trim() || null,
       bunny_video_id: values.bunny_video_id.trim() || null,
       duration_seconds:
         values.duration_minutes.trim() === '' ? null : Math.round(Number(values.duration_minutes) * 60),
       is_free_preview: values.is_free_preview,
-      content_fr: values.content_fr.trim() || null,
-      content_ar: values.content_ar.trim() || null,
+      content_es: values.content_es.trim() || null,
+      content_en: values.content_en.trim() || null,
       attachments: attachments.length > 0 ? attachments : null,
     }
     const options = {
@@ -280,14 +280,14 @@ function LessonFormDialog({
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
           <div className="space-y-2">
-            <Label htmlFor="lesson-title-fr">{t('admin.courses.form.titleFr')}</Label>
-            <Input id="lesson-title-fr" dir="ltr" {...register('title_fr', { required: t('validation.required') })} />
-            {errors.title_fr && <p className="text-sm text-destructive">{errors.title_fr.message}</p>}
+            <Label htmlFor="lesson-title-fr">{t('admin.courses.form.titleEs')}</Label>
+            <Input id="lesson-title-fr" dir="ltr" {...register('title_es', { required: t('validation.required') })} />
+            {errors.title_es && <p className="text-sm text-destructive">{errors.title_es.message}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="lesson-title-ar">{t('admin.courses.form.titleAr')}</Label>
-            <Input id="lesson-title-ar" dir="rtl" {...register('title_ar')} />
-            {errors.title_ar && <p className="text-sm text-destructive">{errors.title_ar.message}</p>}
+            <Label htmlFor="lesson-title-ar">{t('admin.courses.form.titleEn')}</Label>
+            <Input id="lesson-title-ar" dir="rtl" {...register('title_en')} />
+            {errors.title_en && <p className="text-sm text-destructive">{errors.title_en.message}</p>}
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -332,12 +332,12 @@ function LessonFormDialog({
           <div className="space-y-3">
             <p className="text-sm font-semibold">{t('admin.content.form.lessonContent')}</p>
             <div className="space-y-2">
-              <Label htmlFor="lesson-content-fr">{t('admin.content.form.contentFr')}</Label>
-              <Textarea id="lesson-content-fr" rows={4} {...register('content_fr')} />
+              <Label htmlFor="lesson-content-fr">{t('admin.content.form.contentEs')}</Label>
+              <Textarea id="lesson-content-fr" rows={4} {...register('content_es')} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lesson-content-ar">{t('admin.content.form.contentAr')}</Label>
-              <Textarea id="lesson-content-ar" rows={4} dir="rtl" {...register('content_ar')} />
+              <Label htmlFor="lesson-content-ar">{t('admin.content.form.contentEn')}</Label>
+              <Textarea id="lesson-content-ar" rows={4} dir="rtl" {...register('content_en')} />
             </div>
           </div>
 
@@ -414,7 +414,7 @@ function SortableLessonRow({
   const { t, i18n } = useTranslation()
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: lesson.id })
 
-  const title = (i18n.language === 'ar' && lesson.title_ar) || lesson.title_fr
+  const title = (i18n.language === 'ar' && lesson.title_en) || lesson.title_es
   const attachmentsCount = lesson.attachments?.length ?? 0
 
   return (
@@ -502,7 +502,7 @@ function SortableModuleCard({
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
   )
 
-  const title = (i18n.language === 'ar' && module.title_ar) || module.title_fr
+  const title = (i18n.language === 'ar' && module.title_en) || module.title_es
 
   // Admin-only editorial signal: how many passages of this module still await
   // a notary / jurist sign-off. Students never see this.
@@ -653,7 +653,7 @@ export function AdminCourseContentPage() {
     return <p className="py-12 text-center text-destructive">{t('common.error')}</p>
   }
 
-  const courseTitle = (i18n.language === 'ar' && course.title_ar) || course.title_fr
+  const courseTitle = (i18n.language === 'ar' && course.title_en) || course.title_es
 
   return (
     <div className="space-y-6">
@@ -742,7 +742,7 @@ export function AdminCourseContentPage() {
             <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
               {t('admin.content.deleteModuleConfirm', {
-                title: ((i18n.language === 'ar' && moduleToDelete?.title_ar) || moduleToDelete?.title_fr) ?? '',
+                title: ((i18n.language === 'ar' && moduleToDelete?.title_en) || moduleToDelete?.title_es) ?? '',
               })}
             </AlertDialogDescription>
           </AlertDialogHeader>
@@ -769,7 +769,7 @@ export function AdminCourseContentPage() {
             <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
               {t('admin.content.deleteLessonConfirm', {
-                title: ((i18n.language === 'ar' && lessonToDelete?.title_ar) || lessonToDelete?.title_fr) ?? '',
+                title: ((i18n.language === 'ar' && lessonToDelete?.title_en) || lessonToDelete?.title_es) ?? '',
               })}
             </AlertDialogDescription>
           </AlertDialogHeader>

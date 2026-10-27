@@ -27,7 +27,7 @@ class BenchmarkEndpoints extends Command
     {
         $runs = max(3, (int) $this->option('runs'));
 
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->first();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->first();
         if ($course === null) {
             $this->error('Seed the curriculum first.');
 
@@ -46,7 +46,7 @@ class BenchmarkEndpoints extends Command
         $cases = array_filter([
             ['name' => 'GET /courses (catalog, guest)', 'user' => null, 'uri' => '/api/courses'],
             ['name' => 'GET /courses/{slug} (landing, guest)', 'user' => null, 'uri' => "/api/courses/{$course->slug}"],
-            ['name' => 'GET /wilayas (reference, guest)', 'user' => null, 'uri' => '/api/wilayas'],
+            ['name' => 'GET /provinces (reference, guest)', 'user' => null, 'uri' => '/api/provinces'],
             $fullAccess ? ['name' => 'GET /learn (full access)', 'user' => $fullAccess, 'uri' => "/api/courses/{$course->slug}/learn"] : null,
             $partial ? ['name' => 'GET /learn (partial owner)', 'user' => $partial, 'uri' => "/api/courses/{$course->slug}/learn"] : null,
             $fullAccess ? ['name' => 'GET /checklists (full access)', 'user' => $fullAccess, 'uri' => "/api/courses/{$course->slug}/checklists"] : null,

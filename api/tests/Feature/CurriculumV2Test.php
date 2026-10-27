@@ -12,7 +12,7 @@ use Database\Seeders\CurriculumV2Seeder;
 
 beforeEach(function () {
     $this->seed(CurriculumV2Seeder::class);
-    $this->course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->firstOrFail();
+    $this->course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
 });
 
 it('publishes the 13 modules of the v2.0 programme in order', function () {
@@ -24,10 +24,10 @@ it('publishes the 13 modules of the v2.0 programme in order', function () {
         ->and($modules->pluck('order')->all())->toBe(range(1, 13));
 
     // Titles come straight from the source programme.
-    expect($modules[0]->title_fr)->toBe('Le métier, le marché et le business model')
-        ->and($modules[5]->title_fr)->toBe('Installer et ouvrir le chantier')
-        ->and($modules[9]->title_fr)->toBe('Raccordements aux réseaux et réception des VRD')
-        ->and($modules[12]->title_fr)->toBe('Gestion des risques et des crises');
+    expect($modules[0]->title_es)->toBe('Le métier, le marché et le business model')
+        ->and($modules[5]->title_es)->toBe('Installer et ouvrir le chantier')
+        ->and($modules[9]->title_es)->toBe('Raccordements aux réseaux et réception des VRD')
+        ->and($modules[12]->title_es)->toBe('Gestion des risques et des crises');
 
     // Every module carries teaching content.
     foreach ($modules as $module) {
@@ -38,7 +38,7 @@ it('publishes the 13 modules of the v2.0 programme in order', function () {
 it('keeps the five VSP payment tranches verbatim in module 8', function () {
     $module = $this->course->modules()->where('order', 8)->firstOrFail();
     $text = $module->lessons()->get()
-        ->flatMap(fn (Lesson $lesson) => $lesson->key_points_fr ?? [])
+        ->flatMap(fn (Lesson $lesson) => $lesson->key_points_es ?? [])
         ->implode(' ');
 
     // Décret 13-431 — 20/15/35/25/5. These figures must never be reworded.
@@ -60,9 +60,9 @@ it('never shows invented data in a partner slot', function () {
 
     // A slot describes the KIND of provider needed; it never carries contacts.
     foreach ($slots as $slot) {
-        expect($slot->body_fr)->not->toMatch('/\+?\d[\d\s.-]{8,}/')          // no phone numbers
-            ->and($slot->body_fr)->not->toMatch('/[\w.+-]+@[\w-]+\.[\w.]+/')  // no e-mail addresses
-            ->and($slot->body_fr)->not->toMatch('#https?://#');               // no URLs
+        expect($slot->body_es)->not->toMatch('/\+?\d[\d\s.-]{8,}/')          // no phone numbers
+            ->and($slot->body_es)->not->toMatch('/[\w.+-]+@[\w-]+\.[\w.]+/')  // no e-mail addresses
+            ->and($slot->body_es)->not->toMatch('#https?://#');               // no URLs
     }
 
     // In the player, a slot with no attached partner exposes an empty list —
@@ -86,14 +86,14 @@ it('never shows invented data in a partner slot', function () {
     }
 
     // Attach a real partner → the same slot now carries genuine contacts.
-    $notary = Partner::factory()->create(['category' => 'notaire', 'name' => 'Étude Réelle']);
+    $notary = Partner::factory()->create(['category' => 'notario', 'name' => 'Étude Réelle']);
     $module->partners()->attach($notary->id, ['order' => 1]);
 
     $refreshed = collect(
         $this->actingAs($student)->getJson("/api/courses/{$this->course->slug}/learn")->json('data.modules')
     )->firstWhere('id', $module->id);
 
-    $filled = collect($refreshed['blocks'])->firstWhere('partner_category', 'notaire');
+    $filled = collect($refreshed['blocks'])->firstWhere('partner_category', 'notario');
     expect($filled['partners'])->toHaveCount(1)
         ->and($filled['partners'][0]['name'])->toBe('Étude Réelle');
 });
@@ -128,18 +128,18 @@ it('flags the passages awaiting expert validation without deleting them', functi
         ->and(ContentValidation::flags('Le promoteur dépose son dossier.'))->toBeFalse();
 
     // The known flagged passages are still present in the curriculum.
-    $allPoints = Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_fr ?? [])->implode(' ');
+    $allPoints = Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_es ?? [])->implode(' ');
     expect($allPoints)->toContain('à vérifier auprès de la CASNOS')
         ->and($allPoints)->toContain('module à verrouiller avec le notaire');
 
-    expect(ContentValidation::pending(Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_fr ?? [])->all()))
+    expect(ContentValidation::pending(Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_es ?? [])->all()))
         ->not->toBeEmpty();
 });
 
 it('offers the module 13.2 reflex sheet as a downloadable PDF to owners only', function () {
     $lesson = Lesson::query()->where('is_reflex_sheet', true)->firstOrFail();
 
-    expect($lesson->title_fr)->toContain('Fiche réflexe')
+    expect($lesson->title_es)->toContain('Fiche réflexe')
         ->and($lesson->module->order)->toBe(13);
 
     $student = User::factory()->create();
@@ -164,11 +164,11 @@ it('leaves the Arabic translation pending but never blank on screen', function (
     $module = Module::query()->where('order', 1)->firstOrFail();
 
     // Keys exist and are empty — the human translation pass has not run.
-    expect($module->title_ar)->toBeNull();
+    expect($module->title_en)->toBeNull();
 
     // …but the UI still shows the French text instead of an empty string.
     app()->setLocale('ar');
-    expect($module->localizedTitle())->toBe($module->title_fr)
-        ->and($module->localizedDescription())->toBe($module->description_fr);
+    expect($module->localizedTitle())->toBe($module->title_es)
+        ->and($module->localizedDescription())->toBe($module->description_es);
     app()->setLocale('fr');
 });

@@ -1,4 +1,4 @@
-# Ebni Academy
+# Construye Academy
 
 Online course platform for an Algerian real-estate development (promotion immobilière) course,
 taught by a promoter with 16 years in the trade. Laravel 12 API + React 18 SPA, trilingual FR/AR/EN.
@@ -29,7 +29,7 @@ npm --prefix web run dev
 
 The default seed is dev-only: demo logins with the password `password`, invented paid orders,
 public coupon codes. It refuses to run in production; a live database is filled with
-`php artisan app:install` (wilayas, curriculum, one real admin).
+`php artisan app:install` (provinces, curriculum, one real admin).
 
 | Task | Command |
 |---|---|
@@ -60,5 +60,5 @@ makes that work lives in `docker/mysql-test/`.
 - Money is whole currency units on orders and courses, **centimes** on invoices. The suffix says
   which: `total_ttc_c` is centimes.
 - `config/locales.php` is the only list of supported locales. Nothing hardcodes one.
-- Demo data is prefixed `[DÉMO]`.
+- Demo data is prefixed `[DEMO]`.
 - Payment credentials are placeholders. Wiring the real ones is the last step of the project.

@@ -36,7 +36,7 @@ class BenchmarkSeeder extends Seeder
             throw new RuntimeException('BenchmarkSeeder writes invented data and refuses to run in production.');
         }
 
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->firstOrFail();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
         $modules = $course->modules()->orderBy('order')->get();
         $lessons = Lesson::query()->whereIn('module_id', $modules->pluck('id'))->orderBy('id')->get();
 
@@ -54,10 +54,10 @@ class BenchmarkSeeder extends Seeder
                 $users[] = [
                     'name' => "Bench Student {$i}",
                     'email' => "bench-{$i}@bench.invalid",
-                    'phone' => '05'.str_pad((string) $i, 8, '0', STR_PAD_LEFT),
+                    'phone' => '6'.str_pad((string) $i, 8, '0', STR_PAD_LEFT),
                     'password' => '$2y$04$abcdefghijklmnopqrstuv',
                     'role' => 'student',
-                    'locale' => ['fr', 'ar', 'en'][$i % 3],
+                    'locale' => ['es', 'en'][$i % 2],
                     'email_verified_at' => $now,
                     'created_at' => $now->copy()->subDays($i % 365),
                     'updated_at' => $now,
@@ -101,9 +101,9 @@ class BenchmarkSeeder extends Seeder
             $orders[] = [
                 'user_id' => $userId,
                 'course_id' => $course->id,
-                'amount' => $full ? 90000 : 36000,
-                'currency' => 'DZD',
-                'method' => ['chargily', 'manual_ccp', 'manual_baridimob', 'cash'][$index % 4],
+                'amount' => $full ? 490 : 147,
+                'currency' => 'EUR',
+                'method' => ['stripe', 'manual_transfer', 'manual_bizum', 'cash'][$index % 4],
                 'scope' => $full ? 'full' : 'modules',
                 'status' => $index % 11 === 0 ? 'awaiting_review' : 'paid',
                 'paid_at' => $index % 11 === 0 ? null : $created,

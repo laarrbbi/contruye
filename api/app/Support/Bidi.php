@@ -20,7 +20,7 @@ final class Bidi
 
     /**
      * Escaped text that keeps its own direction inside a sentence in the
-     * other one: a French title in an Arabic e-mail stays in reading order.
+     * other one: a right-to-left name in a Spanish e-mail stays in reading order.
      */
     public static function isolate(string $text): string
     {

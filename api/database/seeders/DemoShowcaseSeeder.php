@@ -8,7 +8,7 @@ use App\Models\Enrollment;
 use App\Models\Partner;
 use App\Models\Review;
 use App\Models\User;
-use App\Models\Wilaya;
+use App\Models\Province;
 use Illuminate\Database\Seeder;
 use RuntimeException;
 
@@ -21,7 +21,7 @@ use RuntimeException;
  * promotion, reviews, mixed access levels) so the app can be clicked through
  * end to end.
  *
- * Every fictional entity is prefixed "[DÉMO]" on purpose: these are NOT real
+ * Every fictional entity is prefixed "[DEMO]" on purpose: these are NOT real
  * providers, real customers or a real promotion, and must never be mistaken
  * for them if this data ever turns up outside a dev machine.
  */
@@ -33,7 +33,7 @@ class DemoShowcaseSeeder extends Seeder
             throw new RuntimeException('DemoShowcaseSeeder writes invented data and refuses to run in production.');
         }
 
-        $course = Course::query()->where('slug', 'promotion-immobiliere-algerie')->first();
+        $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->first();
 
         if ($course === null) {
             $this->command?->error('Seed the curriculum first (CurriculumV2Seeder).');
@@ -44,51 +44,51 @@ class DemoShowcaseSeeder extends Seeder
         $modules = $course->modules()->orderBy('order')->get()->keyBy('order');
 
         // --- Partners, matched to the partner_slot categories of the modules ---
-        // Coverage is expressed in wilaya codes so the demo exercises the real
-        // cases: a multi-wilaya provider, a single-wilaya one, and a national.
+        // Coverage is expressed in province codes so the demo exercises the real
+        // cases: a multi-province provider, a single-province one, and a national.
         $partners = [
-            ['name' => '[DÉMO] Étude Notariale Belkacem', 'category' => 'notaire', 'wilayas' => [16, 9, 42],
-                'phone' => '0550000001', 'email' => 'demo-notaire@example.dz', 'website' => 'https://example.dz',
-                'description_fr' => 'Actes de vente sur plan, EDD et livrets fonciers.',
-                'module' => 2, 'note' => 'Pour vos statuts et tous les actes du parcours'],
-            ['name' => '[DÉMO] Cabinet Compta DZ', 'category' => 'expert_comptable', 'wilayas' => [9],
-                'phone' => '0550000002', 'email' => 'demo-compta@example.dz', 'website' => null,
-                'description_fr' => 'Comptabilité, G50, IBS et fiscalité du promoteur.',
-                'module' => 12, 'note' => 'Co-animation du module fiscalité'],
-            ['name' => '[DÉMO] Banque Partenaire', 'category' => 'banque', 'is_national' => true, 'wilayas' => [],
-                'phone' => '0550000003', 'email' => 'demo-banque@example.dz', 'website' => null,
-                'description_fr' => 'Crédit acquéreur VSP et crédit promoteur, réseau national.',
-                'module' => 8, 'note' => 'Conventions de financement acquéreurs'],
-            ['name' => '[DÉMO] Consultant Agrément', 'category' => 'consultant_agrement', 'wilayas' => [31, 13],
-                'phone' => '0550000004', 'email' => 'demo-agrement@example.dz', 'website' => null,
-                'description_fr' => "Montage des dossiers d'agrément en wilaya.",
-                'module' => 3, 'note' => 'Montage du dossier wilaya de bout en bout'],
+            ['name' => '[DEMO] Notaría Colaboradora', 'category' => 'notario', 'provinces' => [28, 45, 19],
+                'phone' => '600000001', 'email' => 'demo-notaria@example.es', 'website' => 'https://example.es',
+                'description_es' => 'Compraventa de suelo, obra nueva, división horizontal y escrituras de venta.',
+                'module' => 1, 'note' => 'Para la compra del solar y todas las escrituras del recorrido'],
+            ['name' => '[DEMO] Asesoría Fiscal Promotores', 'category' => 'asesor_fiscal', 'provinces' => [28],
+                'phone' => '600000002', 'email' => 'demo-asesoria@example.es', 'website' => null,
+                'description_es' => 'IVA, AJD, impuesto sobre sociedades y cierre de la sociedad promotora.',
+                'module' => 12, 'note' => 'Coanima la lección de liquidación'],
+            ['name' => '[DEMO] Banco Colaborador', 'category' => 'banco', 'is_national' => true, 'provinces' => [],
+                'phone' => '600000003', 'email' => 'demo-banco@example.es', 'website' => null,
+                'description_es' => 'Préstamo promotor, avales de cantidades a cuenta e hipotecas para compradores, red nacional.',
+                'module' => 5, 'note' => 'Préstamo promotor y avales'],
+            ['name' => '[DEMO] Correduría de Seguros de Construcción', 'category' => 'aseguradora', 'provinces' => [8, 46],
+                'phone' => '600000004', 'email' => 'demo-seguros@example.es', 'website' => null,
+                'description_es' => 'Seguro decenal, todo riesgo construcción y caución de cantidades a cuenta.',
+                'module' => 7, 'note' => 'Decenal y OCT desde el proyecto'],
         ];
 
-        $wilayaIds = Wilaya::query()->pluck('id', 'code');
+        $provinceIds = Province::query()->pluck('id', 'code');
 
         foreach ($partners as $data) {
             $partner = Partner::query()->updateOrCreate(
                 ['name' => $data['name']],
-                collect($data)->except(['module', 'note', 'wilayas'])->all()
+                collect($data)->except(['module', 'note', 'provinces'])->all()
                     + ['is_active' => true, 'is_national' => false],
             );
 
-            $partner->wilayas()->sync(
-                collect($data['wilayas'])->map(fn (int $code) => $wilayaIds[$code] ?? null)->filter()->all(),
+            $partner->provinces()->sync(
+                collect($data['provinces'])->map(fn (int $code) => $provinceIds[$code] ?? null)->filter()->all(),
             );
 
             $module = $modules->get($data['module']);
             if ($module !== null && ! $module->partners()->where('partners.id', $partner->id)->exists()) {
-                $module->partners()->attach($partner->id, ['order' => 1, 'note_fr' => $data['note']]);
+                $module->partners()->attach($partner->id, ['order' => 1, 'note_es' => $data['note']]);
             }
         }
 
         // --- A running promotion, so the countdown has something to count to ---
         Campaign::query()->firstOrCreate(
-            ['course_id' => $course->id, 'label_fr' => '[DÉMO] Offre de lancement'],
+            ['course_id' => $course->id, 'label_es' => '[DEMO] Oferta de lanzamiento'],
             [
-                'label_ar' => '[DÉMO] عرض الإطلاق',
+                'label_en' => '[DEMO] Launch offer',
                 'percent_off' => 20,
                 'starts_at' => now()->subDay(),
                 'ends_at' => now()->addDays(3)->addHours(6),
@@ -97,16 +97,16 @@ class DemoShowcaseSeeder extends Seeder
         );
 
         // --- Mixed access levels, to exercise the paywall in every state ---
-        $amel = User::query()->where('email', 'amel@example.dz')->first();
-        if ($amel !== null) {
-            // Partial owner: modules 1-3 only → locked-module upsell, partner
-            // slots filled on 2 & 3 but not on 8/12.
-            Enrollment::query()->where('user_id', $amel->id)->delete();
+        $lucia = User::query()->where('email', 'lucia@example.es')->first();
+        if ($lucia !== null) {
+            // Partial owner: phases 1-3 only → locked-module upsell, partner
+            // slot filled on 1 but not on 5/7/12.
+            Enrollment::query()->where('user_id', $lucia->id)->delete();
             foreach ([1, 2, 3] as $order) {
                 $module = $modules->get($order);
                 if ($module !== null) {
                     Enrollment::query()->create([
-                        'user_id' => $amel->id,
+                        'user_id' => $lucia->id,
                         'course_id' => $course->id,
                         'module_id' => $module->id,
                     ]);
@@ -116,8 +116,8 @@ class DemoShowcaseSeeder extends Seeder
 
         // --- Reviews, only from students who really own the course ---
         $reviews = [
-            ['email' => 'karim@example.dz', 'rating' => 5, 'body' => "[DÉMO] Le circuit administratif est enfin clair : agrément, FGCMPI, permis. J'ai gagné des mois."],
-            ['email' => 'lina@example.dz', 'rating' => 4, 'body' => '[DÉMO] Très concret sur la VSP et les délais réels. Le module chantier vaut à lui seul la formation.'],
+            ['email' => 'javier@example.es', 'rating' => 5, 'body' => '[DEMO] Por fin tengo claro el recorrido completo: solar, licencia, préstamo promotor y decenal. Me ha ahorrado meses.'],
+            ['email' => 'marta@example.es', 'rating' => 4, 'body' => '[DEMO] Muy concreto en la venta sobre plano y la garantía de las cantidades a cuenta. La fase de control de obra vale por sí sola el curso.'],
         ];
 
         foreach ($reviews as $data) {
@@ -140,6 +140,6 @@ class DemoShowcaseSeeder extends Seeder
             );
         }
 
-        $this->command?->info('Demo showcase data seeded (all entities prefixed "[DÉMO]").');
+        $this->command?->info('Demo showcase data seeded (all entities prefixed "[DEMO]").');
     }
 }

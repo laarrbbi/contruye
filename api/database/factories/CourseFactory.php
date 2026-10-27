@@ -17,12 +17,11 @@ class CourseFactory extends Factory
 
         return [
             'slug' => Str::slug($title),
-            'title_fr' => $title,
-            'title_ar' => 'تكوين '.fake()->unique()->word(),
-            'description_fr' => fake()->paragraph(),
-            'description_ar' => 'وصف التكوين بالعربية.',
-            'price_dzd' => fake()->numberBetween(15000, 90000),
-            'price_eur' => null,
+            'title_es' => $title,
+            'title_en' => 'تكوين '.fake()->unique()->word(),
+            'description_es' => fake()->paragraph(),
+            'description_en' => 'وصف التكوين بالعربية.',
+            'price_eur' => fake()->numberBetween(15000, 90000),
             'status' => 'published',
             'cover_image' => null,
         ];

@@ -21,7 +21,7 @@ it('builds download links with the scheme the browser actually used', function (
     // which is why 172.16.0.0/12 is the range that is trusted).
     $data = $this->actingAs($student)
         ->withServerVariables(['REMOTE_ADDR' => '172.20.0.7'])
-        ->withHeaders(['X-Forwarded-Proto' => 'https', 'X-Forwarded-Host' => 'ebni.dz'])
+        ->withHeaders(['X-Forwarded-Proto' => 'https', 'X-Forwarded-Host' => 'construye.es'])
         ->getJson('/api/orders')
         ->assertOk()
         ->json('data.0');

@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user = User::create([
             ...$request->validated(),
             'role' => 'student',
-            'locale' => $request->validated('locale', 'fr'),
+            'locale' => $request->validated('locale', 'es'),
         ]);
 
         Auth::login($user);
@@ -58,7 +58,7 @@ class AuthController extends Controller
 
     public function me(Request $request): UserResource
     {
-        return UserResource::make($request->user()->load('wilaya'));
+        return UserResource::make($request->user()->load('province'));
     }
 
     /**
@@ -68,13 +68,13 @@ class AuthController extends Controller
     public function updateMe(Request $request): UserResource
     {
         $data = $request->validate([
-            'wilaya_id' => ['sometimes', 'nullable', 'integer', 'exists:wilayas,id'],
+            'province_id' => ['sometimes', 'nullable', 'integer', 'exists:provinces,id'],
             'locale' => ['sometimes', 'string', Rule::in(config('locales.supported'))],
         ]);
 
         $user = $request->user();
         $user->update($data);
 
-        return UserResource::make($user->load('wilaya'));
+        return UserResource::make($user->load('province'));
     }
 }

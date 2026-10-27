@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { Building2, Globe, Lightbulb, Mail, MapPin, Phone, Scale } from 'lucide-react'
 import type { LearnContentBlock, LearnPartner } from '@/api/learn'
 import { useUser } from '@/api/auth'
-import { joinWilayaNames } from '@/api/wilayas'
+import { joinProvinceNames } from '@/api/provinces'
 import { Button } from '@/components/ui/button'
-import { PartnerWilayaFilter } from './PartnerWilayaFilter'
-import { partnerCoversWilaya } from './partnerFilter'
+import { PartnerProvinceFilter } from './PartnerProvinceFilter'
+import { partnerCoversProvince } from './partnerFilter'
 
 /**
  * Renders the tagged blocks of the programme:
@@ -66,18 +66,18 @@ export function ContentBlocks({ blocks }: { blocks: LearnContentBlock[] }) {
 }
 
 /**
- * A partner slot with its wilaya filter. Filtering is local to the block but
- * seeded from the learner's saved wilaya, so the whole lesson lands
+ * A partner slot with its province filter. Filtering is local to the block but
+ * seeded from the learner's saved province, so the whole lesson lands
  * pre-filtered to where they actually build.
  */
 function PartnerSlot({ block }: { block: LearnContentBlock }) {
   const { t } = useTranslation()
   const { data: user } = useUser()
-  const [override, setOverride] = useState<{ wilayaId: number | null } | null>(null)
+  const [override, setOverride] = useState<{ provinceId: number | null } | null>(null)
 
   const partners = block.partners ?? []
-  const wilayaId = override ? override.wilayaId : (user?.wilaya_id ?? null)
-  const visible = partners.filter((partner) => partnerCoversWilaya(partner, wilayaId))
+  const provinceId = override ? override.provinceId : (user?.province_id ?? null)
+  const visible = partners.filter((partner) => partnerCoversProvince(partner, provinceId))
   const hidden = partners.length - visible.length
   // The API sends the count even when it withholds the contacts, so a locked
   // module can say what it holds instead of pretending it holds nothing.
@@ -105,9 +105,9 @@ function PartnerSlot({ block }: { block: LearnContentBlock }) {
               never becomes a dead end. */}
           {(partners.length > 1 || hidden > 0 || override !== null) && (
             <div className="mt-3">
-              <PartnerWilayaFilter
-                value={wilayaId}
-                onChange={(next) => setOverride({ wilayaId: next })}
+              <PartnerProvinceFilter
+                value={provinceId}
+                onChange={(next) => setOverride({ provinceId: next })}
               />
             </div>
           )}
@@ -115,12 +115,12 @@ function PartnerSlot({ block }: { block: LearnContentBlock }) {
           {visible.length === 0 ? (
             // Never silently empty: say why, and offer the way back.
             <div className="mt-3 rounded-md border border-dashed px-3 py-2 text-sm text-muted-foreground">
-              <p>{t('partners.noneInWilaya')}</p>
+              <p>{t('partners.noneInProvince')}</p>
               <Button
                 variant="link"
                 size="sm"
                 className="h-auto p-0"
-                onClick={() => setOverride({ wilayaId: null })}
+                onClick={() => setOverride({ provinceId: null })}
               >
                 {t('partners.showAll', { count: partners.length })}
               </Button>
@@ -138,7 +138,7 @@ function PartnerSlot({ block }: { block: LearnContentBlock }) {
               variant="link"
               size="sm"
               className="mt-1 h-auto p-0 text-xs"
-              onClick={() => setOverride({ wilayaId: null })}
+              onClick={() => setOverride({ provinceId: null })}
             >
               {t('partners.hiddenByFilter', { count: hidden })}
             </Button>
@@ -160,7 +160,7 @@ function PartnerRow({ partner }: { partner: LearnPartner }) {
           <MapPin className="h-3 w-3 shrink-0" />
           {partner.is_national
             ? t('partners.national')
-            : joinWilayaNames(partner.wilayas, i18n.language) || t('partners.noWilaya')}
+            : joinProvinceNames(partner.provinces, i18n.language) || t('partners.noProvince')}
         </span>
       </div>
       <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">

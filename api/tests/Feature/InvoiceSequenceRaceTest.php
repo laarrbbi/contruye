@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\DB;
 function raceSellerSettings(): void
 {
     Setting::setValue('invoicing.seller', [
-        'business_name' => '[DÉMO] Ebni Academy',
+        'business_name' => '[DEMO] Construye Academy',
         'legal_form' => 'EURL',
         'capital' => '1 000 000 DA',
         'address' => '12 rue des Frères Boulemdaïs, Alger',
@@ -31,7 +31,7 @@ function raceSellerSettings(): void
         'nis' => '002616123456780',
         'ai' => '16123456789',
         'phone' => '0550 00 00 00',
-        'email' => 'contact@example.dz',
+        'email' => 'contact@example.es',
         'bank_details' => '',
     ]);
 }
@@ -55,7 +55,7 @@ function racePayload(): array
     return [
         'buyer_name' => 'Karim Benali',
         'buyer_address' => 'Cité 200 logements, Bab Ezzouar, Alger',
-        'tva_rate' => 19,
+        'iva_rate' => 19,
     ];
 }
 
@@ -76,12 +76,12 @@ function stealInvoiceNumber(Invoice $pending, Order $rival): void
         'buyer_address' => 'Alger',
         'seller' => json_encode([]),
         'lines' => json_encode([]),
-        'tva_rate' => 19,
-        'subtotal_ht_c' => 0,
-        'discount_ht_c' => 0,
-        'total_ht_c' => 0,
-        'tva_c' => 0,
-        'total_ttc_c' => 0,
+        'iva_rate' => 19,
+        'subtotal_net_c' => 0,
+        'discount_net_c' => 0,
+        'total_net_c' => 0,
+        'iva_c' => 0,
+        'total_gross_c' => 0,
         'currency' => 'DZD',
         'payment_method_label' => 'Virement CCP',
         'created_at' => now(),

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { AnimatedCounter } from '@/components/AnimatedCounter'
-import { EbniMark } from '@/components/brand/EbniMark'
+import { ConstruyeMark } from '@/components/brand/ConstruyeMark'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { cn } from '@/lib/utils'
 
@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
  * placeholder at this size, while "Un centre commercial" reads as a building.
  *
  * Each tile takes an optional background photograph. Until the real project
- * photos arrive, tiles fall back to a tinted gradient with the Ebni mark as a
+ * photos arrive, tiles fall back to a tinted gradient with the Construye mark as a
  * watermark: no stock imagery is used, so nothing implies a project that is
  * not his.
  */
@@ -99,7 +99,7 @@ function Tile({ tile, locale, index }: { tile: TrackRecordTile; locale: string; 
               className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/[0.07] to-transparent"
               aria-hidden="true"
             />
-            <EbniMark
+            <ConstruyeMark
               className="pointer-events-none absolute -bottom-6 -end-6 -z-10 h-40 w-40 text-white/[0.05]"
             />
           </>

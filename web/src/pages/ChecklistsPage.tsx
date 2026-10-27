@@ -47,7 +47,7 @@ export function ChecklistsPage() {
         <Lock className="h-10 w-10 text-muted-foreground" />
         <p className="text-muted-foreground">{notEnrolled ? t('player.notEnrolled') : t('common.error')}</p>
         <Button asChild variant="outline">
-          <Link to={notEnrolled ? `/courses/${slug}` : '/dashboard'}>
+          <Link to={notEnrolled ? `/cursos/${slug}` : '/dashboard'}>
             {notEnrolled ? t('player.goToCourse') : t('common.back')}
           </Link>
         </Button>

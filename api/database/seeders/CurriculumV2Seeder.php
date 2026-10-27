@@ -10,15 +10,16 @@ use App\Support\ContentValidation;
 use Illuminate\Database\Seeder;
 
 /**
- * Installs the v2.0 curriculum (13 modules), replacing the v1 program.
+ * Installs the 12-phase curriculum.
  *
  * Rules honoured here:
  * - Legal figures are copied verbatim from the source and never reworded.
- * - Arabic fields stay empty: the AR translation is a separate human pass,
- *   and the localized* accessors fall back to French meanwhile.
- * - Passages containing "à vérifier / à confirmer / à verrouiller / à valider"
- *   are flagged `needs_validation` so admins see an "A VALIDER" badge and
- *   they land in the generated content-review report. They are never removed.
+ * - English fields stay empty: the EN translation is a separate human pass,
+ *   and the localized* accessors fall back to Spanish meanwhile.
+ * - Passages containing "pendiente de validar / verificar / confirmar" (or
+ *   "por validar…") are flagged `needs_validation` so admins see an
+ *   "A VALIDAR" badge and they land in the generated content-review report.
+ *   They are never removed.
  * - partner_slot blocks carry only the KIND of provider needed. No contact is
  *   ever invented; real contacts come from the `partners` table.
  */
@@ -29,30 +30,29 @@ class CurriculumV2Seeder extends Seeder
         $data = require database_path('seeders/data/curriculum_v2.php');
 
         $course = Course::query()->firstOrCreate(
-            ['slug' => 'promotion-immobiliere-algerie'],
+            ['slug' => 'promocion-inmobiliaria-espana'],
             [
-                'title_fr' => $data['course']['title_fr'],
-                // The course TITLE is unchanged from v1, so its existing human
-                // translation still applies. The new v2 description is NOT
-                // translated here — that is a separate human pass.
-                'title_ar' => $data['course']['title_ar'],
-                'price_dzd' => 90000,
-                'price_eur' => 300,
+                'title_es' => $data['course']['title_es'],
+                // No English yet: a human translation is a separate pass.
+                'title_en' => null,
+                // Whole euros, IVA included. 12 phases à la carte cost
+                // 12 × 49 = 588 €, so full access is the best deal (−17 %).
+                'price_eur' => 490,
                 'module_discount_tiers' => PricingService::DEFAULT_TIERS,
                 'status' => 'published',
             ],
         );
 
         $course->update([
-            'title_fr' => $data['course']['title_fr'],
-            'description_fr' => $data['course']['description_fr'],
+            'title_es' => $data['course']['title_es'],
+            'description_es' => $data['course']['description_es'],
             'status' => 'published',
         ]);
 
-        // The v2.0 curriculum replaces v1 wholesale. Enrollments reference
-        // modules, so only re-seed when the structure is not already v2.
+        // Enrollments reference modules, so only (re)seed when the structure
+        // is not already the one in the data file.
         if ($course->modules()->count() === count($data['modules'])) {
-            $this->command?->info('Curriculum v2.0 already installed — skipping.');
+            $this->command?->info('Curriculum already installed — skipping.');
 
             return;
         }
@@ -62,12 +62,11 @@ class CurriculumV2Seeder extends Seeder
         foreach ($data['modules'] as $order => $moduleData) {
             $module = $course->modules()->create([
                 'order' => $order,
-                'title_fr' => $moduleData['title'],
-                'title_ar' => null, // AR translation pending (human pass)
-                'description_fr' => $moduleData['description'] ?? null,
-                'description_ar' => null,
-                'price_dzd' => 12000,
-                'price_eur' => 40,
+                'title_es' => $moduleData['title'],
+                'title_en' => null, // EN translation pending (human pass)
+                'description_es' => $moduleData['description'] ?? null,
+                'description_en' => null,
+                'price_eur' => 49,
             ]);
 
             $this->seedBlocks($moduleData['blocks'] ?? [], moduleId: $module->id);
@@ -75,12 +74,12 @@ class CurriculumV2Seeder extends Seeder
             foreach ($moduleData['lessons'] as $lessonIndex => $lessonData) {
                 $lesson = $module->lessons()->create([
                     'order' => $lessonIndex + 1,
-                    'title_fr' => $lessonData['title'],
-                    'title_ar' => null,
-                    'content_fr' => $lessonData['content'] ?? null,
-                    'content_ar' => null,
-                    'key_points_fr' => $lessonData['key_points'] ?? null,
-                    'key_points_ar' => null,
+                    'title_es' => $lessonData['title'],
+                    'title_en' => null,
+                    'content_es' => $lessonData['content'] ?? null,
+                    'content_en' => null,
+                    'key_points_es' => $lessonData['key_points'] ?? null,
+                    'key_points_en' => null,
                     // First lesson of the course stays a free preview so the
                     // landing page can still offer a taste.
                     'is_free_preview' => $order === 1 && $lessonIndex === 0,
@@ -92,7 +91,7 @@ class CurriculumV2Seeder extends Seeder
             }
         }
 
-        $this->command?->info('Curriculum v2.0 installed: '.count($data['modules']).' modules.');
+        $this->command?->info('Curriculum installed: '.count($data['modules']).' modules.');
     }
 
     /**
@@ -106,8 +105,8 @@ class CurriculumV2Seeder extends Seeder
                 'lesson_id' => $lessonId,
                 'type' => $block['type'],
                 'order' => $index + 1,
-                'body_fr' => $block['body'],
-                'body_ar' => null,
+                'body_es' => $block['body'],
+                'body_en' => null,
                 'partner_category' => $block['partner_category'] ?? null,
                 'needs_validation' => ContentValidation::flags($block['body']),
             ]);

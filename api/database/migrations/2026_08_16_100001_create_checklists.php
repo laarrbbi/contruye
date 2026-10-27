@@ -20,8 +20,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('module_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('order')->default(0);
-            $table->string('text_fr', 500);
-            $table->string('text_ar', 500)->nullable();
+            $table->string('text_es', 500);
+            $table->string('text_en', 500)->nullable();
             $table->timestamps();
 
             $table->index(['module_id', 'order']);

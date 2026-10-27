@@ -25,8 +25,8 @@ it('returns 404 for a draft course by slug', function () {
 it('returns the arabic title when Accept-Language is ar', function () {
     Course::factory()->create([
         'slug' => 'bilingual-course',
-        'title_fr' => 'Titre français',
-        'title_ar' => 'عنوان عربي',
+        'title_es' => 'Titre français',
+        'title_en' => 'عنوان عربي',
     ]);
 
     $this->getJson('/api/courses', ['Accept-Language' => 'ar'])
@@ -55,8 +55,8 @@ it('computes lessons_count and total_duration_seconds across modules', function 
 
 it('shows a published course with ordered modules, lessons and is_enrolled false for guests', function () {
     $course = Course::factory()->create(['slug' => 'detail-course']);
-    $module = Module::factory()->for($course)->create(['order' => 1, 'title_fr' => 'Module un']);
-    Lesson::factory()->for($module)->freePreview()->create(['order' => 1, 'title_fr' => 'Leçon une']);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'title_es' => 'Module un']);
+    Lesson::factory()->for($module)->freePreview()->create(['order' => 1, 'title_es' => 'Leçon une']);
 
     $this->getJson('/api/courses/detail-course')
         ->assertOk()

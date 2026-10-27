@@ -2,7 +2,6 @@ import { lazy, type ReactNode } from 'react'
 import { buyingPath } from '@/lib/buyingPath'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DirectionProvider } from '@radix-ui/react-direction'
-import { useTranslation } from 'react-i18next'
 import { Layout } from '@/components/layout/Layout'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
@@ -45,20 +44,17 @@ const AdminCampaignsPage = lazy(() => import('@/pages/admin/AdminCampaignsPage')
 const AdminPartnersPage = lazy(() => import('@/pages/admin/AdminPartnersPage').then((m) => ({ default: m.AdminPartnersPage })))
 
 const PUBLIC_LOCALES: { prefix: string; locale: Locale }[] = [
-  { prefix: '/', locale: 'fr' },
-  { prefix: '/ar', locale: 'ar' },
+  { prefix: '/', locale: 'es' },
   { prefix: '/en', locale: 'en' },
 ]
 
 /**
  * Keeps Radix primitives (Tabs, DropdownMenu, Select…) in sync with the
- * active language: their internal keyboard/alignment logic follows this
- * dir, not the <html> attribute. Re-renders on i18n.changeLanguage.
+ * document direction: their internal keyboard/alignment logic follows this
+ * dir, not the <html> attribute. Both interface languages are left to right.
  */
 function AppDirectionProvider({ children }: { children: ReactNode }) {
-  const { i18n } = useTranslation()
-
-  return <DirectionProvider dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>{children}</DirectionProvider>
+  return <DirectionProvider dir="ltr">{children}</DirectionProvider>
 }
 
 export default function App() {
@@ -69,19 +65,19 @@ export default function App() {
           <PageTitleProvider>
           <Routes>
             <Route element={<Layout />}>
-              {/* The pages search engines index, once per language: French at
-                  the root, Arabic under /ar, English under /en
-                  (src/i18n/paths.ts). The sales page IS the home page;
-                  /courses/:slug still resolves to it. The server renders these
+              {/* The pages search engines index, once per language: Spanish
+                  at the root, English under /en (src/i18n/paths.ts). The
+                  sales page IS the home page; /cursos/:slug still resolves
+                  to it. The server renders these
                   same URLs with their own head (api/routes/seo.php). */}
               {PUBLIC_LOCALES.map(({ prefix, locale }) => (
                 <Route key={locale} path={prefix} element={<PublicLocale locale={locale} />}>
                   <Route index element={<CourseLandingPage />} />
-                  <Route path="formations" element={<HomePage />} />
-                  <Route path="courses/:slug" element={<CourseLandingPage />} />
+                  <Route path="cursos" element={<HomePage />} />
+                  <Route path="cursos/:slug" element={<CourseLandingPage />} />
                 </Route>
               ))}
-              {/* The app's own screens. deploy/nginx/ebni.conf lists them too:
+              {/* The app's own screens. deploy/nginx/construye.conf lists them too:
                   served with 200, anything unknown answers 404. */}
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />

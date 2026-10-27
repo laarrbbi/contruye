@@ -1,5 +1,5 @@
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import type { WilayaRef } from './wilayas'
+import type { ProvinceRef } from './provinces'
 import { api, API_URL } from './client'
 
 // ---------------------------------------------------------------------------
@@ -11,10 +11,10 @@ export type CourseStatus = 'draft' | 'published'
 export interface AdminCourse {
   id: number
   slug: string
-  title_fr: string
-  title_ar: string
-  description_fr: string | null
-  description_ar: string | null
+  title_es: string
+  title_en: string
+  description_es: string | null
+  description_en: string | null
   price_dzd: number
   price_eur: number | null
   status: CourseStatus
@@ -33,13 +33,13 @@ export interface AdminAttachment {
 export interface AdminLesson {
   id: number
   order: number
-  title_fr: string
-  title_ar: string
+  title_es: string
+  title_en: string
   bunny_video_id: string | null
   duration_seconds: number | null
   is_free_preview: boolean
-  content_fr: string | null
-  content_ar: string | null
+  content_es: string | null
+  content_en: string | null
   is_reflex_sheet?: boolean
   /** Each bullet with its admin-only "A VALIDER" state. */
   key_points?: { text: string; needs_validation: boolean }[]
@@ -49,13 +49,13 @@ export interface AdminLesson {
 export interface AdminModule {
   id: number
   order: number
-  title_fr: string
-  title_ar: string
-  description_fr?: string | null
+  title_es: string
+  title_en: string
+  description_es?: string | null
   /** Admin-only: the module description still needs an expert sign-off. */
   description_needs_validation?: boolean
   /** Tagged content blocks with their admin-only validation state. */
-  blocks?: { id: number; type: string; body_fr: string | null; needs_validation: boolean }[]
+  blocks?: { id: number; type: string; body_es: string | null; needs_validation: boolean }[]
   /** Partners attached to this module, in display order. */
   partners?: ModulePartnerRow[]
   lessons: AdminLesson[]
@@ -69,31 +69,31 @@ export interface AdminCourseDetail extends Omit<AdminCourse, 'modules_count' | '
 }
 
 export interface CoursePayload {
-  title_fr: string
-  title_ar: string
+  title_es: string
+  title_en: string
   slug?: string | null
-  description_fr?: string | null
-  description_ar?: string | null
+  description_es?: string | null
+  description_en?: string | null
   price_dzd: number
   price_eur?: number | null
   status: CourseStatus
 }
 
 export interface ModulePayload {
-  title_fr: string
+  title_es: string
   // Null while the Arabic translation is pending: the API falls back to
   // French, and an empty string would defeat that.
-  title_ar: string | null
+  title_en: string | null
 }
 
 export interface LessonPayload {
-  title_fr: string
-  title_ar: string | null
+  title_es: string
+  title_en: string | null
   bunny_video_id?: string | null
   duration_seconds?: number | null
   is_free_preview?: boolean
-  content_fr?: string | null
-  content_ar?: string | null
+  content_es?: string | null
+  content_en?: string | null
   attachments?: AdminAttachment[] | null
 }
 
@@ -589,9 +589,9 @@ export interface InvoicingSettings {
 export interface AdminInvoiceLine {
   designation: string
   quantity: number
-  unit_ttc_c: number
-  unit_ht_c: number
-  total_ht_c: number
+  unit_gross_c: number
+  unit_net_c: number
+  total_net_c: number
 }
 
 export interface AdminInvoice {
@@ -612,12 +612,12 @@ export interface AdminInvoice {
   buyer_nis: string | null
   buyer_ai: string | null
   lines: AdminInvoiceLine[]
-  tva_rate: number
-  subtotal_ht_c: number
-  discount_ht_c: number
-  total_ht_c: number
-  tva_c: number
-  total_ttc_c: number
+  iva_rate: number
+  subtotal_net_c: number
+  discount_net_c: number
+  total_net_c: number
+  iva_c: number
+  total_gross_c: number
   currency: Currency
   payment_method_label: string
   payment_date: string | null
@@ -633,7 +633,7 @@ export interface InvoicePayload {
   buyer_nif?: string | null
   buyer_nis?: string | null
   buyer_ai?: string | null
-  tva_rate: number
+  iva_rate: number
   notes?: string | null
 }
 
@@ -876,9 +876,9 @@ export function useDeleteReview() {
 export interface AdminCampaign {
   id: number
   course: { id: number; title: string }
-  label_fr: string
+  label_es: string
   /** Null until someone writes it; Arabic visitors read the French name. */
-  label_ar: string | null
+  label_en: string | null
   percent_off: number
   starts_at: string | null
   ends_at: string
@@ -890,8 +890,8 @@ export interface AdminCampaign {
 
 export interface CampaignPayload {
   course_id: number
-  label_fr: string
-  label_ar: string | null
+  label_es: string
+  label_en: string | null
   percent_off: number
   starts_at?: string | null
   ends_at: string
@@ -956,13 +956,15 @@ export function useAdminStudent(id: number | null) {
 // ---------------------------------------------------------------------------
 
 export const PARTNER_CATEGORIES = [
-  'notaire',
-  'expert_comptable',
-  'banque',
-  'bureau_etudes',
+  'notario',
+  'asesor_fiscal',
+  'banco',
+  'arquitectura',
+  'aseguradora',
+  'constructora',
+  'abogado',
   'marketing',
-  'consultant_agrement',
-  'autre',
+  'otro',
 ] as const
 
 export type PartnerCategory = (typeof PARTNER_CATEGORIES)[number]
@@ -971,14 +973,14 @@ export interface AdminPartner {
   id: number
   name: string
   category: PartnerCategory
-  description_fr: string | null
-  description_ar: string | null
+  description_es: string | null
+  description_en: string | null
   website: string | null
   phone: string | null
   email: string | null
-  /** Covers every wilaya (bank, insurer, online service) — `wilayas` is then empty. */
+  /** Covers every province (bank, insurer, online service) — `provinces` is then empty. */
   is_national: boolean
-  wilayas: WilayaRef[]
+  provinces: ProvinceRef[]
   is_active: boolean
   modules_count: number
   created_at: string
@@ -987,31 +989,31 @@ export interface AdminPartner {
 export interface PartnerPayload {
   name: string
   category: PartnerCategory
-  description_fr?: string | null
-  description_ar?: string | null
+  description_es?: string | null
+  description_en?: string | null
   website?: string | null
   phone?: string | null
   email?: string | null
   is_national?: boolean
-  wilaya_ids?: number[]
+  province_ids?: number[]
   is_active?: boolean
 }
 
 export interface AdminPartnerList {
   data: AdminPartner[]
-  /** Only sent when a wilaya filter is active: the categories with nobody there. */
+  /** Only sent when a province filter is active: the categories with nobody there. */
   meta: { gaps: PartnerCategory[] } | null
 }
 
-export function useAdminPartners(search?: string, wilayaId?: number) {
+export function useAdminPartners(search?: string, provinceId?: number) {
   return useQuery<AdminPartnerList>({
-    queryKey: ['admin', 'partners', search ?? '', wilayaId ?? 0],
+    queryKey: ['admin', 'partners', search ?? '', provinceId ?? 0],
     placeholderData: keepPreviousData,
     queryFn: async () => {
       const { data } = await api.get('/admin/partners', {
         params: {
           ...(search ? { search } : {}),
-          ...(wilayaId ? { wilaya_id: wilayaId } : {}),
+          ...(provinceId ? { province_id: provinceId } : {}),
         },
       })
       return data as AdminPartnerList
@@ -1056,14 +1058,14 @@ export interface ModulePartnerRow {
   name: string
   category: PartnerCategory
   order: number
-  note_fr: string | null
-  note_ar: string | null
+  note_es: string | null
+  note_en: string | null
 }
 
 export interface ModulePartnerInput {
   partner_id: number
-  note_fr?: string | null
-  note_ar?: string | null
+  note_es?: string | null
+  note_en?: string | null
 }
 
 /** Replace a module's partner list, in display order. */

@@ -29,8 +29,8 @@ class ContentBlock extends Model
         'lesson_id',
         'type',
         'order',
-        'body_fr',
-        'body_ar',
+        'body_es',
+        'body_en',
         'partner_category',
         'needs_validation',
     ];
@@ -53,7 +53,7 @@ class ContentBlock extends Model
         return $this->belongsTo(Lesson::class);
     }
 
-    /** Falls back to French while the Arabic translation is pending. */
+    /** Falls back to Spanish while the English translation is pending. */
     public function localizedBody(?string $locale = null): ?string
     {
         return $this->localizedValue('body', $locale);

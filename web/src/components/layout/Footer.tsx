@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useUser } from '@/api/auth'
 import { hasContactChannel, useBusinessProfile } from '@/api/business'
-import { EbniLogo } from '@/components/brand/EbniMark'
+import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { ContactOptions } from '@/components/ContactOptions'
 import { IsolatedValue } from '@/components/IsolatedValue'
 import { LOCALES, type Locale } from '@/i18n'
@@ -30,7 +30,7 @@ export function Footer() {
   const locale = (LOCALES.find((l) => l === i18n.language) ?? 'fr') as Locale
   const links = [
     { to: localizedPath('/', locale), label: t('nav.home') },
-    { to: localizedPath('/formations', locale), label: t('footer.courses') },
+    { to: localizedPath('/cursos', locale), label: t('footer.courses') },
     ...(user
       ? [{ to: '/dashboard', label: t('nav.myCourses') }]
       : [
@@ -60,7 +60,7 @@ export function Footer() {
           <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <Link to={localizedPath('/', locale)} className="inline-flex">
               <span className="sr-only">{t('app.name')}</span>
-              <EbniLogo />
+              <ConstruyeLogo />
             </Link>
             <p className="max-w-sm leading-relaxed text-muted-foreground">{t('app.metaDescription')}</p>
           </div>

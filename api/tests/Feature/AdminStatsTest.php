@@ -61,12 +61,12 @@ it('computes the average completion rate across enrollments', function () {
 
 it('lists and searches students with enrollment details', function () {
     $admin = User::factory()->admin()->create();
-    $target = User::factory()->create(['name' => 'Yacine Recherché', 'email' => 'yacine.r@example.dz']);
+    $target = User::factory()->create(['name' => 'Yacine Recherché', 'email' => 'yacine.r@example.es']);
     User::factory()->count(3)->create();
 
     $list = $this->actingAs($admin)->getJson('/api/admin/students?search=Recherché')->assertOk();
     expect($list->json('data'))->toHaveCount(1)
-        ->and($list->json('data.0.email'))->toBe('yacine.r@example.dz');
+        ->and($list->json('data.0.email'))->toBe('yacine.r@example.es');
 
     $course = Course::factory()->create();
     $module = Module::factory()->create(['course_id' => $course->id]);
@@ -82,7 +82,7 @@ it('lists and searches students with enrollment details', function () {
 
 it('exports filtered orders as csv', function () {
     $admin = User::factory()->admin()->create();
-    $course = Course::factory()->create(['title_fr' => 'Formation CSV']);
+    $course = Course::factory()->create(['title_es' => 'Formation CSV']);
     $buyer = User::factory()->create(['name' => 'Client CSV']);
 
     Order::factory()->paid()->create(['user_id' => $buyer->id, 'course_id' => $course->id, 'method' => 'chargily']);
@@ -104,7 +104,7 @@ it('queues the welcome email on registration', function () {
 
     $this->postJson('/api/register', [
         'name' => 'Nouvelle Étudiante',
-        'email' => 'nouvelle@example.dz',
+        'email' => 'nouvelle@example.es',
         'phone' => '0551112233',
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -112,6 +112,6 @@ it('queues the welcome email on registration', function () {
     ])->assertCreated();
 
     Mail::assertQueued(WelcomeMail::class, function ($mail) {
-        return $mail->user->email === 'nouvelle@example.dz' && $mail->locale === 'ar';
+        return $mail->user->email === 'nouvelle@example.es' && $mail->locale === 'ar';
     });
 });

@@ -10,13 +10,13 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         User::query()->firstOrCreate(
-            ['email' => 'admin@example.dz'],
+            ['email' => 'admin@example.es'],
             [
-                'name' => 'Admin Ebni',
-                'phone' => '0550000000',
+                'name' => 'Admin Construye',
+                'phone' => '600000000',
                 'password' => 'password',
                 'role' => 'admin',
-                'locale' => 'fr',
+                'locale' => 'es',
                 'email_verified_at' => now(),
             ],
         );

@@ -45,7 +45,6 @@ class AdminOrderResource extends JsonResource
                     'unit_price' => $orderModule->unit_price,
                 ])->values()),
             'status' => $this->status,
-            'chargily_checkout_id' => $this->chargily_checkout_id,
             'stripe_session_id' => $this->stripe_session_id,
             'admin_note' => $this->admin_note,
             'has_receipt' => $this->receipt_path !== null,

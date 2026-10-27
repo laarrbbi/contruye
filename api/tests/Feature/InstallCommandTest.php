@@ -6,7 +6,7 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\Order;
 use App\Models\User;
-use App\Models\Wilaya;
+use App\Models\Province;
 use Database\Seeders\BenchmarkSeeder;
 use Database\Seeders\DatabaseSeeder;
 use Database\Seeders\DemoShowcaseSeeder;
@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Hash;
 
 /**
  * `app:install` is how an empty production database gets its content. The
- * default seeder is not an option there: it creates admin@example.dz with the
+ * default seeder is not an option there: it creates admin@example.es with the
  * password "password", invented students with paid orders, and coupons whose
  * codes are in the repository.
  */
-function runInstall(string $email = 'owner@ebni-academy.dz', string $password = 'un-vrai-mot-de-passe', ?string $confirmation = null)
+function runInstall(string $email = 'owner@construye-academy.es', string $password = 'un-vrai-mot-de-passe', ?string $confirmation = null)
 {
     return test()->artisan('app:install', ['--admin-email' => $email, '--admin-name' => 'Propriétaire'])
         ->expectsQuestion('Admin password (12 characters or more)', $password)
@@ -28,13 +28,13 @@ function runInstall(string $email = 'owner@ebni-academy.dz', string $password = 
 it('installs the real content and one real admin, and nothing invented', function () {
     runInstall()->assertExitCode(0);
 
-    expect(Wilaya::query()->count())->toBe(58)
-        ->and(Course::query()->where('slug', 'promotion-immobiliere-algerie')->value('status'))->toBe('published')
+    expect(Province::query()->count())->toBe(58)
+        ->and(Course::query()->where('slug', 'promocion-inmobiliaria-espana')->value('status'))->toBe('published')
         ->and(Module::query()->count())->toBe(13)
         ->and(ChecklistItem::query()->count())->toBeGreaterThan(0);
 
     $admin = User::query()->sole();
-    expect($admin->email)->toBe('owner@ebni-academy.dz')
+    expect($admin->email)->toBe('owner@construye-academy.es')
         ->and($admin->role)->toBe('admin')
         ->and(Hash::check('un-vrai-mot-de-passe', $admin->password))->toBeTrue();
 
@@ -50,24 +50,24 @@ it('refuses the demo domain, a short password and a mistyped confirmation', func
 
     expect(User::query()->count())->toBe(0);
 })->with([
-    'demo address' => ['admin@example.dz', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passe'],
-    'short password' => ['owner@ebni-academy.dz', 'court', 'court'],
-    'the seeded password' => ['owner@ebni-academy.dz', 'password', 'password'],
-    'mistyped confirmation' => ['owner@ebni-academy.dz', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passx'],
+    'demo address' => ['admin@example.es', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passe'],
+    'short password' => ['owner@construye-academy.es', 'court', 'court'],
+    'the seeded password' => ['owner@construye-academy.es', 'password', 'password'],
+    'mistyped confirmation' => ['owner@construye-academy.es', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passx'],
 ]);
 
 it('leaves an installed course and an existing admin alone when run again', function () {
     runInstall()->assertExitCode(0);
 
     // The admin edited the course after the first install.
-    Course::query()->where('slug', 'promotion-immobiliere-algerie')->update(['title_fr' => 'Titre corrigé par l\'admin']);
+    Course::query()->where('slug', 'promocion-inmobiliaria-espana')->update(['title_es' => 'Titre corrigé par l\'admin']);
 
-    $this->artisan('app:install', ['--admin-email' => 'someone-else@ebni-academy.dz'])
+    $this->artisan('app:install', ['--admin-email' => 'someone-else@construye-academy.es'])
         ->expectsOutputToContain('already installed')
         ->expectsOutputToContain('an admin already exists')
         ->assertExitCode(0);
 
-    expect(Course::query()->value('title_fr'))->toBe('Titre corrigé par l\'admin')
+    expect(Course::query()->value('title_es'))->toBe('Titre corrigé par l\'admin')
         ->and(User::query()->count())->toBe(1)
         ->and(Module::query()->count())->toBe(13);
 });

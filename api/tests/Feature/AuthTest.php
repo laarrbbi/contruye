@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 it('registers a new student and logs them in', function () {
     $response = $this->postJson('/api/register', [
         'name' => 'Yacine Benali',
-        'email' => 'yacine@example.dz',
+        'email' => 'yacine@example.es',
         'phone' => '0550 12 34 56',
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -14,18 +14,18 @@ it('registers a new student and logs them in', function () {
     ]);
 
     $response->assertCreated()
-        ->assertJsonPath('data.email', 'yacine@example.dz')
+        ->assertJsonPath('data.email', 'yacine@example.es')
         ->assertJsonPath('data.role', 'student')
         ->assertJsonPath('data.phone', '0550123456');
 
     $this->assertAuthenticated();
-    $this->assertDatabaseHas('users', ['email' => 'yacine@example.dz', 'role' => 'student']);
+    $this->assertDatabaseHas('users', ['email' => 'yacine@example.es', 'role' => 'student']);
 });
 
 it('rejects registration with an invalid algerian phone number', function () {
     $response = $this->postJson('/api/register', [
         'name' => 'Test',
-        'email' => 'test@example.dz',
+        'email' => 'test@example.es',
         'phone' => '0450123456',
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -77,7 +77,7 @@ it('registers a buyer who lives abroad with an international number', function (
 it('refuses a phone number that is neither an Algerian mobile nor international', function (string $typed) {
     $this->postJson('/api/register', [
         'name' => 'Test',
-        'email' => 'test@example.dz',
+        'email' => 'test@example.es',
         'phone' => $typed,
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -87,7 +87,7 @@ it('refuses a phone number that is neither an Algerian mobile nor international'
         // the country code instead of guessing.
         ->assertJsonValidationErrors(['phone' => __('Invalid number: Algerian mobile (05, 06, 07) or international number starting with +')]);
 
-    $this->assertDatabaseMissing('users', ['email' => 'test@example.dz']);
+    $this->assertDatabaseMissing('users', ['email' => 'test@example.es']);
 })->with([
     'too short' => ['+12'],
     'seven digits' => ['+677 1234'],
@@ -155,7 +155,7 @@ it('forces the student role however the client fills the registration form', fun
     // otherwise /register is a self-service admin factory.
     $this->postJson('/api/register', [
         'name' => 'Faux Admin',
-        'email' => 'faux@example.dz',
+        'email' => 'faux@example.es',
         'phone' => '0551234567',
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -164,7 +164,7 @@ it('forces the student role however the client fills the registration form', fun
         ->assertCreated()
         ->assertJsonPath('data.role', 'student');
 
-    expect(User::firstWhere('email', 'faux@example.dz')->isAdmin())->toBeFalse();
+    expect(User::firstWhere('email', 'faux@example.es')->isAdmin())->toBeFalse();
 
     $this->assertDatabaseMissing('users', ['role' => 'admin']);
 });
@@ -178,7 +178,7 @@ it('answers a wrong password and an unknown address with the very same 422', fun
     ])->assertUnprocessable();
 
     $unknownEmail = $this->postJson('/api/login', [
-        'email' => 'ghost@example.dz',
+        'email' => 'ghost@example.es',
         'password' => 'not-the-password',
     ])->assertUnprocessable();
 
@@ -216,7 +216,7 @@ it('throttles the auth routes at ten attempts a minute per IP', function () {
     $this->postJson('/api/forgot-password', ['email' => $user->email])->assertStatus(429);
     $this->postJson('/api/register', [
         'name' => 'Trop Tard',
-        'email' => 'trop.tard@example.dz',
+        'email' => 'trop.tard@example.es',
         'phone' => '0551234567',
         'password' => 'password123',
         'password_confirmation' => 'password123',
@@ -257,30 +257,30 @@ it('ends the session on logout: guard dropped, session flushed, CSRF token rotat
 });
 
 it('ignores an email or password change submitted to the profile endpoint', function () {
-    $user = User::factory()->create(['email' => 'amina@example.dz', 'password' => 'password123']);
+    $user = User::factory()->create(['email' => 'amina@example.es', 'password' => 'password123']);
 
     // A legitimate field travels in the same payload, so a green assertion
     // below cannot come from the request having been rejected wholesale.
     $this->actingAs($user)->patchJson('/api/me', [
         'locale' => 'ar',
-        'email' => 'attaquant@example.dz',
+        'email' => 'attaquant@example.es',
         'password' => 'attacker-password',
     ])
         ->assertOk()
         ->assertJsonPath('data.locale', 'ar')
-        ->assertJsonPath('data.email', 'amina@example.dz');
+        ->assertJsonPath('data.email', 'amina@example.es');
 
     $fresh = $user->fresh();
 
     // Widening updateMe's validate() to accept either of these is an account
     // takeover primitive: the address is where the reset link goes, and the
     // password is the credential itself.
-    expect($fresh->email)->toBe('amina@example.dz')
+    expect($fresh->email)->toBe('amina@example.es')
         ->and($fresh->locale)->toBe('ar')
         ->and(Hash::check('password123', $fresh->password))->toBeTrue()
         ->and(Hash::check('attacker-password', $fresh->password))->toBeFalse();
 
-    $this->assertDatabaseMissing('users', ['email' => 'attaquant@example.dz']);
+    $this->assertDatabaseMissing('users', ['email' => 'attaquant@example.es']);
 });
 
 it('requires a password long enough to be worth having', function () {
@@ -288,7 +288,7 @@ it('requires a password long enough to be worth having', function () {
     // reset can never drift apart.
     $this->postJson('/api/register', [
         'name' => 'Trop Court',
-        'email' => 'court@example.dz',
+        'email' => 'court@example.es',
         'phone' => '0551234567',
         'password' => 'court123',
         'password_confirmation' => 'court123',
@@ -296,7 +296,7 @@ it('requires a password long enough to be worth having', function () {
 
     $this->postJson('/api/register', [
         'name' => 'Assez Long',
-        'email' => 'long@example.dz',
+        'email' => 'long@example.es',
         'phone' => '0551234568',
         'password' => 'une-phrase-de-passe',
         'password_confirmation' => 'une-phrase-de-passe',

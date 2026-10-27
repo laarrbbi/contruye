@@ -110,8 +110,8 @@ return [
         /**
          * Whether to enable font subsetting or not.
          */
-        // Ebni: embed only the glyphs a document uses. Whole DejaVu Sans +
-        // Bold made every one-page facture ~880 KB, attached to every e-mail.
+        // Construye: embed only the glyphs a document uses. Whole DejaVu Sans +
+        // Bold made every one-page factura ~880 KB, attached to every e-mail.
         'enable_font_subsetting' => true,
 
         /**
@@ -247,7 +247,7 @@ return [
          *
          * @var bool
          */
-        // Ebni: factures and fiches réflexe never need script inside the PDF.
+        // Construye: facturas and fichas de actuación never need script inside the PDF.
         'enable_javascript' => false,
 
         /**

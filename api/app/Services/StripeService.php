@@ -12,7 +12,8 @@ use Stripe\StripeClient;
 use Stripe\Webhook;
 
 /**
- * Stripe hosted Checkout for diaspora payments (EUR).
+ * Stripe hosted Checkout: card payments in euros (Visa, Mastercard, and the
+ * wallets Stripe offers on the card form).
  */
 class StripeService
 {

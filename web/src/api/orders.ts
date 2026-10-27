@@ -11,11 +11,11 @@ import type { Campaign, CourseDetail, DiscountTier, PublicModule } from './cours
 
 export type { DiscountTier }
 
-export type CheckoutMethod = 'chargily' | 'stripe' | 'manual_ccp' | 'manual_baridimob'
+export type CheckoutMethod = 'stripe' | 'manual_transfer' | 'manual_bizum'
 export type OrderMethod = CheckoutMethod | 'cash'
 export type OrderScope = 'full' | 'modules'
 export type OrderStatus = 'pending' | 'awaiting_review' | 'paid' | 'failed' | 'refunded'
-export type Currency = 'DZD' | 'EUR'
+export type Currency = 'EUR'
 
 /**
  * GET /courses/{slug} already carries per-module prices, discount tiers and
@@ -82,12 +82,14 @@ export function useQuote(payload: QuotePayload | null) {
 }
 
 export interface PaymentInstructions {
-  method: 'manual_ccp' | 'manual_baridimob'
+  method: 'manual_transfer' | 'manual_bizum'
   amount: number
   currency: Currency
-  ccp_number: string | null
-  ccp_name: string | null
-  baridimob_rip: string | null
+  /** The concept to write on the transfer or the Bizum, e.g. "CONSTRUYE-42". */
+  reference: string
+  iban: string | null
+  holder: string | null
+  bizum_phone: string | null
 }
 
 export interface OrderModuleLine {

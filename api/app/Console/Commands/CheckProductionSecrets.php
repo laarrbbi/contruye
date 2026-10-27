@@ -15,7 +15,7 @@ use Illuminate\Console\Command;
  * command is how a deploy finds out BEFORE going live.
  *
  * A gateway the owner has not signed up for yet is switched off explicitly
- * (CHARGILY_ENABLED=false / STRIPE_ENABLED=false). Blank keys are not "off".
+ * (STRIPE_ENABLED=false). Blank keys are not "off".
  *
  *   php artisan app:check-secrets            # report
  *   php artisan app:check-secrets --strict   # non-zero exit for CI / deploy
@@ -31,11 +31,6 @@ class CheckProductionSecrets extends Command
         'services.bunny.token_key' => 'Lesson videos cannot be signed — playback returns 503.',
         'services.bunny.library_id' => 'Lesson videos cannot be resolved — playback returns 503.',
         'app.key' => 'Sessions and encrypted cookies are not secure.',
-    ];
-
-    private const CHARGILY = [
-        'services.chargily.api_key' => 'Card checkouts cannot be created.',
-        'services.chargily.secret' => 'Chargily webhook signatures cannot be verified — the endpoint refuses every call.',
     ];
 
     private const STRIPE = [
@@ -81,7 +76,6 @@ class CheckProductionSecrets extends Command
     private function blankSecrets(): array
     {
         $required = self::ALWAYS
-            + (PaymentMethods::chargilyEnabled() ? self::CHARGILY : [])
             + (PaymentMethods::stripeEnabled() ? self::STRIPE : []);
 
         $blank = [];
@@ -128,19 +122,7 @@ class CheckProductionSecrets extends Command
         }
 
         if (PaymentMethods::available() === []) {
-            $problems[] = ['Checkout', 'No payment method is configured: nobody can buy. Fill the CCP details at least.'];
-        }
-
-        if (PaymentMethods::chargilyEnabled()) {
-            if (str_contains((string) config('services.chargily.base_url'), '/test')) {
-                $problems[] = ['CHARGILY_BASE_URL', 'Points at the Chargily TEST endpoint: buyers would "pay" with test cards and nothing would be collected.'];
-            }
-
-            foreach (['services.chargily.api_key' => 'CHARGILY_API_KEY', 'services.chargily.secret' => 'CHARGILY_SECRET'] as $key => $name) {
-                if (str_starts_with((string) config($key), 'test_')) {
-                    $problems[] = [$name, 'Is a test-mode key.'];
-                }
-            }
+            $problems[] = ['Checkout', 'No payment method is configured: nobody can buy. Fill the bank transfer details at least.'];
         }
 
         if (PaymentMethods::stripeEnabled()) {

@@ -51,10 +51,10 @@
         "createTitle": "New course",
         "editTitle": "Edit course",
         "subtitle": "Fill in the details in both languages.",
-        "titleFr": "Title (French)",
-        "titleAr": "Title (Arabic)",
-        "descriptionFr": "Description (French)",
-        "descriptionAr": "Description (Arabic)",
+        "titleEs": "Title (French)",
+        "titleEn": "Title (Arabic)",
+        "descriptionEs": "Description (French)",
+        "descriptionEn": "Description (Arabic)",
         "slug": "Slug",
         "slugHint": "Leave empty to generate it automatically",
         "priceDzd": "Price (DZD)",
@@ -89,8 +89,8 @@
         "addAttachment": "Add",
         "noAttachments": "No attachments.",
         "lessonContent": "Written lesson content",
-        "contentFr": "Content (FR)",
-        "contentAr": "Content (AR)"
+        "contentEs": "Content (FR)",
+        "contentEn": "Content (AR)"
       },
       "partners": {
         "manage": "Partners",
@@ -100,8 +100,8 @@
         "choose": "Choose…",
         "noneAvailable": "No partner available",
         "empty": "No partner attached to this module.",
-        "noteFr": "Displayed note (FR)",
-        "noteAr": "Displayed note (AR)",
+        "noteEs": "Displayed note (FR)",
+        "noteEn": "Displayed note (AR)",
         "moveUp": "Move up",
         "moveDown": "Move down",
         "count_one": "{{count}} partner",
@@ -281,8 +281,8 @@
         "editTitle": "Edit promotion",
         "subtitle": "A time-limited discount, applied automatically to the price.",
         "course": "Course",
-        "labelFr": "Name (FR)",
-        "labelAr": "Name (AR) — optional",
+        "labelEs": "Name (FR)",
+        "labelEn": "Name (AR) — optional",
         "percentOff": "Discount (%)",
         "percentRange": "Between 1 and 90 %",
         "startsAt": "Start (optional)",
@@ -298,14 +298,14 @@
       "new": "New partner",
       "empty": "No partners yet.",
       "inactive": "Disabled",
-      "searchPlaceholder": "Search by name or wilaya…",
+      "searchPlaceholder": "Search by name or province…",
       "intro": "Providers recommended to students in the relevant modules. Their contact details are only visible for purchased modules.",
       "deleteConfirm": "Delete the partner “{{name}}”?",
       "table": {
         "name": "Name",
         "category": "Category",
         "contact": "Contact",
-        "wilaya": "Wilayas covered",
+        "province": "Provinces covered",
         "modules": "Modules"
       },
       "form": {
@@ -314,28 +314,28 @@
         "subtitle": "A verified provider, then linked to the relevant modules.",
         "name": "Name",
         "category": "Category",
-        "descriptionFr": "Description (FR)",
-        "descriptionAr": "Description (AR)",
+        "descriptionEs": "Description (FR)",
+        "descriptionEn": "Description (AR)",
         "phone": "Phone",
         "email": "Email",
         "website": "Website",
-        "wilaya": "Wilaya",
+        "province": "Province",
         "isActive": "Active"
       },
-      "filterWilaya": "Filter by wilaya",
-      "allWilayas": "All wilayas",
-      "gapsTitle": "No active partner in this wilaya for these trades:",
+      "filterProvince": "Filter by province",
+      "allProvinces": "All provinces",
+      "gapsTitle": "No active partner in this province for these trades:",
       "coverage": {
-        "title": "Wilayas covered",
-        "help": "Tick every wilaya where this partner actually operates.",
+        "title": "Provinces covered",
+        "help": "Tick every province where this partner actually operates.",
         "national": "Nationwide coverage",
-        "nationalHint": "This partner will appear for every learner, whatever their wilaya.",
-        "selected_one": "{{count}} wilaya selected",
-        "selected_other": "{{count}} wilayas selected",
+        "nationalHint": "This partner will appear for every learner, whatever their province.",
+        "selected_one": "{{count}} province selected",
+        "selected_other": "{{count}} provinces selected",
         "clear": "Clear all",
-        "searchPlaceholder": "Search for a wilaya (name or number)…",
-        "noMatch": "No wilaya matches.",
-        "none": "No wilaya"
+        "searchPlaceholder": "Search for a province (name or number)…",
+        "noMatch": "No province matches.",
+        "none": "No province"
       }
     },
     "invoices": {
@@ -389,7 +389,7 @@
         "buyer_nif": "NIF",
         "buyer_nis": "NIS",
         "buyer_ai": "AI",
-        "tvaRate": "VAT rate",
+        "ivaRate": "VAT rate",
         "tva_19": "19 % (standard rate)",
         "tva_9": "9 % (reduced rate)",
         "tva_0": "0 % (exempt)",
@@ -563,9 +563,9 @@
     "fallbackToManual": "Pay by {{method}} instead"
   },
   "app": {
-    "name": "Ebni Academy",
+    "name": "Construye Academy",
     "tagline": "Algeria's reference course in real-estate development",
-    "title": "Ebni Academy — Real-Estate Development Course in Algeria",
+    "title": "Construye Academy — Real-Estate Development Course in Algeria",
     "metaDescription": "Online course: real-estate development in Algeria, from setting up the company to handing over the keys."
   },
   "nav": {
@@ -630,7 +630,7 @@
     "retry": "Try again"
   },
   "footer": {
-    "copyright": "© {{year}} Ebni Academy",
+    "copyright": "© {{year}} Construye Academy",
     "explore": "Explore",
     "courses": "Courses",
     "contact": "Contact us",
@@ -645,7 +645,7 @@
     "expertTip": "Expert's golden tip",
     "partnerNeeded": "Partner",
     "partnerSoon": "Partner contact — coming soon",
-    "noCommission": "Ebni takes no commission on these introductions."
+    "noCommission": "Construye takes no commission on these introductions."
   },
   "campaign": {
     "endsIn": "Ends in",
@@ -740,8 +740,8 @@
     "progress": "{{percent}}% complete",
     "moduleAccess": "{{owned}} / {{total}} modules unlocked",
     "unlockMore": "Unlock more modules",
-    "wilayaTitle": "My wilaya",
-    "wilayaHelp": "Recommended partners will be filtered to this wilaya."
+    "provinceTitle": "My province",
+    "provinceHelp": "Recommended partners will be filtered to this province."
   },
   "orders": {
     "title": "My orders",
@@ -833,7 +833,7 @@
       "parc": "amusement park",
       "years": "years in the business",
       "body": "Sixteen years, from the first plot bought to the last key handed over. Everything you'll learn was done for real first, on his own projects — the wins, the delays, the neighbor appeals, the mistakes paid for in cash.",
-      "attribution": "These figures are the trainer's personal track record as a real-estate developer, as declared by him. They are not the track record of Ebni Academy.",
+      "attribution": "These figures are the trainer's personal track record as a real-estate developer, as declared by him. They are not the track record of Construye Academy.",
       "one": "One",
       "eyebrowExperience": "Experience",
       "eyebrowDelivered": "Delivered"
@@ -955,7 +955,7 @@
     },
     "socialProof": {
       "title": "What the people who've already taken it say.",
-      "note": "Only people who actually bought the course can leave a review. No review is written, ordered or edited by Ebni Academy."
+      "note": "Only people who actually bought the course can leave a review. No review is written, ordered or edited by Construye Academy."
     },
     "finalCta": {
       "title": "16 years on the ground. {{modules}}. Now go build.",
@@ -1061,7 +1061,7 @@
   },
   "partners": {
     "title": "Recommended partners",
-    "intro": "Vetted providers for this stage of the process. Ebni earns no commission on these introductions.",
+    "intro": "Vetted providers for this stage of the process. Construye earns no commission on these introductions.",
     "website": "Website",
     "lockedTease_one": "{{count}} partner contact included in this module",
     "lockedTease_other": "{{count}} partner contacts included in this module",
@@ -1074,22 +1074,22 @@
       "consultant_agrement": "Licensing consultant",
       "autre": "Other"
     },
-    "filterLabel": "My wilaya",
-    "allWilayas": "All wilayas",
+    "filterLabel": "My province",
+    "allProvinces": "All provinces",
     "national": "Nationwide coverage",
-    "noWilaya": "Wilaya not specified",
-    "noneInWilaya": "No partner covers this wilaya yet.",
-    "showAll_one": "Show the partner from all wilayas",
-    "showAll_other": "Show all {{count}} partners from every wilaya",
-    "hiddenByFilter_one": "{{count}} more partner outside your wilaya",
-    "hiddenByFilter_other": "{{count}} more partners outside your wilaya",
+    "noProvince": "Province not specified",
+    "noneInProvince": "No partner covers this province yet.",
+    "showAll_one": "Show the partner from all provinces",
+    "showAll_other": "Show all {{count}} partners from every province",
+    "hiddenByFilter_one": "{{count}} more partner outside your province",
+    "hiddenByFilter_other": "{{count}} more partners outside your province",
     "saveFailed": "Choice not saved to your profile.",
-    "loadingWilayas": "Loading…"
+    "loadingProvinces": "Loading…"
   },
   "contact": {
     "whatsapp": "WhatsApp",
     "hours": "Hours: {{hours}}",
-    "prefillGeneral": "Hello, I have a question about the Ebni Academy course.",
+    "prefillGeneral": "Hello, I have a question about the Construye Academy course.",
     "prefillOrder": "Hello, I am writing about my order no. {{id}}.",
     "paymentHelpTitle": "A question about your payment?",
     "paymentHelpBody": "Message us — your order number is already in the message.",

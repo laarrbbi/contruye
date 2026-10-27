@@ -8,8 +8,8 @@ it('serves each supported locale and falls back to French for anything else', fu
     $course = Course::factory()->create([
         'slug' => 'trilingual-course',
         'status' => 'published',
-        'title_fr' => 'Titre français',
-        'title_ar' => 'العنوان بالعربية',
+        'title_es' => 'Titre français',
+        'title_en' => 'العنوان بالعربية',
     ]);
 
     // Arabic has its own authored column.
@@ -32,8 +32,8 @@ it('reads the primary subtag of the first tag only, and ignores q-values', funct
     Course::factory()->create([
         'slug' => 'negotiated-course',
         'status' => 'published',
-        'title_fr' => 'Titre français',
-        'title_ar' => 'العنوان بالعربية',
+        'title_es' => 'Titre français',
+        'title_en' => 'العنوان بالعربية',
     ]);
 
     $title = fn (array $headers) => $this->getJson('/api/courses/negotiated-course', $headers)

@@ -1,38 +1,38 @@
 import { useTranslation } from 'react-i18next'
 import { MapPin } from 'lucide-react'
 import { useUpdateProfile, useUser } from '@/api/auth'
-import { useWilayas, wilayaLabel } from '@/api/wilayas'
-import { ALL_WILAYAS } from './partnerFilter'
+import { useProvinces, provinceLabel } from '@/api/provinces'
+import { ALL_PROVINCES } from './partnerFilter'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 /**
- * "Ma wilaya" picker shown above a partner list. The choice is saved on the
+ * "Ma province" picker shown above a partner list. The choice is saved on the
  * learner's profile, so it holds across modules, sessions and devices — a
- * promoter builds in one wilaya, they should not re-pick it on every lesson.
+ * promoter builds in one province, they should not re-pick it on every lesson.
  */
-export function PartnerWilayaFilter({
+export function PartnerProvinceFilter({
   value,
   onChange,
   showLabel = true,
 }: {
   value: number | null
-  onChange: (wilayaId: number | null) => void
+  onChange: (provinceId: number | null) => void
   /** Off where the surrounding card already names it. */
   showLabel?: boolean
 }) {
   const { t } = useTranslation()
   const { data: user } = useUser()
-  const { data: wilayas, isPending: wilayasPending } = useWilayas()
+  const { data: provinces, isPending: provincesPending } = useProvinces()
   const updateProfile = useUpdateProfile()
 
   const handleChange = (next: string) => {
-    const wilayaId = next === ALL_WILAYAS ? null : Number(next)
-    onChange(wilayaId)
+    const provinceId = next === ALL_PROVINCES ? null : Number(next)
+    onChange(provinceId)
 
     // Remember it, but never let a failed save block the filtering — the
     // list is already filtered locally either way.
-    if (user && user.wilaya_id !== wilayaId) {
-      updateProfile.mutate({ wilaya_id: wilayaId })
+    if (user && user.province_id !== provinceId) {
+      updateProfile.mutate({ province_id: provinceId })
     }
   }
 
@@ -44,17 +44,17 @@ export function PartnerWilayaFilter({
           <span className="text-xs text-muted-foreground">{t('partners.filterLabel')}</span>
         </>
       )}
-      <Select value={value === null ? ALL_WILAYAS : String(value)} onValueChange={handleChange}>
+      <Select value={value === null ? ALL_PROVINCES : String(value)} onValueChange={handleChange}>
         <SelectTrigger className="h-8 w-[190px] text-sm" aria-label={t('partners.filterLabel')}>
           {/* The list may still be loading (or have failed): never render an
               empty trigger next to an already-filtered list. */}
-          <SelectValue placeholder={wilayasPending ? t('partners.loadingWilayas') : t('partners.allWilayas')} />
+          <SelectValue placeholder={provincesPending ? t('partners.loadingProvinces') : t('partners.allProvinces')} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={ALL_WILAYAS}>{t('partners.allWilayas')}</SelectItem>
-          {(wilayas ?? []).map((wilaya) => (
-            <SelectItem key={wilaya.id} value={String(wilaya.id)}>
-              {wilayaLabel(wilaya)}
+          <SelectItem value={ALL_PROVINCES}>{t('partners.allProvinces')}</SelectItem>
+          {(provinces ?? []).map((province) => (
+            <SelectItem key={province.id} value={String(province.id)}>
+              {provinceLabel(province)}
             </SelectItem>
           ))}
         </SelectContent>

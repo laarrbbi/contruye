@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Check, Search, X } from 'lucide-react'
-import { matchesWilayaSearch, useWilayas, wilayaLabel } from '@/api/wilayas'
+import { matchesProvinceSearch, useProvinces, provinceLabel } from '@/api/provinces'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,8 +9,8 @@ import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { cn } from '@/lib/utils'
 
-interface WilayaCoveragePickerProps {
-  /** Selected wilaya ids — ignored while `isNational` is on. */
+interface ProvinceCoveragePickerProps {
+  /** Selected province ids — ignored while `isNational` is on. */
   value: number[]
   /**
    * Receives an updater rather than a list: the parent applies it against its
@@ -23,24 +23,24 @@ interface WilayaCoveragePickerProps {
 
 /**
  * Where a partner operates: either the whole country, or an explicit set of
- * wilayas picked from the official list. Searchable by name or by matricule,
+ * provinces picked from the official list. Searchable by name or by matricule,
  * because that is how an admin reading a business card thinks ("16" or
  * "Alger").
  */
-export function WilayaCoveragePicker({
+export function ProvinceCoveragePicker({
   value,
   onChange,
   isNational,
   onNationalChange,
-}: WilayaCoveragePickerProps) {
+}: ProvinceCoveragePickerProps) {
   const { t } = useTranslation()
-  const { data: wilayas, isLoading } = useWilayas()
+  const { data: provinces, isLoading } = useProvinces()
   const [search, setSearch] = useState('')
 
   const selected = useMemo(() => new Set(value), [value])
   const visible = useMemo(
-    () => (wilayas ?? []).filter((wilaya) => matchesWilayaSearch(wilaya, search)),
-    [wilayas, search],
+    () => (provinces ?? []).filter((province) => matchesProvinceSearch(province, search)),
+    [provinces, search],
   )
 
   const toggle = (id: number) => {
@@ -108,15 +108,15 @@ export function WilayaCoveragePicker({
               aria-label={t('admin.partners.coverage.title')}
               className="grid max-h-64 grid-cols-1 gap-1 overflow-y-auto sm:grid-cols-2"
             >
-              {visible.map((wilaya) => {
-                const isOn = selected.has(wilaya.id)
+              {visible.map((province) => {
+                const isOn = selected.has(province.id)
                 return (
-                  <li key={wilaya.id}>
+                  <li key={province.id}>
                     <button
                       type="button"
                       role="checkbox"
                       aria-checked={isOn}
-                      onClick={() => toggle(wilaya.id)}
+                      onClick={() => toggle(province.id)}
                       className={cn(
                         'flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-start text-sm transition-colors hover:bg-secondary',
                         isOn && 'bg-primary/5 font-medium text-primary',
@@ -130,7 +130,7 @@ export function WilayaCoveragePicker({
                       >
                         {isOn && <Check className="h-3 w-3" />}
                       </span>
-                      {wilayaLabel(wilaya)}
+                      {provinceLabel(province)}
                     </button>
                   </li>
                 )
@@ -146,12 +146,12 @@ export function WilayaCoveragePicker({
 /**
  * Compact read-only rendering of a partner's coverage, for table rows.
  */
-export function WilayaCoverageBadges({
-  wilayas,
+export function ProvinceCoverageBadges({
+  provinces,
   isNational,
   max = 3,
 }: {
-  wilayas: { id: number; name: string }[]
+  provinces: { id: number; name: string }[]
   isNational: boolean
   max?: number
 }) {
@@ -161,22 +161,22 @@ export function WilayaCoverageBadges({
     return <Badge variant="secondary">{t('admin.partners.coverage.national')}</Badge>
   }
 
-  if (wilayas.length === 0) {
+  if (provinces.length === 0) {
     return <span className="text-sm text-muted-foreground">{t('admin.partners.coverage.none')}</span>
   }
 
-  const shown = wilayas.slice(0, max)
-  const rest = wilayas.length - shown.length
+  const shown = provinces.slice(0, max)
+  const rest = provinces.length - shown.length
 
   return (
     <div className="flex flex-wrap gap-1">
-      {shown.map((wilaya) => (
-        <Badge key={wilaya.id} variant="secondary">
-          {wilaya.name}
+      {shown.map((province) => (
+        <Badge key={province.id} variant="secondary">
+          {province.name}
         </Badge>
       ))}
       {rest > 0 && (
-        <Badge variant="secondary" title={wilayas.map((w) => w.name).join(', ')}>
+        <Badge variant="secondary" title={provinces.map((w) => w.name).join(', ')}>
           +{rest}
         </Badge>
       )}

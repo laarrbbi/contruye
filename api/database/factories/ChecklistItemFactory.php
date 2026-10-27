@@ -16,8 +16,8 @@ class ChecklistItemFactory extends Factory
         return [
             'module_id' => Module::factory(),
             'order' => 1,
-            'text_fr' => 'Déposez le dossier '.fake()->word().' au guichet unique.',
-            'text_ar' => null,
+            'text_es' => 'Déposez le dossier '.fake()->word().' au guichet unique.',
+            'text_en' => null,
         ];
     }
 }

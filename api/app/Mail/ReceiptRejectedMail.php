@@ -18,7 +18,7 @@ class ReceiptRejectedMail extends Mailable implements ShouldQueue
         public Order $order,
         public string $reason,
     ) {
-        $this->locale($order->user->locale ?: 'fr');
+        $this->locale($order->user->locale ?: 'es');
     }
 
     public function envelope(): Envelope

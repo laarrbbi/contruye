@@ -45,7 +45,7 @@ import { hasContactChannel, useBusinessProfile } from '@/api/business'
 import { cn, formatDuration, formatNumber, formatPrice } from '@/lib/utils'
 import { TRANSFER_METHODS, paymentMethodList } from '@/lib/payments'
 
-/** The instructor's track record, as declared by him (never attributed to Ebni). */
+/** The instructor's track record, as declared by him (never attributed to Construye). */
 const TRACK_RECORD = [
   { end: 2100, prefix: '+', labelKey: 'landing.trackRecord.logements' },
   { end: 2, prefix: '', labelKey: 'landing.trackRecord.cliniques' },
@@ -183,7 +183,7 @@ const ALTERNATING = '[&>section:nth-child(odd)]:bg-secondary/40'
 const SPLIT = 'grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14'
 
 /** The single course this academy sells — used when the landing is served at "/". */
-export const MAIN_COURSE_SLUG = 'promotion-immobiliere-algerie'
+export const MAIN_COURSE_SLUG = 'promocion-inmobiliaria-espana'
 
 /** A full-width CTA whose label may wrap on a narrow phone instead of overflowing. */
 const WRAPPING_CTA = 'h-auto min-h-11 w-full whitespace-normal py-2.5 text-center leading-snug'

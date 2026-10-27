@@ -22,8 +22,8 @@ function enrollmentGateLesson(): array
     $lesson = Lesson::factory()->for($module)->create([
         'order' => 1,
         'bunny_video_id' => 'vid-enrollment-1',
-        'content_fr' => 'Contenu payant.',
-        'key_points_fr' => ['Point payant'],
+        'content_es' => 'Contenu payant.',
+        'key_points_es' => ['Point payant'],
         'attachments' => [['name' => 'Fiche.pdf', 'path' => 'lessons/attachments/fiche.pdf']],
         // So the reflex-sheet gate is exercised too: only flagged lessons have one.
         'is_reflex_sheet' => true,

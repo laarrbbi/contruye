@@ -28,7 +28,7 @@ use App\Http\Controllers\Api\ProgressController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\WebhookController;
-use App\Http\Controllers\Api\WilayaController;
+use App\Http\Controllers\Api\ProvinceController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:auth')->group(function () {
@@ -50,11 +50,10 @@ Route::get('/courses/{course:slug}/reviews', [ReviewController::class, 'index'])
 Route::get('/lessons/{lesson}/playback', [PlaybackController::class, 'show']);
 
 // Payment provider webhooks (server-to-server, signature-verified in-controller)
-Route::post('/webhooks/chargily', [WebhookController::class, 'chargily']);
 Route::post('/webhooks/stripe', [WebhookController::class, 'stripe']);
 
-// Reference data: the 58 wilayas, for partner filters and the admin editor.
-Route::get('/wilayas', [WilayaController::class, 'index'])->middleware('throttle:60,1');
+// Reference data: the 52 provinces, for partner filters and the admin editor.
+Route::get('/provinces', [ProvinceController::class, 'index'])->middleware('throttle:60,1');
 
 // Public identity and contact details (footer, FAQ, payment pages). Only what
 // the admin has filled, and never the fiscal-only fields.
@@ -124,7 +123,7 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::post('orders/{order}/reject', [AdminOrderController::class, 'reject'])->whereNumber('order');
     Route::post('orders/{order}/grant', [AdminOrderController::class, 'grant'])->whereNumber('order');
 
-    // Invoicing: seller settings + issued invoices (facture on demand)
+    // Invoicing: seller settings + issued invoices (factura on demand)
     Route::get('invoicing/settings', [AdminInvoicingSettingsController::class, 'show']);
     Route::put('invoicing/settings', [AdminInvoicingSettingsController::class, 'update']);
     Route::get('invoices', [AdminInvoiceController::class, 'index']);

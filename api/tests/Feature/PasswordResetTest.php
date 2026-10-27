@@ -30,9 +30,9 @@ function resetTokenFor(User $user): string
 it('sends a queued reset notification with an SPA link for an existing user', function () {
     Notification::fake();
 
-    $user = User::factory()->create(['email' => 'amina@example.dz']);
+    $user = User::factory()->create(['email' => 'amina@example.es']);
 
-    $this->postJson('/api/forgot-password', ['email' => 'amina@example.dz'])
+    $this->postJson('/api/forgot-password', ['email' => 'amina@example.es'])
         ->assertOk()
         ->assertJsonStructure(['message']);
 
@@ -56,7 +56,7 @@ it('returns the same 200 response for unknown emails and sends nothing', functio
     $user = User::factory()->create();
 
     $known = $this->postJson('/api/forgot-password', ['email' => $user->email])->assertOk();
-    $unknown = $this->postJson('/api/forgot-password', ['email' => 'ghost@example.dz'])->assertOk();
+    $unknown = $this->postJson('/api/forgot-password', ['email' => 'ghost@example.es'])->assertOk();
 
     expect($unknown->json('message'))->toBe($known->json('message'));
 

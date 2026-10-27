@@ -15,9 +15,9 @@ class PartnerFactory extends Factory
         return [
             'name' => 'Cabinet '.fake()->lastName(),
             'category' => fake()->randomElement(Partner::CATEGORIES),
-            'description_fr' => 'Accompagnement des promoteurs immobiliers.',
-            'description_ar' => 'مرافقة المرقّين العقاريين.',
-            'website' => 'https://example.dz',
+            'description_es' => 'Accompagnement des promoteurs immobiliers.',
+            'description_en' => 'مرافقة المرقّين العقاريين.',
+            'website' => 'https://example.es',
             'phone' => '0550'.fake()->numerify('######'),
             'email' => fake()->safeEmail(),
             'is_active' => true,
@@ -25,7 +25,7 @@ class PartnerFactory extends Factory
         ];
     }
 
-    /** Covers every wilaya (bank, insurer, online service). */
+    /** Covers every province (bank, insurer, online service). */
     public function national(): static
     {
         return $this->state(fn () => ['is_national' => true]);

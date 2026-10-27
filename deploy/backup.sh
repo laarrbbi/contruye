@@ -7,12 +7,12 @@
 #   deploy/backup.sh
 #
 # cron (as the deploy user):
-#   30 2 * * * /var/www/ebni/deploy/backup.sh >> /var/log/ebni-backup.log 2>&1
+#   30 2 * * * /var/www/construye/deploy/backup.sh >> /var/log/construye-backup.log 2>&1
 #
 # Environment overrides:
-#   BACKUP_DIR=/var/backups/ebni     where archives are written
+#   BACKUP_DIR=/var/backups/construye     where archives are written
 #   KEEP_DAYS=30                     local retention
-#   BACKUP_RSYNC_TARGET=user@host:/backups/ebni
+#   BACKUP_RSYNC_TARGET=user@host:/backups/construye
 #       copy every archive off this machine. A backup on the server it backs
 #       up does not survive the failure it is for: set this before go-live.
 #
@@ -23,7 +23,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 API="$ROOT/api"
-DEST="${BACKUP_DIR:-/var/backups/ebni}"
+DEST="${BACKUP_DIR:-/var/backups/construye}"
 KEEP_DAYS="${KEEP_DAYS:-30}"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 

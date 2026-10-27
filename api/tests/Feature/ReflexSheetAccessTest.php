@@ -21,7 +21,7 @@ function paidModuleWithLegalBlock(): array
     $module->contentBlocks()->create([
         'order' => 1,
         'type' => 'legal',
-        'body_fr' => 'Décret exécutif 05-12 — obligations du promoteur en cas d\'accident.',
+        'body_es' => 'Décret exécutif 05-12 — obligations du promoteur en cas d\'accident.',
     ]);
 
     return [$course, $module];

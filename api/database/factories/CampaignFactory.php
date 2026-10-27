@@ -15,8 +15,8 @@ class CampaignFactory extends Factory
     {
         return [
             'course_id' => Course::factory(),
-            'label_fr' => 'Offre de lancement',
-            'label_ar' => 'عرض الإطلاق',
+            'label_es' => 'Offre de lancement',
+            'label_en' => 'عرض الإطلاق',
             'percent_off' => 15,
             'starts_at' => now()->subDay(),
             'ends_at' => now()->addDays(3),

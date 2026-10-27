@@ -102,7 +102,7 @@ export function PlayerPage() {
         <h1 className="text-lg font-semibold">{notEnrolled ? t('player.notEnrolled') : t('common.error')}</h1>
         {/* Not enrolled: the sales page is the only way forward, so it is the primary action. */}
         <Button asChild variant={notEnrolled ? 'default' : 'outline'}>
-          <Link to={notEnrolled ? `/courses/${slug}` : '/dashboard'}>
+          <Link to={notEnrolled ? `/cursos/${slug}` : '/dashboard'}>
             {notEnrolled ? t('player.goToCourse') : t('common.back')}
           </Link>
         </Button>

@@ -58,9 +58,9 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        // Poppins ne couvre pas l'arabe : les glyphes AR retombent sur Cairo
-        // automatiquement — une seule pile pour les deux langues.
-        sans: ['Poppins', 'Cairo', 'system-ui', 'sans-serif'],
+        // Poppins covers Spanish and English (á, é, ñ, ü, ¿, ¡ are in its
+        // latin subset).
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       transitionTimingFunction: {
         // Named to match the CSS variables in index.css.

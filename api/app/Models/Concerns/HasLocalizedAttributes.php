@@ -5,10 +5,10 @@ namespace App\Models\Concerns;
 /**
  * Resolves a `<base>_<locale>` attribute through a fallback chain.
  *
- * Course material is authored in French and translated per locale into
- * suffixed columns (`title_fr`, `title_ar`…). A locale with no column of its
+ * Course material is authored in Spanish and translated per locale into
+ * suffixed columns (`title_es`, `title_en`…). A locale with no column of its
  * own — or with an empty one because the translation is still pending — reads
- * the authored French rather than rendering a blank.
+ * the authored Spanish rather than rendering a blank.
  *
  * Keeping the chain here means adding an `_en` column later is a migration
  * plus an admin field: not one call site changes.
@@ -18,7 +18,7 @@ trait HasLocalizedAttributes
     protected function localizedValue(string $base, ?string $locale = null): ?string
     {
         $locale ??= app()->getLocale();
-        $default = config('locales.default', 'fr');
+        $default = config('locales.default', 'es');
 
         foreach ([$locale, $default] as $candidate) {
             $column = "{$base}_{$candidate}";
@@ -46,7 +46,7 @@ trait HasLocalizedAttributes
     protected function localizedArray(string $base, ?string $locale = null): array
     {
         $locale ??= app()->getLocale();
-        $default = config('locales.default', 'fr');
+        $default = config('locales.default', 'es');
 
         foreach ([$locale, $default] as $candidate) {
             $column = "{$base}_{$candidate}";

@@ -10,7 +10,7 @@
 @php
     $s = fn (string $key) => SpaStrings::get($locale, $key);
     $campaign = $course->activeCampaign();
-    $price = $campaign !== null ? $campaign->apply((int) $course->price_dzd) : (int) $course->price_dzd;
+    $price = $campaign !== null ? $campaign->apply((int) $course->price_eur) : (int) $course->price_eur;
 @endphp
 @include('seo._header')
 <main>
@@ -20,9 +20,9 @@
             <h1 class="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl">{{ $s('landing.hero.title') }}</h1>
             <p class="max-w-2xl leading-relaxed text-primary-foreground/80">{{ $s('landing.hero.body') }}</p>
             <p class="text-2xl font-extrabold">
-                {{ Money::format($price, 'DZD', $locale) }}
+                {{ Money::format($price, 'EUR', $locale) }}
                 @if ($campaign !== null)
-                    <s class="ms-2 text-base font-medium text-primary-foreground/70">{{ Money::format((int) $course->price_dzd, 'DZD', $locale) }}</s>
+                    <s class="ms-2 text-base font-medium text-primary-foreground/70">{{ Money::format((int) $course->price_eur, 'EUR', $locale) }}</s>
                 @endif
             </p>
             <p><a href="{{ $checkoutUrl }}" class="inline-flex rounded-md bg-white px-5 py-3 font-semibold text-primary">{{ $s('landing.hero.ctaPrimary') }}</a></p>
@@ -32,7 +32,7 @@
 
     <section class="container space-y-6 py-12">
         <h2 class="text-2xl font-extrabold text-primary">{{ $course->localizedTitle($locale) }}</h2>
-        {{-- dir="auto": material not yet translated reads in French, in its own direction. --}}
+        {{-- dir="auto": material not yet translated reads in Spanish, in its own direction. --}}
         <p dir="auto" class="max-w-3xl leading-relaxed text-muted-foreground">{{ $course->localizedDescription($locale) }}</p>
         <ol class="space-y-4">
             @foreach ($course->modules as $module)

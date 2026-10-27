@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
-            $table->string('label_fr');
-            $table->string('label_ar');
+            $table->string('label_es');
+            $table->string('label_en')->nullable();
             $table->unsignedTinyInteger('percent_off');
             $table->timestamp('starts_at')->nullable();
             // Required: a promotion always has a real end date. The countdown

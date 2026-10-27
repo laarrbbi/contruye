@@ -1,536 +1,551 @@
 <?php
 
 /**
- * Curriculum v2.0 — "La Promotion Immobilière en Algérie" (juillet 2026).
+ * Programa — "La Promoción Inmobiliaria en España" (promoción de viviendas de
+ * renta libre), 12 fases.
  *
- * Source of truth: the v2.0 programme handoff. Legal figures (échéancier
- * 20/15/35/25/5, plafonds 10 % et 20 %, 60 000 DA, amendes) are reproduced
- * verbatim and must never be reworded.
+ * Fuente: el resumen de fases enviado por el formador el 26/10/2026 (los doce
+ * títulos y sus hitos se reproducen tal cual). El desarrollo de cada fase es
+ * un BORRADOR redactado a partir de ese resumen y de la normativa estatal
+ * vigente: el formador lo revisa capítulo a capítulo antes de grabar.
  *
- * Shape:
+ * Toda cifra, plazo o porcentaje que dependa de la práctica del formador, del
+ * banco, de la aseguradora o de la comunidad autónoma lleva la mención
+ * «pendiente de validar»: se muestra al administrador con la etiqueta
+ * A VALIDAR y entra en el informe content-review.md. Nunca se borra para
+ * dejar el texto más limpio.
+ *
+ * Forma:
  *   modules[] = title, description, lessons[], blocks[]
  *   lessons[] = title, key_points[], content, blocks[]
  *   blocks[]  = ['type' => legal|partner_slot|expert_tip, 'body' => ..., 'partner_category' => ...]
  *
- * Arabic is intentionally absent: this pass is French-only, the AR keys are
- * created empty and a human translation follows.
+ * El inglés no se incluye a propósito: los campos _en se crean vacíos y una
+ * traducción humana vendrá después.
  */
 
 return [
     'course' => [
-        'title_fr' => 'La Promotion Immobilière en Algérie',
-        // Existing human translation of the (unchanged) course title.
-        'title_ar' => 'الترقية العقارية في الجزائر',
-        'description_fr' => 'De la création de la société à la remise des clés : le circuit réel, étape par étape. 13 modules concrets — agrément, foncier, permis de construire, chantier, vente sur plan, raccordements, livraison, pilotage financier et gestion des risques — avec les guichets, les délais réalistes, les coûts et les erreurs fréquentes. Une formation de praticien, adossée aux textes de loi algériens en vigueur (vérifiée en juillet 2026).',
-        'format_note' => 'Format : 13 modules vidéo (15 à 40 min par leçon), 1 checklist PDF par module, modèles de documents en annexes, et un « circuit administratif » visuel (carte du parcours avec délais et guichets). Chaque module se termine par : documents à obtenir, où aller, combien ça coûte, délai réaliste, erreurs fréquentes.',
+        'title_es' => 'La Promoción Inmobiliaria en España',
+        'description_es' => 'Del solar a la entrega de llaves: el recorrido real de una promoción de viviendas de renta libre, fase por fase. 12 fases concretas —solar, viabilidad, proyectos, licencias, financiación y contratación, construcción, control de obra, comercialización, legalización, preentrega, entrega de llaves y postventa— con los documentos, los agentes, los plazos, los costes y los errores frecuentes de cada hito. Una formación de profesional, apoyada en la normativa estatal vigente (LOE, Código Técnico de la Edificación, Ley de Suelo) y en las diferencias que marca cada comunidad autónoma.',
+        'format_note' => 'Formato: 12 fases en vídeo, una checklist por fase, modelos de documentos en anexos y un «circuito administrativo» visual (mapa del recorrido con plazos y organismos). Cada fase termina con: documentos que obtener, a quién acudir, cuánto cuesta, plazo realista y errores frecuentes.',
     ],
 
     'modules' => [
         // ------------------------------------------------------------------
         1 => [
-            'title' => 'Le métier, le marché et le business model',
-            'description' => "Ce qu'est réellement la promotion immobilière au sens de la loi, le business model d'un praticien, l'écosystème des acteurs et les deux modes de vente du promoteur.",
+            'title' => 'Solar: búsqueda, análisis urbanístico, due diligence y adquisición',
+            'description' => 'Encontrar el suelo, leer lo que el planeamiento permite construir en él, comprobar que no esconde cargas ni sorpresas, y comprarlo bien: a nombre de la sociedad promotora, con las condiciones adecuadas y con la financiación —propia o externa— resuelta antes de firmar.',
             'lessons' => [
                 [
-                    'title' => 'Le métier, le marché et le business model',
+                    'title' => '1.1 El oficio de promotor y dónde se encuentra el suelo',
                     'key_points' => [
-                        "Ce qu'est la promotion immobilière au sens de la loi (construction neuve, réhabilitation, rénovation, en vue de vendre ou louer) et ce qu'elle n'est pas (agent immobilier, entrepreneur BTP).",
-                        "Le business model type communiqué par l'intervenant : terrain environ 25 % du coût (prévoir une marge de sécurité d'environ 10 % en plus sur ce poste), gestion et marketing 7 %, construction 68 % ; trésorerie de départ à sécuriser avant lancement (l'intervenant cite environ 35 % du chiffre d'affaires, ou un échéancier négocié avec le vendeur du terrain) ; marge brute cible annoncée autour de 50 %. À présenter comme ordres de grandeur d'un praticien, à valider par une étude de faisabilité par projet et par wilaya.",
-                        "Les acteurs de l'écosystème : wilaya, APC, notaire, CNRC, impôts, FGCMPI, CTC, bureau d'études, géomètre-expert, banques, assureurs — et les quatre directions consultées sur chaque permis : urbanisme, santé, protection civile, hydraulique.",
-                        "Les deux modes de vente du promoteur : la vente sur plan (VSP), entièrement encadrée par la loi 11-04 (agrément, FGCMPI, échéancier réglementé) ; et la vente d'un bien achevé, après achèvement complet et certificat de conformité — vente immobilière classique chez le notaire, sans échéancier VSP ni attestation de garantie. Détail au module 8.",
+                        'El promotor es el agente que decide, impulsa, programa y financia la edificación, con recursos propios o ajenos, para venderla o cederla a terceros (art. 9 de la Ley 38/1999 de Ordenación de la Edificación, LOE). No es el constructor ni el agente inmobiliario: responde ante los compradores de todo el proceso.',
+                        'La promoción se aloja en una sociedad dedicada (habitualmente una S.L. por promoción): separa el riesgo de cada proyecto, ordena la contabilidad y es lo que piden los bancos para el préstamo promotor. El solar se compra ya a nombre de esa sociedad.',
+                        'Fuentes de suelo: recorrer físicamente la zona y localizar solares vacíos o edificios para derribar; notarios, administradores de fincas y abogados de herencias (proindivisos y herencias por resolver son la mejor cantera); agentes especializados en suelo; portales inmobiliarios; subastas judiciales y de la Agencia Tributaria; suelo público de ayuntamientos y comunidades autónomas por concurso; y la permuta con propietarios que prefieren cobrar en viviendas.',
+                        'Primer filtro en 48 horas, antes de dedicar dinero: ubicación y demanda, superficie, edificabilidad aproximada según el plan, precio pedido frente al valor residual (fase 2) y si el propietario tiene capacidad real de vender (titularidad clara, herederos de acuerdo).',
+                    ],
+                ],
+                [
+                    'title' => '1.2 Análisis urbanístico: qué se puede construir',
+                    'key_points' => [
+                        'Clase de suelo: un solar es suelo urbano que ya reúne los servicios exigidos (acceso rodado, abastecimiento de agua, evacuación de aguas residuales, suministro eléctrico y alineaciones y rasantes señaladas). Un suelo urbano no consolidado o urbanizable obliga antes a gestionar y pagar la urbanización: otro negocio, otros plazos.',
+                        'Planeamiento aplicable: Plan General de Ordenación Urbana (PGOU) o normas subsidiarias, y en su caso plan parcial, plan especial o estudio de detalle. La clasificación del suelo y su nombre exacto dependen de la ley autonómica (Ley de Suelo estatal, RDL 7/2015, más la ley urbanística de cada comunidad).',
+                        'Parámetros que deciden el negocio: uso y tipología permitidos, edificabilidad (m² de techo por m² de suelo), ocupación máxima, altura y número de plantas, retranqueos y fondo edificable, densidad (viviendas por hectárea), plazas de aparcamiento obligatorias y cesiones o cargas urbanísticas pendientes. La edificabilidad multiplicada por la superficie da los metros cuadrados vendibles: el verdadero valor del solar.',
+                        'Pedir siempre por escrito al ayuntamiento el certificado o cédula de información urbanística (el nombre varía por municipio y comunidad) y no basarse en lo que diga el vendedor ni en un visor web. Plazo habitual de respuesta: de uno a tres meses (pendiente de validar con el formador según municipio).',
+                        'Afecciones sectoriales que reducen o bloquean lo edificable: carreteras, costas, dominio público hidráulico y zonas inundables (confederación hidrográfica), patrimonio histórico y arqueología, servidumbres aeronáuticas, vías pecuarias, líneas eléctricas.',
+                    ],
+                ],
+                [
+                    'title' => '1.3 Due diligence del solar',
+                    'key_points' => [
+                        'Registro de la Propiedad: nota simple (y certificación si hace falta) para conocer el titular, la superficie inscrita y las cargas: hipotecas, embargos, servidumbres, condiciones resolutorias, afecciones fiscales y anotaciones de demanda.',
+                        'Catastro: certificación catastral descriptiva y gráfica. Comparar superficie y linderos con el Registro: las discrepancias se corrigen antes de comprar (coordinación Catastro-Registro de la Ley 13/2015), no después, cuando el proyecto ya depende de esa superficie.',
+                        'Situación urbanística y económica: cuotas de urbanización o derramas de la junta de compensación pendientes, expedientes de disciplina urbanística, IBI y tasas al corriente, ocupantes o arrendatarios, contratos que vinculen el suelo.',
+                        'Suelo y subsuelo: levantamiento topográfico, estudio geotécnico previo (aunque sea con menos sondeos que el definitivo), posibles restos arqueológicos y suelos contaminados: el vendedor debe declarar en la escritura si en la finca se ha realizado una actividad potencialmente contaminante (art. 98 de la Ley 7/2022 de residuos y suelos contaminados).',
+                        'Acometidas: comprobar con las compañías de agua y electricidad la capacidad de la red. Un centro de transformación o una ampliación de red no previstos se comen el margen y retrasan la obra.',
+                    ],
+                    'blocks' => [
+                        ['type' => 'expert_tip', 'body' => 'Encargar el estudio geotécnico y la topografía ANTES de comprar: si la operación no sale, se pierde el coste de dos estudios; si se compra sin ellos, un firme profundo o el nivel freático alto pueden obligar a una cimentación especial que se come el beneficio. Pérdida pequeña y segura frente a pérdida grande y posible.'],
+                    ],
+                ],
+                [
+                    'title' => '1.4 Adquisición y financiación de la compra',
+                    'key_points' => [
+                        'Herramientas para reservar el suelo mientras se completa la due diligence: contrato de arras (confirmatorias o penitenciales del art. 1454 del Código Civil), opción de compra con plazo y precio fijados, y compraventa con condición suspensiva (por ejemplo, obtener la información urbanística favorable o la licencia).',
+                        'La permuta de solar por obra futura: el propietario entrega el suelo a cambio de viviendas o locales de la promoción. Reduce la inversión inicial, pero hay que garantizar al propietario su entrega (aval o condición resolutoria) y tenerla en cuenta en la financiación y en la fiscalidad.',
+                        'Escritura pública ante notario e inscripción en el Registro de la Propiedad a nombre de la sociedad promotora. Gastos: notaría y registro según arancel, gestoría si la hay.',
+                        'Impuestos de la compra: si vende un empresario y el suelo es edificable, IVA al 21 % más Actos Jurídicos Documentados (AJD); si vende un particular, Transmisiones Patrimoniales (ITP) al tipo de cada comunidad autónoma. La plusvalía municipal corresponde al vendedor. Confirmar cada operación con el asesor fiscal (pendiente de validar con el asesor fiscal).',
+                        'Financiación de la compra: lo habitual es pagar el suelo con fondos propios de la sociedad y sus socios, porque los bancos financian poco suelo y con condiciones exigentes; alternativas: socios inversores, préstamo puente, financiación alternativa (deuda privada, plataformas de financiación participativa) o un calendario de pago aplazado con el vendedor. Porcentajes y condiciones actuales pendientes de validar con el formador.',
+                        'Error número uno del principiante: comprar antes de tener por escrito la edificabilidad real y la ausencia de cargas, o firmar arras sin una salida si el ayuntamiento informa en contra.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'legal', 'body' => 'Loi 11-04 du 17/02/2011 (définition, art. 3 ; exercice réservé aux agréés, art. 4).'],
+                ['type' => 'partner_slot', 'partner_category' => 'notario', 'body' => 'Notario colaborador (compraventa, arras, opción de compra, permutas) y abogado urbanista para la due diligence del solar.'],
+                ['type' => 'partner_slot', 'partner_category' => 'otro', 'body' => 'Agentes especializados en suelo y topógrafos / laboratorios geotécnicos por provincia.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 de Ordenación de la Edificación (art. 9, el promotor) ; RDL 7/2015, texto refundido de la Ley de Suelo y Rehabilitación Urbana ; ley urbanística de la comunidad autónoma ; Código Civil (art. 1454, arras) ; Ley 13/2015 (coordinación Catastro-Registro) ; Ley 7/2022 de residuos y suelos contaminados (art. 98).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         2 => [
-            'title' => 'Créer la société (le véhicule juridique)',
-            'description' => "ORDRE RÉEL DU PARCOURS (correction d'expert) : la promotion immobilière est une activité réglementée — on ne crée pas la société complète puis l'agrément, mais : 1) dénomination au CNRC ; 2) dossier d'agrément auprès de la wilaya (module 3) ; 3) statuts chez le notaire + registre de commerce ; 4) NIF / C20 ; 5) affiliation FGCMPI en dernier — le dossier officiel d'affiliation exige justement l'agrément, le RC, le NIF, les statuts et le RIB, preuve de cette chronologie. La pratique variant selon les wilayas, faire valider l'enchaînement exact par le consultant agrément partenaire.",
+            'title' => 'Análisis de viabilidad: estudios de mercado, costes, ingresos y rentabilidad',
+            'description' => 'Antes de comprometerse con el solar y con el proyecto: qué producto pide el mercado, cuánto cuesta realmente hacerlo, cuánto se ingresará y cuándo, y si el margen compensa el riesgo. La viabilidad no se hace una vez: se actualiza en cada fase.',
             'lessons' => [
                 [
-                    'title' => '2.1 Choisir la forme',
+                    'title' => '2.1 Estudio de mercado y definición del producto',
                     'key_points' => [
-                        'EURL : 1 associé unique, capital libre, 1 gérant. Idéal pour démarrer seul.',
-                        'SARL : 2 à 50 associés, capital libre fixé aux statuts, gérant(s) désigné(s) ; possibilité gérant + cogérant (utile en 50/50).',
-                        "SPA : minimum 7 actionnaires, capital minimum 1 000 000 DA (5 000 000 DA si appel public à l'épargne), conseil d'administration + commissaire aux comptes obligatoire. Pour les gros projets et l'entrée d'investisseurs.",
-                        'Conseil pratique de la classe : démarrer en EURL/SARL dédiée exclusivement à la promotion immobilière (activité exclusive), quitte à créer une société par projet plus tard (logique de cantonnement du risque).',
+                        'Oferta y demanda de la zona: promociones de obra nueva en comercialización y su ritmo de venta, viviendas de segunda mano comparables, perfil del comprador (primera vivienda, reposición, inversor) y su capacidad de pago e hipoteca.',
+                        'Precio de venta en euros por metro cuadrado construido, por calle y no por ciudad: testigos reales (promociones vecinas, tasaciones, estadística notarial y registral), no precios de anuncio.',
+                        'Producto: número de dormitorios, superficies útiles y construidas, terrazas, garaje y trastero vinculados, zonas comunes, calidades y eficiencia energética. El producto se decide aquí y el arquitecto lo dibuja en la fase 3, no al revés.',
                     ],
                 ],
                 [
-                    'title' => '2.2 Le circuit de création, dans l\'ordre',
+                    'title' => '2.2 Costes de la promoción',
                     'key_points' => [
-                        'Dénomination sociale : proposer plusieurs noms par ordre de préférence au CNRC (en ligne via sidjilcom.cnrc.dz ou en antenne) et obtenir le certificat de dénomination.',
-                        "Local / siège social : trouver le local, récupérer l'adresse exacte auprès du bailleur ; le bailleur fournit son acte de propriété, son acte de naissance et l'assurance CAT-NAT du local.",
-                        "Chez le notaire : contrat de location au nom de la société (durée + loyer) puis rédaction des statuts. Contenu détaillé des statuts à enseigner : dénomination et siège, objet social (code d'activité de promotion immobilière), durée de la société, apports et capital, répartition des parts, désignation du ou des gérants et étendue de leurs pouvoirs, règles de cession des parts et de décision entre associés. Les associés signent en présence, munis d'actes de naissance et pièces d'identité.",
-                        "Publication au BOAL (Bulletin Officiel des Annonces Légales) : le notaire s'en charge ; c'est la naissance officielle de la société.",
-                        "Immatriculation au registre de commerce (CNRC) : statuts + BOAL + bail + dénomination + pièces des associés + agrément pour l'activité réglementée. Délai courant : quelques jours à deux semaines.",
-                        "Impôts (DGI) : obtention du NIF et du certificat d'existence C20 (les services fiscaux peuvent vérifier physiquement l'adresse du siège). Le C20 porte le numéro d'article d'imposition.",
-                        "NIS auprès de l'Office National des Statistiques (RC + statuts + BOAL + C20 + NIF + bail).",
-                        "CNAS : ouverture du numéro d'employeur pour déclarer et cotiser pour les salariés.",
-                        "Banque : ouverture du compte société (RC + statuts + pièces du gérant) et dépôt de l'intégralité du capital ; remise du chéquier. Aucun frais d'ouverture notable.",
-                        'Cachet de la société chez un prestataire privé (sur présentation du RC).',
+                        'Suelo con todos sus gastos: precio, impuestos de la compra, notaría, registro, due diligence y, si es el caso, cargas de urbanización.',
+                        'Construcción: Presupuesto de Ejecución Material (PEM) del proyecto y, sobre él, gastos generales y beneficio industrial del constructor (Presupuesto de Ejecución por Contrata). En contratación pública se usan de referencia un 13-17 % de gastos generales y un 6 % de beneficio industrial; en obra privada se negocia.',
+                        'Honorarios técnicos: proyecto y dirección de obra (arquitecto), dirección de ejecución (arquitecto técnico), coordinación de seguridad y salud, ingenierías (estructura, instalaciones, telecomunicaciones), topografía, geotecnia, Organismo de Control Técnico (OCT) y laboratorio de control de calidad.',
+                        'Licencias e impuestos municipales: Impuesto sobre Construcciones, Instalaciones y Obras (ICIO, con un máximo legal del 4 % del coste real de la obra, art. 102 del RDL 2/2004 de Haciendas Locales), tasa de licencia, fianza de residuos y, en su caso, aval de urbanización.',
+                        'Seguros y garantías: seguro decenal, todo riesgo construcción, responsabilidad civil del promotor y la garantía de las cantidades a cuenta de los compradores (aval o seguro de caución).',
+                        'Notaría y registro de la obra nueva y la división horizontal (con su AJD), comercialización (agencia, marketing, piso piloto u oficina de ventas), gestión, gastos financieros (intereses, comisiones, tasaciones) e imprevistos. Porcentajes orientativos de cada partida pendientes de validar con el formador.',
                     ],
                 ],
                 [
-                    'title' => '2.3 Obligations récurrentes dès le jour 1',
+                    'title' => '2.3 Ingresos, rentabilidad y flujo de caja',
                     'key_points' => [
-                        'G50 : déclaration fiscale mensuelle avant le 20 du mois (TVA, IRG salaires, acomptes).',
-                        'CNAS : cotisations sociales des salariés (versement trimestriel possible pour petits employeurs).',
-                        'CASNOS : cotisation annuelle du gérant non salarié, calculée sur le revenu déclaré avec un minimum annuel — obligation oubliée dans 90 % des prévisionnels de débutants ; montant en vigueur à vérifier auprès de la CASNOS.',
-                        'Comptabilité tenue obligatoirement ; bilan annuel ; commissaire aux comptes selon forme et seuils.',
+                        'Ingresos: tabla de precios por unidad (planta, orientación, terraza, vistas) para viviendas, garajes, trasteros y locales. Las viviendas tributan al IVA del 10 % (y los garajes y trasteros vendidos con ellas, hasta dos plazas, art. 91 de la Ley 37/1992); los locales, al 21 %. El IVA no es ingreso del promotor.',
+                        'Método residual: valor máximo que se puede pagar por el suelo = ingresos previstos − todos los costes − beneficio exigido. Es el mismo método que usan las sociedades de tasación (Orden ECO/805/2003) y la herramienta para negociar el precio del solar.',
+                        'Indicadores: margen sobre ventas, margen sobre costes, rentabilidad de los fondos propios (ROE), TIR y VAN del proyecto, y punto de equilibrio en ventas. El margen objetivo que suelen exigir promotores y financiadores está pendiente de validar con el formador.',
+                        'Flujo de caja mes a mes: pagos del suelo y de los técnicos al principio, curva de obra después; cobros de reservas y entregas a cuenta de los compradores durante la obra (siempre garantizados y en cuenta especial, fase 5) y el grueso a la escritura. El préstamo promotor cubre el hueco: la viabilidad decide cuánto se necesita y cuándo.',
+                        'Análisis de sensibilidad antes de comprar: qué pasa con un 10 % menos de precio, un 10 % más de coste de obra o seis meses de retraso en la licencia. Si el proyecto no aguanta los tres, no se compra el solar.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'notaire', 'body' => 'Notaire partenaire (création + tous les actes du parcours) ; expert-comptable partenaire (externalisation citée dans les notes autour de 600 EUR/mois — à re-tarifer en DZD selon volume) ; banque partenaire.'],
-                ['type' => 'legal', 'body' => "Code de commerce (ord. 75-59 modifiée, loi 15-20) ; loi 04-08 sur l'exercice des activités commerciales ; décret 15-111 (immatriculation CNRC)."],
+                ['type' => 'partner_slot', 'partner_category' => 'asesor_fiscal', 'body' => 'Asesor fiscal y contable especializado en promoción (IVA de las ventas, AJD, impuesto sobre sociedades de la sociedad promotora) y sociedad de tasación homologada.'],
+                ['type' => 'legal', 'body' => 'RDL 2/2004, texto refundido de la Ley Reguladora de las Haciendas Locales (art. 100-103, ICIO) ; Ley 37/1992 del IVA (art. 91, tipo reducido de viviendas) ; Orden ECO/805/2003 (valoración de inmuebles, método residual) ; RD 1098/2001 (art. 131, referencia de gastos generales y beneficio industrial).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         3 => [
-            'title' => "L'agrément de promoteur immobilier (LE module bloquant)",
-            'description' => "Nul ne peut exercer la promotion immobilière ni initier un projet sans agrément et inscription au Tableau National des Promoteurs Immobiliers (TNPI). L'agrément est délivré au niveau de la wilaya (transfert du ministère vers les wilayas par le décret 19-243 de 2019). Il est personnel : ni cessible ni transmissible ; tout changement de forme, de dénomination ou de gérant rend l'agrément caduc et impose son renouvellement.",
+            'title' => 'Proyectos: estudios técnicos, anteproyecto, proyecto básico y de ejecución, visados y Plan de Seguridad y Salud',
+            'description' => 'Del encargo a los técnicos al proyecto visado: estudios técnicos previos, anteproyecto, proyecto básico y proyecto de ejecución, el visado colegial y la seguridad y salud que se planifica ya en el papel.',
             'lessons' => [
                 [
-                    'title' => '3.1 Conditions',
+                    'title' => '3.1 El equipo técnico y los estudios previos',
                     'key_points' => [
-                        'Personne physique : 25 ans minimum ; personne morale : société de droit algérien.',
-                        'Bonne moralité (casier judiciaire), jouissance des droits civiques, aucune incapacité/interdiction (art. 20 et 21, loi 11-04).',
-                        "Ressources financières suffisantes pour réaliser ses projets (justification encadrée par l'arrêté interministériel du 06/12/2012).",
-                        "Capacités professionnelles : diplôme supérieur en bâtiment, travaux publics, architecture, droit, gestion ou économie — sinon, collaboration permanente et effective d'une personne qualifiée (un ingénieur ou diplômé à intégrer dans l'équipe).",
-                        'Assurance responsabilité civile professionnelle souscrite.',
-                        'Cahier des charges type des engagements du promoteur (décret 12-85) rempli et signé.',
+                        'Proyectista: para edificios de uso residencial, la titulación habilitante es la de arquitecto (art. 10 LOE). Director de ejecución de la obra: arquitecto técnico (art. 13 LOE). Ingenierías para estructura, instalaciones y telecomunicaciones (proyecto de Infraestructura Común de Telecomunicaciones, ICT).',
+                        'Encargo por escrito: hoja de encargo o contrato con alcance (anteproyecto, básico, ejecución, dirección de obra), honorarios por fases, plazos, número de revisiones incluidas y seguro de responsabilidad civil profesional de cada técnico.',
+                        'Estudios técnicos previos: levantamiento topográfico, estudio geotécnico conforme al Documento Básico SE-C del Código Técnico de la Edificación (sondeos, nivel freático, tipo de cimentación recomendada), y estado de las medianeras y edificios colindantes.',
                     ],
                 ],
                 [
-                    'title' => "3.2 Après l'agrément",
+                    'title' => '3.2 Anteproyecto, proyecto básico y proyecto de ejecución',
                     'key_points' => [
-                        "Délai réel constaté par les praticiens : jusqu'à un an entre le dépôt du dossier et l'agrément — prévoir un suivi actif et régulier du dossier auprès des services de la wilaya (relances documentées), et utiliser ce temps pour le sourcing foncier et le montage financier.",
-                        "Inscription au TNPI (Tableau National des Promoteurs Immobiliers) : le registre officiel de la profession, tenu sous l'égide du ministère de l'Habitat. Règle officielle à retenir : l'attestation d'inscription au TNPI et l'affiliation au FGCMPI valent autorisation d'exercer la profession (source : FGCMPI).",
-                        'Affiliation obligatoire au FGCMPI (Fonds de Garantie et de Caution Mutuelle de la Promotion Immobilière) — condition préalable à toute vente sur plan.',
-                        "Dossier d'affiliation FGCMPI (formulaire officiel, modèle mis à jour le 11/07/2024, téléchargeable sur fgcmpi.org.dz) : l'imprimé officiel dûment renseigné (avec l'état des projets engagés ou à engager et leur source de financement : VSP, crédit bancaire ou autofinancement) ; copie de l'attestation d'agrément ; attestation d'immatriculation fiscale (NIF) ; copie des statuts (personnes morales) ; copie du registre de commerce ; copie de la domiciliation bancaire (RIB) ; copie des pièces d'identité du gérant et des associés ; droits d'affiliation de 60 000 DA par virement ou versement BDL.",
-                        "Cotisation annuelle FGCMPI ensuite obligatoire pour conserver la qualité d'affilié : barème officiel par catégorie de chiffre d'affaires (A6 à A1, de moins de 10 MDA à plus de 1 000 MDA), dégressif avec l'ancienneté — de l'ordre de 10 000 DA/an pour un petit promoteur à 237 500 DA/an pour la catégorie la plus haute (barème joint au formulaire officiel).",
-                        "L'activité est exclusive : la société agréée ne peut pas exercer une autre activité réglementée en parallèle — vérifié et confirmé par le cahier des charges type des engagements du promoteur (décret 12-85) ; on ne loge donc pas la promotion dans une société fourre-tout.",
+                        'Anteproyecto: distribución, número y tipo de viviendas, superficies y cumplimiento urbanístico, con una estimación de coste. Es el momento de cerrar el producto con la viabilidad (fase 2) y con el equipo comercial: los cambios aquí son baratos; en obra, carísimos.',
+                        'Proyecto básico: define las características generales de la obra y justifica el cumplimiento urbanístico. En muchos municipios basta para solicitar la licencia de obras (fase 4), pero no permite empezar a construir.',
+                        'Proyecto de ejecución: desarrolla el básico con todo lo necesario para construir: memoria constructiva, cumplimiento de los Documentos Básicos del CTE (seguridad estructural, incendio, utilización y accesibilidad, salubridad, ruido, ahorro de energía), planos de detalle, pliego de condiciones, mediciones y presupuesto, plan de control de calidad, estudio de gestión de residuos y estudio de seguridad y salud (contenido del proyecto: Anejo I de la Parte I del CTE).',
+                        'Certificado de eficiencia energética del proyecto (RD 390/2021): se necesita para comercializar sobre plano, porque la etiqueta debe figurar en la publicidad.',
+                        'Las mediciones del proyecto de ejecución son la base para pedir precios a los constructores (fase 5). Un proyecto con mediciones incompletas se paga en la obra en forma de precios contradictorios.',
+                    ],
+                ],
+                [
+                    'title' => '3.3 Visados y Plan de Seguridad y Salud',
+                    'key_points' => [
+                        'Visado colegial obligatorio del proyecto de ejecución de edificación y del certificado final de obra (RD 1000/2010): lo emite el colegio profesional del técnico, que comprueba su identidad y habilitación y la integridad formal del documento. Cada colegio fija sus derechos de visado.',
+                        'Estudio de Seguridad y Salud (o estudio básico, según el tamaño de la obra): lo encarga el promotor a un técnico competente y forma parte del proyecto. Es obligatorio el estudio completo cuando el presupuesto de ejecución por contrata es igual o superior a 450.759,08 €, la obra dura más de 30 días laborables con más de 20 trabajadores a la vez, o supera las 500 jornadas de trabajo (art. 4 del RD 1627/1997).',
+                        'Plan de Seguridad y Salud: lo redacta cada contratista a partir del estudio, adaptándolo a sus medios y procedimientos, y lo aprueba el coordinador de seguridad y salud en fase de ejecución antes del inicio de la obra (art. 7 del RD 1627/1997). Sin plan aprobado no hay comunicación de apertura del centro de trabajo ni inicio de obra.',
+                        'Coordinador de seguridad y salud: el promotor lo designa en fase de proyecto cuando intervienen varios proyectistas, y en fase de ejecución cuando interviene más de una empresa o trabajadores autónomos (art. 3 del RD 1627/1997), que en una promoción de viviendas es siempre.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'consultant_agrement', 'body' => "Consultant/juriste spécialisé en montage de dossiers d'agrément auprès des wilayas (fort taux de rejet des dossiers incomplets) ; personne qualifiée « diplômé bâtiment/droit » à proposer en collaboration aux candidats qui n'ont pas le diplôme."],
-                ['type' => 'legal', 'body' => 'Loi 11-04 (art. 4, 20-23, 55, 77) ; décret 12-84 modifié par 13-96 et 19-243 ; décret 12-85 ; arrêté interministériel du 06/12/2012.'],
+                ['type' => 'partner_slot', 'partner_category' => 'arquitectura', 'body' => 'Estudios de arquitectura e ingeniería colaboradores (proyecto, dirección de obra, dirección de ejecución, coordinación de seguridad y salud, ICT).'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 10 y 13) ; RD 314/2006, Código Técnico de la Edificación (Parte I, Anejo I ; DB SE-C) ; RD 1000/2010 sobre visado colegial obligatorio ; RD 1627/1997, seguridad y salud en las obras de construcción (art. 3, 4 y 7) ; RD 390/2021, certificación de la eficiencia energética de los edificios ; RD 105/2008, gestión de residuos de construcción y demolición.'],
             ],
         ],
 
         // ------------------------------------------------------------------
         4 => [
-            'title' => 'Le foncier : trouver, vérifier et acheter le terrain',
-            'description' => "Vérifier un titre, exiger le certificat négatif, lire un certificat d'urbanisme (COS/CES) et acheter au nom de la société — puis savoir où trouver le foncier.",
+            'title' => 'Licencias: licencia de obras, autorizaciones, requisitos administrativos y otorgamiento',
+            'description' => 'Conseguir el permiso para construir: qué se presenta, qué revisa el ayuntamiento y otros organismos, cuánto se paga, cuánto se tarda de verdad y qué condiciones trae la licencia una vez otorgada.',
             'lessons' => [
                 [
-                    'title' => 'Vérifier et acheter le terrain',
+                    'title' => '4.1 La solicitud de licencia de obras',
                     'key_points' => [
-                        "Vérification du titre : l'acte de propriété du vendeur est remis au notaire, qui vérifie la chaîne de propriété, les servitudes, les inscriptions à la conservation foncière.",
-                        "Certificat négatif auprès de la conservation foncière (demande avec copie de l'acte) : il révèle tout ce qui grève le terrain — hypothèques, saisies, oppositions, inscriptions quelconques. Aucun achat sans ce document vierge ; le notaire le demande systématiquement, mais l'élève doit savoir l'exiger et le lire lui-même.",
-                        "Certificat d'urbanisme auprès de l'APC du lieu du terrain — circuit réel : c'est le propriétaire (le vendeur, avant votre achat) qui le demande, avec copie de son acte et un extrait du plan cadastral retiré au cadastre / à la conservation foncière ; l'APC transmet à la direction de l'urbanisme, qui répond. Dossier en plusieurs exemplaires (le texte prévoit 2, la pratique en demande souvent 3) ; délai réglementaire de notification : 15 jours, délai réel constaté : un mois minimum ; recours auprès de la direction de l'urbanisme de la wilaya, puis du ministère.",
-                        "Ce que dit le certificat : la typologie constructible (habitat individuel, semi-collectif type duplex, ou collectif R+1 à R+10 et plus), le gabarit, le COS (coefficient d'occupation du sol : surface de plancher constructible rapportée à la surface du terrain) et le CES (coefficient d'emprise au sol : emprise bâtie au sol rapportée à la surface du terrain). Ces deux coefficients déterminent directement combien de mètres carrés vendables le terrain peut produire — donc sa vraie valeur pour un promoteur.",
-                        'Achat chez le notaire : acte au nom de la société. Les apports des associés (immédiats ou futurs) et tout arrangement entre associés se formalisent chez le notaire.',
-                        "Alternative foncier public : concession convertible en cession de terrains du domaine privé de l'État pour projets de promotion à caractère commercial (décret 15-281).",
-                        "Point clé enseigné : le POS décide de ce que vous pouvez construire (nombre d'étages, occupation du sol) — acheter le terrain AVANT le certificat d'urbanisme est l'erreur n°1 du débutant.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'expert_tip', 'body' => "Faire l'étude géotechnique AVANT d'acheter le terrain : si l'affaire ne se fait pas, vous perdez le prix d'une étude — si vous achetez sans, vous risquez de découvrir après coup un sol qui dévore votre marge en fondations spéciales. Petite perte certaine contre grosse perte possible : c'est le meilleur argent dépensé du projet."],
+                        'Una obra de nueva planta de viviendas necesita licencia urbanística expresa: la ley estatal establece el silencio administrativo negativo para las obras de edificación de nueva planta (art. 11.4 del RDL 7/2015). Que pase el plazo sin respuesta no autoriza a construir.',
+                        'Documentación habitual: solicitud, proyecto básico o básico y de ejecución (visado cuando corresponda), hojas de encargo de la dirección de obra y de la dirección de ejecución, estudio de gestión de residuos con su fianza, estudio de seguridad y salud, proyecto de ICT, justificación de aparcamientos, cuestionario de estadística de edificación y justificante de pago de tasas y autoliquidación del ICIO. Cada ayuntamiento publica su lista: pedirla antes de presentar.',
+                        'Si el solar todavía necesita completar la urbanización, la ley autonómica suele permitir urbanizar y edificar a la vez con un aval que garantice la urbanización y el compromiso de no usar el edificio hasta terminarla.',
                     ],
                 ],
                 [
-                    'title' => '4.5 Comment trouver le foncier (sourcing)',
+                    'title' => '4.2 Tramitación, informes y autorizaciones',
                     'key_points' => [
-                        'Le terrain ne se trouve pas derrière un écran : tourner physiquement dans les quartiers cibles, repérer les parcelles vides ou les bâtisses à démolir, interroger le voisinage et les commerçants — la moitié des bonnes affaires se conclut avant toute annonce.',
-                        "Canaux complémentaires : notaires (successions et indivisions à dénouer — le meilleur gisement), agences immobilières agréées, annonces (Ouedkniss et similaires), ventes aux enchères judiciaires, services d'urbanisme et agences foncières de wilaya pour le foncier public (concession convertible en cession, décret 15-281).",
+                        'El ayuntamiento emite informes técnico y jurídico; los requerimientos de subsanación paran el plazo. Responderlos rápido y completos es la mayor palanca del promotor sobre el calendario.',
+                        'Informes sectoriales según la ubicación: carreteras, confederación hidrográfica, patrimonio, servidumbres aeronáuticas, costas. Se piden en paralelo cuando la normativa lo permite.',
+                        'Plazo legal de resolución habitualmente de tres meses en la normativa autonómica; plazo real en grandes ciudades bastante mayor (pendiente de validar con el formador). Hay que llevarlo a la planificación y al flujo de caja: el suelo ya pagado cuesta intereses cada mes de espera.',
+                        'Si se deniega o se retrasa sin motivo: recurso administrativo y, después, contencioso-administrativo. Antes de recurrir, reunión técnica con los servicios municipales: muchas denegaciones se resuelven con una modificación del proyecto.',
+                    ],
+                ],
+                [
+                    'title' => '4.3 El otorgamiento y lo que trae la licencia',
+                    'key_points' => [
+                        'La resolución de licencia fija las condiciones: plazos de inicio y de terminación (si se incumplen, la licencia puede caducar), prescripciones técnicas, fianzas y, en su caso, la obligación de presentar el proyecto de ejecución antes de empezar.',
+                        'Con la licencia: cartel de obra exigido por la ordenanza municipal, licencia de ocupación de la vía pública para vallado, grúa o contenedores, autorización de la grúa torre (proyecto de instalación y puesta en servicio, ITC MIE-AEM-2 del RD 836/2003) y solicitud de acometidas provisionales de obra.',
+                        'La licencia de obras es requisito para la garantía de las cantidades a cuenta y para el préstamo promotor (fase 5), y debe constar en la información que se da a los compradores (fase 8).',
+                        'Cualquier cambio del proyecto que afecte a lo autorizado (número de viviendas, volumen, alturas, usos, fachadas) necesita una modificación de licencia antes de ejecutarse: lo que se construya fuera de licencia bloquea la licencia de primera ocupación (fase 9).',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => 'Agence(s) immobilière(s) agréée(s) orientées foncier, par région — sourcing de terrains qualifiés pour les élèves.'],
-                ['type' => 'legal', 'body' => "Loi 90-29 (aménagement et urbanisme) ; décret 15-19 modifié (art. 2-6 : certificat d'urbanisme) ; loi 90-25 (orientation foncière) ; décret 15-281."],
+                ['type' => 'partner_slot', 'partner_category' => 'abogado', 'body' => 'Abogado urbanista (tramitación, recursos, convenios urbanísticos) y gestoría especializada en licencias por municipio.'],
+                ['type' => 'legal', 'body' => 'RDL 7/2015, Ley de Suelo y Rehabilitación Urbana (art. 11) ; ley urbanística y de procedimiento de la comunidad autónoma ; ordenanzas municipales de tramitación de licencias, ICIO y tasas ; RD 836/2003 (ITC MIE-AEM-2, grúas torre).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         5 => [
-            'title' => 'Études techniques et permis de construire',
-            'description' => "De l'étude de sol au permis obtenu : le bureau d'études, le guichet unique, les quatre services consultés, la déclaration d'ouverture de chantier et le permis modificatif.",
+            'title' => 'Financiación y contratación: préstamo promotor, seguros, licitación y contratos de obra',
+            'description' => 'Asegurar el dinero y a quien va a construir: el préstamo promotor y lo que el banco exige, los seguros y garantías obligatorios, cómo se licita la obra y qué debe decir el contrato con el constructor.',
             'lessons' => [
                 [
-                    'title' => '5.1 Étude géotechnique',
+                    'title' => '5.1 El préstamo promotor',
                     'key_points' => [
-                        "Laboratoire agréé pour l'étude de sol (sondages, portance, niveau du bon sol, présence d'eau). Sert de base au dimensionnement de l'infrastructure et de la superstructure. Délai indicatif cité par l'intervenant : jusqu'à 3 mois. Comment trouver : organisme étatique de contrôle, bouche-à-oreille, internet. Rappel du module 4 : idéalement, cette étude est faite AVANT l'achat du terrain.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'bureau_etudes', 'body' => 'Laboratoire(s) géotechnique(s) agréé(s) — 1 à 2 par région (Centre/Ouest/Est).'],
+                        'Préstamo con garantía hipotecaria sobre el solar y la obra futura, que se va disponiendo contra certificaciones de obra revisadas por la sociedad de tasación. Al vender, la hipoteca se distribuye entre las viviendas y cada comprador se subroga en su parte o el promotor la cancela.',
+                        'Lo que suele pedir el banco: solar pagado con fondos propios, licencia de obras, proyecto de ejecución, contrato de obra con un constructor solvente, tasación de una sociedad homologada, un porcentaje mínimo de preventas con entregas a cuenta, seguros (decenal, todo riesgo construcción) y la cuenta especial para las cantidades de los compradores. Porcentajes de financiación y de preventa exigidos hoy: pendiente de validar con el formador.',
+                        'Costes: intereses, comisión de apertura, tasaciones y seguimientos de obra, notaría y registro de la hipoteca, y comisiones de subrogación o cancelación. Todos van a la viabilidad (fase 2).',
+                        'Si los compradores se van a subrogar, el banco debe darles la información precontractual de la Ley 5/2019 de crédito inmobiliario como en cualquier hipoteca: preverlo con tiempo para no retrasar las escrituras.',
                     ],
                 ],
                 [
-                    'title' => "5.2 Bureau d'études (maîtrise d'œuvre)",
+                    'title' => '5.2 Seguros y garantías obligatorios',
                     'key_points' => [
-                        "Bureau d'études/architecte agréé par l'État (Ordre des architectes). Reçoit l'étude géotechnique + le certificat d'urbanisme, produit l'esquisse, l'avant-projet (maquette 3D, nombre de logements/commerces/services selon les règles d'urbanisme), puis le dossier d'exécution.",
-                        "Rémunération : barème réglementé pour la maîtrise d'œuvre ; l'intervenant cite une pratique de l'ordre de 2 % négociables sur le projet. Tout est négociable, mais formaliser par contrat de maîtrise d'œuvre.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'bureau_etudes', 'body' => "2 à 3 bureaux d'études agréés (architecture + génie civil + VRD) — c'est LE partenaire central de toute la classe : il monte le dossier de permis, produit le devis quantitatif, consulte les entreprises et assure le suivi."],
+                        'Garantía de las cantidades a cuenta: quien promueve viviendas y cobra dinero de los compradores antes de entregarlas debe garantizar, desde la licencia, su devolución más el interés legal mediante seguro de caución o aval solidario de una entidad de crédito, y cobrarlo en una cuenta especial separada de cualquier otro fondo (disposición adicional primera de la LOE). Cada comprador recibe su certificado individual.',
+                        'Seguro decenal de daños materiales (art. 19 LOE): obligatorio en edificios de viviendas, cubre durante diez años los daños estructurales por el 100 % del coste final de la obra. Se contrata antes de empezar —la aseguradora exige un Organismo de Control Técnico desde el proyecto— y entra en vigor con la recepción de la obra (fase 7).',
+                        'Seguro de todo riesgo construcción (daños a la obra durante su ejecución) y responsabilidad civil del promotor: no siempre obligatorios por ley, pero los exige el banco y protegen frente a daños a terceros y a colindantes.',
                     ],
                 ],
                 [
-                    'title' => '5.3 Dépôt et instruction du permis de construire',
+                    'title' => '5.3 Licitación y contrato de obra',
                     'key_points' => [
-                        "Le bureau d'études dépose le dossier au guichet unique (APC ou wilaya selon l'envergure) : plans d'architecture, génie civil, hydraulique, protection civile, acte de propriété, registre de commerce. Nombre d'exemplaires selon le texte officiel : 3 pour l'habitat individuel, 8 pour les projets nécessitant la consultation des services publics (décret 15-19, art. 45) — la pratique varie selon les guichets (l'intervenant en a déposé 5) : se renseigner au dépôt. Un exemplaire reste à l'APC, les autres partent aux services consultés.",
-                        "Ce que chaque service vérifie dans votre dossier — à anticiper dès la conception : l'urbanisme (respect du POS, accessibilité du projet) ; la protection civile (sorties de secours, sécurité incendie) ; la santé (superficies correctes des pièces, dimensions des fenêtres pour la lumière naturelle, aération et humidité) ; l'hydraulique (raccordements, diamètres des canalisations, évacuation des eaux vers le réseau). Un bureau d'études qui intègre ces exigences en amont évite 90 % des allers-retours d'instruction.",
-                        "L'instruction recueille les avis : protection civile, santé, hydraulique, direction de l'urbanisme de la wilaya. La commission se réunit périodiquement ; en cas de lacune, elle contacte directement le bureau d'études. Délai indicatif global cité par l'intervenant : environ 5 mois études comprises. Les réformes 2020 et 2024 (guichets uniques renforcés + plateforme numérique de dépôt) visent des délais raccourcis — vérifier les délais actuels auprès du guichet unique de la wilaya concernée.",
-                        "L'arrêté de permis mentionne tout : nombre de logements, parkings, délai de validité et de démarrage des travaux (caducité si non-respect ; renouvellement sans nouvelle instruction si les règles n'ont pas évolué). Frais à payer à la délivrance (taxe sur les permis immobiliers).",
-                        "Convention CTC : à conclure immédiatement après la signature du contrat de maîtrise d'œuvre — le contrôle technique est obligatoire (génie civil / solidité / étanchéité) et conditionne la décennale.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'bureau_etudes', 'body' => 'CTC (organisme public — contact régional à fournir) ; éventuellement organismes de contrôle agréés.'],
-                    ],
-                ],
-                [
-                    'title' => "5.4 La déclaration d'ouverture de chantier (obligation souvent oubliée)",
-                    'key_points' => [
-                        "Pour tout chantier occupant plus de 9 travailleurs pendant plus d'une semaine, le maître d'ouvrage remplit le formulaire de déclaration d'ouverture de chantier (délivré par les agences CNAS), établi en 4 exemplaires, daté et signé.",
-                        "À communiquer 10 jours AVANT l'ouverture du chantier à trois destinataires : la CNAS, l'OPREBATPH (organisme de prévention des risques professionnels du BTPH) et l'inspection du travail.",
-                        "Pratique de guichet signalée par l'expert : déposer également une déclaration d'ouverture de chantier auprès de l'APC (certaines communes l'exigent ou la délivrent contre récépissé) — à confirmer localement au guichet unique, la date portée devant correspondre à celle du panneau.",
-                        "Côté urbanisme : la date d'ouverture du chantier et la date prévue de fin des travaux figurent sur le panneau réglementaire (module 6). Ouvrir un chantier sans les formalités (clôture de protection, panneau signalétique) est sanctionné d'une amende de 5 000 à 10 000 DA, et ne pas démarrer les travaux dans les délais du permis de 10 000 à 30 000 DA (loi 08-15, art. 89-90).",
-                    ],
-                ],
-                [
-                    'title' => '5.5 Le permis de construire modificatif',
-                    'key_points' => [
-                        "Toute modification du projet en cours de réalisation touchant les éléments approuvés du permis — implantation, gabarit, vocation, façades (exactement ce que la commission de conformité vérifiera, art. 66 du décret 15-19) — ou la consistance du programme (nombre de logements, surfaces) doit être couverte par un permis modificatif AVANT exécution, instruit dans les mêmes formes et les mêmes délais que le permis initial, auprès du même guichet unique (délais d'instruction raccourcis par le décret 15-19 et ses réformes ; à confirmer auprès du guichet de la wilaya). Intégrer ce délai au planning : les travaux sur la partie modifiée ne peuvent pas démarrer avant l'obtention.",
-                        "Construire hors permis = refus du certificat de conformité en fin de projet, donc blocage des actes définitifs des clients, plus les sanctions de la loi 08-15. Réflexe à enseigner : toute demande de modification (client ou technique) passe d'abord par le bureau d'études, qui tranche : simple adaptation d'exécution ou permis modificatif.",
-                        "Si la modification change la division du projet (nombre ou consistance des unités), l'EDD doit être modifié en parallèle auprès de la conservation foncière (EDD modificatif, voir module 7).",
+                        'Modalidades: contratista general a precio cerrado sobre proyecto («llave en mano»), contratación por partidas o gremios coordinada por el promotor, o gestión de obra con honorario. Cada una reparte de forma distinta el riesgo de coste y de plazo.',
+                        'Licitación: invitar al menos a tres constructoras con el proyecto de ejecución y sus mediciones, el plazo y el modelo de contrato; comparar ofertas partida a partida sobre las mismas mediciones (comparativo homogéneo), no por el total. Revisar solvencia: inscripción en el Registro de Empresas Acreditadas (REA), obras similares terminadas, situación financiera y seguros.',
+                        'Contrato de obra: objeto y documentos contractuales (proyecto, pliego, oferta), precio y si es cerrado o por mediciones, forma de pago por certificaciones mensuales, retención de garantía de cada certificación, aval de fiel cumplimiento, plazo con hitos y penalizaciones por retraso, régimen de modificados y precios contradictorios (siempre por escrito y antes de ejecutar), recepción y plazo de garantía, subcontratación y seguros. Porcentajes habituales de retención y aval: pendiente de validar con el formador.',
+                        'Subcontratación: la Ley 32/2006 limita las cadenas de subcontratación y exige el Libro de Subcontratación en obra. El promotor debe conocer quién trabaja en su obra.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'legal', 'body' => "Décret 15-19 modifié (permis de construire, art. 41 et s. ; conformité art. 64-66) ; décret du 22/11/2020 et réforme 2024 (plateforme numérique, guichets uniques) ; arrêté interministériel du 15/05/1988 (maîtrise d'œuvre, art. 18 : convention CTC) ; arrêté du 26/07/2008 (déclaration d'ouverture de chantiers BTPH) ; loi 08-15 (art. 89-90)."],
+                ['type' => 'partner_slot', 'partner_category' => 'banco', 'body' => 'Entidades financieras con línea de préstamo promotor y avales de cantidades a cuenta ; sociedad de tasación homologada.'],
+                ['type' => 'partner_slot', 'partner_category' => 'aseguradora', 'body' => 'Aseguradoras y corredores especializados en construcción (decenal, todo riesgo construcción, caución de cantidades a cuenta, responsabilidad civil).'],
+                ['type' => 'partner_slot', 'partner_category' => 'constructora', 'body' => 'Constructoras de edificación residencial por provincia, con referencias de obra terminada.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 19 y disposición adicional primera, redactada por la Ley 20/2015) ; Ley 5/2019 reguladora de los contratos de crédito inmobiliario ; Ley 32/2006 reguladora de la subcontratación en el sector de la construcción y RD 1109/2007 ; Código Civil (art. 1588-1600, contrato de obra).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         6 => [
-            'title' => 'Installer et ouvrir le chantier',
-            'description' => "Étape charnière ajoutée sur recommandation d'expert : entre le permis obtenu et le premier coup de pelle, l'installation de chantier conditionne la sécurité, la conformité et la productivité de tout le projet.",
+            'title' => 'Construcción: cimentación, estructura, cerramientos, instalaciones y acabados',
+            'description' => 'La obra de principio a fin: el acta de replanteo que la pone en marcha, cada gran capítulo de construcción y lo que el promotor debe vigilar en él, hasta el acta final de obra.',
             'lessons' => [
                 [
-                    'title' => "6.1 L'installation de chantier",
+                    'title' => '6.1 Acta de replanteo e inicio de obra',
                     'key_points' => [
-                        "Clôture de protection du terrain : obligatoire dès l'ouverture — son absence est une infraction sanctionnée (loi 08-15, art. 89).",
-                        "Panneau réglementaire de chantier : rectangulaire, dimensions supérieures à 80 cm, visible de l'extérieur, conforme au modèle-type annexé au décret 15-19 ; il indique les références du permis de construire, la nature de la construction, sa hauteur, la surface du terrain, la date d'ouverture du chantier, la date prévue de fin des travaux et, s'il y a lieu, le maître d'ouvrage, le bureau d'études et l'entreprise de réalisation (décret 15-19, art. 60). Maintenu pendant toute la durée du chantier.",
-                        "Base de vie : bureaux de chantier, vestiaires, sanitaires, réfectoire, loge gardien — dimensionnée selon l'effectif, conformément aux prescriptions d'hygiène du décret 05-12.",
-                        'Alimentation provisoire en eau et en électricité : branchements de chantier à demander auprès des concessionnaires (Sonelgaz ; SEAAL à Alger, ADE ailleurs) — anticiper les délais, rien ne démarre sans.',
-                        "Plan d'installation de chantier (PIC), établi avec le bureau d'études et l'entreprise : accès et circulations, zones de stockage, position de la grue et son rayon, base de vie, signalisation.",
+                        'Antes de empezar: licencia, proyecto de ejecución, Plan de Seguridad y Salud aprobado, comunicación de apertura del centro de trabajo presentada por el contratista ante la autoridad laboral, seguros contratados, coordinador de seguridad y salud nombrado y cartel de obra colocado.',
+                        'Acta de replanteo (o de comienzo de obra): la firman el director de obra, el director de ejecución, el constructor y el promotor; comprueba sobre el terreno la geometría del proyecto y fija la fecha de inicio a efectos del contrato y de la licencia (art. 12 y 13 LOE).',
+                        'Libros que deben estar en obra: Libro de Órdenes y Asistencias (CTE, Anejo II), Libro de Incidencias de seguridad y salud (art. 13 del RD 1627/1997) y Libro de Subcontratación (Ley 32/2006).',
                     ],
                 ],
                 [
-                    'title' => '6.2 Les autorisations spécifiques',
+                    'title' => '6.2 Movimiento de tierras, cimentación y estructura',
                     'key_points' => [
-                        "Occupation temporaire de la voie publique (emprise sur trottoir ou chaussée pour clôture, échafaudage, benne, stationnement d'engins) : autorisation de voirie à demander à l'APC, redevance selon la commune.",
-                        "Fermeture temporaire de route si nécessaire (levages exceptionnels, livraisons hors gabarit) : accord préalable de l'APC et des services de sécurité, avec signalisation et itinéraire de déviation.",
-                        'Grues et équipements de levage : implantation prévue au PIC, montage et vérifications périodiques par un organisme habilité, gestion du survol des propriétés voisines ; conserver les certificats de contrôle sur le chantier.',
+                        'Excavación y contención: vaciado, muros pantalla, pilotes o bataches según el estudio geotécnico y los colindantes. Acta notarial o informe pericial del estado de los edificios vecinos antes de excavar: protege frente a reclamaciones posteriores.',
+                        'Cimentación (zapatas, losa o pilotes) conforme al geotécnico; si al excavar el terreno no coincide con el estudio, la dirección facultativa decide y se documenta en el Libro de Órdenes.',
+                        'Estructura de hormigón armado: control de recepción del hormigón y del acero según el Código Estructural (RD 470/2021), ensayos de laboratorio y desencofrados en plazo. Es la partida que más condiciona el plazo y el seguro decenal.',
                     ],
                 ],
                 [
-                    'title' => '6.3 La gestion HSE (hygiène, sécurité, environnement)',
+                    'title' => '6.3 Cerramientos, cubierta e instalaciones',
                     'key_points' => [
-                        "Cadre légal : loi 88-07 (hygiène, sécurité et médecine du travail) et décret 05-12 (prescriptions particulières applicables aux chantiers du bâtiment, des travaux publics et de l'hydraulique).",
-                        "Plan d'hygiène et de sécurité (PHS) du chantier, établi selon l'arrêté du 26/07/2008.",
-                        "Équipements de sécurité : EPI fournis par l'employeur (casque, chaussures, gants, gilet, harnais pour travail en hauteur), protections collectives (garde-corps, filets), signalisation de sécurité, accueil sécurité de tout nouvel intervenant.",
-                        "Organisation : commission paritaire d'hygiène et de sécurité (CPHS) obligatoire au-delà de 9 travailleurs (décret 05-09) ; comité inter-entreprises d'hygiène et de sécurité pour les chantiers multi-entreprises (décret 05-10) ; registre d'hygiène et de sécurité tenu sur le chantier ; médecine du travail pour les salariés.",
+                        'Envolvente: fachadas, aislamiento térmico (DB HE), aislamiento acústico (DB HR), carpinterías exteriores y cubierta con prueba de estanqueidad. Las humedades son la reclamación más frecuente en postventa: se previenen aquí.',
+                        'Instalaciones: electricidad (Reglamento Electrotécnico de Baja Tensión), fontanería y saneamiento, climatización y agua caliente con energías renovables exigidas por el DB HE (aerotermia o solar), ventilación (DB HS 3), telecomunicaciones (ICT), ascensores y protección contra incendios. Cada instalador habilitado emitirá su certificado o boletín: sin ellos no hay legalización (fase 9).',
+                        'Coordinar los gremios: rozas y pasos de instalaciones antes de cerrar tabiques, y pruebas de presión y estanqueidad antes de tapar.',
+                    ],
+                ],
+                [
+                    'title' => '6.4 Acabados y acta final de obra',
+                    'key_points' => [
+                        'Acabados: tabiquería, solados y alicatados, carpintería interior, pinturas, sanitarios, cocinas y zonas comunes, conforme a la memoria de calidades vendida a los compradores: lo que se publicitó es exigible (fase 8).',
+                        'Gestión de residuos durante toda la obra: el constructor entrega los certificados del gestor autorizado; sin ellos no se recupera la fianza de residuos.',
+                        'Final de obra: el director de obra y el director de ejecución firman el certificado final de obra, que se visa en sus colegios (RD 1000/2010). Después, el promotor y el constructor firman el acta de recepción, con o sin reservas: desde esa fecha corren las garantías de la LOE (fase 7 y fase 12).',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => 'Consultant/organisme HSE (rédaction du PHS, formation des équipes) ; organisme habilité de vérification des appareils de levage.'],
-                ['type' => 'legal', 'body' => "Loi 88-07 ; décrets exécutifs 05-09, 05-10, 05-11 et 05-12 du 08/01/2005 ; arrêtés du 26/07/2008 (PHS et déclaration d'ouverture de chantiers) ; décret 15-19 (art. 60) ; loi 08-15 (art. 89)."],
+                ['type' => 'partner_slot', 'partner_category' => 'constructora', 'body' => 'Constructoras y gremios de confianza por provincia (estructura, fachadas, instalaciones, acabados).'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 6, 12 y 13) ; RD 314/2006, CTE (Parte I, Anejo II y Documentos Básicos) ; RD 470/2021, Código Estructural ; RD 1627/1997 (art. 13) ; Ley 32/2006 ; RD 842/2002, Reglamento Electrotécnico para Baja Tensión ; RD 1027/2007, RITE ; RD 513/2017, instalaciones de protección contra incendios ; RD 105/2008, residuos de construcción.'],
             ],
         ],
 
         // ------------------------------------------------------------------
         7 => [
-            'title' => "Diviser le projet : l'EDD et le livret foncier par unité",
-            'description' => 'Transformer un terrain unique en N unités vendables, chacune avec son livret foncier — la condition matérielle de toute vente.',
+            'title' => 'Control de la obra: dirección facultativa, OCT, calidad, presupuesto y planificación',
+            'description' => 'Quién controla qué en la obra y cómo lo controla el promotor: la dirección facultativa, el Organismo de Control Técnico, el control de calidad, el presupuesto y el plazo, la contratación del seguro decenal y el protocolo ante un accidente grave.',
             'lessons' => [
                 [
-                    'title' => "L'État Descriptif de Division et les livrets fonciers",
+                    'title' => '7.1 Dirección facultativa y OCT',
                     'key_points' => [
-                        "Engager un géomètre-expert agréé par l'État.",
-                        "Le mettre en relation avec le bureau d'études pour établir l'État Descriptif de Division (EDD) : le terrain unique (un seul acte) devient N unités — exemple des notes : 200 logements, 40 services, 20 locaux + parkings.",
-                        "L'EDD est transmis au cadastre / à la conservation foncière, qui crée un livret foncier et un numéro pour chaque unité issue de la division.",
-                        'Préparer en parallèle le règlement de copropriété selon le modèle type (décret 14-99) — il sera annexé aux ventes.',
+                        'Dirección facultativa: el director de obra (arquitecto) dirige el desarrollo de la obra conforme al proyecto; el director de ejecución (arquitecto técnico) controla la ejecución material, la calidad de lo construido y las mediciones; el coordinador de seguridad y salud vigila la aplicación del plan. Sus órdenes quedan en el Libro de Órdenes.',
+                        'Organismo de Control Técnico (OCT): entidad independiente que la aseguradora del decenal exige para asumir el riesgo. Revisa el proyecto antes de empezar, inspecciona la obra en sus fases críticas (cimentación, estructura, cubierta, fachadas) y emite un informe final favorable, requisito para que el seguro decenal entre en vigor. Nombres y número de informes según cada OCT: pendiente de validar con el formador.',
+                        'Reunión semanal de obra con acta: promotor, dirección facultativa, constructor y, cuando proceda, OCT y coordinador. Lo que no está en un acta o en el Libro de Órdenes no se ha decidido.',
+                    ],
+                ],
+                [
+                    'title' => '7.2 Calidad, presupuesto y planificación',
+                    'key_points' => [
+                        'Control de calidad: plan de control del proyecto ejecutado por un laboratorio acreditado (hormigón, acero, pruebas de estanqueidad, pruebas de servicio de instalaciones). Los resultados se archivan para el Libro del Edificio (fase 9).',
+                        'Presupuesto: certificaciones mensuales con relación valorada que comprueba el director de ejecución antes de pagar; seguimiento del coste comprometido frente al presupuesto y a la viabilidad; los modificados y precios contradictorios se aprueban por escrito antes de ejecutarlos.',
+                        'Planificación: diagrama de barras con el camino crítico y los hitos (fin de estructura, cubierta, fachada, instalaciones, acabados); revisión cada mes del plazo previsto de entrega, porque condiciona el calendario de cobros, el préstamo y las fechas prometidas a los compradores.',
+                    ],
+                ],
+                [
+                    'title' => '7.3 La contratación del seguro decenal',
+                    'key_points' => [
+                        'Obligatorio en la edificación de viviendas (art. 19.1.c LOE): seguro de daños materiales durante diez años desde la recepción, por el 100 % del coste final de ejecución material, con una franquicia máxima del 1 % del capital asegurado.',
+                        'Sin él, el notario no autoriza ni el Registro inscribe la escritura de declaración de obra nueva terminada de un edificio de viviendas (art. 20 LOE): no hay escrituras para los compradores ni subrogaciones.',
+                        'Se solicita antes de empezar la obra, con el proyecto y el OCT designado; se paga una prima al inicio y la póliza se emite a la recepción, con el informe final del OCT y el acta de recepción. La única excepción de la ley es el autopromotor de una vivienda unifamiliar para su propio uso, que no es el caso del promotor que vende.',
+                    ],
+                ],
+                [
+                    'title' => '7.4 Ficha de actuación — accidente grave o mortal en obra',
+                    'content' => 'Para imprimir y colocar en las casetas de obra. Secuencia completa (pendiente de validar con el coordinador de seguridad y salud):',
+                    'is_reflex_sheet' => true,
+                    'key_points' => [
+                        'Auxilio inmediato: primeros auxilios, llamada al 112 y evacuación del herido. Proteger la zona para que no haya un segundo accidente.',
+                        'No modificar el lugar del accidente salvo para auxiliar. Avisar al coordinador de seguridad y salud, a la dirección facultativa y al promotor.',
+                        'El empresario del trabajador (la empresa de ese gremio, no necesariamente el promotor) comunica a la autoridad laboral en 24 horas los accidentes graves, muy graves o mortales, y presenta el parte de accidente de trabajo por el sistema Delt@ en el plazo de cinco días hábiles (Orden TAS/2926/2002).',
+                        'Se anota en el Libro de Incidencias; la Inspección de Trabajo investigará y puede paralizar la obra o la zona afectada.',
+                        'Trabajador dado de alta: la mutua o la Seguridad Social cubren asistencia, incapacidad y, si fallece, las prestaciones a sus familiares. Si hubo falta de medidas de seguridad, las prestaciones se recargan entre un 30 % y un 50 % a cargo del empresario responsable (art. 164 de la Ley General de la Seguridad Social), sin posibilidad de asegurarlo.',
+                        'Responsabilidad penal: delitos contra los derechos de los trabajadores por no facilitar los medios de seguridad (art. 316 y 317 del Código Penal), además del homicidio o las lesiones por imprudencia. La responsabilidad alcanza a quien debía garantizar la seguridad; el promotor puede verse implicado si no designó coordinador o la organización de la obra era deficiente.',
+                        'Consecuencias para la promoción: paralización, retrasos en cadena en el plazo prometido a los compradores y en las disposiciones del préstamo.',
+                    ],
+                    'blocks' => [
+                        ['type' => 'expert_tip', 'body' => 'Lo que protege al promotor: designar coordinador de seguridad y salud, exigir por escrito a cada empresa el alta de todos sus trabajadores, la inscripción en el REA y el cumplimiento del Plan de Seguridad y Salud, y guardar esas comprobaciones. El promotor que exigió y comprobó por escrito está en una posición radicalmente distinta del que miró hacia otro lado.'],
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => 'Géomètre(s)-expert(s) agréé(s) par région.'],
-                ['type' => 'legal', 'body' => 'Décret 14-99 du 04/03/2014 (modèle de règlement de copropriété en promotion immobilière) ; réglementation cadastre/conservation foncière.'],
+                ['type' => 'partner_slot', 'partner_category' => 'aseguradora', 'body' => 'Aseguradoras de decenal y Organismos de Control Técnico (OCT) que trabajan con ellas ; laboratorios de control de calidad acreditados.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 12, 13, 19 y 20 ; disposición adicional segunda) ; RD 314/2006, CTE (Parte I, Anejo II) ; RD 1627/1997 ; Ley 31/1995 de Prevención de Riesgos Laborales ; Orden TAS/2926/2002 (Delt@) ; RDL 8/2015, Ley General de la Seguridad Social (art. 164) ; Código Penal (art. 316 y 317).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         8 => [
-            'title' => 'Vendre : les deux modes, et la vente sur plan (VSP) en détail',
-            'description' => "Le cœur commercial et juridique du métier : choisir son mode de vente, réunir les préalables non négociables, appliquer l'échéancier réglementé et monter la machine commerciale.",
+            'title' => 'Comercialización: marketing, reservas, contratos y seguimiento de compradores',
+            'description' => 'Vender sobre plano dentro de la ley: la información que hay que dar al comprador, el marketing y la red de venta, el documento de reserva y el contrato de compraventa, y el acompañamiento del comprador hasta las escrituras.',
             'lessons' => [
                 [
-                    'title' => '8.0 Les deux modes de vente du promoteur',
+                    'title' => '8.1 Producto, precio y marketing',
                     'key_points' => [
-                        "Vente sur plan (VSP) : le régime de la loi 11-04 — tout ce module. Elle exige la totalité des préalables ci-dessous et suit l'échéancier de paiement réglementé.",
-                        "Vente d'un bien achevé : le promoteur construit jusqu'au bout sur ses fonds, obtient le certificat de conformité (l'expert parle d'attestation de bonne exécution), puis vend en vente immobilière classique chez le notaire — sans échéancier VSP ni attestation de garantie de vente sur plan. Plus simple juridiquement, mais tout le financement pèse sur le promoteur : c'est un arbitrage trésorerie contre simplicité à enseigner avec un cas chiffré.",
+                        'Material comercial: planos comerciales, infografías, memoria de calidades, tabla de precios y forma de pago, web de la promoción, oficina de ventas o piso piloto, y presencia en los portales inmobiliarios. La etiqueta de eficiencia energética del proyecto debe aparecer en la publicidad (RD 390/2021).',
+                        'Lo que se publicita obliga: el contenido de la oferta, la promoción y la publicidad es exigible por el comprador aunque no se repita en el contrato (art. 61 del texto refundido de la Ley General para la Defensa de los Consumidores, RDL 1/2007). Infografías y memoria deben ser fieles al proyecto.',
+                        'Información obligatoria a disposición del comprador (RD 515/1989 y normativa autonómica de consumo): planos de situación y de la vivienda, descripción de la vivienda y del edificio, memoria de calidades, precio total y forma de pago, datos de la licencia, de la inscripción registral y de la garantía de las cantidades a cuenta.',
+                        'Red de venta propia o agencias: comisión, exclusiva, argumentario y formación del equipo comercial por el arquitecto sobre el proyecto.',
                     ],
                 ],
                 [
-                    'title' => '8.1 Préalables non négociables avant de vendre le moindre mètre carré',
+                    'title' => '8.2 Reserva y contrato de compraventa',
                     'key_points' => [
-                        'Agrément + attestation TNPI.',
-                        'Acte de propriété du terrain au nom de la société.',
-                        'Permis de construire.',
-                        "Attestation de garantie FGCMPI du projet (peut être partielle : on peut ne garantir et ne vendre sur plan qu'une partie du projet). Elle est obligatoirement annexée à chaque contrat VSP.",
-                        'Convention CTC.',
-                        'Règlement de copropriété.',
+                        'Documento de reserva: identifica la vivienda, el precio y el importe de la reserva, y fija un plazo para firmar el contrato; aclara si la reserva se devuelve y en qué casos. Toda cantidad que entregue el comprador va a la cuenta especial y queda garantizada (fase 5).',
+                        'Contrato privado de compraventa sobre plano: descripción de la vivienda y anejos, precio y calendario de pagos (entrada, aportaciones durante la obra y resto a la escritura), plazo de entrega, memoria de calidades, referencia a la licencia, garantía de las cantidades a cuenta con entrega del certificado individual, y causas de resolución. IVA del 10 % sobre cada cantidad a cuenta en el momento del cobro.',
+                        'Cláusulas abusivas: al comprador consumidor no se le pueden repercutir los gastos que por ley corresponden al promotor —declaración de obra nueva, división horizontal, préstamo promotor y su cancelación— (art. 89 del RDL 1/2007). La plusvalía municipal de la venta la paga el promotor.',
                     ],
                 ],
                 [
-                    'title' => '8.2 Réservation vs vente sur plan',
+                    'title' => '8.3 Seguimiento de compradores',
                     'key_points' => [
-                        "Contrat de réservation (modèle type) : réserve le bien, ce n'est pas une vente.",
-                        "Contrat VSP (modèle type, acte notarié, enregistré et publié) : c'est la vente ; les versements de l'acquéreur sont des paiements, modulés selon l'avancement des travaux selon le barème officiel complet du décret 13-431 : 20 % du prix à la signature ; 15 % à l'achèvement des fondations ; 35 % à l'achèvement des gros œuvres (étanchéité et cloisons extérieures et intérieures comprises) ; 25 % à l'achèvement en tous corps d'état (raccordement aux VRD et aménagements extérieurs compris) ; solde de 5 % au procès-verbal de prise de possession.",
-                        'Pénalité de retard à la charge du promoteur si la livraison dépasse le délai contractuel : le retard est constaté par huissier de justice, la pénalité est calculée par jour de retard selon la formule du contrat, plafonnée à 10 % du prix de vente, et déduite du solde (hors force majeure).',
-                        "Révision du prix : uniquement si le contrat la prévoit (art. 38 de la loi 11-04), selon une formule basée sur les indices officiels des prix, matériaux et main-d'œuvre, plafonnée à 20 % du prix initial sauf circonstances exceptionnelles justifiées.",
-                        "Contenu obligatoire du contrat VSP (source FGCMPI) : mentions d'enregistrement et de publicité foncière ; justification de la qualité de promoteur (agrément, TNPI, affiliation) ; justification de la propriété du terrain et permis de construire ; description détaillée du bien ; prix prévisionnel et échéancier conforme au modèle réglementaire ; garanties légales, décennale et de bonne exécution + attestation de garantie du Fonds ; conditions de résiliation ; modalités de révision du prix le cas échéant.",
-                        "En cas de défaut de paiement de l'acquéreur — procédure réelle décrite par l'expert, dans le cadre du contrat type : mises en demeure par huissier de justice, espacées (il pratique trois mises en demeure à une semaine d'intervalle environ) ; si l'acquéreur ne régularise pas, action en justice en résolution de la vente — c'est un jugement qui prononce l'annulation de l'acte, pas le promoteur seul ; la retenue appliquée au client défaillant est celle prévue par le contrat type, et le remboursement du solde intervient après la revente du lot. Jamais de pratique informelle : chaque étape est écrite et datée.",
-                    ],
-                ],
-                [
-                    'title' => '8.3 Monter la machine commerciale',
-                    'key_points' => [
-                        "Équipe : responsable commercial + commerciaux + comptable/administrateur + caissier (encaissement) + gardiennage du site. Cette équipe peut être entièrement salariée en interne (contrats de travail, déclaration CNAS, ce que fait l'expert) ou partiellement externalisée — arbitrage coût fixe / commission à enseigner. Avant les ventes : le bureau d'études forme les commerciaux sur le projet (plans, prestations, délais).",
-                        'Le marketing est piloté avec les commerciaux : plan de communication, maquettes 3D, bureau de vente, échéancier de paiement type à présenter au client.',
-                        'Financement des acquéreurs : conventions avec les banques (crédits immobiliers des acheteurs) — argument de vente majeur.',
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'banque', 'body' => 'Banques partenaires (crédit acquéreur + crédit promoteur) ; agence marketing immobilier (production 3D, Meta Ads locales, landing pages) ; FGCMPI (organisme, contacts régionaux fournis en annexe).'],
+                        'Herramienta de seguimiento (CRM): estado de cada unidad (libre, reservada, contrato firmado, escriturada), calendario de cobros y documentación de cada comprador.',
+                        'Comunicación durante la obra: informes periódicos de avance con fotos y visitas organizadas a obra con medidas de seguridad. Un comprador informado no se convierte en una reclamación.',
+                        'Personalizaciones y cambios de acabados: catálogo cerrado, presupuesto firmado y plazo límite compatible con la planificación; nunca cambios que afecten a la licencia.',
+                        'Financiación de cada comprador: tasación, oferta del banco o subrogación en el préstamo promotor, con tiempo suficiente para la fecha de escrituras (fase 10).',
+                        'Impagos y desistimientos: requerimiento fehaciente, resolución conforme al contrato y devolución de lo que corresponda; las cantidades garantizadas se devuelven con la garantía cuando la promoción no llega a buen fin. Protección de datos (RGPD) en todo el proceso.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'legal', 'body' => 'Loi 11-04 (art. 25-27, 38, 52-58) ; décret 13-431 (modèles types, tranches 20/15/35/25/5, pénalités, révision) ; décrets 14-180/181/182 de 2014 (FGCMPI).'],
+                ['type' => 'partner_slot', 'partner_category' => 'marketing', 'body' => 'Agencias de comercialización de obra nueva, estudios de infografía 3D y marketing digital inmobiliario.'],
+                ['type' => 'partner_slot', 'partner_category' => 'abogado', 'body' => 'Abogado de derecho inmobiliario y de consumo para los modelos de reserva y de contrato de compraventa.'],
+                ['type' => 'legal', 'body' => 'RD 515/1989, información en la compraventa de viviendas ; RDL 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios (art. 61 y 89) ; Ley 38/1999 LOE (disposición adicional primera) ; Ley 37/1992 del IVA (art. 75 y 91) ; RD 390/2021 ; Reglamento (UE) 2016/679 de protección de datos.'],
             ],
         ],
 
         // ------------------------------------------------------------------
         9 => [
-            'title' => 'Construire : entreprises, chantier, assurances, aléas',
-            'description' => 'Consulter et contractualiser les entreprises, suivre le chantier, couvrir les risques par les bonnes assurances, encaisser les aléas du réel et piloter les paiements.',
+            'title' => 'Legalización: final de obra, documentación técnica, licencia de primera ocupación y Registro',
+            'description' => 'Convertir la obra terminada en viviendas que se pueden escriturar y habitar: la documentación técnica de final de obra, la licencia de primera ocupación, la escritura de obra nueva terminada y división horizontal y su inscripción en el Registro.',
             'lessons' => [
                 [
-                    'title' => '9.1 Consultation et contractualisation des entreprises',
+                    'title' => '9.1 Final de obra y documentación técnica',
                     'key_points' => [
-                        "Le bureau d'études produit le devis quantitatif complet (mètres, béton, acier, câbles… — « un livre entier ») puis demande des devis à au moins 3 entreprises par lot et met en relation les corps d'état entre eux.",
-                        'Lots types : terrassement ; génie civil/bâtiment (fondations, infrastructure, superstructure) ; maçonnerie ; étanchéité (lancée après ~3 niveaux) ; électricité ; plomberie/chauffage ; menuiserie/boiserie ; vitrerie ; peinture ; revêtements sols et faïence ; cuisines équipées ; ascenseurs ; VRD/travaux publics (routes, trottoirs, eaux usées et pluviales).',
-                        "Deux formules : fourniture + pose par l'entreprise, ou fournisseur séparé choisi avec le bureau d'études. Signature de conventions entre le promoteur et chaque entreprise. Délai indicatif pour boucler tous les lots : ~2 mois.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => "Annuaire partenaire par lot : 2-3 entreprises référencées par corps d'état et par région + fournisseurs (béton prêt à l'emploi, acier, câble) + ascensoristes. C'est la plus grosse valeur « contacts réels » de la formation."],
+                        'Certificado final de obra visado, acta de recepción, certificado de eficiencia energética del edificio terminado registrado en la comunidad autónoma, y los certificados de cada instalación: electricidad, telecomunicaciones (boletín, protocolo de pruebas y certificado de fin de obra de la ICT), ascensores, protección contra incendios, instalaciones térmicas y gas.',
+                        'Libro del Edificio (art. 7 LOE): el proyecto con sus modificaciones, el acta de recepción, la relación de agentes que han intervenido y las instrucciones de uso y mantenimiento del edificio y sus instalaciones. Muchas comunidades autónomas regulan su contenido. Se entrega a los usuarios finales (fase 11).',
+                        'Certificados de gestión de residuos para recuperar la fianza, y alta catastral de la nueva construcción (pendiente de validar con el asesor si la comunicación notarial la sustituye en cada caso).',
                     ],
                 ],
                 [
-                    'title' => '9.2 Suivi de chantier',
+                    'title' => '9.2 Licencia de primera ocupación',
                     'key_points' => [
-                        "Suivi assuré par un bureau d'études (le même ou un bureau dédié au suivi, payé à part) : chef de projet (coordonne les sous-traitants), chef d'équipe (encadre ingénieurs/architectes), ingénieurs et architectes de suivi.",
-                        "CTC : intervient sur le génie civil (qualité du béton) et l'étanchéité ; ses visas conditionnent les assurances.",
+                        'El ayuntamiento comprueba que lo construido se ajusta a la licencia y que el edificio puede usarse: según la comunidad autónoma es una licencia de primera ocupación, una declaración responsable de primera ocupación o, en algunas, una cédula de habitabilidad. Confirmar el régimen exacto del municipio (pendiente de validar con el formador).',
+                        'Sin ella no se pueden contratar los suministros definitivos de agua, luz y gas a nombre de los compradores, ni, en muchos casos, otorgar la escritura de obra nueva terminada.',
+                        'Inspección municipal: discrepancias con el proyecto aprobado, aparcamientos, accesibilidad y urbanización exterior terminada. Lo que no se ajuste se corrige o se legaliza con una modificación antes de volver a pedirla.',
                     ],
                 ],
                 [
-                    'title' => '9.3 Assurances du chantier (à enseigner précisément)',
+                    'title' => '9.3 Obra nueva, división horizontal y Registro',
                     'key_points' => [
-                        "RC professionnelle de tous les intervenants : chacun doit pouvoir la justifier à l'ouverture du chantier ; elle court jusqu'à la réception définitive (art. 175-177).",
-                        "Décennale (art. 178 + art. 554 code civil) : souscrite par les architectes, entrepreneurs et contrôleurs techniques ; prend effet à la réception définitive et couvre 10 ans ; elle bénéficie aux propriétaires successifs. Le maître d'ouvrage (promoteur) est tenu d'EXIGER contractuellement ces assurances auprès du même assureur et de vérifier leur souscription (art. 179) — et il reste responsable envers ses clients (loi 11-04, art. 49). Sanction du défaut : amende 5 000 à 100 000 DA.",
-                        'CAT-NAT (ord. 03-12) sur les biens immobiliers.',
-                        "Accidents du travail : la couverture des travailleurs relève de la CNAS — à condition qu'ils soient déclarés par leur employeur (chaque entreprise pour les siens, le promoteur pour ses propres salariés). Exiger contractuellement de chaque entreprise la déclaration CNAS de tous ses ouvriers, avec listes nominatives vérifiées ; des couvertures complémentaires chantier peuvent être souscrites auprès de l'assureur partenaire. La procédure complète en cas d'accident grave ou mortel est au module 13.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => "Compagnie(s) d'assurance partenaires (SAA, CAAT, CAAR, CIAR, GIG…) avec un interlocuteur « risques construction » dédié."],
-                    ],
-                ],
-                [
-                    'title' => "9.4 Les aléas du réel (retour d'expérience de l'intervenant)",
-                    'key_points' => [
-                        "Bon sol à 6 m d'un côté, 8 m de l'autre ; venues d'eau en creusant (ennemi n°1) ; béton non conforme à casser — à la charge de l'entreprise de réalisation ; météo (pluies qui arrêtent le chantier) ; prévoir un délai de grâce (~6 mois) dans le planning et les contrats.",
-                        "Autres surprises budgétaires à provisionner : travaux de renforcement du sol au terrassement quand le bon sol est plus profond que prévu (blocage, substitution, pieux) — des coûts réels à intégrer au prévisionnel ; dommages aux constructions voisines (fissures chez les mitoyens) : c'est la RC qui joue, constat immédiat par huissier et déclaration à l'assureur.",
-                    ],
-                ],
-                [
-                    'title' => '9.5 Le suivi financier du chantier',
-                    'key_points' => [
-                        "Attachements : relevés contradictoires des quantités réellement exécutées, signés sur site par l'entreprise et la maîtrise d'œuvre de suivi — c'est la pièce de base de tout paiement.",
-                        "Situations de travaux : états d'avancement périodiques (généralement mensuels) établis à partir des attachements et des prix de la convention, vérifiés et visés par le bureau de suivi avant tout règlement.",
-                        "Paiements des entreprises : selon l'échéancier de la convention signée (avance éventuelle, règlement des situations, retenue de garantie libérée après levée des réserves — modalités à fixer contractuellement) ; rapprocher en permanence les décaissements chantier des encaissements VSP (pilotage de trésorerie).",
-                        "Avenants : toute modification de consistance, de prix ou de délai fait l'objet d'un avenant écrit et signé AVANT exécution — jamais de travaux supplémentaires sur accord verbal. Si la modification touche aux éléments du permis, permis modificatif d'abord (module 5.5).",
-                    ],
-                ],
-                [
-                    'title' => '9.6 Les contrôles administratifs pendant les travaux',
-                    'key_points' => [
-                        'CTC : visites et visas techniques aux phases clés (fondations, élévations, étanchéité) — conserver tous les PV, ils conditionnent les assurances et la conformité finale.',
-                        "Services de l'urbanisme (commune/daïra) : les agents habilités peuvent visiter le chantier et vérifier la conformité au permis ; faire établir par eux le PV de conformité de l'implantation, indispensable ensuite pour les raccordements définitifs (décret 15-19, art. 61).",
-                        "Protection civile : vérification du respect des prescriptions de sécurité prévues au dossier (accès engins, moyens de lutte incendie selon le projet). Astuce d'expert : ne pas attendre la fin — solliciter officiellement des visites intermédiaires de la protection civile pendant le chantier, et missionner un consultant sécurité incendie qui suit le projet en continu, pour éviter la mauvaise surprise au certificat de conformité.",
-                        "Inspection du travail et CNAS : contrôle des déclarations des travailleurs et du respect des règles d'hygiène et de sécurité (module 6).",
-                        "Conservation foncière : sollicitée en cours de projet uniquement si l'EDD doit être modifié (changement du nombre ou de la consistance des unités vendues).",
+                        'Escritura de declaración de obra nueva (en construcción, al inicio, para el préstamo promotor; y terminada, al final) y de división horizontal: crea una finca registral por vivienda, garaje y trastero, con su cuota de participación, y los estatutos de la comunidad (Ley 49/1960 de Propiedad Horizontal, art. 5).',
+                        'Para la obra nueva terminada el notario y el registrador exigen el certificado final de obra, la licencia o acto de conformidad que corresponda (art. 28 del RDL 7/2015), el seguro decenal (art. 20 LOE) y el Libro del Edificio, que se deposita en el Registro con las coordenadas de la parcela ocupada (art. 202 de la Ley Hipotecaria). Lista definitiva pendiente de validar con el notario.',
+                        'Impuestos: AJD sobre la declaración de obra nueva y la división horizontal, a cargo del promotor, al tipo de cada comunidad autónoma.',
+                        'Con la inscripción, cada vivienda tiene su finca registral: es lo que permite escriturar las ventas y distribuir la hipoteca del préstamo promotor.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'legal', 'body' => 'Ord. 95-07 (art. 175-184) ; décret 95-414 ; ord. 03-12 ; ord. 71-85 (CTC) ; code civil art. 554.'],
+                ['type' => 'partner_slot', 'partner_category' => 'notario', 'body' => 'Notario colaborador (obra nueva, división horizontal, estatutos) y gestoría para la inscripción registral y el Catastro.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 6, 7 y 20) ; RDL 7/2015 (art. 28) ; Ley Hipotecaria (art. 202) ; Ley 49/1960 de Propiedad Horizontal (art. 5) ; RD 390/2021 ; RDL 1/2004, Ley del Catastro Inmobiliario ; normativa autonómica de licencias de ocupación y habitabilidad.'],
             ],
         ],
 
         // ------------------------------------------------------------------
         10 => [
-            'title' => 'Raccordements aux réseaux et réception des VRD',
-            'description' => "Règle d'or fixée par le décret 15-19 (art. 61) : les branchements définitifs des constructions aux différentes utilités ne sont raccordés que sur présentation du permis de construire ET d'un procès-verbal attestant la conformité de l'implantation de la construction, établi par les agents habilités des services de l'urbanisme de la commune. Ce PV se prépare donc PENDANT le chantier, pas à la fin.",
+            'title' => 'Preentrega: inspecciones, repasos, documentación y coordinación notarial',
+            'description' => 'Las semanas que deciden la satisfacción del comprador: revisar cada vivienda antes de enseñarla, corregir los repasos, preparar toda la documentación y coordinar las firmas con notaría y bancos.',
             'lessons' => [
                 [
-                    'title' => '10.1 Électricité et gaz — Sonelgaz',
+                    'title' => '10.1 Inspecciones y repasos',
                     'key_points' => [
-                        'Déposer la demande de raccordement auprès de la direction de distribution Sonelgaz de la wilaya, avec dossier technique : permis, plans, puissance demandée, nombre de compteurs (un par logement et par local).',
-                        "Sonelgaz réalise une étude technique et établit un devis de raccordement ; pour les programmes collectifs, l'étude peut mettre à la charge du promoteur des ouvrages (poste transformateur, extension de réseau, colonnes montantes aux normes) — à anticiper dans le budget et le planning dès le devis quantitatif.",
-                        "Prévoir les locaux techniques (poste, gaines, niches compteurs) dès la conception, avec le bureau d'études.",
+                        'Revisión interna vivienda por vivienda con una lista de comprobación (carpinterías, sanitarios, instalaciones funcionando, acabados, limpieza) por el constructor y el equipo del promotor, antes de cualquier visita del comprador.',
+                        'Visita de preentrega con el comprador: recorrido guiado, lista de repasos firmada por ambos y plazo comprometido para corregirlos. Una segunda visita confirma que están resueltos.',
+                        'Los repasos los ejecuta y paga el constructor dentro de su contrato: la retención de garantía (fase 5) es lo que asegura que vuelva.',
                     ],
                 ],
                 [
-                    'title' => '10.2 Eau potable et assainissement — SEAAL / ADE / ONA',
+                    'title' => '10.2 Documentación para el comprador',
                     'key_points' => [
-                        'À Alger : SEAAL (eau et assainissement). Dans les autres wilayas : ADE (eau potable) et ONA (assainissement). Même logique : demande de branchement avec dossier technique, étude, devis, puis travaux de branchement.',
-                        'Compteurs individuels par unité selon la configuration ; bâche à eau et surpression selon le projet.',
+                        'Carpeta de la vivienda: planos de lo construido, manual de uso y mantenimiento, garantías de electrodomésticos y equipos, certificado de eficiencia energética y copia de la licencia de primera ocupación o documento equivalente.',
+                        'Preparar la documentación de suministros (boletines y certificados) para el cambio de titularidad, y el inventario de llaves y mandos de cada unidad.',
                     ],
                 ],
                 [
-                    'title' => '10.3 La réception des VRD avant livraison',
+                    'title' => '10.3 Coordinación notarial',
                     'key_points' => [
-                        "Voiries, trottoirs, éclairage extérieur, réseaux d'eaux usées et pluviales réalisés par l'entreprise de travaux publics : procéder à une réception formelle des VRD (PV avec l'entreprise et le bureau de suivi, essais des réseaux) AVANT la livraison des logements.",
-                        "Les VRD conditionnent le fonctionnement du programme (accès, évacuation des eaux) et la satisfaction client ; un programme livré sans VRD réceptionnés, c'est un contentieux garanti.",
+                        'Calendario de firmas con la notaría y con los bancos de los compradores (o el banco del préstamo promotor si se subrogan). Las tasaciones y ofertas vinculantes deben estar listas antes de convocar.',
+                        'Liquidación de cada comprador: precio total más IVA, menos las cantidades entregadas a cuenta, menos el importe en que se subroga, igual a lo que paga en la firma. Se envía por escrito con antelación junto con la convocatoria.',
+                        'Lo que lleva el promotor a la notaría: escritura de obra nueva y división horizontal inscrita, licencia de primera ocupación, certificado de eficiencia energética, seguro decenal, certificados de estar al corriente con la comunidad y del IBI, y la carta de pago o cancelación parcial de la hipoteca del préstamo promotor para las viviendas que no se subrogan.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => "Interlocuteurs concessionnaires par région : direction de distribution Sonelgaz, SEAAL / ADE / ONA — contacts à fournir dans l'annuaire de la formation."],
-                ['type' => 'legal', 'body' => 'Décret 15-19 (art. 61).'],
+                ['type' => 'partner_slot', 'partner_category' => 'notario', 'body' => 'Notario colaborador y bancos de los compradores (subrogaciones y nuevas hipotecas).'],
+                ['type' => 'legal', 'body' => 'Ley 5/2019 de crédito inmobiliario (plazos de información precontractual) ; RDL 1/2007 (art. 89, gastos que no se repercuten al consumidor) ; Código Civil (art. 1455, gastos de la escritura).'],
             ],
         ],
 
         // ------------------------------------------------------------------
         11 => [
-            'title' => 'Livrer : conformité, réceptions, actes définitifs',
-            'description' => 'La dernière ligne droite : certificat de conformité, réception provisoire puis définitive avec le client, et actes définitifs chez le notaire.',
+            'title' => 'Entrega de llaves: escrituras, libro del edificio, suministros, CP, cobro final, entrega de la posesión y del juego de llaves',
+            'description' => 'El día de la firma y lo que la rodea: escrituras ante notario, cobro del precio pendiente, libro del edificio, suministros, constitución de la comunidad de propietarios y entrega formal de la posesión y de las llaves.',
             'lessons' => [
                 [
-                    'title' => 'Conformité, réceptions et actes définitifs',
+                    'title' => '11.1 Escrituras y cobro final',
                     'key_points' => [
-                        "Certificat de conformité auprès de l'APC (service d'urbanisme) : une commission (APC + protection civile + subdivision urbanisme de la daïra) vérifie que le construit est conforme au permis — ni plus ni moins : implantation, gabarit (étages), vocation, façades ; également distances entre bâtiments, sous-sols, dimensions des ouvertures. Délai indicatif cité : ~2 mois. Si un point ne passe pas, on corrige et on représente jusqu'à obtention — le certificat vaut permis d'habiter et peut être délivré par tranche.",
-                        "Réception provisoire : elle se fait directement entre le client et le promoteur (correction d'expert — pas via le bureau d'études). Le client visite son logement, compare avec ce qui lui a été présenté (logement témoin, descriptif) et consigne toutes ses réserves sur le formulaire de réception provisoire. Le promoteur transmet les réserves aux entreprises concernées, qui corrigent — délai courant : une quinzaine de jours — puis le client est rappelé.",
-                        "Réception définitive : une fois les réserves levées, le client signe le PV de réception définitive — preuve qu'il a réceptionné un bien conforme à son achat. C'est ce PV qui part chez le notaire pour l'acte définitif.",
-                        "Chez le notaire, pour établir les actes définitifs des clients : EDD + certificat de conformité + attestation d'assurance décennale + liste des clients + certificats de solde + PV de réception définitive. Les clients viennent signer leur acte de propriété.",
-                        "Rappel enseigné : la décennale court à partir de la réception définitive — et elle court lot par lot : chaque unité vendue (logement, local, parking) fait courir ses 10 ans à partir de sa propre réception définitive. Le promoteur reste donc engagé jusqu'à 10 ans après la réception du DERNIER lot vendu — à intégrer dans la durée de vie de la société et de ses assurances.",
+                        'Escritura pública de compraventa ante notario y, en su caso, de préstamo hipotecario o subrogación. El comprador paga el IVA del 10 % sobre lo pendiente y el AJD de su escritura al tipo de su comunidad autónoma.',
+                        'Cobro final: comprobar antes de entregar las llaves que el pago del precio pendiente está hecho (cheque bancario o transferencia confirmada). Las llaves no se entregan contra una promesa.',
+                        'Con la entrega de la vivienda, las garantías de las cantidades a cuenta de ese comprador se cancelan y el promotor puede solicitar su liberación al banco o a la aseguradora.',
+                    ],
+                ],
+                [
+                    'title' => '11.2 Libro del edificio, suministros y comunidad de propietarios',
+                    'key_points' => [
+                        'Libro del Edificio: se entrega a la comunidad de propietarios, y a cada comprador la parte que corresponde a su vivienda (art. 7 LOE).',
+                        'Suministros: alta o cambio de titularidad de luz, agua y gas a nombre de cada comprador con los certificados de instalación y la licencia de primera ocupación; lectura de contadores en el acta de entrega.',
+                        'Comunidad de propietarios (CP): junta constituyente, nombramiento de presidente y administrador, NIF de la comunidad, cuenta bancaria, seguro del edificio y contratos de mantenimiento (ascensor, protección contra incendios, limpieza). Mientras queden viviendas sin vender, el promotor paga sus cuotas (Ley 49/1960, art. 9).',
+                    ],
+                ],
+                [
+                    'title' => '11.3 Entrega de la posesión y del juego de llaves',
+                    'key_points' => [
+                        'Acta de entrega de llaves firmada por el comprador: fecha, vivienda y anejos, lecturas de contadores, inventario de llaves (vivienda, portal, buzón, trastero) y mandos del garaje, y repasos pendientes si los hubiera, con plazo.',
+                        'Las garantías de la LOE no cuentan desde la entrega al comprador sino desde la recepción de la obra entre promotor y constructor (art. 17.1 LOE): explicarlo bien evita malentendidos en postventa.',
                     ],
                 ],
             ],
-            'blocks' => [],
+            'blocks' => [
+                ['type' => 'partner_slot', 'partner_category' => 'otro', 'body' => 'Administradores de fincas colegiados para constituir la comunidad de propietarios.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 7 y 17) ; Ley 49/1960 de Propiedad Horizontal (art. 9, 13 y 14) ; Ley 37/1992 del IVA ; RDL 1/1993, texto refundido del Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados.'],
+            ],
         ],
 
         // ------------------------------------------------------------------
         12 => [
-            'title' => 'Piloter les chiffres',
-            'description' => "Le tableau de bord du promoteur : coût de revient au m², trésorerie, point mort et fiscalité — la partie qui décide si le projet gagne de l'argent.",
+            'title' => 'Postventa y cierre: información de la Comunidad de Propietarios, garantías, incidencias y liquidación de la promoción',
+            'description' => 'Lo que el promotor sigue debiendo después de vender: información a la comunidad, las garantías legales, un sistema serio de incidencias y la liquidación económica, fiscal y societaria de la promoción.',
             'lessons' => [
                 [
-                    'title' => 'Tableau de bord, trésorerie et fiscalité',
+                    'title' => '12.1 Información a la comunidad y garantías',
                     'key_points' => [
-                        "Tableau de bord projet : coût de revient au m² décomposé poste par poste — terrain, études (géotechnique, bureau d'études, géomètre), construction, marketing et commercialisation, assurances, frais opérationnels et de gestion, frais financiers — face au prix de vente au m² relevé par QUARTIER et par wilaya (deux quartiers de la même ville peuvent varier de 40 %) ; échéancier de trésorerie (encaissements VSP vs décaissements chantier) ; point mort.",
-                        'Structure de coûts de référence (intervenant) : terrain 25 % (+ ~10 % de marge de sécurité sur ce poste) / gestion et marketing 7 % / construction 68 % ; trésorerie initiale ~35 % du CA ou échéancier avec le vendeur du terrain.',
-                        "Fiscalité de l'acquisition du terrain — avantage clé du statut de promoteur cité par l'expert : exonération des droits d'enregistrement sur l'acquisition du terrain destiné à la promotion (il cite 2,5 %) ; restent dus la taxe de publicité foncière de 1 % à la charge de l'acheteur (art. 353-2 du code de l'enregistrement) et les honoraires du notaire selon le barème réglementé (de l'ordre de 0,5 à 1 %, dégressif). ATTENTION : la loi de finances 2026 a remanié la fiscalité immobilière (promesses de vente désormais enregistrées à 2,5 % ; exonération des droits d'enregistrement pour les acquéreurs de logements en promotion, circulaire DGI n°42/2026) — module à verrouiller avec le notaire et l'expert-comptable partenaires avant tournage, et à mettre à jour à chaque loi de finances.",
-                        "Fiscalité courante du promoteur : G50 mensuelle, IBS et acomptes, TVA sur les ventes, droits d'enregistrement et publicité foncière — leçon co-animée avec l'expert-comptable partenaire (les taux et régimes évoluent avec chaque loi de finances).",
+                        'Información a la Comunidad de Propietarios: Libro del Edificio, plan de mantenimiento, contactos de postventa y del seguro decenal, garantías de los equipos comunes y el calendario de revisiones obligatorias de las instalaciones.',
+                        'Responsabilidades de la LOE (art. 17), contadas desde la recepción de la obra: diez años por daños en la estructura (cimentación, soportes, vigas, forjados, muros de carga); tres años por defectos que afecten a la habitabilidad; un año por defectos de acabado, a cargo del constructor. El promotor responde solidariamente frente a los compradores con los demás agentes.',
+                        'Plazo para reclamar: dos años desde que se producen los daños (art. 18 LOE), sin perjuicio de las acciones contractuales del Código Civil. Plazos y acciones a confirmar con el abogado en cada caso (pendiente de validar con el abogado).',
+                    ],
+                ],
+                [
+                    'title' => '12.2 Gestión de incidencias',
+                    'key_points' => [
+                        'Canal único de incidencias (formulario o correo), con registro, acuse de recibo, plazo de respuesta, visita técnica, asignación al gremio responsable y cierre firmado por el propietario.',
+                        'Clasificar cada incidencia por garantía (acabado, habitabilidad, estructura) y responsable; los daños estructurales se comunican de inmediato a la aseguradora del decenal.',
+                        'Las incidencias repetidas son información: se revisan con la dirección facultativa y se incorporan a la siguiente promoción.',
+                    ],
+                ],
+                [
+                    'title' => '12.3 Liquidación de la promoción',
+                    'key_points' => [
+                        'Cierre económico: coste real frente a presupuesto y viabilidad partida a partida, beneficio obtenido y rentabilidad de los fondos propios.',
+                        'Cancelación del préstamo promotor y de las garantías pendientes; devolución al constructor de la retención y del aval de fiel cumplimiento al terminar el plazo de garantía del contrato; recuperación de fianzas municipales (residuos, urbanización).',
+                        'Cierre fiscal y societario: IVA de las ventas, impuesto sobre sociedades (el resultado se reconoce con la entrega de las viviendas), reparto de beneficios y, si la sociedad era solo para esta promoción, su disolución y liquidación una vez prescritas o cubiertas las responsabilidades. Criterios a confirmar con el asesor fiscal (pendiente de validar con el asesor fiscal).',
+                        'Memoria de lecciones aprendidas: qué falló en plazo, coste, calidad y venta, para la siguiente promoción.',
                     ],
                 ],
             ],
             'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'expert_comptable', 'body' => 'Expert-comptable / commissaire aux comptes spécialisé promotion immobilière (co-animation du module + offre de service aux élèves).'],
-            ],
-        ],
-
-        // ------------------------------------------------------------------
-        13 => [
-            'title' => 'Gestion des risques et des crises',
-            'description' => "Le module qui sépare les promoteurs qui durent de ceux qui disparaissent : chaque famille de risques est enseignée avec ses signaux d'alerte, sa prévention contractuelle et sa procédure de réaction.",
-            'lessons' => [
-                [
-                    'title' => '13.1 Les familles de risques du métier',
-                    'key_points' => [
-                        "Fonciers : héritiers ou indivisaires qui surgissent après l'achat (successions non réglées), acte contesté, servitudes non déclarées découvertes au terrassement, terrain grevé (d'où le certificat négatif du module 4), occupation illégale pendant la phase études.",
-                        "Administratifs : refus ou retard du permis (avis défavorable d'un service), recours des tiers contre le permis, révision du POS en cours de projet, retard d'agrément ou d'attestation FGCMPI qui bloque légalement les ventes, refus de conformité en fin de projet.",
-                        "Techniques : étude de sol démentie par le terrain (bon sol à 6 m d'un côté, 8 m de l'autre), venues d'eau, béton refusé par le CTC (démolition à la charge de l'entreprise, retard pour tous), fissures chez les mitoyens, effondrement de fouille.",
-                        "Entreprises : défaillance ou abandon de chantier d'un lot, malfaçons découvertes tard, sous-traitance en cascade non déclarée, vol de matériaux (d'où le gardiennage), corps d'état mal coordonnés qui se détruisent mutuellement le travail.",
-                        "Financiers et commerciaux : effet ciseaux de trésorerie (décaissements chantier plus rapides que les encaissements VSP — la cause n°1 de mortalité des promoteurs débutants), clients qui cessent de payer (procédure du module 8), mévente, flambée des matériaux (encadrée par l'art. 38), retard de livraison qui déclenche les pénalités plafonnées à 10 %.",
-                        'Externes : météo, pénuries, changements de réglementation ou de loi de finances en cours de projet.',
-                    ],
-                ],
-                [
-                    'title' => '13.2 Fiche réflexe — accident grave ou mortel sur le chantier',
-                    'content' => 'À imprimer et afficher dans la base de vie de chaque chantier. Séquence complète :',
-                    'is_reflex_sheet' => true,
-                    'key_points' => [
-                        'Secours immédiats : premiers soins, appel protection civile (14) / SAMU, évacuation de la victime.',
-                        "Accident grave ou mortel : ne pas modifier les lieux ; prévenir la police ou la gendarmerie — un décès sur chantier est systématiquement déclaré et déclenche une enquête judiciaire — et informer l'inspection du travail. Consigner l'accident au registre d'hygiène et de sécurité du chantier.",
-                        "Déclaration CNAS sous 48 heures par l'employeur du travailleur (l'entreprise du lot concerné, pas nécessairement le promoteur) ; la victime ou ses proches disposent de 24 h pour informer l'employeur (loi 83-13 relative aux accidents du travail).",
-                        "Travailleur déclaré : prise en charge CNAS (soins, indemnités journalières, rente d'incapacité ; en cas de décès, rentes aux ayants droit et frais funéraires).",
-                        "Travailleur NON déclaré — le scénario catastrophe : la CNAS prend en charge la victime puis récupère l'intégralité des prestations auprès de l'employeur, avec pénalités et sanctions pour travail dissimulé ; une rente à vie répercutée sur une petite société peut la détruire.",
-                        "Volet pénal : si l'enquête établit un manquement aux règles de sécurité (loi 88-07, décret 05-12), poursuites pour homicide involontaire (art. 288 du code pénal) ou blessures involontaires (art. 289) visant d'abord l'employeur direct et son encadrement ; le promoteur peut être recherché si l'organisation générale du chantier était défaillante (pas de PHS, pas de comité inter-entreprises, coordination inexistante).",
-                        "Conséquences chantier : arrêt possible ordonné par l'inspection du travail, gel de la zone pendant l'enquête, retards en cascade sur les délais VSP.",
-                    ],
-                    'blocks' => [
-                        ['type' => 'expert_tip', 'body' => 'Ce qui protège le promoteur — le mantra du module : exiger par écrit de chaque entreprise la déclaration CNAS de tous ses ouvriers (listes nominatives vérifiées), le PHS appliqué, les EPI portés, les engins vérifiés — et archiver ces exigences et vérifications. Le promoteur qui a exigé et vérifié par écrit est dans une position radicalement différente de celui qui a fermé les yeux.'],
-                    ],
-                ],
-            ],
-            'blocks' => [
-                ['type' => 'partner_slot', 'partner_category' => 'autre', 'body' => "Huissier de justice (constats chantier, mises en demeure, retards de livraison) ; avocat d'affaires immobilier (contentieux clients et entreprises)."],
-                ['type' => 'legal', 'body' => 'Loi 83-13 (accidents du travail et maladies professionnelles) ; loi 88-07 et décret 05-12 ; code pénal art. 288-289 ; décret 13-431 (pénalités) ; loi 11-04 art. 38.'],
+                ['type' => 'partner_slot', 'partner_category' => 'asesor_fiscal', 'body' => 'Asesor fiscal y contable para la liquidación de la sociedad promotora ; abogado para reclamaciones de postventa.'],
+                ['type' => 'legal', 'body' => 'Ley 38/1999 LOE (art. 17, 18 y 19) ; Código Civil (art. 1591 y 1964) ; Ley 27/2014 del Impuesto sobre Sociedades ; RDL 1/2010, Ley de Sociedades de Capital (disolución y liquidación).'],
             ],
         ],
     ],
 
-    /** ANNEXE — références légales citées dans la formation. */
+    /** ANEXO — normativa citada en la formación. */
     'legal_annex' => [
-        "Loi n° 11-04 du 17/02/2011 fixant les règles régissant l'activité de promotion immobilière (JO n°14 du 06/03/2011).",
-        'Décret exécutif n° 12-84 du 20/02/2012 (agrément + TNPI), modifié par les décrets 13-96 (26/02/2013) et 19-243 (08/09/2019 : délivrance au niveau wilaya).',
-        'Décret exécutif n° 12-85 du 20/02/2012 : cahier des charges type des engagements du promoteur.',
-        'Arrêté interministériel du 06/12/2012 : justification des ressources financières.',
-        'Décret exécutif n° 13-431 du 18/12/2013 : modèles types des contrats de réservation et de VSP, échéancier 20/15/35/25/5, pénalités (plafond 10 %), révision (plafond 20 %).',
-        'Décrets exécutifs n° 14-180, 14-181, 14-182 du 05/06/2014 : FGCMPI (création modifiée, subrogation, cotisations) ; décret 97-406 du 03/11/1997 (création du FGCMPI).',
-        'Décret exécutif n° 14-99 du 04/03/2014 : modèle de règlement de copropriété.',
-        'Décret exécutif n° 15-281 du 26/10/2015 : concession convertible en cession (foncier public).',
-        "Loi n° 90-29 du 01/12/1990 (aménagement et urbanisme) ; décret exécutif n° 15-19 du 25/01/2015 (actes d'urbanisme, dont art. 45, 60, 61, 64-66), modifié (réformes 2020 et 2024 : guichets uniques, plateforme numérique).",
-        'Ordonnance n° 95-07 du 25/01/1995 relative aux assurances (art. 175-184) ; décret 95-414 ; code civil art. 554 (décennale) ; ordonnance 03-12 (CAT-NAT).',
-        'Ordonnance n° 75-59 (code de commerce) modifiée par la loi 15-20 du 30/12/2015 (SARL/EURL : capital libre, max 50 associés).',
-        "Ordonnance n° 71-85 bis du 29/12/1971 (CTC) ; arrêté interministériel du 15/05/1988 (maîtrise d'œuvre).",
-        "Loi n° 88-07 du 26/01/1988 (hygiène, sécurité et médecine du travail) ; décrets exécutifs n° 05-09, 05-10, 05-11 et 05-12 du 08/01/2005 (dont prescriptions particulières BTPH) ; arrêtés du 26/07/2008 (plan d'hygiène et de sécurité ; déclaration d'ouverture de chantiers BTPH).",
-        'Loi n° 08-15 du 20/07/2008 (règles de mise en conformité des constructions et leur achèvement) — sanctions art. 89 à 91 : clôture et panneau de chantier, délais de démarrage, dépôts de matériaux sur la voie publique.',
-        'Loi n° 83-13 du 02/07/1983 (accidents du travail et maladies professionnelles) ; code pénal art. 288-289.',
-        "Code de l'enregistrement, art. 353-2 (taxe de publicité foncière de 1 %) ; loi de finances 2026 et circulaire DGI n°42/2026 (fiscalité immobilière remaniée — à suivre à chaque loi de finances).",
-        "Formulaire officiel d'inscription au TNPI et d'affiliation au FGCMPI (modèle du 11/07/2024, fgcmpi.org.dz) : pièces, droits d'affiliation (60 000 DA) et barème des cotisations annuelles.",
+        'Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación (LOE): agentes, responsabilidades, garantías, Libro del Edificio y disposición adicional primera (cantidades a cuenta, redactada por la Ley 20/2015).',
+        'Real Decreto Legislativo 7/2015, de 30 de octubre, texto refundido de la Ley de Suelo y Rehabilitación Urbana, y la ley urbanística de cada comunidad autónoma.',
+        'Real Decreto 314/2006, de 17 de marzo, Código Técnico de la Edificación (CTE), y sus Documentos Básicos.',
+        'Real Decreto 1000/2010, de 5 de agosto, sobre visado colegial obligatorio.',
+        'Real Decreto 1627/1997, de 24 de octubre, disposiciones mínimas de seguridad y salud en las obras de construcción; Ley 31/1995 de Prevención de Riesgos Laborales.',
+        'Ley 32/2006, de 18 de octubre, reguladora de la subcontratación en el sector de la construcción, y Real Decreto 1109/2007.',
+        'Real Decreto 470/2021, de 29 de junio, Código Estructural.',
+        'Real Decreto 390/2021, de 1 de junio, procedimiento básico para la certificación de la eficiencia energética de los edificios.',
+        'Real Decreto 105/2008, de 1 de febrero, producción y gestión de los residuos de construcción y demolición; Ley 7/2022 de residuos y suelos contaminados.',
+        'Real Decreto Legislativo 2/2004, texto refundido de la Ley Reguladora de las Haciendas Locales (ICIO y tasas).',
+        'Ley 37/1992 del Impuesto sobre el Valor Añadido; Real Decreto Legislativo 1/1993, texto refundido del ITP y AJD.',
+        'Real Decreto 515/1989, información en la compraventa de viviendas; Real Decreto Legislativo 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios.',
+        'Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario.',
+        'Ley 49/1960, de 21 de julio, sobre Propiedad Horizontal; Ley Hipotecaria (art. 202).',
+        'Orden ECO/805/2003, normas de valoración de bienes inmuebles.',
     ],
 
-    'disclaimer' => "Ce document a été vérifié par recherche documentaire en juillet 2026. Avant tournage et avant toute diffusion commerciale, faire relire les modules 2, 3, 8 et 12 par le notaire et le juriste partenaires — les lois de finances et les réformes de l'urbanisme évoluent chaque année.",
+    'disclaimer' => 'Borrador redactado a partir del resumen de fases del formador (26/10/2026) y de la normativa estatal. Antes de grabar y antes de cualquier venta, el formador revisa cada fase, y las fases 1, 4, 5, 8, 9 y 12 se repasan además con el notario, el abogado y el asesor fiscal colaboradores: la normativa autonómica y municipal cambia de una comunidad a otra y de un año a otro.',
 ];

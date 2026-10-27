@@ -44,13 +44,13 @@ export function useUser() {
 }
 
 /**
- * Update the signed-in user's own preferences (currently their wilaya). The
+ * Update the signed-in user's own preferences (currently their province). The
  * `['user']` cache is patched so every partner filter reacts at once.
  */
 export function useUpdateProfile() {
   const qc = useQueryClient()
   return useMutation({
-    mutationFn: async (payload: { wilaya_id?: number | null; locale?: Locale }) => {
+    mutationFn: async (payload: { province_id?: number | null; locale?: Locale }) => {
       const { data } = await api.patch('/me', payload)
       return data.data as User
     },

@@ -26,7 +26,7 @@ preview: ## The whole site on one address (port 8080), as visitors get it: what 
 	VITE_API_URL= VITE_SITE_URL=$(PREVIEW_URL) npm --prefix web run build
 	docker compose --profile preview up -d
 	docker compose restart queue
-	@echo "Ebni Academy: $(PREVIEW_URL)"
+	@echo "Construye Academy: $(PREVIEW_URL)"
 
 up: ## Start all containers
 	docker compose up -d

@@ -36,7 +36,7 @@ class OrderController extends Controller
 
         return response()->streamDownload(function () use ($query) {
             $out = fopen('php://output', 'w');
-            // UTF-8 BOM so Excel opens accents/Arabic correctly.
+            // UTF-8 BOM so Excel opens accents (á, ñ…) correctly.
             fwrite($out, "\xEF\xBB\xBF");
             fputcsv($out, [
                 __('ID'),

@@ -37,7 +37,6 @@ class StatsController extends Controller
 
         return response()->json(['data' => [
             'revenue_this_month' => [
-                'DZD' => (int) ($revenueThisMonth['DZD'] ?? 0),
                 'EUR' => (int) ($revenueThisMonth['EUR'] ?? 0),
             ],
             // Always a JSON object keyed by method — an empty collection

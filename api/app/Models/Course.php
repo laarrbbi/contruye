@@ -14,11 +14,10 @@ class Course extends Model
 
     protected $fillable = [
         'slug',
-        'title_fr',
-        'title_ar',
-        'description_fr',
-        'description_ar',
-        'price_dzd',
+        'title_es',
+        'title_en',
+        'description_es',
+        'description_en',
         'price_eur',
         'module_discount_tiers',
         'status',
@@ -29,7 +28,6 @@ class Course extends Model
     protected function casts(): array
     {
         return [
-            'price_dzd' => 'integer',
             'price_eur' => 'integer',
             'module_discount_tiers' => 'array',
         ];

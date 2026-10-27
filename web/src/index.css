@@ -89,21 +89,12 @@
     @apply bg-background text-foreground antialiased;
   }
 
-  /* Plus besoin de famille dédiée : Poppins n'ayant pas de glyphes arabes,
-     le texte AR retombe sur Cairo dans la même pile `font-sans`. On garde
-     seulement un interlettrage neutre — le tracking négatif des titres est
-     pensé pour le latin, pas pour l'arabe lié. */
-  html[dir='rtl'] h1,
-  html[dir='rtl'] h2 {
-    letter-spacing: 0;
-  }
 }
 
-/* Course material is authored in French and shown as-is until a human writes
-   the Arabic. Inside an RTL page, a French line like "2.1 Choisir la forme"
-   took the page's direction and read "Choisir la forme 2.1". Each paragraph
-   now takes its direction from its own first letter, while staying aligned
-   with the layout. Harmless in LTR, and Arabic text is unaffected. */
+/* Text the app did not write (a name, a title typed by the admin) takes its
+   direction from its own first letter, while staying aligned with the
+   layout. Harmless in the two left-to-right interface languages; a name in
+   a right-to-left script still reads in order. */
 @layer utilities {
   .bidi-auto {
     unicode-bidi: plaintext;

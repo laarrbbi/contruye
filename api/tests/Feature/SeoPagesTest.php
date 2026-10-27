@@ -19,7 +19,7 @@ use App\Support\SpaStrings;
 
 beforeEach(function () {
     // The source template: the same seo markers the build keeps.
-    config(['seo.spa_index' => base_path('../web/index.html'), 'app.url' => 'https://ebni.example']);
+    config(['seo.spa_index' => base_path('../web/index.html'), 'app.url' => 'https://construye.example']);
 });
 
 /** @return array<string, mixed> */
@@ -35,9 +35,9 @@ function mainCourse(array $attributes = []): Course
 {
     $course = Course::factory()->create(array_merge([
         'slug' => config('seo.main_course'),
-        'title_fr' => 'La Promotion Immobilière en Algérie',
-        'title_ar' => 'الترقية العقارية في الجزائر',
-        'description_fr' => 'De la création de la société à la remise des clés.',
+        'title_es' => 'La Promotion Immobilière en Algérie',
+        'title_en' => 'الترقية العقارية في الجزائر',
+        'description_es' => 'De la création de la société à la remise des clés.',
         'price_dzd' => 90000,
         'price_eur' => 300,
     ], $attributes));
@@ -45,10 +45,10 @@ function mainCourse(array $attributes = []): Course
     $module = Module::factory()->create([
         'course_id' => $course->id,
         'order' => 1,
-        'title_fr' => 'Le foncier : trouver le terrain',
-        'description_fr' => 'TEXTE PAYANT du module, réservé aux acheteurs.',
+        'title_es' => 'Le foncier : trouver le terrain',
+        'description_es' => 'TEXTE PAYANT du module, réservé aux acheteurs.',
     ]);
-    Lesson::factory()->create(['module_id' => $module->id, 'title_fr' => 'Vérifier un titre']);
+    Lesson::factory()->create(['module_id' => $module->id, 'title_es' => 'Vérifier un titre']);
 
     return $course;
 }
@@ -60,12 +60,12 @@ it('serves the home page in French with its own head, whatever the browser speak
 
     expect($html)
         ->toContain('<html lang="fr" dir="ltr">')
-        ->toContain('<title>'.SpaStrings::get('fr', 'seo.home.title').' — Ebni Academy</title>')
+        ->toContain('<title>'.SpaStrings::get('fr', 'seo.home.title').' — Construye Academy</title>')
         ->toContain('<meta name="description" content="'.e(str_replace('{{modules}}', '1', SpaStrings::get('fr', 'seo.home.description'))).'" />')
-        ->toContain('<link rel="canonical" href="https://ebni.example/" />')
-        ->toContain('<link rel="alternate" hreflang="ar" href="https://ebni.example/ar" />')
-        ->toContain('<link rel="alternate" hreflang="en" href="https://ebni.example/en" />')
-        ->toContain('<link rel="alternate" hreflang="x-default" href="https://ebni.example/" />')
+        ->toContain('<link rel="canonical" href="https://construye.example/" />')
+        ->toContain('<link rel="alternate" hreflang="ar" href="https://construye.example/ar" />')
+        ->toContain('<link rel="alternate" hreflang="en" href="https://construye.example/en" />')
+        ->toContain('<link rel="alternate" hreflang="x-default" href="https://construye.example/" />')
         ->toContain('content="index, follow')
         ->not->toContain('noindex')
         // The page's content, readable without JavaScript.
@@ -84,14 +84,14 @@ it('serves /ar in Arabic, right to left, and /en in English', function () {
     expect($arabic)
         ->toContain('<html lang="ar" dir="rtl">')
         ->toContain('<title>'.SpaStrings::get('ar', 'seo.home.title').' — '.SpaStrings::get('ar', 'app.name').'</title>')
-        ->toContain('<link rel="canonical" href="https://ebni.example/ar" />')
+        ->toContain('<link rel="canonical" href="https://construye.example/ar" />')
         ->toContain('الترقية العقارية في الجزائر');
     expect(seoGraph($arabic)['FAQPage']['mainEntity'][0]['name'])
         ->toBe(SpaStrings::get('ar', 'course.faq.'.SpaStrings::faqKeys()[0].'.q'));
 
     expect($this->get('/en')->assertOk()->getContent())
         ->toContain('<html lang="en" dir="ltr">')
-        ->toContain('<link rel="canonical" href="https://ebni.example/en" />');
+        ->toContain('<link rel="canonical" href="https://construye.example/en" />');
 });
 
 it('describes the course for search engines with its real price, today', function () {
@@ -144,7 +144,7 @@ it('keeps paid module text out of the page and its structured data', function ()
 });
 
 it('cannot be broken out of by a course title', function () {
-    mainCourse(['title_fr' => 'Titre</script><img src=x onerror=alert(1)>']);
+    mainCourse(['title_es' => 'Titre</script><img src=x onerror=alert(1)>']);
 
     $html = $this->get('/')->getContent();
 
@@ -157,17 +157,17 @@ it('cannot be broken out of by a course title', function () {
 
 it('points the main course URL at the home page, and gives other courses their own', function () {
     mainCourse();
-    $other = Course::factory()->create(['slug' => 'autre-formation', 'title_fr' => 'Autre formation']);
+    $other = Course::factory()->create(['slug' => 'autre-formation', 'title_es' => 'Autre formation']);
 
     expect($this->get('/courses/'.config('seo.main_course'))->assertOk()->getContent())
-        ->toContain('<link rel="canonical" href="https://ebni.example/" />');
+        ->toContain('<link rel="canonical" href="https://construye.example/" />');
     expect($this->get('/ar/courses/'.config('seo.main_course'))->getContent())
-        ->toContain('<link rel="canonical" href="https://ebni.example/ar" />');
+        ->toContain('<link rel="canonical" href="https://construye.example/ar" />');
 
     $html = $this->get('/courses/autre-formation')->assertOk()->getContent();
     expect($html)
-        ->toContain('<link rel="canonical" href="https://ebni.example/courses/autre-formation" />')
-        ->toContain('<title>Autre formation — Ebni Academy</title>');
+        ->toContain('<link rel="canonical" href="https://construye.example/courses/autre-formation" />')
+        ->toContain('<title>Autre formation — Construye Academy</title>');
     expect(seoGraph($html))->toHaveKey('BreadcrumbList')->not->toHaveKey('FAQPage');
 });
 
@@ -183,14 +183,14 @@ it('answers 404, not indexable, for a course that does not exist or is not publi
 
 it('lists the published courses on the catalogue', function () {
     mainCourse();
-    Course::factory()->create(['slug' => 'brouillon', 'title_fr' => 'Formation brouillon', 'status' => 'draft']);
+    Course::factory()->create(['slug' => 'brouillon', 'title_es' => 'Formation brouillon', 'status' => 'draft']);
 
     $html = $this->get('/formations')->assertOk()->getContent();
 
-    expect($html)->toContain('<link rel="canonical" href="https://ebni.example/formations" />')
+    expect($html)->toContain('<link rel="canonical" href="https://construye.example/formations" />')
         ->toContain('La Promotion Immobilière en Algérie')
         ->not->toContain('Formation brouillon');
-    expect(seoGraph($html)['ItemList']['itemListElement'][0]['url'])->toBe('https://ebni.example/');
+    expect(seoGraph($html)['ItemList']['itemListElement'][0]['url'])->toBe('https://construye.example/');
 });
 
 it('opens no session for a crawler', function () {
@@ -211,12 +211,12 @@ it('publishes a sitemap with every page in every language', function () {
         $locs[] = (string) $url->loc;
     }
 
-    expect($locs)->toContain('https://ebni.example/', 'https://ebni.example/ar', 'https://ebni.example/en')
-        ->toContain('https://ebni.example/formations', 'https://ebni.example/ar/formations')
-        ->toContain('https://ebni.example/courses/autre-formation', 'https://ebni.example/en/courses/autre-formation')
-        ->not->toContain('https://ebni.example/courses/brouillon')
+    expect($locs)->toContain('https://construye.example/', 'https://construye.example/ar', 'https://construye.example/en')
+        ->toContain('https://construye.example/formations', 'https://construye.example/ar/formations')
+        ->toContain('https://construye.example/courses/autre-formation', 'https://construye.example/en/courses/autre-formation')
+        ->not->toContain('https://construye.example/courses/brouillon')
         // The main course is the home page, listed once as such.
-        ->not->toContain('https://ebni.example/courses/'.config('seo.main_course'));
+        ->not->toContain('https://construye.example/courses/'.config('seo.main_course'));
 
     $alternates = [];
     foreach ($xml->url[0]->children('http://www.w3.org/1999/xhtml')->link as $link) {
@@ -229,7 +229,7 @@ it('serves a robots.txt that points at the sitemap and leaves the API open', fun
     $robots = $this->get('/robots.txt')->assertOk()->getContent();
 
     // Google renders the app, and the app reads the course from /api.
-    expect($robots)->toContain('Sitemap: https://ebni.example/sitemap.xml')
+    expect($robots)->toContain('Sitemap: https://construye.example/sitemap.xml')
         ->toContain('Disallow: /admin')
         ->not->toContain('Disallow: /api');
 });

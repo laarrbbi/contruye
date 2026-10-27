@@ -16,7 +16,7 @@ function checklistCourse(): Course
         ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40])
         ->each(function (Module $module) {
             ChecklistItem::factory()->count(3)
-                ->sequence(fn ($seq) => ['order' => $seq->index + 1, 'text_fr' => "Étape secrète {$seq->index} du module {$module->order}"])
+                ->sequence(fn ($seq) => ['order' => $seq->index + 1, 'text_es' => "Étape secrète {$seq->index} du module {$module->order}"])
                 ->create(['module_id' => $module->id]);
         });
 

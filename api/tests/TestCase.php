@@ -24,7 +24,7 @@ abstract class TestCase extends BaseTestCase
             'services.stripe.secret' => 'sk_test_dummy',
             'services.stripe.webhook_secret' => 'whsec_dummy',
             'services.manual_payment.ccp_number' => '0000000000 00',
-            'services.manual_payment.ccp_name' => '[DÉMO] Titulaire',
+            'services.manual_payment.ccp_name' => '[DEMO] Titulaire',
             'services.manual_payment.baridimob_rip' => '00799999000000000000',
         ]);
     }

@@ -14,7 +14,7 @@ export function WatermarkOverlay({ text }: { text: string }) {
            frame of a playing video. The animated box is overlay-sized, so a
            percentage translate resolves against the overlay — moving the label
            from (5%, 6%) to (55%, 84%), the same four corners as before. */
-        @keyframes ebni-watermark-drift {
+        @keyframes construye-watermark-drift {
           0%, 21%   { transform: translate(0, 0); }
           25%, 46%  { transform: translate(50%, 0); }
           50%, 71%  { transform: translate(50%, 78%); }
@@ -24,7 +24,7 @@ export function WatermarkOverlay({ text }: { text: string }) {
       `}</style>
       <div
         className="absolute inset-0 will-change-transform"
-        style={{ animation: 'ebni-watermark-drift 40s linear infinite' }}
+        style={{ animation: 'construye-watermark-drift 40s linear infinite' }}
       >
         <span
           dir="ltr"

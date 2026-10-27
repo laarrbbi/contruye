@@ -37,26 +37,26 @@ it('empties every carrier of the written curriculum in a locked lesson', functio
 
     $paid = Lesson::factory()->for($locked)->create([
         'order' => 1,
-        'content_fr' => 'Le montage financier complet d\'une opération VSP.',
-        'key_points_fr' => ['Garantie CGCI obligatoire', 'Apport minimum de 30 %'],
+        'content_es' => 'Le montage financier complet d\'une opération VSP.',
+        'key_points_es' => ['Garantie CGCI obligatoire', 'Apport minimum de 30 %'],
         'is_reflex_sheet' => true,
     ]);
     $paid->contentBlocks()->create([
         'order' => 1,
         'type' => 'legal',
-        'body_fr' => 'Décret exécutif 13-431 du 18 décembre 2013.',
+        'body_es' => 'Décret exécutif 13-431 du 18 décembre 2013.',
     ]);
 
     $preview = Lesson::factory()->freePreview()->for($locked)->create([
         'order' => 2,
-        'content_fr' => 'Ce que couvre ce module.',
-        'key_points_fr' => ['Aperçu offert'],
+        'content_es' => 'Ce que couvre ce module.',
+        'key_points_es' => ['Aperçu offert'],
         'is_reflex_sheet' => true,
     ]);
     $preview->contentBlocks()->create([
         'order' => 1,
         'type' => 'text',
-        'body_fr' => 'Extrait offert.',
+        'body_es' => 'Extrait offert.',
     ]);
 
     $modules = collect(
@@ -71,7 +71,7 @@ it('empties every carrier of the written curriculum in a locked lesson', functio
     // The paid lesson is teased by title and duration only. `is_locked` alone
     // is a hint to the UI, not a gate: the payload must carry nothing to leak.
     expect($paidPayload['is_locked'])->toBeTrue()
-        ->and($paidPayload['title'])->toBe($paid->title_fr)
+        ->and($paidPayload['title'])->toBe($paid->title_es)
         ->and($paidPayload['content'])->toBeNull()
         ->and($paidPayload['key_points'])->toBe([])
         ->and($paidPayload['blocks'])->toBe([])
@@ -150,12 +150,12 @@ it('serves module-level legal and expert-tip blocks only to owners', function ()
         $module->contentBlocks()->create([
             'order' => 1,
             'type' => 'legal',
-            'body_fr' => 'Loi 11-04 du 17 février 2011 — article 26.',
+            'body_es' => 'Loi 11-04 du 17 février 2011 — article 26.',
         ]);
         $module->contentBlocks()->create([
             'order' => 2,
             'type' => 'expert_tip',
-            'body_fr' => 'Ne signez jamais avant l\'obtention du permis de construire.',
+            'body_es' => 'Ne signez jamais avant l\'obtention du permis de construire.',
         ]);
     }
 

@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 /*
  * Public pages, served with their own head and content for search engines
- * and link previews (SeoPageController). One URL per language: French at the
- * root, /ar and /en for the others. Loaded without the session middleware:
+ * and link previews (SeoPageController). One URL per language: Spanish at the
+ * root, English under /en. Loaded without the session middleware:
  * a crawler visit must not open a session.
  *
- * nginx sends exactly these paths to Laravel (deploy/nginx/ebni.conf).
+ * nginx sends exactly these paths to Laravel (deploy/nginx/construye.conf).
  */
 
 foreach (config('locales.supported') as $locale) {
@@ -17,8 +17,8 @@ foreach (config('locales.supported') as $locale) {
 
     Route::prefix($prefix)->group(function () use ($locale) {
         Route::get('/', [SeoPageController::class, 'home'])->defaults('locale', $locale);
-        Route::get('/formations', [SeoPageController::class, 'catalog'])->defaults('locale', $locale);
-        Route::get('/courses/{slug}', [SeoPageController::class, 'course'])->defaults('locale', $locale);
+        Route::get('/cursos', [SeoPageController::class, 'catalog'])->defaults('locale', $locale);
+        Route::get('/cursos/{slug}', [SeoPageController::class, 'course'])->defaults('locale', $locale);
     });
 }
 

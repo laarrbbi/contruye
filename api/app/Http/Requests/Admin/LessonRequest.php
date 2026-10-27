@@ -33,13 +33,13 @@ class LessonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_fr' => ['required', 'string', 'max:255'],
-            // French-first by design: the column is nullable and
-            // localizedTitle() falls back to French until a translation lands.
-            'title_ar' => ['nullable', 'string', 'max:255'],
+            'title_es' => ['required', 'string', 'max:255'],
+            // Spanish-first by design: the column is nullable and
+            // localizedTitle() falls back to Spanish until a translation lands.
+            'title_en' => ['nullable', 'string', 'max:255'],
             'bunny_video_id' => ['nullable', 'string', 'max:255'],
-            'content_fr' => ['nullable', 'string', 'max:50000'],
-            'content_ar' => ['nullable', 'string', 'max:50000'],
+            'content_es' => ['nullable', 'string', 'max:50000'],
+            'content_en' => ['nullable', 'string', 'max:50000'],
             'duration_seconds' => ['sometimes', 'nullable', 'integer', 'min:0'],
             'is_free_preview' => ['sometimes', 'boolean'],
             'attachments' => ['nullable', 'array'],

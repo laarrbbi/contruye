@@ -9,8 +9,8 @@ use App\Models\Invoice;
  *
  * One source of truth: the seller block the admin fills for invoicing. What
  * goes on a public page is a deliberate subset — identity and contact, never
- * the RIB, the NIS or the article d'imposition, which belong on fiscal
- * documents and nowhere else.
+ * the IBAN or the registry details, which belong on fiscal documents and
+ * nowhere else.
  *
  * Empty fields come back as null so the front-end renders nothing for them.
  * Nothing here is ever defaulted: a phone number that has not been entered
@@ -24,7 +24,7 @@ class BusinessProfile
         'legal_form',
         'capital',
         'address',
-        'rc',
+        'registry',
         'nif',
         'phone',
         'whatsapp',
@@ -45,7 +45,7 @@ class BusinessProfile
             $profile[$field] = $value === '' ? null : $value;
         }
 
-        // Ready-made links, so no client has to know how an Algerian number
+        // Ready-made links, so no client has to know how a Spanish number
         // becomes an international one.
         $whatsapp = self::international($profile['whatsapp']);
         $phone = self::international($profile['phone']);
@@ -57,8 +57,8 @@ class BusinessProfile
     }
 
     /**
-     * An Algerian (or already international) number as bare international
-     * digits — "0550 12 34 56" becomes 213550123456 — or null when it cannot
+     * A Spanish (or already international) number as bare international
+     * digits — "612 34 56 78" becomes 34612345678 — or null when it cannot
      * be a real number.
      */
     public static function international(?string $raw): ?string
@@ -74,12 +74,13 @@ class BusinessProfile
             // Already international: the digits after '+' are the number.
         } elseif (str_starts_with($digits, '00')) {
             $digits = substr($digits, 2);
-        } elseif (str_starts_with($digits, '0')) {
-            $digits = '213'.substr($digits, 1);
+        } elseif (preg_match('/^[6789]\d{8}$/', $digits) === 1) {
+            // A national number: nine digits, no trunk zero in Spain.
+            $digits = '34'.$digits;
         }
 
         // Shortest real international number is 8 digits; E.164 caps at 15.
-        // An Algerian mobile is 213 + 9 digits.
+        // A Spanish number is 34 + 9 digits.
         $length = strlen($digits);
 
         return $length >= 11 && $length <= 15 ? $digits : null;

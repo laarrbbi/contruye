@@ -25,8 +25,8 @@ jobs:
         # Google's Docker Hub mirror.
         image: mirror.gcr.io/library/mysql:8.0
         env:
-          MYSQL_DATABASE: ebni_test
-          MYSQL_USER: ebni
+          MYSQL_DATABASE: construye_test
+          MYSQL_USER: construye
           MYSQL_PASSWORD: secret
           MYSQL_ROOT_PASSWORD: root
         ports:

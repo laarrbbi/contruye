@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Check, Globe, LogOut, LayoutDashboard, Receipt, ShieldCheck } from 'lucide-react'
-import { EbniLogo } from '@/components/brand/EbniMark'
+import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
 import { LOCALES, LOCALE_NAMES, setLocale, type Locale } from '@/i18n'
@@ -39,8 +39,8 @@ export function Header() {
           <span className="sr-only">{t('app.name')}</span>
           {/* Below 440px the wordmark gives way: logo, language, sign-in and
               sign-up did not fit a 390px phone and the whole site scrolled
-              sideways. The mark alone still reads as Ebni. */}
-          <EbniLogo wordmarkClassName="hidden min-[440px]:flex" />
+              sideways. The mark alone still reads as Construye. */}
+          <ConstruyeLogo wordmarkClassName="hidden min-[440px]:flex" />
         </Link>
 
         {/* Labels collapse to icons on phones but stay readable by screen

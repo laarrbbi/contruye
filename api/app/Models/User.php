@@ -29,7 +29,7 @@ class User extends Authenticatable
         'password',
         'role',
         'locale',
-        'wilaya_id',
+        'province_id',
     ];
 
     /**
@@ -62,7 +62,7 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token): void
     {
         $this->notify(
-            (new ResetPasswordNotification($token))->locale($this->locale ?? 'fr')
+            (new ResetPasswordNotification($token))->locale($this->locale ?? 'es')
         );
     }
 
@@ -75,9 +75,9 @@ class User extends Authenticatable
      * Where the learner is building — used to default every partner list to
      * the providers that actually operate there.
      */
-    public function wilaya(): BelongsTo
+    public function province(): BelongsTo
     {
-        return $this->belongsTo(Wilaya::class);
+        return $this->belongsTo(Province::class);
     }
 
     public function orders(): HasMany

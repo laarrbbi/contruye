@@ -45,7 +45,7 @@ class Coupon extends Model
      * Claim one use, atomically, and report whether the cap allowed it.
      *
      * The cap has to be claimed when the discount is GRANTED, not when the
-     * order is later paid: manual CCP orders sit pending for days, so counting
+     * order is later paid: bank-transfer orders sit pending for days, so counting
      * at payment let an unlimited number of buyers hold the same discounted
      * price while `uses` stayed at 1. The conditional WHERE means two
      * simultaneous claims serialize on the row and only one can win.

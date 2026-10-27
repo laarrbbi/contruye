@@ -11,12 +11,12 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique();
-            $table->string('title_fr');
-            $table->string('title_ar');
-            $table->text('description_fr')->nullable();
-            $table->text('description_ar')->nullable();
-            $table->unsignedInteger('price_dzd');
-            $table->unsignedInteger('price_eur')->nullable();
+            $table->string('title_es');
+            $table->string('title_en')->nullable();
+            $table->text('description_es')->nullable();
+            $table->text('description_en')->nullable();
+            // Whole euros, IVA included: the price a buyer is shown.
+            $table->unsignedInteger('price_eur');
             $table->enum('status', ['draft', 'published'])->default('draft');
             $table->string('cover_image')->nullable();
             $table->timestamps();

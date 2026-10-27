@@ -30,8 +30,8 @@
         <env name="DB_CONNECTION" value="mysql"/>
         <env name="DB_HOST" value="mysql-test"/>
         <env name="DB_PORT" value="3306"/>
-        <env name="DB_DATABASE" value="ebni_test"/>
-        <env name="DB_USERNAME" value="ebni"/>
+        <env name="DB_DATABASE" value="construye_test"/>
+        <env name="DB_USERNAME" value="construye"/>
         <env name="DB_PASSWORD" value="secret"/>
         <env name="DB_URL" value=""/>
         <env name="MAIL_MAILER" value="array"/>

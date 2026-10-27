@@ -80,7 +80,7 @@ export function CashPaymentSection({ studentId }: { studentId: number }) {
         >
           {courses.map((c) => (
             <option key={c.id} value={c.id}>
-              {c.title_fr}
+              {c.title_es}
             </option>
           ))}
         </select>
@@ -134,7 +134,7 @@ export function CashPaymentSection({ studentId }: { studentId: number }) {
                     >
                       {checked && <Check className="h-3 w-3" />}
                     </span>
-                    {module.order}. {module.title_fr}
+                    {module.order}. {module.title_es}
                   </button>
                 </li>
               )

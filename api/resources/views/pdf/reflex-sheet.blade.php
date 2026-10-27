@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <title>{{ $title }}</title>
@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="kicker">{{ $courseTitle }} — Module {{ $moduleOrder }}</div>
+        <div class="kicker">{{ $courseTitle }} — Fase {{ $moduleOrder }}</div>
         <h1>{{ $title }}</h1>
     </div>
 
@@ -35,7 +35,7 @@
     </ol>
 
     @foreach ($tips as $tip)
-        <div class="mantra"><strong>À retenir —</strong> {{ $tip }}</div>
+        <div class="mantra"><strong>Recuerde —</strong> {{ $tip }}</div>
     @endforeach
 
     @foreach ($legal as $reference)
@@ -43,8 +43,8 @@
     @endforeach
 
     <div class="footer">
-        {{ $courseTitle }} — fiche à imprimer et afficher dans la base de vie du chantier.
-        Document pédagogique : il ne remplace pas les obligations légales de l'employeur.
+        {{ $courseTitle }} — ficha para imprimir y colocar en las casetas de obra.
+        Documento formativo: no sustituye las obligaciones legales del empresario ni el plan de seguridad y salud.
     </div>
 </body>
 </html>

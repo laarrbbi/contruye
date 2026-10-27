@@ -40,8 +40,8 @@ import { applyServerErrors, formatDate } from './lib'
 
 interface CampaignFormValues {
   course_id: string
-  label_fr: string
-  label_ar: string
+  label_es: string
+  label_en: string
   percent_off: string
   starts_at: string
   ends_at: string
@@ -59,8 +59,8 @@ function toLocalInput(iso: string | null): string {
 
 const emptyValues: CampaignFormValues = {
   course_id: '',
-  label_fr: '',
-  label_ar: '',
+  label_es: '',
+  label_en: '',
   percent_off: '',
   starts_at: '',
   ends_at: '',
@@ -99,8 +99,8 @@ function CampaignFormDialog({
       campaign
         ? {
             course_id: String(campaign.course.id),
-            label_fr: campaign.label_fr,
-            label_ar: campaign.label_ar ?? '',
+            label_es: campaign.label_es,
+            label_en: campaign.label_en ?? '',
             percent_off: String(campaign.percent_off),
             starts_at: toLocalInput(campaign.starts_at),
             ends_at: toLocalInput(campaign.ends_at),
@@ -116,9 +116,9 @@ function CampaignFormDialog({
     setGenericError(null)
     const payload: CampaignPayload = {
       course_id: Number(values.course_id),
-      label_fr: values.label_fr.trim(),
+      label_es: values.label_es.trim(),
       // Blank sends null: Arabic visitors then read the French name.
-      label_ar: values.label_ar.trim() || null,
+      label_en: values.label_en.trim() || null,
       percent_off: Number(values.percent_off),
       // datetime-local has no timezone; send the real instant.
       starts_at: values.starts_at ? new Date(values.starts_at).toISOString() : null,
@@ -159,7 +159,7 @@ function CampaignFormDialog({
               <SelectContent>
                 {(courses ?? []).map((course) => (
                   <SelectItem key={course.id} value={String(course.id)}>
-                    {course.title_fr}
+                    {course.title_es}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -168,13 +168,13 @@ function CampaignFormDialog({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="campaign-label-fr">{t('admin.campaigns.form.labelFr')}</Label>
-              <Input id="campaign-label-fr" {...register('label_fr', { required: t('validation.required') })} />
-              {errors.label_fr && <p className="text-sm text-destructive">{errors.label_fr.message}</p>}
+              <Label htmlFor="campaign-label-fr">{t('admin.campaigns.form.labelEs')}</Label>
+              <Input id="campaign-label-fr" {...register('label_es', { required: t('validation.required') })} />
+              {errors.label_es && <p className="text-sm text-destructive">{errors.label_es.message}</p>}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="campaign-label-ar">{t('admin.campaigns.form.labelAr')}</Label>
-              <Input id="campaign-label-ar" dir="rtl" {...register('label_ar')} />
+              <Label htmlFor="campaign-label-ar">{t('admin.campaigns.form.labelEn')}</Label>
+              <Input id="campaign-label-ar" dir="rtl" {...register('label_en')} />
               <p className="text-xs text-muted-foreground">{t('admin.campaigns.form.labelArHint')}</p>
             </div>
           </div>
@@ -311,7 +311,7 @@ export function AdminCampaignsPage() {
             <TableBody>
               {campaigns.map((campaign) => (
                 <TableRow key={campaign.id}>
-                  <TableCell className="font-medium">{campaign.label_fr}</TableCell>
+                  <TableCell className="font-medium">{campaign.label_es}</TableCell>
                   <TableCell className="max-w-[200px] truncate text-muted-foreground">
                     {campaign.course.title}
                   </TableCell>
@@ -369,7 +369,7 @@ export function AdminCampaignsPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
-              {t('admin.campaigns.deleteConfirm', { label: deleteTarget?.label_fr ?? '' })}
+              {t('admin.campaigns.deleteConfirm', { label: deleteTarget?.label_es ?? '' })}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

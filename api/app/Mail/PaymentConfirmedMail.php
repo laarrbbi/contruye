@@ -16,13 +16,13 @@ class PaymentConfirmedMail extends Mailable implements ShouldQueue
 
     public function __construct(public Order $order)
     {
-        $this->locale($order->user->locale ?: 'fr');
+        $this->locale($order->user->locale ?: 'es');
     }
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Your enrollment at Ebni Academy is confirmed'),
+            subject: __('Your enrollment at Construye Academy is confirmed'),
         );
     }
 

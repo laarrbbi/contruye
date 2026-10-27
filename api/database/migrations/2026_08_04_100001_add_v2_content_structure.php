@@ -5,28 +5,28 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Structure for the v2.0 curriculum (13 modules):
+ * Structure for the curriculum (12 phases):
  * - module descriptions (the module's introductory text)
  * - lesson key_points (the bullets of each lesson)
  * - tagged content blocks (legal / partner_slot / expert_tip / text)
- * - a slot for the "carte du circuit administratif" asset
+ * - a slot for the "mapa del circuito administrativo" asset
  *
- * Arabic columns become nullable: the v2.0 pass is French-only by design —
- * the AR keys exist but stay empty until a human translation is done, and the
- * localized* accessors fall back to French meanwhile.
+ * English columns are nullable: the content is authored in Spanish, the EN
+ * keys stay empty until a human translation is done, and the localized*
+ * accessors fall back to Spanish meanwhile.
  */
 return new class extends Migration
 {
     public function up(): void
     {
         Schema::table('modules', function (Blueprint $table) {
-            $table->text('description_fr')->nullable()->after('title_ar');
-            $table->text('description_ar')->nullable()->after('description_fr');
+            $table->text('description_es')->nullable()->after('title_en');
+            $table->text('description_en')->nullable()->after('description_es');
         });
 
         Schema::table('lessons', function (Blueprint $table) {
-            $table->json('key_points_fr')->nullable()->after('content_ar');
-            $table->json('key_points_ar')->nullable()->after('key_points_fr');
+            $table->json('key_points_es')->nullable()->after('content_en');
+            $table->json('key_points_en')->nullable()->after('key_points_es');
         });
 
         Schema::table('courses', function (Blueprint $table) {
@@ -43,8 +43,8 @@ return new class extends Migration
             $table->foreignId('lesson_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('type')->default('text'); // text|legal|partner_slot|expert_tip
             $table->unsignedInteger('order')->default(0);
-            $table->text('body_fr')->nullable();
-            $table->text('body_ar')->nullable();
+            $table->text('body_es')->nullable();
+            $table->text('body_en')->nullable();
             // Which kind of partner this slot is asking for, so real partners
             // attached to the module can fill it. Never invents contacts.
             $table->string('partner_category')->nullable();
@@ -57,10 +57,6 @@ return new class extends Migration
             $table->index(['lesson_id', 'order']);
             $table->index('needs_validation');
         });
-
-        // The AR translation of the v2.0 content is pending a human pass.
-        Schema::table('modules', fn (Blueprint $t) => $t->string('title_ar')->nullable()->change());
-        Schema::table('lessons', fn (Blueprint $t) => $t->string('title_ar')->nullable()->change());
     }
 
     public function down(): void
@@ -68,7 +64,7 @@ return new class extends Migration
         Schema::dropIfExists('content_blocks');
 
         Schema::table('courses', fn (Blueprint $t) => $t->dropColumn('circuit_map_path'));
-        Schema::table('lessons', fn (Blueprint $t) => $t->dropColumn(['key_points_fr', 'key_points_ar']));
-        Schema::table('modules', fn (Blueprint $t) => $t->dropColumn(['description_fr', 'description_ar']));
+        Schema::table('lessons', fn (Blueprint $t) => $t->dropColumn(['key_points_es', 'key_points_en']));
+        Schema::table('modules', fn (Blueprint $t) => $t->dropColumn(['description_es', 'description_en']));
     }
 };

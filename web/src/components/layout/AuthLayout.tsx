@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BackgroundVideo } from '@/components/BackgroundVideo'
-import { EbniLogo } from '@/components/brand/EbniMark'
+import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 
 /**
  * Split screen used by the account and checkout pages: a media panel on one
@@ -43,7 +43,7 @@ export function AuthLayout({
         <div className="relative flex h-full flex-col justify-between p-10 text-primary-foreground">
           <Link to="/">
             <span className="sr-only">{t('app.name')}</span>
-            <EbniLogo variant="inherit" className="text-primary-foreground" />
+            <ConstruyeLogo variant="inherit" className="text-primary-foreground" />
           </Link>
 
           <div className="space-y-3">

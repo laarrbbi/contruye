@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 RUN echo "upload_max_filesize=10M\npost_max_size=12M\nmemory_limit=512M" \
-    > /usr/local/etc/php/conf.d/ebni.ini
+    > /usr/local/etc/php/conf.d/construye.ini
 
 WORKDIR /var/www/api

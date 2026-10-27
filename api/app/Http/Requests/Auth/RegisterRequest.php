@@ -9,22 +9,17 @@ use Illuminate\Validation\Rules\Password;
 class RegisterRequest extends FormRequest
 {
     /**
-     * An Algerian mobile as dialled at home (05, 06 or 07, then eight digits),
-     * or any number in international form: "+", a country code (never starting
-     * with 0), eight to fifteen digits in all, as E.164 allows. The sales page
-     * invites buyers in France and elsewhere, and the rule used to accept the
-     * Algerian shape alone, so they could not open an account at all.
+     * A Spanish mobile as dialled at home (6 or 7, then eight digits), or any
+     * number in international form: "+", a country code (never starting with
+     * 0), eight to fifteen digits in all, as E.164 allows — buyers living
+     * abroad can open an account too.
      *
-     * Algeria's own code is still held to the mobile rule: "+213 0550…", the
-     * home zero kept after the code, is refused rather than stored as a number
-     * nobody can dial. The same slip after +33 is refused too: France is the
-     * market abroad this is for, "+33 06…" was taken and stored apart from the
-     * buyer's real "+336…", and no French number has a 0 there. It cannot be a
-     * rule for every code, because Italy and Côte d'Ivoire do keep that 0.
-     * RegisterPage.tsx carries the same pattern; the D flag makes "$" the end
-     * of the string, as it already is in JavaScript.
+     * Spain's own code is still held to the mobile rule: "+34 0612…" or a
+     * landline after +34 is refused rather than stored as a number the owner
+     * cannot WhatsApp. RegisterPage.tsx carries the same pattern; the D flag
+     * makes "$" the end of the string, as it already is in JavaScript.
      */
-    private const PHONE_PATTERN = '/^(?:0[567]\d{8}|\+213[567]\d{8}|\+(?!213|330)[1-9]\d{7,14})$/D';
+    private const PHONE_PATTERN = '/^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34)[1-9]\d{7,14})$/D';
 
     public function authorize(): bool
     {
@@ -51,7 +46,7 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'phone.regex' => __('Invalid number: Algerian mobile (05, 06, 07) or international number starting with +'),
+            'phone.regex' => __('Invalid number: Spanish mobile (9 digits starting with 6 or 7) or international number starting with +'),
         ];
     }
 
@@ -63,7 +58,7 @@ class RegisterRequest extends FormRequest
     }
 
     /**
-     * The number as it is checked and stored: "0550123456", "+33612345678".
+     * The number as it is checked and stored: "612345678", "+33612345678".
      *
      * RegisterPage.tsx runs the very same steps before its own check. If the
      * two drift, the form lets a number through and the API sends it back
@@ -73,8 +68,8 @@ class RegisterRequest extends FormRequest
     {
         // Separators, listed one by one because \s is not the same set here
         // (with /u) and in JavaScript: ASCII whitespace; the no-break and other
-        // Unicode spaces of a number pasted from a French page; the invisible
-        // direction marks a number copied out of WhatsApp in Arabic arrives
+        // Unicode spaces of a number pasted from a web page; the invisible
+        // direction marks a number copied out of a right-to-left chat arrives
         // wrapped in (U+061C, U+200E, U+202A…); dots and dashes. Invalid UTF-8
         // is left as typed, for the rule to refuse.
         $phone = preg_replace(
@@ -88,8 +83,8 @@ class RegisterRequest extends FormRequest
         // that the rule refuses, when the buyer wrote a good one.
         $phone = str_replace(['(0)', '(', ')'], '', $phone);
 
-        // "00" is the prefix most of the world dials for "+", and no Algerian
-        // number starts with it, so reading it as "+" never takes a home number.
+        // "00" is the prefix most of the world dials for "+", and no Spanish
+        // number starts with 0, so reading it as "+" never takes a home number.
         return preg_replace('/^00/', '+', $phone) ?? $phone;
     }
 }

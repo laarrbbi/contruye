@@ -7,48 +7,48 @@ use App\Models\Order;
 /**
  * Computes the financial body of an invoice from a paid order.
  *
- * All course prices are TTC (that is what students are quoted and what the
- * order stores), so the HT/TVA breakdown is derived backwards from the TTC
- * amounts at the chosen rate. Everything is computed in integer centimes;
- * totals are built so that HT + TVA == TTC exactly, with any rounding
- * remainder carried by the TVA line.
+ * All course prices include IVA (the final price a consumer must be shown,
+ * and what the order stores), so the net / IVA breakdown is derived
+ * backwards from the gross amounts at the chosen rate. Everything is computed
+ * in integer céntimos; totals are built so that net + IVA == gross exactly,
+ * with any rounding remainder carried by the IVA line.
  */
 class InvoiceBuilder
 {
     /**
      * @return array{
-     *     lines: list<array{designation: string, quantity: int, unit_ttc_c: int, unit_ht_c: int, total_ht_c: int}>,
-     *     tva_rate: float,
-     *     subtotal_ht_c: int,
-     *     discount_ht_c: int,
-     *     total_ht_c: int,
-     *     tva_c: int,
-     *     total_ttc_c: int,
+     *     lines: list<array{designation: string, quantity: int, unit_gross_c: int, unit_net_c: int, total_net_c: int}>,
+     *     iva_rate: float,
+     *     subtotal_net_c: int,
+     *     discount_net_c: int,
+     *     total_net_c: int,
+     *     iva_c: int,
+     *     total_gross_c: int,
      * }
      */
-    public function build(Order $order, float $tvaRate): array
+    public function build(Order $order, float $ivaRate): array
     {
         $order->loadMissing(['course', 'orderModules.module']);
 
-        $amountTtcC = $order->amount * 100;
-        $factor = 1 + $tvaRate / 100;
+        $amountGrossC = $order->amount * 100;
+        $factor = 1 + $ivaRate / 100;
 
         $lines = [];
-        $subtotalTtcC = 0;
+        $subtotalGrossC = 0;
 
         if ($order->scope === 'modules' && $order->orderModules->isNotEmpty()) {
             foreach ($order->orderModules as $orderModule) {
-                $unitTtcC = (int) $orderModule->unit_price * 100;
-                $subtotalTtcC += $unitTtcC;
+                $unitGrossC = (int) $orderModule->unit_price * 100;
+                $subtotalGrossC += $unitGrossC;
 
                 $lines[] = $this->line(
                     sprintf(
-                        'Formation en ligne — %s — Module %d : %s (accès à vie)',
-                        $order->course->localizedTitle('fr'),
+                        'Curso online — %s — Módulo %d: %s (acceso de por vida)',
+                        $order->course->localizedTitle('es'),
                         $orderModule->module?->order ?? 0,
-                        $orderModule->module?->localizedTitle('fr') ?? '',
+                        $orderModule->module?->localizedTitle('es') ?? '',
                     ),
-                    $unitTtcC,
+                    $unitGrossC,
                     $factor,
                 );
             }
@@ -58,106 +58,105 @@ class InvoiceBuilder
             // campaign reductions are folded into the amount without being
             // stored. Any pre-discount price "reconstructed" from it would be
             // a fabricated figure on a fiscal document, so the invoice simply
-            // bills the price actually agreed, with no remise line.
+            // bills the price actually agreed, with no discount line.
             $lines[] = $this->line(
                 sprintf(
-                    'Formation en ligne — %s — Accès complet (accès à vie)',
-                    $order->course->localizedTitle('fr'),
+                    'Curso online — %s — Acceso completo (acceso de por vida)',
+                    $order->course->localizedTitle('es'),
                 ),
-                $amountTtcC,
+                $amountGrossC,
                 $factor,
             );
-            $subtotalTtcC = $amountTtcC;
+            $subtotalGrossC = $amountGrossC;
         }
 
-        $discountTtcC = max(0, $subtotalTtcC - $amountTtcC);
+        $discountGrossC = max(0, $subtotalGrossC - $amountGrossC);
 
-        $subtotalHtC = array_sum(array_column($lines, 'total_ht_c'));
-        $discountHtC = (int) round($discountTtcC / $factor);
-        $totalHtC = $subtotalHtC - $discountHtC;
+        $subtotalNetC = array_sum(array_column($lines, 'total_net_c'));
+        $discountNetC = (int) round($discountGrossC / $factor);
+        $totalNetC = $subtotalNetC - $discountNetC;
 
-        // The TVA line absorbs the per-line rounding so TTC is exact.
-        $tvaC = $amountTtcC - $totalHtC;
+        // The IVA line absorbs the per-line rounding so the gross is exact.
+        $ivaC = $amountGrossC - $totalNetC;
 
         return [
             'lines' => $lines,
-            'tva_rate' => $tvaRate,
-            'subtotal_ht_c' => $subtotalHtC,
-            'discount_ht_c' => $discountHtC,
-            'total_ht_c' => $totalHtC,
-            'tva_c' => $tvaC,
-            'total_ttc_c' => $amountTtcC,
+            'iva_rate' => $ivaRate,
+            'subtotal_net_c' => $subtotalNetC,
+            'discount_net_c' => $discountNetC,
+            'total_net_c' => $totalNetC,
+            'iva_c' => $ivaC,
+            'total_gross_c' => $amountGrossC,
         ];
     }
 
     /**
-     * Recompute the HT/TVA breakdown of an ALREADY-ISSUED invoice from its
+     * Recompute the net/IVA breakdown of an ALREADY-ISSUED invoice from its
      * stored lines. Corrections must never rebuild from the live order — the
      * catalogue may have changed (or a module may have been deleted) since
      * issuance, and the printed designations are part of the legal snapshot.
      *
-     * @param  list<array{designation: string, quantity: int, unit_ttc_c: int}>  $storedLines
+     * @param  list<array{designation: string, quantity: int, unit_gross_c: int}>  $storedLines
      * @return array{
-     *     lines: list<array{designation: string, quantity: int, unit_ttc_c: int, unit_ht_c: int, total_ht_c: int}>,
-     *     tva_rate: float,
-     *     subtotal_ht_c: int,
-     *     discount_ht_c: int,
-     *     total_ht_c: int,
-     *     tva_c: int,
-     *     total_ttc_c: int,
+     *     lines: list<array{designation: string, quantity: int, unit_gross_c: int, unit_net_c: int, total_net_c: int}>,
+     *     iva_rate: float,
+     *     subtotal_net_c: int,
+     *     discount_net_c: int,
+     *     total_net_c: int,
+     *     iva_c: int,
+     *     total_gross_c: int,
      * }
      */
-    public function retotal(array $storedLines, float $tvaRate, int $totalTtcC): array
+    public function retotal(array $storedLines, float $ivaRate, int $totalGrossC): array
     {
-        $factor = 1 + $tvaRate / 100;
+        $factor = 1 + $ivaRate / 100;
 
         $lines = array_map(
-            fn (array $line) => $this->line($line['designation'], (int) $line['unit_ttc_c'], $factor),
+            fn (array $line) => $this->line($line['designation'], (int) $line['unit_gross_c'], $factor),
             $storedLines,
         );
 
-        $subtotalTtcC = array_sum(array_column($lines, 'unit_ttc_c'));
-        $discountTtcC = max(0, $subtotalTtcC - $totalTtcC);
+        $subtotalGrossC = array_sum(array_column($lines, 'unit_gross_c'));
+        $discountGrossC = max(0, $subtotalGrossC - $totalGrossC);
 
-        $subtotalHtC = array_sum(array_column($lines, 'total_ht_c'));
-        $discountHtC = (int) round($discountTtcC / $factor);
-        $totalHtC = $subtotalHtC - $discountHtC;
+        $subtotalNetC = array_sum(array_column($lines, 'total_net_c'));
+        $discountNetC = (int) round($discountGrossC / $factor);
+        $totalNetC = $subtotalNetC - $discountNetC;
 
         return [
             'lines' => $lines,
-            'tva_rate' => $tvaRate,
-            'subtotal_ht_c' => $subtotalHtC,
-            'discount_ht_c' => $discountHtC,
-            'total_ht_c' => $totalHtC,
-            'tva_c' => $totalTtcC - $totalHtC,
-            'total_ttc_c' => $totalTtcC,
+            'iva_rate' => $ivaRate,
+            'subtotal_net_c' => $subtotalNetC,
+            'discount_net_c' => $discountNetC,
+            'total_net_c' => $totalNetC,
+            'iva_c' => $totalGrossC - $totalNetC,
+            'total_gross_c' => $totalGrossC,
         ];
     }
 
     /**
-     * @return array{designation: string, quantity: int, unit_ttc_c: int, unit_ht_c: int, total_ht_c: int}
+     * @return array{designation: string, quantity: int, unit_gross_c: int, unit_net_c: int, total_net_c: int}
      */
-    private function line(string $designation, int $unitTtcC, float $factor): array
+    private function line(string $designation, int $unitGrossC, float $factor): array
     {
-        $unitHtC = (int) round($unitTtcC / $factor);
+        $unitNetC = (int) round($unitGrossC / $factor);
 
         return [
             'designation' => $designation,
             'quantity' => 1,
-            'unit_ttc_c' => $unitTtcC,
-            'unit_ht_c' => $unitHtC,
-            'total_ht_c' => $unitHtC,
+            'unit_gross_c' => $unitGrossC,
+            'unit_net_c' => $unitNetC,
+            'total_net_c' => $unitNetC,
         ];
     }
 
     public static function paymentMethodLabel(string $method): string
     {
         return match ($method) {
-            'chargily' => 'Paiement en ligne — carte CIB / Edahabia',
-            'stripe' => 'Carte bancaire internationale',
-            'manual_ccp' => 'Virement CCP',
-            'manual_baridimob' => 'Virement BaridiMob',
-            'cash' => 'Espèces',
+            'stripe' => 'Tarjeta bancaria (pago online)',
+            'manual_transfer' => 'Transferencia bancaria',
+            'manual_bizum' => 'Bizum',
+            'cash' => 'Efectivo',
             default => $method,
         };
     }

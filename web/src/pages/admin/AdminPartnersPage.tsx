@@ -12,8 +12,8 @@ import {
   type PartnerCategory,
   type PartnerPayload,
 } from '@/api/admin'
-import { useWilayas, wilayaLabel } from '@/api/wilayas'
-import { WilayaCoverageBadges, WilayaCoveragePicker } from '@/components/admin/WilayaCoveragePicker'
+import { useProvinces, provinceLabel } from '@/api/provinces'
+import { ProvinceCoverageBadges, ProvinceCoveragePicker } from '@/components/admin/ProvinceCoveragePicker'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -42,33 +42,33 @@ import {
 } from '@/components/ui/alert-dialog'
 import { applyServerErrors, useDebouncedValue } from './lib'
 
-/** Sentinel for the "no wilaya filter" option (Radix forbids an empty value). */
+/** Sentinel for the "no province filter" option (Radix forbids an empty value). */
 const ALL = 'all'
 
 interface PartnerFormValues {
   name: string
   category: PartnerCategory
-  description_fr: string
-  description_ar: string
+  description_es: string
+  description_en: string
   website: string
   phone: string
   email: string
   is_active: boolean
   is_national: boolean
-  wilaya_ids: number[]
+  province_ids: number[]
 }
 
 const emptyValues: PartnerFormValues = {
   name: '',
-  category: 'notaire',
-  description_fr: '',
-  description_ar: '',
+  category: 'notario',
+  description_es: '',
+  description_en: '',
   website: '',
   phone: '',
   email: '',
   is_active: true,
   is_national: false,
-  wilaya_ids: [],
+  province_ids: [],
 }
 
 function PartnerFormDialog({
@@ -104,14 +104,14 @@ function PartnerFormDialog({
         ? {
             name: partner.name,
             category: partner.category,
-            description_fr: partner.description_fr ?? '',
-            description_ar: partner.description_ar ?? '',
+            description_es: partner.description_es ?? '',
+            description_en: partner.description_en ?? '',
             website: partner.website ?? '',
             phone: partner.phone ?? '',
             email: partner.email ?? '',
             is_active: partner.is_active,
             is_national: partner.is_national,
-            wilaya_ids: partner.wilayas.map((wilaya) => wilaya.id),
+            province_ids: partner.provinces.map((province) => province.id),
           }
         : emptyValues,
     )
@@ -125,14 +125,14 @@ function PartnerFormDialog({
     const payload: PartnerPayload = {
       name: values.name.trim(),
       category: values.category,
-      description_fr: blankToNull(values.description_fr),
-      description_ar: blankToNull(values.description_ar),
+      description_es: blankToNull(values.description_es),
+      description_en: blankToNull(values.description_en),
       website: blankToNull(values.website),
       phone: blankToNull(values.phone),
       email: blankToNull(values.email),
       is_active: values.is_active,
       is_national: values.is_national,
-      wilaya_ids: values.is_national ? [] : values.wilaya_ids,
+      province_ids: values.is_national ? [] : values.province_ids,
     }
     const options = {
       onSuccess: () => onOpenChange(false),
@@ -183,12 +183,12 @@ function PartnerFormDialog({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="partner-desc-fr">{t('admin.partners.form.descriptionFr')}</Label>
-            <Textarea id="partner-desc-fr" rows={2} {...register('description_fr')} />
+            <Label htmlFor="partner-desc-fr">{t('admin.partners.form.descriptionEs')}</Label>
+            <Textarea id="partner-desc-fr" rows={2} {...register('description_es')} />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="partner-desc-ar">{t('admin.partners.form.descriptionAr')}</Label>
-            <Textarea id="partner-desc-ar" rows={2} dir="rtl" {...register('description_ar')} />
+            <Label htmlFor="partner-desc-ar">{t('admin.partners.form.descriptionEn')}</Label>
+            <Textarea id="partner-desc-ar" rows={2} dir="rtl" {...register('description_en')} />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -208,10 +208,10 @@ function PartnerFormDialog({
             </div>
           </div>
 
-          <WilayaCoveragePicker
-            value={watch('wilaya_ids')}
+          <ProvinceCoveragePicker
+            value={watch('province_ids')}
             onChange={(updater) =>
-              setValue('wilaya_ids', updater(getValues('wilaya_ids') ?? []), { shouldDirty: true })
+              setValue('province_ids', updater(getValues('province_ids') ?? []), { shouldDirty: true })
             }
             isNational={watch('is_national')}
             onNationalChange={(next) => setValue('is_national', next, { shouldDirty: true })}
@@ -247,15 +247,15 @@ function PartnerFormDialog({
 export function AdminPartnersPage() {
   const { t } = useTranslation()
   const [search, setSearch] = useState('')
-  const [wilayaFilter, setWilayaFilter] = useState<string>(ALL)
+  const [provinceFilter, setProvinceFilter] = useState<string>(ALL)
   const debouncedSearch = useDebouncedValue(search)
-  const wilayaId = wilayaFilter === ALL ? undefined : Number(wilayaFilter)
-  const { data, isLoading, isError, isFetching } = useAdminPartners(debouncedSearch || undefined, wilayaId)
+  const provinceId = provinceFilter === ALL ? undefined : Number(provinceFilter)
+  const { data, isLoading, isError, isFetching } = useAdminPartners(debouncedSearch || undefined, provinceId)
   const partners = data?.data
   // Kept previous data while refetching means `gaps` can still describe the
-  // wilaya we just navigated away from — don't attribute it to the new one.
+  // province we just navigated away from — don't attribute it to the new one.
   const gaps = isFetching ? [] : (data?.meta?.gaps ?? [])
-  const { data: wilayas } = useWilayas()
+  const { data: provinces } = useProvinces()
   const deletePartner = useDeletePartner()
 
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -292,22 +292,22 @@ export function AdminPartnersPage() {
             className="ps-9"
           />
         </div>
-        <Select value={wilayaFilter} onValueChange={setWilayaFilter}>
-          <SelectTrigger className="w-[220px]" aria-label={t('admin.partners.filterWilaya')}>
+        <Select value={provinceFilter} onValueChange={setProvinceFilter}>
+          <SelectTrigger className="w-[220px]" aria-label={t('admin.partners.filterProvince')}>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value={ALL}>{t('admin.partners.allWilayas')}</SelectItem>
-            {(wilayas ?? []).map((wilaya) => (
-              <SelectItem key={wilaya.id} value={String(wilaya.id)}>
-                {wilayaLabel(wilaya)}
+            <SelectItem value={ALL}>{t('admin.partners.allProvinces')}</SelectItem>
+            {(provinces ?? []).map((province) => (
+              <SelectItem key={province.id} value={String(province.id)}>
+                {provinceLabel(province)}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
 
-      {wilayaId !== undefined && gaps.length > 0 && (
+      {provinceId !== undefined && gaps.length > 0 && (
         <div className="rounded-lg border border-dashed border-amber-500/50 bg-amber-500/5 p-3 text-sm">
           <p className="font-medium">{t('admin.partners.gapsTitle')}</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
@@ -340,7 +340,7 @@ export function AdminPartnersPage() {
                 <TableHead>{t('admin.partners.table.name')}</TableHead>
                 <TableHead>{t('admin.partners.table.category')}</TableHead>
                 <TableHead>{t('admin.partners.table.contact')}</TableHead>
-                <TableHead>{t('admin.partners.table.wilaya')}</TableHead>
+                <TableHead>{t('admin.partners.table.province')}</TableHead>
                 <TableHead className="text-center">{t('admin.partners.table.modules')}</TableHead>
                 <TableHead className="w-24">
                   <span className="sr-only">{t('admin.common.actions')}</span>
@@ -384,7 +384,7 @@ export function AdminPartnersPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <WilayaCoverageBadges wilayas={partner.wilayas} isNational={partner.is_national} />
+                    <ProvinceCoverageBadges provinces={partner.provinces} isNational={partner.is_national} />
                   </TableCell>
                   <TableCell className="text-center">
                     <Badge variant="secondary">{partner.modules_count}</Badge>

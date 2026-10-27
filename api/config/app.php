@@ -70,10 +70,11 @@ return [
     // Instants are stored in UTC — that stays. `business_timezone` is for the
     // questions that have a calendar answer: which day is on the invoice,
     // which fiscal year its number belongs to, which month the revenue counts
-    // in. Algeria is UTC+1 year-round with no DST.
+    // in. Peninsular Spain is UTC+1 in winter and UTC+2 in summer; the zone
+    // name carries both, so never replace it with a fixed offset.
     'timezone' => 'UTC',
 
-    'business_timezone' => env('APP_BUSINESS_TIMEZONE', 'Africa/Algiers'),
+    'business_timezone' => env('APP_BUSINESS_TIMEZONE', 'Europe/Madrid'),
 
     /*
     |--------------------------------------------------------------------------
@@ -86,11 +87,11 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'fr'),
+    'locale' => env('APP_LOCALE', 'es'),
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'fr'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'es'),
 
-    'faker_locale' => env('APP_FAKER_LOCALE', 'fr_FR'),
+    'faker_locale' => env('APP_FAKER_LOCALE', 'es_ES'),
 
     /*
     |--------------------------------------------------------------------------

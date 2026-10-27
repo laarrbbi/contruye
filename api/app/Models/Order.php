@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\DB;
 class Order extends Model
 {
     /**
-     * How long a CCP / BaridiMob receipt may wait for an admin before the
+     * How long a transfer / Bizum receipt may wait for an admin before the
      * dashboard flags it. The buyer has already sent the money.
      */
     public const RECEIPT_REVIEW_HOURS = 48;
+
+    /** Paid outside the site: access opens once an admin has checked the receipt. */
+    public const MANUAL_METHODS = ['manual_transfer', 'manual_bizum'];
 
     use HasFactory;
 
@@ -30,7 +33,6 @@ class Order extends Model
         'method',
         'scope',
         'status',
-        'chargily_checkout_id',
         'stripe_session_id',
         'receipt_path',
         'receipt_uploaded_at',
@@ -79,7 +81,16 @@ class Order extends Model
     }
 
     /**
-     * Store a CCP / BaridiMob receipt and put the order in the review queue.
+     * The concept the buyer writes on a bank transfer or a Bizum, so the
+     * money that lands on the account can be matched to this order.
+     */
+    public function paymentReference(): string
+    {
+        return 'CONSTRUYE-'.$this->id;
+    }
+
+    /**
+     * Store a transfer / Bizum receipt and put the order in the review queue.
      * A receipt re-sent after a rejection takes the order out of `failed`.
      */
     public function attachReceipt(string $path): void
@@ -142,7 +153,7 @@ class Order extends Model
     /**
      * Transition the order to paid and grant the enrollment, atomically and
      * idempotently. This is the ONLY code path that creates enrollments —
-     * used by both the Chargily webhook and manual admin approval, either of
+     * used by both the Stripe webhook and manual admin approval, either of
      * which may fire more than once for the same order.
      *
      * @return bool true if the transition happened, false if it was already paid

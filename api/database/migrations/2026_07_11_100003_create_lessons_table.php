@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('module_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('order')->default(0);
-            $table->string('title_fr');
-            $table->string('title_ar');
+            $table->string('title_es');
+            $table->string('title_en')->nullable();
             $table->string('bunny_video_id')->nullable();
             $table->unsignedInteger('duration_seconds')->default(0);
             $table->boolean('is_free_preview')->default(false);

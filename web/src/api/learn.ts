@@ -32,13 +32,15 @@ export interface LearnLesson {
 }
 
 export type PartnerCategory =
-  | 'notaire'
-  | 'expert_comptable'
-  | 'banque'
-  | 'bureau_etudes'
+  | 'notario'
+  | 'asesor_fiscal'
+  | 'banco'
+  | 'arquitectura'
+  | 'aseguradora'
+  | 'constructora'
+  | 'abogado'
   | 'marketing'
-  | 'consultant_agrement'
-  | 'autre'
+  | 'otro'
 
 /** A recommended provider for this module. Only sent for owned modules. */
 export interface LearnPartner {
@@ -49,9 +51,9 @@ export interface LearnPartner {
   website: string | null
   phone: string | null
   email: string | null
-  /** Covers every wilaya — `wilayas` is then empty. */
+  /** Covers every province — `provinces` is then empty. */
   is_national: boolean
-  wilayas: { id: number; code: number; name: string }[]
+  provinces: { id: number; code: number; name: string }[]
   /** Why this partner matters for this specific module. */
   note: string | null
 }

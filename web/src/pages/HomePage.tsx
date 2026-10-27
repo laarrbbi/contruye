@@ -59,7 +59,7 @@ export function HomePage() {
                     )}
                   </span>
                   <Button asChild>
-                    <Link to={localizedPath(`/courses/${course.slug}`, language)}>{t('dashboard.start')}</Link>
+                    <Link to={localizedPath(`/cursos/${course.slug}`, language)}>{t('dashboard.start')}</Link>
                   </Button>
                 </div>
               </CardContent>

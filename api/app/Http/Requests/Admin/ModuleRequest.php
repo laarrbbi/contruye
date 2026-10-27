@@ -21,11 +21,10 @@ class ModuleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_fr' => ['required', 'string', 'max:255'],
-            // French-first by design: the column is nullable and
-            // localizedTitle() falls back to French until a translation lands.
-            'title_ar' => ['nullable', 'string', 'max:255'],
-            'price_dzd' => ['sometimes', 'nullable', 'integer', 'min:0'],
+            'title_es' => ['required', 'string', 'max:255'],
+            // Spanish-first by design: the column is nullable and
+            // localizedTitle() falls back to Spanish until a translation lands.
+            'title_en' => ['nullable', 'string', 'max:255'],
             'price_eur' => ['sometimes', 'nullable', 'integer', 'min:0'],
         ];
     }

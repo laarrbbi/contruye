@@ -58,9 +58,9 @@ class CampaignController extends Controller
     {
         return $request->validate([
             'course_id' => ['required', 'integer', 'exists:courses,id'],
-            'label_fr' => ['required', 'string', 'max:120'],
-            // Optional, like every Arabic field: the French name shows meanwhile.
-            'label_ar' => ['nullable', 'string', 'max:120'],
+            'label_es' => ['required', 'string', 'max:120'],
+            // Optional, like every English field: the Spanish name shows meanwhile.
+            'label_en' => ['nullable', 'string', 'max:120'],
             // Capped below 100: a promotion discounts a price, it doesn't
             // give the course away, and it can never produce a negative total.
             'percent_off' => ['required', 'integer', 'min:1', 'max:90'],
@@ -86,8 +86,8 @@ class CampaignController extends Controller
                 'id' => $campaign->course->id,
                 'title' => $campaign->course->localizedTitle(),
             ],
-            'label_fr' => $campaign->label_fr,
-            'label_ar' => $campaign->label_ar,
+            'label_es' => $campaign->label_es,
+            'label_en' => $campaign->label_en,
             'percent_off' => $campaign->percent_off,
             'starts_at' => $campaign->starts_at?->toISOString(),
             'ends_at' => $campaign->ends_at->toISOString(),

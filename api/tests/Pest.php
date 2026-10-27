@@ -30,7 +30,7 @@ pest()->extend(TestCase::class)->in('Unit');
 function completeSellerSettings(): void
 {
     Setting::setValue('invoicing.seller', [
-        'business_name' => '[DÉMO] Ebni Academy',
+        'business_name' => '[DEMO] Construye Academy',
         'legal_form' => 'EURL',
         'capital' => '1 000 000 DA',
         'address' => '12 rue des Frères Boulemdaïs, Alger',
@@ -39,7 +39,7 @@ function completeSellerSettings(): void
         'nis' => '002616123456780',
         'ai' => '16123456789',
         'phone' => '0550 00 00 00',
-        'email' => 'contact@example.dz',
+        'email' => 'contact@example.es',
         'bank_details' => '',
     ]);
 }
@@ -80,6 +80,6 @@ function invoicePayload(array $overrides = []): array
     return array_merge([
         'buyer_name' => 'Karim Benali',
         'buyer_address' => 'Cité 200 logements, Bab Ezzouar, Alger',
-        'tva_rate' => 19,
+        'iva_rate' => 19,
     ], $overrides);
 }

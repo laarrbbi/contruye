@@ -12,13 +12,13 @@ return [
     // <!-- seo:start --> … <!-- seo:end --> block is replaced per page.
     'spa_index' => env('SEO_SPA_INDEX', base_path('../web/dist/index.html')),
 
-    // web/src/i18n/{fr,ar,en}.json and the FAQ order (web/src/content).
+    // web/src/i18n/{es,en}.json and the FAQ order (web/src/content).
     'translations' => base_path('../web/src/i18n'),
     'faq' => base_path('../web/src/content/faq.json'),
 
     // The course the home page sells: /courses/{this} is the same page as /,
     // so its canonical URL is the home page.
-    'main_course' => 'promotion-immobiliere-algerie',
+    'main_course' => 'promocion-inmobiliaria-espana',
 
     // Search Console / Bing Webmaster Tools ownership, when verified by meta
     // tag rather than DNS. Empty means no tag.

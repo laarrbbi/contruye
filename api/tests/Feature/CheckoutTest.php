@@ -154,7 +154,7 @@ it('creates a stripe checkout session with the EUR amount', function () {
 it('returns payment instructions for manual methods without a checkout url', function () {
     config([
         'services.manual_payment.ccp_number' => '1234567 89',
-        'services.manual_payment.ccp_name' => 'EBNI ACADEMY SARL',
+        'services.manual_payment.ccp_name' => 'CONSTRUYE ACADEMY SARL',
         'services.manual_payment.baridimob_rip' => '00799999000000000000',
     ]);
 
@@ -169,7 +169,7 @@ it('returns payment instructions for manual methods without a checkout url', fun
         ->assertJsonPath('data.payment_instructions.amount', 30000)
         ->assertJsonPath('data.payment_instructions.currency', 'DZD')
         ->assertJsonPath('data.payment_instructions.ccp_number', '1234567 89')
-        ->assertJsonPath('data.payment_instructions.ccp_name', 'EBNI ACADEMY SARL')
+        ->assertJsonPath('data.payment_instructions.ccp_name', 'CONSTRUYE ACADEMY SARL')
         ->assertJsonPath('data.payment_instructions.baridimob_rip', '00799999000000000000');
 
     expect($response->json('data'))->not->toHaveKey('checkout_url');

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useUser } from '@/api/auth'
-import { PartnerWilayaFilter } from '@/components/player/PartnerWilayaFilter'
+import { PartnerProvinceFilter } from '@/components/player/PartnerProvinceFilter'
 import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { useQuery } from '@tanstack/react-query'
@@ -17,8 +17,8 @@ export function DashboardPage() {
   const { t } = useTranslation()
   usePageTitle(t('dashboard.title'))
   const { data: user } = useUser()
-  const [wilayaOverride, setWilayaOverride] = useState<{ id: number | null } | null>(null)
-  const wilayaId = wilayaOverride ? wilayaOverride.id : (user?.wilaya_id ?? null)
+  const [provinceOverride, setProvinceOverride] = useState<{ id: number | null } | null>(null)
+  const provinceId = provinceOverride ? provinceOverride.id : (user?.province_id ?? null)
 
   const { data: enrollments, isLoading, isError, refetch } = useQuery<Enrollment[]>({
     queryKey: ['enrollments'],
@@ -36,12 +36,12 @@ export function DashboardPage() {
           it — a learner should not have to discover this inside a lesson. */}
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-secondary/40 p-4">
         <div>
-          <p className="text-sm font-medium">{t('dashboard.wilayaTitle')}</p>
-          <p className="text-xs text-muted-foreground">{t('dashboard.wilayaHelp')}</p>
+          <p className="text-sm font-medium">{t('dashboard.provinceTitle')}</p>
+          <p className="text-xs text-muted-foreground">{t('dashboard.provinceHelp')}</p>
         </div>
-        <PartnerWilayaFilter
-          value={wilayaId}
-          onChange={(next) => setWilayaOverride({ id: next })}
+        <PartnerProvinceFilter
+          value={provinceId}
+          onChange={(next) => setProvinceOverride({ id: next })}
           showLabel={false}
         />
       </div>

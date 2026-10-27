@@ -26,7 +26,7 @@ class LearnController extends Controller
         $course->load([
             'modules.lessons.contentBlocks',
             'modules.contentBlocks',
-            'modules.partners.wilayas',
+            'modules.partners.provinces',
         ]);
 
         // One query for all of the user's progress rows in this course.

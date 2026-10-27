@@ -16,8 +16,8 @@ class LessonFactory extends Factory
         return [
             'module_id' => Module::factory(),
             'order' => fake()->numberBetween(1, 20),
-            'title_fr' => 'Leçon — '.fake()->sentence(4),
-            'title_ar' => 'الدرس — '.fake()->word(),
+            'title_es' => 'Leçon — '.fake()->sentence(4),
+            'title_en' => 'الدرس — '.fake()->word(),
             'bunny_video_id' => fake()->uuid(),
             'duration_seconds' => fake()->numberBetween(600, 2400),
             'is_free_preview' => false,

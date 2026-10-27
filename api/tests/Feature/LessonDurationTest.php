@@ -16,8 +16,8 @@ it('accepts a lesson with no duration, the way the admin form sends it', functio
     $module = Module::factory()->for(Course::factory())->create(['order' => 1]);
 
     $lessonId = $this->actingAs($admin)->postJson("/api/admin/modules/{$module->id}/lessons", [
-        'title_fr' => 'Leçon sans durée',
-        'title_ar' => 'درس بدون مدة',
+        'title_es' => 'Leçon sans durée',
+        'title_en' => 'درس بدون مدة',
         'duration_seconds' => null,
     ])->assertCreated()->json('data.id');
 
@@ -32,12 +32,12 @@ it('lets a zero-duration lesson be edited again', function () {
     // The form renders 0 as an empty box and sends null straight back, so this
     // is the round-trip that used to be permanently blocked.
     $this->actingAs($admin)->putJson("/api/admin/lessons/{$lesson->id}", [
-        'title_fr' => 'Titre corrigé',
-        'title_ar' => $lesson->title_ar,
+        'title_es' => 'Titre corrigé',
+        'title_en' => $lesson->title_en,
         'duration_seconds' => null,
     ])->assertOk();
 
-    expect($lesson->fresh()->title_fr)->toBe('Titre corrigé')
+    expect($lesson->fresh()->title_es)->toBe('Titre corrigé')
         ->and($lesson->fresh()->duration_seconds)->toBe(0);
 });
 
@@ -46,12 +46,12 @@ it('still rejects a duration that is not a number', function () {
     $module = Module::factory()->for(Course::factory())->create(['order' => 1]);
 
     $this->actingAs($admin)->postJson("/api/admin/modules/{$module->id}/lessons", [
-        'title_fr' => 'Leçon', 'title_ar' => 'درس',
+        'title_es' => 'Leçon', 'title_en' => 'درس',
         'duration_seconds' => 'bientôt',
     ])->assertUnprocessable()->assertJsonValidationErrors(['duration_seconds']);
 
     $this->actingAs($admin)->postJson("/api/admin/modules/{$module->id}/lessons", [
-        'title_fr' => 'Leçon', 'title_ar' => 'درس',
+        'title_es' => 'Leçon', 'title_en' => 'درس',
         'duration_seconds' => -5,
     ])->assertUnprocessable()->assertJsonValidationErrors(['duration_seconds']);
 });

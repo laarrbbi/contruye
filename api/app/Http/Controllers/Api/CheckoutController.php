@@ -10,7 +10,6 @@ use App\Models\Coupon;
 use App\Models\Course;
 use App\Models\Order;
 use App\Models\User;
-use App\Services\ChargilyService;
 use App\Services\PaymentMethods;
 use App\Services\PricingService;
 use App\Services\StripeService;
@@ -52,7 +51,6 @@ class CheckoutController extends Controller
             $request->user('sanctum'),
             $request->scopeValue(),
             $request->moduleIds(),
-            $request->currency(),
             $this->resolveCoupon($request->validated('coupon_code')),
         );
 
@@ -74,17 +72,16 @@ class CheckoutController extends Controller
         }
 
         $method = $data['method'];
-        $currency = $method === 'stripe' ? 'EUR' : 'DZD';
+        $currency = PricingService::CURRENCY;
         $coupon = $this->resolveCoupon($data['coupon_code'] ?? null, failWhenInvalid: true);
 
         // The quote is the single source of truth: it validates ownership,
-        // module membership, EUR availability and computes every discount.
+        // module membership and computes every discount.
         $quote = $this->pricing->quote(
             $course,
             $user,
             $request->scopeValue(),
             $request->moduleIds(),
-            $currency,
             $coupon,
         );
 
@@ -125,7 +122,6 @@ class CheckoutController extends Controller
         });
 
         return match ($method) {
-            'chargily' => $this->chargilyCheckout($order),
             'stripe' => $this->stripeCheckout($order, $course, $user),
             default => $this->manualCheckout($order),
         };
@@ -150,41 +146,6 @@ class CheckoutController extends Controller
         }
 
         return $coupon;
-    }
-
-    private function chargilyCheckout(Order $order): JsonResponse
-    {
-        $frontend = rtrim((string) config('app.frontend_url'), '/');
-
-        try {
-            $checkout = ChargilyService::fromConfig()->createCheckout(
-                $order->amount,
-                "{$frontend}/checkout/success?order={$order->id}",
-                "{$frontend}/checkout/failure?order={$order->id}",
-                config('app.url').'/api/webhooks/chargily',
-                ['order_id' => $order->id],
-            );
-        } catch (RuntimeException $e) {
-            Log::error('Chargily checkout creation failed', [
-                'order_id' => $order->id,
-                'error' => $e->getMessage(),
-            ]);
-
-            $order->markFailed();
-
-            return response()->json([
-                'message' => __('The payment provider is unavailable. Please try again later.'),
-            ], 502);
-        }
-
-        $order->update(['chargily_checkout_id' => $checkout['id']]);
-
-        return response()->json([
-            'data' => [
-                'order' => OrderResource::make($order->load(['course', 'orderModules.module'])),
-                'checkout_url' => $checkout['checkout_url'],
-            ],
-        ], 201);
     }
 
     private function stripeCheckout(Order $order, Course $course, User $user): JsonResponse

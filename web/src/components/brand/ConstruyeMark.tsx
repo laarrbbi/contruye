@@ -1,15 +1,15 @@
 import { cn } from '@/lib/utils'
 
 /**
- * The Ebni Academy mark: a chevron above a pair of wings, together reading as
+ * The Construye Academy mark: a chevron above a pair of wings, together reading as
  * a diamond — the roof and the foundations.
  *
- * The outlines are traced directly from the supplied logo (Ebni-academy.png),
+ * The outlines are traced directly from the supplied logo (Construye-academy.png),
  * not redrawn by hand, so the silhouette is the real one. `currentColor` lets
  * it sit on any surface — brand blue in the header, white on navy, a faint
  * watermark on the bento tiles.
  */
-export function EbniMark({ className, title }: { className?: string; title?: string }) {
+export function ConstruyeMark({ className, title }: { className?: string; title?: string }) {
   return (
     <svg
       viewBox="0 0 411 415"
@@ -51,16 +51,16 @@ export function EbniMark({ className, title }: { className?: string; title?: str
 }
 
 /** Brand blue from the supplied artwork. */
-export const EBNI_BLUE = '#006FFE'
+export const CONSTRUYE_BLUE = '#006FFE'
 
 /**
  * Mark + wordmark.
  *
- * `brand` reproduces the artwork's own colours (blue mark, navy EBNI, blue
+ * `brand` reproduces the artwork's own colours (blue mark, navy CONSTRUYE, blue
  * ACADEMY) for light surfaces; `inherit` paints everything in currentColor so
  * it stays legible on the navy panels.
  */
-export function EbniLogo({
+export function ConstruyeLogo({
   className,
   compact = false,
   variant = 'brand',
@@ -76,12 +76,12 @@ export function EbniLogo({
 
   return (
     <span className={cn('flex items-center gap-2.5 font-bold', className)}>
-      <EbniMark className={cn('h-8 w-8 shrink-0', brand && 'text-[#006FFE]')} />
+      <ConstruyeMark className={cn('h-8 w-8 shrink-0', brand && 'text-[#006FFE]')} />
       {!compact && (
         // Decorative: the link around the logo carries the accessible name,
-        // and a screen reader would otherwise spell "EBNI ACADEMY" letter-spaced.
+        // and a screen reader would otherwise spell "CONSTRUYE ACADEMY" letter-spaced.
         <span className={cn('flex flex-col leading-none', wordmarkClassName)} aria-hidden>
-          <span className={cn('text-lg tracking-[0.22em]', brand && 'text-[#001B4C]')}>EBNI</span>
+          <span className={cn('text-lg tracking-[0.22em]', brand && 'text-[#001B4C]')}>CONSTRUYE</span>
           <span
             className={cn(
               'mt-0.5 text-[0.58rem] tracking-[0.32em]',

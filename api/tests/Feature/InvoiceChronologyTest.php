@@ -15,7 +15,7 @@ function issueFor($order, array $extra = [])
         ->postJson("/api/admin/orders/{$order->id}/invoice", [
             'buyer_name' => 'Karim Benali',
             'buyer_address' => 'Bab Ezzouar, Alger',
-            'tva_rate' => 19,
+            'iva_rate' => 19,
             ...$extra,
         ]);
 }

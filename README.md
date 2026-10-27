@@ -1,4 +1,4 @@
-# Ebni Academy — LMS
+# Construye Academy — LMS
 
 Plateforme de formation en ligne (LMS) bilingue **français / arabe (RTL)** pour la vente et la diffusion de formations vidéo au marché algérien. Premier produit : **« La Promotion Immobilière en Algérie »** (10 modules, 41 leçons).
 
@@ -65,14 +65,14 @@ Le site complet dans le navigateur, sans rien installer, visible de votre seul c
 
 1. Sur la page du dépôt : bouton vert **Code** → onglet **Codespaces** → **Create codespace on main**.
 2. La première fois, 5 à 8 minutes de construction ; le site s'ouvre ensuite dans un nouvel onglet.
-   Sinon : onglet **Ports** en bas de l'éditeur → ligne « Ebni Academy » (8080) → icône du globe.
+   Sinon : onglet **Ports** en bas de l'éditeur → ligne « Construye Academy » (8080) → icône du globe.
 3. Le codespace s'arrête après 30 minutes d'inactivité ; il se relance depuis
    [github.com/codespaces](https://github.com/codespaces), données de démo comprises.
 
 Ailleurs, `make preview` fait la même chose sur http://localhost:8080 : l'application construite et
 Laravel sur une seule adresse, routés comme en production (`docker/nginx/preview.conf`).
 
-Comptes seedés (développement uniquement) : admin `admin@example.dz` / `password` · étudiants `karim@example.dz` (inscrit), `amel@example.dz` / `password`.
+Comptes seedés (développement uniquement) : admin `admin@example.es` / `password` · étudiants `karim@example.es` (inscrit), `amel@example.es` / `password`.
 
 ## Variables d'environnement (`api/.env`)
 

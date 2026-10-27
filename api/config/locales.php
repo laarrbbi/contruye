@@ -13,22 +13,22 @@ return [
     |
     */
 
-    'supported' => ['fr', 'ar', 'en'],
+    'supported' => ['es', 'en'],
 
     /*
-    | The authored locale. Course content is written in French; every other
+    | The authored locale. Course content is written in Spanish; every other
     | locale falls back to it rather than showing a blank.
     */
-    'default' => 'fr',
+    'default' => 'es',
 
     /*
     | Locales that have their own translated *content* columns in the database
-    | (title_ar, description_ar…). A locale outside this list still gets a
+    | (title_en, description_en…). A locale outside this list still gets a
     | fully translated interface — only the course material falls back.
     |
-    | Adding `en` here after the `_en` columns exist is the only change needed
-    | to switch English content on.
+    | The `_en` columns stay empty until a human translation is written:
+    | English readers see the authored Spanish meanwhile.
     */
-    'content' => ['fr', 'ar'],
+    'content' => ['es', 'en'],
 
 ];
