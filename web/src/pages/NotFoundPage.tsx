@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button'
 export function NotFoundPage() {
   const { t, i18n } = useTranslation()
   usePageTitle(t('notFound.title'))
-  const language = (LOCALES.find((locale) => locale === i18n.language) ?? 'fr') as Locale
+  const language = (LOCALES.find((locale) => locale === i18n.language) ?? 'es') as Locale
   const { data: user } = useUser()
 
   return (

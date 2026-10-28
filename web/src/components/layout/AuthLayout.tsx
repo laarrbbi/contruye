@@ -1,16 +1,13 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { BackgroundVideo } from '@/components/BackgroundVideo'
+import { BlueprintBackdrop } from '@/components/BlueprintBackdrop'
 import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 
 /**
- * Split screen used by the account and checkout pages: a media panel on one
- * side, the form on the other. On mobile the media panel is dropped entirely
- * so the form is the whole screen.
- *
- * The background video is decorative and muted, and is not mounted at all for
- * visitors who asked for reduced motion.
+ * Split screen used by the account and checkout pages: a brand panel on one
+ * side, the form on the other. On mobile the panel is dropped entirely so the
+ * form is the whole screen.
  */
 export function AuthLayout({
   title,
@@ -32,13 +29,7 @@ export function AuthLayout({
     <div className="grid min-h-[calc(100vh-4rem)] lg:grid-cols-2">
       {/* Media panel */}
       <div className="relative isolate hidden overflow-hidden bg-primary lg:block">
-        <BackgroundVideo
-          // The panel only shows from lg up; phones must not download it.
-          media="(min-width: 1024px)"
-          brightness={0.75}
-          cropCorner="top-right"
-          overlayClassName="bg-gradient-to-t from-primary via-primary/55 to-primary/10"
-        />
+        <BlueprintBackdrop />
 
         <div className="relative flex h-full flex-col justify-between p-10 text-primary-foreground">
           <Link to="/">
@@ -48,24 +39,9 @@ export function AuthLayout({
 
           <div className="space-y-3">
             <p className="text-2xl font-extrabold leading-tight">{t('landing.hero.title')}</p>
-            <dl className="flex flex-wrap gap-x-8 gap-y-3 pt-2">
-              <div>
-                <dt className="text-2xl font-extrabold leading-none">+2 100</dt>
-                <dd className="mt-1 text-xs text-primary-foreground/70">
-                  {t('landing.trackRecord.logements')}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-2xl font-extrabold leading-none">16</dt>
-                <dd className="mt-1 text-xs text-primary-foreground/70">
-                  {t('landing.trackRecord.years')}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-2xl font-extrabold leading-none">13</dt>
-                <dd className="mt-1 text-xs text-primary-foreground/70">{t('nav.modules')}</dd>
-              </div>
-            </dl>
+            {/* What the course is, never who made it: the panel makes no claim
+                the instructor has not supplied (constitution I). */}
+            <p className="max-w-md text-sm leading-relaxed text-primary-foreground/75">{t('authPanel.body')}</p>
           </div>
         </div>
       </div>

@@ -30,8 +30,8 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
-/** Algerian TVA rates: normal, réduit, exonéré. */
-const IVA_RATES = [19, 9, 0] as const
+/** Spanish IVA rates: general, reducido, superreducido, exento. */
+const IVA_RATES = [21, 10, 4, 0] as const
 
 export interface InvoiceFormTarget {
   /** Create mode: the paid order to invoice. */
@@ -48,10 +48,11 @@ interface InvoiceFormDialogProps {
 }
 
 /**
- * Issue (or correct) a facture. The buyer block is what Algerian invoicing
- * rules require: name + address always, RC/NIF/NIS/AI when the buyer is a
- * business. Issuance is refused server-side until the seller settings are
- * complete — surfaced here with a link to the settings page.
+ * Issue (or correct) a factura. The buyer block is what the Reglamento de
+ * facturación asks for: name + address always, the NIF when the buyer is a
+ * business or a professional. Issuance is refused server-side until the
+ * seller settings are complete — surfaced here with a link to the settings
+ * page.
  */
 export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
   const { t } = useTranslation()
@@ -60,7 +61,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
   const update = useUpdateInvoice()
 
   const editing = target?.invoice ?? null
-  const [form, setForm] = useState<InvoicePayload>({ buyer_name: '', buyer_address: '', iva_rate: 19 })
+  const [form, setForm] = useState<InvoicePayload>({ buyer_name: '', buyer_address: '', iva_rate: 21 })
   const [error, setError] = useState<string | null>(null)
   // Per field, under the field: one line at the bottom of a long form did not
   // say which of the two required fields was empty.
@@ -72,11 +73,8 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
     setForm({
       buyer_name: editing?.buyer_name ?? target.defaultBuyerName ?? '',
       buyer_address: editing?.buyer_address ?? '',
-      buyer_rc: editing?.buyer_rc ?? '',
       buyer_nif: editing?.buyer_nif ?? '',
-      buyer_nis: editing?.buyer_nis ?? '',
-      buyer_ai: editing?.buyer_ai ?? '',
-      iva_rate: editing?.iva_rate ?? 19,
+      iva_rate: editing?.iva_rate ?? 21,
       notes: editing?.notes ?? '',
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -103,10 +101,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
 
     const payload: InvoicePayload = {
       ...form,
-      buyer_rc: form.buyer_rc || null,
       buyer_nif: form.buyer_nif || null,
-      buyer_nis: form.buyer_nis || null,
-      buyer_ai: form.buyer_ai || null,
       notes: form.notes || null,
     }
 
@@ -127,7 +122,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
     }
   }
 
-  const proField = (field: 'buyer_rc' | 'buyer_nif' | 'buyer_nis' | 'buyer_ai') => (
+  const proField = (field: 'buyer_nif') => (
     <div className="space-y-1.5">
       <Label htmlFor={`invoice-${field}`}>{t(`admin.invoices.form.${field}`)}</Label>
       <Input
@@ -201,10 +196,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
                 {t('admin.invoices.form.proSection')}
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {proField('buyer_rc')}
                 {proField('buyer_nif')}
-                {proField('buyer_nis')}
-                {proField('buyer_ai')}
               </div>
             </div>
 

@@ -20,7 +20,7 @@ export function Header() {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const current = (LOCALES.find((locale) => locale === i18n.language) ?? 'fr') as Locale
+  const current = (LOCALES.find((locale) => locale === i18n.language) ?? 'es') as Locale
 
   const chooseLocale = (locale: Locale) => {
     if (locale === current) return
@@ -61,8 +61,6 @@ export function Header() {
                 <DropdownMenuItem
                   key={locale}
                   onSelect={() => chooseLocale(locale)}
-                  // Each language reads in its own script, never transliterated.
-                  dir={locale === 'ar' ? 'rtl' : 'ltr'}
                   className="justify-between gap-3"
                 >
                   {LOCALE_NAMES[locale]}

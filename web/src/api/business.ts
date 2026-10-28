@@ -11,15 +11,15 @@ export interface BusinessProfile {
   legal_form: string | null
   capital: string | null
   address: string | null
-  rc: string | null
+  registry: string | null
   nif: string | null
   phone: string | null
   whatsapp: string | null
   email: string | null
   support_hours: string | null
-  /** https://wa.me/213…, ready to use. */
+  /** https://wa.me/34…, ready to use. */
   whatsapp_url: string | null
-  /** tel:+213…, ready to use. */
+  /** tel:+34…, ready to use. */
   phone_tel: string | null
 }
 

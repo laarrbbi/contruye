@@ -1,64 +1,43 @@
 import { cn } from '@/lib/utils'
 
 /**
- * The Construye Academy mark: a chevron above a pair of wings, together reading as
- * a diamond — the roof and the foundations.
+ * The Construye Academy mark: a roof over three floors that are still going
+ * up — the building the course follows, from the plot to the keys.
  *
- * The outlines are traced directly from the supplied logo (Construye-academy.png),
- * not redrawn by hand, so the silhouette is the real one. `currentColor` lets
- * it sit on any surface — brand blue in the header, white on navy, a faint
- * watermark on the bento tiles.
+ * Drawn for this site (no artwork has been supplied yet), on a 64-unit grid so
+ * it stays crisp at favicon size. `currentColor` lets it sit on any surface —
+ * brand blue in the header, white on navy.
  */
 export function ConstruyeMark({ className, title }: { className?: string; title?: string }) {
   return (
     <svg
-      viewBox="0 0 411 415"
+      viewBox="0 0 64 64"
       className={cn('h-6 w-6', className)}
       role={title ? 'img' : undefined}
       aria-hidden={title ? undefined : true}
     >
       {title && <title>{title}</title>}
-      <g transform="translate(0,415) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+      <g fill="currentColor">
         {/* roof */}
-        <path
-          d="M1970 4063 c-19 -8 -176 -126 -350 -261 -173 -135 -592 -461 -930
--725 -338 -263 -619 -488 -623
-          -500 -14 -39 188 -204 353 -287 125 -63 255
--75 352 -33 39 18 258 186 938 718 287 225 291 227 388
-          205 56 -12 28 9 941
--704 274 -214 312 -237 412 -244 110 -8 214 32 385 146 164 111 225 178
-          196
-217 -9 13 -170 140 -822 645 -272 211 -565 438 -650 505 -439 343 -427 336
--507 334 -26 0 -64
-          -7 -83 -16z"
-        />
-        {/* foundations */}
-        <path
-          d="M36 1873 c-3 -15 -4 -138 -3 -273 3 -233 4 -248 26 -293 34 -70 87
--110 204 -153 227 -83 853 -337
-          1012 -411 394 -182 624 -371 744 -610 17 -35
-33 -63 36 -63 3 0 19 28 36 63 125 246 355 433 771
-          623 126 58 640 266 985
-398 143 55 191 97 217 188 17 58 21 544 5 554 -16 9 -682 -264 -1019
-          -419
--566 -260 -818 -450 -954 -722 -43 -84 -43 -84 -65 -30 -80 193 -290 395 -576
-555 -228 127
-          -628 307 -1160 523 -271 109 -252 104 -259 70z"
-        />
+        <path d="M32 4 61 26.5 56.6 32.2 32 13.1 7.4 32.2 3 26.5Z" />
+        {/* floors, the last one still being built */}
+        <rect x="12" y="35" width="40" height="7" rx="1.5" />
+        <rect x="12" y="45.5" width="32" height="7" rx="1.5" />
+        <rect x="12" y="56" width="22" height="7" rx="1.5" />
       </g>
     </svg>
   )
 }
 
-/** Brand blue from the supplied artwork. */
+/** Brand blue. */
 export const CONSTRUYE_BLUE = '#006FFE'
 
 /**
  * Mark + wordmark.
  *
- * `brand` reproduces the artwork's own colours (blue mark, navy CONSTRUYE, blue
- * ACADEMY) for light surfaces; `inherit` paints everything in currentColor so
- * it stays legible on the navy panels.
+ * `brand` uses the brand colours (blue mark, navy CONSTRUYE, blue ACADEMY) for
+ * light surfaces; `inherit` paints everything in currentColor so it stays
+ * legible on the navy panels.
  */
 export function ConstruyeLogo({
   className,

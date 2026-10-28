@@ -46,7 +46,7 @@ import { InvoiceFormDialog, type InvoiceFormTarget } from './InvoiceFormDialog'
 import { OrderStatusBadge, ReceiptWaiting } from './orderMeta'
 
 const STATUSES: OrderStatus[] = ['pending', 'awaiting_review', 'paid', 'failed', 'refunded']
-const METHODS: OrderMethod[] = ['chargily', 'stripe', 'manual_ccp', 'manual_baridimob', 'cash']
+const METHODS: OrderMethod[] = ['stripe', 'manual_transfer', 'manual_bizum', 'cash']
 
 const ALL = 'all'
 
@@ -167,7 +167,7 @@ function OrderDetailDialog({
               </Button>
             )}
 
-            {/* Facture: promised "sur demande" on the sales page — issued here. */}
+            {/* Factura: promised "on request" on the sales page — issued here. */}
             {order.status === 'paid' && (
               <div className="rounded-lg border bg-secondary/30 p-3">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">

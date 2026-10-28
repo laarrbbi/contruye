@@ -117,7 +117,7 @@ function CampaignFormDialog({
     const payload: CampaignPayload = {
       course_id: Number(values.course_id),
       label_es: values.label_es.trim(),
-      // Blank sends null: Arabic visitors then read the French name.
+      // Blank sends null: English visitors then read the Spanish name.
       label_en: values.label_en.trim() || null,
       percent_off: Number(values.percent_off),
       // datetime-local has no timezone; send the real instant.
@@ -168,14 +168,14 @@ function CampaignFormDialog({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="campaign-label-fr">{t('admin.campaigns.form.labelEs')}</Label>
-              <Input id="campaign-label-fr" {...register('label_es', { required: t('validation.required') })} />
+              <Label htmlFor="campaign-label-es">{t('admin.campaigns.form.labelEs')}</Label>
+              <Input id="campaign-label-es" {...register('label_es', { required: t('validation.required') })} />
               {errors.label_es && <p className="text-sm text-destructive">{errors.label_es.message}</p>}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="campaign-label-ar">{t('admin.campaigns.form.labelEn')}</Label>
-              <Input id="campaign-label-ar" dir="rtl" {...register('label_en')} />
-              <p className="text-xs text-muted-foreground">{t('admin.campaigns.form.labelArHint')}</p>
+              <Label htmlFor="campaign-label-en">{t('admin.campaigns.form.labelEn')}</Label>
+              <Input id="campaign-label-en" {...register('label_en')} />
+              <p className="text-xs text-muted-foreground">{t('admin.campaigns.form.labelEnHint')}</p>
             </div>
           </div>
 

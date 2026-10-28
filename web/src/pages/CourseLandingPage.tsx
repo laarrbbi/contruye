@@ -7,19 +7,19 @@ import {
   ArrowDown,
   Boxes,
   MessageCircle,
-  Building2,
   CircleCheck,
   Clock,
-  FileSpreadsheet,
   FileText,
   HardHat,
   Infinity as InfinityIcon,
   LandPlot,
+  ListChecks,
   Lock,
   Percent,
   Plane,
   PlayCircle,
-  Quote,
+  Scale,
+  Users,
 } from 'lucide-react'
 import { useCourse, type PublicLesson } from '@/api/courses'
 import { useUser } from '@/api/auth'
@@ -30,13 +30,10 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { CampaignBanner } from '@/components/CampaignBanner'
-import { BackgroundVideo } from '@/components/BackgroundVideo'
-import { TrackRecordBento } from '@/components/landing/TrackRecordBento'
+import { BlueprintBackdrop } from '@/components/BlueprintBackdrop'
 import { ReviewsSection } from '@/components/reviews/ReviewsSection'
 import { StarRating } from '@/components/reviews/StarRating'
 import { ScrollReveal } from '@/components/ScrollReveal'
-import { ProjectGallery } from '@/components/landing/ProjectGallery'
-import { AnimatedCounter } from '@/components/AnimatedCounter'
 import { FaqChat } from '@/components/ui/faq-chat'
 import faqContent from '@/content/faq.json'
 import { ContactOptions } from '@/components/ContactOptions'
@@ -45,17 +42,14 @@ import { hasContactChannel, useBusinessProfile } from '@/api/business'
 import { cn, formatDuration, formatNumber, formatPrice } from '@/lib/utils'
 import { TRANSFER_METHODS, paymentMethodList } from '@/lib/payments'
 
-/** The instructor's track record, as declared by him (never attributed to Construye). */
-const TRACK_RECORD = [
-  { end: 2100, prefix: '+', labelKey: 'landing.trackRecord.logements' },
-  { end: 2, prefix: '', labelKey: 'landing.trackRecord.cliniques' },
-  { end: 1, prefix: '', labelKey: 'landing.trackRecord.centre' },
-  { end: 1, prefix: '', labelKey: 'landing.trackRecord.parc' },
-] as const
+// The sales page makes no claim about the instructor's own track record:
+// none has been supplied yet, and nothing on a public surface is invented
+// (constitution I). Each band below says what the course and the platform
+// actually deliver.
 
 const COST_OF_ERROR = ['e1', 'e2', 'e3', 'e4'] as const
-const METHOD_STEPS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const
-const PROJECT_TYPES = ['t1', 't2', 't3', 't4', 't5'] as const
+/** The instructor's twelve phases, in order (landing.method.s1 … s12). */
+const METHOD_STEPS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'] as const
 const MODULAR_CASES = ['c1', 'c2', 'c3', 'c4'] as const
 
 /** Who the course is for: four starting points. */
@@ -66,11 +60,12 @@ const FOR_WHOM = [
   { key: 'p4', icon: Boxes },
 ] as const
 
+/** What the platform delivers today — each item is a feature that exists. */
 const TOOLKIT = [
-  { icon: FileSpreadsheet, titleKey: 'landing.toolkit.excelTitle', bodyKey: 'landing.toolkit.excelBody' },
-  { icon: FileText, titleKey: 'landing.toolkit.papersTitle', bodyKey: 'landing.toolkit.papersBody' },
-  { icon: Building2, titleKey: 'landing.toolkit.templatesTitle', bodyKey: 'landing.toolkit.templatesBody' },
-  { icon: HardHat, titleKey: 'landing.toolkit.subsTitle', bodyKey: 'landing.toolkit.subsBody' },
+  { icon: ListChecks, titleKey: 'landing.toolkit.checklistsTitle', bodyKey: 'landing.toolkit.checklistsBody' },
+  { icon: Scale, titleKey: 'landing.toolkit.legalTitle', bodyKey: 'landing.toolkit.legalBody' },
+  { icon: Users, titleKey: 'landing.toolkit.partnersTitle', bodyKey: 'landing.toolkit.partnersBody' },
+  { icon: FileText, titleKey: 'landing.toolkit.sheetsTitle', bodyKey: 'landing.toolkit.sheetsBody' },
 ] as const
 
 // Shared with the server, which renders the same questions in the page's
@@ -89,8 +84,7 @@ function SectionTitle({ children, className }: { children: React.ReactNode; clas
 /**
  * The opening of a section: what it is in two or three words, its title and
  * its lead. The short accent rule is the one place the brand's amber shows
- * on every band; letter-spacing is dropped in Arabic, where it breaks the
- * joined letters.
+ * on every band.
  */
 function SectionHeader({
   eyebrow,
@@ -282,19 +276,18 @@ export function CourseLandingPage() {
     )
   }
 
-  const priceDzd = formatPrice(course.price_dzd, 'DZD', i18n.language)
-  const priceEur = course.price_eur != null ? formatPrice(course.price_eur, 'EUR', i18n.language) : null
+  const price = formatPrice(course.price_eur, 'EUR', i18n.language)
 
   // Someone who owns SOME modules can still buy the rest — only full access
   // removes every purchase surface. (is_enrolled is true for partial owners.)
   const canStillBuy = !course.full_access
   const notEnrolled = canStillBuy
-  const sellableModules = course.modules.filter((m) => m.price_dzd != null)
-  const moduleAnchor = sellableModules.reduce((sum, m) => sum + (m.price_dzd ?? 0), 0)
+  const sellableModules = course.modules.filter((m) => m.price_eur != null)
+  const moduleAnchor = sellableModules.reduce((sum, m) => sum + (m.price_eur ?? 0), 0)
   const fullSavingsPct =
-    moduleAnchor > course.price_dzd ? Math.round((1 - course.price_dzd / moduleAnchor) * 100) : 0
+    moduleAnchor > course.price_eur ? Math.round((1 - course.price_eur / moduleAnchor) * 100) : 0
   const cheapestModule = sellableModules.length
-    ? Math.min(...sellableModules.map((m) => m.price_dzd as number))
+    ? Math.min(...sellableModules.map((m) => m.price_eur as number))
     : null
   const tiers = [...course.module_discount_tiers].sort((a, b) => a.min_modules - b.min_modules)
   const showAlaCarte = canStillBuy && cheapestModule != null
@@ -302,15 +295,11 @@ export function CourseLandingPage() {
 
   // Promotion currently running (hidden once the student owns everything).
   const campaign = canStillBuy ? course.campaign : null
-  const campaignPriceDzd = campaign
-    ? Math.round((course.price_dzd * (100 - campaign.percent_off)) / 100)
+  const campaignPrice = campaign
+    ? Math.round((course.price_eur * (100 - campaign.percent_off)) / 100)
     : null
-  const campaignPriceEur =
-    campaign && course.price_eur != null
-      ? Math.round((course.price_eur * (100 - campaign.percent_off)) / 100)
-      : null
 
-  const effectivePrice = campaignPriceDzd ?? course.price_dzd
+  const effectivePrice = campaignPrice ?? course.price_eur
   const hasSocialProof = course.rating != null || (course.students_count ?? 0) > 0
   // Counted, never typed: the copy follows the catalogue when it changes.
   const modulesLabel = t('landing.counts.modules', { count: course.modules.length })
@@ -319,9 +308,9 @@ export function CourseLandingPage() {
     (sum, module) => sum + module.lessons.filter((lesson) => lesson.is_free_preview).length,
     0,
   )
-  // The complete offer planned for launch, the euro price included, even
-  // while a gateway still waits for its credentials (constitution I, amended
-  // 2026-10-09). The checkout offers only what can take money.
+  // The complete offer planned for launch, even while a gateway still waits
+  // for its credentials (constitution I, amendment inherited from Ebni). The
+  // checkout offers only what can take money.
   const paymentNames = paymentMethodList(t)
   const paymentShort = paymentMethodList(t, { set: 'short' })
   const paymentSentence = t('payments.sentence', { methods: paymentNames })
@@ -361,30 +350,24 @@ export function CourseLandingPage() {
       {/* Real, server-set deadline — hides itself and refetches when it ends */}
       <CampaignBanner campaign={campaign} slug={slug} />
 
-      {/* ─── 1. HERO — the man before the promise ─────────────────────── */}
+      {/* ─── 1. HERO — the whole journey, from the plot to the keys ──── */}
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
-        {/* Scrim is deliberately light: heavy enough for white text to stay
-            readable, transparent enough that the footage is actually visible. */}
-        <BackgroundVideo
-          brightness={0.75}
-          cropCorner="top-right"
-          overlayClassName="bg-primary/55 md:bg-gradient-to-r md:from-primary/95 md:via-primary/55 md:to-primary/10"
-        />
+        <BlueprintBackdrop />
 
         {/* Three grid items in reading order: the pitch, the price card, the
             proof. A phone reaches the price right after the pitch; on a wide
             screen the card stands beside both. */}
         <div className="container grid gap-x-10 gap-y-8 py-12 sm:py-16 lg:grid-cols-[1fr_380px] lg:items-start lg:gap-y-6">
           <div className="space-y-6 lg:col-start-1 lg:row-start-1">
-            <p className="inline-flex rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide rtl:tracking-normal">
+            <p className="inline-flex rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
               {t('landing.hero.eyebrow')}
             </p>
 
-            <h1 className="text-3xl font-extrabold leading-tight [text-shadow:0_2px_12px_rgb(0_0_0/45%)] sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[2.75rem]">
               {t('landing.hero.title')}
             </h1>
 
-            <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/90 [text-shadow:0_1px_8px_rgb(0_0_0/45%)]">
+            <p className="max-w-2xl text-base leading-relaxed text-primary-foreground/90">
               {t('landing.hero.body')}
             </p>
 
@@ -418,7 +401,7 @@ export function CourseLandingPage() {
                   (campaign ? (
                     <div className="mb-1 flex flex-wrap items-center gap-2">
                       <span className="text-lg font-medium text-muted-foreground line-through">
-                        {priceDzd}
+                        {price}
                       </span>
                       <Badge variant="success">
                         {t('course.pricing.saveBadge', { percent: campaign.percent_off })}
@@ -427,7 +410,7 @@ export function CourseLandingPage() {
                   ) : fullSavingsPct > 0 ? (
                     <div className="mb-1 flex items-center gap-2">
                       <span className="text-lg font-medium text-muted-foreground line-through">
-                        {formatPrice(moduleAnchor, 'DZD', i18n.language)}
+                        {formatPrice(moduleAnchor, 'EUR', i18n.language)}
                       </span>
                       <Badge variant="success">
                         {t('course.pricing.saveBadge', { percent: fullSavingsPct })}
@@ -435,9 +418,7 @@ export function CourseLandingPage() {
                     </div>
                   ) : null)}
                 <p className="text-3xl font-extrabold text-primary">
-                  {campaignPriceDzd != null
-                    ? formatPrice(campaignPriceDzd, 'DZD', i18n.language)
-                    : priceDzd}
+                  {campaignPrice != null ? formatPrice(campaignPrice, 'EUR', i18n.language) : price}
                 </p>
                 {campaign && (
                   <p className="bidi-auto mt-0.5 text-sm font-semibold text-primary">{campaign.label}</p>
@@ -447,15 +428,8 @@ export function CourseLandingPage() {
                     {t('course.pricing.fullAccessNote')}
                   </p>
                 )}
-                {priceEur && (
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {t('course.eurPrice', {
-                      price:
-                        campaignPriceEur != null
-                          ? formatPrice(campaignPriceEur, 'EUR', i18n.language)
-                          : priceEur,
-                    })}
-                  </p>
+                {notEnrolled && (
+                  <p className="mt-1 text-xs text-muted-foreground">{t('course.pricing.vatIncluded')}</p>
                 )}
               </div>
 
@@ -469,7 +443,7 @@ export function CourseLandingPage() {
                 >
                   <Boxes className="h-4 w-4 shrink-0" />
                   {t('course.pricing.fromPerModule', {
-                    price: formatPrice(cheapestModule, 'DZD', i18n.language),
+                    price: formatPrice(cheapestModule, 'EUR', i18n.language),
                   })}
                 </Link>
               )}
@@ -491,18 +465,19 @@ export function CourseLandingPage() {
             </CardContent>
           </Card>
 
-          {/* The proof. A phone sees the same four figures as photographs in
-              the next band, and the ways to pay in the card above: it keeps
-              the rating, when there is one. */}
-          <div className={cn('space-y-6 lg:col-start-1 lg:row-start-2', !hasSocialProof && 'max-sm:hidden')}>
-            {/* Track record, stacked on mobile, never buried in prose */}
-            <dl className="hidden grid-cols-2 gap-x-6 gap-y-4 border-y border-primary-foreground/15 py-5 sm:grid sm:grid-cols-4">
-              {TRACK_RECORD.map((item) => (
-                <div key={item.labelKey}>
-                  <dt className="text-2xl font-extrabold leading-none sm:text-3xl">
-                    <AnimatedCounter end={item.end} prefix={item.prefix} locale={i18n.language} />
-                  </dt>
-                  <dd className="mt-1 text-xs leading-snug text-primary-foreground/70">{t(item.labelKey)}</dd>
+          {/* The proof: what the programme holds, counted from the catalogue,
+              and the rating once real reviews exist. A phone sees the ways to
+              pay in the card above. */}
+          <div className="space-y-6 lg:col-start-1 lg:row-start-2">
+            <dl className="grid grid-cols-3 gap-x-6 gap-y-4 border-y border-primary-foreground/15 py-5">
+              {[
+                { key: 'phases', figure: formatNumber(course.modules.length, i18n.language), label: t('landing.hero.statPhases') },
+                { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
+                { key: 'access', figure: <InfinityIcon className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden />, label: t('course.lifetimeAccess') },
+              ].map(({ key, figure, label }) => (
+                <div key={key}>
+                  <dt className="flex h-7 items-center text-2xl font-extrabold leading-none sm:h-8 sm:text-3xl">{figure}</dt>
+                  <dd className="mt-1 text-xs leading-snug text-primary-foreground/70">{label}</dd>
                 </div>
               ))}
             </dl>
@@ -534,68 +509,7 @@ export function CourseLandingPage() {
         </div>
       </section>
 
-      {/* ─── 2. TRACK RECORD — what he built, before teaching it ──────── */}
-      {/* The same dark band as the hero, divided by a hairline on the content
-          grid instead of a full-width seam. */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container pb-12 sm:pb-16 lg:pb-20">
-          <div className="space-y-10 border-t border-primary-foreground/10 pt-12 sm:pt-16">
-            <ScrollReveal>
-              <SectionHeader
-                onDark
-                eyebrow={t('landing.eyebrow.trackRecord')}
-                title={t('landing.trackRecord.title')}
-                lead={t('landing.trackRecord.intro')}
-              />
-            </ScrollReveal>
-
-            <TrackRecordBento locale={i18n.language} />
-
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start">
-              <ScrollReveal>
-                <p className="leading-relaxed text-primary-foreground/80">{t('landing.trackRecord.body')}</p>
-              </ScrollReveal>
-              {/* Honest attribution: these are HIS numbers, not the platform's. */}
-              <p className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-primary-foreground/60">
-                {t('landing.trackRecord.attribution')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className={ALTERNATING}>
-        {/* ─── 3. WHY IS HE SELLING — defuse the objection immediately ──── */}
-        <Band className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <ScrollReveal>
-            <SectionHeader
-              eyebrow={t('landing.whySelling.label')}
-              title={t('landing.whySelling.title')}
-              lead={t('landing.whySelling.lead')}
-            />
-          </ScrollReveal>
-
-          <ScrollReveal delay={120}>
-            <figure className="rounded-3xl border bg-background p-6 shadow-sm">
-              <Quote className="h-6 w-6 text-primary/40" aria-hidden />
-              <blockquote className="mt-3 text-lg font-medium leading-relaxed">
-                {t('landing.whySelling.quote')}
-              </blockquote>
-              <ul className="mt-6 space-y-2.5 border-t pt-5">
-                {(['k1', 'k2', 'k3'] as const).map((key) => (
-                  <li key={key} className="flex items-center gap-2.5 text-sm">
-                    <CircleCheck className="h-4 w-4 shrink-0 text-success" />
-                    {t(`landing.whySelling.${key}`)}
-                  </li>
-                ))}
-              </ul>
-              <figcaption className="mt-4 text-sm font-medium text-primary">
-                {t('landing.whySelling.close')}
-              </figcaption>
-            </figure>
-          </ScrollReveal>
-        </Band>
-
         {/* ─── 3b. FOR WHOM — is this for me? ───────────────────────────── */}
         <Band className="space-y-10">
           <SectionHeader
@@ -694,25 +608,6 @@ export function CourseLandingPage() {
           <p className="max-w-3xl font-semibold leading-relaxed">{t('landing.method.close')}</p>
         </Band>
 
-        {/* ─── 7. ANY PROJECT TYPE — qualification objection ────────────── */}
-        <Band className="space-y-8">
-          <SectionHeader eyebrow={t('landing.eyebrow.projects')} title={t('landing.anyProject.title')} />
-
-          <div className="flex flex-wrap gap-2">
-            {PROJECT_TYPES.map((key) => (
-              <Badge key={key} variant="outline" className="bg-background px-3 py-1 text-sm">
-                {t(`landing.anyProject.${key}`)}
-              </Badge>
-            ))}
-          </div>
-
-          {/* Ses opérations, du plan au projet livré — photos fournies par le
-              client, aucune banque d'images, aucune image générée. */}
-          <ProjectGallery />
-
-          <p className="max-w-3xl font-semibold leading-relaxed">{t('landing.anyProject.close')}</p>
-        </Band>
-
         {/* ─── 8. TOOLKIT — what you actually walk away with ────────────── */}
         <Band className="space-y-10">
           <div className={cn(SPLIT, 'lg:items-start')}>
@@ -746,24 +641,6 @@ export function CourseLandingPage() {
             </div>
           </div>
 
-          {/* Preuve visuelle : une vraie fiche technique de logement, plan 3D
-              et surfaces pièce par pièce — le niveau de détail du métier. */}
-          <ScrollReveal delay={120}>
-            <figure className="overflow-hidden rounded-2xl border bg-background shadow-sm">
-              <img
-                src="/fiche-technique-f5.webp"
-                alt={t('landing.toolkit.ficheAlt')}
-                width={1600}
-                height={947}
-                loading="lazy"
-                decoding="async"
-                className="h-auto w-full"
-              />
-              <figcaption className="border-t px-4 py-3 text-xs text-muted-foreground">
-                {t('landing.toolkit.ficheCaption')}
-              </figcaption>
-            </figure>
-          </ScrollReveal>
         </Band>
 
         {/* ─── 9. CURRICULUM — depth is the proof ───────────────────────── */}
@@ -806,8 +683,8 @@ export function CourseLandingPage() {
                           <span>{t('course.lessonsCount', { count: module.lessons.length })}</span>
                           {notEnrolled && (
                             <span className="shrink-0 font-semibold tabular-nums text-primary">
-                              {module.price_dzd != null
-                                ? formatPrice(module.price_dzd, 'DZD', i18n.language)
+                              {module.price_eur != null
+                                ? formatPrice(module.price_eur, 'EUR', i18n.language)
                                 : t('checkout.modules.fullOnly')}
                             </span>
                           )}
@@ -857,7 +734,7 @@ export function CourseLandingPage() {
               <SectionHeader eyebrow={t('landing.eyebrow.modular')} title={t('landing.modular.title')} lead={t('landing.modular.p1')} />
               <p className="text-2xl font-extrabold text-primary">
                 {t('landing.modular.from', {
-                  price: formatPrice(cheapestModule, 'DZD', i18n.language),
+                  price: formatPrice(cheapestModule, 'EUR', i18n.language),
                 })}
               </p>
               {/* "Discounts apply on their own; past a few modules, full access
@@ -937,11 +814,11 @@ export function CourseLandingPage() {
             <div className="flex min-w-0 flex-col rounded-2xl border-2 border-primary bg-background p-6 shadow-lg">
               <h3 className="text-lg font-bold">{t('landing.pricing.fullTitle')}</h3>
               <div className="mt-2 flex flex-wrap items-baseline gap-2">
-                {campaignPriceDzd != null && (
-                  <span className="text-base font-medium text-muted-foreground line-through">{priceDzd}</span>
+                {campaignPrice != null && (
+                  <span className="text-base font-medium text-muted-foreground line-through">{price}</span>
                 )}
                 <span className="text-3xl font-extrabold text-primary">
-                  {formatPrice(effectivePrice, 'DZD', i18n.language)}
+                  {formatPrice(effectivePrice, 'EUR', i18n.language)}
                 </span>
               </div>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
@@ -956,8 +833,8 @@ export function CourseLandingPage() {
               <div className="mt-2 flex flex-wrap items-baseline gap-2">
                 <span className="text-3xl font-extrabold">
                   {cheapestModule != null
-                    ? formatPrice(cheapestModule, 'DZD', i18n.language)
-                    : formatPrice(course.price_dzd, 'DZD', i18n.language)}
+                    ? formatPrice(cheapestModule, 'EUR', i18n.language)
+                    : formatPrice(course.price_eur, 'EUR', i18n.language)}
                 </span>
                 {/* The best volume discount, not a discount on this price. */}
                 {bestTier && (
@@ -1040,7 +917,7 @@ export function CourseLandingPage() {
           <ScrollReveal delay={120} className="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <FaqChat
               items={FAQ_KEYS
-                // "Comment contacter le support ?" promises phone and WhatsApp.
+                // "¿Cómo contacto con el soporte?" promises phone and WhatsApp.
                 // Until a channel is configured that promise is false, so the
                 // question is not asked at all.
                 .filter((key) => key !== 'support' || canBeReached)
@@ -1149,7 +1026,7 @@ export function CourseLandingPage() {
         <ul className="grid grid-cols-3 gap-4 border-t border-primary-foreground/15 pt-6 lg:grid-cols-1 lg:gap-6 lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0">
           {[
             { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
-            { key: 'years', figure: formatNumber(16, i18n.language), label: t('landing.trackRecord.years') },
+            { key: 'phases', figure: formatNumber(course.modules.length, i18n.language), label: t('landing.hero.statPhases') },
             { key: 'access', figure: <InfinityIcon className="h-8 w-8" aria-hidden />, label: t('course.lifetimeAccess') },
           ].map(({ key, figure, label }) => (
             <li key={key}>
@@ -1183,23 +1060,14 @@ export function CourseLandingPage() {
       >
         <div className="container flex items-center justify-between gap-3 py-3">
           {/* The price is what this bar is for: it keeps its width and the
-              button wraps instead ("90 000 DA" used to be cut to "90 000 I"). */}
+              button wraps instead of cutting the amount short. */}
           <div className="shrink-0">
             <p className="flex items-baseline gap-2 whitespace-nowrap text-lg font-extrabold text-primary">
-              {campaignPriceDzd != null && (
-                <span className="text-sm font-medium text-muted-foreground line-through">{priceDzd}</span>
+              {campaignPrice != null && (
+                <span className="text-sm font-medium text-muted-foreground line-through">{price}</span>
               )}
-              {campaignPriceDzd != null
-                ? formatPrice(campaignPriceDzd, 'DZD', i18n.language)
-                : priceDzd}
+              {campaignPrice != null ? formatPrice(campaignPrice, 'EUR', i18n.language) : price}
             </p>
-            {priceEur && (
-              <p className="whitespace-nowrap text-xs text-muted-foreground">
-                {campaignPriceEur != null
-                  ? formatPrice(campaignPriceEur, 'EUR', i18n.language)
-                  : priceEur}
-              </p>
-            )}
           </div>
           {ctaButton('default', 'h-auto min-h-10 min-w-0 flex-1 whitespace-normal py-2 text-center leading-snug')}
         </div>

@@ -12,11 +12,10 @@ export interface AdminCourse {
   id: number
   slug: string
   title_es: string
-  title_en: string
+  title_en: string | null
   description_es: string | null
   description_en: string | null
-  price_dzd: number
-  price_eur: number | null
+  price_eur: number
   status: CourseStatus
   cover_image: string | null
   modules_count: number
@@ -34,14 +33,14 @@ export interface AdminLesson {
   id: number
   order: number
   title_es: string
-  title_en: string
+  title_en: string | null
   bunny_video_id: string | null
   duration_seconds: number | null
   is_free_preview: boolean
   content_es: string | null
   content_en: string | null
   is_reflex_sheet?: boolean
-  /** Each bullet with its admin-only "A VALIDER" state. */
+  /** Each bullet with its admin-only "A VALIDAR" state. */
   key_points?: { text: string; needs_validation: boolean }[]
   attachments: AdminAttachment[] | null
 }
@@ -50,7 +49,7 @@ export interface AdminModule {
   id: number
   order: number
   title_es: string
-  title_en: string
+  title_en: string | null
   description_es?: string | null
   /** Admin-only: the module description still needs an expert sign-off. */
   description_needs_validation?: boolean
@@ -70,19 +69,20 @@ export interface AdminCourseDetail extends Omit<AdminCourse, 'modules_count' | '
 
 export interface CoursePayload {
   title_es: string
-  title_en: string
+  // Null while the English translation is pending: the API falls back to
+  // Spanish, and an empty string would defeat that.
+  title_en: string | null
   slug?: string | null
   description_es?: string | null
   description_en?: string | null
-  price_dzd: number
-  price_eur?: number | null
+  price_eur: number
   status: CourseStatus
 }
 
 export interface ModulePayload {
   title_es: string
-  // Null while the Arabic translation is pending: the API falls back to
-  // French, and an empty string would defeat that.
+  // Null while the English translation is pending: the API falls back to
+  // Spanish, and an empty string would defeat that.
   title_en: string | null
 }
 
@@ -404,9 +404,9 @@ export function useDeleteCoupon() {
 // ---------------------------------------------------------------------------
 
 export type OrderStatus = 'pending' | 'awaiting_review' | 'paid' | 'failed' | 'refunded'
-export type OrderMethod = 'chargily' | 'stripe' | 'manual_ccp' | 'manual_baridimob' | 'cash'
+export type OrderMethod = 'stripe' | 'manual_transfer' | 'manual_bizum' | 'cash'
 export type OrderScope = 'full' | 'modules'
-export type Currency = 'DZD' | 'EUR'
+export type Currency = 'EUR'
 
 export interface Paginated<T> {
   data: T[]
@@ -431,11 +431,10 @@ export interface AdminOrder {
   scope: OrderScope
   modules?: AdminOrderModule[]
   status: OrderStatus
-  chargily_checkout_id: string | null
   stripe_session_id: string | null
   admin_note: string | null
   has_receipt: boolean
-  /** When the buyer sent the CCP / BaridiMob receipt (ISO 8601). */
+  /** When the buyer sent the transfer / Bizum receipt (ISO 8601). */
   receipt_uploaded_at: string | null
   receipt_url: string | null
   /** Present on the detail endpoint; null until the admin issues one. */
@@ -526,7 +525,7 @@ export interface CashOrderPayload {
 export interface CashQuote {
   scope: 'full' | 'modules'
   total: number
-  currency: 'DZD'
+  currency: 'EUR'
   items: { module_id: number; title: string; unit_price: number }[]
 }
 
@@ -559,19 +558,18 @@ export function useCashOrder(studentId: number) {
 }
 
 // ---------------------------------------------------------------------------
-// Invoicing (facture on demand)
+// Invoicing (factura on demand)
 // ---------------------------------------------------------------------------
 
-/** The seller (émetteur) block printed on every invoice. */
+/** The seller (emisor) block printed on every invoice. */
 export interface InvoicingSeller {
   business_name: string
-  legal_form: string
-  capital: string
-  address: string
-  rc: string
   nif: string
-  nis: string
-  ai: string
+  address: string
+  /** A company's form (S.L., S.A.) and Registro Mercantil entry; blank for a sole trader. */
+  legal_form: string
+  registry: string
+  capital: string
   phone: string
   email: string
   bank_details: string
@@ -607,10 +605,7 @@ export interface AdminInvoice {
   }
   buyer_name: string
   buyer_address: string
-  buyer_rc: string | null
   buyer_nif: string | null
-  buyer_nis: string | null
-  buyer_ai: string | null
   lines: AdminInvoiceLine[]
   iva_rate: number
   subtotal_net_c: number
@@ -629,10 +624,7 @@ export interface AdminInvoice {
 export interface InvoicePayload {
   buyer_name: string
   buyer_address: string
-  buyer_rc?: string | null
   buyer_nif?: string | null
-  buyer_nis?: string | null
-  buyer_ai?: string | null
   iva_rate: number
   notes?: string | null
 }
@@ -717,7 +709,7 @@ export function useSendInvoice() {
 }
 
 export interface AdminStats {
-  revenue_this_month: { DZD: number; EUR: number }
+  revenue_this_month: { EUR: number }
   orders_by_method: Record<string, { total: number; paid: number }>
   orders_awaiting_review: number
   /** Receipts sent more than RECEIPT_REVIEW_HOURS ago and still unreviewed. */
@@ -877,7 +869,7 @@ export interface AdminCampaign {
   id: number
   course: { id: number; title: string }
   label_es: string
-  /** Null until someone writes it; Arabic visitors read the French name. */
+  /** Null until someone writes it; English visitors read the Spanish name. */
   label_en: string | null
   percent_off: number
   starts_at: string | null

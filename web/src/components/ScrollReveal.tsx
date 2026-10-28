@@ -59,7 +59,7 @@ export function ScrollReveal({
   }, [delay, reduced])
 
   // `start`/`end` follow the writing direction, so a reveal that slides in
-  // from the reading edge does so in Arabic too. `left`/`right` are kept as
+  // from the reading edge would do so in an RTL language too. `left`/`right` are kept as
   // aliases for the same logical sides rather than as physical ones.
   const hidden = {
     up: 'translate-y-8 opacity-0',

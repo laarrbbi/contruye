@@ -13,8 +13,8 @@ import { CourseLandingPage } from '@/pages/CourseLandingPage'
 // Only the sales page is in the main bundle: it is what a visitor from a
 // shared link opens first, often on a mobile connection. Every other page is
 // its own chunk; the ones on the way to paying (sign-up, login, checkout, the
-// CCP screen) are prefetched as soon as the browser is idle, so the click on
-// "Accéder à la formation" still opens instantly. The admin and the player are
+// transfer screen) are prefetched as soon as the browser is idle, so the click
+// on "Acceder al curso completo" still opens instantly. The admin and the player are
 // never downloaded by a visitor at all.
 const RegisterPage = lazy(() => buyingPath.register().then((m) => ({ default: m.RegisterPage })))
 const LoginPage = lazy(() => buyingPath.login().then((m) => ({ default: m.LoginPage })))

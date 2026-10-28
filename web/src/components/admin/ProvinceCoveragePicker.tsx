@@ -23,9 +23,9 @@ interface ProvinceCoveragePickerProps {
 
 /**
  * Where a partner operates: either the whole country, or an explicit set of
- * provinces picked from the official list. Searchable by name or by matricule,
- * because that is how an admin reading a business card thinks ("16" or
- * "Alger").
+ * provinces picked from the official list. Searchable by name or by INE code
+ * (the first two digits of a postal code), because that is how an admin
+ * reading a business card thinks ("28" or "Madrid").
  */
 export function ProvinceCoveragePicker({
   value,

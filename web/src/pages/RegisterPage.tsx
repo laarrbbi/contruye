@@ -14,26 +14,24 @@ import type { Locale } from '@/api/types'
 import { safeRedirect } from '@/lib/redirect'
 
 // Mirrors normalisePhone() and PHONE_PATTERN in
-// api/app/Http/Requests/Auth/RegisterRequest.php, step for step. The form used
-// to take Algerian mobiles only, so a buyer living in France could not open an
-// account; and a form looser than the API lets a number through only to have
-// it refused after the round trip.
+// api/app/Http/Requests/Auth/RegisterRequest.php, step for step. A form looser
+// than the API lets a number through only to have it refused after the round
+// trip; a stricter one turns away a buyer the API would take.
 const normalisePhone = (v: string) =>
   v
     // Listed one by one, not \s, which PHP reads as a different set: ASCII
-    // whitespace, the no-break spaces of a number pasted from a French page,
-    // the direction marks WhatsApp wraps a number in when it is copied in
-    // Arabic, dots and dashes.
+    // whitespace, the no-break spaces of a number pasted from a web page, the
+    // direction marks a number copied out of a right-to-left chat is wrapped
+    // in, dots and dashes.
     .replace(/[\t\n\v\f\r \u00A0\u061C\u1680\u2000-\u200F\u2028-\u202F\u205F\u2066-\u2069\u3000\uFEFF.-]/g, '')
     // "+33 (0)6 …": the bracketed zero is not dialled from abroad.
     .replace(/\(0\)/g, '')
     .replace(/[()]/g, '')
     .replace(/^00/, '+')
 
-// An Algerian mobile as dialled at home, or "+" and 8 to 15 digits (E.164),
-// with Algeria's own +213 still held to the mobile rule, and +33 never followed
-// by the French home zero, which no French number has there.
-const PHONE_PATTERN = /^(?:0[567]\d{8}|\+213[567]\d{8}|\+(?!213|330)[1-9]\d{7,14})$/
+// A Spanish mobile as dialled at home (6 or 7, then eight digits), or "+" and
+// 8 to 15 digits (E.164), with Spain's own +34 still held to the mobile rule.
+const PHONE_PATTERN = /^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34)[1-9]\d{7,14})$/
 
 const schema = z
   .object({
@@ -130,11 +128,10 @@ export function RegisterPage() {
           error={msg('email')}
           {...register('email')}
         />
-        {/* "06 12 34 56 78" from France has the very shape of an Algerian
-            mobile, so it passes and is stored as one. The example, shown once
-            the field has focus and the label has moved out of the way, is what
-            tells a buyer abroad to type the country code. Any non-empty
-            placeholder keeps the label's :placeholder-shown trick working. */}
+        {/* The example, shown once the field has focus and the label has
+            moved out of the way, is what tells a buyer abroad to type the
+            country code. Any non-empty placeholder keeps the label's
+            :placeholder-shown trick working. */}
         <FloatingInput
           label={t('auth.phone')}
           placeholder={t('auth.phonePlaceholder')}

@@ -191,7 +191,6 @@ export function ModulePartnersDialog({
                       }
                     />
                     <Input
-                      dir="rtl"
                       placeholder={t('admin.content.partners.noteEn')}
                       value={row.note_en ?? ''}
                       onChange={(e) =>

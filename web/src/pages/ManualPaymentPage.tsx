@@ -61,8 +61,8 @@ function InstructionRow({ label, value, copyable = true }: { label: string; valu
     <div className="flex items-center justify-between gap-3 py-2.5">
       <div className="min-w-0">
         <p className="text-xs text-muted-foreground">{label}</p>
-        {/* Forced LTR: an account number reordered by bidi in Arabic is a
-            transfer that fails at the counter. */}
+        {/* Forced LTR: an IBAN reordered by bidi inside other text is a
+            transfer that never arrives. */}
         <p dir="ltr" className="break-all text-start font-semibold tabular-nums">
           {value}
         </p>
@@ -198,8 +198,8 @@ export function ManualPaymentPage() {
     )
   }
 
-  // This page only makes sense for manual (CCP / BaridiMob) orders.
-  if (order.method !== 'manual_ccp' && order.method !== 'manual_baridimob') {
+  // This page only makes sense for manual (bank transfer / Bizum) orders.
+  if (order.method !== 'manual_transfer' && order.method !== 'manual_bizum') {
     return <Navigate to="/dashboard" replace />
   }
 
@@ -276,20 +276,23 @@ export function ManualPaymentPage() {
               <Separator />
 
               <div className="divide-y">
-                {instructions.method === 'manual_ccp' ? (
+                {instructions.method === 'manual_transfer' ? (
                   <>
-                    {instructions.ccp_number && (
-                      <InstructionRow label={t('checkout.manual.ccpNumber')} value={instructions.ccp_number} />
+                    {instructions.iban && (
+                      <InstructionRow label={t('checkout.manual.iban')} value={instructions.iban} />
                     )}
-                    {instructions.ccp_name && (
-                      <InstructionRow label={t('checkout.manual.ccpName')} value={instructions.ccp_name} />
+                    {instructions.holder && (
+                      <InstructionRow label={t('checkout.manual.holder')} value={instructions.holder} />
                     )}
                   </>
                 ) : (
-                  instructions.baridimob_rip && (
-                    <InstructionRow label={t('checkout.manual.rip')} value={instructions.baridimob_rip} />
+                  instructions.bizum_phone && (
+                    <InstructionRow label={t('checkout.manual.bizumPhone')} value={instructions.bizum_phone} />
                   )
                 )}
+                {/* Without the concept, the owner cannot tell whose money
+                    arrived: it goes on every transfer and every Bizum. */}
+                <InstructionRow label={t('checkout.manual.reference')} value={instructions.reference} />
               </div>
             </CardContent>
           </Card>

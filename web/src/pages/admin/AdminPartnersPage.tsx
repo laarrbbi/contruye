@@ -183,12 +183,12 @@ function PartnerFormDialog({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="partner-desc-fr">{t('admin.partners.form.descriptionEs')}</Label>
-            <Textarea id="partner-desc-fr" rows={2} {...register('description_es')} />
+            <Label htmlFor="partner-desc-es">{t('admin.partners.form.descriptionEs')}</Label>
+            <Textarea id="partner-desc-es" rows={2} {...register('description_es')} />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="partner-desc-ar">{t('admin.partners.form.descriptionEn')}</Label>
-            <Textarea id="partner-desc-ar" rows={2} dir="rtl" {...register('description_en')} />
+            <Label htmlFor="partner-desc-en">{t('admin.partners.form.descriptionEn')}</Label>
+            <Textarea id="partner-desc-en" rows={2} {...register('description_en')} />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">

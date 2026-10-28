@@ -15,7 +15,7 @@ export interface Province extends ProvinceRef {
 }
 
 /**
- * The 58 provinces. Reference data that never changes within a session, so it is
+ * The 52 provinces. Reference data that never changes within a session, so it is
  * fetched once and kept — the picker must open instantly.
  */
 export function useProvinces(enabled = true) {
@@ -35,14 +35,14 @@ export function useProvinces(enabled = true) {
 }
 
 /**
- * "Alger (16)" — the matricule stays visible, but the name leads so that
+ * "Madrid (28)" — the INE code stays visible, but the name leads so that
  * type-ahead in a native/Radix Select actually finds the province.
  */
 export function provinceLabel(province: Pick<Province, 'code' | 'name'>) {
   return `${province.name} (${String(province.code).padStart(2, '0')})`
 }
 
-/** Accent- and case-insensitive match, so "bejaia" finds "Béjaïa". */
+/** Accent- and case-insensitive match, so "malaga" finds "Málaga" and "seville" finds "Sevilla". */
 export function matchesProvinceSearch(province: Province, search: string) {
   const normalize = (value: string) =>
     value
@@ -55,16 +55,13 @@ export function matchesProvinceSearch(province: Province, search: string) {
 
   return (
     normalize(province.name_es).includes(needle) ||
-    province.name_en.includes(search.trim()) ||
+    normalize(province.name_en).includes(needle) ||
     String(province.code) === needle ||
     String(province.code).padStart(2, '0') === needle
   )
 }
 
-/**
- * Join province names for display. Arabic uses its own comma (U+060C) — the
- * Latin one reads as a stray glyph inside an RTL run.
- */
-export function joinProvinceNames(provinces: Pick<ProvinceRef, 'name'>[], locale: string) {
-  return provinces.map((province) => province.name).join(locale === 'ar' ? '، ' : ', ')
+/** Join province names for display. */
+export function joinProvinceNames(provinces: Pick<ProvinceRef, 'name'>[]) {
+  return provinces.map((province) => province.name).join(', ')
 }

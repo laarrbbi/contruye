@@ -16,7 +16,8 @@ export interface FaqChatItem {
  * Design ported from the Aurea project. Rebuilt on the Radix accordion this
  * app already ships (with its accordion-down/up keyframes) instead of
  * framer-motion, so it adds no new dependency. Direction-aware: the reply is
- * indented from the inline start, so it mirrors correctly in Arabic RTL.
+ * indented from the inline start, so it would mirror correctly in an RTL
+ * language.
  */
 export function FaqChat({
   items,

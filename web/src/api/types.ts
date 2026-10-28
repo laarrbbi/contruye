@@ -21,8 +21,7 @@ export interface Course {
   slug: string
   title: string
   description: string
-  price_dzd: number
-  price_eur: number | null
+  price_eur: number
   status: 'draft' | 'published'
   cover_image: string | null
   modules?: CourseModule[]

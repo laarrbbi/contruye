@@ -59,11 +59,7 @@ export function AdminDashboardPage() {
     return <p className="py-12 text-center text-destructive">{t('common.error')}</p>
   }
 
-  const revenue = `${formatPrice(stats.revenue_this_month.DZD, 'DZD', i18n.language)}`
-  const revenueEur =
-    stats.revenue_this_month.EUR > 0
-      ? formatPrice(stats.revenue_this_month.EUR, 'EUR', i18n.language)
-      : undefined
+  const revenue = formatPrice(stats.revenue_this_month.EUR, 'EUR', i18n.language)
 
   const methodRows = Object.entries(stats.orders_by_method)
 
@@ -77,7 +73,6 @@ export function AdminDashboardPage() {
           icon={CircleDollarSign}
           label={t('admin.dashboard.revenueThisMonth')}
           value={revenue}
-          hint={revenueEur ? `+ ${revenueEur}` : undefined}
         />
         <StatCard icon={Users} label={t('admin.dashboard.students')} value={String(stats.students_total)} />
         <StatCard

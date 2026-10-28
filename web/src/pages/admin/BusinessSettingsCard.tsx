@@ -12,17 +12,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-/** Mandatory mentions of an Algerian invoice — issuance is blocked without them. */
+/**
+ * The issuer block of a Spanish invoice (RD 1619/2012): name, NIF and address
+ * are required — issuance is blocked without them. A company adds its legal
+ * form and Registro Mercantil entry; a sole trader leaves them blank.
+ */
 const LEGAL_FIELDS: (keyof InvoicingSeller)[] = [
   'business_name',
-  'legal_form',
-  'capital',
-  'address',
-  'rc',
   'nif',
-  'nis',
-  'ai',
+  'address',
+  'legal_form',
+  'registry',
+  'capital',
 ]
+
+/** Mirrors Invoice::REQUIRED_SELLER_FIELDS. */
+const REQUIRED_FIELDS = new Set<keyof InvoicingSeller>(['business_name', 'nif', 'address'])
 
 /** How buyers reach a human. Optional; each one appears on the site once filled. */
 const CONTACT_FIELDS: (keyof InvoicingSeller)[] = ['whatsapp', 'phone', 'email', 'support_hours']
@@ -36,7 +41,7 @@ const PUBLIC_ON_SITE = new Set<keyof InvoicingSeller>([
   'legal_form',
   'capital',
   'address',
-  'rc',
+  'registry',
   'nif',
   'whatsapp',
   'phone',
@@ -46,13 +51,11 @@ const PUBLIC_ON_SITE = new Set<keyof InvoicingSeller>([
 
 const EMPTY: InvoicingSeller = {
   business_name: '',
-  legal_form: '',
-  capital: '',
-  address: '',
-  rc: '',
   nif: '',
-  nis: '',
-  ai: '',
+  address: '',
+  legal_form: '',
+  registry: '',
+  capital: '',
   phone: '',
   email: '',
   bank_details: '',
@@ -98,7 +101,7 @@ export function BusinessSettingsCard() {
         value={seller[name]}
         disabled={!loaded}
         placeholder={t(`admin.business.placeholders.${name}`, { defaultValue: '' })}
-        dir={['whatsapp', 'phone', 'email', 'rc', 'nif', 'nis', 'ai'].includes(name) ? 'ltr' : undefined}
+        dir={['whatsapp', 'phone', 'email', 'nif', 'bank_details'].includes(name) ? 'ltr' : undefined}
         aria-required={required || undefined}
         aria-invalid={Boolean(fieldErrors[name])}
         aria-describedby={fieldErrors[name] ? `seller-${name}-error` : undefined}
@@ -177,7 +180,7 @@ export function BusinessSettingsCard() {
             ))}
         </CardHeader>
         <CardContent className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {LEGAL_FIELDS.map((name) => field(name, true))}
+          {LEGAL_FIELDS.map((name) => field(name, REQUIRED_FIELDS.has(name)))}
           {PRIVATE_FIELDS.map((name) => field(name))}
         </CardContent>
       </Card>

@@ -17,7 +17,7 @@ const STATUS_VARIANT: Record<OrderStatus, 'default' | 'secondary' | 'destructive
 }
 
 function isManual(order: Order) {
-  return order.method === 'manual_ccp' || order.method === 'manual_baridimob'
+  return order.method === 'manual_transfer' || order.method === 'manual_bizum'
 }
 
 function OrderAction({ order }: { order: Order }) {

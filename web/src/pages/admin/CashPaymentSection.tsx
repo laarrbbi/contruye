@@ -48,7 +48,7 @@ export function CashPaymentSection({ studentId }: { studentId: number }) {
         <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-success" />
         <p>
           {t('admin.cash.recorded', {
-            amount: formatPrice(record.data.amount, 'DZD', i18n.language),
+            amount: formatPrice(record.data.amount, 'EUR', i18n.language),
           })}
         </p>
       </div>
@@ -145,7 +145,7 @@ export function CashPaymentSection({ studentId }: { studentId: number }) {
       {preview.data && (
         <p className="rounded-md bg-muted p-3 text-sm">
           {t('admin.cash.toCollect')}{' '}
-          <span className="font-bold tabular-nums">{formatPrice(preview.data.total, 'DZD', i18n.language)}</span>
+          <span className="font-bold tabular-nums">{formatPrice(preview.data.total, 'EUR', i18n.language)}</span>
         </p>
       )}
 
@@ -157,7 +157,7 @@ export function CashPaymentSection({ studentId }: { studentId: number }) {
         </Button>
         {preview.data ? (
           <Button size="sm" disabled={!payload || record.isPending} onClick={() => payload && record.mutate(payload)}>
-            {t('admin.cash.confirm', { amount: formatPrice(preview.data.total, 'DZD', i18n.language) })}
+            {t('admin.cash.confirm', { amount: formatPrice(preview.data.total, 'EUR', i18n.language) })}
           </Button>
         ) : (
           <Button size="sm" variant="outline" disabled={!payload || preview.isPending} onClick={() => payload && preview.mutate(payload)}>

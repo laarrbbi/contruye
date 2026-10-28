@@ -16,10 +16,12 @@ const COLUMN_TITLE = 'text-xs font-semibold uppercase tracking-wider text-foregr
  * is paying and how to reach them.
  *
  * Contact and legal lines are built only from what the owner has filled in
- * the admin (Entreprise & contact). Until then neither shows — never a
- * placeholder RC or a sample number, and no "contact" heading over nothing.
+ * the admin (Empresa y contacto). Until then neither shows — never a
+ * placeholder NIF or a sample number, and no "contact" heading over nothing.
+ * Once filled, the legal lines are the identification a Spanish website owes
+ * its visitors (LSSI-CE, art. 10): name, form, registry entry and NIF.
  *
- * Each value sits in its own isolate, so the Arabic site shows it as typed.
+ * Each value sits in its own isolate, so it shows exactly as typed.
  * Registration numbers and the capital read left to right in every language.
  */
 export function Footer() {
@@ -27,7 +29,7 @@ export function Footer() {
   const { data: user } = useUser()
   const { data: profile } = useBusinessProfile()
 
-  const locale = (LOCALES.find((l) => l === i18n.language) ?? 'fr') as Locale
+  const locale = (LOCALES.find((l) => l === i18n.language) ?? 'es') as Locale
   const links = [
     { to: localizedPath('/', locale), label: t('nav.home') },
     { to: localizedPath('/cursos', locale), label: t('footer.courses') },
@@ -49,8 +51,10 @@ export function Footer() {
   ].filter((part) => !!part)
 
   const registrations = [
-    profile?.rc && { key: 'rc', node: <IsolatedValue i18nKey="footer.legal.rc" name="rc" value={profile.rc} dir="ltr" /> },
     profile?.nif && { key: 'nif', node: <IsolatedValue i18nKey="footer.legal.nif" name="nif" value={profile.nif} dir="ltr" /> },
+    // The Registro Mercantil entry, as the owner wrote it ("Inscrita en el
+    // Registro Mercantil de Madrid, tomo …, folio …, hoja …").
+    profile?.registry && { key: 'registry', node: <bdi>{profile.registry}</bdi> },
   ].filter((line) => !!line)
 
   return (

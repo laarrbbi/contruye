@@ -31,7 +31,6 @@ export interface PublicModule {
   order: number
   title: string
   /** Null when the module is only sold as part of full access. */
-  price_dzd: number | null
   price_eur: number | null
   /** Present for authenticated viewers who already own this module. */
   is_owned?: boolean
@@ -43,8 +42,7 @@ export interface CourseDetail {
   slug: string
   title: string
   description: string
-  price_dzd: number
-  price_eur: number | null
+  price_eur: number
   module_discount_tiers: DiscountTier[]
   cover_image: string | null
   is_enrolled?: boolean

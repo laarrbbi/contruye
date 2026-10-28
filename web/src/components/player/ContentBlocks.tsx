@@ -150,7 +150,7 @@ function PartnerSlot({ block }: { block: LearnContentBlock }) {
 }
 
 function PartnerRow({ partner }: { partner: LearnPartner }) {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <li className="rounded-md bg-secondary/50 p-3">
@@ -160,7 +160,7 @@ function PartnerRow({ partner }: { partner: LearnPartner }) {
           <MapPin className="h-3 w-3 shrink-0" />
           {partner.is_national
             ? t('partners.national')
-            : joinProvinceNames(partner.provinces, i18n.language) || t('partners.noProvince')}
+            : joinProvinceNames(partner.provinces) || t('partners.noProvince')}
         </span>
       </div>
       <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">

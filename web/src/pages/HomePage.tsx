@@ -13,7 +13,7 @@ import { formatPrice } from '@/lib/utils'
 export function HomePage() {
   const { t, i18n } = useTranslation()
   usePageTitle(t('seo.catalog.title'), t('seo.catalog.description'))
-  const language = (LOCALES.find((locale) => locale === i18n.language) ?? 'fr') as Locale
+  const language = (LOCALES.find((locale) => locale === i18n.language) ?? 'es') as Locale
 
   const { data: courses } = useQuery<Course[]>({
     queryKey: ['courses'],
@@ -47,14 +47,14 @@ export function HomePage() {
                   <span className="flex items-baseline gap-2 text-xl font-bold text-primary">
                     {course.campaign && (
                       <span className="text-sm font-medium text-muted-foreground line-through">
-                        {formatPrice(course.price_dzd, 'DZD', i18n.language)}
+                        {formatPrice(course.price_eur, 'EUR', i18n.language)}
                       </span>
                     )}
                     {formatPrice(
                       course.campaign
-                        ? Math.round((course.price_dzd * (100 - course.campaign.percent_off)) / 100)
-                        : course.price_dzd,
-                      'DZD',
+                        ? Math.round((course.price_eur * (100 - course.campaign.percent_off)) / 100)
+                        : course.price_eur,
+                      'EUR',
                       i18n.language,
                     )}
                   </span>

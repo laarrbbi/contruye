@@ -6,14 +6,14 @@ const MARK = String.fromCharCode(0xe000)
 
 /**
  * A translated sentence with a value the owner typed set in its own isolate
- * (<bdi>). Inside an Arabic sentence the browser otherwise reorders a value
- * written left to right: "16/00-1234567 B 26" came out as
- * "1234567-16/00 B 26", a capital of "1 000 000 DA" as "DA 000 000 1".
+ * (<bdi>). Next to text in another direction the browser otherwise reorders
+ * a value written left to right: an identifier "B-12345678" can come out
+ * scrambled, a capital of "3.000 €" with its symbol on the wrong side.
  *
  * dir="ltr" for identifiers and amounts, which read left to right in every
- * language and stay on one line ("1 000 000" never wraps before "DA").
- * Without it the value takes the direction of its first letter: a French
- * module title in "الوحدة 3 — L'agrément (LE module bloquant)".
+ * language and stay on one line ("3.000" never wraps before "€").
+ * Without it the value takes the direction of its first letter, which is
+ * what a module title or a name typed in any script needs.
  *
  * `values` fills the sentence's other placeholders, as plain text.
  */

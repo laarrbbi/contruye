@@ -54,7 +54,6 @@ interface CourseFormValues {
   description_es: string
   description_en: string
   slug: string
-  price_dzd: string
   price_eur: string
   status: CourseStatus
 }
@@ -65,7 +64,6 @@ const emptyValues: CourseFormValues = {
   description_es: '',
   description_en: '',
   slug: '',
-  price_dzd: '',
   price_eur: '',
   status: 'draft',
 }
@@ -73,12 +71,11 @@ const emptyValues: CourseFormValues = {
 function courseToValues(course: AdminCourse): CourseFormValues {
   return {
     title_es: course.title_es,
-    title_en: course.title_en,
+    title_en: course.title_en ?? '',
     description_es: course.description_es ?? '',
     description_en: course.description_en ?? '',
     slug: course.slug,
-    price_dzd: String(course.price_dzd),
-    price_eur: course.price_eur === null ? '' : String(course.price_eur),
+    price_eur: String(course.price_eur),
     status: course.status,
   }
 }
@@ -119,11 +116,11 @@ function CourseFormDialog({
     setGenericError(null)
     const payload: CoursePayload = {
       title_es: values.title_es.trim(),
-      title_en: values.title_en.trim(),
+      // Blank sends null: English visitors then read the Spanish title.
+      title_en: values.title_en.trim() || null,
       description_es: values.description_es.trim() || null,
       description_en: values.description_en.trim() || null,
-      price_dzd: Number(values.price_dzd),
-      price_eur: values.price_eur.trim() === '' ? null : Number(values.price_eur),
+      price_eur: Number(values.price_eur),
       status: values.status,
     }
     const slug = values.slug.trim()
@@ -158,48 +155,45 @@ function CourseFormDialog({
         </DialogHeader>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-          <Tabs defaultValue="fr">
+          <Tabs defaultValue="es">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="fr">
-                {t('admin.form.french')}
+              <TabsTrigger value="es">
+                {t('admin.form.spanish')}
                 {esHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
               </TabsTrigger>
-              <TabsTrigger value="ar">
-                {t('admin.form.arabic')}
+              <TabsTrigger value="en">
+                {t('admin.form.english')}
                 {enHasError && <span className="h-2 w-2 rounded-full bg-destructive" aria-hidden />}
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="fr" className="space-y-4">
+            <TabsContent value="es" className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="course-title-fr">{t('admin.courses.form.titleEs')}</Label>
+                <Label htmlFor="course-title-es">{t('admin.courses.form.titleEs')}</Label>
                 <Input
-                  id="course-title-fr"
+                  id="course-title-es"
                   dir="ltr"
                   {...register('title_es', { required: t('validation.required') })}
                 />
                 {fieldError(errors.title_es?.message)}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="course-description-fr">{t('admin.courses.form.descriptionEs')}</Label>
-                <Textarea id="course-description-fr" dir="ltr" rows={4} {...register('description_es')} />
+                <Label htmlFor="course-description-es">{t('admin.courses.form.descriptionEs')}</Label>
+                <Textarea id="course-description-es" dir="ltr" rows={4} {...register('description_es')} />
                 {fieldError(errors.description_es?.message)}
               </div>
             </TabsContent>
 
-            <TabsContent value="ar" className="space-y-4">
+            <TabsContent value="en" className="space-y-4">
+              <p className="text-xs text-muted-foreground">{t('admin.form.englishOptional')}</p>
               <div className="space-y-2">
-                <Label htmlFor="course-title-ar">{t('admin.courses.form.titleEn')}</Label>
-                <Input
-                  id="course-title-ar"
-                  dir="rtl"
-                  {...register('title_en', { required: t('validation.required') })}
-                />
+                <Label htmlFor="course-title-en">{t('admin.courses.form.titleEn')}</Label>
+                <Input id="course-title-en" dir="ltr" {...register('title_en')} />
                 {fieldError(errors.title_en?.message)}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="course-description-ar">{t('admin.courses.form.descriptionEn')}</Label>
-                <Textarea id="course-description-ar" dir="rtl" rows={4} {...register('description_en')} />
+                <Label htmlFor="course-description-en">{t('admin.courses.form.descriptionEn')}</Label>
+                <Textarea id="course-description-en" dir="ltr" rows={4} {...register('description_en')} />
                 {fieldError(errors.description_en?.message)}
               </div>
             </TabsContent>
@@ -211,38 +205,22 @@ function CourseFormDialog({
             {fieldError(errors.slug?.message)}
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="course-price-dzd">{t('admin.courses.form.priceDzd')}</Label>
-              <Input
-                id="course-price-dzd"
-                type="number"
-                min="0"
-                step="1"
-                dir="ltr"
-                {...register('price_dzd', {
-                  required: t('validation.required'),
-                  validate: (value) =>
-                    (value.trim() !== '' && Number(value) >= 0) || t('admin.form.invalidNumber'),
-                })}
-              />
-              {fieldError(errors.price_dzd?.message)}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="course-price-eur">{t('admin.courses.form.priceEur')}</Label>
-              <Input
-                id="course-price-eur"
-                type="number"
-                min="0"
-                step="1"
-                dir="ltr"
-                {...register('price_eur', {
-                  validate: (value) =>
-                    value.trim() === '' || Number(value) >= 0 || t('admin.form.invalidNumber'),
-                })}
-              />
-              {fieldError(errors.price_eur?.message)}
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="course-price-eur">{t('admin.courses.form.priceEur')}</Label>
+            <Input
+              id="course-price-eur"
+              type="number"
+              min="0"
+              step="1"
+              dir="ltr"
+              className="sm:max-w-[50%]"
+              {...register('price_eur', {
+                required: t('validation.required'),
+                validate: (value) =>
+                  (value.trim() !== '' && Number(value) >= 0) || t('admin.form.invalidNumber'),
+              })}
+            />
+            {fieldError(errors.price_eur?.message)}
           </div>
 
           <div className="space-y-2">
@@ -355,13 +333,13 @@ export function AdminCoursesPage() {
                   onClick={() => navigate(`/admin/courses/${course.id}/content`)}
                 >
                   <TableCell className="font-medium">
-                    <div>{(i18n.language === 'ar' && course.title_en) || course.title_es}</div>
+                    <div>{(i18n.language === 'en' && course.title_en) || course.title_es}</div>
                     <div className="text-xs text-muted-foreground">
                       <span dir="ltr">/{course.slug}</span>
                     </div>
                   </TableCell>
                   <TableCell className="whitespace-nowrap">
-                    {formatPrice(course.price_dzd, 'DZD', i18n.language)}
+                    {formatPrice(course.price_eur, 'EUR', i18n.language)}
                   </TableCell>
                   <TableCell>
                     <Badge variant={course.status === 'published' ? 'success' : 'secondary'}>
@@ -416,7 +394,7 @@ export function AdminCoursesPage() {
             <AlertDialogTitle>{t('admin.common.confirmDeleteTitle')}</AlertDialogTitle>
             <AlertDialogDescription>
               {t('admin.courses.deleteConfirm', {
-                title: ((i18n.language === 'ar' && deleteTarget?.title_en) || deleteTarget?.title_es) ?? '',
+                title: ((i18n.language === 'en' && deleteTarget?.title_en) || deleteTarget?.title_es) ?? '',
               })}
             </AlertDialogDescription>
           </AlertDialogHeader>

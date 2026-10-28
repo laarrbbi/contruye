@@ -9,7 +9,6 @@ import {
   CircleCheck,
   CreditCard,
   FileText,
-  Globe,
   Infinity as InfinityIcon,
   Landmark,
   Layers,
@@ -38,11 +37,12 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { CampaignBanner } from '@/components/CampaignBanner'
-import { BackgroundVideo } from '@/components/BackgroundVideo'
+import { BlueprintBackdrop } from '@/components/BlueprintBackdrop'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn, formatPrice } from '@/lib/utils'
 import { ContactOptions } from '@/components/ContactOptions'
 import { useDebouncedValue } from '@/hooks/useDebouncedValue'
+import { TRANSFER_METHODS } from '@/lib/payments'
 
 
 interface MethodOption {
@@ -53,10 +53,9 @@ interface MethodOption {
 }
 
 const METHOD_OPTIONS: MethodOption[] = [
-  { id: 'chargily', icon: CreditCard, labelKey: 'checkout.method.chargily', hintKey: 'checkout.method.chargilyHint' },
-  { id: 'stripe', icon: Globe, labelKey: 'checkout.method.stripe', hintKey: 'checkout.method.stripeHint' },
-  { id: 'manual_ccp', icon: Landmark, labelKey: 'checkout.method.ccp', hintKey: 'checkout.method.ccpHint' },
-  { id: 'manual_baridimob', icon: Smartphone, labelKey: 'checkout.method.baridimob', hintKey: 'checkout.method.baridimobHint' },
+  { id: 'stripe', icon: CreditCard, labelKey: 'checkout.method.stripe', hintKey: 'checkout.method.stripeHint' },
+  { id: 'manual_transfer', icon: Landmark, labelKey: 'checkout.method.transfer', hintKey: 'checkout.method.transferHint' },
+  { id: 'manual_bizum', icon: Smartphone, labelKey: 'checkout.method.bizum', hintKey: 'checkout.method.bizumHint' },
 ]
 
 export function CheckoutPage() {
@@ -71,7 +70,7 @@ export function CheckoutPage() {
 
   const [scope, setScope] = useState<OrderScope>('full')
   const [selected, setSelected] = useState<number[]>([])
-  const [method, setMethod] = useState<CheckoutMethod>('chargily')
+  const [method, setMethod] = useState<CheckoutMethod>('stripe')
   const [couponInput, setCouponInput] = useState('')
   const [coupon, setCoupon] = useState<string | undefined>(undefined)
   const [upgradedNote, setUpgradedNote] = useState(false)
@@ -107,16 +106,13 @@ export function CheckoutPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [course])
 
-  // Only what can take money right now (GET /checkout/methods), and euros
-  // only for a course that has a euro price. The selection follows: if the
-  // default is not offered, the first method that is becomes the default.
+  // Only what can take money right now (GET /checkout/methods). The
+  // selection follows: if the default is not offered, the first method that
+  // is becomes the default.
   const methodsQuery = useCheckoutMethods()
   const methodOptions = useMemo(
-    () =>
-      METHOD_OPTIONS.filter(
-        (o) => (methodsQuery.data ?? []).includes(o.id) && (o.id !== 'stripe' || course?.price_eur != null),
-      ),
-    [methodsQuery.data, course],
+    () => METHOD_OPTIONS.filter((o) => (methodsQuery.data ?? []).includes(o.id)),
+    [methodsQuery.data],
   )
   useEffect(() => {
     if (methodOptions.length > 0 && !methodOptions.some((o) => o.id === method)) {
@@ -125,8 +121,9 @@ export function CheckoutPage() {
   }, [methodOptions, method])
   const noMethod = methodsQuery.isSuccess && course !== undefined && methodOptions.length === 0
 
-  const currency: Currency = method === 'stripe' ? 'EUR' : 'DZD'
-  const priceOf = (module: PricedModule) => (currency === 'EUR' ? module.price_eur : module.price_dzd)
+  // One currency, whatever the method: the price never changes with it.
+  const currency: Currency = 'EUR'
+  const priceOf = (module: PricedModule) => module.price_eur
 
   const modules = useMemo(
     () => (course ? [...course.modules].sort((a, b) => a.order - b.order) : []),
@@ -134,14 +131,14 @@ export function CheckoutPage() {
   )
 
   // Selection restricted to modules that are actually purchasable right now
-  // (exist, not owned, sellable in the active currency).
+  // (exist, not owned, sold à la carte).
   const effectiveSelection = useMemo(
     () =>
       modules
         .filter((m) => selected.includes(m.id) && !m.is_owned && priceOf(m) !== null)
         .map((m) => m.id),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [modules, selected, currency],
+    [modules, selected],
   )
 
   const quotePayload = useMemo<QuotePayload | null>(() => {
@@ -151,10 +148,9 @@ export function CheckoutPage() {
       course_id: course.id,
       scope,
       ...(scope === 'modules' ? { module_ids: effectiveSelection } : {}),
-      method,
       ...(coupon ? { coupon_code: coupon } : {}),
     }
-  }, [course, scope, effectiveSelection, method, coupon])
+  }, [course, scope, effectiveSelection, coupon])
 
   const debouncedPayload = useDebouncedValue(quotePayload, 400)
   const quoteQuery = useQuote(debouncedPayload)
@@ -250,19 +246,18 @@ export function CheckoutPage() {
   }
 
   const locale = i18n.language
-  const fullPrice = currency === 'EUR' ? course.price_eur : course.price_dzd
+  const fullPrice: number | null = course.price_eur
   const anchorLocal = modules.reduce((sum, m) => sum + (priceOf(m) ?? 0), 0)
-  // Only trust the quote's anchor when it is in the currently displayed
-  // currency — right after a method switch the (kept-previous) quote still
-  // carries amounts in the old currency.
+  // Only trust the quote's anchor once it is the full-access quote: the
+  // kept-previous quote of a module selection carries other figures.
   const anchor =
-    quote?.scope === 'full' && quote.currency === currency ? quote.full_price_anchor : anchorLocal
+    quote?.scope === 'full' ? quote.full_price_anchor : anchorLocal
   // A running promotion is part of the price on offer: the card used to say
-  // 90 000 DA while the button said "Payer 72 000 DA". The quote's figure once
+  // 490 € while the button said "Pagar 392 €". The quote's figure once
   // it is in; until then the sales page's arithmetic (Campaign::apply). A
   // coupon still shows only in the summary.
   const campaignOff =
-    quote?.scope === 'full' && quote.currency === currency
+    quote?.scope === 'full'
       ? quote.campaign_discount
       : fullPrice !== null && course.campaign
         ? fullPrice - Math.round((fullPrice * (100 - course.campaign.percent_off)) / 100)
@@ -297,34 +292,25 @@ export function CheckoutPage() {
 
   const gatewayDown = isAxiosError(checkout.error) && checkout.error.response?.status === 502
   const manualFallback = gatewayDown
-    ? methodOptions.find((o) => o.id === 'manual_ccp' || o.id === 'manual_baridimob')
+    ? methodOptions.find((o) => TRANSFER_METHODS.includes(o.id))
     : undefined
 
   const quoteBroken = quoteQuery.isError && !couponFieldError
   const noSelection = scope === 'modules' && effectiveSelection.length === 0
   const submitDisabled =
     noMethod || noSelection || quoteBroken || !quote || quoteQuery.isFetching || checkout.isPending
-  const isManual = method === 'manual_ccp' || method === 'manual_baridimob'
+  const isManual = TRANSFER_METHODS.includes(method)
 
   const fmt = (amount: number) => formatPrice(amount, currency, locale)
-  // Quote amounts are always formatted in the quote's own currency: while a
-  // method switch is debouncing/fetching, the previous quote's numbers are
-  // still in the old currency.
+  // Quote amounts are formatted in the quote's own currency.
   const fmtQ = (amount: number) => formatPrice(amount, quote?.currency ?? currency, locale)
 
   return (
     <div>
-      {/* Video header band — same language as the landing hero and the auth
-          pages, without stealing the width the checkout columns need. */}
+      {/* Header band — same drawing as the landing hero and the auth pages,
+          without stealing the width the checkout columns need. */}
       <div className="relative isolate overflow-hidden bg-primary text-primary-foreground">
-        <BackgroundVideo
-          // Not on phones: at the moment of paying, every byte on a mobile
-          // connection goes to the payment, not to a decorative band.
-          media="(min-width: 768px)"
-          brightness={0.75}
-          cropCorner="top-right"
-          overlayClassName="bg-primary/60"
-        />
+        <BlueprintBackdrop />
         <div className="container space-y-1 py-10">
           <h1 className="text-3xl font-extrabold">{t('checkout.title')}</h1>
           <p className="bidi-auto text-primary-foreground/75">

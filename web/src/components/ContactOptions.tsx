@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 /**
- * The ways to reach a human — WhatsApp first, because that is where an
- * Algerian buyer asks before spending 90 000 DA.
+ * The ways to reach a human — WhatsApp first, because that is where a buyer
+ * in Spain asks before spending 490 €.
  *
  * Renders only the channels the owner has actually configured, and nothing at
  * all when there are none: a contact button that leads nowhere is worse than
@@ -76,8 +76,8 @@ export function ContactOptions({
       </div>
       {showHours && profile.support_hours && (
         <p className={cn('text-xs', tone === 'onPrimary' ? 'text-primary-foreground/70' : 'text-muted-foreground')}>
-          {/* Free text in the owner's words: French hours keep their order on
-              the Arabic site. */}
+          {/* Free text in the owner's words, isolated so it keeps its own
+              order whatever surrounds it. */}
           <IsolatedValue i18nKey="contact.hours" name="hours" value={profile.support_hours} />
         </p>
       )}

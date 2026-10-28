@@ -79,7 +79,6 @@ export interface LearnModule {
   title: string
   /** True when the student doesn't own this module — its lessons are teased but not playable. */
   is_locked: boolean
-  price_dzd: number | null
   price_eur: number | null
   /** The module's introductory text. */
   description: string | null
