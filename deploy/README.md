@@ -16,7 +16,7 @@ self-signed certificate and a placeholder domain, so certbot and DNS were not pa
 | `deploy/nginx/construye.conf` | The vhost: TLS, SPA routing, Laravel routes, cache and security headers, including a Content-Security-Policy on HTML pages. |
 | `deploy/supervisor/construye-queue.conf` | The queue worker (payment webhooks and every e-mail). |
 | `deploy/php/99-construye.ini` | PHP upload limits: Ubuntu's 2 MB default refuses most receipt photos. |
-| `deploy/backup.sh` | Nightly dump of the database and the private files (CCP receipts, attachments). |
+| `deploy/backup.sh` | Nightly dump of the database and the private files (transfer and Bizum receipts, attachments). |
 | `deploy/restore-drill.sh` | Restores the latest backup into a scratch database and compares it with live. |
 
 ## 1. First install (once)
@@ -33,7 +33,7 @@ git clone https://github.com/laarrbbi/construye.git /var/www/construye
 ```
 
 PHP upload limits. Ubuntu's PHP refuses any upload over 2 MB before Laravel sees it, and buyers
-send CCP and BaridiMob receipts of up to 5 MB (a phone photo is often 3–4 MB). Without this, the
+send bank-transfer and Bizum receipts of up to 5 MB (a phone photo is often 3–4 MB). Without this, the
 buyer gets "Le fichier reçu n'a pas pu être téléversé" and cannot finish paying:
 
 ```bash
@@ -89,8 +89,7 @@ Outbound connections. If the host or its firewall filters outgoing traffic, allo
 | To | Port | For | If blocked |
 |---|---|---|---|
 | `MAIL_HOST` | `MAIL_PORT` (587) | Every e-mail: receipts, access granted, password reset | Mail stays in the queue and fails |
-| `pay.chargily.net` | 443 | CIB / Edahabia checkout | Buyer sees "payment unavailable" and is offered CCP |
-| `api.stripe.com` | 443 | International card checkout (if enabled) | Same |
+| `api.stripe.com` | 443 | Card checkout (if enabled) | Buyer sees "payment unavailable" and is offered bank transfer or Bizum |
 | `api.pwnedpasswords.com` | 443 | Refusing leaked passwords at sign-up and reset | Sign-up still works without the check; a silently dropped connection makes each sign-up wait 5 s (capped in `AppServiceProvider`) |
 | `BACKUP_RSYNC_TARGET` | 22 | The off-server copy of the nightly backup | Backups stay on the server only |
 
@@ -121,7 +120,6 @@ In this order:
 1. `composer install --no-dev`.
 2. **`php artisan app:check-secrets --strict`.** The deploy stops here if:
    - a secret is blank;
-   - Chargily points at its test endpoint or uses a test key;
    - Stripe uses a test key;
    - `APP_DEBUG` is on, or cookies aren't secure;
    - a URL is not https;
@@ -146,18 +144,18 @@ The checkout offers only the methods that can take money (`GET /api/checkout/met
 
 | Method | Offered when |
 |---|---|
-| CIB / Edahabia (Chargily) | `CHARGILY_ENABLED=true` and both Chargily keys are set |
-| International card (Stripe) | `STRIPE_ENABLED=true` and both Stripe keys are set, and the course has a euro price |
-| CCP | `PAYMENT_CCP_NUMBER` and `PAYMENT_CCP_NAME` are set |
-| BaridiMob | `PAYMENT_BARIDIMOB_RIP` is set |
+| Bank card (Stripe) | `STRIPE_ENABLED=true` and both Stripe keys are set |
+| Bank transfer | `PAYMENT_TRANSFER_IBAN` and `PAYMENT_TRANSFER_HOLDER` are set |
+| Bizum | `PAYMENT_BIZUM_PHONE` is set |
 
-**Launching before the gateways are live** (CCP and BaridiMob only): set `CHARGILY_ENABLED=false`
-and `STRIPE_ENABLED=false`. Blank keys with the switch left on fail the deploy on purpose, because
-blank is not the same as off.
+Every price is in euros. A bank transfer or Bizum payment carries the reference
+`CONSTRUYE-<order>`; the buyer uploads the receipt and an admin approves it.
 
-Webhook URLs to register with the providers:
-- Chargily: `https://example.es/api/webhooks/chargily`
-- Stripe: `https://example.es/api/webhooks/stripe`
+**Launching before Stripe is live** (bank transfer and Bizum only): set `STRIPE_ENABLED=false`.
+Blank keys with the switch left on fail the deploy on purpose, because blank is not the same as off.
+
+Webhook URL to register with Stripe (events `checkout.session.completed` and
+`checkout.session.expired`): `https://example.es/api/webhooks/stripe`
 
 ## 4. Backups
 
@@ -167,7 +165,7 @@ Webhook URLs to register with the providers:
 ```
 
 Each night this writes `db-<time>.sql.gz` (a consistent InnoDB snapshot taken without locking the
-site) and `files-<time>.tar.gz` (`storage/app/private`: CCP receipts and lesson attachments). It
+site) and `files-<time>.tar.gz` (`storage/app/private`: payment receipts and lesson attachments). It
 checks that the dump finished, keeps 30 days, and copies everything to `BACKUP_RSYNC_TARGET`. Set
 that target: a backup that lives only on the server it backs up does not survive the failure it is
 for.
@@ -185,39 +183,43 @@ backup fails the drill. An untested backup is not a backup.
 
 ## 5. Search engines
 
-The public pages (`/`, `/formations`, `/courses/…`, and the same under `/ar` and `/en`) are
+The public pages (`/`, `/cursos`, `/cursos/…`, and the same under `/en`) are
 rendered by Laravel with their own title, description, canonical URL, links to their other
 languages, structured data (course, price, FAQ, organisation) and content, so Google, Bing and
 link previews read them without running JavaScript. The vhost sends exactly those paths to
 Laravel; the deploy fails its health check if the home page comes back without its canonical link.
-French is at the root, Arabic under `/ar`, English under `/en`. Every other path is a real 404, and
+Spanish is at the root, English under `/en`. Every other path is a real 404, and
 the app's own screens (login, dashboard, checkout…) tell search engines not to index them.
 
 After the first deploy, once DNS points at the server:
 
 1. **Google Search Console**: add a *Domain* property and verify it with the DNS TXT record it gives
    (or a *URL prefix* property with `GOOGLE_SITE_VERIFICATION` in `.env`). Submit
-   `https://example.es/sitemap.xml`. Use *URL inspection* on `/`, `/ar` and `/en`: the rendered page
-   must be in French, Arabic and English respectively.
+   `https://example.es/sitemap.xml`. Use *URL inspection* on `/` and `/en`: the rendered page
+   must be in Spanish and English respectively.
 2. **Bing Webmaster Tools**: import the site from Search Console (or verify with
    `BING_SITE_VERIFICATION`) and submit the same sitemap.
 3. **Link previews**: paste `https://example.es/` into the Facebook Sharing Debugger and the LinkedIn
    Post Inspector once, so they cache the current card.
 4. **Google Business Profile**, if the business receives people at an address: same name, address and
-   phone as in *Entreprise & contact*.
+   phone as in *Empresa y contacto*.
 
 ## 6. Before taking money: what only the owner can do
 
 These cannot be done from the repository. The deploy gate catches each one that is a setting.
 
 - [ ] A server and a domain, and DNS pointing at it. (**not rehearsed**: certbot needs the real domain)
-- [ ] Chargily account in **live** mode: keys plus the webhook URL. Or `CHARGILY_ENABLED=false`.
-- [ ] Stripe: launch or not. Keys plus webhook URL, or `STRIPE_ENABLED=false`.
-- [ ] CCP and BaridiMob account details in `.env`.
+- [ ] Stripe account in **live** mode: keys plus the webhook URL. Or `STRIPE_ENABLED=false`.
+- [ ] The IBAN and account holder for bank transfers, and the Bizum number, in `.env`.
 - [ ] SMTP credentials, and one test message actually received. (**not rehearsed**)
-- [ ] Seller identity in the admin (*Entreprise & contact*): RC, NIF, NIS, AI. Invoicing refuses to
-      issue until they are filled.
-- [ ] The TVA rate for online training, confirmed with the accountant.
+- [ ] Seller identity in the admin (*Empresa y contacto*): name, NIF and address, plus the
+      Registro Mercantil entry for a company. Invoicing refuses to issue until the first three
+      are filled.
+- [ ] The IVA rate for the online course (21 % by default), confirmed with the tax adviser, and
+      whether VeriFactu invoicing software requirements apply, and from when.
+- [ ] The legal drafts in `docs/legal/` (condiciones de venta, privacidad) reviewed by a lawyer and
+      published, including the 14-day withdrawal right and its waiver for digital content
+      (RDL 1/2007, art. 103 m): the checkout has no consent box for it yet.
 - [ ] Bunny Stream library and token key, and one real lesson video playing with the watermark.
 - [ ] The restore drill run once on the server.
 - [ ] Branch protection on `main`, with the `api` and `web` CI checks required.

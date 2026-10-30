@@ -49,7 +49,7 @@ seed: ## Re-run seeders
 demo: ## Seed local demo data (partners, promo, reviews) — never for production
 	docker compose exec php php artisan db:seed --class=DemoShowcaseSeeder
 
-review: ## Regenerate api/content-review.md (passages à valider)
+review: ## Regenerate api/content-review.md (passages a validar)
 	docker compose exec php php artisan content:review
 
 logs: ## Tail container logs

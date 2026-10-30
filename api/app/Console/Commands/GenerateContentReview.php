@@ -54,7 +54,7 @@ class GenerateContentReview extends Command
             $moduleEntries = [];
 
             if (ContentValidation::flags($module->description_es)) {
-                $moduleEntries[] = ['source' => 'Descripción del módulo', 'text' => $module->description_es];
+                $moduleEntries[] = ['source' => 'Descripción de la fase', 'text' => $module->description_es];
             }
 
             foreach ($module->contentBlocks as $block) {
@@ -85,7 +85,7 @@ class GenerateContentReview extends Command
             $attachedCategories = $module->partners->pluck('category')->all();
             foreach ($module->contentBlocks->where('type', 'partner_slot') as $slot) {
                 if (! in_array($slot->partner_category, $attachedCategories, true)) {
-                    $emptySlots[] = "Módulo {$module->order} — {$module->title_es}: se necesita «{$slot->partner_category}»";
+                    $emptySlots[] = "Fase {$module->order} — {$module->title_es}: se necesita «{$slot->partner_category}»";
                 }
             }
 
@@ -94,7 +94,7 @@ class GenerateContentReview extends Command
             }
 
             $pendingCount += count($moduleEntries);
-            $lines[] = "## Módulo {$module->order} — {$module->title_es}";
+            $lines[] = "## Fase {$module->order} — {$module->title_es}";
             $lines[] = '';
 
             foreach ($moduleEntries as $entry) {
@@ -114,7 +114,7 @@ class GenerateContentReview extends Command
         $lines[] = '## Huecos de colaboradores todavía vacíos';
         $lines[] = '';
         $lines[] = 'Estos bloques muestran «Contacto colaborador — disponible próximamente» al alumno.';
-        $lines[] = 'No se inventa ningún contacto: se rellenan vinculando un colaborador real al módulo.';
+        $lines[] = 'No se inventa ningún contacto: se rellenan vinculando un colaborador real a la fase.';
         $lines[] = '';
 
         if ($emptySlots === []) {
@@ -134,7 +134,7 @@ class GenerateContentReview extends Command
         $lines[] = 'y la interfaz en inglés muestra el texto en español hasta que exista una traducción humana.';
         $lines[] = '';
         $missingEn = Module::whereNull('title_en')->count();
-        $lines[] = "- Módulos sin título en inglés: {$missingEn}";
+        $lines[] = "- Fases sin título en inglés: {$missingEn}";
         $lines[] = '- Lecciones sin título en inglés: '.Lesson::whereNull('title_en')->count();
         $lines[] = '';
 

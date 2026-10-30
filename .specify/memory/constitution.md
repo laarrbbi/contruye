@@ -2,7 +2,9 @@
 
 The rules below are not preferences. Each one exists because breaking it either misleads a buyer,
 destroys a record someone is legally required to keep, or gives away something that was paid for.
-They were learned from real defects in this codebase — several of which shipped before being caught.
+They were learned from real defects in the codebase this platform was adapted from (Ebni Academy,
+the Algerian edition) — several of which shipped before being caught. Construye Academy is the same
+platform, adapted for Spain.
 
 Anything not covered here is an ordinary engineering decision. Make it and move on.
 
@@ -18,27 +20,36 @@ the instructor actually supplied or the database actually holds.
 - Review counts, student counts and ratings come from approved rows. `rating` stays `null` until a
   real review lands — never a placeholder score.
 - No countdown that resets, no "12 people are viewing this", no testimonial that was not written.
-- `landing.trackRecord.attribution` states that the track record is the instructor's own and not
-  Construye Academy's. **That sentence does not change.**
+- No track record, biography, project photo or figure about the instructor appears until the
+  instructor supplies it. The Spanish edition launched without one, on purpose: the sales page
+  describes the course, not a career we cannot attribute.
 - Project imagery is the instructor's own work. If provenance cannot be established, the image does
-  not ship — and neither does a number describing a project we cannot attribute.
+  not ship — and neither does a number describing a project we cannot attribute. The drawings on
+  the page (`BlueprintBackdrop`) are illustrations, not projects.
 
 A claim that cannot be verified is removed, not softened.
 
-**Amendment (2026-10-09, owner's decision).** The sales page presents the complete payment offer
-planned for launch — CIB/Edahabia, CCP, BaridiMob, and the international card with its euro price —
-before every gateway is configured, because the gateways are added just before launch. The
-checkout still offers only the methods that can take money, and the Course structured data offers
-a euro price only when card payment in euros is on.
+**Amendment (2026-10-09, owner's decision, inherited from Ebni).** The sales page presents the
+complete payment offer planned for launch — bank card (Stripe), bank transfer and Bizum — before
+every gateway is configured, because the gateways are added just before launch. The checkout still
+offers only the methods that can take money, and the Course structured data offers a price only
+while at least one of them can.
 
 ### II. The course content is the instructor's, not ours
 
 Lesson text, key points, legal citations and figures are authored material.
 
-- **Never reword a legal figure.** The échéancier (20/15/35/25/5), the 10 % and 20 % ceilings, the
-  60 000 DA FGCMPI fee, the fines, and every law and decree number are quoted, not paraphrased.
-- Passages the instructor marked "à vérifier / à confirmer / à verrouiller" keep an admin-only
-  A VALIDER badge and appear in `content-review.md`. **They are never deleted to tidy the text.**
+- The twelve phases, their order and their titles are the instructor's outline (Nicolás Cabañas
+  Yuste, «Fases para el desarrollo de una promoción de viviendas de renta libre»). The detail inside
+  each phase is a **draft written from that outline**, to be gone through phase by phase with the
+  instructor; until that is done, it is not presented to them as finished.
+- **Never reword a legal figure.** The guarantee of buyers' payments on account (seguro de caución
+  or aval, cuenta especial, interés legal — disposición adicional primera LOE), the ten-year
+  structural insurance (art. 19 LOE), the VAT rates, the deadlines, and every law and decree number
+  are quoted, not paraphrased.
+- Passages marked "pendiente de validar / verificar / confirmar" (or "por validar…") keep an
+  admin-only A VALIDAR badge and appear in `content-review.md`. **They are never deleted to tidy
+  the text.** A figure nobody has confirmed is written that way rather than guessed.
 - Marketing copy (`landing.*`) is ours to sharpen. Course content is not. When asked to make the
   writing punchier, that request applies to the sales page only.
 
@@ -64,7 +75,13 @@ Orders, enrollments and invoices are the record of money that changed hands.
   live catalogue. Its number and date never change, and every correction keeps the previous values.
 - An order carries the full breakdown that produced its price. Provenance must not depend on a
   coupon or campaign row that may later be edited or deleted.
-- Numbering is gap-free per fiscal year, and the year is the **Algiers** calendar year.
+- Numbering is gap-free per fiscal year, and the year is the **Madrid** calendar year
+  (`app.business_timezone`).
+- An invoice carries what the Reglamento de facturación (RD 1619/2012) requires: number and series,
+  date, the issuer's name, NIF and address, the buyer's name and address (and NIF, which the
+  admin fills in when the buyer is a business or asks for a full invoice), the taxable base, the
+  VAT rate and amount. The issuer block refuses to issue until those are filled. Electronic invoicing
+  requirements (VeriFactu) are the owner's to settle with an adviser before they apply.
 
 ### V. Secrets fail closed
 
@@ -85,14 +102,15 @@ final step of the project.
 
 ## Language
 
-French is the authored locale. Arabic and English are translations, and the interface ships in all
-three.
+Spanish is the authored locale, served at the root URLs. English is a translation, under `/en`, and
+the interface ships in both.
 
-- Course **material** exists in French and Arabic. A locale with no content columns falls back to
-  French — a reader sees the authored text, never a blank.
+- Course **material** has `_es` and `_en` columns. An empty English column falls back to Spanish —
+  a reader sees the authored text, never a blank. The English material is empty at launch.
 - `config/locales.php` is the single source of truth for which locales exist. Middleware and
   validation read it; nothing hardcodes a locale list.
-- Arabic is RTL. Directional motion and layout use logical properties, never physical left/right.
+- Both locales are left to right, but layout keeps logical properties (start/end), never physical
+  left/right, so a right-to-left locale stays a configuration change.
 - Machine translation is a draft. Any locale not yet reviewed by a human is stated as such to the
   owner, not presented as finished.
 
@@ -113,14 +131,16 @@ A change is done when all of these hold — not when the code works.
 
 ## Governance
 
-This constitution supersedes habit and convenience. It does not supersede the owner: when he
-decides differently, the decision is his, and the amendment is recorded here with its reason.
+This constitution supersedes habit and convenience. It does not supersede the owner: when they
+decide differently, the decision is theirs, and the amendment is recorded here with its reason.
 
 Amending it means changing this file in the same commit as the behaviour it permits, so the rule
 and the code never disagree. A principle that is inconvenient is still in force; a principle that
 turns out to be wrong is amended, not quietly ignored.
 
 The four pipeline reports and the behavior inventory in `reports/` are the evidence behind these
-rules. Read them before arguing with one.
+rules. They were written about Ebni Academy, before the Spanish adaptation: their file paths and
+behaviours still match, their Algerian specifics (dinars, Chargily, CCP, wilayas, French and
+Arabic) do not. Read them before arguing with one.
 
-**Version**: 1.1.0 | **Ratified**: 2026-09-26 | **Last Amended**: 2026-10-09
+**Version**: 2.0.0 (Spanish edition) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-10-30

@@ -1,43 +1,60 @@
 # Construye Academy — LMS
 
-Plateforme de formation en ligne (LMS) bilingue **français / arabe (RTL)** pour la vente et la diffusion de formations vidéo au marché algérien. Premier produit : **« La Promotion Immobilière en Algérie »** (10 modules, 41 leçons).
+Plataforma de formación online (LMS) en **español**, con la interfaz también en **inglés**
+(`/en`), para vender y difundir un curso en vídeo de promoción inmobiliaria en España. Primer
+producto: **«Promoción inmobiliaria en España»**, las 12 fases del desarrollo de una promoción de
+viviendas de renta libre, del solar a la postventa (12 fases, 39 lecciones).
 
-## Architecture
+Es la misma plataforma que Ebni Academy (la edición argelina), adaptada a España: contenidos,
+idioma, moneda, medios de pago, provincias y facturación. Las funcionalidades no cambian.
 
-Monorepo :
+## Arquitectura
 
-| Dossier | Rôle | Stack |
+Monorepo:
+
+| Carpeta | Papel | Stack |
 |---|---|---|
-| `api/` | API REST | Laravel 12 · PHP 8.3 · MySQL 8 · Sanctum (SPA cookies) · queues database · Pest |
-| `web/` | SPA | React 18 · Vite · TypeScript · Tailwind · shadcn-style UI · TanStack Query · i18next (fr/ar + RTL) |
-| `docker/` | Dev & prod images | php-fpm 8.3, nginx |
+| `api/` | API REST | Laravel 12 · PHP 8.3 · MySQL 8 · Sanctum (cookies SPA) · colas database · Pest |
+| `web/` | SPA | React 18 · Vite · TypeScript · Tailwind · UI estilo shadcn · TanStack Query · i18next (es/en) |
+| `docker/` | Imágenes de desarrollo y producción | php-fpm 8.3, nginx |
 
-> **Note version framework** : le cahier des charges demandait Laravel 11, mais toutes les versions 11.x sont bloquées par des avis de sécurité Composer (fin du support sécurité en mars 2026). Le projet utilise **Laravel 12** (structure applicative identique).
+### Pagos
 
-### Paiements
+Todo en **euros**.
 
-| Méthode | Devise | Flux |
-|---|---|---|
-| **Chargily Pay v2** (CIB / Edahabia) | DZD | Checkout hébergé → webhook signé (HMAC-SHA256, en-tête `signature`) → job en file → `Order::markPaidAndEnroll()` |
-| **Stripe Checkout** (diaspora) | EUR | Session hébergée → webhook `Stripe-Signature` vérifié via SDK → même chemin |
-| **CCP / BaridiMob** (manuel) | DZD | L'élève téléverse un reçu (jpeg/png/pdf ≤ 5 Mo, stockage privé) → validation admin (approve/reject + e-mail) |
-| **Cash** | DZD | Bouton « accorder l'accès » côté admin |
+| Método | Flujo |
+|---|---|
+| **Stripe Checkout** (tarjeta bancaria) | Sesión alojada → webhook `Stripe-Signature` verificado con el SDK → job en cola → `Order::markPaidAndEnroll()` |
+| **Transferencia bancaria** (manual) | El alumno ve el IBAN, el titular y la referencia `CONSTRUYE-{pedido}`, y sube el justificante (jpeg/png/pdf ≤ 5 MB, almacenamiento privado) → validación del admin (aprobar/rechazar + e-mail) |
+| **Bizum** (manual) | Igual, con el número de Bizum |
+| **Efectivo** | El admin registra un pedido pagado en efectivo, al precio que calcula `PricingService` |
 
-L'inscription (`enrollments`) n'est créée **que** par la transition d'une commande vers `paid` — transaction DB verrouillée et idempotente (les webhooks peuvent être livrés deux fois).
+La matrícula (`enrollments`) **solo** se crea cuando un pedido pasa a `paid`: transacción con
+bloqueo de fila e idempotente (los webhooks pueden llegar dos veces).
 
-### Vidéo (Bunny Stream)
+### Vídeo (Bunny Stream)
 
-`GET /api/lessons/{id}/playback` (aperçu gratuit public, sinon inscrit/admin) renvoie une **URL d'embed signée à durée limitée** (`sha256(token_key + video_id + expires)`, TTL 4 h). Filigrane e-mail superposé au lecteur. Les URL brutes ne sont jamais exposées.
+`GET /api/lessons/{id}/playback` (vista previa gratuita pública; si no, alumno matriculado o admin)
+devuelve una **URL de embed firmada y con caducidad** (`sha256(token_key + video_id + expires)`,
+TTL 4 h). Marca de agua con el e-mail sobre el reproductor. Las URL directas nunca se exponen.
 
-## Démarrage local
+### Facturas
 
-Prérequis : Docker Desktop + Node 20+.
+Facturas numeradas `FAC-AAAA-NNNNN`, sin huecos por año natural de Madrid, con los datos que exige
+el Reglamento de facturación (RD 1619/2012): emisor (razón social, NIF, domicilio), cliente, base
+imponible, tipo y cuota de IVA (21 %, 10 %, 4 % o 0 %) e importe en letra. PDF en español. Una
+factura emitida es una instantánea: las correcciones parten de sus líneas guardadas y se auditan.
+El cumplimiento de VeriFactu queda pendiente del propietario y su asesor.
 
-Première fois, depuis un clone neuf : `make setup` (copie `api/.env`, construit et démarre les
-conteneurs, `composer install`, clé d'application, base avec les données de démo, `npm install`).
-Les conteneurs PHP tournent avec votre utilisateur : sous Linux, si `id -u` ne vaut pas 1000,
-écrivez d'abord `UID=…` et `GID=…` dans un fichier `.env` à la racine (`make setup` le fait).
-Sans `make` (Windows) :
+## Arranque local
+
+Requisitos: Docker Desktop + Node 20+.
+
+La primera vez, desde un clon nuevo: `make setup` (copia `api/.env`, construye y arranca los
+contenedores, `composer install`, clave de la aplicación, base con los datos de demo,
+`npm install`). Los contenedores PHP corren con tu usuario: en Linux, si `id -u` no vale 1000,
+escribe antes `UID=…` y `GID=…` en un fichero `.env` en la raíz (`make setup` lo hace).
+Sin `make` (Windows):
 
 ```bash
 cp api/.env.example api/.env
@@ -49,79 +66,104 @@ docker compose exec php php artisan db:seed --class=DemoShowcaseSeeder
 npm --prefix web install
 ```
 
-Ces étapes tournent telles quelles sur GitHub, depuis un checkout neuf, chaque semaine
-(`.github/workflows/setup.yml`). Ensuite :
+Estos pasos se ejecutan tal cual en GitHub, desde un checkout nuevo, cada semana
+(`.github/workflows/setup.yml`). Después:
 
 ```bash
-make up          # php-fpm, nginx (http://localhost:8000), mysql, mysql-test, redis, queue worker
-make fresh       # migrate:fresh --seed (programme réel + comptes démo)
-make web         # Vite dev server → http://localhost:5174
-make test        # suite Pest complète (base mysql-test isolée)
+make up          # php-fpm, nginx (http://localhost:8000), mysql, mysql-test, redis, worker de colas
+make fresh       # migrate:fresh --seed (programa real + cuentas de demo)
+make web         # servidor Vite → http://localhost:5174
+make test        # suite Pest completa (base mysql-test aislada)
 ```
 
-### Aperçu privé en ligne (GitHub Codespaces)
+### Vista previa privada online (GitHub Codespaces)
 
-Le site complet dans le navigateur, sans rien installer, visible de votre seul compte GitHub :
+El sitio completo en el navegador, sin instalar nada, visible solo para tu cuenta de GitHub:
 
-1. Sur la page du dépôt : bouton vert **Code** → onglet **Codespaces** → **Create codespace on main**.
-2. La première fois, 5 à 8 minutes de construction ; le site s'ouvre ensuite dans un nouvel onglet.
-   Sinon : onglet **Ports** en bas de l'éditeur → ligne « Construye Academy » (8080) → icône du globe.
-3. Le codespace s'arrête après 30 minutes d'inactivité ; il se relance depuis
-   [github.com/codespaces](https://github.com/codespaces), données de démo comprises.
+1. En la página del repositorio: botón verde **Code** → pestaña **Codespaces** → **Create codespace on main**.
+2. La primera vez tarda de 5 a 8 minutos; después el sitio se abre en una pestaña nueva.
+   Si no: pestaña **Ports** abajo en el editor → fila «Construye Academy» (8080) → icono del globo.
+3. El codespace se detiene tras 30 minutos de inactividad; se vuelve a lanzar desde
+   [github.com/codespaces](https://github.com/codespaces), con los datos de demo.
 
-Ailleurs, `make preview` fait la même chose sur http://localhost:8080 : l'application construite et
-Laravel sur une seule adresse, routés comme en production (`docker/nginx/preview.conf`).
+En otro sitio, `make preview` hace lo mismo en http://localhost:8080: la aplicación compilada y
+Laravel en una sola dirección, enrutados como en producción (`docker/nginx/preview.conf`).
 
-Comptes seedés (développement uniquement) : admin `admin@example.es` / `password` · étudiants `karim@example.es` (inscrit), `amel@example.es` / `password`.
+Cuentas sembradas (solo desarrollo): admin `admin@example.es` / `password` · alumnos
+`javier@example.es` (matriculado), `lucia@example.es` / `password`.
 
-## Variables d'environnement (`api/.env`)
+## Variables de entorno (`api/.env`)
 
-| Variable | Rôle |
+| Variable | Papel |
 |---|---|
-| `FRONTEND_URL` | Origine SPA (CORS/Sanctum + URLs de retour checkout) |
-| `SANCTUM_STATEFUL_DOMAINS`, `SESSION_DOMAIN` | Auth cookie SPA |
-| `CHARGILY_API_KEY` / `CHARGILY_SECRET` | Clés Chargily Pay v2 (la `SECRET` signe les webhooks) |
-| `CHARGILY_BASE_URL` | `https://pay.chargily.net/test/api/v2` (test) → retirer `/test` en prod |
-| `STRIPE_SECRET` / `STRIPE_WEBHOOK_SECRET` | Stripe (EUR diaspora) |
+| `FRONTEND_URL` | Origen de la SPA (CORS/Sanctum + URL de vuelta del checkout) |
+| `SANCTUM_STATEFUL_DOMAINS`, `SESSION_DOMAIN` | Autenticación por cookie de la SPA |
+| `STRIPE_ENABLED` / `STRIPE_SECRET` / `STRIPE_WEBHOOK_SECRET` | Stripe (tarjeta, EUR). `STRIPE_ENABLED=false` lo desactiva a propósito |
+| `PAYMENT_TRANSFER_IBAN` / `PAYMENT_TRANSFER_HOLDER` | Datos de la transferencia mostrados en el checkout manual |
+| `PAYMENT_BIZUM_PHONE` | Número de Bizum mostrado en el checkout manual |
 | `BUNNY_STREAM_LIBRARY_ID` / `BUNNY_TOKEN_KEY` / `BUNNY_EMBED_TTL` | Bunny Stream (Embed View Token Authentication) |
-| `PAYMENT_CCP_NUMBER` / `PAYMENT_CCP_NAME` / `PAYMENT_BARIDIMOB_RIP` | Coordonnées affichées au checkout manuel |
-| `MAIL_*` | Mailtrap en dev ; e-mails en file d'attente |
+| `APP_BUSINESS_TIMEZONE` | Calendario del negocio: `Europe/Madrid` (estadísticas del mes, año de las facturas) |
+| `MAIL_*` | Mailtrap en desarrollo; e-mails en cola |
 
-### Configuration des webhooks
+Un método de pago cuyos datos están vacíos no se ofrece en el checkout. Las credenciales son
+marcadores de posición: conectarlas es el último paso del proyecto.
 
-- **Chargily** : dashboard → URL `https://votre-domaine/api/webhooks/chargily`. La signature HMAC est vérifiée sur le corps brut avant tout traitement ; chaque payload est journalisé.
-- **Stripe** : `stripe listen --forward-to localhost:8000/api/webhooks/stripe` en dev ; en prod, endpoint + `whsec_…` dans `STRIPE_WEBHOOK_SECRET`.
+### Configuración del webhook
 
-## Déploiement
+- **Stripe**: `stripe listen --forward-to localhost:8000/api/webhooks/stripe` en desarrollo; en
+  producción, el endpoint `https://tu-dominio/api/webhooks/stripe` y su `whsec_…` en
+  `STRIPE_WEBHOOK_SECRET`. La firma se verifica sobre el cuerpo en bruto antes de cualquier
+  tratamiento, junto con el importe y la moneda.
 
-Voir **[`deploy/README.md`](deploy/README.md)** : installation du serveur, `deploy/deploy.sh` (qui
-s'arrête avant de toucher au site si un secret manque ou si un réglage n'est pas celui de la
-production), configuration Nginx et Supervisor, sauvegardes et exercice de restauration.
+## Despliegue
 
-En production, le contenu et le compte admin s'installent avec `php artisan app:install` — jamais
-avec `db:seed`, qui crée des comptes et des commandes de démonstration et refuse désormais de
-s'exécuter en production.
+Ver **[`deploy/README.md`](deploy/README.md)**: instalación del servidor, `deploy/deploy.sh` (que
+se detiene antes de tocar el sitio si falta un secreto o un ajuste no es el de producción),
+configuración de Nginx y Supervisor, copias de seguridad y simulacro de restauración.
 
-## E-mails (file d'attente)
+En producción, el contenido y la cuenta de admin se instalan con `php artisan app:install`, nunca
+con `db:seed`, que crea cuentas y pedidos de demostración y se niega a ejecutarse en producción.
 
-Trois Mailables bilingues (FR/AR selon la locale de l'utilisateur), tous `ShouldQueue` : bienvenue à l'inscription, confirmation de paiement (webhook ou validation admin), reçu rejeté (avec motif). Traductions dans `api/lang/fr.json` / `ar.json`. En dev, configurer Mailtrap dans `MAIL_*` ou laisser `MAIL_MAILER=log`.
+## E-mails (en cola)
 
-## Administration
+Cuatro Mailables bilingües (es/en según el idioma del usuario), todos `ShouldQueue`: bienvenida al
+registrarse, confirmación de pago (webhook o validación del admin), justificante rechazado (con el
+motivo) y factura. Traducciones en `api/lang/es.json` / `en.json`. En desarrollo, configurar
+Mailtrap en `MAIL_*` o dejar `MAIL_MAILER=log`.
 
-`/admin` (rôle `admin`) : tableau de bord (revenu du mois par devise, commandes par méthode, inscriptions, taux de complétion), gestion des formations/modules/leçons (drag-and-drop), commandes (filtres, aperçu du reçu, approuver/rejeter/accorder, **export CSV** `GET /api/admin/orders/export`), étudiants (recherche, progression par formation), coupons. Toutes les actions sur les commandes sont journalisées dans `audit_logs`.
+## Administración
+
+`/admin` (rol `admin`): panel (ingresos del mes, pedidos por método, matrículas, tasa de
+finalización), gestión de cursos/fases/lecciones (arrastrar y soltar), pedidos (filtros, vista del
+justificante, aprobar/rechazar/conceder, **exportación CSV** `GET /api/admin/orders/export`),
+alumnos (búsqueda, progreso por curso), cupones, campañas, colaboradores por provincia y facturas.
+Todas las acciones sobre los pedidos quedan registradas en `audit_logs`.
+
+## Contenido del curso
+
+Las 12 fases y sus títulos siguen el esquema de Nicolás Cabañas Yuste. El detalle de cada fase es
+un **borrador** escrito a partir de ese esquema, para revisarlo fase por fase con el formador. Los
+pasajes marcados «pendiente de validar» llevan la etiqueta A VALIDAR en el admin y aparecen en
+`api/content-review.md` (`make review` lo regenera). El material en inglés está vacío: un lector en
+inglés ve el texto en español.
 
 ## Tests
 
 ```bash
-make test   # Pest, base MySQL isolée (mysql-test), HTTP fakés pour Chargily, signatures réelles pour les webhooks
+make test   # Pest, base MySQL aislada (mysql-test), Stripe simulado, firmas reales para los webhooks
 ```
 
-La suite couvre : auth Sanctum, catalogue localisé, CRUD admin (403 non-admin sur toutes les routes), checkout (Chargily/Stripe/manuel, coupons), webhooks signés + idempotence (double livraison = une seule inscription), reçus (taille/type/propriétaire), lecture vidéo (aperçus gratuits invités, 403 non-inscrits, token Bunny recalculé), progression/reprise, stats admin, export CSV.
+La suite cubre: autenticación Sanctum, catálogo localizado, CRUD del admin (403 para no admins en
+todas las rutas), checkout (Stripe, transferencia, Bizum, efectivo, cupones, campañas), webhooks
+firmados + idempotencia (doble entrega = una sola matrícula), justificantes (tamaño/tipo/propietario),
+reproducción de vídeo (vistas previas para invitados, 403 sin matrícula, token Bunny recalculado),
+progreso, facturas (numeración, IVA, importe en letra), estadísticas del admin y exportación CSV.
 
-## Sécurité — points clés
+## Seguridad — puntos clave
 
-- Webhooks : signature vérifiée sur le corps brut **avant** tout traitement ; payloads journalisés (prévoir une rédaction/rotation des logs en production).
-- Inscriptions : uniquement via `Order::markPaidAndEnroll()` (transaction + verrou de ligne, idempotent).
-- Reçus : disque privé, servis via une route admin authentifiée en streaming.
-- Vidéos : URLs d'embed signées à TTL court, jamais d'URL brute ; filigrane e-mail sur le lecteur.
-- Rate limiting : `throttle:auth` (10/min/IP) et `throttle:checkout` (10/min/utilisateur).
+- Webhook: firma verificada sobre el cuerpo en bruto **antes** de cualquier tratamiento; el log
+  solo guarda lo que traza el pago, nunca el nombre, e-mail ni datos de tarjeta del comprador.
+- Matrículas: solo vía `Order::markPaidAndEnroll()` (transacción + bloqueo de fila, idempotente).
+- Justificantes: disco privado, servidos por una ruta de admin autenticada.
+- Vídeos: URL de embed firmadas con TTL corto, nunca URL directas; marca de agua con el e-mail.
+- Límites de peticiones: `throttle:auth` (10/min/IP) y `throttle:checkout` (10/min/usuario).
