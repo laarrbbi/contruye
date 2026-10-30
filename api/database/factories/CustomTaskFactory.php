@@ -17,7 +17,7 @@ class CustomTaskFactory extends Factory
         return [
             'user_id' => User::factory(),
             'module_id' => Module::factory(),
-            'body' => 'Appeler '.fake()->lastName().' pour le devis.',
+            'body' => 'Llamar a '.fake()->lastName().' para el presupuesto.',
             'is_done' => false,
             'order' => 1,
         ];

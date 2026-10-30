@@ -5,8 +5,8 @@ use App\Models\Coupon;
 use App\Models\Course;
 use App\Models\Module;
 use App\Models\Order;
-use App\Models\User;
 use App\Models\Province;
+use App\Models\User;
 use Database\Seeders\BenchmarkSeeder;
 use Database\Seeders\DatabaseSeeder;
 use Database\Seeders\DemoShowcaseSeeder;
@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Hash;
  * password "password", invented students with paid orders, and coupons whose
  * codes are in the repository.
  */
-function runInstall(string $email = 'owner@construye-academy.es', string $password = 'un-vrai-mot-de-passe', ?string $confirmation = null)
+function runInstall(string $email = 'owner@construye-academy.es', string $password = 'una-contrasena-de-verdad', ?string $confirmation = null)
 {
-    return test()->artisan('app:install', ['--admin-email' => $email, '--admin-name' => 'Propriétaire'])
+    return test()->artisan('app:install', ['--admin-email' => $email, '--admin-name' => 'Propietario'])
         ->expectsQuestion('Admin password (12 characters or more)', $password)
         ->expectsQuestion('Same password again', $confirmation ?? $password);
 }
@@ -28,15 +28,15 @@ function runInstall(string $email = 'owner@construye-academy.es', string $passwo
 it('installs the real content and one real admin, and nothing invented', function () {
     runInstall()->assertExitCode(0);
 
-    expect(Province::query()->count())->toBe(58)
+    expect(Province::query()->count())->toBe(52)
         ->and(Course::query()->where('slug', 'promocion-inmobiliaria-espana')->value('status'))->toBe('published')
-        ->and(Module::query()->count())->toBe(13)
+        ->and(Module::query()->count())->toBe(12)
         ->and(ChecklistItem::query()->count())->toBeGreaterThan(0);
 
     $admin = User::query()->sole();
     expect($admin->email)->toBe('owner@construye-academy.es')
         ->and($admin->role)->toBe('admin')
-        ->and(Hash::check('un-vrai-mot-de-passe', $admin->password))->toBeTrue();
+        ->and(Hash::check('una-contrasena-de-verdad', $admin->password))->toBeTrue();
 
     // No student, no order, no coupon: nothing that would show up in revenue,
     // in the public student count, or as a discount anyone can type.
@@ -50,26 +50,26 @@ it('refuses the demo domain, a short password and a mistyped confirmation', func
 
     expect(User::query()->count())->toBe(0);
 })->with([
-    'demo address' => ['admin@example.es', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passe'],
-    'short password' => ['owner@construye-academy.es', 'court', 'court'],
+    'demo address' => ['admin@example.es', 'una-contrasena-de-verdad', 'una-contrasena-de-verdad'],
+    'short password' => ['owner@construye-academy.es', 'corta', 'corta'],
     'the seeded password' => ['owner@construye-academy.es', 'password', 'password'],
-    'mistyped confirmation' => ['owner@construye-academy.es', 'un-vrai-mot-de-passe', 'un-vrai-mot-de-passx'],
+    'mistyped confirmation' => ['owner@construye-academy.es', 'una-contrasena-de-verdad', 'una-contrasena-de-verdax'],
 ]);
 
 it('leaves an installed course and an existing admin alone when run again', function () {
     runInstall()->assertExitCode(0);
 
     // The admin edited the course after the first install.
-    Course::query()->where('slug', 'promocion-inmobiliaria-espana')->update(['title_es' => 'Titre corrigé par l\'admin']);
+    Course::query()->where('slug', 'promocion-inmobiliaria-espana')->update(['title_es' => 'Título corregido por el admin']);
 
     $this->artisan('app:install', ['--admin-email' => 'someone-else@construye-academy.es'])
         ->expectsOutputToContain('already installed')
         ->expectsOutputToContain('an admin already exists')
         ->assertExitCode(0);
 
-    expect(Course::query()->value('title_es'))->toBe('Titre corrigé par l\'admin')
+    expect(Course::query()->value('title_es'))->toBe('Título corregido por el admin')
         ->and(User::query()->count())->toBe(1)
-        ->and(Module::query()->count())->toBe(13);
+        ->and(Module::query()->count())->toBe(12);
 });
 
 it('refuses to seed demo data in production', function (string $seeder) {

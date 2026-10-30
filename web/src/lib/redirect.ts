@@ -5,7 +5,7 @@
  * link and `state.from` on the navigation — because a CTA can be a plain <a>.
  * Both are read here so login and registration can never disagree about it,
  * which is how a first-time buyer used to be dropped on an empty dashboard
- * after clicking "Accéder à la formation complète".
+ * after clicking "Acceder al curso completo".
  *
  * Only same-origin relative paths are honoured: a redirect parameter is
  * attacker-supplied, and an absolute URL would turn this into an open redirect.

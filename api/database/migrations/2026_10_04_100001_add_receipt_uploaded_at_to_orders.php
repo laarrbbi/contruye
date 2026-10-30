@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * When the buyer sent the CCP / BaridiMob receipt. A buyer who transferred
- * 90 000 DA and hears nothing for days is the one who asks for a refund;
+ * When the buyer sent the bank-transfer / Bizum receipt. A buyer who transferred
+ * 490 € and hears nothing for days is the one who asks for a refund;
  * the admin needs to see how long each receipt has waited, and updated_at
  * moves on every edit.
  */

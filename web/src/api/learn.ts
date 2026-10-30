@@ -178,7 +178,7 @@ export function attachmentUrl(lessonId: number, index: number) {
   return `${API_URL}/api/lessons/${lessonId}/attachments/${index}`
 }
 
-/** Printable "fiche réflexe" PDF (module 13.2), same cookie-auth navigation. */
+/** Printable "ficha de actuación" PDF (lesson 7.4), same cookie-auth navigation. */
 export function reflexSheetUrl(lessonId: number) {
   return `${API_URL}/api/lessons/${lessonId}/reflex-sheet`
 }

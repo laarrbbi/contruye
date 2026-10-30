@@ -15,7 +15,7 @@ it('lets an enrolled user download an attachment with its original name', functi
     $user = User::factory()->create();
     $lesson = Lesson::factory()->create([
         'attachments' => [
-            ['name' => 'Fiche-revision.pdf', 'path' => 'lessons/attachments/abc123.pdf'],
+            ['name' => 'Ficha-repaso.pdf', 'path' => 'lessons/attachments/abc123.pdf'],
         ],
     ]);
     Enrollment::factory()->for($user)->for($lesson->module->course)->create();
@@ -25,7 +25,7 @@ it('lets an enrolled user download an attachment with its original name', functi
     $response = $this->actingAs($user)
         ->get("/api/lessons/{$lesson->id}/attachments/0")
         ->assertOk()
-        ->assertDownload('Fiche-revision.pdf');
+        ->assertDownload('Ficha-repaso.pdf');
 
     expect($response->streamedContent())->toBe('%PDF-1.4 fake pdf content');
 });

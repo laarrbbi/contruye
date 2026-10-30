@@ -6,9 +6,9 @@ use App\Models\Campaign;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Partner;
+use App\Models\Province;
 use App\Models\Review;
 use App\Models\User;
-use App\Models\Province;
 use Illuminate\Database\Seeder;
 use RuntimeException;
 

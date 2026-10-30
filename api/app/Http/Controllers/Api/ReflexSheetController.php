@@ -27,7 +27,7 @@ class ReflexSheetController extends Controller
 
         // C56: only lessons the instructor wrote as a ficha de actuación have one.
         // The player offers the download on has_reflex_sheet; any other id
-        // used to render a "fiche" out of an ordinary lesson.
+        // used to render a "ficha" out of an ordinary lesson.
         abort_unless($lesson->is_reflex_sheet, 404);
 
         $module = $lesson->module;

@@ -15,7 +15,7 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
     Mail::fake();
 
     $admin = User::factory()->create(['role' => 'admin']);
-    $student = User::factory()->create(['email' => 'acheteur@example.es']);
+    $student = User::factory()->create(['email' => 'comprador@example.es']);
     $order = paidModulesOrder($student);
     completeSellerSettings();
 
@@ -25,10 +25,10 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
 
     $this->actingAs($admin)->postJson("/api/admin/invoices/{$invoice['id']}/send")
         ->assertOk()
-        ->assertJsonPath('message', 'Invoice sent to acheteur@example.es.');
+        ->assertJsonPath('message', 'Invoice sent to comprador@example.es.');
 
     // It must reach the buyer — not the admin who pressed the button.
-    Mail::assertQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo('acheteur@example.es'));
+    Mail::assertQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo('comprador@example.es'));
     Mail::assertNotQueued(InvoiceIssuedMail::class, fn ($mail) => $mail->hasTo($admin->email));
 
     $entry = AuditLog::query()->where('action', 'invoice.sent')->latest('id')->first();
@@ -36,7 +36,7 @@ it('queues the invoice to the buyer, to nobody else, and records who sent it', f
     expect($entry)->not->toBeNull()
         ->and($entry->user_id)->toBe($admin->id)
         ->and($entry->meta['number'])->toBe($invoice['number'])
-        ->and($entry->meta['to'])->toBe('acheteur@example.es');
+        ->and($entry->meta['to'])->toBe('comprador@example.es');
 });
 
 it('refuses to send an invoice for anyone who is not an admin', function () {

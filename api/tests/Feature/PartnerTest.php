@@ -5,8 +5,8 @@ use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\Partner;
-use App\Models\User;
 use App\Models\Province;
+use App\Models\User;
 
 /** Course with two modules, each holding one lesson. */
 function partnerCourse(): Course
@@ -155,7 +155,7 @@ it('lets an admin manage partners and attach them to a module in order', functio
         'name' => 'Notaría Gran Vía Madrid',
         'category' => 'notario',
         'description_es' => 'Escrituras de compraventa y declaraciones de obra nueva.',
-        'website' => 'https://notaire.example.es',
+        'website' => 'https://notaria.example.es',
         'phone' => '611223344',
         'province_ids' => [Province::where('code', 16)->value('id')],
     ])->assertCreated()->json('data.id');
@@ -176,7 +176,7 @@ it('lets an admin manage partners and attach them to a module in order', functio
     $synced = $this->actingAs($admin)->putJson("/api/admin/modules/{$module->id}/partners", [
         'partners' => [
             ['partner_id' => $second->id, 'note_es' => 'Hipotecas para compradores'],
-            ['partner_id' => $id, 'note_es' => 'Actes de vente'],
+            ['partner_id' => $id, 'note_es' => 'Escrituras de compraventa'],
         ],
     ])->assertOk()->json('data');
 

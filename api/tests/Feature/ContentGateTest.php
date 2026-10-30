@@ -37,14 +37,14 @@ it('empties every carrier of the written curriculum in a locked lesson', functio
 
     $paid = Lesson::factory()->for($locked)->create([
         'order' => 1,
-        'content_es' => 'Le montage financier complet d\'une opération VSP.',
+        'content_es' => 'El plan financiero completo de una promoción sobre plano.',
         'key_points_es' => ['Garantie CGCI obligatoire', 'Apport minimum de 30 %'],
         'is_reflex_sheet' => true,
     ]);
     $paid->contentBlocks()->create([
         'order' => 1,
         'type' => 'legal',
-        'body_es' => 'Décret exécutif 13-431 du 18 décembre 2013.',
+        'body_es' => 'Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación.',
     ]);
 
     $preview = Lesson::factory()->freePreview()->for($locked)->create([
@@ -110,11 +110,11 @@ it('refuses the attachments of a free-preview lesson inside an unowned module', 
     ]);
     $ownedLesson = Lesson::factory()->for($owned)->create([
         'order' => 1,
-        'attachments' => [['name' => 'Checklist-chantier.pdf', 'path' => 'lessons/attachments/chantier.pdf']],
+        'attachments' => [['name' => 'Checklist-obra.pdf', 'path' => 'lessons/attachments/obra.pdf']],
     ]);
 
     Storage::disk('local')->put('lessons/attachments/vsp.pdf', 'paid attachment body');
-    Storage::disk('local')->put('lessons/attachments/chantier.pdf', 'owned attachment body');
+    Storage::disk('local')->put('lessons/attachments/obra.pdf', 'owned attachment body');
 
     // Playable and paid at once: the video streams, the file does not. A free
     // preview is a taste of the lesson, not a key to the module's deliverables.
@@ -125,7 +125,7 @@ it('refuses the attachments of a free-preview lesson inside an unowned module', 
     // above is about ownership and not about the fixture.
     $this->actingAs($student)->get("/api/lessons/{$ownedLesson->id}/attachments/0")
         ->assertOk()
-        ->assertDownload('Checklist-chantier.pdf');
+        ->assertDownload('Checklist-obra.pdf');
 
     // The gate runs before the index lookup, so an out-of-range index on an
     // unowned lesson answers 403 and cannot be used to probe what exists.
@@ -150,12 +150,12 @@ it('serves module-level legal and expert-tip blocks only to owners', function ()
         $module->contentBlocks()->create([
             'order' => 1,
             'type' => 'legal',
-            'body_es' => 'Loi 11-04 du 17 février 2011 — article 26.',
+            'body_es' => 'Ley 38/1999 — disposición adicional primera.',
         ]);
         $module->contentBlocks()->create([
             'order' => 2,
             'type' => 'expert_tip',
-            'body_es' => 'Ne signez jamais avant l\'obtention du permis de construire.',
+            'body_es' => 'No firme nunca antes de obtener la licencia de obras.',
         ]);
     }
 
@@ -172,7 +172,7 @@ it('serves module-level legal and expert-tip blocks only to owners', function ()
 
     expect(collect($ownedPayload['blocks'])->pluck('type')->all())->toBe(['legal', 'expert_tip'])
         ->and(collect($ownedPayload['blocks'])->pluck('body')->all())
-        ->toContain('Loi 11-04 du 17 février 2011 — article 26.')
+        ->toContain('Ley 38/1999 — disposición adicional primera.')
         ->and($lockedPayload['blocks'])->toBe([]);
 
     // partner_slot is not the only block type the lock has to cover: the

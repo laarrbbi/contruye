@@ -56,13 +56,13 @@ it('computes lessons_count and total_duration_seconds across modules', function 
 it('shows a published course with ordered modules, lessons and is_enrolled false for guests', function () {
     $course = Course::factory()->create(['slug' => 'detail-course']);
     $module = Module::factory()->for($course)->create(['order' => 1, 'title_es' => 'Module un']);
-    Lesson::factory()->for($module)->freePreview()->create(['order' => 1, 'title_es' => 'Leçon une']);
+    Lesson::factory()->for($module)->freePreview()->create(['order' => 1, 'title_es' => 'Lección uno']);
 
     $this->getJson('/api/courses/detail-course')
         ->assertOk()
         ->assertJsonPath('data.is_enrolled', false)
         ->assertJsonPath('data.modules.0.title', 'Module un')
-        ->assertJsonPath('data.modules.0.lessons.0.title', 'Leçon une')
+        ->assertJsonPath('data.modules.0.lessons.0.title', 'Lección uno')
         ->assertJsonPath('data.modules.0.lessons.0.is_free_preview', true);
 });
 

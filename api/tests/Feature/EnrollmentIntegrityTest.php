@@ -22,9 +22,9 @@ function enrollmentGateLesson(): array
     $lesson = Lesson::factory()->for($module)->create([
         'order' => 1,
         'bunny_video_id' => 'vid-enrollment-1',
-        'content_es' => 'Contenu payant.',
+        'content_es' => 'Contenido de pago.',
         'key_points_es' => ['Point payant'],
-        'attachments' => [['name' => 'Fiche.pdf', 'path' => 'lessons/attachments/fiche.pdf']],
+        'attachments' => [['name' => 'Ficha.pdf', 'path' => 'lessons/attachments/ficha.pdf']],
         // So the reflex-sheet gate is exercised too: only flagged lessons have one.
         'is_reflex_sheet' => true,
     ]);
@@ -39,7 +39,7 @@ it('shuts every gate the moment an enrollment expires', function () {
         'services.bunny.embed_ttl' => 14400,
     ]);
     Storage::fake('local');
-    Storage::disk('local')->put('lessons/attachments/fiche.pdf', 'paid attachment body');
+    Storage::disk('local')->put('lessons/attachments/ficha.pdf', 'paid attachment body');
 
     [$course, $module, $lesson] = enrollmentGateLesson();
     $student = User::factory()->create();

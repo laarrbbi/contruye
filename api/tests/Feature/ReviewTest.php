@@ -84,7 +84,7 @@ it('lets only enrolled students review, and holds it for moderation', function (
     $student = enrolledStudent($course);
 
     $this->actingAs($student)
-        ->postJson("/api/courses/{$course->slug}/reviews", ['rating' => 5, 'body' => 'Excellente formation.'])
+        ->postJson("/api/courses/{$course->slug}/reviews", ['rating' => 5, 'body' => 'Excelente curso.'])
         ->assertCreated()
         ->assertJsonPath('data.status', 'pending');
 
@@ -157,7 +157,7 @@ it('lets an admin approve and reject reviews but not author them', function () {
         'course_id' => $course->id,
         'user_id' => $student->id,
         'rating' => 5,
-        'body' => 'Très complet.',
+        'body' => 'Muy completo.',
     ]);
 
     $admin = User::factory()->create(['role' => 'admin']);
@@ -175,10 +175,10 @@ it('lets an admin approve and reject reviews but not author them', function () {
     $this->getJson("/api/courses/{$course->slug}/reviews")
         ->assertOk()
         ->assertJsonPath('meta.count', 1)
-        ->assertJsonPath('data.0.body', 'Très complet.');
+        ->assertJsonPath('data.0.body', 'Muy completo.');
 
     $this->actingAs($admin)
-        ->postJson("/api/admin/reviews/{$review->id}/moderate", ['status' => 'rejected', 'admin_note' => 'Hors sujet'])
+        ->postJson("/api/admin/reviews/{$review->id}/moderate", ['status' => 'rejected', 'admin_note' => 'No tiene que ver con el curso'])
         ->assertOk();
 
     $this->getJson("/api/courses/{$course->slug}/reviews")
@@ -225,7 +225,7 @@ it('never hands a viewer someone else\'s pending review, nor an invitation to wr
         'course_id' => $course->id,
         'user_id' => $author->id,
         'rating' => 1,
-        'body' => 'Brouillon privé en cours de modération.',
+        'body' => 'Borrador privado en moderación.',
     ]);
 
     // Guest first: the sanctum guard caches a resolved user for the rest of

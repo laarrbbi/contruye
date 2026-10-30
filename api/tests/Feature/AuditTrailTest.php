@@ -115,17 +115,15 @@ it('attributes promotions and the seller block every invoice is printed from', f
 
     $this->actingAs($actor)->deleteJson("/api/admin/campaigns/{$campaignId}")->assertOk();
 
-    // The émetteur block is a fiscal identity: an RC or NIF correction has to
-    // be attributable even though it edits a settings row and not a model.
+    // The issuer block is a fiscal identity: a NIF or registry correction has
+    // to be attributable even though it edits a settings row and not a model.
     $this->actingAs($actor)->putJson('/api/admin/invoicing/settings', [
         'business_name' => 'Construye Academy',
-        'legal_form' => 'EURL',
-        'capital' => '1 000 000 DA',
-        'address' => 'Alger',
-        'rc' => '16/00-1234567 B 26',
-        'nif' => '002616123456789',
-        'nis' => '002616123456780',
-        'ai' => '16123456789',
+        'legal_form' => 'S.L.',
+        'capital' => '3.000 €',
+        'address' => 'Calle Mayor 1, 28013 Madrid',
+        'registry' => 'Inscrita en el Registro Mercantil de Madrid, tomo 1, folio 1, hoja M-1',
+        'nif' => 'B12345674',
     ])->assertOk();
 
     $actions = AuditLog::query()->where('user_id', $actor->id)->pluck('action')->all();

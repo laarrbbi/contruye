@@ -234,5 +234,5 @@ it('renders the payment mails in both locales', function () {
     $order->user->update(['locale' => 'ar']);
     $order->refresh();
 
-    expect((new ReceiptRejectedMail($order, 'سبب الرفض'))->render())->toContain('سبب الرفض');
+    expect((new ReceiptRejectedMail($order, 'Motivo del rechazo'))->render())->toContain('Motivo del rechazo');
 });

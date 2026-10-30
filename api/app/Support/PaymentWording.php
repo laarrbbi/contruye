@@ -26,7 +26,7 @@ final class PaymentWording
             .' '.SpaStrings::get($locale, 'payments.or').' '.end($names);
     }
 
-    /** "Paiement : …." followed by $rest. */
+    /** "Pago: …." followed by $rest. */
     public static function sentence(string $locale, string $rest): string
     {
         return str_replace('{{methods}}', self::methods($locale), SpaStrings::get($locale, 'payments.sentence')).' '.$rest;

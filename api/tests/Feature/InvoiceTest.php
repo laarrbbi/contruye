@@ -183,7 +183,7 @@ it('corrects from the stored snapshot even when the order lines are gone', funct
         ->and($updated['iva_c'])->toBe($created['iva_c']);
 
     // And a fresh order in the same broken state refuses to invoice rather
-    // than fabricate an "accès complet" line.
+    // than fabricate an "acceso completo" line.
     $other = paidModulesOrder(User::factory()->create());
     $other->orderModules()->delete();
     $this->actingAs($admin)

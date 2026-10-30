@@ -15,19 +15,19 @@ beforeEach(function () {
     $this->course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
 });
 
-it('publishes the 13 modules of the v2.0 programme in order', function () {
+it('publishes the 12 phases of the instructor\'s outline in order', function () {
     expect($this->course->status)->toBe('published');
 
     $modules = $this->course->modules()->orderBy('order')->get();
 
-    expect($modules)->toHaveCount(13)
-        ->and($modules->pluck('order')->all())->toBe(range(1, 13));
+    expect($modules)->toHaveCount(12)
+        ->and($modules->pluck('order')->all())->toBe(range(1, 12));
 
-    // Titles come straight from the source programme.
-    expect($modules[0]->title_es)->toBe('Le métier, le marché et le business model')
-        ->and($modules[5]->title_es)->toBe('Installer et ouvrir le chantier')
-        ->and($modules[9]->title_es)->toBe('Raccordements aux réseaux et réception des VRD')
-        ->and($modules[12]->title_es)->toBe('Gestion des risques et des crises');
+    // Titles come straight from the instructor's outline of the twelve phases.
+    expect($modules[0]->title_es)->toBe('Solar: búsqueda, análisis urbanístico, due diligence y adquisición')
+        ->and($modules[3]->title_es)->toBe('Licencias: licencia de obras, autorizaciones, requisitos administrativos y otorgamiento')
+        ->and($modules[5]->title_es)->toBe('Construcción: cimentación, estructura, cerramientos, instalaciones y acabados')
+        ->and($modules[11]->title_es)->toBe('Postventa y cierre: información de la Comunidad de Propietarios, garantías, incidencias y liquidación de la promoción');
 
     // Every module carries teaching content.
     foreach ($modules as $module) {
@@ -35,22 +35,22 @@ it('publishes the 13 modules of the v2.0 programme in order', function () {
     }
 });
 
-it('keeps the five VSP payment tranches verbatim in module 8', function () {
-    $module = $this->course->modules()->where('order', 8)->firstOrFail();
-    $text = $module->lessons()->get()
+it('keeps the legal guarantees of buyers\' money verbatim in phases 5 and 8', function () {
+    $text = fn (int $phase) => $this->course->modules()->where('order', $phase)->firstOrFail()
+        ->lessons()->get()
         ->flatMap(fn (Lesson $lesson) => $lesson->key_points_es ?? [])
         ->implode(' ');
 
-    // Décret 13-431 — 20/15/35/25/5. These figures must never be reworded.
-    expect($text)->toContain('20 % du prix à la signature')
-        ->and($text)->toContain("15 % à l'achèvement des fondations")
-        ->and($text)->toContain("35 % à l'achèvement des gros œuvres")
-        ->and($text)->toContain("25 % à l'achèvement en tous corps d'état")
-        ->and($text)->toContain('solde de 5 % au procès-verbal de prise de possession');
+    // Disposición adicional primera LOE: these terms must never be reworded.
+    expect($text(5))->toContain('su devolución más el interés legal mediante seguro de caución o aval solidario de una entidad de crédito')
+        ->and($text(5))->toContain('en una cuenta especial separada de cualquier otro fondo')
+        ->and($text(5))->toContain('Cada comprador recibe su certificado individual.')
+        // Art. 19 LOE: ten years, 100 % of the final cost of the works.
+        ->and($text(5))->toContain('durante diez años los daños estructurales por el 100 % del coste final de la obra');
 
-    // The caps that frame the échéancier.
-    expect($text)->toContain('plafonnée à 10 % du prix de vente')
-        ->and($text)->toContain('plafonnée à 20 % du prix initial');
+    // The sale contract refers back to the same guarantee, and the VAT on each payment.
+    expect($text(8))->toContain('garantía de las cantidades a cuenta con entrega del certificado individual')
+        ->and($text(8))->toContain('IVA del 10 % sobre cada cantidad a cuenta');
 });
 
 it('never shows invented data in a partner slot', function () {
@@ -66,8 +66,8 @@ it('never shows invented data in a partner slot', function () {
     }
 
     // In the player, a slot with no attached partner exposes an empty list —
-    // the UI renders "bientôt disponible" rather than inventing a contact.
-    $module = $this->course->modules()->where('order', 2)->firstOrFail();
+    // the UI renders "próximamente" rather than inventing a contact.
+    $module = $this->course->modules()->where('order', 1)->firstOrFail();
     $student = User::factory()->create();
     Enrollment::factory()->create([
         'user_id' => $student->id,
@@ -86,7 +86,7 @@ it('never shows invented data in a partner slot', function () {
     }
 
     // Attach a real partner → the same slot now carries genuine contacts.
-    $notary = Partner::factory()->create(['category' => 'notario', 'name' => 'Étude Réelle']);
+    $notary = Partner::factory()->create(['category' => 'notario', 'name' => 'Notaría Real']);
     $module->partners()->attach($notary->id, ['order' => 1]);
 
     $refreshed = collect(
@@ -95,10 +95,10 @@ it('never shows invented data in a partner slot', function () {
 
     $filled = collect($refreshed['blocks'])->firstWhere('partner_category', 'notario');
     expect($filled['partners'])->toHaveCount(1)
-        ->and($filled['partners'][0]['name'])->toBe('Étude Réelle');
+        ->and($filled['partners'][0]['name'])->toBe('Notaría Real');
 });
 
-it('serves key points and tagged blocks to students, without the A VALIDER badge', function () {
+it('serves key points and tagged blocks to students, without the A VALIDAR badge', function () {
     $student = User::factory()->create();
     Enrollment::factory()->create([
         'user_id' => $student->id,
@@ -113,7 +113,7 @@ it('serves key points and tagged blocks to students, without the A VALIDER badge
     $module1 = $modules->firstWhere('order', 1);
     expect($module1['description'])->not->toBeNull()
         ->and($module1['lessons'][0]['key_points'])->not->toBeEmpty()
-        // [BASE LEGALE] is exposed as a typed block.
+        // The legal references are exposed as a typed block.
         ->and(collect($module1['blocks'])->pluck('type'))->toContain('legal');
 
     // The editorial "needs validation" state is never leaked to students.
@@ -122,25 +122,25 @@ it('serves key points and tagged blocks to students, without the A VALIDER badge
 
 it('flags the passages awaiting expert validation without deleting them', function () {
     // The marker helper drives both the admin badge and the review report.
-    expect(ContentValidation::flags('montant en vigueur à vérifier auprès de la CASNOS'))->toBeTrue()
-        ->and(ContentValidation::flags('module à verrouiller avec le notaire'))->toBeTrue()
-        ->and(ContentValidation::flags('à confirmer localement au guichet unique'))->toBeTrue()
-        ->and(ContentValidation::flags('Le promoteur dépose son dossier.'))->toBeFalse();
+    expect(ContentValidation::flags('Plazo habitual (pendiente de validar con el formador).'))->toBeTrue()
+        ->and(ContentValidation::flags('Porcentajes orientativos pendientes de validar con el formador.'))->toBeTrue()
+        ->and(ContentValidation::flags('Importe vigente por confirmar con el ayuntamiento.'))->toBeTrue()
+        ->and(ContentValidation::flags('El promotor solicita la licencia de obras.'))->toBeFalse();
 
     // The known flagged passages are still present in the curriculum.
     $allPoints = Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_es ?? [])->implode(' ');
-    expect($allPoints)->toContain('à vérifier auprès de la CASNOS')
-        ->and($allPoints)->toContain('module à verrouiller avec le notaire');
+    expect($allPoints)->toContain('pendiente de validar con el asesor fiscal')
+        ->and($allPoints)->toContain('Lista definitiva pendiente de validar con el notario.');
 
     expect(ContentValidation::pending(Lesson::all()->flatMap(fn (Lesson $l) => $l->key_points_es ?? [])->all()))
         ->not->toBeEmpty();
 });
 
-it('offers the module 13.2 reflex sheet as a downloadable PDF to owners only', function () {
+it('offers the lesson 7.4 ficha de actuación as a downloadable PDF to owners only', function () {
     $lesson = Lesson::query()->where('is_reflex_sheet', true)->firstOrFail();
 
-    expect($lesson->title_es)->toContain('Fiche réflexe')
-        ->and($lesson->module->order)->toBe(13);
+    expect($lesson->title_es)->toContain('Ficha de actuación')
+        ->and($lesson->module->order)->toBe(7);
 
     $student = User::factory()->create();
 
@@ -160,15 +160,15 @@ it('offers the module 13.2 reflex sheet as a downloadable PDF to owners only', f
         ->and(substr($response->getContent(), 0, 4))->toBe('%PDF');
 });
 
-it('leaves the Arabic translation pending but never blank on screen', function () {
+it('leaves the English translation pending but never blank on screen', function () {
     $module = Module::query()->where('order', 1)->firstOrFail();
 
     // Keys exist and are empty — the human translation pass has not run.
     expect($module->title_en)->toBeNull();
 
-    // …but the UI still shows the French text instead of an empty string.
-    app()->setLocale('ar');
+    // …but the UI still shows the Spanish text instead of an empty string.
+    app()->setLocale('en');
     expect($module->localizedTitle())->toBe($module->title_es)
         ->and($module->localizedDescription())->toBe($module->description_es);
-    app()->setLocale('fr');
+    app()->setLocale('es');
 });

@@ -5,8 +5,8 @@ use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\Partner;
-use App\Models\User;
 use App\Models\Province;
+use App\Models\User;
 
 function province(int $code): Province
 {

@@ -300,7 +300,7 @@ it('requires a password long enough to be worth having', function () {
         'name' => 'Assez Long',
         'email' => 'long@example.es',
         'phone' => '651234568',
-        'password' => 'une-phrase-de-passe',
-        'password_confirmation' => 'une-phrase-de-passe',
+        'password' => 'una-frase-de-paso',
+        'password_confirmation' => 'una-frase-de-paso',
     ])->assertCreated();
 });

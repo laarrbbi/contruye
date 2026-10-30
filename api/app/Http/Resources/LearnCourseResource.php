@@ -132,7 +132,7 @@ class LearnCourseResource extends JsonResource
             'blocks' => $playable ? $this->blocks($lesson->contentBlocks, $module) : [],
             'has_reflex_sheet' => $playable && $lesson->is_reflex_sheet,
             // False while the lesson's video has not been shot yet, so the
-            // player can say "bientôt disponible" instead of showing an error.
+            // player can say "próximamente" instead of showing an error.
             'has_video' => $lesson->bunny_video_id !== null,
             'is_completed' => $progress?->completed_at !== null,
             'last_position_seconds' => (int) ($progress?->last_position_seconds ?? 0),

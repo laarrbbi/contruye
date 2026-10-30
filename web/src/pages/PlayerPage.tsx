@@ -309,7 +309,7 @@ export function PlayerPage() {
             <FullClassText module={currentModule} currentLessonId={currentLesson.id} />
           )}
 
-          {/* Checklist d'actions — à la fin du module (sa dernière leçon) */}
+          {/* Checklist de acciones — al final de la fase (su última lección) */}
           {!currentLesson.is_locked &&
             currentModule &&
             currentModule.lessons[currentModule.lessons.length - 1]?.id === currentLesson.id &&

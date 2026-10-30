@@ -81,7 +81,7 @@ class InstallProduction extends Command
         $validator = Validator::make(
             ['email' => $email, 'name' => $name, 'password' => $password, 'password_confirmation' => $confirmation],
             [
-                'email' => ['required', 'email', 'unique:users,email', 'not_regex:/@example\.(dz|com|org)$/i'],
+                'email' => ['required', 'email', 'unique:users,email', 'not_regex:/@example\.(es|com|org)$/i'],
                 'name' => ['required', 'string', 'max:255'],
                 'password' => ['required', 'confirmed', Password::min(12), 'not_in:password,password1234,admin1234567'],
             ],

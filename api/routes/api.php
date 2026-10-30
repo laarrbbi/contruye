@@ -25,10 +25,10 @@ use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PlaybackController;
 use App\Http\Controllers\Api\ProgressController;
+use App\Http\Controllers\Api\ProvinceController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\WebhookController;
-use App\Http\Controllers\Api\ProvinceController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:auth')->group(function () {

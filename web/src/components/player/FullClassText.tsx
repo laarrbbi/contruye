@@ -4,7 +4,7 @@ import type { LearnModule } from '@/api/learn'
 import { cn } from '@/lib/utils'
 
 /**
- * "Le cours complet" — the whole class in one place: the module's
+ * "El curso completo" — the whole class in one place: the module's
  * introductory text followed by every one of its sections in order.
  *
  * Shown at the bottom of each lesson of the module, so a student reading any

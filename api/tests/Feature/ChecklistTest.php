@@ -16,7 +16,7 @@ function checklistCourse(): Course
         ->create(['course_id' => $course->id, 'price_eur' => 12000])
         ->each(function (Module $module) {
             ChecklistItem::factory()->count(3)
-                ->sequence(fn ($seq) => ['order' => $seq->index + 1, 'text_es' => "Étape secrète {$seq->index} du module {$module->order}"])
+                ->sequence(fn ($seq) => ['order' => $seq->index + 1, 'text_es' => "Paso secreto {$seq->index} de la fase {$module->order}"])
                 ->create(['module_id' => $module->id]);
         });
 
@@ -51,7 +51,7 @@ it('serves checklist texts only for owned modules and never leaks locked ones', 
     expect($lockedPayload['is_locked'])->toBeTrue()
         ->and($lockedPayload['items'])->toBe([])
         ->and($lockedPayload['items_count'])->toBe(3)
-        ->and(json_encode($lockedPayload))->not->toContain('Étape secrète');
+        ->and(json_encode($lockedPayload))->not->toContain('Paso secreto');
 });
 
 it('lets a student check and uncheck a step, idempotently', function () {
@@ -113,14 +113,14 @@ it('manages personal tasks Google-Tasks style, scoped to their author', function
 
     // Create
     $taskId = $this->actingAs($student)->postJson("/api/modules/{$module->id}/tasks", [
-        'body' => 'Appeler le notaire pour le certificat négatif',
+        'body' => 'Llamar a la notaría para la nota simple',
     ])->assertCreated()->json('data.id');
 
     // Toggle + edit
     $this->actingAs($student)->patchJson("/api/tasks/{$taskId}", ['is_done' => true])
         ->assertOk()->assertJsonPath('data.is_done', true);
-    $this->actingAs($student)->patchJson("/api/tasks/{$taskId}", ['body' => 'Rappeler le notaire'])
-        ->assertOk()->assertJsonPath('data.body', 'Rappeler le notaire');
+    $this->actingAs($student)->patchJson("/api/tasks/{$taskId}", ['body' => 'Volver a llamar a la notaría'])
+        ->assertOk()->assertJsonPath('data.body', 'Volver a llamar a la notaría');
 
     // Appears in the index, for its author only.
     $mine = collect($this->actingAs($student)->getJson("/api/courses/{$course->slug}/checklists")->json('data.modules'))
@@ -156,11 +156,11 @@ it('keeps the curated checklists behind the paywall entirely', function () {
         ->getJson("/api/courses/{$course->slug}/checklists")
         ->assertForbidden();
 
-    expect($refused->getContent())->not->toContain('Étape secrète');
+    expect($refused->getContent())->not->toContain('Paso secreto');
 
     // An unknown slug is a 404, not a 403: route-model binding runs first, so
     // the gate never has to answer "does this course exist".
-    $this->actingAs($stranger)->getJson('/api/courses/aucune-formation/checklists')->assertNotFound();
+    $this->actingAs($stranger)->getJson('/api/courses/ningun-curso/checklists')->assertNotFound();
 });
 
 it('lets an admin drive any checklist but never author another student\'s tasks', function () {
@@ -187,7 +187,7 @@ it('lets an admin drive any checklist but never author another student\'s tasks'
         ->putJson('/api/checklist-items/'.$other->checklistItems()->first()->id, ['checked' => true])
         ->assertOk();
     $this->actingAs($admin)
-        ->postJson("/api/modules/{$other->id}/tasks", ['body' => 'Vérifier la rédaction de cette étape.'])
+        ->postJson("/api/modules/{$other->id}/tasks", ['body' => 'Revisar la redacción de este paso.'])
         ->assertCreated();
 
     // …and deliberately does NOT bypass authorship: a personal task list is

@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Marks the lessons that ship a printable "fiche réflexe" (module 13.2 —
- * accident grave ou mortel), offered as a downloadable PDF in addition to
- * the on-screen lesson.
+ * Marks the lessons that ship a printable "ficha de actuación" (lesson 7.4 —
+ * accidente grave o mortal en obra), offered as a downloadable PDF in
+ * addition to the on-screen lesson.
  */
 return new class extends Migration
 {

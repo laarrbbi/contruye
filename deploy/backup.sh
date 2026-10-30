@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #
-# Nightly backup: the database and the private files (CCP receipts, lesson
-# attachments). Orders and invoices are records the business is legally
-# required to keep; a receipt is the only proof a CCP transfer happened.
+# Nightly backup: the database and the private files (transfer and Bizum
+# receipts, lesson attachments). Orders and invoices are records the business
+# is legally required to keep; a receipt is the only proof a bank transfer or
+# Bizum payment happened.
 #
 #   deploy/backup.sh
 #

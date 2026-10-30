@@ -78,7 +78,7 @@ function stealInvoiceNumber(Invoice $pending, Order $rival): void
         'iva_c' => 0,
         'total_gross_c' => 0,
         'currency' => 'EUR',
-        'payment_method_label' => 'Virement CCP',
+        'payment_method_label' => 'Transferencia bancaria',
         'created_at' => now(),
         'updated_at' => now(),
     ]);

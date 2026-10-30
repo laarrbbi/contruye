@@ -41,7 +41,7 @@ it('releases the coupon use as soon as an admin rejects the receipt', function (
     expect($coupon->fresh()->uses)->toBe(1);
 
     $this->actingAs($admin)
-        ->postJson("/api/admin/orders/{$order->id}/reject", ['reason' => 'Reçu illisible'])
+        ->postJson("/api/admin/orders/{$order->id}/reject", ['reason' => 'Justificante ilegible'])
         ->assertOk();
 
     // The buyer walked away with nothing, so the coupon is free again.
@@ -60,7 +60,7 @@ it('re-claims the use when a rejected order is granted after someone else took t
     $first->update(['status' => 'awaiting_review', 'receipt_path' => 'receipts/x.jpg']);
 
     $this->actingAs($admin)
-        ->postJson("/api/admin/orders/{$first->id}/reject", ['reason' => 'Reçu illisible'])
+        ->postJson("/api/admin/orders/{$first->id}/reject", ['reason' => 'Justificante ilegible'])
         ->assertOk();
 
     // The released use is taken by a second buyer, legitimately.
