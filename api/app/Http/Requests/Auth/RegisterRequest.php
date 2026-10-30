@@ -16,10 +16,13 @@ class RegisterRequest extends FormRequest
      *
      * Spain's own code is still held to the mobile rule: "+34 0612…" or a
      * landline after +34 is refused rather than stored as a number the owner
-     * cannot WhatsApp. RegisterPage.tsx carries the same pattern; the D flag
+     * cannot WhatsApp. The home zero kept after +33 ("+33 06…") is refused too:
+     * no French number has a 0 there, and it was stored apart from the
+     * buyer's real "+336…". It cannot be a rule for every code, because Italy
+     * does keep that 0. RegisterPage.tsx carries the same pattern; the D flag
      * makes "$" the end of the string, as it already is in JavaScript.
      */
-    private const PHONE_PATTERN = '/^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34)[1-9]\d{7,14})$/D';
+    private const PHONE_PATTERN = '/^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34|330)[1-9]\d{7,14})$/D';
 
     public function authorize(): bool
     {

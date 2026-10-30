@@ -25,8 +25,8 @@ function soldCourse(): Order
         'user_id' => User::factory()->create()->id,
         'course_id' => Course::factory()->create(['status' => 'published'])->id,
         'amount' => 90000,
-        'currency' => 'DZD',
-        'method' => 'manual_ccp',
+        'currency' => 'EUR',
+        'method' => 'manual_transfer',
         'scope' => 'full',
         'status' => 'paid',
         'paid_at' => now(),
@@ -65,7 +65,7 @@ it('will not let the database delete a module that appears on an order line', fu
     $order->update(['scope' => 'modules']);
     $line = $order->orderModules()->create(['module_id' => $module->id, 'unit_price' => 12000]);
 
-    // order_modules.module_id — the line items an issued facture is built
+    // order_modules.module_id — the line items an issued invoice is built
     // from. Losing them turns a numbered fiscal document into a total with no
     // designations behind it.
     expect(fn () => $module->delete())->toThrow(QueryException::class);

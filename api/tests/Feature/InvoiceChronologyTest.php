@@ -13,16 +13,17 @@ function issueFor($order, array $extra = [])
 {
     return test()->actingAs(User::factory()->admin()->create())
         ->postJson("/api/admin/orders/{$order->id}/invoice", [
-            'buyer_name' => 'Karim Benali',
-            'buyer_address' => 'Bab Ezzouar, Alger',
-            'iva_rate' => 19,
+            'buyer_name' => 'Javier Morales',
+            'buyer_address' => 'Avenida de la Constitución 12, 41001 Sevilla',
+            'buyer_nif' => '12345678Z',
+            'iva_rate' => 21,
             ...$extra,
         ]);
 }
 
 beforeEach(function () {
     completeSellerSettings();
-    $this->travelTo(now('Africa/Algiers')->setDate(2026, 10, 20)->setTime(12, 0));
+    $this->travelTo(now('Europe/Madrid')->setDate(2026, 10, 20)->setTime(12, 0));
 });
 
 it('refuses a date earlier than the last invoice already issued', function () {

@@ -13,13 +13,13 @@ use App\Support\Money;
 
 /*
  * What a buyer reads in their inbox, checked for the defects found by
- * reading every e-mail on a phone in French and Arabic:
- * - Arabic amounts read backwards ("DZD 000 72"): a plain space split the
- *   number and the right-to-left line reversed the pieces.
- * - Gmail drops the attributes of <html>, the only place the direction was
- *   set, so Arabic e-mails would be laid out left to right there.
- * - The invoice number broke across lines and reordered in Arabic.
- * - A French rejection reason inside an Arabic e-mail lost its order.
+ * reading every e-mail on a phone (on the platform this one was adapted
+ * from, and kept here because each one can come back):
+ * - An amount split by a plain space wrapped in the middle of the number.
+ * - Gmail drops the attributes of <html>, so the direction set only there
+ *   was lost: it is set on the content as well.
+ * - The invoice number broke across lines.
+ * - A reason typed in another script inside the e-mail lost its order.
  * - "Start learning" opened the sales page instead of the course.
  */
 
@@ -27,79 +27,82 @@ function paidOrderFor(string $locale): Order
 {
     return Order::factory()->create([
         'user_id' => User::factory()->create(['locale' => $locale])->id,
-        'course_id' => Course::factory()->create(['status' => 'published', 'slug' => "cours-{$locale}"])->id,
-        'amount' => 72000,
-        'currency' => 'DZD',
+        'course_id' => Course::factory()->create(['status' => 'published', 'slug' => "curso-{$locale}"])->id,
+        'amount' => 1490,
+        'currency' => 'EUR',
         'status' => 'paid',
         'paid_at' => now(),
     ]);
 }
 
-it('formats amounts like the site: no breakable space, so no reordering', function () {
-    // web/src/lib/utils.ts formatPrice uses Intl.NumberFormat('fr-DZ'|'ar-DZ'|'en-DZ').
+it('formats amounts like the site: no breakable space, so no wrapping', function () {
+    // web/src/lib/utils.ts formatPrice uses Intl.NumberFormat('es-ES'|'en-GB').
     // ICU builds that same pattern for PHP.
-    foreach (['fr', 'ar', 'en'] as $locale) {
-        expect(Money::format(72000, 'DZD', $locale))->not->toContain(' ');
+    foreach (config('locales.supported') as $locale) {
+        expect(Money::format(1490, 'EUR', $locale))->not->toContain(' ');
     }
 
-    expect(Money::format(72000, 'DZD', 'fr'))->toMatch('/^72\x{202F}000\x{00A0}DA$/u')
-        ->and(Money::format(75630.25, 'DZD', 'fr'))->toMatch('/^75\x{202F}630,25\x{00A0}DA$/u')
-        ->and(Money::format(72000, 'DZD', 'ar'))->toContain('72.000')
-        ->and(Money::format(240, 'EUR', 'fr'))->toMatch('/^240\x{00A0}€$/u');
+    expect(Money::format(1490, 'EUR', 'es'))->toBe("1.490\u{00A0}€")
+        ->and(Money::format(490, 'EUR', 'es'))->toBe("490\u{00A0}€")
+        ->and(Money::format(40.5, 'EUR', 'es'))->toBe("40,50\u{00A0}€")
+        ->and(Money::format(1490, 'EUR', 'en'))->toBe('€1,490');
 });
 
-it('sets the Arabic direction on the content, not only on <html>', function () {
-    $order = paidOrderFor('ar');
+it('sets the direction on the content, not only on <html>', function () {
+    $order = paidOrderFor('es');
     $invoice = Invoice::factory()->create(['order_id' => $order->id]);
 
     $rendered = [
         'welcome' => (new WelcomeMail($order->user))->render(),
         'payment-confirmed' => (new PaymentConfirmedMail($order))->render(),
-        'receipt-rejected' => (new ReceiptRejectedMail($order, 'سبب'))->render(),
+        'receipt-rejected' => (new ReceiptRejectedMail($order, 'Motivo'))->render(),
         'invoice-issued' => (new InvoiceIssuedMail($invoice))->render(),
         'reset-password' => (function () use ($order) {
-            app()->setLocale('ar');
+            app()->setLocale('es');
 
             return (string) (new ResetPasswordNotification('token'))->toMail($order->user)->render();
         })(),
     ];
 
     foreach ($rendered as $name => $html) {
-        expect($html)->toMatch('/<body[^>]*>\s*<div[^>]*dir="rtl"/', "{$name}: the wrapper inside <body> must carry dir=\"rtl\"");
+        expect($html)->toMatch('/<body[^>]*>\s*<div[^>]*dir="ltr"/', "{$name}: the wrapper inside <body> must carry dir=\"ltr\"");
     }
 });
 
-it('shows an Arabic buyer the amount and invoice number in reading order', function () {
-    $order = paidOrderFor('ar');
+it('keeps the amount and the invoice number in one piece', function () {
+    $order = paidOrderFor('es');
     $invoice = Invoice::factory()->create(['order_id' => $order->id, 'number' => 'FAC-2026-00042']);
 
     expect((new PaymentConfirmedMail($order))->render())
-        ->toContain(Money::format(72000, 'DZD', 'ar'))
-        ->not->toContain('72 000 DZD');
+        ->toContain(Money::format(1490, 'EUR', 'es'))
+        ->not->toContain('1490 EUR');
 
     expect((new InvoiceIssuedMail($invoice))->render())
         ->toContain('<span dir="ltr" style="white-space:nowrap;">FAC-2026-00042</span>')
-        ->toContain(Money::format(90000, 'DZD', 'ar'));
+        ->toContain(Money::format(490, 'EUR', 'es'));
 });
 
 it('gives a rejection reason its own direction, whatever the e-mail is in', function () {
-    $order = paidOrderFor('ar');
+    $order = paidOrderFor('es');
 
-    $french = (new ReceiptRejectedMail($order, 'Le montant du reçu (30 000 DA) ne correspond pas.'))->render();
+    $spanish = (new ReceiptRejectedMail($order, 'El importe del justificante (300 €) no coincide.'))->render();
     $arabic = (new ReceiptRejectedMail($order, 'المبلغ لا يطابق الطلب.'))->render();
 
-    expect($french)->toMatch('/<div dir="ltr"[^>]*>\s*Le montant du reçu \(30 000 DA\)/u')
+    expect($spanish)->toMatch('/<div dir="ltr"[^>]*>\s*El importe del justificante \(300 €\)/u')
         ->and($arabic)->toMatch('/<div dir="rtl"[^>]*>\s*المبلغ لا يطابق الطلب\./u');
 });
 
 it('takes a new student straight into the course they paid for', function () {
-    $order = paidOrderFor('fr');
+    $order = paidOrderFor('es');
 
     expect((new PaymentConfirmedMail($order))->render())
-        ->toContain('href="'.rtrim(config('app.frontend_url'), '/').'/learn/cours-fr"');
+        ->toContain('href="'.rtrim(config('app.frontend_url'), '/').'/learn/curso-es"');
 });
 
-it('punctuates French the French way', function () {
-    // "Montant payé : 72 000 DA", with the space before the colon unbreakable.
-    expect((new PaymentConfirmedMail(paidOrderFor('fr')))->render())->toContain("Montant payé\u{00A0}:");
+it('writes the e-mail in the buyer\'s language, whatever the admin works in', function () {
+    app()->setLocale('en');
+    $html = (new PaymentConfirmedMail(paidOrderFor('es')))->render();
+
+    expect($html)->toContain('Importe pagado:')
+        ->and($html)->toContain('<html lang="es"');
 });

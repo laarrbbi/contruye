@@ -25,9 +25,9 @@ it('filters orders by status, method and user search', function () {
     $alice = User::factory()->create(['name' => 'Alice Wonder', 'email' => 'alice@example.com']);
     $bob = User::factory()->create(['name' => 'Bob Builder', 'email' => 'bob@example.com']);
 
-    Order::factory()->for($alice)->paid()->create(['method' => 'chargily']);
-    Order::factory()->for($bob)->create(['method' => 'manual_ccp', 'status' => 'pending']);
-    Order::factory()->for($bob)->awaitingReview()->create(); // manual_ccp
+    Order::factory()->for($alice)->paid()->create(['method' => 'stripe']);
+    Order::factory()->for($bob)->create(['method' => 'manual_transfer', 'status' => 'pending']);
+    Order::factory()->for($bob)->awaitingReview()->create(); // manual_transfer
 
     $this->actingAs($admin)->getJson('/api/admin/orders')
         ->assertOk()
@@ -40,7 +40,7 @@ it('filters orders by status, method and user search', function () {
         ->assertJsonPath('data.0.user.email', 'alice@example.com')
         ->assertJsonPath('data.0.status', 'paid');
 
-    $this->actingAs($admin)->getJson('/api/admin/orders?method=manual_ccp')
+    $this->actingAs($admin)->getJson('/api/admin/orders?method=manual_transfer')
         ->assertOk()
         ->assertJsonCount(2, 'data');
 
@@ -201,7 +201,7 @@ it('streams the private receipt file with its content type', function () {
     Storage::fake('local');
 
     $admin = User::factory()->admin()->create();
-    $order = Order::factory()->create(['method' => 'manual_ccp', 'status' => 'awaiting_review']);
+    $order = Order::factory()->create(['method' => 'manual_transfer', 'status' => 'awaiting_review']);
 
     $path = Storage::disk('local')->putFile(
         "receipts/{$order->id}",
@@ -219,7 +219,7 @@ it('returns 404 when the order has no receipt', function () {
     Storage::fake('local');
 
     $admin = User::factory()->admin()->create();
-    $order = Order::factory()->create(['method' => 'manual_ccp', 'status' => 'pending', 'receipt_path' => null]);
+    $order = Order::factory()->create(['method' => 'manual_transfer', 'status' => 'pending', 'receipt_path' => null]);
 
     $this->actingAs($admin)
         ->getJson("/api/admin/orders/{$order->id}/receipt")

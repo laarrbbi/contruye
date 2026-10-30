@@ -103,32 +103,32 @@ it('returns 0 percent and a null next lesson for a course without lessons', func
         ->assertJsonPath('data.next_lesson_id', null);
 });
 
-it('returns arabic titles when Accept-Language is ar', function () {
+it('returns english titles when Accept-Language is en', function () {
     $user = User::factory()->create();
     $course = Course::factory()->create([
-        'slug' => 'arabic-course',
-        'title_es' => 'Titre français',
-        'title_en' => 'عنوان الدورة',
+        'slug' => 'english-course',
+        'title_es' => 'Título en español',
+        'title_en' => 'Course title',
     ]);
     Enrollment::factory()->for($user)->for($course)->create();
 
     $module = Module::factory()->for($course)->create([
         'order' => 1,
-        'title_es' => 'Module un',
-        'title_en' => 'الوحدة الأولى',
+        'title_es' => 'Fase uno',
+        'title_en' => 'Phase one',
     ]);
     Lesson::factory()->for($module)->create([
         'order' => 1,
-        'title_es' => 'Leçon une',
-        'title_en' => 'الدرس الأول',
+        'title_es' => 'Lección uno',
+        'title_en' => 'Lesson one',
     ]);
 
     $this->actingAs($user)
-        ->getJson('/api/courses/arabic-course/learn', ['Accept-Language' => 'ar'])
+        ->getJson('/api/courses/english-course/learn', ['Accept-Language' => 'en'])
         ->assertOk()
-        ->assertJsonPath('data.course.title', 'عنوان الدورة')
-        ->assertJsonPath('data.modules.0.title', 'الوحدة الأولى')
-        ->assertJsonPath('data.modules.0.lessons.0.title', 'الدرس الأول');
+        ->assertJsonPath('data.course.title', 'Course title')
+        ->assertJsonPath('data.modules.0.title', 'Phase one')
+        ->assertJsonPath('data.modules.0.lessons.0.title', 'Lesson one');
 });
 
 it('exposes attachments as name and index only, never storage paths', function () {

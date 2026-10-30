@@ -84,8 +84,8 @@ it('shows no rating at all rather than a placeholder before a review is approved
 });
 
 it('promotes a campaign on the catalog only while it is genuinely running', function () {
-    $running = Course::factory()->create(['slug' => 'running-course', 'price_dzd' => 90000]);
-    $notYet = Course::factory()->create(['slug' => 'not-yet-course', 'price_dzd' => 90000]);
+    $running = Course::factory()->create(['slug' => 'running-course', 'price_eur' => 90000]);
+    $notYet = Course::factory()->create(['slug' => 'not-yet-course', 'price_eur' => 90000]);
 
     Campaign::factory()->create(['course_id' => $running->id, 'percent_off' => 15]);
     // Three campaigns that must not show: not started, finished, switched off.
@@ -104,7 +104,7 @@ it('promotes a campaign on the catalog only while it is genuinely running', func
 });
 
 it('resolves the same campaign in memory as the queried path resolves it', function () {
-    $course = Course::factory()->create(['slug' => 'overlap-course', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['slug' => 'overlap-course', 'price_eur' => 90000]);
 
     Campaign::factory()->create([
         'course_id' => $course->id, 'percent_off' => 10, 'ends_at' => now()->addDays(9),

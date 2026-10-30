@@ -5,28 +5,28 @@ use Illuminate\Support\Facades\Hash;
 
 it('registers a new student and logs them in', function () {
     $response = $this->postJson('/api/register', [
-        'name' => 'Yacine Benali',
-        'email' => 'yacine@example.es',
-        'phone' => '0550 12 34 56',
+        'name' => 'Pablo Ruiz',
+        'email' => 'pablo@example.es',
+        'phone' => '612 34 56 78',
         'password' => 'password123',
         'password_confirmation' => 'password123',
-        'locale' => 'fr',
+        'locale' => 'es',
     ]);
 
     $response->assertCreated()
-        ->assertJsonPath('data.email', 'yacine@example.es')
+        ->assertJsonPath('data.email', 'pablo@example.es')
         ->assertJsonPath('data.role', 'student')
-        ->assertJsonPath('data.phone', '0550123456');
+        ->assertJsonPath('data.phone', '612345678');
 
     $this->assertAuthenticated();
-    $this->assertDatabaseHas('users', ['email' => 'yacine@example.es', 'role' => 'student']);
+    $this->assertDatabaseHas('users', ['email' => 'pablo@example.es', 'role' => 'student']);
 });
 
-it('rejects registration with an invalid algerian phone number', function () {
+it('rejects registration with an invalid spanish phone number', function () {
     $response = $this->postJson('/api/register', [
         'name' => 'Test',
         'email' => 'test@example.es',
-        'phone' => '0450123456',
+        'phone' => '512345678',
         'password' => 'password123',
         'password_confirmation' => 'password123',
     ]);
@@ -35,10 +35,10 @@ it('rejects registration with an invalid algerian phone number', function () {
 });
 
 it('registers a buyer who lives abroad with an international number', function (string $typed, string $stored) {
-    // The sales page invites buyers in France and elsewhere; the rule took an
-    // Algerian mobile only, so they could not open an account to pay with.
+    // Buyers living outside Spain must be able to open an account to pay
+    // with: a Spanish-mobile-only rule would turn them away.
     $this->postJson('/api/register', [
-        'name' => 'Karim Haddad',
+        'name' => 'Claire Martin',
         'email' => 'karim@example.fr',
         'phone' => $typed,
         'password' => 'password123',
@@ -54,27 +54,29 @@ it('registers a buyer who lives abroad with an international number', function (
     // Kept, the bracketed zero would make +330612345678, which rings nowhere.
     'French (0) notation' => ['+33 (0)6 12 34 56 78', '+33612345678'],
     'Canada, brackets and dash' => ['+1 (514) 555-0123', '+15145550123'],
-    'dots' => ['0550.12.34.56', '0550123456'],
-    'Algerian mobile written internationally' => ['+213 5 50 12 34 56', '+213550123456'],
-    // Only Algeria's own code is held to the mobile rule, not every +2….
-    'Morocco, another code starting with 2' => ['+212 6 12 34 56 78', '+212612345678'],
+    'dots' => ['612.34.56.78', '612345678'],
+    'Spanish mobile written internationally' => ['+34 612 34 56 78', '+34612345678'],
+    'Spanish mobile starting with 7' => ['712 34 56 78', '712345678'],
+    // Only Spain's own code is held to the mobile rule, not every +3….
+    'Portugal, another code starting with 3' => ['+351 912 345 678', '+351912345678'],
     // "00" is read as "+" at the start only, never inside the number.
     'zeros inside the number' => ['+33 6 00 11 22 33', '+33600112233'],
-    // How WhatsApp hands over a number copied in Arabic: LRE … PDF around it.
-    'copied from WhatsApp in Arabic' => ["\u{202A}+213 550 12 34 56\u{202C}", '+213550123456'],
-    'no-break spaces from a French page' => ["0550\u{00A0}12\u{00A0}34\u{00A0}56", '0550123456'],
+    // How a chat app hands over a number copied in a right-to-left
+    // conversation: LRE … PDF around it.
+    'copied from a right-to-left chat' => ["\u{202A}+34 612 34 56 78\u{202C}", '+34612345678'],
+    'no-break spaces from a web page' => ["612\u{00A0}34\u{00A0}56\u{00A0}78", '612345678'],
     // The marks below sit inside the number on purpose: at either end, the
     // TrimStrings middleware removes most of them before normalisePhone()
     // runs, and the case would pass with the separator list emptied.
-    'tabs, pasted from a spreadsheet' => ["0550\t12\t34\t56", '0550123456'],
-    'direction marks between the groups' => ["0550\u{200E}12\u{200F}34\u{200E}56", '0550123456'],
+    'tabs, pasted from a spreadsheet' => ["612\t34\t56\t78", '612345678'],
+    'direction marks between the groups' => ["612\u{200E}34\u{200F}56\u{200E}78", '612345678'],
     'wrapped in isolates, thin spaces' => ["\u{2068}+33\u{2009}6\u{2009}12 34 56 78\u{2069}", '+33612345678'],
     'stray BOM, Arabic letter mark and rarer spaces' => ["+33\u{FEFF}6\u{061C}12\u{3000}34\u{205F}56\u{1680}78", '+33612345678'],
     'shortest: eight digits' => ['+677 12345', '+67712345'],
     'longest: fifteen digits' => ['+86 123 4567 8901 23', '+861234567890123'],
 ]);
 
-it('refuses a phone number that is neither an Algerian mobile nor international', function (string $typed) {
+it('refuses a phone number that is neither a Spanish mobile nor international', function (string $typed) {
     $this->postJson('/api/register', [
         'name' => 'Test',
         'email' => 'test@example.es',
@@ -85,22 +87,22 @@ it('refuses a phone number that is neither an Algerian mobile nor international'
         ->assertUnprocessable()
         // The message says what is accepted, so a buyer abroad knows to add
         // the country code instead of guessing.
-        ->assertJsonValidationErrors(['phone' => __('Invalid number: Algerian mobile (05, 06, 07) or international number starting with +')]);
+        ->assertJsonValidationErrors(['phone' => __('Invalid number: Spanish mobile (9 digits starting with 6 or 7) or international number starting with +')]);
 
     $this->assertDatabaseMissing('users', ['email' => 'test@example.es']);
 })->with([
     'too short' => ['+12'],
     'seven digits' => ['+677 1234'],
     'sixteen digits' => ['+86 123 4567 8901 234'],
-    'country code starting with 0' => ['+0550123456'],
+    'country code starting with 0' => ['+0612345678'],
     'international digits without + or 00' => ['33612345678'],
     'letters' => ['+33 6 12 AB 56 78'],
     'two plus signs' => ['++33612345678'],
-    'Algerian landline written internationally' => ['+213 21 12 34 56'],
-    // Refused as 0450123456 is: written internationally, it is still no mobile.
-    'Algerian non-mobile written internationally' => ['+213 4 50 12 34 56'],
+    'Spanish landline, dialled at home' => ['912 34 56 78'],
+    'Spanish landline written internationally' => ['+34 912 34 56 78'],
+    'eight digits dialled at home' => ['61234567'],
     // The home zero kept after the code: a number nobody can dial.
-    'Algerian mobile with its home zero after +213' => ['+213 0550 12 34 56'],
+    'Spanish mobile with a zero after +34' => ['+34 0612 34 56 78'],
     'French mobile with its home zero after +33' => ['+33 06 12 34 56 78'],
     'the same, with 00 for +' => ['0033 06 12 34 56 78'],
 ]);
@@ -156,7 +158,7 @@ it('forces the student role however the client fills the registration form', fun
     $this->postJson('/api/register', [
         'name' => 'Faux Admin',
         'email' => 'faux@example.es',
-        'phone' => '0551234567',
+        'phone' => '651234567',
         'password' => 'password123',
         'password_confirmation' => 'password123',
         'role' => 'admin',
@@ -217,7 +219,7 @@ it('throttles the auth routes at ten attempts a minute per IP', function () {
     $this->postJson('/api/register', [
         'name' => 'Trop Tard',
         'email' => 'trop.tard@example.es',
-        'phone' => '0551234567',
+        'phone' => '651234567',
         'password' => 'password123',
         'password_confirmation' => 'password123',
     ])->assertStatus(429);
@@ -262,12 +264,12 @@ it('ignores an email or password change submitted to the profile endpoint', func
     // A legitimate field travels in the same payload, so a green assertion
     // below cannot come from the request having been rejected wholesale.
     $this->actingAs($user)->patchJson('/api/me', [
-        'locale' => 'ar',
+        'locale' => 'en',
         'email' => 'attaquant@example.es',
         'password' => 'attacker-password',
     ])
         ->assertOk()
-        ->assertJsonPath('data.locale', 'ar')
+        ->assertJsonPath('data.locale', 'en')
         ->assertJsonPath('data.email', 'amina@example.es');
 
     $fresh = $user->fresh();
@@ -276,7 +278,7 @@ it('ignores an email or password change submitted to the profile endpoint', func
     // takeover primitive: the address is where the reset link goes, and the
     // password is the credential itself.
     expect($fresh->email)->toBe('amina@example.es')
-        ->and($fresh->locale)->toBe('ar')
+        ->and($fresh->locale)->toBe('en')
         ->and(Hash::check('password123', $fresh->password))->toBeTrue()
         ->and(Hash::check('attacker-password', $fresh->password))->toBeFalse();
 
@@ -289,7 +291,7 @@ it('requires a password long enough to be worth having', function () {
     $this->postJson('/api/register', [
         'name' => 'Trop Court',
         'email' => 'court@example.es',
-        'phone' => '0551234567',
+        'phone' => '651234567',
         'password' => 'court123',
         'password_confirmation' => 'court123',
     ])->assertUnprocessable()->assertJsonValidationErrors(['password']);
@@ -297,7 +299,7 @@ it('requires a password long enough to be worth having', function () {
     $this->postJson('/api/register', [
         'name' => 'Assez Long',
         'email' => 'long@example.es',
-        'phone' => '0551234568',
+        'phone' => '651234568',
         'password' => 'une-phrase-de-passe',
         'password_confirmation' => 'une-phrase-de-passe',
     ])->assertCreated();

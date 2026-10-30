@@ -8,14 +8,14 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 /**
- * B91/B92: the first facture of a year has no row to lock, so two admins
+ * B91/B92: the first invoice of a year has no row to lock, so two admins
  * issuing at once can both compute sequence 1 and collide on the unique
  * (year, sequence) index. InvoiceController retries the whole transaction up
  * to three times on SQLSTATE 23000/40001 and rethrows on the fourth.
  *
  * InvoiceTest only walks the happy path, so the retry can be deleted with the
  * suite still green — its absence surfaces only as an admin-facing 500 while
- * a customer is waiting for their facture. These inject the collision.
+ * a customer is waiting for their invoice. These inject the collision.
  */
 
 /** Minimal but complete seller block, so issuance is not refused for settings. */
@@ -23,14 +23,9 @@ function raceSellerSettings(): void
 {
     Setting::setValue('invoicing.seller', [
         'business_name' => '[DEMO] Construye Academy',
-        'legal_form' => 'EURL',
-        'capital' => '1 000 000 DA',
-        'address' => '12 rue des Frères Boulemdaïs, Alger',
-        'rc' => '16/00-1234567 B 26',
-        'nif' => '002616123456789',
-        'nis' => '002616123456780',
-        'ai' => '16123456789',
-        'phone' => '0550 00 00 00',
+        'nif' => 'B12345674',
+        'address' => 'Calle Mayor 1, 28013 Madrid',
+        'phone' => '600 00 00 00',
         'email' => 'contact@example.es',
         'bank_details' => '',
     ]);
@@ -40,10 +35,10 @@ function racePaidOrder(): Order
 {
     return Order::factory()->create([
         'user_id' => User::factory()->create()->id,
-        'course_id' => Course::factory()->create(['status' => 'published', 'price_dzd' => 90000])->id,
-        'amount' => 90000,
-        'currency' => 'DZD',
-        'method' => 'manual_ccp',
+        'course_id' => Course::factory()->create(['status' => 'published', 'price_eur' => 490])->id,
+        'amount' => 490,
+        'currency' => 'EUR',
+        'method' => 'manual_transfer',
         'scope' => 'full',
         'status' => 'paid',
         'paid_at' => now(),
@@ -53,9 +48,9 @@ function racePaidOrder(): Order
 function racePayload(): array
 {
     return [
-        'buyer_name' => 'Karim Benali',
-        'buyer_address' => 'Cité 200 logements, Bab Ezzouar, Alger',
-        'iva_rate' => 19,
+        'buyer_name' => 'Javier Morales',
+        'buyer_address' => 'Avenida de la Constitución 12, 41001 Sevilla',
+        'iva_rate' => 21,
     ];
 }
 
@@ -72,17 +67,17 @@ function stealInvoiceNumber(Invoice $pending, Order $rival): void
         'year' => $pending->year,
         'sequence' => $pending->sequence,
         'issued_at' => now()->toDateString(),
-        'buyer_name' => 'Concurrent',
-        'buyer_address' => 'Alger',
+        'buyer_name' => 'Competidor',
+        'buyer_address' => 'Madrid',
         'seller' => json_encode([]),
         'lines' => json_encode([]),
-        'iva_rate' => 19,
+        'iva_rate' => 21,
         'subtotal_net_c' => 0,
         'discount_net_c' => 0,
         'total_net_c' => 0,
         'iva_c' => 0,
         'total_gross_c' => 0,
-        'currency' => 'DZD',
+        'currency' => 'EUR',
         'payment_method_label' => 'Virement CCP',
         'created_at' => now(),
         'updated_at' => now(),
@@ -116,7 +111,7 @@ it('absorbs a duplicate invoice number instead of answering 500', function () {
         ->and(Invoice::query()->first()->order_id)->toBe($order->id)
         ->and(Invoice::query()->first()->sequence)->toBe(1);
 
-    // And the abandoned attempt burned no number: the next facture is 2, not
+    // And the abandoned attempt burned no number: the next invoice is 2, not
     // 3. A retry that consumed the sequence would leave a hole an inspector
     // cannot be shown.
     $this->actingAs($admin)

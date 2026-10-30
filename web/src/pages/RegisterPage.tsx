@@ -30,8 +30,9 @@ const normalisePhone = (v: string) =>
     .replace(/^00/, '+')
 
 // A Spanish mobile as dialled at home (6 or 7, then eight digits), or "+" and
-// 8 to 15 digits (E.164), with Spain's own +34 still held to the mobile rule.
-const PHONE_PATTERN = /^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34)[1-9]\d{7,14})$/
+// 8 to 15 digits (E.164), with Spain's own +34 still held to the mobile rule,
+// and +33 never followed by the French home zero, which no French number has.
+const PHONE_PATTERN = /^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34|330)[1-9]\d{7,14})$/
 
 const schema = z
   .object({

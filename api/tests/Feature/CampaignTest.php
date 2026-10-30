@@ -7,20 +7,18 @@ use App\Models\Module;
 use App\Models\Order;
 use App\Models\User;
 use App\Services\PricingService;
-use Illuminate\Support\Facades\Http;
 
 function campaignCourse(): Course
 {
     $course = Course::factory()->create([
         'status' => 'published',
-        'price_dzd' => 90000,
-        'price_eur' => 300,
+        'price_eur' => 900,
         'module_discount_tiers' => null,
     ]);
 
     Module::factory()->count(10)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
 
     return $course->fresh();
 }
@@ -29,11 +27,11 @@ it('applies a running campaign to the full-access price', function () {
     $course = campaignCourse();
     Campaign::factory()->create(['course_id' => $course->id, 'percent_off' => 20]);
 
-    $quote = app(PricingService::class)->quote($course, null, 'full', [], 'DZD');
+    $quote = app(PricingService::class)->quote($course, null, 'full', []);
 
-    expect($quote['total'])->toBe(72000) // 90 000 − 20%
+    expect($quote['total'])->toBe(720) // 900 − 20%
         ->and($quote['campaign_percent'])->toBe(20)
-        ->and($quote['campaign_discount'])->toBe(18000)
+        ->and($quote['campaign_discount'])->toBe(180)
         ->and($quote['campaign']['percent_off'])->toBe(20);
 });
 
@@ -43,13 +41,14 @@ it('applies the campaign after the volume tier on a module selection', function 
     $ids = $course->modules()->orderBy('order')->pluck('id')->all();
     $user = User::factory()->create();
 
-    // 3 modules: 36 000 → tier 10% = 32 400 → campaign 10% = 29 160.
-    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 3), 'DZD');
+    // 3 modules: 360 → tier 10% = 324 → campaign 10% = 291.60, charged as 292:
+    // orders are whole euros, and the rounding is the campaign's, not the buyer's.
+    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 3));
 
     expect($quote['tier_percent'])->toBe(10)
         ->and($quote['campaign_percent'])->toBe(10)
-        ->and($quote['campaign_discount'])->toBe(3240)
-        ->and($quote['total'])->toBe(29160);
+        ->and($quote['campaign_discount'])->toBe(32)
+        ->and($quote['total'])->toBe(292);
 });
 
 it('raises the price again the moment the campaign deadline passes', function () {
@@ -61,13 +60,13 @@ it('raises the price again the moment the campaign deadline passes', function ()
     ]);
     $pricing = app(PricingService::class);
 
-    expect($pricing->quote($course->fresh(), null, 'full', [], 'DZD')['total'])->toBe(72000);
+    expect($pricing->quote($course->fresh(), null, 'full', [])['total'])->toBe(720);
 
     // Travel past the real deadline — no data is changed, time simply moves on.
     $this->travel(2)->hours();
 
-    $after = $pricing->quote($course->fresh(), null, 'full', [], 'DZD');
-    expect($after['total'])->toBe(90000)          // genuinely back to full price
+    $after = $pricing->quote($course->fresh(), null, 'full', []);
+    expect($after['total'])->toBe(900)          // genuinely back to full price
         ->and($after['campaign'])->toBeNull()
         ->and($after['campaign_percent'])->toBe(0);
 
@@ -80,15 +79,15 @@ it('ignores campaigns that are disabled, expired or not started yet', function (
 
     $disabled = campaignCourse();
     Campaign::factory()->disabled()->create(['course_id' => $disabled->id, 'percent_off' => 50]);
-    expect($pricing->quote($disabled->fresh(), null, 'full', [], 'DZD')['total'])->toBe(90000);
+    expect($pricing->quote($disabled->fresh(), null, 'full', [])['total'])->toBe(900);
 
     $expired = campaignCourse();
     Campaign::factory()->expired()->create(['course_id' => $expired->id, 'percent_off' => 50]);
-    expect($pricing->quote($expired->fresh(), null, 'full', [], 'DZD')['total'])->toBe(90000);
+    expect($pricing->quote($expired->fresh(), null, 'full', [])['total'])->toBe(900);
 
     $upcoming = campaignCourse();
     Campaign::factory()->upcoming()->create(['course_id' => $upcoming->id, 'percent_off' => 50]);
-    expect($pricing->quote($upcoming->fresh(), null, 'full', [], 'DZD')['total'])->toBe(90000);
+    expect($pricing->quote($upcoming->fresh(), null, 'full', [])['total'])->toBe(900);
 });
 
 it('picks the best running campaign when several overlap', function () {
@@ -96,10 +95,10 @@ it('picks the best running campaign when several overlap', function () {
     Campaign::factory()->create(['course_id' => $course->id, 'percent_off' => 10]);
     Campaign::factory()->create(['course_id' => $course->id, 'percent_off' => 30]);
 
-    $quote = app(PricingService::class)->quote($course->fresh(), null, 'full', [], 'DZD');
+    $quote = app(PricingService::class)->quote($course->fresh(), null, 'full', []);
 
     expect($quote['campaign_percent'])->toBe(30)
-        ->and($quote['total'])->toBe(63000);
+        ->and($quote['total'])->toBe(630);
 });
 
 it('stacks a coupon on top of the campaign without going negative', function () {
@@ -107,18 +106,16 @@ it('stacks a coupon on top of the campaign without going negative', function () 
     Campaign::factory()->create(['course_id' => $course->id, 'percent_off' => 50]);
     $coupon = Coupon::factory()->create(['percent_off' => 50]);
 
-    $quote = app(PricingService::class)->quote($course->fresh(), null, 'full', [], 'DZD', $coupon);
+    $quote = app(PricingService::class)->quote($course->fresh(), null, 'full', [], $coupon);
 
-    // 90 000 → 45 000 (campaign) → 22 500 (coupon)
-    expect($quote['campaign_discount'])->toBe(45000)
-        ->and($quote['coupon_discount'])->toBe(22500)
-        ->and($quote['total'])->toBe(22500)
+    // 900 → 450 (campaign) → 225 (coupon)
+    expect($quote['campaign_discount'])->toBe(450)
+        ->and($quote['coupon_discount'])->toBe(225)
+        ->and($quote['total'])->toBe(225)
         ->and($quote['total'])->toBeGreaterThanOrEqual(0);
 });
 
 it('charges the campaign price at checkout, matching the quote exactly', function () {
-    Http::fake(['*' => Http::response(['id' => '01chk', 'checkout_url' => 'https://pay.test/x'], 200)]);
-
     $course = campaignCourse();
     Campaign::factory()->create(['course_id' => $course->id, 'percent_off' => 25]);
     $user = User::factory()->create();
@@ -131,13 +128,13 @@ it('charges the campaign price at checkout, matching the quote exactly', functio
     $charged = $this->actingAs($user)->postJson('/api/checkout', [
         'course_id' => $course->id,
         'scope' => 'full',
-        'method' => 'chargily',
+        'method' => 'manual_transfer',
     ])->assertCreated()->json('data.order.amount');
 
-    expect($quoted)->toBe(67500)
+    expect($quoted)->toBe(675)
         ->and($charged)->toBe($quoted);
 
-    expect(Order::latest('id')->first()->amount)->toBe(67500);
+    expect(Order::latest('id')->first()->amount)->toBe(675);
 });
 
 it('exposes the real campaign deadline on the public course payload', function () {
@@ -145,14 +142,15 @@ it('exposes the real campaign deadline on the public course payload', function (
     $campaign = Campaign::factory()->create([
         'course_id' => $course->id,
         'percent_off' => 15,
-        'label_es' => 'Offre de lancement',
+        'label_es' => 'Oferta de lanzamiento',
         'ends_at' => now()->addDays(2),
     ]);
 
-    $response = $this->getJson("/api/courses/{$course->slug}")->assertOk();
+    $response = $this->withHeader('Accept-Language', 'es')
+        ->getJson("/api/courses/{$course->slug}")->assertOk();
 
     expect($response->json('data.campaign.percent_off'))->toBe(15)
-        ->and($response->json('data.campaign.label'))->toBe('Offre de lancement')
+        ->and($response->json('data.campaign.label'))->toBe('Oferta de lanzamiento')
         ->and($response->json('data.campaign.ends_at'))->toBe($campaign->ends_at->toISOString());
 
     // No promotion → no countdown to show.
@@ -183,8 +181,8 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // Create
     $id = $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_es' => 'Offre de rentrée',
-        'label_en' => 'عرض الدخول',
+        'label_es' => 'Oferta de septiembre',
+        'label_en' => 'September offer',
         'percent_off' => 20,
         'ends_at' => now()->addDays(5)->toISOString(),
     ])->assertCreated()->assertJsonPath('data.is_running', true)->json('data.id');
@@ -215,7 +213,7 @@ it('lets an admin manage campaigns and refuses dishonest deadlines', function ()
     // Update + delete
     $this->actingAs($admin)->putJson("/api/admin/campaigns/{$id}", [
         'course_id' => $course->id,
-        'label_es' => 'Offre de rentrée', 'label_en' => 'عرض الدخول',
+        'label_es' => 'Oferta de septiembre', 'label_en' => 'September offer',
         'percent_off' => 25,
         'ends_at' => now()->addDays(5)->toISOString(),
         'is_active' => false,
@@ -244,13 +242,13 @@ it('bases the upgrade hint on the discounted full price during a campaign', func
     $ids = $course->modules()->orderBy('order')->pluck('id')->all();
     $user = User::factory()->create();
 
-    // 9 modules: 108 000 → tier 20% = 86 400 → campaign 20% = 69 120.
-    // Full access during the campaign costs 90 000 − 20% = 72 000.
-    $quote = app(PricingService::class)->quote($course->fresh(), $user, 'modules', array_slice($ids, 0, 9), 'DZD');
+    // 9 modules: 1 080 → tier 20% = 864 → campaign 20% = 691.20, so 691.
+    // Full access during the campaign costs 900 − 20% = 720.
+    $quote = app(PricingService::class)->quote($course->fresh(), $user, 'modules', array_slice($ids, 0, 9));
 
-    expect($quote['total'])->toBe(69120)
+    expect($quote['total'])->toBe(691)
         // The top-up is measured against what full access really costs now.
-        ->and($quote['upgrade_hint']['price_delta'])->toBe(2880)
+        ->and($quote['upgrade_hint']['price_delta'])->toBe(29)
         ->and($quote['upgrade_hint']['modules_missing'])->toBe(1);
 });
 
@@ -264,8 +262,8 @@ it('keeps the campaign deadline stable when two campaigns share the same discoun
     ]);
 
     // Deterministic tie-break: soonest deadline wins, identically every call.
-    $first = app(PricingService::class)->quote($course->fresh(), null, 'full', [], 'DZD')['campaign'];
-    $second = app(PricingService::class)->quote($course->fresh(), null, 'full', [], 'DZD')['campaign'];
+    $first = app(PricingService::class)->quote($course->fresh(), null, 'full', [])['campaign'];
+    $second = app(PricingService::class)->quote($course->fresh(), null, 'full', [])['campaign'];
 
     expect($first['ends_at'])->toBe($soonest->ends_at->toISOString())
         ->and($second['ends_at'])->toBe($first['ends_at']);
@@ -277,7 +275,7 @@ it('rejects a campaign window that could never run', function () {
 
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_es' => 'Inversée', 'label_en' => 'مقلوب',
+        'label_es' => 'Invertida', 'label_en' => 'Inverted',
         'percent_off' => 20,
         'starts_at' => now()->addDays(9)->toISOString(),
         'ends_at' => now()->addDays(3)->toISOString(),
@@ -292,14 +290,14 @@ it('lets an admin edit a finished campaign without resurrecting the discount', f
     // Renaming / disabling a past promotion must not require a future end date.
     $this->actingAs($admin)->putJson("/api/admin/campaigns/{$ended->id}", [
         'course_id' => $course->id,
-        'label_es' => 'Offre de printemps (terminée)',
-        'label_en' => 'عرض الربيع (منتهٍ)',
+        'label_es' => 'Oferta de primavera (terminada)',
+        'label_en' => 'Spring offer (ended)',
         'percent_off' => 20,
         'ends_at' => $ended->ends_at->toISOString(),
         'is_active' => false,
     ])->assertOk()->assertJsonPath('data.is_running', false);
 
-    expect($ended->fresh()->label_es)->toBe('Offre de printemps (terminée)');
+    expect($ended->fresh()->label_es)->toBe('Oferta de primavera (terminada)');
 
     // Creating a new campaign still demands a real, future deadline.
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
@@ -320,19 +318,19 @@ it('shows the campaign price on the public catalog too', function () {
     expect($card['campaign']['percent_off'])->toBe(20);
 });
 
-it('starts a promotion with no Arabic name; Arabic visitors read the French one', function () {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+it('starts a promotion with no English name; English visitors read the Spanish one', function () {
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 900]);
     $admin = User::factory()->create(['role' => 'admin']);
 
     $this->actingAs($admin)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_es' => 'Offre de lancement',
+        'label_es' => 'Oferta de lanzamiento',
         'percent_off' => 20,
         'ends_at' => now()->addDays(3)->toISOString(),
     ])->assertCreated()->assertJsonPath('data.label_en', null);
 
-    $this->withHeader('Accept-Language', 'ar')
+    $this->withHeader('Accept-Language', 'en')
         ->getJson("/api/courses/{$course->slug}")
         ->assertOk()
-        ->assertJsonPath('data.campaign.label', 'Offre de lancement');
+        ->assertJsonPath('data.campaign.label', 'Oferta de lanzamiento');
 });

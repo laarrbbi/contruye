@@ -27,7 +27,7 @@ it('builds download links with the scheme the browser actually used', function (
         ->json('data.0');
 
     // An http:// link here is blocked by the browser as mixed content, so the
-    // student simply cannot download their facture.
+    // student simply cannot download their invoice.
     expect($data['invoice']['url'])->toStartWith('https://');
 });
 

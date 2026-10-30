@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Storage;
  */
 function contentGateCourse(): array
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
 
-    $owned = Module::factory()->for($course)->create(['order' => 1, 'price_dzd' => 12000]);
-    $locked = Module::factory()->for($course)->create(['order' => 2, 'price_dzd' => 12000]);
+    $owned = Module::factory()->for($course)->create(['order' => 1, 'price_eur' => 12000]);
+    $locked = Module::factory()->for($course)->create(['order' => 2, 'price_eur' => 12000]);
 
     $student = User::factory()->create();
     Enrollment::factory()->create([

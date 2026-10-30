@@ -13,10 +13,10 @@ use App\Models\User;
  */
 function alaCarteCompleter(): array
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
     $modules = Module::factory()->count(3)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000]);
+        ->create(['course_id' => $course->id, 'price_eur' => 12000]);
     $student = User::factory()->create();
 
     foreach ($modules as $module) {
@@ -34,12 +34,12 @@ it('does not sell the full course again to someone who owns every module', funct
     [$course, $student] = alaCarteCompleter();
 
     $this->actingAs($student)
-        ->postJson('/api/checkout/quote', ['course_id' => $course->id, 'scope' => 'full', 'currency' => 'DZD'])
+        ->postJson('/api/checkout/quote', ['course_id' => $course->id, 'scope' => 'full', 'currency' => 'EUR'])
         ->assertUnprocessable()
         ->assertJsonValidationErrors(['course_id']);
 
     $this->actingAs($student)
-        ->postJson('/api/checkout', ['course_id' => $course->id, 'scope' => 'full', 'method' => 'manual_ccp'])
+        ->postJson('/api/checkout', ['course_id' => $course->id, 'scope' => 'full', 'method' => 'manual_transfer'])
         ->assertUnprocessable()
         ->assertJsonValidationErrors(['course_id']);
 
@@ -48,7 +48,7 @@ it('does not sell the full course again to someone who owns every module', funct
 
 it('stops counting as full access when the course gains a module they do not own', function () {
     [$course, $student] = alaCarteCompleter();
-    Module::factory()->create(['course_id' => $course->id, 'order' => 4, 'price_dzd' => 12000]);
+    Module::factory()->create(['course_id' => $course->id, 'order' => 4, 'price_eur' => 12000]);
 
     $this->actingAs($student);
 

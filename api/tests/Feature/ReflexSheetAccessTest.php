@@ -7,21 +7,21 @@ use App\Models\Module;
 use App\Models\User;
 
 /**
- * A published course whose only module is paid content and carries a
- * [BASE LEGALE] block — the material the fiche réflexe PDF embeds alongside
- * the lesson's own blocks.
+ * A published course whose only module is paid content and carries a legal
+ * block — the material the ficha de actuación PDF embeds alongside the
+ * lesson's own blocks.
  *
  * @return array{0: Course, 1: Module}
  */
 function paidModuleWithLegalBlock(): array
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
-    $module = Module::factory()->for($course)->create(['order' => 1, 'price_dzd' => 12000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 490]);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'price_eur' => 49]);
 
     $module->contentBlocks()->create([
         'order' => 1,
         'type' => 'legal',
-        'body_es' => 'Décret exécutif 05-12 — obligations du promoteur en cas d\'accident.',
+        'body_es' => 'Real Decreto 1627/1997 — seguridad y salud en las obras de construcción.',
     ]);
 
     return [$course, $module];
@@ -51,8 +51,8 @@ it('prints the reflex sheet of a free-preview lesson for a visitor who bought no
 
     // The gate is authorizeLessonAccess(..., allowFreePreview: true), so the
     // preview flag alone opens the PDF, and the PDF carries the LOCKED
-    // module's [BASE LEGALE] content. Findings S6/C14: knowingly left as it
-    // is — the sheet exists to be printed and posted in the base de vie, so
+    // module's legal block. Findings S6/C14: knowingly left as it is — the
+    // sheet exists to be printed and pinned up in the site office, so
     // reaching people who have not paid is the point. Pinned here because it
     // was decided rather than overlooked: flipping the flag to false must
     // break a test instead of passing unnoticed.
@@ -70,7 +70,7 @@ it('prints the reflex sheet of a free-preview lesson for a visitor who bought no
         ->assertForbidden();
 });
 
-it('prints a fiche réflexe only for a lesson written as one', function () {
+it('prints a ficha de actuación only for a lesson written as one', function () {
     [$course, $module] = paidModuleWithLegalBlock();
 
     $ordinary = Lesson::factory()->for($module)->create([
@@ -105,5 +105,5 @@ it('prints a fiche réflexe only for a lesson written as one', function () {
     $response = $this->actingAs($student)->get("/api/lessons/{$sheet->id}/reflex-sheet")->assertOk();
 
     expect(substr($response->getContent(), 0, 4))->toBe('%PDF')
-        ->and($response->headers->get('content-disposition'))->toContain("fiche-reflexe-{$sheet->id}.pdf");
+        ->and($response->headers->get('content-disposition'))->toContain("ficha-actuacion-{$sheet->id}.pdf");
 });

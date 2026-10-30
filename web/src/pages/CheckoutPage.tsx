@@ -137,7 +137,6 @@ export function CheckoutPage() {
       modules
         .filter((m) => selected.includes(m.id) && !m.is_owned && priceOf(m) !== null)
         .map((m) => m.id),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [modules, selected],
   )
 

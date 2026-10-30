@@ -21,7 +21,7 @@ function checkoutWithCoupon(Coupon $coupon, Course $course, ?User $buyer = null)
     $id = test()->actingAs($buyer ?? User::factory()->create())
         ->postJson('/api/checkout', [
             'course_id' => $course->id,
-            'method' => 'manual_ccp',
+            'method' => 'manual_transfer',
             'coupon_code' => $coupon->code,
         ])->assertCreated()->json('data.order.id');
 
@@ -31,7 +31,7 @@ function checkoutWithCoupon(Coupon $coupon, Course $course, ?User $buyer = null)
 it('releases the coupon use as soon as an admin rejects the receipt', function () {
     Mail::fake();
 
-    $course = Course::factory()->create(['price_dzd' => 10000]);
+    $course = Course::factory()->create(['price_eur' => 10000]);
     $coupon = Coupon::factory()->create(['percent_off' => 50, 'max_uses' => 1, 'uses' => 0]);
     $admin = User::factory()->admin()->create();
 
@@ -52,7 +52,7 @@ it('releases the coupon use as soon as an admin rejects the receipt', function (
 it('re-claims the use when a rejected order is granted after someone else took the last use', function () {
     Mail::fake();
 
-    $course = Course::factory()->create(['price_dzd' => 10000]);
+    $course = Course::factory()->create(['price_eur' => 10000]);
     $coupon = Coupon::factory()->create(['percent_off' => 50, 'max_uses' => 1, 'uses' => 0]);
     $admin = User::factory()->admin()->create();
 
@@ -64,7 +64,7 @@ it('re-claims the use when a rejected order is granted after someone else took t
         ->assertOk();
 
     // The released use is taken by a second buyer, legitimately.
-    $second = checkoutWithCoupon($coupon, Course::factory()->create(['price_dzd' => 10000]));
+    $second = checkoutWithCoupon($coupon, Course::factory()->create(['price_eur' => 10000]));
 
     expect($coupon->fresh()->uses)->toBe(1)
         ->and($second->amount)->toBe(5000);
@@ -85,7 +85,7 @@ it('re-claims the use when a rejected order is granted after someone else took t
 it('re-claims the use when a receipt re-sent after a rejection revives the order', function () {
     Storage::fake('local');
 
-    $course = Course::factory()->create(['price_dzd' => 10000]);
+    $course = Course::factory()->create(['price_eur' => 10000]);
     $coupon = Coupon::factory()->create(['percent_off' => 50, 'max_uses' => 1, 'uses' => 0]);
     $buyer = User::factory()->create();
 
@@ -113,7 +113,7 @@ it('re-claims the use when a receipt re-sent after a rejection revives the order
 });
 
 it('never lets the released counter fall below zero, however many times an order fails', function () {
-    $course = Course::factory()->create(['price_dzd' => 10000]);
+    $course = Course::factory()->create(['price_eur' => 10000]);
     $coupon = Coupon::factory()->create(['percent_off' => 50, 'max_uses' => 3, 'uses' => 0]);
 
     $order = checkoutWithCoupon($coupon, $course);
@@ -131,7 +131,7 @@ it('never lets the released counter fall below zero, however many times an order
 });
 
 it('keeps the reserved use when the order is already paid', function () {
-    $course = Course::factory()->create(['price_dzd' => 10000]);
+    $course = Course::factory()->create(['price_eur' => 10000]);
     $coupon = Coupon::factory()->create(['percent_off' => 50, 'max_uses' => 1, 'uses' => 0]);
 
     $order = checkoutWithCoupon($coupon, $course);

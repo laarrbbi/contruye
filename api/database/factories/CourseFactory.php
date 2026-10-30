@@ -18,10 +18,13 @@ class CourseFactory extends Factory
         return [
             'slug' => Str::slug($title),
             'title_es' => $title,
-            'title_en' => 'تكوين '.fake()->unique()->word(),
+            // English left blank, as the real course is seeded: the material
+            // is authored in Spanish and an English reader falls back to it.
+            // A test about English sets it.
+            'title_en' => null,
             'description_es' => fake()->paragraph(),
-            'description_en' => 'وصف التكوين بالعربية.',
-            'price_eur' => fake()->numberBetween(15000, 90000),
+            'description_en' => null,
+            'price_eur' => fake()->numberBetween(150, 900),
             'status' => 'published',
             'cover_image' => null,
         ];

@@ -13,7 +13,7 @@ it('records when the buyer sent the receipt', function () {
     Storage::fake('local');
     $this->travelTo(now()->startOfMinute());
 
-    $order = Order::factory()->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $this->actingAs($order->user)
         ->post("/api/orders/{$order->id}/receipt", ['receipt' => UploadedFile::fake()->image('recu.jpg')])

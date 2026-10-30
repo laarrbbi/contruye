@@ -13,12 +13,12 @@ class PartnerFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Cabinet '.fake()->lastName(),
+            'name' => 'Despacho '.fake()->lastName(),
             'category' => fake()->randomElement(Partner::CATEGORIES),
-            'description_es' => 'Accompagnement des promoteurs immobiliers.',
-            'description_en' => 'مرافقة المرقّين العقاريين.',
+            'description_es' => 'Asesoramiento a promotores inmobiliarios.',
+            'description_en' => null,
             'website' => 'https://example.es',
-            'phone' => '0550'.fake()->numerify('######'),
+            'phone' => '91'.fake()->numerify('#######'),
             'email' => fake()->safeEmail(),
             'is_active' => true,
             'is_national' => false,

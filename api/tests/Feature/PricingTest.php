@@ -8,24 +8,22 @@ use App\Models\Module;
 use App\Models\Order;
 use App\Models\User;
 use App\Services\PricingService;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 
 /**
- * Build the reference course: 10 modules at 12 000 DZD / 40 EUR,
- * full access 90 000 DZD / 300 EUR, default tiers.
+ * Build the reference course: 10 modules at 120 €, full access 900 €,
+ * default tiers.
  */
 function pricedCourse(): Course
 {
     $course = Course::factory()->create([
-        'price_dzd' => 90000,
-        'price_eur' => 300,
+        'price_eur' => 900,
         'module_discount_tiers' => null, // defaults apply
     ]);
 
     Module::factory()->count(10)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
 
     return $course->fresh();
 }
@@ -35,21 +33,21 @@ it('prices module selections exactly per the tier table', function (int $count, 
     $user = User::factory()->create();
     $moduleIds = $course->modules()->limit($count)->pluck('id')->all();
 
-    $quote = app(PricingService::class)->quote($course, $user, 'modules', $moduleIds, 'DZD');
+    $quote = app(PricingService::class)->quote($course, $user, 'modules', $moduleIds);
 
     expect($quote['total'])->toBe($expectedTotal)
         ->and($quote['tier_percent'])->toBe($expectedPercent)
         ->and($quote['scope'])->toBe($count === 10 ? 'full' : 'modules');
 })->with([
-    '1 module — 0%' => [1, 12000, 0],
-    '2 modules — 5%' => [2, 22800, 5],
-    '3 modules — 10%' => [3, 32400, 10],
-    '4 modules — 10%' => [4, 43200, 10],
-    '5 modules — 15%' => [5, 51000, 15],
-    '6 modules — 15%' => [6, 61200, 15],
-    '7 modules — 20%' => [7, 67200, 20],
-    '9 modules — 20%' => [9, 86400, 20],
-    '10 modules — auto-upgrade to full' => [10, 90000, 25],
+    '1 module — 0%' => [1, 120, 0],
+    '2 modules — 5%' => [2, 228, 5],
+    '3 modules — 10%' => [3, 324, 10],
+    '4 modules — 10%' => [4, 432, 10],
+    '5 modules — 15%' => [5, 510, 15],
+    '6 modules — 15%' => [6, 612, 15],
+    '7 modules — 20%' => [7, 672, 20],
+    '9 modules — 20%' => [9, 864, 20],
+    '10 modules — auto-upgrade to full' => [10, 900, 25],
 ]);
 
 it('holds the pricing invariants: monotonic totals and no split beats full access', function () {
@@ -60,7 +58,7 @@ it('holds the pricing invariants: monotonic totals and no split beats full acces
 
     $totals = [];
     foreach (range(1, 10) as $n) {
-        $totals[$n] = $pricing->quote($course, $user, 'modules', array_slice($ids, 0, $n), 'DZD')['total'];
+        $totals[$n] = $pricing->quote($course, $user, 'modules', array_slice($ids, 0, $n))['total'];
     }
 
     // Strictly increasing with the module count.
@@ -70,23 +68,27 @@ it('holds the pricing invariants: monotonic totals and no split beats full acces
 
     // Any two-order split costs at least the full-access price.
     foreach ([[9, 1], [7, 3], [5, 5], [6, 4]] as [$a, $b]) {
-        expect($totals[$a] + $totals[$b])->toBeGreaterThanOrEqual(90000);
+        expect($totals[$a] + $totals[$b])->toBeGreaterThanOrEqual(900);
     }
 
     // Buying one by one costs the full anchor.
-    expect(10 * $totals[1])->toBe(120000)
-        ->and($totals[10])->toBe(90000);
+    expect(10 * $totals[1])->toBe(1200)
+        ->and($totals[10])->toBe(900);
 });
 
-it('quotes EUR totals for stripe with exact integers', function () {
-    $course = pricedCourse();
+it('quotes whole-euro totals at a second price point', function () {
+    $course = Course::factory()->create(['price_eur' => 300, 'module_discount_tiers' => null]);
+    Module::factory()->count(10)
+        ->sequence(fn ($seq) => ['order' => $seq->index + 1])
+        ->create(['course_id' => $course->id, 'price_eur' => 40]);
+    $course = $course->fresh();
     $user = User::factory()->create();
     $ids = $course->modules()->pluck('id')->all();
     $pricing = app(PricingService::class);
 
-    expect($pricing->quote($course, $user, 'modules', array_slice($ids, 0, 2), 'EUR')['total'])->toBe(76)
-        ->and($pricing->quote($course, $user, 'modules', array_slice($ids, 0, 5), 'EUR')['total'])->toBe(170)
-        ->and($pricing->quote($course, $user, 'full', [], 'EUR')['total'])->toBe(300);
+    expect($pricing->quote($course, $user, 'modules', array_slice($ids, 0, 2))['total'])->toBe(76)
+        ->and($pricing->quote($course, $user, 'modules', array_slice($ids, 0, 5))['total'])->toBe(170)
+        ->and($pricing->quote($course, $user, 'full', [])['total'])->toBe(300);
 });
 
 it('serves live quotes to guests and excludes owned modules for buyers', function () {
@@ -100,10 +102,10 @@ it('serves live quotes to guests and excludes owned modules for buyers', functio
         'module_ids' => array_slice($ids, 0, 3),
     ])->assertOk();
 
-    expect($guest->json('data.total'))->toBe(32400)
+    expect($guest->json('data.total'))->toBe(324)
         ->and($guest->json('data.tier_percent'))->toBe(10)
-        ->and($guest->json('data.full_price_anchor'))->toBe(120000)
-        ->and($guest->json('data.full_price'))->toBe(90000);
+        ->and($guest->json('data.full_price_anchor'))->toBe(1200)
+        ->and($guest->json('data.full_price'))->toBe(900);
 
     // A user who owns modules 1-2 asking for 1-2-3 is quoted for 3 only.
     $owner = User::factory()->create();
@@ -121,13 +123,13 @@ it('serves live quotes to guests and excludes owned modules for buyers', functio
         'module_ids' => array_slice($ids, 0, 3),
     ])->assertOk();
 
-    expect($refined->json('data.total'))->toBe(12000)
+    expect($refined->json('data.total'))->toBe(120)
         ->and($refined->json('data.owned_module_ids'))->toHaveCount(2);
 });
 
 it('rejects quotes for foreign modules and fully-owned selections', function () {
     $course = pricedCourse();
-    $other = Module::factory()->create(['price_dzd' => 12000]);
+    $other = Module::factory()->create(['price_eur' => 120]);
     $user = User::factory()->create();
 
     $this->actingAs($user)->postJson('/api/checkout/quote', [
@@ -150,8 +152,6 @@ it('rejects quotes for foreign modules and fully-owned selections', function () 
 });
 
 it('checks out modules à la carte and enrolls per module on payment', function () {
-    Http::fake(['*' => Http::response(['id' => '01chk', 'checkout_url' => 'https://pay.test/x'], 200)]);
-
     $course = pricedCourse();
     $user = User::factory()->create();
     $picked = $course->modules()->orderBy('order')->limit(3)->pluck('id')->all();
@@ -160,11 +160,11 @@ it('checks out modules à la carte and enrolls per module on payment', function 
         'course_id' => $course->id,
         'scope' => 'modules',
         'module_ids' => $picked,
-        'method' => 'chargily',
+        'method' => 'manual_transfer',
     ])->assertCreated();
 
     $orderId = $response->json('data.order.id');
-    expect($response->json('data.order.amount'))->toBe(32400)
+    expect($response->json('data.order.amount'))->toBe(324)
         ->and($response->json('data.order.scope'))->toBe('modules')
         ->and($response->json('data.order.discount_percent'))->toBe(10)
         ->and($response->json('data.order.modules'))->toHaveCount(3);
@@ -186,8 +186,6 @@ it('checks out modules à la carte and enrolls per module on payment', function 
 });
 
 it('auto-upgrades a full module selection to full access pricing', function () {
-    Http::fake(['*' => Http::response(['id' => '01chk', 'checkout_url' => 'https://pay.test/x'], 200)]);
-
     $course = pricedCourse();
     $user = User::factory()->create();
 
@@ -195,10 +193,10 @@ it('auto-upgrades a full module selection to full access pricing', function () {
         'course_id' => $course->id,
         'scope' => 'modules',
         'module_ids' => $course->modules()->pluck('id')->all(),
-        'method' => 'chargily',
+        'method' => 'manual_transfer',
     ])->assertCreated();
 
-    expect($response->json('data.order.amount'))->toBe(90000)
+    expect($response->json('data.order.amount'))->toBe(900)
         ->and($response->json('data.order.scope'))->toBe('full');
 
     Order::find($response->json('data.order.id'))->markPaidAndEnroll();
@@ -219,13 +217,13 @@ it('charges a partial owner the itemized price for their remaining modules, not 
         ]);
     }
 
-    $quote = app(PricingService::class)->quote($course, $owner, 'modules', array_slice($ids, 5, 5), 'DZD');
+    $quote = app(PricingService::class)->quote($course, $owner, 'modules', array_slice($ids, 5, 5));
 
-    // 5 × 12 000 = 60 000, 15% tier → 51 000 — NOT the 90 000 full-access price.
-    expect($quote['total'])->toBe(51000)
+    // 5 × 120 = 600, 15% tier → 510 — NOT the 900 full-access price.
+    expect($quote['total'])->toBe(510)
         ->and($quote['scope'])->toBe('modules');
 
-    // Owner of nine modules buying the single remaining one pays à la carte (12 000).
+    // Owner of nine modules buying the single remaining one pays à la carte (120).
     $owner2 = User::factory()->create();
     foreach (array_slice($ids, 0, 9) as $ownedId) {
         Enrollment::factory()->create([
@@ -235,38 +233,36 @@ it('charges a partial owner the itemized price for their remaining modules, not 
         ]);
     }
 
-    $last = app(PricingService::class)->quote($course, $owner2, 'modules', [$ids[9]], 'DZD');
-    expect($last['total'])->toBe(12000)
+    $last = app(PricingService::class)->quote($course, $owner2, 'modules', [$ids[9]]);
+    expect($last['total'])->toBe(120)
         ->and($last['scope'])->toBe('modules');
 });
 
 it('never charges more than full access, upgrading a costly partial selection to full', function () {
     // Full access deliberately cheaper than the top-tier module bundle.
     $course = Course::factory()->create([
-        'price_dzd' => 80000,
-        'price_eur' => 300,
+        'price_eur' => 800,
         'module_discount_tiers' => null,
     ]);
     Module::factory()->count(10)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
     $course = $course->fresh();
 
     $ids = $course->modules()->orderBy('order')->pluck('id')->all();
     $user = User::factory()->create();
 
-    // 9 modules itemized = 108 000 × 0.8 (20% tier) = 86 400 > 80 000 full access.
-    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 9), 'DZD');
+    // 9 modules itemized = 1 080 × 0.8 (20% tier) = 864 > 800 full access.
+    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 9));
 
-    expect($quote['total'])->toBe(80000)
+    expect($quote['total'])->toBe(800)
         ->and($quote['scope'])->toBe('full')
         ->and($quote['upgraded_to_full'])->toBeTrue();
 });
 
 it('applies the best discount when tiers are non-monotonic', function () {
     $course = Course::factory()->create([
-        'price_dzd' => 90000,
-        'price_eur' => 300,
+        'price_eur' => 900,
         'module_discount_tiers' => [
             ['min_modules' => 2, 'percent_off' => 20],
             ['min_modules' => 5, 'percent_off' => 10],
@@ -274,55 +270,53 @@ it('applies the best discount when tiers are non-monotonic', function () {
     ]);
     Module::factory()->count(10)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
     $course = $course->fresh();
 
     $ids = $course->modules()->orderBy('order')->pluck('id')->all();
     $user = User::factory()->create();
 
     // 6 modules qualifies for both tiers; the buyer gets the best (20%), not 10%.
-    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 6), 'DZD');
+    $quote = app(PricingService::class)->quote($course, $user, 'modules', array_slice($ids, 0, 6));
     expect($quote['tier_percent'])->toBe(20)
-        ->and($quote['total'])->toBe(57600);
+        ->and($quote['total'])->toBe(576);
 });
 
 it('never reports a negative full-access discount when the anchor is below full price', function () {
-    // Sum of module prices (100 000) is below the full-access price (120 000).
+    // Sum of module prices (1 000) is below the full-access price (1 200).
     $course = Course::factory()->create([
-        'price_dzd' => 120000,
-        'price_eur' => 300,
+        'price_eur' => 1200,
         'module_discount_tiers' => null,
     ]);
     Module::factory()->count(10)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 10000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 100]);
     $course = $course->fresh();
 
-    $quote = app(PricingService::class)->quote($course, null, 'full', [], 'DZD');
+    $quote = app(PricingService::class)->quote($course, null, 'full', []);
     expect($quote['tier_percent'])->toBe(0) // clamped, never negative
-        ->and($quote['total'])->toBe(120000);
+        ->and($quote['total'])->toBe(1200);
 });
 
-it('upgrades an all-modules EUR selection to full access when a module has no EUR price', function () {
+it('upgrades an all-modules selection to full access when a module has no price of its own', function () {
     $course = Course::factory()->create([
-        'price_dzd' => 90000,
-        'price_eur' => 300,
+        'price_eur' => 900,
         'module_discount_tiers' => null,
     ]);
     Module::factory()->count(9)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
-    // Module 10 is full-access-only in EUR (no EUR price).
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
+    // Module 10 is sold only inside full access (no price of its own).
     Module::factory()->create([
-        'course_id' => $course->id, 'order' => 10, 'price_dzd' => 12000, 'price_eur' => null,
+        'course_id' => $course->id, 'order' => 10, 'price_eur' => null,
     ]);
     $course = $course->fresh();
 
     $ids = $course->modules()->orderBy('order')->pluck('id')->all();
     $user = User::factory()->create();
 
-    $quote = app(PricingService::class)->quote($course, $user, 'modules', $ids, 'EUR');
-    expect($quote['total'])->toBe(300)
+    $quote = app(PricingService::class)->quote($course, $user, 'modules', $ids);
+    expect($quote['total'])->toBe(900)
         ->and($quote['scope'])->toBe('full')
         ->and($quote['upgraded_to_full'])->toBeTrue();
 });
@@ -398,16 +392,15 @@ it('summarizes partial access on the dashboard', function () {
 
 it('refuses a partial selection that includes a full-access-only module', function () {
     $course = Course::factory()->create([
-        'price_dzd' => 90000,
-        'price_eur' => 300,
+        'price_eur' => 900,
         'module_discount_tiers' => null,
     ]);
     Module::factory()->count(9)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
-    // Module 10 has no EUR price: in EUR it exists only inside full access.
+        ->create(['course_id' => $course->id, 'price_eur' => 120]);
+    // Module 10 has no price of its own: it exists only inside full access.
     $fullOnly = Module::factory()->create([
-        'course_id' => $course->id, 'order' => 10, 'price_dzd' => 12000, 'price_eur' => null,
+        'course_id' => $course->id, 'order' => 10, 'price_eur' => null,
     ]);
     $course = $course->fresh();
 
@@ -416,8 +409,8 @@ it('refuses a partial selection that includes a full-access-only module', functi
     $selection = [$ids[0], $fullOnly->id];
 
     // Two of ten does not complete the course, so it cannot be itemized: the
-    // module with no EUR price would be billed at (int) null = 0.
-    expect(fn () => app(PricingService::class)->quote($course, $user, 'modules', $selection, 'EUR'))
+    // module with no price would be billed at (int) null = 0.
+    expect(fn () => app(PricingService::class)->quote($course, $user, 'modules', $selection))
         ->toThrow(ValidationException::class);
 
     $this->actingAs($user)->postJson('/api/checkout/quote', [
@@ -439,9 +432,4 @@ it('refuses a partial selection that includes a full-access-only module', functi
     ])->assertUnprocessable()->assertJsonValidationErrors('module_ids');
 
     expect(Order::query()->where('user_id', $user->id)->count())->toBe(0);
-
-    // The refusal is per-currency, not a permanent property of the module: in
-    // DZD the same two modules are sellable at the 5 % two-module tier.
-    expect(app(PricingService::class)->quote($course, $user, 'modules', $selection, 'DZD')['total'])
-        ->toBe(22800);
 });

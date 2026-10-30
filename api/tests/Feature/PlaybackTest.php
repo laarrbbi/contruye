@@ -84,12 +84,12 @@ it('returns 503 when the bunny token key is not configured', function () {
 
     $lesson = Lesson::factory()->freePreview()->create(['bunny_video_id' => 'vid-503-a']);
 
-    // Pinned to French: the point here is the 503, and the message is
+    // Pinned to Spanish: the point here is the 503, and the message is
     // localized — the test client's own Accept-Language would pick English.
-    $this->withHeader('Accept-Language', 'fr')
+    $this->withHeader('Accept-Language', 'es')
         ->getJson("/api/lessons/{$lesson->id}/playback")
         ->assertStatus(503)
-        ->assertJsonPath('message', 'La lecture vidéo est temporairement indisponible. Veuillez réessayer plus tard.');
+        ->assertJsonPath('message', 'La reproducción de vídeo no está disponible temporalmente. Inténtalo de nuevo más tarde.');
 });
 
 it('returns 503 when the bunny library id is not configured', function () {
@@ -97,12 +97,12 @@ it('returns 503 when the bunny library id is not configured', function () {
 
     $lesson = Lesson::factory()->freePreview()->create(['bunny_video_id' => 'vid-503-b']);
 
-    // Pinned to French: the point here is the 503, and the message is
+    // Pinned to Spanish: the point here is the 503, and the message is
     // localized — the test client's own Accept-Language would pick English.
-    $this->withHeader('Accept-Language', 'fr')
+    $this->withHeader('Accept-Language', 'es')
         ->getJson("/api/lessons/{$lesson->id}/playback")
         ->assertStatus(503)
-        ->assertJsonPath('message', 'La lecture vidéo est temporairement indisponible. Veuillez réessayer plus tard.');
+        ->assertJsonPath('message', 'La reproducción de vídeo no está disponible temporalmente. Inténtalo de nuevo más tarde.');
 });
 
 it('returns 404 for a lesson without a bunny video id', function () {

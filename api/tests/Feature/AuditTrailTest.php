@@ -15,22 +15,22 @@ function admin(): User
 
 it('attributes every price lever an admin can pull', function () {
     $actor = admin();
-    $course = Course::factory()->create(['status' => 'draft', 'price_dzd' => 90000]);
-    $module = Module::factory()->for($course)->create(['order' => 1, 'price_dzd' => 12000]);
+    $course = Course::factory()->create(['status' => 'draft', 'price_eur' => 90000]);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'price_eur' => 12000]);
 
     // Course price and publication state.
     $this->actingAs($actor)->putJson("/api/admin/courses/{$course->id}", [
         'title_es' => $course->title_es,
         'title_en' => $course->title_en,
-        'price_dzd' => 120000,
+        'price_eur' => 120000,
         'status' => 'published',
     ])->assertOk();
 
     // Per-module price, which every à-la-carte quote is built from.
     $this->actingAs($actor)->putJson("/api/admin/modules/{$module->id}", [
-        'title_es' => 'Module renommé',
+        'title_es' => 'Fase renombrada',
         'title_en' => $module->title_en,
-        'price_dzd' => 30000,
+        'price_eur' => 30000,
     ])->assertOk();
 
     // A discount code.
@@ -51,8 +51,8 @@ it('attributes every price lever an admin can pull', function () {
     // The trail has to carry the old value, or it cannot answer "who changed
     // this price, and from what".
     $courseEntry = AuditLog::query()->where('action', 'course.updated')->latest('id')->first();
-    expect($courseEntry->meta['before']['price_dzd'])->toBe(90000)
-        ->and($courseEntry->meta['after']['price_dzd'])->toBe(120000)
+    expect($courseEntry->meta['before']['price_eur'])->toBe(90000)
+        ->and($courseEntry->meta['after']['price_eur'])->toBe(120000)
         ->and($courseEntry->meta['before']['status'])->toBe('draft');
 
     $couponEntry = AuditLog::query()->where('action', 'coupon.updated')->latest('id')->first();
@@ -63,8 +63,8 @@ it('attributes every price lever an admin can pull', function () {
 it('records deletions of catalogue content with enough to identify what was lost', function () {
     $actor = admin();
     $course = Course::factory()->create();
-    $module = Module::factory()->for($course)->create(['order' => 1, 'title_es' => 'Module supprimé']);
-    $lesson = Lesson::factory()->for($module)->create(['order' => 1, 'title_es' => 'Leçon supprimée']);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'title_es' => 'Fase eliminada']);
+    $lesson = Lesson::factory()->for($module)->create(['order' => 1, 'title_es' => 'Lección eliminada']);
 
     $this->actingAs($actor)->deleteJson("/api/admin/lessons/{$lesson->id}")->assertNoContent();
     $this->actingAs($actor)->deleteJson("/api/admin/modules/{$module->id}")->assertNoContent();
@@ -73,9 +73,9 @@ it('records deletions of catalogue content with enough to identify what was lost
     $moduleEntry = AuditLog::query()->where('action', 'module.deleted')->latest('id')->first();
 
     expect($lessonEntry)->not->toBeNull()
-        ->and($lessonEntry->meta['title'])->toBe('Leçon supprimée')
+        ->and($lessonEntry->meta['title'])->toBe('Lección eliminada')
         ->and($moduleEntry)->not->toBeNull()
-        ->and($moduleEntry->meta['title'])->toBe('Module supprimé')
+        ->and($moduleEntry->meta['title'])->toBe('Fase eliminada')
         // The record must survive the row it describes.
         ->and(Module::find($module->id))->toBeNull();
 });
@@ -93,22 +93,22 @@ it('names the actor, never leaving a change anonymous', function () {
         ->and($entry->meta['code'])->toBe('TRACE');
 });
 
-it('attributes promotions and the seller block every facture is printed from', function () {
+it('attributes promotions and the seller block every invoice is printed from', function () {
     $actor = admin();
-    $course = Course::factory()->create(['price_dzd' => 90000]);
+    $course = Course::factory()->create(['price_eur' => 90000]);
 
     $campaignId = $this->actingAs($actor)->postJson('/api/admin/campaigns', [
         'course_id' => $course->id,
-        'label_es' => 'Rentrée 2026',
-        'label_en' => 'الدخول 2026',
+        'label_es' => 'Vuelta al cole 2026',
+        'label_en' => 'Back to school 2026',
         'percent_off' => 30,
         'ends_at' => now()->addWeek()->toISOString(),
     ])->assertCreated()->json('data.id');
 
     $this->actingAs($actor)->putJson("/api/admin/campaigns/{$campaignId}", [
         'course_id' => $course->id,
-        'label_es' => 'Rentrée 2026',
-        'label_en' => 'الدخول 2026',
+        'label_es' => 'Vuelta al cole 2026',
+        'label_en' => 'Back to school 2026',
         'percent_off' => 50,
         'ends_at' => now()->addWeek()->toISOString(),
     ])->assertOk();
@@ -156,13 +156,13 @@ it('records the money path: invoices issued and corrected, campaigns changed', f
         ->assertCreated()->json('data');
 
     $this->actingAs($actor)
-        ->putJson("/api/admin/invoices/{$invoice['id']}", invoicePayload(['buyer_name' => 'Nom corrigé']))
+        ->putJson("/api/admin/invoices/{$invoice['id']}", invoicePayload(['buyer_name' => 'Nombre corregido']))
         ->assertOk();
 
     // A campaign moves the advertised price of the whole course.
     $campaignId = $this->actingAs($actor)->postJson('/api/admin/campaigns', [
         'course_id' => $order->course_id,
-        'label_es' => 'Rentrée', 'label_en' => 'الدخول',
+        'label_es' => 'Vuelta al cole', 'label_en' => 'Back to school',
         'percent_off' => 25,
         'ends_at' => now()->addDays(10)->toIso8601String(),
         'is_active' => true,
@@ -182,6 +182,6 @@ it('records the money path: invoices issued and corrected, campaigns changed', f
     $correction = AuditLog::query()->where('action', 'invoice.updated')->latest('id')->first();
 
     expect($correction->meta['number'])->toBe($invoice['number'])
-        ->and($correction->meta['before']['buyer_name'])->toBe('Karim Benali')
-        ->and($correction->meta['after']['buyer_name'])->toBe('Nom corrigé');
+        ->and($correction->meta['before']['buyer_name'])->toBe('Javier Morales')
+        ->and($correction->meta['after']['buyer_name'])->toBe('Nombre corregido');
 });

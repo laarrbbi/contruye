@@ -1,13 +1,15 @@
 <?php
 
 /*
- * Every message the API can put in front of a person exists in French and
- * Arabic. Sixteen did not: three checkout errors, the review and task-limit
- * messages, the invoice e-mail's subject, body and button, and the admin's
- * invoicing and deletion errors all reached French and Arabic users in
- * English. Nothing caught it, because each one only shows up in its own
- * corner of the product.
+ * Every message the API can put in front of a person exists in Spanish. On
+ * the platform this one was adapted from, sixteen did not: three checkout
+ * errors, the review and task-limit messages, the invoice e-mail's subject,
+ * body and button, and the admin's invoicing and deletion errors all reached
+ * their readers in English. Nothing caught it, because each one only shows
+ * up in its own corner of the product.
  *
+ * The keys are written in English, so English needs no entry of its own:
+ * every other supported locale is checked.
  * The strings are collected from the source the way __() receives them, so a
  * new message without a translation fails here, not in a buyer's inbox.
  */
@@ -57,8 +59,11 @@ it('finds the strings it checks', function () use ($translatableLiterals) {
         ->and($translatableLiterals())->toHaveKey('Your Construye Academy invoice :number');
 });
 
-it('has a French and an Arabic translation for every message the API sends', function () use ($translatableLiterals) {
-    foreach (['fr', 'ar'] as $locale) {
+it('has a translation for every message the API sends, in every locale but the keys\' own', function () use ($translatableLiterals) {
+    $locales = array_diff(config('locales.supported'), ['en']);
+    expect($locales)->toContain('es');
+
+    foreach ($locales as $locale) {
         $translations = json_decode(file_get_contents(lang_path("{$locale}.json")), true, flags: JSON_THROW_ON_ERROR);
 
         $missing = array_diff_key($translatableLiterals(), $translations);
@@ -73,8 +78,8 @@ it('has a French and an Arabic translation for every message the API sends', fun
 
 it('keeps every placeholder in every translation', function () use ($placeholders) {
     // A translation that drops :number sends an invoice e-mail without the
-    // invoice number in it; one that renames :course prints ":cours".
-    foreach (['fr', 'ar'] as $locale) {
+    // invoice number in it; one that renames :course prints ":curso".
+    foreach (config('locales.supported') as $locale) {
         $translations = json_decode(file_get_contents(lang_path("{$locale}.json")), true, flags: JSON_THROW_ON_ERROR);
 
         foreach ($translations as $key => $translation) {

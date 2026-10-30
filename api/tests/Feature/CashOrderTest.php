@@ -16,7 +16,7 @@ beforeEach(fn () => Mail::fake());
 
 it('previews the price without recording anything', function () {
     $student = User::factory()->create();
-    $order = paidModulesOrder(User::factory()->create()); // a course with 3 × 12 000 modules
+    $order = paidModulesOrder(User::factory()->create()); // a course with 3 × 49 € modules
     $course = $order->course;
 
     $this->actingAs(User::factory()->admin()->create())
@@ -24,7 +24,7 @@ it('previews the price without recording anything', function () {
             'course_id' => $course->id, 'scope' => 'full', 'confirm' => false,
         ])
         ->assertOk()
-        ->assertJsonPath('data.quote.total', 90000)
+        ->assertJsonPath('data.quote.total', 490)
         ->assertJsonPath('data.quote.scope', 'full');
 
     expect(Order::query()->where('user_id', $student->id)->exists())->toBeFalse();
@@ -47,9 +47,10 @@ it('records a paid cash order, enrolls the student and tells them', function () 
         ->assertCreated()
         ->assertJsonPath('data.method', 'cash')
         ->assertJsonPath('data.status', 'paid')
-        // Two modules at 12 000, the course's two-module tier applied by the
+        // Two modules at 49 €, the course's two-module tier applied by the
         // same rules as checkout — not a number the admin typed.
-        ->assertJsonPath('data.pricing_snapshot.subtotal', 24000);
+        ->assertJsonPath('data.pricing_snapshot.subtotal', 98)
+        ->assertJsonPath('data.pricing_snapshot.total', 93);
 
     $order = Order::query()->findOrFail($response->json('data.id'));
 

@@ -9,11 +9,11 @@ use App\Models\User;
 
 function checklistCourse(): Course
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
 
     Module::factory()->count(2)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40])
+        ->create(['course_id' => $course->id, 'price_eur' => 12000])
         ->each(function (Module $module) {
             ChecklistItem::factory()->count(3)
                 ->sequence(fn ($seq) => ['order' => $seq->index + 1, 'text_es' => "Étape secrète {$seq->index} du module {$module->order}"])

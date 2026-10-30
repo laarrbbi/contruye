@@ -17,30 +17,30 @@ use Carbon\CarbonImmutable;
  * of the month and a course that has lessons; these pin the edges where the
  * two implementations disagree.
  */
-it('CHARACTERIZATION: reports nothing for the first Algiers hour of a new month', function () {
+it('CHARACTERIZATION: reports nothing for the first Madrid hours of a new month', function () {
     $admin = User::factory()->admin()->create();
     $course = Course::factory()->create();
 
-    // 23:30 UTC on 31 August is already 00:30 on 1 September in Algiers: the
-    // business month has turned over, the UTC one has not. This is the only
-    // window in which the two calendars disagree, so it is the only window in
-    // which the C8 fix is observable at all.
+    // 23:30 UTC on 31 August is already 01:30 on 1 September in Madrid
+    // (summer time, UTC+2): the business month has turned over, the UTC one
+    // has not. This is the only window in which the two calendars disagree,
+    // so it is the only window in which the C8 fix is observable at all.
     $this->travelTo(CarbonImmutable::parse('2026-08-31 23:30:00', 'UTC'));
 
     $justSold = Order::factory()->paid()->create([
         'course_id' => $course->id,
-        'amount' => 40000,
-        'currency' => 'DZD',
-        'method' => 'chargily',
+        'amount' => 400,
+        'currency' => 'EUR',
+        'method' => 'stripe',
         'paid_at' => CarbonImmutable::parse('2026-08-31 23:15:00', 'UTC'),
     ]);
 
     // Mid-August: last month's revenue on either calendar.
     Order::factory()->paid()->create([
         'course_id' => $course->id,
-        'amount' => 70000,
-        'currency' => 'DZD',
-        'method' => 'chargily',
+        'amount' => 700,
+        'currency' => 'EUR',
+        'method' => 'stripe',
         'paid_at' => CarbonImmutable::parse('2026-08-15 10:00:00', 'UTC'),
     ]);
 
@@ -49,21 +49,22 @@ it('CHARACTERIZATION: reports nothing for the first Algiers hour of a new month'
     Enrollment::factory()->for($course)->for(User::factory())
         ->create(['created_at' => CarbonImmutable::parse('2026-08-15 10:00:00', 'UTC')]);
 
-    // The sale really is 00:15 on 1 September in Algiers.
-    expect($justSold->fresh()->paid_at->setTimezone('Africa/Algiers')->format('Y-m-d H:i'))
-        ->toBe('2026-09-01 00:15');
+    // The sale really is 01:15 on 1 September in Madrid.
+    expect($justSold->fresh()->paid_at->setTimezone('Europe/Madrid')->format('Y-m-d H:i'))
+        ->toBe('2026-09-01 01:15');
 
     $response = $this->actingAs($admin)->getJson('/api/admin/stats')->assertOk();
 
-    // Recorded, not endorsed. The intended cutoff is the Algiers month start,
-    // 23:00 UTC on the 31st, which would report 40 000. What ships binds the
+    // Recorded, not endorsed. The intended cutoff is the Madrid month start,
+    // 22:00 UTC on the 31st, which would report 400. What ships binds the
     // Carbon by its LOCAL wall clock — the literal string '2026-09-01
     // 00:00:00' — against paid_at columns stored in UTC, so the cutoff lands
-    // an hour late and the first Algiers hour of the month is reported by
-    // neither month. Reverting to a plain now()->startOfMonth() answers
-    // 110 000 here instead, so this number pins the line in both directions;
-    // finishing the fix should turn it into 40 000, deliberately.
-    expect($response->json('data.revenue_this_month.DZD'))->toBe(0)
+    // two hours late in summer (one in winter) and the first Madrid hours of
+    // the month are reported by neither month. Reverting to a plain
+    // now()->startOfMonth() answers 1 100 here instead, so this number pins
+    // the line in both directions; finishing the fix should turn it into
+    // 400, deliberately.
+    expect($response->json('data.revenue_this_month.EUR'))->toBe(0)
         ->and($response->json('data.enrollments_this_month'))->toBe(0)
         ->and($response->json('data.enrollments_total'))->toBe(2);
 });

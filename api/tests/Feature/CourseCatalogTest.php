@@ -22,20 +22,20 @@ it('returns 404 for a draft course by slug', function () {
     $this->getJson('/api/courses/secret-draft')->assertNotFound();
 });
 
-it('returns the arabic title when Accept-Language is ar', function () {
+it('returns the english title when Accept-Language is en', function () {
     Course::factory()->create([
         'slug' => 'bilingual-course',
-        'title_es' => 'Titre français',
-        'title_en' => 'عنوان عربي',
+        'title_es' => 'Título en español',
+        'title_en' => 'English title',
     ]);
 
-    $this->getJson('/api/courses', ['Accept-Language' => 'ar'])
+    $this->getJson('/api/courses', ['Accept-Language' => 'en'])
         ->assertOk()
-        ->assertJsonPath('data.0.title', 'عنوان عربي');
+        ->assertJsonPath('data.0.title', 'English title');
 
-    $this->getJson('/api/courses/bilingual-course', ['Accept-Language' => 'fr'])
+    $this->getJson('/api/courses/bilingual-course', ['Accept-Language' => 'es'])
         ->assertOk()
-        ->assertJsonPath('data.title', 'Titre français');
+        ->assertJsonPath('data.title', 'Título en español');
 });
 
 it('computes lessons_count and total_duration_seconds across modules', function () {

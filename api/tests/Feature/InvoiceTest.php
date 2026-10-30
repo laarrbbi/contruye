@@ -7,7 +7,7 @@ use App\Models\Invoice;
 use App\Models\Module;
 use App\Models\Order;
 use App\Models\User;
-use App\Services\FrenchNumberSpeller;
+use App\Services\SpanishNumberSpeller;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Mail;
 
@@ -32,7 +32,7 @@ it('round-trips seller settings and reports missing required fields', function (
 
     $this->actingAs($admin)->putJson('/api/admin/invoicing/settings', [
         'business_name' => '[DEMO] Construye Academy',
-        'legal_form' => 'EURL',
+        'legal_form' => 'S.L.',
     ])->assertOk()->assertJsonPath('complete', false);
 
     completeSellerSettings();
@@ -61,7 +61,7 @@ it('refuses to invoice unpaid orders, incomplete settings, and duplicates', func
         'user_id' => $student->id,
         'course_id' => $order->course_id,
         'status' => 'pending',
-        'amount' => 90000,
+        'amount' => 490,
         'scope' => 'full',
         'method' => 'cash',
     ]);
@@ -75,7 +75,7 @@ it('refuses to invoice unpaid orders, incomplete settings, and duplicates', func
         ->assertUnprocessable();
 });
 
-it('computes the HT/TVA breakdown from TTC amounts, exactly', function () {
+it('computes the net/IVA breakdown from IVA-inclusive amounts, exactly', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     $student = User::factory()->create();
     $order = paidModulesOrder($student);
@@ -87,16 +87,17 @@ it('computes the HT/TVA breakdown from TTC amounts, exactly', function () {
 
     $data = $response->json('data');
 
-    // 3 lines at 12 000 TTC → unit HT = round(1 200 000 / 1.19) = 1 008 403 c.
+    // 3 lines at 49 € IVA included → unit net = round(4 900 / 1.21) = 4 050 c.
     expect($data['lines'])->toHaveCount(3)
-        ->and($data['lines'][0]['unit_net_c'])->toBe(1008403)
-        ->and($data['subtotal_net_c'])->toBe(3 * 1008403)
-        // Remise TTC 3 600 → HT 302 521 c.
-        ->and($data['discount_net_c'])->toBe(302521)
-        ->and($data['total_net_c'])->toBe(3 * 1008403 - 302521)
-        // HT + TVA must equal the TTC actually paid, to the centime.
-        ->and($data['total_net_c'] + $data['iva_c'])->toBe(3240000)
-        ->and($data['total_gross_c'])->toBe(3240000)
+        ->and($data['lines'][0]['unit_net_c'])->toBe(4050)
+        ->and($data['subtotal_net_c'])->toBe(3 * 4050)
+        // Discount 15 € IVA included → 12,40 € net.
+        ->and($data['discount_net_c'])->toBe(1240)
+        ->and($data['total_net_c'])->toBe(3 * 4050 - 1240)
+        // Net + IVA must equal what was actually paid, to the cent.
+        ->and($data['total_net_c'] + $data['iva_c'])->toBe(13200)
+        ->and($data['iva_c'])->toBe(2290)
+        ->and($data['total_gross_c'])->toBe(13200)
         ->and($data['number'])->toBe('FAC-'.now()->year.'-00001');
 });
 
@@ -115,21 +116,21 @@ it('numbers invoices sequentially within a year', function () {
     }
 });
 
-it('bills full-access orders at the agreed price without fabricating a remise', function () {
+it('bills full-access orders at the agreed price without fabricating a discount', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     $student = User::factory()->create();
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 490]);
     completeSellerSettings();
 
-    // A coupon brought the price to 45 000 but discount_percent only stores
+    // A coupon brought the price to 245 but discount_percent only stores
     // the (synthetic) volume tier — the pre-discount price is NOT
     // reconstructable, so the invoice must simply bill what was agreed.
     $order = Order::factory()->create([
         'user_id' => $student->id,
         'course_id' => $course->id,
-        'amount' => 45000,
+        'amount' => 245,
         'discount_percent' => 31,
-        'currency' => 'DZD',
+        'currency' => 'EUR',
         'method' => 'cash',
         'scope' => 'full',
         'status' => 'paid',
@@ -142,9 +143,9 @@ it('bills full-access orders at the agreed price without fabricating a remise', 
         ->json('data');
 
     expect($data['lines'])->toHaveCount(1)
-        ->and($data['lines'][0]['unit_gross_c'])->toBe(4500000)
+        ->and($data['lines'][0]['unit_gross_c'])->toBe(24500)
         ->and($data['discount_net_c'])->toBe(0)
-        ->and($data['total_net_c'] + $data['iva_c'])->toBe(4500000);
+        ->and($data['total_net_c'] + $data['iva_c'])->toBe(24500);
 });
 
 it('corrects from the stored snapshot even when the order lines are gone', function () {
@@ -219,9 +220,8 @@ it('lets the admin correct an invoice without touching number or date', function
 
     $updated = $this->actingAs($admin)
         ->putJson("/api/admin/invoices/{$created['id']}", invoicePayload([
-            'buyer_name' => 'SARL Promo-Bat',
-            'buyer_rc' => '16/00-7654321 B 26',
-            'buyer_nif' => '002616987654321',
+            'buyer_name' => 'Promociones Ejemplo S.L.',
+            'buyer_nif' => 'B87654321',
             'iva_rate' => 0,
         ]))
         ->assertOk()
@@ -229,10 +229,11 @@ it('lets the admin correct an invoice without touching number or date', function
 
     expect($updated['number'])->toBe($created['number'])
         ->and($updated['issued_at'])->toBe($created['issued_at'])
-        ->and($updated['buyer_name'])->toBe('SARL Promo-Bat')
-        // 0 % TVA → HT equals TTC.
+        ->and($updated['buyer_name'])->toBe('Promociones Ejemplo S.L.')
+        ->and($updated['buyer_nif'])->toBe('B87654321')
+        // 0 % IVA → net equals what was paid.
         ->and($updated['iva_c'])->toBe(0)
-        ->and($updated['total_net_c'])->toBe(3240000);
+        ->and($updated['total_net_c'])->toBe(13200);
 });
 
 it('serves the PDF to the buyer and the admin, and to nobody else', function () {
@@ -280,50 +281,55 @@ it('exposes the invoice on both order resources once issued', function () {
         ->assertJsonPath('data.invoice.number', 'FAC-'.now()->year.'-00001');
 });
 
-it('spells French amounts correctly, including the awkward ones', function () {
+it('spells Spanish amounts correctly, including the awkward ones', function () {
     $cases = [
-        [7100, 'soixante et onze dinars algériens'],
-        [8000, 'quatre-vingts dinars algériens'],
-        [8100, 'quatre-vingt-un dinars algériens'],
-        [9100, 'quatre-vingt-onze dinars algériens'],
-        [10000, 'cent dinars algériens'],
-        [20000, 'deux cents dinars algériens'],
-        [20100, 'deux cent un dinars algériens'],
-        [100000, 'mille dinars algériens'],
-        [198000, 'mille neuf cent quatre-vingts dinars algériens'],
-        [8000000, 'quatre-vingt mille dinars algériens'],
-        [9000000, 'quatre-vingt-dix mille dinars algériens'],
-        [3240000, 'trente-deux mille quatre cents dinars algériens'],
-        [20000000, 'deux cent mille dinars algériens'],
-        [100000000, 'un million de dinars algériens'],
-        // million/milliard are nouns: the plural of what precedes them stays.
-        [8000000000, 'quatre-vingts millions de dinars algériens'],
-        [20000000000, 'deux cents millions de dinars algériens'],
-        [23050000000, 'deux cent trente millions cinq cent mille dinars algériens'],
-        [100, 'un dinar algérien'],
-        [150, 'un dinar algérien et cinquante centimes'],
-        [1008403, 'dix mille quatre-vingt-quatre dinars algériens et trois centimes'],
+        [100, 'un euro'],
+        [2100, 'veintiún euros'],
+        [2200, 'veintidós euros'],
+        [1600, 'dieciséis euros'],
+        [3100, 'treinta y un euros'],
+        [4900, 'cuarenta y nueve euros'],
+        [10000, 'cien euros'],
+        [10100, 'ciento un euros'],
+        [50000, 'quinientos euros'],
+        [70000, 'setecientos euros'],
+        [90000, 'novecientos euros'],
+        [100000, 'mil euros'],
+        [149000, 'mil cuatrocientos noventa euros'],
+        [2100000, 'veintiún mil euros'],
+        [20100000, 'doscientos un mil euros'],
+        [13200, 'ciento treinta y dos euros'],
+        [100000000, 'un millón de euros'],
+        [200000000, 'dos millones de euros'],
+        [125000000, 'un millón doscientos cincuenta mil euros'],
+        // "mil millones", never "un billón" (a million millions).
+        [100000000000, 'mil millones de euros'],
+        [150, 'un euro con cincuenta céntimos'],
+        [2101, 'veintiún euros con un céntimo'],
+        [4050, 'cuarenta euros con cincuenta céntimos'],
+        [0, 'cero euros'],
     ];
 
-    foreach ($cases as [$centimes, $expected]) {
-        expect(FrenchNumberSpeller::amountInWords($centimes, 'DZD'))->toBe($expected);
+    foreach ($cases as [$centimos, $expected]) {
+        expect(SpanishNumberSpeller::amountInWords($centimos, 'EUR'))->toBe($expected);
     }
 });
 
-it('dates an invoice by the Algiers calendar, not UTC', function () {
+it('dates an invoice by the Madrid calendar, not UTC', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     $order = paidModulesOrder(User::factory()->create());
     completeSellerSettings();
 
-    // 31 December 23:30 UTC is already 1 January in Algiers (UTC+1): the
-    // facture must carry the new year's date and start that year's sequence.
+    // 31 December 23:30 UTC is already 1 January in Madrid (UTC+1 in winter):
+    // the factura must carry the new year's date and start that year's
+    // sequence.
     $this->travelTo(CarbonImmutable::parse('2026-12-31 23:30:00', 'UTC'));
 
     $data = $this->actingAs($admin)
         ->postJson("/api/admin/orders/{$order->id}/invoice", [
-            'buyer_name' => 'Karim Benali',
-            'buyer_address' => 'Alger',
-            'iva_rate' => 19,
+            'buyer_name' => 'Javier Morales',
+            'buyer_address' => 'Madrid',
+            'iva_rate' => 21,
         ])
         ->assertCreated()
         ->json('data');
@@ -344,48 +350,48 @@ it('freezes the seller block into the invoice at issuance', function () {
         ->assertCreated()
         ->json('data');
 
-    // The émetteur block is COPIED onto the document, not referenced.
+    // The emisor block is COPIED onto the document, not referenced.
     $invoice = Invoice::query()->findOrFail($created['id']);
 
     expect($invoice->seller['business_name'])->toBe('[DEMO] Construye Academy')
-        ->and($invoice->seller['rc'])->toBe('16/00-1234567 B 26')
-        ->and($invoice->seller['nif'])->toBe('002616123456789');
+        ->and($invoice->seller['registry'])->toBe('Inscrita en el Registro Mercantil de Madrid, tomo 1, folio 1, hoja M-1')
+        ->and($invoice->seller['nif'])->toBe('B12345674');
 
-    // The company re-registers and moves. Correcting the settings must never
+    // The company changes form and moves. Correcting the settings must never
     // rewrite a numbered document that has already been handed to a buyer.
     $this->actingAs($admin)->putJson('/api/admin/invoicing/settings', [
-        'business_name' => 'Construye Academy SPA',
-        'legal_form' => 'SPA',
-        'capital' => '5 000 000 DA',
-        'address' => 'Nouvelle adresse, Oran',
-        'rc' => '31/00-9999999 B 26',
-        'nif' => '003116999999999',
-        'nis' => '003116999999990',
-        'ai' => '31999999999',
-    ])->assertOk()->assertJsonPath('seller.rc', '31/00-9999999 B 26');
+        'business_name' => 'Construye Academy S.A.',
+        'legal_form' => 'S.A.',
+        'capital' => '60.000 €',
+        'address' => 'Nueva dirección, Valencia',
+        'registry' => 'Inscrita en el Registro Mercantil de Valencia, tomo 9, folio 9, hoja V-9',
+        'nif' => 'A99999999',
+    ])->assertOk()->assertJsonPath('seller.nif', 'A99999999');
 
-    expect($invoice->fresh()->seller['rc'])->toBe('16/00-1234567 B 26')
+    expect($invoice->fresh()->seller['nif'])->toBe('B12345674')
         ->and($invoice->fresh()->seller['business_name'])->toBe('[DEMO] Construye Academy');
 
     // And what is printed reads from that snapshot, not from the live settings.
     $html = view('pdf.invoice', [
         'invoice' => $invoice->fresh()->load(['order.user', 'order.course']),
-        'amountInWords' => FrenchNumberSpeller::amountInWords($invoice->total_gross_c, $invoice->currency),
+        'amountInWords' => SpanishNumberSpeller::amountInWords($invoice->total_gross_c, $invoice->currency),
     ])->render();
 
-    expect($html)->toContain('16/00-1234567 B 26')
+    expect($html)->toContain('B12345674')
         ->and($html)->toContain('[DEMO] Construye Academy')
-        ->and($html)->not->toContain('31/00-9999999 B 26')
-        ->and($html)->not->toContain('Construye Academy SPA');
+        ->and($html)->toContain('hoja M-1')
+        ->and($html)->toContain('ciento treinta y dos euros')
+        ->and($html)->not->toContain('A99999999')
+        ->and($html)->not->toContain('Construye Academy S.A.');
 
     // A correction on the invoice must not quietly re-pull the new block either.
     $this->actingAs($admin)
         ->putJson("/api/admin/invoices/{$invoice->id}", invoicePayload(['buyer_name' => 'Corrigé']))
         ->assertOk();
 
-    expect($invoice->fresh()->seller['rc'])->toBe('16/00-1234567 B 26');
+    expect($invoice->fresh()->seller['nif'])->toBe('B12345674');
 
-    // The NEXT facture carries the new identity: the snapshot is taken per
+    // The NEXT factura carries the new identity: the snapshot is taken per
     // document at issuance, it is not a global freeze on the settings.
     $next = paidModulesOrder(User::factory()->create());
     $nextId = $this->actingAs($admin)
@@ -393,16 +399,16 @@ it('freezes the seller block into the invoice at issuance', function () {
         ->assertCreated()
         ->json('data.id');
 
-    expect(Invoice::query()->findOrFail($nextId)->seller['rc'])->toBe('31/00-9999999 B 26');
+    expect(Invoice::query()->findOrFail($nextId)->seller['nif'])->toBe('A99999999');
 });
 
 it('accepts a backdated issue date and takes the sequence from that fiscal year', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     completeSellerSettings();
 
-    // Mid-January: December's factures still have to be issued, dated
+    // Mid-January: December's facturas still have to be issued, dated
     // December, and numbered in the year that is now closed.
-    $this->travelTo(CarbonImmutable::parse('2027-01-15 09:00:00', 'Africa/Algiers'));
+    $this->travelTo(CarbonImmutable::parse('2027-01-15 09:00:00', 'Europe/Madrid'));
 
     $january = paidModulesOrder(User::factory()->create());
     $this->actingAs($admin)->postJson("/api/admin/orders/{$january->id}/invoice", invoicePayload())
@@ -455,7 +461,7 @@ it('accepts a backdated issue date and takes the sequence from that fiscal year'
     $this->travelBack();
 });
 
-it('re-sends a facture for admins only, not even for the buyer it belongs to', function () {
+it('re-sends an invoice for admins only, not even for the buyer it belongs to', function () {
     Mail::fake();
 
     $student = User::factory()->create();
@@ -471,7 +477,7 @@ it('re-sends a facture for admins only, not even for the buyer it belongs to', f
     expect(AuditLog::query()->where('action', 'invoice.sent')->count())->toBe(0);
 });
 
-it('emails the facture to the buyer, audits it, and throttles the endpoint', function () {
+it('emails the invoice to the buyer, audits it, and throttles the endpoint', function () {
     Mail::fake();
 
     $admin = User::factory()->create(['role' => 'admin']);
@@ -506,7 +512,7 @@ it('emails the facture to the buyer, audits it, and throttles the endpoint', fun
         ->and($entry->meta['to'])->toBe($student->email);
 
     // Ten a minute: the eleventh call is refused, so a stuck admin (or a stuck
-    // admin UI) cannot mailbomb a buyer with re-issued factures.
+    // admin UI) cannot mailbomb a buyer with re-issued invoices.
     foreach (range(2, 10) as $ignored) {
         $this->actingAs($admin)->postJson("/api/admin/invoices/{$invoiceId}/send")->assertOk();
     }
@@ -516,7 +522,7 @@ it('emails the facture to the buyer, audits it, and throttles the endpoint', fun
     Mail::assertQueued(InvoiceIssuedMail::class, 10);
 });
 
-it('audits the issuance and the correction of a numbered facture', function () {
+it('audits the issuance and the correction of a numbered invoice', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     $order = paidModulesOrder(User::factory()->create());
     completeSellerSettings();
@@ -528,8 +534,8 @@ it('audits the issuance and the correction of a numbered facture', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/invoices/{$created['id']}", invoicePayload([
-            'buyer_name' => 'SARL Promo-Bat',
-            'iva_rate' => 9,
+            'buyer_name' => 'Promociones Alameda S.L.',
+            'iva_rate' => 10,
         ]))
         ->assertOk();
 
@@ -542,11 +548,11 @@ it('audits the issuance and the correction of a numbered facture', function () {
         ->and($issued->meta['number'])->toBe($created['number']);
 
     // A correction to a numbered document has to keep what it overwrote, or
-    // the original facture becomes unrecoverable.
+    // the original invoice becomes unrecoverable.
     expect($corrected)->not->toBeNull()
-        ->and($corrected->meta['before']['buyer_name'])->toBe('Karim Benali')
-        ->and($corrected->meta['after']['buyer_name'])->toBe('SARL Promo-Bat')
-        ->and((float) $corrected->meta['before']['iva_rate'])->toBe(19.0)
-        ->and((float) $corrected->meta['after']['iva_rate'])->toBe(9.0)
+        ->and($corrected->meta['before']['buyer_name'])->toBe('Javier Morales')
+        ->and($corrected->meta['after']['buyer_name'])->toBe('Promociones Alameda S.L.')
+        ->and((float) $corrected->meta['before']['iva_rate'])->toBe(21.0)
+        ->and((float) $corrected->meta['after']['iva_rate'])->toBe(10.0)
         ->and($corrected->meta['before']['iva_c'])->not->toBe($corrected->meta['after']['iva_c']);
 });

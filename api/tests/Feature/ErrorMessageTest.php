@@ -19,18 +19,18 @@ it('explains a refused lesson instead of sending an empty message', function () 
     $lesson = Lesson::factory()->create(['module_id' => $module->id, 'is_free_preview' => false]);
 
     $this->actingAs(User::factory()->create())
-        ->withHeader('Accept-Language', 'fr')
+        ->withHeader('Accept-Language', 'es')
         ->postJson("/api/lessons/{$lesson->id}/complete")
         ->assertForbidden()
-        ->assertExactJson(['message' => "Vous n'avez pas accès à cette ressource."]);
+        ->assertExactJson(['message' => 'No tienes acceso a este contenido.']);
 });
 
 it('does not name the model behind a missing record', function () {
     $response = $this->actingAs(User::factory()->create())
-        ->withHeader('Accept-Language', 'fr')
+        ->withHeader('Accept-Language', 'es')
         ->getJson('/api/orders/999999')
         ->assertNotFound()
-        ->assertExactJson(['message' => 'Introuvable.']);
+        ->assertExactJson(['message' => 'No encontrado.']);
 
     expect($response->getContent())->not->toContain('App\\\\Models');
 });
@@ -41,8 +41,8 @@ it('keeps an explicit message when the code gave one', function () {
 
     // OrderController::invoice aborts with its own explanation.
     $this->actingAs($student)
-        ->withHeader('Accept-Language', 'fr')
+        ->withHeader('Accept-Language', 'es')
         ->getJson("/api/orders/{$order->id}/invoice")
         ->assertNotFound()
-        ->assertJsonPath('message', __('No invoice has been issued for this order.', [], 'fr'));
+        ->assertJsonPath('message', __('No invoice has been issued for this order.', [], 'es'));
 });

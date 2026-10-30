@@ -11,15 +11,15 @@ use Illuminate\Support\Facades\Storage;
  * checkout, given back once when the payment fails, taken again if the
  * order is paid after all.
  */
-function couponOrder(string $method = 'chargily', string $status = 'pending'): array
+function couponOrder(string $method = 'stripe', string $status = 'pending'): array
 {
-    $coupon = Coupon::factory()->create(['code' => 'BLED50', 'percent_off' => 50, 'max_uses' => 10, 'uses' => 3]);
+    $coupon = Coupon::factory()->create(['code' => 'OBRA50', 'percent_off' => 50, 'max_uses' => 10, 'uses' => 3]);
     $order = Order::factory()->create([
         'coupon_id' => $coupon->id,
         'method' => $method,
         'status' => $status,
-        'amount' => 45000,
-        'currency' => 'DZD',
+        'amount' => 245,
+        'currency' => 'EUR',
     ]);
 
     return [$coupon, $order];
@@ -27,17 +27,20 @@ function couponOrder(string $method = 'chargily', string $status = 'pending'): a
 
 it('gives the use back once, however many times the failure is reported', function () {
     [$coupon, $order] = couponOrder();
-    config(['services.chargily.secret' => 'chargily_real_secret']);
+    config(['services.stripe.webhook_secret' => 'stripe_real_secret']);
 
     $body = json_encode([
-        'type' => 'checkout.failed',
-        'data' => ['metadata' => ['order_id' => $order->id]],
+        'id' => 'evt_expired',
+        'object' => 'event',
+        'type' => 'checkout.session.expired',
+        'data' => ['object' => ['id' => 'cs_expired', 'metadata' => ['order_id' => (string) $order->id]]],
     ]);
 
     // Gateways re-deliver; an attacker holding one signed event can replay it.
     foreach (range(1, 4) as $delivery) {
-        $this->call('POST', '/api/webhooks/chargily', [], [], [], [
-            'HTTP_SIGNATURE' => hash_hmac('sha256', $body, 'chargily_real_secret'),
+        $ts = time();
+        $this->call('POST', '/api/webhooks/stripe', [], [], [], [
+            'HTTP_STRIPE_SIGNATURE' => "t={$ts},v1=".hash_hmac('sha256', "{$ts}.{$body}", 'stripe_real_secret'),
             'CONTENT_TYPE' => 'application/json',
         ], $body)->assertOk();
     }
@@ -56,15 +59,15 @@ it('does not release a use from an order that is already paid or refunded', func
 })->with(['paid', 'refunded']);
 
 it('counts the use again when a failed order is paid after all', function () {
-    // A CCP receipt was rejected (use released), the buyer sent a new one,
+    // A transfer receipt was rejected (use released), the buyer sent a new one,
     // and the admin approves it: the order is paid at the coupon price.
-    [$coupon, $order] = couponOrder('manual_ccp');
+    [$coupon, $order] = couponOrder('manual_transfer');
     $order->markFailed();
     expect($coupon->fresh()->uses)->toBe(2);
 
     Storage::fake('local');
     $this->actingAs($order->user)
-        ->post("/api/orders/{$order->id}/receipt", ['receipt' => UploadedFile::fake()->image('nouveau-recu.jpg')])
+        ->post("/api/orders/{$order->id}/receipt", ['receipt' => UploadedFile::fake()->image('nuevo-justificante.jpg')])
         ->assertOk();
     expect($coupon->fresh()->uses)->toBe(3);
 

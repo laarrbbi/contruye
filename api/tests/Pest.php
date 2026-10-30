@@ -31,14 +31,12 @@ function completeSellerSettings(): void
 {
     Setting::setValue('invoicing.seller', [
         'business_name' => '[DEMO] Construye Academy',
-        'legal_form' => 'EURL',
-        'capital' => '1 000 000 DA',
-        'address' => '12 rue des Frères Boulemdaïs, Alger',
-        'rc' => '16/00-1234567 B 26',
-        'nif' => '002616123456789',
-        'nis' => '002616123456780',
-        'ai' => '16123456789',
-        'phone' => '0550 00 00 00',
+        'nif' => 'B12345674',
+        'address' => 'Calle Mayor 1, 28013 Madrid',
+        'legal_form' => 'S.L.',
+        'registry' => 'Inscrita en el Registro Mercantil de Madrid, tomo 1, folio 1, hoja M-1',
+        'capital' => '3.000 €',
+        'phone' => '600 00 00 00',
         'email' => 'contact@example.es',
         'bank_details' => '',
     ]);
@@ -46,19 +44,19 @@ function completeSellerSettings(): void
 
 function paidModulesOrder(User $student): Order
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 490]);
     $modules = Module::factory()->count(3)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40]);
+        ->create(['course_id' => $course->id, 'price_eur' => 49]);
 
-    // 3 × 12 000 with the 10 % volume tier → 32 400, like the demo data.
+    // 3 × 49 with the 10 % volume tier → 132, like the demo data.
     $order = Order::factory()->create([
         'user_id' => $student->id,
         'course_id' => $course->id,
-        'amount' => 32400,
+        'amount' => 132,
         'discount_percent' => 10,
-        'currency' => 'DZD',
-        'method' => 'manual_ccp',
+        'currency' => 'EUR',
+        'method' => 'manual_transfer',
         'scope' => 'modules',
         'status' => 'paid',
         'paid_at' => now(),
@@ -68,7 +66,7 @@ function paidModulesOrder(User $student): Order
         OrderModule::query()->create([
             'order_id' => $order->id,
             'module_id' => $module->id,
-            'unit_price' => 12000,
+            'unit_price' => 49,
         ]);
     }
 
@@ -78,8 +76,8 @@ function paidModulesOrder(User $student): Order
 function invoicePayload(array $overrides = []): array
 {
     return array_merge([
-        'buyer_name' => 'Karim Benali',
-        'buyer_address' => 'Cité 200 logements, Bab Ezzouar, Alger',
-        'iva_rate' => 19,
+        'buyer_name' => 'Javier Morales',
+        'buyer_address' => 'Avenida de la Constitución 12, 41001 Sevilla',
+        'iva_rate' => 21,
     ], $overrides);
 }

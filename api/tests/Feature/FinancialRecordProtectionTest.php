@@ -82,7 +82,7 @@ it('keeps a module a student has actually paid for, and their access with it', f
     $admin = User::factory()->create(['role' => 'admin']);
     $student = User::factory()->create();
     $course = Course::factory()->create(['status' => 'published']);
-    $module = Module::factory()->for($course)->create(['order' => 1, 'price_dzd' => 12000]);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'price_eur' => 12000]);
     Lesson::factory()->for($module)->create(['order' => 1]);
 
     $order = Order::factory()->create([
@@ -90,7 +90,7 @@ it('keeps a module a student has actually paid for, and their access with it', f
         'course_id' => $course->id,
         'amount' => 12000,
         'scope' => 'modules',
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'status' => 'pending',
     ]);
     $order->orderModules()->create(['module_id' => $module->id, 'unit_price' => 12000]);
@@ -119,12 +119,12 @@ it('keeps a module a student has actually paid for, and their access with it', f
 it('never lets a deleted coupon take a paid order down with it', function () {
     $admin = User::factory()->create(['role' => 'admin']);
     $student = User::factory()->create();
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 49900]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 49900]);
     $coupon = Coupon::factory()->create(['code' => 'LANCEMENT20', 'percent_off' => 20]);
 
     $orderId = $this->actingAs($student)->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'coupon_code' => 'LANCEMENT20',
     ])->assertCreated()->json('data.order.id');
 

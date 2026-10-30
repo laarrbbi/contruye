@@ -19,7 +19,7 @@ beforeEach(function () {
 
 it('stores the receipt privately and moves the order to awaiting_review', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->for($user)->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $this->actingAs($user)
         ->post("/api/orders/{$order->id}/receipt", ['receipt' => fakeReceiptFile()], ['Accept' => 'application/json'])
@@ -37,7 +37,7 @@ it('stores the receipt privately and moves the order to awaiting_review', functi
 
 it('rejects files over 5MB', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->for($user)->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $file = UploadedFile::fake()->create('big.pdf', 6000, 'application/pdf');
 
@@ -51,7 +51,7 @@ it('rejects files over 5MB', function () {
 
 it('rejects unsupported file types', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->for($user)->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $file = UploadedFile::fake()->createWithContent('receipt.gif', 'GIF89a-not-allowed');
 
@@ -62,7 +62,7 @@ it('rejects unsupported file types', function () {
 });
 
 it('refuses a receipt on someone else\'s order as if it did not exist', function () {
-    $order = Order::factory()->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->create(['method' => 'manual_transfer', 'status' => 'pending']);
     $intruder = User::factory()->create();
 
     $this->actingAs($intruder)
@@ -74,7 +74,7 @@ it('refuses a receipt on someone else\'s order as if it did not exist', function
 
 it('rejects receipt uploads on non-manual orders', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->chargily()->create();
+    $order = Order::factory()->for($user)->stripe()->create();
 
     $this->actingAs($user)
         ->post("/api/orders/{$order->id}/receipt", ['receipt' => fakeReceiptFile()], ['Accept' => 'application/json'])
@@ -83,7 +83,7 @@ it('rejects receipt uploads on non-manual orders', function () {
 
 it('rejects receipt uploads once the order is paid', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->paid()->create(['method' => 'manual_ccp']);
+    $order = Order::factory()->for($user)->paid()->create(['method' => 'manual_transfer']);
 
     $this->actingAs($user)
         ->post("/api/orders/{$order->id}/receipt", ['receipt' => fakeReceiptFile()], ['Accept' => 'application/json'])
@@ -92,7 +92,7 @@ it('rejects receipt uploads once the order is paid', function () {
 
 it('replaces the old receipt after a rejection and returns to awaiting_review', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->for($user)->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $oldPath = Storage::disk('local')->putFile("receipts/{$order->id}", fakeReceiptFile('old.pdf'));
     $order->update([
@@ -119,7 +119,7 @@ it('replaces the old receipt after a rejection and returns to awaiting_review', 
 it('keeps the previous receipt when the new one cannot be stored — C24', function () {
     Storage::fake('local');
     $buyer = User::factory()->create();
-    $order = Order::factory()->for($buyer)->create(['method' => 'manual_ccp', 'status' => 'pending']);
+    $order = Order::factory()->for($buyer)->create(['method' => 'manual_transfer', 'status' => 'pending']);
 
     $this->actingAs($buyer)
         ->post("/api/orders/{$order->id}/receipt", ['receipt' => fakeReceiptFile()], ['Accept' => 'application/json'])

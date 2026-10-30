@@ -13,11 +13,11 @@ use App\Models\User;
  */
 function twoModuleCourse(): Course
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
 
     Module::factory()->count(2)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 50000, 'price_eur' => 200])
+        ->create(['course_id' => $course->id, 'price_eur' => 50000])
         ->each(fn (Module $module) => Lesson::factory()->count(2)
             ->sequence(fn ($seq) => ['order' => $seq->index + 1])
             ->create(['module_id' => $module->id]));

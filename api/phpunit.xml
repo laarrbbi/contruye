@@ -43,9 +43,6 @@
         <!-- Third-party credentials are pinned blank: a test that needs one
              sets it with config(). Left to .env, the suite passed on a laptop
              holding a Stripe key and failed on a clean checkout. -->
-        <env name="CHARGILY_API_KEY" value=""/>
-        <env name="CHARGILY_SECRET" value=""/>
-        <env name="CHARGILY_BASE_URL" value="https://pay.chargily.net/test/api/v2"/>
         <env name="STRIPE_SECRET" value=""/>
         <env name="STRIPE_WEBHOOK_SECRET" value=""/>
         <env name="BUNNY_STREAM_LIBRARY_ID" value=""/>

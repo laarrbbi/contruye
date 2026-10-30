@@ -19,13 +19,11 @@ abstract class TestCase extends BaseTestCase
         // phpunit.xml pins the real ones blank; a test about a missing key
         // blanks it again itself.
         config([
-            'services.chargily.api_key' => 'test_pk_dummy',
-            'services.chargily.secret' => 'test_sk_dummy',
             'services.stripe.secret' => 'sk_test_dummy',
             'services.stripe.webhook_secret' => 'whsec_dummy',
-            'services.manual_payment.ccp_number' => '0000000000 00',
-            'services.manual_payment.ccp_name' => '[DEMO] Titulaire',
-            'services.manual_payment.baridimob_rip' => '00799999000000000000',
+            'services.manual_payment.iban' => 'ES00 0000 0000 0000 0000 0000',
+            'services.manual_payment.holder' => '[DEMO] Titular',
+            'services.manual_payment.bizum_phone' => '600000000',
         ]);
     }
 }

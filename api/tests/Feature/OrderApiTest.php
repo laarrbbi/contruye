@@ -23,14 +23,14 @@ it('lists only the user\'s own orders, newest first', function () {
 
 it('shows a manual pending order with payment instructions', function () {
     config([
-        'services.manual_payment.ccp_number' => '1234567 89',
-        'services.manual_payment.ccp_name' => 'CONSTRUYE ACADEMY SARL',
-        'services.manual_payment.baridimob_rip' => '00799999000000000000',
+        'services.manual_payment.iban' => '1234567 89',
+        'services.manual_payment.holder' => 'CONSTRUYE ACADEMY SARL',
+        'services.manual_payment.bizum_phone' => '00799999000000000000',
     ]);
 
     $user = User::factory()->create();
     $order = Order::factory()->for($user)->create([
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'status' => 'pending',
         'amount' => 45000,
     ]);
@@ -40,12 +40,12 @@ it('shows a manual pending order with payment instructions', function () {
         ->assertOk()
         ->assertJsonPath('data.id', $order->id)
         ->assertJsonPath('data.has_receipt', false)
-        ->assertJsonPath('data.payment_instructions.method', 'manual_ccp')
+        ->assertJsonPath('data.payment_instructions.method', 'manual_transfer')
         ->assertJsonPath('data.payment_instructions.amount', 45000)
-        ->assertJsonPath('data.payment_instructions.currency', 'DZD')
-        ->assertJsonPath('data.payment_instructions.ccp_number', '1234567 89')
-        ->assertJsonPath('data.payment_instructions.ccp_name', 'CONSTRUYE ACADEMY SARL')
-        ->assertJsonPath('data.payment_instructions.baridimob_rip', '00799999000000000000');
+        ->assertJsonPath('data.payment_instructions.currency', 'EUR')
+        ->assertJsonPath('data.payment_instructions.iban', '1234567 89')
+        ->assertJsonPath('data.payment_instructions.holder', 'CONSTRUYE ACADEMY SARL')
+        ->assertJsonPath('data.payment_instructions.bizum_phone', '00799999000000000000');
 });
 
 it('answers someone else\'s order exactly like one that does not exist', function () {
@@ -69,20 +69,20 @@ it('lets an admin view any order', function () {
         ->assertJsonPath('data.id', $order->id);
 });
 
-it('omits payment instructions for chargily orders', function () {
+it('omits payment instructions for card orders', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->chargily()->create();
+    $order = Order::factory()->for($user)->stripe()->create();
 
     $this->actingAs($user)
         ->getJson("/api/orders/{$order->id}")
         ->assertOk()
-        ->assertJsonPath('data.method', 'chargily')
+        ->assertJsonPath('data.method', 'stripe')
         ->assertJsonMissingPath('data.payment_instructions');
 });
 
 it('omits payment instructions once a manual order is paid', function () {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->paid()->create(['method' => 'manual_ccp']);
+    $order = Order::factory()->for($user)->paid()->create(['method' => 'manual_transfer']);
 
     $this->actingAs($user)
         ->getJson("/api/orders/{$order->id}")

@@ -11,11 +11,11 @@ use App\Models\Province;
 /** Course with two modules, each holding one lesson. */
 function partnerCourse(): Course
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 490]);
 
     Module::factory()->count(2)
         ->sequence(fn ($seq) => ['order' => $seq->index + 1])
-        ->create(['course_id' => $course->id, 'price_dzd' => 12000, 'price_eur' => 40])
+        ->create(['course_id' => $course->id, 'price_eur' => 49])
         ->each(fn (Module $module) => Lesson::factory()->create(['module_id' => $module->id, 'order' => 1]));
 
     return $course->fresh();
@@ -25,9 +25,9 @@ it('lists partners only for modules the student owns', function () {
     $course = partnerCourse();
     [$owned, $locked] = $course->modules()->orderBy('order')->get();
 
-    $partnerA = Partner::factory()->create(['name' => 'Notaire Bensalem', 'category' => 'notario']);
-    $partnerB = Partner::factory()->create(['name' => 'Cabinet Compta DZ', 'category' => 'asesor_fiscal']);
-    $owned->partners()->attach($partnerA->id, ['order' => 1, 'note_es' => 'Pour vos actes VSP']);
+    $partnerA = Partner::factory()->create(['name' => 'Notaría Fernández', 'category' => 'notario']);
+    $partnerB = Partner::factory()->create(['name' => 'Asesoría Fiscal Norte', 'category' => 'asesor_fiscal']);
+    $owned->partners()->attach($partnerA->id, ['order' => 1, 'note_es' => 'Para sus escrituras de compraventa']);
     $locked->partners()->attach($partnerB->id, ['order' => 1]);
 
     $student = User::factory()->create();
@@ -46,9 +46,9 @@ it('lists partners only for modules the student owns', function () {
 
     // Owned module: full details, including the per-module note.
     expect($ownedPayload['partners'])->toHaveCount(1)
-        ->and($ownedPayload['partners'][0]['name'])->toBe('Notaire Bensalem')
+        ->and($ownedPayload['partners'][0]['name'])->toBe('Notaría Fernández')
         ->and($ownedPayload['partners'][0]['phone'])->not->toBeNull()
-        ->and($ownedPayload['partners'][0]['note'])->toBe('Pour vos actes VSP');
+        ->and($ownedPayload['partners'][0]['note'])->toBe('Para sus escrituras de compraventa');
 
     // Locked module: no contact details leak — only the count teases them.
     expect($lockedPayload['is_locked'])->toBeTrue()
@@ -56,7 +56,7 @@ it('lists partners only for modules the student owns', function () {
         ->and($lockedPayload['partners_count'])->toBe(1);
 
     // Nothing about partner B is reachable anywhere in the locked payload.
-    expect(json_encode($lockedPayload))->not->toContain('Cabinet Compta DZ')
+    expect(json_encode($lockedPayload))->not->toContain('Asesoría Fiscal Norte')
         ->and(json_encode($lockedPayload))->not->toContain($partnerB->phone)
         ->and(json_encode($lockedPayload))->not->toContain($partnerB->email);
 });
@@ -65,8 +65,8 @@ it('hides deactivated partners from students but keeps the count honest', functi
     $course = partnerCourse();
     $module = $course->modules()->orderBy('order')->first();
 
-    $active = Partner::factory()->create(['name' => 'Banque Active']);
-    $inactive = Partner::factory()->inactive()->create(['name' => 'Ancien Partenaire']);
+    $active = Partner::factory()->create(['name' => 'Banco Activo']);
+    $inactive = Partner::factory()->inactive()->create(['name' => 'Antiguo Colaborador']);
     $module->partners()->attach([$active->id => ['order' => 1], $inactive->id => ['order' => 2]]);
 
     $student = User::factory()->create();
@@ -81,9 +81,9 @@ it('hides deactivated partners from students but keeps the count honest', functi
     )->firstWhere('id', $module->id);
 
     expect($payload['partners'])->toHaveCount(1)
-        ->and($payload['partners'][0]['name'])->toBe('Banque Active')
+        ->and($payload['partners'][0]['name'])->toBe('Banco Activo')
         ->and($payload['partners_count'])->toBe(1)
-        ->and(json_encode($payload))->not->toContain('Ancien Partenaire');
+        ->and(json_encode($payload))->not->toContain('Antiguo Colaborador');
 });
 
 it('serves lesson content only for accessible or free-preview lessons', function () {
@@ -91,16 +91,16 @@ it('serves lesson content only for accessible or free-preview lessons', function
     [$owned, $locked] = $course->modules()->orderBy('order')->get();
 
     $ownedLesson = $owned->lessons()->first();
-    $ownedLesson->update(['content_es' => 'Checklist du dossier CNRC', 'content_en' => 'قائمة ملف CNRC']);
+    $ownedLesson->update(['content_es' => 'Checklist de la nota simple']);
 
     $lockedLesson = $locked->lessons()->first();
-    $lockedLesson->update(['content_es' => 'Contenu payant réservé']);
+    $lockedLesson->update(['content_es' => 'Contenido de pago reservado']);
 
     $preview = Lesson::factory()->create([
         'module_id' => $locked->id,
         'order' => 2,
         'is_free_preview' => true,
-        'content_es' => 'Extrait gratuit',
+        'content_es' => 'Extracto gratuito',
     ]);
 
     $student = User::factory()->create();
@@ -116,16 +116,16 @@ it('serves lesson content only for accessible or free-preview lessons', function
 
     $lessons = $modules->flatMap(fn ($m) => $m['lessons'])->keyBy('id');
 
-    expect($lessons[$ownedLesson->id]['content'])->toBe('Checklist du dossier CNRC')
+    expect($lessons[$ownedLesson->id]['content'])->toBe('Checklist de la nota simple')
         ->and($lessons[$lockedLesson->id]['content'])->toBeNull()   // paid content withheld
-        ->and($lessons[$preview->id]['content'])->toBe('Extrait gratuit'); // free preview shown
+        ->and($lessons[$preview->id]['content'])->toBe('Extracto gratuito'); // free preview shown
 });
 
 it('returns lesson content in the requested language', function () {
     $course = partnerCourse();
     $module = $course->modules()->orderBy('order')->first();
     $lesson = $module->lessons()->first();
-    $lesson->update(['content_es' => 'Contenu FR', 'content_en' => 'محتوى عربي']);
+    $lesson->update(['content_es' => 'Contenido ES', 'content_en' => 'English content']);
 
     $student = User::factory()->create();
     Enrollment::factory()->create([
@@ -134,11 +134,16 @@ it('returns lesson content in the requested language', function () {
         'module_id' => null,
     ]);
 
-    $ar = $this->actingAs($student)
-        ->withHeader('Accept-Language', 'ar')
+    $en = $this->actingAs($student)
+        ->withHeader('Accept-Language', 'en')
         ->getJson("/api/courses/{$course->slug}/learn")->json('data.modules.0.lessons.0.content');
 
-    expect($ar)->toBe('محتوى عربي');
+    $es = $this->actingAs($student)
+        ->withHeader('Accept-Language', 'es')
+        ->getJson("/api/courses/{$course->slug}/learn")->json('data.modules.0.lessons.0.content');
+
+    expect($en)->toBe('English content')
+        ->and($es)->toBe('Contenido ES');
 });
 
 it('lets an admin manage partners and attach them to a module in order', function () {
@@ -147,11 +152,11 @@ it('lets an admin manage partners and attach them to a module in order', functio
     $admin = User::factory()->create(['role' => 'admin']);
 
     $id = $this->actingAs($admin)->postJson('/api/admin/partners', [
-        'name' => 'Étude Notariale Alger',
+        'name' => 'Notaría Gran Vía Madrid',
         'category' => 'notario',
-        'description_es' => 'Actes VSP et livrets fonciers.',
+        'description_es' => 'Escrituras de compraventa y declaraciones de obra nueva.',
         'website' => 'https://notaire.example.es',
-        'phone' => '0550112233',
+        'phone' => '611223344',
         'province_ids' => [Province::where('code', 16)->value('id')],
     ])->assertCreated()->json('data.id');
 
@@ -170,7 +175,7 @@ it('lets an admin manage partners and attach them to a module in order', functio
     // Attach both, in a deliberate order.
     $synced = $this->actingAs($admin)->putJson("/api/admin/modules/{$module->id}/partners", [
         'partners' => [
-            ['partner_id' => $second->id, 'note_es' => 'Financement acquéreurs'],
+            ['partner_id' => $second->id, 'note_es' => 'Hipotecas para compradores'],
             ['partner_id' => $id, 'note_es' => 'Actes de vente'],
         ],
     ])->assertOk()->json('data');
@@ -198,13 +203,13 @@ it('lets an admin write lesson content in both languages', function () {
     $this->actingAs($admin)->putJson("/api/admin/lessons/{$lesson->id}", [
         'title_es' => $lesson->title_es,
         'title_en' => $lesson->title_en,
-        'content_es' => 'Étapes détaillées du dépôt en province.',
-        'content_en' => 'خطوات الإيداع في الولاية.',
+        'content_es' => 'Pasos detallados de la solicitud de licencia.',
+        'content_en' => 'Detailed steps of the permit application.',
     ])->assertOk()
-        ->assertJsonPath('data.content_es', 'Étapes détaillées du dépôt en province.')
-        ->assertJsonPath('data.content_en', 'خطوات الإيداع في الولاية.');
+        ->assertJsonPath('data.content_es', 'Pasos detallados de la solicitud de licencia.')
+        ->assertJsonPath('data.content_en', 'Detailed steps of the permit application.');
 
-    expect($lesson->fresh()->content_es)->toBe('Étapes détaillées du dépôt en province.');
+    expect($lesson->fresh()->content_es)->toBe('Pasos detallados de la solicitud de licencia.');
 });
 
 it('forbids partner management for non-admins', function () {
@@ -284,13 +289,13 @@ it('exposes a module\'s partners to the admin content editor', function () {
     $course = partnerCourse();
     $module = $course->modules()->orderBy('order')->first();
     $admin = User::factory()->create(['role' => 'admin']);
-    $partner = Partner::factory()->create(['name' => 'Notaire Test']);
+    $partner = Partner::factory()->create(['name' => 'Notaría Prueba']);
     $module->partners()->attach($partner->id, ['order' => 1, 'note_es' => 'Note admin']);
 
     $payload = collect($this->actingAs($admin)->getJson("/api/admin/courses/{$course->id}")->assertOk()
         ->json('data.modules'))->firstWhere('id', $module->id);
 
     expect($payload['partners'])->toHaveCount(1)
-        ->and($payload['partners'][0]['name'])->toBe('Notaire Test')
+        ->and($payload['partners'][0]['name'])->toBe('Notaría Prueba')
         ->and($payload['partners'][0]['note_es'])->toBe('Note admin');
 });

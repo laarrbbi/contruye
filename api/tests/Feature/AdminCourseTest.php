@@ -42,7 +42,7 @@ it('forbids non-admins on every admin route', function () {
 
 it('lists courses with raw fields and counts for admins', function () {
     $admin = User::factory()->admin()->create();
-    $course = Course::factory()->draft()->create(['title_en' => 'تكوين تجريبي']);
+    $course = Course::factory()->draft()->create(['title_en' => 'Draft course']);
     $module = Module::factory()->for($course)->create(['order' => 1]);
     Lesson::factory()->for($module)->count(2)->create();
 
@@ -50,7 +50,7 @@ it('lists courses with raw fields and counts for admins', function () {
         ->getJson('/api/admin/courses')
         ->assertOk()
         ->assertJsonCount(1, 'data')
-        ->assertJsonPath('data.0.title_en', 'تكوين تجريبي')
+        ->assertJsonPath('data.0.title_en', 'Draft course')
         ->assertJsonPath('data.0.status', 'draft')
         ->assertJsonPath('data.0.modules_count', 1)
         ->assertJsonPath('data.0.lessons_count', 2)
@@ -62,18 +62,18 @@ it('creates a course with an auto-generated slug from title_es', function () {
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_es' => 'Développement Web Complet',
-            'title_en' => 'تطوير الويب الكامل',
-            'price_dzd' => 25000,
+            'title_es' => 'Promoción de Viviendas Completa',
+            'title_en' => 'Complete Housing Development',
+            'price_eur' => 250,
         ])
         ->assertCreated()
-        ->assertJsonPath('data.slug', 'developpement-web-complet')
-        ->assertJsonPath('data.title_en', 'تطوير الويب الكامل')
+        ->assertJsonPath('data.slug', 'promocion-de-viviendas-completa')
+        ->assertJsonPath('data.title_en', 'Complete Housing Development')
         ->assertJsonPath('data.status', 'draft');
 
     $this->assertDatabaseHas('courses', [
-        'slug' => 'developpement-web-complet',
-        'price_dzd' => 25000,
+        'slug' => 'promocion-de-viviendas-completa',
+        'price_eur' => 250,
     ]);
 });
 
@@ -82,15 +82,14 @@ it('creates a course with an explicit slug and status', function () {
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_es' => 'Cours publié',
-            'title_en' => 'دورة منشورة',
-            'slug' => 'mon-slug-perso',
-            'price_dzd' => 12000,
+            'title_es' => 'Curso publicado',
+            'title_en' => 'Published course',
+            'slug' => 'mi-slug-propio',
             'price_eur' => 60,
             'status' => 'published',
         ])
         ->assertCreated()
-        ->assertJsonPath('data.slug', 'mon-slug-perso')
+        ->assertJsonPath('data.slug', 'mi-slug-propio')
         ->assertJsonPath('data.status', 'published')
         ->assertJsonPath('data.price_eur', 60);
 });
@@ -116,23 +115,23 @@ it('shows a course with nested modules and lessons including raw fields', functi
 
 it('updates a course keeping its own slug', function () {
     $admin = User::factory()->admin()->create();
-    $course = Course::factory()->draft()->create(['slug' => 'mon-cours']);
+    $course = Course::factory()->draft()->create(['slug' => 'mi-curso']);
 
     $this->actingAs($admin)
         ->putJson("/api/admin/courses/{$course->id}", [
-            'title_es' => 'Nouveau titre',
-            'title_en' => 'عنوان جديد',
-            'slug' => 'mon-cours',
-            'price_dzd' => 30000,
+            'title_es' => 'Nuevo título',
+            'title_en' => 'New title',
+            'slug' => 'mi-curso',
+            'price_eur' => 300,
             'status' => 'published',
         ])
         ->assertOk()
-        ->assertJsonPath('data.title_es', 'Nouveau titre')
+        ->assertJsonPath('data.title_es', 'Nuevo título')
         ->assertJsonPath('data.status', 'published');
 
     $this->assertDatabaseHas('courses', [
         'id' => $course->id,
-        'title_es' => 'Nouveau titre',
+        'title_es' => 'Nuevo título',
         'status' => 'published',
     ]);
 });
@@ -144,10 +143,10 @@ it('rejects an update whose slug belongs to another course', function () {
 
     $this->actingAs($admin)
         ->putJson("/api/admin/courses/{$course->id}", [
-            'title_es' => 'Titre',
-            'title_en' => 'عنوان',
+            'title_es' => 'Título',
+            'title_en' => 'Title',
             'slug' => 'taken-slug',
-            'price_dzd' => 1000,
+            'price_eur' => 10,
         ])
         ->assertUnprocessable()
         ->assertJsonValidationErrors(['slug']);
@@ -164,14 +163,23 @@ it('deletes a course', function () {
     $this->assertDatabaseMissing('courses', ['id' => $course->id]);
 });
 
-it('returns 422 when title_en is missing', function () {
+it('creates a course with no English title yet, but never without a Spanish one', function () {
     $admin = User::factory()->admin()->create();
+
+    // The material is authored in Spanish; English is a translation to come.
+    $this->actingAs($admin)
+        ->postJson('/api/admin/courses', [
+            'title_es' => 'Sin título en inglés',
+            'price_eur' => 50,
+        ])
+        ->assertCreated()
+        ->assertJsonPath('data.title_en', null);
 
     $this->actingAs($admin)
         ->postJson('/api/admin/courses', [
-            'title_es' => 'Sans titre arabe',
-            'price_dzd' => 5000,
+            'title_en' => 'English only',
+            'price_eur' => 50,
         ])
         ->assertUnprocessable()
-        ->assertJsonValidationErrors(['title_en']);
+        ->assertJsonValidationErrors(['title_es']);
 });

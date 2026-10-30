@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Storage;
  */
 function enrollmentGateLesson(): array
 {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
-    $module = Module::factory()->for($course)->create(['order' => 1, 'price_dzd' => 12000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
+    $module = Module::factory()->for($course)->create(['order' => 1, 'price_eur' => 12000]);
     $lesson = Lesson::factory()->for($module)->create([
         'order' => 1,
         'bunny_video_id' => 'vid-enrollment-1',
@@ -117,7 +117,7 @@ it('lets an expired student buy again instead of claiming they already own it', 
     // the renewal that would fix it.
     $this->actingAs($student)->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'scope' => 'full',
     ])->assertCreated()->assertJsonPath('data.order.amount', 90000);
 
@@ -126,7 +126,7 @@ it('lets an expired student buy again instead of claiming they already own it', 
 
     $this->actingAs($student)->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'scope' => 'full',
     ])->assertUnprocessable()->assertJsonValidationErrors('course_id');
 });
@@ -140,7 +140,7 @@ it('opens no second access row when a second paid order delivers the same course
         'course_id' => $course->id,
         'amount' => 90000,
         'scope' => 'full',
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'status' => 'pending',
     ]));
 
@@ -175,7 +175,7 @@ it('opens no second access row when a second paid order delivers the same course
             'course_id' => $course->id,
             'amount' => 12000,
             'scope' => 'modules',
-            'method' => 'manual_ccp',
+            'method' => 'manual_transfer',
             'status' => 'pending',
         ]);
         $order->orderModules()->create(['module_id' => $module->id, 'unit_price' => 12000]);

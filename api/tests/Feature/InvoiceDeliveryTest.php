@@ -79,14 +79,13 @@ it('throttles repeated sends so a loop cannot flood the buyer', function () {
 });
 
 it('reaches the buyer in their own language: subject, sentence and button', function () {
-    // The subject, the sentence carrying the invoice number and the button had
-    // no French or Arabic translation: every buyer got them in English.
+    // The subject, the sentence carrying the invoice number and the button
+    // once had no translation: every buyer got them in English.
     $admin = User::factory()->create(['role' => 'admin']);
     completeSellerSettings();
 
     $expected = [
-        'fr' => ['Votre facture Construye Academy', 'Veuillez trouver ci-joint votre facture', 'Mes commandes'],
-        'ar' => ['فاتورتك من أكاديمية إبني', 'تجد في المرفق فاتورتك', 'طلباتي'],
+        'es' => ['Tu factura de Construye Academy', 'Te adjuntamos la factura', 'Mis pedidos'],
         'en' => ['Your Construye Academy invoice', 'Please find attached your invoice', 'My orders'],
     ];
 

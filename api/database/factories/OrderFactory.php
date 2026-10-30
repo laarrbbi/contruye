@@ -18,11 +18,11 @@ class OrderFactory extends Factory
             'user_id' => User::factory(),
             'course_id' => Course::factory(),
             'coupon_id' => null,
-            'amount' => fake()->numberBetween(15000, 90000),
-            'currency' => 'DZD',
-            'method' => fake()->randomElement(['chargily', 'manual_ccp', 'manual_baridimob']),
+            'amount' => fake()->numberBetween(150, 900),
+            'currency' => 'EUR',
+            'method' => fake()->randomElement(['stripe', 'manual_transfer', 'manual_bizum']),
             'status' => 'pending',
-            'chargily_checkout_id' => null,
+            'stripe_session_id' => null,
             'receipt_path' => null,
             'admin_note' => null,
             'paid_at' => null,
@@ -38,17 +38,17 @@ class OrderFactory extends Factory
     {
         return $this->state(fn () => [
             'status' => 'awaiting_review',
-            'method' => 'manual_ccp',
+            'method' => 'manual_transfer',
             'receipt_path' => 'receipts/fake-receipt.jpg',
             'receipt_uploaded_at' => now(),
         ]);
     }
 
-    public function chargily(): static
+    public function stripe(): static
     {
         return $this->state(fn () => [
-            'method' => 'chargily',
-            'chargily_checkout_id' => '01'.fake()->regexify('[a-z0-9]{24}'),
+            'method' => 'stripe',
+            'stripe_session_id' => 'cs_test_'.fake()->regexify('[A-Za-z0-9]{24}'),
         ]);
     }
 }

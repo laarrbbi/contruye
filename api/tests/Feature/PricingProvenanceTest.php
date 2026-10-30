@@ -6,13 +6,13 @@ use App\Models\Order;
 use App\Models\User;
 
 it('keeps every term that produced the price, so a paid order can explain itself', function () {
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 100000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 100000]);
     $coupon = Coupon::factory()->create(['code' => 'PROV20', 'percent_off' => 20, 'max_uses' => null]);
     $user = User::factory()->create();
 
     $orderId = $this->actingAs($user)->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'coupon_code' => $coupon->code,
     ])->assertCreated()->json('data.order.id');
 
@@ -21,7 +21,7 @@ it('keeps every term that produced the price, so a paid order can explain itself
     expect($snapshot)->not->toBeNull()
         ->and($snapshot['coupon_code'])->toBe('PROV20')
         ->and($snapshot['coupon_percent'])->toBe(20)
-        ->and($snapshot['currency'])->toBe('DZD')
+        ->and($snapshot['currency'])->toBe('EUR')
         // The terms must actually add up to what was charged.
         ->and($snapshot['total'])->toBe(Order::find($orderId)->amount)
         ->and($snapshot['subtotal'] - $snapshot['tier_discount'] - $snapshot['campaign_discount'] - $snapshot['coupon_discount'])
@@ -30,12 +30,12 @@ it('keeps every term that produced the price, so a paid order can explain itself
 
 it('survives the coupon being deleted afterwards', function () {
     $admin = User::factory()->create(['role' => 'admin']);
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 49900]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 49900]);
     $coupon = Coupon::factory()->create(['code' => 'GONE20', 'percent_off' => 20, 'max_uses' => null]);
 
     $orderId = $this->actingAs(User::factory()->create())->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_ccp',
+        'method' => 'manual_transfer',
         'coupon_code' => $coupon->code,
     ])->assertCreated()->json('data.order.id');
 
@@ -58,12 +58,12 @@ it('survives the coupon being deleted afterwards', function () {
 
 it('shows the admin how a price was reached', function () {
     $admin = User::factory()->create(['role' => 'admin']);
-    $course = Course::factory()->create(['status' => 'published', 'price_dzd' => 90000]);
+    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 90000]);
 
     // A plain full-access order, no promotions.
     $orderId = $this->actingAs(User::factory()->create())->postJson('/api/checkout', [
         'course_id' => $course->id,
-        'method' => 'manual_baridimob',
+        'method' => 'manual_bizum',
     ])->assertCreated()->json('data.order.id');
 
     $snapshot = $this->actingAs($admin)->getJson("/api/admin/orders/{$orderId}")
