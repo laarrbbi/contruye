@@ -33,6 +33,7 @@ class CourseDocumentController extends Controller
             'title' => $document->localizedTitle(),
             'access' => $document->access,
             'body_html' => Markdown::toHtml($document->localizedBody()),
+            'body_locale' => $document->localizedLocale('body'),
         ]]);
     }
 }

@@ -15,6 +15,7 @@ import { ModuleOverview } from '@/components/player/ModuleOverview'
 import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { moduleLabel } from '@/lib/modules'
 import { cn, formatDuration } from '@/lib/utils'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
@@ -208,8 +209,9 @@ export function PlayerPage() {
 
       {/* The lesson, as the instructor wrote it */}
       {!currentLesson.is_locked && currentLesson.content_html && (
-        <article aria-label={currentLesson.title}>
-          <MarkdownContent html={currentLesson.content_html} />
+        <article aria-label={currentLesson.title} className="space-y-3">
+          <ContentLanguageNote locale={currentLesson.content_locale} />
+          <MarkdownContent html={currentLesson.content_html} lang={currentLesson.content_locale} />
         </article>
       )}
 

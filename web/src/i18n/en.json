@@ -853,7 +853,9 @@
     "expertTip": "The expert's tip",
     "partnerNeeded": "Partner",
     "partnerSoon": "Partner contact — coming soon",
-    "noCommission": "Construye takes no commission on these introductions."
+    "noCommission": "Construye takes no commission on these introductions.",
+    "inSpanish": "This text is not translated yet: you are reading the Spanish original.",
+    "draftTranslation": "Draft translation: the instructor's Spanish is the reference, above all for laws, figures and deadlines."
   },
   "landing": {
     "hero": {

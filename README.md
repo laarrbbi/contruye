@@ -1,7 +1,9 @@
 # Construye Academy — LMS
 
-Plataforma de formación online (LMS) en **español**, con la interfaz también en **inglés**
-(`/en`), para vender y difundir un curso de promoción inmobiliaria en España. Primer producto:
+Plataforma de formación online (LMS) en **español**, con la interfaz también en **inglés**,
+**francés**, **árabe** (de derecha a izquierda), **ruso** y **ucraniano** (`/en`, `/fr`, `/ar`,
+`/ru`, `/uk`), para vender y difundir un curso de promoción inmobiliaria en España. Los textos
+del curso se traducen en `traducciones/` (borradores sin revisar; el español es la referencia). Primer producto:
 **CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 4.0: 12 módulos (las
 12 fases reales de una promoción, del solar a la postventa, 51 lecciones), la sección Financials
 (9 lecciones y la plantilla financiera del profesional, calculada en la plataforma), un quiz por
@@ -17,8 +19,9 @@ Monorepo:
 | Carpeta | Papel | Stack |
 |---|---|---|
 | `api/` | API REST | Laravel 12 · PHP 8.3 · MySQL 8 · Sanctum (cookies SPA) · colas database · Pest |
-| `web/` | SPA | React 18 · Vite · TypeScript · Tailwind · UI estilo shadcn · TanStack Query · i18next (es/en) |
+| `web/` | SPA | React 18 · Vite · TypeScript · Tailwind · UI estilo shadcn · TanStack Query · i18next (es/en/fr/ar/ru/uk) |
 | `curso/` | El paquete del curso, **tal como lo entregó el formador** | Markdown, JSON, PDF, la plantilla financiera y su motor |
+| `traducciones/` | Nuestras traducciones del curso, una carpeta por idioma, comprobadas contra el español | Markdown con la misma estructura que `curso/` |
 | `financials/` | Servicio de la plantilla financiera | Node.js 22 + el motor del paquete (HyperFormula) |
 | `docker/` | Imágenes de desarrollo y producción | php-fpm 8.3, nginx |
 
@@ -131,7 +134,7 @@ con `db:seed`, que crea cuentas y pedidos de demostración y se niega a ejecutar
 
 ## E-mails (en cola)
 
-Cuatro Mailables bilingües (es/en según el idioma del usuario), todos `ShouldQueue`: bienvenida al
+Cuatro Mailables en el idioma del usuario (es, en, fr, ar —de derecha a izquierda—, ru, uk), todos `ShouldQueue`: bienvenida al
 registrarse, confirmación de pago (webhook o validación del admin), justificante rechazado (con el
 motivo) y factura. Traducciones en `api/lang/es.json` / `en.json`. En desarrollo, configurar
 Mailtrap en `MAIL_*` o dejar `MAIL_MAILER=log`.

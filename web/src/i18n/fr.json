@@ -853,7 +853,9 @@
     "expertTip": "Le conseil de l'expert",
     "partnerNeeded": "Partenaire",
     "partnerSoon": "Contact de partenaire — bientôt disponible",
-    "noCommission": "Construye ne perçoit aucune commission sur ces contacts."
+    "noCommission": "Construye ne perçoit aucune commission sur ces contacts.",
+    "inSpanish": "Ce texte n'est pas encore traduit : vous lisez l'original espagnol.",
+    "draftTranslation": "Traduction en version provisoire : l'espagnol de l'instructeur fait foi, surtout pour les lois, les chiffres et les délais."
   },
   "landing": {
     "hero": {

@@ -17,4 +17,18 @@ return [
 
     'path' => env('CURSO_PATH', base_path('../curso')),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Its translations
+    |--------------------------------------------------------------------------
+    |
+    | One folder per locale (traducciones/ru/…), files named as in curso/ and
+    | cut the same way. Ours, not the instructor's: drafts until a human
+    | reviews them, with the Spanish as the reference. CourseTranslationSeeder
+    | loads them into the `_<locale>` columns; see traducciones/LEEME.md.
+    |
+    */
+
+    'translations' => env('CURSO_TRANSLATIONS_PATH', base_path('../traducciones')),
+
 ];

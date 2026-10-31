@@ -105,6 +105,9 @@ class LearnCourseResource extends JsonResource
                 'description' => $module->localizedDescription(),
                 // "**Objetivo:** …" / "**Duración:** …", one per line as written.
                 'description_html' => Markdown::toHtml($module->localizedDescription(), lineBreaks: true),
+                // The language each text is read in: the student's, or the
+                // Spanish it falls back to while its translation is pending.
+                'description_locale' => $module->localizedLocale('description'),
                 'is_locked' => ! $this->isAccessible($module),
                 // The quiz is listed for every module (title, size, the
                 // student's result); its questions come behind the module's gate.
@@ -164,6 +167,7 @@ class LearnCourseResource extends JsonResource
             // Written lesson content follows the same access rule as playback.
             'content' => $playable ? $lesson->localizedContent() : null,
             'content_html' => $playable ? Markdown::toHtml($lesson->localizedContent()) : null,
+            'content_locale' => $lesson->localizedLocale('content'),
             // Bullets of the lesson. Students never see the "A VALIDER" state:
             // that badge is an admin-only editorial signal.
             'key_points' => $playable ? $lesson->localizedKeyPoints() : [],
@@ -204,6 +208,7 @@ class LearnCourseResource extends JsonResource
                 'type' => $block->type,
                 'body' => $block->localizedBody(),
                 'body_html' => Markdown::toHtml($block->localizedBody()),
+                'body_locale' => $block->localizedLocale('body'),
             ];
 
             if ($block->type === 'partner_slot') {

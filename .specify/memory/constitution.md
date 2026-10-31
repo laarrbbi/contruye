@@ -112,17 +112,24 @@ final step of the project.
 
 ## Language
 
-Spanish is the authored locale, served at the root URLs. English is a translation, under `/en`, and
-the interface ships in both.
+Spanish is the authored locale, served at the root URLs. English, French, Arabic, Russian and
+Ukrainian are translations, under `/en`, `/fr`, `/ar`, `/ru` and `/uk`; the interface ships in all
+six. Arabic is right to left.
 
-- Course **material** has `_es` and `_en` columns. An empty English column falls back to Spanish —
-  a reader sees the authored text, never a blank. The English material is empty at launch.
-- `config/locales.php` is the single source of truth for which locales exist. Middleware and
-  validation read it; nothing hardcodes a locale list.
-- Both locales are left to right, but layout keeps logical properties (start/end), never physical
-  left/right, so a right-to-left locale stays a configuration change.
+- Course **material** has a column per locale (`title_es`, `title_ru`…). An empty column falls back
+  to Spanish — a reader sees the authored text, never a blank — and the page says the text is
+  still in Spanish.
+- Course translations live in `traducciones/<locale>/`, beside the package, never inside `curso/`.
+  They are checked against the Spanish before they are loaded: every number, law and article
+  reference and acronym kept, the same sections, table rows and checklist items, the same right
+  answers. **A legal figure is quoted, never reworded, in any language.**
+- `config/locales.php` is the single source of truth for which locales exist and which are right
+  to left. Middleware and validation read it; nothing hardcodes a locale list.
+- Layout keeps logical properties (start/end), never physical left/right; text whose language
+  differs from the page's carries its own `lang` and `dir`.
 - Machine translation is a draft. Any locale not yet reviewed by a human is stated as such to the
-  owner, not presented as finished.
+  owner (traducciones/README.md) and to the reader (a line above every translated course text:
+  the instructor's Spanish is the reference), not presented as finished.
 
 ## Quality Gates
 

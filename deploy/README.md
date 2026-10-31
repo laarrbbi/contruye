@@ -196,12 +196,12 @@ backup fails the drill. An untested backup is not a backup.
 
 ## 5. Search engines
 
-The public pages (`/`, `/cursos`, `/cursos/…`, and the same under `/en`) are
+The public pages (`/`, `/cursos`, `/cursos/…`, and the same under `/en`, `/fr`, `/ar`, `/ru` and `/uk`) are
 rendered by Laravel with their own title, description, canonical URL, links to their other
 languages, structured data (course, price, FAQ, organisation) and content, so Google, Bing and
 link previews read them without running JavaScript. The vhost sends exactly those paths to
 Laravel; the deploy fails its health check if the home page comes back without its canonical link.
-Spanish is at the root, English under `/en`. Every other path is a real 404, and
+Spanish is at the root, the other languages under their prefix. Every other path is a real 404, and
 the app's own screens (login, dashboard, checkout…) tell search engines not to index them.
 
 After the first deploy, once DNS points at the server:

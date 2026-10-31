@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use App\Models\Course;
 use App\Models\User;
+use App\Support\Course\CourseTranslation;
 use Database\Seeders\ChecklistSeeder;
+use Database\Seeders\CourseTranslationSeeder;
 use Database\Seeders\CurriculumV2Seeder;
 use Database\Seeders\ProvinceGuideSeeder;
 use Database\Seeders\ProvinceSeeder;
@@ -59,6 +61,12 @@ class InstallProduction extends Command
                     && $this->callSilent('db:seed', ['--class' => ChecklistSeeder::class, '--force' => true]) === 0;
             });
         }
+
+        // Translations are refreshed on every install: a corrected file is
+        // picked up without touching the Spanish or anyone's progress.
+        $this->components->task('Course translations ('.implode(', ', CourseTranslation::available()).')', fn () => $this->callSilent('db:seed', [
+            '--class' => CourseTranslationSeeder::class, '--force' => true,
+        ]) === 0);
 
         if (User::query()->where('role', 'admin')->exists()) {
             $this->components->twoColumnDetail('Admin account', '<fg=yellow>an admin already exists — none created</>');

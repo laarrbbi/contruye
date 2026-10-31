@@ -18,6 +18,8 @@ services:
       # The instructor's course package, read by the seeders and the
       # downloads (api/config/curso.php reads ../curso).
       - ./curso:/var/www/curso:ro
+      # Its translations (api/config/curso.php reads ../traducciones).
+      - ./traducciones:/var/www/traducciones:ro
     environment:
       PHP_IDE_CONFIG: serverName=construye
       # That user has no home in the image.

@@ -39,6 +39,20 @@ trait HasLocalizedAttributes
     }
 
     /**
+     * The language a localized value is actually read in: the asked locale
+     * when its column holds something, else the authored one the chain fell
+     * back to. Lets a page say "this text is still in Spanish" and set `lang`.
+     */
+    public function localizedLocale(string $base, ?string $locale = null): string
+    {
+        $locale ??= app()->getLocale();
+        $column = "{$base}_{$locale}";
+        $value = array_key_exists($column, $this->attributes) ? $this->{$column} : null;
+
+        return $value === null || $value === '' || $value === [] ? config('locales.default', 'es') : $locale;
+    }
+
+    /**
      * Same chain, for a column cast to an array (key points, tags…).
      *
      * @return array<int, mixed>

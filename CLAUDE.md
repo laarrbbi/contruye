@@ -3,7 +3,8 @@
 Online course platform for CONSTRUYE, a Spanish real-estate development (promoción inmobiliaria)
 course: 12 modules, one per phase of a housing development from the site to after-sales, plus
 Financials, quizzes, a final exam and a directory of the 52 provinces. Laravel 12 API + React 18
-SPA + a small Node.js service for the financial template. Spanish (authored) and English.
+SPA + a small Node.js service for the financial template. Spanish (authored), English, French,
+Arabic (right to left), Russian and Ukrainian.
 
 It is the Ebni Academy platform (the Algerian edition, in the sibling `ebni` repository) adapted
 for Spain: content, language, euros, Stripe / bank transfer / Bizum, the 52 provinces and Spanish
@@ -49,6 +50,7 @@ public coupon codes. It refuses to run in production; a live database is filled 
 | Format PHP | `docker compose exec -T php ./vendor/bin/pint` |
 | Dependency audit | `docker compose exec -T php composer audit` |
 | Secrets gate (before deploy) | `docker compose exec -T php php artisan app:check-secrets --strict` |
+| Course translations: check / load | `docker compose exec -T php php artisan app:check-translations` · `… db:seed --class=CourseTranslationSeeder` |
 | Deploy / backups | `deploy/README.md` — `deploy/deploy.sh`, `deploy/backup.sh`, `deploy/restore-drill.sh` |
 | Benchmark | `docker compose exec -T php php artisan bench:endpoints` |
 | Front-end build / lint | `npm --prefix web run build` · `npm --prefix web run lint` |
@@ -64,10 +66,15 @@ makes that work lives in `docker/mysql-test/`.
   invoices), `PaymentMethods` and `StripeService`.
 - `api/app/Http/Controllers/Api/Concerns/AuthorizesCourseAccess.php` is the access gate. Every
   route that serves course material goes through it.
-- `web/src/i18n/` — `es.json` is authored; `en.json` is the translation. Course *material* lives
-  in the database with `_es`/`_en` columns and falls back to Spanish (the English material is
-  empty at launch). The UI calls the unit "módulo", as the course text does; "fase" is the phase
-  of a real promotion.
+- `web/src/i18n/` — `es.json` is authored; `en`, `fr`, `ar`, `ru` and `uk.json` are translations,
+  each with its own plural forms (Russian/Ukrainian one/few/many, Arabic zero…many). Course
+  *material* lives in the database with a column per locale (`_es`, `_ru`…) and falls back to
+  Spanish, which the player says. The UI calls the unit "módulo", as the course text does; "fase"
+  is the phase of a real promotion.
+- `traducciones/` — our translations of the course, one folder per locale, files mirroring
+  `curso/` section for section (`<!-- es -->` = not translated yet). `CourseTranslation` checks each
+  piece against the Spanish (every figure, law number and acronym kept) and
+  `CourseTranslationSeeder` loads them. Drafts until a human reviews them: see its README.
 - `api/app/Support/Course/CourseSource.php` reads `curso/` and cuts each module file at its
   headings (overview sections, lessons, checklist, closing sections) without changing a word;
   `CurriculumV2Seeder`, `ChecklistSeeder` and `ProvinceGuideSeeder` store the pieces, and

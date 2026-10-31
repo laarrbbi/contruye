@@ -905,7 +905,9 @@
     "expertTip": "نصيحة الخبير",
     "partnerNeeded": "شريك",
     "partnerSoon": "جهة اتصال الشريك — متاحة قريباً",
-    "noCommission": "لا تتقاضى Construye أي عمولة على هذه الجهات."
+    "noCommission": "لا تتقاضى Construye أي عمولة على هذه الجهات.",
+    "inSpanish": "هذا النص غير مترجم بعد: أنت تقرأ الأصل الإسباني.",
+    "draftTranslation": "ترجمة أولية: النص الإسباني للمدرّب هو المرجع، ولا سيما في القوانين والأرقام والمهل."
   },
   "landing": {
     "hero": {
@@ -1008,7 +1010,7 @@
     "pricing": {
       "title": "طريقتان للوصول.",
       "fullTitle": "وصول كامل",
-      "fullBody": "الوحدات الـ{{modules}} وFinancials، والدروس الـ{{lessons}}، والاختبارات القصيرة والامتحان النهائي، وقوائم المراجعة ودليل المقاطعات الاثنتين والخمسين. وصول مدى الحياة. أدنى سعر للوحدة بفارق كبير.",
+      "fullBody": "الوحدات الـ{{modules}} و Financials، والدروس الـ{{lessons}}، والاختبارات القصيرة والامتحان النهائي، وقوائم المراجعة ودليل المقاطعات الاثنتين والخمسين. وصول مدى الحياة. أدنى سعر للوحدة بفارق كبير.",
       "unitTitle": "حسب الوحدات",
       "unitBody": "خذ الوحدة التي تعثّرت فيها، وتقدّم بالسرعة التي تناسبك، وأكمل لاحقاً.",
       "payment": "الأسعار شاملة ضريبة القيمة المضافة (IVA). وصول مدى الحياة: الجوال والجهاز اللوحي والحاسوب. فاتورة عند الطلب.",
@@ -1049,11 +1051,11 @@
       "modules_many": "{{count}} وحدة",
       "modules_other": "{{count}} وحدة",
       "modulesWithFinancials_zero": "Financials",
-      "modulesWithFinancials_one": "وحدة واحدة وFinancials",
-      "modulesWithFinancials_two": "وحدتان وFinancials",
-      "modulesWithFinancials_few": "{{count}} وحدات وFinancials",
-      "modulesWithFinancials_many": "{{count}} وحدة وFinancials",
-      "modulesWithFinancials_other": "{{count}} وحدة وFinancials"
+      "modulesWithFinancials_one": "وحدة واحدة و Financials",
+      "modulesWithFinancials_two": "وحدتان و Financials",
+      "modulesWithFinancials_few": "{{count}} وحدات و Financials",
+      "modulesWithFinancials_many": "{{count}} وحدة و Financials",
+      "modulesWithFinancials_other": "{{count}} وحدة و Financials"
     },
     "forWhom": {
       "title": "لديك مشروع. ينقصك المسار.",

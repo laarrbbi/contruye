@@ -8,6 +8,7 @@ import { courseFileUrl, useCourseDocument, useLearn, useProvinceDirectory, type 
 import { provinceLabel, useProvinces } from '@/api/provinces'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
 import { Button } from '@/components/ui/button'
@@ -121,7 +122,8 @@ export function CourseDocumentPage() {
 
   return (
     <PlayerShell data={learn.data} location={{ document: document.data.slug }}>
-      <MarkdownContent html={document.data.body_html} />
+      <ContentLanguageNote locale={document.data.body_locale} />
+      <MarkdownContent html={document.data.body_html} lang={document.data.body_locale} />
       {document.data.slug === 'recursos' && <Downloads data={learn.data} />}
       {document.data.slug === 'anexo-a' && <ProvinceAnnex slug={learn.data.course.slug} />}
     </PlayerShell>

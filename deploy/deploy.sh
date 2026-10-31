@@ -49,6 +49,8 @@ step "Secrets and production settings — the deploy stops here if anything is w
 # A cached config from the previous release would hide a change to .env.
 "$PHP" artisan config:clear
 "$PHP" artisan app:check-secrets --strict
+# A course translation that lost a figure or a law number stops here, site up.
+"$PHP" artisan app:check-translations
 
 if [ "${SKIP_WEB:-}" != "1" ]; then
   step "Front-end build (into dist-next; the live dist is untouched until the swap)"
@@ -65,6 +67,9 @@ cd "$API"
 "$PHP" artisan down --retry=15 || true
 trap 'printf "\n\033[31mDeploy failed after maintenance mode began: the site is still DOWN.\nFix the error, then run deploy/deploy.sh again or php artisan up.\033[0m\n" >&2' ERR
 "$PHP" artisan migrate --force
+# The course translations (traducciones/), checked before maintenance mode,
+# re-read on every deploy: a corrected file goes live with the code.
+"$PHP" artisan db:seed --class=CourseTranslationSeeder --force
 
 step "Caches"
 "$PHP" artisan optimize

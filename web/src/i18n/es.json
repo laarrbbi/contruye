@@ -853,7 +853,9 @@
     "expertTip": "El consejo del experto",
     "partnerNeeded": "Colaborador",
     "partnerSoon": "Contacto de colaborador — disponible próximamente",
-    "noCommission": "Construye no cobra ninguna comisión por estos contactos."
+    "noCommission": "Construye no cobra ninguna comisión por estos contactos.",
+    "inSpanish": "Este texto todavía no está traducido: lo lees en el español original.",
+    "draftTranslation": "Traducción en borrador: el texto de referencia es el español del instructor, sobre todo para leyes, cifras y plazos."
   },
   "landing": {
     "hero": {

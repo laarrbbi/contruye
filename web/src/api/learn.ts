@@ -18,6 +18,8 @@ export interface LearnLesson {
   content: string | null
   /** The same text rendered (safe HTML from the server); null when locked. */
   content_html: string | null
+  /** The language the text is in: the student's, or Spanish while its translation is pending. */
+  content_locale: string
   /** The lesson's bullet points (empty when locked). */
   key_points: string[]
   /** Tagged blocks attached to the lesson (empty when locked). */
@@ -69,6 +71,8 @@ export interface LearnContentBlock {
   body: string | null
   /** The body rendered from Markdown (safe HTML from the server). */
   body_html: string | null
+  /** The language the body is in (Spanish while its translation is pending). */
+  body_locale: string
   /** partner_slot only: which kind of provider the slot is asking for. */
   partner_category?: string | null
   /** Always sent: lets a locked slot tease what it holds without listing it. */
@@ -102,6 +106,8 @@ export interface LearnModule {
   /** The module's introductory text ("Objetivo / Duración / Resultado"). */
   description: string | null
   description_html: string | null
+  /** The language the description is in (Spanish while its translation is pending). */
+  description_locale: string
   /** The quiz that closes the module. */
   quiz: LearnQuizSummary | null
   /** Tagged blocks attached to the module (empty when locked). */
@@ -220,6 +226,8 @@ export interface CourseDocument {
   title: string
   access: 'enrolled' | 'full'
   body_html: string | null
+  /** The language the body is in (Spanish while its translation is pending). */
+  body_locale: string
 }
 
 export function useCourseDocument(slug: string | undefined, documentSlug: string | undefined) {

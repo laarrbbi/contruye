@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { ChevronDown, Scale } from 'lucide-react'
 import type { LearnModule } from '@/api/learn'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { moduleLabel } from '@/lib/modules'
 
 /**
@@ -25,9 +26,14 @@ export function ModuleOverview({ module, defaultOpen }: { module: LearnModule; d
         <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
       </summary>
       <div className="space-y-5 border-t px-4 py-4">
-        <MarkdownContent html={module.description_html} className="rounded-lg bg-primary/5 px-4 py-3" />
+        <MarkdownContent
+          html={module.description_html}
+          lang={module.description_locale}
+          className="rounded-lg bg-primary/5 px-4 py-3"
+        />
+        {sections.length > 0 && <ContentLanguageNote locale={sections[0].body_locale} />}
         {sections.map((block) => (
-          <MarkdownContent key={block.id} html={block.body_html} />
+          <MarkdownContent key={block.id} html={block.body_html} lang={block.body_locale} />
         ))}
       </div>
     </details>
