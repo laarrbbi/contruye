@@ -4,10 +4,15 @@ namespace App\Http\Resources;
 
 use App\Models\ContentBlock;
 use App\Models\Course;
+use App\Models\CourseDocument;
 use App\Models\Lesson;
 use App\Models\LessonProgress;
 use App\Models\Module;
 use App\Models\Partner;
+use App\Models\Quiz;
+use App\Models\QuizAttempt;
+use App\Support\Course\CourseFiles;
+use App\Support\Markdown;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
@@ -28,11 +33,13 @@ class LearnCourseResource extends JsonResource
     /**
      * @param  Collection<int, LessonProgress>  $progressByLesson  keyed by lesson_id
      * @param  Collection<int, int>  $accessibleModuleIds
+     * @param  Collection<int, Collection<int, QuizAttempt>>  $attemptsByQuiz  submitted attempts, keyed by quiz_id
      */
     public function __construct(
         Course $course,
         private readonly Collection $progressByLesson,
         private readonly Collection $accessibleModuleIds,
+        private readonly Collection $attemptsByQuiz = new Collection,
     ) {
         parent::__construct($course);
     }
@@ -56,22 +63,52 @@ class LearnCourseResource extends JsonResource
         $nextLesson = $accessible->first(fn (Lesson $lesson) => ! $this->isCompleted($lesson))
             ?? $accessible->first();
 
+        $fullAccess = $this->accessibleModuleIds->count() >= $this->modules->count();
+        $finalExam = $this->quizzes->firstWhere('kind', 'final');
+
         return [
             'course' => [
                 'id' => $this->id,
                 'slug' => $this->slug,
                 'title' => $this->localizedTitle(),
                 'progress_percent' => $total > 0 ? (int) round($completed / $total * 100) : 0,
-                'full_access' => $this->accessibleModuleIds->count() >= $this->modules->count(),
+                'full_access' => $fullAccess,
                 'owned_modules_count' => $this->accessibleModuleIds->count(),
                 'total_modules_count' => $this->modules->count(),
+                // Titles only: the texts come one at a time, behind their own gate.
+                'documents' => $this->documents->map(fn (CourseDocument $document) => [
+                    'slug' => $document->slug,
+                    'title' => $document->localizedTitle(),
+                    'access' => $document->access,
+                    'is_locked' => $document->access === 'full' && ! $fullAccess,
+                ])->values(),
+                // The package's downloads and whether this student may take them.
+                'files' => collect(CourseFiles::FILES)->map(fn (array $file, string $key) => [
+                    'key' => $key,
+                    'name' => $file['name'],
+                    'access' => $file['access'],
+                    'is_locked' => $file['access'] === 'full'
+                        ? ! $fullAccess
+                        : ! $this->modules->contains(fn (Module $module) => $module->isFinancials() && $this->isAccessible($module)),
+                ])->values(),
+                'final_exam' => $finalExam === null ? null : [
+                    ...$this->quizSummary($finalExam),
+                    'duration_minutes' => $finalExam->duration_minutes,
+                    'is_locked' => ! $fullAccess,
+                ],
             ],
             'modules' => $this->modules->map(fn (Module $module) => [
                 'id' => $module->id,
                 'order' => $module->order,
+                'kind' => $module->kind,
                 'title' => $module->localizedTitle(),
                 'description' => $module->localizedDescription(),
+                // "**Objetivo:** …" / "**Duración:** …", one per line as written.
+                'description_html' => Markdown::toHtml($module->localizedDescription(), lineBreaks: true),
                 'is_locked' => ! $this->isAccessible($module),
+                // The quiz is listed for every module (title, size, the
+                // student's result); its questions come behind the module's gate.
+                'quiz' => $module->quiz === null ? null : $this->quizSummary($module->quiz),
                 'price_eur' => $module->price_eur,
                 // Partner contact details are a paid perk: only listed for
                 // modules the student actually owns. Locked modules expose
@@ -126,6 +163,7 @@ class LearnCourseResource extends JsonResource
             'is_locked' => ! $accessible && ! $lesson->is_free_preview,
             // Written lesson content follows the same access rule as playback.
             'content' => $playable ? $lesson->localizedContent() : null,
+            'content_html' => $playable ? Markdown::toHtml($lesson->localizedContent()) : null,
             // Bullets of the lesson. Students never see the "A VALIDER" state:
             // that badge is an admin-only editorial signal.
             'key_points' => $playable ? $lesson->localizedKeyPoints() : [],
@@ -165,6 +203,7 @@ class LearnCourseResource extends JsonResource
                 'id' => $block->id,
                 'type' => $block->type,
                 'body' => $block->localizedBody(),
+                'body_html' => Markdown::toHtml($block->localizedBody()),
             ];
 
             if ($block->type === 'partner_slot') {
@@ -216,6 +255,27 @@ class LearnCourseResource extends JsonResource
             'code' => $province->code,
             'name' => $province->localizedName(),
         ])->values()->all();
+    }
+
+    /**
+     * What the player shows about a quiz before it is opened. Never the
+     * questions, never the answers.
+     *
+     * @return array<string, mixed>
+     */
+    private function quizSummary(Quiz $quiz): array
+    {
+        $attempts = $this->attemptsByQuiz->get($quiz->id, new Collection);
+
+        return [
+            'id' => $quiz->id,
+            'title' => $quiz->localizedTitle(),
+            'pass_mark' => $quiz->pass_mark,
+            'questions_count' => $quiz->questionCount(),
+            'attempts_count' => $attempts->count(),
+            'best_score' => $attempts->max('score'),
+            'passed' => $attempts->contains('passed', true),
+        ];
     }
 
     private function isAccessible(Module $module): bool

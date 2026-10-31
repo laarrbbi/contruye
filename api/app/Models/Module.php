@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Module extends Model
 {
@@ -16,6 +17,7 @@ class Module extends Model
     protected $fillable = [
         'course_id',
         'order',
+        'kind',
         'title_es',
         'title_en',
         'description_es',
@@ -57,6 +59,16 @@ class Module extends Model
             ->withPivot(['order', 'note_es', 'note_en'])
             ->withTimestamps()
             ->orderBy('module_partner.order');
+    }
+
+    public function quiz(): HasOne
+    {
+        return $this->hasOne(Quiz::class);
+    }
+
+    public function isFinancials(): bool
+    {
+        return $this->kind === 'financials';
     }
 
     public function lessons(): HasMany

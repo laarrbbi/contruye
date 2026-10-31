@@ -19,13 +19,18 @@ use App\Http\Controllers\Api\BusinessController;
 use App\Http\Controllers\Api\ChecklistController;
 use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\CourseController;
+use App\Http\Controllers\Api\CourseDocumentController;
+use App\Http\Controllers\Api\CourseFileController;
 use App\Http\Controllers\Api\EnrollmentController;
+use App\Http\Controllers\Api\FinancialsController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PlaybackController;
 use App\Http\Controllers\Api\ProgressController;
 use App\Http\Controllers\Api\ProvinceController;
+use App\Http\Controllers\Api\ProvinceDirectoryController;
+use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\WebhookController;
@@ -82,8 +87,35 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/lessons/{lesson}/complete', [ProgressController::class, 'complete']);
     Route::get('/lessons/{lesson}/attachments/{index}', [AttachmentController::class, 'download'])
         ->whereNumber('index');
-    // Printable safety sheet (module 13.2) — same access gate as the lesson.
+    // Printable safety sheet — same access gate as the lesson.
     Route::get('/lessons/{lesson}/reflex-sheet', [ReflexSheetController::class, 'download']);
+
+    // Course documents (introduction, resources, annexes) and package downloads
+    Route::get('/courses/{course:slug}/documents/{slug}', [CourseDocumentController::class, 'show'])
+        ->where('slug', '[a-z0-9-]+');
+    Route::get('/courses/{course:slug}/files/{key}', [CourseFileController::class, 'download'])
+        ->where('key', '[a-z0-9-]+')->middleware('throttle:30,1');
+
+    // Anexo A: the student's province, phase by phase
+    Route::get('/courses/{course:slug}/directory/{province}', [ProvinceDirectoryController::class, 'show'])
+        ->whereNumber('province');
+
+    // Module quizzes and the final exam (graded on the server)
+    Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->whereNumber('quiz');
+    Route::post('/quizzes/{quiz}/attempts', [QuizController::class, 'start'])
+        ->whereNumber('quiz')->middleware('throttle:30,1');
+    Route::post('/quiz-attempts/{attempt}/submit', [QuizController::class, 'submit'])
+        ->whereNumber('attempt')->middleware('throttle:30,1');
+
+    // Financials: the professional's template, calculated on the server
+    Route::prefix('/courses/{course:slug}/financials')->group(function () {
+        Route::get('/inputs', [FinancialsController::class, 'inputs']);
+        Route::post('/calculate', [FinancialsController::class, 'calculate'])->middleware('throttle:20,1');
+        Route::get('/scenarios', [FinancialsController::class, 'scenarios']);
+        Route::post('/scenarios', [FinancialsController::class, 'storeScenario'])->middleware('throttle:30,1');
+        Route::put('/scenarios/{scenario}', [FinancialsController::class, 'updateScenario'])->whereNumber('scenario');
+        Route::delete('/scenarios/{scenario}', [FinancialsController::class, 'destroyScenario'])->whereNumber('scenario');
+    });
 
     // Checkout + orders
     Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('throttle:checkout');

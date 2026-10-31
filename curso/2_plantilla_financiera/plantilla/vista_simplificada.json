@@ -1,0 +1,2950 @@
+{
+ "hoja_modelo": "3ª Coste Total Promoción",
+ "desplazamiento": {
+  "filas": 1,
+  "columnas": 1
+ },
+ "nota": "Celda X del archivo simplificado = celda (fila-1, columna-1) de la hoja '3ª Coste Total Promoción' del modelo completo. Comprobado: 129 etiquetas en la misma posición y los 291 números son fórmulas del modelo.",
+ "celdas": [
+  {
+   "simplificada": "B2",
+   "modelo": "A1",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "COSTE DE LA PROMOCIÓN"
+  },
+  {
+   "simplificada": "L2",
+   "modelo": "K1",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "RESUMEN DE LA PROMOCIÓN"
+  },
+  {
+   "simplificada": "T2",
+   "modelo": "S1",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "RESUMEN DE LA PROMOCION"
+  },
+  {
+   "simplificada": "B3",
+   "modelo": "A2",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CONCEPTO"
+  },
+  {
+   "simplificada": "D3",
+   "modelo": "C2",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "F3",
+   "modelo": "E2",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "H3",
+   "modelo": "G2",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "J3",
+   "modelo": "I2",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "  % "
+  },
+  {
+   "simplificada": "D4",
+   "modelo": "C3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": " NETO"
+  },
+  {
+   "simplificada": "F4",
+   "modelo": "E3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CON IVA"
+  },
+  {
+   "simplificada": "H4",
+   "modelo": "G3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": " IVA"
+  },
+  {
+   "simplificada": "J4",
+   "modelo": "I3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "   TOTAL"
+  },
+  {
+   "simplificada": "N4",
+   "modelo": "M3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "P4",
+   "modelo": "O3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "R4",
+   "modelo": "Q3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "% "
+  },
+  {
+   "simplificada": "V4",
+   "modelo": "U3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "X4",
+   "modelo": "W3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE"
+  },
+  {
+   "simplificada": "Z4",
+   "modelo": "Y3",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "%"
+  },
+  {
+   "simplificada": "L5",
+   "modelo": "K4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CONCEPTO"
+  },
+  {
+   "simplificada": "N5",
+   "modelo": "M4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "NETO"
+  },
+  {
+   "simplificada": "P5",
+   "modelo": "O4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CON IVA"
+  },
+  {
+   "simplificada": "R5",
+   "modelo": "Q4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DEL TOTAL"
+  },
+  {
+   "simplificada": "T5",
+   "modelo": "S4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CONCEPTO"
+  },
+  {
+   "simplificada": "V5",
+   "modelo": "U4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "NETO"
+  },
+  {
+   "simplificada": "X5",
+   "modelo": "W4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CON IVA"
+  },
+  {
+   "simplificada": "Z5",
+   "modelo": "Y4",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": " DEL TOTAL"
+  },
+  {
+   "simplificada": "B7",
+   "modelo": "A6",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TERRENO"
+  },
+  {
+   "simplificada": "D7",
+   "modelo": "C6",
+   "tipo": "numero",
+   "ejemplo_profesional": 53100,
+   "texto": null
+  },
+  {
+   "simplificada": "F7",
+   "modelo": "E6",
+   "tipo": "numero",
+   "ejemplo_profesional": 61116,
+   "texto": null
+  },
+  {
+   "simplificada": "H7",
+   "modelo": "G6",
+   "tipo": "numero",
+   "ejemplo_profesional": 8016,
+   "texto": null
+  },
+  {
+   "simplificada": "J7",
+   "modelo": "I6",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.16463244952259556,
+   "texto": null
+  },
+  {
+   "simplificada": "L7",
+   "modelo": "K6",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TERRENOS"
+  },
+  {
+   "simplificada": "N7",
+   "modelo": "M6",
+   "tipo": "numero",
+   "ejemplo_profesional": 50000,
+   "texto": null
+  },
+  {
+   "simplificada": "P7",
+   "modelo": "O6",
+   "tipo": "numero",
+   "ejemplo_profesional": 58000,
+   "texto": null
+  },
+  {
+   "simplificada": "R7",
+   "modelo": "Q6",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.15502113891016528,
+   "texto": null
+  },
+  {
+   "simplificada": "T7",
+   "modelo": "S6",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "IMPORTE CONSTRUCCIÓN"
+  },
+  {
+   "simplificada": "V7",
+   "modelo": "U6",
+   "tipo": "numero",
+   "ejemplo_profesional": 163400,
+   "texto": null
+  },
+  {
+   "simplificada": "X7",
+   "modelo": "W6",
+   "tipo": "numero",
+   "ejemplo_profesional": 174838,
+   "texto": null
+  },
+  {
+   "simplificada": "Z7",
+   "modelo": "Y6",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.5066090819584201,
+   "texto": null
+  },
+  {
+   "simplificada": "B9",
+   "modelo": "A8",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CONSTRUCCIÓN"
+  },
+  {
+   "simplificada": "D9",
+   "modelo": "C8",
+   "tipo": "numero",
+   "ejemplo_profesional": 180935.33496882053,
+   "texto": null
+  },
+  {
+   "simplificada": "F9",
+   "modelo": "E8",
+   "tipo": "numero",
+   "ejemplo_profesional": 193552.30658902897,
+   "texto": null
+  },
+  {
+   "simplificada": "H9",
+   "modelo": "G8",
+   "tipo": "numero",
+   "ejemplo_profesional": 12616.971620208433,
+   "texto": null
+  },
+  {
+   "simplificada": "J9",
+   "modelo": "I8",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.5609760339191764,
+   "texto": null
+  },
+  {
+   "simplificada": "L9",
+   "modelo": "K8",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N9",
+   "modelo": "M8",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P9",
+   "modelo": "O8",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R9",
+   "modelo": "Q8",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T9",
+   "modelo": "S8",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "RETENCIÓN"
+  },
+  {
+   "simplificada": "V9",
+   "modelo": "U8",
+   "tipo": "numero",
+   "ejemplo_profesional": 8600,
+   "texto": null
+  },
+  {
+   "simplificada": "X9",
+   "modelo": "W8",
+   "tipo": "numero",
+   "ejemplo_profesional": 9202,
+   "texto": null
+  },
+  {
+   "simplificada": "Z9",
+   "modelo": "Y8",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02666363589254843,
+   "texto": null
+  },
+  {
+   "simplificada": "B11",
+   "modelo": "A10",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "URBANIZACIÓN"
+  },
+  {
+   "simplificada": "D11",
+   "modelo": "C10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F11",
+   "modelo": "E10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "H11",
+   "modelo": "G10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "J11",
+   "modelo": "I10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L11",
+   "modelo": "K10",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "RETENCIÓN URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N11",
+   "modelo": "M10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P11",
+   "modelo": "O10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R11",
+   "modelo": "Q10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T11",
+   "modelo": "S10",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "O.C.T."
+  },
+  {
+   "simplificada": "V11",
+   "modelo": "U10",
+   "tipo": "numero",
+   "ejemplo_profesional": 3606.0726263026936,
+   "texto": null
+  },
+  {
+   "simplificada": "X11",
+   "modelo": "W10",
+   "tipo": "numero",
+   "ejemplo_profesional": 4183.044246511125,
+   "texto": null
+  },
+  {
+   "simplificada": "Z11",
+   "modelo": "Y10",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.011180349710444288,
+   "texto": null
+  },
+  {
+   "simplificada": "B13",
+   "modelo": "A12",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTOS"
+  },
+  {
+   "simplificada": "D13",
+   "modelo": "C12",
+   "tipo": "numero",
+   "ejemplo_profesional": 38754.09155414518,
+   "texto": null
+  },
+  {
+   "simplificada": "F13",
+   "modelo": "E12",
+   "tipo": "numero",
+   "ejemplo_profesional": 44954.74620280841,
+   "texto": null
+  },
+  {
+   "simplificada": "H13",
+   "modelo": "G12",
+   "tipo": "numero",
+   "ejemplo_profesional": 6200.654648663229,
+   "texto": null
+  },
+  {
+   "simplificada": "J13",
+   "modelo": "I12",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.1201540682030481,
+   "texto": null
+  },
+  {
+   "simplificada": "L13",
+   "modelo": "K12",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CERTIFICACIÓN CONTROL CALIDAD URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N13",
+   "modelo": "M12",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P13",
+   "modelo": "O12",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R13",
+   "modelo": "Q12",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T13",
+   "modelo": "S12",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "SEGURO DECENAL"
+  },
+  {
+   "simplificada": "V13",
+   "modelo": "U12",
+   "tipo": "numero",
+   "ejemplo_profesional": 5329.2623425178535,
+   "texto": null
+  },
+  {
+   "simplificada": "X13",
+   "modelo": "W12",
+   "tipo": "numero",
+   "ejemplo_profesional": 5329.2623425178535,
+   "texto": null
+  },
+  {
+   "simplificada": "Z13",
+   "modelo": "Y12",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.01652296635776346,
+   "texto": null
+  },
+  {
+   "simplificada": "B15",
+   "modelo": "A14",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "LICENCIAS"
+  },
+  {
+   "simplificada": "D15",
+   "modelo": "C14",
+   "tipo": "numero",
+   "ejemplo_profesional": 7740,
+   "texto": null
+  },
+  {
+   "simplificada": "F15",
+   "modelo": "E14",
+   "tipo": "numero",
+   "ejemplo_profesional": 7740,
+   "texto": null
+  },
+  {
+   "simplificada": "H15",
+   "modelo": "G14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "J15",
+   "modelo": "I14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02399727230329359,
+   "texto": null
+  },
+  {
+   "simplificada": "L15",
+   "modelo": "K14",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CERTIFICACIÓN SEGURIDAD URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N15",
+   "modelo": "M14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P15",
+   "modelo": "O14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R15",
+   "modelo": "Q14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T15",
+   "modelo": "S14",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TIMBRES CONST."
+  },
+  {
+   "simplificada": "V15",
+   "modelo": "U14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X15",
+   "modelo": "W14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z15",
+   "modelo": "Y14",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B17",
+   "modelo": "A16",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "VARIOS"
+  },
+  {
+   "simplificada": "D17",
+   "modelo": "C16",
+   "tipo": "numero",
+   "ejemplo_profesional": 18484.04840523972,
+   "texto": null
+  },
+  {
+   "simplificada": "F17",
+   "modelo": "E16",
+   "tipo": "numero",
+   "ejemplo_profesional": 20250.239446120562,
+   "texto": null
+  },
+  {
+   "simplificada": "H17",
+   "modelo": "G16",
+   "tipo": "numero",
+   "ejemplo_profesional": 2045.0606573149184,
+   "texto": null
+  },
+  {
+   "simplificada": "J17",
+   "modelo": "I16",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.05730836470901772,
+   "texto": null
+  },
+  {
+   "simplificada": "L17",
+   "modelo": "K16",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TIMBRES URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N17",
+   "modelo": "M16",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P17",
+   "modelo": "O16",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R17",
+   "modelo": "Q16",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T17",
+   "modelo": "S16",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V17",
+   "modelo": "U16",
+   "tipo": "numero",
+   "ejemplo_profesional": 180935.33496882053,
+   "texto": null
+  },
+  {
+   "simplificada": "X17",
+   "modelo": "W16",
+   "tipo": "numero",
+   "ejemplo_profesional": 193552.30658902897,
+   "texto": null
+  },
+  {
+   "simplificada": "B19",
+   "modelo": "A18",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GESTIÓN"
+  },
+  {
+   "simplificada": "D19",
+   "modelo": "C18",
+   "tipo": "numero",
+   "ejemplo_profesional": 15358.888456703586,
+   "texto": null
+  },
+  {
+   "simplificada": "F19",
+   "modelo": "E18",
+   "tipo": "numero",
+   "ejemplo_profesional": 17816.31060977616,
+   "texto": null
+  },
+  {
+   "simplificada": "H19",
+   "modelo": "G18",
+   "tipo": "numero",
+   "ejemplo_profesional": 2457.422153072574,
+   "texto": null
+  },
+  {
+   "simplificada": "J19",
+   "modelo": "I18",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.04761904761904762,
+   "texto": null
+  },
+  {
+   "simplificada": "L19",
+   "modelo": "K18",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "N19",
+   "modelo": "M18",
+   "tipo": "numero",
+   "ejemplo_profesional": 50000,
+   "texto": null
+  },
+  {
+   "simplificada": "P19",
+   "modelo": "O18",
+   "tipo": "numero",
+   "ejemplo_profesional": 58000,
+   "texto": null
+  },
+  {
+   "simplificada": "T19",
+   "modelo": "S18",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "LICENCIAS Y OTROS TRIBUTOS"
+  },
+  {
+   "simplificada": "V19",
+   "modelo": "U18",
+   "tipo": "numero",
+   "ejemplo_profesional": 7740,
+   "texto": null
+  },
+  {
+   "simplificada": "X19",
+   "modelo": "W18",
+   "tipo": "numero",
+   "ejemplo_profesional": 7740,
+   "texto": null
+  },
+  {
+   "simplificada": "Z19",
+   "modelo": "Y18",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.023997272303293585,
+   "texto": null
+  },
+  {
+   "simplificada": "B21",
+   "modelo": "A20",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GASTOS PRÉSTAMO HIPOTECARIO"
+  },
+  {
+   "simplificada": "D21",
+   "modelo": "C20",
+   "tipo": "numero",
+   "ejemplo_profesional": 8164.294205866285,
+   "texto": null
+  },
+  {
+   "simplificada": "F21",
+   "modelo": "E20",
+   "tipo": "numero",
+   "ejemplo_profesional": 9073.024507694563,
+   "texto": null
+  },
+  {
+   "simplificada": "H21",
+   "modelo": "G20",
+   "tipo": "numero",
+   "ejemplo_profesional": 908.7303018282789,
+   "texto": null
+  },
+  {
+   "simplificada": "J21",
+   "modelo": "I20",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.025312763723821102,
+   "texto": null
+  },
+  {
+   "simplificada": "L21",
+   "modelo": "K20",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO PARCELAZ./DELIMITACIÓN y EST.DE DETALLE"
+  },
+  {
+   "simplificada": "N21",
+   "modelo": "M20",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P21",
+   "modelo": "O20",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R21",
+   "modelo": "Q20",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T21",
+   "modelo": "S20",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GASTOS JURIDICOS"
+  },
+  {
+   "simplificada": "V21",
+   "modelo": "U20",
+   "tipo": "numero",
+   "ejemplo_profesional": 6696.747207096751,
+   "texto": null
+  },
+  {
+   "simplificada": "X21",
+   "modelo": "W20",
+   "tipo": "numero",
+   "ejemplo_profesional": 7137.82676023223,
+   "texto": null
+  },
+  {
+   "simplificada": "Z21",
+   "modelo": "Y20",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.020762747580752135,
+   "texto": null
+  },
+  {
+   "simplificada": "B23",
+   "modelo": "A22",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GASTOS FINANCIACIÓN EXTERNA"
+  },
+  {
+   "simplificada": "D23",
+   "modelo": "C22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F23",
+   "modelo": "E22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "H23",
+   "modelo": "G22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "J23",
+   "modelo": "I22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L23",
+   "modelo": "K22",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO DE COMPENSACIÓN."
+  },
+  {
+   "simplificada": "N23",
+   "modelo": "M22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P23",
+   "modelo": "O22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R23",
+   "modelo": "Q22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T23",
+   "modelo": "S22",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "FORMALIZACIÓN PRÉSTAMO HIPOTECARIO"
+  },
+  {
+   "simplificada": "V23",
+   "modelo": "U22",
+   "tipo": "numero",
+   "ejemplo_profesional": 6969.7110167898445,
+   "texto": null
+  },
+  {
+   "simplificada": "X23",
+   "modelo": "W22",
+   "tipo": "numero",
+   "ejemplo_profesional": 7878.441318618123,
+   "texto": null
+  },
+  {
+   "simplificada": "Z23",
+   "modelo": "Y22",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.021609050793949754,
+   "texto": null
+  },
+  {
+   "simplificada": "D25",
+   "modelo": "C24",
+   "tipo": "numero",
+   "ejemplo_profesional": 322536.6575907753,
+   "texto": null
+  },
+  {
+   "simplificada": "F25",
+   "modelo": "E24",
+   "tipo": "numero",
+   "ejemplo_profesional": 354502.6273554287,
+   "texto": null
+  },
+  {
+   "simplificada": "H25",
+   "modelo": "G24",
+   "tipo": "numero",
+   "ejemplo_profesional": 32244.839381087433,
+   "texto": null
+  },
+  {
+   "simplificada": "J25",
+   "modelo": "I24",
+   "tipo": "numero",
+   "ejemplo_profesional": 1.0000000000000002,
+   "texto": null
+  },
+  {
+   "simplificada": "L25",
+   "modelo": "K24",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "OTROS GASTOS DE JUNTA DE COMPENSACIÓN"
+  },
+  {
+   "simplificada": "N25",
+   "modelo": "M24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P25",
+   "modelo": "O24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R25",
+   "modelo": "Q24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T25",
+   "modelo": "S24",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "FORMALIZACIÓN FINANCIACIÓN EXTERNA"
+  },
+  {
+   "simplificada": "V25",
+   "modelo": "U24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X25",
+   "modelo": "W24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z25",
+   "modelo": "Y24",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "D26",
+   "modelo": "C25",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "O.K."
+  },
+  {
+   "simplificada": "F26",
+   "modelo": "E25",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "O.K."
+  },
+  {
+   "simplificada": "D27",
+   "modelo": "C26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F27",
+   "modelo": "E26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L27",
+   "modelo": "K26",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N27",
+   "modelo": "M26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P27",
+   "modelo": "O26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R27",
+   "modelo": "Q26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T27",
+   "modelo": "S26",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GASTOS DTO. EFECTOS"
+  },
+  {
+   "simplificada": "V27",
+   "modelo": "U26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X27",
+   "modelo": "W26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z27",
+   "modelo": "Y26",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B29",
+   "modelo": "A28",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PRÉSTAMO HIPOTECARIO"
+  },
+  {
+   "simplificada": "C29",
+   "modelo": "B28",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.8,
+   "texto": null
+  },
+  {
+   "simplificada": "D29",
+   "modelo": "C28",
+   "tipo": "numero",
+   "ejemplo_profesional": 258029.32607262023,
+   "texto": null
+  },
+  {
+   "simplificada": "L29",
+   "modelo": "K28",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "ESTUDIOS TOPOGRÁFICO/GEOTÉCNICO."
+  },
+  {
+   "simplificada": "N29",
+   "modelo": "M28",
+   "tipo": "numero",
+   "ejemplo_profesional": 9015.181565756735,
+   "texto": null
+  },
+  {
+   "simplificada": "P29",
+   "modelo": "O28",
+   "tipo": "numero",
+   "ejemplo_profesional": 10457.610616277812,
+   "texto": null
+  },
+  {
+   "simplificada": "R29",
+   "modelo": "Q28",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02795087427611072,
+   "texto": null
+  },
+  {
+   "simplificada": "T29",
+   "modelo": "S28",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "OTROS GASTOS FINANCIEROS"
+  },
+  {
+   "simplificada": "V29",
+   "modelo": "U28",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X29",
+   "modelo": "W28",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z29",
+   "modelo": "Y28",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F31",
+   "modelo": "E30",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Repercusión"
+  },
+  {
+   "simplificada": "L31",
+   "modelo": "K30",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO BÁSICO"
+  },
+  {
+   "simplificada": "N31",
+   "modelo": "M30",
+   "tipo": "numero",
+   "ejemplo_profesional": 6536,
+   "texto": null
+  },
+  {
+   "simplificada": "P31",
+   "modelo": "O30",
+   "tipo": "numero",
+   "ejemplo_profesional": 7581.759999999999,
+   "texto": null
+  },
+  {
+   "simplificada": "R31",
+   "modelo": "Q30",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.020264363278336806,
+   "texto": null
+  },
+  {
+   "simplificada": "T31",
+   "modelo": "S30",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V31",
+   "modelo": "U30",
+   "tipo": "numero",
+   "ejemplo_profesional": 21406.458223886595,
+   "texto": null
+  },
+  {
+   "simplificada": "X31",
+   "modelo": "W30",
+   "tipo": "numero",
+   "ejemplo_profesional": 22756.268078850353,
+   "texto": null
+  },
+  {
+   "simplificada": "F32",
+   "modelo": "E31",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "por m2"
+  },
+  {
+   "simplificada": "D33",
+   "modelo": "C32",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Repercusión"
+  },
+  {
+   "simplificada": "F33",
+   "modelo": "E32",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "construido"
+  },
+  {
+   "simplificada": "L33",
+   "modelo": "K32",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO DE EJECUCIÓN"
+  },
+  {
+   "simplificada": "N33",
+   "modelo": "M32",
+   "tipo": "numero",
+   "ejemplo_profesional": 4902,
+   "texto": null
+  },
+  {
+   "simplificada": "P33",
+   "modelo": "O32",
+   "tipo": "numero",
+   "ejemplo_profesional": 5686.32,
+   "texto": null
+  },
+  {
+   "simplificada": "R33",
+   "modelo": "Q32",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.015198272458752604,
+   "texto": null
+  },
+  {
+   "simplificada": "D34",
+   "modelo": "C33",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "por vivienda"
+  },
+  {
+   "simplificada": "F34",
+   "modelo": "E33",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "sobre rasante"
+  },
+  {
+   "simplificada": "T34",
+   "modelo": "S33",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "ACOMETIDAS"
+  },
+  {
+   "simplificada": "V34",
+   "modelo": "U33",
+   "tipo": "numero",
+   "ejemplo_profesional": 240.40484175351293,
+   "texto": null
+  },
+  {
+   "simplificada": "X34",
+   "modelo": "W33",
+   "tipo": "numero",
+   "ejemplo_profesional": 278.869616434075,
+   "texto": null
+  },
+  {
+   "simplificada": "Z34",
+   "modelo": "Y33",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.0007453566473629526,
+   "texto": null
+  },
+  {
+   "simplificada": "B35",
+   "modelo": "A34",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Terreno"
+  },
+  {
+   "simplificada": "D35",
+   "modelo": "C34",
+   "tipo": "numero",
+   "ejemplo_profesional": 53100,
+   "texto": null
+  },
+  {
+   "simplificada": "E35",
+   "modelo": "D34",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.16463244952259556,
+   "texto": null
+  },
+  {
+   "simplificada": "F35",
+   "modelo": "E34",
+   "tipo": "numero",
+   "ejemplo_profesional": 265.5,
+   "texto": null
+  },
+  {
+   "simplificada": "G35",
+   "modelo": "F34",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.16463244952259554,
+   "texto": null
+  },
+  {
+   "simplificada": "L35",
+   "modelo": "K34",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTOS DE INSTALACIONES"
+  },
+  {
+   "simplificada": "B36",
+   "modelo": "A35",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Construcción"
+  },
+  {
+   "simplificada": "D36",
+   "modelo": "C35",
+   "tipo": "numero",
+   "ejemplo_profesional": 180935.33496882053,
+   "texto": null
+  },
+  {
+   "simplificada": "E36",
+   "modelo": "D35",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.5609760339191764,
+   "texto": null
+  },
+  {
+   "simplificada": "F36",
+   "modelo": "E35",
+   "tipo": "numero",
+   "ejemplo_profesional": 904.6766748441026,
+   "texto": null
+  },
+  {
+   "simplificada": "G36",
+   "modelo": "F35",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.5609760339191764,
+   "texto": null
+  },
+  {
+   "simplificada": "T36",
+   "modelo": "S35",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "SUMINISTROS OFICINA Y OTROS GASTOS"
+  },
+  {
+   "simplificada": "V36",
+   "modelo": "U35",
+   "tipo": "numero",
+   "ejemplo_profesional": 48.080968350702584,
+   "texto": null
+  },
+  {
+   "simplificada": "X36",
+   "modelo": "W35",
+   "tipo": "numero",
+   "ejemplo_profesional": 55.773923286815,
+   "texto": null
+  },
+  {
+   "simplificada": "Z36",
+   "modelo": "Y35",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.0001490713294725905,
+   "texto": null
+  },
+  {
+   "simplificada": "B37",
+   "modelo": "A36",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Urbanización"
+  },
+  {
+   "simplificada": "D37",
+   "modelo": "C36",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "E37",
+   "modelo": "D36",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F37",
+   "modelo": "E36",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "G37",
+   "modelo": "F36",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L37",
+   "modelo": "K36",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "   - ELECTRICIDAD"
+  },
+  {
+   "simplificada": "N37",
+   "modelo": "M36",
+   "tipo": "numero",
+   "ejemplo_profesional": 33.13379731467792,
+   "texto": null
+  },
+  {
+   "simplificada": "P37",
+   "modelo": "O36",
+   "tipo": "numero",
+   "ejemplo_profesional": 38.43520488502639,
+   "texto": null
+  },
+  {
+   "simplificada": "R37",
+   "modelo": "Q36",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00010272877992279895,
+   "texto": null
+  },
+  {
+   "simplificada": "B38",
+   "modelo": "A37",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Proyectos"
+  },
+  {
+   "simplificada": "D38",
+   "modelo": "C37",
+   "tipo": "numero",
+   "ejemplo_profesional": 38754.09155414518,
+   "texto": null
+  },
+  {
+   "simplificada": "E38",
+   "modelo": "D37",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.1201540682030481,
+   "texto": null
+  },
+  {
+   "simplificada": "F38",
+   "modelo": "E37",
+   "tipo": "numero",
+   "ejemplo_profesional": 193.77045777072593,
+   "texto": null
+  },
+  {
+   "simplificada": "G38",
+   "modelo": "F37",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.1201540682030481,
+   "texto": null
+  },
+  {
+   "simplificada": "T38",
+   "modelo": "S37",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "ALQUILER LOCAL ASAMBLEAS."
+  },
+  {
+   "simplificada": "V38",
+   "modelo": "U37",
+   "tipo": "numero",
+   "ejemplo_profesional": 2524.2508384118855,
+   "texto": null
+  },
+  {
+   "simplificada": "X38",
+   "modelo": "W37",
+   "tipo": "numero",
+   "ejemplo_profesional": 2928.130972557787,
+   "texto": null
+  },
+  {
+   "simplificada": "Z38",
+   "modelo": "Y37",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.007826244797311002,
+   "texto": null
+  },
+  {
+   "simplificada": "B39",
+   "modelo": "A38",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Licencias"
+  },
+  {
+   "simplificada": "D39",
+   "modelo": "C38",
+   "tipo": "numero",
+   "ejemplo_profesional": 7740,
+   "texto": null
+  },
+  {
+   "simplificada": "E39",
+   "modelo": "D38",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02399727230329359,
+   "texto": null
+  },
+  {
+   "simplificada": "F39",
+   "modelo": "E38",
+   "tipo": "numero",
+   "ejemplo_profesional": 38.7,
+   "texto": null
+  },
+  {
+   "simplificada": "G39",
+   "modelo": "F38",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02399727230329359,
+   "texto": null
+  },
+  {
+   "simplificada": "L39",
+   "modelo": "K38",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "   - FONTANERIA"
+  },
+  {
+   "simplificada": "N39",
+   "modelo": "M38",
+   "tipo": "numero",
+   "ejemplo_profesional": 64.90930727344849,
+   "texto": null
+  },
+  {
+   "simplificada": "P39",
+   "modelo": "O38",
+   "tipo": "numero",
+   "ejemplo_profesional": 75.29479643720025,
+   "texto": null
+  },
+  {
+   "simplificada": "R39",
+   "modelo": "Q38",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.0002012462947879972,
+   "texto": null
+  },
+  {
+   "simplificada": "B40",
+   "modelo": "A39",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Varios"
+  },
+  {
+   "simplificada": "D40",
+   "modelo": "C39",
+   "tipo": "numero",
+   "ejemplo_profesional": 18484.04840523972,
+   "texto": null
+  },
+  {
+   "simplificada": "E40",
+   "modelo": "D39",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.05730836470901772,
+   "texto": null
+  },
+  {
+   "simplificada": "F40",
+   "modelo": "E39",
+   "tipo": "numero",
+   "ejemplo_profesional": 92.4202420261986,
+   "texto": null
+  },
+  {
+   "simplificada": "G40",
+   "modelo": "F39",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.05730836470901772,
+   "texto": null
+  },
+  {
+   "simplificada": "T40",
+   "modelo": "S39",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "AUDITORIAS"
+  },
+  {
+   "simplificada": "V40",
+   "modelo": "U39",
+   "tipo": "numero",
+   "ejemplo_profesional": 7212.145252605388,
+   "texto": null
+  },
+  {
+   "simplificada": "X40",
+   "modelo": "W39",
+   "tipo": "numero",
+   "ejemplo_profesional": 8366.088493022251,
+   "texto": null
+  },
+  {
+   "simplificada": "Z40",
+   "modelo": "Y39",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.02236069942088858,
+   "texto": null
+  },
+  {
+   "simplificada": "B41",
+   "modelo": "A40",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Gestión"
+  },
+  {
+   "simplificada": "D41",
+   "modelo": "C40",
+   "tipo": "numero",
+   "ejemplo_profesional": 15358.888456703586,
+   "texto": null
+  },
+  {
+   "simplificada": "E41",
+   "modelo": "D40",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.04761904761904762,
+   "texto": null
+  },
+  {
+   "simplificada": "F41",
+   "modelo": "E40",
+   "tipo": "numero",
+   "ejemplo_profesional": 76.79444228351792,
+   "texto": null
+  },
+  {
+   "simplificada": "G41",
+   "modelo": "F40",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.047619047619047616,
+   "texto": null
+  },
+  {
+   "simplificada": "L41",
+   "modelo": "K40",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "   - CALEFACCION"
+  },
+  {
+   "simplificada": "N41",
+   "modelo": "M40",
+   "tipo": "numero",
+   "ejemplo_profesional": 59.50019833399445,
+   "texto": null
+  },
+  {
+   "simplificada": "P41",
+   "modelo": "O40",
+   "tipo": "numero",
+   "ejemplo_profesional": 69.02023006743356,
+   "texto": null
+  },
+  {
+   "simplificada": "R41",
+   "modelo": "Q40",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00018447577022233076,
+   "texto": null
+  },
+  {
+   "simplificada": "B42",
+   "modelo": "A41",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Gastos Préstamo Hipotecario"
+  },
+  {
+   "simplificada": "D42",
+   "modelo": "C41",
+   "tipo": "numero",
+   "ejemplo_profesional": 8164.294205866285,
+   "texto": null
+  },
+  {
+   "simplificada": "E42",
+   "modelo": "D41",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.025312763723821102,
+   "texto": null
+  },
+  {
+   "simplificada": "F42",
+   "modelo": "E41",
+   "tipo": "numero",
+   "ejemplo_profesional": 40.82147102933143,
+   "texto": null
+  },
+  {
+   "simplificada": "G42",
+   "modelo": "F41",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.025312763723821102,
+   "texto": null
+  },
+  {
+   "simplificada": "T42",
+   "modelo": "S41",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "SEGUROS"
+  },
+  {
+   "simplificada": "V42",
+   "modelo": "U41",
+   "tipo": "numero",
+   "ejemplo_profesional": 1762.4192970214783,
+   "texto": null
+  },
+  {
+   "simplificada": "X42",
+   "modelo": "W41",
+   "tipo": "numero",
+   "ejemplo_profesional": 1762.4192970214783,
+   "texto": null
+  },
+  {
+   "simplificada": "Z42",
+   "modelo": "Y41",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.005464244933230449,
+   "texto": null
+  },
+  {
+   "simplificada": "B43",
+   "modelo": "A42",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Gastos Financiación Externa"
+  },
+  {
+   "simplificada": "D43",
+   "modelo": "C42",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "E43",
+   "modelo": "D42",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F43",
+   "modelo": "E42",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "G43",
+   "modelo": "F42",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L43",
+   "modelo": "K42",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "   - P. TELECOMUNICACIONES"
+  },
+  {
+   "simplificada": "N43",
+   "modelo": "M42",
+   "tipo": "numero",
+   "ejemplo_profesional": 36.060726263026936,
+   "texto": null
+  },
+  {
+   "simplificada": "P43",
+   "modelo": "O42",
+   "tipo": "numero",
+   "ejemplo_profesional": 41.83044246511124,
+   "texto": null
+  },
+  {
+   "simplificada": "R43",
+   "modelo": "Q42",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00011180349710444288,
+   "texto": null
+  },
+  {
+   "simplificada": "B44",
+   "modelo": "A43",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "D44",
+   "modelo": "C43",
+   "tipo": "numero",
+   "ejemplo_profesional": 322536.6575907753,
+   "texto": null
+  },
+  {
+   "simplificada": "E44",
+   "modelo": "D43",
+   "tipo": "numero",
+   "ejemplo_profesional": 1,
+   "texto": null
+  },
+  {
+   "simplificada": "F44",
+   "modelo": "E43",
+   "tipo": "numero",
+   "ejemplo_profesional": 1612.6832879538765,
+   "texto": null
+  },
+  {
+   "simplificada": "G44",
+   "modelo": "F43",
+   "tipo": "numero",
+   "ejemplo_profesional": 1,
+   "texto": null
+  },
+  {
+   "simplificada": "T44",
+   "modelo": "S43",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GASTOS CONSEJO RECTOR"
+  },
+  {
+   "simplificada": "V44",
+   "modelo": "U43",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X44",
+   "modelo": "W43",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z44",
+   "modelo": "Y43",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B45",
+   "modelo": "A44",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PRÉSTAMO HIPOTECARIO"
+  },
+  {
+   "simplificada": "D45",
+   "modelo": "C44",
+   "tipo": "numero",
+   "ejemplo_profesional": 258029.32607262023,
+   "texto": null
+  },
+  {
+   "simplificada": "E45",
+   "modelo": "D44",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.8,
+   "texto": null
+  },
+  {
+   "simplificada": "F45",
+   "modelo": "E44",
+   "tipo": "numero",
+   "ejemplo_profesional": 1290.1466303631012,
+   "texto": null
+  },
+  {
+   "simplificada": "G45",
+   "modelo": "F44",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.7999999999999999,
+   "texto": null
+  },
+  {
+   "simplificada": "L45",
+   "modelo": "K44",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO DE SEGURIDAD E HIGIENE OBRA"
+  },
+  {
+   "simplificada": "N45",
+   "modelo": "M44",
+   "tipo": "numero",
+   "ejemplo_profesional": 865.8480000000001,
+   "texto": null
+  },
+  {
+   "simplificada": "P45",
+   "modelo": "O44",
+   "tipo": "numero",
+   "ejemplo_profesional": 1004.38368,
+   "texto": null
+  },
+  {
+   "simplificada": "R45",
+   "modelo": "Q44",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.002684494861661776,
+   "texto": null
+  },
+  {
+   "simplificada": "B46",
+   "modelo": "A45",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Suelo neto de gastos"
+  },
+  {
+   "simplificada": "D46",
+   "modelo": "C45",
+   "tipo": "numero",
+   "ejemplo_profesional": 50000,
+   "texto": null
+  },
+  {
+   "simplificada": "F46",
+   "modelo": "E45",
+   "tipo": "numero",
+   "ejemplo_profesional": 250,
+   "texto": null
+  },
+  {
+   "simplificada": "T46",
+   "modelo": "S45",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V46",
+   "modelo": "U45",
+   "tipo": "numero",
+   "ejemplo_profesional": 11787.301198142968,
+   "texto": null
+  },
+  {
+   "simplificada": "X46",
+   "modelo": "W45",
+   "tipo": "numero",
+   "ejemplo_profesional": 13112.412685888332,
+   "texto": null
+  },
+  {
+   "simplificada": "B47",
+   "modelo": "A46",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Construcción neta de gastos"
+  },
+  {
+   "simplificada": "D47",
+   "modelo": "C46",
+   "tipo": "numero",
+   "ejemplo_profesional": 172000,
+   "texto": null
+  },
+  {
+   "simplificada": "F47",
+   "modelo": "E46",
+   "tipo": "numero",
+   "ejemplo_profesional": 860,
+   "texto": null
+  },
+  {
+   "simplificada": "L47",
+   "modelo": "K46",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PROYECTO DE SEGURIDAD E HIGIENE URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N47",
+   "modelo": "M46",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P47",
+   "modelo": "O46",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R47",
+   "modelo": "Q46",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B48",
+   "modelo": "A47",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Urbanizacción neta de gastos"
+  },
+  {
+   "simplificada": "D48",
+   "modelo": "C47",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "F48",
+   "modelo": "E47",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B49",
+   "modelo": "A48",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Suma"
+  },
+  {
+   "simplificada": "D49",
+   "modelo": "C48",
+   "tipo": "numero",
+   "ejemplo_profesional": 222000,
+   "texto": null
+  },
+  {
+   "simplificada": "E49",
+   "modelo": "D48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.688293856761134,
+   "texto": null
+  },
+  {
+   "simplificada": "F49",
+   "modelo": "E48",
+   "tipo": "numero",
+   "ejemplo_profesional": 1110,
+   "texto": null
+  },
+  {
+   "simplificada": "G49",
+   "modelo": "F48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.688293856761134,
+   "texto": null
+  },
+  {
+   "simplificada": "L49",
+   "modelo": "K48",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "MANUAL DE MANTENIMIENTO"
+  },
+  {
+   "simplificada": "N49",
+   "modelo": "M48",
+   "tipo": "numero",
+   "ejemplo_profesional": 66.11133148221606,
+   "texto": null
+  },
+  {
+   "simplificada": "P49",
+   "modelo": "O48",
+   "tipo": "numero",
+   "ejemplo_profesional": 76.68914451937063,
+   "texto": null
+  },
+  {
+   "simplificada": "R49",
+   "modelo": "Q48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00020497307802481198,
+   "texto": null
+  },
+  {
+   "simplificada": "T49",
+   "modelo": "S48",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "FINANCIEROS TERRENO"
+  },
+  {
+   "simplificada": "V49",
+   "modelo": "U48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X49",
+   "modelo": "W48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z49",
+   "modelo": "Y48",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "B50",
+   "modelo": "A49",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Total"
+  },
+  {
+   "simplificada": "D50",
+   "modelo": "C49",
+   "tipo": "numero",
+   "ejemplo_profesional": 322536.6575907753,
+   "texto": null
+  },
+  {
+   "simplificada": "F50",
+   "modelo": "E49",
+   "tipo": "numero",
+   "ejemplo_profesional": 1612.6832879538765,
+   "texto": null
+  },
+  {
+   "simplificada": "B51",
+   "modelo": "A50",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "Coeficiente de Paso"
+  },
+  {
+   "simplificada": "D51",
+   "modelo": "C50",
+   "tipo": "numero",
+   "ejemplo_profesional": 1.4528678269854742,
+   "texto": null
+  },
+  {
+   "simplificada": "F51",
+   "modelo": "E50",
+   "tipo": "numero",
+   "ejemplo_profesional": 1.4528678269854742,
+   "texto": null
+  },
+  {
+   "simplificada": "L51",
+   "modelo": "K50",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "INFORMES TÉCNICOS"
+  },
+  {
+   "simplificada": "N51",
+   "modelo": "M50",
+   "tipo": "numero",
+   "ejemplo_profesional": 4597.742598535935,
+   "texto": null
+  },
+  {
+   "simplificada": "P51",
+   "modelo": "O50",
+   "tipo": "numero",
+   "ejemplo_profesional": 5333.381414301684,
+   "texto": null
+  },
+  {
+   "simplificada": "R51",
+   "modelo": "Q50",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.01425494588081647,
+   "texto": null
+  },
+  {
+   "simplificada": "T51",
+   "modelo": "S50",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "FINANCIEROS CONSTRUCCIÓN"
+  },
+  {
+   "simplificada": "V51",
+   "modelo": "U50",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X51",
+   "modelo": "W50",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z51",
+   "modelo": "Y50",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L53",
+   "modelo": "K52",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DIRECCIÓN FACULT. SUPERIOR URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N53",
+   "modelo": "M52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P53",
+   "modelo": "O52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R53",
+   "modelo": "Q52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T53",
+   "modelo": "S52",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "FINANCIEROS URBANIZACIÓN"
+  },
+  {
+   "simplificada": "V53",
+   "modelo": "U52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X53",
+   "modelo": "W52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z53",
+   "modelo": "Y52",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L55",
+   "modelo": "K54",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DIRECCIÓN FACULT.APAREJADORES URBANIZACIÓN"
+  },
+  {
+   "simplificada": "N55",
+   "modelo": "M54",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P55",
+   "modelo": "O54",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R55",
+   "modelo": "Q54",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T55",
+   "modelo": "S54",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CONTROL DE CALIDAD"
+  },
+  {
+   "simplificada": "V55",
+   "modelo": "U54",
+   "tipo": "numero",
+   "ejemplo_profesional": 2580,
+   "texto": null
+  },
+  {
+   "simplificada": "X55",
+   "modelo": "W54",
+   "tipo": "numero",
+   "ejemplo_profesional": 2992.7999999999997,
+   "texto": null
+  },
+  {
+   "simplificada": "Z55",
+   "modelo": "Y54",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00799909076776453,
+   "texto": null
+  },
+  {
+   "simplificada": "L57",
+   "modelo": "K56",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DIRECCIÓN FACULT. SUPERIOR OBRA"
+  },
+  {
+   "simplificada": "N57",
+   "modelo": "M56",
+   "tipo": "numero",
+   "ejemplo_profesional": 4902,
+   "texto": null
+  },
+  {
+   "simplificada": "P57",
+   "modelo": "O56",
+   "tipo": "numero",
+   "ejemplo_profesional": 5686.32,
+   "texto": null
+  },
+  {
+   "simplificada": "R57",
+   "modelo": "Q56",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.015198272458752604,
+   "texto": null
+  },
+  {
+   "simplificada": "T57",
+   "modelo": "S56",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "INTERESES DE CARENCIA"
+  },
+  {
+   "simplificada": "V57",
+   "modelo": "U56",
+   "tipo": "numero",
+   "ejemplo_profesional": 1194.5831890764398,
+   "texto": null
+  },
+  {
+   "simplificada": "X57",
+   "modelo": "W56",
+   "tipo": "numero",
+   "ejemplo_profesional": 1194.5831890764398,
+   "texto": null
+  },
+  {
+   "simplificada": "Z57",
+   "modelo": "Y56",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00370371292987134,
+   "texto": null
+  },
+  {
+   "simplificada": "L59",
+   "modelo": "K58",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DIRECCIÓN FACULT.APAREJADORES OBRA"
+  },
+  {
+   "simplificada": "N59",
+   "modelo": "M58",
+   "tipo": "numero",
+   "ejemplo_profesional": 4902,
+   "texto": null
+  },
+  {
+   "simplificada": "P59",
+   "modelo": "O58",
+   "tipo": "numero",
+   "ejemplo_profesional": 5686.32,
+   "texto": null
+  },
+  {
+   "simplificada": "R59",
+   "modelo": "Q58",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.015198272458752604,
+   "texto": null
+  },
+  {
+   "simplificada": "T59",
+   "modelo": "S58",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "INTERESES DE FINANCIACIÓN EXTERNA"
+  },
+  {
+   "simplificada": "V59",
+   "modelo": "U58",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X59",
+   "modelo": "W58",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "Z59",
+   "modelo": "Y58",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L61",
+   "modelo": "K60",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "DIR. INGENIERO INSTALACIONES"
+  },
+  {
+   "simplificada": "N61",
+   "modelo": "M60",
+   "tipo": "numero",
+   "ejemplo_profesional": 193.6040291851478,
+   "texto": null
+  },
+  {
+   "simplificada": "P61",
+   "modelo": "O60",
+   "tipo": "numero",
+   "ejemplo_profesional": 224.58067385477142,
+   "texto": null
+  },
+  {
+   "simplificada": "R61",
+   "modelo": "Q60",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.0006002543420375698,
+   "texto": null
+  },
+  {
+   "simplificada": "T61",
+   "modelo": "S60",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V61",
+   "modelo": "U60",
+   "tipo": "numero",
+   "ejemplo_profesional": 3774.58318907644,
+   "texto": null
+  },
+  {
+   "simplificada": "X61",
+   "modelo": "W60",
+   "tipo": "numero",
+   "ejemplo_profesional": 4187.3831890764395,
+   "texto": null
+  },
+  {
+   "simplificada": "L63",
+   "modelo": "K62",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "N63",
+   "modelo": "M62",
+   "tipo": "numero",
+   "ejemplo_profesional": 36174.091554145176,
+   "texto": null
+  },
+  {
+   "simplificada": "P63",
+   "modelo": "O62",
+   "tipo": "numero",
+   "ejemplo_profesional": 41961.9462028084,
+   "texto": null
+  },
+  {
+   "simplificada": "T64",
+   "modelo": "S63",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "GESTIÓN PROMOCIÓN"
+  },
+  {
+   "simplificada": "V64",
+   "modelo": "U63",
+   "tipo": "numero",
+   "ejemplo_profesional": 13853.888456703586,
+   "texto": null
+  },
+  {
+   "simplificada": "X64",
+   "modelo": "W63",
+   "tipo": "numero",
+   "ejemplo_profesional": 16070.51060977616,
+   "texto": null
+  },
+  {
+   "simplificada": "Z64",
+   "modelo": "Y63",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.04295291133785164,
+   "texto": null
+  },
+  {
+   "simplificada": "L65",
+   "modelo": "K64",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "NOTARIO SUELO"
+  },
+  {
+   "simplificada": "N65",
+   "modelo": "M64",
+   "tipo": "numero",
+   "ejemplo_profesional": 50,
+   "texto": null
+  },
+  {
+   "simplificada": "P65",
+   "modelo": "O64",
+   "tipo": "numero",
+   "ejemplo_profesional": 57.99999999999999,
+   "texto": null
+  },
+  {
+   "simplificada": "R65",
+   "modelo": "Q64",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00015502113891016528,
+   "texto": null
+  },
+  {
+   "simplificada": "T66",
+   "modelo": "S65",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "CAPTACIÓN SOCIOS"
+  },
+  {
+   "simplificada": "V66",
+   "modelo": "U65",
+   "tipo": "numero",
+   "ejemplo_profesional": 1505,
+   "texto": null
+  },
+  {
+   "simplificada": "X66",
+   "modelo": "W65",
+   "tipo": "numero",
+   "ejemplo_profesional": 1745.8,
+   "texto": null
+  },
+  {
+   "simplificada": "Z66",
+   "modelo": "Y65",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.004666136281195975,
+   "texto": null
+  },
+  {
+   "simplificada": "L67",
+   "modelo": "K66",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "REGISTRO SUELO"
+  },
+  {
+   "simplificada": "N67",
+   "modelo": "M66",
+   "tipo": "numero",
+   "ejemplo_profesional": 50,
+   "texto": null
+  },
+  {
+   "simplificada": "P67",
+   "modelo": "O66",
+   "tipo": "numero",
+   "ejemplo_profesional": 57.99999999999999,
+   "texto": null
+  },
+  {
+   "simplificada": "R67",
+   "modelo": "Q66",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.00015502113891016528,
+   "texto": null
+  },
+  {
+   "simplificada": "T68",
+   "modelo": "S67",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V68",
+   "modelo": "U67",
+   "tipo": "numero",
+   "ejemplo_profesional": 15358.888456703586,
+   "texto": null
+  },
+  {
+   "simplificada": "X68",
+   "modelo": "W67",
+   "tipo": "numero",
+   "ejemplo_profesional": 17816.31060977616,
+   "texto": null
+  },
+  {
+   "simplificada": "L69",
+   "modelo": "K68",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": " I.T.P. y A.J.D."
+  },
+  {
+   "simplificada": "N69",
+   "modelo": "M68",
+   "tipo": "numero",
+   "ejemplo_profesional": 500,
+   "texto": null
+  },
+  {
+   "simplificada": "P69",
+   "modelo": "O68",
+   "tipo": "numero",
+   "ejemplo_profesional": 500,
+   "texto": null
+  },
+  {
+   "simplificada": "R69",
+   "modelo": "Q68",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.001550211389101653,
+   "texto": null
+  },
+  {
+   "simplificada": "L71",
+   "modelo": "K70",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "COSTE DE AVALES Y TIMBRES"
+  },
+  {
+   "simplificada": "N71",
+   "modelo": "M70",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "P71",
+   "modelo": "O70",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "R71",
+   "modelo": "Q70",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "T71",
+   "modelo": "S70",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "V71",
+   "modelo": "U70",
+   "tipo": "numero",
+   "ejemplo_profesional": 322536.65759077534,
+   "texto": null
+  },
+  {
+   "simplificada": "X71",
+   "modelo": "W70",
+   "tipo": "numero",
+   "ejemplo_profesional": 354502.62735542865,
+   "texto": null
+  },
+  {
+   "simplificada": "Z71",
+   "modelo": "Y70",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.9992546433526369,
+   "texto": null
+  },
+  {
+   "simplificada": "V72",
+   "modelo": "U71",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "O.K."
+  },
+  {
+   "simplificada": "X72",
+   "modelo": "W71",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "O.K."
+  },
+  {
+   "simplificada": "L73",
+   "modelo": "K72",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "PLUSVALIA, API y VARIOS"
+  },
+  {
+   "simplificada": "N73",
+   "modelo": "M72",
+   "tipo": "numero",
+   "ejemplo_profesional": 2500,
+   "texto": null
+  },
+  {
+   "simplificada": "P73",
+   "modelo": "O72",
+   "tipo": "numero",
+   "ejemplo_profesional": 2500,
+   "texto": null
+  },
+  {
+   "simplificada": "R73",
+   "modelo": "Q72",
+   "tipo": "numero",
+   "ejemplo_profesional": 0.007751056945508264,
+   "texto": null
+  },
+  {
+   "simplificada": "V73",
+   "modelo": "U72",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "X73",
+   "modelo": "W72",
+   "tipo": "numero",
+   "ejemplo_profesional": 0,
+   "texto": null
+  },
+  {
+   "simplificada": "L75",
+   "modelo": "K74",
+   "tipo": "texto",
+   "ejemplo_profesional": null,
+   "texto": "TOTAL"
+  },
+  {
+   "simplificada": "N75",
+   "modelo": "M74",
+   "tipo": "numero",
+   "ejemplo_profesional": 3100,
+   "texto": null
+  },
+  {
+   "simplificada": "P75",
+   "modelo": "O74",
+   "tipo": "numero",
+   "ejemplo_profesional": 3116,
+   "texto": null
+  }
+ ]
+}

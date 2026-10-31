@@ -25,8 +25,10 @@ it('computes monthly revenue and orders by method', function () {
     Order::factory()->paid()->create(['course_id' => $course->id, 'amount' => 490, 'currency' => 'EUR', 'method' => 'stripe']);
     Order::factory()->paid()->create(['course_id' => $course->id, 'amount' => 250, 'currency' => 'EUR', 'method' => 'manual_bizum']);
     // Paid last month — excluded from this month's revenue. Method pinned:
-    // the factory picks randomly and would skew the per-method counts.
-    Order::factory()->paid()->create(['course_id' => $course->id, 'amount' => 9999, 'currency' => 'EUR', 'method' => 'manual_bizum', 'paid_at' => now()->subMonth()]);
+    // the factory picks randomly and would skew the per-method counts. Not
+    // now()->subMonth(): on the 31st that overflows into the 1st of this
+    // month, and the test failed one day in seven months.
+    Order::factory()->paid()->create(['course_id' => $course->id, 'amount' => 9999, 'currency' => 'EUR', 'method' => 'manual_bizum', 'paid_at' => now()->startOfMonth()->subDays(5)]);
     Order::factory()->create(['course_id' => $course->id, 'method' => 'manual_transfer', 'status' => 'awaiting_review', 'receipt_path' => 'receipts/x.jpg']);
 
     $response = $this->actingAs($admin)->getJson('/api/admin/stats')->assertOk();

@@ -53,5 +53,12 @@
     "Not found.": "Not found.",
     "Unauthenticated.": "Please sign in.",
     "An invoice dated :date has already been issued: a later number cannot carry an earlier date.": "An invoice dated :date has already been issued: a later number cannot carry an earlier date.",
-    "The receipt could not be saved. Please try again.": "The receipt could not be saved. Please try again."
+    "The receipt could not be saved. Please try again.": "The receipt could not be saved. Please try again.",
+    "Some answers do not match a question of this quiz.": "Some answers do not match a question of this quiz.",
+    "This attempt has already been submitted.": "This attempt has already been submitted.",
+    "The time for this exam is over. The attempt has been closed.": "The time for this exam is over. The attempt has been closed.",
+    "The financial template is not available at the moment. Please try again later.": "The financial template is not available at the moment. Please try again later.",
+    "You have reached the maximum number of saved scenarios. Delete one first.": "You have reached the maximum number of saved scenarios. Delete one first.",
+    "Scenario deleted.": "Scenario deleted.",
+    "The inputs do not match the financial template.": "The inputs do not match the financial template."
 }

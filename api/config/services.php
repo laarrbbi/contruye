@@ -35,6 +35,13 @@ return [
         ],
     ],
 
+    // The financial template service (financials/ at the root of the
+    // repository): Node.js, reachable only from the API.
+    'plantilla' => [
+        'url' => env('PLANTILLA_URL', 'http://127.0.0.1:3100'),
+        'timeout' => (int) env('PLANTILLA_TIMEOUT', 60),
+    ],
+
     'stripe' => [
         // false switches card payments off on purpose. Blank is not off.
         'enabled' => (bool) env('STRIPE_ENABLED', true),

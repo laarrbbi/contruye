@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\User;
 use Database\Seeders\ChecklistSeeder;
 use Database\Seeders\CurriculumV2Seeder;
+use Database\Seeders\ProvinceGuideSeeder;
 use Database\Seeders\ProvinceSeeder;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
@@ -44,14 +45,16 @@ class InstallProduction extends Command
 
     public function handle(): int
     {
-        $this->components->task('Provinces (52)', fn () => $this->callSilent('db:seed', [
+        $this->components->task('Provinces (52) and their guides (Anexo A)', fn () => $this->callSilent('db:seed', [
             '--class' => ProvinceSeeder::class, '--force' => true,
+        ]) === 0 && $this->callSilent('db:seed', [
+            '--class' => ProvinceGuideSeeder::class, '--force' => true,
         ]) === 0);
 
         if (Course::query()->where('slug', self::SLUG)->exists()) {
             $this->components->twoColumnDetail('Curriculum', '<fg=yellow>already installed — left as it is</>');
         } else {
-            $this->components->task('Curriculum (12 phases) and checklists', function () {
+            $this->components->task('Curriculum (12 modules and Financials), quizzes and checklists', function () {
                 return $this->callSilent('db:seed', ['--class' => CurriculumV2Seeder::class, '--force' => true]) === 0
                     && $this->callSilent('db:seed', ['--class' => ChecklistSeeder::class, '--force' => true]) === 0;
             });

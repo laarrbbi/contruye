@@ -1,0 +1,1048 @@
+{
+ "titulo": "Examen final de certificación CONSTRUYE · Promotor Inmobiliario Certificado · España",
+ "preguntas_total": 40,
+ "minimo": "32/40 (80 %)",
+ "duracion_minutos": 60,
+ "preguntas": [
+  {
+   "numero": 1,
+   "pregunta": "3 m²t/m²s en un solar de 1.500 m² permiten construir:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "1.500",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "3.000",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "4.500 m²",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "6.000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 2,
+   "pregunta": "Primer documento del Registro de la Propiedad antes de comprar:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Certificación urbanística",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Nota simple",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Escritura",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Referencia catastral",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 3,
+   "pregunta": "Un particular te vende el solar:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "IVA 21 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "ITP de la comunidad autónoma",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "IS",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Solo AJD",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 4,
+   "pregunta": "Margen mínimo sobre ventas recomendado:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "5 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "10 %",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "15 %",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "25 %",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 5,
+   "pregunta": "La LOE define al promotor en el artículo:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "3",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "9",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "12",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "17",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 6,
+   "pregunta": "El CTE DB HR regula:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Estructura",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Energía",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Ruido",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Salubridad",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 7,
+   "pregunta": "Visado colegial obligatorio según el RD 1000/2010:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Anteproyecto",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Proyecto de ejecución y certificado final de obra",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Estudio de mercado",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Contrato de obra",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 8,
+   "pregunta": "El ICIO es:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Estatal al 4 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Municipal, con un máximo del 4 %",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Autonómico",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Lo paga siempre el contratista",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 9,
+   "pregunta": "Seguro decenal obligatorio en:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Todos los edificios",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Solo terciarios",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Edificios de vivienda (salvo autopromotor de vivienda unifamiliar propia)",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Más de 10 plantas",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 10,
+   "pregunta": "Preventas que suele exigir el banco:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "10 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "20 %",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "30–50 %",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "70 %",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 11,
+   "pregunta": "El acta de replanteo la firman:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Promotor y banco",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Director de obra, director de ejecución y constructor",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Notario y promotor",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Ayuntamiento y promotor",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 12,
+   "pregunta": "Silencio administrativo en una licencia de obra nueva:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Positivo",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Negativo (art. 11.4 TRLSRU)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Depende del alcalde",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "No existe",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 13,
+   "pregunta": "El OCT interviene sobre todo en:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El proyecto de arquitectura",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El marketing",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Estructura, cimentación e impermeabilización, para la aseguradora decenal",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "La licencia",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 14,
+   "pregunta": "Garantía por daños estructurales:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "1 año",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "3 años",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "10 años",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "20 años",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 15,
+   "pregunta": "Las garantías de la LOE se cuentan desde:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "La escritura de cada vivienda",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "La recepción de la obra sin reservas (o la subsanación de las reservas)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "La licencia",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "El CFO",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 16,
+   "pregunta": "La primera ocupación la gestiona:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "La Comunidad Autónoma",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El Registro",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "El ayuntamiento (licencia o declaración responsable)",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "El colegio",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 17,
+   "pregunta": "La división horizontal crea:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "La comunidad",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Los elementos privativos con cuota y los elementos comunes",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "La garantía decenal",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Los estatutos únicamente",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 18,
+   "pregunta": "El Libro del Edificio se entrega a:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El ayuntamiento",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El banco",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "La comunidad de propietarios y a cada comprador lo suyo",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "El OCT",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 19,
+   "pregunta": "El snagging es:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Elegir acabados",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "La revisión y lista de defectos antes de entregar",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "La escritura",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "El cierre del préstamo",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 20,
+   "pregunta": "El AJD de la hipoteca del comprador lo paga desde 2018:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El comprador",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El banco",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "El promotor",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "A medias",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 21,
+   "pregunta": "La plusvalía municipal en la venta de vivienda nueva a un consumidor:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "La paga el comprador",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "La comunidad",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "El promotor, y no la puede repercutir",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Nadie",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 22,
+   "pregunta": "Tipo de IS de una entidad de nueva creación en sus dos primeros períodos con base positiva:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "25 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "15 %",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "10 %",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "30 %",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 23,
+   "pregunta": "Capital social mínimo de una SL tras la Ley 18/2022:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "60.000 €",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "3.000 €",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "30.000 €",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "1 €, con reglas de protección hasta 3.000 €",
+     "correcta": true
+    }
+   ]
+  },
+  {
+   "numero": 24,
+   "pregunta": "PEC sin IVA:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "PEM + IVA",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "PEM + gastos generales (13–17 %) + beneficio industrial (6 %)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "PEM + honorarios",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "PEM × 2",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 25,
+   "pregunta": "Comunidades que mantienen la cédula de habitabilidad en 2026:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Madrid y País Vasco",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Andalucía y Galicia",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Cataluña, Navarra, Canarias, Extremadura, Baleares, La Rioja, Asturias y Murcia",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Todas",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 26,
+   "pregunta": "El método residual sirve para:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Calcular la obra",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Calcular el precio máximo del suelo",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Calcular el IVA",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Valorar zonas comunes",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 27,
+   "pregunta": "La ICT obliga a instalar:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Antenas 5G",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "RITI, RITS y redes (fibra, coaxial y pares) hasta cada vivienda",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Internet gratis",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Centralita",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 28,
+   "pregunta": "Las cantidades cobradas a cuenta antes de la entrega deben:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Ir a la cuenta general",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Estar garantizadas individualmente y en cuenta especial (DA 1.ª LOE)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Declararse al ayuntamiento",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Devolverse al año",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 29,
+   "pregunta": "El préstamo promotor se dispone:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "De una vez",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Por certificaciones de obra",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Solo con compradores",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Con la primera ocupación",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 30,
+   "pregunta": "El coordinador de seguridad en ejecución es obligatorio cuando:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El PEM supera 1 M€",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "La obra dura más de 6 meses",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Intervienen varias empresas, o empresa y autónomos",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Lo pide el banco",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 31,
+   "pregunta": "El CTE DB HE regula:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Incendio",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Humedad",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Ahorro de energía",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Accesibilidad",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 32,
+   "pregunta": "El estudio de gestión de residuos:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Es optativo",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Es parte obligatoria del proyecto (RD 105/2008)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Lo hace el constructor al final",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Solo en rehabilitación",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 33,
+   "pregunta": "¿Puedes obligar al comprador a subrogarse en tu préstamo?",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Sí",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "No, solo ofrecerlo (art. 89.3 TRLGDCU)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Solo en Madrid",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Si lo pide el banco",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 34,
+   "pregunta": "En el plan de pagos habitual, en la escritura se paga:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "20–30 %",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "50 %",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "70–85 %",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "100 %",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 35,
+   "pregunta": "Una promoción con TIR del 12 %:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Adelante",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Se replantea: el objetivo es 15–20 %",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Bajar precios",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Alargar la obra",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 36,
+   "pregunta": "El libro de órdenes y asistencias lo lleva:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El constructor",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El jefe de obra",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "La dirección facultativa, diligenciado por el colegio",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "El coordinador de seguridad",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 37,
+   "pregunta": "El hormigón estructural se rige por:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "La EHE-08",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "El Código Estructural (RD 470/2021)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "El REBT",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "La LPH",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 38,
+   "pregunta": "Como promotor, ante el blanqueo de capitales:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "No tienes obligaciones",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Eres sujeto obligado (Ley 10/2010)",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Solo si vendes a extranjeros",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Solo el banco",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 39,
+   "pregunta": "El IIVTNU es:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "El impuesto de construcción",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "La plusvalía municipal",
+     "correcta": true
+    },
+    {
+     "letra": "C",
+     "texto": "Un índice",
+     "correcta": false
+    },
+    {
+     "letra": "D",
+     "texto": "Un impuesto de urbanizaciones",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "numero": 40,
+   "pregunta": "Al terminar la promoción, la SPE:",
+   "opciones": [
+    {
+     "letra": "A",
+     "texto": "Debe disolverse",
+     "correcta": false
+    },
+    {
+     "letra": "B",
+     "texto": "Debe seguir activa",
+     "correcta": false
+    },
+    {
+     "letra": "C",
+     "texto": "Puede extinguirse o quedar en reserva, sabiendo que las garantías de la LOE siguen vivas",
+     "correcta": true
+    },
+    {
+     "letra": "D",
+     "texto": "Se convierte en comunidad",
+     "correcta": false
+    }
+   ]
+  }
+ ]
+}

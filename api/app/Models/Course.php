@@ -43,6 +43,16 @@ class Course extends Model
         return $this->hasManyThrough(Lesson::class, Module::class);
     }
 
+    public function documents(): HasMany
+    {
+        return $this->hasMany(CourseDocument::class)->orderBy('order');
+    }
+
+    public function quizzes(): HasMany
+    {
+        return $this->hasMany(Quiz::class);
+    }
+
     public function enrollments(): HasMany
     {
         return $this->hasMany(Enrollment::class);

@@ -4,12 +4,14 @@ namespace Database\Seeders;
 
 use App\Models\ChecklistItem;
 use App\Models\Course;
+use App\Support\Course\CourseSource;
 use Illuminate\Database\Seeder;
 
 /**
- * Installs the curated per-module action checklists (data/checklists_v1.php),
- * keyed by module order. Idempotent: a module that already has items is left
- * untouched, so student check states survive re-seeding.
+ * Installs the checklist that closes each module ("## Checklist del Módulo N"
+ * in the instructor's package), item by item and word for word. Idempotent: a
+ * module that already has items is left untouched, so student check states
+ * survive re-seeding.
  */
 class ChecklistSeeder extends Seeder
 {
@@ -23,11 +25,11 @@ class ChecklistSeeder extends Seeder
             return;
         }
 
-        $lists = require database_path('seeders/data/checklists_v1.php');
+        $lists = array_column(CourseSource::fromConfig()->modules(), 'checklist');
         $created = 0;
 
-        foreach ($course->modules()->orderBy('order')->get() as $module) {
-            $items = $lists[$module->order] ?? [];
+        foreach ($course->modules()->orderBy('order')->get()->values() as $index => $module) {
+            $items = $lists[$index] ?? [];
 
             if ($items === [] || $module->checklistItems()->exists()) {
                 continue;

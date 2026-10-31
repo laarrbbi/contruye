@@ -70,5 +70,12 @@
     "My orders": "Mis pedidos",
     "Amount paid:": "Importe pagado:",
     "Amount:": "Importe:",
-    "Reason:": "Motivo:"
+    "Reason:": "Motivo:",
+    "Some answers do not match a question of this quiz.": "Algunas respuestas no corresponden a ninguna pregunta de este cuestionario.",
+    "This attempt has already been submitted.": "Este intento ya se ha enviado.",
+    "The time for this exam is over. The attempt has been closed.": "Se ha acabado el tiempo de este examen. El intento se ha cerrado.",
+    "The financial template is not available at the moment. Please try again later.": "La plantilla financiera no está disponible en este momento. Inténtalo de nuevo más tarde.",
+    "You have reached the maximum number of saved scenarios. Delete one first.": "Has llegado al máximo de escenarios guardados. Borra uno antes.",
+    "Scenario deleted.": "Escenario borrado.",
+    "The inputs do not match the financial template.": "Los datos no corresponden a la plantilla financiera."
 }

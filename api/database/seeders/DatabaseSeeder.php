@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CurriculumV2Seeder::class,
             ChecklistSeeder::class,
+            ProvinceGuideSeeder::class,
             StudentSeeder::class,
             OrderSeeder::class,
         ]);

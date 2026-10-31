@@ -17,12 +17,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *                    module; contacts are NEVER invented.
  * - `expert_tip`   → CONSEIL D'OR DE L'EXPERT, highlighted practitioner advice
  * - `text`         → plain prose
+ * - `overview`     → a module section that comes before its lessons, as the
+ *                    instructor wrote it ("Leyes que aplican", "Dónde ir"):
+ *                    Markdown with its own "## " heading
+ * - `section`      → the same, for a section after the lessons ("Partners en
+ *                    tu provincia")
  */
 class ContentBlock extends Model
 {
     use HasFactory, HasLocalizedAttributes;
 
-    public const TYPES = ['text', 'legal', 'partner_slot', 'expert_tip'];
+    public const TYPES = ['text', 'legal', 'partner_slot', 'expert_tip', 'overview', 'section'];
 
     protected $fillable = [
         'module_id',

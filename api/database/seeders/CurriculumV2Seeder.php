@@ -4,39 +4,50 @@ namespace Database\Seeders;
 
 use App\Models\ContentBlock;
 use App\Models\Course;
-use App\Models\Lesson;
+use App\Models\CourseDocument;
+use App\Models\Module;
+use App\Models\Quiz;
 use App\Services\PricingService;
 use App\Support\ContentValidation;
+use App\Support\Course\CourseSource;
 use Illuminate\Database\Seeder;
 
 /**
- * Installs the 12-phase curriculum.
+ * Installs the course from the instructor's package (curso/, version 4.0):
+ * the 12 modules and Financials with their lessons, the course documents
+ * (introduction, resources, annexes), the module quizzes and the final exam.
  *
  * Rules honoured here:
- * - Legal figures are copied verbatim from the source and never reworded.
+ * - Every text is stored as delivered, Markdown included (CourseSource says
+ *   how a file is cut; CourseContentTest proves nothing is lost).
  * - English fields stay empty: the EN translation is a separate human pass,
  *   and the localized* accessors fall back to Spanish meanwhile.
- * - Passages containing "pendiente de validar / verificar / confirmar" (or
- *   "por validar…") are flagged `needs_validation` so admins see an
- *   "A VALIDAR" badge and they land in the generated content-review report.
- *   They are never removed.
- * - partner_slot blocks carry only the KIND of provider needed. No contact is
- *   ever invented; real contacts come from the `partners` table.
+ * - Passages containing "pendiente de validar…" would still be flagged for
+ *   the admin's A VALIDAR badge; the delivered text has none.
+ * - The checklists are ChecklistSeeder's; the province directory is
+ *   ProvinceGuideSeeder's.
  */
 class CurriculumV2Seeder extends Seeder
 {
     public function run(): void
     {
-        $data = require database_path('seeders/data/curriculum_v2.php');
+        $source = CourseSource::fromConfig();
+        $modules = $source->modules();
+        $intro = $source->read('1_contenido/modulos/00_introduccion.md');
+
+        // "## Promoción de viviendas de renta libre en España" and the
+        // course's own one-paragraph answer to "Qué es este curso".
+        preg_match('/^## (.+)$/m', $intro, $title);
+        preg_match('/^> \*\*Qué es este curso\*\*\n> (.+)$/mu', $intro, $what);
 
         $course = Course::query()->firstOrCreate(
             ['slug' => 'promocion-inmobiliaria-espana'],
             [
-                'title_es' => $data['course']['title_es'],
+                'title_es' => $title[1],
                 // No English yet: a human translation is a separate pass.
                 'title_en' => null,
-                // Whole euros, IVA included. 12 phases à la carte cost
-                // 12 × 49 = 588 €, so full access is the best deal (−17 %).
+                // Whole euros, IVA included. Placeholders until the owner
+                // sets the launch prices.
                 'price_eur' => 490,
                 'module_discount_tiers' => PricingService::DEFAULT_TIERS,
                 'status' => 'published',
@@ -44,72 +55,136 @@ class CurriculumV2Seeder extends Seeder
         );
 
         $course->update([
-            'title_es' => $data['course']['title_es'],
-            'description_es' => $data['course']['description_es'],
+            'title_es' => $title[1],
+            'description_es' => $what[1],
             'status' => 'published',
         ]);
 
-        // Enrollments reference modules, so only (re)seed when the structure
-        // is not already the one in the data file.
-        if ($course->modules()->count() === count($data['modules'])) {
-            $this->command?->info('Curriculum already installed — skipping.');
+        $this->seedDocuments($course, $source);
+
+        // Enrollments and orders reference modules, so the structure is only
+        // (re)built when it is not already the one in the package.
+        if ($course->modules()->count() === count($modules)) {
+            $this->command?->info('Curriculum already installed — skipping the modules.');
+            $this->seedQuizzes($course, $source);
 
             return;
         }
 
         $course->modules()->delete();
 
-        foreach ($data['modules'] as $order => $moduleData) {
+        foreach ($modules as $index => $data) {
             $module = $course->modules()->create([
-                'order' => $order,
-                'title_es' => $moduleData['title'],
-                'title_en' => null, // EN translation pending (human pass)
-                'description_es' => $moduleData['description'] ?? null,
+                'order' => $index + 1,
+                'kind' => $data['kind'],
+                'title_es' => $data['title'],
+                'title_en' => null,
+                'description_es' => $data['description'],
                 'description_en' => null,
                 'price_eur' => 49,
             ]);
 
-            $this->seedBlocks($moduleData['blocks'] ?? [], moduleId: $module->id);
+            $order = 0;
+            foreach ($data['overview'] as $body) {
+                $this->block($module, 'overview', ++$order, $body);
+            }
+            foreach ($data['closing'] as $body) {
+                $this->block($module, 'section', ++$order, $body);
+            }
 
-            foreach ($moduleData['lessons'] as $lessonIndex => $lessonData) {
-                $lesson = $module->lessons()->create([
+            foreach ($data['lessons'] as $lessonIndex => $lesson) {
+                $module->lessons()->create([
                     'order' => $lessonIndex + 1,
-                    'title_es' => $lessonData['title'],
+                    'title_es' => $lesson['title'],
                     'title_en' => null,
-                    'content_es' => $lessonData['content'] ?? null,
+                    'content_es' => $lesson['content'],
                     'content_en' => null,
-                    'key_points_es' => $lessonData['key_points'] ?? null,
-                    'key_points_en' => null,
-                    // First lesson of the course stays a free preview so the
-                    // landing page can still offer a taste.
-                    'is_free_preview' => $order === 1 && $lessonIndex === 0,
-                    'is_reflex_sheet' => $lessonData['is_reflex_sheet'] ?? false,
+                    // The first two lessons of module 1 are open to everyone,
+                    // as the course's plan has it.
+                    'is_free_preview' => $index === 0 && $lessonIndex < 2,
+                    'is_reflex_sheet' => false,
                     'duration_seconds' => 0,
                 ]);
-
-                $this->seedBlocks($lessonData['blocks'] ?? [], lessonId: $lesson->id);
             }
         }
 
-        $this->command?->info('Curriculum installed: '.count($data['modules']).' modules.');
+        $this->seedQuizzes($course, $source);
+
+        $this->command?->info('Curriculum installed: '.count($modules).' modules, '
+            .array_sum(array_map(fn (array $m) => count($m['lessons']), $modules)).' lessons.');
+    }
+
+    private function block(Module $module, string $type, int $order, string $body): void
+    {
+        ContentBlock::create([
+            'module_id' => $module->id,
+            'type' => $type,
+            'order' => $order,
+            'body_es' => $body,
+            'body_en' => null,
+            'needs_validation' => ContentValidation::flags($body),
+        ]);
     }
 
     /**
-     * @param  array<int, array<string, mixed>>  $blocks
+     * Course documents are texts, not structure: refreshed on every run.
      */
-    private function seedBlocks(array $blocks, ?int $moduleId = null, ?int $lessonId = null): void
+    private function seedDocuments(Course $course, CourseSource $source): void
     {
-        foreach ($blocks as $index => $block) {
-            ContentBlock::create([
-                'module_id' => $moduleId,
-                'lesson_id' => $lessonId,
-                'type' => $block['type'],
-                'order' => $index + 1,
-                'body_es' => $block['body'],
-                'body_en' => null,
-                'partner_category' => $block['partner_category'] ?? null,
-                'needs_validation' => ContentValidation::flags($block['body']),
-            ]);
+        $order = 0;
+        foreach ($source->documents() as $slug => $document) {
+            CourseDocument::query()->updateOrCreate(
+                ['course_id' => $course->id, 'slug' => $slug],
+                [
+                    'order' => ++$order,
+                    'title_es' => $document['title'],
+                    'body_es' => $document['body'],
+                    'access' => $document['access'],
+                ],
+            );
         }
+    }
+
+    /**
+     * One quiz per module (matched on the module file it belongs to) and the
+     * final exam. Refreshed in place, so attempts keep their quiz.
+     */
+    private function seedQuizzes(Course $course, CourseSource $source): void
+    {
+        $quizzes = $source->quizzes();
+        $modules = $course->modules()->orderBy('order')->get()->values();
+
+        foreach ($source->modules() as $index => $data) {
+            $quiz = $quizzes[$data['section']] ?? null;
+            $module = $modules[$index] ?? null;
+
+            if ($quiz === null || $module === null) {
+                continue;
+            }
+
+            Quiz::query()->updateOrCreate(
+                ['module_id' => $module->id],
+                [
+                    'course_id' => $course->id,
+                    'kind' => 'module',
+                    'title_es' => $quiz['titulo'],
+                    'pass_mark' => CourseSource::passMark($quiz['minimo']),
+                    'duration_minutes' => null,
+                    'questions' => $quiz['preguntas'],
+                ],
+            );
+        }
+
+        $exam = $source->finalExam();
+        Quiz::query()->updateOrCreate(
+            ['course_id' => $course->id, 'kind' => 'final'],
+            [
+                'module_id' => null,
+                'title_es' => $exam['titulo'],
+                'pass_mark' => CourseSource::passMark($exam['minimo']),
+                'duration_minutes' => (int) $exam['duracion_minutos'],
+                'questions' => $exam['preguntas'],
+            ],
+        );
     }
 }

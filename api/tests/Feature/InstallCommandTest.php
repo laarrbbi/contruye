@@ -6,6 +6,8 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\Order;
 use App\Models\Province;
+use App\Models\ProvinceGuide;
+use App\Models\Quiz;
 use App\Models\User;
 use Database\Seeders\BenchmarkSeeder;
 use Database\Seeders\DatabaseSeeder;
@@ -30,8 +32,12 @@ it('installs the real content and one real admin, and nothing invented', functio
 
     expect(Province::query()->count())->toBe(52)
         ->and(Course::query()->where('slug', 'promocion-inmobiliaria-espana')->value('status'))->toBe('published')
-        ->and(Module::query()->count())->toBe(12)
-        ->and(ChecklistItem::query()->count())->toBeGreaterThan(0);
+        // The 12 modules and Financials, with their quizzes, the final exam
+        // and the province directory.
+        ->and(Module::query()->count())->toBe(13)
+        ->and(ChecklistItem::query()->count())->toBeGreaterThan(0)
+        ->and(Quiz::query()->count())->toBe(14)
+        ->and(ProvinceGuide::query()->count())->toBe(52);
 
     $admin = User::query()->sole();
     expect($admin->email)->toBe('owner@construye-academy.es')
@@ -69,7 +75,7 @@ it('leaves an installed course and an existing admin alone when run again', func
 
     expect(Course::query()->value('title_es'))->toBe('Título corregido por el admin')
         ->and(User::query()->count())->toBe(1)
-        ->and(Module::query()->count())->toBe(12);
+        ->and(Module::query()->count())->toBe(13);
 });
 
 it('refuses to seed demo data in production', function (string $seeder) {

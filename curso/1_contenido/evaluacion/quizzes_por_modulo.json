@@ -1,0 +1,3369 @@
+[
+ {
+  "seccion": "01_solar_busqueda_analisis_urbanistico_due_diligence_y_adquisic",
+  "titulo": "Quiz Módulo 1 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "La edificabilidad se expresa en:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "m²/€",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "m²t/m²s",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "plantas/parcela",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "m³/m²",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "¿Qué documento del Registro de la Propiedad te dice las cargas de un solar?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La referencia catastral",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El PGOU",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La nota simple informativa",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El plan parcial",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "Un solar de 800 m² con 2,5 m²t/m²s permite construir:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "800 m²",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "1.600 m²",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "2.000 m²",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "2.400 m²",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Un particular te vende un solar. La compra tributa por:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "IVA 21 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "ITP de la comunidad autónoma",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "IS",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No tributa",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "Un empresario te vende un solar edificable. Pagas:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Solo ITP",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "IVA 21 % (deducible) + AJD",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "IVA 10 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Nada",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "El informe o cédula urbanística del ayuntamiento:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Siempre vincula al ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Es obligatorio para toda obra",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Su carácter vinculante depende de la ley autonómica",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Lo emite el Registro",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "¿Qué significa \"suelo urbano no consolidado\"?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Suelo con todos los servicios",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Suelo que necesita urbanización o cesiones antes de edificar",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Suelo rústico",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solar con edificio",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El capital social mínimo de una SL desde la Ley 18/2022 es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "3.000 €",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "60.000 €",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "1 €, con reglas de protección hasta 3.000 €",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "30.000 €",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "CASA47 es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Una aseguradora decenal",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La entidad pública estatal de vivienda y suelo que sustituye a SEPES",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Un portal de subastas",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Un colegio profesional",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "Si el IBI de años anteriores está impagado:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Es problema solo del vendedor",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La finca responde de la deuda (afección real)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Prescribe con la venta",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Lo paga el notario",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "02_analisis_de_viabilidad",
+  "titulo": "Quiz Módulo 2 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "Margen mínimo sobre ventas recomendado:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "5 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 %",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "15 %",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "30 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "El PEM es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Plan de Ejecución Municipal",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Presupuesto de Ejecución Material (sin gastos generales, beneficio ni IVA)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Plan Especial",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Presupuesto de equipamiento",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "IVA de la venta de vivienda libre nueva:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "21 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "4 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "0 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Método residual:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Precio de mercado × edificabilidad",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Ingresos − resto de costes − beneficio objetivo",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Coste de obra × 2",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Valor catastral × coeficiente",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "Coste de ejecución material de vivienda estándar (2025-2026):",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "300–500 €/m²",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "600–800 €/m²",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "900–1.100 €/m²",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "2.000 €/m²",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "¿Por qué la CRP se hace sin IVA?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Porque el IVA no existe en obra nueva",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Porque el promotor recupera el IVA soportado al repercutir el de las ventas",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Porque lo paga el banco",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Por costumbre",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "Tipo de IS de una sociedad de nueva creación en sus dos primeros períodos con base positiva:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "25 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "15 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "10 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "0 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El ICIO lo regula:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La LOE",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El TRLRHL (RDL 2/2004), con un máximo del 4 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "La ley autonómica",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El CTE",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Escenario pesimista típico:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Ventas al 100 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Ventas al 110 %",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Ventas al 85–90 %, obra +10–15 %, retraso",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Solo retraso",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "Duración típica de una promoción desde el suelo a la última escritura:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "6–12 meses",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "1–2 años",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "3–4 años",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "6–8 años",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "03_proyectos_tecnicos",
+  "titulo": "Quiz Módulo 3 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "La LOE define al promotor en su artículo:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "3",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "9",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "12",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "17",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "¿Qué DB del CTE regula la seguridad en caso de incendio?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "DB SE",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "DB HE",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "DB HR",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "DB SI",
+      "correcta": true
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "El visado colegial obligatorio (RD 1000/2010) se exige al:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Anteproyecto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Proyecto de ejecución de edificación",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Estudio de mercado",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Plan de ventas",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El plan de seguridad y salud lo redacta:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El arquitecto proyectista",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Cada contratista",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El ayuntamiento",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "El visado comprueba principalmente:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El cumplimiento técnico exhaustivo del CTE",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El precio de la obra",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La identidad y habilitación del técnico, su seguro y que el proyecto está completo",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "La viabilidad económica",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "En vivienda, el director de ejecución de la obra es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El arquitecto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El arquitecto técnico",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El jefe de obra",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El OCT",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "El cálculo sísmico se hace con:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El DB SE-AE",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La NCSE-02 (RD 997/2002)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El REBT",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No se exige en España",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El hormigón y el acero estructural se rigen desde 2021 por:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La EHE-08",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El Código Estructural (RD 470/2021)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El RITE",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La NBE",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Hace falta estudio de seguridad y salud (no básico) cuando el PEM es igual o mayor que:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "100.000 €",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "450.759,08 €",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "1 M€",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Siempre",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "El coordinador de seguridad en ejecución es obligatorio cuando:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El PEM supera 1 M€",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La obra dura más de un año",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Interviene más de una empresa, o empresa y autónomos",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Lo decide el promotor",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "04_licencias_y_autorizaciones_administrativas",
+  "titulo": "Quiz Módulo 4 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "ICIO significa:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Índice de Costes de Instalación",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Impuesto sobre Construcciones, Instalaciones y Obras",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Instrucción de Control",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Impuesto de la Comunidad",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "Tipo máximo del ICIO:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "2 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "4 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "6 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "10 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "Si el ayuntamiento no resuelve en plazo una licencia de obra nueva:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Se entiende concedida",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Puedes empezar",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Se entiende denegada: el silencio es negativo (art. 11.4 TRLSRU)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Se prorroga 6 meses",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El acta de replanteo la firman:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Promotor y notario",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Director de obra, director de ejecución y constructor",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Ayuntamiento y promotor",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Arquitecto y banco",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "La comunicación de apertura del centro de trabajo la presenta:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El promotor al ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El contratista a la autoridad laboral de la CCAA",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El arquitecto al colegio",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El notario",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "El plan de seguridad y salud lo aprueba:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El coordinador de seguridad en ejecución",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El banco",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "Tu solar está a 60 m de un río. Necesitas:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Nada",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Autorización del organismo de cuenca (zona de policía de 100 m)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Informe del Registro",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Certificado del Catastro",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El REA es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El registro de arquitectos",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El Registro de Empresas Acreditadas del sector de la construcción",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Un seguro",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Un impuesto",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Tienes un requerimiento de subsanación. Plazo general:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "48 horas",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 días",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "3 meses",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hay plazo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "La caducidad de la licencia:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Es automática al día siguiente",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Requiere expediente con audiencia al promotor",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "No existe",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La declara el notario",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "05_financiacion_y_contratacion",
+  "titulo": "Quiz Módulo 5 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "Importe habitual del préstamo promotor sobre el coste total:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "90–95 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "80–85 %",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "60–70 %",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "40–50 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "El seguro decenal cubre:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Defectos de acabado 1 año",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Habitabilidad 3 años",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Daños estructurales 10 años",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Todo 5 años",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "¿Quién contrata el seguro decenal?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El constructor",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El banco",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El promotor",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El arquitecto",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Los plazos de garantía de la LOE empiezan a contar desde:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La licencia",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La escritura de cada vivienda",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La recepción de la obra sin reservas (o la subsanación de las reservas)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "La primera ocupación",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "Las cantidades a cuenta de los compradores deben:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Ingresarse en la cuenta general",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Garantizarse con aval o seguro de caución individual y depositarse en cuenta especial",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Devolverse si sube el Euríbor",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No tienen regulación",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "Preventas que suele exigir la banca:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "10–15 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "30–50 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "70 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "100 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "Retención de garantía habitual en el contrato de obra:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "1 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "5 % hasta un año después de la recepción",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "20 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "50 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "Plazo máximo de pago entre empresas (Ley 3/2004):",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "30 días",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "60 días",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "90 días",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "120 días",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Número máximo de niveles de subcontratación (Ley 32/2006):",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Ilimitado",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "1",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "3",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "5",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "¿Por qué pides al contratista certificados de la AEAT y de la Seguridad Social?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Por costumbre",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Para evitar responder de sus deudas tributarias y de Seguridad Social",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Lo exige el ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Para el visado",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "06_construccion",
+  "titulo": "Quiz Módulo 6 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "El REBT (RD 842/2002) regula:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La fontanería",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Las instalaciones eléctricas de baja tensión",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El aislamiento",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El gas",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "Electrificación elevada de una vivienda:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "3.450 W",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "5.750 W",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "9.200 W",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "12.000 W",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "El RITE es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Reglamento de telecomunicaciones",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Reglamento de Instalaciones Térmicas en los Edificios",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Registro de inmuebles",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Reglamento de incendios",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Ascensor accesible obligatorio según el CTE DB SUA 9 cuando:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Siempre",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Hay 2 plantas",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Hay que salvar más de dos plantas desde la entrada accesible o hay más de 12 viviendas en plantas sin entrada accesible",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Hay 6 plantas",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "El acta de recepción inicia:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El plazo de la licencia",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Los plazos de garantía de 1, 3 y 10 años",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El plazo de escritura",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La comercialización",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "Si no se firma acta ni se rechaza la obra en 30 días desde la terminación:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "No pasa nada",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La recepción se entiende tácita",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Caduca la licencia",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Se pierde el decenal",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "La preinstalación de recarga de vehículo eléctrico en edificios de vivienda nuevos con garaje:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Es opcional",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Solo en el 10 % de las plazas",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Afecta a todas las plazas (ITC-BT-52 y CTE HE6)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Solo en parkings públicos",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "La contribución renovable mínima para ACS (CTE HE4) se puede cubrir con:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Solo paneles solares térmicos",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Cualquier renovable, incluida la aerotermia",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Calderas de gas",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No se exige",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "El certificado final de obra lo firman:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Promotor y banco",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Ayuntamiento y aparejador",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Director de obra y director de ejecución",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Notario y promotor",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "Las tierras limpias de excavación:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Se pueden tirar en cualquier solar",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Se pueden reutilizar según la Orden APM/1007/2017 o entregar a gestor autorizado",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Las recoge el ayuntamiento gratis",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No tienen regulación",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "07_control_de_obra",
+  "titulo": "Quiz Módulo 7 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "El OCT:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Es obligatorio por ley en toda obra",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Solo en obras de más de 1 M€",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "No lo exige la ley, lo exige la aseguradora decenal",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Solo en edificios de más de 10 plantas",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "En vivienda, quién certifica mensualmente la obra ejecutada:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El banco",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El director de ejecución (arquitecto técnico)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El notario",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "La resistencia del hormigón se comprueba de forma general a los:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "3 días",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "14 días",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "28 días",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "90 días",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Un modificado es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Un cambio de arquitecto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Una variación del contrato, ordenada por escrito y valorada antes de ejecutarse",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "La certificación mensual",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Una prórroga de licencia",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "La ruta crítica es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La lista de trabajos",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El camino más corto",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La secuencia de actividades que fija la duración total",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Los trabajos más caros",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "El libro de incidencias lo custodia:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El banco",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El coordinador de seguridad y salud",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El OCT",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "Principal causa de sobrecostes:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El cemento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Los modificados mal gestionados",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "La licencia",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La inflación",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El planning lo elabora:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El proyectista",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El constructor, y lo aprueba la dirección facultativa",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El OCT",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Coste a fin de obra =",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Lo pendiente",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Contratado + modificados + previsiones",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Lo certificado",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El PEM inicial",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "Las entidades de control y los laboratorios de ensayo se rigen por:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La LPH",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El RD 410/2010",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El REBT",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La Ley 5/2019",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "08_comercializacion",
+  "titulo": "Quiz Módulo 8 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "¿Cuándo puedes empezar a cobrar anticipos?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Con el proyecto básico",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Cuando tengas licencia y la garantía individual y la cuenta especial operativas",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Con el suelo comprado",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Cuando quieras",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "IVA de la vivienda libre nueva:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "21 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "4 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "0 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "¿Puedes pactar que el comprador consumidor pague la plusvalía municipal?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Sí, si lo firma",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "No: es una cláusula abusiva (art. 89.3 TRLGDCU)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Solo en Madrid",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solo si la vivienda vale más de 300.000 €",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El aval o seguro de caución protege al comprador frente a:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Subidas de precio",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El impago de su hipoteca",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La pérdida de sus anticipos si no se termina o no se entrega en plazo",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Defectos constructivos",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "¿Puedes obligar al comprador a subrogarse en tu préstamo promotor?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Sí",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "No, solo ofrecérselo como opción",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Solo si lo exige el banco",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solo en VPO",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "La publicidad de la promoción:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Es orientativa",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Es exigible: forma parte del contrato (art. 61 TRLGDCU)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Solo vale si se firma",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No está regulada",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "En Cataluña, Comunitat Valenciana y Canarias, la agencia colaboradora debe:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Ser franquicia",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Estar inscrita en el registro autonómico de agentes inmobiliarios",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Tener 10 años de antigüedad",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Nada especial",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "Como promotor, en materia de blanqueo de capitales:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "No tienes obligaciones",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Eres sujeto obligado: identificas al comprador y el origen de los fondos",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Solo el notario tiene obligaciones",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solo si vendes a extranjeros",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Pago en efectivo entre un empresario y un particular:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Sin límite",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Prohibido a partir de 1.000 €",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Hasta 10.000 €",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Hasta 2.500 €",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "La Ley 5/2019 regula:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El IVA de la vivienda",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El contrato de obra",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Los contratos de crédito inmobiliario (hipoteca del comprador)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Las comisiones de agencia",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "09_legalizacion",
+  "titulo": "Quiz Módulo 9 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "La división horizontal crea:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La obra",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La licencia",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Los elementos privativos con su cuota y los elementos comunes",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El seguro decenal",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "Requisitos de la escritura de obra nueva terminada los fija:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La LPH",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El art. 28 del TRLSRU (junto con el art. 20 LOE)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El CTE",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El REBT",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "Sin seguro decenal, el notario:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Firma igual",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "No autoriza la escritura de obra nueva terminada de viviendas",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Cobra más",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Avisa al banco",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "Los planos \"de lo construido\" son:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Los del básico",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Los que reflejan lo realmente ejecutado",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Los de la licencia",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Los del Catastro",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "El Libro del Edificio es obligatorio según:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El RD 105/2008",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El art. 7 de la LOE",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El DB SI",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El RITE",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "¿Qué comunidades mantienen la cédula de habitabilidad en 2026?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Todas",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Solo Madrid y Barcelona",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Cataluña, Navarra, Canarias, Extremadura, Baleares, La Rioja, Asturias y Murcia",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Ninguna",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "En la Comunidad de Madrid la primera ocupación se tramita como:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Cédula autonómica",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Declaración responsable ante el ayuntamiento (Ley 1/2020)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Escritura notarial",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hace falta",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "Los gastos de la escritura de obra nueva y división horizontal:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Se reparten con los compradores",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Los paga el promotor; no se pueden repercutir al comprador consumidor",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Los paga el banco",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Son gratuitos",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "La obra nueva en construcción se escritura:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Al terminar",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Al empezar, para poder hipotecar la obra futura",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Antes de comprar el suelo",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Con la primera ocupación",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "El Libro del Edificio se entrega:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Al ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Al banco",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "A la comunidad de propietarios (y a cada comprador lo de su vivienda)",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Al colegio",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "10_preentrega",
+  "titulo": "Quiz Módulo 10 · 8 preguntas · mínimo 6/8",
+  "minimo": "6/8",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "La hoja de preentrega se firma entre:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Promotor y constructor",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Promotor y comprador",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Director de obra y director de ejecución",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Notario y comprador",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "¿Cuántas rondas de repasos recomienda el curso?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "1",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "2",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "3: interna, con comprador y verificación",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Ninguna",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "El comprador consumidor tiene derecho a elegir:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Al arquitecto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Al constructor",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "La notaría",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "La fecha del replanteo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El certificado de deuda de cada finca lo emite:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El notario",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El banco del préstamo promotor",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El Registro",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "Con qué antelación mínima debe recibir el comprador la documentación de su hipoteca (FEIN) según la Ley 5/2019:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El mismo día",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 días naturales",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Un año",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hay plazo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "El snagging interno sirve para:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Calcular el coste final",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Corregir defectos antes de que los vea el comprador",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Obtener la licencia",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Cerrar el préstamo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "El comprador lleva a la notaría:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El título del suelo",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "DNI o NIE, justificantes de pagos y del origen de fondos",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "La licencia de obras",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El plan de seguridad",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "El manual de uso y mantenimiento es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El libro de órdenes",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Una guía comercial",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El extracto del Libro del Edificio para la vivienda",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El proyecto completo",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "11_entrega_de_llaves",
+  "titulo": "Quiz Módulo 11 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "IVA de la vivienda libre nueva en la península y Baleares:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "21 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 %",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "4 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "0 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "El AJD de la constitución de la hipoteca del comprador lo paga:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El comprador",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El banco",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "A medias",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "La Ley de Propiedad Horizontal es la:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Ley 38/1999",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Ley 5/2019",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Ley 49/1960",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Ley 57/1968",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El fondo de reserva mínimo de la comunidad es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "5 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 % del presupuesto ordinario",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "15 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hay mínimo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "La plusvalía municipal en la venta de vivienda nueva a un consumidor la paga:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El comprador",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor, sin poder repercutirla",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "La comunidad",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Nadie",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "Plazo para autoliquidar la plusvalía en una venta:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "1 año",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "30 días hábiles",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "6 meses",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hay plazo",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "Los plazos de garantía de la LOE empiezan:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "En la entrega de cada vivienda",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "En la recepción de la obra sin reservas (o en la subsanación de las reservas)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "En la licencia",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "En la escritura de obra nueva",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "En el acto de entrega se firma:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El contrato privado",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La división horizontal",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "El acta de entrega de posesión",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "El Libro del Edificio",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Los estatutos de la comunidad suelen ir en:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El proyecto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La escritura de división horizontal",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El libro de órdenes",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La licencia",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "La garantía de 3 años cubre:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Estructura",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Acabados",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Defectos que afectan a la habitabilidad",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Todo",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "12_postventa_y_cierre_de_la_promocion",
+  "titulo": "Quiz Módulo 12 · 10 preguntas · mínimo 7/10",
+  "minimo": "7/10",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "Tipo general del IS:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "15 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "20 %",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "25 %",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "30 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "Plazo para reclamar por daños cubiertos por la LOE:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "6 meses",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "2 años desde que se producen los daños",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "15 años",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No prescribe",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "Fondo de reserva mínimo de la comunidad:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "5 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "10 % del presupuesto ordinario",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "15 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "No hay",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "La cancelación del préstamo promotor en el Registro se hace con:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Un trámite bancario",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Escritura notarial de cancelación",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Un email",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Una carta certificada",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "Si el constructor no repara una incidencia en garantía:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El propietario pierde el derecho",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El promotor repara y repercute el coste al constructor",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Se considera no cubierta",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El promotor ya no responde",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "Sin incremento de valor del terreno, la plusvalía municipal:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Se paga igual",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "No se paga (RDL 26/2021)",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Se paga doble",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La paga el comprador",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "La contabilidad trata los costes de la promoción como:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Gastos del año",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Inmovilizado",
+      "correcta": false
+     },
+     {
+      "letra": "C",
+      "texto": "Existencias",
+      "correcta": true
+     },
+     {
+      "letra": "D",
+      "texto": "Deudas",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "Extinguir la SPE:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Elimina toda responsabilidad",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "No elimina las garantías: los socios responden hasta lo recibido en la liquidación",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Requiere permiso del ayuntamiento",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Lo hace la AEAT",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 9,
+    "pregunta": "Los gastos financieros del préstamo promotor:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "No son deducibles",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Son deducibles con el límite del art. 16 LIS, y se activan como existencias si la promoción dura más de un año",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Se deducen en el IVA",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solo si hay beneficio",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 10,
+    "pregunta": "Si alquilas las viviendas que no has vendido:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "No pasa nada",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Debes regularizar el IVA deducido, porque el alquiler de vivienda está exento",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Pagas IVA del 21 % por el alquiler",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Pierdes el decenal",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "seccion": "13_financials_plantilla_financiera",
+  "titulo": "Quiz Financials · 8 preguntas · mínimo 6/8",
+  "minimo": "6/8",
+  "preguntas": [
+   {
+    "numero": 1,
+    "pregunta": "La plantilla simplificada es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Un modelo distinto",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "La hoja \"3ª Coste Total Promoción\" del modelo completo",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El cash-flow",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "La hoja de datos",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 2,
+    "pregunta": "Si Excel avisa de \"referencia circular\" al abrir la plantilla:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "La plantilla está mal",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Hay que activar el cálculo iterativo",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Hay que borrar el préstamo",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Hay que cambiar a LibreOffice",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 3,
+    "pregunta": "En la plantilla, \"API, VARIOS\" del suelo se introduce como:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Importe en euros",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Porcentaje sobre el precio del suelo",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Número de agentes",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Fecha",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 4,
+    "pregunta": "El coeficiente de paso del ejemplo (1,4529) significa:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Que el margen es del 45 %",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Que por cada euro de suelo y obra hay 0,45 € de otros costes",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Que el préstamo es del 145 %",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Que el IVA es del 45 %",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 5,
+    "pregunta": "El préstamo hipotecario del ejemplo es:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El 100 % del suelo",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "El 80 % del coste total",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El 60 % de la obra",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Lo que pida el socio",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 6,
+    "pregunta": "Los honorarios de proyecto de la plantilla dependen de:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "El número de socios",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Un porcentaje por tramos de superficie aplicado al importe de construcción",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "El precio del suelo",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "El tipo de interés",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 7,
+    "pregunta": "¿Para qué sirve la curva de obra de la hoja 3ª Construcción?",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Para calcular el IVA",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Para repartir las certificaciones mes a mes según la duración de la obra",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Para fijar el precio de venta",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Para el seguro decenal",
+      "correcta": false
+     }
+    ]
+   },
+   {
+    "numero": 8,
+    "pregunta": "Antes de usar la plantilla para una promoción de 2026 debes revisar:",
+    "opciones": [
+     {
+      "letra": "A",
+      "texto": "Nada",
+      "correcta": false
+     },
+     {
+      "letra": "B",
+      "texto": "Los tipos de IVA, el ITP/AJD de tu comunidad y las tarifas de la época",
+      "correcta": true
+     },
+     {
+      "letra": "C",
+      "texto": "Solo el nombre de la promoción",
+      "correcta": false
+     },
+     {
+      "letra": "D",
+      "texto": "Solo las fechas",
+      "correcta": false
+     }
+    ]
+   }
+  ]
+ }
+]

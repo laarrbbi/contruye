@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\LearnCourseResource;
 use App\Models\Course;
 use App\Models\LessonProgress;
+use App\Models\QuizAttempt;
 use Illuminate\Http\Request;
 
 class LearnController extends Controller
@@ -27,6 +28,9 @@ class LearnController extends Controller
             'modules.lessons.contentBlocks',
             'modules.contentBlocks',
             'modules.partners.provinces',
+            'modules.quiz',
+            'documents',
+            'quizzes',
         ]);
 
         // One query for all of the user's progress rows in this course.
@@ -41,6 +45,14 @@ class LearnController extends Controller
             ? $course->modules->pluck('id')
             : $user->accessibleModuleIds($course);
 
-        return new LearnCourseResource($course, $progressByLesson, $accessibleModuleIds);
+        // The student's submitted quiz attempts, for the pass / best-score badges.
+        $attemptsByQuiz = QuizAttempt::query()
+            ->where('user_id', $user->id)
+            ->whereIn('quiz_id', $course->quizzes->pluck('id'))
+            ->whereNotNull('submitted_at')
+            ->get()
+            ->groupBy('quiz_id');
+
+        return new LearnCourseResource($course, $progressByLesson, $accessibleModuleIds, $attemptsByQuiz);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Concerns;
 
 use App\Models\Course;
 use App\Models\Lesson;
+use App\Models\Module;
 use App\Models\User;
 
 /**
@@ -43,5 +44,23 @@ trait AuthorizesCourseAccess
         }
 
         abort_unless($user->isAdmin() || $user->hasAccessToModule($module), 403);
+    }
+
+    /**
+     * Abort with 403 unless the user is an admin or owns the module.
+     */
+    private function authorizeModuleAccess(User $user, Module $module): void
+    {
+        abort_if($module->course === null, 404);
+        abort_unless($user->isAdmin() || $user->hasAccessToModule($module), 403);
+    }
+
+    /**
+     * Abort with 403 unless the user is an admin or owns the whole course:
+     * the final exam, the full Anexo A and the course PDF are for them.
+     */
+    private function authorizeFullAccess(User $user, Course $course): void
+    {
+        abort_unless($user->isAdmin() || $user->hasFullAccessTo($course), 403);
     }
 }

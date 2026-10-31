@@ -1,0 +1,14 @@
+{
+  "name": "construye-plantilla-libre",
+  "version": "1.0.0",
+  "description": "Motor de cálculo de PLANTILLA_LIBRE.xls con sus fórmulas originales",
+  "main": "plantillaEngine.js",
+  "scripts": {
+    "test": "node ../pruebas/validar.js",
+    "ejemplo": "node ejemplo.js"
+  },
+  "dependencies": {
+    "hyperformula": "^2.7.1"
+  },
+  "license": "UNLICENSED"
+}
