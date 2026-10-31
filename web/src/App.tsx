@@ -30,6 +30,9 @@ const CheckoutFailurePage = lazy(() => import('@/pages/CheckoutFailurePage').the
 const MyOrdersPage = lazy(() => import('@/pages/MyOrdersPage').then((m) => ({ default: m.MyOrdersPage })))
 const PlayerPage = lazy(() => import('@/pages/PlayerPage').then((m) => ({ default: m.PlayerPage })))
 const ChecklistsPage = lazy(() => import('@/pages/ChecklistsPage').then((m) => ({ default: m.ChecklistsPage })))
+const QuizPage = lazy(() => import('@/pages/QuizPage').then((m) => ({ default: m.QuizPage })))
+const CourseDocumentPage = lazy(() => import('@/pages/CourseDocumentPage').then((m) => ({ default: m.CourseDocumentPage })))
+const FinancialsPage = lazy(() => import('@/pages/FinancialsPage').then((m) => ({ default: m.FinancialsPage })))
 const AdminLayout = lazy(() => import('@/pages/admin/AdminLayout').then((m) => ({ default: m.AdminLayout })))
 const AdminDashboardPage = lazy(() => import('@/pages/admin/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })))
 const AdminCoursesPage = lazy(() => import('@/pages/admin/AdminCoursesPage').then((m) => ({ default: m.AdminCoursesPage })))
@@ -89,6 +92,9 @@ export default function App() {
                 <Route path="/learn/:slug" element={<PlayerPage />} />
                 <Route path="/learn/:slug/lessons/:lessonId" element={<PlayerPage />} />
                 <Route path="/learn/:slug/checklists" element={<ChecklistsPage />} />
+                <Route path="/learn/:slug/quizzes/:quizId" element={<QuizPage />} />
+                <Route path="/learn/:slug/docs/:documentSlug" element={<CourseDocumentPage />} />
+                <Route path="/learn/:slug/financials" element={<FinancialsPage />} />
                 <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
                 <Route path="/checkout/failure" element={<CheckoutFailurePage />} />
                 <Route path="/checkout/:slug" element={<CheckoutPage />} />

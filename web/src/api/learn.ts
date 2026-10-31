@@ -14,13 +14,15 @@ export interface LearnLesson {
   is_free_preview: boolean
   /** True for lessons in a module the student doesn't own (free previews stay unlocked). */
   is_locked: boolean
-  /** Written lesson notes; null when the lesson is locked. */
+  /** The lesson's text, Markdown as written; null when the lesson is locked. */
   content: string | null
+  /** The same text rendered (safe HTML from the server); null when locked. */
+  content_html: string | null
   /** The lesson's bullet points (empty when locked). */
   key_points: string[]
   /** Tagged blocks attached to the lesson (empty when locked). */
   blocks: LearnContentBlock[]
-  /** True for the printable safety sheet (module 13.2). */
+  /** True for a printable safety sheet. */
   has_reflex_sheet: boolean
   /** False while the lesson's video has not been produced yet. */
   has_video: boolean
@@ -58,13 +60,15 @@ export interface LearnPartner {
   note: string | null
 }
 
-export type ContentBlockType = 'text' | 'legal' | 'partner_slot' | 'expert_tip'
+export type ContentBlockType = 'text' | 'legal' | 'partner_slot' | 'expert_tip' | 'overview' | 'section'
 
 /** A tagged block of course content (legal reference, expert tip, partner slot). */
 export interface LearnContentBlock {
   id: number
   type: ContentBlockType
   body: string | null
+  /** The body rendered from Markdown (safe HTML from the server). */
+  body_html: string | null
   /** partner_slot only: which kind of provider the slot is asking for. */
   partner_category?: string | null
   /** Always sent: lets a locked slot tease what it holds without listing it. */
@@ -73,15 +77,33 @@ export interface LearnContentBlock {
   partners?: LearnPartner[]
 }
 
+/** What the player shows about a quiz before it is opened: never its questions. */
+export interface LearnQuizSummary {
+  id: number
+  title: string
+  pass_mark: number
+  questions_count: number
+  attempts_count: number
+  best_score: number | null
+  passed: boolean
+}
+
+export type ModuleKind = 'phase' | 'financials'
+
 export interface LearnModule {
   id: number
   order: number
+  /** A phase of the promotion (numbered), or the Financials section. */
+  kind: ModuleKind
   title: string
   /** True when the student doesn't own this module — its lessons are teased but not playable. */
   is_locked: boolean
   price_eur: number | null
-  /** The module's introductory text. */
+  /** The module's introductory text ("Objetivo / Duración / Resultado"). */
   description: string | null
+  description_html: string | null
+  /** The quiz that closes the module. */
+  quiz: LearnQuizSummary | null
   /** Tagged blocks attached to the module (empty when locked). */
   blocks: LearnContentBlock[]
   /** Empty for locked modules — the contacts are a paid perk. */
@@ -100,6 +122,11 @@ export interface LearnData {
     full_access: boolean
     owned_modules_count: number
     total_modules_count: number
+    /** Course-level texts: introduction, resources, annexes. */
+    documents: { slug: string; title: string; access: 'enrolled' | 'full'; is_locked: boolean }[]
+    /** Files of the course package and whether this student may download them. */
+    files: { key: string; name: string; access: 'financials' | 'full'; is_locked: boolean }[]
+    final_exam: (LearnQuizSummary & { duration_minutes: number | null; is_locked: boolean }) | null
   }
   modules: LearnModule[]
   next_lesson_id: number | null
@@ -178,7 +205,68 @@ export function attachmentUrl(lessonId: number, index: number) {
   return `${API_URL}/api/lessons/${lessonId}/attachments/${index}`
 }
 
-/** Printable "ficha de actuación" PDF (lesson 7.4), same cookie-auth navigation. */
+/** Printable safety sheet PDF, same cookie-auth navigation. */
 export function reflexSheetUrl(lessonId: number) {
   return `${API_URL}/api/lessons/${lessonId}/reflex-sheet`
+}
+
+/** A file of the course package (template, directory, course PDF), same cookie-auth navigation. */
+export function courseFileUrl(slug: string, key: string) {
+  return `${API_URL}/api/courses/${slug}/files/${key}`
+}
+
+export interface CourseDocument {
+  slug: string
+  title: string
+  access: 'enrolled' | 'full'
+  body_html: string | null
+}
+
+export function useCourseDocument(slug: string | undefined, documentSlug: string | undefined) {
+  return useQuery<CourseDocument>({
+    queryKey: ['course-document', slug, documentSlug],
+    enabled: !!slug && !!documentSlug,
+    retry: false,
+    queryFn: async () => {
+      const { data } = await api.get(`/courses/${slug}/documents/${documentSlug}`)
+      return data.data as CourseDocument
+    },
+  })
+}
+
+/** Anexo A for one province: its rows for each phase the student owns. */
+export interface ProvinceDirectory {
+  province: { id: number; code: number; name: string }
+  name: string
+  capital: string
+  ccaa: string
+  urban_law: string
+  first_occupation: string
+  habitability_certificate: string | null
+  itp: string
+  ajd: string
+  sale_tax: string
+  foral: string | null
+  phases: {
+    phase: number
+    module_id: number
+    is_locked: boolean
+    rows_count: number
+    rows: { name: string; purpose: string }[]
+  }[]
+  /** The province's whole section of the annex, with full access only. */
+  section_html: string | null
+}
+
+export function useProvinceDirectory(slug: string | undefined, provinceId: number | null) {
+  return useQuery<ProvinceDirectory>({
+    queryKey: ['province-directory', slug, provinceId],
+    enabled: !!slug && provinceId !== null,
+    retry: false,
+    staleTime: 10 * 60 * 1000,
+    queryFn: async () => {
+      const { data } = await api.get(`/courses/${slug}/directory/${provinceId}`)
+      return data.data as ProvinceDirectory
+    },
+  })
 }

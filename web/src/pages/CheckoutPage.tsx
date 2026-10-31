@@ -423,7 +423,8 @@ export function CheckoutPage() {
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block text-sm font-medium leading-snug">
-                          {index + 1}. <bdi>{module.title}</bdi>
+                          {module.kind !== 'financials' && `${index + 1}. `}
+                          <bdi>{module.title}</bdi>
                         </span>
                         {owned && (
                           <Badge variant="secondary" className="mt-1.5">

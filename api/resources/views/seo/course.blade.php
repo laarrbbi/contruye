@@ -37,7 +37,7 @@
         <ol class="space-y-4">
             @foreach ($course->modules as $module)
                 <li>
-                    <h3 dir="auto" class="font-semibold">{{ $module->order }}. {{ $module->localizedTitle($locale) }}</h3>
+                    <h3 dir="auto" class="font-semibold">@if ($module->kind === 'phase'){{ $module->order }}. @endif{{ $module->localizedTitle($locale) }}</h3>
                     @if ($module->lessons->isNotEmpty())
                         <ul class="mt-1 list-disc space-y-0.5 ps-6 text-sm text-muted-foreground">
                             @foreach ($module->lessons as $lesson)

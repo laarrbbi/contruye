@@ -14,7 +14,7 @@
     "login": "Sign in",
     "register": "Create an account",
     "logout": "Sign out",
-    "modules": "phases",
+    "modules": "modules",
     "registerShort": "Sign up"
   },
   "authPanel": {
@@ -86,8 +86,8 @@
     "continue": "Continue",
     "start": "Start",
     "progress": "{{percent}}% complete",
-    "moduleAccess": "{{owned}} / {{total}} phases unlocked",
-    "unlockMore": "Unlock more phases",
+    "moduleAccess": "{{owned}} / {{total}} modules unlocked",
+    "unlockMore": "Unlock more modules",
     "provinceTitle": "My province",
     "provinceHelp": "Recommended partners will be filtered to this province."
   },
@@ -99,14 +99,14 @@
       "saveBadge": "-{{percent}}%",
       "fullAccessNote": "Full access to the whole course",
       "vatIncluded": "VAT included",
-      "fromPerModule": "or from {{price}} per phase",
-      "alaCarteTitle": "Go at your own pace, phase by phase",
-      "alaCarteBody": "No need to take everything at once: buy single phases from {{price}}, with discounts that grow with the number of phases. Select them all and full access applies automatically, at the best price.",
-      "pickModulesCta": "Choose my phases"
+      "fromPerModule": "or from {{price}} per module",
+      "alaCarteTitle": "Go at your own pace, module by module",
+      "alaCarteBody": "No need to take everything at once: buy single modules from {{price}}, with discounts that grow with the number of modules. Select them all and full access applies automatically, at the best price.",
+      "pickModulesCta": "Choose my modules"
     },
     "lessonsCount_one": "{{count}} lesson",
     "lessonsCount_other": "{{count}} lessons",
-    "moduleHeading": "Phase {{number}} — {{title}}",
+    "moduleHeading": "Module {{number}} — {{title}}",
     "program": "Course programme",
     "emptyProgram": "The detailed programme will be available soon.",
     "freePreview": "Free preview",
@@ -136,7 +136,7 @@
       },
       "abroad": {
         "q": "Can I follow the course from outside Spain?",
-        "a": "Yes. Everything is online, with lifetime access on phone, tablet or computer: you follow the phases wherever you live. The rules, procedures and authorities covered are Spain's, where the development takes place."
+        "a": "Yes. Everything is online, with lifetime access on phone, tablet or computer: you follow the course wherever you live. The rules, procedures and authorities covered are Spain's, where the development takes place."
       },
       "invoice": {
         "q": "Can I get an invoice?",
@@ -148,47 +148,47 @@
       },
       "modules": {
         "q": "Do I have to buy everything at once?",
-        "a": "No. Phases are sold one by one, depending on where you are. Discounts grow with the number of phases, and full access remains the cheapest option per phase."
+        "a": "No. Modules are sold one by one, depending on where you are. Discounts grow with the number of modules, and full access remains the cheapest option per module."
       },
       "partners": {
         "q": "Do you share professionals' contacts?",
-        "a": "Yes. Each phase has a place for the partners it needs — notaries, architects, banks, insurers, builders — filtered by province. They appear as verified professionals join: never an invented contact. Construye takes no commission on these introductions."
+        "a": "Yes. Each module ends with the institutions and partners to go to in your province for that phase, from the course's directory of the 52 provinces, with your region's planning law and taxes. Names of professional bodies and agencies are confirmed in their official search engines. Construye takes no commission on these introductions."
       },
       "projectType": {
         "q": "Does it suit my type of project?",
         "a": "The course follows an open-market housing development, from the plot to after-sales. Much of the journey — land, permits, financing, construction, legalisation — is the same for commercial and mixed-use schemes. Subsidised housing adds requirements set by each region that are not covered in detail."
       },
       "phases": {
-        "q": "What does each phase include?",
-        "a": "Its lessons, with the key points in writing, the legislation it relies on, an action checklist for your own project and, where there are any, partner contacts. You can follow the phases in order or go straight to the one you need."
+        "q": "What does each module include?",
+        "a": "The laws that apply and where to go, its lessons in writing, an action checklist for your own project, the institutions and partners of your province, and a quiz to check what you learnt. You can follow the modules in order or go straight to the one you need."
       }
     }
   },
   "checkout": {
     "title": "Complete your enrolment",
     "scopeFull": "Full access",
-    "scopeModules": "By phase",
+    "scopeModules": "By module",
     "full": {
       "title": "Full access to the course",
       "badge": "-{{percent}}%",
       "bullets": {
-        "modules": "All {{count}} phases of the programme",
+        "modules": "All {{count}} modules of the programme",
         "lifetime": "Unlimited, lifetime access",
         "attachments": "Every downloadable document and checklist"
       }
     },
     "modules": {
-      "title": "Choose your phases",
+      "title": "Choose your modules",
       "owned": "Already yours",
       "fullOnly": "Full access only",
-      "empty": "Select at least one phase to continue.",
-      "selectedCount_one": "{{count}} phase selected",
-      "selectedCount_other": "{{count}} phases selected",
+      "empty": "Select at least one module to continue.",
+      "selectedCount_one": "{{count}} module selected",
+      "selectedCount_other": "{{count}} modules selected",
       "tierTitle": "Volume discounts",
       "tierPercent": "-{{percent}}%",
-      "tierMin": "from {{min}} phases",
-      "tierHint_one": "Add {{count}} phase to get -{{percent}}%",
-      "tierHint_other": "Add {{count}} phases to get -{{percent}}%"
+      "tierMin": "from {{min}} modules",
+      "tierHint_one": "Add {{count}} module to get {{percent}}% off",
+      "tierHint_other": "Add {{count}} modules to get {{percent}}% off"
     },
     "quote": {
       "title": "Summary",
@@ -196,13 +196,13 @@
       "tierDiscount": "Volume discount (-{{percent}}%)",
       "coupon": "Code {{code}} (-{{percent}}%)",
       "total": "Total (VAT included)",
-      "itemized": "Price by phase: {{price}} —",
+      "itemized": "Price by module: {{price}} —",
       "savings": "you save {{amount}}",
       "upgradeTitle": "For {{delta}} more, unlock the WHOLE programme",
-      "upgradeSubtitle_one": "{{count}} phase left, included in full access",
-      "upgradeSubtitle_other": "{{count}} phases left, included in full access",
+      "upgradeSubtitle_one": "{{count}} remaining module, included in full access",
+      "upgradeSubtitle_other": "{{count}} remaining modules, included in full access",
       "upgradeCta": "Switch to full access",
-      "upgradedNote": "You selected every phase: full access has been applied automatically (best price).",
+      "upgradedNote": "You selected every module: full access has been applied automatically (best price).",
       "quoteError": "The price could not be calculated. Check your selection."
     },
     "coupon": {
@@ -242,7 +242,7 @@
       "reference": "Reference (write it exactly as shown)",
       "copy": "Copy",
       "copied": "Copied!",
-      "purchasedModules": "Phases ordered",
+      "purchasedModules": "Modules ordered",
       "uploadTitle": "Send the payment receipt",
       "uploadHint": "JPG, PNG or PDF — 5 MB maximum",
       "uploadChoose": "Choose a file",
@@ -290,8 +290,8 @@
     "browse": "Discover the course",
     "orderNumber": "Order no. {{id}}",
     "scopeFull": "Full access",
-    "scopeModules_one": "{{count}} phase",
-    "scopeModules_other": "{{count}} phases",
+    "scopeModules_one": "{{count}} module",
+    "scopeModules_other": "{{count}} modules",
     "sendReceipt": "Send the receipt",
     "viewInstructions": "View the instructions",
     "access": "Open",
@@ -317,7 +317,7 @@
     "videoError": "The video could not be loaded. Please try again.",
     "contents": "Course contents",
     "showContents": "Programme",
-    "moduleLabel": "Phase {{number}}",
+    "moduleLabel": "Module {{number}}",
     "courseProgress": "Course progress",
     "progressPercent": "{{percent}}% complete",
     "completed": "Completed",
@@ -331,9 +331,9 @@
     "notEnrolled": "You are not enrolled in this course.",
     "goToCourse": "View the course",
     "locked": "Locked",
-    "lockedHeading": "This phase is locked",
-    "lockedBody": "It is not part of your current access. Unlock it to watch this lesson and the rest of the phase.",
-    "unlockModule": "Unlock this phase",
+    "lockedHeading": "This module is locked",
+    "lockedBody": "It is not part of your current access. Unlock it to watch this lesson and the rest of the module.",
+    "unlockModule": "Unlock this module",
     "unlock": "Unlock",
     "lessonNotes": "Lesson notes",
     "keyPoints": "Key points",
@@ -341,7 +341,9 @@
     "videoSoon": "Video coming soon",
     "videoSoonHint": "The written content of this lesson is already available below. The video will be added shortly.",
     "fullClass": "The full lesson",
-    "currentSection": "current section"
+    "currentSection": "current section",
+    "financialsLabel": "Financials",
+    "moduleOverview": "Objective, laws and where to go"
   },
   "admin": {
     "title": "Admin",
@@ -378,12 +380,12 @@
       "new": "New course",
       "empty": "No courses yet.",
       "manageContent": "Manage content",
-      "deleteConfirm": "Delete the course “{{title}}”? Its phases, lessons and enrolments will be deleted too. This cannot be undone.",
+      "deleteConfirm": "Delete the course “{{title}}”? Its modules, lessons and enrolments will be deleted too. This cannot be undone.",
       "table": {
         "title": "Title",
         "price": "Price (EUR)",
         "status": "Status",
-        "modules": "Phases",
+        "modules": "Modules",
         "lessons": "Lessons",
         "enrollments": "Enrolled",
         "createdAt": "Created on"
@@ -407,18 +409,18 @@
       }
     },
     "content": {
-      "subtitle": "Drag and drop to reorder phases and lessons.",
+      "subtitle": "Drag and drop to reorder modules and lessons.",
       "back": "Back to courses",
-      "addModule": "Add a phase",
-      "editModule": "Edit the phase",
-      "moduleFormSubtitle": "Phase title in Spanish (English is optional).",
-      "deleteModuleConfirm": "Delete the phase “{{title}}” and all its lessons? This cannot be undone.",
-      "noModules": "No phases yet. Start by adding one.",
+      "addModule": "Add a module",
+      "editModule": "Edit the module",
+      "moduleFormSubtitle": "Module title in Spanish (English is optional).",
+      "deleteModuleConfirm": "Delete the module “{{title}}” and all its lessons? This cannot be undone.",
+      "noModules": "No modules yet. Start by adding one.",
       "addLesson": "Add a lesson",
       "editLesson": "Edit the lesson",
       "lessonFormSubtitle": "Fill in the lesson information.",
       "deleteLessonConfirm": "Delete the lesson “{{title}}”? This cannot be undone.",
-      "noLessons": "No lessons in this phase.",
+      "noLessons": "No lessons in this module.",
       "lessonsCount_one": "{{count}} lesson",
       "lessonsCount_other": "{{count}} lessons",
       "dragToReorder": "Drag to reorder",
@@ -438,12 +440,12 @@
       },
       "partners": {
         "manage": "Partners",
-        "title": "Phase partners",
-        "subtitle": "Visible only to students who bought this phase.",
+        "title": "Module partners",
+        "subtitle": "Visible only to students who bought this module.",
         "add": "Add a partner",
         "choose": "Choose…",
         "noneAvailable": "No partner available",
-        "empty": "No partner attached to this phase.",
+        "empty": "No partner attached to this module.",
         "noteEs": "Displayed note (ES)",
         "noteEn": "Displayed note (EN)",
         "moveUp": "Move up",
@@ -527,11 +529,11 @@
         "title": "Order #{{id}}",
         "scope": "Purchase type",
         "fullAccess": "Full access",
-        "modulesScope": "Single phases",
+        "modulesScope": "Single modules",
         "discount": "Discount",
         "createdAt": "Created on",
         "paidAt": "Paid on",
-        "modules": "Phases bought",
+        "modules": "Modules bought",
         "adminNote": "Internal note"
       },
       "actions": {
@@ -575,7 +577,7 @@
         "orders": "Orders",
         "noOrders": "No orders.",
         "fullAccess": "Full access",
-        "modulesOwned": "{{owned}} of {{total}} phases"
+        "modulesOwned": "{{owned}} of {{total}} modules"
       }
     },
     "reviews": {
@@ -642,19 +644,19 @@
       "empty": "No partners yet.",
       "inactive": "Disabled",
       "searchPlaceholder": "Search by name or province…",
-      "intro": "Providers recommended to students in the relevant phases. Their contact details are visible only in purchased phases.",
+      "intro": "Providers recommended to students in the relevant modules. Their contact details are visible only in purchased modules.",
       "deleteConfirm": "Delete the partner “{{name}}”?",
       "table": {
         "name": "Name",
         "category": "Category",
         "contact": "Contact",
         "province": "Provinces covered",
-        "modules": "Phases"
+        "modules": "Modules"
       },
       "form": {
         "createTitle": "New partner",
         "editTitle": "Edit the partner",
-        "subtitle": "A vetted provider, then attached to the relevant phases.",
+        "subtitle": "A vetted provider, then attached to the relevant modules.",
         "name": "Name",
         "category": "Category",
         "descriptionEs": "Description (ES)",
@@ -773,7 +775,7 @@
       "open": "Record a cash payment",
       "scope": "What the student paid for",
       "full": "Full access",
-      "modules": "Phases",
+      "modules": "Modules",
       "price": "Calculate the amount",
       "toCollect": "Amount to collect:",
       "confirm": "Confirm collection of {{amount}}",
@@ -817,10 +819,10 @@
   },
   "partners": {
     "title": "Recommended partners",
-    "intro": "Vetted providers for this phase of the journey. Construye takes no commission on these introductions.",
+    "intro": "Vetted providers for this module of the journey. Construye takes no commission on these introductions.",
     "website": "Website",
-    "lockedTease_one": "{{count}} partner contact included in this phase",
-    "lockedTease_other": "{{count}} partner contacts included in this phase",
+    "lockedTease_one": "{{count}} partner contact included in this module",
+    "lockedTease_other": "{{count}} partner contacts included in this module",
     "category": {
       "notario": "Notary",
       "asesor_fiscal": "Tax and accounting adviser",
@@ -857,11 +859,11 @@
       "title": "Property development in Spain, phase by phase: from the plot to the handover of the keys.",
       "body": "The 12 phases of an open-market housing development, in the order they really happen: what each one involves, the documents, the authorities, the timescales and the mistakes that cost the most.",
       "ctaPrimary": "Get the full course",
-      "paymentNote": "Lifetime access: phone, tablet, computer. As a whole or phase by phase.",
+      "paymentNote": "Lifetime access: phone, tablet, computer. As a whole or module by module.",
       "ctaSecondary_one": "See the programme — {{modules}}, one free preview lesson",
       "ctaSecondary_other": "See the programme — {{modules}}, {{count}} free preview lessons",
       "ctaSecondaryNoPreview": "See the programme — {{modules}}",
-      "statPhases": "phases, from the plot to after-sales"
+      "statPhases": "modules, from the plot to after-sales"
     },
     "eyebrow": {
       "maze": "The real obstacle",
@@ -869,7 +871,7 @@
       "method": "The method",
       "toolkit": "What you get",
       "curriculum": "The programme",
-      "modular": "Phase by phase",
+      "modular": "Module by module",
       "reviews": "Reviews",
       "pricing": "Pricing",
       "faq": "Your questions",
@@ -915,43 +917,43 @@
     },
     "toolkit": {
       "title": "You do not leave with notes. You leave with tools.",
-      "checklistsTitle": "A checklist per phase",
-      "checklistsBody": "Each phase's actions, to tick off on your own project and add your own tasks to. Your roadmap, saved in your account.",
-      "legalTitle": "The legislation it cites",
-      "legalBody": "Each phase names the laws and royal decrees it relies on: the Building Act (LOE), the Technical Building Code, the Land Act, the invoicing regulation…",
-      "partnersTitle": "Partners by province",
-      "partnersBody": "Vetted notaries, architects, banks, insurers and builders, filtered by your province, as they join. Never an invented contact.",
-      "sheetsTitle": "Printable sheets",
-      "sheetsBody": "Such as the action sheet for a serious accident on site, as a PDF, to post in the site huts.",
+      "checklistsTitle": "A checklist per module",
+      "checklistsBody": "Each module's actions, to tick off on your own project and add your own tasks to. Your roadmap, saved in your account.",
+      "legalTitle": "The laws that apply and where to go",
+      "legalBody": "Each module opens with the laws that apply and the institutions to go to: what you ask for, what you get, how long it takes and what it costs.",
+      "partnersTitle": "Your province, phase by phase",
+      "partnersBody": "The directory of the 52 provinces: for each phase, the institution or partner to go to in yours, with your region's planning law and taxes.",
+      "sheetsTitle": "The financial template, calculated",
+      "sheetsBody": "A practitioner's template, with its 17 sheets and its formulas, calculated on the platform: cost by chapter, loan, 48-month cash flow and summary per home.",
       "footer": "Everything listed here is in the platform from day one."
     },
     "curriculumIntro": {
       "title": "{{modules}}, {{lessons}}. The depth is the proof.",
-      "lead": "Every phase is detailed below, lesson by lesson.",
-      "leadPreview_one": "Every phase is detailed below. One lesson is a free preview: judge the level of detail before you buy.",
-      "leadPreview_other": "Every phase is detailed below. {{count}} lessons are free previews: judge the level of detail before you buy."
+      "lead": "Every module is detailed below, lesson by lesson.",
+      "leadPreview_one": "Every module is detailed below. One lesson is a free preview: judge the level of detail before you buy.",
+      "leadPreview_other": "Every module is detailed below. {{count}} lessons are free previews: judge the level of detail before you buy."
     },
     "modular": {
-      "title": "Buy the phase you are stuck on. Or the whole trade.",
-      "p1": "No need to take everything at once: buy phase by phase, depending on where you really are.",
+      "title": "Buy the module you are stuck on. Or the whole trade.",
+      "p1": "No need to take everything at once: buy module by module, depending on where you really are.",
       "c1": "Starting from scratch? Start with the plot and the feasibility study.",
-      "c2": "Permit stuck? Take the permits phase.",
-      "c3": "Negotiating with the bank? Take the financing and contracting phase.",
-      "c4": "Works starting? Take the construction and site control phases.",
-      "close": "Discounts apply on their own. Past a certain number of phases, full access simply becomes the cheapest option.",
-      "from": "From {{price}} per phase"
+      "c2": "Permit stuck? Take the permits module.",
+      "c3": "Negotiating with the bank? Take the financing and contracting module.",
+      "c4": "Works starting? Take the construction and site control modules.",
+      "close": "Discounts apply on their own. Past a certain number of modules, full access simply becomes the cheapest option.",
+      "from": "From {{price}} per module"
     },
     "pricing": {
       "title": "Two ways in.",
       "fullTitle": "Full access",
-      "fullBody": "All {{modules}} phases, all {{lessons}} lessons, the checklists and the partner contacts. Lifetime access. By far the lowest price per phase.",
-      "unitTitle": "By phase",
-      "unitBody": "Take the phase you are stuck on, go at your own pace, complete it later.",
+      "fullBody": "All {{modules}} modules and Financials, all {{lessons}} lessons, the quizzes and the final exam, the checklists and the directory of the 52 provinces. Lifetime access. By far the lowest price per module.",
+      "unitTitle": "By module",
+      "unitBody": "Take the module you are stuck on, go at your own pace, complete it later.",
       "payment": "Prices include VAT. Lifetime access: phone, tablet, computer. Invoice on request.",
       "promoNote": "The promotional price ends with the countdown. After that, the struck-through price is the price again.",
       "upTo": "up to -{{percent}}%",
-      "unitTiers_one": "Automatic discounts from {{count}} phase.",
-      "unitTiers_other": "Automatic discounts from {{count}} phases."
+      "unitTiers_one": "Automatic discounts from {{count}} module.",
+      "unitTiers_other": "Automatic discounts from {{count}} modules."
     },
     "socialProof": {
       "title": "What those who have taken it say.",
@@ -959,7 +961,7 @@
     },
     "finalCta": {
       "title": "{{modules}}. From the plot to the keys. Your turn to build.",
-      "p1": "The whole journey of an open-market housing development in Spain, phase by phase, with the legislation, the checklists and the partners of each one.",
+      "p1": "The whole journey of an open-market housing development in Spain, phase by phase, with the legislation, the checklists and the institutions and partners of your province.",
       "p2": "Learn these phases on your first site, paying for every mistake. Or here, before you sign at the notary's."
     },
     "faq": {
@@ -970,8 +972,10 @@
       "expertHelpPreview_other": "The detailed programme and the free preview lessons answer most questions."
     },
     "counts": {
-      "modules_one": "{{count}} phase",
-      "modules_other": "{{count}} phases"
+      "modules_one": "{{count}} module",
+      "modules_other": "{{count}} modules",
+      "modulesWithFinancials_one": "{{count}} module and Financials",
+      "modulesWithFinancials_other": "{{count}} modules and Financials"
     },
     "forWhom": {
       "title": "You have a project. What you lack is the route.",
@@ -983,12 +987,12 @@
       "p3Title": "You invest from outside Spain",
       "p3Body": "You are preparing a development in Spain from another country and need to understand the route before investing.",
       "p4Title": "You are stuck at one phase",
-      "p4Body": "Permit, developer loan, off-plan sales, construction: you are already moving, and one phase may be all you need."
+      "p4Body": "Permit, developer loan, off-plan sales, construction: you are already moving, and one module may be all you need."
     },
     "howItWorks": {
       "title": "Three steps between you and the first lesson.",
       "s1Title": "Choose",
-      "s1BodyModules": "The full course, or only the phases you need.",
+      "s1BodyModules": "The full course, or only the modules you need.",
       "s1BodyFull": "The full course, in a single purchase.",
       "s1Tiers": "Discounts apply on their own.",
       "s2Title": "Pay",
@@ -1000,18 +1004,18 @@
     }
   },
   "checklist": {
-    "title": "Phase checklist",
+    "title": "Module checklist",
     "subtitle": "Tick each step as you carry it out on your own project.",
     "myTasks": "My tasks",
     "add": "Add",
     "addPlaceholder": "Add a task…",
     "deleteTask": "Delete the task",
     "pageTitle": "My roadmap",
-    "pageSubtitle": "Every step of the journey, phase by phase — the course's and your own.",
+    "pageSubtitle": "Every step of the journey, module by module — the course's and your own.",
     "overallProgress": "Overall progress",
     "backToCourse": "Back to the course",
-    "lockedTease_one": "{{count}} step included in this phase",
-    "lockedTease_other": "{{count}} steps included in this phase",
+    "lockedTease_one": "{{count}} step included in this module",
+    "lockedTease_other": "{{count}} steps included in this module",
     "saveFailed": "Change not saved — check your connection and try again."
   },
   "contact": {
@@ -1036,7 +1040,7 @@
   "seo": {
     "home": {
       "title": "Property development course in Spain",
-      "description": "Online course in property development in Spain: plot, feasibility, design, building permit, developer loan, construction, off-plan sales and handover of the keys. {{modules}} phases."
+      "description": "Online course in property development in Spain: plot, feasibility, design, building permit, developer loan, construction, off-plan sales and handover of the keys. {{modules}} modules, one per phase."
     },
     "catalog": {
       "title": "Property development courses in Spain",
@@ -1058,5 +1062,96 @@
     "or": "or",
     "sentence": "Payment: {{methods}}.",
     "cash": "You can also pay in cash: contact us."
+  },
+  "quiz": {
+    "navTitle": "Module quiz",
+    "passedShort": "Passed",
+    "ctaBody": "{{total}} questions: you pass with {{pass}} right answers.",
+    "ctaPassed": "Passed with {{score}}/{{total}}. You can retake it whenever you like.",
+    "locked": "This quiz belongs to a module you do not have yet",
+    "rules": "{{total}} questions, one right answer each. You pass with {{pass}} right. Once you send it, you see the right answers.",
+    "passed": "Passed",
+    "failed": "Not yet",
+    "score": "{{score}} of {{total}} right (pass mark {{pass}}).",
+    "retry": "Try again",
+    "answered": "{{count}} of {{total}} answered",
+    "correct": "Right",
+    "incorrect": "Wrong",
+    "incorrectWithAnswer": "Wrong. The right answer is {{answer}}.",
+    "submit": "Send answers",
+    "history": "Earlier attempts"
+  },
+  "exam": {
+    "navTitle": "Final exam",
+    "lockedHint": "With full access to the course.",
+    "rules": "{{total}} questions in {{minutes}} minutes. You pass with {{pass}} right. Once you send it, you see your score and which answers were wrong.",
+    "startHint": "The clock starts when you press the button and keeps running if you close the page. After {{minutes}} minutes, your answers are sent on their own.",
+    "start": "Start the exam",
+    "timeLeft": "Time left",
+    "submit": "Send the exam"
+  },
+  "documents": {
+    "navTitle": "Course documents",
+    "locked": "This document comes with full access to the course",
+    "downloadsTitle": "Available downloads",
+    "files": {
+      "plantilla-libre": "Full financial template (17 sheets)",
+      "plantilla-simplificada": "Simplified feasibility template",
+      "directorio-partners": "Directory of partners by province (Excel)",
+      "curso-pdf": "The whole course as a PDF"
+    },
+    "needsFullAccess": "With full access",
+    "needsFinancials": "With the Financials module",
+    "downloadsNote": "The other resources on the list will be published here as soon as they are available. The tax table by region is Annex B."
+  },
+  "directory": {
+    "panelTitle": "Your province in this phase",
+    "chooseProvince": "Choose your province",
+    "chooseHint": "Choose the province where you build: you will see which institution or partner to go to in this phase, with your region's planning law and taxes.",
+    "urbanLaw": "Planning law",
+    "firstOccupation": "First occupation",
+    "taxes": "Taxes",
+    "foral": "Foral regime",
+    "partner": "Partner / institution",
+    "purpose": "What for",
+    "lockedPhase_one": "{{count}} institution or partner in this phase, with the module",
+    "lockedPhase_other": "{{count}} institutions and partners in this phase, with the module",
+    "openAnnex": "See your whole province in Annex A"
+  },
+  "financials": {
+    "navTitle": "Calculate the template",
+    "ctaTitle": "Calculate the template on the platform",
+    "ctaBody": "Fill in the starting data and get the cost, the loan, the cash flow and the summary, with the practitioner's formulas.",
+    "title": "Financial template of the development",
+    "lead": "The practitioner's template (PLANTILLA_LIBRE.xls), calculated with its original formulas and with the iterative calculation already solved. You fill in the starting data; the template calculates everything else.",
+    "paramsNotice": "The template calculates with the parameters it was built with, around 2002 (7% and 16% VAT, fees in pesetas, cooperative items). Before using it for a current development, review:",
+    "locked": "The template comes with the Financials module",
+    "formulaDefault": "template formula",
+    "notANumber": "Not a number.",
+    "scenarios": "My scenarios",
+    "loadExample": "Load the 24-home example",
+    "reset": "Clear",
+    "scenarioName": "Scenario name",
+    "save": "Save",
+    "update": "Save changes",
+    "delete": "Delete",
+    "saved": "Saved",
+    "inputsTitle": "Starting data",
+    "emptyKeepsDefault": "Whatever you leave empty keeps the template's value or formula.",
+    "calculate": "Calculate",
+    "calculating": "Calculating…",
+    "converged": "Calculated: the iterative calculation settled in {{count}} iterations.",
+    "notConverged": "Warning: the iterative calculation did not settle in {{count}} iterations. Check the data.",
+    "tabSummary": "Cost summary",
+    "tabSimplified": "Simplified template",
+    "tabSheets": "All sheets",
+    "chapter": "Chapter",
+    "net": "Net",
+    "withVat": "With VAT",
+    "vat": "VAT",
+    "simplifiedHint": "The \"3ª Coste Total Promoción\" sheet: it is the simplified feasibility template, with your data.",
+    "sheet": "Sheet",
+    "originals": "The original files",
+    "originalsNote": "As the practitioner delivered them. In Excel, enable iterative calculation (100 iterations, maximum change 0.001): the template has circular references on purpose."
   }
 }

@@ -18,6 +18,8 @@ class ModuleResource extends JsonResource
         return [
             'id' => $this->id,
             'order' => $this->order,
+            // A phase of the promotion, or the Financials section.
+            'kind' => $this->kind,
             'title' => $this->localizedTitle(),
             'price_eur' => $this->price_eur,
             'is_owned' => $this->whenHas('is_owned', fn ($value) => (bool) $value),

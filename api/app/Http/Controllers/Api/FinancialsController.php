@@ -40,9 +40,18 @@ class FinancialsController extends Controller
     {
         $this->authorizeFinancials($request->user(), $course);
 
-        $dictionary = CourseSource::fromConfig()->json('2_plantilla_financiera/plantilla/entradas.json');
+        $source = CourseSource::fromConfig();
+        $dictionary = $source->json('2_plantilla_financiera/plantilla/entradas.json');
 
-        return response()->json(['data' => $dictionary]);
+        return response()->json(['data' => [
+            ...$dictionary,
+            // The package's own worked example (motor/ejemplo.js): a
+            // promotion of 24 homes, to start from something that calculates.
+            'ejemplos' => [[
+                'key' => '24-viviendas',
+                'datos' => $source->json('2_plantilla_financiera/pruebas/escenario_24_viviendas.json'),
+            ]],
+        ]]);
     }
 
     public function calculate(Request $request, Course $course): JsonResponse

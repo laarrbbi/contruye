@@ -14,7 +14,7 @@
     "login": "Iniciar sesión",
     "register": "Crear una cuenta",
     "logout": "Cerrar sesión",
-    "modules": "fases",
+    "modules": "módulos",
     "registerShort": "Registrarse"
   },
   "authPanel": {
@@ -86,8 +86,8 @@
     "continue": "Continuar",
     "start": "Empezar",
     "progress": "{{percent}} % completado",
-    "moduleAccess": "{{owned}} / {{total}} fases desbloqueadas",
-    "unlockMore": "Desbloquear más fases",
+    "moduleAccess": "{{owned}} / {{total}} módulos desbloqueados",
+    "unlockMore": "Desbloquear más módulos",
     "provinceTitle": "Mi provincia",
     "provinceHelp": "Los colaboradores recomendados se filtrarán por esta provincia."
   },
@@ -99,14 +99,14 @@
       "saveBadge": "-{{percent}} %",
       "fullAccessNote": "Acceso completo a todo el curso",
       "vatIncluded": "IVA incluido",
-      "fromPerModule": "o desde {{price}} por fase",
-      "alaCarteTitle": "Avanza a tu ritmo, fase a fase",
-      "alaCarteBody": "No hace falta comprarlo todo de golpe: compra las fases sueltas desde {{price}}, con descuentos que crecen con el número de fases. Si seleccionas todas, se aplica automáticamente el acceso completo, al mejor precio.",
-      "pickModulesCta": "Elegir mis fases"
+      "fromPerModule": "o desde {{price}} por módulo",
+      "alaCarteTitle": "Avanza a tu ritmo, módulo a módulo",
+      "alaCarteBody": "No hace falta comprarlo todo de golpe: compra los módulos sueltos desde {{price}}, con descuentos que crecen con el número de módulos. Si seleccionas todos, se aplica automáticamente el acceso completo, al mejor precio.",
+      "pickModulesCta": "Elegir mis módulos"
     },
     "lessonsCount_one": "{{count}} lección",
     "lessonsCount_other": "{{count}} lecciones",
-    "moduleHeading": "Fase {{number}} — {{title}}",
+    "moduleHeading": "Módulo {{number}} — {{title}}",
     "program": "Programa del curso",
     "emptyProgram": "El programa detallado estará disponible próximamente.",
     "freePreview": "Vista previa gratuita",
@@ -136,7 +136,7 @@
       },
       "abroad": {
         "q": "¿Puedo seguir el curso desde fuera de España?",
-        "a": "Sí. Todo es online, con acceso de por vida desde el móvil, la tableta o el ordenador: sigues las fases desde donde vivas. La normativa, los trámites y los organismos que se estudian son los de España, donde se hace la promoción."
+        "a": "Sí. Todo es online, con acceso de por vida desde el móvil, la tableta o el ordenador: sigues el curso desde donde vivas. La normativa, los trámites y los organismos que se estudian son los de España, donde se hace la promoción."
       },
       "invoice": {
         "q": "¿Puedo pedir factura?",
@@ -148,47 +148,47 @@
       },
       "modules": {
         "q": "¿Tengo que comprarlo todo de una vez?",
-        "a": "No. Las fases se compran sueltas, según el punto en el que estés. Los descuentos crecen con el número de fases, y el acceso completo sigue siendo la opción más barata por fase."
+        "a": "No. Los módulos se compran sueltos, según el punto en el que estés. Los descuentos crecen con el número de módulos, y el acceso completo sigue siendo la opción más barata por módulo."
       },
       "partners": {
         "q": "¿Se facilitan contactos de profesionales?",
-        "a": "Sí. Cada fase reserva un espacio para los colaboradores que la necesitan —notarios, arquitectos, bancos, aseguradoras, constructoras— filtrados por provincia. Se muestran a medida que se incorporan profesionales verificados: nunca un contacto inventado. Construye no cobra comisión por estos contactos."
+        "a": "Sí. Cada módulo termina con las instituciones y los partners a los que ir en tu provincia para esa fase, del directorio de las 52 provincias del curso, con la ley urbanística y los impuestos de tu comunidad. Los nombres de colegios y organismos se confirman en sus buscadores oficiales. Construye no cobra comisión por estos contactos."
       },
       "projectType": {
         "q": "¿Sirve para mi tipo de proyecto?",
         "a": "El curso sigue una promoción de viviendas de renta libre, del solar a la postventa. Buena parte del recorrido —suelo, licencias, financiación, obra, legalización— es la misma para locales y usos mixtos. La vivienda protegida añade requisitos de cada comunidad autónoma que no se tratan en detalle."
       },
       "phases": {
-        "q": "¿Qué incluye cada fase?",
-        "a": "Sus lecciones, con los puntos clave por escrito, la normativa que se cita, una checklist de acciones para tu propio proyecto y, cuando los hay, los contactos de colaboradores. Las fases se pueden seguir en orden o ir directamente a la que necesitas."
+        "q": "¿Qué incluye cada módulo?",
+        "a": "Las leyes que aplican y dónde ir, sus lecciones por escrito, una checklist de acciones para tu propio proyecto, las instituciones y partners de tu provincia, y un quiz para comprobar lo aprendido. Los módulos se pueden seguir en orden o ir directamente al que necesitas."
       }
     }
   },
   "checkout": {
     "title": "Completar la inscripción",
     "scopeFull": "Acceso completo",
-    "scopeModules": "Por fases",
+    "scopeModules": "Por módulos",
     "full": {
       "title": "Acceso completo al curso",
       "badge": "-{{percent}} %",
       "bullets": {
-        "modules": "Las {{count}} fases del programa",
+        "modules": "Los {{count}} módulos del programa",
         "lifetime": "Acceso ilimitado y de por vida",
         "attachments": "Todos los documentos y checklists descargables"
       }
     },
     "modules": {
-      "title": "Elige tus fases",
+      "title": "Elige tus módulos",
       "owned": "Ya la tienes",
       "fullOnly": "Solo con acceso completo",
-      "empty": "Selecciona al menos una fase para continuar.",
-      "selectedCount_one": "{{count}} fase seleccionada",
-      "selectedCount_other": "{{count}} fases seleccionadas",
+      "empty": "Selecciona al menos un módulo para continuar.",
+      "selectedCount_one": "{{count}} módulo seleccionado",
+      "selectedCount_other": "{{count}} módulos seleccionados",
       "tierTitle": "Descuentos por volumen",
       "tierPercent": "-{{percent}} %",
-      "tierMin": "desde {{min}} fases",
-      "tierHint_one": "Añade {{count}} fase para obtener un -{{percent}} %",
-      "tierHint_other": "Añade {{count}} fases para obtener un -{{percent}} %"
+      "tierMin": "desde {{min}} módulos",
+      "tierHint_one": "Añade {{count}} módulo para obtener un -{{percent}} %",
+      "tierHint_other": "Añade {{count}} módulos para obtener un -{{percent}} %"
     },
     "quote": {
       "title": "Resumen",
@@ -196,13 +196,13 @@
       "tierDiscount": "Descuento por volumen (-{{percent}} %)",
       "coupon": "Código {{code}} (-{{percent}} %)",
       "total": "Total (IVA incluido)",
-      "itemized": "Precio por fases: {{price}} —",
+      "itemized": "Precio por módulos: {{price}} —",
       "savings": "te ahorras {{amount}}",
       "upgradeTitle": "Por {{delta}} más, desbloquea TODO el programa",
-      "upgradeSubtitle_one": "{{count}} fase restante, incluida en el acceso completo",
-      "upgradeSubtitle_other": "{{count}} fases restantes, incluidas en el acceso completo",
+      "upgradeSubtitle_one": "{{count}} módulo restante, incluido en el acceso completo",
+      "upgradeSubtitle_other": "{{count}} módulos restantes, incluidos en el acceso completo",
       "upgradeCta": "Pasar al acceso completo",
-      "upgradedNote": "Has seleccionado todas las fases: se te aplica automáticamente el acceso completo (mejor precio).",
+      "upgradedNote": "Has seleccionado todos los módulos: se te aplica automáticamente el acceso completo (mejor precio).",
       "quoteError": "No se ha podido calcular el precio. Revisa tu selección."
     },
     "coupon": {
@@ -242,7 +242,7 @@
       "reference": "Concepto (escríbelo tal cual)",
       "copy": "Copiar",
       "copied": "¡Copiado!",
-      "purchasedModules": "Fases del pedido",
+      "purchasedModules": "Módulos del pedido",
       "uploadTitle": "Enviar el justificante de pago",
       "uploadHint": "JPG, PNG o PDF — 5 MB como máximo",
       "uploadChoose": "Elegir un archivo",
@@ -290,8 +290,8 @@
     "browse": "Descubrir el curso",
     "orderNumber": "Pedido n.º {{id}}",
     "scopeFull": "Acceso completo",
-    "scopeModules_one": "{{count}} fase",
-    "scopeModules_other": "{{count}} fases",
+    "scopeModules_one": "{{count}} módulo",
+    "scopeModules_other": "{{count}} módulos",
     "sendReceipt": "Enviar el justificante",
     "viewInstructions": "Ver las instrucciones",
     "access": "Acceder",
@@ -317,7 +317,7 @@
     "videoError": "No se ha podido cargar el vídeo. Inténtalo de nuevo.",
     "contents": "Contenido del curso",
     "showContents": "Programa",
-    "moduleLabel": "Fase {{number}}",
+    "moduleLabel": "Módulo {{number}}",
     "courseProgress": "Progreso del curso",
     "progressPercent": "{{percent}} % completado",
     "completed": "Completada",
@@ -331,9 +331,9 @@
     "notEnrolled": "No estás inscrito en este curso.",
     "goToCourse": "Ver el curso",
     "locked": "Bloqueada",
-    "lockedHeading": "Esta fase está bloqueada",
-    "lockedBody": "No forma parte de tu acceso actual. Desbloquéala para ver esta lección y el resto de la fase.",
-    "unlockModule": "Desbloquear esta fase",
+    "lockedHeading": "Este módulo está bloqueado",
+    "lockedBody": "No forma parte de tu acceso actual. Desbloquéalo para ver esta lección y el resto del módulo.",
+    "unlockModule": "Desbloquear este módulo",
     "unlock": "Desbloquear",
     "lessonNotes": "Notas de la lección",
     "keyPoints": "Puntos clave",
@@ -341,7 +341,9 @@
     "videoSoon": "Vídeo disponible próximamente",
     "videoSoonHint": "El contenido escrito de esta lección ya está disponible más abajo. El vídeo se añadirá pronto.",
     "fullClass": "La clase completa",
-    "currentSection": "sección actual"
+    "currentSection": "sección actual",
+    "financialsLabel": "Financials",
+    "moduleOverview": "Objetivo, leyes y dónde ir"
   },
   "admin": {
     "title": "Administración",
@@ -378,12 +380,12 @@
       "new": "Nuevo curso",
       "empty": "Todavía no hay cursos.",
       "manageContent": "Gestionar el contenido",
-      "deleteConfirm": "¿Eliminar el curso «{{title}}»? También se eliminarán sus fases, lecciones e inscripciones. Esta acción no se puede deshacer.",
+      "deleteConfirm": "¿Eliminar el curso «{{title}}»? También se eliminarán sus módulos, lecciones e inscripciones. Esta acción no se puede deshacer.",
       "table": {
         "title": "Título",
         "price": "Precio (EUR)",
         "status": "Estado",
-        "modules": "Fases",
+        "modules": "Módulos",
         "lessons": "Lecciones",
         "enrollments": "Inscritos",
         "createdAt": "Creado el"
@@ -407,18 +409,18 @@
       }
     },
     "content": {
-      "subtitle": "Arrastra y suelta para reordenar las fases y las lecciones.",
+      "subtitle": "Arrastra y suelta para reordenar los módulos y las lecciones.",
       "back": "Volver a los cursos",
-      "addModule": "Añadir una fase",
-      "editModule": "Editar la fase",
-      "moduleFormSubtitle": "Título de la fase en español (el inglés es opcional).",
-      "deleteModuleConfirm": "¿Eliminar la fase «{{title}}» y todas sus lecciones? Esta acción no se puede deshacer.",
-      "noModules": "Todavía no hay fases. Empieza añadiendo una.",
+      "addModule": "Añadir un módulo",
+      "editModule": "Editar el módulo",
+      "moduleFormSubtitle": "Título del módulo en español (el inglés es opcional).",
+      "deleteModuleConfirm": "¿Eliminar el módulo «{{title}}» y todas sus lecciones? Esta acción no se puede deshacer.",
+      "noModules": "Todavía no hay módulos. Empieza añadiendo uno.",
       "addLesson": "Añadir una lección",
       "editLesson": "Editar la lección",
       "lessonFormSubtitle": "Rellena la información de la lección.",
       "deleteLessonConfirm": "¿Eliminar la lección «{{title}}»? Esta acción no se puede deshacer.",
-      "noLessons": "Esta fase no tiene lecciones.",
+      "noLessons": "Este módulo no tiene lecciones.",
       "lessonsCount_one": "{{count}} lección",
       "lessonsCount_other": "{{count}} lecciones",
       "dragToReorder": "Arrastra para reordenar",
@@ -438,12 +440,12 @@
       },
       "partners": {
         "manage": "Colaboradores",
-        "title": "Colaboradores de la fase",
-        "subtitle": "Solo los ven los alumnos que han comprado esta fase.",
+        "title": "Colaboradores del módulo",
+        "subtitle": "Solo los ven los alumnos que han comprado este módulo.",
         "add": "Añadir un colaborador",
         "choose": "Elegir…",
         "noneAvailable": "No hay colaboradores disponibles",
-        "empty": "Ningún colaborador vinculado a esta fase.",
+        "empty": "Ningún colaborador vinculado a este módulo.",
         "noteEs": "Nota que se muestra (ES)",
         "noteEn": "Nota que se muestra (EN)",
         "moveUp": "Subir",
@@ -527,11 +529,11 @@
         "title": "Pedido n.º {{id}}",
         "scope": "Tipo de compra",
         "fullAccess": "Acceso completo",
-        "modulesScope": "Fases sueltas",
+        "modulesScope": "Módulos sueltos",
         "discount": "Descuento",
         "createdAt": "Creado el",
         "paidAt": "Pagado el",
-        "modules": "Fases compradas",
+        "modules": "Módulos comprados",
         "adminNote": "Nota interna"
       },
       "actions": {
@@ -575,7 +577,7 @@
         "orders": "Pedidos",
         "noOrders": "Sin pedidos.",
         "fullAccess": "Acceso completo",
-        "modulesOwned": "{{owned}} de {{total}} fases"
+        "modulesOwned": "{{owned}} de {{total}} módulos"
       }
     },
     "reviews": {
@@ -642,19 +644,19 @@
       "empty": "Todavía no hay colaboradores.",
       "inactive": "Desactivado",
       "searchPlaceholder": "Buscar por nombre o provincia…",
-      "intro": "Profesionales recomendados a los alumnos en las fases correspondientes. Sus datos de contacto solo se ven en las fases compradas.",
+      "intro": "Profesionales recomendados a los alumnos en los módulos correspondientes. Sus datos de contacto solo se ven en los módulos comprados.",
       "deleteConfirm": "¿Eliminar el colaborador «{{name}}»?",
       "table": {
         "name": "Nombre",
         "category": "Categoría",
         "contact": "Contacto",
         "province": "Provincias donde trabaja",
-        "modules": "Fases"
+        "modules": "Módulos"
       },
       "form": {
         "createTitle": "Nuevo colaborador",
         "editTitle": "Editar el colaborador",
-        "subtitle": "Un profesional verificado, que después se vincula a las fases correspondientes.",
+        "subtitle": "Un profesional verificado, que después se vincula a los módulos correspondientes.",
         "name": "Nombre",
         "category": "Categoría",
         "descriptionEs": "Descripción (ES)",
@@ -773,7 +775,7 @@
       "open": "Registrar un pago en efectivo",
       "scope": "Lo que ha pagado el alumno",
       "full": "Acceso completo",
-      "modules": "Fases",
+      "modules": "Módulos",
       "price": "Calcular el importe",
       "toCollect": "Importe a cobrar:",
       "confirm": "Confirmar el cobro de {{amount}}",
@@ -817,10 +819,10 @@
   },
   "partners": {
     "title": "Colaboradores recomendados",
-    "intro": "Profesionales verificados para esta fase del recorrido. Construye no cobra ninguna comisión por estos contactos.",
+    "intro": "Profesionales verificados para este módulo del recorrido. Construye no cobra ninguna comisión por estos contactos.",
     "website": "Sitio web",
-    "lockedTease_one": "{{count}} contacto de colaborador incluido en esta fase",
-    "lockedTease_other": "{{count}} contactos de colaboradores incluidos en esta fase",
+    "lockedTease_one": "{{count}} contacto de colaborador incluido en este módulo",
+    "lockedTease_other": "{{count}} contactos de colaboradores incluidos en este módulo",
     "category": {
       "notario": "Notaría",
       "asesor_fiscal": "Asesoría fiscal y contable",
@@ -857,11 +859,11 @@
       "title": "La promoción inmobiliaria en España, fase por fase: del solar a la entrega de llaves.",
       "body": "Las 12 fases de una promoción de viviendas de renta libre, en el orden real en que se hacen: lo que toca en cada una, los documentos, los organismos, los plazos y los errores que más cuestan.",
       "ctaPrimary": "Acceder al curso completo",
-      "paymentNote": "Acceso de por vida: móvil, tableta, ordenador. Completo o fase a fase.",
+      "paymentNote": "Acceso de por vida: móvil, tableta, ordenador. Completo o módulo a módulo.",
       "ctaSecondary_one": "Ver el programa — {{modules}}, una lección de vista previa gratuita",
       "ctaSecondary_other": "Ver el programa — {{modules}}, {{count}} lecciones de vista previa gratuita",
       "ctaSecondaryNoPreview": "Ver el programa — {{modules}}",
-      "statPhases": "fases, del solar a la postventa"
+      "statPhases": "módulos, del solar a la postventa"
     },
     "eyebrow": {
       "maze": "El verdadero obstáculo",
@@ -869,7 +871,7 @@
       "method": "El método",
       "toolkit": "Lo que recibes",
       "curriculum": "El programa",
-      "modular": "Fase a fase",
+      "modular": "Módulo a módulo",
       "reviews": "Opiniones",
       "pricing": "Precios",
       "faq": "Tus preguntas",
@@ -915,43 +917,43 @@
     },
     "toolkit": {
       "title": "No te llevas apuntes. Te llevas herramientas.",
-      "checklistsTitle": "Una checklist por fase",
-      "checklistsBody": "Las acciones de cada fase, para marcarlas en tu propio proyecto y añadir tus propias tareas. Tu hoja de ruta, guardada en tu cuenta.",
-      "legalTitle": "La normativa citada",
-      "legalBody": "Cada fase indica las leyes y reales decretos en los que se apoya: LOE, Código Técnico de la Edificación, Ley de Suelo, Reglamento de facturación…",
-      "partnersTitle": "Colaboradores por provincia",
-      "partnersBody": "Notarios, arquitectos, bancos, aseguradoras y constructoras verificados, filtrados por tu provincia, a medida que se incorporan. Nunca un contacto inventado.",
-      "sheetsTitle": "Fichas para imprimir",
-      "sheetsBody": "Como la ficha de actuación ante un accidente grave en obra, en PDF, para colocar en las casetas.",
+      "checklistsTitle": "Una checklist por módulo",
+      "checklistsBody": "Las acciones de cada módulo, para marcarlas en tu propio proyecto y añadir tus propias tareas. Tu hoja de ruta, guardada en tu cuenta.",
+      "legalTitle": "Leyes que aplican y dónde ir",
+      "legalBody": "Cada módulo empieza con las leyes que aplican y con las instituciones a las que ir: qué pides, qué te dan, cuánto tarda y cuánto cuesta.",
+      "partnersTitle": "Tu provincia, fase a fase",
+      "partnersBody": "El directorio de las 52 provincias: para cada fase, la institución o el partner al que ir en la tuya, con la ley urbanística y los impuestos de tu comunidad.",
+      "sheetsTitle": "La plantilla financiera, calculada",
+      "sheetsBody": "La plantilla de un profesional del sector, con sus 17 hojas y sus fórmulas, calculada en la plataforma: coste por capítulos, préstamo, cash-flow de 48 meses y resumen por vivienda.",
       "footer": "Todo lo que aparece aquí está dentro de la plataforma desde el primer día."
     },
     "curriculumIntro": {
       "title": "{{modules}}, {{lessons}}. El detalle es la prueba.",
-      "lead": "Cada fase se detalla abajo, lección por lección.",
-      "leadPreview_one": "Cada fase se detalla abajo. Una lección es de vista previa gratuita: juzga el nivel de detalle antes de comprar.",
-      "leadPreview_other": "Cada fase se detalla abajo. {{count}} lecciones son de vista previa gratuita: juzga el nivel de detalle antes de comprar."
+      "lead": "Cada módulo se detalla abajo, lección por lección.",
+      "leadPreview_one": "Cada módulo se detalla abajo. Una lección es de vista previa gratuita: juzga el nivel de detalle antes de comprar.",
+      "leadPreview_other": "Cada módulo se detalla abajo. {{count}} lecciones son de vista previa gratuita: juzga el nivel de detalle antes de comprar."
     },
     "modular": {
-      "title": "Compra la fase en la que estás atascado. O el oficio completo.",
-      "p1": "No hace falta comprarlo todo de golpe: compra fase a fase, según el punto en el que estés de verdad.",
+      "title": "Compra el módulo en el que estás atascado. O el oficio completo.",
+      "p1": "No hace falta comprarlo todo de golpe: compra módulo a módulo, según el punto en el que estés de verdad.",
       "c1": "¿Empiezas de cero? Empieza por el solar y la viabilidad.",
-      "c2": "¿La licencia no sale? Toma la fase de licencias.",
-      "c3": "¿Negociando con el banco? Toma la fase de financiación y contratación.",
-      "c4": "¿Empieza la obra? Toma las fases de construcción y control de obra.",
-      "close": "Los descuentos se aplican solos. A partir de cierto número de fases, el acceso completo pasa a ser la opción más barata.",
-      "from": "Desde {{price}} por fase"
+      "c2": "¿La licencia no sale? Toma el módulo de licencias.",
+      "c3": "¿Negociando con el banco? Toma el módulo de financiación y contratación.",
+      "c4": "¿Empieza la obra? Toma los módulos de construcción y control de obra.",
+      "close": "Los descuentos se aplican solos. A partir de cierto número de módulos, el acceso completo pasa a ser la opción más barata.",
+      "from": "Desde {{price}} por módulo"
     },
     "pricing": {
       "title": "Dos maneras de acceder.",
       "fullTitle": "Acceso completo",
-      "fullBody": "Las {{modules}} fases, las {{lessons}} lecciones, las checklists y los contactos de colaboradores. Acceso de por vida. El precio más bajo por fase, con diferencia.",
-      "unitTitle": "Por fases",
-      "unitBody": "Toma la fase en la que estás atascado, avanza a tu ritmo y complétalo más adelante.",
+      "fullBody": "Los {{modules}} módulos y Financials, las {{lessons}} lecciones, los quizzes y el examen final, las checklists y el directorio de las 52 provincias. Acceso de por vida. El precio más bajo por módulo, con diferencia.",
+      "unitTitle": "Por módulos",
+      "unitBody": "Toma el módulo en el que estás atascado, avanza a tu ritmo y complétalo más adelante.",
       "payment": "Precios con IVA incluido. Acceso de por vida: móvil, tableta, ordenador. Factura bajo petición.",
       "promoNote": "El precio promocional termina con la cuenta atrás. Después, el precio tachado vuelve a ser el precio.",
       "upTo": "hasta -{{percent}} %",
-      "unitTiers_one": "Descuentos automáticos desde {{count}} fase.",
-      "unitTiers_other": "Descuentos automáticos desde {{count}} fases."
+      "unitTiers_one": "Descuentos automáticos desde {{count}} módulo.",
+      "unitTiers_other": "Descuentos automáticos desde {{count}} módulos."
     },
     "socialProof": {
       "title": "Lo que dicen quienes ya lo han seguido.",
@@ -959,7 +961,7 @@
     },
     "finalCta": {
       "title": "{{modules}}. Del solar a las llaves. Ahora te toca construir.",
-      "p1": "El recorrido completo de una promoción de viviendas de renta libre en España, fase por fase, con la normativa, las checklists y los colaboradores de cada una.",
+      "p1": "El recorrido completo de una promoción de viviendas de renta libre en España, fase por fase, con la normativa, las checklists y las instituciones y partners de tu provincia.",
       "p2": "Aprende estas fases en tu primera obra, pagando cada error. O aquí, antes de firmar en la notaría."
     },
     "faq": {
@@ -970,8 +972,10 @@
       "expertHelpPreview_other": "El programa detallado y las lecciones de vista previa gratuita responden a la mayoría de las preguntas."
     },
     "counts": {
-      "modules_one": "{{count}} fase",
-      "modules_other": "{{count}} fases"
+      "modules_one": "{{count}} módulo",
+      "modules_other": "{{count}} módulos",
+      "modulesWithFinancials_one": "{{count}} módulo y Financials",
+      "modulesWithFinancials_other": "{{count}} módulos y Financials"
     },
     "forWhom": {
       "title": "Tienes un proyecto. Te falta el recorrido.",
@@ -983,12 +987,12 @@
       "p3Title": "Inviertes desde fuera de España",
       "p3Body": "Preparas una promoción en España desde otro país y necesitas entender el recorrido antes de invertir.",
       "p4Title": "Estás atascado en una fase",
-      "p4Body": "Licencia, préstamo promotor, venta sobre plano, obra: ya avanzas, y puede bastarte una sola fase."
+      "p4Body": "Licencia, préstamo promotor, venta sobre plano, obra: ya avanzas, y puede bastarte un solo módulo."
     },
     "howItWorks": {
       "title": "Tres pasos entre tú y la primera lección.",
       "s1Title": "Elige",
-      "s1BodyModules": "El curso completo, o solo las fases que necesitas.",
+      "s1BodyModules": "El curso completo, o solo los módulos que necesitas.",
       "s1BodyFull": "El curso completo, en una sola compra.",
       "s1Tiers": "Los descuentos se aplican solos.",
       "s2Title": "Paga",
@@ -1000,18 +1004,18 @@
     }
   },
   "checklist": {
-    "title": "Checklist de la fase",
+    "title": "Checklist del módulo",
     "subtitle": "Marca cada paso a medida que lo haces en tu propio proyecto.",
     "myTasks": "Mis tareas",
     "add": "Añadir",
     "addPlaceholder": "Añadir una tarea…",
     "deleteTask": "Eliminar la tarea",
     "pageTitle": "Mi hoja de ruta",
-    "pageSubtitle": "Todos los pasos del recorrido, fase a fase: los del curso y los tuyos.",
+    "pageSubtitle": "Todos los pasos del recorrido, módulo a módulo: los del curso y los tuyos.",
     "overallProgress": "Progreso global",
     "backToCourse": "Volver al curso",
-    "lockedTease_one": "{{count}} paso incluido en esta fase",
-    "lockedTease_other": "{{count}} pasos incluidos en esta fase",
+    "lockedTease_one": "{{count}} paso incluido en este módulo",
+    "lockedTease_other": "{{count}} pasos incluidos en este módulo",
     "saveFailed": "No se ha guardado el cambio: comprueba tu conexión e inténtalo de nuevo."
   },
   "contact": {
@@ -1036,7 +1040,7 @@
   "seo": {
     "home": {
       "title": "Curso de promoción inmobiliaria en España",
-      "description": "Curso online de promoción inmobiliaria en España: solar, viabilidad, proyecto, licencia de obras, préstamo promotor, obra, venta sobre plano y entrega de llaves. {{modules}} fases."
+      "description": "Curso online de promoción inmobiliaria en España: solar, viabilidad, proyecto, licencia de obras, préstamo promotor, obra, venta sobre plano y entrega de llaves. {{modules}} módulos, uno por fase."
     },
     "catalog": {
       "title": "Cursos de promoción inmobiliaria en España",
@@ -1058,5 +1062,96 @@
     "or": "o",
     "sentence": "Pago: {{methods}}.",
     "cash": "También puedes pagar en efectivo: escríbenos."
+  },
+  "quiz": {
+    "navTitle": "Quiz del módulo",
+    "passedShort": "Aprobado",
+    "ctaBody": "{{total}} preguntas: apruebas con {{pass}} respuestas correctas.",
+    "ctaPassed": "Aprobado con {{score}}/{{total}}. Puedes repetirlo cuando quieras.",
+    "locked": "Este quiz es de un módulo que todavía no tienes",
+    "rules": "{{total}} preguntas, una respuesta correcta en cada una. Apruebas con {{pass}} aciertos. Al enviar, ves las respuestas correctas.",
+    "passed": "Aprobado",
+    "failed": "Todavía no",
+    "score": "{{score}} de {{total}} correctas (mínimo {{pass}}).",
+    "retry": "Volver a intentarlo",
+    "answered": "{{count}} de {{total}} respondidas",
+    "correct": "Correcta",
+    "incorrect": "Incorrecta",
+    "incorrectWithAnswer": "Incorrecta. La correcta es la {{answer}}.",
+    "submit": "Enviar respuestas",
+    "history": "Intentos anteriores"
+  },
+  "exam": {
+    "navTitle": "Examen final",
+    "lockedHint": "Con el acceso completo al curso.",
+    "rules": "{{total}} preguntas en {{minutes}} minutos. Apruebas con {{pass}} aciertos. Al enviar, ves tu nota y qué respuestas fallaste.",
+    "startHint": "El reloj empieza al pulsar el botón y sigue corriendo aunque cierres la página. A los {{minutes}} minutos, tus respuestas se envían solas.",
+    "start": "Empezar el examen",
+    "timeLeft": "Tiempo restante",
+    "submit": "Enviar el examen"
+  },
+  "documents": {
+    "navTitle": "Documentos del curso",
+    "locked": "Este documento es del acceso completo al curso",
+    "downloadsTitle": "Descargas disponibles",
+    "files": {
+      "plantilla-libre": "Plantilla financiera completa (17 hojas)",
+      "plantilla-simplificada": "Plantilla simplificada de Análisis de Viabilidad",
+      "directorio-partners": "Directorio de partners por provincia (Excel)",
+      "curso-pdf": "El curso completo en PDF"
+    },
+    "needsFullAccess": "Con el acceso completo",
+    "needsFinancials": "Con el módulo Financials",
+    "downloadsNote": "Los demás recursos de la lista se publicarán aquí en cuanto estén disponibles. La tabla fiscal por comunidad es el Anexo B."
+  },
+  "directory": {
+    "panelTitle": "Tu provincia en esta fase",
+    "chooseProvince": "Elige tu provincia",
+    "chooseHint": "Elige la provincia donde promueves: verás a qué institución o partner ir en esta fase, con la ley urbanística y los impuestos de tu comunidad.",
+    "urbanLaw": "Ley urbanística",
+    "firstOccupation": "Primera ocupación",
+    "taxes": "Impuestos",
+    "foral": "Régimen foral",
+    "partner": "Partner / institución",
+    "purpose": "Para qué",
+    "lockedPhase_one": "{{count}} institución o partner en esta fase, con el módulo",
+    "lockedPhase_other": "{{count}} instituciones y partners en esta fase, con el módulo",
+    "openAnnex": "Ver tu provincia completa en el Anexo A"
+  },
+  "financials": {
+    "navTitle": "Calcular la plantilla",
+    "ctaTitle": "Calcula la plantilla en la plataforma",
+    "ctaBody": "Rellena los datos de partida y obtén el coste, el préstamo, el cash-flow y el resumen, con las fórmulas del profesional.",
+    "title": "Plantilla financiera de la promoción",
+    "lead": "La plantilla del profesional (PLANTILLA_LIBRE.xls), calculada con sus fórmulas originales y el cálculo iterativo ya resuelto. Rellenas los datos de partida; todo lo demás lo calcula la plantilla.",
+    "paramsNotice": "La plantilla calcula con los parámetros con que se construyó, hacia 2002 (IVA del 7 % y del 16 %, aranceles en pesetas, partidas de cooperativa). Antes de usarla para una promoción actual, revisa:",
+    "locked": "La plantilla es del módulo Financials",
+    "formulaDefault": "fórmula de la plantilla",
+    "notANumber": "No es un número.",
+    "scenarios": "Mis escenarios",
+    "loadExample": "Cargar el ejemplo de 24 viviendas",
+    "reset": "Vaciar",
+    "scenarioName": "Nombre del escenario",
+    "save": "Guardar",
+    "update": "Guardar cambios",
+    "delete": "Borrar",
+    "saved": "Guardado",
+    "inputsTitle": "Datos de partida",
+    "emptyKeepsDefault": "Lo que dejes vacío conserva el valor o la fórmula de la plantilla.",
+    "calculate": "Calcular",
+    "calculating": "Calculando…",
+    "converged": "Calculado: el cálculo iterativo se ha estabilizado en {{count}} iteraciones.",
+    "notConverged": "Atención: el cálculo iterativo no se ha estabilizado en {{count}} iteraciones. Revisa los datos.",
+    "tabSummary": "Resumen del coste",
+    "tabSimplified": "Plantilla simplificada",
+    "tabSheets": "Todas las hojas",
+    "chapter": "Capítulo",
+    "net": "Neto",
+    "withVat": "Con IVA",
+    "vat": "IVA",
+    "simplifiedHint": "La hoja «3ª Coste Total Promoción»: es la plantilla simplificada de Análisis de Viabilidad, con tus datos.",
+    "sheet": "Hoja",
+    "originals": "Los archivos originales",
+    "originalsNote": "Tal como los entregó el profesional. En Excel, activa el cálculo iterativo (100 iteraciones, cambio máximo 0,001): la plantilla tiene referencias circulares a propósito."
   }
 }

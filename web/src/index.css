@@ -101,3 +101,77 @@
   }
 }
 
+
+/* The instructor's texts, rendered from Markdown (MarkdownContent). Tables
+   scroll on their own on a phone instead of widening the page. */
+@layer components {
+  .md-content {
+    @apply text-sm leading-relaxed text-foreground;
+  }
+  .md-content > * + * {
+    @apply mt-3;
+  }
+  .md-content h1 {
+    @apply text-2xl font-bold leading-tight text-primary;
+  }
+  .md-content h2 {
+    @apply mt-6 text-lg font-bold leading-snug text-primary;
+  }
+  .md-content h3 {
+    @apply mt-5 text-base font-semibold leading-snug;
+  }
+  .md-content h2:first-child,
+  .md-content h3:first-child {
+    @apply mt-0;
+  }
+  .md-content strong {
+    @apply font-semibold text-foreground;
+  }
+  .md-content a {
+    @apply font-medium text-primary underline underline-offset-2;
+  }
+  .md-content code {
+    @apply rounded bg-secondary px-1 py-0.5 font-mono text-[0.85em];
+  }
+  .md-content ul {
+    @apply list-disc space-y-1.5 ps-5;
+  }
+  .md-content ol {
+    @apply list-decimal space-y-1.5 ps-5;
+  }
+  .md-content li > ul,
+  .md-content li > ol {
+    @apply mt-1.5;
+  }
+  .md-content li::marker {
+    @apply text-muted-foreground;
+  }
+  /* GitHub task lists: "- [ ] …" */
+  .md-content li:has(> input[type='checkbox']) {
+    @apply list-none;
+  }
+  .md-content li > input[type='checkbox'] {
+    @apply me-2 align-middle accent-primary;
+  }
+  .md-content blockquote {
+    @apply rounded-lg border-s-4 border-primary/40 bg-primary/5 px-4 py-3 text-foreground;
+  }
+  .md-content blockquote > * + * {
+    @apply mt-2;
+  }
+  .md-content hr {
+    @apply my-6 border-border;
+  }
+  .md-content table {
+    @apply block w-full max-w-full overflow-x-auto border-collapse text-[13px];
+  }
+  .md-content th {
+    @apply border-b-2 border-border bg-secondary/60 px-3 py-2 text-start align-bottom font-semibold;
+  }
+  .md-content td {
+    @apply border-b border-border px-3 py-2 align-top;
+  }
+  .md-content tbody tr:last-child td {
+    @apply border-b-0;
+  }
+}

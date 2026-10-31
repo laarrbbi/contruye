@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { isAxiosError } from 'axios'
 import {
+  Calculator,
+  MapPin,
   ArrowDown,
   Boxes,
   MessageCircle,
   CircleCheck,
   Clock,
-  FileText,
   HardHat,
   Infinity as InfinityIcon,
   LandPlot,
@@ -19,7 +20,6 @@ import {
   Plane,
   PlayCircle,
   Scale,
-  Users,
 } from 'lucide-react'
 import { useCourse, type PublicLesson } from '@/api/courses'
 import { useUser } from '@/api/auth'
@@ -39,6 +39,7 @@ import faqContent from '@/content/faq.json'
 import { ContactOptions } from '@/components/ContactOptions'
 import { IsolatedValue } from '@/components/IsolatedValue'
 import { hasContactChannel, useBusinessProfile } from '@/api/business'
+import { phaseModules } from '@/lib/modules'
 import { cn, formatDuration, formatNumber, formatPrice } from '@/lib/utils'
 import { TRANSFER_METHODS, paymentMethodList } from '@/lib/payments'
 
@@ -64,8 +65,8 @@ const FOR_WHOM = [
 const TOOLKIT = [
   { icon: ListChecks, titleKey: 'landing.toolkit.checklistsTitle', bodyKey: 'landing.toolkit.checklistsBody' },
   { icon: Scale, titleKey: 'landing.toolkit.legalTitle', bodyKey: 'landing.toolkit.legalBody' },
-  { icon: Users, titleKey: 'landing.toolkit.partnersTitle', bodyKey: 'landing.toolkit.partnersBody' },
-  { icon: FileText, titleKey: 'landing.toolkit.sheetsTitle', bodyKey: 'landing.toolkit.sheetsBody' },
+  { icon: MapPin, titleKey: 'landing.toolkit.partnersTitle', bodyKey: 'landing.toolkit.partnersBody' },
+  { icon: Calculator, titleKey: 'landing.toolkit.sheetsTitle', bodyKey: 'landing.toolkit.sheetsBody' },
 ] as const
 
 // Shared with the server, which renders the same questions in the page's
@@ -194,7 +195,7 @@ export function CourseLandingPage() {
   usePageTitle(
     isMain ? t('seo.home.title') : course?.title,
     // The description names the module count: set once it is known.
-    isMain ? (course ? t('seo.home.description', { modules: course.modules.length }) : undefined) : course?.description,
+    isMain ? (course ? t('seo.home.description', { modules: phaseModules(course.modules).length }) : undefined) : course?.description,
   )
   const { data: business } = useBusinessProfile()
   const canBeReached = hasContactChannel(business)
@@ -302,7 +303,12 @@ export function CourseLandingPage() {
   const effectivePrice = campaignPrice ?? course.price_eur
   const hasSocialProof = course.rating != null || (course.students_count ?? 0) > 0
   // Counted, never typed: the copy follows the catalogue when it changes.
-  const modulesLabel = t('landing.counts.modules', { count: course.modules.length })
+  // The 12 phases are the modules; Financials comes on top of them.
+  const phaseCount = phaseModules(course.modules).length
+  const modulesLabel = t(
+    course.modules.length > phaseCount ? 'landing.counts.modulesWithFinancials' : 'landing.counts.modules',
+    { count: phaseCount },
+  )
   const lessonsLabel = t('course.lessonsCount', { count: course.lessons_count })
   const previewCount = course.modules.reduce(
     (sum, module) => sum + module.lessons.filter((lesson) => lesson.is_free_preview).length,
@@ -471,7 +477,7 @@ export function CourseLandingPage() {
           <div className="space-y-6 lg:col-start-1 lg:row-start-2">
             <dl className="grid grid-cols-3 gap-x-6 gap-y-4 border-y border-primary-foreground/15 py-5">
               {[
-                { key: 'phases', figure: formatNumber(course.modules.length, i18n.language), label: t('landing.hero.statPhases') },
+                { key: 'phases', figure: formatNumber(phaseCount, i18n.language), label: t('landing.hero.statPhases') },
                 { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
                 { key: 'access', figure: <InfinityIcon className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden />, label: t('course.lifetimeAccess') },
               ].map(({ key, figure, label }) => (
@@ -677,7 +683,11 @@ export function CourseLandingPage() {
                           every title: the lesson count, the price at the end. */}
                       <span className="flex min-w-0 flex-1 flex-col gap-1 pe-2">
                         <span className="font-semibold">
-                          <IsolatedValue i18nKey="course.moduleHeading" name="title" value={module.title} values={{ number: index + 1 }} />
+                          {module.kind === 'financials' ? (
+                            <bdi>{module.title}</bdi>
+                          ) : (
+                            <IsolatedValue i18nKey="course.moduleHeading" name="title" value={module.title} values={{ number: index + 1 }} />
+                          )}
                         </span>
                         <span className="flex items-baseline justify-between gap-3 text-xs font-normal text-muted-foreground">
                           <span>{t('course.lessonsCount', { count: module.lessons.length })}</span>
@@ -822,7 +832,7 @@ export function CourseLandingPage() {
                 </span>
               </div>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {t('landing.pricing.fullBody', { modules: course.modules.length, lessons: course.lessons_count })}
+                {t('landing.pricing.fullBody', { modules: phaseCount, lessons: course.lessons_count })}
               </p>
               <div className="mt-5">{ctaButton('lg', WRAPPING_CTA)}</div>
             </div>
@@ -1026,7 +1036,7 @@ export function CourseLandingPage() {
         <ul className="grid grid-cols-3 gap-4 border-t border-primary-foreground/15 pt-6 lg:grid-cols-1 lg:gap-6 lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0">
           {[
             { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
-            { key: 'phases', figure: formatNumber(course.modules.length, i18n.language), label: t('landing.hero.statPhases') },
+            { key: 'phases', figure: formatNumber(phaseCount, i18n.language), label: t('landing.hero.statPhases') },
             { key: 'access', figure: <InfinityIcon className="h-8 w-8" aria-hidden />, label: t('course.lifetimeAccess') },
           ].map(({ key, figure, label }) => (
             <li key={key}>

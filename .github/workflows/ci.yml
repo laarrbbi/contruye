@@ -1,5 +1,5 @@
 # The constitution's quality gates, run on every push and pull request.
-# To make them block merges, mark the "api" and "web" checks as required in
+# To make them block merges, mark the "api", "web" and "financials" checks as required in
 # GitHub → Settings → Branches → branch protection for main.
 name: CI
 
@@ -98,3 +98,28 @@ jobs:
       # non-breaking fix and never ship.
       - name: Dependency advisories
         run: npm audit --omit=dev
+
+  # The professional's financial template: the package's own checks (the
+  # engine gives Excel's results) and the service around it.
+  financials:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: curso/2_plantilla_financiera/motor/package-lock.json
+
+      - run: npm ci --ignore-scripts
+        working-directory: curso/2_plantilla_financiera/motor
+
+      - name: The engine calculates like the original Excel (the package's own test)
+        run: npm test
+        working-directory: curso/2_plantilla_financiera/motor
+
+      - name: The service reuses the engine without changing a result
+        run: npm test
+        working-directory: financials

@@ -5,6 +5,7 @@ import type { LearnContentBlock, LearnPartner } from '@/api/learn'
 import { useUser } from '@/api/auth'
 import { joinProvinceNames } from '@/api/provinces'
 import { Button } from '@/components/ui/button'
+import { MarkdownContent } from '@/components/MarkdownContent'
 import { PartnerProvinceFilter } from './PartnerProvinceFilter'
 import { partnerCoversProvince } from './partnerFilter'
 
@@ -14,6 +15,7 @@ import { partnerCoversProvince } from './partnerFilter'
  * - `expert_tip`   → a practitioner's "conseil d'or"
  * - `partner_slot` → real attached partners, or an honest placeholder. A slot
  *                    with no partner NEVER shows an invented contact.
+ * - `overview`, `section`, `text` → the instructor's Markdown, rendered.
  */
 export function ContentBlocks({ blocks }: { blocks: LearnContentBlock[] }) {
   const { t } = useTranslation()
@@ -55,11 +57,7 @@ export function ContentBlocks({ blocks }: { blocks: LearnContentBlock[] }) {
           return <PartnerSlot key={block.id} block={block} />
         }
 
-        return (
-          <p key={block.id} className="bidi-auto whitespace-pre-line text-sm leading-relaxed">
-            {block.body}
-          </p>
-        )
+        return <MarkdownContent key={block.id} html={block.body_html} />
       })}
     </div>
   )

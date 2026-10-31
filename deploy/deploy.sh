@@ -13,6 +13,9 @@
 # Environment overrides:
 #   PHP=php8.3                       PHP binary (default: php)
 #   PHP_FPM_SERVICE=php8.3-fpm       reload it at the end so OPcache drops old code
+#   FINANCIALS_PROGRAM=construye-financials
+#                                    restart the financial template service
+#                                    (supervisor program) at the end
 #   SKIP_WEB=1                       back-end only (e.g. a PHP hotfix)
 
 set -euo pipefail
@@ -38,6 +41,9 @@ step "Release $(git -C "$ROOT" rev-parse --short HEAD) — $(git -C "$ROOT" log 
 step "Back-end dependencies"
 cd "$API"
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+step "Financial template service dependency (HyperFormula, into curso/…/motor)"
+npm ci --prefix "$ROOT/curso/2_plantilla_financiera/motor" --ignore-scripts --no-audit --no-fund
 
 step "Secrets and production settings — the deploy stops here if anything is wrong"
 # A cached config from the previous release would hide a change to .env.
@@ -77,6 +83,11 @@ step "Restart the queue workers"
 # and e-mails go out from code that no longer exists on disk.
 "$PHP" artisan queue:restart
 
+if [ -n "${FINANCIALS_PROGRAM:-}" ]; then
+  step "Restart the financial template service ($FINANCIALS_PROGRAM)"
+  sudo supervisorctl restart "$FINANCIALS_PROGRAM"
+fi
+
 if [ -n "${PHP_FPM_SERVICE:-}" ]; then
   step "Reload $PHP_FPM_SERVICE"
   sudo systemctl reload "$PHP_FPM_SERVICE"
@@ -87,6 +98,18 @@ trap - ERR
 
 step "Health check"
 APP_URL="$(env_get APP_URL)"
+PLANTILLA_URL="$(env_get PLANTILLA_URL)"
+PLANTILLA_URL="${PLANTILLA_URL:-http://127.0.0.1:3100}"
+# The template takes a few seconds to load after a restart.
+for _ in 1 2 3 4 5 6 7 8 9 10; do
+  curl -fsS --max-time 3 "$PLANTILLA_URL/salud" > /dev/null 2>&1 && break
+  sleep 2
+done
+if curl -fsS --max-time 3 "$PLANTILLA_URL/salud" > /dev/null 2>&1; then
+  echo "The financial template service answers."
+else
+  printf '\033[33mThe financial template service does not answer on %s: the course works, the Financials calculator does not. See deploy/README.md.\033[0m\n' "$PLANTILLA_URL"
+fi
 if curl -fsS --max-time 10 "$APP_URL/up" > /dev/null; then
   echo "$APP_URL/up answers."
 else

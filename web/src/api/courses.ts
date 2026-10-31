@@ -29,6 +29,8 @@ export interface Campaign {
 export interface PublicModule {
   id: number
   order: number
+  /** A phase of the promotion, or the Financials section. */
+  kind?: 'phase' | 'financials'
   title: string
   /** Null when the module is only sold as part of full access. */
   price_eur: number | null

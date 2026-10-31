@@ -15,13 +15,38 @@ services:
       # The public pages are rendered from the app's shell and translations
       # (api/config/seo.php reads ../web).
       - ./web:/var/www/web:ro
+      # The instructor's course package, read by the seeders and the
+      # downloads (api/config/curso.php reads ../curso).
+      - ./curso:/var/www/curso:ro
     environment:
       PHP_IDE_CONFIG: serverName=construye
       # That user has no home in the image.
       COMPOSER_HOME: /tmp/composer
+      PLANTILLA_URL: http://financials:3100
     depends_on:
       mysql:
         condition: service_healthy
+    networks:
+      - construye
+
+  # The financial template (financials/): the professional's PLANTILLA_LIBRE
+  # with its original formulas, calculated by Node.js for the API only. It
+  # installs the engine's one dependency (HyperFormula) into the package's
+  # motor/ folder, then loads the template (about 3 s) and listens.
+  financials:
+    image: node:22-alpine
+    container_name: construye-financials
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /srv/financials
+    command: sh -c "npm ci --prefix /srv/curso/2_plantilla_financiera/motor --ignore-scripts --no-audit --no-fund && node server.js"
+    environment:
+      PLANTILLA_HOST: 0.0.0.0
+      PLANTILLA_DIR: /srv/curso/2_plantilla_financiera
+      npm_config_cache: /tmp/npm
+    volumes:
+      - ./financials:/srv/financials:ro
+      - ./curso:/srv/curso
+    restart: unless-stopped
     networks:
       - construye
 

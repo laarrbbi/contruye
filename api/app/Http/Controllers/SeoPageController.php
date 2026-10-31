@@ -152,7 +152,7 @@ final class SeoPageController
             $isMain ? SpaStrings::get($locale, 'seo.home.title') : $course->localizedTitle($locale),
             $isMain
                 // Counted, as on the page: never a module count typed by hand.
-                ? str_replace('{{modules}}', (string) $course->modules->count(), SpaStrings::get($locale, 'seo.home.description'))
+                ? str_replace('{{modules}}', (string) $course->modules->where('kind', 'phase')->count(), SpaStrings::get($locale, 'seo.home.description'))
                 : Str::limit((string) $course->localizedDescription($locale), 155),
             $nodes,
         );
