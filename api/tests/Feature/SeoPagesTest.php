@@ -343,7 +343,7 @@ it('counts the modules in the description instead of typing them', function () {
         ->toContain('<meta name="description" content="'.e(str_replace('{{modules}}', '2', SpaStrings::get('es', 'seo.home.description'))).'" />');
 });
 
-it('has every string of the app in English', function () {
+it('has every string of the app in every language', function () {
     $flatten = function (array $strings, string $prefix = '') use (&$flatten): array {
         $keys = [];
         foreach ($strings as $key => $value) {
@@ -360,5 +360,57 @@ it('has every string of the app in English', function () {
     // authored language. Every locale but the authored one is checked.
     foreach (array_diff(config('locales.supported'), [config('locales.default')]) as $locale) {
         expect(array_values(array_diff($read('es'), $read($locale))))->toBe([], "missing from web/src/i18n/{$locale}.json");
+    }
+});
+
+it('translates the app, in each language\'s own plural forms', function () {
+    $read = function (string $locale): array {
+        $flat = [];
+        $walk = function (array $strings, string $prefix) use (&$walk, &$flat): void {
+            foreach ($strings as $key => $value) {
+                is_array($value) ? $walk($value, "{$prefix}{$key}.") : $flat["{$prefix}{$key}"] = $value;
+            }
+        };
+        $walk(json_decode(file_get_contents(config('seo.translations')."/{$locale}.json"), true), '');
+
+        return $flat;
+    };
+
+    // The CLDR plural categories i18next asks for. A count with no string in
+    // its category falls through to Spanish: "3 урока" needs _few, "11 درساً"
+    // needs _many. A new locale fails here until its forms are listed.
+    $categories = [
+        'es' => ['one', 'other'],
+        'en' => ['one', 'other'],
+        'fr' => ['one', 'other'],
+        'ar' => ['zero', 'one', 'two', 'few', 'many', 'other'],
+        'ru' => ['one', 'few', 'many', 'other'],
+        'uk' => ['one', 'few', 'many', 'other'],
+    ];
+    expect(array_keys($categories))->toEqualCanonicalizing(config('locales.supported'));
+
+    $spanish = $read('es');
+    $english = $read('en');
+    $plurals = array_unique(array_map(
+        fn (string $key) => preg_replace('/_(one|other)$/', '', $key),
+        array_filter(array_keys($spanish), fn (string $key) => preg_match('/_(one|other)$/', $key)),
+    ));
+
+    foreach (config('locales.supported') as $locale) {
+        $strings = $read($locale);
+
+        foreach ($plurals as $base) {
+            foreach ($categories[$locale] as $category) {
+                expect(array_key_exists("{$base}_{$category}", $strings))->toBeTrue("web/src/i18n/{$locale}.json has no {$base}_{$category}");
+            }
+        }
+
+        // The four languages first shipped as copies of the English file. A
+        // copy passes the key check above; it does not pass this one. French
+        // shares a few strings with English by nature ("Module {{number}}").
+        if (! in_array($locale, ['es', 'en'], true)) {
+            $copied = array_filter($english, fn (string $text, string $key) => strlen($text) > 12 && ($strings[$key] ?? null) === $text, ARRAY_FILTER_USE_BOTH);
+            expect(count($copied))->toBeLessThan(count($english) * 0.03, "web/src/i18n/{$locale}.json repeats the English: ".implode(', ', array_keys($copied)));
+        }
     }
 });

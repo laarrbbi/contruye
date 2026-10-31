@@ -4,7 +4,7 @@ import { Check, ChevronDown, Globe, LogOut, LayoutDashboard, Receipt, ShieldChec
 import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
-import { LOCALES, LOCALE_NAMES, setLocale, type Locale } from '@/i18n'
+import { LOCALES, LOCALE_NAMES, isRtl, setLocale, type Locale } from '@/i18n'
 import { isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
 import { cn } from '@/lib/utils'
 import {
@@ -111,7 +111,11 @@ export function Header() {
                   onSelect={() => chooseLocale(locale)}
                   className="justify-between gap-3"
                 >
-                  {LOCALE_NAMES[locale]}
+                  {/* Each name in its own language and script, so a screen
+                      reader says "Русский" in Russian, not spelled out. */}
+                  <span lang={locale} dir={isRtl(locale) ? 'rtl' : 'ltr'}>
+                    {LOCALE_NAMES[locale]}
+                  </span>
                   {locale === current && <Check className="h-4 w-4 shrink-0 text-primary" />}
                 </DropdownMenuItem>
               ))}
