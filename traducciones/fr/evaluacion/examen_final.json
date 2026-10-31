@@ -1,0 +1,1048 @@
+{
+  "titulo": "Examen final de certification CONSTRUYE · Promoteur immobilier certifié · Espagne",
+  "preguntas_total": 40,
+  "minimo": "32/40 (80 %)",
+  "duracion_minutos": 60,
+  "preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "3 m²t/m²s sur un terrain de 1.500 m² permettent de construire :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1.500",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "4.500 m²",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "6.000",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "pregunta": "Premier document du Registre de la propriété avant d'acheter :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Certificat d'urbanisme",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Nota simple",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Acte de vente",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Référence cadastrale",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "pregunta": "Un particulier vous vend le terrain :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "IVA 21 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "L'ITP de la communauté autonome",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "L'IS",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Seulement l'AJD",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "pregunta": "Marge minimale recommandée sur les ventes :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "5 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "25 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "pregunta": "La LOE définit le promoteur à l'article :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "9",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "17",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "pregunta": "Le CTE DB HR régit :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "La structure",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "L'énergie",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Le bruit",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "La salubrité",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "pregunta": "Visa obligatoire de l'ordre selon le RD 1000/2010 :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Avant-projet",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Projet d'exécution et certificat de fin de chantier",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Étude de marché",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Contrat de travaux",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "pregunta": "L'ICIO est :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Un impôt d'État de 4 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Un impôt municipal, avec un maximum de 4 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Un impôt régional",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Toujours payé par l'entreprise",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "pregunta": "Assurance décennale obligatoire pour :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Tous les bâtiments",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Seulement le tertiaire",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Les immeubles de logements (sauf l'autopromoteur de sa propre maison individuelle)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Plus de 10 étages",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "pregunta": "Préventes que la banque exige habituellement :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "20 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30–50 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "70 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "pregunta": "Le procès-verbal d'implantation est signé par :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Le promoteur et la banque",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Le directeur des travaux, le directeur de l'exécution et le constructeur",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Le notaire et le promoteur",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "La mairie et le promoteur",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "pregunta": "Silence administratif sur un permis de construire neuf :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Positif",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Négatif (art. 11.4 TRLSRU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Dépend du maire",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "N'existe pas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "pregunta": "L'OCT intervient surtout sur :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Le projet d'architecture",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Le marketing",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "La structure, les fondations et l'étanchéité, pour l'assureur décennal",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Le permis",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "pregunta": "Garantie pour les dommages structurels :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1 an",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3 ans",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "10 ans",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "20 ans",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "pregunta": "Les garanties de la LOE se comptent à partir de :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "L'acte de vente de chaque logement",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "La réception des travaux sans réserves (ou la levée des réserves)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Le permis",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Le CFO",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 16,
+      "pregunta": "La première occupation est gérée par :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "La communauté autonome",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Le Registre",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "La mairie (permis ou déclaration responsable)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "L'ordre professionnel",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 17,
+      "pregunta": "La division horizontale crée :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "La copropriété",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Les parties privatives avec quote-part et les parties communes",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "La garantie décennale",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Seulement les statuts",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 18,
+      "pregunta": "Le Livre de l'immeuble est remis à :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "La mairie",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "La banque",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "La copropriété, et à chaque acheteur ce qui le concerne",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "L'OCT",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 19,
+      "pregunta": "Le snagging est :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Le choix des finitions",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "La revue et la liste des défauts avant la livraison",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "L'acte de vente",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "La clôture du prêt",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 20,
+      "pregunta": "L'AJD du prêt hypothécaire de l'acheteur est payé depuis 2018 par :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "L'acheteur",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "La banque",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Le promoteur",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Moitié-moitié",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 21,
+      "pregunta": "La plus-value municipale lors de la vente d'un logement neuf à un consommateur :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Est payée par l'acheteur",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Par la copropriété",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Par le promoteur, qui ne peut pas la répercuter",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Par personne",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 22,
+      "pregunta": "Taux d'IS d'une entité nouvellement créée sur ses deux premiers exercices bénéficiaires :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "25 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "30 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 23,
+      "pregunta": "Capital social minimal d'une SL après la Ley 18/2022 :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "60.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "1 €, avec des règles de protection jusqu'à 3.000 €",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "numero": 24,
+      "pregunta": "PEC hors IVA :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM + IVA",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "PEM + frais généraux (13–17 %) + bénéfice industriel (6 %)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "PEM + honoraires",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "PEM × 2",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 25,
+      "pregunta": "Communautés qui conservent la cédula de habitabilidad en 2026 :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Madrid et Pays basque",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Andalousie et Galice",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Catalogne, Navarre, Canaries, Estrémadure, Baléares, La Rioja, Asturies et Murcie",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Toutes",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 26,
+      "pregunta": "La méthode résiduelle sert à :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Calculer les travaux",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Calculer le prix maximal du terrain",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Calculer l'IVA",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Évaluer les parties communes",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "pregunta": "L'ICT oblige à installer :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Des antennes 5G",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "RITI, RITS et réseaux (fibre, coaxial et paires) jusqu'à chaque logement",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Internet gratuit",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Un standard téléphonique",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "pregunta": "Les sommes encaissées d'avance avant la livraison doivent :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Aller sur le compte général",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Être garanties individuellement et sur un compte spécial (DA 1.ª LOE)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Être déclarées à la mairie",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Être restituées au bout d'un an",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "pregunta": "Le prêt promoteur se débloque :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "En une fois",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Selon les situations de travaux",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Seulement avec des acheteurs",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Avec la première occupation",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 30,
+      "pregunta": "Le coordinateur de sécurité en phase d'exécution est obligatoire lorsque :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Le PEM dépasse 1 M€",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Le chantier dure plus de 6 mois",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Plusieurs entreprises interviennent, ou une entreprise et des indépendants",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "La banque le demande",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 31,
+      "pregunta": "Le CTE DB HE régit :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "L'incendie",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "L'humidité",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Les économies d'énergie",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "L'accessibilité",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 32,
+      "pregunta": "L'étude de gestion des déchets :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Est facultative",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Est une partie obligatoire du projet (RD 105/2008)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Est faite par le constructeur à la fin",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Seulement en réhabilitation",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 33,
+      "pregunta": "Pouvez-vous obliger l'acheteur à reprendre votre prêt ?",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Oui",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Non, seulement le proposer (art. 89.3 TRLGDCU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Seulement à Madrid",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Si la banque le demande",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 34,
+      "pregunta": "Dans l'échéancier habituel, on paie à la signature de l'acte :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "20–30 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "50 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "70–85 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "100 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 35,
+      "pregunta": "Une promotion avec un TRI (TIR) de 12 % :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "On y va",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "On la revoit : l'objectif est de 15–20 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Baisser les prix",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Allonger le chantier",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 36,
+      "pregunta": "Le registre des ordres et des visites est tenu par :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Le constructeur",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Le chef de chantier",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "La maîtrise d'œuvre, visé par l'ordre professionnel",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Le coordinateur de sécurité",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 37,
+      "pregunta": "Le béton de structure relève :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "De l'EHE-08",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Du Code structurel (Código Estructural, RD 470/2021)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Du REBT",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "De la LPH",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 38,
+      "pregunta": "En tant que promoteur, face au blanchiment de capitaux :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Vous n'avez aucune obligation",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Vous êtes assujetti (Ley 10/2010)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Seulement si vous vendez à des étrangers",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Seule la banque l'est",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 39,
+      "pregunta": "L'IIVTNU est :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "L'impôt sur la construction",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "La plus-value municipale",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Un indice",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Un impôt sur les lotissements",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 40,
+      "pregunta": "À la fin de la promotion, la SPE :",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Doit être dissoute",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Doit rester active",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Peut être dissoute ou mise en réserve, sachant que les garanties de la LOE restent en vigueur",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Devient une copropriété",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}
