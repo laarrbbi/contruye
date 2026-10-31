@@ -37,19 +37,26 @@ while at least one of them can.
 
 ### II. The course content is the instructor's, not ours
 
-Lesson text, key points, legal citations and figures are authored material.
+The course is the instructor's package, version 4.0, kept unchanged in `curso/`: the module texts,
+the quizzes and the exam, the province directory, the tax tables and the financial template. Its
+sequence of phases follows Nicolás Cabañas Yuste's «Fases para el desarrollo de una promoción de
+viviendas».
 
-- The twelve phases, their order and their titles are the instructor's outline (Nicolás Cabañas
-  Yuste, «Fases para el desarrollo de una promoción de viviendas de renta libre»). The detail inside
-  each phase is a **draft written from that outline**, to be gone through phase by phase with the
-  instructor; until that is done, it is not presented to them as finished.
-- **Never reword a legal figure.** The guarantee of buyers' payments on account (seguro de caución
-  or aval, cuenta especial, interés legal — disposición adicional primera LOE), the ten-year
-  structural insurance (art. 19 LOE), the VAT rates, the deadlines, and every law and decree number
-  are quoted, not paraphrased.
+- **Texts are integrated as written.** The seeders cut the files at their headings and store every
+  piece as is, Markdown included; `CourseContentTest` rebuilds each module file from the database
+  and compares it line by line. The only change of form: module titles in sentence case, as the
+  instructor's own summary page writes them.
+- **Never reword a legal figure.** Rates, deadlines, thresholds and every law and decree number
+  are quoted, not paraphrased. A text that needs correcting is corrected in the package, by the
+  instructor, and re-imported.
+- **The financial template is used as is: no formula, value or label is changed**, not in
+  `PLANTILLA_LIBRE.xls`, not in its export, not in its engine. The platform only writes the input
+  cells the template's own dictionary lists, and reads results. Its 2002 parameters and the two
+  incidences documented in its specification stay until the professional decides otherwise.
+  `npm test` in `curso/2_plantilla_financiera/motor` must keep passing.
 - Passages marked "pendiente de validar / verificar / confirmar" (or "por validar…") keep an
   admin-only A VALIDAR badge and appear in `content-review.md`. **They are never deleted to tidy
-  the text.** A figure nobody has confirmed is written that way rather than guessed.
+  the text.** The delivered text has none.
 - Marketing copy (`landing.*`) is ours to sharpen. Course content is not. When asked to make the
   writing punchier, that request applies to the sales page only.
 
@@ -61,6 +68,9 @@ A module the student does not own must not leak through any surface.
   withheld from non-owners. A locked module exposes titles, durations and **counts** only.
 - A free preview makes one lesson playable. It does not unlock that module's attachments,
   partner contacts or written content.
+- A module's quiz is its owners'; the final exam, the whole Anexo A and the course PDF are for
+  full access; the financial template and its files are for the owners of Financials. **Answers
+  never leave the server before an attempt is submitted**, and the exam's answer key never does.
 - Every new endpoint that reads course material states which of the two gates it uses —
   ownership, or ownership-or-preview — and has a test asserting the withholding half, not just
   the 403.
@@ -143,4 +153,4 @@ rules. They were written about Ebni Academy, before the Spanish adaptation: thei
 behaviours still match, their Algerian specifics (dinars, Chargily, CCP, wilayas, French and
 Arabic) do not. Read them before arguing with one.
 
-**Version**: 2.0.0 (Spanish edition) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-10-30
+**Version**: 2.1.0 (Spanish edition, course package 4.0) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-10-31

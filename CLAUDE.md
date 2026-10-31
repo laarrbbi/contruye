@@ -1,8 +1,9 @@
 # Construye Academy
 
-Online course platform for a Spanish real-estate development (promoción inmobiliaria) course: the
-twelve phases of a housing development, from the site to after-sales, following the outline of
-Nicolás Cabañas Yuste. Laravel 12 API + React 18 SPA, Spanish (authored) and English.
+Online course platform for CONSTRUYE, a Spanish real-estate development (promoción inmobiliaria)
+course: 12 modules, one per phase of a housing development from the site to after-sales, plus
+Financials, quizzes, a final exam and a directory of the 52 provinces. Laravel 12 API + React 18
+SPA + a small Node.js service for the financial template. Spanish (authored) and English.
 
 It is the Ebni Academy platform (the Algerian edition, in the sibling `ebni` repository) adapted
 for Spain: content, language, euros, Stripe / bank transfer / Bizum, the 52 provinces and Spanish
@@ -19,6 +20,11 @@ Read it before changing anything that a buyer, a student or a tax inspector woul
 reports (code & schema, tests, performance, security) plus a motion audit. `06-go-live-pass.md`
 says what has been closed since, and what is left for the owner. They were written about Ebni,
 before the Spanish adaptation: the paths and behaviours still match, the Algerian specifics do not.
+
+**`curso/`** is the instructor's package, version 4.0, exactly as delivered (start with
+`curso/LEEME.md`). Its texts are integrated as written and its financial template is used as is:
+no formula, value or label changes, ever. Never edit anything under `curso/`; a correction comes
+as a new package from the instructor.
 
 ## Running it
 
@@ -46,6 +52,7 @@ public coupon codes. It refuses to run in production; a live database is filled 
 | Deploy / backups | `deploy/README.md` — `deploy/deploy.sh`, `deploy/backup.sh`, `deploy/restore-drill.sh` |
 | Benchmark | `docker compose exec -T php php artisan bench:endpoints` |
 | Front-end build / lint | `npm --prefix web run build` · `npm --prefix web run lint` |
+| Financial template (engine = Excel; service) | `npm --prefix curso/2_plantilla_financiera/motor test` · `npm --prefix financials test` |
 
 Tests run against `mysql-test`. `--parallel` gives each worker its own database; the grant that
 makes that work lives in `docker/mysql-test/`.
@@ -59,10 +66,19 @@ makes that work lives in `docker/mysql-test/`.
   route that serves course material goes through it.
 - `web/src/i18n/` — `es.json` is authored; `en.json` is the translation. Course *material* lives
   in the database with `_es`/`_en` columns and falls back to Spanish (the English material is
-  empty at launch).
-- `api/database/seeders/data/curriculum_v2.php` is the course: 12 phases, 39 lessons. The detail is
-  a draft from the instructor's outline; passages marked «pendiente de validar» are flagged for
-  the instructor, never deleted.
+  empty at launch). The UI calls the unit "módulo", as the course text does; "fase" is the phase
+  of a real promotion.
+- `api/app/Support/Course/CourseSource.php` reads `curso/` and cuts each module file at its
+  headings (overview sections, lessons, checklist, closing sections) without changing a word;
+  `CurriculumV2Seeder`, `ChecklistSeeder` and `ProvinceGuideSeeder` store the pieces, and
+  `tests/Feature/CourseContentTest.php` rebuilds every file from the database to prove it.
+- Course text is Markdown, rendered on the server by `App\Support\Markdown` (raw HTML stripped).
+- Modules have a `kind`: `phase` (numbered "Módulo N") or `financials`. Course-level texts are
+  `CourseDocument`s (introduction, resources, annexes); Anexo A is one `ProvinceGuide` per province.
+- Quizzes and the final exam are graded in `QuizController`; answers never go out before a
+  submission, the exam's key never does.
+- `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP
+  service; `FinancialsController` is the only caller and checks access first.
 - `.claude/skills/` — Laravel and design skills used by review passes, vendored from
   [ECC](https://github.com/affaan-m/ecc) and [emilkowalski/skills](https://github.com/emilkowalski/skills).
 

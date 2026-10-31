@@ -15,6 +15,7 @@ self-signed certificate and a placeholder domain, so certbot and DNS were not pa
 | `api/.env.production.example` | The production `.env`, with every value the deploy gate checks. |
 | `deploy/nginx/construye.conf` | The vhost: TLS, SPA routing, Laravel routes, cache and security headers, including a Content-Security-Policy on HTML pages. |
 | `deploy/supervisor/construye-queue.conf` | The queue worker (payment webhooks and every e-mail). |
+| `deploy/supervisor/construye-financials.conf` | The financial template service (`financials/`, Node.js, 127.0.0.1:3100). |
 | `deploy/php/99-construye.ini` | PHP upload limits: Ubuntu's 2 MB default refuses most receipt photos. |
 | `deploy/backup.sh` | Nightly dump of the database and the private files (transfer and Bizum receipts, attachments). |
 | `deploy/restore-drill.sh` | Restores the latest backup into a scratch database and compares it with live. |
@@ -81,6 +82,7 @@ The queue worker:
 
 ```bash
 sudo cp /var/www/construye/deploy/supervisor/construye-queue.conf /etc/supervisor/conf.d/
+sudo cp /var/www/construye/deploy/supervisor/construye-financials.conf /etc/supervisor/conf.d/
 sudo supervisorctl reread && sudo supervisorctl update
 ```
 
@@ -137,6 +139,17 @@ If step 2 or 3 fails, the running release is exactly as it was. If a migration f
 stays in maintenance and the script says so.
 
 Run `php artisan app:check-secrets` without `--strict` at any time to preview the gate.
+
+### The financial template service
+
+Financials calculates the professional's template (`curso/2_plantilla_financiera`) with its
+original formulas, in a Node.js process the API calls on `PLANTILLA_URL` (default
+`http://127.0.0.1:3100`). Node is already on the server for the front-end build. `deploy.sh`
+installs the engine's one dependency (HyperFormula) into the package's `motor/` folder on every
+release; run it with `FINANCIALS_PROGRAM=construye-financials` to restart the service too
+(it loads the template in about 3 s). It listens on 127.0.0.1 only and needs no outbound access.
+If it is down, the course works and the calculator says it is unavailable; the deploy's health
+check warns about it.
 
 ## 3. Payment methods: what the buyer is offered
 

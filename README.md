@@ -1,9 +1,11 @@
 # Construye Academy — LMS
 
 Plataforma de formación online (LMS) en **español**, con la interfaz también en **inglés**
-(`/en`), para vender y difundir un curso en vídeo de promoción inmobiliaria en España. Primer
-producto: **«Promoción inmobiliaria en España»**, las 12 fases del desarrollo de una promoción de
-viviendas de renta libre, del solar a la postventa (12 fases, 39 lecciones).
+(`/en`), para vender y difundir un curso de promoción inmobiliaria en España. Primer producto:
+**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 4.0: 12 módulos (las
+12 fases reales de una promoción, del solar a la postventa, 51 lecciones), la sección Financials
+(9 lecciones y la plantilla financiera del profesional, calculada en la plataforma), un quiz por
+módulo, un examen final y el directorio de las 52 provincias.
 
 Es la misma plataforma que Ebni Academy (la edición argelina), adaptada a España: contenidos,
 idioma, moneda, medios de pago, provincias y facturación. Las funcionalidades no cambian.
@@ -16,6 +18,8 @@ Monorepo:
 |---|---|---|
 | `api/` | API REST | Laravel 12 · PHP 8.3 · MySQL 8 · Sanctum (cookies SPA) · colas database · Pest |
 | `web/` | SPA | React 18 · Vite · TypeScript · Tailwind · UI estilo shadcn · TanStack Query · i18next (es/en) |
+| `curso/` | El paquete del curso, **tal como lo entregó el formador** | Markdown, JSON, PDF, la plantilla financiera y su motor |
+| `financials/` | Servicio de la plantilla financiera | Node.js 22 + el motor del paquete (HyperFormula) |
 | `docker/` | Imágenes de desarrollo y producción | php-fpm 8.3, nginx |
 
 ### Pagos
@@ -70,7 +74,7 @@ Estos pasos se ejecutan tal cual en GitHub, desde un checkout nuevo, cada semana
 (`.github/workflows/setup.yml`). Después:
 
 ```bash
-make up          # php-fpm, nginx (http://localhost:8000), mysql, mysql-test, redis, worker de colas
+make up          # php-fpm, nginx (http://localhost:8000), mysql, mysql-test, redis, colas, plantilla financiera
 make fresh       # migrate:fresh --seed (programa real + cuentas de demo)
 make web         # servidor Vite → http://localhost:5174
 make test        # suite Pest completa (base mysql-test aislada)
@@ -103,6 +107,7 @@ Cuentas sembradas (solo desarrollo): admin `admin@example.es` / `password` · al
 | `PAYMENT_BIZUM_PHONE` | Número de Bizum mostrado en el checkout manual |
 | `BUNNY_STREAM_LIBRARY_ID` / `BUNNY_TOKEN_KEY` / `BUNNY_EMBED_TTL` | Bunny Stream (Embed View Token Authentication) |
 | `APP_BUSINESS_TIMEZONE` | Calendario del negocio: `Europe/Madrid` (estadísticas del mes, año de las facturas) |
+| `PLANTILLA_URL` | Servicio de la plantilla financiera (`http://127.0.0.1:3100`; en Docker, `http://financials:3100`) |
 | `MAIL_*` | Mailtrap en desarrollo; e-mails en cola |
 
 Un método de pago cuyos datos están vacíos no se ofrece en el checkout. Las credenciales son
@@ -141,11 +146,42 @@ Todas las acciones sobre los pedidos quedan registradas en `audit_logs`.
 
 ## Contenido del curso
 
-Las 12 fases y sus títulos siguen el esquema de Nicolás Cabañas Yuste. El detalle de cada fase es
-un **borrador** escrito a partir de ese esquema, para revisarlo fase por fase con el formador. Los
-pasajes marcados «pendiente de validar» llevan la etiqueta A VALIDAR en el admin y aparecen en
-`api/content-review.md` (`make review` lo regenera). El material en inglés está vacío: un lector en
-inglés ve el texto en español.
+El curso es el paquete del formador, versión 4.0, en `curso/` (empieza por `curso/LEEME.md`). La
+secuencia de fases sigue el documento de Nicolás Cabañas Yuste. **Los textos se integran tal como
+están:** los seeders (`CurriculumV2Seeder`, `ChecklistSeeder`, `ProvinceGuideSeeder`) leen el
+paquete y guardan cada pieza sin reescribirla, y `CourseContentTest` reconstruye cada archivo
+desde la base de datos y lo compara línea a línea.
+
+| Del paquete | En la plataforma |
+|---|---|
+| `modulos/01…12` | Los 12 módulos: objetivo, «Leyes que aplican» y «Dónde ir» al abrir el módulo; las lecciones; la checklist; «Partners en tu provincia» |
+| `modulos/13_financials…` | El módulo Financials, con la calculadora de la plantilla |
+| `modulos/00`, `14`, `16`, `17` | Documentos del curso: introducción, recursos, Anexo A (una provincia cada vez), Anexo B |
+| `evaluacion/*.json` | Un quiz por módulo (13) y el examen final (40 preguntas, 60 minutos), corregidos en el servidor |
+| `datos/partners_por_provincia.json` | En cada módulo, las instituciones y partners de la provincia del alumno para esa fase |
+| `pdf/curso_sin_evaluacion.pdf`, `datos/*.xlsx`, `originales/*.xls(x)` | Descargas, detrás de su acceso |
+| `modulos/15_estrategia_comercial.md` | No se publica: es del propietario |
+
+Las lecciones son texto (los vídeos se añaden después). El material en inglés está vacío: un
+lector en inglés ve el texto en español. `make review` regenera `api/content-review.md`.
+
+## Financials: la plantilla financiera
+
+`curso/2_plantilla_financiera` es la plantilla del profesional (`PLANTILLA_LIBRE.xls`, 17 hojas,
+30.795 fórmulas) exportada celda a celda con su motor de cálculo. **Se usa tal cual: no se cambia
+ninguna fórmula, valor ni etiqueta.** `financials/` es un pequeño servicio Node.js que reutiliza
+ese motor (lo construye una vez y lo devuelve a su estado inicial antes de cada cálculo) y que
+solo llama la API. El alumno de Financials rellena los datos de partida (el formulario sale del
+diccionario de entradas de la plantilla), calcula, ve el resumen, la plantilla simplificada y
+cualquiera de las 17 hojas, y guarda escenarios.
+
+```bash
+cd curso/2_plantilla_financiera/motor && npm ci && npm test   # el motor da lo mismo que Excel
+cd financials && npm test                                     # el servicio no cambia ningún resultado
+```
+
+HyperFormula, el motor de hojas de cálculo, es GPLv3: corre en el servidor y no se distribuye al
+navegador (`ESPECIFICACION_TECNICA.md`, punto 10).
 
 ## Tests
 
@@ -153,11 +189,13 @@ inglés ve el texto en español.
 make test   # Pest, base MySQL aislada (mysql-test), Stripe simulado, firmas reales para los webhooks
 ```
 
-La suite cubre: autenticación Sanctum, catálogo localizado, CRUD del admin (403 para no admins en
-todas las rutas), checkout (Stripe, transferencia, Bizum, efectivo, cupones, campañas), webhooks
-firmados + idempotencia (doble entrega = una sola matrícula), justificantes (tamaño/tipo/propietario),
-reproducción de vídeo (vistas previas para invitados, 403 sin matrícula, token Bunny recalculado),
-progreso, facturas (numeración, IVA, importe en letra), estadísticas del admin y exportación CSV.
+La suite cubre: el contenido (cada archivo del paquete reconstruido línea a línea), autenticación
+Sanctum, catálogo localizado, CRUD del admin (403 para no admins en todas las rutas), checkout
+(Stripe, transferencia, Bizum, efectivo, cupones, campañas), webhooks firmados + idempotencia,
+justificantes, reproducción de vídeo, progreso, quizzes y examen (corrección en el servidor,
+respuestas nunca enviadas antes, reloj del examen), directorio por provincia y descargas detrás
+de su acceso, Financials (paso al servicio, escenarios), facturas, estadísticas y exportación CSV.
+Las pruebas del motor y del servicio de la plantilla son de Node (arriba).
 
 ## Seguridad — puntos clave
 

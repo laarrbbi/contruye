@@ -39,8 +39,18 @@ export function serialToIso(serial: number): string {
 }
 
 function decimalsIn(section: string): number {
-  const match = /0[.,](0+)/.exec(section)
+  const match = /0\.(0+)/.exec(section)
   return match ? match[1].length : 0
+}
+
+/** A format section without what only affects layout: quoted text, [locale] tags, escapes, padding. */
+function cleanSection(section: string): string {
+  return section
+    .replace(/"[^"]*"/g, '')
+    .replace(/\[[^\]]*\]/g, '')
+    .replace(/_./g, '')
+    .replace(/\*./g, '')
+    .replace(/\\(.)/g, '$1')
 }
 
 export function formatCellValue(value: unknown, format: string | undefined, locale = 'es-ES'): string {
@@ -50,33 +60,41 @@ export function formatCellValue(value: unknown, format: string | undefined, loca
   if (typeof value !== 'number' || !Number.isFinite(value)) return String(value)
 
   const nf = format ?? 'General'
+  if (nf === 'General' || nf === '@') return value.toLocaleString(locale, { maximumFractionDigits: 4 })
+
   const sections = nf.split(';')
-  const section = value < 0 && sections[1] ? sections[1] : sections[0]
-  const lower = section.toLowerCase().replace(/"[^"]*"/g, '')
+  // Accounting formats print zero as a dash in their third section.
+  if (value === 0 && sections[2] !== undefined && /"-|\\-/.test(sections[2])) return '-'
 
-  // Accounting formats print zero as a dash.
-  if (value === 0 && sections[2] && /"-\s*"/.test(sections[2])) return '-'
+  const section = cleanSection(value < 0 && sections[1] ? sections[1] : sections[0])
+  const lower = section.toLowerCase()
 
-  if (/(d{1,2}|y{2,4}|m{3,})/.test(lower) && !lower.includes('0')) {
+  // Dates: day, month and year codes, no digit placeholders.
+  if (/[dmy]/.test(lower) && !/[0#]/.test(lower)) {
     if (value === 0) return ''
-    return serialToDate(value).toLocaleDateString(locale, { timeZone: 'UTC' })
-  }
-
-  if (lower.includes('%')) {
-    const digits = decimalsIn(section)
-    return `${(value * 100).toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits })} %`
-  }
-
-  if (nf === 'General' || !/[0#]/.test(lower)) {
-    return value.toLocaleString(locale, { maximumFractionDigits: 4 })
+    const date = serialToDate(value)
+    return lower.includes('d')
+      ? date.toLocaleDateString(locale, { timeZone: 'UTC' })
+      : date.toLocaleDateString(locale, { timeZone: 'UTC', month: 'short', year: 'numeric' })
   }
 
   const digits = decimalsIn(section)
-  return Math.abs(value).toLocaleString(locale, {
+  if (lower.includes('%')) {
+    return `${(value * 100).toLocaleString(locale, { minimumFractionDigits: digits, maximumFractionDigits: digits })} %`
+  }
+
+  // "0000" pads account codes; "#,##0" groups thousands.
+  const pad = /^0{2,}$/.exec(section.trim())
+  if (pad) return String(Math.round(value)).padStart(pad[0].length, '0')
+
+  const text = Math.abs(value).toLocaleString(locale, {
     minimumFractionDigits: digits,
     maximumFractionDigits: digits,
-    useGrouping: true,
-  }).replace(/^/, value < 0 ? '-' : '')
+    useGrouping: section.includes(','),
+  })
+  // "(1,234)" formats show negatives in brackets.
+  if (value < 0) return sections[1] && sections[1].includes('(') ? `(${text})` : `-${text}`
+  return text
 }
 
 /** "1.300.000,50" or "1300000.5" → 1300000.5; null when it is not a number. */
