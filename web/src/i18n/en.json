@@ -15,7 +15,9 @@
     "register": "Create an account",
     "logout": "Sign out",
     "modules": "modules",
-    "registerShort": "Sign up"
+    "registerShort": "Sign up",
+    "main": "Main navigation",
+    "account": "My account"
   },
   "authPanel": {
     "body": "The 12 phases of an open-market housing development in Spain: plot, feasibility, design, permits, financing, construction, sales, legalisation and handover of the keys."

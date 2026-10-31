@@ -15,7 +15,9 @@
     "register": "Crear una cuenta",
     "logout": "Cerrar sesión",
     "modules": "módulos",
-    "registerShort": "Registrarse"
+    "registerShort": "Registrarse",
+    "main": "Navegación principal",
+    "account": "Mi cuenta"
   },
   "authPanel": {
     "body": "Las 12 fases de una promoción de viviendas de renta libre en España: solar, viabilidad, proyectos, licencias, financiación, obra, venta, legalización y entrega de llaves."
