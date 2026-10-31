@@ -3,6 +3,7 @@
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Module;
+use App\Models\Quiz;
 use App\Models\User;
 use App\Support\Course\CourseSource;
 use App\Support\Course\CourseTranslation;
@@ -165,4 +166,31 @@ it('stops a deploy on a translation that lost a figure, before the site goes dow
     } finally {
         File::deleteDirectory($root);
     }
+});
+
+it('gives a Russian student the quiz in Russian, without the answers, and grades it on the Spanish key', function () {
+    $this->seed([ProvinceSeeder::class, CurriculumV2Seeder::class, ChecklistSeeder::class, CourseTranslationSeeder::class]);
+    $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
+    $quiz = Quiz::query()->where('module_id', $course->modules()->orderBy('order')->first()->id)->firstOrFail();
+    $student = User::factory()->create(['locale' => 'ru']);
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => null]);
+
+    $served = $this->actingAs($student)->withHeader('Accept-Language', 'ru')
+        ->getJson("/api/quizzes/{$quiz->id}")->assertOk();
+    expect($served->json('data.title'))->toBe('Тест модуля 1 · 10 вопросов · минимум 7/10')
+        ->and($served->json('data.questions.0.pregunta'))->toBe('Допустимая застройка выражается в:')
+        ->and($served->json('data.questions.0.opciones.1'))->toBe(['letra' => 'B', 'texto' => 'm²t/m²s'])
+        ->and($served->getContent())->not->toContain('correcta');
+
+    // The right letters of the Spanish file, answered in a Russian session.
+    $answers = collect($quiz->questions)->mapWithKeys(fn (array $question) => [
+        (string) $question['numero'] => collect($question['opciones'])->firstWhere('correcta', true)['letra'],
+    ])->all();
+
+    $attemptId = $this->actingAs($student)->withHeader('Accept-Language', 'ru')
+        ->postJson("/api/quizzes/{$quiz->id}/attempts")->assertCreated()->json('data.open_attempt.id');
+    $result = $this->actingAs($student)->withHeader('Accept-Language', 'ru')
+        ->postJson("/api/quiz-attempts/{$attemptId}/submit", ['answers' => $answers])->assertOk()->json('data');
+
+    expect($result['score'])->toBe(count($answers))->and($result['passed'])->toBeTrue();
 });

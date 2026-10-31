@@ -1,0 +1,1048 @@
+{
+  "titulo": "Итоговый сертификационный экзамен CONSTRUYE · Сертифицированный девелопер · Испания",
+  "preguntas_total": 40,
+  "minimo": "32/40 (80 %)",
+  "duracion_minutos": 60,
+  "preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "3 m²t/m²s на участке 1.500 m² позволяют построить:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1.500",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "4.500 m²",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "6.000",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "pregunta": "Первый документ Реестра недвижимости перед покупкой:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Градостроительная справка",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Nota simple",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотариальный акт",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Кадастровый номер",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "pregunta": "Частное лицо продаёт вам участок:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "IVA 21 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "ITP автономного сообщества",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "IS",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Только AJD",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "pregunta": "Рекомендуемая минимальная маржа от продаж:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "5 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "25 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "pregunta": "LOE определяет девелопера в статье:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "9",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "17",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "pregunta": "CTE DB HR регулирует:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Конструкции",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Энергию",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Шум",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Санитарно-гигиенические требования",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "pregunta": "Обязательная виза коллегии по RD 1000/2010:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Эскизный проект",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Рабочий проект и итоговый сертификат завершения работ",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Анализ рынка",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Договор подряда",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "pregunta": "ICIO — это:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Государственный налог 4 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Муниципальный налог с максимумом 4 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Региональный налог",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Всегда платит подрядчик",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "pregunta": "Десятилетняя страховка обязательна для:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Всех зданий",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Только коммерческих",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Жилых зданий (кроме собственного строительства частного дома для себя)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Зданий выше 10 этажей",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "pregunta": "Предпродажи, которые обычно требует банк:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "20 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30–50 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "70 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "pregunta": "Акт разбивки подписывают:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Девелопер и банк",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Руководитель проекта, руководитель производства работ и подрядчик",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотариус и девелопер",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Мэрия и девелопер",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "pregunta": "Административное молчание по разрешению на новое строительство:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Положительное",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Отрицательное (ст. 11.4 TRLSRU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Зависит от мэра",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Не существует",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "pregunta": "OCT участвует прежде всего в:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Архитектурном проекте",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Маркетинге",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Конструкциях, фундаменте и гидроизоляции — для страховщика десятилетней ответственности",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Разрешении",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "pregunta": "Гарантия на конструктивные повреждения:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1 год",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3 года",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "10 лет",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "20 лет",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "pregunta": "Гарантии LOE отсчитываются с:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Нотариального акта на каждую квартиру",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Приёмки работ без замечаний (или устранения замечаний)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Выдачи разрешения",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "CFO",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 16,
+      "pregunta": "Разрешение на заселение оформляет:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Автономное сообщество",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Реестр",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Мэрия (лицензия или ответственная декларация)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Коллегия",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 17,
+      "pregunta": "Горизонтальный раздел создаёт:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Сообщество собственников",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Отдельные помещения с долями и общие элементы",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Десятилетнюю гарантию",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Только устав",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 18,
+      "pregunta": "Книга здания передаётся:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Мэрии",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Банку",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Сообществу собственников, а каждому покупателю — его часть",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "OCT",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 19,
+      "pregunta": "Snagging — это:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Выбор отделки",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Проверка и список дефектов перед передачей",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотариальный акт",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Закрытие кредита",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 20,
+      "pregunta": "AJD за ипотеку покупателя с 2018 года платит:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Покупатель",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Банк",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Девелопер",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Пополам",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 21,
+      "pregunta": "Муниципальный налог plusvalía при продаже нового жилья потребителю:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Платит покупатель",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Сообщество собственников",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Девелопер, и переложить его нельзя",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Никто",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 22,
+      "pregunta": "Ставка IS для вновь созданной организации в первые два периода с положительной базой:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "25 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "30 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 23,
+      "pregunta": "Минимальный уставный капитал SL после Ley 18/2022:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "60.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "1 €, с защитными правилами до 3.000 €",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "numero": 24,
+      "pregunta": "PEC без IVA:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM + IVA",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "PEM + накладные расходы (13–17 %) + прибыль подрядчика (6 %)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "PEM + гонорары",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "PEM × 2",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 25,
+      "pregunta": "Сообщества, сохраняющие cédula de habitabilidad в 2026 году:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Мадрид и Страна Басков",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Андалусия и Галисия",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Каталония, Наварра, Канары, Эстремадура, Балеары, Риоха, Астурия и Мурсия",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Все",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 26,
+      "pregunta": "Остаточный метод служит для того, чтобы:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Рассчитать строительство",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Рассчитать максимальную цену земли",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Рассчитать IVA",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Оценить общие зоны",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "pregunta": "ICT обязывает установить:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Антенны 5G",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "RITI, RITS и сети (оптика, коаксиал и витая пара) до каждой квартиры",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Бесплатный интернет",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Телефонную станцию",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "pregunta": "Суммы, полученные авансом до передачи, должны:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Поступать на общий счёт",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Быть индивидуально гарантированы и размещены на специальном счёте (DA 1.ª LOE)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Декларироваться в мэрии",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Возвращаться через год",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "pregunta": "Кредит девелоперу выбирается:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Сразу целиком",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "По актам выполненных работ",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Только при наличии покупателей",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "С разрешением на заселение",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 30,
+      "pregunta": "Координатор по безопасности на этапе строительства обязателен, когда:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM превышает 1 M€",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Строительство длится больше 6 месяцев",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Участвуют несколько компаний или компания и индивидуальные предприниматели",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Этого требует банк",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 31,
+      "pregunta": "CTE DB HE регулирует:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Пожарную безопасность",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Влажность",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Энергосбережение",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Доступность",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 32,
+      "pregunta": "Исследование по обращению с отходами:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Необязательно",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Обязательная часть проекта (RD 105/2008)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Делается подрядчиком в конце",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Только при реконструкции",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 33,
+      "pregunta": "Можно ли обязать покупателя перейти на ваш кредит?",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Да",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Нет, только предложить (ст. 89.3 TRLGDCU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Только в Мадриде",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Если этого требует банк",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 34,
+      "pregunta": "В обычном графике платежей при подписании акта оплачивается:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "20–30 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "50 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "70–85 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "100 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 35,
+      "pregunta": "Проект с IRR (TIR) 12 %:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Вперёд",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Пересматривается: цель — 15–20 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Снизить цены",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Удлинить строительство",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 36,
+      "pregunta": "Журнал распоряжений и посещений ведёт:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Подрядчик",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Прораб",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Технический надзор, журнал заверяется коллегией",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Координатор по безопасности",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 37,
+      "pregunta": "Конструкционный бетон регулируется:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "EHE-08",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Строительным кодексом конструкций (Código Estructural, RD 470/2021)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "REBT",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "LPH",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 38,
+      "pregunta": "Как девелопер в отношении отмывания денег вы:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Не имеете обязанностей",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Являетесь обязанным субъектом (Ley 10/2010)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Обязаны, только если продаёте иностранцам",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Обязанности только у банка",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 39,
+      "pregunta": "IIVTNU — это:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Налог на строительство",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Муниципальный налог на прирост стоимости земли (plusvalía)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Индекс",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Налог на коттеджные посёлки",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 40,
+      "pregunta": "После завершения проекта SPE:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Должна быть ликвидирована",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Должна продолжать работать",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Может быть ликвидирована или оставлена в резерве, с учётом того, что гарантии LOE продолжают действовать",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Становится сообществом собственников",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}
