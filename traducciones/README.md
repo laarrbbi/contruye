@@ -8,21 +8,21 @@ as such, wherever a piece is not translated.
 
 ## What is translated
 
-| | fr | ar | ru | uk |
-|---|---|---|---|---|
-| Course title and description, document titles (`curso.json`) | ✓ | ✓ | ✓ | ✓ |
-| The 13 module titles and objectives | ✓ | ✓ | ✓ | ✓ |
-| The 60 lesson titles | ✓ | ✓ | ✓ | ✓ |
-| The 13 checklists (119 items) | ✓ | ✓ | ✓ | ✓ |
-| Modules 1 to 12 in full: the laws and where-to-go tables, the lessons (1.1 and 1.2 are the free preview), the closing sections | ✓ | ✓ | ✓ | ✓ |
-| Financials (module 13) in full: the template map and its 9 lessons (sheet and column names stay in Spanish, as the template and the platform show them) | ✓ | ✓ | ✓ | ✓ |
-| Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ |
-| Introduction, resources, Anexo A preface, Anexo B | Spanish | Spanish | Spanish | Spanish |
-| Anexo A, the 52 provinces (institution names, laws) | Spanish | Spanish | Spanish | Spanish |
+| | en | fr | ar | ru | uk |
+|---|---|---|---|---|---|
+| Course title and description, document titles (`curso.json`) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| The 13 module titles and objectives | ✓ | ✓ | ✓ | ✓ | ✓ |
+| The 60 lesson titles | ✓ | ✓ | ✓ | ✓ | ✓ |
+| The 13 checklists (119 items) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Modules 1 to 12 in full: the laws and where-to-go tables, the lessons (1.1 and 1.2 are the free preview), the closing sections | Spanish | ✓ | ✓ | ✓ | ✓ |
+| Financials (module 13) in full: the template map and its 9 lessons (sheet and column names stay in Spanish, as the template and the platform show them) | Spanish | ✓ | ✓ | ✓ | ✓ |
+| Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Introduction, resources, Anexo A preface, Anexo B | Spanish | Spanish | Spanish | Spanish | Spanish |
+| Anexo A, the 52 provinces (institution names, laws) | Spanish | Spanish | Spanish | Spanish | Spanish |
 
 The interface (buttons, pages, e-mails, errors) is translated in full; that lives in
-`web/src/i18n/` and `api/lang/`, not here. English course material is still empty: add an `en/`
-folder the same way when it is written.
+`web/src/i18n/` and `api/lang/`, not here. English is written in British spelling (*licence*,
+*programme*), as the interface is.
 
 ## How a file is laid out
 

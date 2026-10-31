@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\File;
  */
 
 it('checks every translation in the repository against the Spanish, and finds them sound', function () {
-    expect(CourseTranslation::available())->toBe(['fr', 'ar', 'ru', 'uk']);
+    expect(CourseTranslation::available())->toBe(['en', 'fr', 'ar', 'ru', 'uk']);
 
     foreach (CourseTranslation::available() as $locale) {
         $translation = CourseTranslation::fromConfig($locale);
@@ -137,7 +137,9 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
         ->checklistItems()->orderBy('order')->first()->text_ru)
         ->toBe('Карточка продукта определена (тип, аудитория, типология квартир, уровень отделки, целевая цена)');
 
-    // Spanish readers are untouched; Arabic is served as Arabic.
+    // Spanish readers are untouched; Arabic is served as Arabic, English as English.
+    expect($learn('en')['course']['title'])->toBe('Open-market housing development in Spain')
+        ->and($learn('en')['modules'][0]['lessons'][0]['title'])->toBe('Lesson 1.1 — Define the product and find the plot');
     $spanish = $learn('es');
     expect($spanish['modules'][0]['lessons'][0]['title'])->toBe('Lección 1.1 — Define el producto y encuentra el solar')
         ->and($spanish['modules'][0]['lessons'][0]['content_locale'])->toBe('es')

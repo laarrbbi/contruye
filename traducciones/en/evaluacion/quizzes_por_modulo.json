@@ -1,0 +1,3369 @@
+[
+  {
+    "seccion": "01_solar_busqueda_analisis_urbanistico_due_diligence_y_adquisic",
+    "titulo": "Module 1 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "Buildability is expressed in:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "m²/€",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "m²t/m²s",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "storeys/plot",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "m³/m²",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "Which Land Registry document tells you the encumbrances on a plot?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The cadastral reference",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The PGOU",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The nota simple informativa (registry extract)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The partial plan",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "A plot of 800 m² with 2,5 m²t/m²s lets you build:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "800 m²",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "1.600 m²",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "2.000 m²",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "2.400 m²",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "A private individual sells you a plot. The purchase is taxed with:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "IVA 21 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The autonomous community's ITP",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "IS",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "It is not taxed",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "A business sells you a building plot. You pay:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "ITP only",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "IVA 21 % (deductible) + AJD",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "IVA 10 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Nothing",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "The town hall's planning report or certificate (informe o cédula urbanística):",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Always binds the town hall",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Is compulsory for any works",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Is binding or not depending on the regional law",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Is issued by the Land Registry",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "What does \"suelo urbano no consolidado\" (unconsolidated urban land) mean?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Land with every service",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Land that needs urbanisation works or land transfers before building",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Rural land",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A plot with a building on it",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "Since Ley 18/2022, the minimum share capital of an SL is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "3.000 €",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "60.000 €",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "1 €, with protection rules until it reaches 3.000 €",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "30.000 €",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "CASA47 is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A ten-year insurer",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The state public housing and land body that replaces SEPES",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "An auction portal",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A professional body",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "If the IBI for earlier years is unpaid:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "It is only the seller's problem",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The property itself answers for the debt (real charge)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "It lapses with the sale",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The notary pays it",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "02_analisis_de_viabilidad",
+    "titulo": "Module 2 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "Recommended minimum margin on sales:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "5 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 %",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "15 %",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "30 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "The PEM is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A municipal execution plan",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The material execution budget (Presupuesto de Ejecución Material: without overheads, contractor's profit or IVA)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A special plan",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "An equipment budget",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "IVA on the sale of a new open-market home:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "21 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "4 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "0 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The residual method:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Market price × buildability",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Revenue − all other costs − target profit",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Construction cost × 2",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Cadastral value × coefficient",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "Material execution cost of a standard home (2025-2026):",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "300–500 €/m²",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "600–800 €/m²",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "900–1.100 €/m²",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "2.000 €/m²",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "Why is the CRP drawn up without IVA?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Because there is no IVA on new buildings",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Because the developer recovers the input IVA when charging IVA on the sales",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Because the bank pays it",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Out of habit",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "IS rate of a newly created company in its first two periods with a positive tax base:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "25 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "15 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "10 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "0 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The ICIO is governed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The LOE",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The TRLRHL (RDL 2/2004), with a maximum of 4 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The regional law",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The CTE",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "A typical pessimistic scenario:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Sales at 100 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Sales at 110 %",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Sales at 85–90 %, construction +10–15 %, delay",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Delay only",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Typical length of a development from the land to the last deed:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "6–12 months",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "1–2 years",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "3–4 years",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "6–8 years",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "03_proyectos_tecnicos",
+    "titulo": "Module 3 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "The LOE defines the developer in its article:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "3",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "9",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "12",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "17",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "Which DB of the CTE governs fire safety?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "DB SE",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "DB HE",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "DB HR",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "DB SI",
+            "correcta": true
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "Compulsory endorsement by the professional body (visado, RD 1000/2010) applies to:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The preliminary design",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The construction design of a building",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The market study",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The sales plan",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The health and safety plan is written by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The design architect",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Each contractor",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The town hall",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The visado mainly checks:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Full technical compliance with the CTE",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The construction price",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The professional's identity and qualification, their insurance and that the design is complete",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Economic feasibility",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "On housing, the director of works execution is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The architect",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The technical architect",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The site manager",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The OCT",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "Seismic design is done with:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "DB SE-AE",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The NCSE-02 (RD 997/2002)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The REBT",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "It is not required in Spain",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "Since 2021, structural concrete and steel are governed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The EHE-08",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The Structural Code (Código Estructural, RD 470/2021)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The RITE",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The NBE",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "A full (not basic) health and safety study is needed when the PEM is equal to or greater than:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "100.000 €",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "450.759,08 €",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "1 M€",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Always",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "A safety coordinator during the works is compulsory when:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The PEM exceeds 1 M€",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The works last more than a year",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "More than one company, or a company and self-employed workers, take part",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The developer decides so",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "04_licencias_y_autorizaciones_administrativas",
+    "titulo": "Module 4 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "ICIO stands for:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "An installation cost index",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Tax on constructions, installations and works (Impuesto sobre Construcciones, Instalaciones y Obras)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A control instruction",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A regional tax",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "Maximum ICIO rate:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "2 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "4 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "6 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "10 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "If the town hall does not decide on a licence for a new building in time:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "It is deemed granted",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "You can start",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "It is deemed refused: silence is negative (art. 11.4 TRLSRU)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "It is extended by 6 months",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The setting-out record (acta de replanteo) is signed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer and the notary",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The works director, the director of works execution and the contractor",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The town hall and the developer",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The architect and the bank",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The notification of the opening of the workplace is filed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer, with the town hall",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The contractor, with the CCAA's labour authority",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The architect, with the professional body",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The notary",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "The health and safety plan is approved by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The town hall",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The safety coordinator during the works",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The bank",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "Your plot is 60 m from a river. You need:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Nothing",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Authorisation from the river basin authority (100 m control zone)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A Land Registry report",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A Cadastre certificate",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The REA is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The register of architects",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The register of accredited construction companies (Registro de Empresas Acreditadas)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "An insurance policy",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A tax",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "You receive a request to correct your application. General deadline:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "48 hours",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 days",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "3 months",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "There is none",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Expiry of the licence:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Is automatic the next day",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Requires a procedure in which the developer is heard",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Does not exist",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Is declared by the notary",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "05_financiacion_y_contratacion",
+    "titulo": "Module 5 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "Usual size of the development loan as a share of total cost:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "90–95 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "80–85 %",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "60–70 %",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "40–50 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "Ten-year insurance covers:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Finishing defects, 1 year",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Habitability, 3 years",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Structural damage, 10 years",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Everything, 5 years",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "Who takes out the ten-year insurance?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The contractor",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The bank",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The developer",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The architect",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The LOE warranty periods start from:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The licence",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The deed of each home",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Handover of the works without reservations (or once the reservations are remedied)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "First occupation",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "Buyers' advance payments must be:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Paid into the general account",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Guaranteed with an individual bank guarantee or surety insurance and paid into a special account",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Refunded if the Euríbor rises",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "They are not regulated",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "Pre-sales banks usually require:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "10–15 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "30–50 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "70 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "100 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "Usual retention in the construction contract:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "1 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "5 % until one year after handover",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "20 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "50 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "Maximum payment term between businesses (Ley 3/2004):",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "30 days",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "60 days",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "90 days",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "120 days",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "Maximum number of subcontracting levels (Ley 32/2006):",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Unlimited",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "1",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "3",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "5",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Why do you ask the contractor for AEAT and Social Security certificates?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Out of habit",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "To avoid being liable for its tax and Social Security debts",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The town hall requires it",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "For the visado",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "06_construccion",
+    "titulo": "Module 6 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "The REBT (RD 842/2002) governs:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Plumbing",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Low-voltage electrical installations",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Insulation",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Gas",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "High electrification level of a home:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "3.450 W",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "5.750 W",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "9.200 W",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "12.000 W",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "The RITE is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The telecommunications regulation",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The regulation of thermal installations in buildings (Reglamento de Instalaciones Térmicas en los Edificios)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A property register",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The fire regulation",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "An accessible lift is compulsory under CTE DB SUA 9 when:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Always",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "There are 2 storeys",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "More than two storeys must be climbed from the accessible entrance, or there are more than 12 homes on storeys without an accessible entrance",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "There are 6 storeys",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The handover record starts:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The licence period",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The 1, 3 and 10-year warranty periods",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The deadline for the deeds",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Sales",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "If no record is signed and the works are not rejected within 30 days of completion:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Nothing happens",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Handover is deemed tacit",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The licence expires",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The ten-year insurance is lost",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "Pre-installation for electric vehicle charging in new residential buildings with a garage:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Is optional",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Only in 10 % of the spaces",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Covers every space (ITC-BT-52 and CTE HE6)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Only in public car parks",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The minimum renewable contribution for domestic hot water (ACS, CTE HE4) can be met with:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Solar thermal panels only",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Any renewable, aerothermal heat pumps included",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Gas boilers",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "It is not required",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "The final completion certificate is signed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer and the bank",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The town hall and the technical architect",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The works director and the director of works execution",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The notary and the developer",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Clean excavated soil:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Can be dumped on any plot",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Can be reused under Orden APM/1007/2017 or handed to an authorised waste manager",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Is collected by the town hall for free",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Is not regulated",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "07_control_de_obra",
+    "titulo": "Module 7 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "The OCT:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Is compulsory by law on every site",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Only on works over 1 M€",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Is not required by law; the ten-year insurer requires it",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Only on buildings of more than 10 storeys",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "On housing, who certifies the work done each month?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The bank",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The director of works execution (technical architect)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The notary",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "Concrete strength is generally checked at:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "3 days",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "14 days",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "28 days",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "90 days",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "A variation (modificado) is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A change of architect",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A change to the contract, ordered in writing and priced before it is carried out",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The monthly valuation",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A licence extension",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The critical path is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The list of tasks",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The shortest route",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The sequence of activities that sets the total duration",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The most expensive tasks",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "The incidents book is kept by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The bank",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The health and safety coordinator",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The OCT",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "Main cause of cost overruns:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Cement",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Badly managed variations",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The licence",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Inflation",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The programme is drawn up by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The designer",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The contractor, and approved by the site supervision team",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The OCT",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "Cost at completion =",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "What is outstanding",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Contracted + variations + allowances",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "What has been certified",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The initial PEM",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Inspection bodies and testing laboratories are governed by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The LPH",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "RD 410/2010",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The REBT",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Ley 5/2019",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "08_comercializacion",
+    "titulo": "Module 8 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "When can you start collecting advance payments?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "With the basic design",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "When you have the licence and the individual guarantee and the special account are in place",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Once the land is bought",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Whenever you like",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "IVA on a new open-market home:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "21 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "4 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "0 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "Can you agree that a consumer buyer pays the municipal plusvalía?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Yes, if they sign it",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "No: it is an unfair term (art. 89.3 TRLGDCU)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Only in Madrid",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Only if the home is worth more than 300.000 €",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The bank guarantee or surety insurance protects the buyer against:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Price rises",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Defaulting on their mortgage",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Losing their advance payments if the building is not finished or not delivered on time",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Construction defects",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "Can you force the buyer to take over your development loan?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Yes",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "No, only offer it as an option",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Only if the bank requires it",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Only for VPO",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "The development's advertising:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Is only indicative",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Is binding: it forms part of the contract (art. 61 TRLGDCU)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Only counts if it is signed",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Is not regulated",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "In Cataluña, the Comunitat Valenciana and Canarias, a collaborating agency must:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Be a franchise",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Be entered in the regional register of estate agents",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Have been trading for 10 years",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Nothing in particular",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "As a developer, on money laundering:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "You have no obligations",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "You are an obliged entity: you identify the buyer and the origin of the funds",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Only the notary has obligations",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Only if you sell to foreigners",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "Cash payments between a business and a private individual:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "No limit",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Banned from 1.000 €",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Up to 10.000 €",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Up to 2.500 €",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "Ley 5/2019 governs:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "IVA on housing",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The construction contract",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Real estate credit agreements (the buyer's mortgage)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Agency commissions",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "09_legalizacion",
+    "titulo": "Module 9 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "Horizontal division creates:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The building",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The licence",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The private units with their share and the common elements",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The ten-year insurance",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "The requirements for the deed of a completed new building are set by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The LPH",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Art. 28 of the TRLSRU (together with art. 20 LOE)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The CTE",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The REBT",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "Without ten-year insurance, the notary:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Signs anyway",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Does not authorise the deed of a completed new residential building",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Charges more",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Notifies the bank",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The \"as-built\" drawings are:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Those of the basic design",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Those that show what was actually built",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Those of the licence",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Those of the Cadastre",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The Building Book is compulsory under:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "RD 105/2008",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Art. 7 of the LOE",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "DB SI",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The RITE",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "Which communities still have the certificate of habitability (cédula de habitabilidad) in 2026?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "All of them",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Only Madrid and Barcelona",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Cataluña, Navarra, Canarias, Extremadura, Baleares, La Rioja, Asturias and Murcia",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "None",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "In the Comunidad de Madrid, first occupation is processed as:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A regional cédula",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A responsible declaration to the town hall (Ley 1/2020)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A notarial deed",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "It is not needed",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The costs of the deed of new building and horizontal division:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Are shared with the buyers",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Are paid by the developer; they cannot be passed on to a consumer buyer",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Are paid by the bank",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Are free",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "A new building under construction is declared by deed:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "On completion",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "At the start, so the future building can be mortgaged",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Before buying the land",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "With first occupation",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "The Building Book is handed to:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The town hall",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The bank",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The owners' association (and each buyer gets the part for their home)",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The professional body",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "10_preentrega",
+    "titulo": "Module 10 quiz · 8 questions · pass mark 6/8",
+    "minimo": "6/8",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "The pre-handover sheet is signed between:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The developer and the contractor",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer and the buyer",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The works director and the director of works execution",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The notary and the buyer",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "How many snagging rounds does the course recommend?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "1",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "2",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "3: internal, with the buyer and verification",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "None",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "A consumer buyer has the right to choose:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The architect",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The contractor",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The notary",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The date of the setting-out",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The debt certificate for each property is issued by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The town hall",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The notary",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The bank of the development loan",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The Land Registry",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "Minimum notice with which the buyer must receive their mortgage documents (FEIN) under Ley 5/2019:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The same day",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 calendar days",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "One year",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "There is no deadline",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "Internal snagging is for:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Working out the final cost",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Fixing defects before the buyer sees them",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Getting the licence",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Closing the loan",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "The buyer brings to the notary:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The title to the land",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "DNI or NIE, proof of payments and of the origin of the funds",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The building licence",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The safety plan",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "The use and maintenance manual is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The orders book",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A sales brochure",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The extract of the Building Book for the home",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The complete design",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "11_entrega_de_llaves",
+    "titulo": "Module 11 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "IVA on a new open-market home on the mainland and in the Balearic Islands:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "21 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 %",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "4 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "0 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "AJD on the buyer's mortgage is paid by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The buyer",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The bank",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Half each",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "The Horizontal Property Act (Ley de Propiedad Horizontal) is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Ley 38/1999",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Ley 5/2019",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Ley 49/1960",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Ley 57/1968",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The owners' association's minimum reserve fund is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "5 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 % of the ordinary budget",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "15 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "There is no minimum",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "On the sale of a new home to a consumer, the municipal plusvalía is paid by:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The buyer",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer, who cannot pass it on",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The owners' association",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Nobody",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "Deadline to self-assess the plusvalía on a sale:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "1 year",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "30 working days",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "6 months",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "There is no deadline",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "The LOE warranty periods start:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "At the handover of each home",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "At handover of the works without reservations (or once the reservations are remedied)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "At the licence",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "At the deed of new building",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "At the handover, the parties sign:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The private contract",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The horizontal division",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "The record of handover of possession",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "The Building Book",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "The owners' association's statutes usually go in:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The design",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The deed of horizontal division",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The orders book",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The licence",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "The 3-year warranty covers:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The structure",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The finishes",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Defects affecting habitability",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Everything",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "12_postventa_y_cierre_de_la_promocion",
+    "titulo": "Module 12 quiz · 10 questions · pass mark 7/10",
+    "minimo": "7/10",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "General IS rate:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "15 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "20 %",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "25 %",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "30 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "Deadline to claim for damage covered by the LOE:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "6 months",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "2 years from when the damage occurs",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "15 years",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "It never lapses",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "The owners' association's minimum reserve fund:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "5 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "10 % of the ordinary budget",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "15 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "There is none",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The development loan is cancelled at the Land Registry with:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A bank formality",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A notarial deed of cancellation",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "An email",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A recorded-delivery letter",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "If the contractor does not repair a warranty defect:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The owner loses the right",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The developer repairs it and charges the cost to the contractor",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "It is treated as not covered",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The developer is no longer liable",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "If the land has not increased in value, the municipal plusvalía:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Is paid anyway",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Is not paid (RDL 26/2021)",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Is paid twice",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Is paid by the buyer",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "The accounts treat the development's costs as:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Expenses of the year",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Fixed assets",
+            "correcta": false
+          },
+          {
+            "letra": "C",
+            "texto": "Inventory",
+            "correcta": true
+          },
+          {
+            "letra": "D",
+            "texto": "Liabilities",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "Dissolving the SPE:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Removes all liability",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Does not remove the warranties: the shareholders are liable up to what they received in the liquidation",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Needs the town hall's permission",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Is done by the AEAT",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "pregunta": "The finance costs of the development loan:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Are not deductible",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "Are deductible within the limit of art. 16 LIS, and are capitalised into inventory if the development lasts more than a year",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Are deducted in the IVA return",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Only if there is a profit",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "pregunta": "If you rent out the homes you have not sold:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Nothing happens",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "You must adjust the IVA you deducted, because renting a home is exempt",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "You pay IVA at 21 % on the rent",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "You lose the ten-year insurance",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "seccion": "13_financials_plantilla_financiera",
+    "titulo": "Financials quiz · 8 questions · pass mark 6/8",
+    "minimo": "6/8",
+    "preguntas": [
+      {
+        "numero": 1,
+        "pregunta": "The simplified model is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "A different model",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The \"3ª Coste Total Promoción\" sheet of the full model",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The cash flow",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The input sheet",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "pregunta": "If Excel warns of a \"circular reference\" when you open the model:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The model is wrong",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "You need to turn on iterative calculation",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "You need to delete the loan",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "You need to switch to LibreOffice",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "pregunta": "In the model, the land's \"API, VARIOS\" is entered as:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "An amount in euros",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A percentage of the land price",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "A number of agents",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "A date",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "pregunta": "The example's pass-through coefficient (1,4529) means:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "That the margin is 45 %",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "That for every euro of land and construction there is 0,45 € of other costs",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "That the loan is 145 %",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "That IVA is 45 %",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "pregunta": "The example's mortgage loan is:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "100 % of the land",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "80 % of the total cost",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "60 % of the construction",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Whatever the member asks for",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "pregunta": "The model's design fees depend on:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "The number of members",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "A percentage by floor-area band applied to the construction amount",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "The land price",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "The interest rate",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "pregunta": "What is the construction curve of the 3ª Construcción sheet for?",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "To calculate IVA",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "To spread the valuations month by month according to the length of the works",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "To set the sale price",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "For the ten-year insurance",
+            "correcta": false
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "pregunta": "Before using the model for a 2026 development you must check:",
+        "opciones": [
+          {
+            "letra": "A",
+            "texto": "Nothing",
+            "correcta": false
+          },
+          {
+            "letra": "B",
+            "texto": "The IVA rates, your community's ITP/AJD and the rates of the period",
+            "correcta": true
+          },
+          {
+            "letra": "C",
+            "texto": "Only the name of the development",
+            "correcta": false
+          },
+          {
+            "letra": "D",
+            "texto": "Only the dates",
+            "correcta": false
+          }
+        ]
+      }
+    ]
+  }
+]
