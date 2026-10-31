@@ -64,3 +64,13 @@ export function formatDuration(seconds: number, t: TFunction): string | null {
 export function formatTotalDuration(totalSeconds: number | null | undefined, t: TFunction) {
   return formatDuration(totalSeconds ?? 0, t)
 }
+
+/**
+ * `ltr` for a text with no right-to-left letters in it ("m²/€", "IVA 21 %",
+ * "DB SI"), so a formula or a unit reads in its own order inside an Arabic
+ * page instead of being reordered by the page's direction. A text with
+ * Arabic in it keeps the page's direction (undefined).
+ */
+export function latinDir(text: string): 'ltr' | undefined {
+  return /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]/.test(text) ? undefined : 'ltr'
+}

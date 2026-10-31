@@ -9,7 +9,7 @@ import { usePageTitle } from '@/hooks/usePageTitle'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, latinDir } from '@/lib/utils'
 
 /** "59:07" */
 function clock(seconds: number) {
@@ -223,7 +223,9 @@ export function QuizPage() {
                           className="mt-1 accent-primary"
                         />
                         <span className="font-semibold">{option.letra}</span>
-                        <span className="flex-1">{option.texto}</span>
+                        <span className="flex-1">
+                          <bdi dir={latinDir(option.texto)}>{option.texto}</bdi>
+                        </span>
                       </label>
                     )
                   })}
