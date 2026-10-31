@@ -20,8 +20,24 @@ class Module extends Model
         'kind',
         'title_es',
         'title_en',
+
+        'title_fr',
+
+        'title_ar',
+
+        'title_ru',
+
+        'title_uk',
         'description_es',
         'description_en',
+
+        'description_fr',
+
+        'description_ar',
+
+        'description_ru',
+
+        'description_uk',
         'price_eur',
     ];
 
@@ -56,7 +72,7 @@ class Module extends Model
     public function partners(): BelongsToMany
     {
         return $this->belongsToMany(Partner::class)
-            ->withPivot(['order', 'note_es', 'note_en'])
+            ->withPivot(['order', 'note_es', 'note_en', 'note_fr', 'note_ar', 'note_ru', 'note_uk'])
             ->withTimestamps()
             ->orderBy('module_partner.order');
     }

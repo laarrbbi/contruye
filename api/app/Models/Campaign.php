@@ -24,6 +24,14 @@ class Campaign extends Model
         'course_id',
         'label_es',
         'label_en',
+
+        'label_fr',
+
+        'label_ar',
+
+        'label_ru',
+
+        'label_uk',
         'percent_off',
         'starts_at',
         'ends_at',

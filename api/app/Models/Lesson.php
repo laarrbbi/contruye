@@ -17,13 +17,37 @@ class Lesson extends Model
         'order',
         'title_es',
         'title_en',
+
+        'title_fr',
+
+        'title_ar',
+
+        'title_ru',
+
+        'title_uk',
         'bunny_video_id',
         'duration_seconds',
         'is_free_preview',
         'content_es',
         'content_en',
+
+        'content_fr',
+
+        'content_ar',
+
+        'content_ru',
+
+        'content_uk',
         'key_points_es',
         'key_points_en',
+
+        'key_points_fr',
+
+        'key_points_ar',
+
+        'key_points_ru',
+
+        'key_points_uk',
         'is_reflex_sheet',
         'attachments',
     ];
@@ -37,6 +61,10 @@ class Lesson extends Model
             'attachments' => 'array',
             'key_points_es' => 'array',
             'key_points_en' => 'array',
+            'key_points_fr' => 'array',
+            'key_points_ar' => 'array',
+            'key_points_ru' => 'array',
+            'key_points_uk' => 'array',
             'is_reflex_sheet' => 'boolean',
         ];
     }

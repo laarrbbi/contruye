@@ -12,8 +12,22 @@ export function cn(...inputs: ClassValue[]) {
  * day-first dates instead of switching a buyer in Spain to US conventions.
  */
 export function intlLocale(locale: string | undefined): string {
-  if (locale === 'en') return 'en-GB'
-  return 'es-ES'
+  switch (locale) {
+    case 'en':
+      return 'en-GB'
+    case 'fr':
+      return 'fr-FR'
+    // Arabic text, Latin digits: amounts read the same as on the invoice and
+    // the bank transfer (App\Support\Money does the same).
+    case 'ar':
+      return 'ar-u-nu-latn'
+    case 'ru':
+      return 'ru-RU'
+    case 'uk':
+      return 'uk-UA'
+    default:
+      return 'es-ES'
+  }
 }
 
 /**

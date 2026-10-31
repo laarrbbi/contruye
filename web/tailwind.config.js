@@ -58,9 +58,11 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        // Poppins covers Spanish and English (á, é, ñ, ü, ¿, ¡ are in its
-        // latin subset).
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        // Poppins covers the Latin languages (á, é, ñ, ü, ç, œ are in its
+        // latin subset). It has no Cyrillic or Arabic: Russian and Ukrainian
+        // fall back to Montserrat's Cyrillic, Arabic to Cairo, in the same
+        // stack. Each subset is downloaded only when its script is on screen.
+        sans: ['Poppins', 'Montserrat', 'Cairo', 'system-ui', 'sans-serif'],
       },
       transitionTimingFunction: {
         // Named to match the CSS variables in index.css.

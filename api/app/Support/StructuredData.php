@@ -105,7 +105,9 @@ final class StructuredData
             'url' => $url,
             'image' => self::base().'/og-image.jpg',
             // The material is written in Spanish; English once modules carry it.
-            'inLanguage' => $course->modules->contains(fn (Module $module) => filled($module->description_en)) ? ['es', 'en'] : 'es',
+            // The languages the material is actually written in: Spanish, and
+            // each translation once its lessons are in.
+            'inLanguage' => count($languages = self::materialLanguages($course)) === 1 ? $languages[0] : $languages,
             'provider' => ['@id' => self::base().'/#organization'],
             'hasCourseInstance' => array_filter([
                 '@type' => 'CourseInstance',
@@ -199,6 +201,20 @@ final class StructuredData
             ['@context' => 'https://schema.org', '@graph' => $nodes],
             JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_THROW_ON_ERROR,
         );
+    }
+
+    /**
+     * Spanish, plus every content language a module's description is written in.
+     *
+     * @return list<string>
+     */
+    private static function materialLanguages(Course $course): array
+    {
+        return array_values(array_filter(
+            config('locales.content'),
+            fn (string $locale) => $locale === config('locales.default')
+                || $course->modules->contains(fn (Module $module) => filled($module->{"description_{$locale}"} ?? null)),
+        ));
     }
 
     /** @param  list<string>  $methods */

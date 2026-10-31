@@ -16,8 +16,24 @@ class Course extends Model
         'slug',
         'title_es',
         'title_en',
+
+        'title_fr',
+
+        'title_ar',
+
+        'title_ru',
+
+        'title_uk',
         'description_es',
         'description_en',
+
+        'description_fr',
+
+        'description_ar',
+
+        'description_ru',
+
+        'description_uk',
         'price_eur',
         'module_discount_tiers',
         'status',

@@ -17,7 +17,7 @@ class ProvinceSeeder extends Seeder
         foreach (require database_path('seeders/data/provinces.php') as $province) {
             Province::query()->updateOrCreate(
                 ['code' => $province['code']],
-                ['name_es' => $province['name_es'], 'name_en' => $province['name_en']],
+                array_intersect_key($province, array_flip(['name_es', 'name_en', 'name_fr', 'name_ar', 'name_ru', 'name_uk'])),
             );
         }
     }

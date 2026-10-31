@@ -35,6 +35,14 @@ class Partner extends Model
         'category',
         'description_es',
         'description_en',
+
+        'description_fr',
+
+        'description_ar',
+
+        'description_ru',
+
+        'description_uk',
         'website',
         'phone',
         'email',
@@ -54,7 +62,7 @@ class Partner extends Model
     public function modules(): BelongsToMany
     {
         return $this->belongsToMany(Module::class)
-            ->withPivot(['order', 'note_es', 'note_en'])
+            ->withPivot(['order', 'note_es', 'note_en', 'note_fr', 'note_ar', 'note_ru', 'note_uk'])
             ->withTimestamps();
     }
 

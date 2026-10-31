@@ -91,6 +91,21 @@ it('serves /en in English, whatever the browser speaks', function () {
         ->toBe(SpaStrings::get('en', 'course.faq.'.SpaStrings::faqKeys()[0].'.q'));
 });
 
+it('serves French, Arabic, Russian and Ukrainian under their own prefix, Arabic right to left', function () {
+    mainCourse();
+
+    foreach (['fr', 'ar', 'ru', 'uk'] as $locale) {
+        $html = $this->withHeader('Accept-Language', 'es-ES')->get("/{$locale}")->assertOk()->getContent();
+
+        expect($html)
+            ->toContain('<html lang="'.$locale.'" dir="'.($locale === 'ar' ? 'rtl' : 'ltr').'">')
+            ->toContain('<title>'.e(SpaStrings::get($locale, 'seo.home.title')).' — '.e(SpaStrings::get($locale, 'app.name')).'</title>')
+            ->toContain('<link rel="canonical" href="https://construye.example/'.$locale.'" />')
+            ->toContain('<link rel="alternate" hreflang="'.$locale.'" href="https://construye.example/'.$locale.'" />')
+            ->toContain(e(SpaStrings::get($locale, 'landing.hero.title')));
+    }
+});
+
 it('falls back to the Spanish material where the English is not written yet', function () {
     // The interface is translated; the course material is authored in Spanish
     // and an English visitor reads it rather than a blank.
@@ -237,7 +252,7 @@ it('publishes a sitemap with every page in every language', function () {
     foreach ($xml->url[0]->children('http://www.w3.org/1999/xhtml')->link as $link) {
         $alternates[] = (string) $link->attributes()->hreflang;
     }
-    expect($alternates)->toBe(['es', 'en', 'x-default']);
+    expect($alternates)->toBe(['es', 'en', 'fr', 'ar', 'ru', 'uk', 'x-default']);
 });
 
 it('serves a robots.txt that points at the sitemap and leaves the API open', function () {

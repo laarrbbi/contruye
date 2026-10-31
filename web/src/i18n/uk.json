@@ -1,0 +1,1159 @@
+{
+  "app": {
+    "name": "Construye Academy",
+    "tagline": "The reference course in property development in Spain",
+    "title": "Construye Academy — Property Development Course in Spain",
+    "metaDescription": "Online course: property development in Spain, from the plot to the handover of the keys, in 12 phases."
+  },
+  "nav": {
+    "home": "Home",
+    "changeLanguage": "Change language",
+    "myCourses": "My courses",
+    "myOrders": "My orders",
+    "admin": "Admin",
+    "login": "Sign in",
+    "register": "Create an account",
+    "logout": "Sign out",
+    "modules": "modules",
+    "registerShort": "Sign up",
+    "main": "Main navigation",
+    "account": "My account"
+  },
+  "authPanel": {
+    "body": "The 12 phases of an open-market housing development in Spain: plot, feasibility, design, permits, financing, construction, sales, legalisation and handover of the keys."
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginSubtitle": "Access your courses",
+    "registerTitle": "Create an account",
+    "registerSubtitle": "Join the course",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Mobile phone",
+    "phonePlaceholder": "612 34 56 78 or +44 7700 900123",
+    "password": "Password",
+    "passwordConfirmation": "Confirm password",
+    "submitLogin": "Sign in",
+    "submitRegister": "Create my account",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already registered?",
+    "forgotPassword": "Forgot your password?",
+    "resetPassword": "Reset password",
+    "forgotPasswordSubtitle": "Enter your email address and we will send you a reset link.",
+    "resetPasswordSubtitle": "Choose a new password for your account.",
+    "sendResetLink": "Send the link",
+    "resetLinkSent": "If an account exists for this email, a reset link has been sent.",
+    "newPassword": "New password",
+    "passwordResetSuccess": "Your password has been reset. You can now sign in.",
+    "backToLogin": "Back to sign in",
+    "resetLinkIncomplete": "This link is incomplete. Ask for a new one: it will be sent to you by email.",
+    "requestNewLink": "Get a new link",
+    "invalidCredentials": "Incorrect credentials."
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Invalid email address",
+    "phone": "Invalid number: Spanish mobile (9 digits starting with 6 or 7) or international number starting with +",
+    "passwordMin": "At least 10 characters",
+    "passwordMatch": "The passwords do not match"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "close": "Close",
+    "durationHM": "{{h}} h {{m}} min",
+    "durationM": "{{m}} min",
+    "loadFailed": "Your data could not be loaded. Check your connection.",
+    "retry": "Retry"
+  },
+  "footer": {
+    "copyright": "© {{year}} Construye Academy",
+    "explore": "Explore",
+    "courses": "Courses",
+    "contact": "Contact us",
+    "legal": {
+      "capital": "share capital {{capital}}",
+      "nif": "NIF {{nif}}"
+    }
+  },
+  "dashboard": {
+    "title": "My courses",
+    "empty": "You are not enrolled in any course yet.",
+    "browseCourses": "Discover the course",
+    "continue": "Continue",
+    "start": "Start",
+    "progress": "{{percent}}% complete",
+    "moduleAccess": "{{owned}} / {{total}} modules unlocked",
+    "unlockMore": "Unlock more modules",
+    "provinceTitle": "My province",
+    "provinceHelp": "Recommended partners will be filtered to this province."
+  },
+  "course": {
+    "enrollCta": "Enrol in the course",
+    "accessCta": "Go to the course",
+    "notFound": "Course not found.",
+    "pricing": {
+      "saveBadge": "-{{percent}}%",
+      "fullAccessNote": "Full access to the whole course",
+      "vatIncluded": "VAT included",
+      "fromPerModule": "or from {{price}} per module",
+      "alaCarteTitle": "Go at your own pace, module by module",
+      "alaCarteBody": "No need to take everything at once: buy single modules from {{price}}, with discounts that grow with the number of modules. Select them all and full access applies automatically, at the best price.",
+      "pickModulesCta": "Choose my modules"
+    },
+    "lessonsCount_one": "{{count}} lesson",
+    "lessonsCount_other": "{{count}} lessons",
+    "moduleHeading": "Module {{number}} — {{title}}",
+    "program": "Course programme",
+    "emptyProgram": "The detailed programme will be available soon.",
+    "freePreview": "Free preview",
+    "watchPreview": "Play",
+    "lifetimeAccess": "Lifetime access",
+    "stats": {
+      "lessons": "Lessons",
+      "duration": "Total duration"
+    },
+    "bullets": {
+      "lifetime": "Unlimited, lifetime access",
+      "devices": "On phone, tablet and computer"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "payment": {
+        "q": "Which payment methods do you accept?",
+        "a": "You can pay by {{methods}}."
+      },
+      "access": {
+        "q": "How long do I have access to the course?",
+        "a": "Access is for life: once enrolled, you can watch the lessons as often as you like, with no time limit."
+      },
+      "mobile": {
+        "q": "Can I follow the course on my phone?",
+        "a": "Yes, the platform works on smartphone, tablet and computer. An internet connection is all you need."
+      },
+      "abroad": {
+        "q": "Can I follow the course from outside Spain?",
+        "a": "Yes. Everything is online, with lifetime access on phone, tablet or computer: you follow the course wherever you live. The rules, procedures and authorities covered are Spain's, where the development takes place."
+      },
+      "invoice": {
+        "q": "Can I get an invoice?",
+        "a": "Yes, an invoice can be issued on request after payment. Write to us with your order reference."
+      },
+      "support": {
+        "q": "How do I contact support?",
+        "a": "Our team answers by email and by phone or WhatsApp during office hours, and helps you with any technical issue."
+      },
+      "modules": {
+        "q": "Do I have to buy everything at once?",
+        "a": "No. Modules are sold one by one, depending on where you are. Discounts grow with the number of modules, and full access remains the cheapest option per module."
+      },
+      "partners": {
+        "q": "Do you share professionals' contacts?",
+        "a": "Yes. Each module ends with the institutions and partners to go to in your province for that phase, from the course's directory of the 52 provinces, with your region's planning law and taxes. Names of professional bodies and agencies are confirmed in their official search engines. Construye takes no commission on these introductions."
+      },
+      "projectType": {
+        "q": "Does it suit my type of project?",
+        "a": "The course follows an open-market housing development, from the plot to after-sales. Much of the journey — land, permits, financing, construction, legalisation — is the same for commercial and mixed-use schemes. Subsidised housing adds requirements set by each region that are not covered in detail."
+      },
+      "phases": {
+        "q": "What does each module include?",
+        "a": "The laws that apply and where to go, its lessons in writing, an action checklist for your own project, the institutions and partners of your province, and a quiz to check what you learnt. You can follow the modules in order or go straight to the one you need."
+      }
+    }
+  },
+  "checkout": {
+    "title": "Complete your enrolment",
+    "scopeFull": "Full access",
+    "scopeModules": "By module",
+    "full": {
+      "title": "Full access to the course",
+      "badge": "-{{percent}}%",
+      "bullets": {
+        "modules": "All {{count}} modules of the programme",
+        "lifetime": "Unlimited, lifetime access",
+        "attachments": "Every downloadable document and checklist"
+      }
+    },
+    "modules": {
+      "title": "Choose your modules",
+      "owned": "Already yours",
+      "fullOnly": "Full access only",
+      "empty": "Select at least one module to continue.",
+      "selectedCount_one": "{{count}} module selected",
+      "selectedCount_other": "{{count}} modules selected",
+      "tierTitle": "Volume discounts",
+      "tierPercent": "-{{percent}}%",
+      "tierMin": "from {{min}} modules",
+      "tierHint_one": "Add {{count}} module to get {{percent}}% off",
+      "tierHint_other": "Add {{count}} modules to get {{percent}}% off"
+    },
+    "quote": {
+      "title": "Summary",
+      "subtotal": "Subtotal",
+      "tierDiscount": "Volume discount (-{{percent}}%)",
+      "coupon": "Code {{code}} (-{{percent}}%)",
+      "total": "Total (VAT included)",
+      "itemized": "Price by module: {{price}} —",
+      "savings": "you save {{amount}}",
+      "upgradeTitle": "For {{delta}} more, unlock the WHOLE programme",
+      "upgradeSubtitle_one": "{{count}} remaining module, included in full access",
+      "upgradeSubtitle_other": "{{count}} remaining modules, included in full access",
+      "upgradeCta": "Switch to full access",
+      "upgradedNote": "You selected every module: full access has been applied automatically (best price).",
+      "quoteError": "The price could not be calculated. Check your selection."
+    },
+    "coupon": {
+      "label": "Promo code",
+      "placeholder": "Promo code",
+      "apply": "Apply",
+      "remove": "Remove the code",
+      "invalid": "This promo code is invalid or has expired.",
+      "applied": "Code {{code}} applied"
+    },
+    "method": {
+      "title": "Payment method",
+      "stripe": "Bank card",
+      "stripeHint": "Visa or Mastercard, secure online payment",
+      "transfer": "Bank transfer",
+      "transferHint": "From your bank, with the reference we give you",
+      "bizum": "Bizum",
+      "bizumHint": "From your banking app, to the number we give you",
+      "noneAvailable": "Online payment is not open yet. Write to us and we will tell you how to book your place."
+    },
+    "submit": {
+      "pay": "Pay {{amount}}",
+      "order": "Confirm the order",
+      "processing": "Processing…"
+    },
+    "errors": {
+      "alreadyEnrolled": "You are already enrolled in this course.",
+      "goToCourse": "Go to the course"
+    },
+    "manual": {
+      "title": "Payment instructions",
+      "subtitle": "Make the payment, then send us the receipt for validation.",
+      "amount": "Amount to pay",
+      "iban": "IBAN",
+      "holder": "Account holder",
+      "bizumPhone": "Bizum number",
+      "reference": "Reference (write it exactly as shown)",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "purchasedModules": "Modules ordered",
+      "uploadTitle": "Send the payment receipt",
+      "uploadHint": "JPG, PNG or PDF — 5 MB maximum",
+      "uploadChoose": "Choose a file",
+      "uploadSubmit": "Send the receipt",
+      "uploading": "Uploading…",
+      "uploadTooLarge": "The file is larger than 5 MB.",
+      "uploadBadType": "Unsupported format (JPG, PNG or PDF only).",
+      "receiptSent": "Receipt sent — awaiting validation",
+      "receiptSentHint": "Our team is checking your payment. You will receive an email as soon as your access is active.",
+      "uploadAnother": "Send another receipt",
+      "rejectedTitle": "Payment rejected",
+      "rejectedHint": "Fix the problem described and send a receipt again.",
+      "paidTitle": "Payment confirmed!",
+      "paidHint": "Your access is now active.",
+      "startCourse": "Start the course",
+      "notFound": "Order not found."
+    },
+    "success": {
+      "checking": "Confirming your payment…",
+      "checkingHint": "This usually takes only a few seconds.",
+      "paidTitle": "Payment confirmed — welcome!",
+      "paidHint": "Your access to the course is now active.",
+      "start": "Start",
+      "timeoutTitle": "Confirmation is taking longer than expected",
+      "timeoutHint": "Your payment may still be processing. Refresh in a moment or check your orders.",
+      "refresh": "Refresh",
+      "viewOrders": "View my orders",
+      "failedTitle": "The payment did not go through",
+      "failedHint": "You have not been charged. You can try again.",
+      "retry": "Try again",
+      "reviewTitle": "Order awaiting validation",
+      "reviewHint": "We are checking your payment. You will receive a confirmation email."
+    },
+    "failure": {
+      "title": "Payment cancelled or failed",
+      "hint": "You have not been charged. You can try again whenever you like.",
+      "retry": "Retry the payment",
+      "viewOrders": "My orders"
+    },
+    "fallbackToManual": "Pay by {{method}} instead"
+  },
+  "orders": {
+    "title": "My orders",
+    "empty": "No orders yet.",
+    "browse": "Discover the course",
+    "orderNumber": "Order no. {{id}}",
+    "scopeFull": "Full access",
+    "scopeModules_one": "{{count}} module",
+    "scopeModules_other": "{{count}} modules",
+    "sendReceipt": "Send the receipt",
+    "viewInstructions": "View the instructions",
+    "access": "Open",
+    "status": {
+      "pending": "Awaiting payment",
+      "awaiting_review": "Being validated",
+      "paid": "Paid",
+      "failed": "Failed",
+      "refunded": "Refunded"
+    },
+    "method": {
+      "stripe": "Card",
+      "manual_transfer": "Bank transfer",
+      "manual_bizum": "Bizum",
+      "cash": "Cash"
+    },
+    "invoice": "Invoice"
+  },
+  "player": {
+    "videoTitle": "Video player",
+    "loadingVideo": "Loading the video…",
+    "lockedMessage": "This lesson is reserved for enrolled students. Enrol in the course to access it.",
+    "videoError": "The video could not be loaded. Please try again.",
+    "contents": "Course contents",
+    "showContents": "Programme",
+    "moduleLabel": "Module {{number}}",
+    "courseProgress": "Course progress",
+    "progressPercent": "{{percent}}% complete",
+    "completed": "Completed",
+    "markComplete": "Mark as complete",
+    "markIncomplete": "Mark as not complete",
+    "previousLesson": "Previous lesson",
+    "nextLesson": "Next lesson",
+    "attachments": "Lesson documents",
+    "download": "Download",
+    "noLessons": "No lessons available yet.",
+    "notEnrolled": "You are not enrolled in this course.",
+    "goToCourse": "View the course",
+    "locked": "Locked",
+    "lockedHeading": "This module is locked",
+    "lockedBody": "It is not part of your current access. Unlock it to watch this lesson and the rest of the module.",
+    "unlockModule": "Unlock this module",
+    "unlock": "Unlock",
+    "lessonNotes": "Lesson notes",
+    "keyPoints": "Key points",
+    "downloadReflexSheet": "Download the action sheet (PDF)",
+    "videoSoon": "Video coming soon",
+    "videoSoonHint": "The written content of this lesson is already available below. The video will be added shortly.",
+    "fullClass": "The full lesson",
+    "currentSection": "current section",
+    "financialsLabel": "Financials",
+    "moduleOverview": "Objective, laws and where to go"
+  },
+  "admin": {
+    "title": "Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "courses": "Courses",
+      "coupons": "Codes",
+      "orders": "Orders",
+      "students": "Students",
+      "soon": "soon",
+      "toggleMenu": "Open the menu",
+      "reviews": "Reviews",
+      "campaigns": "Promotions",
+      "partners": "Partners",
+      "invoices": "Invoicing",
+      "business": "Business & contact"
+    },
+    "common": {
+      "actions": "Actions",
+      "edit": "Edit",
+      "confirmDeleteTitle": "Are you sure?",
+      "pageOf": "Page {{page}} / {{total}}",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "form": {
+      "spanish": "Spanish",
+      "english": "English",
+      "englishOptional": "Optional: while empty, English visitors read the Spanish text.",
+      "invalidNumber": "Invalid number"
+    },
+    "courses": {
+      "title": "Courses",
+      "new": "New course",
+      "empty": "No courses yet.",
+      "manageContent": "Manage content",
+      "deleteConfirm": "Delete the course “{{title}}”? Its modules, lessons and enrolments will be deleted too. This cannot be undone.",
+      "table": {
+        "title": "Title",
+        "price": "Price (EUR)",
+        "status": "Status",
+        "modules": "Modules",
+        "lessons": "Lessons",
+        "enrollments": "Enrolled",
+        "createdAt": "Created on"
+      },
+      "status": {
+        "draft": "Draft",
+        "published": "Published"
+      },
+      "form": {
+        "createTitle": "New course",
+        "editTitle": "Edit the course",
+        "subtitle": "Fill in the information in Spanish; English is optional.",
+        "titleEs": "Title (Spanish)",
+        "titleEn": "Title (English)",
+        "descriptionEs": "Description (Spanish)",
+        "descriptionEn": "Description (English)",
+        "slug": "Slug",
+        "slugHint": "Leave empty to generate it automatically",
+        "priceEur": "Price (EUR, VAT included)",
+        "status": "Status"
+      }
+    },
+    "content": {
+      "subtitle": "Drag and drop to reorder modules and lessons.",
+      "back": "Back to courses",
+      "addModule": "Add a module",
+      "editModule": "Edit the module",
+      "moduleFormSubtitle": "Module title in Spanish (English is optional).",
+      "deleteModuleConfirm": "Delete the module “{{title}}” and all its lessons? This cannot be undone.",
+      "noModules": "No modules yet. Start by adding one.",
+      "addLesson": "Add a lesson",
+      "editLesson": "Edit the lesson",
+      "lessonFormSubtitle": "Fill in the lesson information.",
+      "deleteLessonConfirm": "Delete the lesson “{{title}}”? This cannot be undone.",
+      "noLessons": "No lessons in this module.",
+      "lessonsCount_one": "{{count}} lesson",
+      "lessonsCount_other": "{{count}} lessons",
+      "dragToReorder": "Drag to reorder",
+      "freePreviewBadge": "Free preview",
+      "form": {
+        "bunnyVideoId": "Bunny video ID",
+        "durationMinutes": "Duration (minutes)",
+        "freePreview": "Free preview lesson",
+        "attachments": "Attachments",
+        "attachmentName": "Name",
+        "attachmentPath": "File path",
+        "addAttachment": "Add",
+        "noAttachments": "No attachments.",
+        "lessonContent": "Written lesson content",
+        "contentEs": "Content (ES)",
+        "contentEn": "Content (EN)"
+      },
+      "partners": {
+        "manage": "Partners",
+        "title": "Module partners",
+        "subtitle": "Visible only to students who bought this module.",
+        "add": "Add a partner",
+        "choose": "Choose…",
+        "noneAvailable": "No partner available",
+        "empty": "No partner attached to this module.",
+        "noteEs": "Displayed note (ES)",
+        "noteEn": "Displayed note (EN)",
+        "moveUp": "Move up",
+        "moveDown": "Move down",
+        "count_one": "{{count}} partner",
+        "count_other": "{{count}} partners"
+      },
+      "needsValidation": "{{count}} to validate"
+    },
+    "coupons": {
+      "title": "Promo codes",
+      "new": "New code",
+      "empty": "No codes yet.",
+      "deleteConfirm": "Delete the code “{{code}}”? This cannot be undone.",
+      "noLimit": "Unlimited",
+      "never": "No expiry",
+      "expired": "Expired",
+      "table": {
+        "code": "Code",
+        "percentOff": "Discount",
+        "uses": "Uses",
+        "expiresAt": "Expires on"
+      },
+      "form": {
+        "createTitle": "New code",
+        "editTitle": "Edit the code",
+        "subtitle": "The code is applied at payment.",
+        "code": "Code",
+        "percentOff": "Discount (%)",
+        "maxUses": "Maximum uses (optional)",
+        "expiresAt": "Expiry date (optional)",
+        "percentRange": "Between 1 and 100"
+      }
+    },
+    "status": {
+      "pending": "Pending",
+      "awaiting_review": "To review",
+      "paid": "Paid",
+      "failed": "Failed",
+      "refunded": "Refunded"
+    },
+    "method": {
+      "stripe": "Card (Stripe)",
+      "manual_transfer": "Bank transfer",
+      "manual_bizum": "Bizum",
+      "cash": "Cash"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "revenueThisMonth": "Revenue this month",
+      "students": "Students",
+      "enrollments": "Enrolments",
+      "enrollmentsThisMonth": "{{count}} this month",
+      "completionRate": "Average completion rate",
+      "awaitingReview": "Payments to review",
+      "reviewNow": "Review now",
+      "allClear": "Nothing to review",
+      "recentOrders": "Recent orders",
+      "viewAllOrders": "View all orders",
+      "noOrders": "No orders yet.",
+      "byMethod": "By payment method",
+      "paidOfTotal": "{{paid}} paid / {{total}}",
+      "overdue": "{{count}} waiting for more than {{hours}} h"
+    },
+    "orders": {
+      "title": "Orders",
+      "export": "Export (CSV)",
+      "searchPlaceholder": "Search by name or email…",
+      "allStatuses": "All statuses",
+      "allMethods": "All methods",
+      "empty": "No order matches these filters.",
+      "table": {
+        "customer": "Customer",
+        "course": "Course",
+        "amount": "Amount",
+        "method": "Method",
+        "status": "Status",
+        "date": "Date"
+      },
+      "detail": {
+        "title": "Order #{{id}}",
+        "scope": "Purchase type",
+        "fullAccess": "Full access",
+        "modulesScope": "Single modules",
+        "discount": "Discount",
+        "createdAt": "Created on",
+        "paidAt": "Paid on",
+        "modules": "Modules bought",
+        "adminNote": "Internal note"
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "grant": "Grant access",
+        "viewReceipt": "View the receipt"
+      },
+      "reject": {
+        "title": "Reject the payment",
+        "subtitle": "The reason will be emailed to the student.",
+        "reason": "Reason for rejection",
+        "placeholder": "E.g.: unreadable receipt, wrong amount, missing reference…"
+      },
+      "confirm": {
+        "approveTitle": "Approve this payment?",
+        "approveBody": "{{name}} will be given access and sent a confirmation email.",
+        "grantTitle": "Grant access manually?",
+        "grantBody": "{{name}} will be enrolled immediately (e.g. cash payment)."
+      },
+      "waitingHours": "for {{count}} h",
+      "waitingDays": "for {{count}} d"
+    },
+    "students": {
+      "title": "Students",
+      "searchPlaceholder": "Search by name, email or phone…",
+      "empty": "No student found.",
+      "table": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "enrollments": "Enrolments",
+        "joined": "Joined on"
+      },
+      "detail": {
+        "phone": "Phone",
+        "joined": "Joined on",
+        "enrollments": "Enrolments",
+        "noEnrollments": "No enrolments.",
+        "lessonsDone": "{{done}} / {{total}} lessons completed",
+        "orders": "Orders",
+        "noOrders": "No orders.",
+        "fullAccess": "Full access",
+        "modulesOwned": "{{owned}} of {{total}} modules"
+      }
+    },
+    "reviews": {
+      "title": "Reviews",
+      "empty": "No reviews to moderate.",
+      "allStatuses": "All reviews",
+      "pendingBadge": "{{count}} pending",
+      "table": {
+        "author": "Author",
+        "rating": "Rating",
+        "review": "Review",
+        "status": "Status",
+        "date": "Date"
+      },
+      "actions": {
+        "approve": "Publish",
+        "reject": "Reject",
+        "delete": "Delete"
+      },
+      "noteLabel": "Reason (internal, optional)",
+      "rejectTitle": "Reject this review?",
+      "rejectBody": "The review will not be published. The student's text is kept.",
+      "deleteConfirm": "Delete this review permanently?",
+      "authorNote": "Reviews are written by students: you can publish or reject them, never edit them."
+    },
+    "campaigns": {
+      "title": "Promotions",
+      "new": "New promotion",
+      "empty": "No promotions yet.",
+      "intro": "The end date is real: the countdown students see is that exact date, the same for everyone, and the price goes back up on its own once it has passed.",
+      "deleteConfirm": "Delete the promotion “{{label}}”?",
+      "table": {
+        "label": "Name",
+        "course": "Course",
+        "discount": "Discount",
+        "endsAt": "Ends on",
+        "state": "State"
+      },
+      "state": {
+        "running": "Running",
+        "inactive": "Scheduled",
+        "disabled": "Disabled"
+      },
+      "form": {
+        "createTitle": "New promotion",
+        "editTitle": "Edit the promotion",
+        "subtitle": "A time-limited discount, applied to the price automatically.",
+        "course": "Course",
+        "labelEs": "Name (ES)",
+        "labelEn": "Name (EN) — optional",
+        "percentOff": "Discount (%)",
+        "percentRange": "Between 1 and 90%",
+        "startsAt": "Start (optional)",
+        "endsAt": "End",
+        "endsInFuture": "The end date must be in the future.",
+        "isActive": "Active",
+        "deadlineNote": "The countdown points at this exact date. It never resets, and the price goes back to normal afterwards.",
+        "labelEnHint": "Left empty, English visitors see the Spanish name."
+      }
+    },
+    "partners": {
+      "title": "Partners",
+      "new": "New partner",
+      "empty": "No partners yet.",
+      "inactive": "Disabled",
+      "searchPlaceholder": "Search by name or province…",
+      "intro": "Providers recommended to students in the relevant modules. Their contact details are visible only in purchased modules.",
+      "deleteConfirm": "Delete the partner “{{name}}”?",
+      "table": {
+        "name": "Name",
+        "category": "Category",
+        "contact": "Contact",
+        "province": "Provinces covered",
+        "modules": "Modules"
+      },
+      "form": {
+        "createTitle": "New partner",
+        "editTitle": "Edit the partner",
+        "subtitle": "A vetted provider, then attached to the relevant modules.",
+        "name": "Name",
+        "category": "Category",
+        "descriptionEs": "Description (ES)",
+        "descriptionEn": "Description (EN)",
+        "phone": "Phone",
+        "email": "Email",
+        "website": "Website",
+        "province": "Province",
+        "isActive": "Active"
+      },
+      "filterProvince": "Filter by province",
+      "allProvinces": "All provinces",
+      "gapsTitle": "No active partner in this province for these trades:",
+      "coverage": {
+        "title": "Provinces covered",
+        "help": "Tick every province where this partner actually works.",
+        "national": "Nationwide coverage",
+        "nationalHint": "This partner will appear to every learner, whatever their province.",
+        "selected_one": "{{count}} province selected",
+        "selected_other": "{{count}} provinces selected",
+        "clear": "Untick all",
+        "searchPlaceholder": "Search a province (name or code)…",
+        "noMatch": "No province matches.",
+        "none": "No province"
+      }
+    },
+    "invoices": {
+      "nav": "Invoicing",
+      "title": "Invoicing",
+      "subtitle": "Issuer details and issued invoices — the sales page promises an invoice “on request”.",
+      "listTitle": "Issued invoices",
+      "searchPlaceholder": "No., customer, email…",
+      "empty": "No invoices yet. Open a paid order to issue its invoice.",
+      "seller": {
+        "title": "Issuer details (mandatory information)",
+        "complete": "All mandatory information is filled in.",
+        "incomplete": "Missing mandatory fields:",
+        "saved": "Saved.",
+        "business_name": "Name or company name",
+        "legal_form": "Legal form",
+        "capital": "Share capital",
+        "address": "Registered address",
+        "registry": "Registration details (Registro Mercantil)",
+        "nif": "NIF",
+        "phone": "Phone",
+        "email": "Email",
+        "bank_details": "IBAN",
+        "edit": "Edit the business identity"
+      },
+      "table": {
+        "number": "No.",
+        "date": "Date",
+        "buyer": "Customer",
+        "total": "Total (VAT incl.)",
+        "download": "PDF",
+        "send": "Send",
+        "sent": "Sent ✓"
+      },
+      "orderSection": {
+        "title": "Invoice",
+        "create": "Issue the invoice"
+      },
+      "form": {
+        "createTitle": "Issue the invoice",
+        "editTitle": "Correct invoice {{number}}",
+        "subtitle": "The customer's name and address are required; the NIF when the customer is a business or a professional.",
+        "settingsIncomplete": "First complete the issuer details (name or company name, NIF, address) before issuing an invoice.",
+        "goToSettings": "Complete Business & contact",
+        "buyerName": "Customer name or company name",
+        "buyerAddress": "Customer address",
+        "proSection": "Business or professional customer (optional)",
+        "buyer_nif": "NIF",
+        "ivaRate": "VAT rate",
+        "iva_21": "21% (standard)",
+        "iva_10": "10% (reduced)",
+        "iva_4": "4% (super-reduced)",
+        "iva_0": "0% (exempt — give the article in the note)",
+        "notes": "Note on the invoice (optional)",
+        "submit": "Issue the invoice"
+      }
+    },
+    "business": {
+      "title": "Business & contact",
+      "subtitle": "Who your buyers pay, and how they reach you. What is filled in here appears on the site; what is empty does not.",
+      "contactTitle": "Contact",
+      "contactHint": "Shown in the footer, the FAQ, the payment page and the bank-transfer waiting screen. Start with WhatsApp: that is where your buyers ask their questions.",
+      "legalTitle": "Legal identity",
+      "legalHint": "Required to issue invoices. Name, legal form, capital, address, registration details and NIF also appear in the footer, as the LSSI requires. The IBAN stays on invoices only.",
+      "publicHint": "Visible on the site",
+      "saved": "Saved. The site is up to date.",
+      "fixErrors": "Fix the fields in red.",
+      "fields": {
+        "business_name": "Name or company name",
+        "legal_form": "Legal form",
+        "capital": "Share capital",
+        "address": "Registered address",
+        "registry": "Registration details (Registro Mercantil)",
+        "nif": "Tax identification number (NIF)",
+        "phone": "Phone",
+        "email": "Email",
+        "bank_details": "IBAN",
+        "whatsapp": "WhatsApp number",
+        "support_hours": "Opening hours"
+      },
+      "placeholders": {
+        "whatsapp": "612 34 56 78",
+        "phone": "912 34 56 78",
+        "email": "contact@your-domain.es",
+        "support_hours": "Mon–Fri, 9:00–18:00",
+        "legal_form": "S.L.",
+        "registry": "Registered in the Registro Mercantil of …, volume …, folio …, sheet …"
+      }
+    },
+    "cash": {
+      "title": "Cash payment",
+      "open": "Record a cash payment",
+      "scope": "What the student paid for",
+      "full": "Full access",
+      "modules": "Modules",
+      "price": "Calculate the amount",
+      "toCollect": "Amount to collect:",
+      "confirm": "Confirm collection of {{amount}}",
+      "recorded": "Cash payment of {{amount}} recorded. Access is open and the student has been emailed."
+    }
+  },
+  "reviews": {
+    "title": "Student reviews",
+    "empty": "No reviews yet. Reviews come from enrolled students only.",
+    "beFirst": "Write the first review",
+    "leaveOne": "Leave a review",
+    "editMine": "Edit my review",
+    "verified": "Verified purchase",
+    "count_one": "{{count}} review",
+    "count_other": "{{count}} reviews",
+    "studentsEnrolled_one": "{{count}} student enrolled",
+    "studentsEnrolled_other": "{{count}} students enrolled",
+    "pendingHint": "Your review has been received. It will be published once the team has checked it.",
+    "status": {
+      "pending": "Awaiting validation",
+      "approved": "Published",
+      "rejected": "Not published"
+    },
+    "form": {
+      "title": "Your review",
+      "subtitle": "Share your experience with future students. Your review is published after a check.",
+      "rating": "Your rating",
+      "ratingRequired": "Choose a rating.",
+      "body": "Your comment (optional)",
+      "placeholder": "What the course gave you, what helped you most…",
+      "submit": "Send my review"
+    },
+    "more": "See more reviews"
+  },
+  "campaign": {
+    "endsIn": "Ends in",
+    "days": "d",
+    "hours": "h",
+    "minutes": "min",
+    "seconds": "s"
+  },
+  "partners": {
+    "title": "Recommended partners",
+    "intro": "Vetted providers for this module of the journey. Construye takes no commission on these introductions.",
+    "website": "Website",
+    "lockedTease_one": "{{count}} partner contact included in this module",
+    "lockedTease_other": "{{count}} partner contacts included in this module",
+    "category": {
+      "notario": "Notary",
+      "asesor_fiscal": "Tax and accounting adviser",
+      "banco": "Bank",
+      "arquitectura": "Architects and engineers",
+      "aseguradora": "Insurance",
+      "constructora": "Builder",
+      "abogado": "Lawyer",
+      "marketing": "Marketing and sales",
+      "otro": "Other"
+    },
+    "filterLabel": "My province",
+    "allProvinces": "All provinces",
+    "national": "Nationwide coverage",
+    "noProvince": "Province not specified",
+    "noneInProvince": "No partner covers this province yet.",
+    "showAll_one": "Show the partner from all provinces",
+    "showAll_other": "Show the {{count}} partners from all provinces",
+    "hiddenByFilter_one": "{{count}} more partner outside your province",
+    "hiddenByFilter_other": "{{count}} more partners outside your province",
+    "saveFailed": "Choice not saved to your profile.",
+    "loadingProvinces": "Loading…"
+  },
+  "content": {
+    "legalBasis": "Legal basis",
+    "expertTip": "The expert's tip",
+    "partnerNeeded": "Partner",
+    "partnerSoon": "Partner contact — coming soon",
+    "noCommission": "Construye takes no commission on these introductions."
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Online course — Spain",
+      "title": "Property development in Spain, phase by phase: from the plot to the handover of the keys.",
+      "body": "The 12 phases of an open-market housing development, in the order they really happen: what each one involves, the documents, the authorities, the timescales and the mistakes that cost the most.",
+      "ctaPrimary": "Get the full course",
+      "paymentNote": "Lifetime access: phone, tablet, computer. As a whole or module by module.",
+      "ctaSecondary_one": "See the programme — {{modules}}, one free preview lesson",
+      "ctaSecondary_other": "See the programme — {{modules}}, {{count}} free preview lessons",
+      "ctaSecondaryNoPreview": "See the programme — {{modules}}",
+      "statPhases": "modules, from the plot to after-sales"
+    },
+    "eyebrow": {
+      "maze": "The real obstacle",
+      "costOfError": "The price of a mistake",
+      "method": "The method",
+      "toolkit": "What you get",
+      "curriculum": "The programme",
+      "modular": "Module by module",
+      "reviews": "Reviews",
+      "pricing": "Pricing",
+      "faq": "Your questions",
+      "forWhom": "Who it is for",
+      "howItWorks": "How it works"
+    },
+    "maze": {
+      "title": "Capital is not enough. It is the paperwork that stops projects.",
+      "lead": "You have the funds, perhaps even the plot. What blocks you comes later.",
+      "b1": "Building permit",
+      "b2": "Developer loan",
+      "b3": "Guarantee of buyers' deposits",
+      "b4": "Ten-year insurance and technical inspection",
+      "b5": "Off-plan sales",
+      "b6": "First-occupation licence",
+      "b7": "New-build and division deeds",
+      "close": "These are not money problems: they are about order, documents and timing. They are learnt over years in the trade — or by paying for them."
+    },
+    "costOfError": {
+      "title": "In a development, a mistake is not paid in euros. It is paid in months.",
+      "e1": "A plot bought without checking its buildable area: the project that does not fit on it.",
+      "e2": "An incomplete permit application: months of waiting with the land paid and interest running.",
+      "e3": "Taking buyers' money without a guarantee or a special account: a breach of the law, and a bank that will not lend.",
+      "e4": "The wrong builder: works stopped, budget reopened, handover delayed.",
+      "close": "The price of this course? What it would cost you to learn just one of these phases on your own site."
+    },
+    "method": {
+      "title": "The whole journey: from the plot to the handover of the keys.",
+      "intro": "The real order of an open-market housing development, without skipping a phase:",
+      "s1": "Plot: search, planning analysis, due diligence and purchase, with your own or external financing.",
+      "s2": "Feasibility study: market research, costs, revenue and profitability.",
+      "s3": "Design: technical studies, preliminary design, basic and construction projects, professional approval (visado) and the Health and Safety Plan.",
+      "s4": "Permits: building permit, authorisations, administrative requirements and grant.",
+      "s5": "Financing and contracting: developer loan, insurance, tender and construction contracts.",
+      "s6": "Construction: foundations, structure, envelope, services and finishes, from the setting-out record to the completion record.",
+      "s7": "Site control: site management team, technical inspection body, quality, budget, planning and ten-year insurance.",
+      "s8": "Sales: marketing, reservations, contracts and buyer follow-up.",
+      "s9": "Legalisation: completion, technical documentation, first-occupation licence and Land Registry.",
+      "s10": "Pre-handover: inspections, snagging, documentation and coordination with the notary.",
+      "s11": "Handover of the keys: deeds, building logbook, utilities, owners' association, final payment and delivery of possession.",
+      "s12": "After-sales and close-out: information to the owners' association, warranties, claims and winding up the development.",
+      "close": "At every phase: what to do, in what order, with which document — and the mistake that costs the most at that exact moment."
+    },
+    "toolkit": {
+      "title": "You do not leave with notes. You leave with tools.",
+      "checklistsTitle": "A checklist per module",
+      "checklistsBody": "Each module's actions, to tick off on your own project and add your own tasks to. Your roadmap, saved in your account.",
+      "legalTitle": "The laws that apply and where to go",
+      "legalBody": "Each module opens with the laws that apply and the institutions to go to: what you ask for, what you get, how long it takes and what it costs.",
+      "partnersTitle": "Your province, phase by phase",
+      "partnersBody": "The directory of the 52 provinces: for each phase, the institution or partner to go to in yours, with your region's planning law and taxes.",
+      "sheetsTitle": "The financial template, calculated",
+      "sheetsBody": "A practitioner's template, with its 17 sheets and its formulas, calculated on the platform: cost by chapter, loan, 48-month cash flow and summary per home.",
+      "footer": "Everything listed here is in the platform from day one."
+    },
+    "curriculumIntro": {
+      "title": "{{modules}}, {{lessons}}. The depth is the proof.",
+      "lead": "Every module is detailed below, lesson by lesson.",
+      "leadPreview_one": "Every module is detailed below. One lesson is a free preview: judge the level of detail before you buy.",
+      "leadPreview_other": "Every module is detailed below. {{count}} lessons are free previews: judge the level of detail before you buy."
+    },
+    "modular": {
+      "title": "Buy the module you are stuck on. Or the whole trade.",
+      "p1": "No need to take everything at once: buy module by module, depending on where you really are.",
+      "c1": "Starting from scratch? Start with the plot and the feasibility study.",
+      "c2": "Permit stuck? Take the permits module.",
+      "c3": "Negotiating with the bank? Take the financing and contracting module.",
+      "c4": "Works starting? Take the construction and site control modules.",
+      "close": "Discounts apply on their own. Past a certain number of modules, full access simply becomes the cheapest option.",
+      "from": "From {{price}} per module"
+    },
+    "pricing": {
+      "title": "Two ways in.",
+      "fullTitle": "Full access",
+      "fullBody": "All {{modules}} modules and Financials, all {{lessons}} lessons, the quizzes and the final exam, the checklists and the directory of the 52 provinces. Lifetime access. By far the lowest price per module.",
+      "unitTitle": "By module",
+      "unitBody": "Take the module you are stuck on, go at your own pace, complete it later.",
+      "payment": "Prices include VAT. Lifetime access: phone, tablet, computer. Invoice on request.",
+      "promoNote": "The promotional price ends with the countdown. After that, the struck-through price is the price again.",
+      "upTo": "up to -{{percent}}%",
+      "unitTiers_one": "Automatic discounts from {{count}} module.",
+      "unitTiers_other": "Automatic discounts from {{count}} modules."
+    },
+    "socialProof": {
+      "title": "What those who have taken it say.",
+      "note": "Only people who actually bought the course can leave a review. No review is written, commissioned or edited by Construye Academy."
+    },
+    "finalCta": {
+      "title": "{{modules}}. From the plot to the keys. Your turn to build.",
+      "p1": "The whole journey of an open-market housing development in Spain, phase by phase, with the legislation, the checklists and the institutions and partners of your province.",
+      "p2": "Learn these phases on your first site, paying for every mistake. Or here, before you sign at the notary's."
+    },
+    "faq": {
+      "subtitle": "The questions developers ask before getting started.",
+      "stillHaveQuestions": "Another question?",
+      "expertHelp": "The detailed programme answers most questions.",
+      "expertHelpPreview_one": "The detailed programme and the free preview lesson answer most questions.",
+      "expertHelpPreview_other": "The detailed programme and the free preview lessons answer most questions."
+    },
+    "counts": {
+      "modules_one": "{{count}} module",
+      "modules_other": "{{count}} modules",
+      "modulesWithFinancials_one": "{{count}} module and Financials",
+      "modulesWithFinancials_other": "{{count}} modules and Financials"
+    },
+    "forWhom": {
+      "title": "You have a project. What you lack is the route.",
+      "lead": "It is for people who take action, whatever their starting point.",
+      "p1Title": "You have a plot or funds",
+      "p1Body": "And you want to know how a development is put together end to end, before committing to anything.",
+      "p2Title": "You already work in construction",
+      "p2Body": "Builder, architect, building engineer: you know the site and want to move to the other side, the developer's.",
+      "p3Title": "You invest from outside Spain",
+      "p3Body": "You are preparing a development in Spain from another country and need to understand the route before investing.",
+      "p4Title": "You are stuck at one phase",
+      "p4Body": "Permit, developer loan, off-plan sales, construction: you are already moving, and one module may be all you need."
+    },
+    "howItWorks": {
+      "title": "Three steps between you and the first lesson.",
+      "s1Title": "Choose",
+      "s1BodyModules": "The full course, or only the modules you need.",
+      "s1BodyFull": "The full course, in a single purchase.",
+      "s1Tiers": "Discounts apply on their own.",
+      "s2Title": "Pay",
+      "s2Card": "By card, access opens as soon as the payment is confirmed.",
+      "s2Transfer": "By {{methods}}: send the receipt from your account, and access opens once it has been checked.",
+      "s2Mail": "An email confirms that your access is open.",
+      "s3Title": "Learn",
+      "s3Body": "On phone, tablet or computer, at your own pace and for life. Invoice on request."
+    }
+  },
+  "checklist": {
+    "title": "Module checklist",
+    "subtitle": "Tick each step as you carry it out on your own project.",
+    "myTasks": "My tasks",
+    "add": "Add",
+    "addPlaceholder": "Add a task…",
+    "deleteTask": "Delete the task",
+    "pageTitle": "My roadmap",
+    "pageSubtitle": "Every step of the journey, module by module — the course's and your own.",
+    "overallProgress": "Overall progress",
+    "backToCourse": "Back to the course",
+    "lockedTease_one": "{{count}} step included in this module",
+    "lockedTease_other": "{{count}} steps included in this module",
+    "saveFailed": "Change not saved — check your connection and try again."
+  },
+  "contact": {
+    "whatsapp": "WhatsApp",
+    "hours": "Hours: {{hours}}",
+    "prefillGeneral": "Hello, I have a question about the Construye Academy course.",
+    "prefillOrder": "Hello, I am writing about my order no. {{id}}.",
+    "paymentHelpTitle": "A question about your payment?",
+    "paymentHelpBody": "Write to us: your order number is already in the message.",
+    "beforePaying": "A question before paying?"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This address leads nowhere. The link may be incomplete, or the page may have moved.",
+    "home": "Back to home"
+  },
+  "crash": {
+    "title": "Something went wrong",
+    "body": "The page could not be displayed. Reload it; if the problem comes back, return to the home page.",
+    "reload": "Reload the page"
+  },
+  "seo": {
+    "home": {
+      "title": "Property development course in Spain",
+      "description": "Online course in property development in Spain: plot, feasibility, design, building permit, developer loan, construction, off-plan sales and handover of the keys. {{modules}} modules, one per phase."
+    },
+    "catalog": {
+      "title": "Property development courses in Spain",
+      "description": "Online courses for property developers in Spain: from buying the plot to building, selling and handing over the homes."
+    }
+  },
+  "payments": {
+    "names": {
+      "stripe": "bank card (Visa, Mastercard)",
+      "manual_transfer": "bank transfer",
+      "manual_bizum": "Bizum"
+    },
+    "short": {
+      "stripe": "Card",
+      "manual_transfer": "bank transfer",
+      "manual_bizum": "Bizum"
+    },
+    "separator": ", ",
+    "or": "or",
+    "sentence": "Payment: {{methods}}.",
+    "cash": "You can also pay in cash: contact us."
+  },
+  "quiz": {
+    "navTitle": "Module quiz",
+    "passedShort": "Passed",
+    "ctaBody": "{{total}} questions: you pass with {{pass}} right answers.",
+    "ctaPassed": "Passed with {{score}}/{{total}}. You can retake it whenever you like.",
+    "locked": "This quiz belongs to a module you do not have yet",
+    "rules": "{{total}} questions, one right answer each. You pass with {{pass}} right. Once you send it, you see the right answers.",
+    "passed": "Passed",
+    "failed": "Not yet",
+    "score": "{{score}} of {{total}} right (pass mark {{pass}}).",
+    "retry": "Try again",
+    "answered": "{{count}} of {{total}} answered",
+    "correct": "Right",
+    "incorrect": "Wrong",
+    "incorrectWithAnswer": "Wrong. The right answer is {{answer}}.",
+    "submit": "Send answers",
+    "history": "Earlier attempts"
+  },
+  "exam": {
+    "navTitle": "Final exam",
+    "lockedHint": "With full access to the course.",
+    "rules": "{{total}} questions in {{minutes}} minutes. You pass with {{pass}} right. Once you send it, you see your score and which answers were wrong.",
+    "startHint": "The clock starts when you press the button and keeps running if you close the page. After {{minutes}} minutes, your answers are sent on their own.",
+    "start": "Start the exam",
+    "timeLeft": "Time left",
+    "submit": "Send the exam"
+  },
+  "documents": {
+    "navTitle": "Course documents",
+    "locked": "This document comes with full access to the course",
+    "downloadsTitle": "Available downloads",
+    "files": {
+      "plantilla-libre": "Full financial template (17 sheets)",
+      "plantilla-simplificada": "Simplified feasibility template",
+      "directorio-partners": "Directory of partners by province (Excel)",
+      "curso-pdf": "The whole course as a PDF"
+    },
+    "needsFullAccess": "With full access",
+    "needsFinancials": "With the Financials module",
+    "downloadsNote": "The other resources on the list will be published here as soon as they are available. The tax table by region is Annex B."
+  },
+  "directory": {
+    "panelTitle": "Your province in this phase",
+    "chooseProvince": "Choose your province",
+    "chooseHint": "Choose the province where you build: you will see which institution or partner to go to in this phase, with your region's planning law and taxes.",
+    "urbanLaw": "Planning law",
+    "firstOccupation": "First occupation",
+    "taxes": "Taxes",
+    "foral": "Foral regime",
+    "partner": "Partner / institution",
+    "purpose": "What for",
+    "lockedPhase_one": "{{count}} institution or partner in this phase, with the module",
+    "lockedPhase_other": "{{count}} institutions and partners in this phase, with the module",
+    "openAnnex": "See your whole province in Annex A"
+  },
+  "financials": {
+    "navTitle": "Calculate the template",
+    "ctaTitle": "Calculate the template on the platform",
+    "ctaBody": "Fill in the starting data and get the cost, the loan, the cash flow and the summary, with the practitioner's formulas.",
+    "title": "Financial template of the development",
+    "lead": "The practitioner's template (PLANTILLA_LIBRE.xls), calculated with its original formulas and with the iterative calculation already solved. You fill in the starting data; the template calculates everything else.",
+    "paramsNotice": "The template calculates with the parameters it was built with, around 2002 (7% and 16% VAT, fees in pesetas, cooperative items). Before using it for a current development, review:",
+    "locked": "The template comes with the Financials module",
+    "formulaDefault": "template formula",
+    "notANumber": "Not a number.",
+    "scenarios": "My scenarios",
+    "loadExample": "Load the 24-home example",
+    "reset": "Clear",
+    "scenarioName": "Scenario name",
+    "save": "Save",
+    "update": "Save changes",
+    "delete": "Delete",
+    "saved": "Saved",
+    "inputsTitle": "Starting data",
+    "emptyKeepsDefault": "Whatever you leave empty keeps the template's value or formula.",
+    "calculate": "Calculate",
+    "calculating": "Calculating…",
+    "converged": "Calculated: the iterative calculation settled in {{count}} iterations.",
+    "notConverged": "Warning: the iterative calculation did not settle in {{count}} iterations. Check the data.",
+    "tabSummary": "Cost summary",
+    "tabSimplified": "Simplified template",
+    "tabSheets": "All sheets",
+    "chapter": "Chapter",
+    "net": "Net",
+    "withVat": "With VAT",
+    "vat": "VAT",
+    "simplifiedHint": "The \"3ª Coste Total Promoción\" sheet: it is the simplified feasibility template, with your data.",
+    "sheet": "Sheet",
+    "originals": "The original files",
+    "originalsNote": "As the practitioner delivered them. In Excel, enable iterative calculation (100 iterations, maximum change 0.001): the template has circular references on purpose."
+  }
+}

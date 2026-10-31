@@ -126,9 +126,9 @@ class LearnCourseResource extends JsonResource
                             'email' => $partner->email,
                             'is_national' => $partner->is_national,
                             'provinces' => $this->provinces($partner),
-                            // English once written, the authored Spanish meanwhile.
-                            'note' => app()->getLocale() === 'en' && filled($partner->pivot->note_en)
-                                ? $partner->pivot->note_en
+                            // The reader's language once written, the authored Spanish meanwhile.
+                            'note' => filled($partner->pivot->{'note_'.app()->getLocale()} ?? null)
+                                ? $partner->pivot->{'note_'.app()->getLocale()}
                                 : $partner->pivot->note_es,
                         ])->values()
                     : [],

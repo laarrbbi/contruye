@@ -2,12 +2,13 @@ import { lazy, type ReactNode } from 'react'
 import { buyingPath } from '@/lib/buyingPath'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DirectionProvider } from '@radix-ui/react-direction'
+import { useTranslation } from 'react-i18next'
 import { Layout } from '@/components/layout/Layout'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { PageTitleProvider } from '@/components/PageTitleProvider'
 import { PublicLocale } from '@/components/PublicLocale'
-import type { Locale } from '@/i18n'
+import { isRtl, type Locale } from '@/i18n'
 import { CourseLandingPage } from '@/pages/CourseLandingPage'
 
 // Only the sales page is in the main bundle: it is what a visitor from a
@@ -49,15 +50,20 @@ const AdminPartnersPage = lazy(() => import('@/pages/admin/AdminPartnersPage').t
 const PUBLIC_LOCALES: { prefix: string; locale: Locale }[] = [
   { prefix: '/', locale: 'es' },
   { prefix: '/en', locale: 'en' },
+  { prefix: '/fr', locale: 'fr' },
+  { prefix: '/ar', locale: 'ar' },
+  { prefix: '/ru', locale: 'ru' },
+  { prefix: '/uk', locale: 'uk' },
 ]
 
 /**
  * Keeps Radix primitives (Tabs, DropdownMenu, Select…) in sync with the
  * document direction: their internal keyboard/alignment logic follows this
- * dir, not the <html> attribute. Both interface languages are left to right.
+ * dir, not the <html> attribute. Re-renders on i18n.changeLanguage.
  */
 function AppDirectionProvider({ children }: { children: ReactNode }) {
-  return <DirectionProvider dir="ltr">{children}</DirectionProvider>
+  const { i18n } = useTranslation()
+  return <DirectionProvider dir={isRtl(i18n.language) ? 'rtl' : 'ltr'}>{children}</DirectionProvider>
 }
 
 export default function App() {

@@ -102,6 +102,13 @@
 }
 
 
+/* Joined Arabic letters must not be spaced apart: the tight tracking of the
+   headings and the wide tracking of the small capital labels are for Latin
+   and Cyrillic only. */
+html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
+  letter-spacing: 0;
+}
+
 /* The instructor's texts, rendered from Markdown (MarkdownContent). Tables
    scroll on their own on a phone instead of widening the page. */
 @layer components {

@@ -93,8 +93,13 @@ return new class extends Migration
     {
         $reference = require database_path('seeders/data/provinces.php');
 
+        // Only the columns this migration creates: the reference file has
+        // grown a name per language since (2026_11_01_100001 fills those).
         if (DB::table('provinces')->count() === 0) {
-            DB::table('provinces')->insert($reference);
+            DB::table('provinces')->insert(array_map(
+                fn (array $province) => array_intersect_key($province, array_flip(['code', 'name_es', 'name_en'])),
+                $reference,
+            ));
         }
 
         // Names fold to a bare a-z0-9 key so "Málaga" matches "malaga".

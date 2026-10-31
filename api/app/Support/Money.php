@@ -19,6 +19,12 @@ final class Money
     {
         $formatter = new NumberFormatter(match ($locale ?? app()->getLocale()) {
             'en' => 'en_GB',
+            'fr' => 'fr_FR',
+            // Arabic text, Latin digits: the amounts on the invoice, the bank
+            // transfer and the page read the same in every language.
+            'ar' => 'ar@numbers=latn',
+            'ru' => 'ru_RU',
+            'uk' => 'uk_UA',
             default => 'es_ES',
         }, NumberFormatter::CURRENCY);
 
@@ -28,6 +34,12 @@ final class Money
         $formatter->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $whole ? 0 : 2);
         $formatter->setAttribute(NumberFormatter::MAX_FRACTION_DIGITS, 2);
 
-        return $formatter->formatCurrency($amount, $currency);
+        // The euro sign in every language: Ukrainian ICU data writes "EUR".
+        $formatter->setTextAttribute(NumberFormatter::CURRENCY_CODE, $currency);
+        if ($currency === 'EUR') {
+            $formatter->setSymbol(NumberFormatter::CURRENCY_SYMBOL, '€');
+        }
+
+        return $formatter->format($amount);
     }
 }

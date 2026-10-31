@@ -51,7 +51,7 @@ it('reads the primary subtag of the first tag only, and ignores q-values', funct
     // written down anywhere else. First: q-values are not parsed, so a client
     // that ranks English highest is still served Spanish…
     expect($title(['Accept-Language' => 'es;q=0.1,en;q=0.9']))->toBe('Título en español')
-        ->and($title(['Accept-Language' => 'fr;q=0.2,en;q=1.0']))->toBe('Título en español');
+        ->and($title(['Accept-Language' => 'de;q=0.2,en;q=1.0']))->toBe('Título en español');
 
     // …second, only the first two characters are read, so a value that is not
     // a language tag at all still resolves — generously, never with a 500.
@@ -71,9 +71,30 @@ it('localizes server messages into every supported locale', function () {
             ->json('message');
     }
 
-    // Two distinct languages, neither falling through to the other.
+    // Six distinct languages, none falling through to another.
     expect($messages['es'])->toBe('La reproducción de vídeo no está disponible temporalmente. Inténtalo de nuevo más tarde.')
-        ->and($messages['en'])->toBe('Video playback is temporarily unavailable. Please try again later.');
+        ->and($messages['en'])->toBe('Video playback is temporarily unavailable. Please try again later.')
+        ->and($messages['fr'])->toBe('La lecture vidéo est temporairement indisponible. Veuillez réessayer plus tard.')
+        ->and($messages['ar'])->toBe('تشغيل الفيديو غير متاح مؤقتاً. يرجى المحاولة لاحقاً.')
+        ->and($messages['ru'])->toBe('Воспроизведение видео временно недоступно. Повторите попытку позже.')
+        ->and($messages['uk'])->toBe('Відтворення відео тимчасово недоступне. Спробуйте пізніше.')
+        ->and(array_unique($messages))->toHaveCount(count(config('locales.supported')));
+});
+
+it('validates in the visitor\'s language, field names included', function () {
+    $errors = [];
+    foreach (config('locales.supported') as $locale) {
+        $errors[$locale] = $this->withHeader('Accept-Language', $locale)
+            ->postJson('/api/login', [])
+            ->assertUnprocessable()
+            ->json('errors.email.0');
+    }
+
+    expect($errors['es'])->toBe('El campo correo electrónico es obligatorio.')
+        ->and($errors['fr'])->toContain('adresse e-mail')
+        ->and($errors['ru'])->toBe('Поле «адрес электронной почты» обязательно для заполнения.')
+        ->and($errors['uk'])->toBe('Поле «адреса електронної пошти» є обов’язковим.')
+        ->and(array_unique($errors))->toHaveCount(count(config('locales.supported')));
 });
 
 it('accepts every supported locale as a user preference and rejects the rest', function () {

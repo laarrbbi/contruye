@@ -16,7 +16,7 @@ class Province extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['code', 'name_es', 'name_en'];
+    protected $fillable = ['code', 'name_es', 'name_en', 'name_fr', 'name_ar', 'name_ru', 'name_uk'];
 
     protected function casts(): array
     {

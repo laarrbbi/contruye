@@ -22,8 +22,24 @@ class CourseDocument extends Model
         'order',
         'title_es',
         'title_en',
+
+        'title_fr',
+
+        'title_ar',
+
+        'title_ru',
+
+        'title_uk',
         'body_es',
         'body_en',
+
+        'body_fr',
+
+        'body_ar',
+
+        'body_ru',
+
+        'body_uk',
         'access',
     ];
 

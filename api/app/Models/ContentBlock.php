@@ -36,6 +36,14 @@ class ContentBlock extends Model
         'order',
         'body_es',
         'body_en',
+
+        'body_fr',
+
+        'body_ar',
+
+        'body_ru',
+
+        'body_uk',
         'partner_category',
         'needs_validation',
     ];

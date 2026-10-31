@@ -4,8 +4,9 @@ namespace App\Support;
 
 /**
  * One URL per language for the public pages: Spanish at the root (the
- * authored language and the market), English under /en. The app reads the
- * same prefixes (web/src/i18n/paths.ts).
+ * authored language and the market), every other language under its code
+ * (/en, /fr, /ar, /ru, /uk). The app reads the same prefixes
+ * (web/src/i18n/paths.ts).
  */
 final class LocalizedUrl
 {

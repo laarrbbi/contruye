@@ -1,14 +1,14 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import es from './es.json'
-import { isLocale, rememberLocale, storedLocale, type Locale } from './locales'
+import { isLocale, isRtl, rememberLocale, storedLocale, type Locale } from './locales'
 import { isPublicPage, splitLocalePath } from './paths'
 
-export { LOCALES, LOCALE_NAMES, type Locale } from './locales'
+export { LOCALES, LOCALE_NAMES, isRtl, type Locale } from './locales'
 
 /**
- * On a public page, the URL decides: /en is English and the unprefixed pages
- * are Spanish. That is what search engines index and what people share.
+ * On a public page, the URL decides: /en is English, /fr French, /ar Arabic,
+ * /ru Russian, /uk Ukrainian, and the unprefixed pages are Spanish. That is what search engines index and what people share.
  * Guessing from the browser there showed Googlebot, which renders with an
  * en-US browser, the English site on Spanish URLs.
  *
@@ -38,10 +38,14 @@ function initialLocale(): Locale {
 
 const initial = initialLocale()
 
-// Spanish is bundled: it is the authored locale and every fallback. English
-// is fetched on demand, so a visitor downloads one language, not two.
+// Spanish is bundled: it is the authored locale and every fallback. The
+// others are fetched on demand, so a visitor downloads one language, not six.
 const loaders: Record<Exclude<Locale, 'es'>, () => Promise<{ default: Record<string, unknown> }>> = {
   en: () => import('./en.json'),
+  fr: () => import('./fr.json'),
+  ar: () => import('./ar.json'),
+  ru: () => import('./ru.json'),
+  uk: () => import('./uk.json'),
 }
 
 async function ensureLoaded(locale: Locale) {
@@ -61,11 +65,11 @@ i18n.use(initReactI18next).init({
 })
 
 // Title and description belong to the page (PageTitleProvider), not here.
-// Both interface languages read left to right; the app keeps its logical
-// (start/end) layout, so a right-to-left language could be added later.
+// Arabic reads right to left: the layout uses logical (start/end) properties
+// throughout, so the whole page mirrors with the document's direction.
 export function applyDirection(locale: string) {
   document.documentElement.lang = locale
-  document.documentElement.dir = 'ltr'
+  document.documentElement.dir = isRtl(locale) ? 'rtl' : 'ltr'
 }
 
 export async function setLocale(locale: Locale) {

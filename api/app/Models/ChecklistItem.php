@@ -22,6 +22,14 @@ class ChecklistItem extends Model
         'order',
         'text_es',
         'text_en',
+
+        'text_fr',
+
+        'text_ar',
+
+        'text_ru',
+
+        'text_uk',
     ];
 
     protected function casts(): array

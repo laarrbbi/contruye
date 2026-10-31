@@ -24,9 +24,21 @@ class Quiz extends Model
         'kind',
         'title_es',
         'title_en',
+
+        'title_fr',
+
+        'title_ar',
+
+        'title_ru',
+
+        'title_uk',
         'pass_mark',
         'duration_minutes',
         'questions',
+        'questions_fr',
+        'questions_ar',
+        'questions_ru',
+        'questions_uk',
     ];
 
     protected function casts(): array
@@ -35,6 +47,10 @@ class Quiz extends Model
             'pass_mark' => 'integer',
             'duration_minutes' => 'integer',
             'questions' => 'array',
+            'questions_fr' => 'array',
+            'questions_ar' => 'array',
+            'questions_ru' => 'array',
+            'questions_uk' => 'array',
         ];
     }
 
@@ -74,7 +90,7 @@ class Quiz extends Model
      *
      * @return list<array{numero: int, pregunta: string, opciones: list<array{letra: string, texto: string}>}>
      */
-    public function questionsForStudent(): array
+    public function questionsForStudent(?string $locale = null): array
     {
         return array_map(fn (array $question) => [
             'numero' => $question['numero'],
@@ -83,7 +99,25 @@ class Quiz extends Model
                 fn (array $option) => ['letra' => $option['letra'], 'texto' => $option['texto']],
                 $question['opciones'],
             ),
-        ], $this->questions ?? []);
+        ], $this->localizedQuestions($locale));
+    }
+
+    /**
+     * The questions in the reader's language when they are translated, the
+     * authored Spanish otherwise. A translation keeps the numbers, letters and
+     * right answers of the original (QuizTranslationTest); grading always
+     * uses the original's key.
+     *
+     * @return list<array<string, mixed>>
+     */
+    public function localizedQuestions(?string $locale = null): array
+    {
+        $locale ??= app()->getLocale();
+        $translated = array_key_exists("questions_{$locale}", $this->attributes) ? $this->{"questions_{$locale}"} : null;
+
+        return is_array($translated) && count($translated) === $this->questionCount()
+            ? $translated
+            : ($this->questions ?? []);
     }
 
     /**

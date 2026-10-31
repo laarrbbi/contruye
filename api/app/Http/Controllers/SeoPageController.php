@@ -28,9 +28,15 @@ use Illuminate\Support\Str;
 final class SeoPageController
 {
     /** The language switcher's names, as the app shows them. */
-    private const LANGUAGE_NAMES = ['es' => 'Español', 'en' => 'English'];
+    private const LANGUAGE_NAMES = [
+        'es' => 'Español', 'en' => 'English', 'fr' => 'Français',
+        'ar' => 'العربية', 'ru' => 'Русский', 'uk' => 'Українська',
+    ];
 
-    private const OG_LOCALES = ['es' => 'es_ES', 'en' => 'en_GB'];
+    private const OG_LOCALES = [
+        'es' => 'es_ES', 'en' => 'en_GB', 'fr' => 'fr_FR',
+        'ar' => 'ar_AR', 'ru' => 'ru_RU', 'uk' => 'uk_UA',
+    ];
 
     // The language comes from the route's defaults (routes/seo.php), read by
     // name: Laravel passes route parameters by position, URL ones first.
@@ -251,7 +257,7 @@ final class SeoPageController
         if ($locale !== null) {
             $html = (string) preg_replace(
                 '/<html\b[^>]*>/',
-                '<html lang="'.$locale.'" dir="ltr">',
+                '<html lang="'.$locale.'" dir="'.(in_array($locale, config('locales.rtl', []), true) ? 'rtl' : 'ltr').'">',
                 $html,
                 1,
             );
