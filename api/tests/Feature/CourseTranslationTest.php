@@ -108,16 +108,30 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
         // Module 1 is translated in full, its tables included.
         ->and(collect($module['blocks'])->pluck('body_locale')->unique()->all())->toBe(['ru']);
 
-    // Not yet (module 2): the title translated, the text the Spanish, with
-    // its language said.
-    $next = $russian['modules'][1];
-    expect($next['lessons'][0]['title'])->toBe('Урок 2.1 — Счёт результатов девелопера (CRP)')
-        ->and($next['lessons'][0]['content_locale'])->toBe('es')
-        ->and($next['lessons'][0]['content'])->toBe(
-            Module::query()->where('course_id', $course->id)->where('order', 2)->first()
-                ->lessons()->orderBy('order')->first()->content_es,
-        )
-        ->and(collect($next['blocks'])->pluck('body_locale')->unique()->all())->toBe(['es']);
+    // Not translated yet: the Spanish, with its language said. A copy of the
+    // Russian folder with lesson 1.3 set back to <!-- es --> stands for any
+    // piece still waiting for its translation, however far the files get.
+    $root = storage_path('framework/testing/traducciones-'.uniqid());
+    File::copyDirectory(config('curso.translations').'/ru', "{$root}/ru");
+    $file = "{$root}/ru/modulos/01_solar_busqueda_analisis_urbanistico_due_diligence_y_adquisic.md";
+    File::put($file, preg_replace('/^(## Урок 1\.3[^\n]*\n\n)(?:(?!## ).*\n)*/mu', "\$1<!-- es -->\n\n", File::get($file)));
+    $realRoot = config('curso.translations');
+    config(['curso.translations' => $root]);
+
+    try {
+        $this->seed(CourseTranslationSeeder::class);
+        $pending = $learn('ru')['modules'][0]['lessons'][2];
+
+        expect($pending['title'])->toStartWith('Урок 1.3')
+            ->and($pending['content_locale'])->toBe('es')
+            ->and($pending['content'])->toBe(
+                Module::query()->where('course_id', $course->id)->orderBy('order')->first()
+                    ->lessons()->orderBy('order')->skip(2)->first()->content_es,
+            );
+    } finally {
+        File::deleteDirectory($root);
+        config(['curso.translations' => $realRoot]);
+    }
 
     expect(Module::query()->where('course_id', $course->id)->orderBy('order')->first()
         ->checklistItems()->orderBy('order')->first()->text_ru)

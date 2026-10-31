@@ -14,8 +14,8 @@ as such, wherever a piece is not translated.
 | The 13 module titles and objectives | ✓ | ✓ | ✓ | ✓ |
 | The 60 lesson titles | ✓ | ✓ | ✓ | ✓ |
 | The 13 checklists (119 items) | ✓ | ✓ | ✓ | ✓ |
-| Module 1 in full: its laws and where-to-go tables, the 4 lessons (1.1 and 1.2 are the free preview), the closing section | ✓ | ✓ | ✓ | ✓ |
-| Modules 2–12 and Financials: the lessons, "Leyes que aplican", "Dónde ir", the closing sections | Spanish | Spanish | Spanish | Spanish |
+| Modules 1 and 2 in full: the laws and where-to-go tables, the lessons (1.1 and 1.2 are the free preview), the closing sections | ✓ | ✓ | ✓ | ✓ |
+| Modules 3–12 and Financials: the lessons, "Leyes que aplican", "Dónde ir", the closing sections | Spanish | Spanish | Spanish | Spanish |
 | Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ |
 | Introduction, resources, Anexo A preface, Anexo B | Spanish | Spanish | Spanish | Spanish |
 | Anexo A, the 52 provinces (institution names, laws) | Spanish | Spanish | Spanish | Spanish |
