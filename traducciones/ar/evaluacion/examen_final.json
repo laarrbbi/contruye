@@ -1,0 +1,1048 @@
+{
+  "titulo": "الامتحان النهائي للشهادة CONSTRUYE · مطوّر عقاري معتمد · إسبانيا",
+  "preguntas_total": 40,
+  "minimo": "32/40 (80 %)",
+  "duracion_minutos": 60,
+  "preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "معامل 3 m²t/m²s على قطعة أرض مساحتها 1.500 m² يسمح ببناء:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1.500",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "4.500 m²",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "6.000",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "pregunta": "أول وثيقة من السجل العقاري قبل الشراء:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "الشهادة العمرانية",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "النوتا سيمبلي (nota simple)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "العقد الموثّق",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "المرجع المساحي",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "pregunta": "يبيعك فرد قطعة الأرض:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "IVA بنسبة 21 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "ITP الخاصة بالمنطقة ذاتية الحكم",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "IS",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "AJD فقط",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "pregunta": "الحد الأدنى الموصى به للهامش من المبيعات:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "5 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "25 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "pregunta": "يعرّف قانون LOE المطوّر في المادة:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "9",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "17",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "pregunta": "ينظّم CTE DB HR:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "الهيكل",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "الطاقة",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "الضجيج",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "الصحة العامة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "pregunta": "الاعتماد الإلزامي من النقابة وفق RD 1000/2010:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "التصميم المبدئي",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "المشروع التنفيذي وشهادة نهاية الأشغال",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "دراسة السوق",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "عقد البناء",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "pregunta": "ضريبة ICIO هي:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "ضريبة حكومية بنسبة 4 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "ضريبة بلدية بحد أقصى 4 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "ضريبة إقليمية",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "يدفعها المقاول دائماً",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "pregunta": "تأمين العشر سنوات إلزامي في:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "كل المباني",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "المباني التجارية فقط",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "المباني السكنية (باستثناء من يبني مسكنه المنفرد لنفسه)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "المباني التي تتجاوز 10 طوابق",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "pregunta": "المبيعات المسبقة التي يشترطها البنك عادة:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "20 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30–50 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "70 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "pregunta": "يوقّع محضر التوقيع على الأرض:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "المطوّر والبنك",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "مدير المشروع ومدير التنفيذ والمقاول",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "الموثّق والمطوّر",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "البلدية والمطوّر",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "pregunta": "السكوت الإداري في رخصة بناء جديد:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "إيجابي",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "سلبي (المادة 11.4 من TRLSRU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "يتوقف على رئيس البلدية",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "غير موجود",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "pregunta": "تتدخّل جهة الرقابة الفنية OCT أساساً في:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "المشروع المعماري",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "التسويق",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "الهيكل والأساسات والعزل المائي، لصالح شركة تأمين العشر سنوات",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "الرخصة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "pregunta": "الضمان على الأضرار الإنشائية:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "سنة واحدة (1)",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3 سنوات",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "10 سنوات",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "20 سنة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "pregunta": "تُحتسب ضمانات قانون LOE من:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "عقد كل مسكن",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "استلام الأشغال دون تحفظات (أو معالجة التحفظات)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "الرخصة",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "CFO",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 16,
+      "pregunta": "تتولى رخصة السكن الأول:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "المنطقة ذاتية الحكم",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "السجل العقاري",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "البلدية (رخصة أو تصريح مسؤول)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "النقابة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 17,
+      "pregunta": "ينشئ التقسيم الأفقي:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "اتحاد الملاك",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "الوحدات الخاصة بحصصها والأجزاء المشتركة",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "ضمان العشر سنوات",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "النظام الداخلي فقط",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 18,
+      "pregunta": "يُسلَّم سجل المبنى إلى:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "البلدية",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "البنك",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "اتحاد الملاك، ولكل مشترٍ ما يخصّه",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "OCT",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 19,
+      "pregunta": "الفحص (snagging) هو:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "اختيار التشطيبات",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "المراجعة وقائمة العيوب قبل التسليم",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "العقد الموثّق",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "إغلاق القرض",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 20,
+      "pregunta": "يدفع AJD عن رهن المشتري منذ 2018:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "المشتري",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "البنك",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "المطوّر",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "مناصفة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 21,
+      "pregunta": "ضريبة القيمة الزائدة البلدية عند بيع مسكن جديد لمستهلك:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "يدفعها المشتري",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "اتحاد الملاك",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "المطوّر، ولا يمكنه تحميلها",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "لا أحد",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 22,
+      "pregunta": "نسبة IS لكيان حديث التأسيس في أول فترتين ضريبيتين بقاعدة موجبة:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "25 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "30 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 23,
+      "pregunta": "الحد الأدنى لرأس مال الشركة SL بعد Ley 18/2022:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "60.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "1 €، مع قواعد حماية حتى 3.000 €",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "numero": 24,
+      "pregunta": "PEC دون IVA:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM + IVA",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "PEM + المصاريف العامة (13–17 %) + الربح الصناعي (6 %)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "PEM + الأتعاب",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "PEM × 2",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 25,
+      "pregunta": "المناطق التي تحتفظ بشهادة الصلاحية للسكن (cédula de habitabilidad) في 2026:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "مدريد وإقليم الباسك",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "الأندلس وغاليسيا",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "كتالونيا ونافارا وجزر الكناري وإكستريمادورا وجزر البليار ولا ريوخا وأستورياس ومورسيا",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "كلها",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 26,
+      "pregunta": "تُستخدم الطريقة المتبقية من أجل:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "حساب البناء",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "حساب السعر الأقصى للأرض",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "حساب IVA",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "تقييم المرافق المشتركة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "pregunta": "تُلزم ICT بتركيب:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "هوائيات 5G",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "RITI و RITS والشبكات (الألياف، والمحوري، والأزواج المجدولة) حتى كل مسكن",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "إنترنت مجاني",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "مقسم هاتفي",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "pregunta": "المبالغ المحصَّلة مقدّماً قبل التسليم يجب أن:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "تذهب إلى الحساب العام",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "تكون مضمونة فردياً وفي حساب خاص (DA 1.ª LOE)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "يُصرَّح بها للبلدية",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "تُردّ بعد سنة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "pregunta": "يُسحب قرض المطوّر:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "دفعة واحدة",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "حسب كشوف الأشغال",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "فقط مع وجود مشترين",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "مع السكن الأول",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 30,
+      "pregunta": "يكون منسّق السلامة أثناء التنفيذ إلزامياً عندما:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "تتجاوز PEM مبلغ 1 M€",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "تستمر الأشغال أكثر من 6 أشهر",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "تشارك عدة شركات، أو شركة وعاملون لحسابهم الخاص",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "يطلبه البنك",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 31,
+      "pregunta": "ينظّم CTE DB HE:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "الحرائق",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "الرطوبة",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "توفير الطاقة",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "إمكانية الوصول",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 32,
+      "pregunta": "دراسة إدارة المخلفات:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "اختيارية",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "جزء إلزامي من المشروع (RD 105/2008)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "يعدّها المقاول في النهاية",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "فقط في الترميم",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 33,
+      "pregunta": "هل يمكنك إلزام المشتري بالحلول محلّك في قرضك؟",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "نعم",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "لا، يمكنك فقط عرضه (المادة 89.3 من TRLGDCU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "في مدريد فقط",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "إذا طلبه البنك",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 34,
+      "pregunta": "في خطة الدفع المعتادة، يُدفع عند توقيع العقد الموثّق:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "20–30 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "50 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "70–85 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "100 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 35,
+      "pregunta": "مشروع بمعدل عائد داخلي (TIR) قدره 12 %:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "يمضي قُدماً",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "يُعاد النظر فيه: الهدف 15–20 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "خفض الأسعار",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "إطالة مدة الأشغال",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 36,
+      "pregunta": "يمسك سجل الأوامر والزيارات:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "المقاول",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "رئيس الورشة",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "الإدارة الفنية، ويُصادَق عليه من النقابة",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "منسّق السلامة",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 37,
+      "pregunta": "تخضع الخرسانة الإنشائية لـ:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "EHE-08",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "القانون الإنشائي (Código Estructural، RD 470/2021)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "REBT",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "LPH",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 38,
+      "pregunta": "بصفتك مطوّراً، في مواجهة غسل الأموال:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "ليست عليك أي التزامات",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "أنت جهة ملزَمة (Ley 10/2010)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "فقط إذا بعت لأجانب",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "البنك وحده",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 39,
+      "pregunta": "ضريبة IIVTNU هي:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "ضريبة البناء",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "ضريبة القيمة الزائدة البلدية (plusvalía)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "مؤشر",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "ضريبة على التجزئات السكنية",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 40,
+      "pregunta": "عند انتهاء المشروع، فإن الشركة ذات الغرض الخاص (SPE):",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "يجب حلّها",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "يجب أن تبقى نشطة",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "يمكن حلّها أو الاحتفاظ بها، مع العلم أن ضمانات قانون LOE تبقى سارية",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "تتحوّل إلى اتحاد ملاك",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}
