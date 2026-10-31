@@ -104,11 +104,19 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
         ->and($lessons[0]['title'])->toBe('Урок 1.1 — Определите продукт и найдите участок')
         ->and($lessons[0]['content_locale'])->toBe('ru')
         ->and($lessons[0]['content'])->toContain('Ley 12/2023')->toContain('CASA47')
-        // Not yet: the Spanish, with its language said.
-        ->and($lessons[2]['title'])->toStartWith('Урок 1.3')
-        ->and($lessons[2]['content_locale'])->toBe('es')
-        ->and($lessons[2]['content'])->toStartWith('- **Legal:**')
-        ->and(collect($module['blocks'])->pluck('body_locale')->unique()->all())->toBe(['es']);
+        // Module 1 is translated in full, its tables included.
+        ->and(collect($module['blocks'])->pluck('body_locale')->unique()->all())->toBe(['ru']);
+
+    // Not yet (module 2): the title translated, the text the Spanish, with
+    // its language said.
+    $next = $russian['modules'][1];
+    expect($next['lessons'][0]['title'])->toBe('Урок 2.1 — Счёт результатов девелопера (CRP)')
+        ->and($next['lessons'][0]['content_locale'])->toBe('es')
+        ->and($next['lessons'][0]['content'])->toBe(
+            Module::query()->where('course_id', $course->id)->where('order', 2)->first()
+                ->lessons()->orderBy('order')->first()->content_es,
+        )
+        ->and(collect($next['blocks'])->pluck('body_locale')->unique()->all())->toBe(['es']);
 
     expect(Module::query()->where('course_id', $course->id)->orderBy('order')->first()
         ->checklistItems()->orderBy('order')->first()->text_ru)
