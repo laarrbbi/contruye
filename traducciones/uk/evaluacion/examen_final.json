@@ -1,0 +1,1048 @@
+{
+  "titulo": "Підсумковий сертифікаційний іспит CONSTRUYE · Сертифікований девелопер · Іспанія",
+  "preguntas_total": 40,
+  "minimo": "32/40 (80 %)",
+  "duracion_minutos": 60,
+  "preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "3 m²t/m²s на ділянці 1.500 m² дають змогу збудувати:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1.500",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "4.500 m²",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "6.000",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "pregunta": "Перший документ Реєстру нерухомості перед купівлею:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Містобудівна довідка",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Nota simple",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотаріальний акт",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Кадастровий номер",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "pregunta": "Приватна особа продає вам ділянку:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "IVA 21 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "ITP автономної спільноти",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "IS",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Лише AJD",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "pregunta": "Рекомендована мінімальна маржа від продажів:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "5 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "25 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "pregunta": "LOE визначає девелопера в статті:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "9",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "17",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 6,
+      "pregunta": "CTE DB HR регулює:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Конструкції",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Енергію",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Шум",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Санітарно-гігієнічні вимоги",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 7,
+      "pregunta": "Обов’язкова віза колегії за RD 1000/2010:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Ескізний проєкт",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Робочий проєкт і підсумковий сертифікат завершення робіт",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Аналіз ринку",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Договір підряду",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 8,
+      "pregunta": "ICIO — це:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Державний податок 4 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Муніципальний податок із максимумом 4 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Регіональний податок",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Завжди сплачує підрядник",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 9,
+      "pregunta": "Десятирічна страховка обов’язкова для:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Усіх будівель",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Лише комерційних",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Житлових будівель (крім власного будівництва приватного будинку для себе)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Будівель понад 10 поверхів",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 10,
+      "pregunta": "Передпродажі, яких зазвичай вимагає банк:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "20 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30–50 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "70 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 11,
+      "pregunta": "Акт розбивки підписують:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Девелопер і банк",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Керівник проєкту, керівник виконання робіт і підрядник",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотаріус і девелопер",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Мерія й девелопер",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 12,
+      "pregunta": "Адміністративне мовчання щодо дозволу на нове будівництво:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Позитивне",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Негативне (ст. 11.4 TRLSRU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Залежить від мера",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Не існує",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 13,
+      "pregunta": "OCT бере участь передусім у:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Архітектурному проєкті",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Маркетингу",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Конструкціях, фундаменті й гідроізоляції — для страховика десятирічної відповідальності",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Дозволі",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 14,
+      "pregunta": "Гарантія на конструктивні пошкодження:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "1 рік",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3 роки",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "10 років",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "20 років",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 15,
+      "pregunta": "Гарантії LOE відраховуються від:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Нотаріального акта на кожну квартиру",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Приймання робіт без зауважень (або усунення зауважень)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Видачі дозволу",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "CFO",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 16,
+      "pregunta": "Дозвіл на заселення оформлює:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Автономна спільнота",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Реєстр",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Мерія (ліцензія або відповідальна декларація)",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Колегія",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 17,
+      "pregunta": "Горизонтальний поділ створює:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Спільноту власників",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Окремі приміщення з частками й спільні елементи",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Десятирічну гарантію",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Лише статут",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 18,
+      "pregunta": "Книгу будівлі передають:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Мерії",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Банку",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Спільноті власників, а кожному покупцю — його частину",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "OCT",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 19,
+      "pregunta": "Snagging — це:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Вибір оздоблення",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Перевірка й перелік дефектів перед передачею",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Нотаріальний акт",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Закриття кредиту",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 20,
+      "pregunta": "AJD за іпотеку покупця з 2018 року сплачує:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Покупець",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Банк",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Девелопер",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Навпіл",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 21,
+      "pregunta": "Муніципальний податок plusvalía під час продажу нового житла споживачеві:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Сплачує покупець",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Спільнота власників",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Девелопер, і перекласти його не можна",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Ніхто",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 22,
+      "pregunta": "Ставка IS для новоствореної організації в перші два періоди з позитивною базою:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "25 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "15 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "10 %",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "30 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 23,
+      "pregunta": "Мінімальний статутний капітал SL після Ley 18/2022:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "60.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "3.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "30.000 €",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "1 €, із захисними правилами до 3.000 €",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "numero": 24,
+      "pregunta": "PEC без IVA:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM + IVA",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "PEM + накладні витрати (13–17 %) + прибуток підрядника (6 %)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "PEM + гонорари",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "PEM × 2",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 25,
+      "pregunta": "Спільноти, що зберігають cédula de habitabilidad у 2026 році:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Мадрид і Країна Басків",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Андалусія й Галісія",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Каталонія, Наварра, Канари, Естремадура, Балеари, Ріоха, Астурія й Мурсія",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Усі",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 26,
+      "pregunta": "Залишковий метод слугує для того, щоб:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Розрахувати будівництво",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Розрахувати максимальну ціну землі",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Розрахувати IVA",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Оцінити спільні зони",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "pregunta": "ICT зобов’язує встановити:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Антени 5G",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "RITI, RITS і мережі (оптика, коаксіал і вита пара) до кожної квартири",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Безкоштовний інтернет",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Телефонну станцію",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "pregunta": "Суми, отримані авансом до передачі, мають:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Надходити на загальний рахунок",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Бути індивідуально гарантовані й розміщені на спеціальному рахунку (DA 1.ª LOE)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Декларуватися в мерії",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Повертатися через рік",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "pregunta": "Кредит девелоперу вибирають:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Одразу повністю",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "За актами виконаних робіт",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Лише за наявності покупців",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "З дозволом на заселення",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 30,
+      "pregunta": "Координатор з безпеки на етапі будівництва обов’язковий, коли:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "PEM перевищує 1 M€",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Будівництво триває понад 6 місяців",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Беруть участь кілька компаній або компанія й фізичні особи-підприємці",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Цього вимагає банк",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 31,
+      "pregunta": "CTE DB HE регулює:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Пожежну безпеку",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Вологість",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Енергозбереження",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Доступність",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 32,
+      "pregunta": "Дослідження щодо поводження з відходами:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Необов’язкове",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Обов’язкова частина проєкту (RD 105/2008)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Робить підрядник наприкінці",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Лише під час реконструкції",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 33,
+      "pregunta": "Чи можна зобов’язати покупця перейти на ваш кредит?",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Так",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Ні, лише запропонувати (ст. 89.3 TRLGDCU)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Лише в Мадриді",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Якщо цього вимагає банк",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 34,
+      "pregunta": "У звичайному графіку платежів під час підписання акта сплачується:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "20–30 %",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "50 %",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "70–85 %",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "100 %",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 35,
+      "pregunta": "Проєкт з IRR (TIR) 12 %:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Уперед",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Переглядається: мета — 15–20 %",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Знизити ціни",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Подовжити будівництво",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 36,
+      "pregunta": "Журнал розпоряджень і відвідувань веде:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Підрядник",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Виконроб",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Технічний нагляд, журнал засвідчує колегія",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Координатор з безпеки",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 37,
+      "pregunta": "Конструкційний бетон регулюється:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "EHE-08",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Будівельним кодексом конструкцій (Código Estructural, RD 470/2021)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "REBT",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "LPH",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 38,
+      "pregunta": "Як девелопер щодо відмивання коштів ви:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Не маєте обов’язків",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Є суб’єктом первинного фінансового моніторингу (Ley 10/2010)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Зобов’язані, лише якщо продаєте іноземцям",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Обов’язки лише в банку",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 39,
+      "pregunta": "IIVTNU — це:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Податок на будівництво",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Муніципальний податок на приріст вартості землі (plusvalía)",
+          "correcta": true
+        },
+        {
+          "letra": "C",
+          "texto": "Індекс",
+          "correcta": false
+        },
+        {
+          "letra": "D",
+          "texto": "Податок на котеджні містечка",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "numero": 40,
+      "pregunta": "Після завершення проєкту SPE:",
+      "opciones": [
+        {
+          "letra": "A",
+          "texto": "Має бути ліквідована",
+          "correcta": false
+        },
+        {
+          "letra": "B",
+          "texto": "Має продовжувати працювати",
+          "correcta": false
+        },
+        {
+          "letra": "C",
+          "texto": "Може бути ліквідована або залишена в резерві, з огляду на те, що гарантії LOE продовжують діяти",
+          "correcta": true
+        },
+        {
+          "letra": "D",
+          "texto": "Стає спільнотою власників",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}
