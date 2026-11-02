@@ -59,7 +59,30 @@ export interface CourseDetail {
   reviews_count?: number
   lessons_count: number
   total_duration_seconds: number
+  /** Every quiz question of the course, the final exam's included. */
+  questions_count?: number
+  has_final_exam?: boolean
   modules: PublicModule[]
+}
+
+/** The written text of a free-preview lesson, readable by any visitor. */
+export interface LessonPreview {
+  id: number
+  title: string
+  content_html: string | null
+  /** The language the text is actually in: 'es' while its translation is pending. */
+  content_locale: string
+}
+
+export function useLessonPreview(lessonId: number | null) {
+  return useQuery<LessonPreview>({
+    queryKey: ['lesson-preview', lessonId],
+    enabled: lessonId != null,
+    queryFn: async () => {
+      const { data } = await api.get(`/lessons/${lessonId}/preview`)
+      return data.data as LessonPreview
+    },
+  })
 }
 
 export function useCourse(slug: string | undefined) {

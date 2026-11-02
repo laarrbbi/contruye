@@ -129,12 +129,8 @@
         "a": "Vous pouvez payer par {{methods}}."
       },
       "access": {
-        "q": "Combien de temps ai-je accès à la formation ?",
-        "a": "L'accès est à vie : une fois inscrit, vous revoyez les leçons autant de fois que vous le souhaitez, sans limite de temps."
-      },
-      "mobile": {
-        "q": "Puis-je suivre la formation sur mon téléphone ?",
-        "a": "Oui, la plateforme fonctionne sur mobile, tablette et ordinateur. Il vous suffit d'une connexion internet."
+        "q": "Comment accéder à la formation ?",
+        "a": "Par carte, l'accès s'ouvre dès que le paiement est confirmé ; avec les autres moyens de paiement, dès que nous avons vérifié le justificatif. Il est à vie, sur mobile, tablette ou ordinateur."
       },
       "abroad": {
         "q": "Puis-je suivre la formation depuis l'étranger ?",
@@ -152,17 +148,37 @@
         "q": "Dois-je tout acheter d'un coup ?",
         "a": "Non. Les modules s'achètent à l'unité, selon l'étape où vous en êtes. Les réductions augmentent avec le nombre de modules, et l'accès complet reste l'option la moins chère par module."
       },
-      "partners": {
-        "q": "Des contacts de professionnels sont-ils fournis ?",
-        "a": "Oui. Chaque module se termine par les institutions et les partenaires à solliciter dans votre province pour cette phase, issus de l'annuaire des 52 provinces de la formation, avec la loi d'urbanisme et les impôts de votre communauté autonome. Les noms des ordres professionnels et des organismes se vérifient dans leurs moteurs de recherche officiels. Construye ne perçoit aucune commission sur ces contacts."
-      },
       "projectType": {
         "q": "La formation convient-elle à mon type de projet ?",
         "a": "La formation suit une promotion de logements à prix libre, du terrain au service après-vente. Une grande partie du parcours — foncier, permis, financement, chantier, régularisation — est la même pour les locaux et les usages mixtes. Le logement social (vivienda protegida) ajoute des exigences propres à chaque communauté autonome, qui ne sont pas traitées en détail."
       },
-      "phases": {
-        "q": "Que contient chaque module ?",
-        "a": "Les lois applicables et où s'adresser, les leçons par écrit, une checklist d'actions pour votre propre projet, les institutions et partenaires de votre province, et un quiz pour vérifier vos acquis. Les modules peuvent se suivre dans l'ordre ou directement celui dont vous avez besoin."
+      "whatIs": {
+        "q": "Qu'est-ce qu'une formation en promotion immobilière et qu'est-ce que je vais apprendre ?",
+        "a": "C'est une formation qui vous explique comment promouvoir des logements du début à la fin. Avec CONSTRUYE, vous parcourez les 12 phases : terrain, faisabilité, projets, permis, financement, chantier, commercialisation, régularisation, livraison et après-vente."
+      },
+      "needExperience": {
+        "q": "Faut-il de l'expérience, un diplôme ou beaucoup de capital pour devenir promoteur immobilier ?",
+        "a": "La loi n'exige aucun diplôme particulier pour être promoteur. Le capital nécessaire dépend de chaque projet : le module de financement et le modèle financier vous apprennent à le calculer avant de vous engager."
+      },
+      "stepByStep": {
+        "q": "Comment promouvoir un logement, pas à pas ?",
+        "a": "On commence par le terrain et son analyse d'urbanisme, on calcule la faisabilité, on commande les projets, on demande les permis, on finance et on construit. Ensuite on vend, on régularise l'ouvrage, on remet les clés et on assure l'après-vente. La formation développe chaque étape."
+      },
+      "anyProvince": {
+        "q": "La formation vaut-elle pour toutes les provinces d'Espagne ?",
+        "a": "Oui. Elle inclut la réglementation nationale, un annuaire de partenaires pour les 52 provinces et une annexe avec la fiscalité et l'urbanisme de chaque communauté autonome."
+      },
+      "financials": {
+        "q": "Qu'est-ce que le modèle financier de Financials ?",
+        "a": "C'est le tableur d'un professionnel qui calcule le coût total d'une promotion et le financement nécessaire. Il compte 17 feuilles, plus de 30 000 formules et un exemple résolu. Dans la formation, vous apprenez à le remplir et à l'interpréter, et la plateforme le calcule avec vos données."
+      },
+      "roles": {
+        "q": "Quelle différence entre promoteur, constructeur et agent immobilier ?",
+        "a": "Le promoteur décide, impulse et finance l'opération et répond devant l'acheteur. Le constructeur exécute les travaux et l'agent commercialise. Dans une petite promotion, une même personne peut tenir plusieurs rôles, et la formation vous explique les responsabilités de chacun."
+      },
+      "company": {
+        "q": "Puis-je promouvoir via une société à responsabilité limitée ?",
+        "a": "Oui, c'est le cas habituel. Depuis la Ley 18/2022, on peut constituer une S.L. avec un capital de 1 euro, sous conditions. La formation explique comment structurer la société de promotion."
       }
     }
   },
@@ -859,77 +875,29 @@
   },
   "landing": {
     "hero": {
-      "eyebrow": "Formation en ligne — Espagne",
-      "title": "La promotion immobilière en Espagne, phase par phase : du terrain à la remise des clés.",
-      "body": "Les 12 phases d'une promotion de logements à prix libre, dans l'ordre réel où elles se font : ce qu'il faut faire à chacune, les documents, les organismes, les délais et les erreurs qui coûtent le plus.",
-      "ctaPrimary": "Accéder à la formation complète",
+      "eyebrow": "La formation pour promouvoir des logements en Espagne, phase par phase",
+      "title": "Formation en promotion immobilière en Espagne : de l'idée à la remise des clés",
+      "body": "CONSTRUYE vous apprend à promouvoir des logements à prix libre pas à pas : les 12 phases, la loi qui s'applique à chacune, les partenaires de votre province et le modèle financier d'un professionnel. Une seule formation, de la recherche du terrain au service après-vente.",
+      "ctaPrimary": "Je veux commencer à promouvoir",
       "paymentNote": "Accès à vie : mobile, tablette, ordinateur. Complet ou module par module.",
-      "ctaSecondary_one": "Voir le programme — {{modules}}, une leçon en aperçu gratuit",
-      "ctaSecondary_other": "Voir le programme — {{modules}}, {{count}} leçons en aperçu gratuit",
-      "ctaSecondaryNoPreview": "Voir le programme — {{modules}}",
-      "statPhases": "modules, du terrain au service après-vente"
+      "ctaSecondary": "Voir le programme complet",
+      "trust": "Paiement unique de {{price}} · Accès à vie",
+      "imageAlt": "Formation en promotion immobilière – chantier de logements"
     },
     "eyebrow": {
-      "maze": "Le vrai obstacle",
-      "costOfError": "Le prix d'une erreur",
-      "method": "La méthode",
-      "toolkit": "Ce que vous recevez",
       "curriculum": "Le programme",
       "modular": "Module par module",
       "reviews": "Avis",
       "pricing": "Tarifs",
       "faq": "Vos questions",
       "forWhom": "Pour qui",
-      "howItWorks": "Comment ça marche"
-    },
-    "maze": {
-      "title": "Le capital ne suffit pas. Ce qui arrête les projets, ce sont les démarches.",
-      "lead": "Vous avez les fonds, peut-être même le terrain. Ce qui bloque vient après.",
-      "b1": "Permis de construire (licencia de obras)",
-      "b2": "Prêt promoteur (préstamo promotor)",
-      "b3": "Garantie des acomptes des acheteurs",
-      "b4": "Assurance décennale et contrôle technique (OCT)",
-      "b5": "Vente sur plan",
-      "b6": "Permis de première occupation",
-      "b7": "Déclaration d'ouvrage neuf et division horizontale",
-      "close": "Ce ne sont pas des problèmes d'argent : ce sont des problèmes d'ordre, de documents et de délais. Ils s'apprennent avec des années de métier, ou en les payant."
-    },
-    "costOfError": {
-      "title": "Dans une promotion, une erreur ne se paie pas en euros. Elle se paie en mois.",
-      "e1": "Un terrain acheté sans vérifier sa constructibilité : le projet qui n'y tient pas.",
-      "e2": "Un permis incomplet : des mois d'attente avec le terrain déjà payé et les intérêts qui courent.",
-      "e3": "Encaisser les acheteurs sans garantie ni compte spécial : une infraction à la loi et une banque qui ne finance pas.",
-      "e4": "Un constructeur mal choisi : chantier arrêté, budget rouvert et livraison retardée.",
-      "close": "Le prix de cette formation ? Ce que vous coûterait l'apprentissage d'une seule de ces phases sur votre propre chantier."
-    },
-    "method": {
-      "title": "Le parcours complet : du terrain à la remise des clés.",
-      "intro": "L'ordre réel d'une promotion de logements à prix libre, sans sauter aucune phase :",
-      "s1": "Terrain : recherche, analyse d'urbanisme, due diligence et acquisition, sur fonds propres ou avec financement externe.",
-      "s2": "Étude de faisabilité : études de marché, coûts, recettes et rentabilité.",
-      "s3": "Projets : études techniques, avant-projet, projet de base et d'exécution, visas et Plan de sécurité et de santé.",
-      "s4": "Permis : permis de construire, autorisations, exigences administratives et délivrance.",
-      "s5": "Financement et contrats : prêt promoteur, assurances, appel d'offres et contrats de travaux.",
-      "s6": "Construction : fondations, structure, clos-couvert, installations et finitions, du procès-verbal d'implantation au procès-verbal de fin de chantier.",
-      "s7": "Contrôle du chantier : maîtrise d'œuvre, OCT, qualité, budget, planning et assurance décennale.",
-      "s8": "Commercialisation : marketing, réservations, contrats et suivi des acheteurs.",
-      "s9": "Régularisation : fin de chantier, documentation technique, permis de première occupation et Registre foncier.",
-      "s10": "Pré-livraison : inspections, reprises, documentation et coordination avec le notaire.",
-      "s11": "Remise des clés : actes notariés, livret de l'immeuble, raccordements, copropriété, encaissement final et remise de la possession.",
-      "s12": "Après-vente et clôture : information de la copropriété, garanties, incidents et liquidation de la promotion.",
-      "close": "À chaque phase : quoi faire, dans quel ordre, avec quel document, et l'erreur qui coûte le plus à ce moment-là."
-    },
-    "toolkit": {
-      "title": "Vous ne repartez pas avec des notes. Vous repartez avec des outils.",
-      "checklistsTitle": "Une checklist par module",
-      "checklistsBody": "Les actions de chaque module, à cocher sur votre propre projet, avec vos propres tâches en plus. Votre feuille de route, enregistrée dans votre compte.",
-      "legalTitle": "Lois applicables et où s'adresser",
-      "legalBody": "Chaque module commence par les lois applicables et les institutions à solliciter : ce que vous demandez, ce que l'on vous remet, combien de temps cela prend et combien cela coûte.",
-      "partnersTitle": "Votre province, phase par phase",
-      "partnersBody": "L'annuaire des 52 provinces : pour chaque phase, l'institution ou le partenaire à solliciter dans la vôtre, avec la loi d'urbanisme et les impôts de votre communauté autonome.",
-      "sheetsTitle": "Le modèle financier, calculé",
-      "sheetsBody": "Le modèle d'un professionnel du secteur, avec ses 17 feuilles et ses formules, calculé sur la plateforme : coût par chapitres, prêt, cash-flow sur 48 mois et synthèse par logement.",
-      "footer": "Tout ce qui figure ici est dans la plateforme dès le premier jour."
+      "howItWorks": "Comment ça marche",
+      "sample": "Leçon d'essai",
+      "opportunity": "L'opportunité",
+      "programme": "Le programme",
+      "difference": "Ce qui fait la différence",
+      "included": "Ce que vous recevez",
+      "objections": "Vos doutes"
     },
     "curriculumIntro": {
       "title": "{{modules}}, {{lessons}}. Le détail fait la preuve.",
@@ -963,11 +931,6 @@
       "title": "Ce qu'en disent ceux qui l'ont déjà suivie.",
       "note": "Seuls ceux qui ont réellement acheté la formation peuvent donner leur avis. Construye Academy n'écrit, ne commande ni ne corrige aucun avis."
     },
-    "finalCta": {
-      "title": "{{modules}}. Du terrain aux clés. À vous de construire.",
-      "p1": "Le parcours complet d'une promotion de logements à prix libre en Espagne, phase par phase, avec la réglementation, les checklists et les institutions et partenaires de votre province.",
-      "p2": "Apprenez ces phases sur votre premier chantier, en payant chaque erreur. Ou ici, avant de signer chez le notaire."
-    },
     "faq": {
       "subtitle": "Les questions que se posent les promoteurs avant de se lancer.",
       "stillHaveQuestions": "Une autre question ?",
@@ -981,18 +944,6 @@
       "modulesWithFinancials_one": "{{count}} module et Financials",
       "modulesWithFinancials_other": "{{count}} modules et Financials"
     },
-    "forWhom": {
-      "title": "Vous avez un projet. Il vous manque le parcours.",
-      "lead": "Elle s'adresse à ceux qui passent à l'action, quel que soit leur point de départ.",
-      "p1Title": "Vous avez un terrain ou des fonds",
-      "p1Body": "Et vous voulez savoir comment se monte une promotion de bout en bout avant de vous engager.",
-      "p2Title": "Vous travaillez déjà dans la construction",
-      "p2Body": "Constructeur, architecte, conducteur de travaux, ingénieur : vous connaissez le chantier et voulez passer de l'autre côté, celui du promoteur.",
-      "p3Title": "Vous investissez depuis l'étranger",
-      "p3Body": "Vous préparez une promotion en Espagne depuis un autre pays et devez comprendre le parcours avant d'investir.",
-      "p4Title": "Vous êtes bloqué à une phase",
-      "p4Body": "Permis, prêt promoteur, vente sur plan, chantier : vous avancez déjà, et un seul module peut vous suffire."
-    },
     "howItWorks": {
       "title": "Trois étapes entre vous et la première leçon.",
       "s1Title": "Choisissez",
@@ -1005,6 +956,160 @@
       "s2Mail": "Un e-mail vous confirme que l'accès est ouvert.",
       "s3Title": "Apprenez",
       "s3Body": "Sur mobile, tablette ou ordinateur, à votre rythme et à vie. Facture sur demande."
+    },
+    "cta": {
+      "access": "Je veux accéder à la formation",
+      "enter": "Je veux rejoindre CONSTRUYE"
+    },
+    "figures": {
+      "title": "Ce qui est déjà prêt et vous attend dès le premier jour",
+      "phases": "phases de la promotion, du terrain au service après-vente",
+      "lessons": "leçons : {{process}} sur le processus et {{financial}} d'analyse financière",
+      "provinces": "provinces avec leur annuaire de partenaires et d'institutions",
+      "sheets": "feuilles du modèle financier d'un professionnel, avec plus de 30 000 formules",
+      "questions": "questions d'évaluation, examen final compris",
+      "questionsNoExam": "questions d'évaluation"
+    },
+    "promises": {
+      "p1Title": "Vous saurez quoi faire et dans quel ordre.",
+      "p1Body": "Douze phases avec leurs étapes, leurs délais et les erreurs qui coûtent le plus cher.",
+      "p2Title": "Vous saurez à quelle administration vous adresser et quelle loi s'applique.",
+      "p2Body": "Mairie, registre foncier, notaire, ordres professionnels et la règle qui s'applique à chaque étape.",
+      "p3Title": "Vous saurez si une promotion est rentable avant d'acheter le terrain.",
+      "p3Body": "Avec le même modèle financier qu'utilise un professionnel."
+    },
+    "sample": {
+      "title": "Lisez une leçon entière avant de payer.",
+      "body": "Les leçons d'essai se lisent en entier, gratuitement et sans inscription : jugez vous-même du niveau de détail.",
+      "open": "Lire la leçon"
+    },
+    "opportunity": {
+      "title": "Chaque année, il se forme plus de ménages qu'il ne se construit de logements. Cet écart est votre opportunité",
+      "lead": "L'Espagne manque de logements, les prix montent et l'État a approuvé un plan de 7 000 millions d'euros pour stimuler l'offre. Qui sait promouvoir a devant lui le marché à la plus forte demande non satisfaite depuis des années.",
+      "d1Label": "Nouveaux ménages par an en 2026 (demande structurelle)",
+      "d1Figure": "223 000",
+      "d2Label": "Logements mis en chantier en 2026",
+      "d2Figure": "153 000",
+      "d2Note": "139 000 en 2025 ; 170 000 prévus en 2027",
+      "d3Label": "Écart annuel entre la demande et les mises en chantier",
+      "d3Figure": "environ 70 000 logements",
+      "d4Label": "Déficit cumulé en 2026",
+      "d4Figure": "807 000 logements",
+      "d4Note": "885 000 prévus en 2027",
+      "d5Label": "Déficit estimé en 2028",
+      "d5Figure": "1 million de logements",
+      "d6Label": "Logements libres achevés par an",
+      "d6Figure": "90 000–100 000",
+      "d6Note": "sans progression ces dernières années",
+      "d7Label": "Prix des logements, premier trimestre 2026",
+      "d7Figure": "+12,9 % sur un an",
+      "d7Note": "ancien +13,5 %, neuf +9,1 %",
+      "d8Label": "Plan national du logement 2026-2030",
+      "d8Figure": "7 000 millions d'euros",
+      "d8Note": "dont au moins 40 % pour la construction et l'acquisition de logements",
+      "sourceBbva": "BBVA Research, juillet 2026",
+      "sourceBde": "Banco de España, octobre 2026",
+      "sourceIne": "INE",
+      "sourcePlan": "Plan Estatal de Vivienda",
+      "via": "via {{site}}",
+      "caveat": "Les estimations du déficit varient selon l'organisme et la méthode (la Banco de España, BBVA Research et CaixaBank Research ne s'accordent pas sur le chiffre exact), mais toutes vont dans le même sens.",
+      "meansTitle": "Ce que cela signifie pour vous",
+      "m1Title": "La demande existe déjà.",
+      "m1Body": "Ce n'est pas une prévision : chaque année se forment quelque 223 000 ménages et 153 000 logements sont mis en chantier.",
+      "m2Title": "Le secteur réagit déjà.",
+      "m2Body": "De 139 000 logements mis en chantier en 2025 à 153 000 en 2026 (+10 %), et 170 000 prévus en 2027.",
+      "m3Title": "Il y a un soutien public.",
+      "m3Body": "Le plan national donne la priorité à la construction neuve et industrialisée, et les logements bâtis avec ses fonds seront protégés de façon permanente.",
+      "m4Title": "L'opportunité n'est pas automatique.",
+      "m4Body": "Avec un foncier et des coûts en hausse, la marge se gagne dans l'étude de faisabilité. Qui achète un terrain sans faire les comptes perd. C'est pourquoi CONSTRUYE commence par le terrain et le compte de résultat.",
+      "cta": "Voir comment se fait une promotion, phase par phase"
+    },
+    "programme": {
+      "title": "Du terrain au service après-vente : les {{phases}} phases d'une promotion, expliquées pas à pas",
+      "lead": "Chaque module vous dit quoi faire, dans quel ordre, à qui vous adresser et quelle loi s'applique. Avec des listes de contrôle pratiques, un quiz par module et un examen final.",
+      "p1Name": "Terrain",
+      "p1": "Trouver des terrains, lire les règles d'urbanisme et acheter sans surprise juridique ni urbanistique",
+      "p2Name": "Étude de faisabilité",
+      "p2": "Calculer le coût, le financement et la marge avant d'engager le moindre euro",
+      "p3Name": "Projets techniques",
+      "p3": "Engager et coordonner l'architecte, les ingénieurs et la direction de chantier",
+      "p4Name": "Permis et autorisations",
+      "p4": "Savoir quel permis demander, à qui, et ce que signifie le silence de l'administration",
+      "p5Name": "Financement et contrats",
+      "p5": "Monter le prêt promoteur, les garanties et le contrat de travaux",
+      "p6Name": "Construction",
+      "p6": "Organiser le chantier, les délais et les assurances obligatoires",
+      "p7Name": "Contrôle du chantier",
+      "p7": "Surveiller les situations de travaux, la qualité et les dérives de coût",
+      "p8Name": "Commercialisation",
+      "p8": "Fixer le prix et vendre sur plan avec les garanties qu'exige la loi",
+      "p9Name": "Régularisation",
+      "p9": "Clore la fin de chantier, la déclaration d'ouvrage neuf, la division horizontale et l'habitabilité",
+      "p10Name": "Pré-livraison",
+      "p10": "Visiter le logement avec l'acheteur et corriger avant de livrer",
+      "p11Name": "Remise des clés",
+      "p11": "Livrer avec les documents en règle et sans conflit",
+      "p12Name": "Après-vente et clôture",
+      "p12": "Traiter les garanties et les réclamations, et clôturer la promotion financièrement"
+    },
+    "difference": {
+      "title": "Trois choses qui font la différence",
+      "financialsTitle": "Financials : le modèle financier d'un professionnel, dans la formation",
+      "financialsBody": "Neuf leçons et un modèle de 17 feuilles avec plus de 30 000 formules qui calcule le coût total d'une promotion : terrain, construction, viabilisation, études, permis, financement et gestion. Il est utilisé tel que le professionnel l'a conçu, avec son exemple réel résolu, pour que vous voyiez ce que donne une promotion avant de risquer votre argent.",
+      "partnersTitle": "Des partenaires dans les 52 provinces",
+      "partnersBody": "Pour chaque phase, un annuaire des organismes et des professionnels avec qui vous travaillerez dans votre province. Vous ne repartez pas de zéro en entrant dans une nouvelle mairie.",
+      "lawsTitle": "Les lois et les impôts de votre communauté",
+      "lawsBody": "La réglementation nationale (loi sur le sol, loi d'organisation de la construction ou LOE, code technique de la construction ou CTE) et une annexe avec la fiscalité et l'urbanisme de chaque communauté autonome, pour que ce que vous apprenez vaille à Alicante, à Madrid ou à Séville.",
+      "extrasTitle": "Et aussi",
+      "extra1": "Des fichiers pour travailler : le modèle financier en Excel (complet et simplifié), l'annuaire des partenaires en Excel et toute la formation en PDF.",
+      "extra2": "Une checklist par module, à cocher sur votre propre projet et à garder dans votre compte.",
+      "extra3": "Des quiz par module et un examen final pour vérifier que vous avez tout assimilé."
+    },
+    "forWhom": {
+      "title": "CONSTRUYE est-il fait pour vous ?",
+      "yesTitle": "C'est pour vous si…",
+      "yes1": "Vous voulez réaliser votre première promotion et ne savez pas par où commencer.",
+      "yes2": "Vous êtes architecte, constructeur, agent immobilier ou investisseur et voulez franchir le pas vers la promotion.",
+      "yes3": "Vous avez un terrain ou une opportunité et devez savoir si elle est rentable.",
+      "yes4": "Vous voulez créer votre propre société de promotion, avec méthode.",
+      "noTitle": "Ce n'est pas pour vous si…",
+      "no1": "Vous cherchez de l'argent rapide et sans risque : la promotion comporte des risques, et la formation vous apprend à les mesurer, pas à les faire disparaître par magie.",
+      "no2": "Vous visez le logement social : la formation porte sur la promotion de logements à prix libre."
+    },
+    "included": {
+      "title": "Tout ce que comprend la formation",
+      "colItem": "Inclus",
+      "colUse": "À quoi cela vous sert",
+      "i1": "{{modules}} modules et {{lessons}} leçons sur le processus",
+      "i1Use": "Savoir quoi faire à chaque phase",
+      "i2": "Financials : {{lessons}} leçons et le modèle du professionnel",
+      "i2Use": "Calculer si une promotion est rentable avant d'acheter",
+      "i3": "Annuaire des partenaires des 52 provinces",
+      "i3Use": "Savoir qui appeler dans votre région",
+      "i4": "Annexe sur la fiscalité et l'urbanisme par communauté autonome",
+      "i4Use": "Appliquer les règles et les impôts de votre communauté",
+      "i5": "Une checklist par module et les fichiers : modèle et annuaire en Excel, formation en PDF",
+      "i5Use": "Travailler avec les documents dès le premier jour",
+      "i6": "Quiz par module et examen final",
+      "i6Use": "Vérifier ce que vous avez appris"
+    },
+    "objections": {
+      "title": "Les doutes qui freinent l'achat, levés",
+      "o1Q": "« Je n'ai pas d'expérience. »",
+      "o1A": "La formation part de zéro et explique chaque phase dans l'ordre.",
+      "o2Q": "« Je n'ai pas beaucoup de capital. »",
+      "o2A": "Le module de financement et le modèle vous montrent combien de fonds propres et de dette exige chaque projet, avant de vous engager.",
+      "o3Q": "« C'est trop technique. »",
+      "o3A": "Chaque module se termine par une checklist d'étapes pratiques et un quiz.",
+      "o4Q": "« Ma province est différente. »",
+      "o4A": "C'est pour cela que la formation inclut les partenaires des 52 provinces et la fiscalité par communauté."
+    },
+    "legalNotice": "La promotion immobilière comporte des risques. CONSTRUYE est une formation et ne garantit aucun résultat financier.",
+    "finalCta": {
+      "title": "Chaque année, il manque des milliers de logements. La question est de savoir si vous allez promouvoir ou regarder",
+      "p1": "Vous avez la méthode en {{phases}} phases, le modèle financier d'un professionnel, les partenaires de votre province et les lois qui s'appliquent à chaque étape. Il ne manque plus que vous commenciez.",
+      "ps": "P.-S. : Pendant que vous hésitez, le déficit de logements continue de se creuser. Chaque phase de la formation est pensée pour vous faire passer de la compréhension du marché à l'action.",
+      "questions": "Des questions ? Écrivez-nous."
     }
   },
   "checklist": {
@@ -1043,8 +1148,8 @@
   },
   "seo": {
     "home": {
-      "title": "Formation à la promotion immobilière en Espagne",
-      "description": "Formation en ligne à la promotion immobilière en Espagne : terrain, faisabilité, projet, permis de construire, prêt promoteur, chantier, vente sur plan et remise des clés. {{modules}} modules, un par phase."
+      "title": "Formation en promotion immobilière en Espagne",
+      "description": "Apprenez à promouvoir des logements en Espagne pas à pas : {{modules}} phases, les lois, des partenaires dans les 52 provinces et un modèle financier professionnel."
     },
     "catalog": {
       "title": "Formations à la promotion immobilière en Espagne",

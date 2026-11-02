@@ -24,6 +24,7 @@ use App\Http\Controllers\Api\CourseFileController;
 use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\FinancialsController;
 use App\Http\Controllers\Api\LearnController;
+use App\Http\Controllers\Api\LessonPreviewController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PlaybackController;
@@ -53,6 +54,8 @@ Route::get('/courses/{course:slug}/reviews', [ReviewController::class, 'index'])
 // Playback: free-preview lessons are playable by guests; everything else
 // requires an enrolled (or admin) authenticated user — enforced in-controller.
 Route::get('/lessons/{lesson}/playback', [PlaybackController::class, 'show']);
+// The written sample of the same free-preview lessons, read on the sales page.
+Route::get('/lessons/{lesson}/preview', [LessonPreviewController::class, 'show']);
 
 // Payment provider webhooks (server-to-server, signature-verified in-controller)
 Route::post('/webhooks/stripe', [WebhookController::class, 'stripe']);

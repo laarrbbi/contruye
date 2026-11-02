@@ -4,6 +4,7 @@ use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
+use App\Models\Quiz;
 use App\Models\User;
 
 it('lists only published courses', function () {
@@ -86,4 +87,22 @@ it('keeps is_enrolled false for a user whose enrollment expired', function () {
         ->getJson('/api/courses/expired-course')
         ->assertOk()
         ->assertJsonPath('data.is_enrolled', false);
+});
+
+it('counts every quiz question of a course, the final exam included, for the sales page', function () {
+    $course = Course::factory()->create(['slug' => 'assessed-course']);
+    Quiz::factory()->forModule(Module::factory()->for($course)->create(['order' => 1]))->create();
+    Quiz::factory()->forModule(Module::factory()->for($course)->create(['order' => 2]))
+        ->create(['questions' => array_slice(Quiz::factory()->make()->questions, 0, 3)]);
+
+    $this->getJson('/api/courses/assessed-course')
+        ->assertOk()
+        ->assertJsonPath('data.questions_count', 7)
+        ->assertJsonPath('data.has_final_exam', false);
+
+    Quiz::factory()->finalExam($course)->create();
+
+    $this->getJson('/api/courses/assessed-course')
+        ->assertJsonPath('data.questions_count', 11)
+        ->assertJsonPath('data.has_final_exam', true);
 });

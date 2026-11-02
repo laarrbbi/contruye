@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CourseResource;
 use App\Models\Course;
 use App\Models\Enrollment;
+use App\Models\Quiz;
 use App\Models\Review;
 use App\Services\CourseSocialProof;
 use App\Services\PricingService;
@@ -60,6 +61,12 @@ class CourseController extends Controller
             ->load('modules.lessons');
 
         CourseSocialProof::attach($course);
+
+        // The sales page counts the assessment instead of typing "166
+        // questions": a quiz added or cut changes the figure on its own.
+        $quizzes = $course->quizzes()->get(['id', 'kind', 'questions']);
+        $course->setAttribute('questions_count', $quizzes->sum(fn (Quiz $quiz) => $quiz->questionCount()));
+        $course->setAttribute('has_final_exam', $quizzes->contains('kind', 'final'));
 
         $user = $request->user('sanctum');
         $ownedModuleIds = $user?->accessibleModuleIds($course) ?? collect();

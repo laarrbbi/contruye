@@ -129,12 +129,8 @@
         "a": "Puedes pagar con {{methods}}."
       },
       "access": {
-        "q": "¿Durante cuánto tiempo tengo acceso al curso?",
-        "a": "El acceso es de por vida: una vez inscrito, puedes ver las lecciones tantas veces como quieras, sin límite de tiempo."
-      },
-      "mobile": {
-        "q": "¿Puedo seguir el curso desde el móvil?",
-        "a": "Sí, la plataforma funciona en móvil, tableta y ordenador. Solo necesitas conexión a internet."
+        "q": "¿Cómo accedo al curso?",
+        "a": "Con tarjeta, el acceso se abre en cuanto se confirma el pago; con los demás medios de pago, en cuanto comprobamos el justificante. Es de por vida, en el móvil, la tableta o el ordenador."
       },
       "abroad": {
         "q": "¿Puedo seguir el curso desde fuera de España?",
@@ -152,17 +148,37 @@
         "q": "¿Tengo que comprarlo todo de una vez?",
         "a": "No. Los módulos se compran sueltos, según el punto en el que estés. Los descuentos crecen con el número de módulos, y el acceso completo sigue siendo la opción más barata por módulo."
       },
-      "partners": {
-        "q": "¿Se facilitan contactos de profesionales?",
-        "a": "Sí. Cada módulo termina con las instituciones y los partners a los que ir en tu provincia para esa fase, del directorio de las 52 provincias del curso, con la ley urbanística y los impuestos de tu comunidad. Los nombres de colegios y organismos se confirman en sus buscadores oficiales. Construye no cobra comisión por estos contactos."
-      },
       "projectType": {
         "q": "¿Sirve para mi tipo de proyecto?",
         "a": "El curso sigue una promoción de viviendas de renta libre, del solar a la postventa. Buena parte del recorrido —suelo, licencias, financiación, obra, legalización— es la misma para locales y usos mixtos. La vivienda protegida añade requisitos de cada comunidad autónoma que no se tratan en detalle."
       },
-      "phases": {
-        "q": "¿Qué incluye cada módulo?",
-        "a": "Las leyes que aplican y dónde ir, sus lecciones por escrito, una checklist de acciones para tu propio proyecto, las instituciones y partners de tu provincia, y un quiz para comprobar lo aprendido. Los módulos se pueden seguir en orden o ir directamente al que necesitas."
+      "whatIs": {
+        "q": "¿Qué es un curso de promoción inmobiliaria y qué voy a aprender?",
+        "a": "Es una formación que te explica cómo promover viviendas de principio a fin. En CONSTRUYE recorres las 12 fases: solar, viabilidad, proyectos, licencias, financiación, obra, comercialización, legalización, entrega y postventa."
+      },
+      "needExperience": {
+        "q": "¿Necesito experiencia, título o mucho capital para ser promotor inmobiliario?",
+        "a": "La ley no exige una titulación concreta para ser promotor. El capital que necesitas depende de cada proyecto: el módulo de financiación y la plantilla financiera te enseñan a calcularlo antes de comprometerte."
+      },
+      "stepByStep": {
+        "q": "¿Cómo se promueve una vivienda paso a paso?",
+        "a": "Se empieza por el solar y su análisis urbanístico, se calcula la viabilidad, se encargan los proyectos, se piden las licencias, se financia y se construye. Después se vende, se legaliza la obra, se entregan las llaves y se atiende la postventa. El curso desarrolla cada paso."
+      },
+      "anyProvince": {
+        "q": "¿El curso sirve para cualquier provincia de España?",
+        "a": "Sí. Incluye la normativa estatal, un directorio de partners para las 52 provincias y un anexo con la fiscalidad y el urbanismo de cada comunidad autónoma."
+      },
+      "financials": {
+        "q": "¿Qué es la plantilla financiera de Financials?",
+        "a": "Es la hoja de cálculo de un profesional que calcula el coste total de una promoción y la financiación necesaria. Tiene 17 hojas, más de 30.000 fórmulas y un ejemplo resuelto. En el curso aprendes a rellenarla e interpretarla, y la plataforma la calcula con tus datos."
+      },
+      "roles": {
+        "q": "¿Qué diferencia hay entre promotor, constructor y agente inmobiliario?",
+        "a": "El promotor decide, impulsa y financia la obra y responde ante el comprador. El constructor la ejecuta y el agente comercializa. En una promoción pequeña, una misma persona puede ocuparse de varios papeles, y el curso te explica las responsabilidades de cada uno."
+      },
+      "company": {
+        "q": "¿Puedo promover a través de una sociedad limitada?",
+        "a": "Sí, es lo habitual para promover. Desde la Ley 18/2022 se puede constituir una S.L. con un capital de 1 euro, con condiciones. El curso explica cómo plantear la sociedad promotora."
       }
     }
   },
@@ -859,77 +875,29 @@
   },
   "landing": {
     "hero": {
-      "eyebrow": "Curso online — España",
-      "title": "La promoción inmobiliaria en España, fase por fase: del solar a la entrega de llaves.",
-      "body": "Las 12 fases de una promoción de viviendas de renta libre, en el orden real en que se hacen: lo que toca en cada una, los documentos, los organismos, los plazos y los errores que más cuestan.",
-      "ctaPrimary": "Acceder al curso completo",
+      "eyebrow": "El curso para promover vivienda en España, fase a fase",
+      "title": "Curso de promoción inmobiliaria en España: de la idea a la entrega de llaves",
+      "body": "CONSTRUYE te enseña a promover viviendas de renta libre paso a paso: las 12 fases, la ley que se aplica en cada una, los partners de tu provincia y la plantilla financiera de un profesional. Un solo curso, de la búsqueda del solar a la postventa.",
+      "ctaPrimary": "Quiero empezar a promover",
       "paymentNote": "Acceso de por vida: móvil, tableta, ordenador. Completo o módulo a módulo.",
-      "ctaSecondary_one": "Ver el programa — {{modules}}, una lección de vista previa gratuita",
-      "ctaSecondary_other": "Ver el programa — {{modules}}, {{count}} lecciones de vista previa gratuita",
-      "ctaSecondaryNoPreview": "Ver el programa — {{modules}}",
-      "statPhases": "módulos, del solar a la postventa"
+      "trust": "Pago único de {{price}} · Acceso de por vida",
+      "imageAlt": "Curso de promoción inmobiliaria – obra de viviendas",
+      "ctaSecondary": "Ver el programa completo"
     },
     "eyebrow": {
-      "maze": "El verdadero obstáculo",
-      "costOfError": "El precio de un error",
-      "method": "El método",
-      "toolkit": "Lo que recibes",
       "curriculum": "El programa",
       "modular": "Módulo a módulo",
       "reviews": "Opiniones",
       "pricing": "Precios",
       "faq": "Tus preguntas",
       "forWhom": "Para quién",
-      "howItWorks": "Cómo funciona"
-    },
-    "maze": {
-      "title": "El capital no basta. Lo que para los proyectos es la tramitación.",
-      "lead": "Tienes los fondos, quizá incluso el solar. Lo que bloquea viene después.",
-      "b1": "Licencia de obras",
-      "b2": "Préstamo promotor",
-      "b3": "Garantía de las cantidades a cuenta",
-      "b4": "Seguro decenal y OCT",
-      "b5": "Venta sobre plano",
-      "b6": "Licencia de primera ocupación",
-      "b7": "Obra nueva y división horizontal",
-      "close": "No son problemas de dinero: son de orden, de documentos y de plazos. Se aprenden con años de oficio, o pagándolos."
-    },
-    "costOfError": {
-      "title": "En una promoción, un error no se paga en euros. Se paga en meses.",
-      "e1": "Un solar comprado sin comprobar su edificabilidad: el proyecto que no cabe en él.",
-      "e2": "Una licencia incompleta: meses de espera con el suelo ya pagado y los intereses corriendo.",
-      "e3": "Cobrar a los compradores sin garantía ni cuenta especial: un incumplimiento legal y un banco que no financia.",
-      "e4": "Un constructor mal elegido: obra parada, presupuesto reabierto y entrega retrasada.",
-      "close": "¿El precio de este curso? Lo que te costaría aprender una sola de estas fases en tu propia obra."
-    },
-    "method": {
-      "title": "El recorrido completo: del solar a la entrega de llaves.",
-      "intro": "El orden real de una promoción de viviendas de renta libre, sin saltarse ninguna fase:",
-      "s1": "Solar: búsqueda, análisis urbanístico, due diligence y adquisición, con financiación propia o externa.",
-      "s2": "Análisis de viabilidad: estudios de mercado, costes, ingresos y rentabilidad.",
-      "s3": "Proyectos: estudios técnicos, anteproyecto, proyecto básico y de ejecución, visados y Plan de Seguridad y Salud.",
-      "s4": "Licencias: licencia de obras, autorizaciones, requisitos administrativos y otorgamiento.",
-      "s5": "Financiación y contratación: préstamo promotor, seguros, licitación y contratos de obra.",
-      "s6": "Construcción: cimentación, estructura, cerramientos, instalaciones y acabados, del acta de replanteo al acta final de obra.",
-      "s7": "Control de la obra: dirección facultativa, OCT, calidad, presupuesto, planificación y seguro decenal.",
-      "s8": "Comercialización: marketing, reservas, contratos y seguimiento de compradores.",
-      "s9": "Legalización: final de obra, documentación técnica, licencia de primera ocupación y Registro.",
-      "s10": "Preentrega: inspecciones, repasos, documentación y coordinación notarial.",
-      "s11": "Entrega de llaves: escrituras, libro del edificio, suministros, comunidad de propietarios, cobro final y entrega de la posesión.",
-      "s12": "Postventa y cierre: información a la comunidad, garantías, incidencias y liquidación de la promoción.",
-      "close": "En cada fase: qué hacer, en qué orden, con qué documento, y el error que más cuesta en ese momento."
-    },
-    "toolkit": {
-      "title": "No te llevas apuntes. Te llevas herramientas.",
-      "checklistsTitle": "Una checklist por módulo",
-      "checklistsBody": "Las acciones de cada módulo, para marcarlas en tu propio proyecto y añadir tus propias tareas. Tu hoja de ruta, guardada en tu cuenta.",
-      "legalTitle": "Leyes que aplican y dónde ir",
-      "legalBody": "Cada módulo empieza con las leyes que aplican y con las instituciones a las que ir: qué pides, qué te dan, cuánto tarda y cuánto cuesta.",
-      "partnersTitle": "Tu provincia, fase a fase",
-      "partnersBody": "El directorio de las 52 provincias: para cada fase, la institución o el partner al que ir en la tuya, con la ley urbanística y los impuestos de tu comunidad.",
-      "sheetsTitle": "La plantilla financiera, calculada",
-      "sheetsBody": "La plantilla de un profesional del sector, con sus 17 hojas y sus fórmulas, calculada en la plataforma: coste por capítulos, préstamo, cash-flow de 48 meses y resumen por vivienda.",
-      "footer": "Todo lo que aparece aquí está dentro de la plataforma desde el primer día."
+      "howItWorks": "Cómo funciona",
+      "sample": "Lección de muestra",
+      "opportunity": "La oportunidad",
+      "programme": "El programa",
+      "difference": "Lo que marca la diferencia",
+      "included": "Qué recibes",
+      "objections": "Tus dudas"
     },
     "curriculumIntro": {
       "title": "{{modules}}, {{lessons}}. El detalle es la prueba.",
@@ -963,11 +931,6 @@
       "title": "Lo que dicen quienes ya lo han seguido.",
       "note": "Solo pueden opinar quienes han comprado el curso de verdad. Construye Academy no escribe, encarga ni corrige ninguna opinión."
     },
-    "finalCta": {
-      "title": "{{modules}}. Del solar a las llaves. Ahora te toca construir.",
-      "p1": "El recorrido completo de una promoción de viviendas de renta libre en España, fase por fase, con la normativa, las checklists y las instituciones y partners de tu provincia.",
-      "p2": "Aprende estas fases en tu primera obra, pagando cada error. O aquí, antes de firmar en la notaría."
-    },
     "faq": {
       "subtitle": "Las preguntas que se hacen los promotores antes de lanzarse.",
       "stillHaveQuestions": "¿Otra pregunta?",
@@ -981,18 +944,6 @@
       "modulesWithFinancials_one": "{{count}} módulo y Financials",
       "modulesWithFinancials_other": "{{count}} módulos y Financials"
     },
-    "forWhom": {
-      "title": "Tienes un proyecto. Te falta el recorrido.",
-      "lead": "Está pensado para quien pasa a la acción, sea cual sea su punto de partida.",
-      "p1Title": "Tienes un solar o fondos",
-      "p1Body": "Y quieres saber cómo se monta una promoción de principio a fin antes de comprometer nada.",
-      "p2Title": "Ya trabajas en la construcción",
-      "p2Body": "Constructor, arquitecto, aparejador, ingeniero: conoces la obra y quieres pasar al otro lado, al del promotor.",
-      "p3Title": "Inviertes desde fuera de España",
-      "p3Body": "Preparas una promoción en España desde otro país y necesitas entender el recorrido antes de invertir.",
-      "p4Title": "Estás atascado en una fase",
-      "p4Body": "Licencia, préstamo promotor, venta sobre plano, obra: ya avanzas, y puede bastarte un solo módulo."
-    },
     "howItWorks": {
       "title": "Tres pasos entre tú y la primera lección.",
       "s1Title": "Elige",
@@ -1005,6 +956,160 @@
       "s2Mail": "Un correo te confirma que el acceso está abierto.",
       "s3Title": "Aprende",
       "s3Body": "En el móvil, la tableta o el ordenador, a tu ritmo y de por vida. Factura bajo petición."
+    },
+    "cta": {
+      "access": "Quiero acceder al curso",
+      "enter": "Quiero entrar en CONSTRUYE"
+    },
+    "figures": {
+      "title": "Lo que ya está hecho y te espera el primer día",
+      "phases": "fases de la promoción, del solar a la postventa",
+      "lessons": "lecciones: {{process}} del proceso y {{financial}} de análisis financiero",
+      "provinces": "provincias con su directorio de partners e instituciones",
+      "sheets": "hojas de la plantilla financiera de un profesional, con más de 30.000 fórmulas",
+      "questions": "preguntas de evaluación, con examen final",
+      "questionsNoExam": "preguntas de evaluación"
+    },
+    "promises": {
+      "p1Title": "Sabrás qué hacer y en qué orden.",
+      "p1Body": "Doce fases con sus pasos, sus plazos y los errores que más dinero cuestan.",
+      "p2Title": "Sabrás a qué administración ir y qué ley manda.",
+      "p2Body": "Ayuntamiento, registro, notaría, colegios profesionales y la norma que aplica en cada paso.",
+      "p3Title": "Sabrás si una promoción sale rentable antes de comprar el solar.",
+      "p3Body": "Con la misma plantilla financiera que usa un profesional."
+    },
+    "sample": {
+      "title": "Lee una lección entera antes de pagar.",
+      "body": "Las lecciones de muestra se leen completas y gratis, sin registrarte: juzga tú mismo el nivel de detalle.",
+      "open": "Leer la lección"
+    },
+    "opportunity": {
+      "title": "Cada año se forman más hogares que viviendas se construyen. Esa brecha es tu oportunidad",
+      "lead": "En España faltan viviendas, los precios suben y el Estado ha aprobado un plan de 7.000 millones de euros para impulsar la oferta. Quien sabe promover tiene delante el mercado con más demanda sin cubrir de los últimos años.",
+      "d1Label": "Hogares nuevos al año en 2026 (demanda estructural)",
+      "d1Figure": "223.000",
+      "d2Label": "Viviendas iniciadas en 2026",
+      "d2Figure": "153.000",
+      "d2Note": "139.000 en 2025; 170.000 previstas en 2027",
+      "d3Label": "Brecha anual entre demanda y obra iniciada",
+      "d3Figure": "unas 70.000 viviendas",
+      "d4Label": "Déficit acumulado en 2026",
+      "d4Figure": "807.000 viviendas",
+      "d4Note": "885.000 previstas en 2027",
+      "d5Label": "Déficit estimado en 2028",
+      "d5Figure": "1 millón de viviendas",
+      "d6Label": "Viviendas libres terminadas al año",
+      "d6Figure": "90.000–100.000",
+      "d6Note": "sin crecer en los últimos ejercicios",
+      "d7Label": "Precio de la vivienda, primer trimestre de 2026",
+      "d7Figure": "+12,9 % interanual",
+      "d7Note": "usada +13,5 %, nueva +9,1 %",
+      "d8Label": "Plan Estatal de Vivienda 2026-2030",
+      "d8Figure": "7.000 millones de euros",
+      "d8Note": "al menos el 40 % a construcción y adquisición de viviendas",
+      "sourceBbva": "BBVA Research, julio de 2026",
+      "sourceBde": "Banco de España, octubre de 2026",
+      "sourceIne": "INE",
+      "sourcePlan": "Plan Estatal de Vivienda",
+      "via": "vía {{site}}",
+      "caveat": "Las estimaciones del déficit cambian según el organismo y el método (el Banco de España, BBVA Research y CaixaBank Research no coinciden en la cifra exacta), pero todas apuntan en la misma dirección.",
+      "meansTitle": "Qué significa para ti",
+      "m1Title": "La demanda ya existe.",
+      "m1Body": "No es una previsión: cada año se forman unos 223.000 hogares y se inician 153.000 viviendas.",
+      "m2Title": "El sector ya está reaccionando.",
+      "m2Body": "De 139.000 viviendas iniciadas en 2025 a 153.000 en 2026 (+10 %), y 170.000 previstas en 2027.",
+      "m3Title": "Hay apoyo público.",
+      "m3Body": "El plan estatal prioriza nueva construcción e industrialización, y las viviendas que se hagan con sus fondos tendrán protección permanente.",
+      "m4Title": "La oportunidad no es automática.",
+      "m4Body": "Con suelo y costes al alza, el margen se gana en la viabilidad. Quien compra un solar sin hacer los números, pierde. Por eso CONSTRUYE empieza por el solar y por la cuenta de resultados.",
+      "cta": "Ver cómo se promueve, fase a fase"
+    },
+    "programme": {
+      "title": "Del solar a la postventa: las {{phases}} fases de una promoción, explicadas paso a paso",
+      "lead": "Cada módulo te dice qué hacer, en qué orden, a quién acudir y qué ley aplica. Con listas de comprobación prácticas, un cuestionario por módulo y un examen final.",
+      "p1Name": "Solar",
+      "p1": "Encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas",
+      "p2Name": "Análisis de viabilidad",
+      "p2": "Calcular coste, financiación y margen antes de comprometer un euro",
+      "p3Name": "Proyectos técnicos",
+      "p3": "Contratar y coordinar arquitecto, ingenierías y dirección facultativa",
+      "p4Name": "Licencias y autorizaciones",
+      "p4": "Saber qué licencia pedir, ante quién y qué pasa con el silencio administrativo",
+      "p5Name": "Financiación y contratación",
+      "p5": "Montar el préstamo promotor, los avales y el contrato de obra",
+      "p6Name": "Construcción",
+      "p6": "Organizar la obra, los plazos y los seguros obligatorios",
+      "p7Name": "Control de obra",
+      "p7": "Vigilar certificaciones, calidad y desviaciones de coste",
+      "p8Name": "Comercialización",
+      "p8": "Fijar precio y vender sobre plano con las garantías que exige la ley",
+      "p9Name": "Legalización",
+      "p9": "Cerrar el fin de obra, la obra nueva, la división horizontal y la habitabilidad",
+      "p10Name": "Preentrega",
+      "p10": "Revisar la vivienda con el comprador y corregir antes de entregar",
+      "p11Name": "Entrega de llaves",
+      "p11": "Entregar con la documentación en regla y sin conflictos",
+      "p12Name": "Postventa y cierre",
+      "p12": "Atender garantías y reclamaciones y cerrar la promoción económicamente"
+    },
+    "difference": {
+      "title": "Tres cosas que marcan la diferencia",
+      "financialsTitle": "Financials: la plantilla financiera de un profesional, dentro del curso",
+      "financialsBody": "Nueve lecciones y una plantilla de 17 hojas con más de 30.000 fórmulas que calcula el coste total de una promoción: terreno, construcción, urbanización, proyectos, licencias, financiación y gestión. Se usa tal como la diseñó el profesional, con su ejemplo real resuelto, para que veas cómo sale una promoción antes de arriesgar dinero.",
+      "partnersTitle": "Partners en las 52 provincias",
+      "partnersBody": "Para cada fase, un directorio de los organismos y profesionales con los que vas a trabajar en tu provincia. No empiezas de cero cuando pisas un ayuntamiento nuevo.",
+      "lawsTitle": "Las leyes y los impuestos de tu comunidad",
+      "lawsBody": "La normativa estatal (ley del suelo, Ley de Ordenación de la Edificación, Código Técnico de la Edificación) y un anexo con la fiscalidad y el urbanismo de cada comunidad autónoma, para que lo que aprendes valga en Alicante, en Madrid o en Sevilla.",
+      "extrasTitle": "Y además",
+      "extra1": "Descargas para trabajar: la plantilla financiera en Excel (completa y simplificada), el directorio de partners en Excel y el curso completo en PDF.",
+      "extra2": "Una checklist por módulo, para marcar en tu propio proyecto y guardarla en tu cuenta.",
+      "extra3": "Cuestionarios por módulo y examen final para comprobar que lo has asimilado."
+    },
+    "included": {
+      "title": "Todo lo que incluye el curso",
+      "colItem": "Incluido",
+      "colUse": "Para qué te sirve",
+      "i1": "{{modules}} módulos y {{lessons}} lecciones del proceso",
+      "i1Use": "Saber qué hacer en cada fase",
+      "i2": "Financials: {{lessons}} lecciones y la plantilla del profesional",
+      "i2Use": "Calcular si una promoción sale antes de comprar",
+      "i3": "Directorio de partners de las 52 provincias",
+      "i3Use": "Saber a quién llamar en tu zona",
+      "i4": "Anexo de fiscalidad y urbanismo por comunidad autónoma",
+      "i4Use": "Aplicar la norma y los impuestos de tu comunidad",
+      "i5": "Una checklist por módulo y las descargas: plantilla y directorio en Excel, curso en PDF",
+      "i5Use": "Trabajar con los documentos desde el primer día",
+      "i6": "Cuestionarios por módulo y examen final",
+      "i6Use": "Comprobar lo aprendido"
+    },
+    "objections": {
+      "title": "Las dudas que frenan la compra, resueltas",
+      "o1Q": "«No tengo experiencia.»",
+      "o1A": "El curso parte de cero y explica cada fase en orden.",
+      "o2Q": "«No tengo mucho capital.»",
+      "o2A": "El módulo de financiación y la plantilla te muestran cuánto capital propio y cuánta deuda necesita cada proyecto, antes de que te comprometas.",
+      "o3Q": "«Es demasiado técnico.»",
+      "o3A": "Cada módulo acaba en una checklist de pasos prácticos y un cuestionario.",
+      "o4Q": "«Mi provincia es distinta.»",
+      "o4A": "Por eso están los partners de las 52 provincias y la fiscalidad por comunidad."
+    },
+    "legalNotice": "La promoción inmobiliaria conlleva riesgos. CONSTRUYE es formación y no garantiza resultados económicos.",
+    "forWhom": {
+      "title": "¿Es CONSTRUYE para ti?",
+      "yesTitle": "Es para ti si…",
+      "yes1": "Quieres hacer tu primera promoción y no sabes por dónde empezar.",
+      "yes2": "Eres arquitecto, constructor, agente inmobiliario o inversor y quieres dar el salto a promotor.",
+      "yes3": "Tienes un solar o una oportunidad y necesitas saber si sale a cuenta.",
+      "yes4": "Quieres montar tu propia promotora y hacerlo con método.",
+      "noTitle": "No es para ti si…",
+      "no1": "Buscas dinero rápido y sin riesgo: la promoción tiene riesgos y el curso te enseña a medirlos, no a evitarlos por arte de magia.",
+      "no2": "Quieres vivienda protegida: el curso se centra en la promoción de vivienda de renta libre."
+    },
+    "finalCta": {
+      "title": "Cada año faltan miles de viviendas. La pregunta es si vas a promover o a mirar",
+      "p1": "Tienes el método en {{phases}} fases, la plantilla financiera de un profesional, los partners de tu provincia y las leyes que aplican en cada paso. Lo único que falta es que empieces.",
+      "ps": "P. D.: Mientras decides, el déficit de vivienda sigue creciendo. Cada fase del curso está pensada para que pases de entender el mercado a actuar en él.",
+      "questions": "¿Tienes dudas? Escríbenos."
     }
   },
   "checklist": {
@@ -1043,8 +1148,8 @@
   },
   "seo": {
     "home": {
-      "title": "Curso de promoción inmobiliaria en España",
-      "description": "Curso online de promoción inmobiliaria en España: solar, viabilidad, proyecto, licencia de obras, préstamo promotor, obra, venta sobre plano y entrega de llaves. {{modules}} módulos, uno por fase."
+      "title": "Curso de Promoción Inmobiliaria en España",
+      "description": "Aprende a promover viviendas en España paso a paso: {{modules}} fases, leyes, partners en las 52 provincias y plantilla financiera profesional. Empieza hoy."
     },
     "catalog": {
       "title": "Cursos de promoción inmobiliaria en España",

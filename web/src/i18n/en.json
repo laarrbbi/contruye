@@ -129,12 +129,8 @@
         "a": "You can pay by {{methods}}."
       },
       "access": {
-        "q": "How long do I have access to the course?",
-        "a": "Access is for life: once enrolled, you can watch the lessons as often as you like, with no time limit."
-      },
-      "mobile": {
-        "q": "Can I follow the course on my phone?",
-        "a": "Yes, the platform works on smartphone, tablet and computer. An internet connection is all you need."
+        "q": "How do I access the course?",
+        "a": "By card, access opens as soon as the payment is confirmed; with the other payment methods, as soon as we have checked the receipt. It is for life, on your phone, tablet or computer."
       },
       "abroad": {
         "q": "Can I follow the course from outside Spain?",
@@ -152,17 +148,37 @@
         "q": "Do I have to buy everything at once?",
         "a": "No. Modules are sold one by one, depending on where you are. Discounts grow with the number of modules, and full access remains the cheapest option per module."
       },
-      "partners": {
-        "q": "Do you share professionals' contacts?",
-        "a": "Yes. Each module ends with the institutions and partners to go to in your province for that phase, from the course's directory of the 52 provinces, with your region's planning law and taxes. Names of professional bodies and agencies are confirmed in their official search engines. Construye takes no commission on these introductions."
-      },
       "projectType": {
         "q": "Does it suit my type of project?",
         "a": "The course follows an open-market housing development, from the plot to after-sales. Much of the journey — land, permits, financing, construction, legalisation — is the same for commercial and mixed-use schemes. Subsidised housing adds requirements set by each region that are not covered in detail."
       },
-      "phases": {
-        "q": "What does each module include?",
-        "a": "The laws that apply and where to go, its lessons in writing, an action checklist for your own project, the institutions and partners of your province, and a quiz to check what you learnt. You can follow the modules in order or go straight to the one you need."
+      "whatIs": {
+        "q": "What is a real estate development course and what will I learn?",
+        "a": "It is training that explains how to develop housing from start to finish. In CONSTRUYE you go through the 12 phases: plot, feasibility, design, licences, financing, construction, sales, legalisation, handover and after-sales."
+      },
+      "needExperience": {
+        "q": "Do I need experience, a degree or a lot of capital to be a property developer?",
+        "a": "The law does not require any particular qualification to be a developer. The capital you need depends on each project: the financing module and the financial model teach you to work it out before you commit."
+      },
+      "stepByStep": {
+        "q": "How is a housing development done, step by step?",
+        "a": "You start with the plot and its planning analysis, work out the feasibility, commission the design, apply for the licences, finance and build. Then you sell, legalise the works, hand over the keys and look after after-sales. The course develops each step."
+      },
+      "anyProvince": {
+        "q": "Is the course valid for any province in Spain?",
+        "a": "Yes. It includes the state rules, a directory of partners for all 52 provinces and an annex with the tax and planning rules of each autonomous community."
+      },
+      "financials": {
+        "q": "What is the Financials financial model?",
+        "a": "It is a professional's spreadsheet that calculates the total cost of a development and the financing it needs. It has 17 sheets, more than 30,000 formulas and a worked example. In the course you learn to fill it in and read it, and the platform calculates it with your figures."
+      },
+      "roles": {
+        "q": "What is the difference between a developer, a builder and an estate agent?",
+        "a": "The developer decides on, drives and finances the works and is liable to the buyer. The builder carries them out and the agent sells. In a small development one person can take on several roles, and the course explains the responsibilities of each."
+      },
+      "company": {
+        "q": "Can I develop through a limited company?",
+        "a": "Yes, it is the usual way to develop. Since Ley 18/2022 an S.L. can be set up with a capital of 1 euro, under conditions. The course explains how to set up the development company."
       }
     }
   },
@@ -859,77 +875,29 @@
   },
   "landing": {
     "hero": {
-      "eyebrow": "Online course — Spain",
-      "title": "Property development in Spain, phase by phase: from the plot to the handover of the keys.",
-      "body": "The 12 phases of an open-market housing development, in the order they really happen: what each one involves, the documents, the authorities, the timescales and the mistakes that cost the most.",
-      "ctaPrimary": "Get the full course",
+      "eyebrow": "The course for developing housing in Spain, phase by phase",
+      "title": "Real estate development course in Spain: from the idea to handing over the keys",
+      "body": "CONSTRUYE teaches you to develop open-market housing step by step: the 12 phases, the law that applies in each one, the partners in your province and a professional's financial model. One course, from searching for the plot to after-sales.",
+      "ctaPrimary": "I want to start developing",
       "paymentNote": "Lifetime access: phone, tablet, computer. As a whole or module by module.",
-      "ctaSecondary_one": "See the programme — {{modules}}, one free preview lesson",
-      "ctaSecondary_other": "See the programme — {{modules}}, {{count}} free preview lessons",
-      "ctaSecondaryNoPreview": "See the programme — {{modules}}",
-      "statPhases": "modules, from the plot to after-sales"
+      "ctaSecondary": "See the full programme",
+      "trust": "One payment of {{price}} · Lifetime access",
+      "imageAlt": "Real estate development course – housing under construction"
     },
     "eyebrow": {
-      "maze": "The real obstacle",
-      "costOfError": "The price of a mistake",
-      "method": "The method",
-      "toolkit": "What you get",
       "curriculum": "The programme",
       "modular": "Module by module",
       "reviews": "Reviews",
       "pricing": "Pricing",
       "faq": "Your questions",
       "forWhom": "Who it is for",
-      "howItWorks": "How it works"
-    },
-    "maze": {
-      "title": "Capital is not enough. It is the paperwork that stops projects.",
-      "lead": "You have the funds, perhaps even the plot. What blocks you comes later.",
-      "b1": "Building permit",
-      "b2": "Developer loan",
-      "b3": "Guarantee of buyers' deposits",
-      "b4": "Ten-year insurance and technical inspection",
-      "b5": "Off-plan sales",
-      "b6": "First-occupation licence",
-      "b7": "New-build and division deeds",
-      "close": "These are not money problems: they are about order, documents and timing. They are learnt over years in the trade — or by paying for them."
-    },
-    "costOfError": {
-      "title": "In a development, a mistake is not paid in euros. It is paid in months.",
-      "e1": "A plot bought without checking its buildable area: the project that does not fit on it.",
-      "e2": "An incomplete permit application: months of waiting with the land paid and interest running.",
-      "e3": "Taking buyers' money without a guarantee or a special account: a breach of the law, and a bank that will not lend.",
-      "e4": "The wrong builder: works stopped, budget reopened, handover delayed.",
-      "close": "The price of this course? What it would cost you to learn just one of these phases on your own site."
-    },
-    "method": {
-      "title": "The whole journey: from the plot to the handover of the keys.",
-      "intro": "The real order of an open-market housing development, without skipping a phase:",
-      "s1": "Plot: search, planning analysis, due diligence and purchase, with your own or external financing.",
-      "s2": "Feasibility study: market research, costs, revenue and profitability.",
-      "s3": "Design: technical studies, preliminary design, basic and construction projects, professional approval (visado) and the Health and Safety Plan.",
-      "s4": "Permits: building permit, authorisations, administrative requirements and grant.",
-      "s5": "Financing and contracting: developer loan, insurance, tender and construction contracts.",
-      "s6": "Construction: foundations, structure, envelope, services and finishes, from the setting-out record to the completion record.",
-      "s7": "Site control: site management team, technical inspection body, quality, budget, planning and ten-year insurance.",
-      "s8": "Sales: marketing, reservations, contracts and buyer follow-up.",
-      "s9": "Legalisation: completion, technical documentation, first-occupation licence and Land Registry.",
-      "s10": "Pre-handover: inspections, snagging, documentation and coordination with the notary.",
-      "s11": "Handover of the keys: deeds, building logbook, utilities, owners' association, final payment and delivery of possession.",
-      "s12": "After-sales and close-out: information to the owners' association, warranties, claims and winding up the development.",
-      "close": "At every phase: what to do, in what order, with which document — and the mistake that costs the most at that exact moment."
-    },
-    "toolkit": {
-      "title": "You do not leave with notes. You leave with tools.",
-      "checklistsTitle": "A checklist per module",
-      "checklistsBody": "Each module's actions, to tick off on your own project and add your own tasks to. Your roadmap, saved in your account.",
-      "legalTitle": "The laws that apply and where to go",
-      "legalBody": "Each module opens with the laws that apply and the institutions to go to: what you ask for, what you get, how long it takes and what it costs.",
-      "partnersTitle": "Your province, phase by phase",
-      "partnersBody": "The directory of the 52 provinces: for each phase, the institution or partner to go to in yours, with your region's planning law and taxes.",
-      "sheetsTitle": "The financial template, calculated",
-      "sheetsBody": "A practitioner's template, with its 17 sheets and its formulas, calculated on the platform: cost by chapter, loan, 48-month cash flow and summary per home.",
-      "footer": "Everything listed here is in the platform from day one."
+      "howItWorks": "How it works",
+      "sample": "Sample lesson",
+      "opportunity": "The opportunity",
+      "programme": "The programme",
+      "difference": "What makes the difference",
+      "included": "What you get",
+      "objections": "Your doubts"
     },
     "curriculumIntro": {
       "title": "{{modules}}, {{lessons}}. The depth is the proof.",
@@ -963,11 +931,6 @@
       "title": "What those who have taken it say.",
       "note": "Only people who actually bought the course can leave a review. No review is written, commissioned or edited by Construye Academy."
     },
-    "finalCta": {
-      "title": "{{modules}}. From the plot to the keys. Your turn to build.",
-      "p1": "The whole journey of an open-market housing development in Spain, phase by phase, with the legislation, the checklists and the institutions and partners of your province.",
-      "p2": "Learn these phases on your first site, paying for every mistake. Or here, before you sign at the notary's."
-    },
     "faq": {
       "subtitle": "The questions developers ask before getting started.",
       "stillHaveQuestions": "Another question?",
@@ -981,18 +944,6 @@
       "modulesWithFinancials_one": "{{count}} module and Financials",
       "modulesWithFinancials_other": "{{count}} modules and Financials"
     },
-    "forWhom": {
-      "title": "You have a project. What you lack is the route.",
-      "lead": "It is for people who take action, whatever their starting point.",
-      "p1Title": "You have a plot or funds",
-      "p1Body": "And you want to know how a development is put together end to end, before committing to anything.",
-      "p2Title": "You already work in construction",
-      "p2Body": "Builder, architect, building engineer: you know the site and want to move to the other side, the developer's.",
-      "p3Title": "You invest from outside Spain",
-      "p3Body": "You are preparing a development in Spain from another country and need to understand the route before investing.",
-      "p4Title": "You are stuck at one phase",
-      "p4Body": "Permit, developer loan, off-plan sales, construction: you are already moving, and one module may be all you need."
-    },
     "howItWorks": {
       "title": "Three steps between you and the first lesson.",
       "s1Title": "Choose",
@@ -1005,6 +956,160 @@
       "s2Mail": "An email confirms that your access is open.",
       "s3Title": "Learn",
       "s3Body": "On phone, tablet or computer, at your own pace and for life. Invoice on request."
+    },
+    "cta": {
+      "access": "I want to access the course",
+      "enter": "I want to join CONSTRUYE"
+    },
+    "figures": {
+      "title": "What is already done and waiting for you on day one",
+      "phases": "phases of a development, from the plot to after-sales",
+      "lessons": "lessons: {{process}} on the process and {{financial}} on financial analysis",
+      "provinces": "provinces with their directory of partners and institutions",
+      "sheets": "sheets in a professional's financial model, with more than 30,000 formulas",
+      "questions": "assessment questions, final exam included",
+      "questionsNoExam": "assessment questions"
+    },
+    "promises": {
+      "p1Title": "You will know what to do and in what order.",
+      "p1Body": "Twelve phases with their steps, their deadlines and the mistakes that cost the most money.",
+      "p2Title": "You will know which authority to go to and which law applies.",
+      "p2Body": "Town hall, land registry, notary, professional associations and the rule that applies at each step.",
+      "p3Title": "You will know whether a development pays off before you buy the plot.",
+      "p3Body": "With the same financial model a professional uses."
+    },
+    "sample": {
+      "title": "Read a whole lesson before you pay.",
+      "body": "The sample lessons can be read in full, free and without signing up: judge the level of detail for yourself.",
+      "open": "Read the lesson"
+    },
+    "opportunity": {
+      "title": "Every year more households are formed than homes are built. That gap is your opportunity",
+      "lead": "Spain is short of homes, prices are rising and the State has approved a 7,000 million euro plan to boost supply. Whoever knows how to develop has in front of them the market with the most unmet demand in years.",
+      "d1Label": "New households a year in 2026 (structural demand)",
+      "d1Figure": "223,000",
+      "d2Label": "Homes started in 2026",
+      "d2Figure": "153,000",
+      "d2Note": "139,000 in 2025; 170,000 forecast for 2027",
+      "d3Label": "Annual gap between demand and homes started",
+      "d3Figure": "about 70,000 homes",
+      "d4Label": "Accumulated shortfall in 2026",
+      "d4Figure": "807,000 homes",
+      "d4Note": "885,000 forecast for 2027",
+      "d5Label": "Estimated shortfall in 2028",
+      "d5Figure": "1 million homes",
+      "d6Label": "Open-market homes completed a year",
+      "d6Figure": "90,000–100,000",
+      "d6Note": "not growing in recent years",
+      "d7Label": "House prices, first quarter of 2026",
+      "d7Figure": "+12.9% year on year",
+      "d7Note": "resale +13.5%, new build +9.1%",
+      "d8Label": "State Housing Plan 2026-2030",
+      "d8Figure": "7,000 million euros",
+      "d8Note": "at least 40% for building and buying homes",
+      "sourceBbva": "BBVA Research, July 2026",
+      "sourceBde": "Banco de España, October 2026",
+      "sourceIne": "INE",
+      "sourcePlan": "Plan Estatal de Vivienda",
+      "via": "via {{site}}",
+      "caveat": "Shortfall estimates vary with the body and the method (the Banco de España, BBVA Research and CaixaBank Research do not agree on the exact figure), but they all point the same way.",
+      "meansTitle": "What it means for you",
+      "m1Title": "The demand already exists.",
+      "m1Body": "It is not a forecast: every year some 223,000 households are formed and 153,000 homes are started.",
+      "m2Title": "The sector is already reacting.",
+      "m2Body": "From 139,000 homes started in 2025 to 153,000 in 2026 (+10%), and 170,000 forecast for 2027.",
+      "m3Title": "There is public support.",
+      "m3Body": "The state plan prioritises new building and industrialised construction, and homes built with its funds will be permanently protected.",
+      "m4Title": "The opportunity is not automatic.",
+      "m4Body": "With land and costs rising, the margin is won in the feasibility study. Whoever buys a plot without running the numbers loses. That is why CONSTRUYE starts with the plot and the profit and loss account.",
+      "cta": "See how a development is done, phase by phase"
+    },
+    "programme": {
+      "title": "From the plot to after-sales: the {{phases}} phases of a development, explained step by step",
+      "lead": "Each module tells you what to do, in what order, who to go to and which law applies. With practical checklists, a quiz per module and a final exam.",
+      "p1Name": "Plot",
+      "p1": "Find plots, read the planning rules and buy with no legal or planning surprises",
+      "p2Name": "Feasibility study",
+      "p2": "Work out cost, financing and margin before committing a single euro",
+      "p3Name": "Technical design",
+      "p3": "Hire and coordinate the architect, the engineers and the site supervision team",
+      "p4Name": "Licences and authorisations",
+      "p4": "Know which licence to apply for, to whom, and what administrative silence means",
+      "p5Name": "Financing and contracting",
+      "p5": "Set up the development loan, the guarantees and the construction contract",
+      "p6Name": "Construction",
+      "p6": "Organise the works, the deadlines and the compulsory insurance",
+      "p7Name": "Site control",
+      "p7": "Keep watch on valuations, quality and cost overruns",
+      "p8Name": "Sales and marketing",
+      "p8": "Set the price and sell off-plan with the guarantees the law requires",
+      "p9Name": "Legalisation",
+      "p9": "Close out completion, the new building declaration, the horizontal division and habitability",
+      "p10Name": "Pre-handover",
+      "p10": "Inspect the home with the buyer and fix things before handing over",
+      "p11Name": "Handover of the keys",
+      "p11": "Hand over with the paperwork in order and without disputes",
+      "p12Name": "After-sales and closing",
+      "p12": "Handle warranties and claims, and close the development financially"
+    },
+    "difference": {
+      "title": "Three things that make the difference",
+      "financialsTitle": "Financials: a professional's financial model, inside the course",
+      "financialsBody": "Nine lessons and a model of 17 sheets with more than 30,000 formulas that calculates the total cost of a development: land, construction, external works, design, licences, financing and management. It is used exactly as the professional designed it, with their real worked example, so you can see how a development comes out before risking money.",
+      "partnersTitle": "Partners in all 52 provinces",
+      "partnersBody": "For each phase, a directory of the bodies and professionals you will work with in your province. You do not start from scratch when you walk into a new town hall.",
+      "lawsTitle": "Your community's laws and taxes",
+      "lawsBody": "The state rules (the Land Act, the Building Act or LOE, the Building Code or CTE) and an annex with the tax and planning rules of each autonomous community, so what you learn holds in Alicante, in Madrid or in Seville.",
+      "extrasTitle": "And also",
+      "extra1": "Downloads to work with: the financial model in Excel (full and simplified), the partners directory in Excel and the whole course in PDF.",
+      "extra2": "A checklist per module, to tick off on your own project and keep in your account.",
+      "extra3": "Quizzes per module and a final exam to check you have taken it in."
+    },
+    "forWhom": {
+      "title": "Is CONSTRUYE for you?",
+      "yesTitle": "It is for you if…",
+      "yes1": "You want to do your first development and do not know where to start.",
+      "yes2": "You are an architect, builder, estate agent or investor and want to make the leap to developer.",
+      "yes3": "You have a plot or an opportunity and need to know whether it pays off.",
+      "yes4": "You want to set up your own development company and do it with a method.",
+      "noTitle": "It is not for you if…",
+      "no1": "You are after quick, risk-free money: development carries risks, and the course teaches you to measure them, not to make them vanish by magic.",
+      "no2": "You want protected housing: the course focuses on developing open-market housing."
+    },
+    "included": {
+      "title": "Everything the course includes",
+      "colItem": "Included",
+      "colUse": "What it is for",
+      "i1": "{{modules}} modules and {{lessons}} lessons on the process",
+      "i1Use": "Knowing what to do in each phase",
+      "i2": "Financials: {{lessons}} lessons and the professional's model",
+      "i2Use": "Working out whether a development pays off before buying",
+      "i3": "Directory of partners in all 52 provinces",
+      "i3Use": "Knowing who to call in your area",
+      "i4": "Annex on tax and planning by autonomous community",
+      "i4Use": "Applying your community's rules and taxes",
+      "i5": "A checklist per module and the downloads: model and directory in Excel, course in PDF",
+      "i5Use": "Working with the documents from day one",
+      "i6": "Quizzes per module and a final exam",
+      "i6Use": "Checking what you have learned"
+    },
+    "objections": {
+      "title": "The doubts that hold back a purchase, answered",
+      "o1Q": "“I have no experience.”",
+      "o1A": "The course starts from zero and explains each phase in order.",
+      "o2Q": "“I don't have much capital.”",
+      "o2A": "The financing module and the model show you how much equity and how much debt each project needs, before you commit.",
+      "o3Q": "“It's too technical.”",
+      "o3A": "Each module ends with a checklist of practical steps and a quiz.",
+      "o4Q": "“My province is different.”",
+      "o4A": "That is why the partners of all 52 provinces and the tax rules by community are included."
+    },
+    "legalNotice": "Real estate development carries risks. CONSTRUYE is training and does not guarantee any financial result.",
+    "finalCta": {
+      "title": "Thousands of homes are missing every year. The question is whether you will develop or watch",
+      "p1": "You have the method in {{phases}} phases, a professional's financial model, the partners in your province and the laws that apply at each step. All that is missing is for you to start.",
+      "ps": "P.S. While you decide, the housing shortfall keeps growing. Every phase of the course is designed to take you from understanding the market to acting in it.",
+      "questions": "Any questions? Write to us."
     }
   },
   "checklist": {
@@ -1043,8 +1148,8 @@
   },
   "seo": {
     "home": {
-      "title": "Property development course in Spain",
-      "description": "Online course in property development in Spain: plot, feasibility, design, building permit, developer loan, construction, off-plan sales and handover of the keys. {{modules}} modules, one per phase."
+      "title": "Real Estate Development Course in Spain",
+      "description": "Learn to develop housing in Spain step by step: {{modules}} phases, the laws, partners in all 52 provinces and a professional financial model. Start today."
     },
     "catalog": {
       "title": "Property development courses in Spain",

@@ -39,6 +39,9 @@ class CourseResource extends JsonResource
             'students_count' => $this->whenHas('students_count', fn ($value) => (int) $value),
             'rating' => $this->whenHas('rating', fn ($value) => $value === null ? null : round((float) $value, 1)),
             'reviews_count' => $this->whenHas('reviews_count', fn ($value) => (int) $value),
+            // Detail endpoint only: every quiz question, the final exam's included.
+            'questions_count' => $this->whenHas('questions_count', fn ($value) => (int) $value),
+            'has_final_exam' => $this->whenHas('has_final_exam', fn ($value) => (bool) $value),
             'modules' => ModuleResource::collection($this->whenLoaded('modules')),
             'is_enrolled' => $this->whenHas('is_enrolled', fn ($value) => (bool) $value),
             'full_access' => $this->whenHas('full_access', fn ($value) => (bool) $value),

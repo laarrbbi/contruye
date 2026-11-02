@@ -180,3 +180,22 @@ it('serves module-level legal and expert-tip blocks only to owners', function ()
     expect(json_encode($lockedPayload))->not->toContain('Loi 11-04')
         ->and(json_encode($lockedPayload))->not->toContain('permis de construire');
 });
+
+it('lets a visitor read the text of a free-preview lesson, and no other', function () {
+    [$course, $owned, $locked] = contentGateCourse();
+    $preview = Lesson::factory()->freePreview()->for($locked)->create(['order' => 1, 'content_es' => "## Paso 1\n\nDefine el producto."]);
+    $paid = Lesson::factory()->for($locked)->create(['order' => 2, 'content_es' => 'Texto de pago']);
+
+    // A guest, no session: the sample reads as the student will read it.
+    $this->getJson("/api/lessons/{$preview->id}/preview")
+        ->assertOk()
+        ->assertJsonPath('data.content_locale', 'es')
+        ->assertJsonPath('data.content_html', fn (string $html) => str_contains($html, '<h2>Paso 1</h2>'));
+
+    // Every other lesson is not a preview, for a guest as for anyone.
+    $this->getJson("/api/lessons/{$paid->id}/preview")->assertNotFound()->assertDontSee('Texto de pago');
+
+    // A preview of an unpublished course is not on sale, so not a sample either.
+    $course->update(['status' => 'draft']);
+    $this->getJson("/api/lessons/{$preview->id}/preview")->assertNotFound();
+});

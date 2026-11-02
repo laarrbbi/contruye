@@ -4,31 +4,32 @@ import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { isAxiosError } from 'axios'
 import {
-  Calculator,
-  MapPin,
   ArrowDown,
+  BookOpen,
   Boxes,
-  MessageCircle,
+  Calculator,
   CircleCheck,
-  Clock,
+  CircleX,
+  Download,
+  ExternalLink,
   HardHat,
-  Infinity as InfinityIcon,
-  LandPlot,
+  Landmark,
   ListChecks,
   Lock,
+  MapPin,
+  MessageCircle,
   Percent,
-  Plane,
   PlayCircle,
   Scale,
+  Users,
 } from 'lucide-react'
-import { useCourse, type PublicLesson } from '@/api/courses'
+import { useCourse, useLessonPreview, type PublicLesson } from '@/api/courses'
 import { useUser } from '@/api/auth'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { CampaignBanner } from '@/components/CampaignBanner'
 import { BlueprintBackdrop } from '@/components/BlueprintBackdrop'
 import { ReviewsSection } from '@/components/reviews/ReviewsSection'
@@ -38,36 +39,77 @@ import { FaqChat } from '@/components/ui/faq-chat'
 import faqContent from '@/content/faq.json'
 import { ContactOptions } from '@/components/ContactOptions'
 import { IsolatedValue } from '@/components/IsolatedValue'
+import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { hasContactChannel, useBusinessProfile } from '@/api/business'
 import { phaseModules } from '@/lib/modules'
 import { cn, formatDuration, formatNumber, formatPrice } from '@/lib/utils'
 import { TRANSFER_METHODS, paymentMethodList } from '@/lib/payments'
 
 // The sales page makes no claim about the instructor's own track record:
-// none has been supplied yet, and nothing on a public surface is invented
-// (constitution I). Each band below says what the course and the platform
-// actually deliver.
+// none has been confirmed yet, and nothing on a public surface is invented
+// (constitution I). The owner's copy (Oct 2026) names the instructor and a
+// Máster en Urbanismo as still to be confirmed: that section and its Person
+// structured data wait for the confirmation. Every other figure below is
+// counted from the catalogue or traced to the package or a cited source.
 
-const COST_OF_ERROR = ['e1', 'e2', 'e3', 'e4'] as const
-/** The instructor's twelve phases, in order (landing.method.s1 … s12). */
-const METHOD_STEPS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'] as const
-const MODULAR_CASES = ['c1', 'c2', 'c3', 'c4'] as const
+/** Anexo A has one entry per province: 50 provinces, Ceuta and Melilla (ProvinceGuideSeeder). */
+const PROVINCES = 52
+/** curso/2_plantilla_financiera/ESPECIFICACION_TECNICA.md: 17 sheets, 30.795 formulas. */
+const TEMPLATE_SHEETS = 17
 
-/** Who the course is for: four starting points. */
-const FOR_WHOM = [
-  { key: 'p1', icon: LandPlot },
-  { key: 'p2', icon: HardHat },
-  { key: 'p3', icon: Plane },
-  { key: 'p4', icon: Boxes },
+/** The twelve phases, in order (landing.programme.p1 … p12). */
+const PHASES = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12'] as const
+
+const PROMISES = ['p1', 'p2', 'p3'] as const
+
+/**
+ * The market figures the owner supplied, each with the source it was taken
+ * from. They are the press's report of the studies, and the link says so
+ * ("via …"): the original reports are to be cited once opened.
+ */
+const SOURCES = {
+  bbva: {
+    nameKey: 'landing.opportunity.sourceBbva',
+    url: 'https://funciohouse.com/blog/viviendas-iniciadas-espana-2026-oferta-deficit-bbva-funcionario/',
+  },
+  bde: {
+    nameKey: 'landing.opportunity.sourceBde',
+    url: 'https://www.infobae.com/espana/2026/10/09/espana-no-logra-construir-las-viviendas-que-necesita-el-deficit-llegara-al-millon-en-2028-calcula-el-banco-de-espana-e-insta-a-invertir-mas/',
+  },
+  ine: {
+    nameKey: 'landing.opportunity.sourceIne',
+    url: 'https://www.infobae.com/espana/2026/06/08/el-precio-de-la-vivienda-sigue-al-alza-crece-un-129-en-el-primer-trimestre-de-2026-respecto-al-ano-anterior-segun-el-ine/',
+  },
+  plan: {
+    nameKey: 'landing.opportunity.sourcePlan',
+    url: 'https://elderecho.com/plan-estatal-de-vivienda-2026-2030',
+  },
+} as const
+
+const MARKET: { key: string; source: keyof typeof SOURCES; note?: boolean }[] = [
+  { key: 'd1', source: 'bbva' },
+  { key: 'd2', source: 'bbva', note: true },
+  { key: 'd3', source: 'bbva' },
+  { key: 'd4', source: 'bbva', note: true },
+  { key: 'd5', source: 'bde' },
+  { key: 'd6', source: 'bde', note: true },
+  { key: 'd7', source: 'ine', note: true },
+  { key: 'd8', source: 'plan', note: true },
+]
+
+const MEANS = [
+  { key: 'm1', icon: Users },
+  { key: 'm2', icon: HardHat },
+  { key: 'm3', icon: Landmark },
+  { key: 'm4', icon: Calculator },
 ] as const
 
-/** What the platform delivers today — each item is a feature that exists. */
-const TOOLKIT = [
-  { icon: ListChecks, titleKey: 'landing.toolkit.checklistsTitle', bodyKey: 'landing.toolkit.checklistsBody' },
-  { icon: Scale, titleKey: 'landing.toolkit.legalTitle', bodyKey: 'landing.toolkit.legalBody' },
-  { icon: MapPin, titleKey: 'landing.toolkit.partnersTitle', bodyKey: 'landing.toolkit.partnersBody' },
-  { icon: Calculator, titleKey: 'landing.toolkit.sheetsTitle', bodyKey: 'landing.toolkit.sheetsBody' },
-] as const
+/** Who it is for, and who it is not for. */
+const YES = ['yes1', 'yes2', 'yes3', 'yes4'] as const
+const NO = ['no1', 'no2'] as const
+
+const OBJECTIONS = ['o1', 'o2', 'o3', 'o4'] as const
 
 // Shared with the server, which renders the same questions in the page's
 // structured data (api SeoPageController).
@@ -183,6 +225,47 @@ export const MAIN_COURSE_SLUG = 'promocion-inmobiliaria-espana'
 /** A full-width CTA whose label may wrap on a narrow phone instead of overflowing. */
 const WRAPPING_CTA = 'h-auto min-h-11 w-full whitespace-normal py-2.5 text-center leading-snug'
 
+/** The site a source link leads to, as the reader will see it in the address bar. */
+function siteOf(url: string): string {
+  return new URL(url).hostname.replace(/^www\./, '')
+}
+
+/**
+ * A free-preview lesson as its buyer will read it: the written text, with
+ * the line that says which language it is in. Readable by any visitor
+ * (GET /lessons/{id}/preview serves free previews only).
+ */
+function LessonPreviewDialog({ lesson, onClose }: { lesson: PublicLesson | null; onClose: () => void }) {
+  const { t } = useTranslation()
+  const preview = useLessonPreview(lesson?.id ?? null)
+
+  return (
+    <Dialog open={lesson !== null} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-h-[85svh] max-w-3xl overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="bidi-auto pe-6">{preview.data?.title ?? lesson?.title}</DialogTitle>
+          <DialogDescription>{t('course.freePreview')}</DialogDescription>
+        </DialogHeader>
+        {preview.isLoading ? (
+          <div aria-busy="true" className="space-y-3 motion-safe:animate-pulse">
+            <p className="sr-only">{t('common.loading')}</p>
+            <div className="h-4 rounded bg-muted" />
+            <div className="h-4 w-11/12 rounded bg-muted" />
+            <div className="h-4 w-4/5 rounded bg-muted" />
+          </div>
+        ) : preview.isError || !preview.data ? (
+          <p className="text-sm text-muted-foreground">{t('common.error')}</p>
+        ) : (
+          <div className="space-y-4">
+            <ContentLanguageNote locale={preview.data.content_locale} />
+            <MarkdownContent html={preview.data.content_html} lang={preview.data.content_locale} />
+          </div>
+        )}
+      </DialogContent>
+    </Dialog>
+  )
+}
+
 export function CourseLandingPage() {
   const params = useParams<{ slug: string }>()
   const slug = params.slug ?? MAIN_COURSE_SLUG
@@ -220,17 +303,19 @@ export function CourseLandingPage() {
   const checkoutPath = `/checkout/${slug}`
   const cta = useMemo(() => {
     if (course?.is_enrolled) {
-      return { to: `/learn/${slug}`, state: undefined, label: 'course.accessCta' }
+      return { to: `/learn/${slug}`, state: undefined, enrolled: true }
     }
     if (user) {
-      return { to: checkoutPath, state: undefined, label: 'landing.hero.ctaPrimary' }
+      return { to: checkoutPath, state: undefined, enrolled: false }
     }
     return {
       to: `/register?redirect=${encodeURIComponent(checkoutPath)}`,
       state: { from: checkoutPath },
-      label: 'landing.hero.ctaPrimary',
+      enrolled: false,
     }
   }, [course?.is_enrolled, user, slug, checkoutPath])
+  // Each call to action has its own words; a buyer is sent to the course.
+  const ctaLabel = (key: string) => (cta.enrolled ? t('course.accessCta') : t(key))
 
   // Same guest-vs-authenticated routing as `cta`, for arbitrary targets.
   const purchaseLink = (target: string): { to: string; state?: { from: string } } =>
@@ -304,16 +389,18 @@ export function CourseLandingPage() {
   const hasSocialProof = course.rating != null || (course.students_count ?? 0) > 0
   // Counted, never typed: the copy follows the catalogue when it changes.
   // The 12 phases are the modules; Financials comes on top of them.
-  const phaseCount = phaseModules(course.modules).length
+  const phases = phaseModules(course.modules)
+  const phaseCount = phases.length
+  const processLessons = phases.reduce((sum, module) => sum + module.lessons.length, 0)
+  const financialsModule = course.modules.find((module) => module.kind === 'financials')
+  const financialLessons = financialsModule?.lessons.length ?? 0
   const modulesLabel = t(
     course.modules.length > phaseCount ? 'landing.counts.modulesWithFinancials' : 'landing.counts.modules',
     { count: phaseCount },
   )
   const lessonsLabel = t('course.lessonsCount', { count: course.lessons_count })
-  const previewCount = course.modules.reduce(
-    (sum, module) => sum + module.lessons.filter((lesson) => lesson.is_free_preview).length,
-    0,
-  )
+  const previewLessons = course.modules.flatMap((module) => module.lessons.filter((lesson) => lesson.is_free_preview))
+  const previewCount = previewLessons.length
   // The complete offer planned for launch, even while a gateway still waits
   // for its credentials (constitution I, amendment inherited from Ebni). The
   // checkout offers only what can take money.
@@ -325,11 +412,34 @@ export function CourseLandingPage() {
   // it, with the invitation to write the first review.
   const showReviews = (course.reviews_count ?? 0) > 0 || course.is_enrolled
   const bestTier = tiers.length > 0 ? tiers[tiers.length - 1] : null
+  const number = (value: number) => formatNumber(value, i18n.language)
 
-  const ctaButton = (size: 'default' | 'lg' = 'lg', className?: string) => (
+  // What is ready on the first day, counted from the catalogue where it can
+  // be: the provinces and the template's sheets are the package's own.
+  const figures = [
+    { key: 'phases', figure: number(phaseCount), label: t('landing.figures.phases') },
+    {
+      key: 'lessons',
+      figure: number(course.lessons_count),
+      label: financialLessons > 0
+        ? t('landing.figures.lessons', { process: number(processLessons), financial: number(financialLessons) })
+        : t('course.stats.lessons'),
+    },
+    { key: 'provinces', figure: number(PROVINCES), label: t('landing.figures.provinces') },
+    ...(financialsModule ? [{ key: 'sheets', figure: number(TEMPLATE_SHEETS), label: t('landing.figures.sheets') }] : []),
+    ...((course.questions_count ?? 0) > 0
+      ? [{
+          key: 'questions',
+          figure: number(course.questions_count ?? 0),
+          label: t(course.has_final_exam ? 'landing.figures.questions' : 'landing.figures.questionsNoExam'),
+        }]
+      : []),
+  ]
+
+  const ctaButton = (labelKey: string, size: 'default' | 'lg' = 'lg', className?: string) => (
     <Button asChild size={size} className={cn('font-semibold', className)}>
       <Link to={cta.to} state={cta.state}>
-        {t(cta.label)}
+        {ctaLabel(labelKey)}
       </Link>
     </Button>
   )
@@ -346,7 +456,7 @@ export function CourseLandingPage() {
 
   const curriculumButtons = (className: string) => (
     <div className={cn('flex flex-wrap gap-3', className)}>
-      {ctaButton('lg', 'max-sm:w-full')}
+      {ctaButton('landing.cta.access', 'lg', 'max-sm:w-full')}
       {modulesButton('max-sm:w-full')}
     </div>
   )
@@ -356,7 +466,7 @@ export function CourseLandingPage() {
       {/* Real, server-set deadline — hides itself and refetches when it ends */}
       <CampaignBanner campaign={campaign} slug={slug} />
 
-      {/* ─── 1. HERO — the whole journey, from the plot to the keys ──── */}
+      {/* ─── 1. HERO — the promise, the price, the way in ───────────── */}
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
         <BlueprintBackdrop />
 
@@ -386,9 +496,7 @@ export function CourseLandingPage() {
                   className="h-4 w-4 shrink-0 transition-transform duration-200 ease-out-strong group-hover:translate-y-0.5"
                   aria-hidden
                 />
-                {previewCount > 0
-                  ? t('landing.hero.ctaSecondary', { count: previewCount, modules: modulesLabel })
-                  : t('landing.hero.ctaSecondaryNoPreview', { modules: modulesLabel })}
+                {t('landing.hero.ctaSecondary')}
               </a>
             )}
           </div>
@@ -399,7 +507,7 @@ export function CourseLandingPage() {
             className="overflow-hidden text-foreground shadow-2xl shadow-black/25 lg:col-start-2 lg:row-span-2 lg:row-start-1"
           >
             {course.cover_image && (
-              <img src={course.cover_image} alt={course.title} className="aspect-video w-full object-cover" />
+              <img src={course.cover_image} alt={t('landing.hero.imageAlt')} className="aspect-video w-full object-cover" />
             )}
             <CardContent className="space-y-4 p-5">
               <div>
@@ -439,7 +547,7 @@ export function CourseLandingPage() {
                 )}
               </div>
 
-              {ctaButton('lg', 'w-full')}
+              {ctaButton('landing.hero.ctaPrimary', 'lg', 'w-full')}
 
               {showAlaCarte && (
                 <Link
@@ -471,22 +579,17 @@ export function CourseLandingPage() {
             </CardContent>
           </Card>
 
-          {/* The proof: what the programme holds, counted from the catalogue,
-              and the rating once real reviews exist. A phone sees the ways to
-              pay in the card above. */}
-          <div className="space-y-6 lg:col-start-1 lg:row-start-2">
-            <dl className="grid grid-cols-3 gap-x-6 gap-y-4 border-y border-primary-foreground/15 py-5">
-              {[
-                { key: 'phases', figure: formatNumber(phaseCount, i18n.language), label: t('landing.hero.statPhases') },
-                { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
-                { key: 'access', figure: <InfinityIcon className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden />, label: t('course.lifetimeAccess') },
-              ].map(({ key, figure, label }) => (
-                <div key={key}>
-                  <dt className="flex h-7 items-center text-2xl font-extrabold leading-none sm:h-8 sm:text-3xl">{figure}</dt>
-                  <dd className="mt-1 text-xs leading-snug text-primary-foreground/70">{label}</dd>
-                </div>
-              ))}
-            </dl>
+          {/* The proof under the pitch: one payment, the rating once real
+              reviews exist, and the ways to pay (a phone sees them in the
+              card above). */}
+          <div className="space-y-4 lg:col-start-1 lg:row-start-2">
+            {notEnrolled && (
+              <p className="text-sm font-semibold text-primary-foreground/90">
+                {t('landing.hero.trust', {
+                  price: formatPrice(effectivePrice, 'EUR', i18n.language),
+                })}
+              </p>
+            )}
 
             {/* Real social proof — each item renders only when the number is real. */}
             {hasSocialProof && (
@@ -516,144 +619,156 @@ export function CourseLandingPage() {
       </section>
 
       <div className={ALTERNATING}>
-        {/* ─── 3b. FOR WHOM — is this for me? ───────────────────────────── */}
+        {/* ─── 2. FIGURES — what is already done, and the three promises ── */}
         <Band className="space-y-10">
-          <SectionHeader
-            eyebrow={t('landing.eyebrow.forWhom')}
-            title={t('landing.forWhom.title')}
-            lead={t('landing.forWhom.lead')}
-          />
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {FOR_WHOM.map(({ key, icon: Icon }, index) => (
+          <SectionTitle className="max-w-2xl">{t('landing.figures.title')}</SectionTitle>
+          {/* The figure first, its caption under it. A list, not a <dl>: a
+              definition list may only hold dt/dd. */}
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-8 border-y py-8 sm:grid-cols-3 lg:grid-cols-5">
+            {figures.map(({ key, figure, label }) => (
+              <li key={key}>
+                <span className="block text-3xl font-extrabold leading-none tabular-nums text-primary sm:text-4xl">
+                  {figure}
+                </span>
+                <span className="mt-2 block text-sm leading-snug text-muted-foreground">{label}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="grid gap-4 md:grid-cols-3">
+            {PROMISES.map((key, index) => (
               <ScrollReveal
                 key={key}
                 as="li"
                 delay={index * 50}
-                className="flex h-full flex-col gap-3 rounded-2xl border bg-background p-5"
+                className="flex h-full gap-4 rounded-2xl border bg-background p-5"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" />
-                </span>
-                <h3 className="font-semibold leading-snug">{t(`landing.forWhom.${key}Title`)}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{t(`landing.forWhom.${key}Body`)}</p>
+                <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-success" aria-hidden />
+                <div className="space-y-1.5">
+                  <h3 className="font-semibold leading-snug">{t(`landing.promises.${key}Title`)}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{t(`landing.promises.${key}Body`)}</p>
+                </div>
               </ScrollReveal>
             ))}
           </ul>
         </Band>
 
-        {/* ─── 4. THE MAZE — name the real blocker ──────────────────────── */}
-        <Band className={cn(SPLIT, 'lg:items-start')}>
-          <ScrollReveal>
-            <SectionHeader eyebrow={t('landing.eyebrow.maze')} title={t('landing.maze.title')} lead={t('landing.maze.lead')} />
-          </ScrollReveal>
-
-          <ScrollReveal delay={120}>
-            <ul className="grid gap-2.5 sm:grid-cols-2">
-              {(['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'] as const).map((key) => (
-                <li
-                  key={key}
-                  // Seven hurdles: the last one spans the row instead of
-                  // sitting alone in it.
-                  className="flex items-center gap-3 rounded-xl border bg-background px-3.5 py-3 text-sm font-medium sm:last:col-span-2"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary/[0.07]">
-                    <Lock className="h-3.5 w-3.5 text-primary/70" />
+        {/* ─── 3. SAMPLE — read a whole lesson before paying ───────────── */}
+        {previewCount > 0 && (
+          <Band className={cn(SPLIT, 'lg:items-center')}>
+            <SectionHeader eyebrow={t('landing.eyebrow.sample')} title={t('landing.sample.title')} lead={t('landing.sample.body')} />
+            <ul className="grid gap-3">
+              {previewLessons.map((lesson) => (
+                <li key={lesson.id} className="flex flex-wrap items-center gap-3 rounded-2xl border bg-background p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <BookOpen className="h-5 w-5 text-primary" aria-hidden />
                   </span>
-                  {t(`landing.maze.${key}`)}
+                  <span className="bidi-auto min-w-0 flex-1 font-semibold leading-snug">{lesson.title}</span>
+                  <Button variant="outline" className="max-sm:w-full" onClick={() => setPreviewLesson(lesson)}>
+                    {t('landing.sample.open')}
+                  </Button>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 leading-relaxed">{t('landing.maze.close')}</p>
-          </ScrollReveal>
-        </Band>
+          </Band>
+        )}
 
-        {/* ─── 5. COST OF ERROR — reframe the price as insurance ────────── */}
+        {/* ─── 4. OPPORTUNITY — the housing gap, with its sources ─────── */}
         <Band className="space-y-10">
-          <SectionHeader eyebrow={t('landing.eyebrow.costOfError')} title={t('landing.costOfError.title')} />
+          <SectionHeader
+            eyebrow={t('landing.eyebrow.opportunity')}
+            title={t('landing.opportunity.title')}
+            lead={t('landing.opportunity.lead')}
+          />
 
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {COST_OF_ERROR.map((key, index) => (
-              <ScrollReveal
-                key={key}
-                as="li"
-                delay={index * 50}
-                // The icon beside the text on a phone, above it in the grid.
-                className="flex h-full items-start gap-4 rounded-2xl border bg-background p-5 shadow-sm sm:flex-col"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-destructive/10">
-                  <Clock className="h-4 w-4 text-destructive" />
-                </span>
-                <span className="text-sm leading-relaxed">{t(`landing.costOfError.${key}`)}</span>
-              </ScrollReveal>
-            ))}
+            {MARKET.map(({ key, source, note }, index) => {
+              const { nameKey, url } = SOURCES[source]
+              return (
+                <ScrollReveal
+                  key={key}
+                  as="li"
+                  delay={(index % 4) * 50}
+                  className="flex h-full flex-col gap-2 rounded-2xl border bg-background p-5"
+                >
+                  <span className="text-sm leading-snug text-muted-foreground">{t(`landing.opportunity.${key}Label`)}</span>
+                  <span className="text-2xl font-extrabold leading-tight text-primary">{t(`landing.opportunity.${key}Figure`)}</span>
+                  {note && <span className="text-sm leading-snug">{t(`landing.opportunity.${key}Note`)}</span>}
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-start gap-1.5 pt-2 text-xs text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+                  >
+                    <ExternalLink className="mt-0.5 h-3 w-3 shrink-0" aria-hidden />
+                    <span>
+                      {t(nameKey)} · {t('landing.opportunity.via', { site: siteOf(url) })}
+                    </span>
+                  </a>
+                </ScrollReveal>
+              )
+            })}
           </ul>
 
-          <p className="max-w-3xl text-lg font-semibold leading-relaxed text-primary">{t('landing.costOfError.close')}</p>
+          <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">{t('landing.opportunity.caveat')}</p>
+
+          <div className="space-y-5">
+            <h3 className="text-lg font-bold">{t('landing.opportunity.meansTitle')}</h3>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {MEANS.map(({ key, icon: Icon }) => (
+                <li key={key} className="flex gap-4 rounded-2xl border bg-background p-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="h-5 w-5 text-primary" aria-hidden />
+                  </span>
+                  <div className="space-y-1">
+                    <p className="font-semibold leading-snug">{t(`landing.opportunity.${key}Title`)}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{t(`landing.opportunity.${key}Body`)}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <Button asChild size="lg" variant="outline" className="font-semibold max-sm:w-full">
+            <a href="#programme">
+              <ArrowDown className="me-2 h-4 w-4" aria-hidden />
+              {t('landing.opportunity.cta')}
+            </a>
+          </Button>
         </Band>
 
-        {/* ─── 6. METHOD — the real step by step ────────────────────────── */}
-        <Band className="space-y-10">
-          <SectionHeader eyebrow={t('landing.eyebrow.method')} title={t('landing.method.title')} lead={t('landing.method.intro')} />
+        {/* ─── 5. PROGRAMME — what each phase gets you ─────────────────── */}
+        <Band id="programme" className="space-y-10">
+          <SectionHeader
+            eyebrow={t('landing.eyebrow.programme')}
+            title={t('landing.programme.title', { phases: number(phaseCount) })}
+            lead={t('landing.programme.lead')}
+          />
 
           <ol className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-            {METHOD_STEPS.map((key, index) => (
+            {PHASES.map((key, index) => (
               <ScrollReveal
                 key={key}
                 as="li"
-                delay={index * 50}
+                delay={(index % 3) * 50}
                 className="flex h-full items-start gap-4 rounded-2xl border bg-background p-4 sm:p-5"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold tabular-nums text-accent-foreground">
                   {index + 1}
                 </span>
-                <span className="pt-1.5 text-sm leading-relaxed">{t(`landing.method.${key}`)}</span>
+                <span className="space-y-1 pt-1">
+                  <span className="block font-semibold leading-snug">{t(`landing.programme.${key}Name`)}</span>
+                  <span className="block text-sm leading-relaxed text-muted-foreground">{t(`landing.programme.${key}`)}</span>
+                </span>
               </ScrollReveal>
             ))}
           </ol>
-
-          <p className="max-w-3xl font-semibold leading-relaxed">{t('landing.method.close')}</p>
         </Band>
 
-        {/* ─── 8. TOOLKIT — what you actually walk away with ────────────── */}
-        <Band className="space-y-10">
-          <div className={cn(SPLIT, 'lg:items-start')}>
-            <ScrollReveal>
-              <SectionHeader
-                eyebrow={t('landing.eyebrow.toolkit')}
-                title={t('landing.toolkit.title')}
-                lead={t('landing.toolkit.footer')}
-              />
-            </ScrollReveal>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {TOOLKIT.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <ScrollReveal
-                    key={item.titleKey}
-                    delay={index * 50}
-                    className="h-full space-y-3 rounded-2xl border bg-background p-5"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                        <Icon className="h-5 w-5 text-primary" />
-                      </span>
-                      <h3 className="font-semibold leading-snug">{t(item.titleKey)}</h3>
-                    </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{t(item.bodyKey)}</p>
-                  </ScrollReveal>
-                )
-              })}
-            </div>
-          </div>
-
-        </Band>
-
-        {/* ─── 9. CURRICULUM — depth is the proof ───────────────────────── */}
+        {/* ─── 6. CURRICULUM — every lesson, with the samples ──────────── */}
         {/* On a wide screen the header and its buttons stay in view beside the
             long list. On a phone the buttons come after the list, once the
             modules have been seen. */}
-        <Band id="programme" className={cn(SPLIT, 'lg:items-start')}>
+        <Band id="curriculum" className={cn(SPLIT, 'lg:items-start')}>
           <div className="space-y-8 lg:sticky lg:top-24">
             <SectionHeader
               eyebrow={t('landing.eyebrow.curriculum')}
@@ -718,7 +833,7 @@ export function CourseLandingPage() {
                                 className="h-7 gap-1.5 px-2.5 text-xs text-primary"
                                 onClick={() => setPreviewLesson(lesson)}
                               >
-                                <PlayCircle className="h-3.5 w-3.5" />
+                                <BookOpen className="h-3.5 w-3.5" />
                                 {t('course.watchPreview')}
                               </Button>
                             )}
@@ -737,7 +852,213 @@ export function CourseLandingPage() {
           </div>
         </Band>
 
-        {/* ─── 10. MODULAR OFFER — buy the stage you're stuck on ────────── */}
+        {/* ─── 7. DIFFERENCE — the template, the provinces, the laws ───── */}
+        <Band className="space-y-10">
+          <SectionHeader eyebrow={t('landing.eyebrow.difference')} title={t('landing.difference.title')} />
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {/* The template leads: it is what a buyer cannot find elsewhere. */}
+            <ScrollReveal className="h-full space-y-3 rounded-2xl border-2 border-primary bg-background p-6 shadow-sm lg:row-span-2">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <Calculator className="h-5 w-5 text-primary" aria-hidden />
+              </span>
+              <h3 className="text-lg font-bold leading-snug">{t('landing.difference.financialsTitle')}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{t('landing.difference.financialsBody')}</p>
+            </ScrollReveal>
+            {[
+              { key: 'partners', icon: MapPin },
+              { key: 'laws', icon: Scale },
+            ].map(({ key, icon: Icon }, index) => (
+              <ScrollReveal
+                key={key}
+                delay={(index + 1) * 50}
+                className="h-full space-y-3 rounded-2xl border bg-background p-5 lg:col-span-2"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="h-5 w-5 text-primary" aria-hidden />
+                  </span>
+                  <h3 className="font-semibold leading-snug">{t(`landing.difference.${key}Title`)}</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">{t(`landing.difference.${key}Body`)}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-bold">{t('landing.difference.extrasTitle')}</h3>
+            <ul className="grid gap-3 md:grid-cols-3">
+              {[
+                { key: 'extra1', icon: Download },
+                { key: 'extra2', icon: ListChecks },
+                { key: 'extra3', icon: CircleCheck },
+              ].map(({ key, icon: Icon }) => (
+                <li key={key} className="flex gap-3 rounded-2xl border bg-background p-4">
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <span className="text-sm leading-relaxed">{t(`landing.difference.${key}`)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {canStillBuy && ctaButton('landing.cta.access', 'lg', 'max-sm:w-full')}
+        </Band>
+
+        {/* ─── 8. SOCIAL PROOF — real verified buyers only ─────────────── */}
+        {showReviews && (
+          <Band className={cn(SPLIT, 'lg:items-start')}>
+            <SectionHeader
+              eyebrow={t('landing.eyebrow.reviews')}
+              title={t('landing.socialProof.title')}
+              lead={t('landing.socialProof.note')}
+            />
+            <div className="min-w-0">
+              <ReviewsSection slug={slug} embedded />
+            </div>
+          </Band>
+        )}
+
+        {/* ─── 9. FOR WHOM — and for whom not ──────────────────────────── */}
+        <Band className="space-y-10">
+          <SectionHeader eyebrow={t('landing.eyebrow.forWhom')} title={t('landing.forWhom.title')} />
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-4 rounded-2xl border bg-background p-6">
+              <h3 className="font-bold">{t('landing.forWhom.yesTitle')}</h3>
+              <ul className="space-y-3">
+                {YES.map((key) => (
+                  <li key={key} className="flex gap-3 text-sm leading-relaxed">
+                    <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
+                    {t(`landing.forWhom.${key}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4 rounded-2xl border bg-background p-6">
+              <h3 className="font-bold">{t('landing.forWhom.noTitle')}</h3>
+              <ul className="space-y-3">
+                {NO.map((key) => (
+                  <li key={key} className="flex gap-3 text-sm leading-relaxed">
+                    <CircleX className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden />
+                    {t(`landing.forWhom.${key}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Band>
+
+        {/* ─── 10. INCLUDED — and the doubts that stop a purchase ──────── */}
+        <Band className={cn(SPLIT, 'lg:items-start')}>
+          <div className="space-y-6">
+            <SectionHeader eyebrow={t('landing.eyebrow.included')} title={t('landing.included.title')} />
+            <div className="overflow-hidden rounded-2xl border bg-background">
+              <table className="w-full text-sm">
+                <thead className="bg-secondary/60 text-start">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 text-start font-semibold">{t('landing.included.colItem')}</th>
+                    <th scope="col" className="px-4 py-3 text-start font-semibold">{t('landing.included.colUse')}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
+                  {[
+                    { key: 'i1', values: { modules: number(phaseCount), lessons: number(processLessons) } },
+                    ...(financialsModule ? [{ key: 'i2', values: { lessons: number(financialLessons) } }] : []),
+                    { key: 'i3' },
+                    { key: 'i4' },
+                    { key: 'i5' },
+                    { key: 'i6' },
+                  ].map(({ key, values }) => (
+                    <tr key={key}>
+                      <td className="px-4 py-3 align-top font-medium">{t(`landing.included.${key}`, values)}</td>
+                      <td className="px-4 py-3 align-top text-muted-foreground">{t(`landing.included.${key}Use`)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <SectionHeader eyebrow={t('landing.eyebrow.objections')} title={t('landing.objections.title')} />
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {OBJECTIONS.map((key) => (
+                <li key={key} className="space-y-1.5 rounded-2xl border bg-background p-5">
+                  <p className="font-semibold leading-snug">{t(`landing.objections.${key}Q`)}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{t(`landing.objections.${key}A`)}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Band>
+
+        {/* ─── 11. PRICING — the two ways in ────────────────────────────── */}
+        <Band className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:items-start lg:gap-14">
+          <div className="space-y-4">
+            <SectionHeader eyebrow={t('landing.eyebrow.pricing')} title={t('landing.pricing.title')} />
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {`${paymentSentence} ${t('landing.pricing.payment')}`}
+            </p>
+            {campaign && (
+              <p className="text-sm leading-relaxed text-muted-foreground">{t('landing.pricing.promoNote')}</p>
+            )}
+          </div>
+
+          <div className="space-y-4">
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Full access — the primary offer */}
+              {/* min-w-0 and wrapping CTAs: a grid item defaults to its content's
+                  width, and a nowrap button label pushed both cards past a
+                  390px screen. */}
+              <div className="flex min-w-0 flex-col rounded-2xl border-2 border-primary bg-background p-6 shadow-lg">
+                <h3 className="text-lg font-bold">{t('landing.pricing.fullTitle')}</h3>
+                <div className="mt-2 flex flex-wrap items-baseline gap-2">
+                  {campaignPrice != null && (
+                    <span className="text-base font-medium text-muted-foreground line-through">{price}</span>
+                  )}
+                  <span className="text-3xl font-extrabold text-primary">
+                    {formatPrice(effectivePrice, 'EUR', i18n.language)}
+                  </span>
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {t('landing.pricing.fullBody', { modules: phaseCount, lessons: course.lessons_count })}
+                </p>
+                <div className="mt-5">{ctaButton('landing.cta.enter', 'lg', WRAPPING_CTA)}</div>
+              </div>
+
+              {/* Per module — the low-friction entry */}
+              <div className="flex min-w-0 flex-col rounded-2xl border bg-background p-6">
+                <h3 className="text-lg font-bold">{t('landing.pricing.unitTitle')}</h3>
+                <div className="mt-2 flex flex-wrap items-baseline gap-2">
+                  <span className="text-3xl font-extrabold">
+                    {cheapestModule != null
+                      ? formatPrice(cheapestModule, 'EUR', i18n.language)
+                      : formatPrice(course.price_eur, 'EUR', i18n.language)}
+                  </span>
+                  {/* The best volume discount, not a discount on this price. */}
+                  {bestTier && (
+                    <Badge variant="secondary">
+                      {t('landing.pricing.upTo', { percent: bestTier.percent_off })}
+                    </Badge>
+                  )}
+                </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {[
+                    t('landing.pricing.unitBody'),
+                    tiers.length > 0 && t('landing.pricing.unitTiers', { count: tiers[0].min_modules }),
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                </p>
+                <div className="mt-5">{modulesButton(WRAPPING_CTA)}</div>
+              </div>
+            </div>
+
+            {/* Under the offer, as the owner asked: training, not a promise of profit. */}
+            <p className="text-xs italic leading-relaxed text-muted-foreground">{t('landing.legalNotice')}</p>
+          </div>
+        </Band>
+
+        {/* ─── 12. MODULAR OFFER — buy the stage you're stuck on ────────── */}
         {showAlaCarte && (
           <Band className={cn(SPLIT, 'lg:items-start')}>
             <ScrollReveal className="space-y-6">
@@ -757,7 +1078,7 @@ export function CourseLandingPage() {
 
             <div className="min-w-0 space-y-4">
               <ul className="grid gap-3 sm:grid-cols-2">
-                {MODULAR_CASES.map((key) => (
+                {(['c1', 'c2', 'c3', 'c4'] as const).map((key) => (
                   <li key={key} className="flex gap-3 rounded-2xl border bg-background p-4">
                     <Boxes className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <span className="text-sm leading-relaxed">{t(`landing.modular.${key}`)}</span>
@@ -790,83 +1111,7 @@ export function CourseLandingPage() {
           </Band>
         )}
 
-        {/* ─── 11. SOCIAL PROOF — real verified buyers only ─────────────── */}
-        {showReviews && (
-          <Band className={cn(SPLIT, 'lg:items-start')}>
-            <SectionHeader
-              eyebrow={t('landing.eyebrow.reviews')}
-              title={t('landing.socialProof.title')}
-              lead={t('landing.socialProof.note')}
-            />
-            <div className="min-w-0">
-              <ReviewsSection slug={slug} embedded />
-            </div>
-          </Band>
-        )}
-
-        {/* ─── 12. PRICING — the two ways in ────────────────────────────── */}
-        <Band className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:items-start lg:gap-14">
-          <div className="space-y-4">
-            <SectionHeader eyebrow={t('landing.eyebrow.pricing')} title={t('landing.pricing.title')} />
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {`${paymentSentence} ${t('landing.pricing.payment')}`}
-            </p>
-            {campaign && (
-              <p className="text-sm leading-relaxed text-muted-foreground">{t('landing.pricing.promoNote')}</p>
-            )}
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {/* Full access — the primary offer */}
-            {/* min-w-0 and wrapping CTAs: a grid item defaults to its content's
-                width, and a nowrap button label pushed both cards past a
-                390px screen. */}
-            <div className="flex min-w-0 flex-col rounded-2xl border-2 border-primary bg-background p-6 shadow-lg">
-              <h3 className="text-lg font-bold">{t('landing.pricing.fullTitle')}</h3>
-              <div className="mt-2 flex flex-wrap items-baseline gap-2">
-                {campaignPrice != null && (
-                  <span className="text-base font-medium text-muted-foreground line-through">{price}</span>
-                )}
-                <span className="text-3xl font-extrabold text-primary">
-                  {formatPrice(effectivePrice, 'EUR', i18n.language)}
-                </span>
-              </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {t('landing.pricing.fullBody', { modules: phaseCount, lessons: course.lessons_count })}
-              </p>
-              <div className="mt-5">{ctaButton('lg', WRAPPING_CTA)}</div>
-            </div>
-
-            {/* Per module — the low-friction entry */}
-            <div className="flex min-w-0 flex-col rounded-2xl border bg-background p-6">
-              <h3 className="text-lg font-bold">{t('landing.pricing.unitTitle')}</h3>
-              <div className="mt-2 flex flex-wrap items-baseline gap-2">
-                <span className="text-3xl font-extrabold">
-                  {cheapestModule != null
-                    ? formatPrice(cheapestModule, 'EUR', i18n.language)
-                    : formatPrice(course.price_eur, 'EUR', i18n.language)}
-                </span>
-                {/* The best volume discount, not a discount on this price. */}
-                {bestTier && (
-                  <Badge variant="secondary">
-                    {t('landing.pricing.upTo', { percent: bestTier.percent_off })}
-                  </Badge>
-                )}
-              </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {[
-                  t('landing.pricing.unitBody'),
-                  tiers.length > 0 && t('landing.pricing.unitTiers', { count: tiers[0].min_modules }),
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
-              </p>
-              <div className="mt-5">{modulesButton(WRAPPING_CTA)}</div>
-            </div>
-          </div>
-        </Band>
-
-        {/* ─── 12b. HOW IT WORKS — from payment to the first lesson ─────── */}
+        {/* ─── 13. HOW IT WORKS — from payment to the first lesson ─────── */}
         {/* Card and transfer, as the offer is planned for launch: by card,
             access opens on the gateway's confirmation; by transfer, once the
             receipt is checked. */}
@@ -915,7 +1160,7 @@ export function CourseLandingPage() {
           </Band>
         )}
 
-        {/* ─── 13. FAQ ──────────────────────────────────────────────────── */}
+        {/* ─── 14. FAQ ──────────────────────────────────────────────────── */}
         {/* Three grid items in reading order: the header, the questions, then
             "another question?". On a wide screen the last one moves under
             the header, beside the questions. */}
@@ -981,12 +1226,12 @@ export function CourseLandingPage() {
                       state={cta.state}
                       className="text-sm font-semibold text-primary-foreground/80 underline-offset-4 hover:underline"
                     >
-                      {t(cta.label)}
+                      {ctaLabel('landing.cta.enter')}
                     </Link>
                   </>
                 ) : (
                   <Button asChild variant="secondary" className="mt-2 rounded-full px-6 font-semibold">
-                    <Link to={cta.to} state={cta.state}>{t(cta.label)}</Link>
+                    <Link to={cta.to} state={cta.state}>{ctaLabel('landing.cta.enter')}</Link>
                   </Button>
                 )}
               </div>
@@ -996,18 +1241,19 @@ export function CourseLandingPage() {
 
       </div>
 
-      {/* ─── 14. FINAL CTA ────────────────────────────────────────────── */}
+      {/* ─── 15. FINAL CTA ────────────────────────────────────────────── */}
       <Band tone="dark" texture className="grid gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center lg:gap-14">
         <div className="space-y-5">
-          <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">{t('landing.finalCta.title', { modules: modulesLabel })}</h2>
-          <p className="leading-relaxed text-primary-foreground/80">{t('landing.finalCta.p1')}</p>
-          <p className="leading-relaxed font-medium">{t('landing.finalCta.p2')}</p>
+          <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">{t('landing.finalCta.title')}</h2>
+          <p className="leading-relaxed text-primary-foreground/80">
+            {t('landing.finalCta.p1', { phases: number(phaseCount) })}
+          </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             {/* The page's last word gets its one amber button. */}
             <Button asChild size="lg" variant="accent" className="max-sm:w-full">
               <Link to={cta.to} state={cta.state}>
-                {t(cta.label)}
+                {ctaLabel('landing.cta.enter')}
               </Link>
             </Button>
             {showAlaCarte && (
@@ -1025,19 +1271,29 @@ export function CourseLandingPage() {
             )}
           </div>
 
+          {/* "Write to us": only once there is somewhere to write. */}
+          {canBeReached && (
+            <div className="space-y-2 pt-2">
+              <p className="text-sm font-semibold">{t('landing.finalCta.questions')}</p>
+              <ContactOptions tone="onPrimary" prefill={t('contact.prefillGeneral')} className="flex flex-wrap items-start gap-3" />
+            </div>
+          )}
+
           {campaign && (
             <p className="text-xs text-primary-foreground/60">{t('landing.pricing.promoNote')}</p>
           )}
+
+          <p className="border-t border-primary-foreground/15 pt-5 text-sm italic leading-relaxed text-primary-foreground/75">
+            {t('landing.finalCta.ps')}
+          </p>
         </div>
 
-        {/* The figure first, its caption under it. Lifetime access has no
-            figure: its sign stands in, at the same height. A list, not a
-            <dl>: a definition list may only hold dt/dd. */}
+        {/* The figure first, its caption under it. */}
         <ul className="grid grid-cols-3 gap-4 border-t border-primary-foreground/15 pt-6 lg:grid-cols-1 lg:gap-6 lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0">
           {[
-            { key: 'lessons', figure: formatNumber(course.lessons_count, i18n.language), label: t('course.stats.lessons') },
-            { key: 'phases', figure: formatNumber(phaseCount, i18n.language), label: t('landing.hero.statPhases') },
-            { key: 'access', figure: <InfinityIcon className="h-8 w-8" aria-hidden />, label: t('course.lifetimeAccess') },
+            { key: 'phases', figure: number(phaseCount), label: t('landing.figures.phases') },
+            { key: 'lessons', figure: number(course.lessons_count), label: t('course.stats.lessons') },
+            { key: 'provinces', figure: number(PROVINCES), label: t('landing.figures.provinces') },
           ].map(({ key, figure, label }) => (
             <li key={key}>
               <span className="flex h-9 items-center text-3xl font-extrabold leading-none tabular-nums">{figure}</span>
@@ -1047,16 +1303,8 @@ export function CourseLandingPage() {
         </ul>
       </Band>
 
-      {/* Free-preview dialog */}
-      <Dialog open={previewLesson !== null} onOpenChange={(open) => !open && setPreviewLesson(null)}>
-        <DialogContent className="max-w-3xl">
-          <DialogHeader>
-            <DialogTitle className="bidi-auto pe-6">{previewLesson?.title}</DialogTitle>
-            <DialogDescription>{t('course.freePreview')}</DialogDescription>
-          </DialogHeader>
-          {previewLesson && <VideoPlayer lessonId={previewLesson.id} />}
-        </DialogContent>
-      </Dialog>
+      {/* Free-preview dialog: the lesson's text, readable without an account */}
+      <LessonPreviewDialog lesson={previewLesson} onClose={() => setPreviewLesson(null)} />
 
       {/* Sticky mobile CTA bar. The layout reserves its height after the
           footer (data-bottom-bar). */}
@@ -1079,7 +1327,7 @@ export function CourseLandingPage() {
               {campaignPrice != null ? formatPrice(campaignPrice, 'EUR', i18n.language) : price}
             </p>
           </div>
-          {ctaButton('default', 'h-auto min-h-10 min-w-0 flex-1 whitespace-normal py-2 text-center leading-snug')}
+          {ctaButton('landing.hero.ctaPrimary', 'default', 'h-auto min-h-10 min-w-0 flex-1 whitespace-normal py-2 text-center leading-snug')}
         </div>
       </div>
     </div>
