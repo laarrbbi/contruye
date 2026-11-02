@@ -30,12 +30,12 @@ sudo apt install nginx mysql-server php8.3-fpm php8.3-cli php8.3-mysql php8.3-mb
   composer supervisor certbot python3-certbot-nginx rsync git unzip
 # Node 22 for the front-end build (nodesource or nvm), then:
 sudo mkdir -p /var/www/construye && sudo chown "$USER":www-data /var/www/construye
-git clone https://github.com/laarrbbi/construye.git /var/www/construye
+git clone https://github.com/laarrbbi/contruye.git /var/www/construye
 ```
 
 PHP upload limits. Ubuntu's PHP refuses any upload over 2 MB before Laravel sees it, and buyers
 send bank-transfer and Bizum receipts of up to 5 MB (a phone photo is often 3–4 MB). Without this, the
-buyer gets "Le fichier reçu n'a pas pu être téléversé" and cannot finish paying:
+buyer gets "No se ha podido subir el archivo justificante" and cannot finish paying:
 
 ```bash
 sudo cp /var/www/construye/deploy/php/99-construye.ini /etc/php/8.3/fpm/conf.d/
