@@ -197,7 +197,10 @@ it('rejects out-of-range issue dates', function () {
     $order = paidModulesOrder($student);
     completeSellerSettings();
 
-    foreach ([now()->addDay(), now()->subDays(90)] as $bad) {
+    // Out of range in Madrid's calendar, the one the rule uses: between 23:00
+    // and midnight UTC, tomorrow in UTC is already today there.
+    $today = now(config('app.business_timezone'));
+    foreach ([$today->copy()->addDay(), $today->copy()->subDays(90)] as $bad) {
         $this->actingAs($admin)
             ->postJson("/api/admin/orders/{$order->id}/invoice", invoicePayload([
                 'issued_at' => $bad->toDateString(),
