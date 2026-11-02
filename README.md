@@ -87,7 +87,8 @@ make test        # suite Pest completa (base mysql-test aislada)
 
 El sitio completo en el navegador, sin instalar nada, visible solo para tu cuenta de GitHub:
 
-1. En la página del repositorio: botón verde **Code** → pestaña **Codespaces** → **Create codespace on main**.
+1. En la página del repositorio: botón verde **Code** → pestaña **Codespaces** → **Create codespace on …** (la rama
+   por defecto del repositorio, que lleva la última versión).
 2. La primera vez tarda de 5 a 8 minutos; después el sitio se abre en una pestaña nueva.
    Si no: pestaña **Ports** abajo en el editor → fila «Construye Academy» (8080) → icono del globo.
 3. El codespace se detiene tras 30 minutos de inactividad; se vuelve a lanzar desde

@@ -5,7 +5,9 @@ import { chromium } from 'playwright'
 
 const BASE = process.env.PREVIEW_URL ?? 'http://localhost:8080'
 const browser = await chromium.launch()
-const page = await browser.newPage()
+// A Spanish browser: the app's own screens take the browser's language, and
+// the course title checked below is the authored Spanish one.
+const page = await browser.newPage({ locale: 'es-ES' })
 const errors = []
 page.on('pageerror', (error) => errors.push(`page error: ${error}`))
 page.on('console', (message) => {
@@ -17,17 +19,18 @@ await page.goto(`${BASE}/`, { waitUntil: 'networkidle' })
 await page.getByRole('heading', { level: 1 }).first().waitFor()
 
 await page.goto(`${BASE}/login`, { waitUntil: 'networkidle' })
-await page.fill('input[type=email]', 'karim@example.es')
+// The enrolled demo student (StudentSeeder).
+await page.fill('input[type=email]', 'javier@example.es')
 await page.fill('input[type=password]', 'password')
 await page.click('button[type=submit]')
 await page.waitForURL((url) => !url.pathname.startsWith('/login'), { timeout: 15000 })
 
 await page.goto(`${BASE}/dashboard`, { waitUntil: 'networkidle' })
-await page.getByText(/Promotion Immobili/i).first().waitFor({ timeout: 15000 })
+await page.getByText(/Promoción de viviendas/i).first().waitFor({ timeout: 15000 })
 
 await browser.close()
 if (errors.length > 0) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log('The sales page renders; karim@example.es signs in and reaches the course.')
+console.log('The sales page renders; javier@example.es signs in and reaches the course.')
