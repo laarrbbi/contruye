@@ -215,7 +215,7 @@ final class SeoPageController
             'ogLocale' => self::OG_LOCALES[$locale],
             'ogLocaleAlternates' => array_values(array_diff_key(self::OG_LOCALES, [$locale => true])),
             'image' => rtrim((string) config('app.url'), '/').'/og-image.jpg',
-            'imageAlt' => SpaStrings::get($locale, 'landing.hero.title'),
+            'imageAlt' => SpaStrings::get($locale, 'landing.heroV2.title'),
             'verification' => array_filter((array) config('seo.verification')),
             'jsonLd' => StructuredData::encode($nodes),
         ])->render();

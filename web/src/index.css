@@ -45,6 +45,26 @@
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
     --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+    /* The sales page's palette (docs/redesign-plan.md, section 3). Added
+       beside the tokens above, which the other screens keep using. Night is
+       the drawing, paper is the building site, amber is the one accent. */
+    --nuit-950: 214 58% 9%; /* #0A1626 */
+    --nuit-900: 212 58% 14%; /* #0F2238 */
+    --marine-700: 215 51% 25%; /* #1F3A5F, the brand blue */
+    --marine-600: 215 48% 35%; /* #2E5283 */
+    --trait-nuit: 213 35% 75%; /* #A9BDD6: 9.5:1 on nuit-950 */
+    --blanc: 43 30% 95%; /* #F7F5F0: 16.7:1 on nuit-950 */
+    --papier-100: 43 23% 94%; /* #F3F1EC */
+    --papier-50: 45 33% 98%; /* #FBFAF7 */
+    --encre: 214 51% 15%; /* #13243A: 13.9:1 on papier-100 */
+    --beton-200: 45 10% 84%; /* #DAD8D2, decorative rules only */
+    --beton-500: 69 3% 51%; /* #85867F: 3.3:1 on paper, control outlines */
+    --beton-600: 90 2% 37%; /* #5F615D: 5.6:1 on paper, secondary text */
+    --ambre-400: 43 96% 56%; /* #FBBF24 */
+    --ambre-500: 38 92% 50%; /* #F59E0B: never a text colour on paper (1.9:1) */
+    --ambre-700: 31 92% 31%; /* #9A5206: 5.2:1 on paper */
+    --rouge-revision: 4 76% 40%; /* #B42318 */
   }
 
   html {
@@ -181,4 +201,761 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content tbody tr:last-child td {
     @apply border-b-0;
   }
+}
+
+/* ─── The redesigned sales page ───────────────────────────────────────────
+   It speaks in the site's own faces, Poppins and Cairo (main.tsx), like every
+   other screen. The class sits on <html> while one of its pages is mounted
+   (and on the server's first screen, drawn before the app): it only tunes
+   the selection colour and the tap highlight. */
+.landing-type,
+html.landing-type body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.landing-type ::selection {
+  background: hsl(var(--ambre-500) / 0.85);
+  color: hsl(var(--encre));
+}
+
+/* Lenis drives the wheel on desktop. The browser's own smooth scrolling
+   (html, above) would animate every position Lenis sets and the two would
+   chase each other: the page drifted on its own. While Lenis is on, the
+   browser scrolls instantly. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis {
+  scroll-behavior: auto !important;
+}
+
+/* The building, drawn storey by storey (components/landing/hero). Each storey
+   is its own small SVG moved with a transform, so stacking never repaints;
+   pouring the concrete is a cross-fade between its two layers. */
+.bld-ghost {
+  fill: hsl(var(--trait-nuit) / 0.05);
+  stroke: hsl(var(--trait-nuit) / 0.85);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition:
+    opacity 600ms var(--ease-out),
+    stroke 300ms var(--ease-out);
+}
+
+.bld-solid,
+.bld-lit {
+  opacity: 0;
+  transition: opacity 700ms var(--ease-out);
+}
+
+.bld-storey.is-active .bld-ghost {
+  stroke: hsl(var(--ambre-500));
+}
+
+.bld-storey.is-built .bld-solid {
+  opacity: 1;
+}
+
+.bld-storey.is-built .bld-ghost {
+  opacity: 0.22;
+}
+
+/* The windows come on one after the other: each carries its own rank. */
+.bld-storey.is-lit .bld-lit {
+  opacity: 1;
+  transition-delay: calc(var(--rank, 0) * 55ms);
+}
+
+/* Movement tied to the scroll, for the browsers that can do it in CSS alone
+   (no script, off the main thread). Elsewhere, and for a visitor who asked for
+   reduced motion, the element simply sits where it belongs. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* A plate that drifts against the page as it crosses the screen: --drift
+       is how far, and its sign which way. */
+    .drift {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    /* A rule that draws itself from its start as it comes into view. */
+    .draw-down {
+      transform-origin: top;
+      animation: draw-down linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 60%;
+    }
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, var(--drift, 40px), 0);
+  }
+  to {
+    transform: translate3d(0, calc(var(--drift, 40px) * -1), 0);
+  }
+}
+
+@keyframes draw-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* The site-journal strip scrolls sideways without showing a scrollbar. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Style studies (/style/a, /style/b, /style/c) ──────────────────────────
+   Three directions for the first screen, to choose from. What they share. */
+
+/* Pieces arrive one after the other: --i is their turn. */
+.rise {
+  opacity: 0;
+  animation: rise 900ms var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A halo of light that wanders slowly. */
+.halo {
+  animation: halo 16s ease-in-out infinite alternate;
+}
+
+@keyframes halo {
+  from {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(8%, 6%, 0) scale(1.18);
+  }
+}
+
+/* A band of light that crosses a card now and then. */
+.shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / 0.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: shine 5.5s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.spin-slow {
+  animation: spin 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halo,
+  .spin-slow,
+  .shine::after {
+    animation: none !important;
+  }
+}
+
+/* ─── Direction « Du croquis à la réalité » (docs/redesign-plan.md, 16) ─────
+   Two worlds: paper (the project, in pencil) and night (the real, in photos).
+   One curve for every entrance, var(--ease-out); nothing bounces. */
+
+.titre {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+/* Arabic (Cairo) has no capitals and its letters join: bolder, no
+   tightening, more air. */
+[dir='rtl'] .titre {
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+/* A small label: capitals, spaced. Latin only. */
+.etiquette {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+[dir='rtl'] .etiquette {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* The paper's grain, over the whole page. Fixed, so it costs one layer. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.085;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* The shade of a tree on the paper. It sways on a desk, holds still on a phone. */
+.feuillage {
+  filter: blur(10px);
+  transform-origin: 0 0;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .feuillage {
+    animation: feuillage 12s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes feuillage {
+  from {
+    transform: rotate(-1.4deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotate(1.8deg) translate3d(1.4%, 0.9%, 0);
+  }
+}
+
+/* A title arrives word by word, each one rising from behind its own line. */
+.mot {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-block: 0.16em 0.12em;
+  margin-block: -0.16em -0.12em;
+}
+
+[dir='rtl'] .mot {
+  padding-block: 0.3em 0.26em;
+  margin-block: -0.3em -0.26em;
+}
+
+.mot > span {
+  display: inline-block;
+  transform: translate3d(0, 118%, 0);
+  animation: lever 1000ms var(--ease-out) forwards;
+  animation-delay: calc(var(--d, 0ms) + var(--i, 0) * 60ms);
+}
+
+@keyframes lever {
+  to {
+    transform: none;
+  }
+}
+
+/* A paragraph fades in and settles. */
+.entree {
+  opacity: 0;
+  animation: entree 800ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes entree {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* A line of the drawing traces itself (pathLength="1" on the stroke). */
+.trace {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: trace 1800ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes trace {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* While the intro plays over the page, the page holds its breath. */
+.dort .mot > span,
+.dort .entree,
+.dort .trace {
+  animation-play-state: paused;
+}
+
+/* The main button: amber, an arrow in a dark square, a glint now and then. */
+.btn-or {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 3.5rem;
+  padding-inline: 1.5rem 0.5rem;
+  overflow: hidden;
+  border-radius: 0.875rem;
+  background: linear-gradient(180deg, #f1b860, #e8a33d 55%, #db952c);
+  color: #141a22;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.55),
+    0 1px 2px rgb(143 90 14 / 0.4),
+    0 10px 22px -8px rgb(232 163 61 / 0.6),
+    0 26px 48px -22px rgb(143 90 14 / 0.55);
+  transition:
+    transform 180ms var(--ease-out),
+    box-shadow 250ms var(--ease-out);
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-or::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgb(255 255 255 / 0.5) 50%, transparent 62%);
+  transform: translateX(-130%);
+  animation: balayage 4.6s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+
+@keyframes balayage {
+  0%,
+  72% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+.btn-or:active {
+  transform: scale(0.97);
+}
+
+.btn-or:focus-visible {
+  outline: 2px solid var(--focus, #141a22);
+  outline-offset: 3px;
+}
+
+.btn-or__fleche {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  background: #141a22;
+  color: #f6f2ea;
+  transition: transform 250ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-or:hover {
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.6),
+      0 1px 2px rgb(143 90 14 / 0.4),
+      0 16px 30px -8px rgb(232 163 61 / 0.75),
+      0 36px 64px -22px rgb(143 90 14 / 0.6);
+  }
+
+  .btn-or:hover .btn-or__fleche {
+    transform: translateX(3px);
+  }
+
+  [dir='rtl'] .btn-or:hover .btn-or__fleche {
+    transform: translateX(-3px);
+  }
+}
+
+/* The second voice: an editorial link, underlined, its arrow pointing out. */
+.lien-edito {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45em;
+  padding-bottom: 0.25em;
+  font-weight: 500;
+  touch-action: manipulation;
+}
+
+.lien-edito::before,
+.lien-edito::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+}
+
+.lien-edito::before {
+  opacity: 0.3;
+}
+
+.lien-edito::after {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 450ms var(--ease-out);
+}
+
+[dir='rtl'] .lien-edito::after {
+  transform-origin: 100% 50%;
+}
+
+.lien-edito:focus-visible {
+  outline: 2px solid var(--focus, #141a22);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lien-edito:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Dark glass on the night: translucent, a lit edge, a one-pixel glint on top,
+   shadows tinted with the two lights of the page. */
+.verre {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(155deg, rgb(31 58 95 / 0.58), rgb(7 15 28 / 0.74));
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  color: #f6f2ea;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    0 2px 6px rgb(7 15 28 / 0.35),
+    0 18px 40px -12px rgb(59 111 216 / 0.38),
+    0 44px 80px -30px rgb(232 163 61 / 0.3);
+}
+
+.verre::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.06) 42%, rgb(232 163 61 / 0.42));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* S1. The night spreads from the photograph like an iris opening:
+   --iris runs from 0 to 1 with the scroll, --cx/--cy are the photo's centre. */
+.iris {
+  --r: calc(var(--iris, 0) * 175vmax);
+  -webkit-mask-image: radial-gradient(circle at var(--cx, 75%) var(--cy, 50%), #000 calc(var(--r) - 16vmax), transparent var(--r));
+  mask-image: radial-gradient(circle at var(--cx, 75%) var(--cy, 50%), #000 calc(var(--r) - 16vmax), transparent var(--r));
+}
+
+/* The intro's props drift in the beam. */
+.flotte {
+  animation: flotte var(--t, 7s) ease-in-out infinite alternate;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes flotte {
+  from {
+    transform: translate3d(0, -9px, 0) rotate(var(--a, -6deg));
+  }
+  to {
+    transform: translate3d(0, 11px, 0) rotate(var(--b, 7deg));
+  }
+}
+
+/* A card of the tools (s6/Outils) comes in showing its back, turns over once
+   on its upright axis, and settles showing its face. */
+.carte-arrive {
+  animation: carte-arrive 1600ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* No fade: a 3D element made translucent is flattened, and the face would
+   then show through the back. */
+@keyframes carte-arrive {
+  from {
+    transform: translate3d(var(--dx, -3rem), 3rem, 0) rotateY(var(--spin, -180deg));
+  }
+  to {
+    transform: none;
+  }
+}
+
+[data-vu='false'] .carte-arrive {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carte-arrive {
+    animation: none !important;
+    transform: none;
+  }
+
+  .mot > span,
+  .entree,
+  .trace {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+
+  .feuillage,
+  .flotte,
+  .btn-or::after {
+    animation: none !important;
+  }
+
+}
+
+/* S1: before the night opens there is nothing of it to paint; once it covers
+   the screen the mask is dropped and its halos may wander. */
+[data-iris='closed'] .iris {
+  visibility: hidden;
+}
+
+[data-iris='open'] .iris {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+[data-iris='open'] .s1-halo {
+  animation: halo 16s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s1-halo {
+    animation: none !important;
+  }
+}
+
+/* Sections below the first screen hold their entrances until they are seen
+   (kit/tools.ts, useVu). */
+[data-vu='false'] .mot > span,
+[data-vu='false'] .entree,
+[data-vu='false'].entree,
+[data-vu='false'] .trace,
+[data-vu='false'] .masque,
+[data-vu='false'] .masque > img {
+  animation-play-state: paused;
+}
+
+/* A picture is uncovered from the bottom while it settles from a slight zoom. */
+.masque {
+  overflow: hidden;
+  clip-path: inset(100% 0 0 0);
+  animation: masque 1200ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.masque > img {
+  transform: scale(1.12);
+  animation: masque-zoom 1600ms var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes masque {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes masque-zoom {
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masque,
+  .masque > img {
+    animation: none !important;
+    clip-path: none;
+    transform: none;
+  }
+}
+
+/* A picture shown large draws slowly nearer, as a camera would (Ken Burns). */
+.kenburns {
+  animation: kenburns 24s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.13) translate3d(-1.4%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns {
+    animation: none !important;
+  }
+}
+
+/* The account screens (pages/auth). */
+
+/* An architect's grid on the night: fine lines, a stronger one every five,
+   fading towards the edges. */
+.plan-grille {
+  background-image:
+    linear-gradient(rgb(246 242 234 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(246 242 234 / 0.05) 1px, transparent 1px),
+    linear-gradient(rgb(246 242 234 / 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(246 242 234 / 0.022) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 30%, transparent 85%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 30%, transparent 85%);
+}
+
+/* A field whose error just appeared gives a small shake, once. */
+.champ-secousse {
+  animation: champ-secousse 380ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes champ-secousse {
+  20%,
+  60% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  40%,
+  80% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+/* The green check of a matching confirmation draws itself. */
+.coche-trace {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: coche-trace 420ms 60ms var(--ease-out) forwards;
+}
+
+@keyframes coche-trace {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* The welcome: it fades in, the key turns a quarter in its lock, its light breathes. */
+.bienvenue {
+  animation: bienvenue 420ms var(--ease-out) both;
+}
+
+@keyframes bienvenue {
+  from {
+    opacity: 0;
+  }
+}
+
+.bienvenue-cle {
+  transform-origin: 50% 25%;
+  animation: bienvenue-cle 1200ms 250ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes bienvenue-cle {
+  from {
+    transform: translate3d(0, 10px, 0) rotate(0deg) scale(0.9);
+  }
+  45% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.bienvenue-lueur {
+  animation: bienvenue-lueur 1600ms 900ms ease-in-out both;
+}
+
+@keyframes bienvenue-lueur {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.25);
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .champ-secousse,
+  .bienvenue-cle,
+  .bienvenue-lueur {
+    animation: none !important;
+  }
+
+  .coche-trace {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* The account screens' video fades out towards the form: masked, so what is
+   under it (the night, its grid, its lights) shows through, with no seam. */
+.fondu-nuit {
+  -webkit-mask-image: linear-gradient(to left, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
+  mask-image: linear-gradient(to left, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
+}
+
+[dir='rtl'] .fondu-nuit {
+  -webkit-mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
+  mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
 }

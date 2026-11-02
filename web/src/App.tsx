@@ -9,7 +9,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { PageTitleProvider } from '@/components/PageTitleProvider'
 import { PublicLocale } from '@/components/PublicLocale'
 import { isRtl, type Locale } from '@/i18n'
-import { CourseLandingPage } from '@/pages/CourseLandingPage'
+import { SalesPage } from '@/pages/SalesPage'
 
 // Only the sales page is in the main bundle: it is what a visitor from a
 // shared link opens first, often on a mobile connection. Every other page is
@@ -17,13 +17,18 @@ import { CourseLandingPage } from '@/pages/CourseLandingPage'
 // transfer screen) are prefetched as soon as the browser is idle, so the click
 // on "Acceder al curso completo" still opens instantly. The admin and the player are
 // never downloaded by a visitor at all.
-const RegisterPage = lazy(() => buyingPath.register().then((m) => ({ default: m.RegisterPage })))
-const LoginPage = lazy(() => buyingPath.login().then((m) => ({ default: m.LoginPage })))
+// Three directions for the first screen, to choose from (docs/redesign-plan.md,
+// section 15). Standalone: each has its own look from the top bar down.
+// Sign in, sign up and the forgotten password are one page (pages/auth/AuthPage), kept mounted
+// across their three addresses so its card can turn from one to the other.
+const AuthPage = lazy(() => buyingPath.register().then((m) => ({ default: m.AuthPage })))
 const CheckoutPage = lazy(() => buyingPath.checkout().then((m) => ({ default: m.CheckoutPage })))
 const ManualPaymentPage = lazy(() => buyingPath.manualPayment().then((m) => ({ default: m.ManualPaymentPage })))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })))
 const HomePage = lazy(() => import('@/pages/HomePage').then((m) => ({ default: m.HomePage })))
-const ForgotPasswordPage = lazy(() => import('@/pages/ForgotPasswordPage').then((m) => ({ default: m.ForgotPasswordPage })))
+// The redesign's hero on its own, in each language, to show the owner before
+// the other sections are built. Its own chunk: the live sales page above does
+// not download any of it.
 const ResetPasswordPage = lazy(() => import('@/pages/ResetPasswordPage').then((m) => ({ default: m.ResetPasswordPage })))
 const DashboardPage = lazy(() => import('@/pages/DashboardPage').then((m) => ({ default: m.DashboardPage })))
 const CheckoutSuccessPage = lazy(() => import('@/pages/CheckoutSuccessPage').then((m) => ({ default: m.CheckoutSuccessPage })))
@@ -73,6 +78,8 @@ export default function App() {
         <BrowserRouter>
           <PageTitleProvider>
           <Routes>
+
+
             <Route element={<Layout />}>
               {/* The pages search engines index, once per language: Spanish
                   at the root, English under /en (src/i18n/paths.ts). The
@@ -81,16 +88,18 @@ export default function App() {
                   same URLs with their own head (api/routes/seo.php). */}
               {PUBLIC_LOCALES.map(({ prefix, locale }) => (
                 <Route key={locale} path={prefix} element={<PublicLocale locale={locale} />}>
-                  <Route index element={<CourseLandingPage />} />
+                  <Route index element={<SalesPage />} />
                   <Route path="cursos" element={<HomePage />} />
-                  <Route path="cursos/:slug" element={<CourseLandingPage />} />
+                  <Route path="cursos/:slug" element={<SalesPage />} />
                 </Route>
               ))}
               {/* The app's own screens. deploy/nginx/construye.conf lists them too:
                   served with 200, anything unknown answers 404. */}
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route element={<AuthPage />}>
+                <Route path="/login" element={null} />
+                <Route path="/register" element={null} />
+                <Route path="/forgot-password" element={null} />
+              </Route>
               <Route path="/reset-password" element={<ResetPasswordPage />} />
 
               <Route element={<ProtectedRoute />}>

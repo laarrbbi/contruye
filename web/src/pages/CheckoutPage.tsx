@@ -37,7 +37,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { CampaignBanner } from '@/components/CampaignBanner'
-import { BlueprintBackdrop } from '@/components/BlueprintBackdrop'
+import { BackgroundVideo } from '@/components/BackgroundVideo'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn, formatPrice } from '@/lib/utils'
 import { ContactOptions } from '@/components/ContactOptions'
@@ -309,7 +309,13 @@ export function CheckoutPage() {
       {/* Header band — same drawing as the landing hero and the auth pages,
           without stealing the width the checkout columns need. */}
       <div className="relative isolate overflow-hidden bg-primary text-primary-foreground">
-        <BlueprintBackdrop />
+        <BackgroundVideo
+          // Not on phones: at the moment of paying, every byte on a mobile
+          // connection goes to the payment, not to a decorative band.
+          media="(min-width: 768px)"
+          brightness={0.75}
+          overlayClassName="bg-primary/60"
+        />
         <div className="container space-y-1 py-10">
           <h1 className="text-3xl font-extrabold">{t('checkout.title')}</h1>
           <p className="bidi-auto text-primary-foreground/75">

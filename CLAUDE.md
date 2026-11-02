@@ -79,6 +79,11 @@ makes that work lives in `docker/mysql-test/`.
   headings (overview sections, lessons, checklist, closing sections) without changing a word;
   `CurriculumV2Seeder`, `ChecklistSeeder` and `ProvinceGuideSeeder` store the pieces, and
   `tests/Feature/CourseContentTest.php` rebuilds every file from the database to prove it.
+- The sales page (`web/src/pages/SalesPage.tsx`, sections in `web/src/components/landing/s1`…`s9`)
+  and the sign-in screens (`web/src/pages/auth/`) are Hani Oulhadj's design for Ebni, kept as is
+  and filled with CONSTRUYE's copy (`landing.*` keys). Every picture on it is a licensed
+  illustration, none an instructor's project: sources, licences and scripts in
+  `docs/credits-photos.md`.
 - Course text is Markdown, rendered on the server by `App\Support\Markdown` (raw HTML stripped).
 - Modules have a `kind`: `phase` (numbered "Módulo N") or `financials`. Course-level texts are
   `CourseDocument`s (introduction, resources, annexes); Anexo A is one `ProvinceGuide` per province.

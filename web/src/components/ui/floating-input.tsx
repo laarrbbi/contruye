@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { useTranslation } from 'react-i18next'
+import { Eye, EyeOff } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /**
@@ -28,6 +30,9 @@ export const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputPro
     const generatedId = React.useId()
     const inputId = id ?? generatedId
     const errorId = `${inputId}-error`
+    // A field written left to right (an address, a password): its padding is on
+    // its own right, or on its left in Arabic, where the adornment sits at the field's end.
+    const ltr = props.dir === 'ltr'
 
     return (
       <div className="w-full">
@@ -45,7 +50,7 @@ export const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputPro
               'focus:border-primary focus:ring-1 focus:ring-primary',
               'disabled:cursor-not-allowed disabled:opacity-50',
               error ? 'border-destructive focus:border-destructive focus:ring-destructive' : 'border-input',
-              endAdornment && 'pe-12',
+              endAdornment && (ltr ? 'pr-12 rtl:pl-12 rtl:pr-4' : 'pe-12'),
               className,
             )}
             {...props}
@@ -82,3 +87,34 @@ export const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputPro
   },
 )
 FloatingInput.displayName = 'FloatingInput'
+
+/**
+ * A password field with its eye. The icon says the state (hidden: the eye
+ * struck out; shown: the eye open), the label read aloud says the action.
+ */
+export const FloatingPasswordInput = React.forwardRef<HTMLInputElement, Omit<FloatingInputProps, 'type' | 'endAdornment'>>(
+  (props, ref) => {
+    const { t } = useTranslation()
+    const [shown, setShown] = React.useState(false)
+    return (
+      <FloatingInput
+        ref={ref}
+        type={shown ? 'text' : 'password'}
+        dir="ltr"
+        endAdornment={
+          <button
+            type="button"
+            onClick={() => setShown((value) => !value)}
+            aria-label={shown ? t('auth.hidePassword') : t('auth.showPassword')}
+            aria-pressed={shown}
+            className="grid h-9 w-9 place-items-center rounded-md text-muted-foreground transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            {shown ? <Eye className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} /> : <EyeOff className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} />}
+          </button>
+        }
+        {...props}
+      />
+    )
+  },
+)
+FloatingPasswordInput.displayName = 'FloatingPasswordInput'

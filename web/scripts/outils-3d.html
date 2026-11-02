@@ -1,0 +1,241 @@
+<!doctype html>
+<!--
+  The four pictures of the tools section (web/public/outils/*.webp), made as
+  plain 3D stills: a tablet with a spreadsheet, a stack of papers and a
+  stamp, rolled plans, a contact book under a site helmet. Nothing on them
+  can be read: every texture is drawn, then blurred.
+
+  To render again: serve this page with web/node_modules mounted at /three/
+  (any static server, or a browser automation that answers the requests),
+  open it with ?scene=excel|papiers|plans|contacts on a 720 x 720 viewport,
+  wait for window.done, screenshot the canvas with a transparent background,
+  then trim and convert to WebP (about 20 KB each).
+
+  The Excel picture stands in for the real file: replace public/outils/excel.webp
+  with a screenshot of the instructor's model when he sends one.
+-->
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:transparent}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three'
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
+
+const SIZE = 720
+const scene = new THREE.Scene()
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(1)
+renderer.setSize(SIZE, SIZE)
+renderer.setClearColor(0x000000, 0)
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 0.92
+renderer.outputColorSpace = THREE.SRGBColorSpace
+renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCFSoftShadowMap
+document.body.appendChild(renderer.domElement)
+const pmrem = new THREE.PMREMGenerator(renderer)
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture
+scene.environmentIntensity = 0.62
+
+const sun = new THREE.DirectionalLight(0xfff1dc, 2.4)
+sun.position.set(-3, 6, 3.5)
+sun.castShadow = true
+sun.shadow.mapSize.set(2048, 2048)
+sun.shadow.radius = 9
+sun.shadow.blurSamples = 20
+sun.shadow.bias = -0.0004
+Object.assign(sun.shadow.camera, { left: -4, right: 4, top: 4, bottom: -4, near: 0.5, far: 20 })
+scene.add(sun)
+const fill = new THREE.DirectionalLight(0xbfd2ff, 0.5)
+fill.position.set(4, 2, -2)
+scene.add(fill)
+
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({ opacity: 0.28 }))
+ground.rotation.x = -Math.PI / 2
+ground.receiveShadow = true
+scene.add(ground)
+
+const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100)
+
+// A texture drawn on a canvas, then softened: nothing on it can be read.
+function canvasTexture(w, h, draw, blur = 0) {
+  const c = document.createElement('canvas')
+  c.width = w; c.height = h
+  const x = c.getContext('2d')
+  draw(x, w, h)
+  if (blur) {
+    const d = document.createElement('canvas')
+    d.width = w; d.height = h
+    const y = d.getContext('2d')
+    y.filter = `blur(${blur}px)`
+    y.drawImage(c, 0, 0)
+    const t = new THREE.CanvasTexture(d)
+    t.colorSpace = THREE.SRGBColorSpace
+    t.anisotropy = 8
+    return t
+  }
+  const t = new THREE.CanvasTexture(c)
+  t.colorSpace = THREE.SRGBColorSpace
+  t.anisotropy = 8
+  return t
+}
+const rnd = (() => { let s = 7; return () => ((s = (s * 16807) % 2147483647) / 2147483647) })()
+const paperLines = (ink = 'rgba(40,52,70,0.55)', stamp = false) => (x, w, h) => {
+  x.fillStyle = '#F7F2E8'; x.fillRect(0, 0, w, h)
+  x.fillStyle = ink
+  x.fillRect(w * 0.1, h * 0.08, w * 0.42, h * 0.03)
+  for (let i = 0; i < 16; i++) {
+    const y = h * 0.17 + i * h * 0.045
+    x.fillStyle = 'rgba(60,70,85,0.35)'
+    x.fillRect(w * 0.1, y, w * (0.5 + rnd() * 0.32), h * 0.012)
+  }
+  if (stamp) {
+    x.strokeStyle = 'rgba(31,72,160,0.75)'; x.lineWidth = w * 0.018
+    x.beginPath(); x.arc(w * 0.68, h * 0.8, w * 0.12, 0, Math.PI * 2); x.stroke()
+    x.lineWidth = w * 0.008
+    x.beginPath(); x.arc(w * 0.68, h * 0.8, w * 0.085, 0, Math.PI * 2); x.stroke()
+    x.fillStyle = 'rgba(31,72,160,0.6)'; x.fillRect(w * 0.6, h * 0.79, w * 0.16, h * 0.02)
+  }
+}
+const mat = (o) => new THREE.MeshPhysicalMaterial(o)
+const add = (mesh) => { mesh.castShadow = true; mesh.receiveShadow = true; scene.add(mesh); return mesh }
+
+const which = new URLSearchParams(location.search).get('scene')
+
+if (which === 'excel') {
+  // A tablet lying on the desk, a spreadsheet on its screen, every cell blurred.
+  const body = add(new THREE.Mesh(new RoundedBoxGeometry(3.2, 0.12, 2.3, 6, 0.14), mat({ color: 0x9aa3ae, metalness: 0.85, roughness: 0.32 })))
+  body.position.y = 0.06
+  const screenTex = canvasTexture(1280, 920, (x, w, h) => {
+    x.fillStyle = '#0B1424'; x.fillRect(0, 0, w, h)
+    const ox = w * 0.03, oy = h * 0.05, cw = w * 0.94, ch = h * 0.9
+    x.fillStyle = '#F5F2EC'; x.fillRect(ox, oy, cw * 0.56, ch)
+    x.fillStyle = '#1F3A5F'; x.fillRect(ox, oy, cw * 0.56, ch * 0.07)
+    for (let r = 0; r < 18; r++) for (let c = 0; c < 6; c++) {
+      x.fillStyle = r % 2 ? '#E9E3D8' : '#F5F2EC'
+      x.fillRect(ox + c * cw * 0.093 + 2, oy + ch * 0.08 + r * ch * 0.05 + 2, cw * 0.093 - 4, ch * 0.05 - 4)
+      x.fillStyle = 'rgba(40,52,70,0.5)'
+      x.fillRect(ox + c * cw * 0.093 + 10, oy + ch * 0.08 + r * ch * 0.05 + ch * 0.018, (cw * 0.093 - 20) * (0.4 + rnd() * 0.5), ch * 0.012)
+    }
+    // A chart: bars in amber, a line in light blue.
+    const gx = ox + cw * 0.6, gy = oy + ch * 0.1, gw = cw * 0.38, gh = ch * 0.62
+    x.fillStyle = '#12223A'; x.fillRect(gx, gy, gw, gh)
+    const vals = [0.35, 0.48, 0.42, 0.6, 0.72, 0.66, 0.84, 0.9]
+    vals.forEach((v, i) => { x.fillStyle = '#E8A33D'; x.fillRect(gx + gw * 0.08 + i * gw * 0.11, gy + gh * (0.92 - v * 0.8), gw * 0.07, gh * v * 0.8) })
+    x.strokeStyle = '#8EC1FF'; x.lineWidth = 6; x.beginPath()
+    vals.forEach((v, i) => { const px = gx + gw * 0.115 + i * gw * 0.11, py = gy + gh * (0.86 - v * 0.62); i ? x.lineTo(px, py) : x.moveTo(px, py) }); x.stroke()
+    x.fillStyle = '#F5F2EC'; x.fillRect(gx, gy + gh + ch * 0.05, gw, ch * 0.22)
+  }, 3.2)
+  const screen = new THREE.Mesh(new THREE.PlaneGeometry(2.96, 2.06), new THREE.MeshPhysicalMaterial({ map: screenTex, emissive: 0xffffff, emissiveMap: screenTex, emissiveIntensity: 0.55, roughness: 0.12, clearcoat: 1, clearcoatRoughness: 0.05 }))
+  screen.rotation.x = -Math.PI / 2
+  screen.position.y = 0.122
+  body.add(screen); screen.position.set(0, 0.062, 0)
+  const bezel = new THREE.Mesh(new THREE.PlaneGeometry(3.08, 2.18), mat({ color: 0x05070b, roughness: 0.2 }))
+  bezel.rotation.x = -Math.PI / 2; bezel.position.set(0, 0.0615, 0); body.add(bezel)
+  body.rotation.y = 0.32
+  // A stylus beside it.
+  const pen = add(new THREE.Mesh(new THREE.CapsuleGeometry(0.045, 1.5, 8, 24), mat({ color: 0xE8E4DC, metalness: 0.2, roughness: 0.25, clearcoat: 1 })))
+  pen.rotation.z = Math.PI / 2; pen.rotation.y = 0.25; pen.position.set(0.35, 0.045, 1.55)
+  camera.position.set(1.9, 6.4, 5.6); camera.lookAt(0.05, 0, 0.3)
+}
+
+if (which === 'papiers') {
+  // A stack of administrative papers, a rubber stamp beside it, its mark on the top sheet.
+  const sheets = 9
+  for (let i = 0; i < sheets; i++) {
+    const top = i === sheets - 1
+    const tex = canvasTexture(840, 1188, paperLines('rgba(31,58,95,0.75)', top), 2.4)
+    const m = add(new THREE.Mesh(new THREE.BoxGeometry(2.1, 0.018, 2.97), [mat({ color: 0xEDE6D8, roughness: 0.9 }), mat({ color: 0xEDE6D8, roughness: 0.9 }), mat({ map: tex, roughness: 0.85 }), mat({ color: 0xEDE6D8 }), mat({ color: 0xEDE6D8, roughness: 0.9 }), mat({ color: 0xEDE6D8, roughness: 0.9 })]))
+    m.position.set((rnd() - 0.5) * 0.12, 0.012 + i * 0.022, (rnd() - 0.5) * 0.12)
+    m.rotation.y = (rnd() - 0.5) * 0.14
+  }
+  // A folder under the stack.
+  const folder = add(new THREE.Mesh(new RoundedBoxGeometry(2.4, 0.03, 3.2, 2, 0.02), mat({ color: 0x2B4D7E, roughness: 0.6 })))
+  folder.position.set(0.05, 0.0, 0.02); folder.rotation.y = -0.06
+  const stamp = new THREE.Group()
+  const base = new THREE.Mesh(new RoundedBoxGeometry(0.62, 0.16, 0.62, 4, 0.04), mat({ color: 0x1b1f26, roughness: 0.5 }))
+  base.position.y = 0.08
+  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.16, 0.35, 32), mat({ color: 0x6b4a2b, roughness: 0.45, clearcoat: 0.6 }))
+  neck.position.y = 0.33
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(0.2, 32, 24), mat({ color: 0x6b4a2b, roughness: 0.4, clearcoat: 0.8 }))
+  knob.position.y = 0.62
+  for (const p of [base, neck, knob]) { p.castShadow = true; stamp.add(p) }
+  stamp.position.set(1.55, 0, 0.9); stamp.rotation.y = 0.4
+  scene.add(stamp)
+  camera.position.set(2.4, 5.8, 5.6); camera.lookAt(0.3, 0.1, 0.25)
+}
+
+if (which === 'plans') {
+  // Plans: sheets spread in a fan, and three rolled ones on top.
+  const plan = (seed) => canvasTexture(1188, 840, (x, w, h) => {
+    x.fillStyle = '#EEF3F8'; x.fillRect(0, 0, w, h)
+    x.strokeStyle = 'rgba(31,72,140,0.8)'; x.lineWidth = 5
+    x.strokeRect(w * 0.06, h * 0.08, w * 0.88, h * 0.84)
+    x.lineWidth = 3
+    for (let i = 0; i < 7; i++) { const a = w * (0.1 + rnd() * 0.5), b = h * (0.14 + rnd() * 0.5); x.strokeRect(a, b, w * (0.12 + rnd() * 0.25), h * (0.12 + rnd() * 0.25)) }
+    x.beginPath(); x.moveTo(w * 0.06, h * 0.5); x.lineTo(w * 0.94, h * 0.5); x.moveTo(w * 0.5, h * 0.08); x.lineTo(w * 0.5, h * 0.92); x.stroke()
+    x.fillStyle = 'rgba(31,72,140,0.55)'; x.fillRect(w * 0.7, h * 0.78, w * 0.2, h * 0.1)
+  }, 2.2)
+  ;[-0.38, -0.12, 0.14].forEach((turn, i) => {
+    const m = add(new THREE.Mesh(new THREE.BoxGeometry(2.97, 0.012, 2.1), [0, 0, mat({ map: plan(i), roughness: 0.85 }), 0, 0, 0].map((v) => v || mat({ color: 0xE6ECF2, roughness: 0.9 }))))
+    m.position.set(-0.2 + i * 0.25, 0.008 + i * 0.014, 0.2 - i * 0.1); m.rotation.y = turn
+  })
+  const roll = (len, r, color) => {
+    const g = new THREE.Group()
+    const tube = new THREE.Mesh(new THREE.CylinderGeometry(r, r, len, 48, 1, true), mat({ color, roughness: 0.8, side: THREE.DoubleSide }))
+    const inner = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.55, r * 0.55, len * 1.002, 32, 1, true), mat({ color: 0xc9c2b4, roughness: 0.9, side: THREE.BackSide }))
+    const ringMat = mat({ color: 0xdcd5c6, roughness: 0.9 })
+    for (const s of [-1, 1]) { const cap = new THREE.Mesh(new THREE.RingGeometry(r * 0.55, r, 48), ringMat); cap.position.y = (s * len) / 2; cap.rotation.x = (s * Math.PI) / 2; g.add(cap) }
+    const band = new THREE.Mesh(new THREE.CylinderGeometry(r * 1.02, r * 1.02, 0.08, 48), mat({ color: 0xE8A33D, roughness: 0.5 }))
+    for (const p of [tube, inner, band]) { p.castShadow = true; g.add(p) }
+    g.rotation.z = Math.PI / 2
+    scene.add(g)
+    return g
+  }
+  const a = roll(3.0, 0.2, 0xF4F1EA); a.position.set(0.1, 0.25, 0.85); a.rotation.y = 0.35
+  const b = roll(2.6, 0.17, 0xDCE6F0); b.position.set(0.25, 0.22, 1.32); b.rotation.y = 0.18
+  const c = roll(2.8, 0.18, 0xF4F1EA); c.position.set(0.3, 0.55, 1.08); c.rotation.y = 0.28
+  camera.position.set(2.2, 5.6, 6.2); camera.lookAt(0.2, 0.2, 0.55)
+}
+
+if (which === 'contacts') {
+  // A contact book, closed by its elastic band, and a site helmet resting on it.
+  const book = new THREE.Group()
+  const cover = new THREE.Mesh(new RoundedBoxGeometry(2.1, 0.32, 2.9, 4, 0.06), mat({ color: 0x1F3A5F, roughness: 0.55, sheen: 1, sheenColor: 0x6d86ad, sheenRoughness: 0.6 }))
+  cover.position.y = 0.16
+  const pages = new THREE.Mesh(new THREE.BoxGeometry(2.02, 0.24, 2.82), mat({ color: 0xF2EDE2, roughness: 0.95 }))
+  pages.position.set(0.04, 0.16, 0)
+  const band = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.33, 2.92), mat({ color: 0xE8A33D, roughness: 0.4 }))
+  band.position.set(0.72, 0.16, 0)
+  // Tabs of the address book on its edge.
+  for (let i = 0; i < 5; i++) { const tab = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.2, 0.32), mat({ color: [0xE8A33D, 0x3B6FD8, 0xF4F1EA, 0x2B4D7E, 0xDB952C][i], roughness: 0.6 })); tab.position.set(1.07, 0.16, -1.1 + i * 0.52); book.add(tab) }
+  for (const p of [cover, pages, band]) { p.castShadow = true; p.receiveShadow = true; book.add(p) }
+  book.rotation.y = -0.28
+  book.traverse((o) => { if (o.isMesh) o.castShadow = true })
+  scene.add(book)
+  // The helmet: a dome, a ridge, a brim.
+  const helmet = new THREE.Group()
+  const shell = mat({ color: 0xE39410, roughness: 0.28, clearcoat: 1, clearcoatRoughness: 0.12 })
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(0.9, 64, 32, 0, Math.PI * 2, 0, Math.PI / 2), shell)
+  dome.scale.set(1, 1.02, 1.14)
+  const ridge = new THREE.Mesh(new THREE.TorusGeometry(0.86, 0.05, 16, 80, Math.PI), shell)
+  ridge.rotation.y = Math.PI / 2; ridge.scale.set(1.12, 0.9, 1)
+  const brimShape = new THREE.Shape()
+  // Narrow at the back and the sides, a peak at the front.
+  brimShape.absellipse(0, 0.12, 0.97, 1.17, 0, Math.PI * 2)
+  const hole = new THREE.Path(); hole.absellipse(0, 0, 0.88, 1.0, 0, Math.PI * 2); brimShape.holes.push(hole)
+  const brim = new THREE.Mesh(new THREE.ExtrudeGeometry(brimShape, { depth: 0.05, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.02, bevelSegments: 3, curveSegments: 64 }), shell)
+  brim.rotation.x = Math.PI / 2
+  brim.position.set(0, 0.03, 0)
+  for (const p of [dome, ridge, brim]) { p.castShadow = true; p.receiveShadow = true; helmet.add(p) }
+  helmet.position.set(0.15, 0.33, 0.25); helmet.rotation.set(0.04, 0.75, 0); helmet.scale.setScalar(0.86)
+  scene.add(helmet)
+  camera.position.set(2.4, 4.6, 6.6); camera.lookAt(0.1, 0.35, 0.15)
+}
+
+renderer.render(scene, camera)
+window.done = true
+</script>
+</body></html>

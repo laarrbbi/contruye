@@ -51,6 +51,40 @@ export default {
           DEFAULT: 'hsl(var(--success))',
           foreground: 'hsl(var(--success-foreground))',
         },
+        // The sales page's palette (index.css). Named as in the plan.
+        nuit: { 950: 'hsl(var(--nuit-950))', 900: 'hsl(var(--nuit-900))' },
+        // Direction « Du croquis à la réalité » (docs/redesign-plan.md, 16).
+        // Night: the real, the site, the proof. Paper: the project, the plan.
+        sombre: { 950: '#070F1C', 900: '#0B1A2E', 800: '#12253F', 700: '#1F3A5F' },
+        creme: { 100: '#F6F2EA', 200: '#EFE9DE' },
+        plume: '#141A22', // ink on paper: 15.6:1 on creme-100
+        or: { DEFAULT: '#E8A33D', fonce: '#8F5A0E' }, // fonce: 5.0:1 on creme-100, for text
+        electrique: '#3B6FD8',
+        graphite: '#5B6470', // pencil lines; 5.3:1 on creme-100 for small notes
+        marine: { 700: 'hsl(var(--marine-700))', 600: 'hsl(var(--marine-600))' },
+        trait: 'hsl(var(--trait-nuit))',
+        blanc: 'hsl(var(--blanc))',
+        papier: { 100: 'hsl(var(--papier-100))', 50: 'hsl(var(--papier-50))' },
+        encre: 'hsl(var(--encre))',
+        beton: {
+          200: 'hsl(var(--beton-200))',
+          500: 'hsl(var(--beton-500))',
+          600: 'hsl(var(--beton-600))',
+        },
+        ambre: {
+          400: 'hsl(var(--ambre-400))',
+          500: 'hsl(var(--ambre-500))',
+          700: 'hsl(var(--ambre-700))',
+        },
+        revision: 'hsl(var(--rouge-revision))',
+      },
+      boxShadow: {
+        // One light, from above. Three layers, tinted with the ink, never black.
+        plate:
+          '0 1px 1px hsl(var(--encre) / 0.05), 0 6px 12px -2px hsl(var(--encre) / 0.07), 0 22px 40px -12px hsl(var(--encre) / 0.14)',
+        // A sheet of paper lifted off the night drawing.
+        float:
+          '0 2px 3px hsl(214 70% 4% / 0.3), 0 14px 24px -6px hsl(214 70% 4% / 0.45), 0 44px 72px -20px hsl(214 70% 4% / 0.6)',
       },
       borderRadius: {
         lg: 'var(--radius)',

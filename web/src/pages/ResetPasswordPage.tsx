@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
@@ -5,9 +6,9 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from '@/lib/zod'
 import { PASSWORD_MIN_LENGTH } from '@/lib/passwordRules'
-import { Button } from '@/components/ui/button'
-import { FloatingInput } from '@/components/ui/floating-input'
-import { AuthLayout } from '@/components/layout/AuthLayout'
+import { ArrowLeft, ArrowRight, MailCheck } from 'lucide-react'
+import { NuitAuth } from '@/pages/auth/NuitAuth'
+import { BoutonEnvoi, Champ, ChampSecret, Erreur } from '@/pages/auth/fields'
 import { useResetPassword } from '@/api/auth'
 import { apiFieldError } from '@/api/orders'
 
@@ -49,84 +50,85 @@ export function ResetPasswordPage() {
   const otherError = resetPassword.isError && !linkError && !passwordError ? t('common.error') : null
 
   const backToLogin = (
-    <Link to="/login" className="font-medium text-primary hover:underline">
+    <Link
+      to="/login"
+      className="-ms-1 inline-flex items-center gap-1.5 rounded-lg px-1 py-1 text-[0.875rem] text-creme-100/65 transition-colors hover:text-[#F1B860] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F1B860]"
+    >
+      <ArrowLeft aria-hidden className="h-4 w-4 rtl:-scale-x-100" strokeWidth={1.75} />
       {t('auth.backToLogin')}
     </Link>
+  )
+  // A link dressed as the main button (amber, the arrow in its dark square).
+  const lienOr = (to: string, label: string) => (
+    <Link to={to} className="btn-or w-full">
+      <span className="min-w-0 truncate">{label}</span>
+      <span aria-hidden className="btn-or__fleche">
+        <ArrowRight className="h-4 w-4 rtl:-scale-x-100" strokeWidth={1.75} />
+      </span>
+    </Link>
+  )
+  const carte = (children: ReactNode) => (
+    <NuitAuth>
+      <div className="verre p-6 sm:p-9">
+        {backToLogin}
+        <h1 className="titre mt-4 text-[1.875rem] text-creme-100">{t('auth.resetPassword')}</h1>
+        {children}
+      </div>
+    </NuitAuth>
   )
 
   // Opened without the token or the address (a truncated link, or typed by
   // hand): say so now rather than after the visitor has typed a password.
   if (!token || !email) {
-    return (
-      <AuthLayout title={t('auth.resetPassword')} footer={backToLogin}>
-        <div className="space-y-4">
-          <p className="text-sm leading-relaxed text-muted-foreground">{t('auth.resetLinkIncomplete')}</p>
-          <Button asChild size="lg" className="w-full font-semibold">
-            <Link to="/forgot-password">{t('auth.requestNewLink')}</Link>
-          </Button>
-        </div>
-      </AuthLayout>
+    return carte(
+      <div className="mt-6 space-y-6">
+        <p className="text-[0.9375rem] leading-relaxed text-creme-100/70">{t('auth.resetLinkIncomplete')}</p>
+        {lienOr('/forgot-password', t('auth.requestNewLink'))}
+      </div>,
     )
   }
 
-  return (
-    <AuthLayout title={t('auth.resetPassword')} subtitle={t('auth.resetPasswordSubtitle')} footer={backToLogin}>
-      {resetPassword.isSuccess ? (
-        <div className="space-y-4">
-          <p role="status" className="rounded-lg border bg-muted/40 p-4 text-sm leading-relaxed">
-            {t('auth.passwordResetSuccess')}
-          </p>
-          <Button asChild size="lg" className="w-full font-semibold">
-            <Link to="/login">{t('auth.submitLogin')}</Link>
-          </Button>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-          {/* The account being reset, read-only. Also what lets a password
-              manager save the new password against the right account. */}
-          <FloatingInput
-            label={t('auth.email')}
-            type="email"
-            autoComplete="username"
-            dir="ltr"
-            value={email}
-            readOnly
-            className="text-muted-foreground"
-          />
-          <FloatingInput
-            label={t('auth.newPassword')}
-            type="password"
-            autoComplete="new-password"
-            dir="ltr"
-            error={errors.password ? t(errors.password.message!) : passwordError}
-            {...register('password')}
-          />
-          <FloatingInput
-            label={t('auth.passwordConfirmation')}
-            type="password"
-            autoComplete="new-password"
-            dir="ltr"
-            error={errors.password_confirmation ? t(errors.password_confirmation.message!) : undefined}
-            {...register('password_confirmation')}
-          />
+  return carte(
+    resetPassword.isSuccess ? (
+      <div className="mt-6 space-y-6">
+        <p role="status" className="flex items-start gap-3 rounded-xl bg-[#5DD39A]/10 p-4 text-[0.9375rem] leading-relaxed text-creme-100/90 ring-1 ring-[#5DD39A]/25">
+          <MailCheck aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-[#5DD39A]" strokeWidth={1.75} />
+          {t('auth.passwordResetSuccess')}
+        </p>
+        {lienOr('/login', t('auth.submitLogin'))}
+      </div>
+    ) : (
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-7 space-y-4" noValidate>
+        {/* The account being reset, read-only. Also what lets a password
+            manager save the new password against the right account. */}
+        <Champ label={t('auth.email')} type="email" autoComplete="username" dir="ltr" value={email} readOnly className="text-creme-100/60" />
+        <ChampSecret
+          label={t('auth.newPassword')}
+          autoComplete="new-password"
+          error={errors.password ? t(errors.password.message!) : passwordError}
+          {...register('password')}
+        />
+        <ChampSecret
+          label={t('auth.passwordConfirmation')}
+          autoComplete="new-password"
+          error={errors.password_confirmation ? t(errors.password_confirmation.message!) : undefined}
+          {...register('password_confirmation')}
+        />
 
-          {/* An expired link cannot succeed however often the form is sent:
-              offer the way out right where the error is. */}
-          {linkError && (
-            <div className="space-y-1">
-              <p className="text-sm text-destructive">{linkError}</p>
-              <Link to="/forgot-password" className="text-sm font-medium text-primary hover:underline">
-                {t('auth.requestNewLink')}
-              </Link>
-            </div>
-          )}
-          {otherError && <p className="text-sm text-destructive">{otherError}</p>}
+        {/* An expired link cannot succeed however often the form is sent:
+            offer the way out right where the error is. */}
+        {linkError && (
+          <div className="space-y-1.5">
+            <Erreur id="reinitialisation-lien">{linkError}</Erreur>
+            <Link to="/forgot-password" className="ms-1 rounded text-[0.875rem] font-semibold text-[#F1B860] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F1B860]">
+              {t('auth.requestNewLink')}
+            </Link>
+          </div>
+        )}
+        {otherError && <Erreur id="reinitialisation-erreur">{otherError}</Erreur>}
 
-          <Button type="submit" size="lg" className="w-full font-semibold" disabled={resetPassword.isPending}>
-            {resetPassword.isPending ? t('common.loading') : t('auth.resetPassword')}
-          </Button>
-        </form>
-      )}
-    </AuthLayout>
+        <BoutonEnvoi state={resetPassword.isPending ? 'loading' : 'idle'}>{t('auth.resetPassword')}</BoutonEnvoi>
+      </form>
+    ),
   )
 }

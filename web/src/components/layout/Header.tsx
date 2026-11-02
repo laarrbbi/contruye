@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
 import { LOCALES, LOCALE_NAMES, isRtl, setLocale, type Locale } from '@/i18n'
 import { isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
+import { useHeaderTone } from '@/lib/headerTone'
 import { cn } from '@/lib/utils'
 import {
   DropdownMenu,
@@ -36,6 +37,12 @@ export function Header() {
   const current = (LOCALES.find((locale) => locale === i18n.language) ?? 'es') as Locale
   const appShell = APP_SHELL.test(location.pathname)
 
+  // Over the sales page's night sky the bar is a sheet of tracing paper: the
+  // drawing shows through and the text turns white (lib/headerTone.ts).
+  const tone = useHeaderTone()
+  const night = tone === 'night'
+  const quiet = night ? 'text-blanc hover:bg-blanc/10 hover:text-blanc focus-visible:ring-blanc focus-visible:ring-offset-nuit-950' : undefined
+
   const chooseLocale = (locale: Locale) => {
     if (locale === current) return
     // setLocale stores the choice before anything else, so the page below
@@ -58,7 +65,19 @@ export function Header() {
     : []
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/75">
+    <header
+      className={cn(
+        'sticky top-0 z-40 w-full border-b transition-colors duration-500 ease-out-strong',
+        // On the sales page's paper the bar is the sheet itself, with no band:
+        // the same cream, veiled enough that the text passing under it does
+        // not show through the bar's own.
+        night
+          ? 'border-blanc/10 bg-sombre-950/55 text-blanc backdrop-blur'
+          : tone === 'paper'
+            ? 'border-transparent bg-creme-100/80 text-plume backdrop-blur-md'
+            : 'bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/75',
+      )}
+    >
       {/* On the player and the admin, the logo lines up with the sidebar
           below it; elsewhere it lines up with the page's own column. */}
       <div className={cn('flex h-16 items-center gap-6', appShell ? 'px-4 lg:px-6' : 'container')}>
@@ -67,7 +86,7 @@ export function Header() {
           {/* Below 440px the wordmark gives way: logo, language, sign-in and
               sign-up did not fit a 390px phone and the whole site scrolled
               sideways. The mark alone still reads as Construye. */}
-          <ConstruyeLogo wordmarkClassName="hidden min-[440px]:flex" />
+          <ConstruyeLogo variant={night ? 'inherit' : 'brand'} wordmarkClassName="hidden min-[440px]:flex" />
         </Link>
 
         {links.length > 0 && (
@@ -81,9 +100,11 @@ export function Header() {
                   return cn(
                     'rounded-md px-3 py-2 text-sm font-medium transition-colors duration-150',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                    active
-                      ? 'bg-primary/[0.07] text-primary'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                    night
+                      ? cn('text-blanc hover:bg-blanc/10', active && 'bg-blanc/10')
+                      : active
+                        ? 'bg-primary/[0.07] text-primary'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground',
                   )
                 }}
               >
@@ -98,7 +119,7 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               {/* The visible code is part of the spoken name ("FR, Changer de
                   langue"), so voice control users can say what they see. */}
-              <Button variant="ghost" size="sm" className="px-2 text-muted-foreground hover:text-foreground sm:px-3">
+              <Button variant="ghost" size="sm" className={cn('px-2 sm:px-3', quiet ?? 'text-muted-foreground hover:text-foreground')}>
                 <Globe className="h-4 w-4" aria-hidden />
                 <span className="font-semibold uppercase">{current}</span>
                 <span className="sr-only">{t('nav.changeLanguage')}</span>
@@ -127,7 +148,10 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <button
                   type="button"
-                  className="group flex items-center gap-1.5 rounded-full p-0.5 pe-1.5 transition-colors duration-150 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=open]:bg-muted"
+                  className={cn(
+                    'group flex items-center gap-1.5 rounded-full p-0.5 pe-1.5 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2',
+                    night ? 'hover:bg-blanc/10 focus-visible:ring-blanc data-[state=open]:bg-blanc/10' : 'hover:bg-muted focus-visible:ring-ring data-[state=open]:bg-muted',
+                  )}
                 >
                   <span
                     aria-hidden
@@ -137,7 +161,7 @@ export function Header() {
                   </span>
                   <ChevronDown
                     aria-hidden
-                    className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180"
+                    className={cn('h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180', night ? 'text-blanc/80' : 'text-muted-foreground')}
                   />
                   <span className="sr-only">
                     {t('nav.account')} — {user.name}
@@ -173,10 +197,14 @@ export function Header() {
             </DropdownMenu>
           ) : (
             <>
-              <Button variant="ghost" size="sm" asChild>
+              <Button variant="ghost" size="sm" className={quiet} asChild>
                 <Link to="/login">{t('nav.login')}</Link>
               </Button>
-              <Button size="sm" asChild>
+              <Button
+                size="sm"
+                className={cn(night && 'bg-blanc text-encre hover:bg-white focus-visible:ring-blanc focus-visible:ring-offset-nuit-950')}
+                asChild
+              >
                 <Link to="/register">
                   {/* One label at a time, so a screen reader hears one. */}
                   <span className="sm:hidden">{t('nav.registerShort')}</span>
