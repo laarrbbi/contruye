@@ -17,7 +17,8 @@
     "modules": "modules",
     "registerShort": "S'inscrire",
     "main": "Navigation principale",
-    "account": "Mon compte"
+    "account": "Mon compte",
+    "partners": "Partenaires"
   },
   "auth": {
     "loginTitle": "Se connecter",
@@ -384,7 +385,8 @@
       "campaigns": "Promotions",
       "partners": "Partenaires",
       "invoices": "Facturation",
-      "business": "Entreprise et contact"
+      "business": "Entreprise et contact",
+      "companies": "Annuaire des entreprises"
     },
     "common": {
       "actions": "Actions",
@@ -807,6 +809,31 @@
       "toCollect": "Montant à encaisser :",
       "confirm": "Confirmer l'encaissement de {{amount}}",
       "recorded": "Paiement en espèces de {{amount}} enregistré. L'accès est ouvert et l'élève a reçu un e-mail."
+    },
+    "companies": {
+      "title": "Annuaire des entreprises",
+      "lead": "Les entreprises importées (php artisan directory:import). Choisissez celles que voient les élèves : une par une, ou toutes celles que trouve le filtre. Chaque entreprise apparaît dans les modules de son type.",
+      "searchPlaceholder": "Nom, ville ou NIF",
+      "province": "Province",
+      "allProvinces": "Toutes les provinces",
+      "visibility": "Visibilité",
+      "allStates": "Visibles et masquées",
+      "shown": "Visibles",
+      "hidden": "Masquées",
+      "summary": "{{total}} entreprises dans ce filtre · {{visible}} visibles pour les élèves",
+      "showAll": "Afficher tout le filtre",
+      "hideAll": "Masquer tout le filtre",
+      "confirmShow": "Afficher aux élèves les {{total}} entreprises de ce filtre ?",
+      "confirmHide": "Masquer aux élèves les {{total}} entreprises de ce filtre ?",
+      "updated": "{{total}} entreprises mises à jour.",
+      "visibleColumn": "Visible",
+      "name": "Entreprise",
+      "category": "Type",
+      "place": "Où",
+      "contact": "Contact",
+      "employees": "Effectifs",
+      "hideOne": "Masquer {{name}}",
+      "showOne": "Afficher {{name}}"
     }
   },
   "reviews": {
@@ -1262,7 +1289,50 @@
     "purpose": "Pour quoi faire",
     "lockedPhase_one": "{{count}} institution ou partenaire pour cette phase, avec le module",
     "lockedPhase_other": "{{count}} institutions et partenaires pour cette phase, avec le module",
-    "openAnnex": "Voir votre province complète dans l'annexe A"
+    "openAnnex": "Voir votre province complète dans l'annexe A",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher par nom, ville ou NIF",
+    "module": "Module",
+    "allModules": "Tous vos modules",
+    "categories": "Type d'entreprise",
+    "allCategories": "Toutes",
+    "locked": "Les entreprises de l'annuaire viennent avec les modules que vous possédez. Débloquez un module pour les voir.",
+    "empty": "Aucune entreprise ne correspond à ces filtres.",
+    "count": "{{formatted}} entreprises",
+    "pages": "Pages",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{page}} sur {{total}}",
+    "where": "Où",
+    "phone": "Téléphone",
+    "website": "Site web",
+    "email": "E-mail",
+    "category": {
+      "promotoras": "Promoteurs",
+      "constructoras": "Entreprises générales",
+      "obra_civil": "Génie civil",
+      "demolicion_movimiento_tierras": "Démolition et terrassement",
+      "instalaciones": "Installations",
+      "acabados": "Finitions",
+      "cubiertas_estructuras": "Couverture et travaux spécialisés",
+      "materiales": "Matériaux de construction",
+      "maquinaria": "Engins et location",
+      "residuos": "Gestion des déchets",
+      "arquitectura": "Architecture",
+      "ingenieria": "Ingénierie et topographie",
+      "control_tecnico": "Contrôle technique (OCT) et laboratoires",
+      "diseno": "Design et services techniques",
+      "abogados": "Avocats",
+      "asesoria_contable": "Expertise comptable et fiscale",
+      "consultoria": "Conseil",
+      "banca_financiacion": "Banque et financement",
+      "seguros": "Assurances",
+      "agencias_inmobiliarias": "Agences immobilières",
+      "administracion_fincas": "Syndics et gestion immobilière",
+      "marketing": "Marketing et publicité",
+      "limpieza_mantenimiento": "Nettoyage et maintenance",
+      "otros": "Autres"
+    }
   },
   "financials": {
     "navTitle": "Calculer le modèle",
@@ -1299,5 +1369,22 @@
     "sheet": "Feuille",
     "originals": "Les fichiers d'origine",
     "originalsNote": "Tels que le professionnel les a remis. Dans Excel, activez le calcul itératif (100 itérations, écart maximal 0,001) : le modèle contient des références circulaires voulues."
+  },
+  "moduleSection": {
+    "tareas": "Tâches du module",
+    "tareasLead": "Ce que vous devez avoir fait sur votre promotion à la fin de ce module : la checklist de la formation et vos propres tâches.",
+    "leyes": "Lois applicables",
+    "leyesLead": "La réglementation de cette phase, et ce qui compte pour vous dans chaque texte.",
+    "partners": "Partenaires du module",
+    "partnersLead": "Où aller et avec qui travailler dans cette phase : les institutions, les partenaires de votre province et les entreprises de l'annuaire.",
+    "noTasks": "Ce module n'a pas de tâches.",
+    "noLaws": "Ce module n'a pas de lois propres.",
+    "companies": "Entreprises pour cette phase",
+    "companiesLead": "Les entreprises de l'annuaire pour le travail qu'enseigne ce module, dans votre province par défaut."
+  },
+  "partnersPage": {
+    "eyebrow": "Annuaire",
+    "title": "Partenaires",
+    "lead": "Les entreprises avec lesquelles travaille un promoteur en Espagne, pour chaque module que vous possédez : cherchez-les par nom, type, province ou module."
   }
 }

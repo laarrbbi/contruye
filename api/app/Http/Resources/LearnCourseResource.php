@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Company;
 use App\Models\ContentBlock;
 use App\Models\Course;
 use App\Models\CourseDocument;
@@ -136,6 +137,10 @@ class LearnCourseResource extends JsonResource
                         ])->values()
                     : [],
                 'partners_count' => $module->partners->where('is_active', true)->count(),
+                // Companies of the directory this module sends the promoter to (shown, not hidden ones).
+                'companies_count' => $module->kind === 'phase'
+                    ? Company::query()->visible()->whereIn('category', Company::categoriesForPhase($module->order))->count()
+                    : 0,
                 'blocks' => $this->isAccessible($module)
                     ? $this->blocks($module->contentBlocks, $module)
                     : [],
@@ -209,6 +214,13 @@ class LearnCourseResource extends JsonResource
                 'body' => $block->localizedBody(),
                 'body_html' => Markdown::toHtml($block->localizedBody()),
                 'body_locale' => $block->localizedLocale('body'),
+                // Which of the module's opening sections this is, read from the
+                // instructor's Spanish heading: the player shows them apart.
+                'role' => $block->type === 'overview' ? match (true) {
+                    str_starts_with(ltrim((string) $block->body_es), '## Leyes') => 'laws',
+                    str_starts_with(ltrim((string) $block->body_es), '## Dónde') => 'where',
+                    default => null,
+                } : null,
             ];
 
             if ($block->type === 'partner_slot') {

@@ -17,7 +17,8 @@
     "modules": "modules",
     "registerShort": "Sign up",
     "main": "Main navigation",
-    "account": "My account"
+    "account": "My account",
+    "partners": "Partners"
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -384,7 +385,8 @@
       "campaigns": "Promotions",
       "partners": "Partners",
       "invoices": "Invoicing",
-      "business": "Business & contact"
+      "business": "Business & contact",
+      "companies": "Company directory"
     },
     "common": {
       "actions": "Actions",
@@ -807,6 +809,31 @@
       "toCollect": "Amount to collect:",
       "confirm": "Confirm collection of {{amount}}",
       "recorded": "Cash payment of {{amount}} recorded. Access is open and the student has been emailed."
+    },
+    "companies": {
+      "title": "Company directory",
+      "lead": "The imported companies (php artisan directory:import). Choose which ones students see: one by one, or every company the filter finds. Each company appears in the modules of its kind.",
+      "searchPlaceholder": "Name, city or tax ID",
+      "province": "Province",
+      "allProvinces": "All provinces",
+      "visibility": "Visibility",
+      "allStates": "Shown and hidden",
+      "shown": "Shown",
+      "hidden": "Hidden",
+      "summary": "{{total}} companies in this filter · {{visible}} shown to students",
+      "showAll": "Show all in the filter",
+      "hideAll": "Hide all in the filter",
+      "confirmShow": "Show the {{total}} companies of this filter to students?",
+      "confirmHide": "Hide the {{total}} companies of this filter from students?",
+      "updated": "{{total}} companies updated.",
+      "visibleColumn": "Shown",
+      "name": "Company",
+      "category": "Kind",
+      "place": "Where",
+      "contact": "Contact",
+      "employees": "Employees",
+      "hideOne": "Hide {{name}}",
+      "showOne": "Show {{name}}"
     }
   },
   "reviews": {
@@ -1262,7 +1289,50 @@
     "purpose": "What for",
     "lockedPhase_one": "{{count}} institution or partner in this phase, with the module",
     "lockedPhase_other": "{{count}} institutions and partners in this phase, with the module",
-    "openAnnex": "See your whole province in Annex A"
+    "openAnnex": "See your whole province in Annex A",
+    "search": "Search",
+    "searchPlaceholder": "Search by name, city or tax ID",
+    "module": "Module",
+    "allModules": "All your modules",
+    "categories": "Kind of company",
+    "allCategories": "All",
+    "locked": "The directory's companies come with the modules you own. Unlock a module to see them.",
+    "empty": "No company matches these filters.",
+    "count": "{{formatted}} companies",
+    "pages": "Pages",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {{page}} of {{total}}",
+    "where": "Where",
+    "phone": "Phone",
+    "website": "Website",
+    "email": "Email",
+    "category": {
+      "promotoras": "Developers",
+      "constructoras": "Building contractors",
+      "obra_civil": "Civil works",
+      "demolicion_movimiento_tierras": "Demolition and earthworks",
+      "instalaciones": "Installations",
+      "acabados": "Finishes",
+      "cubiertas_estructuras": "Roofing and specialist trades",
+      "materiales": "Building materials",
+      "maquinaria": "Machinery and hire",
+      "residuos": "Waste management",
+      "arquitectura": "Architecture",
+      "ingenieria": "Engineering and surveying",
+      "control_tecnico": "Technical control (OCT) and labs",
+      "diseno": "Design and technical services",
+      "abogados": "Lawyers",
+      "asesoria_contable": "Accounting and tax advice",
+      "consultoria": "Consultancy",
+      "banca_financiacion": "Banking and finance",
+      "seguros": "Insurance",
+      "agencias_inmobiliarias": "Estate agencies",
+      "administracion_fincas": "Property management",
+      "marketing": "Marketing and advertising",
+      "limpieza_mantenimiento": "Cleaning and maintenance",
+      "otros": "Other"
+    }
   },
   "financials": {
     "navTitle": "Calculate the template",
@@ -1299,5 +1369,22 @@
     "sheet": "Sheet",
     "originals": "The original files",
     "originalsNote": "As the practitioner delivered them. In Excel, enable iterative calculation (100 iterations, maximum change 0.001): the template has circular references on purpose."
+  },
+  "moduleSection": {
+    "tareas": "Module tasks",
+    "tareasLead": "What you should have done on your development by the end of this module: the course checklist and your own tasks.",
+    "leyes": "Laws that apply",
+    "leyesLead": "The rules of this phase, and what matters to you in each one.",
+    "partners": "Module partners",
+    "partnersLead": "Where to go and who to work with in this phase: the institutions, the partners in your province and the companies of the directory.",
+    "noTasks": "This module has no tasks.",
+    "noLaws": "This module has no laws of its own.",
+    "companies": "Companies for this phase",
+    "companiesLead": "The directory's companies for the work this module teaches, in your province by default."
+  },
+  "partnersPage": {
+    "eyebrow": "Directory",
+    "title": "Partners",
+    "lead": "The companies a developer works with in Spain, for every module you own: search them by name, kind, province or module."
   }
 }

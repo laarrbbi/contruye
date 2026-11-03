@@ -53,6 +53,7 @@ public coupon codes. It refuses to run in production; a live database is filled 
 | Course translations: check / load | `docker compose exec -T php php artisan app:check-translations` · `… db:seed --class=CourseTranslationSeeder` |
 | Deploy / backups | `deploy/README.md` — `deploy/deploy.sh`, `deploy/backup.sh`, `deploy/restore-drill.sh` |
 | Benchmark | `docker compose exec -T php php artisan bench:endpoints` |
+| Company directory: import | `docker compose exec -T php php artisan directory:import <file.xlsx>…` (Orbis export; see README «Directorio de empresas» on data rights) |
 | Front-end build / lint | `npm --prefix web run build` · `npm --prefix web run lint` |
 | Financial template (engine = Excel; service) | `NODE_OPTIONS="--require $PWD/financials/reference-day.cjs" npm --prefix curso/2_plantilla_financiera/motor test` (on the package's reference day: see the file) · `npm --prefix financials test` |
 
@@ -87,6 +88,9 @@ makes that work lives in `docker/mysql-test/`.
 - Course text is Markdown, rendered on the server by `App\Support\Markdown` (raw HTML stripped).
 - Modules have a `kind`: `phase` (numbered "Módulo N") or `financials`. Course-level texts are
   `CourseDocument`s (introduction, resources, annexes); Anexo A is one `ProvinceGuide` per province.
+- The company directory (`Company`, `config/directory.php`) maps each company's CNAE code to a kind
+  and each kind to the modules it serves. `CompanyDirectoryController` serves it behind the module
+  gate; `/admin/companies` decides which companies students see. The data is never committed.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP

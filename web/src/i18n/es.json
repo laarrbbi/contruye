@@ -17,7 +17,8 @@
     "modules": "módulos",
     "registerShort": "Registrarse",
     "main": "Navegación principal",
-    "account": "Mi cuenta"
+    "account": "Mi cuenta",
+    "partners": "Partners"
   },
   "auth": {
     "loginTitle": "Iniciar sesión",
@@ -384,7 +385,8 @@
       "campaigns": "Promociones",
       "partners": "Colaboradores",
       "invoices": "Facturación",
-      "business": "Empresa y contacto"
+      "business": "Empresa y contacto",
+      "companies": "Directorio de empresas"
     },
     "common": {
       "actions": "Acciones",
@@ -807,6 +809,31 @@
       "toCollect": "Importe a cobrar:",
       "confirm": "Confirmar el cobro de {{amount}}",
       "recorded": "Pago en efectivo de {{amount}} registrado. El acceso está abierto y el alumno ha recibido un correo."
+    },
+    "companies": {
+      "title": "Directorio de empresas",
+      "lead": "Las empresas importadas (php artisan directory:import). Elige cuáles ven los alumnos: una a una, o todas las que encuentra el filtro. Cada empresa aparece en los módulos de su tipo.",
+      "searchPlaceholder": "Nombre, ciudad o NIF",
+      "province": "Provincia",
+      "allProvinces": "Todas las provincias",
+      "visibility": "Visibilidad",
+      "allStates": "Visibles y ocultas",
+      "shown": "Visibles",
+      "hidden": "Ocultas",
+      "summary": "{{total}} empresas con este filtro · {{visible}} visibles para los alumnos",
+      "showAll": "Mostrar todas las del filtro",
+      "hideAll": "Ocultar todas las del filtro",
+      "confirmShow": "¿Mostrar a los alumnos las {{total}} empresas de este filtro?",
+      "confirmHide": "¿Ocultar a los alumnos las {{total}} empresas de este filtro?",
+      "updated": "{{total}} empresas actualizadas.",
+      "visibleColumn": "Visible",
+      "name": "Empresa",
+      "category": "Tipo",
+      "place": "Dónde",
+      "contact": "Contacto",
+      "employees": "Empleados",
+      "hideOne": "Ocultar {{name}}",
+      "showOne": "Mostrar {{name}}"
     }
   },
   "reviews": {
@@ -1262,7 +1289,50 @@
     "purpose": "Para qué",
     "lockedPhase_one": "{{count}} institución o partner en esta fase, con el módulo",
     "lockedPhase_other": "{{count}} instituciones y partners en esta fase, con el módulo",
-    "openAnnex": "Ver tu provincia completa en el Anexo A"
+    "openAnnex": "Ver tu provincia completa en el Anexo A",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar por nombre, ciudad o NIF",
+    "module": "Módulo",
+    "allModules": "Todos tus módulos",
+    "categories": "Tipo de empresa",
+    "allCategories": "Todas",
+    "locked": "Las empresas del directorio vienen con los módulos que tienes. Desbloquea un módulo para verlas.",
+    "empty": "Ninguna empresa con estos filtros.",
+    "count": "{{formatted}} empresas",
+    "pages": "Páginas",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página {{page}} de {{total}}",
+    "where": "Dónde",
+    "phone": "Teléfono",
+    "website": "Web",
+    "email": "Correo",
+    "category": {
+      "promotoras": "Promotoras",
+      "constructoras": "Constructoras",
+      "obra_civil": "Obra civil",
+      "demolicion_movimiento_tierras": "Demolición y movimiento de tierras",
+      "instalaciones": "Instalaciones",
+      "acabados": "Acabados",
+      "cubiertas_estructuras": "Cubiertas y trabajos especializados",
+      "materiales": "Materiales de construcción",
+      "maquinaria": "Maquinaria y alquiler",
+      "residuos": "Gestión de residuos",
+      "arquitectura": "Arquitectura",
+      "ingenieria": "Ingeniería y topografía",
+      "control_tecnico": "Control técnico (OCT) y laboratorios",
+      "diseno": "Diseño y servicios técnicos",
+      "abogados": "Abogados",
+      "asesoria_contable": "Asesoría contable y fiscal",
+      "consultoria": "Consultoría",
+      "banca_financiacion": "Banca y financiación",
+      "seguros": "Seguros",
+      "agencias_inmobiliarias": "Agencias inmobiliarias",
+      "administracion_fincas": "Administración de fincas",
+      "marketing": "Marketing y publicidad",
+      "limpieza_mantenimiento": "Limpieza y mantenimiento",
+      "otros": "Otras"
+    }
   },
   "financials": {
     "navTitle": "Calcular la plantilla",
@@ -1299,5 +1369,22 @@
     "sheet": "Hoja",
     "originals": "Los archivos originales",
     "originalsNote": "Tal como los entregó el profesional. En Excel, activa el cálculo iterativo (100 iteraciones, cambio máximo 0,001): la plantilla tiene referencias circulares a propósito."
+  },
+  "moduleSection": {
+    "tareas": "Tareas del módulo",
+    "tareasLead": "Lo que tienes que dejar hecho en tu promoción al terminar este módulo: la checklist del curso y tus propias tareas.",
+    "leyes": "Leyes que aplican",
+    "leyesLead": "La normativa de esta fase y qué te importa de cada norma.",
+    "partners": "Partners del módulo",
+    "partnersLead": "Dónde ir y con quién trabajar en esta fase: las instituciones, los partners de tu provincia y las empresas del directorio.",
+    "noTasks": "Este módulo no tiene tareas.",
+    "noLaws": "Este módulo no tiene leyes propias.",
+    "companies": "Empresas para esta fase",
+    "companiesLead": "Las empresas del directorio con las que se trabaja en lo que enseña este módulo, en tu provincia por defecto."
+  },
+  "partnersPage": {
+    "eyebrow": "Directorio",
+    "title": "Partners",
+    "lead": "Las empresas con las que trabaja un promotor en España, de cada módulo que tienes: búscalas por nombre, tipo, provincia o módulo."
   }
 }

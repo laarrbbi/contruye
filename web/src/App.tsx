@@ -39,6 +39,9 @@ const ChecklistsPage = lazy(() => import('@/pages/ChecklistsPage').then((m) => (
 const QuizPage = lazy(() => import('@/pages/QuizPage').then((m) => ({ default: m.QuizPage })))
 const CourseDocumentPage = lazy(() => import('@/pages/CourseDocumentPage').then((m) => ({ default: m.CourseDocumentPage })))
 const FinancialsPage = lazy(() => import('@/pages/FinancialsPage').then((m) => ({ default: m.FinancialsPage })))
+const ModuleSectionPage = lazy(() => import('@/pages/ModuleSectionPage').then((m) => ({ default: m.ModuleSectionPage })))
+const PartnersPage = lazy(() => import('@/pages/PartnersPage').then((m) => ({ default: m.PartnersPage })))
+const AdminCompaniesPage = lazy(() => import('@/pages/admin/AdminCompaniesPage').then((m) => ({ default: m.AdminCompaniesPage })))
 const AdminLayout = lazy(() => import('@/pages/admin/AdminLayout').then((m) => ({ default: m.AdminLayout })))
 const AdminDashboardPage = lazy(() => import('@/pages/admin/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })))
 const AdminCoursesPage = lazy(() => import('@/pages/admin/AdminCoursesPage').then((m) => ({ default: m.AdminCoursesPage })))
@@ -110,6 +113,8 @@ export default function App() {
                 <Route path="/learn/:slug/quizzes/:quizId" element={<QuizPage />} />
                 <Route path="/learn/:slug/docs/:documentSlug" element={<CourseDocumentPage />} />
                 <Route path="/learn/:slug/financials" element={<FinancialsPage />} />
+                <Route path="/learn/:slug/modules/:moduleId/:section" element={<ModuleSectionPage />} />
+                <Route path="/partners" element={<PartnersPage />} />
                 <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
                 <Route path="/checkout/failure" element={<CheckoutFailurePage />} />
                 <Route path="/checkout/:slug" element={<CheckoutPage />} />
@@ -129,6 +134,7 @@ export default function App() {
                   <Route path="reviews" element={<AdminReviewsPage />} />
                   <Route path="campaigns" element={<AdminCampaignsPage />} />
                   <Route path="partners" element={<AdminPartnersPage />} />
+                  <Route path="companies" element={<AdminCompaniesPage />} />
                   <Route path="coupons" element={<AdminCouponsPage />} />
                 </Route>
               </Route>

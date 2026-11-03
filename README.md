@@ -145,8 +145,29 @@ Mailtrap en `MAIL_*` o dejar `MAIL_MAILER=log`.
 `/admin` (rol `admin`): panel (ingresos del mes, pedidos por método, matrículas, tasa de
 finalización), gestión de cursos/fases/lecciones (arrastrar y soltar), pedidos (filtros, vista del
 justificante, aprobar/rechazar/conceder, **exportación CSV** `GET /api/admin/orders/export`),
-alumnos (búsqueda, progreso por curso), cupones, campañas, colaboradores por provincia y facturas.
+alumnos (búsqueda, progreso por curso), cupones, campañas, colaboradores por provincia, directorio de empresas y facturas.
 Todas las acciones sobre los pedidos quedan registradas en `audit_logs`.
+
+## Directorio de empresas (Partners)
+
+Un listado de empresas españolas (constructoras, arquitectos, bancos, abogados…) que el alumno ve en
+dos sitios: en cada módulo, en su sección **Partners del módulo**, las empresas de los tipos que ese
+módulo enseña a contratar; y en la página **Partners** (`/partners`), todas las de los módulos que
+tiene, con búsqueda por nombre, tipo, provincia y módulo. Las empresas vienen con los módulos: las de
+un módulo bloqueado no se sirven.
+
+- **Importar:** `php artisan directory:import fichero.xlsx [más ficheros…] [--source=orbis] [--hidden]`.
+  Lee la hoja de datos de una exportación de Orbis (cabeceras en francés, inglés o español), saca la
+  provincia del código postal y el tipo del código CNAE. Volver a importar actualiza cada empresa
+  sin tocar si está visible u oculta. `--hidden` las deja todas ocultas hasta que el admin elija.
+- **Tipos y módulos:** `api/config/directory.php`, cada tipo con sus prefijos CNAE y sus módulos. Las
+  empresas de tipo «otras» no aparecen en ningún módulo.
+- **Elegir qué se ve:** `/admin/companies`, una a una o todas las que encuentra un filtro. Cada cambio
+  queda en `audit_logs`.
+- **Derechos sobre los datos:** una exportación de Orbis hecha con una licencia académica (de
+  universidad) no permite su uso comercial ni su difusión. Antes de importar a producción, el
+  propietario confirma que tiene una licencia que cubre publicarla en un curso de pago. Los datos no
+  se versionan: el repositorio solo lleva el importador y 16 empresas `[DEMO]` (`DemoShowcaseSeeder`).
 
 ## Contenido del curso
 
@@ -158,7 +179,7 @@ desde la base de datos y lo compara línea a línea.
 
 | Del paquete | En la plataforma |
 |---|---|
-| `modulos/01…12` | Los 12 módulos: objetivo, «Leyes que aplican» y «Dónde ir» al abrir el módulo; las lecciones; la checklist; «Partners en tu provincia» |
+| `modulos/01…12` | Los 12 módulos: objetivo, «Leyes que aplican» y «Dónde ir» al abrir el módulo; las lecciones; la checklist; «Partners en tu provincia». Tras el quiz, cada módulo tiene además sus secciones Tareas (la checklist), Leyes y Partners |
 | `modulos/13_financials…` | El módulo Financials, con la calculadora de la plantilla |
 | `modulos/00`, `14`, `16`, `17` | Documentos del curso: introducción, recursos, Anexo A (una provincia cada vez), Anexo B |
 | `evaluacion/*.json` | Un quiz por módulo (13) y el examen final (40 preguntas, 60 minutos), corregidos en el servidor |

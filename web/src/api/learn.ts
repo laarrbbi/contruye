@@ -73,6 +73,8 @@ export interface LearnContentBlock {
   body_html: string | null
   /** The language the body is in (Spanish while its translation is pending). */
   body_locale: string
+  /** overview only: "Leyes que aplican" or "Dónde ir", shown apart by the player. */
+  role?: 'laws' | 'where' | null
   /** partner_slot only: which kind of provider the slot is asking for. */
   partner_category?: string | null
   /** Always sent: lets a locked slot tease what it holds without listing it. */
@@ -116,6 +118,8 @@ export interface LearnModule {
   partners: LearnPartner[]
   /** Always present, so a locked module can tease how many contacts it unlocks. */
   partners_count: number
+  /** Visible companies of the directory this module sends the promoter to. */
+  companies_count: number
   lessons: LearnLesson[]
 }
 

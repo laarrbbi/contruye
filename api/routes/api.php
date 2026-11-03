@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Admin\CampaignController as AdminCampaignController;
 use App\Http\Controllers\Api\Admin\CashOrderController as AdminCashOrderController;
+use App\Http\Controllers\Api\Admin\CompanyController as AdminCompanyController;
 use App\Http\Controllers\Api\Admin\CouponController as AdminCouponController;
 use App\Http\Controllers\Api\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BusinessController;
 use App\Http\Controllers\Api\ChecklistController;
 use App\Http\Controllers\Api\CheckoutController;
+use App\Http\Controllers\Api\CompanyDirectoryController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\CourseDocumentController;
 use App\Http\Controllers\Api\CourseFileController;
@@ -102,6 +104,11 @@ Route::middleware('auth:sanctum')->group(function () {
     // Anexo A: the student's province, phase by phase
     Route::get('/courses/{course:slug}/directory/{province}', [ProvinceDirectoryController::class, 'show'])
         ->whereNumber('province');
+    // The company directory: a module's companies, and the Partners page.
+    Route::get('/courses/{course:slug}/modules/{module}/companies', [CompanyDirectoryController::class, 'module'])
+        ->middleware('throttle:120,1');
+    Route::get('/courses/{course:slug}/companies', [CompanyDirectoryController::class, 'index'])
+        ->middleware('throttle:120,1');
 
     // Module quizzes and the final exam (graded on the server)
     Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->whereNumber('quiz');
@@ -148,6 +155,9 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::apiResource('campaigns', AdminCampaignController::class)->except(['show']);
     Route::apiResource('partners', AdminPartnerController::class)->except(['show']);
     Route::put('modules/{module}/partners', [AdminPartnerController::class, 'syncModule']);
+    Route::get('companies', [AdminCompanyController::class, 'index']);
+    Route::patch('companies/{company}', [AdminCompanyController::class, 'update']);
+    Route::post('companies/visibility', [AdminCompanyController::class, 'bulk']);
 
     // Order review
     Route::get('orders', [AdminOrderController::class, 'index']);

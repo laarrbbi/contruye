@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Campaign;
+use App\Models\Company;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Partner;
@@ -82,6 +83,39 @@ class DemoShowcaseSeeder extends Seeder
             if ($module !== null && ! $module->partners()->where('partners.id', $partner->id)->exists()) {
                 $module->partners()->attach($partner->id, ['order' => 1, 'note_es' => $data['note']]);
             }
+        }
+
+        // --- Company directory: one invented firm per kind, so every module's
+        // Partners section has something to show without a real import.
+        // Category, activity code and province follow the same rules as an import.
+        $companies = [
+            ['4110', 'Promotora Ejemplo', 28], ['6831', 'Agencia Inmobiliaria Ejemplo', 28],
+            ['6910', 'Despacho de Abogados Urbanistas', 8], ['6920', 'Asesoría Contable Ejemplo', 46],
+            ['7022', 'Consultora de Viabilidad Ejemplo', 28], ['7111', 'Estudio de Arquitectura Ejemplo', 8],
+            ['7112', 'Ingeniería y Topografía Ejemplo', 41], ['4121', 'Constructora Ejemplo', 28],
+            ['6419', 'Entidad Financiera Ejemplo', 28], ['6622', 'Correduría de Seguros Ejemplo', 46],
+            ['4673', 'Almacén de Materiales Ejemplo', 29], ['3811', 'Gestor de Residuos Ejemplo', 41],
+            ['7120', 'Organismo de Control Técnico Ejemplo', 8], ['7311', 'Agencia de Marketing Inmobiliario', 29],
+            ['4321', 'Instalaciones Eléctricas Ejemplo', 46], ['6832', 'Administración de Fincas Ejemplo', 28],
+        ];
+
+        foreach ($companies as $index => [$code, $name, $provinceCode]) {
+            $number = $index + 1;
+            Company::query()->updateOrCreate(
+                ['source' => 'demo', 'source_ref' => 'demo-'.$number],
+                [
+                    'name' => '[DEMO] '.$name,
+                    'category' => Company::categoryFor($code),
+                    'activity_code' => $code,
+                    'legal_form' => 'Sociedad limitada',
+                    'city' => null,
+                    'province_id' => $provinceIds[$provinceCode] ?? null,
+                    'phone' => sprintf('6000001%02d', $number),
+                    'email' => 'demo-empresa-'.$number.'@example.es',
+                    'website' => 'https://example.es',
+                    'is_visible' => true,
+                ],
+            );
         }
 
         // --- A running promotion, so the countdown has something to count to ---

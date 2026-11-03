@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
@@ -7,8 +8,11 @@ import {
   ClipboardList,
   FileText,
   GraduationCap,
+  Handshake,
+  ListChecks,
   Lock,
   PlayCircle,
+  Scale,
 } from 'lucide-react'
 import type { LearnData, LearnModule, LearnQuizSummary } from '@/api/learn'
 import { Progress } from '@/components/ui/progress'
@@ -21,6 +25,7 @@ export type PlayerLocation =
   | { quizId: number }
   | { document: string }
   | { financials: true }
+  | { moduleId: number; section: 'tareas' | 'leyes' | 'partners' }
 
 interface PlayerSidebarProps {
   data: LearnData
@@ -28,6 +33,13 @@ interface PlayerSidebarProps {
   /** Called after a link is clicked (used to close the mobile panel). */
   onNavigate?: () => void
 }
+
+/** A module's own sections, after its quiz. */
+const SECTIONS = [
+  { key: 'tareas', icon: ListChecks },
+  { key: 'leyes', icon: Scale },
+  { key: 'partners', icon: Handshake },
+] as const
 
 const rowClass = (isCurrent: boolean) =>
   cn(
@@ -163,6 +175,28 @@ function ModuleSection({
             </Link>
           </li>
         )}
+
+        {/* What the module leaves the promoter with, each apart: tasks, laws, partners. */}
+        {module.kind === 'phase' && !module.is_locked &&
+          SECTIONS.map(({ key, icon: Icon }) => {
+            const isCurrent = 'section' in location && location.moduleId === module.id && location.section === key
+            return (
+              <li key={key}>
+                <Link
+                  to={`/learn/${slug}/modules/${module.id}/${key}`}
+                  onClick={onNavigate}
+                  aria-current={isCurrent ? 'true' : undefined}
+                  className={rowClass(isCurrent)}
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-muted-foreground" />
+                  <span className="flex-1 leading-snug">{t(`moduleSection.${key}`)}</span>
+                  {key === 'partners' && module.companies_count > 0 && (
+                    <span className="shrink-0 text-xs tabular-nums text-muted-foreground">{module.companies_count.toLocaleString()}</span>
+                  )}
+                </Link>
+              </li>
+            )
+          })}
       </ul>
 
       {module.is_locked && (
@@ -190,6 +224,22 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
   const { t } = useTranslation()
   const slug = data.course.slug
   const exam = data.course.final_exam
+  const navRef = useRef<HTMLElement>(null)
+  // A new object on every render: compare by value, so a re-render never
+  // pulls back a list the student has scrolled.
+  const where = JSON.stringify(location)
+
+  // Bring the current entry into view: a Module 9 section is far down the list.
+  // Only the list scrolls, never the page.
+  useEffect(() => {
+    const nav = navRef.current
+    const current = nav?.querySelector<HTMLElement>('[aria-current="true"]')
+    if (!nav || !current) return
+    const top = current.getBoundingClientRect().top - nav.getBoundingClientRect().top
+    if (top < 0 || top > nav.clientHeight - current.offsetHeight) {
+      nav.scrollTop += top - nav.clientHeight / 3
+    }
+  }, [where])
 
   return (
     <div className="flex h-full flex-col">
@@ -209,7 +259,7 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
         </Link>
       </div>
 
-      <nav className="flex-1 divide-y overflow-y-auto" aria-label={t('player.contents')}>
+      <nav ref={navRef} className="flex-1 divide-y overflow-y-auto" aria-label={t('player.contents')}>
         {data.course.documents.length > 0 && (
           <section className="py-2">
             <p className="etiquette px-5 py-2 text-foreground/55">
