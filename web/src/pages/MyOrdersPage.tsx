@@ -75,7 +75,7 @@ export function MyOrdersPage() {
 
   return (
     <div className="container max-w-4xl py-8 sm:py-12">
-      <h1 className="mb-8 text-3xl font-bold">{t('orders.title')}</h1>
+      <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)] mb-10">{t('orders.title')}</h1>
 
       {isLoading ? (
         <p className="text-muted-foreground">{t('common.loading')}</p>

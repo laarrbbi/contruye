@@ -58,13 +58,13 @@ export function Footer() {
   ].filter((line) => !!line)
 
   return (
-    <footer className="border-t bg-secondary/30">
+    <footer className="theme-night !bg-[#04090F]">
       <div className="container py-10 text-sm">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[minmax(0,5fr)_minmax(0,3fr)_minmax(0,4fr)] lg:gap-14">
           <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <Link to={localizedPath('/', locale)} className="inline-flex">
               <span className="sr-only">{t('app.name')}</span>
-              <ConstruyeLogo />
+              <ConstruyeLogo variant="inherit" />
             </Link>
             <p className="max-w-sm leading-relaxed text-muted-foreground">{t('app.metaDescription')}</p>
           </div>

@@ -236,7 +236,7 @@ export function CheckoutPage() {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <CircleCheck className="h-12 w-12 text-success" aria-hidden />
-        <h1 className="text-lg font-semibold">{t('checkout.errors.alreadyEnrolled')}</h1>
+        <h1 className="titre text-2xl">{t('checkout.errors.alreadyEnrolled')}</h1>
         <Button asChild>
           <Link to={`/learn/${course.slug}`}>{t('checkout.errors.goToCourse')}</Link>
         </Button>
@@ -317,7 +317,7 @@ export function CheckoutPage() {
           overlayClassName="bg-primary/60"
         />
         <div className="container space-y-1 py-10">
-          <h1 className="text-3xl font-extrabold">{t('checkout.title')}</h1>
+          <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('checkout.title')}</h1>
           <p className="bidi-auto text-primary-foreground/75">
             <Link to={`/cursos/${course.slug}`} className="hover:underline">
               {course.title}

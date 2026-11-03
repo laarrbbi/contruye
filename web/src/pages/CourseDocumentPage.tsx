@@ -112,7 +112,7 @@ export function CourseDocumentPage() {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <Lock className="h-10 w-10 text-muted-foreground" aria-hidden />
-        <h1 className="text-lg font-semibold">{status === 403 ? t('documents.locked') : t('common.error')}</h1>
+        <h1 className="titre text-2xl">{status === 403 ? t('documents.locked') : t('common.error')}</h1>
         <Button asChild variant="outline">
           <Link to={slug ? `/learn/${slug}` : '/dashboard'}>{t('common.back')}</Link>
         </Button>

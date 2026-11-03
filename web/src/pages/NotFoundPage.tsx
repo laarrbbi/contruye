@@ -23,7 +23,7 @@ export function NotFoundPage() {
         <MapPinOff className="h-10 w-10 text-primary" aria-hidden />
       </div>
       <div className="max-w-md space-y-2">
-        <h1 className="text-3xl font-bold">{t('notFound.title')}</h1>
+        <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('notFound.title')}</h1>
         <p className="text-muted-foreground">{t('notFound.body')}</p>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-3">

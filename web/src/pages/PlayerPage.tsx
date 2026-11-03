@@ -97,7 +97,7 @@ export function PlayerPage() {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <Lock className="h-10 w-10 text-muted-foreground" aria-hidden />
-        <h1 className="text-lg font-semibold">{notEnrolled ? t('player.notEnrolled') : t('common.error')}</h1>
+        <h1 className="titre text-2xl">{notEnrolled ? t('player.notEnrolled') : t('common.error')}</h1>
         {/* Not enrolled: the sales page is the only way forward, so it is the primary action. */}
         <Button asChild variant={notEnrolled ? 'default' : 'outline'}>
           <Link to={notEnrolled ? `/cursos/${slug}` : '/dashboard'}>
@@ -141,7 +141,7 @@ export function PlayerPage() {
             <Lock className="h-7 w-7 text-muted-foreground" />
           </div>
           <p className="bidi-auto mt-4 text-sm text-muted-foreground">{currentLesson.title}</p>
-          <h1 className="mt-1 text-xl font-bold leading-snug sm:text-2xl">{t('player.lockedHeading')}</h1>
+          <h1 className="titre mt-2 text-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)]">{t('player.lockedHeading')}</h1>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">{t('player.lockedBody')}</p>
           {currentModule && currentModule.partners_count > 0 && (
             <p className="mt-2 text-sm font-medium text-primary">
@@ -167,10 +167,11 @@ export function PlayerPage() {
           ) : (
             /* Written content ships before the video is shot — say so
                plainly rather than showing a playback error. */
-            <div className="flex aspect-[21/9] flex-col items-center justify-center gap-2 rounded-xl border border-dashed bg-secondary/40 text-center">
-              <Video className="h-8 w-8 text-muted-foreground" />
-              <p className="text-sm font-medium">{t('player.videoSoon')}</p>
-              <p className="max-w-sm px-6 text-xs text-muted-foreground">{t('player.videoSoonHint')}</p>
+            <div className="theme-night relative flex aspect-[21/9] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl bg-[radial-gradient(110%_90%_at_50%_10%,#12253F,#0B1A2E_55%,#070F1C)] text-center">
+              <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,rgb(246_242_234/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(246_242_234/0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
+              <Video className="relative h-8 w-8 text-or" />
+              <p className="titre relative text-lg">{t('player.videoSoon')}</p>
+              <p className="relative max-w-sm px-6 text-xs text-muted-foreground">{t('player.videoSoonHint')}</p>
             </div>
           )}
 
@@ -178,13 +179,16 @@ export function PlayerPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
               {currentModule && (
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  {moduleLabel(currentModule, t)} · <bdi>{currentModule.title}</bdi>
+                <p className="etiquette flex items-center gap-3 text-foreground/60">
+                  <span aria-hidden className="h-px w-8 shrink-0 bg-or" />
+                  <span>
+                    {moduleLabel(currentModule, t)} · <bdi>{currentModule.title}</bdi>
+                  </span>
                 </p>
               )}
-              <h1 className="bidi-auto mt-1 text-xl font-bold leading-snug sm:text-2xl">{currentLesson.title}</h1>
+              <h1 className="bidi-auto titre mt-4 text-[clamp(1.6rem,1.25rem+1.2vw,2.35rem)]">{currentLesson.title}</h1>
               {formatDuration(currentLesson.duration_seconds, t) && (
-                <p className="mt-1 text-sm text-muted-foreground">{formatDuration(currentLesson.duration_seconds, t)}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{formatDuration(currentLesson.duration_seconds, t)}</p>
               )}
             </div>
             <Button
@@ -217,12 +221,15 @@ export function PlayerPage() {
 
       {/* Key points of the lesson */}
       {!currentLesson.is_locked && currentLesson.key_points.length > 0 && (
-        <section className="rounded-lg border">
-          <h2 className="border-b px-4 py-3 text-sm font-semibold">{t('player.keyPoints')}</h2>
-          <ul className="space-y-2.5 px-4 py-3">
+        <section className="rounded-2xl border border-foreground/[0.08] bg-card p-6 shadow-[0_24px_48px_-34px_rgb(20_26_34/0.38)] sm:p-8">
+          <h2 className="etiquette flex items-center gap-3 text-foreground/60">
+            <span aria-hidden className="h-px w-6 shrink-0 bg-or" />
+            {t('player.keyPoints')}
+          </h2>
+          <ul className="mt-5 space-y-3">
             {currentLesson.key_points.map((point, index) => (
-              <li key={index} className="flex gap-2.5 text-sm leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
+              <li key={index} className="flex gap-3 text-[0.9375rem] leading-relaxed">
+                <span className="mt-[0.6rem] h-px w-3 shrink-0 bg-or" aria-hidden />
                 <span className="bidi-auto">{point}</span>
               </li>
             ))}

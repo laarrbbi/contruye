@@ -212,7 +212,7 @@ export function ManualPaymentPage() {
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <CircleCheck className="h-14 w-14 text-success" />
         <div className="space-y-1">
-          <h1 className="text-2xl font-bold">{t('checkout.manual.paidTitle')}</h1>
+          <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)]">{t('checkout.manual.paidTitle')}</h1>
           <p className="text-muted-foreground">{t('checkout.manual.paidHint')}</p>
         </div>
         <Button asChild size="lg">
@@ -229,7 +229,7 @@ export function ManualPaymentPage() {
   return (
     <div className="container max-w-2xl py-8 sm:py-12">
       <div className="mb-6 space-y-1">
-        <h1 className="text-3xl font-bold">{t('checkout.manual.title')}</h1>
+        <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('checkout.manual.title')}</h1>
         <p className="text-muted-foreground">
           {t('orders.orderNumber', { id: order.id })} — {order.course.title}
         </p>

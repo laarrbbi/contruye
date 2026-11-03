@@ -14,18 +14,20 @@
   }
 
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 50% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 215 50% 15%;
+    /* Hani's paper and ink (tailwind creme / plume / or), for every page
+       inside the platform: the sales page and the platform are one design. */
+    --background: 40 41% 94%; /* creme-100 #F6F2EA */
+    --foreground: 214 26% 10%; /* plume #141A22: 15.6:1 on the paper */
+    --card: 40 60% 97%; /* #FBF8F2, a sheet laid on the paper */
+    --card-foreground: 214 26% 10%;
     --primary: 215 51% 25%; /* deep blue #1F3A5F */
     --primary-foreground: 0 0% 100%;
-    --secondary: 215 35% 95%;
-    --secondary-foreground: 215 51% 25%;
-    --muted: 215 25% 96%;
-    --muted-foreground: 215 15% 45%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 215 50% 15%;
+    --secondary: 38 33% 91%; /* creme-200 #EFE9DE */
+    --secondary-foreground: 214 26% 10%;
+    --muted: 38 33% 91%;
+    --muted-foreground: 213 10% 40%; /* graphite #5B6470: 5.3:1 on the paper */
+    --accent: 36 79% 57%; /* or #E8A33D */
+    --accent-foreground: 214 26% 10%;
     --destructive: 0 72% 45%; /* #c52020: 5.4:1 on its own tinted panels, 5.8:1 on white */
     --destructive-foreground: 0 0% 100%;
     /* 30% lightness: 5.3:1 with white text, 5.0:1 on success/5 panels (36% was 3.9:1). */
@@ -34,10 +36,10 @@
     /* Expert tips ("conseil d'or") — warm highlight, readable on light bg. */
     --warning: 38 92% 50%;
     --warning-foreground: 30 70% 20%; /* #57330f: 5.2:1 on the amber badge (26% was 3.95:1), 10:1 on warning/10 panels */
-    --border: 215 25% 90%;
-    --input: 215 25% 85%;
+    --border: 37 18% 84%;
+    --input: 37 14% 74%;
     --ring: 215 51% 25%;
-    --radius: 0.5rem;
+    --radius: 0.875rem;
 
     /* Motion. The built-in CSS easings are too weak to read as intentional;
        these are the standard strong curves. ease-in is deliberately absent —
@@ -385,6 +387,29 @@ html.lenis {
   .shine::after {
     animation: none !important;
   }
+}
+
+/* Night, inside the platform: the same tokens re-pointed, so any component
+   placed in it (the course navigation, a panel) takes Hani's night (sombre)
+   without being rewritten. Amber is the accent; the paper is the ink. */
+.theme-night {
+  --background: 216 61% 7%; /* sombre-950 #070F1C */
+  --foreground: 40 41% 94%;
+  --card: 213 61% 11%; /* sombre-900 #0B1A2E */
+  --card-foreground: 40 41% 94%;
+  --primary: 36 79% 57%;
+  --primary-foreground: 214 26% 10%;
+  --secondary: 213 56% 16%; /* sombre-800 #12253F */
+  --secondary-foreground: 40 41% 94%;
+  --muted: 213 56% 16%;
+  --muted-foreground: 214 22% 72%; /* 9:1 on sombre-950 */
+  --accent: 36 79% 57%;
+  --accent-foreground: 214 26% 10%;
+  --border: 214 40% 20%;
+  --input: 214 35% 28%;
+  --ring: 36 79% 57%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
 /* ─── Direction « Du croquis à la réalité » (docs/redesign-plan.md, 16) ─────

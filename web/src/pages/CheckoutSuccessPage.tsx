@@ -59,7 +59,7 @@ export function CheckoutSuccessPage() {
           <PartyPopper className="h-10 w-10 text-success" />
         </div>
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold">{t('checkout.success.paidTitle')}</h1>
+          <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('checkout.success.paidTitle')}</h1>
           <p className="text-muted-foreground">{t('checkout.success.paidHint')}</p>
           <p className="bidi-auto font-semibold">{order.course.title}</p>
         </div>
@@ -77,7 +77,7 @@ export function CheckoutSuccessPage() {
           <CircleAlert className="h-10 w-10 text-destructive" />
         </div>
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold">{t('checkout.success.failedTitle')}</h1>
+          <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('checkout.success.failedTitle')}</h1>
           <p className="text-muted-foreground">{t('checkout.success.failedHint')}</p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -100,7 +100,7 @@ export function CheckoutSuccessPage() {
             <Hourglass className="h-10 w-10 text-muted-foreground" />
           </div>
           <div className="max-w-md space-y-2">
-            <h1 className="text-2xl font-bold">{t('checkout.success.timeoutTitle')}</h1>
+            <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)]">{t('checkout.success.timeoutTitle')}</h1>
             <p className="text-muted-foreground">{t('checkout.success.timeoutHint')}</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -120,7 +120,7 @@ export function CheckoutSuccessPage() {
       <div className="container flex min-h-[60vh] flex-col items-center justify-center gap-5 text-center">
         <LoaderCircle className="h-12 w-12 animate-spin text-primary" />
         <div className="space-y-2">
-          <h1 className="text-2xl font-bold">{t('checkout.success.checking')}</h1>
+          <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)]">{t('checkout.success.checking')}</h1>
           <p className="text-muted-foreground">{t('checkout.success.checkingHint')}</p>
         </div>
       </div>
@@ -134,7 +134,7 @@ export function CheckoutSuccessPage() {
         <Hourglass className="h-10 w-10 text-muted-foreground" />
       </div>
       <div className="max-w-md space-y-2">
-        <h1 className="text-2xl font-bold">{t('checkout.success.reviewTitle')}</h1>
+        <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)]">{t('checkout.success.reviewTitle')}</h1>
         <p className="text-muted-foreground">{t('checkout.success.reviewHint')}</p>
       </div>
       <Button asChild variant="outline">

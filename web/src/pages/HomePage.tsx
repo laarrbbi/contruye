@@ -27,7 +27,7 @@ export function HomePage() {
     <div>
       <section className="bg-primary py-16 text-primary-foreground sm:py-24">
         <div className="container max-w-3xl text-center">
-          <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">{t('app.tagline')}</h1>
+          <h1 className="titre text-[clamp(2.25rem,1.5rem+3vw,4rem)]">{t('app.tagline')}</h1>
         </div>
       </section>
 

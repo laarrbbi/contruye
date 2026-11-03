@@ -102,7 +102,11 @@
     "moduleAccess": "{{owned}} / {{total}} modules débloqués",
     "unlockMore": "Débloquer d'autres modules",
     "provinceTitle": "Ma province",
-    "provinceHelp": "Les partenaires recommandés seront filtrés selon cette province."
+    "provinceHelp": "Les partenaires recommandés seront filtrés selon cette province.",
+    "hello": "Bonjour, {{name}}",
+    "lead": "Reprenez là où vous vous êtes arrêté : chaque module est une phase de la promotion.",
+    "progressLabel": "Avancement",
+    "courseLabel": "Formation"
   },
   "course": {
     "enrollCta": "M'inscrire à la formation",

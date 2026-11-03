@@ -33,8 +33,8 @@ const rowClass = (isCurrent: boolean) =>
   cn(
     // Every row reserves the marker's 2px, so opening an item recolours its
     // edge instead of shifting its text.
-    'flex items-center gap-3 border-s-2 px-4 py-2.5 text-sm transition-colors hover:bg-secondary',
-    isCurrent ? 'border-primary bg-secondary font-medium text-primary' : 'border-transparent text-foreground/80',
+    'flex items-center gap-3 border-s-2 px-5 py-2.5 text-sm transition-colors hover:bg-foreground/[0.05]',
+    isCurrent ? 'border-or bg-foreground/[0.07] font-medium text-foreground' : 'border-transparent text-foreground/75',
   )
 
 function QuizBadge({ quiz }: { quiz: LearnQuizSummary }) {
@@ -69,10 +69,10 @@ function ModuleSection({
   const percent = module.lessons.length > 0 ? Math.round((completedCount / module.lessons.length) * 100) : 0
 
   return (
-    <section className={cn(module.is_locked && 'bg-secondary/30')}>
-      <div className="space-y-2 px-4 py-3">
+    <section className={cn(module.is_locked && 'bg-foreground/[0.02]')}>
+      <div className="space-y-2 px-5 pb-3 pt-5">
         <div className="flex items-center justify-between gap-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{moduleLabel(module, t)}</p>
+          <p className="etiquette text-or">{moduleLabel(module, t)}</p>
           {module.is_locked && (
             <span className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
               <Lock className="h-3 w-3" />
@@ -80,7 +80,7 @@ function ModuleSection({
             </span>
           )}
         </div>
-        <h3 className="bidi-auto text-sm font-semibold leading-snug">{module.title}</h3>
+        <h3 className="bidi-auto titre text-[0.9375rem] leading-snug">{module.title}</h3>
         {!module.is_locked && (
           <div className="flex items-center gap-2">
             <Progress value={percent} className="h-1.5 flex-1" aria-label={module.title} />
@@ -102,7 +102,7 @@ function ModuleSection({
           if (lesson.is_locked) {
             return (
               <li key={lesson.id}>
-                <div className="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground">
+                <div className="flex items-center gap-3 px-5 py-2.5 text-sm text-muted-foreground">
                   <Lock className="h-4 w-4 shrink-0" aria-label={t('player.locked')} />
                   <span className="bidi-auto flex-1 leading-snug">{lesson.title}</span>
                   <span className="shrink-0 text-xs tabular-nums">{formatDuration(lesson.duration_seconds, t)}</span>
@@ -120,7 +120,7 @@ function ModuleSection({
                 className={rowClass(isCurrent)}
               >
                 {lesson.is_completed ? (
-                  <CircleCheck className="h-4 w-4 shrink-0 text-success" aria-label={t('player.completed')} />
+                  <CircleCheck className="h-4 w-4 shrink-0 text-or" aria-label={t('player.completed')} />
                 ) : (
                   <PlayCircle className={cn('h-4 w-4 shrink-0', isCurrent ? 'text-primary' : 'text-muted-foreground')} />
                 )}
@@ -166,11 +166,11 @@ function ModuleSection({
       </ul>
 
       {module.is_locked && (
-        <div className="px-4 pb-3">
+        <div className="px-5 pb-4">
           <Link
             to={`/checkout/${slug}?modules=${module.id}`}
             onClick={onNavigate}
-            className="flex items-center justify-center gap-1.5 rounded-md border border-primary/40 bg-background px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/5"
+            className="flex items-center justify-center gap-1.5 rounded-xl border border-or/40 px-3 py-2 text-xs font-semibold text-or transition-colors hover:bg-or/10"
           >
             <Lock className="h-3.5 w-3.5" />
             {t('player.unlockModule')}
@@ -193,8 +193,8 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
 
   return (
     <div className="flex h-full flex-col">
-      <div className="space-y-2 border-b px-4 py-4">
-        <h2 className="bidi-auto text-sm font-bold leading-snug">{data.course.title}</h2>
+      <div className="space-y-3 border-b px-5 py-6">
+        <h2 className="bidi-auto titre text-lg leading-snug">{data.course.title}</h2>
         <Progress value={data.course.progress_percent} aria-label={t('player.courseProgress')} />
         <p className="text-xs text-muted-foreground">
           {t('player.progressPercent', { percent: data.course.progress_percent })}
@@ -202,7 +202,7 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
         <Link
           to={`/learn/${slug}/checklists`}
           onClick={onNavigate}
-          className="mt-1 flex items-center gap-2 rounded-md border border-primary/30 px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
+          className="mt-2 flex items-center gap-2 rounded-xl border border-or/40 px-3 py-2.5 text-sm font-medium text-or transition-colors hover:bg-or/10"
         >
           <ClipboardList className="h-4 w-4 shrink-0" />
           {t('checklist.pageTitle')}
@@ -212,7 +212,7 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
       <nav className="flex-1 divide-y overflow-y-auto" aria-label={t('player.contents')}>
         {data.course.documents.length > 0 && (
           <section className="py-2">
-            <p className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <p className="etiquette px-5 py-2 text-foreground/55">
               {t('documents.navTitle')}
             </p>
             <ul>
@@ -221,7 +221,7 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
                 return (
                   <li key={document.slug}>
                     {document.is_locked ? (
-                      <div className="flex items-center gap-3 px-4 py-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-3 px-5 py-2 text-sm text-muted-foreground">
                         <Lock className="h-4 w-4 shrink-0" aria-label={t('player.locked')} />
                         <span className="flex-1 leading-snug">{document.title}</span>
                       </div>

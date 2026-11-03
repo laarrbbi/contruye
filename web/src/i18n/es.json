@@ -102,7 +102,11 @@
     "moduleAccess": "{{owned}} / {{total}} módulos desbloqueados",
     "unlockMore": "Desbloquear más módulos",
     "provinceTitle": "Mi provincia",
-    "provinceHelp": "Los colaboradores recomendados se filtrarán por esta provincia."
+    "provinceHelp": "Los colaboradores recomendados se filtrarán por esta provincia.",
+    "hello": "Hola, {{name}}",
+    "lead": "Retoma donde lo dejaste: cada módulo es una fase de la promoción.",
+    "progressLabel": "Avance",
+    "courseLabel": "Curso"
   },
   "course": {
     "enrollCta": "Inscribirme en el curso",

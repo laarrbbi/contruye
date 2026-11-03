@@ -75,7 +75,7 @@ export function ChecklistsPage() {
         </Button>
 
         <div className="space-y-2">
-          <h1 className="flex items-center gap-2.5 text-3xl font-extrabold text-primary">
+          <h1 className="titre flex items-center gap-3 text-[clamp(2rem,1.45rem+2vw,3.25rem)]">
             <ClipboardList className="h-7 w-7 shrink-0" />
             {t('checklist.pageTitle')}
           </h1>

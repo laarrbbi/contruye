@@ -20,7 +20,7 @@ export function CheckoutFailurePage() {
         <CircleX className="h-10 w-10 text-destructive" />
       </div>
       <div className="max-w-md space-y-2">
-        <h1 className="text-3xl font-bold">{t('checkout.failure.title')}</h1>
+        <h1 className="titre text-[clamp(2rem,1.45rem+2vw,3.25rem)]">{t('checkout.failure.title')}</h1>
         <p className="text-muted-foreground">{t('checkout.failure.hint')}</p>
         {order && <p className="bidi-auto font-semibold">{order.course.title}</p>}
       </div>

@@ -94,7 +94,7 @@ export function QuizPage() {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <Lock className="h-10 w-10 text-muted-foreground" aria-hidden />
-        <h1 className="text-lg font-semibold">{status === 403 ? t('quiz.locked') : t('common.error')}</h1>
+        <h1 className="titre text-2xl">{status === 403 ? t('quiz.locked') : t('common.error')}</h1>
         <Button asChild variant="outline">
           <Link to={slug ? `/learn/${slug}` : '/dashboard'}>{t('common.back')}</Link>
         </Button>
@@ -113,7 +113,7 @@ export function QuizPage() {
           <Icon className="h-4 w-4 text-primary" />
           {isFinal ? t('exam.navTitle') : t('quiz.navTitle')}
         </p>
-        <h1 className="text-xl font-bold leading-snug sm:text-2xl">{data.title}</h1>
+        <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">{data.title}</h1>
         <p className="text-sm text-muted-foreground">
           {isFinal
             ? t('exam.rules', { total: data.questions_count, pass: data.pass_mark, minutes: data.duration_minutes })

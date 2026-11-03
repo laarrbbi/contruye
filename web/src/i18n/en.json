@@ -102,7 +102,11 @@
     "moduleAccess": "{{owned}} / {{total}} modules unlocked",
     "unlockMore": "Unlock more modules",
     "provinceTitle": "My province",
-    "provinceHelp": "Recommended partners will be filtered to this province."
+    "provinceHelp": "Recommended partners will be filtered to this province.",
+    "hello": "Hello, {{name}}",
+    "lead": "Pick up where you left off: each module is a phase of the development.",
+    "progressLabel": "Progress",
+    "courseLabel": "Course"
   },
   "course": {
     "enrollCta": "Enrol in the course",

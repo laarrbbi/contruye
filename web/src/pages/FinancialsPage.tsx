@@ -190,7 +190,7 @@ export function FinancialsPage() {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <Lock className="h-10 w-10 text-muted-foreground" aria-hidden />
-        <h1 className="text-lg font-semibold">{status === 403 ? t('financials.locked') : t('common.error')}</h1>
+        <h1 className="titre text-2xl">{status === 403 ? t('financials.locked') : t('common.error')}</h1>
         <Button asChild variant="outline">
           <Link to={slug ? `/learn/${slug}` : '/dashboard'}>{t('common.back')}</Link>
         </Button>
@@ -212,7 +212,7 @@ export function FinancialsPage() {
           <Calculator className="h-4 w-4 text-primary" />
           {t('player.financialsLabel')}
         </p>
-        <h1 className="text-xl font-bold leading-snug sm:text-2xl">{t('financials.title')}</h1>
+        <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">{t('financials.title')}</h1>
         <p className="text-sm text-muted-foreground">{t('financials.lead')}</p>
         <p className="rounded-md border border-warning/40 bg-warning/10 px-3 py-2 text-xs leading-relaxed">
           {t('financials.paramsNotice')}{' '}

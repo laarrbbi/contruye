@@ -41,7 +41,7 @@ export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: Vid
     <div className="space-y-2">
       <div
         className={cn(
-          'relative aspect-video w-full overflow-hidden rounded-lg bg-foreground/95 text-background',
+          'relative aspect-video w-full overflow-hidden rounded-2xl bg-sombre-950 text-creme-100 shadow-[0_40px_80px_-50px_rgb(7_15_28/0.7)]',
           className,
         )}
       >
