@@ -35,3 +35,14 @@ clips in place of the generated ones, then `mezcla.py` and `render.mjs` again.
 The Ukrainian voice reads letters, with the stress marked in `guion/uk.json` (U+0301); the Arabic
 script is fully vocalised. Spoken lines may differ from the on-screen words where a voice cannot
 say an acronym (PGOU → «el plan general»).
+
+## Putting it in the course
+
+The film opens Module 1, so it belongs to its first lesson (Lección 1.1). Upload the six files to
+Bunny Stream, then in **Admin → Cursos → contenido → Lección 1.1**:
+
+- **ID del vídeo en Bunny**: the Spanish film's video id (`modulo-1-es.mp4`);
+- **Vídeo en otros idiomas**: one id per language (`modulo-1-en.mp4`, `-fr`, `-ar`, `-ru`, `-uk`).
+
+A student gets the film in their language; a language left empty plays the Spanish one, and the
+player says so. Playback stays behind the access gate (`PlaybackController`), as for every lesson.
