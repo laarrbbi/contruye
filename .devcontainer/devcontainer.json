@@ -4,7 +4,9 @@
 // new tab. Demo logins: admin@example.es / password, javier@example.es / password.
 {
   "name": "Construye Academy preview",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  // Pinned: "base:ubuntu" moved to 26.04, where the docker-in-docker feature
+  // fails to install and the codespace opens in recovery mode.
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/node:1": { "version": "22" }
