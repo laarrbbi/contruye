@@ -373,7 +373,8 @@
     "fullClass": "Увесь урок",
     "currentSection": "поточний розділ",
     "financialsLabel": "Financials",
-    "moduleOverview": "Мета, закони й куди звертатися"
+    "moduleOverview": "Мета, закони й куди звертатися",
+    "videoInLanguage": "Відео мовою: {{language}}. Версії цього уроку вашою мовою поки немає."
   },
   "admin": {
     "title": "Адміністрування",
@@ -468,7 +469,9 @@
         "noAttachments": "Вкладень немає.",
         "lessonContent": "Текст уроку",
         "contentEs": "Текст (ES)",
-        "contentEn": "Текст (EN)"
+        "contentEn": "Текст (EN)",
+        "videoByLanguage": "Відео іншими мовами",
+        "videoByLanguageHelp": "ID відео цього уроку в Bunny для кожної мови. Порожньо: відтворюється відео іспанською."
       },
       "partners": {
         "manage": "Партнери",

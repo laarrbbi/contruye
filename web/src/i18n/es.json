@@ -363,7 +363,8 @@
     "fullClass": "La clase completa",
     "currentSection": "sección actual",
     "financialsLabel": "Financials",
-    "moduleOverview": "Objetivo, leyes y dónde ir"
+    "moduleOverview": "Objetivo, leyes y dónde ir",
+    "videoInLanguage": "Vídeo en {{language}}: esta lección no tiene todavía versión en tu idioma."
   },
   "admin": {
     "title": "Administración",
@@ -456,7 +457,9 @@
         "noAttachments": "Sin adjuntos.",
         "lessonContent": "Contenido escrito de la lección",
         "contentEs": "Contenido (ES)",
-        "contentEn": "Contenido (EN)"
+        "contentEn": "Contenido (EN)",
+        "videoByLanguage": "Vídeo en otros idiomas",
+        "videoByLanguageHelp": "El ID de Bunny del vídeo de esta lección en cada idioma. Vacío: se reproduce el vídeo en español."
       },
       "partners": {
         "manage": "Colaboradores",

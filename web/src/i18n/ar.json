@@ -383,7 +383,8 @@
     "fullClass": "الدرس كاملاً",
     "currentSection": "القسم الحالي",
     "financialsLabel": "Financials",
-    "moduleOverview": "الهدف والقوانين وإلى أين تتوجّه"
+    "moduleOverview": "الهدف والقوانين وإلى أين تتوجّه",
+    "videoInLanguage": "لغة الفيديو: {{language}}. لا تتوفر لهذا الدرس بعدُ نسخة بلغتك."
   },
   "admin": {
     "title": "الإدارة",
@@ -480,7 +481,9 @@
         "noAttachments": "لا مرفقات.",
         "lessonContent": "المحتوى المكتوب للدرس",
         "contentEs": "المحتوى (ES)",
-        "contentEn": "المحتوى (EN)"
+        "contentEn": "المحتوى (EN)",
+        "videoByLanguage": "الفيديو باللغات الأخرى",
+        "videoByLanguageHelp": "معرّف Bunny لفيديو هذا الدرس بكل لغة. إن تُرك فارغاً، يُعرض الفيديو بالإسبانية."
       },
       "partners": {
         "manage": "الشركاء",

@@ -110,3 +110,31 @@ it('returns 404 for a lesson without a bunny video id', function () {
 
     $this->getJson("/api/lessons/{$lesson->id}/playback")->assertNotFound();
 });
+
+it('plays the video in the student\'s language, and the Spanish one where there is none', function () {
+    $lesson = Lesson::factory()->freePreview()->create([
+        'bunny_video_id' => 'vid-es',
+        'bunny_video_ids' => ['fr' => 'vid-fr', 'ar' => 'vid-ar'],
+    ]);
+
+    $fr = $this->getJson("/api/lessons/{$lesson->id}/playback", ['Accept-Language' => 'fr'])->assertOk();
+    expect($fr->json('data.url'))->toContain('/embed/123456/vid-fr')
+        ->and($fr->json('data.locale'))->toBe('fr');
+
+    // No Russian version: the Spanish video, and the player is told so.
+    $ru = $this->getJson("/api/lessons/{$lesson->id}/playback", ['Accept-Language' => 'ru'])->assertOk();
+    expect($ru->json('data.url'))->toContain('/embed/123456/vid-es')
+        ->and($ru->json('data.locale'))->toBe('es');
+
+    $es = $this->getJson("/api/lessons/{$lesson->id}/playback", ['Accept-Language' => 'es'])->assertOk();
+    expect($es->json('data.url'))->toContain('/embed/123456/vid-es');
+});
+
+it('serves a lesson that only has a version in another language to that language', function () {
+    $lesson = Lesson::factory()->freePreview()->create(['bunny_video_id' => null, 'bunny_video_ids' => ['en' => 'vid-en']]);
+
+    $this->getJson("/api/lessons/{$lesson->id}/playback", ['Accept-Language' => 'en'])
+        ->assertOk()
+        ->assertJsonPath('data.locale', 'en');
+    $this->getJson("/api/lessons/{$lesson->id}/playback", ['Accept-Language' => 'es'])->assertNotFound();
+});

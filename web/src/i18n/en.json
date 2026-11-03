@@ -363,7 +363,8 @@
     "fullClass": "The full lesson",
     "currentSection": "current section",
     "financialsLabel": "Financials",
-    "moduleOverview": "Objective, laws and where to go"
+    "moduleOverview": "Objective, laws and where to go",
+    "videoInLanguage": "Video in {{language}}: this lesson has no version in your language yet."
   },
   "admin": {
     "title": "Admin",
@@ -456,7 +457,9 @@
         "noAttachments": "No attachments.",
         "lessonContent": "Written lesson content",
         "contentEs": "Content (ES)",
-        "contentEn": "Content (EN)"
+        "contentEn": "Content (EN)",
+        "videoByLanguage": "Video in other languages",
+        "videoByLanguageHelp": "The Bunny ID of this lesson's video in each language. Empty: the Spanish video plays."
       },
       "partners": {
         "manage": "Partners",

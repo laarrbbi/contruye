@@ -29,18 +29,22 @@ class PlaybackController extends Controller
             $this->authorizeLessonAccess($user, $lesson);
         }
 
-        abort_if(blank($lesson->bunny_video_id), 404);
+        // The student's language when the lesson has that version, Spanish otherwise.
+        $video = $lesson->videoFor(app()->getLocale());
+        abort_if($video === null, 404);
 
         if (blank(config('services.bunny.library_id')) || blank(config('services.bunny.token_key'))) {
             abort(503, __('Video playback is temporarily unavailable. Please try again later.'));
         }
 
-        $signed = BunnyStreamService::fromConfig()->signedEmbedUrl($lesson->bunny_video_id);
+        $signed = BunnyStreamService::fromConfig()->signedEmbedUrl($video['id']);
 
         return response()->json([
             'data' => [
                 'url' => $signed['url'],
                 'expires_at' => $signed['expires_at'],
+                // The language the video is spoken in, for the player to say when it is not the student's.
+                'locale' => $video['locale'],
                 // Shown as an overlay by the player to discourage screen recording.
                 'watermark' => $user?->email,
             ],

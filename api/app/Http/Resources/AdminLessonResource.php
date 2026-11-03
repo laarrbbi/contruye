@@ -23,6 +23,8 @@ class AdminLessonResource extends JsonResource
             'title_es' => $this->title_es,
             'title_en' => $this->title_en,
             'bunny_video_id' => $this->bunny_video_id,
+            // Other languages' versions of the video, by locale; empty object when none.
+            'bunny_video_ids' => (object) ($this->bunny_video_ids ?? []),
             'duration_seconds' => $this->duration_seconds,
             'is_free_preview' => $this->is_free_preview,
             'content_es' => $this->content_es,

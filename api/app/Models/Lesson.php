@@ -26,6 +26,7 @@ class Lesson extends Model
 
         'title_uk',
         'bunny_video_id',
+        'bunny_video_ids',
         'duration_seconds',
         'is_free_preview',
         'content_es',
@@ -59,6 +60,7 @@ class Lesson extends Model
             'duration_seconds' => 'integer',
             'is_free_preview' => 'boolean',
             'attachments' => 'array',
+            'bunny_video_ids' => 'array',
             'key_points_es' => 'array',
             'key_points_en' => 'array',
             'key_points_fr' => 'array',
@@ -67,6 +69,24 @@ class Lesson extends Model
             'key_points_uk' => 'array',
             'is_reflex_sheet' => 'boolean',
         ];
+    }
+
+    /**
+     * The video a student watching in $locale gets: the lesson's own video in
+     * that language when it has one, the authored (Spanish) video otherwise.
+     *
+     * @return array{id: string, locale: string}|null
+     */
+    public function videoFor(string $locale): ?array
+    {
+        $own = $this->bunny_video_ids[$locale] ?? null;
+        if (filled($own)) {
+            return ['id' => (string) $own, 'locale' => $locale];
+        }
+
+        return filled($this->bunny_video_id)
+            ? ['id' => (string) $this->bunny_video_id, 'locale' => (string) config('locales.default')]
+            : null;
     }
 
     public function module(): BelongsTo

@@ -85,6 +85,26 @@ it('rejects a lesson attachment without a path', function () {
         ->assertJsonValidationErrors(['attachments.0.path']);
 });
 
+it('stores a lesson\'s videos in other languages, and only in supported ones', function () {
+    $admin = User::factory()->admin()->create();
+    $lesson = Lesson::factory()->create(['order' => 1]);
+
+    $this->actingAs($admin)
+        ->putJson("/api/admin/lessons/{$lesson->id}", [
+            'title_es' => 'Lección',
+            'bunny_video_id' => 'vid-es',
+            'bunny_video_ids' => ['en' => ' vid-en ', 'fr' => '', 'uk' => 'vid-uk'],
+        ])
+        ->assertOk()
+        ->assertJsonPath('data.bunny_video_ids', ['en' => 'vid-en', 'uk' => 'vid-uk']);
+
+    // Spanish is bunny_video_id itself; an unknown locale is refused.
+    $this->actingAs($admin)
+        ->putJson("/api/admin/lessons/{$lesson->id}", ['title_es' => 'Lección', 'bunny_video_ids' => ['es' => 'x', 'de' => 'y']])
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors(['bunny_video_ids']);
+});
+
 it('updates and deletes a lesson', function () {
     $admin = User::factory()->admin()->create();
     $lesson = Lesson::factory()->create(['order' => 1]);

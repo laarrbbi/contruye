@@ -1,3 +1,4 @@
+import i18n from '@/i18n'
 import { useQuery } from '@tanstack/react-query'
 import { api } from './client'
 
@@ -101,6 +102,8 @@ export interface Playback {
   url: string
   expires_at: string
   watermark: string | null
+  /** The language the video is spoken in: the student's, or Spanish when the lesson has no version in theirs. */
+  locale: string
 }
 
 /**
@@ -109,7 +112,8 @@ export interface Playback {
  */
 export function usePlayback(lessonId: number | null | undefined, enabled = true) {
   return useQuery<Playback>({
-    queryKey: ['playback', lessonId],
+    // The video depends on the language (the API reads it from Accept-Language).
+    queryKey: ['playback', lessonId, i18n.language],
     enabled: enabled && lessonId != null,
     retry: false,
     // Signed URLs expire server-side; keep them fresh-ish but avoid refetch

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { LOCALES, LOCALE_NAMES } from '@/i18n/locales'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useFieldArray, useForm } from 'react-hook-form'
@@ -166,10 +167,14 @@ function ModuleFormDialog({
 // Lesson form dialog
 // ---------------------------------------------------------------------------
 
+/** The languages a lesson can have its own video in: all but the authored one (the first, Spanish). */
+const VIDEO_LOCALES = LOCALES.filter((l) => l !== LOCALES[0])
+
 interface LessonFormValues {
   title_es: string
   title_en: string
   bunny_video_id: string
+  bunny_video_ids: Record<string, string>
   duration_minutes: string
   is_free_preview: boolean
   content_es: string
@@ -181,6 +186,7 @@ const emptyLessonValues: LessonFormValues = {
   title_es: '',
   title_en: '',
   bunny_video_id: '',
+  bunny_video_ids: {},
   duration_minutes: '',
   is_free_preview: false,
   content_es: '',
@@ -193,6 +199,7 @@ function lessonToValues(lesson: AdminLesson): LessonFormValues {
     title_es: lesson.title_es,
     title_en: lesson.title_en ?? '',
     bunny_video_id: lesson.bunny_video_id ?? '',
+    bunny_video_ids: Object.fromEntries(VIDEO_LOCALES.map((l) => [l, lesson.bunny_video_ids?.[l] ?? ''])),
     duration_minutes: lesson.duration_seconds ? String(Math.round(lesson.duration_seconds / 60)) : '',
     is_free_preview: lesson.is_free_preview,
     content_es: lesson.content_es ?? '',
@@ -251,6 +258,7 @@ function LessonFormDialog({
       title_es: values.title_es.trim(),
       title_en: values.title_en.trim() || null,
       bunny_video_id: values.bunny_video_id.trim() || null,
+      bunny_video_ids: Object.fromEntries(VIDEO_LOCALES.map((l) => [l, (values.bunny_video_ids[l] ?? '').trim()]).filter(([, id]) => id !== '')),
       duration_seconds:
         values.duration_minutes.trim() === '' ? null : Math.round(Number(values.duration_minutes) * 60),
       is_free_preview: values.is_free_preview,
@@ -314,6 +322,20 @@ function LessonFormDialog({
               )}
             </div>
           </div>
+
+          {/* The same lesson's video in the other languages: empty means the Spanish video is played. */}
+          <fieldset className="space-y-3 rounded-lg border p-3">
+            <legend className="px-1 text-sm font-medium">{t('admin.content.form.videoByLanguage')}</legend>
+            <p className="text-xs text-muted-foreground">{t('admin.content.form.videoByLanguageHelp')}</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {VIDEO_LOCALES.map((l) => (
+                <div key={l} className="space-y-1">
+                  <Label htmlFor={`lesson-bunny-${l}`} className="text-xs">{LOCALE_NAMES[l]}</Label>
+                  <Input id={`lesson-bunny-${l}`} dir="ltr" {...register(`bunny_video_ids.${l}` as const)} />
+                </div>
+              ))}
+            </div>
+          </fieldset>
 
           <div className="flex items-center justify-between rounded-md border p-3">
             <Label htmlFor="lesson-free-preview" className="cursor-pointer">

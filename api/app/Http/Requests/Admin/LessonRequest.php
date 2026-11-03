@@ -28,6 +28,11 @@ class LessonRequest extends FormRequest
         if ($this->exists('duration_seconds') && $this->input('duration_seconds') === null) {
             $this->merge(['duration_seconds' => 0]);
         }
+        // An emptied field removes that language's video rather than storing "".
+        if (is_array($this->input('bunny_video_ids'))) {
+            $ids = array_filter(array_map(fn ($id) => is_string($id) ? trim($id) : $id, $this->input('bunny_video_ids')), fn ($id) => filled($id));
+            $this->merge(['bunny_video_ids' => $ids === [] ? null : $ids]);
+        }
     }
 
     public function rules(): array
@@ -38,6 +43,9 @@ class LessonRequest extends FormRequest
             // localizedTitle() falls back to Spanish until a translation lands.
             'title_en' => ['nullable', 'string', 'max:255'],
             'bunny_video_id' => ['nullable', 'string', 'max:255'],
+            // Keyed by the other supported locales; the authored one is bunny_video_id.
+            'bunny_video_ids' => ['nullable', 'array:'.implode(',', array_diff(config('locales.supported'), [config('locales.default')]))],
+            'bunny_video_ids.*' => ['string', 'max:255'],
             'content_es' => ['nullable', 'string', 'max:50000'],
             'content_en' => ['nullable', 'string', 'max:50000'],
             'duration_seconds' => ['sometimes', 'nullable', 'integer', 'min:0'],

@@ -373,7 +373,8 @@
     "fullClass": "Весь урок",
     "currentSection": "текущий раздел",
     "financialsLabel": "Financials",
-    "moduleOverview": "Цель, законы и куда обращаться"
+    "moduleOverview": "Цель, законы и куда обращаться",
+    "videoInLanguage": "Видео на языке: {{language}}. Версии этого урока на вашем языке пока нет."
   },
   "admin": {
     "title": "Администрирование",
@@ -468,7 +469,9 @@
         "noAttachments": "Вложений нет.",
         "lessonContent": "Текст урока",
         "contentEs": "Текст (ES)",
-        "contentEn": "Текст (EN)"
+        "contentEn": "Текст (EN)",
+        "videoByLanguage": "Видео на других языках",
+        "videoByLanguageHelp": "ID видео этого урока в Bunny для каждого языка. Пусто: воспроизводится видео на испанском."
       },
       "partners": {
         "manage": "Партнёры",

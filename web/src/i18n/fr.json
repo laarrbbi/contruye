@@ -363,7 +363,8 @@
     "fullClass": "Le cours complet",
     "currentSection": "section en cours",
     "financialsLabel": "Financials",
-    "moduleOverview": "Objectif, lois et où s'adresser"
+    "moduleOverview": "Objectif, lois et où s'adresser",
+    "videoInLanguage": "Vidéo en {{language}} : cette leçon n'a pas encore de version dans votre langue."
   },
   "admin": {
     "title": "Administration",
@@ -456,7 +457,9 @@
         "noAttachments": "Aucune pièce jointe.",
         "lessonContent": "Contenu écrit de la leçon",
         "contentEs": "Contenu (ES)",
-        "contentEn": "Contenu (EN)"
+        "contentEn": "Contenu (EN)",
+        "videoByLanguage": "Vidéo dans les autres langues",
+        "videoByLanguageHelp": "L'ID Bunny de la vidéo de cette leçon dans chaque langue. Vide : la vidéo en espagnol est lue."
       },
       "partners": {
         "manage": "Partenaires",

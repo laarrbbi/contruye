@@ -35,6 +35,8 @@ export interface AdminLesson {
   title_es: string
   title_en: string | null
   bunny_video_id: string | null
+  /** The video in other languages, by locale; Spanish is bunny_video_id. */
+  bunny_video_ids: Partial<Record<string, string>>
   duration_seconds: number | null
   is_free_preview: boolean
   content_es: string | null
@@ -90,6 +92,7 @@ export interface LessonPayload {
   title_es: string
   title_en: string | null
   bunny_video_id?: string | null
+  bunny_video_ids?: Partial<Record<string, string>> | null
   duration_seconds?: number | null
   is_free_preview?: boolean
   content_es?: string | null
