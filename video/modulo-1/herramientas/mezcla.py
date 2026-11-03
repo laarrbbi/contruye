@@ -127,7 +127,11 @@ def main(locale):
     # Duck the pad under the voice: a slow envelope of the voice level.
     lvl = np.abs(voice)
     k = int(0.25 * R)
-    env = np.convolve(lvl, np.ones(k) / k, mode='same')
+    # A centred moving average, by running sum (a direct convolution is O(n·k)).
+    c = np.concatenate([[0.0], np.cumsum(lvl)])
+    lo = np.clip(np.arange(n) - k // 2, 0, n)
+    hi = np.clip(np.arange(n) + (k - k // 2), 0, n)
+    env = (c[hi] - c[lo]) / k
     env = np.clip(env / (np.percentile(env[env > 1e-4], 70) + 1e-9), 0, 1)
     duck = 10 ** ((-7 * env) / 20)
     music *= duck
