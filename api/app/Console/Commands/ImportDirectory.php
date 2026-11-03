@@ -82,6 +82,7 @@ class ImportDirectory extends Command
             $this->info(basename($file).": {$count} companies");
         }
 
+        Company::forgetCounts();
         $this->info("Directory: {$total} companies imported or updated.");
 
         return self::SUCCESS;

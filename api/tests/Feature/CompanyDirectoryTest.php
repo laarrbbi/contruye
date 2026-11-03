@@ -134,19 +134,53 @@ it('lists the Partners page from the owned modules, naming the locked ones', fun
     $this->actingAs(User::factory()->create())->getJson("/api/courses/{$course->slug}/companies")->assertForbidden();
 });
 
+it('lists larger firms first, unknown sizes last, and counts the pages from the filter', function () {
+    $course = directoryCourse();
+    $obra = $course->modules()->orderBy('order')->get()[1];
+    company(['name' => 'Sin Datos', 'employees' => null]);
+    company(['name' => 'Pequeña', 'employees' => 3]);
+    company(['name' => 'Grande', 'employees' => 900]);
+    company(['name' => 'Aseguradora', 'category' => 'seguros', 'employees' => 50]);
+    foreach (range(1, 24) as $n) {
+        company(['name' => sprintf('Obra Civil %02d', $n), 'category' => 'obra_civil', 'employees' => 10]);
+    }
+
+    $student = User::factory()->create();
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => $obra->id]);
+    $url = "/api/courses/{$course->slug}/modules/{$obra->id}/companies";
+
+    $all = $this->actingAs($student)->getJson($url)->assertOk();
+    expect($all->json('data.0.name'))->toBe('Grande')
+        ->and($all->json('meta.total'))->toBe(28)
+        ->and($all->json('meta.last_page'))->toBe(2);
+    $last = $this->actingAs($student)->getJson("{$url}?page=2")->assertOk();
+    expect(collect($last->json('data'))->pluck('name')->last())->toBe('Sin Datos');
+
+    $builders = $this->actingAs($student)->getJson("{$url}?category=constructoras")->assertOk();
+    expect(collect($builders->json('data'))->pluck('name')->all())->toBe(['Grande', 'Pequeña', 'Sin Datos'])
+        ->and($builders->json('meta.total'))->toBe(3)
+        ->and($builders->json('meta.last_page'))->toBe(1);
+});
+
 it('lets the admin show and hide companies, one by one or by filter', function () {
     $admin = User::factory()->admin()->create();
     $a = company(['name' => 'Alfa Construcciones']);
     company(['name' => 'Beta Construcciones']);
     company(['name' => 'Gamma Abogados', 'category' => 'abogados']);
 
+    // The player's per-module count is kept between requests: every change must reach it.
+    expect(Company::visibleCountForPhase(6))->toBe(2);
+
     $this->actingAs($admin)->patchJson("/api/admin/companies/{$a->id}", ['is_visible' => false])->assertOk();
-    expect($a->fresh()->is_visible)->toBeFalse();
+    expect($a->fresh()->is_visible)->toBeFalse()
+        ->and(Company::visibleCountForPhase(6))->toBe(1);
 
     $this->actingAs($admin)->postJson('/api/admin/companies/visibility', ['is_visible' => false, 'category' => 'constructoras'])
         ->assertOk()->assertJsonPath('data.updated', 1);
     expect(Company::where('category', 'constructoras')->where('is_visible', true)->count())->toBe(0)
-        ->and(Company::where('category', 'abogados')->value('is_visible'))->toBeTrue();
+        ->and(Company::where('category', 'abogados')->value('is_visible'))->toBeTrue()
+        ->and(Company::visibleCountForPhase(6))->toBe(0)
+        ->and(Company::visibleCountForPhase(11))->toBe(1);
 
     $this->actingAs($admin)->getJson('/api/admin/companies?visible=0')->assertOk()->assertJsonPath('meta.total', 2);
     $this->actingAs(User::factory()->create())->getJson('/api/admin/companies')->assertForbidden();

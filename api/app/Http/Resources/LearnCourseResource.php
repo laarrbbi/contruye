@@ -138,9 +138,7 @@ class LearnCourseResource extends JsonResource
                     : [],
                 'partners_count' => $module->partners->where('is_active', true)->count(),
                 // Companies of the directory this module sends the promoter to (shown, not hidden ones).
-                'companies_count' => $module->kind === 'phase'
-                    ? Company::query()->visible()->whereIn('category', Company::categoriesForPhase($module->order))->count()
-                    : 0,
+                'companies_count' => $module->kind === 'phase' ? Company::visibleCountForPhase($module->order) : 0,
                 'blocks' => $this->isAccessible($module)
                     ? $this->blocks($module->contentBlocks, $module)
                     : [],

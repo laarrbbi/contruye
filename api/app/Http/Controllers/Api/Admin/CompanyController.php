@@ -62,6 +62,7 @@ class CompanyController extends Controller
         $request->validate(['is_visible' => ['required', 'boolean']]);
         $visible = $request->boolean('is_visible');
         $count = $this->filtered($request)->where('is_visible', '!=', $visible)->update(['is_visible' => $visible, 'updated_at' => now()]);
+        Company::forgetCounts();
         AuditLog::record($request->user(), $visible ? 'companies.shown' : 'companies.hidden', null, [
             'count' => $count,
             'filters' => $request->only(['q', 'category', 'province', 'visible']),

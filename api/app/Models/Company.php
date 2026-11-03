@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * A company of the directory: a builder, an architect, a bank… imported from
@@ -24,6 +25,40 @@ class Company extends Model
     protected function casts(): array
     {
         return ['is_visible' => 'boolean', 'employees' => 'integer'];
+    }
+
+    private const COUNTS_KEY = 'directory.visible-counts';
+
+    protected static function booted(): void
+    {
+        static::saved(fn () => self::forgetCounts());
+        static::deleted(fn () => self::forgetCounts());
+    }
+
+    /**
+     * How many companies students see in each category. The player asks on
+     * every load (one count per module), so it is kept, and dropped whenever
+     * a company changes: here, and after the bulk writes that skip model
+     * events (the admin's filter-wide switch, the import).
+     *
+     * @return array<string, int>
+     */
+    public static function visibleCounts(): array
+    {
+        return Cache::remember(self::COUNTS_KEY, now()->addHour(), fn () => self::query()->visible()
+            ->selectRaw('category, count(*) as n')->groupBy('category')->pluck('n', 'category')
+            ->map(fn ($n) => (int) $n)->all());
+    }
+
+    /** How many companies students see in a phase's Partners section. */
+    public static function visibleCountForPhase(int $phase): int
+    {
+        return (int) array_sum(array_intersect_key(self::visibleCounts(), array_flip(self::categoriesForPhase($phase))));
+    }
+
+    public static function forgetCounts(): void
+    {
+        Cache::forget(self::COUNTS_KEY);
     }
 
     public function province(): BelongsTo

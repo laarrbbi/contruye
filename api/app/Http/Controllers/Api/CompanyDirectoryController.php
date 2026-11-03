@@ -76,11 +76,16 @@ class CompanyDirectoryController extends Controller
         // How many in each category, for the filter: before the category itself is applied.
         $counts = $base()->selectRaw('category, count(*) as n')->groupBy('category')->pluck('n', 'category');
         $category = $request->input('category');
-        $query = $base()->when($category && in_array($category, $categories, true), fn (Builder $q) => $q->where('category', $category))
+        $category = $category !== null && in_array($category, $categories, true) ? $category : null;
+        $query = $base()->when($category !== null, fn (Builder $q) => $q->where('category', $category))
             ->with('province:id,code,name_es,name_en,name_fr,name_ar,name_ru,name_uk')
             // Larger firms first: a promoter's first calls, then the alphabet.
-            ->orderByRaw('employees is null')->orderByDesc('employees')->orderBy('name');
-        $page = $query->paginate(self::PER_PAGE);
+            // MySQL puts an unknown size (NULL) last in a descending sort, and
+            // companies_listing_order_index holds exactly this order.
+            ->orderByDesc('employees')->orderBy('name');
+        // The counts already give the total: no second count over the table.
+        $total = (int) ($category !== null ? ($counts[$category] ?? 0) : $counts->sum());
+        $page = $query->paginate(self::PER_PAGE, total: $total);
 
         return response()->json([
             'data' => collect($page->items())->map(fn (Company $company) => [
