@@ -1,0 +1,5 @@
+# Rendered films, voice clips and mixes: rebuilt by the scripts, too large for git.
+modulo-*/salida/
+# Voice models, fetched by herramientas/modelos.sh.
+modulo-*/modelos/
+__pycache__/

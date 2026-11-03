@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Módulo 1 · El solar</title>
+<!--
+  The picture of the Module 1 video, one frame at a time. render.mjs opens this
+  page at 1920 × 1080, hands it the script (guion/<locale>.json) and the timeline
+  the voice was laid out on, then asks for each frame by its time: nothing here
+  runs on its own clock. Hani's palette and type, the site's own fonts.
+-->
+<style>
+  @font-face { font-family: Poppins; font-weight: 400; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 500; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 600; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 700; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2); }
+  @font-face { font-family: Poppins; font-weight: 400; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-ext-400-normal.woff2); unicode-range: U+0100-024F, U+20AC; }
+  @font-face { font-family: Poppins; font-weight: 600; src: url(../../../web/node_modules/@fontsource/poppins/files/poppins-latin-ext-600-normal.woff2); unicode-range: U+0100-024F, U+20AC; }
+  @font-face { font-family: Montserrat; font-weight: 400; src: url(../../../web/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2); unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: Montserrat; font-weight: 500; src: url(../../../web/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-500-normal.woff2); unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: Montserrat; font-weight: 600; src: url(../../../web/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-600-normal.woff2); unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: Montserrat; font-weight: 700; src: url(../../../web/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-700-normal.woff2); unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: Cairo; font-weight: 400; src: url(../../../web/node_modules/@fontsource/cairo/files/cairo-arabic-400-normal.woff2); }
+  @font-face { font-family: Cairo; font-weight: 600; src: url(../../../web/node_modules/@fontsource/cairo/files/cairo-arabic-600-normal.woff2); }
+  @font-face { font-family: Cairo; font-weight: 700; src: url(../../../web/node_modules/@fontsource/cairo/files/cairo-arabic-700-normal.woff2); }
+
+  :root {
+    --paper: #F6F2EA; --paper2: #EFE9DE; --card: #FBF8F2; --ink: #141A22;
+    --night: #070F1C; --night2: #0B1A2E; --night3: #12253F; --night4: #1F3A5F;
+    --amber: #E8A33D; --amber-dark: #8F5A0E; --amber-light: #FBD9A0; --graphite: #5B6470; --brick: #B4472E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--night); }
+  body { font-family: Poppins, Montserrat, Cairo, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+  [dir=rtl] body, html[dir=rtl] body { font-family: Cairo, Poppins, sans-serif; }
+
+  #stage { position: absolute; inset: 0; overflow: hidden; }
+  .scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+  .scene.paper { background: var(--paper); color: var(--ink); }
+  .scene.night { background: radial-gradient(110% 80% at 50% 28%, var(--night3), var(--night2) 50%, var(--night)); color: var(--paper); }
+  .cam { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
+  .abs { position: absolute; }
+
+  /* Paper: a faint drafting grid and the tooth of the sheet. Night: the same grid, in blueprint. */
+  .grid { position: absolute; inset: -60px; background-image: linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px); background-size: 96px 96px; }
+  .paper .grid { color: rgb(20 26 34 / 0.045); }
+  .night .grid { color: rgb(246 242 234 / 0.035); }
+  .halo { position: absolute; border-radius: 50%; filter: blur(10px); }
+
+  .eyebrow { font-weight: 500; font-size: 19px; letter-spacing: 0.22em; text-transform: uppercase; display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+  .eyebrow::before { content: ''; width: 44px; height: 2px; background: var(--amber); flex: none; }
+  [dir=rtl] .eyebrow { letter-spacing: 0; font-size: 24px; }
+  .paper .eyebrow { color: rgb(20 26 34 / 0.62); }
+  .night .eyebrow { color: rgb(246 242 234 / 0.62); }
+  .h1 { font-weight: 600; letter-spacing: -0.035em; line-height: 0.95; }
+  .h2 { font-weight: 600; letter-spacing: -0.025em; line-height: 1.04; }
+  .body { font-weight: 400; line-height: 1.4; }
+  [dir=rtl] .h1, [dir=rtl] .h2 { letter-spacing: 0; line-height: 1.25; }
+  [dir=rtl] .body { line-height: 1.6; }
+  .label { font-weight: 500; font-size: 17px; letter-spacing: 0.18em; text-transform: uppercase; }
+  [dir=rtl] .label { letter-spacing: 0; font-size: 22px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* A word comes up from under its own line. */
+  .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.06em 0 0.16em; margin: -0.06em 0 -0.16em; }
+  .wi { display: inline-block; will-change: transform; }
+
+  .card { background: var(--card); border-radius: 22px; box-shadow: 0 1px 0 rgb(255 255 255 / 0.8) inset, 0 30px 60px -30px rgb(20 26 34 / 0.35), 0 0 0 1px rgb(20 26 34 / 0.06); }
+  .night .card { background: rgb(246 242 234 / 0.045); box-shadow: 0 0 0 1px rgb(246 242 234 / 0.12), 0 40px 80px -40px rgb(0 0 0 / 0.6); backdrop-filter: blur(2px); }
+  .chip { border-radius: 999px; padding: 14px 26px; font-size: 26px; font-weight: 500; white-space: nowrap; }
+
+  svg { overflow: visible; }
+  .stroke { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  #bug { position: absolute; top: 54px; inset-inline-start: 72px; display: flex; align-items: center; gap: 16px; z-index: 50; font-weight: 500; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; }
+  [dir=rtl] #bug { letter-spacing: 0; font-size: 19px; }
+  #bug svg { width: 30px; height: 30px; }
+  #rail { position: absolute; bottom: 54px; inset-inline-start: 72px; display: flex; gap: 10px; z-index: 50; }
+  #rail .seg { width: 92px; }
+  #rail .bar { height: 3px; border-radius: 2px; background: currentColor; opacity: 0.18; position: relative; overflow: hidden; }
+  #rail .fill { position: absolute; inset: 0; background: var(--amber); transform-origin: left; }
+  [dir=rtl] #rail .fill { transform-origin: right; }
+  #rail .tag { margin-top: 10px; font-size: 14px; font-weight: 500; letter-spacing: 0.14em; }
+
+  #grain { position: absolute; inset: 0; z-index: 90; pointer-events: none; mix-blend-mode: overlay; opacity: 0.22; }
+  #vignette { position: absolute; inset: 0; z-index: 89; pointer-events: none; background: radial-gradient(120% 95% at 50% 45%, transparent 62%, rgb(7 15 28 / 0.22)); }
+  #wipe { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--amber); z-index: 80; box-shadow: 0 0 24px 4px rgb(232 163 61 / 0.55); }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="wipe"></div>
+<div id="vignette"></div>
+<canvas id="grain" width="960" height="540"></canvas>
+<script src="./motion.js"></script>
+</body>
+</html>
