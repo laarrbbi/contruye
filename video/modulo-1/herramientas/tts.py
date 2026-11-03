@@ -18,8 +18,8 @@ VOICES = {
     'en': ('kokoro', 'af_heart', 'en-us', 0.97),
     'fr': ('kokoro', 'ff_siwis', 'fr-fr', 0.96),
     'ru': ('piper', 'vits-piper-ru_RU-dmitri-medium/ru_RU-dmitri-medium', 0, 1.0),
-    'uk': ('piper-text', 'vits-piper-uk_UA-ukrainian_tts-medium/uk_UA-ukrainian_tts-medium', 2, 1.0),
-    'ar': ('piper', 'vits-piper-ar_JO-kareem-medium/ar_JO-kareem-medium', 0, 1.0),
+    'uk': ('piper-text', 'vits-piper-uk_UA-ukrainian_tts-medium/uk_UA-ukrainian_tts-medium', 2, 1.12),
+    'ar': ('piper', 'vits-piper-ar_JO-kareem-medium/ar_JO-kareem-medium', 0, 1.2),
 }
 _k = None
 _p = {}

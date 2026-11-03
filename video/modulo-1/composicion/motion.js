@@ -71,7 +71,9 @@ function sv(tag, attrs, parent) {
 }
 /** A block of text placed at x (from the start edge), y, width w. */
 function block(parent, text, cls, x, y, w, style = {}) {
-  const n = el('div', 'abs ' + cls, parent, { left: X(x, w) + 'px', top: y + 'px', width: w + 'px', ...style })
+  const { fit, ...rest } = style
+  const n = el('div', 'abs ' + cls, parent, { left: X(x, w) + 'px', top: y + 'px', width: w + 'px', ...rest })
+  if (fit) n.dataset.fit = fit
   if (text != null) n.textContent = text
   return n
 }
@@ -189,7 +191,7 @@ S.open = (root, ui, cue) => {
   sv('path', { d: `M${o.x + 820} ${o.y + 292} L${o.x + 832} ${o.y + 340} L${o.x + 820} ${o.y + 332} L${o.x + 808} ${o.y + 340} Z`, fill: C.paper }, north)
 
   const eb = block(root, ui.eyebrow, 'eyebrow', 140, 318, 700)
-  const title = words(root, ui.title, 'h1', 140, 360, 820, { fontSize: RTL ? '190px' : '212px' })
+  const title = words(root, ui.title, 'h1', 140, 360, 820, { fontSize: RTL ? '190px' : '212px', fit: 250 })
   const sub = block(root, ui.sub, 'body', 144, 610, 760, { fontSize: '29px', color: 'rgb(246 242 234 / 0.72)' })
   const gl = block(root, ui.goalLabel, 'label', 144, 728, 700, { color: C.amber })
   const goal = words(root, ui.goal, 'body', 144, 770, 780, { fontSize: '40px', fontWeight: 500, lineHeight: 1.3 })
@@ -220,7 +222,7 @@ S.open = (root, ui, cue) => {
 }
 
 S.route = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '88px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '88px', fit: 112 })
   const g = stageSvg(root)
   const xs = [220, 640, 1060, 1480]
   const y = 560
@@ -263,9 +265,9 @@ S.route = (root, ui, cue) => {
 
 S.product = (root, ui, cue) => {
   const eb = block(root, ui.lesson, 'eyebrow', 140, 300, 600)
-  const title = words(root, ui.title, 'h2', 140, 344, 720, { fontSize: '92px' })
+  const title = words(root, ui.title, 'h2', 140, 344, 720, { fontSize: '92px', fit: 230 })
   const note = words(root, ui.note, 'body', 144, 640, 660, { fontSize: '36px', fontWeight: 500 })
-  const und = el('div', 'abs', root, { left: X(144, 300) + 'px', top: '760px', width: '300px', height: '4px', background: C.amber, transformOrigin: RTL ? 'right' : 'left', transform: 'scaleX(0)', borderRadius: '2px' })
+  const und = el('div', '', note.box, { marginTop: '22px', width: '300px', height: '4px', background: C.amber, transformOrigin: RTL ? 'right' : 'left', transform: 'scaleX(0)', borderRadius: '2px' })
   const card = el('div', 'abs card', root, { left: X(1000, 780) + 'px', top: '170px', width: '780px', height: '740px' })
   const head = el('div', 'abs label', card, { top: '46px', left: '56px', right: '56px', color: 'rgb(20 26 34 / 0.55)', display: 'flex', justifyContent: 'space-between' })
   el('span', '', head).textContent = ui.title
@@ -345,14 +347,14 @@ S.land = (root, ui, cue) => {
   const dots = sv('g', { opacity: 0 }, g)
   for (let i = 0; i < 70; i++) { const [x, y] = fieldPr(6 + ((i * 37) % 58), 6 + ((i * 53) % 58)); sv('circle', { cx: x, cy: y, r: 1.6, fill: C.line }, dots) }
   const [fx, fy] = fieldPr(35, 32)
-  const noBox = el('div', 'abs', pan, { top: fy - 70 + 'px', width: '560px', left: (RTL ? W - fx - 280 : fx - 280) + 'px', textAlign: 'center', opacity: 0 })
-  const noT = el('div', 'h2', noBox, { fontSize: '54px', color: C.paper, position: 'relative', display: 'inline-block' })
+  const noBox = el('div', 'abs', pan, { top: fy - 70 + 'px', width: '760px', left: (RTL ? W - fx - 380 : fx - 380) + 'px', textAlign: 'center', opacity: 0 })
+  const noT = el('div', 'h2', noBox, { fontSize: '54px', color: C.paper, position: 'relative', display: 'inline-block', whiteSpace: 'nowrap' })
   noT.textContent = ui.no
   const strike = el('div', 'abs', noT, { left: '-8px', right: '-8px', top: '54%', height: '4px', background: C.brick, transformOrigin: RTL ? 'right' : 'left', transform: 'scaleX(0)' })
   const noN = el('div', 'body', noBox, { fontSize: '26px', color: 'rgb(246 242 234 / 0.72)', marginTop: '14px' })
   noN.textContent = ui.noNote
 
-  const title = words(root, ui.title, 'h2', 140, 196, 640, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 760, { fontSize: '84px', fit: 108 })
   const yes = words(root, ui.yes, 'h2', 140, 318, 600, { fontSize: '54px', color: C.amberLight })
   const yesNote = el('div', 'abs', root, { left: X(140, 620) + 'px', top: '800px', width: '620px', display: 'flex', gap: '20px', alignItems: 'flex-start', opacity: 0 })
   const ys = sv('svg', { width: 44, height: 44, style: 'flex:none;margin-top:4px' }, yesNote)
@@ -394,7 +396,7 @@ S.land = (root, ui, cue) => {
 }
 
 S.channels = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 560, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 520, { fontSize: '84px', fit: 200 })
   const cap = block(root, ui.caption, 'label', 144, 420, 440, { color: C.amberDark })
   const g = stageSvg(root)
   const defs = sv('defs', {}, g)
@@ -429,7 +431,7 @@ S.channels = (root, ui, cue) => {
 }
 
 S.filter = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 250, 196, 1300, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 250, 196, 1500, { fontSize: '84px', fit: 108 })
   // A ten-minute dial beside the title, running for the whole scene.
   const dial = sv('svg', { width: 90, height: 90, class: 'abs', style: `${RTL ? 'right' : 'left'}:140px;top:204px` }, root)
   sv('circle', { cx: 45, cy: 45, r: 38, fill: 'none', stroke: 'rgb(20 26 34 / 0.15)', 'stroke-width': 6 }, dial)
@@ -456,7 +458,7 @@ S.filter = (root, ui, cue) => {
   const askLabel = el('div', 'abs label', root, { top: barY + barH + 22 + 'px', left: X(barX, 600) + 'px', width: '600px', opacity: 0 })
   askLabel.textContent = ui.asking
   const mark = el('div', 'abs', root, { top: barY - 34 + 'px', left: (RTL ? W - barX - barW * 0.3 : barX + barW * 0.3) - 1.5 + 'px', width: '3px', height: barH + 80 + 'px', background: C.amber, transformOrigin: 'top', transform: 'scaleY(0)' })
-  const markLabel = el('div', 'abs h2 num', root, { top: barY - 100 + 'px', left: (RTL ? W - barX - barW * 0.3 : barX + barW * 0.3) - 100 + 'px', width: '200px', textAlign: 'center', fontSize: '48px', color: C.amberDark, opacity: 0 })
+  const markLabel = el('div', 'abs h2 num', root, { direction: 'ltr', top: barY - 100 + 'px', left: (RTL ? W - barX - barW * 0.3 : barX + barW * 0.3) - 100 + 'px', width: '200px', textAlign: 'center', fontSize: '48px', color: C.amberDark, opacity: 0 })
   markLabel.textContent = '30 %'
   const stamp = el('div', 'abs', root, { top: '790px', left: X(1120, 660) + 'px', width: '660px', textAlign: 'center', opacity: 0 })
   const st = el('div', 'h2', stamp, { display: 'inline-block', fontSize: '64px', color: C.brick, border: `4px solid ${C.brick}`, borderRadius: '14px', padding: '6px 30px 10px' })
@@ -495,7 +497,7 @@ S.filter = (root, ui, cue) => {
 
 S.urban = (root, ui, cue) => {
   const eb = block(root, ui.lesson, 'eyebrow', 140, 200, 600)
-  const title = words(root, ui.title, 'h2', 140, 240, 660, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 240, 680, { fontSize: '84px', fit: 205 })
   const rules = el('div', 'abs card', root, { left: X(140, 640) + 'px', top: '470px', width: '640px', padding: '34px 40px', opacity: 0 })
   const rr = [0, 2].map((k) => {
     const r = el('div', '', rules, { padding: k ? '26px 0 0' : '0 0 26px', borderBottom: k ? 'none' : '1px solid rgb(246 242 234 / 0.14)', opacity: 0 })
@@ -512,7 +514,7 @@ S.urban = (root, ui, cue) => {
   sv('polygon', { points: pts(slabF.right), fill: '#12253F' }, slab)
   sv('polygon', { points: pts(plot), fill: 'rgb(232 163 61 / 0.12)' }, slab)
   const plotLine = line(g, pathOf(plot), { stroke: C.amber, 'stroke-width': 2.6 })
-  const plotLabel = pin(root, ui.plot, 'h2 num', ...pr(12.5, 50), { fontSize: '30px', color: C.amberLight, opacity: 0 }, 'center')
+  const plotLabel = pin(root, ui.plot, 'h2 num', ...pr(27.5, -3), { fontSize: '30px', color: C.amberLight, opacity: 0 })
   const coef = pin(root, ui.coef, 'chip num', ...pr(30, 34), { fontSize: '30px', background: C.amber, color: C.ink, opacity: 0 })
   // Five floors (PB+4), 400 m² each: 2,000 m² of floor area on 1,000 m² of land.
   const floors = [0, 1, 2, 3, 4].map((k) => {
@@ -592,7 +594,7 @@ S.urban = (root, ui, cue) => {
 }
 
 S.practice = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 1500, { fontSize: '84px', fit: 108 })
   const xs = [140, 700, 1260]
   const cards = ui.cards.map(([head, desc], i) => {
     const c = el('div', 'abs card', root, { left: X(xs[i], 520) + 'px', top: '340px', width: '520px', height: '440px', opacity: 0 })
@@ -614,8 +616,9 @@ S.practice = (root, ui, cue) => {
       for (let k = 0; k < 4; k++) strokes.push(line(s, `M52 ${54 + k * 22} L ${136 - (k % 2) * 30} ${54 + k * 22}`, { ...st, 'stroke-width': 1.6 }))
       strokes.push(line(s, 'M150 128 m -28 0 a 28 28 0 1 0 56 0 a 28 28 0 1 0 -56 0', { stroke: C.amber, 'stroke-width': 3 }))
     }
-    el('div', 'abs h2', c, { top: '250px', left: '44px', right: '44px', fontSize: '38px' }).textContent = head
-    el('div', 'abs body', c, { top: '312px', left: '44px', right: '44px', fontSize: '27px', color: C.graphite }).textContent = desc
+    const words_ = el('div', 'abs', c, { top: '240px', left: '44px', right: '44px' })
+    el('div', 'h2', words_, { fontSize: '36px', lineHeight: 1.12 }).textContent = head
+    el('div', 'body', words_, { fontSize: '26px', color: C.graphite, marginTop: '14px' }).textContent = desc
     return { c, strokes }
   })
   const warn = el('div', 'abs', root, { left: X(140, 1640) + 'px', top: '840px', width: '1640px', height: '100px', border: `2px solid ${C.amber}`, borderRadius: '18px', display: 'flex', alignItems: 'center', gap: '26px', padding: '0 34px', background: 'rgb(232 163 61 / 0.08)', opacity: 0 })
@@ -640,7 +643,7 @@ S.practice = (root, ui, cue) => {
 
 S.dd = (root, ui, cue) => {
   const eb = block(root, ui.lesson, 'eyebrow', 140, 250, 600)
-  const title = words(root, ui.title, 'h2', 140, 294, 700, { fontSize: '100px' })
+  const title = words(root, ui.title, 'h2', 140, 294, 760, { fontSize: '100px', fit: 135 })
   const docs = ui.docs.map((d, i) => {
     const r = el('div', 'abs', root, { left: X(140, 720) + 'px', top: 470 + i * 96 + 'px', width: '720px', display: 'flex', alignItems: 'center', gap: '24px', opacity: 0 })
     const s = sv('svg', { width: 44, height: 54, style: 'flex:none' }, r)
@@ -697,7 +700,7 @@ S.dd = (root, ui, cue) => {
 }
 
 S.checks = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 1500, { fontSize: '84px', fit: 108 })
   const xs = [140, 700, 1260]
   const icons = [
     (s) => [line(s, 'M8 40 L24 8 L40 40 Z', { stroke: C.amber, 'stroke-width': 2.6 }), line(s, 'M18 28 L30 28 M24 20 L24 34', { stroke: C.paper, 'stroke-width': 2.2 })],
@@ -735,7 +738,7 @@ S.checks = (root, ui, cue) => {
 
 S.forms = (root, ui, cue) => {
   const eb = block(root, ui.lesson, 'eyebrow', 140, 180, 600)
-  const title = words(root, ui.title, 'h2', 140, 222, 1200, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 222, 1200, { fontSize: '84px', fit: 108 })
   const cx = [390, 690, 990, 1290, 1590]
   const rot = [-7, -3.5, 0, 3.5, 7]
   const cards = ui.forms.map((f, i) => {
@@ -773,7 +776,7 @@ S.forms = (root, ui, cue) => {
 }
 
 S.tax = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '84px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 1500, { fontSize: '84px', fit: 108 })
   const colX = [140, 960, 1440]
   const colW = [780, 440, 340]
   const heads = ui.head.map((h, i) => block(root, h, 'label', colX[i], 380, colW[i], { color: 'rgb(20 26 34 / 0.55)', opacity: 0 }))
@@ -810,8 +813,8 @@ S.tax = (root, ui, cue) => {
 }
 
 S.spe = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 520, { fontSize: '96px' })
-  const tag = el('div', 'abs chip', root, { left: X(140, 600) + 'px', top: '318px', border: `2px solid ${C.amber}`, color: C.amberLight, fontSize: '28px', opacity: 0 })
+  const title = words(root, ui.title, 'h2', 140, 196, 1000, { fontSize: '96px', fit: 122 })
+  const tag = el('div', 'abs chip', root, { left: X(140, 600) + 'px', top: '338px', border: `2px solid ${C.amber}`, color: C.amberLight, fontSize: '28px', opacity: 0 })
   tag.textContent = ui.tag
   const g = stageSvg(root)
   const xs = [260, 540, 820, 1100, 1380, 1660]
@@ -856,7 +859,7 @@ S.spe = (root, ui, cue) => {
 }
 
 S.mistakes = (root, ui, cue) => {
-  const title = words(root, ui.title, 'h2', 140, 196, 1200, { fontSize: '96px' })
+  const title = words(root, ui.title, 'h2', 140, 196, 1500, { fontSize: '96px', fit: 122 })
   const rows = ui.items.map((txt, i) => {
     const r = el('div', 'abs', root, { left: X(140, 1640) + 'px', top: 380 + i * 180 + 'px', width: '1640px', display: 'flex', alignItems: 'center', gap: '36px' })
     const s = sv('svg', { width: 74, height: 68, style: 'flex:none' }, r)
@@ -886,7 +889,7 @@ S.mistakes = (root, ui, cue) => {
 
 S.close = (root, ui, cue) => {
   const list = el('div', 'abs', root, { inset: 0 })
-  const title = words(list, ui.title, 'h2', 140, 180, 1400, { fontSize: '72px' })
+  const title = words(list, ui.title, 'h2', 140, 180, 1500, { fontSize: '72px', fit: 96 })
   const items = ui.items.map((txt, i) => {
     const col = i < 7 ? 0 : 1
     const row = i < 7 ? i : i - 7
@@ -1005,6 +1008,14 @@ window.boot = async ({ script, timeline }) => {
     noise.push(c)
   }
   await document.fonts.ready
+  // Longer languages: a title takes the room it was given, and no more.
+  for (const n of document.querySelectorAll('[data-fit]')) {
+    let size = parseFloat(getComputedStyle(n).fontSize)
+    while (n.scrollHeight > Number(n.dataset.fit) && size > 18) {
+      size *= 0.95
+      n.style.fontSize = size + 'px'
+    }
+  }
   return { duration: timeline.duration }
 }
 
