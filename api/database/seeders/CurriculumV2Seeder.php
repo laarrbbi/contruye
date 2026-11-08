@@ -13,9 +13,12 @@ use App\Support\Course\CourseSource;
 use Illuminate\Database\Seeder;
 
 /**
- * Installs the course from the instructor's package (curso/, version 4.0):
+ * Installs the course from the instructor's package (curso/, version 4.1):
  * the 12 modules and Financials with their lessons, the course documents
  * (introduction, resources, annexes), the module quizzes and the final exam.
+ * Run again over a course already installed, it brings the Spanish texts up
+ * to the package in place (a new package from the instructor), so progress,
+ * enrollments and orders keep their modules and lessons.
  *
  * Rules honoured here:
  * - Every text is stored as delivered, Markdown included (CourseSource says
@@ -65,7 +68,7 @@ class CurriculumV2Seeder extends Seeder
         // Enrollments and orders reference modules, so the structure is only
         // (re)built when it is not already the one in the package.
         if ($course->modules()->count() === count($modules)) {
-            $this->command?->info('Curriculum already installed — skipping the modules.');
+            $this->refreshTexts($course, $modules);
             $this->seedQuizzes($course, $source);
 
             return;
@@ -81,7 +84,9 @@ class CurriculumV2Seeder extends Seeder
                 'title_en' => null,
                 'description_es' => $data['description'],
                 'description_en' => null,
-                'price_eur' => 49,
+                // Financials is the extra at the end: no price until the owner sets one
+                // (the admin's «Plantillas» page), and not on sale until then.
+                'price_eur' => $data['kind'] === Module::KIND_FINANCIALS ? null : 49,
             ]);
 
             $order = 0;
@@ -112,6 +117,60 @@ class CurriculumV2Seeder extends Seeder
 
         $this->command?->info('Curriculum installed: '.count($modules).' modules, '
             .array_sum(array_map(fn (array $m) => count($m['lessons']), $modules)).' lessons.');
+    }
+
+    /**
+     * The package's Spanish texts over an installed course, module by module
+     * and lesson by lesson in their order. A module whose shape changed (its
+     * kind or its number of lessons) is left alone and named: rebuilding it
+     * would orphan the progress on its lessons. Translations are
+     * CourseTranslationSeeder's, which runs after this one.
+     *
+     * @param  list<array<string, mixed>>  $modules
+     */
+    private function refreshTexts(Course $course, array $modules): void
+    {
+        $installed = $course->modules()->orderBy('order')
+            ->with(['lessons' => fn ($q) => $q->orderBy('order')])
+            ->get()->values();
+        $refreshed = 0;
+
+        foreach ($modules as $index => $data) {
+            $module = $installed[$index];
+
+            if ($module->kind !== $data['kind'] || $module->lessons->count() !== count($data['lessons'])) {
+                $this->command?->warn("Module {$module->order} no longer has the package's shape: its texts are left as they are.");
+
+                continue;
+            }
+
+            $module->update(['title_es' => $data['title'], 'description_es' => $data['description']]);
+
+            // The module's own texts: overview first, then the closing sections.
+            $bodies = [
+                ...array_map(fn (string $body) => ['overview', $body], $data['overview']),
+                ...array_map(fn (string $body) => ['section', $body], $data['closing']),
+            ];
+            $blocks = $module->contentBlocks()->whereNull('lesson_id')->whereIn('type', ['overview', 'section'])->orderBy('order')->get()->values();
+
+            if ($blocks->count() === count($bodies)) {
+                foreach ($bodies as $position => [$type, $body]) {
+                    $blocks[$position]->update(['type' => $type, 'body_es' => $body, 'needs_validation' => ContentValidation::flags($body)]);
+                }
+            } else {
+                $module->contentBlocks()->whereKey($blocks->modelKeys())->delete();
+                foreach ($bodies as $position => [$type, $body]) {
+                    $this->block($module, $type, $position + 1, $body);
+                }
+            }
+
+            foreach ($data['lessons'] as $position => $lesson) {
+                $module->lessons[$position]->update(['title_es' => $lesson['title'], 'content_es' => $lesson['content']]);
+            }
+            $refreshed++;
+        }
+
+        $this->command?->info("Curriculum already installed — Spanish texts brought up to the package in {$refreshed} modules.");
     }
 
     private function block(Module $module, string $type, int $order, string $body): void

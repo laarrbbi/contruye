@@ -271,8 +271,8 @@ section{display:flex;flex-direction:column;gap:20px}
   <section aria-labelledby="fin-h">
     <div class="sec-head">
       <span class="eyebrow">Financials</span>
-      <h2 id="fin-h">La plantilla financiera del profesional</h2>
-      <p>Una plantilla de 17 hojas, la misma en el curso y en la plataforma, con sus fórmulas sin cambiar. Rellenas los datos de partida y calcula el coste por capítulos, el préstamo, la gestión, la forma de pago, el cash-flow de 48 meses y el resumen por vivienda.</p>
+      <h2 id="fin-h">Extra: la plantilla financiera del profesional</h2>
+      <p>El extra opcional del final del curso: la plantilla completa del profesional, revisada celda a celda, corregida y con los impuestos al día (hoja «Parámetros legales»). Durante el curso usas 5 plantillas pequeñas incluidas. Rellenas los datos de partida y calcula el coste por capítulos, el préstamo, la gestión, la forma de pago, el cash-flow de 48 meses y el resumen por vivienda.</p>
     </div>
     <div class="calc">
       <div class="cout">
@@ -535,14 +535,18 @@ const RES = [
   ["Informe de seguimiento mensual de obra","Control económico y de plazo"],
   ["Directorio de partners por provincia","52 provincias × 12 fases, en Excel filtrable"],
   ["Manual de prevención de blanqueo","Procedimiento y formularios para promotores"],
-  ["PLANTILLA_LIBRE.xls","Plantilla financiera completa del profesional: 17 hojas"],
-  ["Plantilla simplificada","Resumen del coste con el ejemplo real del profesional"]
+  ["Plantilla 1 · Compra del solar","Incluida · Módulo 1"],
+  ["Plantilla 2 · Viabilidad y método residual","Incluida · Módulo 2"],
+  ["Plantilla 3 · Préstamo promotor","Incluida · Módulo 5"],
+  ["Plantilla 4 · Control de costes de obra","Incluida · Módulo 7"],
+  ["Plantilla 5 · Plan de ventas y cobros","Incluida · Módulo 8"],
+  ["Extra: plantilla financiera profesional","De pago, al terminar el curso: 18 hojas, corregida y con los impuestos al día"]
 ];
 document.getElementById("res").innerHTML = RES.map((r,i)=>`<div class="r"><span class="i">${pad(i+1)}</span><div><div class="t">${r[0]}</div><div class="d">${r[1]}</div></div></div>`).join("");
 
 const PR = [
   {nm:"Esencial",pr:"297",it:["Vídeos y texto de los 12 módulos","Acceso durante 1 año"]},
-  {nm:"Pro",pr:"597",feat:true,it:["Todo lo de Esencial","12 quizzes y examen final","Certificado con QR verificable","19 recursos, incluida la plantilla financiera","Directorio de partners de las 52 provincias"]},
+  {nm:"Pro",pr:"597",feat:true,it:["Todo lo de Esencial","12 quizzes y examen final","Certificado con QR verificable","22 recursos, con las 5 plantillas pequeñas","Directorio de partners de las 52 provincias"]},
   {nm:"Premium",pr:"997",it:["Todo lo de Pro","Comunidad privada","Acceso de por vida","Actualizaciones anuales"]},
   {nm:"Mentoría",pr:"2.497",it:["Todo lo de Premium","3 sesiones de 1 h con el promotor experto"]}
 ];

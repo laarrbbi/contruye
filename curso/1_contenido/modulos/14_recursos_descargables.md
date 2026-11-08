@@ -19,7 +19,11 @@
 | 15 | Informe mensual de obra | Coste, plazo, ventas |
 | 16 | Directorio de partners por provincia | Anexo A en Excel filtrable |
 | 17 | Manual de prevención de blanqueo para promotores | Procedimiento y formularios |
-| 18 | **PLANTILLA_LIBRE.xls** | Plantilla financiera completa del profesional (17 hojas): coste, préstamo, gestión, forma de pago, cash-flow y resumen |
-| 19 | **Plantilla simplificada de Análisis de Viabilidad** | Resumen del coste con el ejemplo real del profesional |
+| 18 | **Plantilla 1 · Compra del solar** (incluida) | ITP o IVA + AJD por comunidad, notaría, coste del solar y repercusión (Módulo 1) |
+| 19 | **Plantilla 2 · Viabilidad rápida y método residual** (incluida) | Ventas, costes, margen y precio máximo del suelo (Módulo 2) |
+| 20 | **Plantilla 3 · Préstamo promotor** (incluida) | Importe, comisión, intereses y coste financiero (Módulo 5) |
+| 21 | **Plantilla 4 · Control de costes de obra** (incluida) | Presupuesto, certificado, previsión y desviaciones por capítulo (Módulo 7) |
+| 22 | **Plantilla 5 · Plan de ventas y cobros** (incluida) | Reserva, contrato, aplazado, escritura y cantidades a cuenta (Módulo 8) |
+| Extra | **Plantilla financiera profesional completa** (de pago, al terminar el curso) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 hojas: coste, préstamo, gestión, forma de pago, cash-flow y resumen. Incluye la versión simplificada con el ejemplo real del profesional |
 
 

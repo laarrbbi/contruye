@@ -135,7 +135,7 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
 
     expect(Module::query()->where('course_id', $course->id)->orderBy('order')->first()
         ->checklistItems()->orderBy('order')->first()->text_ru)
-        ->toBe('Карточка продукта определена (тип, аудитория, типология квартир, уровень отделки, целевая цена)');
+        ->toBe('Модель 1 · Покупка участка (входит в курс) заполнена: цена, автономное сообщество и фактические расходы');
 
     // Spanish readers are untouched; Arabic is served as Arabic, English as English.
     expect($learn('en')['course']['title'])->toBe('Open-market housing development in Spain')

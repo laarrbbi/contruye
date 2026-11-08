@@ -10,9 +10,11 @@ use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 
 /**
- * Financials: the API checks who is asking and passes the inputs to the
- * financials service, which runs the professional's template. The service
- * itself is tested in financials/test; here it is faked at the HTTP boundary.
+ * Financials: the professional template, the extra at the end of the course.
+ * The API checks who is asking, holds the inputs to the template's dictionary
+ * and passes them, with the legal parameters in force, to the financials
+ * service, which runs the template. The service itself is tested in
+ * financials/test; here it is faked at the HTTP boundary.
  */
 function financialsCourse(): array
 {
@@ -31,22 +33,26 @@ function enrolledIn(Course $course, ?Module $module): User
     return $user;
 }
 
-it('is for the owners of the Financials module', function () {
+it('is for the buyers of the extra: not even the whole course opens it', function () {
     Http::fake();
     [$course, $phase, $financials] = financialsCourse();
 
-    $other = enrolledIn($course, $phase);
-    $this->actingAs($other)->getJson("/api/courses/{$course->slug}/financials/inputs")->assertForbidden();
-    $this->actingAs($other)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => []])->assertForbidden();
-    $this->actingAs($other)->getJson("/api/courses/{$course->slug}/financials/scenarios")->assertForbidden();
+    foreach ([enrolledIn($course, $phase), enrolledIn($course, null)] as $other) {
+        $this->actingAs($other)->getJson("/api/courses/{$course->slug}/financials/inputs")->assertForbidden();
+        $this->actingAs($other)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => []])->assertForbidden();
+        $this->actingAs($other)->postJson("/api/courses/{$course->slug}/financials/excel", ['datos' => []])->assertForbidden();
+        $this->actingAs($other)->getJson("/api/courses/{$course->slug}/financials/scenarios")->assertForbidden();
+    }
     Http::assertNothingSent();
 
-    // The template's own dictionary of inputs, as delivered.
+    // The template's own dictionary of inputs, as delivered, and the legal parameters it applies.
     $inputs = $this->actingAs(enrolledIn($course, $financials))
         ->getJson("/api/courses/{$course->slug}/financials/inputs")->assertOk()->json('data');
     expect($inputs['entradas'])->toHaveCount(275)
         ->and($inputs['entradas'][2])->toMatchArray(['hoja' => 'Datos de Partida', 'celda' => 'C9', 'tipo' => 'numero'])
-        ->and($inputs['ejemplos'][0]['datos']['Datos de Partida']['C9'])->toBe(24);
+        ->and($inputs['ejemplos'][0]['datos']['Datos de Partida']['C9'])->toBe(24)
+        ->and($inputs['legal']['parameters'][0])->toMatchArray(['code' => 'IVA_GENERAL', 'value' => 0.21])
+        ->and($inputs['legal']['regions'])->toHaveCount(19);
 });
 
 it('passes the inputs to the template service and returns its result untouched', function () {
@@ -63,11 +69,16 @@ it('passes the inputs to the template service and returns its result untouched',
         'hojas' => ['8º Resumen'],
     ])->assertOk()->assertJsonPath('data.resumen.0.neto', 6056013.13);
 
-    Http::assertSent(fn (Request $request) => str_ends_with($request->url(), '/calcular')
-        && json_decode($request->body(), true) === [
-            'datos' => ['Datos de Partida' => ['C9' => 24, 'D79' => '01/01/2027', 'D80' => 'SI', 'D81' => 0.04]],
-            'hojas' => ['8º Resumen'],
-        ]);
+    Http::assertSent(function (Request $request) {
+        $body = json_decode($request->body(), true);
+
+        return str_ends_with($request->url(), '/calcular')
+            && $body['datos'] === ['Datos de Partida' => ['C9' => 24, 'D79' => '01/01/2027', 'D80' => 'SI', 'D81' => 0.04]]
+            && $body['hojas'] === ['8º Resumen']
+            // The legal parameters in force go with every calculation.
+            && $body['parametros']['IVA_GENERAL'] === 0.21
+            && $body['parametros']['comunidades']['Cataluña'] === ['itp' => 0.1, 'ajd' => 0.015];
+    });
 });
 
 it('refuses inputs outside the template before they reach it, and relays the template\'s own refusal', function () {
@@ -75,15 +86,24 @@ it('refuses inputs outside the template before they reach it, and relays the tem
     [$course, , $financials] = financialsCourse();
     $student = enrolledIn($course, $financials);
 
-    // A sheet that has no input cells, or a value that is not a value.
-    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => ['3ª Coste Total Promoción' => ['C24' => 1]]])
-        ->assertUnprocessable()->assertJsonValidationErrors('datos');
-    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => ['Datos de Partida' => ['C9' => ['x']]]])
-        ->assertUnprocessable();
+    // A sheet that has no input cells, a cell that is a formula, a legal
+    // parameter, a value that is not a value, a community that is not one.
+    foreach ([
+        ['3ª Coste Total Promoción' => ['C24' => 1]],
+        ['Datos de Partida' => ['A1' => 'x']],
+        ['Parámetros legales' => ['C5' => 0.5]],
+        ['Datos de Partida' => ['C9' => ['x']]],
+        ['Datos de Partida' => ['C9' => '24']],
+        ['Datos de Partida' => ['D93' => 'Narnia']],
+        ['Datos de Partida' => ['D80' => 'sí']],
+    ] as $datos) {
+        $this->actingAs($student)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => $datos])
+            ->assertUnprocessable()->assertJsonValidationErrors('datos');
+    }
     Http::assertNothingSent();
 
-    // A cell of an input sheet that is a formula: the service says no.
-    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => ['Datos de Partida' => ['A1' => 'x']]])
+    // What the template itself refuses comes back as it says it.
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => ['Datos de Partida' => ['C9' => 24]]])
         ->assertUnprocessable()
         ->assertJsonPath('errors.datos.0', 'La celda Datos de Partida!A1 no es una entrada de la plantilla');
 });

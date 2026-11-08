@@ -1,0 +1,193 @@
+{
+ "plantilla": "Plantilla 2 · Viabilidad rápida y método residual",
+ "regla": "Solo se escriben estas celdas. Los impuestos salen de Parámetros legales (los fija el administrador).",
+ "porcentajes": "En tanto por uno (0,05 = 5 %).",
+ "entradas": [
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B4",
+   "etiqueta": "Comunidad autónoma",
+   "tipo": "lista: comunidades",
+   "unidad": "",
+   "defecto": "Comunitat Valenciana",
+   "nota": "",
+   "defecto_es_formula": false,
+   "opciones": [
+    "Andalucía",
+    "Aragón",
+    "Principado de Asturias",
+    "Illes Balears",
+    "Canarias",
+    "Cantabria",
+    "Castilla-La Mancha",
+    "Castilla y León",
+    "Cataluña",
+    "Comunitat Valenciana",
+    "Extremadura",
+    "Galicia",
+    "Comunidad de Madrid",
+    "Región de Murcia",
+    "Comunidad Foral de Navarra",
+    "País Vasco",
+    "La Rioja",
+    "Ciudad Autónoma de Ceuta",
+    "Ciudad Autónoma de Melilla"
+   ]
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B5",
+   "etiqueta": "¿El solar se compra con IVA? (SI/NO)",
+   "tipo": "SI/NO",
+   "unidad": "",
+   "defecto": "SI",
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B6",
+   "etiqueta": "Edificabilidad (m² construidos)",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 2000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B7",
+   "etiqueta": "Número de viviendas",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 20,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B8",
+   "etiqueta": "Precio de venta (€/m² construido, sin IVA)",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 2500,
+   "nota": "De tu estudio de mercado",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B9",
+   "etiqueta": "Coste de construcción (€/m² construido)",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 1200,
+   "nota": "Pide al menos 3 presupuestos",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B10",
+   "etiqueta": "Urbanización y acometidas",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 50000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B11",
+   "etiqueta": "Honorarios técnicos (% s/ construcción)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.08,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B12",
+   "etiqueta": "Licencias, ICIO y tasas (% s/ construcción)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.05,
+   "nota": "ICIO: máximo legal 4 %",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B13",
+   "etiqueta": "Seguros, OCT, control de calidad y otros (% s/ construcción)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.03,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B14",
+   "etiqueta": "Comercialización y marketing (% s/ ventas)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.03,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B15",
+   "etiqueta": "Gastos financieros (% s/ ventas)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.04,
+   "nota": "Afínalo con la Plantilla 3",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B16",
+   "etiqueta": "Gastos generales de la promotora (% s/ ventas)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.02,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B17",
+   "etiqueta": "Margen objetivo (% s/ ventas, antes de impuestos)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.18,
+   "nota": "Mínimo habitual: 15 %",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B18",
+   "etiqueta": "Precio que piden por el solar",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 600000,
+   "nota": "",
+   "defecto_es_formula": false
+  }
+ ]
+}

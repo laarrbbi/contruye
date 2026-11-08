@@ -1,0 +1,732 @@
+{
+ "nombre": "Plantilla 2 · Viabilidad rápida y método residual",
+ "origen": "CONSTRUYE (plantilla pequeña incluida en el curso)",
+ "modulo": "Módulo 2 · Análisis de viabilidad",
+ "calculo": {
+  "iterativo": false,
+  "max_iteraciones": 1,
+  "cambio_maximo": 0.001
+ },
+ "hojas": [
+  {
+   "nombre": "Calculadora",
+   "celdas": {
+    "A1": {
+     "v": "Plantilla 2 · Viabilidad rápida y método residual"
+    },
+    "A2": {
+     "v": "Módulo 2 · Análisis de viabilidad · Incluida en el curso CONSTRUYE. Rellena las casillas amarillas; los impuestos salen de la hoja Parámetros legales."
+    },
+    "A4": {
+     "v": "Comunidad autónoma"
+    },
+    "B4": {
+     "v": "Comunitat Valenciana"
+    },
+    "A5": {
+     "v": "¿El solar se compra con IVA? (SI/NO)"
+    },
+    "B5": {
+     "v": "SI"
+    },
+    "A6": {
+     "v": "Edificabilidad (m² construidos)"
+    },
+    "B6": {
+     "v": 2000,
+     "nf": "#,##0"
+    },
+    "A7": {
+     "v": "Número de viviendas"
+    },
+    "B7": {
+     "v": 20,
+     "nf": "#,##0"
+    },
+    "A8": {
+     "v": "Precio de venta (€/m² construido, sin IVA)"
+    },
+    "B8": {
+     "v": 2500,
+     "nf": "#,##0.00 €"
+    },
+    "C8": {
+     "v": "De tu estudio de mercado"
+    },
+    "A9": {
+     "v": "Coste de construcción (€/m² construido)"
+    },
+    "B9": {
+     "v": 1200,
+     "nf": "#,##0.00 €"
+    },
+    "C9": {
+     "v": "Pide al menos 3 presupuestos"
+    },
+    "A10": {
+     "v": "Urbanización y acometidas"
+    },
+    "B10": {
+     "v": 50000,
+     "nf": "#,##0.00 €"
+    },
+    "A11": {
+     "v": "Honorarios técnicos (% s/ construcción)"
+    },
+    "B11": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "A12": {
+     "v": "Licencias, ICIO y tasas (% s/ construcción)"
+    },
+    "B12": {
+     "v": 0.05,
+     "nf": "0.00%"
+    },
+    "C12": {
+     "v": "ICIO: máximo legal 4 %"
+    },
+    "A13": {
+     "v": "Seguros, OCT, control de calidad y otros (% s/ construcción)"
+    },
+    "B13": {
+     "v": 0.03,
+     "nf": "0.00%"
+    },
+    "A14": {
+     "v": "Comercialización y marketing (% s/ ventas)"
+    },
+    "B14": {
+     "v": 0.03,
+     "nf": "0.00%"
+    },
+    "A15": {
+     "v": "Gastos financieros (% s/ ventas)"
+    },
+    "B15": {
+     "v": 0.04,
+     "nf": "0.00%"
+    },
+    "C15": {
+     "v": "Afínalo con la Plantilla 3"
+    },
+    "A16": {
+     "v": "Gastos generales de la promotora (% s/ ventas)"
+    },
+    "B16": {
+     "v": 0.02,
+     "nf": "0.00%"
+    },
+    "A17": {
+     "v": "Margen objetivo (% s/ ventas, antes de impuestos)"
+    },
+    "B17": {
+     "v": 0.18,
+     "nf": "0.00%"
+    },
+    "C17": {
+     "v": "Mínimo habitual: 15 %"
+    },
+    "A18": {
+     "v": "Precio que piden por el solar"
+    },
+    "B18": {
+     "v": 600000,
+     "nf": "#,##0.00 €"
+    },
+    "A20": {
+     "v": "RESULTADO"
+    },
+    "A21": {
+     "v": "Ventas (sin IVA)"
+    },
+    "B21": {
+     "f": "=B6*B8",
+     "nf": "#,##0.00 €"
+    },
+    "A22": {
+     "v": "Construcción"
+    },
+    "B22": {
+     "f": "=B6*B9",
+     "nf": "#,##0.00 €"
+    },
+    "A23": {
+     "v": "Honorarios técnicos"
+    },
+    "B23": {
+     "f": "=B22*B11",
+     "nf": "#,##0.00 €"
+    },
+    "A24": {
+     "v": "Licencias, ICIO y tasas"
+    },
+    "B24": {
+     "f": "=B22*B12",
+     "nf": "#,##0.00 €"
+    },
+    "A25": {
+     "v": "Seguros, OCT, control y otros"
+    },
+    "B25": {
+     "f": "=B22*B13",
+     "nf": "#,##0.00 €"
+    },
+    "A26": {
+     "v": "Urbanización y acometidas"
+    },
+    "B26": {
+     "f": "=B10",
+     "nf": "#,##0.00 €"
+    },
+    "A27": {
+     "v": "Comercialización"
+    },
+    "B27": {
+     "f": "=B21*B14",
+     "nf": "#,##0.00 €"
+    },
+    "A28": {
+     "v": "Gastos financieros"
+    },
+    "B28": {
+     "f": "=B21*B15",
+     "nf": "#,##0.00 €"
+    },
+    "A29": {
+     "v": "Gastos generales"
+    },
+    "B29": {
+     "f": "=B21*B16",
+     "nf": "#,##0.00 €"
+    },
+    "A30": {
+     "v": "Costes sin suelo"
+    },
+    "B30": {
+     "f": "=SUM(B22:B29)",
+     "nf": "#,##0.00 €"
+    },
+    "A31": {
+     "v": "Impuesto de la compra del suelo (tipo)"
+    },
+    "B31": {
+     "f": "=IF(B5=\"SI\",'Parámetros legales'!$B$37,'Parámetros legales'!$B$36)",
+     "nf": "0.00%"
+    },
+    "C31": {
+     "v": "AJD si lleva IVA; ITP si no"
+    },
+    "A32": {
+     "v": "Precio máximo del solar (método residual)"
+    },
+    "B32": {
+     "f": "=MAX(0,(B21*(1-B17)-B30)/(1+B31))",
+     "nf": "#,##0.00 €"
+    },
+    "C32": {
+     "v": "Lo máximo que puedes pagar y ganar tu margen objetivo"
+    },
+    "A33": {
+     "v": "Coste del solar con impuestos (al precio pedido)"
+    },
+    "B33": {
+     "f": "=B18*(1+B31)",
+     "nf": "#,##0.00 €"
+    },
+    "C33": {
+     "v": "Sin notaría ni registro: afínalo con la Plantilla 1"
+    },
+    "A34": {
+     "v": "Coste total de la promoción"
+    },
+    "B34": {
+     "f": "=B30+B33",
+     "nf": "#,##0.00 €"
+    },
+    "A35": {
+     "v": "Beneficio antes de impuestos"
+    },
+    "B35": {
+     "f": "=B21-B34",
+     "nf": "#,##0.00 €"
+    },
+    "A36": {
+     "v": "Margen sobre ventas"
+    },
+    "B36": {
+     "f": "=IF(B21=0,0,B35/B21)",
+     "nf": "0.00%"
+    },
+    "A37": {
+     "v": "¿Cumple el margen objetivo?"
+    },
+    "B37": {
+     "f": "=IF(B18<=B32,\"SÍ\",\"NO\")"
+    },
+    "A38": {
+     "v": "Repercusión del suelo (€/m² construido)"
+    },
+    "B38": {
+     "f": "=IF(B6=0,0,B18/B6)",
+     "nf": "#,##0.00 €"
+    },
+    "A39": {
+     "v": "Precio medio por vivienda (sin IVA)"
+    },
+    "B39": {
+     "f": "=IF(B7=0,0,B21/B7)",
+     "nf": "#,##0.00 €"
+    },
+    "A40": {
+     "v": "Precio medio por vivienda (con IVA)"
+    },
+    "B40": {
+     "f": "=B39*(1+'Parámetros legales'!$C$6)",
+     "nf": "#,##0.00 €"
+    },
+    "C40": {
+     "v": "IVA de vivienda nueva"
+    }
+   }
+  },
+  {
+   "nombre": "Parámetros legales",
+   "celdas": {
+    "A1": {
+     "v": "PARÁMETROS LEGALES Y FISCALES"
+    },
+    "A2": {
+     "v": "Los actualiza el administrador de CONSTRUYE y se aplican a todas las plantillas. No los cambies aquí salvo que sepas que la ley ha cambiado."
+    },
+    "A3": {
+     "v": "Revisados el:"
+    },
+    "B3": {
+     "v": 46334,
+     "nf": "dd/mm/yyyy"
+    },
+    "A4": {
+     "v": "Código"
+    },
+    "B4": {
+     "v": "Parámetro"
+    },
+    "C4": {
+     "v": "Valor vigente"
+    },
+    "D4": {
+     "v": "Valor en el original (2002)"
+    },
+    "E4": {
+     "v": "Base legal"
+    },
+    "F4": {
+     "v": "Dónde se usa"
+    },
+    "A5": {
+     "v": "IVA_GENERAL"
+    },
+    "B5": {
+     "v": "IVA, tipo general"
+    },
+    "C5": {
+     "v": 0.21,
+     "nf": "0.00%"
+    },
+    "D5": {
+     "v": 0.16,
+     "nf": "0.00%"
+    },
+    "E5": {
+     "v": "Ley 37/1992 del IVA, art. 90"
+    },
+    "F5": {
+     "v": "Suelo con IVA, honorarios, notaría, registro, tasaciones, urbanización, control de calidad, gestión, varios, cash-flow"
+    },
+    "A6": {
+     "v": "IVA_REDUCIDO"
+    },
+    "B6": {
+     "v": "IVA, tipo reducido (vivienda y obra de vivienda)"
+    },
+    "C6": {
+     "v": 0.1,
+     "nf": "0.00%"
+    },
+    "D6": {
+     "v": 0.07,
+     "nf": "0.00%"
+    },
+    "E6": {
+     "v": "Ley 37/1992 del IVA, art. 91.Uno"
+    },
+    "F6": {
+     "v": "Certificaciones de obra, cantidades a cuenta, ingresos de la cooperativa, cash-flow"
+    },
+    "A7": {
+     "v": "IPS"
+    },
+    "B7": {
+     "v": "Impuesto sobre las Primas de Seguros"
+    },
+    "C7": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "D7": {
+     "v": 0.06,
+     "nf": "0.00%"
+    },
+    "E7": {
+     "v": "Ley 13/1996, art. 12 (8 % desde la Ley 3/2017)"
+    },
+    "F7": {
+     "v": "Seguro decenal (3ª Construcción)"
+    },
+    "A8": {
+     "v": "CLEA"
+    },
+    "B8": {
+     "v": "Recargo del Consorcio para la liquidación de entidades aseguradoras (CLEA)"
+    },
+    "C8": {
+     "v": 0.0015,
+     "nf": "0.00%"
+    },
+    "D8": {
+     "v": 0.005,
+     "nf": "0.00%"
+    },
+    "E8": {
+     "v": "Estatuto legal del Consorcio de Compensación de Seguros"
+    },
+    "F8": {
+     "v": "Seguro decenal y seguro de cantidades a cuenta"
+    },
+    "A9": {
+     "v": "INTERES_LEGAL"
+    },
+    "B9": {
+     "v": "Interés legal del dinero (devolución de cantidades a cuenta)"
+    },
+    "C9": {
+     "v": 0.0325,
+     "nf": "0.00%"
+    },
+    "D9": {
+     "v": 0.06,
+     "nf": "0.00%"
+    },
+    "E9": {
+     "v": "Ley 38/1999 (LOE), disp. adicional 1.ª; Ley de Presupuestos (prorrogada en 2026)"
+    },
+    "F9": {
+     "v": "Seguro de cantidades a cuenta (3ª Licencias y Varios K11)"
+    },
+    "A10": {
+     "v": "AJD_PRESTAMO"
+    },
+    "B10": {
+     "v": "AJD del préstamo hipotecario a cargo del promotor"
+    },
+    "C10": {
+     "v": 0.0,
+     "nf": "0.00%"
+    },
+    "D10": {
+     "v": 0.0,
+     "nf": "0.00%"
+    },
+    "E10": {
+     "v": "RDL 17/2018: el sujeto pasivo es el prestamista (el banco)"
+    },
+    "F10": {
+     "v": "Préstamo hipotecario (Datos de Partida D154)"
+    },
+    "A13": {
+     "v": "IMPUESTOS AUTONÓMICOS DE LA COMPRA DEL SUELO Y DE LA OBRA NUEVA"
+    },
+    "A14": {
+     "v": "Comunidad autónoma"
+    },
+    "B14": {
+     "v": "ITP (compra a particular)"
+    },
+    "C14": {
+     "v": "AJD (escrituras con IVA, obra nueva y división horizontal)"
+    },
+    "D14": {
+     "v": "Nota"
+    },
+    "A15": {
+     "v": "Andalucía"
+    },
+    "B15": {
+     "v": 0.07,
+     "nf": "0.00%"
+    },
+    "C15": {
+     "v": 0.012,
+     "nf": "0.00%"
+    },
+    "A16": {
+     "v": "Aragón"
+    },
+    "B16": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C16": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "D16": {
+     "v": "ITP progresivo 8–10 %: se usa el 8 %; ajústalo al valor del solar"
+    },
+    "A17": {
+     "v": "Principado de Asturias"
+    },
+    "B17": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C17": {
+     "v": 0.012,
+     "nf": "0.00%"
+    },
+    "D17": {
+     "v": "ITP progresivo 8–10 %: se usa el 8 %"
+    },
+    "A18": {
+     "v": "Illes Balears"
+    },
+    "B18": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C18": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "D18": {
+     "v": "ITP progresivo 8–13 %: se usa el 8 %"
+    },
+    "A19": {
+     "v": "Canarias"
+    },
+    "B19": {
+     "v": 0.065,
+     "nf": "0.00%"
+    },
+    "C19": {
+     "v": 0.01,
+     "nf": "0.00%"
+    },
+    "D19": {
+     "v": "AJD 1 % en operaciones con IGIC (0,75 % el resto). En Canarias se aplica IGIC, no IVA: esta plantilla calcula con IVA"
+    },
+    "A20": {
+     "v": "Cantabria"
+    },
+    "B20": {
+     "v": 0.09,
+     "nf": "0.00%"
+    },
+    "C20": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "A21": {
+     "v": "Castilla-La Mancha"
+    },
+    "B21": {
+     "v": 0.09,
+     "nf": "0.00%"
+    },
+    "C21": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "A22": {
+     "v": "Castilla y León"
+    },
+    "B22": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C22": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "D22": {
+     "v": "ITP progresivo 8–10 %: se usa el 8 %"
+    },
+    "A23": {
+     "v": "Cataluña"
+    },
+    "B23": {
+     "v": 0.1,
+     "nf": "0.00%"
+    },
+    "C23": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "D23": {
+     "v": "ITP 10 % hasta 600.000 €; 11 % hasta 900.000 €; 12 % hasta 1,5 M€; 13 % más"
+    },
+    "A24": {
+     "v": "Comunitat Valenciana"
+    },
+    "B24": {
+     "v": 0.09,
+     "nf": "0.00%"
+    },
+    "C24": {
+     "v": 0.014,
+     "nf": "0.00%"
+    },
+    "D24": {
+     "v": "ITP 11 % por encima de 1 M€ (Ley 5/2025)"
+    },
+    "A25": {
+     "v": "Extremadura"
+    },
+    "B25": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C25": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "D25": {
+     "v": "ITP progresivo 8–11 %: se usa el 8 %"
+    },
+    "A26": {
+     "v": "Galicia"
+    },
+    "B26": {
+     "v": 0.08,
+     "nf": "0.00%"
+    },
+    "C26": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "A27": {
+     "v": "Comunidad de Madrid"
+    },
+    "B27": {
+     "v": 0.06,
+     "nf": "0.00%"
+    },
+    "C27": {
+     "v": 0.0075,
+     "nf": "0.00%"
+    },
+    "A28": {
+     "v": "Región de Murcia"
+    },
+    "B28": {
+     "v": 0.0775,
+     "nf": "0.00%"
+    },
+    "C28": {
+     "v": 0.015,
+     "nf": "0.00%"
+    },
+    "A29": {
+     "v": "Comunidad Foral de Navarra"
+    },
+    "B29": {
+     "v": 0.06,
+     "nf": "0.00%"
+    },
+    "C29": {
+     "v": 0.005,
+     "nf": "0.00%"
+    },
+    "D29": {
+     "v": "Régimen foral"
+    },
+    "A30": {
+     "v": "País Vasco"
+    },
+    "B30": {
+     "v": 0.04,
+     "nf": "0.00%"
+    },
+    "C30": {
+     "v": 0.005,
+     "nf": "0.00%"
+    },
+    "D30": {
+     "v": "Régimen foral; hasta 7 % en bases altas según territorio"
+    },
+    "A31": {
+     "v": "La Rioja"
+    },
+    "B31": {
+     "v": 0.07,
+     "nf": "0.00%"
+    },
+    "C31": {
+     "v": 0.01,
+     "nf": "0.00%"
+    },
+    "A32": {
+     "v": "Ciudad Autónoma de Ceuta"
+    },
+    "B32": {
+     "v": 0.03,
+     "nf": "0.00%"
+    },
+    "C32": {
+     "v": 0.0025,
+     "nf": "0.00%"
+    },
+    "D32": {
+     "v": "Tipo estatal con bonificación del 50 %: confírmalo. Se aplica IPSI, no IVA"
+    },
+    "A33": {
+     "v": "Ciudad Autónoma de Melilla"
+    },
+    "B33": {
+     "v": 0.03,
+     "nf": "0.00%"
+    },
+    "C33": {
+     "v": 0.0025,
+     "nf": "0.00%"
+    },
+    "D33": {
+     "v": "Tipo estatal con bonificación del 50 %: confírmalo. Se aplica IPSI, no IVA"
+    },
+    "A35": {
+     "v": "Comunidad de esta promoción"
+    },
+    "B35": {
+     "f": "='Calculadora'!B4"
+    },
+    "A36": {
+     "v": "ITP aplicado"
+    },
+    "B36": {
+     "f": "=VLOOKUP(B35,$A$15:$C$33,2,0)",
+     "nf": "0.00%"
+    },
+    "A37": {
+     "v": "AJD aplicado"
+    },
+    "B37": {
+     "f": "=VLOOKUP(B35,$A$15:$C$33,3,0)",
+     "nf": "0.00%"
+    }
+   }
+  }
+ ],
+ "cortes_de_ciclo": []
+}

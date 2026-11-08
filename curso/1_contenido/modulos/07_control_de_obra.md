@@ -112,6 +112,7 @@
 
 ## Checklist del Módulo 7
 
+- [ ] Plantilla 4 · Control de costes de obra (incluida) rellena actualizada con cada certificación
 - [ ] Plan de control de calidad aprobado
 - [ ] Informes del OCT al día
 - [ ] Ensayos del laboratorio archivados

@@ -1,5 +1,5 @@
 {
- "plantilla": "PLANTILLA_LIBRE.xls",
+ "plantilla": "PLANTILLA_LIBRE (corregida v3)",
  "regla": "Solo se escriben estas celdas. Ninguna otra celda del modelo se modifica.",
  "fechas": "Número de serie de Excel (p. ej. 01/01/2027 = 46388). La interfaz puede pedir dd/mm/aaaa y convertir.",
  "porcentajes": "En tanto por uno (0,05 = 5 %), como en el original.",
@@ -1629,8 +1629,40 @@
    "tipo": "SI/NO",
    "unidad": "",
    "defecto": "SI",
-   "nota": "SI: IVA 16 % + AJD 1 %. NO: ITP 8 % (tipos escritos en las fórmulas de 3ª Terrenos)",
+   "nota": "SI: IVA general + AJD de la comunidad. NO: ITP de la comunidad. Los tipos están en la hoja Parámetros legales (los fija el administrador)",
    "defecto_es_formula": false
+  },
+  {
+   "seccion": "Suelo",
+   "hoja": "Datos de Partida",
+   "celda": "D93",
+   "etiqueta": "Comunidad autónoma del solar",
+   "tipo": "lista: Andalucía/Aragón/Principado de Asturias/Illes Balears/Canarias/Cantabria/Castilla-La Mancha/Castilla y León/Cataluña/Comunitat Valenciana/Extremadura/Galicia/Comunidad de Madrid/Región de Murcia/Comunidad Foral de Navarra/País Vasco/La Rioja/Ciudad Autónoma de Ceuta/Ciudad Autónoma de Melilla",
+   "unidad": "",
+   "defecto": "Comunitat Valenciana",
+   "nota": "Decide el ITP y el AJD que se aplican (hoja Parámetros legales). Casilla nueva",
+   "defecto_es_formula": false,
+   "opciones": [
+    "Andalucía",
+    "Aragón",
+    "Principado de Asturias",
+    "Illes Balears",
+    "Canarias",
+    "Cantabria",
+    "Castilla-La Mancha",
+    "Castilla y León",
+    "Cataluña",
+    "Comunitat Valenciana",
+    "Extremadura",
+    "Galicia",
+    "Comunidad de Madrid",
+    "Región de Murcia",
+    "Comunidad Foral de Navarra",
+    "País Vasco",
+    "La Rioja",
+    "Ciudad Autónoma de Ceuta",
+    "Ciudad Autónoma de Melilla"
+   ]
   },
   {
    "seccion": "Suelo",
@@ -1897,6 +1929,17 @@
    "defecto_es_formula": false
   },
   {
+   "seccion": "Construcción",
+   "hoja": "Datos de Partida",
+   "celda": "D102",
+   "etiqueta": "Control de calidad de la obra",
+   "tipo": "porcentaje",
+   "unidad": "% sobre construcción",
+   "defecto": 0.015,
+   "nota": "Antes estaba fijo al 1,5 % dentro de 3ª Proyectos D53. Casilla nueva",
+   "defecto_es_formula": false
+  },
+  {
    "seccion": "Urbanización",
    "hoja": "Datos de Partida",
    "celda": "D108",
@@ -1977,11 +2020,11 @@
    "seccion": "Urbanización",
    "hoja": "Datos de Partida",
    "celda": "D115",
-   "etiqueta": "Certificación de control de calidad",
+   "etiqueta": "Certificación de control de calidad de la urbanización",
    "tipo": "porcentaje",
    "unidad": "%",
    "defecto": 0.01,
-   "nota": "Etiqueta original 'CONTROL CALIDAD OBRA'; la usa 3ª Urbanización E47",
+   "nota": "La usa 3ª Urbanización E47. La etiqueta original decía «OBRA»; corregida",
    "defecto_es_formula": false
   },
   {
@@ -2069,17 +2112,6 @@
    "tipo": "porcentaje",
    "unidad": "% sobre construcción",
    "defecto": 0.005,
-   "nota": "",
-   "defecto_es_formula": false
-  },
-  {
-   "seccion": "Gastos jurídicos",
-   "hoja": "Datos de Partida",
-   "celda": "D133",
-   "etiqueta": "AJD de obra nueva y división horizontal",
-   "tipo": "porcentaje",
-   "unidad": "%",
-   "defecto": 0.01,
    "nota": "",
    "defecto_es_formula": false
   },
@@ -2234,17 +2266,6 @@
    "tipo": "porcentaje",
    "unidad": "%",
    "defecto": 0.005,
-   "nota": "",
-   "defecto_es_formula": false
-  },
-  {
-   "seccion": "Préstamo hipotecario",
-   "hoja": "Datos de Partida",
-   "celda": "D154",
-   "etiqueta": "AJD de la garantía hipotecaria",
-   "tipo": "porcentaje",
-   "unidad": "%",
-   "defecto": 0,
    "nota": "",
    "defecto_es_formula": false
   },
@@ -3029,5 +3050,6 @@
    "nota": "",
    "defecto_es_formula": false
   }
- ]
+ ],
+ "parametros_legales": "Las celdas de la hoja «Parámetros legales» no son entradas del usuario: las fija el administrador (ver parametros_legales.json) y se aplican a todas las plantillas."
 }

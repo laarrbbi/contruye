@@ -1,7 +1,7 @@
 {
   "name": "construye-plantilla-libre",
-  "version": "1.0.0",
-  "description": "Motor de cálculo de PLANTILLA_LIBRE.xls con sus fórmulas originales",
+  "version": "3.0.0",
+  "description": "Motor de cálculo de la plantilla PLANTILLA_LIBRE corregida (y del original) y de las plantillas pequeñas del curso CONSTRUYE, con parámetros legales",
   "main": "plantillaEngine.js",
   "scripts": {
     "test": "node ../pruebas/validar.js",

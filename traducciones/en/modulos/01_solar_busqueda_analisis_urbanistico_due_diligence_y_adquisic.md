@@ -143,6 +143,7 @@
 
 ## Module 1 checklist
 
+- [ ] Template 1 · Site purchase (included) filled in with the price, the autonomous community and the actual costs
 - [ ] Product sheet defined (type, buyers, unit mix, specification, target price)
 - [ ] Up-to-date nota simple and certificate of encumbrances
 - [ ] Cadastral reference and topographic survey match

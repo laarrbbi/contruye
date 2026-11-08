@@ -1,6 +1,11 @@
 // CONSTRUYE · Motor de la plantilla PLANTILLA_LIBRE
-// Calcula la plantilla del profesional con sus fórmulas ORIGINALES, sin modificar ninguna.
-// - Fórmulas: plantilla/plantilla_libre.json (exportadas celda a celda del .xls original).
+// Calcula la plantilla del profesional. Por defecto carga la versión CORREGIDA (plantilla/plantilla_libre.json): el .xls original
+// con los errores corregidos y los impuestos de 2002 sacados a la hoja «Parámetros legales». Cada cambio está en
+// plantilla/correcciones.json. La versión sin ningún cambio sigue en plantilla/plantilla_libre_original.json:
+//   PlantillaEngine.desdeArchivos(undefined, 'plantilla_libre_original.json', 'entradas_original.json')
+// Parámetros legales (IVA, ITP/AJD por comunidad, IPS, interés legal…): los fija el administrador para TODOS los usuarios
+// con setParametros(); el usuario no puede tocarlos con setDatos(). Lista y celdas en plantilla/parametros_legales.json.
+// - Fórmulas: exportadas celda a celda del .xls original.
 // - Referencias circulares: se resuelven como Excel con cálculo iterativo (máx. 100 iteraciones, cambio máx. 0,001).
 //   Las 64 celdas que rompen los ciclos están en plantilla_libre.json → cortes_de_ciclo. Su fórmula original se evalúa
 //   en una hoja auxiliar y su valor se copia a la celda en cada iteración, igual que hace Excel al iterar.
@@ -53,9 +58,12 @@ function fechaASerie(s) {
   return Math.round((Date.UTC(y, m - 1, d) - Date.UTC(1899, 11, 30)) / 86400000);
 }
 
+const HOJA_PARAMETROS = 'Parámetros legales';
+
 class PlantillaEngine {
-  constructor(plantilla, entradas) {
+  constructor(plantilla, entradas, parametros) {
     this.tpl = plantilla;
+    this.parametros = parametros || null;
     this.entradas = entradas ? Object.fromEntries(entradas.entradas.map(e => [`${e.hoja}!${e.celda}`, e])) : null;
     const sheets = {};
     for (const h of plantilla.hojas) {
@@ -80,10 +88,47 @@ class PlantillaEngine {
     this.hf.resumeEvaluation();
   }
 
-  static desdeArchivos(dir = path.join(__dirname, '..', 'plantilla')) {
-    const tpl = JSON.parse(fs.readFileSync(path.join(dir, 'plantilla_libre.json'), 'utf8'));
-    const ent = JSON.parse(fs.readFileSync(path.join(dir, 'entradas.json'), 'utf8'));
-    return new PlantillaEngine(tpl, ent);
+  static desdeArchivos(dir = path.join(__dirname, '..', 'plantilla'), archivo = 'plantilla_libre.json', archivoEntradas = 'entradas.json') {
+    const leer = f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    const tpl = leer(archivo);
+    // parametros_legales.json: el de la carpeta de la plantilla o, si no hay, el de la plantilla grande (mismas celdas en todas)
+    const pDir = [path.join(dir, 'parametros_legales.json'), path.join(__dirname, '..', 'plantilla', 'parametros_legales.json')].find(f => fs.existsSync(f));
+    const conParametros = tpl.hojas.some(h => h.nombre === HOJA_PARAMETROS) && pDir;
+    return new PlantillaEngine(tpl, leer(archivoEntradas), conParametros ? JSON.parse(fs.readFileSync(pDir, 'utf8')) : null);
+  }
+
+  // Parámetros legales vigentes, iguales para todos los usuarios. Los guarda el administrador y se aplican antes de calcular.
+  // valores = { IVA_GENERAL: 0.21, IVA_REDUCIDO: 0.10, ..., comunidades: { 'Comunitat Valenciana': { itp: 0.09, ajd: 0.014 }, ... } }
+  // Solo hace falta pasar lo que cambia; lo que no se pasa conserva el valor de plantilla/parametros_legales.json.
+  setParametros(valores = {}) {
+    if (!this.parametros) throw new Error('Esta plantilla no tiene hoja de parámetros legales');
+    const pct = (k, v) => { if (typeof v !== 'number' || !(v >= 0 && v < 1)) throw new Error(`${k}: debe ser un tanto por uno entre 0 y 1 (0,21 = 21 %)`); return v; };
+    const porCodigo = Object.fromEntries(this.parametros.parametros.map(p => [p.codigo, p]));
+    const porNombre = Object.fromEntries(this.parametros.comunidades.map(c => [c.nombre, c]));
+    const sheet = this.ids[HOJA_PARAMETROS];
+    this.hf.suspendEvaluation();
+    for (const [k, v] of Object.entries(valores)) {
+      if (k === 'comunidades') {
+        for (const [n, tipos] of Object.entries(v)) {
+          const c = porNombre[n]; if (!c) throw new Error(`Comunidad desconocida: ${n}`);
+          if (tipos.itp !== undefined) { const { row, col } = decode(c.celda_itp); this.hf.setCellContents({ sheet, row, col }, [[pct(n + ' ITP', tipos.itp)]]); }
+          if (tipos.ajd !== undefined) { const { row, col } = decode(c.celda_ajd); this.hf.setCellContents({ sheet, row, col }, [[pct(n + ' AJD', tipos.ajd)]]); }
+        }
+        continue;
+      }
+      const p = porCodigo[k]; if (!p) throw new Error(`Parámetro legal desconocido: ${k}`);
+      const { row, col } = decode(p.celda); this.hf.setCellContents({ sheet, row, col }, [[pct(k, v)]]);
+    }
+    this.hf.resumeEvaluation();
+    return this;
+  }
+
+  // Valores que está usando ahora la plantilla
+  parametrosVigentes() {
+    if (!this.parametros) return null;
+    const out = {}; for (const p of this.parametros.parametros) out[p.codigo] = this.valor(HOJA_PARAMETROS, p.celda);
+    out.comunidades = Object.fromEntries(this.parametros.comunidades.map(c => [c.nombre, { itp: this.valor(HOJA_PARAMETROS, c.celda_itp), ajd: this.valor(HOJA_PARAMETROS, c.celda_ajd) }]));
+    return out;
   }
 
   // datos = { 'Datos de Partida': { C9: 24, D79: '01/01/2027', D80: 'SI', ... }, '3ª Proyectos': {...} }
@@ -156,4 +201,4 @@ class PlantillaEngine {
   }
 }
 
-module.exports = { PlantillaEngine, fechaASerie, decode, encode };
+module.exports = { HOJA_PARAMETROS, PlantillaEngine, fechaASerie, decode, encode };

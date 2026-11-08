@@ -127,6 +127,7 @@
 
 ## Checklist del Módulo 5
 
+- [ ] Plantilla 3 · Préstamo promotor (incluida) rellena con la oferta del banco
 - [ ] Tasación y oferta vinculante del banco
 - [ ] Préstamo promotor y línea de avales firmados
 - [ ] Cuenta especial de cantidades a cuenta abierta

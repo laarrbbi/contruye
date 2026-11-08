@@ -54,6 +54,15 @@ class Course extends Model
         return $this->hasMany(Module::class)->orderBy('order');
     }
 
+    /**
+     * The modules the course itself sells and full access covers: all but
+     * Financials, the extra bought on its own (FinancialsExtra).
+     */
+    public function includedModules(): HasMany
+    {
+        return $this->modules()->where('kind', '!=', Module::KIND_FINANCIALS);
+    }
+
     public function lessons(): HasManyThrough
     {
         return $this->hasManyThrough(Lesson::class, Module::class);

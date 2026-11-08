@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Api\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Api\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Api\Admin\StudentController as AdminStudentController;
+use App\Http\Controllers\Api\Admin\TemplateSettingsController as AdminTemplateSettingsController;
 use App\Http\Controllers\Api\AttachmentController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BusinessController;
@@ -26,6 +27,7 @@ use App\Http\Controllers\Api\CourseDocumentController;
 use App\Http\Controllers\Api\CourseFileController;
 use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\FinancialsController;
+use App\Http\Controllers\Api\FinancialsExtraController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\LessonPreviewController;
 use App\Http\Controllers\Api\OfferController;
@@ -39,6 +41,7 @@ use App\Http\Controllers\Api\ProvinceDirectoryController;
 use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\SmallTemplateController;
 use App\Http\Controllers\Api\WebhookController;
 use App\Models\Offer;
 use Illuminate\Support\Facades\Route;
@@ -132,14 +135,24 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/quiz-attempts/{attempt}/submit', [QuizController::class, 'submit'])
         ->whereNumber('attempt')->middleware('throttle:30,1');
 
-    // Financials: the professional's template, calculated on the server
+    // Financials: the professional template (the extra), calculated on the server
+    Route::get('/courses/{course:slug}/extra', [FinancialsExtraController::class, 'show']);
     Route::prefix('/courses/{course:slug}/financials')->group(function () {
         Route::get('/inputs', [FinancialsController::class, 'inputs']);
         Route::post('/calculate', [FinancialsController::class, 'calculate'])->middleware('throttle:20,1');
+        Route::post('/excel', [FinancialsController::class, 'excel'])->middleware('throttle:20,1');
         Route::get('/scenarios', [FinancialsController::class, 'scenarios']);
         Route::post('/scenarios', [FinancialsController::class, 'storeScenario'])->middleware('throttle:30,1');
         Route::put('/scenarios/{scenario}', [FinancialsController::class, 'updateScenario'])->whereNumber('scenario');
         Route::delete('/scenarios/{scenario}', [FinancialsController::class, 'destroyScenario'])->whereNumber('scenario');
+    });
+
+    // The five small templates of the course, each in its module
+    Route::prefix('/courses/{course:slug}/templates')->group(function () {
+        Route::get('/', [SmallTemplateController::class, 'index']);
+        Route::get('/{number}', [SmallTemplateController::class, 'show'])->whereNumber('number');
+        Route::post('/{number}/calculate', [SmallTemplateController::class, 'calculate'])->whereNumber('number')->middleware('throttle:60,1');
+        Route::post('/{number}/excel', [SmallTemplateController::class, 'excel'])->whereNumber('number')->middleware('throttle:20,1');
     });
 
     // Checkout + orders
@@ -175,6 +188,10 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::post('companies/visibility', [AdminCompanyController::class, 'bulk']);
     Route::get('offers', [AdminOfferController::class, 'index']);
     Route::put('offers/{offer}', [AdminOfferController::class, 'update'])->whereNumber('offer');
+    // The templates: the extra on sale or not, and the legal parameters
+    Route::get('templates', [AdminTemplateSettingsController::class, 'show']);
+    Route::put('templates/extra', [AdminTemplateSettingsController::class, 'updateExtra']);
+    Route::put('templates/legal', [AdminTemplateSettingsController::class, 'updateLegal']);
 
     // Order review
     Route::get('orders', [AdminOrderController::class, 'index']);

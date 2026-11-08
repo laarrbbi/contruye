@@ -1,22 +1,23 @@
-# FINANCIALS — LA PLANTILLA FINANCIERA DE LA PROMOCIÓN
+# FINANCIALS — EXTRA: LA PLANTILLA FINANCIERA PROFESIONAL
 
 > **Objetivo:** saber rellenar, leer y defender la plantilla financiera profesional del curso: coste por capítulos, préstamo, gestión, forma de pago, cash-flow y resumen.
-> **Duración:** 120 min · **Herramienta:** `PLANTILLA_LIBRE.xls` y su versión simplificada, las mismas que se calculan en la plataforma · **Se usa en:** Módulos 2, 5, 7 y 12.
+> **Duración:** 120 min · **Herramienta:** `PLANTILLA_LIBRE_corregida.xlsx` y su versión simplificada, las mismas que se calculan en la plataforma · **Acceso:** extra opcional de pago al terminar el curso · **Amplía:** las Plantillas 2, 3, 4 y 5 de los Módulos 2, 5, 7 y 8.
 
 ## De dónde sale la plantilla
 
-- Es la **plantilla de un profesional del sector**, y se usa en el curso y en la plataforma **tal cual**, con sus fórmulas.
+- Es la **plantilla de un profesional del sector**, con sus fórmulas. La hemos revisado celda a celda: está **corregida** (Lección F.8) y los impuestos, que en el original eran de 2002, salen de una hoja nueva, **Parámetros legales**, con los tipos vigentes.
 - Está hecha para una promoción de **vivienda libre en régimen de cooperativa**: los socios compran a coste, la gestora cobra un porcentaje de gestión y la financiación es un préstamo hipotecario que se subroga a los socios.
 - **Dos archivos:**
-  - **PLANTILLA_LIBRE.xls**: el modelo completo. 17 hojas y unas 31.000 fórmulas enlazadas.
+  - **PLANTILLA_LIBRE_corregida.xlsx**: el modelo completo. 18 hojas (las 17 del original más «Parámetros legales») y unas 31.000 fórmulas enlazadas.
   - **Plantilla simplificada de Análisis de Viabilidad**: la hoja de resumen del modelo completo ("3ª Coste Total Promoción") con un ejemplo real: 1 vivienda de 200 m².
-- **Antes de abrirla en Excel:** activa el cálculo iterativo (*Archivo → Opciones → Fórmulas → Habilitar cálculo iterativo*, 100 iteraciones, cambio máximo 0,001). La plantilla tiene referencias circulares a propósito (Lección F.7) y sin iteración Excel no calcula. En la plataforma ya viene resuelto.
+- **Cálculo iterativo:** la plantilla tiene referencias circulares a propósito (Lección F.7). El archivo corregido ya trae activado el cálculo iterativo (100 iteraciones, cambio máximo 0,001). Si Excel avisa de «referencia circular», compruébalo en *Archivo → Opciones → Fórmulas → Habilitar cálculo iterativo*. En LibreOffice, recalcula varias veces (Ctrl+Mayús+F9) hasta que los importes no cambien. En la plataforma ya viene resuelto.
 
 ## Mapa de la plantilla
 
 | Orden | Hoja | Qué hace |
 |---|---|---|
 | 1 | **Datos de Partida** | Todo lo que introduces: superficies, modelos de vivienda, suelo, construcción, urbanización, licencias, préstamo, gestión, socios |
+| 1 | **Parámetros legales** | IVA, ITP y AJD de cada comunidad, IPS, interés legal del dinero… Los mantiene CONSTRUYE al día. Tú solo eliges la comunidad del solar en Datos de Partida (D93) |
 | 2 | 2º Auxiliar | Cálculos intermedios: superficies y costes por elemento y por modelo |
 | 3 | **3ª Terrenos** | Coste del suelo: precio, impuestos, notaría, registro, avales, timbres, API |
 | 3 | **3ª Construcción** | Certificaciones mes a mes con la curva de obra, retención, OCT y seguro decenal |
@@ -39,7 +40,7 @@
 
 | Bloque | Celdas | Qué pones | Ojo con |
 |---|---|---|---|
-| Superficies por elemento | C9:E16 | Unidades, m² construidos medios y **coste de construcción por m²** de vivienda, garajes, trasteros, terrazas, locales, otros | La columna se llama "PVP CONSTRUCCIÓN" pero es **coste**, no precio de venta |
+| Superficies por elemento | C9:E16 | Unidades, m² construidos medios y **coste de construcción por m²** de vivienda, garajes, trasteros, terrazas, locales, otros | En el original se llamaba "PVP CONSTRUCCIÓN"; es **coste**, no precio de venta. Ya corregido: ahora dice "COSTE CONSTRUCCIÓN" |
 | Modelos de vivienda | B22:C45 | Hasta 24 modelos: nº de viviendas y m² útiles | La suma de viviendas debe ser igual a C9. Los m² construidos los calcula la plantilla |
 | Elementos vinculados | C51:E74 | m² de garaje, trastero y terraza de cada modelo | Cuentan para el **tramo de honorarios** de proyecto |
 | Suelo | D79:D83 | Mes cero, ¿lleva IVA? (SI/NO), interés del aplazamiento, precio, API y varios | **API y varios es un % del precio**, no un importe |
@@ -88,10 +89,12 @@ La hoja "3ª Coste Total Promoción" (la plantilla simplificada) resume todo. Es
 | Urbanización | 0,00 € | 0,00 € | 0,0 % |
 | Proyectos | 38.754,09 € | 44.954,75 € | 12,0 % |
 | Licencias | 7.740,00 € | 7.740,00 € | 2,4 % |
-| Varios | 18.484,05 € | 20.250,24 € | 5,7 % |
+| Varios | 18.484,05 € | 20.529,11 € | 5,7 % |
 | Gestión | 15.358,89 € | 17.816,31 € | 4,8 % |
 | Gastos préstamo hipotecario | 8.164,29 € | 9.073,02 € | 2,5 % |
-| **Total** | **322.536,66 €** | **354.502,63 €** | **100 %** |
+| **Total** | **322.536,66 €** | **354.781,50 €** | **100 %** |
+
+- Son las cifras del ejemplo original, con los impuestos de 2002 (IVA 7 % y 16 %, AJD 1 %), y con «Varios» con IVA ya corregido: el original no sumaba las acometidas (278,87 €).
 
 - **Cómo se lee cada capítulo** (columnas de detalle de la hoja):
   - **Terreno 53.100 €** = 50.000 € de suelo + 50 € de notaría + 50 € de registro + 500 € de AJD (1 %) + 2.500 € de API y varios (5 %).
@@ -148,21 +151,36 @@ La hoja "3ª Coste Total Promoción" (la plantilla simplificada) resume todo. Es
 - En la plantilla, el resultado se estabiliza en unas 20 iteraciones.
 - **Si Excel avisa de "referencia circular", no está mal: activa el cálculo iterativo.**
 
-## Lección F.8 — Lo que debes revisar antes de usarla en 2026
+## Lección F.8 — Impuestos al día y errores corregidos
 
-La plantilla calcula con los parámetros con que se construyó, alrededor de 2002. Para estudiar una promoción actual, comprueba con tu asesor:
+La plantilla original se construyó hacia 2002. La versión del curso está revisada celda a celda.
 
-| Parámetro de la plantilla | Valor en la plantilla | Referencia actual (Módulos 2 y 11, Anexo B) |
+**Impuestos: hoja «Parámetros legales»**
+
+| Parámetro | Original (2002) | Plantilla del curso (revisada el 08/11/2026) |
 |---|---|---|
-| IVA de la obra de vivienda | 7 % | 10 % |
-| IVA general (honorarios, notaría, OCT…) | 16 % | 21 % |
-| Impuesto de la compra del suelo | AJD 1 % o ITP 8 % | Según tu comunidad autónoma (Anexo B) |
-| Aranceles de notaría y registro, timbres, OCT, decenal, honorarios | Tablas de la época, en pesetas | Pide presupuesto actual |
-| Partidas de cooperativa | Captación de socios, consejo rector, local de asambleas | No aplican a un promotor |
+| IVA de la obra de vivienda y de la venta | 7 % | 10 % |
+| IVA general (honorarios, notaría, OCT, tasaciones…) | 16 % | 21 % |
+| Impuesto de la compra del suelo | AJD 1 % o ITP 8 % fijos | AJD o ITP de la comunidad que elijas en Datos de Partida (Anexo B) |
+| AJD de obra nueva y división horizontal | 1 % | AJD de tu comunidad |
+| AJD del préstamo hipotecario | Dato | 0 %: desde 2018 lo paga el banco |
+| Impuesto sobre las Primas de Seguros (seguro decenal) | 6 % | 8 % |
+| Interés de las cantidades a cuenta | 6 % | Interés legal del dinero (3,25 %) |
+| Importes en pesetas (aranceles, timbres, tasas) | Pesetas | Los mismos importes en euros |
 
-**Dos detalles del original que conviene conocer:**
-- **"Varios" con IVA no suma las acometidas** (en el ejemplo, 278,87 €). El total con IVA correcto del ejemplo sería 354.781,50 €. El neto es correcto.
-- **El quinto pago del suelo** no calcula el coste de su aval si va avalado. Los pagos 1 a 4 sí.
+- CONSTRUYE actualiza esta hoja cuando cambia la ley. En la plataforma se aplica sola a todas las plantillas.
+- **Sigue pidiendo presupuesto actual** de lo que no fija la ley: honorarios, OCT, seguro decenal, tasaciones y los costes de 2002 que el modelo trae por defecto.
+- ITP y AJD son los tipos generales de cada comunidad. Si la tuya tiene tramos o tipos reducidos, confírmalo con tu asesor.
+- **Partidas de cooperativa** (captación de socios, consejo rector, local de asambleas): no aplican a un promotor. Déjalas a 0.
+
+**Errores del original que ya están corregidos**
+
+- "Varios" con IVA no sumaba las acometidas (en el ejemplo, 278,87 €). El total con IVA del ejemplo es 354.781,50 €.
+- El quinto pago del suelo no calculaba el coste de su aval.
+- El cash-flow perdía pagos cuando dos caían en el mismo mes (por ejemplo, dos disposiciones del préstamo). Tampoco sumaba las acometidas en el total de los 4 años, y solo pagaba el ITP o el AJD del suelo si eran exactamente el 8 % o el 1 %.
+- La liquidación del IVA del cash-flow estaba enlazada a mano para el calendario del ejemplo. Ahora se calcula sola cada trimestre.
+- Había errores visibles (#VALUE! y #DIV/0!) y controles «O.K.» que fallaban por decimales.
+- El control de calidad de la obra estaba fijo al 1,5 % dentro de una fórmula. Ahora es un dato (Datos de Partida D102).
 
 ## Lección F.9 — De la plantilla a la decisión de un promotor
 
@@ -179,14 +197,14 @@ La plantilla calcula con los parámetros con que se construyó, alrededor de 200
 
 ## Checklist de Financials
 
-- [ ] Cálculo iterativo activado en Excel (en la plataforma ya viene)
+- [ ] Cálculo iterativo activado (el archivo corregido ya lo trae; en la plataforma ya viene)
 - [ ] Superficies, modelos y elementos vinculados rellenos y cuadrados con la ficha de producto
 - [ ] Coste de construcción por m² con presupuestos reales
 - [ ] Suelo, licencias y préstamo con sus unidades correctas (importes y porcentajes)
 - [ ] Calendario: fechas de compra, obra, urbanización, disposiciones y gestión
 - [ ] Resumen revisado: capítulos, repercusiones, coeficiente de paso y préstamo
 - [ ] Cash-flow sin acumulado negativo (o póliza prevista)
-- [ ] Parámetros de la plantilla revisados para la fiscalidad actual (Lección F.8)
+- [ ] Comunidad autónoma del solar elegida y fecha de revisión de «Parámetros legales» comprobada (Lección F.8)
 
 
 

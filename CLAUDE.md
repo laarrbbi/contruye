@@ -55,7 +55,7 @@ public coupon codes. It refuses to run in production; a live database is filled 
 | Benchmark | `docker compose exec -T php php artisan bench:endpoints` |
 | Company directory: import | `docker compose exec -T php php artisan directory:import <file.xlsx>…` (Orbis export; see README «Directorio de empresas» on data rights) |
 | Front-end build / lint | `npm --prefix web run build` · `npm --prefix web run lint` |
-| Financial template (engine = Excel; service) | `NODE_OPTIONS="--require $PWD/financials/reference-day.cjs" npm --prefix curso/2_plantilla_financiera/motor test` (on the package's reference day: see the file) · `npm --prefix financials test` |
+| Financial templates (engine = Excel; service) | `npm --prefix curso/2_plantilla_financiera/motor test` (the package's 39 checks) · `npm --prefix financials test` |
 
 Tests run against `mysql-test`. `--parallel` gives each worker its own database; the grant that
 makes that work lives in `docker/mysql-test/`.

@@ -120,6 +120,7 @@
 
 ## Checklist del Módulo 8
 
+- [ ] Plantilla 5 · Plan de ventas y cobros (incluida) rellena con la política de precios y de pagos
 - [ ] Documentación del RD 515/1989 en la oficina de ventas
 - [ ] Calificación energética en la publicidad
 - [ ] Línea de avales y cuenta especial operativas antes de cobrar la primera reserva

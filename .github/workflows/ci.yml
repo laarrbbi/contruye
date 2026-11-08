@@ -116,13 +116,11 @@ jobs:
       - run: npm ci --ignore-scripts
         working-directory: curso/2_plantilla_financiera/motor
 
-      # On the day its reference values were calculated: sixteen cells hold
-      # today's date (financials/reference-day.cjs says why, and curso/ stays as delivered).
-      - name: The engine calculates like the original Excel (the package's own test)
+      # The package's 39 checks (original against Excel and LibreOffice, the corrected
+      # template, the legal parameters, the five small templates), on today's date.
+      - name: The engine calculates like Excel (the package's own test)
         run: npm test
         working-directory: curso/2_plantilla_financiera/motor
-        env:
-          NODE_OPTIONS: --require ${{ github.workspace }}/financials/reference-day.cjs
 
       - name: The service reuses the engine without changing a result
         run: npm test

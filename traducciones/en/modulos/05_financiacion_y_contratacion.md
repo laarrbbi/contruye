@@ -127,6 +127,7 @@
 
 ## Module 5 checklist
 
+- [ ] Template 3 · Developer loan (included) filled in with the bank's offer
 - [ ] Valuation and binding offer from the bank
 - [ ] Development loan and guarantee line signed
 - [ ] Special account for advance payments opened

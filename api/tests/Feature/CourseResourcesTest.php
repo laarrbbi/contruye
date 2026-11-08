@@ -87,16 +87,19 @@ it('hands out the package files behind their own gate, from the package as deliv
     [$course, $phase1, , $financials] = resourcesCourse();
 
     $partial = owner($course, $phase1);
-    $this->actingAs($partial)->get("/api/courses/{$course->slug}/files/plantilla-libre")->assertForbidden();
+    $this->actingAs($partial)->get("/api/courses/{$course->slug}/files/plantilla-simplificada")->assertForbidden();
     $this->actingAs($partial)->get("/api/courses/{$course->slug}/files/curso-pdf")->assertForbidden();
 
+    // The simplified template is the extra's: its buyers have it, as delivered.
     $financialsOwner = owner($course, $financials);
-    $response = $this->actingAs($financialsOwner)->get("/api/courses/{$course->slug}/files/plantilla-libre")->assertOk();
-    expect($response->headers->get('content-disposition'))->toContain('PLANTILLA_LIBRE.xls')
-        ->and(md5_file($response->getFile()->getPathname()))->toBe('61de546ad0e5d84fbfd5a2ed2e652ab4');
+    $response = $this->actingAs($financialsOwner)->get("/api/courses/{$course->slug}/files/plantilla-simplificada")->assertOk();
+    expect($response->headers->get('content-disposition'))->toContain('Plantilla_simplificada_corregida.xlsx')
+        ->and(md5_file($response->getFile()->getPathname()))->toBe(md5_file(base_path('../curso/2_plantilla_financiera/excel_corregido/Plantilla_simplificada_corregida.xlsx')));
     $this->actingAs($financialsOwner)->get("/api/courses/{$course->slug}/files/curso-pdf")->assertForbidden();
 
+    // The whole course is not the extra.
     $full = owner($course, null);
+    $this->actingAs($full)->get("/api/courses/{$course->slug}/files/plantilla-simplificada")->assertForbidden();
     $this->actingAs($full)->get("/api/courses/{$course->slug}/files/curso-pdf")->assertOk()
         ->assertHeader('content-type', 'application/pdf');
     $this->actingAs($full)->get("/api/courses/{$course->slug}/files/directorio-partners")->assertOk();

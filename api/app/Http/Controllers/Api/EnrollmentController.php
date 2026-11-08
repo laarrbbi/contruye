@@ -34,7 +34,7 @@ class EnrollmentController extends Controller
 
         $modulesByCourse = Module::query()
             ->whereIn('course_id', $courseIds)
-            ->get(['id', 'course_id'])
+            ->get(['id', 'course_id', 'kind'])
             ->groupBy('course_id');
 
         $lessonTotalsByModule = Lesson::query()
@@ -58,17 +58,17 @@ class EnrollmentController extends Controller
                 $course = $first->course;
 
                 $courseModules = $modulesByCourse->get($course->id, collect());
+                // The course's own modules: Financials is the extra, in no plan.
+                $includedIds = $courseModules->reject(fn (Module $m) => $m->isFinancials())->pluck('id');
                 $wholeCourse = $rows->contains(fn ($row) => $row->module_id === null);
+                $boughtIds = $rows->pluck('module_id')->filter()->unique()->intersect($courseModules->pluck('id'));
 
-                $ownedModuleIds = $wholeCourse
-                    ? $courseModules->pluck('id')
-                    : $rows->pluck('module_id')->filter()->unique()
-                        ->intersect($courseModules->pluck('id'))->values();
+                $ownedModuleIds = ($wholeCourse ? $includedIds->merge($boughtIds) : $boughtIds)->unique()->values();
 
-                // Same rule as User::hasFullAccessTo(): every module is
+                // Same rule as User::hasFullAccessTo(): every included module is
                 // watchable, however it was bought.
-                $fullAccess = $courseModules->isNotEmpty()
-                    && $ownedModuleIds->count() >= $courseModules->count();
+                $fullAccess = $includedIds->isNotEmpty()
+                    && $ownedModuleIds->intersect($includedIds)->count() >= $includedIds->count();
 
                 $total = (int) $ownedModuleIds->sum(fn ($id) => (int) ($lessonTotalsByModule[$id] ?? 0));
                 $done = (int) $ownedModuleIds->sum(fn ($id) => (int) ($completedByModule[$id] ?? 0));
@@ -83,8 +83,8 @@ class EnrollmentController extends Controller
                         'progress_percent' => $total === 0 ? 0 : (int) round($done / $total * 100),
                     ],
                     'full_access' => $fullAccess,
-                    'owned_modules_count' => $ownedModuleIds->count(),
-                    'total_modules_count' => $courseModules->count(),
+                    'owned_modules_count' => $ownedModuleIds->intersect($includedIds)->count(),
+                    'total_modules_count' => $includedIds->count(),
                     'expires_at' => $first->expires_at?->toISOString(),
                     'created_at' => $first->created_at?->toISOString(),
                 ];

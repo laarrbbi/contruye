@@ -1,0 +1,50 @@
+{
+ "nota": "Plantillas pequeñas incluidas en el curso. La plantilla profesional completa (PLANTILLA_LIBRE) es el extra de pago del final del curso.",
+ "plantillas": [
+  {
+   "numero": 1,
+   "titulo": "Plantilla 1 · Compra del solar",
+   "modulo": "Módulo 1 · Solar",
+   "excel": "1_compra_del_solar.xlsx",
+   "plantilla": "1_compra_del_solar.json",
+   "entradas": "1_compra_del_solar.entradas.json",
+   "n_entradas": 7
+  },
+  {
+   "numero": 2,
+   "titulo": "Plantilla 2 · Viabilidad rápida y método residual",
+   "modulo": "Módulo 2 · Análisis de viabilidad",
+   "excel": "2_viabilidad_metodo_residual.xlsx",
+   "plantilla": "2_viabilidad_metodo_residual.json",
+   "entradas": "2_viabilidad_metodo_residual.entradas.json",
+   "n_entradas": 15
+  },
+  {
+   "numero": 3,
+   "titulo": "Plantilla 3 · Préstamo promotor",
+   "modulo": "Módulo 5 · Financiación y contratación",
+   "excel": "3_prestamo_promotor.xlsx",
+   "plantilla": "3_prestamo_promotor.json",
+   "entradas": "3_prestamo_promotor.entradas.json",
+   "n_entradas": 9
+  },
+  {
+   "numero": 4,
+   "titulo": "Plantilla 4 · Control de costes de obra",
+   "modulo": "Módulo 7 · Control de obra",
+   "excel": "4_control_costes_obra.xlsx",
+   "plantilla": "4_control_costes_obra.json",
+   "entradas": "4_control_costes_obra.entradas.json",
+   "n_entradas": 49
+  },
+  {
+   "numero": 5,
+   "titulo": "Plantilla 5 · Plan de ventas y cobros",
+   "modulo": "Módulo 8 · Comercialización",
+   "excel": "5_plan_ventas_cobros.xlsx",
+   "plantilla": "5_plan_ventas_cobros.json",
+   "entradas": "5_plan_ventas_cobros.entradas.json",
+   "n_entradas": 7
+  }
+ ]
+}

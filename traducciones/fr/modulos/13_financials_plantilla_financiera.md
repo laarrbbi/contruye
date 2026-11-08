@@ -1,22 +1,23 @@
-# Financials — le modèle financier de la promotion
+# Financials — extra : le modèle financier professionnel
 
 > **Objectif :** savoir remplir, lire et défendre le modèle financier professionnel de la formation : coût par chapitres, prêt, gestion, échéancier de paiement, cash-flow et synthèse.
-> **Durée :** 120 min · **Outil :** `PLANTILLA_LIBRE.xls` et sa version simplifiée, les mêmes que celles calculées sur la plateforme · **Utilisé dans :** modules 2, 5, 7 et 12.
+> **Durée :** 120 min · **Outil :** `PLANTILLA_LIBRE_corregida.xlsx` et sa version simplifiée, les mêmes que celles calculées sur la plateforme · **Accès :** extra optionnel payant à la fin de la formation · **Complète :** les modèles 2, 3, 4 et 5 des modules 2, 5, 7 et 8.
 
 ## D'où vient le modèle
 
-- C'est le **modèle d'un professionnel du secteur**, utilisé dans le cours et sur la plateforme **tel quel**, avec ses formules.
+- C'est le **modèle d'un professionnel du secteur**, avec ses formules. Nous l'avons revu cellule par cellule : il est **corrigé** (leçon F.8) et les impôts, qui dans l'original étaient ceux de 2002, viennent d'une nouvelle feuille, **Parámetros legales** (paramètres légaux), avec les taux en vigueur.
 - Il est conçu pour une promotion de **logement libre en régime de coopérative** (*vivienda libre en régimen de cooperativa*) : les associés achètent au coût, la société de gestion (*gestora*) perçoit un pourcentage de gestion et le financement est un prêt hypothécaire auquel les associés sont subrogés (*subrogación*).
 - **Deux fichiers :**
-  - **PLANTILLA_LIBRE.xls** : le modèle complet. 17 feuilles et environ 31.000 formules liées.
+  - **PLANTILLA_LIBRE_corregida.xlsx** : le modèle complet. 18 feuilles (les 17 de l'original plus « Parámetros legales ») et environ 31.000 formules liées.
   - **Modèle simplifié d'analyse de faisabilité** (*Plantilla simplificada de Análisis de Viabilidad*) : la feuille de synthèse du modèle complet (« 3ª Coste Total Promoción ») avec un exemple réel : 1 logement de 200 m².
-- **Avant de l'ouvrir dans Excel :** activez le calcul itératif (*Fichier → Options → Formules → Activer le calcul itératif*, 100 itérations, écart maximal 0,001). Le modèle contient des références circulaires voulues (leçon F.7) et, sans itération, Excel ne calcule pas. Sur la plateforme, c'est déjà réglé.
+- **Calcul itératif :** le modèle contient des références circulaires voulues (leçon F.7). Le fichier corrigé a déjà le calcul itératif activé (100 itérations, écart maximal 0,001). Si Excel signale une « référence circulaire », vérifiez-le dans *Fichier → Options → Formules → Activer le calcul itératif*. Dans LibreOffice, recalculez plusieurs fois (Ctrl+Maj+F9) jusqu'à ce que les montants ne changent plus. Sur la plateforme, c'est déjà réglé.
 
 ## Plan du modèle
 
 | Ordre | Feuille | Ce qu'elle fait |
 |---|---|---|
 | 1 | **Datos de Partida** (données de départ) | Tout ce que vous saisissez : surfaces, types de logement, terrain, construction, viabilisation, licences, prêt, gestion, associés |
+| 1 | **Parámetros legales** (paramètres légaux) | IVA, ITP et AJD de chaque communauté, IPS, taux d'intérêt légal… CONSTRUYE les tient à jour. Vous choisissez seulement la communauté du terrain dans Datos de Partida (D93) |
 | 2 | 2º Auxiliar | Calculs intermédiaires : surfaces et coûts par élément et par type de logement |
 | 3 | **3ª Terrenos** (terrain) | Coût du terrain : prix, impôts, notaire, registre, cautions, droits de timbre, API (agent immobilier) |
 | 3 | **3ª Construcción** (construction) | Situations de travaux (*certificaciones*) mois par mois selon la courbe de chantier, retenue, OCT et assurance décennale |
@@ -39,7 +40,7 @@
 
 | Bloc | Cellules | Ce que vous saisissez | Attention |
 |---|---|---|---|
-| Surfaces par élément | C9:E16 | Unités, m² construits moyens et **coût de construction au m²** des logements, garages, débarras, terrasses, locaux, autres | La colonne s'appelle « PVP CONSTRUCCIÓN » mais c'est un **coût**, pas un prix de vente |
+| Surfaces par élément | C9:E16 | Unités, m² construits moyens et **coût de construction au m²** des logements, garages, débarras, terrasses, locaux, autres | Dans l'original, elle s'appelait « PVP CONSTRUCCIÓN » ; c'est un **coût**, pas un prix de vente. Déjà corrigé : elle s'appelle désormais « COSTE CONSTRUCCIÓN » |
 | Types de logement | B22:C45 | Jusqu'à 24 types : nombre de logements et m² utiles | La somme des logements doit être égale à C9. Le modèle calcule lui-même les m² construits |
 | Éléments liés | C51:E74 | m² de garage, de débarras et de terrasse de chaque type | Ils comptent pour la **tranche d'honoraires** du projet |
 | Terrain | D79:D83 | Mois zéro, soumis à l'IVA ? (SI/NO), intérêt du paiement différé, prix, API et divers | **API et divers est un % du prix**, pas un montant |
@@ -88,10 +89,12 @@ La feuille « 3ª Coste Total Promoción » (le modèle simplifié) résume tout
 | Viabilisation (*Urbanización*) | 0,00 € | 0,00 € | 0,0 % |
 | Études et projets (*Proyectos*) | 38.754,09 € | 44.954,75 € | 12,0 % |
 | Licences (*Licencias*) | 7.740,00 € | 7.740,00 € | 2,4 % |
-| Divers (*Varios*) | 18.484,05 € | 20.250,24 € | 5,7 % |
+| Divers (*Varios*) | 18.484,05 € | 20.529,11 € | 5,7 % |
 | Gestion (*Gestión*) | 15.358,89 € | 17.816,31 € | 4,8 % |
 | Frais du prêt hypothécaire | 8.164,29 € | 9.073,02 € | 2,5 % |
-| **Total** | **322.536,66 €** | **354.502,63 €** | **100 %** |
+| **Total** | **322.536,66 €** | **354.781,50 €** | **100 %** |
+
+- Ce sont les chiffres de l'exemple original, avec les impôts de 2002 (IVA 7 % et 16 %, AJD 1 %), et avec « Divers » TTC déjà corrigé : l'original n'additionnait pas les raccordements (278,87 €).
 
 - **Comment lire chaque chapitre** (colonnes de détail de la feuille) :
   - **Terrain 53.100 €** = 50.000 € de terrain + 50 € de notaire + 50 € de registre + 500 € d'AJD (1 %) + 2.500 € d'API et divers (5 %).
@@ -148,21 +151,36 @@ La feuille « 3ª Coste Total Promoción » (le modèle simplifié) résume tout
 - Dans ce modèle, le résultat se stabilise en 20 itérations environ.
 - **Si Excel signale une « référence circulaire », ce n'est pas une erreur : activez le calcul itératif.**
 
-## Leçon F.8 — Ce qu'il faut revoir avant de l'utiliser en 2026
+## Leçon F.8 — Des impôts à jour et des erreurs corrigées
 
-Le modèle calcule avec les paramètres de sa construction, vers 2002. Pour étudier une promotion actuelle, vérifiez avec votre conseiller :
+Le modèle original a été construit vers 2002. La version de la formation a été revue cellule par cellule.
 
-| Paramètre du modèle | Valeur dans le modèle | Référence actuelle (modules 2 et 11, annexe B) |
+**Impôts : la feuille « Parámetros legales »**
+
+| Paramètre | Original (2002) | Modèle de la formation (revu le 08/11/2026) |
 |---|---|---|
-| IVA des travaux de logement | 7 % | 10 % |
-| IVA général (honoraires, notaire, OCT…) | 16 % | 21 % |
-| Impôt sur l'achat du terrain | AJD 1 % ou ITP 8 % | Selon votre communauté autonome (annexe B) |
-| Barèmes de notaire et de registre, droits de timbre, OCT, décennale, honoraires | Tableaux de l'époque, en pesetas | Demandez un devis actuel |
-| Postes propres à la coopérative | Recrutement des associés, conseil d'administration, salle d'assemblées | Ne s'appliquent pas à un promoteur |
+| IVA des travaux de logement et de la vente | 7 % | 10 % |
+| IVA général (honoraires, notaire, OCT, expertises…) | 16 % | 21 % |
+| Impôt sur l'achat du terrain | AJD 1 % ou ITP 8 % fixes | AJD ou ITP de la communauté que vous choisissez dans Datos de Partida (annexe B) |
+| AJD de la déclaration d'ouvrage neuf et de la division horizontale | 1 % | AJD de votre communauté |
+| AJD du prêt hypothécaire | Donnée | 0 % : depuis 2018, c'est la banque qui le paie |
+| Taxe sur les primes d'assurance (assurance décennale) | 6 % | 8 % |
+| Intérêts des sommes versées à l'avance | 6 % | Taux d'intérêt légal (3,25 %) |
+| Montants en pesetas (barèmes, timbres, taxes) | Pesetas | Les mêmes montants en euros |
 
-**Deux détails de l'original à connaître :**
-- **Le TTC de « Divers » n'additionne pas les raccordements** (dans l'exemple, 278,87 €). Le total TTC correct de l'exemple serait de 354.781,50 €. Le HT est correct.
-- **Le cinquième paiement du terrain** ne calcule pas le coût de sa caution s'il est garanti. Les paiements 1 à 4, si.
+- CONSTRUYE met cette feuille à jour quand la loi change. Sur la plateforme, elle s'applique d'elle-même à tous les modèles.
+- **Continuez à demander des devis actuels** pour ce que la loi ne fixe pas : honoraires, OCT, assurance décennale, expertises et les coûts de 2002 que le modèle propose par défaut.
+- L'ITP et l'AJD sont les taux généraux de chaque communauté. Si la vôtre a des tranches ou des taux réduits, confirmez-le avec votre conseiller.
+- **Postes de coopérative** (recrutement des associés, conseil d'administration, local des assemblées) : ils ne s'appliquent pas à un promoteur. Laissez-les à 0.
+
+**Erreurs de l'original déjà corrigées**
+
+- « Divers » TTC n'additionnait pas les raccordements (278,87 € dans l'exemple). Le total TTC de l'exemple est de 354.781,50 €.
+- Le cinquième paiement du terrain ne calculait pas le coût de sa garantie.
+- Le cash-flow perdait des paiements quand deux tombaient le même mois (par exemple, deux tirages du prêt). Il n'additionnait pas non plus les raccordements dans le total des 4 ans, et ne payait l'ITP ou l'AJD du terrain que s'ils valaient exactement 8 % ou 1 %.
+- La liquidation de l'IVA du cash-flow était liée à la main au calendrier de l'exemple. Elle se calcule désormais d'elle-même chaque trimestre.
+- Il y avait des erreurs visibles (#VALUE! et #DIV/0!) et des contrôles « O.K. » qui échouaient à cause des décimales.
+- Le contrôle qualité des travaux était fixé à 1,5 % dans une formule. C'est désormais une donnée (Datos de Partida D102).
 
 ## Leçon F.9 — Du modèle à la décision d'un promoteur
 
@@ -179,11 +197,11 @@ Le modèle calcule avec les paramètres de sa construction, vers 2002. Pour étu
 
 ## Checklist de Financials
 
-- [ ] Calcul itératif activé dans Excel (déjà actif sur la plateforme)
+- [ ] Calcul itératif activé (le fichier corrigé l'a déjà ; déjà actif sur la plateforme)
 - [ ] Surfaces, modèles et éléments rattachés remplis et cohérents avec la fiche produit
 - [ ] Coût de construction par m² issu de devis réels
 - [ ] Terrain, permis et prêt avec les bonnes unités (montants et pourcentages)
 - [ ] Calendrier : dates d'achat, de chantier, de viabilisation, de tirages et de gestion
 - [ ] Synthèse vérifiée : chapitres, incidences, coefficient de passage et prêt
 - [ ] Cash-flow sans cumul négatif (ou ligne de crédit prévue)
-- [ ] Paramètres du modèle revus selon la fiscalité actuelle (Leçon F.8)
+- [ ] Communauté autonome du terrain choisie et date de révision de « Parámetros legales » vérifiée (Leçon F.8)

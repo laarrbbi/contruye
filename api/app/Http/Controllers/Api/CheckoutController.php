@@ -72,7 +72,10 @@ class CheckoutController extends Controller
 
         $method = $data['method'];
         $currency = PricingService::CURRENCY;
-        $coupon = $this->resolveCoupon($data['coupon_code'] ?? null, failWhenInvalid: true);
+        // The extra is sold at its own price: no coupon applies to it.
+        $coupon = $request->scopeValue() === 'extra'
+            ? null
+            : $this->resolveCoupon($data['coupon_code'] ?? null, failWhenInvalid: true);
 
         // The quote is the single source of truth: it validates ownership,
         // module membership and computes every discount.

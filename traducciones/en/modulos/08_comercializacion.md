@@ -120,6 +120,7 @@
 
 ## Module 8 checklist
 
+- [ ] Template 5 · Sales and collections plan (included) filled in with the pricing and payment policy
 - [ ] RD 515/1989 documentation in the sales office
 - [ ] Energy rating in the advertising
 - [ ] Guarantee line and special account working before the first reservation is collected

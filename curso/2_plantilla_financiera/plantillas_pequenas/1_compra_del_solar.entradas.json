@@ -1,0 +1,105 @@
+{
+ "plantilla": "Plantilla 1 · Compra del solar",
+ "regla": "Solo se escriben estas celdas. Los impuestos salen de Parámetros legales (los fija el administrador).",
+ "porcentajes": "En tanto por uno (0,05 = 5 %).",
+ "entradas": [
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B4",
+   "etiqueta": "Comunidad autónoma del solar",
+   "tipo": "lista: comunidades",
+   "unidad": "",
+   "defecto": "Comunitat Valenciana",
+   "nota": "Decide el ITP o el AJD (hoja Parámetros legales)",
+   "defecto_es_formula": false,
+   "opciones": [
+    "Andalucía",
+    "Aragón",
+    "Principado de Asturias",
+    "Illes Balears",
+    "Canarias",
+    "Cantabria",
+    "Castilla-La Mancha",
+    "Castilla y León",
+    "Cataluña",
+    "Comunitat Valenciana",
+    "Extremadura",
+    "Galicia",
+    "Comunidad de Madrid",
+    "Región de Murcia",
+    "Comunidad Foral de Navarra",
+    "País Vasco",
+    "La Rioja",
+    "Ciudad Autónoma de Ceuta",
+    "Ciudad Autónoma de Melilla"
+   ]
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B5",
+   "etiqueta": "Precio del solar",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 500000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B6",
+   "etiqueta": "¿Lo vende una empresa con IVA? (SI/NO)",
+   "tipo": "SI/NO",
+   "unidad": "",
+   "defecto": "SI",
+   "nota": "SI: IVA + AJD. NO (particular): ITP",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B7",
+   "etiqueta": "Edificabilidad (m² de techo)",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 2000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B8",
+   "etiqueta": "Notaría y registro (% del precio, estimado)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.005,
+   "nota": "Pide presupuesto para afinar",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B9",
+   "etiqueta": "Plusvalía (si la asumes), API y otros",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 0,
+   "nota": "La plusvalía municipal la paga el vendedor salvo pacto",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B10",
+   "etiqueta": "Due diligence, tasación y estudios",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 3000,
+   "nota": "",
+   "defecto_es_formula": false
+  }
+ ]
+}

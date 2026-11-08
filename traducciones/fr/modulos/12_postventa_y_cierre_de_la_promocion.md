@@ -71,7 +71,7 @@
 - **Décompte avec l'entreprise :** approuvez la situation finale et soldez le contrat (retenues, pénalités, suppléments). Restituez la retenue à son échéance.
 - **Soldez les comptes** avec les techniciens, fournisseurs et prestataires, et réglez les factures et garanties en suspens.
 - **Rapprochez** les recettes des ventes, les coûts, les intérêts et les frais généraux.
-- **Rentabilité réelle :** comparez-la au CRP approuvé (écarts de coût, de délai et de ventes). Recalculez le modèle de FINANCIALS avec les données réelles.
+- **Rentabilité réelle :** comparez-la au CRP approuvé (écarts de coût, de délai et de ventes). Recalculez le modèle 2 avec les données réelles (ou le modèle professionnel de FINANCIALS, si vous avez l'extra).
 
 - **Comptabilité :** tous les coûts ont été inscrits en **stocks** (promotion en cours → immeuble achevé). À chaque acte, on comptabilise la vente et on sort le coût correspondant.
 - **Charges financières :** si la promotion dure plus d'un an, les intérêts du prêt promoteur sont incorporés au coût des stocks.

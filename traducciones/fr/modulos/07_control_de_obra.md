@@ -112,6 +112,7 @@
 
 ## Checklist du module 7
 
+- [ ] Modèle 4 · Contrôle des coûts du chantier (inclus) rempli et mis à jour à chaque situation de travaux
 - [ ] Plan de contrôle qualité approuvé
 - [ ] Rapports de l'OCT à jour
 - [ ] Essais du laboratoire archivés

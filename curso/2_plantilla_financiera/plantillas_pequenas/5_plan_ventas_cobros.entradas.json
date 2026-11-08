@@ -1,0 +1,84 @@
+{
+ "plantilla": "Plantilla 5 · Plan de ventas y cobros",
+ "regla": "Solo se escriben estas celdas. Los impuestos salen de Parámetros legales (los fija el administrador).",
+ "porcentajes": "En tanto por uno (0,05 = 5 %).",
+ "entradas": [
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B4",
+   "etiqueta": "Número de viviendas",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 20,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B5",
+   "etiqueta": "Precio medio por vivienda (sin IVA)",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 250000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B6",
+   "etiqueta": "Reserva (€ por vivienda)",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 6000,
+   "nota": "Se descuenta en el contrato privado",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B7",
+   "etiqueta": "A la firma del contrato privado (% del precio)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.1,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B8",
+   "etiqueta": "Aplazado durante la obra (% del precio)",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.1,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B9",
+   "etiqueta": "Meses de pago aplazado",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 18,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B10",
+   "etiqueta": "Viviendas vendidas al mes",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 2,
+   "nota": "",
+   "defecto_es_formula": false
+  }
+ ]
+}

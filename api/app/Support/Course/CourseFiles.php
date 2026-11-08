@@ -6,8 +6,13 @@ namespace App\Support\Course;
  * The files of the course package a student can download, by key. Each is
  * served from the package as delivered, never copied or altered, behind the
  * gate its `access` names:
- * - `financials`: the owner of the Financials module (the template files);
+ * - `financials`: a student who bought the extra (the Financials module);
  * - `full`: a student with the whole course.
+ *
+ * The corrected professional template itself is not here: a student downloads
+ * it filled with their inputs and the legal parameters in force
+ * (FinancialsController::excel), and each small template likewise from its
+ * module (SmallTemplateController::excel).
  *
  * The course PDF is the edition without the quizzes and the exam
  * (curso_sin_evaluacion): the complete one carries the answer keys.
@@ -16,14 +21,10 @@ final class CourseFiles
 {
     /** @var array<string, array{path: string, name: string, access: 'financials'|'full'}> */
     public const FILES = [
-        'plantilla-libre' => [
-            'path' => '2_plantilla_financiera/originales/PLANTILLA_LIBRE.xls',
-            'name' => 'PLANTILLA_LIBRE.xls',
-            'access' => 'financials',
-        ],
+        // The professional's real example (1 home of 200 m²), with «Varios» corrected: values, no formulas.
         'plantilla-simplificada' => [
-            'path' => '2_plantilla_financiera/originales/Plantilla_simplificada_Analisis_de_Viabilidad.xlsx',
-            'name' => 'Plantilla_simplificada_Analisis_de_Viabilidad.xlsx',
+            'path' => '2_plantilla_financiera/excel_corregido/Plantilla_simplificada_corregida.xlsx',
+            'name' => 'Plantilla_simplificada_corregida.xlsx',
             'access' => 'financials',
         ],
         'directorio-partners' => [

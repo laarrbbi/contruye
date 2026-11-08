@@ -71,7 +71,7 @@
 - **Final account with the contractor:** approve the final valuation and settle the contract (retentions, penalties, extras). Release the retention when its period ends.
 - **Close the accounts** with professionals, suppliers and vendors, and settle outstanding invoices and warranties.
 - **Reconcile** sales revenue, costs, interest and overheads.
-- **Actual return:** compare it with the approved CRP (deviations in cost, time and sales). Run the FINANCIALS model again with the actual figures.
+- **Actual return:** compare it with the approved CRP (deviations in cost, time and sales). Run Template 2 again with the actual figures (or the professional model in FINANCIALS, if you have the extra).
 
 - **Accounting:** every cost has been capitalised as **inventory** (development in progress → finished building). At each deed the sale is recognised and the proportional cost is written off.
 - **Finance costs:** if the development lasts more than a year, the interest on the development loan is capitalised as an additional cost of the inventory.

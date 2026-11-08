@@ -112,6 +112,7 @@
 
 ## Module 7 checklist
 
+- [ ] Template 4 · Construction cost control (included) filled in and updated with each progress valuation
 - [ ] Quality control plan approved
 - [ ] OCT reports up to date
 - [ ] Laboratory test results filed

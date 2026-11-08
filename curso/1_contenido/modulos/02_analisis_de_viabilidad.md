@@ -135,7 +135,7 @@
 
 - **Imprevistos (contingencias):** reserva un 3–5 % del coste de construcción desde la primera CRP.
 - **Gastos jurídicos** (abogados, notaría, registro) y de **estructura societaria**: inclúyelos aunque parezcan pequeños.
-- Para meter todo esto con método usa la plantilla de la sección **FINANCIALS**: calcula el coste por capítulos, el préstamo y el cash-flow.
+- Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y cash-flow), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
 
 ## Lección 2.4 — Ratios y decisión
 
@@ -188,6 +188,7 @@
 
 ## Checklist del Módulo 2
 
+- [ ] Plantilla 2 · Viabilidad rápida y método residual (incluida) rellena con precios de venta y costes contrastados
 - [ ] Estudio de mercado con precios escriturados
 - [ ] Mix de producto cerrado con el arquitecto
 - [ ] Presupuesto de construcción contrastado con 2 constructoras locales

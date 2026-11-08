@@ -109,7 +109,8 @@ class User extends Authenticatable
      * whole (an enrollment with module_id NULL) or module by module until
      * they own them all. The one definition the course page, the dashboard,
      * the player and checkout share — an à-la-carte completer used to be
-     * offered the full course again at full price.
+     * offered the full course again at full price. The course's modules are
+     * its included ones: Financials, the extra, is not part of it.
      */
     public function hasFullAccessTo(Course $course): bool
     {
@@ -117,17 +118,17 @@ class User extends Authenticatable
             return true;
         }
 
-        $moduleCount = $course->modules()->count();
+        $moduleCount = $course->includedModules()->count();
 
         return $moduleCount > 0 && $this->ownedModuleCount($course) >= $moduleCount;
     }
 
-    /** Distinct modules of the course held through an active per-module enrollment. */
+    /** Distinct included modules of the course held through an active per-module enrollment. */
     private function ownedModuleCount(Course $course): int
     {
         return $this->activeEnrollmentsFor($course)
             ->whereNotNull('module_id')
-            ->whereIn('module_id', $course->modules()->select('id'))
+            ->whereIn('module_id', $course->includedModules()->select('id'))
             ->distinct()
             ->count('module_id');
     }
@@ -140,6 +141,11 @@ class User extends Authenticatable
 
     public function hasAccessToModule(Module $module): bool
     {
+        // Financials is the extra: only its own purchase opens it, never the whole course.
+        if ($module->isFinancials()) {
+            return $this->activeEnrollmentsFor($module->course)->where('module_id', $module->id)->exists();
+        }
+
         return $this->activeEnrollmentsFor($module->course)
             ->where(fn ($q) => $q->whereNull('module_id')->orWhere('module_id', $module->id))
             ->exists();
@@ -152,13 +158,14 @@ class User extends Authenticatable
      */
     public function accessibleModuleIds(Course $course): Collection
     {
+        $bought = $this->activeEnrollmentsFor($course)->whereNotNull('module_id')->pluck('module_id');
+
         if ($this->activeEnrollmentsFor($course)->whereNull('module_id')->exists()) {
-            return $course->modules()->pluck('id');
+            // The whole course, plus Financials when the extra was bought too.
+            return $course->includedModules()->pluck('id')->merge($bought)->unique()->values();
         }
 
-        return $this->activeEnrollmentsFor($course)
-            ->whereNotNull('module_id')
-            ->pluck('module_id');
+        return $bought;
     }
 
     private function activeEnrollmentsFor(Course $course)

@@ -21,7 +21,8 @@ class CheckoutRequest extends FormRequest
     {
         return [
             'course_id' => ['required', 'integer', 'exists:courses,id'],
-            'scope' => ['sometimes', Rule::in(['full', 'modules'])],
+            // 'extra': the professional template, bought on its own (FinancialsExtra).
+            'scope' => ['sometimes', Rule::in(['full', 'modules', 'extra'])],
             'module_ids' => ['required_if:scope,modules', 'array', 'min:1'],
             'module_ids.*' => ['integer', 'distinct', 'exists:modules,id'],
             'method' => ['required', Rule::in(PaymentMethods::ALL)],

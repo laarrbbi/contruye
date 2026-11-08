@@ -86,5 +86,11 @@
     "Your course and your access do not change.": "Ваш курс и доступ к нему не меняются.",
     "Back to my courses": "Вернуться к моим курсам",
     "An active offer needs a title in Spanish.": "Активному предложению нужен заголовок на испанском.",
-    "An active offer needs a course or a link to sell.": "Активному предложению нужен курс или ссылка для продажи."
+    "An active offer needs a course or a link to sell.": "Активному предложению нужен курс или ссылка для продажи.",
+    "The value of :cell is not valid.": "Значение :cell недопустимо.",
+    "The professional template is not on sale yet.": "Профессиональная модель пока не продаётся.",
+    "The professional template is for the students of the course.": "Профессиональная модель — для слушателей курса.",
+    "You already have the professional template.": "У вас уже есть профессиональная модель.",
+    "Each value must be between 0 and 100 %.": "Каждое значение должно быть от 0 до 100 %.",
+    "Unknown autonomous community: :name": "Неизвестное автономное сообщество: :name"
 }

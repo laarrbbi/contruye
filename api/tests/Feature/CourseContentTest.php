@@ -48,7 +48,7 @@ it('installs the 12 modules and Financials, with 51 lessons and 9', function () 
     // The module titles of the instructor's own summary page.
     expect($modules[0]->title_es)->toBe('Solar: búsqueda, análisis urbanístico, due diligence y adquisición')
         ->and($modules[11]->title_es)->toBe('Postventa y cierre de la promoción')
-        ->and($modules[12]->title_es)->toBe('Financials — la plantilla financiera de la promoción')
+        ->and($modules[12]->title_es)->toBe('Financials — extra: la plantilla financiera profesional')
         ->and($modules[0]->lessons()->orderBy('order')->first()->title_es)->toBe('Lección 1.1 — Define el producto y encuentra el solar');
 
     expect($this->course->title_es)->toBe('Promoción de viviendas de renta libre en España');
@@ -232,4 +232,35 @@ it('does not rebuild an installed course, whose modules orders may reference', f
 
     expect($this->course->modules()->pluck('id')->all())->toBe($ids)
         ->and(Quiz::query()->count())->toBe(14);
+});
+
+it('brings an installed course up to a new package in place, keeping progress and ticks', function () {
+    // The course as package 4.0 left it: module 1 without the Plantilla 1
+    // item at the top of its checklist, an older lesson text, an older
+    // reworded Financials item. A student had ticked two steps.
+    $module1 = $this->course->modules()->where('order', 1)->firstOrFail();
+    $financials = $this->course->modules()->where('kind', 'financials')->firstOrFail();
+    $added = $module1->checklistItems()->orderBy('order')->firstOrFail();
+    $kept = $module1->checklistItems()->where('order', 2)->firstOrFail();
+    $reworded = $financials->checklistItems()->orderBy('order')->firstOrFail();
+    $added->delete();
+    $module1->checklistItems()->where('order', '>', 1)->decrement('order');
+    $reworded->update(['text_es' => 'Cálculo iterativo activado en Excel (en la plataforma ya viene)']);
+    $lesson = $module1->lessons()->orderBy('order')->firstOrFail();
+    $lesson->update(['content_es' => 'texto de una versión anterior']);
+    $student = User::factory()->create();
+    $student->checkedChecklistItems()->attach([$kept->id, $reworded->id]);
+    $ids = $this->course->modules()->pluck('id')->all();
+
+    $this->seed([CurriculumV2Seeder::class, ChecklistSeeder::class]);
+
+    $items = $module1->checklistItems()->orderBy('order')->get();
+    expect($this->course->modules()->pluck('id')->all())->toBe($ids)
+        ->and($lesson->fresh()->content_es)->not->toBe('texto de una versión anterior')
+        ->and($items->pluck('text_es')->all())->toBe($this->source->modules()[0]['checklist'])
+        // The unchanged step kept its row (and the tick), now second.
+        ->and($items[1]->id)->toBe($kept->id)
+        // The reworded one is the same step, in the same place.
+        ->and($reworded->fresh()->text_es)->toBe($this->source->modules()[12]['checklist'][0])
+        ->and($student->checkedChecklistItems()->pluck('checklist_items.id')->sort()->values()->all())->toBe(collect([$kept->id, $reworded->id])->sort()->values()->all());
 });

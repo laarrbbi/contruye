@@ -120,6 +120,7 @@
 
 ## Checklist du module 8
 
+- [ ] Modèle 5 · Plan de ventes et d'encaissements (inclus) rempli avec la politique de prix et de paiements
 - [ ] Documentation du RD 515/1989 au bureau de vente
 - [ ] Classement énergétique dans la publicité
 - [ ] Ligne de garanties et compte spécial opérationnels avant d'encaisser la première réservation

@@ -19,6 +19,7 @@
 | **Pro** (recomendado) | 597 € | Esencial + quizzes + examen + certificado + recursos + directorio por provincia |
 | Premium | 997 € | Pro + comunidad privada + acceso de por vida + actualizaciones legales anuales |
 | Mentoría | 2.497 € | Premium + 3 sesiones de 1 h con el promotor experto |
+| Extra: plantilla profesional | [COMPLETAR] | Se ofrece al terminar el curso, a alumnos de cualquier plan: la plantilla financiera completa (Excel y calculadora en la plataforma) |
 
 ## Funcionamiento de la plataforma
 

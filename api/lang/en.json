@@ -69,5 +69,11 @@
     "Your course and your access do not change.": "Your course and your access do not change.",
     "Back to my courses": "Back to my courses",
     "An active offer needs a title in Spanish.": "An active offer needs a title in Spanish.",
-    "An active offer needs a course or a link to sell.": "An active offer needs a course or a link to sell."
+    "An active offer needs a course or a link to sell.": "An active offer needs a course or a link to sell.",
+    "The value of :cell is not valid.": "The value of :cell is not valid.",
+    "The professional template is not on sale yet.": "The professional template is not on sale yet.",
+    "The professional template is for the students of the course.": "The professional template is for the students of the course.",
+    "You already have the professional template.": "You already have the professional template.",
+    "Each value must be between 0 and 100 %.": "Each value must be between 0 and 100 %.",
+    "Unknown autonomous community: :name": "Unknown autonomous community: :name"
 }

@@ -1,0 +1,228 @@
+{
+ "hoja": "Parámetros legales",
+ "regla": "Estos valores no los toca el usuario. Los cambia el administrador de CONSTRUYE cuando cambia la ley y se aplican a todas las plantillas (PlantillaEngine.setParametros).",
+ "revisado": "2026-11-08",
+ "formato": "Tanto por uno (0,21 = 21 %).",
+ "parametros": [
+  {
+   "codigo": "IVA_GENERAL",
+   "etiqueta": "IVA, tipo general",
+   "celda": "C5",
+   "valor": 0.21,
+   "valor_original_2002": 0.16,
+   "base_legal": "Ley 37/1992 del IVA, art. 90",
+   "fuente": "AEAT",
+   "donde_se_usa": "Suelo con IVA, honorarios, notaría, registro, tasaciones, urbanización, control de calidad, gestión, varios, cash-flow"
+  },
+  {
+   "codigo": "IVA_REDUCIDO",
+   "etiqueta": "IVA, tipo reducido (vivienda y obra de vivienda)",
+   "celda": "C6",
+   "valor": 0.1,
+   "valor_original_2002": 0.07,
+   "base_legal": "Ley 37/1992 del IVA, art. 91.Uno",
+   "fuente": "AEAT",
+   "donde_se_usa": "Certificaciones de obra, cantidades a cuenta, ingresos de la cooperativa, cash-flow"
+  },
+  {
+   "codigo": "IPS",
+   "etiqueta": "Impuesto sobre las Primas de Seguros",
+   "celda": "C7",
+   "valor": 0.08,
+   "valor_original_2002": 0.06,
+   "base_legal": "Ley 13/1996, art. 12 (8 % desde la Ley 3/2017)",
+   "fuente": "Hacienda",
+   "donde_se_usa": "Seguro decenal (3ª Construcción)"
+  },
+  {
+   "codigo": "CLEA",
+   "etiqueta": "Recargo del Consorcio para la liquidación de entidades aseguradoras (CLEA)",
+   "celda": "C8",
+   "valor": 0.0015,
+   "valor_original_2002": 0.005,
+   "base_legal": "Estatuto legal del Consorcio de Compensación de Seguros",
+   "fuente": "Consorcio de Compensación de Seguros",
+   "donde_se_usa": "Seguro decenal y seguro de cantidades a cuenta"
+  },
+  {
+   "codigo": "INTERES_LEGAL",
+   "etiqueta": "Interés legal del dinero (devolución de cantidades a cuenta)",
+   "celda": "C9",
+   "valor": 0.0325,
+   "valor_original_2002": 0.06,
+   "base_legal": "Ley 38/1999 (LOE), disp. adicional 1.ª; Ley de Presupuestos (prorrogada en 2026)",
+   "fuente": "BOE / OCU",
+   "donde_se_usa": "Seguro de cantidades a cuenta (3ª Licencias y Varios K11)"
+  },
+  {
+   "codigo": "AJD_PRESTAMO",
+   "etiqueta": "AJD del préstamo hipotecario a cargo del promotor",
+   "celda": "C10",
+   "valor": 0.0,
+   "valor_original_2002": 0.0,
+   "base_legal": "RDL 17/2018: el sujeto pasivo es el prestamista (el banco)",
+   "fuente": "BOE",
+   "donde_se_usa": "Préstamo hipotecario (Datos de Partida D154)"
+  }
+ ],
+ "comunidades": [
+  {
+   "nombre": "Andalucía",
+   "itp": 0.07,
+   "ajd": 0.012,
+   "nota": "",
+   "celda_itp": "B15",
+   "celda_ajd": "C15"
+  },
+  {
+   "nombre": "Aragón",
+   "itp": 0.08,
+   "ajd": 0.015,
+   "nota": "ITP progresivo 8–10 %: se usa el 8 %; ajústalo al valor del solar",
+   "celda_itp": "B16",
+   "celda_ajd": "C16"
+  },
+  {
+   "nombre": "Principado de Asturias",
+   "itp": 0.08,
+   "ajd": 0.012,
+   "nota": "ITP progresivo 8–10 %: se usa el 8 %",
+   "celda_itp": "B17",
+   "celda_ajd": "C17"
+  },
+  {
+   "nombre": "Illes Balears",
+   "itp": 0.08,
+   "ajd": 0.015,
+   "nota": "ITP progresivo 8–13 %: se usa el 8 %",
+   "celda_itp": "B18",
+   "celda_ajd": "C18"
+  },
+  {
+   "nombre": "Canarias",
+   "itp": 0.065,
+   "ajd": 0.01,
+   "nota": "AJD 1 % en operaciones con IGIC (0,75 % el resto). En Canarias se aplica IGIC, no IVA: esta plantilla calcula con IVA",
+   "celda_itp": "B19",
+   "celda_ajd": "C19"
+  },
+  {
+   "nombre": "Cantabria",
+   "itp": 0.09,
+   "ajd": 0.015,
+   "nota": "",
+   "celda_itp": "B20",
+   "celda_ajd": "C20"
+  },
+  {
+   "nombre": "Castilla-La Mancha",
+   "itp": 0.09,
+   "ajd": 0.015,
+   "nota": "",
+   "celda_itp": "B21",
+   "celda_ajd": "C21"
+  },
+  {
+   "nombre": "Castilla y León",
+   "itp": 0.08,
+   "ajd": 0.015,
+   "nota": "ITP progresivo 8–10 %: se usa el 8 %",
+   "celda_itp": "B22",
+   "celda_ajd": "C22"
+  },
+  {
+   "nombre": "Cataluña",
+   "itp": 0.1,
+   "ajd": 0.015,
+   "nota": "ITP 10 % hasta 600.000 €; 11 % hasta 900.000 €; 12 % hasta 1,5 M€; 13 % más",
+   "celda_itp": "B23",
+   "celda_ajd": "C23"
+  },
+  {
+   "nombre": "Comunitat Valenciana",
+   "itp": 0.09,
+   "ajd": 0.014,
+   "nota": "ITP 11 % por encima de 1 M€ (Ley 5/2025)",
+   "celda_itp": "B24",
+   "celda_ajd": "C24"
+  },
+  {
+   "nombre": "Extremadura",
+   "itp": 0.08,
+   "ajd": 0.015,
+   "nota": "ITP progresivo 8–11 %: se usa el 8 %",
+   "celda_itp": "B25",
+   "celda_ajd": "C25"
+  },
+  {
+   "nombre": "Galicia",
+   "itp": 0.08,
+   "ajd": 0.015,
+   "nota": "",
+   "celda_itp": "B26",
+   "celda_ajd": "C26"
+  },
+  {
+   "nombre": "Comunidad de Madrid",
+   "itp": 0.06,
+   "ajd": 0.0075,
+   "nota": "",
+   "celda_itp": "B27",
+   "celda_ajd": "C27"
+  },
+  {
+   "nombre": "Región de Murcia",
+   "itp": 0.0775,
+   "ajd": 0.015,
+   "nota": "",
+   "celda_itp": "B28",
+   "celda_ajd": "C28"
+  },
+  {
+   "nombre": "Comunidad Foral de Navarra",
+   "itp": 0.06,
+   "ajd": 0.005,
+   "nota": "Régimen foral",
+   "celda_itp": "B29",
+   "celda_ajd": "C29"
+  },
+  {
+   "nombre": "País Vasco",
+   "itp": 0.04,
+   "ajd": 0.005,
+   "nota": "Régimen foral; hasta 7 % en bases altas según territorio",
+   "celda_itp": "B30",
+   "celda_ajd": "C30"
+  },
+  {
+   "nombre": "La Rioja",
+   "itp": 0.07,
+   "ajd": 0.01,
+   "nota": "",
+   "celda_itp": "B31",
+   "celda_ajd": "C31"
+  },
+  {
+   "nombre": "Ciudad Autónoma de Ceuta",
+   "itp": 0.03,
+   "ajd": 0.0025,
+   "nota": "Tipo estatal con bonificación del 50 %: confírmalo. Se aplica IPSI, no IVA",
+   "celda_itp": "B32",
+   "celda_ajd": "C32"
+  },
+  {
+   "nombre": "Ciudad Autónoma de Melilla",
+   "itp": 0.03,
+   "ajd": 0.0025,
+   "nota": "Tipo estatal con bonificación del 50 %: confírmalo. Se aplica IPSI, no IVA",
+   "celda_itp": "B33",
+   "celda_ajd": "C33"
+  }
+ ],
+ "comunidad_de_la_promocion": {
+  "hoja": "Datos de Partida",
+  "celda": "D93",
+  "nota": "La elige el usuario; ITP y AJD aplicados salen en Parámetros legales B36 y B37"
+ },
+ "fuente_comunidades": "Anexo B del curso (haciendas autonómicas y guías fiscales consultadas en octubre de 2026). Tipos generales: hay tramos y reducidos que el administrador puede ajustar."
+}

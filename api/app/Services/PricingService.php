@@ -33,7 +33,7 @@ class PricingService
      *
      * Every price is in euros: courses and modules carry one price each.
      *
-     * @param  'full'|'modules'  $scope
+     * @param  'full'|'modules'|'extra'  $scope
      * @param  int[]  $moduleIds
      * @return array{
      *   scope: string, currency: string,
@@ -58,9 +58,14 @@ class PricingService
         $currency = self::CURRENCY;
         $priceField = 'price_eur';
 
+        if ($scope === 'extra') {
+            return $this->extraQuote($course, $user, $currency);
+        }
+
         $fullPrice = (int) $course->{$priceField};
 
-        $modules = $course->modules()->get();
+        // The course's own modules: Financials is the extra, sold on its own.
+        $modules = $course->includedModules()->get();
         $ownedModuleIds = $user ? $this->ownedModuleIds($user, $course) : collect();
 
         // Resolved once, server-side: the quote a student is shown and the
@@ -318,17 +323,71 @@ class PricingService
         ];
     }
 
+    /**
+     * The extra at the end of the course: the professional template (the
+     * Financials module), for a student of the course, at its own price. No
+     * volume tier, campaign or coupon: it is one product, outside the plans.
+     * Ordered as a one-module purchase, so paying for it enrolls the student
+     * in Financials only.
+     *
+     * @return array<string, mixed>
+     */
+    private function extraQuote(Course $course, ?User $user, string $currency): array
+    {
+        $extra = app(FinancialsExtra::class);
+        $module = $extra->module($course);
+
+        if ($module === null || ! $extra->onSale($course)) {
+            throw ValidationException::withMessages(['scope' => [__('The professional template is not on sale yet.')]]);
+        }
+
+        if ($user === null || ! $user->isEnrolledIn($course)) {
+            throw ValidationException::withMessages(['scope' => [__('The professional template is for the students of the course.')]]);
+        }
+
+        if ($user->hasAccessToModule($module)) {
+            throw ValidationException::withMessages(['scope' => [__('You already have the professional template.')]]);
+        }
+
+        $price = (int) $extra->price($course);
+
+        return [
+            'scope' => 'modules',
+            'extra' => true,
+            'currency' => $currency,
+            'items' => [['module_id' => $module->id, 'title' => $module->localizedTitle(), 'unit_price' => $price]],
+            'subtotal' => $price,
+            'tier_percent' => 0,
+            'tier_discount' => 0,
+            'campaign' => null,
+            'campaign_percent' => 0,
+            'campaign_discount' => 0,
+            'coupon_code' => null,
+            'coupon_percent' => 0,
+            'coupon_discount' => 0,
+            'total' => $price,
+            'full_price' => $price,
+            'full_price_anchor' => $price,
+            'savings_vs_itemized' => 0,
+            'upgrade_hint' => null,
+            'owned_module_ids' => $this->ownedModuleIds($user, $course)->values()->all(),
+            'upgraded_to_full' => false,
+        ];
+    }
+
+    /** The included modules the student owns (Financials, the extra, is never one). */
     private function ownedModuleIds(User $user, Course $course): Collection
     {
         $enrollments = $user->enrollments()
             ->where('course_id', $course->id)
             ->active()
             ->get(['module_id']);
+        $included = $course->includedModules()->pluck('id');
 
         if ($enrollments->contains(fn ($e) => $e->module_id === null)) {
-            return $course->modules()->pluck('id');
+            return $included;
         }
 
-        return $enrollments->pluck('module_id')->filter()->values();
+        return $enrollments->pluck('module_id')->filter()->intersect($included)->values();
     }
 }

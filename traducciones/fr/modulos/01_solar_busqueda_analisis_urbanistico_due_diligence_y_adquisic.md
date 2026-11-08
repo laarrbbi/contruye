@@ -143,6 +143,7 @@
 
 ## Checklist du module 1
 
+- [ ] Modèle 1 · Achat du terrain (inclus) rempli avec le prix, la communauté autonome et les frais réels
 - [ ] Fiche produit définie (type, public, typologies, qualité, prix cible)
 - [ ] Nota simple et certificat des charges à jour
 - [ ] Référence cadastrale et relevé topographique concordants

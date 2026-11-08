@@ -143,6 +143,7 @@
 
 ## Checklist del Módulo 1
 
+- [ ] Plantilla 1 · Compra del solar (incluida) rellena con el precio, la comunidad autónoma y los gastos reales
 - [ ] Ficha de producto definida (tipo, público, tipologías, calidades, precio objetivo)
 - [ ] Nota simple y certificación de cargas actualizadas
 - [ ] Referencia catastral y topográfico coincidentes

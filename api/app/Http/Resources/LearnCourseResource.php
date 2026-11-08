@@ -64,7 +64,10 @@ class LearnCourseResource extends JsonResource
         $nextLesson = $accessible->first(fn (Lesson $lesson) => ! $this->isCompleted($lesson))
             ?? $accessible->first();
 
-        $fullAccess = $this->accessibleModuleIds->count() >= $this->modules->count();
+        // The course's own modules: Financials is the extra, outside every plan.
+        $included = $this->modules->reject(fn (Module $module) => $module->isFinancials());
+        $ownedIncluded = $included->filter(fn (Module $module) => $this->accessibleModuleIds->contains($module->id))->count();
+        $fullAccess = $included->isNotEmpty() && $ownedIncluded >= $included->count();
         $finalExam = $this->quizzes->firstWhere('kind', 'final');
 
         return [
@@ -74,8 +77,8 @@ class LearnCourseResource extends JsonResource
                 'title' => $this->localizedTitle(),
                 'progress_percent' => $total > 0 ? (int) round($completed / $total * 100) : 0,
                 'full_access' => $fullAccess,
-                'owned_modules_count' => $this->accessibleModuleIds->count(),
-                'total_modules_count' => $this->modules->count(),
+                'owned_modules_count' => $ownedIncluded,
+                'total_modules_count' => $included->count(),
                 // Titles only: the texts come one at a time, behind their own gate.
                 'documents' => $this->documents->map(fn (CourseDocument $document) => [
                     'slug' => $document->slug,

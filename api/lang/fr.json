@@ -86,5 +86,11 @@
     "Your course and your access do not change.": "Votre cours et votre accès ne changent pas.",
     "Back to my courses": "Retour à mes cours",
     "An active offer needs a title in Spanish.": "Une offre active a besoin d'un titre en espagnol.",
-    "An active offer needs a course or a link to sell.": "Une offre active a besoin d'un cours ou d'un lien à vendre."
+    "An active offer needs a course or a link to sell.": "Une offre active a besoin d'un cours ou d'un lien à vendre.",
+    "The value of :cell is not valid.": "La valeur de :cell n'est pas valide.",
+    "The professional template is not on sale yet.": "Le modèle professionnel n'est pas encore en vente.",
+    "The professional template is for the students of the course.": "Le modèle professionnel est réservé aux élèves de la formation.",
+    "You already have the professional template.": "Vous avez déjà le modèle professionnel.",
+    "Each value must be between 0 and 100 %.": "Chaque valeur doit être comprise entre 0 et 100 %.",
+    "Unknown autonomous community: :name": "Communauté autonome inconnue : :name"
 }

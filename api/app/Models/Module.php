@@ -82,9 +82,12 @@ class Module extends Model
         return $this->hasOne(Quiz::class);
     }
 
+    /** The professional template: an extra sold on its own, in no plan of the course. */
+    public const KIND_FINANCIALS = 'financials';
+
     public function isFinancials(): bool
     {
-        return $this->kind === 'financials';
+        return $this->kind === self::KIND_FINANCIALS;
     }
 
     public function lessons(): HasMany

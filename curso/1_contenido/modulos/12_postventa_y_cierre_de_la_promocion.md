@@ -71,7 +71,7 @@
 - **Liquidación con la constructora:** aprueba la certificación final y liquida el contrato (retenciones, penalidades, extras). Devuelve la retención cuando venza su plazo.
 - **Cierra cuentas** con técnicos, suministradores y proveedores, y resuelve facturas y garantías pendientes.
 - **Concilia** ingresos por ventas, costes, intereses y gastos generales.
-- **Rentabilidad real:** compárala con la CRP aprobada (desviaciones de coste, plazo y ventas). Vuelve a calcular la plantilla de FINANCIALS con los datos reales.
+- **Rentabilidad real:** compárala con la CRP aprobada (desviaciones de coste, plazo y ventas). Vuelve a calcular la Plantilla 2 con los datos reales (o la plantilla profesional de FINANCIALS, si tienes el extra).
 
 - **Contabilidad:** todos los costes se han activado como **existencias** (promoción en curso → edificio terminado). En cada escritura se reconoce la venta y se da de baja el coste proporcional.
 - **Gastos financieros:** si la promoción dura más de un año, los intereses del préstamo promotor se activan como mayor coste de las existencias.

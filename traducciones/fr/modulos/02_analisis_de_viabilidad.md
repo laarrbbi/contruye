@@ -135,7 +135,7 @@
 
 - **Imprévus (aléas) :** réservez 3–5 % du coût de construction dès le premier CRP.
 - **Frais juridiques** (avocats, notaire, registre) et de **structure sociétaire** : incluez-les même s'ils semblent faibles.
-- Pour tout intégrer avec méthode, utilisez le modèle de la section **FINANCIALS** : il calcule le coût par chapitres, le prêt et le cash-flow.
+- Pour tout intégrer avec méthode, utilisez le **modèle 2 · Viabilité rapide et méthode résiduelle** (inclus) : ventes, coûts par poste, marge et prix maximal du terrain. Si vous voulez le détail mois par mois (coût par chapitres, prêt et cash-flow), l'extra de fin de formation est le modèle professionnel complet (section **FINANCIALS**).
 
 ## Leçon 2.4 — Ratios et décision
 
@@ -188,6 +188,7 @@
 
 ## Checklist du module 2
 
+- [ ] Modèle 2 · Viabilité rapide et méthode résiduelle (inclus) rempli avec des prix de vente et des coûts vérifiés
 - [ ] Étude de marché avec des prix réellement signés chez le notaire
 - [ ] Mix produit arrêté avec l'architecte
 - [ ] Budget de construction comparé avec 2 entreprises locales

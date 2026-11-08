@@ -127,6 +127,7 @@
 
 ## Checklist du module 5
 
+- [ ] Modèle 3 · Prêt promoteur (inclus) rempli avec l'offre de la banque
 - [ ] Expertise et offre ferme de la banque
 - [ ] Prêt promoteur et ligne de garanties signés
 - [ ] Compte spécial des sommes versées d'avance ouvert

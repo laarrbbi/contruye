@@ -8,49 +8,53 @@ use App\Models\Course;
 use App\Models\FinancialScenario;
 use App\Models\Module;
 use App\Models\User;
-use App\Support\Course\CourseSource;
-use Illuminate\Http\Client\ConnectionException;
+use App\Services\LegalParameters;
+use App\Services\TemplateEngine;
+use App\Support\Financials\TemplateCatalog;
+use App\Support\Financials\XlsxFiller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
- * Financials: the professional's template, calculated on the server.
+ * Financials: the professional template (the corrected PLANTILLA_LIBRE),
+ * calculated on the server. It is the extra offered at the end of the course:
+ * everything here is for the students who bought it (and the admins).
  *
  * The form is built from the template's own dictionary of input cells
  * (entradas.json), and a calculation is the template itself, run by the
- * financials service with its original formulas: the API only checks who is
- * asking and passes the inputs through. The service refuses any cell that is
- * not an input, so no formula can be overwritten from here.
- *
- * Everything here is for the owners of the Financials module.
+ * financials service with its formulas and the legal parameters in force.
+ * Only input cells are accepted, here and by the service, so no formula and
+ * no legal parameter can be overwritten from here.
  */
 class FinancialsController extends Controller
 {
     use AuthorizesCourseAccess;
 
-    /** Sheets whose cells a student may fill (the template's own rule). */
-    private const INPUT_SHEETS = ['Datos de Partida', '3ª Proyectos', '3ª Pólizas de Crédito'];
-
     private const MAX_SCENARIOS = 50;
+
+    public function __construct(
+        private readonly TemplateEngine $engine,
+        private readonly LegalParameters $legal,
+    ) {}
 
     public function inputs(Request $request, Course $course): JsonResponse
     {
         $this->authorizeFinancials($request->user(), $course);
 
-        $source = CourseSource::fromConfig();
-        $dictionary = $source->json('2_plantilla_financiera/plantilla/entradas.json');
+        $catalog = TemplateCatalog::fromConfig();
 
         return response()->json(['data' => [
-            ...$dictionary,
-            // The package's own worked example (motor/ejemplo.js): a
+            ...$catalog->professionalDictionary(),
+            // The package's worked example (motor/ejemplo.js, pruebas/): a
             // promotion of 24 homes, to start from something that calculates.
             'ejemplos' => [[
                 'key' => '24-viviendas',
-                'datos' => $source->json('2_plantilla_financiera/pruebas/escenario_24_viviendas.json'),
+                'datos' => $catalog->professionalExample(),
             ]],
+            // What the template applies: read only, with the date of the last review.
+            'legal' => $this->legal->view(),
         ]]);
     }
 
@@ -63,33 +67,34 @@ class FinancialsController extends Controller
             'hojas' => ['sometimes', 'array', 'max:2'],
             'hojas.*' => ['string', 'max:60'],
         ]);
-        $datos = $this->validInputs($validated['datos'], 'datos');
+        $catalog = TemplateCatalog::fromConfig();
+        $datos = $catalog->inputs($catalog->professionalDictionary(), $validated['datos'], 'datos');
 
-        try {
-            $response = Http::timeout(config('services.plantilla.timeout'))
-                ->acceptJson()
-                ->post(rtrim(config('services.plantilla.url'), '/').'/calcular', [
-                    // An empty object, not a list, when nothing is filled.
-                    'datos' => (object) $datos,
-                    'hojas' => array_values($validated['hojas'] ?? []),
-                ]);
-        } catch (ConnectionException $e) {
-            Log::error('Financials service unreachable', ['error' => $e->getMessage()]);
+        return response()->json(['data' => $this->engine->professional($datos, $validated['hojas'] ?? [])]);
+    }
 
-            return response()->json(['message' => __('The financial template is not available at the moment. Please try again later.')], 503);
-        }
+    /**
+     * The corrected PLANTILLA_LIBRE in Excel with the student's inputs and the
+     * legal parameters in force written into a copy: the formulas travel
+     * untouched, and Excel calculates it on opening.
+     */
+    public function excel(Request $request, Course $course): BinaryFileResponse
+    {
+        $this->authorizeFinancials($request->user(), $course);
 
-        if ($response->status() === 422) {
-            throw ValidationException::withMessages(['datos' => [(string) $response->json('error')]]);
-        }
+        $catalog = TemplateCatalog::fromConfig();
+        $dictionary = $catalog->professionalDictionary();
+        $datos = $catalog->inputs($dictionary, $request->validate(['datos' => ['present', 'array']])['datos'], 'datos');
+        $cells = $catalog->legalCells();
 
-        if (! $response->successful()) {
-            Log::error('Financials service failed', ['status' => $response->status()]);
+        $path = XlsxFiller::fill($catalog->professionalWorkbook(), [
+            ...$catalog->toWorkbook($dictionary, $datos),
+            $cells['sheet'] => $this->legal->cellValues($cells),
+        ]);
 
-            return response()->json(['message' => __('The financial template is not available at the moment. Please try again later.')], 503);
-        }
-
-        return response()->json(['data' => $response->json()]);
+        return response()->download($path, 'PLANTILLA_LIBRE_corregida.xlsx', [
+            'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        ])->deleteFileAfterSend();
     }
 
     public function scenarios(Request $request, Course $course): JsonResponse
@@ -120,7 +125,7 @@ class FinancialsController extends Controller
         $scenario = FinancialScenario::query()->create([
             'user_id' => $user->id,
             'name' => $data['name'],
-            'inputs' => $this->validInputs($data['inputs'], 'inputs'),
+            'inputs' => $this->scenarioInputs($data['inputs']),
         ]);
 
         return response()->json(['data' => $scenario->only(['id', 'name', 'inputs', 'updated_at'])], 201);
@@ -137,7 +142,7 @@ class FinancialsController extends Controller
             'inputs' => ['present', 'array'],
         ]);
 
-        $scenario->update(['name' => $data['name'], 'inputs' => $this->validInputs($data['inputs'], 'inputs')]);
+        $scenario->update(['name' => $data['name'], 'inputs' => $this->scenarioInputs($data['inputs'])]);
 
         return response()->json(['data' => $scenario->only(['id', 'name', 'inputs', 'updated_at'])]);
     }
@@ -165,36 +170,15 @@ class FinancialsController extends Controller
     }
 
     /**
-     * The inputs as { sheet: { cell: value } }, on the template's input sheets,
-     * with scalar values. Which cells are inputs is the service's call: it
-     * holds the template's dictionary and refuses anything else.
+     * A scenario keeps only the student's inputs, held to the template's
+     * dictionary: never the legal parameters, which are the platform's.
      *
-     * @param  array<mixed>  $inputs
-     * @return array<string, array<string, int|float|string|null>>
+     * @return array<string, array<string, int|float|string>>
      */
-    private function validInputs(array $inputs, string $field): array
+    private function scenarioInputs(mixed $inputs): array
     {
-        $clean = [];
-        $count = 0;
+        $catalog = TemplateCatalog::fromConfig();
 
-        foreach ($inputs as $sheet => $cells) {
-            if (! in_array($sheet, self::INPUT_SHEETS, true) || ! is_array($cells)) {
-                throw ValidationException::withMessages([$field => [__('The inputs do not match the financial template.')]]);
-            }
-
-            foreach ($cells as $cell => $value) {
-                $count++;
-                $valid = is_string($cell) && preg_match('/^[A-Z]{1,3}[1-9]\d{0,3}$/', $cell) === 1
-                    && ($value === null || is_int($value) || is_float($value) || (is_string($value) && mb_strlen($value) <= 120));
-
-                if (! $valid || $count > 400) {
-                    throw ValidationException::withMessages([$field => [__('The inputs do not match the financial template.')]]);
-                }
-
-                $clean[$sheet][$cell] = $value;
-            }
-        }
-
-        return $clean;
+        return $catalog->inputs($catalog->professionalDictionary(), $inputs, 'inputs');
     }
 }

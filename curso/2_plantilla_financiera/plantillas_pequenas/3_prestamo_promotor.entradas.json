@@ -1,0 +1,106 @@
+{
+ "plantilla": "Plantilla 3 · Préstamo promotor",
+ "regla": "Solo se escriben estas celdas. Los impuestos salen de Parámetros legales (los fija el administrador).",
+ "porcentajes": "En tanto por uno (0,05 = 5 %).",
+ "entradas": [
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B4",
+   "etiqueta": "Coste total de la promoción",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 4000000,
+   "nota": "De la Plantilla 2",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B5",
+   "etiqueta": "% del coste que financia el banco",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.7,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B6",
+   "etiqueta": "Tipo de interés anual",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.045,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B7",
+   "etiqueta": "Comisión de apertura",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.0075,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B8",
+   "etiqueta": "Meses de obra (el préstamo se dispone poco a poco)",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 20,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B9",
+   "etiqueta": "Meses desde el fin de obra hasta las escrituras de venta",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 4,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B10",
+   "etiqueta": "Tasación y certificaciones de obra",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 6000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B11",
+   "etiqueta": "Notaría y registro del préstamo",
+   "tipo": "numero",
+   "unidad": "€",
+   "defecto": 4000,
+   "nota": "",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Datos",
+   "hoja": "Calculadora",
+   "celda": "B12",
+   "etiqueta": "Responsabilidad hipotecaria (veces el principal)",
+   "tipo": "numero",
+   "unidad": "",
+   "defecto": 1.5,
+   "nota": "",
+   "defecto_es_formula": false
+  }
+ ]
+}
