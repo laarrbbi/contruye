@@ -77,5 +77,14 @@
     "The financial template is not available at the moment. Please try again later.": "Фінансова модель зараз недоступна. Спробуйте пізніше.",
     "You have reached the maximum number of saved scenarios. Delete one first.": "Досягнуто максимальної кількості збережених сценаріїв. Спершу видаліть один.",
     "Scenario deleted.": "Сценарій видалено.",
-    "The inputs do not match the financial template.": "Дані не відповідають фінансовій моделі."
+    "The inputs do not match the financial template.": "Дані не відповідають фінансовій моделі.",
+    "See the offer": "Переглянути пропозицію",
+    "Available until :date.": "Доступно до :date.",
+    "You receive this e-mail because you are a student of Construye Academy.": "Ви отримали цей лист, бо навчаєтеся в Construye Academy.",
+    "Stop receiving offers by e-mail": "Не отримувати пропозиції поштою",
+    "You will no longer receive offers by e-mail.": "Ви більше не отримуватимете пропозиції поштою.",
+    "Your course and your access do not change.": "Ваш курс і доступ до нього не змінюються.",
+    "Back to my courses": "Повернутися до моїх курсів",
+    "An active offer needs a title in Spanish.": "Активній пропозиції потрібен заголовок іспанською.",
+    "An active offer needs a course or a link to sell.": "Активній пропозиції потрібен курс або посилання для продажу."
 }

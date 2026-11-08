@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ListVideo, X } from 'lucide-react'
 import type { LearnData } from '@/api/learn'
+import { CurrentOffer } from '@/components/offers/OfferCard'
 import { Button } from '@/components/ui/button'
 import { PlayerSidebar, type PlayerLocation } from './PlayerSidebar'
 
@@ -65,6 +66,8 @@ export function PlayerShell({
               {t('player.progressPercent', { percent: data.course.progress_percent })}
             </span>
           </div>
+
+          <CurrentOffer variant="compact" />
 
           {children}
         </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\InvoicingSettingsController as AdminInvoicingSettingsController;
 use App\Http\Controllers\Api\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Api\Admin\ModuleController as AdminModuleController;
+use App\Http\Controllers\Api\Admin\OfferController as AdminOfferController;
 use App\Http\Controllers\Api\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Api\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Api\Admin\ReviewController as AdminReviewController;
@@ -27,6 +28,8 @@ use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\FinancialsController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\LessonPreviewController;
+use App\Http\Controllers\Api\OfferController;
+use App\Http\Controllers\Api\OfferLinkController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\PlaybackController;
@@ -37,6 +40,7 @@ use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\WebhookController;
+use App\Models\Offer;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:auth')->group(function () {
@@ -69,6 +73,12 @@ Route::get('/provinces', [ProvinceController::class, 'index'])->middleware('thro
 // the admin has filled, and never the fiscal-only fields.
 Route::get('/business', [BusinessController::class, 'show'])->middleware('throttle:60,1');
 
+// The two links of an offer e-mail: signed, they need no session.
+Route::get('/offers/open/{moment}', [OfferLinkController::class, 'open'])
+    ->name('offers.open')->middleware(['signed', 'throttle:30,1']);
+Route::match(['get', 'post'], '/offers/unsubscribe/{user}', [OfferLinkController::class, 'unsubscribe'])
+    ->name('offers.unsubscribe')->middleware(['signed', 'throttle:30,1']);
+
 // Live pricing quote (guest-friendly; owned modules excluded when authenticated)
 Route::post('/checkout/quote', [CheckoutController::class, 'quote']);
 Route::get('/checkout/methods', [CheckoutController::class, 'methods'])->middleware('throttle:60,1');
@@ -78,6 +88,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::patch('/me', [AuthController::class, 'updateMe']);
     Route::get('/enrollments', [EnrollmentController::class, 'index']);
+
+    // The offers whose moment has come (after the purchase, the milestone, the end).
+    Route::get('/me/offers', [OfferController::class, 'index'])->middleware('throttle:60,1');
+    Route::post('/me/offers/{stage}/{action}', [OfferController::class, 'record'])
+        ->whereIn('stage', Offer::STAGES)->whereIn('action', ['seen', 'click', 'dismiss'])->middleware('throttle:60,1');
 
     // Course player (enrolled students / admins)
     Route::get('/courses/{course:slug}/learn', [LearnController::class, 'show']);
@@ -158,6 +173,8 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::get('companies', [AdminCompanyController::class, 'index']);
     Route::patch('companies/{company}', [AdminCompanyController::class, 'update']);
     Route::post('companies/visibility', [AdminCompanyController::class, 'bulk']);
+    Route::get('offers', [AdminOfferController::class, 'index']);
+    Route::put('offers/{offer}', [AdminOfferController::class, 'update'])->whereNumber('offer');
 
     // Order review
     Route::get('orders', [AdminOrderController::class, 'index']);

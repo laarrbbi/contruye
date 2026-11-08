@@ -386,7 +386,8 @@
       "partners": "Partenaires",
       "invoices": "Facturation",
       "business": "Entreprise et contact",
-      "companies": "Annuaire des entreprises"
+      "companies": "Annuaire des entreprises",
+      "offers": "Offres"
     },
     "common": {
       "actions": "Actions",
@@ -834,6 +835,60 @@
       "employees": "Effectifs",
       "hideOne": "Masquer {{name}}",
       "showOne": "Afficher {{name}}"
+    },
+    "offers": {
+      "title": "Offres",
+      "lead": "Les trois offres qu'un élève voit au fil du cours : le lendemain de son achat, à sa première étape et à la fin. Chacune reste éteinte tant que vous n'avez pas écrit ce qu'elle vend et ne l'avez pas activée. Elles s'affichent dans son tableau de bord et dans le cours, et partent par e-mail si vous le choisissez.",
+      "slot": "Offre {{number}} sur 3",
+      "stage": {
+        "after_purchase": {
+          "name": "Après l'achat",
+          "when": "Une petite offre, le lendemain : de 24 à 48 heures après le premier paiement."
+        },
+        "milestone": {
+          "name": "Première étape",
+          "when": "Quand l'élève termine son premier module (toutes ses leçons). Vous pouvez demander plus d'un module."
+        },
+        "course_end": {
+          "name": "Fin du cours",
+          "when": "La grande, par exemple la formation Excel : quand l'élève réussit l'examen final ou termine toutes les leçons."
+        }
+      },
+      "live": "Active",
+      "off": "Désactivée",
+      "stats": "Arrivés au moment : {{reached}} · E-mails : {{emailed}} · L'ont vue : {{seen}} · Clics : {{clicked}} · L'ont fermée : {{dismissed}}",
+      "active": "Activer cette offre",
+      "timing": "Quand elle s'affiche",
+      "modulesRequired": "Modules terminés",
+      "delay": "Heures d'attente",
+      "available": "Heures affichée",
+      "untilClosed": "Jusqu'à fermeture",
+      "windowFixed": "Visible de l'heure {{from}} à l'heure {{to}} après le moment, puis elle disparaît.",
+      "windowOpen": "Visible à partir de l'heure {{from}} après le moment, jusqu'à ce que l'élève la ferme.",
+      "sells": "Ce qu'elle vend",
+      "target": {
+        "url": "Un lien",
+        "course": "Un cours de la plateforme"
+      },
+      "course": "Cours",
+      "chooseCourse": "Choisissez un cours",
+      "courseHelp": "Le bouton mène à la page du cours, avec son prix. Elle ne s'affiche pas pour qui a déjà le cours complet.",
+      "url": "Lien (page de vente, paiement…)",
+      "price": "Prix (€)",
+      "text": "Texte",
+      "spanishRequired": "L'espagnol est obligatoire pour activer l'offre.",
+      "fallback": "Facultatif : sans texte en {{language}}, l'élève voit l'espagnol.",
+      "titleField": "Titre",
+      "bodyField": "Texte",
+      "markdown": "Markdown accepté : **gras**, listes avec « - », liens.",
+      "ctaField": "Texte du bouton",
+      "sendEmail": "L'envoyer aussi par e-mail",
+      "sendEmailHelp": "Un e-mail par élève, quand son moment s'ouvre, avec un lien pour ne plus recevoir d'offres. Jamais à qui s'est désinscrit, ni pour un moment de plus de 3 jours.",
+      "saved": "Enregistré",
+      "saveFailed": "Non enregistré : vérifiez votre connexion et réessayez.",
+      "preview": "Aperçu",
+      "previewTitle": "Titre de l'offre",
+      "previewHelp": "Ce que voit l'élève : en haut dans son tableau de bord, en bas dans le cours. La mise en forme Markdown s'applique à la publication."
     }
   },
   "reviews": {
@@ -1386,5 +1441,16 @@
     "eyebrow": "Annuaire",
     "title": "Partenaires",
     "lead": "Les entreprises avec lesquelles travaille un promoteur en Espagne, pour chaque module que vous possédez : cherchez-les par nom, type, province ou module."
+  },
+  "offers": {
+    "cta": "Voir l'offre",
+    "until": "Disponible jusqu'au {{date}}",
+    "close": "Fermer l'offre",
+    "notNow": "Pas maintenant",
+    "stage": {
+      "after_purchase": "Pour vous, après votre achat",
+      "milestone": "Première étape franchie",
+      "course_end": "Vous avez terminé le cours"
+    }
   }
 }

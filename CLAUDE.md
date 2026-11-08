@@ -91,6 +91,10 @@ makes that work lives in `docker/mysql-test/`.
 - The company directory (`Company`, `config/directory.php`) maps each company's CNAE code to a kind
   and each kind to the modules it serves. `CompanyDirectoryController` serves it behind the module
   gate; `/admin/companies` decides which companies students see. The data is never committed.
+- The three offers (`Offer`, `OfferService`, `/admin/offers`): after the purchase (24–48 h), at the
+  first milestone, at the end. A student's moment is stored once with its real time
+  (`user_offers`), so a deadline never moves; `offers:send` (scheduler, every 10 min) e-mails them.
+  The slots ship empty and off: nothing is offered until the owner writes it.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP

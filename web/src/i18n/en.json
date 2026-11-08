@@ -386,7 +386,8 @@
       "partners": "Partners",
       "invoices": "Invoicing",
       "business": "Business & contact",
-      "companies": "Company directory"
+      "companies": "Company directory",
+      "offers": "Offers"
     },
     "common": {
       "actions": "Actions",
@@ -834,6 +835,60 @@
       "employees": "Employees",
       "hideOne": "Hide {{name}}",
       "showOne": "Show {{name}}"
+    },
+    "offers": {
+      "title": "Offers",
+      "lead": "The three offers a student sees along the course: the day after the purchase, at the first milestone and at the end. Each stays off until you write what it sells and switch it on. They show on the student's dashboard and in the course, and go out by e-mail if you choose.",
+      "slot": "Offer {{number}} of 3",
+      "stage": {
+        "after_purchase": {
+          "name": "After the purchase",
+          "when": "A small offer, the next day: from 24 to 48 hours after the first payment."
+        },
+        "milestone": {
+          "name": "First milestone",
+          "when": "When the student finishes their first module (every lesson of it). You can ask for more than one module."
+        },
+        "course_end": {
+          "name": "End of the course",
+          "when": "The big one, for instance the Excel training: when the student passes the final exam or completes every lesson."
+        }
+      },
+      "live": "Live",
+      "off": "Off",
+      "stats": "Reached the moment: {{reached}} · E-mails: {{emailed}} · Saw it: {{seen}} · Clicks: {{clicked}} · Closed it: {{dismissed}}",
+      "active": "Switch this offer on",
+      "timing": "When it shows",
+      "modulesRequired": "Modules finished",
+      "delay": "Hours of delay",
+      "available": "Hours shown",
+      "untilClosed": "Until closed",
+      "windowFixed": "Shown from hour {{from}} to hour {{to}} after the moment, then it disappears.",
+      "windowOpen": "Shown from hour {{from}} after the moment, until the student closes it.",
+      "sells": "What it sells",
+      "target": {
+        "url": "A link",
+        "course": "A course of the platform"
+      },
+      "course": "Course",
+      "chooseCourse": "Choose a course",
+      "courseHelp": "The button leads to the course's page, with its price. It is not shown to anyone who already has the whole course.",
+      "url": "Link (sales page, payment…)",
+      "price": "Price (€)",
+      "text": "Text",
+      "spanishRequired": "Spanish is required to switch the offer on.",
+      "fallback": "Optional: with no text in {{language}}, the student sees the Spanish.",
+      "titleField": "Title",
+      "bodyField": "Text",
+      "markdown": "Markdown works: **bold**, lists with \"-\", links.",
+      "ctaField": "Button text",
+      "sendEmail": "Also send it by e-mail",
+      "sendEmailHelp": "One e-mail per student, when their moment opens, with a link to stop receiving offers. Never to anyone who unsubscribed, nor for a moment more than 3 days old.",
+      "saved": "Saved",
+      "saveFailed": "Not saved: check your connection and try again.",
+      "preview": "Preview",
+      "previewTitle": "Title of the offer",
+      "previewHelp": "How the student sees it: above on their dashboard, below in the course. Markdown formatting applies once published."
     }
   },
   "reviews": {
@@ -1386,5 +1441,16 @@
     "eyebrow": "Directory",
     "title": "Partners",
     "lead": "The companies a developer works with in Spain, for every module you own: search them by name, kind, province or module."
+  },
+  "offers": {
+    "cta": "See the offer",
+    "until": "Available until {{date}}",
+    "close": "Close the offer",
+    "notNow": "Not now",
+    "stage": {
+      "after_purchase": "For you, after your purchase",
+      "milestone": "First milestone reached",
+      "course_end": "You have finished the course"
+    }
   }
 }

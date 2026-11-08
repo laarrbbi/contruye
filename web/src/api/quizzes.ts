@@ -71,6 +71,8 @@ export function useSubmitQuiz(slug: string | undefined, quizId: number | undefin
       qc.invalidateQueries({ queryKey: ['quiz', quizId] })
       // The sidebar shows the pass badge.
       qc.invalidateQueries({ queryKey: ['learn', slug] })
+      // A finished module or the passed exam can open an offer.
+      qc.invalidateQueries({ queryKey: ['offers'] })
     },
   })
 }

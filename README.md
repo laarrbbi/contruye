@@ -145,8 +145,38 @@ Mailtrap en `MAIL_*` o dejar `MAIL_MAILER=log`.
 `/admin` (rol `admin`): panel (ingresos del mes, pedidos por método, matrículas, tasa de
 finalización), gestión de cursos/fases/lecciones (arrastrar y soltar), pedidos (filtros, vista del
 justificante, aprobar/rechazar/conceder, **exportación CSV** `GET /api/admin/orders/export`),
-alumnos (búsqueda, progreso por curso), cupones, campañas, colaboradores por provincia, directorio de empresas y facturas.
+alumnos (búsqueda, progreso por curso), cupones, campañas, ofertas, colaboradores por provincia, directorio de
+empresas y facturas.
 Todas las acciones sobre los pedidos quedan registradas en `audit_logs`.
+
+## Ofertas: las tres ventas del recorrido
+
+Tres ofertas acompañan al alumno, cada una en su momento (`/admin/offers`):
+
+| Oferta | Cuándo | Para |
+|---|---|---|
+| 1 · Después de la compra | De las 24 a las 48 h después del primer pago | Algo pequeño, al día siguiente |
+| 2 · Primer hito | Al terminar su primer módulo (todas sus lecciones; se puede pedir más de uno) | Algo intermedio |
+| 3 · Final del curso | Al aprobar el examen final o completar todas las lecciones | La grande, p. ej. la formación Excel |
+
+- **Vacías hasta que el propietario las escribe.** Cada una vende un curso de la plataforma (el botón
+  lleva a su página, con su precio, y no se muestra a quien ya lo tiene completo) o un enlace (con
+  el precio que escribas). Título, texto (Markdown) y botón en español, y en los otros idiomas si
+  quieres: sin traducción, el alumno ve el español. Las horas de espera y de visibilidad se cambian
+  en la misma página.
+- **Dónde se ven:** en «Mis cursos» (grande) y encima de cada página del curso (en una línea). Si hay
+  varias abiertas se ve la más avanzada. El alumno puede cerrarla («Ahora no») y no vuelve.
+- **El momento queda guardado** con su hora real (`user_offers`), así que el plazo de una oferta no
+  se mueve nunca: «disponible hasta» es una fecha de verdad, no una cuenta atrás que vuelve a empezar.
+- **Correo (opcional por oferta):** `php artisan offers:send` corre cada 10 minutos (el programador:
+  servicio `scheduler` en Docker, `deploy/supervisor/construye-scheduler.conf` en producción). Un
+  correo por alumno y oferta cuando se abre su momento, con enlace para darse de baja (también en la
+  cabecera List-Unsubscribe). Nunca a quien se dio de baja, ni por un momento de hace más de 3 días:
+  activar una oferta no escribe a toda la escuela. La LSSI (art. 21) permite escribir a clientes
+  sobre productos parecidos a los que compraron si pueden negarse al dar sus datos y en cada correo:
+  el registro debería decirlo; es decisión del propietario con su asesor.
+- **Cifras:** en cada oferta, cuántos alumnos llegaron al momento, recibieron el correo, la vieron,
+  hicieron clic y la cerraron.
 
 ## Directorio de empresas (Partners)
 

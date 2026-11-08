@@ -16,6 +16,7 @@ self-signed certificate and a placeholder domain, so certbot and DNS were not pa
 | `deploy/nginx/construye.conf` | The vhost: TLS, SPA routing, Laravel routes, cache and security headers, including a Content-Security-Policy on HTML pages. |
 | `deploy/supervisor/construye-queue.conf` | The queue worker (payment webhooks and every e-mail). |
 | `deploy/supervisor/construye-financials.conf` | The financial template service (`financials/`, Node.js, 127.0.0.1:3100). |
+| `deploy/supervisor/construye-scheduler.conf` | The scheduler (`schedule:work`): the offer e-mails, every ten minutes. |
 | `deploy/php/99-construye.ini` | PHP upload limits: Ubuntu's 2 MB default refuses most receipt photos. |
 | `deploy/backup.sh` | Nightly dump of the database and the private files (transfer and Bizum receipts, attachments). |
 | `deploy/restore-drill.sh` | Restores the latest backup into a scratch database and compares it with live. |
@@ -78,11 +79,12 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-The queue worker:
+The queue worker, the financial template service and the scheduler (the offer e-mails):
 
 ```bash
 sudo cp /var/www/construye/deploy/supervisor/construye-queue.conf /etc/supervisor/conf.d/
 sudo cp /var/www/construye/deploy/supervisor/construye-financials.conf /etc/supervisor/conf.d/
+sudo cp /var/www/construye/deploy/supervisor/construye-scheduler.conf /etc/supervisor/conf.d/
 sudo supervisorctl reread && sudo supervisorctl update
 ```
 

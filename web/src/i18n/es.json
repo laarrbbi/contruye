@@ -386,7 +386,8 @@
       "partners": "Colaboradores",
       "invoices": "Facturación",
       "business": "Empresa y contacto",
-      "companies": "Directorio de empresas"
+      "companies": "Directorio de empresas",
+      "offers": "Ofertas"
     },
     "common": {
       "actions": "Acciones",
@@ -834,6 +835,60 @@
       "employees": "Empleados",
       "hideOne": "Ocultar {{name}}",
       "showOne": "Mostrar {{name}}"
+    },
+    "offers": {
+      "title": "Ofertas",
+      "lead": "Las tres ofertas que ve un alumno a lo largo del curso: al día siguiente de su compra, en su primer hito y al terminar. Cada una está apagada hasta que escribes qué vende y la activas. Se muestran en su panel y en el curso, y se envían por correo si lo eliges.",
+      "slot": "Oferta {{number}} de 3",
+      "stage": {
+        "after_purchase": {
+          "name": "Después de la compra",
+          "when": "Una oferta pequeña, al día siguiente: de las 24 a las 48 horas después del primer pago."
+        },
+        "milestone": {
+          "name": "Primer hito",
+          "when": "Cuando el alumno termina su primer módulo (todas sus lecciones). Puedes pedir más de un módulo."
+        },
+        "course_end": {
+          "name": "Final del curso",
+          "when": "La grande, por ejemplo la formación Excel: cuando aprueba el examen final o completa todas las lecciones."
+        }
+      },
+      "live": "Activa",
+      "off": "Desactivada",
+      "stats": "Llegaron al momento: {{reached}} · Correos: {{emailed}} · La vieron: {{seen}} · Clics: {{clicked}} · La cerraron: {{dismissed}}",
+      "active": "Activar esta oferta",
+      "timing": "Cuándo se muestra",
+      "modulesRequired": "Módulos terminados",
+      "delay": "Horas de espera",
+      "available": "Horas visible",
+      "untilClosed": "Hasta que la cierre",
+      "windowFixed": "Se ve desde la hora {{from}} hasta la hora {{to}} después del momento, y luego desaparece.",
+      "windowOpen": "Se ve a partir de la hora {{from}} después del momento, hasta que el alumno la cierre.",
+      "sells": "Qué vende",
+      "target": {
+        "url": "Un enlace",
+        "course": "Un curso de la plataforma"
+      },
+      "course": "Curso",
+      "chooseCourse": "Elige un curso",
+      "courseHelp": "El botón lleva a la página del curso, con su precio. No se muestra a quien ya tiene el curso completo.",
+      "url": "Enlace (página de venta, pago…)",
+      "price": "Precio (€)",
+      "text": "Texto",
+      "spanishRequired": "El español es obligatorio para activar la oferta.",
+      "fallback": "Opcional: sin texto en {{language}}, el alumno ve el español.",
+      "titleField": "Título",
+      "bodyField": "Texto",
+      "markdown": "Admite Markdown: **negrita**, listas con «-», enlaces.",
+      "ctaField": "Texto del botón",
+      "sendEmail": "Enviarla también por correo",
+      "sendEmailHelp": "Un correo por alumno, cuando se abre su momento, con un enlace para no recibir más ofertas. Nunca a quien se dio de baja ni por un momento de hace más de 3 días.",
+      "saved": "Guardado",
+      "saveFailed": "No se ha guardado: comprueba tu conexión e inténtalo de nuevo.",
+      "preview": "Vista previa",
+      "previewTitle": "Título de la oferta",
+      "previewHelp": "Así la ve el alumno: arriba en su panel, abajo en el curso. El formato Markdown se aplica al publicar."
     }
   },
   "reviews": {
@@ -1386,5 +1441,16 @@
     "eyebrow": "Directorio",
     "title": "Partners",
     "lead": "Las empresas con las que trabaja un promotor en España, de cada módulo que tienes: búscalas por nombre, tipo, provincia o módulo."
+  },
+  "offers": {
+    "cta": "Ver la oferta",
+    "until": "Disponible hasta el {{date}}",
+    "close": "Cerrar la oferta",
+    "notNow": "Ahora no",
+    "stage": {
+      "after_purchase": "Para ti, tras tu compra",
+      "milestone": "Primer hito superado",
+      "course_end": "Has terminado el curso"
+    }
   }
 }

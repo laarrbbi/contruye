@@ -6,6 +6,7 @@ use App\Models\Campaign;
 use App\Models\Company;
 use App\Models\Course;
 use App\Models\Enrollment;
+use App\Models\Offer;
 use App\Models\Partner;
 use App\Models\Province;
 use App\Models\Review;
@@ -172,6 +173,26 @@ class DemoShowcaseSeeder extends Seeder
                     'approved_at' => now(),
                 ],
             );
+        }
+
+        // --- The three offers: filled only while a slot is still empty, so the
+        // demo never overwrites what the owner has written. Links go nowhere real.
+        $offers = [
+            'after_purchase' => ['[DEMO] Plantillas de contratos para tu promoción', "Los modelos de contrato que usa un promotor, listos para adaptar.\n\n- Compraventa sobre plano\n- Contrato de obra\n- Reserva", 49],
+            'milestone' => ['[DEMO] Revisión de tu solar con un experto', 'Una hora con un profesional para revisar el solar que estás estudiando.', 190],
+            'course_end' => ['[DEMO] Formación Excel: tu promoción en la hoja de cálculo', 'El curso completo de la plantilla financiera, celda a celda, con tus propios números.', 990],
+        ];
+        foreach ($offers as $stage => [$title, $body, $price]) {
+            Offer::query()->where('stage', $stage)->whereNull('title_es')->update([
+                'is_active' => true,
+                'title_es' => $title,
+                'body_es' => $body,
+                'url' => 'https://example.es/demo-oferta',
+                'price_eur' => $price,
+                'send_email' => false,
+                'activated_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
 
         $this->command?->info('Demo showcase data seeded (all entities prefixed "[DEMO]").');

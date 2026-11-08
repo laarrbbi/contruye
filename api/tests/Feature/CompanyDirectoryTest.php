@@ -1,67 +1,10 @@
 <?php
 
 use App\Models\Company;
-use App\Models\Course;
 use App\Models\Enrollment;
-use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\Province;
 use App\Models\User;
-
-/** A course with phases 1 (Solar) and 6 (Construcción), one lesson each. */
-function directoryCourse(): Course
-{
-    $course = Course::factory()->create(['status' => 'published', 'price_eur' => 490]);
-    foreach ([1, 6] as $order) {
-        $module = Module::factory()->create(['course_id' => $course->id, 'order' => $order, 'kind' => 'phase', 'price_eur' => 49]);
-        Lesson::factory()->create(['module_id' => $module->id, 'order' => 1]);
-    }
-
-    return $course->fresh();
-}
-
-function company(array $attributes = []): Company
-{
-    static $n = 0;
-    $n++;
-
-    return Company::create($attributes + ['source' => 'test', 'source_ref' => "ref-{$n}", 'name' => "Empresa {$n}", 'category' => 'constructoras', 'is_visible' => true]);
-}
-
-/** A tiny .xlsx with an Orbis-like header row and the given rows. */
-function orbisFile(array $rows): string
-{
-    $header = ["Nom de l'entreprise Latin alphabet", 'NACE Rev. 2 Code principal', 'Code postal Latin Alphabet', 'Ville Latin Alphabet', 'Téléphone', 'Adresse du site internet', 'Numéro BvD', 'N° de Taxe / TVA', 'Effectifs Dernière année disp.'];
-    $strings = [];
-    $index = function (string $s) use (&$strings) {
-        $i = array_search($s, $strings, true);
-        if ($i === false) {
-            $strings[] = $s;
-            $i = count($strings) - 1;
-        }
-
-        return $i;
-    };
-    $xmlRows = '';
-    foreach (array_merge([$header], $rows) as $r => $row) {
-        $cells = '';
-        foreach (array_values($row) as $c => $value) {
-            $ref = chr(65 + $c).($r + 1);
-            $cells .= "<c r=\"{$ref}\" t=\"s\"><v>{$index((string) $value)}</v></c>";
-        }
-        $xmlRows .= '<row r="'.($r + 1)."\">{$cells}</row>";
-    }
-    $ns = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main';
-    $sst = "<sst xmlns=\"{$ns}\">".implode('', array_map(fn ($s) => '<si><t>'.htmlspecialchars($s).'</t></si>', $strings)).'</sst>';
-    $path = tempnam(sys_get_temp_dir(), 'orbis').'.xlsx';
-    $zip = new ZipArchive;
-    $zip->open($path, ZipArchive::CREATE);
-    $zip->addFromString('xl/sharedStrings.xml', $sst);
-    $zip->addFromString('xl/worksheets/sheet1.xml', "<worksheet xmlns=\"{$ns}\"><sheetData>{$xmlRows}</sheetData></worksheet>");
-    $zip->close();
-
-    return $path;
-}
 
 it('files a company under the category of its activity code', function () {
     expect(Company::categoryFor('4120'))->toBe('constructoras')

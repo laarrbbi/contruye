@@ -77,5 +77,14 @@
     "The financial template is not available at the moment. Please try again later.": "La plantilla financiera no está disponible en este momento. Inténtalo de nuevo más tarde.",
     "You have reached the maximum number of saved scenarios. Delete one first.": "Has llegado al máximo de escenarios guardados. Borra uno antes.",
     "Scenario deleted.": "Escenario borrado.",
-    "The inputs do not match the financial template.": "Los datos no corresponden a la plantilla financiera."
+    "The inputs do not match the financial template.": "Los datos no corresponden a la plantilla financiera.",
+    "See the offer": "Ver la oferta",
+    "Available until :date.": "Disponible hasta el :date.",
+    "You receive this e-mail because you are a student of Construye Academy.": "Recibes este correo porque eres alumno de Construye Academy.",
+    "Stop receiving offers by e-mail": "No recibir más ofertas por correo",
+    "You will no longer receive offers by e-mail.": "Ya no recibirás ofertas por correo.",
+    "Your course and your access do not change.": "Tu curso y tu acceso no cambian.",
+    "Back to my courses": "Volver a mis cursos",
+    "An active offer needs a title in Spanish.": "Una oferta activa necesita un título en español.",
+    "An active offer needs a course or a link to sell.": "Una oferta activa necesita un curso o un enlace que vender."
 }

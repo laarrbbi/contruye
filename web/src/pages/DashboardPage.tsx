@@ -7,6 +7,7 @@ import { usePageTitle } from '@/hooks/usePageTitle'
 import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Boxes } from 'lucide-react'
 import { PageHead, SectionLabel } from '@/components/inside/PageHead'
+import { CurrentOffer } from '@/components/offers/OfferCard'
 import { api } from '@/api/client'
 import type { Enrollment } from '@/api/types'
 import { Button } from '@/components/ui/button'
@@ -117,6 +118,10 @@ export function DashboardPage() {
           })}
         </div>
       )}
+
+      {/* The offer whose moment has come (after the purchase, the milestone,
+          the end of the course), if the admin has written one. */}
+      {!!enrollments?.length && <CurrentOffer variant="full" className="mt-10" />}
 
       {/* Set once here, and every partner list across the course filters to
           it — a learner should not have to discover this inside a lesson. */}

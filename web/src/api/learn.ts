@@ -203,6 +203,8 @@ export function useToggleComplete(slug: string | undefined) {
     },
     onSettled: () => {
       qc.invalidateQueries({ queryKey: ['learn', slug] })
+      // A finished module or the passed exam can open an offer.
+      qc.invalidateQueries({ queryKey: ['offers'] })
     },
   })
 }

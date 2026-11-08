@@ -147,6 +147,23 @@ services:
     networks:
       - construye
 
+  scheduler:
+    build:
+      context: ./docker/php
+    container_name: construye-scheduler
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /var/www/api
+    # routes/console.php: the offer e-mails (offers:send), every ten minutes.
+    command: php artisan schedule:work
+    volumes:
+      - ./api:/var/www/api
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - construye
+
 volumes:
   mysql-data:
 
