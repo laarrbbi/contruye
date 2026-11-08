@@ -7,6 +7,7 @@ import { useProvinceDirectory } from '@/api/learn'
 import { provinceLabel, useProvinces } from '@/api/provinces'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Skeleton } from '@/components/ui/skeleton'
+import { OfficialLinks } from '@/components/legal/OfficialLinks'
 
 /**
  * "Partners en tu provincia": the rows of Anexo A for this module's phase, in
@@ -61,15 +62,17 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
           <>
             <dl className="grid gap-x-4 gap-y-1 text-xs text-muted-foreground sm:grid-cols-[auto_1fr]">
               <dt className="font-medium text-foreground">{t('directory.urbanLaw')}</dt>
-              <dd>{directory.data.urban_law}</dd>
+              <dd>
+                <LinkedText html={directory.data.urban_law_html} text={directory.data.urban_law} />
+              </dd>
               <dt className="font-medium text-foreground">{t('directory.firstOccupation')}</dt>
               <dd>
-                {directory.data.first_occupation}
+                <LinkedText html={directory.data.first_occupation_html} text={directory.data.first_occupation} />
                 {directory.data.habitability_certificate && ` · ${directory.data.habitability_certificate}`}
               </dd>
               <dt className="font-medium text-foreground">{t('directory.taxes')}</dt>
               <dd>
-                ITP {directory.data.itp} · AJD {directory.data.ajd} · {directory.data.sale_tax}
+                ITP <LinkedText html={directory.data.itp_html} text={directory.data.itp} /> · AJD {directory.data.ajd} · {directory.data.sale_tax}
               </dd>
               {directory.data.foral && (
                 <>
@@ -92,7 +95,9 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
                     {rows.rows.map((row, index) => (
                       <tr key={index}>
                         <td className="font-medium">{row.name}</td>
-                        <td>{row.purpose}</td>
+                        <td>
+                          <LinkedText html={row.purpose_html} text={row.purpose} />
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -105,6 +110,13 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
               </p>
             ) : null}
 
+            {directory.data.official_links.length > 0 && (
+              <div>
+                <p className="etiquette text-foreground/55">{t('legal.officialSources', { region: directory.data.ccaa })}</p>
+                <OfficialLinks links={directory.data.official_links} className="mt-2" />
+              </div>
+            )}
+
             {showAnnexLink && (
               <Link to={`/learn/${slug}/docs/anexo-a`} className="inline-block text-xs font-medium text-primary underline underline-offset-2">
                 {t('directory.openAnnex')}
@@ -115,4 +127,14 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
       </div>
     </section>
   )
+}
+
+/**
+ * A field of the province's data with its laws linked to their official
+ * pages. The HTML comes from the API's Markdown renderer (escaped text plus
+ * those links only); the plain text stands in if it is missing.
+ */
+function LinkedText({ html, text }: { html: string | null | undefined; text: string }) {
+  if (!html) return <>{text}</>
+  return <span className="md-inline" dangerouslySetInnerHTML={{ __html: html }} />
 }

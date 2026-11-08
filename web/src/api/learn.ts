@@ -227,6 +227,16 @@ export function courseFileUrl(slug: string, key: string) {
   return `${API_URL}/api/courses/${slug}/files/${key}`
 }
 
+/** An official page: a law's text (BOE, regional bulletin), a tax agency, a housing department. */
+export interface OfficialLink {
+  kind: 'planning' | 'taxes' | 'housing'
+  url: string
+  /** The page's own title, as the official site writes it. */
+  title: string
+  /** The title's language: Spanish, or Catalan on some regional pages. */
+  lang: 'es' | 'ca'
+}
+
 export interface CourseDocument {
   slug: string
   title: string
@@ -234,6 +244,8 @@ export interface CourseDocument {
   body_html: string | null
   /** The language the body is in (Spanish while its translation is pending). */
   body_locale: string
+  /** Anexo B only: each community's official pages. */
+  regions: { key: string; name: string; links: OfficialLink[] }[] | null
 }
 
 export function useCourseDocument(slug: string | undefined, documentSlug: string | undefined) {
@@ -255,18 +267,24 @@ export interface ProvinceDirectory {
   capital: string
   ccaa: string
   urban_law: string
+  /** The same texts with their laws linked to the official pages. */
+  urban_law_html: string | null
   first_occupation: string
+  first_occupation_html: string | null
   habitability_certificate: string | null
   itp: string
+  itp_html: string | null
   ajd: string
   sale_tax: string
   foral: string | null
+  /** The community's planning law, tax agency (ITP, AJD) and protected-housing prices. */
+  official_links: OfficialLink[]
   phases: {
     phase: number
     module_id: number
     is_locked: boolean
     rows_count: number
-    rows: { name: string; purpose: string }[]
+    rows: { name: string; purpose: string; purpose_html: string | null }[]
   }[]
   /** The province's whole section of the annex, with full access only. */
   section_html: string | null

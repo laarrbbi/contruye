@@ -1452,5 +1452,16 @@
       "milestone": "Primer hito superado",
       "course_end": "Has terminado el curso"
     }
+  },
+  "legal": {
+    "kind": {
+      "planning": "Ley de urbanismo: texto oficial",
+      "taxes": "ITP y AJD: hacienda de la comunidad",
+      "housing": "Vivienda protegida: precios máximos"
+    },
+    "newTab": "(se abre la web oficial en una pestaña nueva)",
+    "officialSources": "Fuentes oficiales · {{region}}",
+    "regionsTitle": "Las fuentes oficiales de cada comunidad",
+    "regionsLead": "La ley de urbanismo, la página de la hacienda autonómica sobre el ITP y el AJD y los precios máximos de la vivienda protegida, en la web oficial de cada comunidad. Ceuta y Melilla no publican precios máximos propios."
   }
 }

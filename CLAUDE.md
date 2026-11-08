@@ -95,6 +95,10 @@ makes that work lives in `docker/mysql-test/`.
   first milestone, at the end. A student's moment is stored once with its real time
   (`user_offers`), so a deadline never moves; `offers:send` (scheduler, every 10 min) e-mails them.
   The slots ship empty and off: nothing is offered until the owner writes it.
+- Every law the course names links to its official text (`config/legal.php`, `Support/Legal`):
+  added when the Markdown is rendered, never written into the text. A new law in a new package
+  needs its entry (`LegalLinksTest` fails until it has one); `docs/fuentes-oficiales.md` says how
+  each link was checked. Only official sites, https.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP

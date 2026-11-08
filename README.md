@@ -220,6 +220,16 @@ desde la base de datos y lo compara línea a línea.
 Las lecciones son texto (los vídeos se añaden después). El material en inglés está vacío: un
 lector en inglés ve el texto en español. `make review` regenera `api/content-review.md`.
 
+## Leyes enlazadas a su fuente oficial
+
+Cada ley que nombra el curso (las 95: estatales y autonómicas) enlaza a su texto oficial, el texto
+consolidado del BOE o el boletín autonómico, sin cambiar una palabra del formador: los enlaces se
+añaden al mostrar el texto (`App\Support\Legal\LegalLinker`, datos en `api/config/legal.php`). Cada
+comunidad tiene además sus páginas oficiales (ley de urbanismo, ITP y AJD en su hacienda, precios
+máximos de la vivienda protegida) en «Tu provincia en esta fase» y bajo el Anexo B. La lista completa,
+cómo se comprobó y lo que el formador debe revisar: `docs/fuentes-oficiales.md`.
+`php artisan legal:check-links` vuelve a abrir cada enlace (las webs oficiales cambian de sitio sus páginas).
+
 ## Financials: la plantilla financiera
 
 `curso/2_plantilla_financiera` es la plantilla del profesional (`PLANTILLA_LIBRE.xls`, 17 hojas,

@@ -70,7 +70,7 @@ it('gives a province\'s rows for the phases a student owns, and counts the other
     $data = $this->actingAs($partial)->getJson("/api/courses/{$course->slug}/directory/{$madrid->id}")->assertOk()->json('data');
 
     expect($data['itp'])->toBe('6 %')
-        ->and($data['phases'][0])->toMatchArray(['phase' => 1, 'is_locked' => false, 'rows' => [['name' => 'Registro de la Propiedad', 'purpose' => 'Nota simple']]])
+        ->and($data['phases'][0])->toMatchArray(['phase' => 1, 'is_locked' => false, 'rows' => [['name' => 'Registro de la Propiedad', 'purpose' => 'Nota simple', 'purpose_html' => 'Nota simple']]])
         ->and($data['phases'][1])->toMatchArray(['phase' => 2, 'is_locked' => true, 'rows_count' => 2, 'rows' => []])
         // The annex's full section is part of the whole course.
         ->and($data['section_html'])->toBeNull()

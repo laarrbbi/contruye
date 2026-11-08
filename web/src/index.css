@@ -159,6 +159,11 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content a {
     @apply font-medium text-primary underline underline-offset-2;
   }
+  /* A law, linked to its official text: present, never louder than the sentence. */
+  .md-content a.ley,
+  .md-inline a.ley {
+    @apply [font-weight:inherit] text-inherit decoration-primary/50 decoration-dotted underline underline-offset-[3px] transition-colors hover:text-primary hover:decoration-solid;
+  }
   .md-content code {
     @apply rounded bg-secondary px-1 py-0.5 font-mono text-[0.85em];
   }

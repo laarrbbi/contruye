@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api\Concerns\AuthorizesCourseAccess;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Support\Legal\RegionalSources;
 use App\Support\Markdown;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -34,6 +35,8 @@ class CourseDocumentController extends Controller
             'access' => $document->access,
             'body_html' => Markdown::toHtml($document->localizedBody()),
             'body_locale' => $document->localizedLocale('body'),
+            // Anexo B (tax and planning per community): each community's official pages.
+            'regions' => $document->slug === 'anexo-b' ? RegionalSources::all() : null,
         ]]);
     }
 }

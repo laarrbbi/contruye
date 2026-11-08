@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next'
 import { isAxiosError } from 'axios'
 import { Download, FileText, Lock } from 'lucide-react'
 import { useUser } from '@/api/auth'
-import { courseFileUrl, useCourseDocument, useLearn, useProvinceDirectory, type LearnData } from '@/api/learn'
+import { courseFileUrl, useCourseDocument, useLearn, useProvinceDirectory, type CourseDocument, type LearnData } from '@/api/learn'
 import { provinceLabel, useProvinces } from '@/api/provinces'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { OfficialLinks } from '@/components/legal/OfficialLinks'
 import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
@@ -126,6 +127,37 @@ export function CourseDocumentPage() {
       <MarkdownContent html={document.data.body_html} lang={document.data.body_locale} />
       {document.data.slug === 'recursos' && <Downloads data={learn.data} />}
       {document.data.slug === 'anexo-a' && <ProvinceAnnex slug={learn.data.course.slug} />}
+      {document.data.regions && <RegionSources regions={document.data.regions} />}
     </PlayerShell>
+  )
+}
+
+/**
+ * Anexo B, under the instructor's table: each community's official pages
+ * (planning law, ITP and AJD at its tax agency, protected-housing prices),
+ * so "confírmalos en la hacienda de tu comunidad" is one click away.
+ */
+function RegionSources({ regions }: { regions: NonNullable<CourseDocument['regions']> }) {
+  const { t } = useTranslation()
+
+  return (
+    <section aria-labelledby="region-sources" className="space-y-4 border-t pt-8">
+      <div>
+        <h2 id="region-sources" className="titre text-xl">
+          {t('legal.regionsTitle')}
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t('legal.regionsLead')}</p>
+      </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        {regions.map((region) => (
+          <div key={region.key} className="rounded-2xl border bg-card p-4">
+            <h3 className="font-semibold" lang="es">
+              {region.name}
+            </h3>
+            <OfficialLinks links={region.links} className="mt-2" />
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }

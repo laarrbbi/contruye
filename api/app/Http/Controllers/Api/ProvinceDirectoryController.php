@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\Province;
 use App\Models\ProvinceGuide;
+use App\Support\Legal\RegionalSources;
 use App\Support\Markdown;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -48,7 +49,12 @@ class ProvinceDirectoryController extends Controller
                     'is_locked' => ! $owned,
                     'rows_count' => count($rows),
                     'rows' => $owned
-                        ? array_map(fn (array $row) => ['name' => $row[0], 'purpose' => $row[1]], $rows)
+                        ? array_map(fn (array $row) => [
+                            'name' => $row[0],
+                            'purpose' => $row[1],
+                            // The same text with its laws linked to their official pages.
+                            'purpose_html' => Markdown::inline($row[1]),
+                        ], $rows)
                         : [],
                 ];
             });
@@ -59,12 +65,17 @@ class ProvinceDirectoryController extends Controller
             'capital' => $data['cap'],
             'ccaa' => $data['ccaa'],
             'urban_law' => $data['ley'],
+            'urban_law_html' => Markdown::inline($data['ley']),
             'first_occupation' => $data['ocup'],
+            'first_occupation_html' => Markdown::inline($data['ocup']),
             'habitability_certificate' => $data['cedula'],
             'itp' => $data['itp'],
+            'itp_html' => Markdown::inline($data['itp']),
             'ajd' => $data['ajd'],
             'sale_tax' => $data['iva'],
             'foral' => $data['foral'],
+            // The community's planning law, tax agency and protected-housing prices.
+            'official_links' => RegionalSources::for($data['ccaaKey'] ?? null),
             'phases' => $phases,
             'section_html' => $fullAccess ? Markdown::toHtml($guide->section_es) : null,
         ]]);

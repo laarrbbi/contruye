@@ -1452,5 +1452,16 @@
       "milestone": "First milestone reached",
       "course_end": "You have finished the course"
     }
+  },
+  "legal": {
+    "kind": {
+      "planning": "Planning law: official text",
+      "taxes": "ITP and AJD: the region's tax agency",
+      "housing": "Protected housing: maximum prices"
+    },
+    "newTab": "(opens the official site in a new tab)",
+    "officialSources": "Official sources · {{region}}",
+    "regionsTitle": "Each region's official sources",
+    "regionsLead": "The planning law, the regional tax agency's page on ITP and AJD, and the maximum prices of protected housing, on each region's official site. Ceuta and Melilla publish no maximum prices of their own."
   }
 }

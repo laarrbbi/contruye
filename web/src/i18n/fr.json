@@ -1452,5 +1452,16 @@
       "milestone": "Première étape franchie",
       "course_end": "Vous avez terminé le cours"
     }
+  },
+  "legal": {
+    "kind": {
+      "planning": "Loi d'urbanisme : texte officiel",
+      "taxes": "ITP et AJD : administration fiscale de la région",
+      "housing": "Logement protégé : prix maximaux"
+    },
+    "newTab": "(ouvre le site officiel dans un nouvel onglet)",
+    "officialSources": "Sources officielles · {{region}}",
+    "regionsTitle": "Les sources officielles de chaque région",
+    "regionsLead": "La loi d'urbanisme, la page de l'administration fiscale régionale sur l'ITP et l'AJD, et les prix maximaux du logement protégé, sur le site officiel de chaque région. Ceuta et Melilla ne publient pas de prix maximaux propres."
   }
 }
