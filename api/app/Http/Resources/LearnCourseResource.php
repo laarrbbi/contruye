@@ -13,6 +13,7 @@ use App\Models\Partner;
 use App\Models\Quiz;
 use App\Models\QuizAttempt;
 use App\Support\Course\CourseFiles;
+use App\Support\Financials\TemplateCatalog;
 use App\Support\Markdown;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -69,6 +70,8 @@ class LearnCourseResource extends JsonResource
         $ownedIncluded = $included->filter(fn (Module $module) => $this->accessibleModuleIds->contains($module->id))->count();
         $fullAccess = $included->isNotEmpty() && $ownedIncluded >= $included->count();
         $finalExam = $this->quizzes->firstWhere('kind', 'final');
+        $templates = collect(TemplateCatalog::fromConfig()->small())
+            ->mapWithKeys(fn (array $t) => [$t['module_order'] => ['number' => $t['number'], 'title' => $t['title']]]);
 
         return [
             'course' => [
@@ -102,6 +105,8 @@ class LearnCourseResource extends JsonResource
                 ],
             ],
             'modules' => $this->modules->map(fn (Module $module) => [
+                // The small template the module carries (1 to 5), if any: its calculator is the module's.
+                'template' => $module->kind === 'phase' ? ($templates[$module->order] ?? null) : null,
                 'id' => $module->id,
                 'order' => $module->order,
                 'kind' => $module->kind,

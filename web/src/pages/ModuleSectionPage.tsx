@@ -10,17 +10,19 @@ import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
 import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
+import { SmallTemplateCalculator } from '@/components/templates/SmallTemplateCalculator'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { moduleLabel } from '@/lib/modules'
 
-export const MODULE_SECTIONS = ['tareas', 'leyes', 'partners'] as const
+export const MODULE_SECTIONS = ['tareas', 'plantilla', 'leyes', 'partners'] as const
 export type ModuleSection = (typeof MODULE_SECTIONS)[number]
 
 /**
  * What a module leaves the promoter with, each on its own page after the
- * quiz: the tasks (the module's checklist and the student's own), the laws
- * that apply, and the partners (where to go, the province's institutions and
- * the companies of the directory for this phase).
+ * quiz: the tasks (the module's checklist and the student's own), the
+ * module's small template when it has one (modules 1, 2, 5, 7 and 8), the
+ * laws that apply, and the partners (where to go, the province's institutions
+ * and the companies of the directory for this phase).
  */
 export function ModuleSectionPage() {
   const { slug, moduleId, section } = useParams<{ slug: string; moduleId: string; section: string }>()
@@ -32,6 +34,7 @@ export function ModuleSectionPage() {
 
   if (isLoading || !data || !slug) return <PlayerSkeleton />
   if (!module || !MODULE_SECTIONS.includes(section as ModuleSection) || module.is_locked) return <Navigate to={`/learn/${slug}`} replace />
+  if (section === 'plantilla' && !module.template) return <Navigate to={`/learn/${slug}`} replace />
 
   const kind = section as ModuleSection
   const laws = module.blocks.filter((b) => b.type === 'overview' && b.role === 'laws')
@@ -47,9 +50,15 @@ export function ModuleSectionPage() {
             {moduleLabel(module, t)} · <bdi>{module.title}</bdi>
           </span>
         </p>
-        <h1 className="titre mt-4 text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">{t(`moduleSection.${kind}`)}</h1>
+        <h1 className="titre mt-4 text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">
+          {kind === 'plantilla' && module.template
+            ? `${t('templates.label', { number: module.template.number })} · ${t(`templates.name.${module.template.number}`)}`
+            : t(`moduleSection.${kind}`)}
+        </h1>
         <p className="mt-3 max-w-2xl text-foreground/70">{t(`moduleSection.${kind}Lead`)}</p>
       </header>
+
+      {kind === 'plantilla' && module.template && <SmallTemplateCalculator slug={slug} number={module.template.number} />}
 
       {kind === 'tareas' &&
         (checklist ? <ModuleChecklist slug={slug} module={checklist} /> : <p className="text-sm text-muted-foreground">{t('moduleSection.noTasks')}</p>)}

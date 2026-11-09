@@ -60,6 +60,7 @@ class SmallTemplateController extends Controller
             'number' => $number,
             'title' => $template['title'],
             'module_id' => $module->id,
+            'excel' => $template['excel'],
             'regla' => $dictionary['regla'],
             'porcentajes' => $dictionary['porcentajes'],
             'entradas' => $dictionary['entradas'],

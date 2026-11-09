@@ -73,6 +73,8 @@ export interface Enrollment {
     progress_percent: number
   }
   full_access: boolean
+  /** The final exam is passed: the course is finished. */
+  finished: boolean
   owned_modules_count: number
   total_modules_count: number
   expires_at: string | null

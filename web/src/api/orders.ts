@@ -60,9 +60,12 @@ export interface Quote {
   upgraded_to_full: boolean
 }
 
+/** 'extra': the professional template, bought on its own at the end of the course. */
+export type PurchaseScope = OrderScope | 'extra'
+
 export interface QuotePayload {
   course_id: number
-  scope: OrderScope
+  scope: PurchaseScope
   module_ids?: number[]
   method?: CheckoutMethod
   coupon_code?: string
@@ -125,7 +128,7 @@ export interface Order {
 
 export interface CheckoutPayload {
   course_id: number
-  scope: OrderScope
+  scope: PurchaseScope
   module_ids?: number[]
   method: CheckoutMethod
   coupon_code?: string

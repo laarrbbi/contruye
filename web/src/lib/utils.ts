@@ -74,3 +74,8 @@ export function formatTotalDuration(totalSeconds: number | null | undefined, t: 
 export function latinDir(text: string): 'ltr' | undefined {
   return /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]/.test(text) ? undefined : 'ltr'
 }
+
+/** A fraction as a percentage: 0.21 → «21 %», 0.0015 → «0,15 %». */
+export function formatPercent(value: number, locale: string): string {
+  return new Intl.NumberFormat(intlLocale(locale), { style: 'percent', maximumFractionDigits: 2 }).format(value)
+}

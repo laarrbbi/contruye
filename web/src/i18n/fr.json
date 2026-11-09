@@ -387,7 +387,8 @@
       "invoices": "Facturation",
       "business": "Entreprise et contact",
       "companies": "Annuaire des entreprises",
-      "offers": "Offres"
+      "offers": "Offres",
+      "templates": "Modèles"
     },
     "common": {
       "actions": "Actions",
@@ -889,6 +890,47 @@
       "preview": "Aperçu",
       "previewTitle": "Titre de l'offre",
       "previewHelp": "Ce que voit l'élève : en haut dans son tableau de bord, en bas dans le cours. La mise en forme Markdown s'applique à la publication."
+    },
+    "templates": {
+      "title": "Modèles",
+      "lead": "Le modèle professionnel comme extra de fin de formation, et les paramètres légaux avec lesquels calculent tous les modèles.",
+      "extraTitle": "Modèle professionnel (extra)",
+      "onSale": "En vente",
+      "offSale": "Désactivé",
+      "buyers": "Acheteurs : {{count}}",
+      "extraLead": "Proposé en fin de formation aux élèves de toute offre : à la réussite de l'examen final, dans leur espace élève et dans Financials. Prix propre, sans coupon.",
+      "extraAuthorise": "Avant de l'activer : le professionnel doit revoir le modèle corrigé et autoriser sa vente comme extra.",
+      "enabled": "En vente",
+      "price": "Prix (€, IVA comprise)",
+      "save": "Enregistrer",
+      "priceRequired": "Pour le mettre en vente, indiquez son prix.",
+      "legalTitle": "Paramètres légaux",
+      "reviewedBy": "Revus le {{date}} par {{name}}",
+      "legalLead": "Tous les modèles de tous les élèves les utilisent, le professionnel et les 5 de la formation, à leur prochain calcul. Valeurs en %, de 0 à moins de 100.",
+      "parameter": "Paramètre",
+      "value": "En vigueur",
+      "original": "Original (2002)",
+      "basis": "Base légale",
+      "usedIn": "Où il est utilisé",
+      "regionsTitle": "ITP et AJD par communauté autonome",
+      "region": "Communauté",
+      "note": "Note",
+      "range": "Chaque valeur doit être comprise entre 0 et 100 %.",
+      "saveChanges": "Enregistrer les modifications ({{count}})",
+      "markReviewed": "Marquer comme revus aujourd'hui",
+      "discard": "Annuler les modifications",
+      "saved": "Enregistré.",
+      "confirmTitle": "Enregistrer ces modifications ?",
+      "confirmReviewTitle": "Marquer les paramètres comme revus aujourd'hui ?",
+      "confirmBody": "Ils s'appliquent à tous les modèles de tous les élèves à leur prochain calcul. Ils restent dans l'historique avec votre nom et la valeur précédente.",
+      "confirm": "Confirmer",
+      "historyTitle": "Historique des modifications",
+      "historyEmpty": "Aucune modification pour l'instant : les valeurs sont celles du paquet.",
+      "when": "Date",
+      "who": "Qui",
+      "what": "Quoi",
+      "before": "Avant",
+      "after": "Après"
     }
   },
   "reviews": {
@@ -1323,13 +1365,12 @@
     "locked": "Ce document fait partie de l'accès complet à la formation",
     "downloadsTitle": "Téléchargements disponibles",
     "files": {
-      "plantilla-libre": "Modèle financier complet (17 feuilles)",
-      "plantilla-simplificada": "Modèle simplifié d'étude de faisabilité",
+      "plantilla-simplificada": "Modèle simplifié corrigé (exemple du professionnel)",
       "directorio-partners": "Annuaire des partenaires par province (Excel)",
       "curso-pdf": "La formation complète en PDF"
     },
     "needsFullAccess": "Avec l'accès complet",
-    "needsFinancials": "Avec le module Financials",
+    "needsFinancials": "Avec l'extra (modèle professionnel)",
     "downloadsNote": "Les autres ressources de la liste seront publiées ici dès qu'elles seront disponibles. Le tableau fiscal par communauté autonome est l'annexe B."
   },
   "directory": {
@@ -1394,9 +1435,9 @@
     "ctaTitle": "Calculez le modèle sur la plateforme",
     "ctaBody": "Saisissez les données de départ et obtenez le coût, le prêt, le cash-flow et la synthèse, avec les formules du professionnel.",
     "title": "Modèle financier de la promotion",
-    "lead": "Le modèle du professionnel (PLANTILLA_LIBRE.xls), calculé avec ses formules d'origine et le calcul itératif déjà résolu. Vous saisissez les données de départ ; le modèle calcule tout le reste.",
-    "paramsNotice": "Le modèle calcule avec les paramètres de sa création, vers 2002 (TVA à 7 % et 16 %, droits en pesetas, postes de coopérative). Avant de l'utiliser pour une promotion actuelle, vérifiez :",
-    "locked": "Le modèle fait partie du module Financials",
+    "lead": "Le modèle professionnel corrigé (PLANTILLA_LIBRE_corregida.xlsx), calculé avec ses formules et le calcul itératif déjà résolu. Vous remplissez les données de départ ; le modèle calcule tout le reste, avec les paramètres légaux en vigueur.",
+    "paramsNotice": "Ce que la loi ne fixe pas (honoraires, OCT, assurance décennale, expertises) garde les valeurs de l'original : demandez un devis actuel.",
+    "locked": "C'est l'extra de fin de formation : il n'entre dans aucune offre et s'achète à part.",
     "formulaDefault": "formule du modèle",
     "notANumber": "Ce n'est pas un nombre.",
     "scenarios": "Mes scénarios",
@@ -1422,8 +1463,9 @@
     "vat": "TVA",
     "simplifiedHint": "La feuille « 3ª Coste Total Promoción » : c'est le modèle simplifié d'étude de faisabilité, avec vos données.",
     "sheet": "Feuille",
-    "originals": "Les fichiers d'origine",
-    "originalsNote": "Tels que le professionnel les a remis. Dans Excel, activez le calcul itératif (100 itérations, écart maximal 0,001) : le modèle contient des références circulaires voulues."
+    "originals": "Téléchargements",
+    "originalsNote": "Si Excel signale une « référence circulaire », vérifiez que le calcul itératif est activé (100 itérations, écart maximal 0,001). Dans LibreOffice, recalculez plusieurs fois (Ctrl+Maj+F9).",
+    "mineNote": "Avec vos données et les paramètres légaux en vigueur. Les formules sont intactes et le calcul itératif est activé."
   },
   "moduleSection": {
     "tareas": "Tâches du module",
@@ -1435,7 +1477,9 @@
     "noTasks": "Ce module n'a pas de tâches.",
     "noLaws": "Ce module n'a pas de lois propres.",
     "companies": "Entreprises pour cette phase",
-    "companiesLead": "Les entreprises de l'annuaire pour le travail qu'enseigne ce module, dans votre province par défaut."
+    "companiesLead": "Les entreprises de l'annuaire pour le travail qu'enseigne ce module, dans votre province par défaut.",
+    "plantilla": "Modèle de calcul",
+    "plantillaLead": "Le modèle de ce module, inclus dans la formation : calculez avec vos données et téléchargez-le en Excel."
   },
   "partnersPage": {
     "eyebrow": "Annuaire",
@@ -1463,5 +1507,46 @@
     "officialSources": "Sources officielles · {{region}}",
     "regionsTitle": "Les sources officielles de chaque région",
     "regionsLead": "La loi d'urbanisme, la page de l'administration fiscale régionale sur l'ITP et l'AJD, et les prix maximaux du logement protégé, sur le site officiel de chaque région. Ceuta et Melilla ne publient pas de prix maximaux propres."
+  },
+  "templates": {
+    "label": "Modèle {{number}}",
+    "name": {
+      "1": "Achat du terrain",
+      "2": "Viabilité rapide et méthode résiduelle",
+      "3": "Prêt promoteur",
+      "4": "Contrôle des coûts du chantier",
+      "5": "Plan de ventes et d'encaissements"
+    },
+    "download": "Télécharger en Excel",
+    "downloadError": "Le fichier Excel n'a pas pu être préparé. Réessayez.",
+    "reset": "Revenir à l'exemple",
+    "calculating": "Calcul en cours…",
+    "notANumber": "Saisissez un nombre",
+    "locked": "Le modèle fait partie de son module.",
+    "error": "Le calcul n'a pas abouti. Réessayez.",
+    "howTo": "Remplissez les cases mises en évidence : les formules du modèle calculent le reste, avec les impôts en vigueur. Le fichier Excel téléchargé contient vos données."
+  },
+  "legalParams": {
+    "title": "Paramètres légaux appliqués",
+    "reviewed": "Revus le {{date}}",
+    "readOnly": "IVA, ITP, AJD et tout ce que fixe la loi : CONSTRUYE les tient à jour et tous les modèles les appliquent. Vous choisissez seulement la communauté autonome du terrain."
+  },
+  "extra": {
+    "eyebrow": "L'extra de fin de formation",
+    "badge": "Extra",
+    "title": "Passez à l'étape suivante : le modèle financier complet d'un professionnel",
+    "body": "Vous savez déjà calculer une promotion avec les modèles de la formation. Le modèle professionnel le fait mois par mois et par chapitres : terrain, travaux, viabilisation, études, licences, prêt, gestion, échéancier et cash-flow sur 48 mois. 18 feuilles et plus de 30 000 formules, revu cellule par cellule, corrigé et avec les impôts de votre communauté à jour.",
+    "includes": {
+      "excel": "Le modèle en Excel et le calculateur sur la plateforme.",
+      "simplified": "La version simplifiée avec l'exemple réel du professionnel.",
+      "lessons": "Les 9 leçons de Financials : quelle donnée va dans chaque case et comment lire le résultat.",
+      "taxes": "Les impôts à jour : quand la loi change, ils se mettent à jour d'eux-mêmes."
+    },
+    "cta": "Ajouter le modèle professionnel",
+    "notOnSale": "Il n'est pas encore en vente.",
+    "open": "Ouvrir le modèle professionnel",
+    "see": "Voir l'extra",
+    "finishedTitle": "Vous avez terminé la formation",
+    "finishedBody": "Vous avez réussi l'examen final."
   }
 }

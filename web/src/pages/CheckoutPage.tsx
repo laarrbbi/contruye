@@ -27,6 +27,7 @@ import {
   type CheckoutPayload,
   type Currency,
   type OrderScope,
+  type PurchaseScope,
   type PricedCourse,
   type PricedModule,
   type QuotePayload,
@@ -43,6 +44,7 @@ import { cn, formatPrice } from '@/lib/utils'
 import { ContactOptions } from '@/components/ContactOptions'
 import { useDebouncedValue } from '@/hooks/useDebouncedValue'
 import { TRANSFER_METHODS } from '@/lib/payments'
+import { ExtraCheckoutCard } from '@/components/extra/ExtraOffer'
 
 
 interface MethodOption {
@@ -68,7 +70,10 @@ export function CheckoutPage() {
   const courseQuery = useCourse(slug)
   const course = courseQuery.data as PricedCourse | undefined
 
-  const [scope, setScope] = useState<OrderScope>('full')
+  // ?extra=1: the professional template, the extra at the end of the course,
+  // bought on its own (at its own price, no coupon), whatever the plan.
+  const isExtra = searchParams.get('extra') === '1'
+  const [scope, setScope] = useState<PurchaseScope>(isExtra ? 'extra' : 'full')
   const [selected, setSelected] = useState<number[]>([])
   const [method, setMethod] = useState<CheckoutMethod>('stripe')
   const [couponInput, setCouponInput] = useState('')
@@ -90,6 +95,7 @@ export function CheckoutPage() {
   useEffect(() => {
     if (!course || initializedRef.current) return
     initializedRef.current = true
+    if (isExtra) return
     const preselect = preselectRef.current ?? []
     const valid = course.modules
       .filter((m) => preselect.includes(m.id) && !m.is_owned)
@@ -125,8 +131,9 @@ export function CheckoutPage() {
   const currency: Currency = 'EUR'
   const priceOf = (module: PricedModule) => module.price_eur
 
+  // The course's own modules: Financials is the extra, in no plan.
   const modules = useMemo(
-    () => (course ? [...course.modules].sort((a, b) => a.order - b.order) : []),
+    () => (course ? course.modules.filter((m) => m.kind !== 'financials').sort((a, b) => a.order - b.order) : []),
     [course],
   )
 
@@ -141,7 +148,9 @@ export function CheckoutPage() {
   )
 
   const quotePayload = useMemo<QuotePayload | null>(() => {
-    if (!course || course.full_access) return null
+    if (!course) return null
+    if (scope === 'extra') return { course_id: course.id, scope: 'extra' }
+    if (course.full_access) return null
     if (scope === 'modules' && effectiveSelection.length === 0) return null
     return {
       course_id: course.id,
@@ -198,7 +207,7 @@ export function CheckoutPage() {
       scope,
       method,
       ...(scope === 'modules' ? { module_ids: effectiveSelection } : {}),
-      ...(coupon ? { coupon_code: coupon } : {}),
+      ...(coupon && scope !== 'extra' ? { coupon_code: coupon } : {}),
     }
     checkout.mutate(payload, {
       onSuccess: (res) => {
@@ -231,8 +240,8 @@ export function CheckoutPage() {
     )
   }
 
-  // Already owns everything: nothing left to buy.
-  if (course.full_access) {
+  // Already owns everything: nothing left to buy (the extra is bought apart).
+  if (course.full_access && !isExtra) {
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <CircleCheck className="h-12 w-12 text-success" aria-hidden />
@@ -334,6 +343,9 @@ export function CheckoutPage() {
       <div className="grid gap-8 lg:grid-cols-[1fr_400px] lg:items-start">
         {/* ——— Left column: scope + payment method ——— */}
         <div className="space-y-8">
+          {isExtra ? (
+            <ExtraCheckoutCard price={quote ? fmtQ(quote.total) : null} />
+          ) : (
           <Tabs value={scope} onValueChange={handleScopeChange}>
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="full">
@@ -490,6 +502,7 @@ export function CheckoutPage() {
               )}
             </TabsContent>
           </Tabs>
+          )}
 
           {/* Payment methods */}
           <section className="space-y-3">
@@ -643,7 +656,8 @@ export function CheckoutPage() {
                 </div>
               )}
 
-              {/* Coupon */}
+              {/* Coupon (not for the extra, sold at its own price) */}
+              {!isExtra && (
               <div className="space-y-2">
                 {couponApplied && quote ? (
                   <div className="flex items-center justify-between gap-2 rounded-md border border-success/40 bg-success/5 px-3 py-2">
@@ -682,6 +696,7 @@ export function CheckoutPage() {
                 )}
                 {couponError && <p className="text-sm text-destructive">{couponError}</p>}
               </div>
+              )}
 
               {/* Checkout errors */}
               {alreadyEnrolledError && (

@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { api } from './client'
+import type { LegalParametersView } from './templates'
 
 /** One input cell of the template, from its own dictionary (entradas.json). */
 export interface TemplateInput {
@@ -7,11 +8,14 @@ export interface TemplateInput {
   hoja: string
   celda: string
   etiqueta: string
-  tipo: 'numero' | 'porcentaje' | 'fecha' | 'texto' | 'SI/NO' | 'lista: bloque/chalets'
+  /** 'numero', 'porcentaje', 'fecha', 'texto', 'SI/NO', or 'lista: a/b/…' (a closed list). */
+  tipo: string
   unidad: string
   defecto: number | string | null
   nota: string
   defecto_es_formula: boolean
+  /** The choices of a list, when the dictionary gives them (the communities of D93). */
+  opciones?: string[]
 }
 
 export interface TemplateInputs {
@@ -21,6 +25,8 @@ export interface TemplateInputs {
   porcentajes: string
   entradas: TemplateInput[]
   ejemplos: { key: string; datos: InputValues }[]
+  /** The legal parameters the template applies: read only. */
+  legal: LegalParametersView
 }
 
 /** { 'Datos de Partida': { C9: 24, D79: '2027-01-01', … } } */
@@ -51,7 +57,7 @@ export interface Scenario {
   updated_at: string
 }
 
-/** The 17 sheets of PLANTILLA_LIBRE.xls, in the workbook's order. */
+/** The 18 sheets of the corrected PLANTILLA_LIBRE, in the workbook's order. */
 export const TEMPLATE_SHEETS = [
   'Datos de Partida',
   '2º Auxiliar',
@@ -70,6 +76,7 @@ export const TEMPLATE_SHEETS = [
   '5º Forma de Pago',
   '6ª Cash-flow',
   '8º Resumen',
+  'Parámetros legales',
 ] as const
 
 export function useTemplateInputs(slug: string | undefined) {

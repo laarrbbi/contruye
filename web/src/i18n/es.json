@@ -387,7 +387,8 @@
       "invoices": "Facturación",
       "business": "Empresa y contacto",
       "companies": "Directorio de empresas",
-      "offers": "Ofertas"
+      "offers": "Ofertas",
+      "templates": "Plantillas"
     },
     "common": {
       "actions": "Acciones",
@@ -889,6 +890,47 @@
       "preview": "Vista previa",
       "previewTitle": "Título de la oferta",
       "previewHelp": "Así la ve el alumno: arriba en su panel, abajo en el curso. El formato Markdown se aplica al publicar."
+    },
+    "templates": {
+      "title": "Plantillas",
+      "lead": "La plantilla profesional como extra del final del curso y los parámetros legales con que calculan todas las plantillas.",
+      "extraTitle": "Plantilla profesional (extra)",
+      "onSale": "A la venta",
+      "offSale": "Desactivada",
+      "buyers": "Compradores: {{count}}",
+      "extraLead": "Se ofrece al terminar el curso, a alumnos de cualquier plan: al aprobar el examen final, en su área de alumno y en Financials. Precio propio, sin cupones.",
+      "extraAuthorise": "Antes de activarla: que el profesional revise la plantilla corregida y autorice venderla como extra.",
+      "enabled": "A la venta",
+      "price": "Precio (€, IVA incluido)",
+      "save": "Guardar",
+      "priceRequired": "Para ponerla a la venta, escribe su precio.",
+      "legalTitle": "Parámetros legales",
+      "reviewedBy": "Revisados el {{date}} por {{name}}",
+      "legalLead": "Los usan todas las plantillas de todos los alumnos, la profesional y las 5 del curso, en su próximo cálculo. Valores en %, de 0 a menos de 100.",
+      "parameter": "Parámetro",
+      "value": "Vigente",
+      "original": "Original (2002)",
+      "basis": "Base legal",
+      "usedIn": "Dónde se usa",
+      "regionsTitle": "ITP y AJD por comunidad autónoma",
+      "region": "Comunidad",
+      "note": "Nota",
+      "range": "Cada valor debe estar entre 0 y 100 %.",
+      "saveChanges": "Guardar los cambios ({{count}})",
+      "markReviewed": "Marcar como revisados hoy",
+      "discard": "Descartar",
+      "saved": "Guardado.",
+      "confirmTitle": "¿Guardar estos cambios?",
+      "confirmReviewTitle": "¿Marcar los parámetros como revisados hoy?",
+      "confirmBody": "Se aplican a todas las plantillas de todos los alumnos en su próximo cálculo. Quedan en el historial con tu nombre y el valor anterior.",
+      "confirm": "Confirmar",
+      "historyTitle": "Historial de cambios",
+      "historyEmpty": "Todavía no hay cambios: los valores son los del paquete.",
+      "when": "Fecha",
+      "who": "Quién",
+      "what": "Qué",
+      "before": "Antes",
+      "after": "Después"
     }
   },
   "reviews": {
@@ -1323,13 +1365,12 @@
     "locked": "Este documento es del acceso completo al curso",
     "downloadsTitle": "Descargas disponibles",
     "files": {
-      "plantilla-libre": "Plantilla financiera completa (17 hojas)",
-      "plantilla-simplificada": "Plantilla simplificada de Análisis de Viabilidad",
+      "plantilla-simplificada": "Plantilla simplificada corregida (ejemplo del profesional)",
       "directorio-partners": "Directorio de partners por provincia (Excel)",
       "curso-pdf": "El curso completo en PDF"
     },
     "needsFullAccess": "Con el acceso completo",
-    "needsFinancials": "Con el módulo Financials",
+    "needsFinancials": "Con el extra (plantilla profesional)",
     "downloadsNote": "Los demás recursos de la lista se publicarán aquí en cuanto estén disponibles. La tabla fiscal por comunidad es el Anexo B."
   },
   "directory": {
@@ -1394,9 +1435,9 @@
     "ctaTitle": "Calcula la plantilla en la plataforma",
     "ctaBody": "Rellena los datos de partida y obtén el coste, el préstamo, el cash-flow y el resumen, con las fórmulas del profesional.",
     "title": "Plantilla financiera de la promoción",
-    "lead": "La plantilla del profesional (PLANTILLA_LIBRE.xls), calculada con sus fórmulas originales y el cálculo iterativo ya resuelto. Rellenas los datos de partida; todo lo demás lo calcula la plantilla.",
-    "paramsNotice": "La plantilla calcula con los parámetros con que se construyó, hacia 2002 (IVA del 7 % y del 16 %, aranceles en pesetas, partidas de cooperativa). Antes de usarla para una promoción actual, revisa:",
-    "locked": "La plantilla es del módulo Financials",
+    "lead": "La plantilla profesional corregida (PLANTILLA_LIBRE_corregida.xlsx), calculada con sus fórmulas y el cálculo iterativo ya resuelto. Rellenas los datos de partida; todo lo demás lo calcula la plantilla, con los parámetros legales vigentes.",
+    "paramsNotice": "Lo que no fija la ley (honorarios, OCT, seguro decenal, tasaciones) sigue con los valores del original: pide presupuesto actual.",
+    "locked": "Es el extra del final del curso: no entra en ningún plan y se compra aparte.",
     "formulaDefault": "fórmula de la plantilla",
     "notANumber": "No es un número.",
     "scenarios": "Mis escenarios",
@@ -1422,8 +1463,9 @@
     "vat": "IVA",
     "simplifiedHint": "La hoja «3ª Coste Total Promoción»: es la plantilla simplificada de Análisis de Viabilidad, con tus datos.",
     "sheet": "Hoja",
-    "originals": "Los archivos originales",
-    "originalsNote": "Tal como los entregó el profesional. En Excel, activa el cálculo iterativo (100 iteraciones, cambio máximo 0,001): la plantilla tiene referencias circulares a propósito."
+    "originals": "Descargas",
+    "originalsNote": "Si Excel avisa de «referencia circular», comprueba que el cálculo iterativo está activado (100 iteraciones, cambio máximo 0,001). En LibreOffice, recalcula varias veces (Ctrl+Mayús+F9).",
+    "mineNote": "Con tus datos y los parámetros legales vigentes. Las fórmulas van intactas y el cálculo iterativo, activado."
   },
   "moduleSection": {
     "tareas": "Tareas del módulo",
@@ -1435,7 +1477,9 @@
     "noTasks": "Este módulo no tiene tareas.",
     "noLaws": "Este módulo no tiene leyes propias.",
     "companies": "Empresas para esta fase",
-    "companiesLead": "Las empresas del directorio con las que se trabaja en lo que enseña este módulo, en tu provincia por defecto."
+    "companiesLead": "Las empresas del directorio con las que se trabaja en lo que enseña este módulo, en tu provincia por defecto.",
+    "plantilla": "Plantilla de cálculo",
+    "plantillaLead": "La plantilla de este módulo, incluida en el curso: calcula con tus datos y descárgala en Excel."
   },
   "partnersPage": {
     "eyebrow": "Directorio",
@@ -1463,5 +1507,46 @@
     "officialSources": "Fuentes oficiales · {{region}}",
     "regionsTitle": "Las fuentes oficiales de cada comunidad",
     "regionsLead": "La ley de urbanismo, la página de la hacienda autonómica sobre el ITP y el AJD y los precios máximos de la vivienda protegida, en la web oficial de cada comunidad. Ceuta y Melilla no publican precios máximos propios."
+  },
+  "templates": {
+    "label": "Plantilla {{number}}",
+    "name": {
+      "1": "Compra del solar",
+      "2": "Viabilidad rápida y método residual",
+      "3": "Préstamo promotor",
+      "4": "Control de costes de obra",
+      "5": "Plan de ventas y cobros"
+    },
+    "download": "Descargar en Excel",
+    "downloadError": "No se ha podido preparar el Excel. Inténtalo de nuevo.",
+    "reset": "Volver al ejemplo",
+    "calculating": "Calculando…",
+    "notANumber": "Escribe un número",
+    "locked": "La plantilla es de su módulo.",
+    "error": "No se ha podido calcular. Inténtalo de nuevo.",
+    "howTo": "Rellena las casillas resaltadas: el resto lo calculan las fórmulas de la plantilla, con los impuestos vigentes. El Excel que descargas lleva tus datos."
+  },
+  "legalParams": {
+    "title": "Parámetros legales aplicados",
+    "reviewed": "Revisados el {{date}}",
+    "readOnly": "IVA, ITP, AJD y el resto de lo que fija la ley: los mantiene CONSTRUYE al día y se aplican a todas las plantillas. Tú solo eliges la comunidad autónoma del solar."
+  },
+  "extra": {
+    "eyebrow": "El extra del final del curso",
+    "badge": "Extra",
+    "title": "Da el siguiente paso: la plantilla financiera completa de un profesional",
+    "body": "Ya sabes calcular una promoción con las plantillas del curso. La plantilla profesional lo hace mes a mes y por capítulos: suelo, obra, urbanización, proyectos, licencias, préstamo, gestión, forma de pago y cash-flow de 48 meses. 18 hojas y más de 30.000 fórmulas, revisada celda a celda, corregida y con los impuestos de tu comunidad al día.",
+    "includes": {
+      "excel": "La plantilla en Excel y la calculadora en la plataforma.",
+      "simplified": "La versión simplificada con el ejemplo real del profesional.",
+      "lessons": "Las 9 lecciones de Financials: qué dato va en cada casilla y cómo leer el resultado.",
+      "taxes": "Los impuestos al día: cuando cambia la ley, se actualizan solos."
+    },
+    "cta": "Añadir la plantilla profesional",
+    "notOnSale": "Todavía no está a la venta.",
+    "open": "Abrir la plantilla profesional",
+    "see": "Ver el extra",
+    "finishedTitle": "Has terminado el curso",
+    "finishedBody": "Has aprobado el examen final."
   }
 }

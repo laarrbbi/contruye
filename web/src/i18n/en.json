@@ -387,7 +387,8 @@
       "invoices": "Invoicing",
       "business": "Business & contact",
       "companies": "Company directory",
-      "offers": "Offers"
+      "offers": "Offers",
+      "templates": "Templates"
     },
     "common": {
       "actions": "Actions",
@@ -889,6 +890,47 @@
       "preview": "Preview",
       "previewTitle": "Title of the offer",
       "previewHelp": "How the student sees it: above on their dashboard, below in the course. Markdown formatting applies once published."
+    },
+    "templates": {
+      "title": "Templates",
+      "lead": "The professional template as the extra at the end of the course, and the legal parameters every template calculates with.",
+      "extraTitle": "Professional template (extra)",
+      "onSale": "On sale",
+      "offSale": "Off",
+      "buyers": "Buyers: {{count}}",
+      "extraLead": "Offered at the end of the course to students of any plan: when they pass the final exam, in their student area and in Financials. Its own price, no coupons.",
+      "extraAuthorise": "Before switching it on: the professional must review the corrected template and authorise selling it as an extra.",
+      "enabled": "On sale",
+      "price": "Price (€, IVA included)",
+      "save": "Save",
+      "priceRequired": "To put it on sale, enter its price.",
+      "legalTitle": "Legal parameters",
+      "reviewedBy": "Reviewed on {{date}} by {{name}}",
+      "legalLead": "Every template of every student uses them, the professional one and the course's 5, the next time it is calculated. Values in %, from 0 to under 100.",
+      "parameter": "Parameter",
+      "value": "In force",
+      "original": "Original (2002)",
+      "basis": "Legal basis",
+      "usedIn": "Where it is used",
+      "regionsTitle": "ITP and AJD by autonomous community",
+      "region": "Community",
+      "note": "Note",
+      "range": "Each value must be between 0 and 100 %.",
+      "saveChanges": "Save the changes ({{count}})",
+      "markReviewed": "Mark as reviewed today",
+      "discard": "Discard",
+      "saved": "Saved.",
+      "confirmTitle": "Save these changes?",
+      "confirmReviewTitle": "Mark the parameters as reviewed today?",
+      "confirmBody": "They apply to every template of every student the next time it is calculated. They are kept in the history with your name and the previous value.",
+      "confirm": "Confirm",
+      "historyTitle": "History of changes",
+      "historyEmpty": "No changes yet: the values are the package's.",
+      "when": "Date",
+      "who": "Who",
+      "what": "What",
+      "before": "Before",
+      "after": "After"
     }
   },
   "reviews": {
@@ -1323,13 +1365,12 @@
     "locked": "This document comes with full access to the course",
     "downloadsTitle": "Available downloads",
     "files": {
-      "plantilla-libre": "Full financial template (17 sheets)",
-      "plantilla-simplificada": "Simplified feasibility template",
+      "plantilla-simplificada": "Corrected simplified template (the professional's example)",
       "directorio-partners": "Directory of partners by province (Excel)",
       "curso-pdf": "The whole course as a PDF"
     },
     "needsFullAccess": "With full access",
-    "needsFinancials": "With the Financials module",
+    "needsFinancials": "With the extra (professional template)",
     "downloadsNote": "The other resources on the list will be published here as soon as they are available. The tax table by region is Annex B."
   },
   "directory": {
@@ -1394,9 +1435,9 @@
     "ctaTitle": "Calculate the template on the platform",
     "ctaBody": "Fill in the starting data and get the cost, the loan, the cash flow and the summary, with the practitioner's formulas.",
     "title": "Financial template of the development",
-    "lead": "The practitioner's template (PLANTILLA_LIBRE.xls), calculated with its original formulas and with the iterative calculation already solved. You fill in the starting data; the template calculates everything else.",
-    "paramsNotice": "The template calculates with the parameters it was built with, around 2002 (7% and 16% VAT, fees in pesetas, cooperative items). Before using it for a current development, review:",
-    "locked": "The template comes with the Financials module",
+    "lead": "The corrected professional template (PLANTILLA_LIBRE_corregida.xlsx), calculated with its formulas and the iterative calculation already solved. You fill in the input data; the template calculates everything else, with the legal parameters in force.",
+    "paramsNotice": "What the law does not set (fees, OCT, ten-year insurance, valuations) keeps the original's values: ask for a current quote.",
+    "locked": "It is the extra at the end of the course: it is in no plan and is bought separately.",
     "formulaDefault": "template formula",
     "notANumber": "Not a number.",
     "scenarios": "My scenarios",
@@ -1422,8 +1463,9 @@
     "vat": "VAT",
     "simplifiedHint": "The \"3ª Coste Total Promoción\" sheet: it is the simplified feasibility template, with your data.",
     "sheet": "Sheet",
-    "originals": "The original files",
-    "originalsNote": "As the practitioner delivered them. In Excel, enable iterative calculation (100 iterations, maximum change 0.001): the template has circular references on purpose."
+    "originals": "Downloads",
+    "originalsNote": "If Excel warns of a «circular reference», check that iterative calculation is on (100 iterations, maximum change 0.001). In LibreOffice, recalculate several times (Ctrl+Shift+F9).",
+    "mineNote": "With your figures and the legal parameters in force. The formulas are intact and iterative calculation is on."
   },
   "moduleSection": {
     "tareas": "Module tasks",
@@ -1435,7 +1477,9 @@
     "noTasks": "This module has no tasks.",
     "noLaws": "This module has no laws of its own.",
     "companies": "Companies for this phase",
-    "companiesLead": "The directory's companies for the work this module teaches, in your province by default."
+    "companiesLead": "The directory's companies for the work this module teaches, in your province by default.",
+    "plantilla": "Calculation template",
+    "plantillaLead": "This module's template, included in the course: calculate with your own figures and download it in Excel."
   },
   "partnersPage": {
     "eyebrow": "Directory",
@@ -1463,5 +1507,46 @@
     "officialSources": "Official sources · {{region}}",
     "regionsTitle": "Each region's official sources",
     "regionsLead": "The planning law, the regional tax agency's page on ITP and AJD, and the maximum prices of protected housing, on each region's official site. Ceuta and Melilla publish no maximum prices of their own."
+  },
+  "templates": {
+    "label": "Template {{number}}",
+    "name": {
+      "1": "Site purchase",
+      "2": "Quick feasibility and residual method",
+      "3": "Developer loan",
+      "4": "Construction cost control",
+      "5": "Sales and collections plan"
+    },
+    "download": "Download in Excel",
+    "downloadError": "The Excel file could not be prepared. Please try again.",
+    "reset": "Back to the example",
+    "calculating": "Calculating…",
+    "notANumber": "Enter a number",
+    "locked": "The template comes with its module.",
+    "error": "It could not be calculated. Please try again.",
+    "howTo": "Fill in the highlighted cells: the template's formulas calculate the rest, with the taxes in force. The Excel file you download carries your figures."
+  },
+  "legalParams": {
+    "title": "Legal parameters applied",
+    "reviewed": "Reviewed on {{date}}",
+    "readOnly": "IVA, ITP, AJD and the rest of what the law sets: CONSTRUYE keeps them up to date and every template applies them. You only choose the autonomous community where the site is."
+  },
+  "extra": {
+    "eyebrow": "The extra at the end of the course",
+    "badge": "Extra",
+    "title": "Take the next step: a professional's complete financial template",
+    "body": "You can already calculate a development with the course's templates. The professional template does it month by month and chapter by chapter: land, construction, external works, design, licences, loan, management, payment schedule and a 48-month cash flow. 18 sheets and more than 30,000 formulas, reviewed cell by cell, corrected and with your community's taxes up to date.",
+    "includes": {
+      "excel": "The template in Excel and the calculator on the platform.",
+      "simplified": "The simplified version with the professional's real example.",
+      "lessons": "The 9 Financials lessons: which figure goes in each cell and how to read the result.",
+      "taxes": "Taxes up to date: when the law changes, they update by themselves."
+    },
+    "cta": "Add the professional template",
+    "notOnSale": "It is not on sale yet.",
+    "open": "Open the professional template",
+    "see": "See the extra",
+    "finishedTitle": "You have finished the course",
+    "finishedBody": "You have passed the final exam."
   }
 }

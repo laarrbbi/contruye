@@ -7,6 +7,8 @@ use App\Models\LegalParameter;
 use App\Models\LegalParameterChange;
 use App\Models\Module;
 use App\Models\Order;
+use App\Models\Quiz;
+use App\Models\QuizAttempt;
 use App\Models\User;
 use App\Services\FinancialsExtra;
 use App\Services\LegalParameters;
@@ -162,8 +164,19 @@ it('keeps the extra out of every plan: the whole course does not open Financials
         ->and($learn['total_modules_count'])->toBe(8)
         ->and($learn['owned_modules_count'])->toBe(8);
 
+    // Each module says which small template it carries: 1, 2, 5, 7 and 8 do.
+    $modules = collect($this->actingAs($full)->getJson("/api/courses/{$course->slug}/learn")->json('data.modules'))->keyBy('order');
+    expect($modules->map(fn ($m) => $m['template']['number'] ?? null)->filter()->all())->toBe([1 => 1, 2 => 2, 5 => 3, 7 => 4, 8 => 5]);
+
     $dashboard = $this->actingAs($full)->getJson('/api/enrollments')->assertOk()->json('data.0');
-    expect($dashboard['full_access'])->toBeTrue()->and($dashboard['total_modules_count'])->toBe(8);
+    expect($dashboard['full_access'])->toBeTrue()
+        ->and($dashboard['total_modules_count'])->toBe(8)
+        ->and($dashboard['finished'])->toBeFalse();
+
+    // The final exam passed, the course is finished: the dashboard offers the extra.
+    $exam = Quiz::factory()->create(['course_id' => $course->id, 'kind' => 'final']);
+    QuizAttempt::query()->create(['quiz_id' => $exam->id, 'user_id' => $full->id, 'answers' => [], 'score' => 36, 'total' => 40, 'passed' => true, 'started_at' => now(), 'submitted_at' => now()]);
+    expect($this->actingAs($full)->getJson('/api/enrollments')->json('data.0.finished'))->toBeTrue();
 
     // The course's price list does not include it either.
     $quote = $this->actingAs(User::factory()->create())->postJson('/api/checkout/quote', ['course_id' => $course->id])->assertOk()->json('data');

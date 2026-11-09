@@ -120,6 +120,8 @@ export interface LearnModule {
   partners_count: number
   /** Visible companies of the directory this module sends the promoter to. */
   companies_count: number
+  /** The small template the module carries (Plantilla 1 to 5), whose calculator is the module's. */
+  template: { number: number; title: string } | null
   lessons: LearnLesson[]
 }
 

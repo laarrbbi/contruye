@@ -6,6 +6,7 @@ import { CircleCheck, CircleX, ClipboardCheck, GraduationCap, Lock, Timer } from
 import { useLearn } from '@/api/learn'
 import { useQuiz, useStartQuiz, useSubmitQuiz, type QuizResult } from '@/api/quizzes'
 import { usePageTitle } from '@/hooks/usePageTitle'
+import { ExtraOffer } from '@/components/extra/ExtraOffer'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
 import { Button } from '@/components/ui/button'
@@ -150,6 +151,21 @@ export function QuizPage() {
           >
             {t('quiz.retry')}
           </Button>
+        </section>
+      )}
+
+      {/* The end of the course: the final exam passed, now or before. The
+          extra at the end, the professional template, is offered here. */}
+      {isFinal && slug && (result?.passed || (!questions && data.attempts?.some((past) => past.passed))) && (
+        <section className="space-y-6">
+          <div className="flex items-start gap-3 rounded-2xl border border-success/40 bg-success/10 p-5">
+            <GraduationCap className="mt-0.5 h-6 w-6 shrink-0 text-success" />
+            <div>
+              <p className="titre text-xl">{t('extra.finishedTitle')}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{t('extra.finishedBody')}</p>
+            </div>
+          </div>
+          <ExtraOffer slug={slug} ownedLink />
         </section>
       )}
 

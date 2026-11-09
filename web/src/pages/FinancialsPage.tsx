@@ -25,6 +25,9 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { formatCellValue, parseLocaleNumber, serialToIso } from '@/lib/sheet'
+import { downloadWorkbook } from '@/api/templates'
+import { ExtraOffer } from '@/components/extra/ExtraOffer'
+import { LegalParametersPanel } from '@/components/templates/LegalParametersPanel'
 
 /** The summary sheet: it is the simplified template, cell for cell. */
 const SUMMARY_SHEET = '3ª Coste Total Promoción'
@@ -65,8 +68,8 @@ function Field({
   const percent = input.tipo === 'porcentaje' ? parseLocaleNumber(value) : null
 
   let control
-  if (input.tipo === 'SI/NO' || input.tipo === 'lista: bloque/chalets') {
-    const options = input.tipo === 'SI/NO' ? ['SI', 'NO'] : ['bloque', 'chalets']
+  if (input.tipo === 'SI/NO' || input.tipo.startsWith('lista:')) {
+    const options = input.tipo === 'SI/NO' ? ['SI', 'NO'] : (input.opciones ?? input.tipo.slice(6).trim().split('/'))
     control = (
       <Select value={value === '' ? undefined : value} onValueChange={onChange}>
         <SelectTrigger id={id} className="h-9">
@@ -113,10 +116,12 @@ function Field({
 }
 
 /**
- * Financials: the professional's template (PLANTILLA_LIBRE.xls), calculated
- * by the platform with its own formulas. The form is the template's input
- * cells, by section, as its dictionary describes them; whatever is left empty
- * keeps the template's own default. Results are the template's sheets.
+ * Financials: the professional template (the corrected PLANTILLA_LIBRE), the
+ * extra at the end of the course, calculated by the platform with its own
+ * formulas and the legal parameters in force. The form is the template's
+ * input cells, by section, as its dictionary describes them; whatever is left
+ * empty keeps the template's own default. Results are the template's sheets.
+ * A student without the extra sees its offer instead.
  */
 export function FinancialsPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -134,6 +139,8 @@ export function FinancialsPage() {
   const [scenarioName, setScenarioName] = useState('')
   const [result, setResult] = useState<CalculationResult | null>(null)
   const [sheetName, setSheetName] = useState<string>('6ª Cash-flow')
+  const [downloading, setDownloading] = useState(false)
+  const [downloadError, setDownloadError] = useState(false)
 
   const sections = useMemo(() => {
     const groups = new Map<string, TemplateInput[]>()
@@ -185,12 +192,30 @@ export function FinancialsPage() {
 
   if (learn.isLoading || inputs.isLoading) return <PlayerSkeleton />
 
+  const status = isAxiosError(inputs.error) ? inputs.error.response?.status : undefined
+
+  // Not bought: the module stays closed, with the extra's offer.
+  if (learn.data && slug && status === 403) {
+    return (
+      <PlayerShell data={learn.data} location={{ financials: true }}>
+        <header className="space-y-2">
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <Lock className="h-4 w-4" />
+            {t('player.financialsLabel')} · {t('extra.badge')}
+          </p>
+          <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">{t('financials.title')}</h1>
+          <p className="text-sm text-muted-foreground">{t('financials.locked')}</p>
+        </header>
+        <ExtraOffer slug={slug} />
+      </PlayerShell>
+    )
+  }
+
   if (!learn.data || inputs.isError || !inputs.data) {
-    const status = isAxiosError(inputs.error) ? inputs.error.response?.status : undefined
     return (
       <div className="container flex min-h-[50vh] flex-col items-center justify-center gap-4 text-center">
         <Lock className="h-10 w-10 text-muted-foreground" aria-hidden />
-        <h1 className="titre text-2xl">{status === 403 ? t('financials.locked') : t('common.error')}</h1>
+        <h1 className="titre text-2xl">{t('common.error')}</h1>
         <Button asChild variant="outline">
           <Link to={slug ? `/learn/${slug}` : '/dashboard'}>{t('common.back')}</Link>
         </Button>
@@ -204,6 +229,7 @@ export function FinancialsPage() {
     ? (calculate.error.response?.data?.errors?.datos?.[0] ?? calculate.error.response?.data?.message)
     : null
   const files = data.course.files.filter((file) => file.access === 'financials' && !file.is_locked)
+  const community = values['Datos de Partida!D93'] || String(inputs.data.entradas.find((input) => input.celda === 'D93')?.defecto ?? '')
 
   return (
     <PlayerShell data={data} location={{ financials: true }}>
@@ -214,7 +240,7 @@ export function FinancialsPage() {
         </p>
         <h1 className="titre text-[clamp(1.75rem,1.3rem+1.6vw,2.75rem)]">{t('financials.title')}</h1>
         <p className="text-sm text-muted-foreground">{t('financials.lead')}</p>
-        <p className="rounded-md border border-warning/40 bg-warning/10 px-3 py-2 text-xs leading-relaxed">
+        <p className="text-xs leading-relaxed text-muted-foreground">
           {t('financials.paramsNotice')}{' '}
           {lessonF8 && (
             <Link to={`/learn/${data.course.slug}/lessons/${lessonF8.id}`} className="font-medium underline underline-offset-2">
@@ -223,6 +249,8 @@ export function FinancialsPage() {
           )}
         </p>
       </header>
+
+      <LegalParametersPanel legal={inputs.data.legal} community={community} />
 
       {/* Scenarios */}
       <section className="space-y-3 rounded-lg border p-4">
@@ -428,25 +456,50 @@ export function FinancialsPage() {
         </Tabs>
       )}
 
-      {files.length > 0 && (
-        <section className="rounded-lg border">
-          <h2 className="border-b px-4 py-3 text-sm font-semibold">{t('financials.originals')}</h2>
-          <ul className="divide-y">
-            {files.map((file) => (
-              <li key={file.key} className="flex items-center gap-3 px-4 py-3 text-sm">
-                <span className="min-w-0 flex-1 truncate">{file.name}</span>
-                <Button asChild size="sm" variant="outline">
-                  <a href={courseFileUrl(data.course.slug, file.key)}>
-                    <Download className="h-4 w-4" />
-                    {t('player.download')}
-                  </a>
-                </Button>
-              </li>
-            ))}
-          </ul>
-          <p className="border-t px-4 py-3 text-xs text-muted-foreground">{t('financials.originalsNote')}</p>
-        </section>
-      )}
+      <section className="rounded-lg border">
+        <h2 className="border-b px-4 py-3 text-sm font-semibold">{t('financials.originals')}</h2>
+        <ul className="divide-y">
+          {/* The template in Excel with these inputs and the legal parameters in force. */}
+          <li className="flex flex-wrap items-center gap-3 px-4 py-3 text-sm">
+            <span className="min-w-0 flex-1">
+              <span className="block truncate">PLANTILLA_LIBRE_corregida.xlsx</span>
+              <span className="block text-xs text-muted-foreground">{t('financials.mineNote')}</span>
+            </span>
+            <Button
+              size="sm"
+              variant="outline"
+              disabled={invalid.size > 0 || downloading}
+              onClick={async () => {
+                setDownloading(true)
+                setDownloadError(false)
+                try {
+                  await downloadWorkbook(`/courses/${data.course.slug}/financials/excel`, datos, 'PLANTILLA_LIBRE_corregida.xlsx')
+                } catch {
+                  setDownloadError(true)
+                } finally {
+                  setDownloading(false)
+                }
+              }}
+            >
+              <Download className="h-4 w-4" />
+              {t('player.download')}
+            </Button>
+          </li>
+          {files.map((file) => (
+            <li key={file.key} className="flex items-center gap-3 px-4 py-3 text-sm">
+              <span className="min-w-0 flex-1 truncate">{file.name}</span>
+              <Button asChild size="sm" variant="outline">
+                <a href={courseFileUrl(data.course.slug, file.key)}>
+                  <Download className="h-4 w-4" />
+                  {t('player.download')}
+                </a>
+              </Button>
+            </li>
+          ))}
+        </ul>
+        {downloadError && <p className="border-t px-4 py-3 text-sm text-destructive">{t('templates.downloadError')}</p>}
+        <p className="border-t px-4 py-3 text-xs text-muted-foreground">{t('financials.originalsNote')}</p>
+      </section>
     </PlayerShell>
   )
 }

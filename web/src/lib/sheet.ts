@@ -92,9 +92,11 @@ export function formatCellValue(value: unknown, format: string | undefined, loca
     maximumFractionDigits: digits,
     useGrouping: section.includes(','),
   })
+  // A currency written into the format («#,##0.00 €») is shown, as Excel does.
+  const shown = section.includes('€') ? `${text} €` : text
   // "(1,234)" formats show negatives in brackets.
-  if (value < 0) return sections[1] && sections[1].includes('(') ? `(${text})` : `-${text}`
-  return text
+  if (value < 0) return sections[1] && sections[1].includes('(') ? `(${shown})` : `-${shown}`
+  return shown
 }
 
 /** "1.300.000,50" or "1300000.5" → 1300000.5; null when it is not a number. */

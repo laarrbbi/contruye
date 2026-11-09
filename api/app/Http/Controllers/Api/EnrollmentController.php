@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Lesson;
 use App\Models\LessonProgress;
 use App\Models\Module;
+use App\Models\QuizAttempt;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -51,9 +52,19 @@ class EnrollmentController extends Controller
             ->selectRaw('lessons.module_id, count(*) as aggregate')
             ->pluck('aggregate', 'module_id');
 
+        // The courses whose final exam this student passed: the course is finished.
+        $finishedCourseIds = QuizAttempt::query()
+            ->join('quizzes', 'quizzes.id', '=', 'quiz_attempts.quiz_id')
+            ->where('quiz_attempts.user_id', $user->id)
+            ->where('quiz_attempts.passed', true)
+            ->where('quizzes.kind', 'final')
+            ->whereIn('quizzes.course_id', $courseIds)
+            ->distinct()
+            ->pluck('quizzes.course_id');
+
         $data = $enrollments
             ->groupBy('course_id')
-            ->map(function ($rows) use ($modulesByCourse, $lessonTotalsByModule, $completedByModule) {
+            ->map(function ($rows) use ($modulesByCourse, $lessonTotalsByModule, $completedByModule, $finishedCourseIds) {
                 $first = $rows->sortBy('created_at')->first();
                 $course = $first->course;
 
@@ -83,6 +94,7 @@ class EnrollmentController extends Controller
                         'progress_percent' => $total === 0 ? 0 : (int) round($done / $total * 100),
                     ],
                     'full_access' => $fullAccess,
+                    'finished' => $finishedCourseIds->contains($course->id),
                     'owned_modules_count' => $ownedModuleIds->intersect($includedIds)->count(),
                     'total_modules_count' => $includedIds->count(),
                     'expires_at' => $first->expires_at?->toISOString(),

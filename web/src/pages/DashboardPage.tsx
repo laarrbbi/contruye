@@ -8,6 +8,7 @@ import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Boxes } from 'lucide-react'
 import { PageHead, SectionLabel } from '@/components/inside/PageHead'
 import { CurrentOffer } from '@/components/offers/OfferCard'
+import { ExtraOffer } from '@/components/extra/ExtraOffer'
 import { api } from '@/api/client'
 import type { Enrollment } from '@/api/types'
 import { Button } from '@/components/ui/button'
@@ -118,6 +119,12 @@ export function DashboardPage() {
           })}
         </div>
       )}
+
+      {/* The course is finished: the extra at the end, the professional
+          template, for a student of any plan (nothing once they have it). */}
+      {enrollments?.filter((enrollment) => enrollment.finished).map((enrollment) => (
+        <ExtraOffer key={enrollment.id} slug={enrollment.course.slug} className="mt-10" />
+      ))}
 
       {/* The offer whose moment has come (after the purchase, the milestone,
           the end of the course), if the admin has written one. */}

@@ -43,6 +43,7 @@ const ModuleSectionPage = lazy(() => import('@/pages/ModuleSectionPage').then((m
 const PartnersPage = lazy(() => import('@/pages/PartnersPage').then((m) => ({ default: m.PartnersPage })))
 const AdminCompaniesPage = lazy(() => import('@/pages/admin/AdminCompaniesPage').then((m) => ({ default: m.AdminCompaniesPage })))
 const AdminOffersPage = lazy(() => import('@/pages/admin/AdminOffersPage').then((m) => ({ default: m.AdminOffersPage })))
+const AdminTemplatesPage = lazy(() => import('@/pages/admin/AdminTemplatesPage').then((m) => ({ default: m.AdminTemplatesPage })))
 const AdminLayout = lazy(() => import('@/pages/admin/AdminLayout').then((m) => ({ default: m.AdminLayout })))
 const AdminDashboardPage = lazy(() => import('@/pages/admin/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })))
 const AdminCoursesPage = lazy(() => import('@/pages/admin/AdminCoursesPage').then((m) => ({ default: m.AdminCoursesPage })))
@@ -137,6 +138,7 @@ export default function App() {
                   <Route path="partners" element={<AdminPartnersPage />} />
                   <Route path="companies" element={<AdminCompaniesPage />} />
                   <Route path="offers" element={<AdminOffersPage />} />
+                  <Route path="templates" element={<AdminTemplatesPage />} />
                   <Route path="coupons" element={<AdminCouponsPage />} />
                 </Route>
               </Route>

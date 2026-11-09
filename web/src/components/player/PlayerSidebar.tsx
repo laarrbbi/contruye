@@ -25,7 +25,7 @@ export type PlayerLocation =
   | { quizId: number }
   | { document: string }
   | { financials: true }
-  | { moduleId: number; section: 'tareas' | 'leyes' | 'partners' }
+  | { moduleId: number; section: 'tareas' | 'plantilla' | 'leyes' | 'partners' }
 
 interface PlayerSidebarProps {
   data: LearnData
@@ -37,6 +37,7 @@ interface PlayerSidebarProps {
 /** A module's own sections, after its quiz. */
 const SECTIONS = [
   { key: 'tareas', icon: ListChecks },
+  { key: 'plantilla', icon: Calculator },
   { key: 'leyes', icon: Scale },
   { key: 'partners', icon: Handshake },
 ] as const
@@ -84,7 +85,10 @@ function ModuleSection({
     <section className={cn(module.is_locked && 'bg-foreground/[0.02]')}>
       <div className="space-y-2 px-5 pb-3 pt-5">
         <div className="flex items-center justify-between gap-2">
-          <p className="etiquette text-or">{moduleLabel(module, t)}</p>
+          <p className="etiquette text-or">
+            {moduleLabel(module, t)}
+            {module.kind === 'financials' && <span className="ms-2 rounded-full border border-or/50 px-1.5 py-px text-[0.625rem]">{t('extra.badge')}</span>}
+          </p>
           {module.is_locked && (
             <span className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
               <Lock className="h-3 w-3" />
@@ -178,7 +182,7 @@ function ModuleSection({
 
         {/* What the module leaves the promoter with, each apart: tasks, laws, partners. */}
         {module.kind === 'phase' && !module.is_locked &&
-          SECTIONS.map(({ key, icon: Icon }) => {
+          SECTIONS.filter(({ key }) => key !== 'plantilla' || module.template !== null).map(({ key, icon: Icon }) => {
             const isCurrent = 'section' in location && location.moduleId === module.id && location.section === key
             return (
               <li key={key}>
@@ -189,7 +193,9 @@ function ModuleSection({
                   className={rowClass(isCurrent)}
                 >
                   <Icon className="h-4 w-4 shrink-0 text-muted-foreground" />
-                  <span className="flex-1 leading-snug">{t(`moduleSection.${key}`)}</span>
+                  <span className="flex-1 leading-snug">
+                    {key === 'plantilla' && module.template ? t('templates.label', { number: module.template.number }) : t(`moduleSection.${key}`)}
+                  </span>
                   {key === 'partners' && module.companies_count > 0 && (
                     <span className="shrink-0 text-xs tabular-nums text-muted-foreground">{module.companies_count.toLocaleString()}</span>
                   )}
@@ -201,13 +207,14 @@ function ModuleSection({
 
       {module.is_locked && (
         <div className="px-5 pb-4">
+          {/* Financials is the extra at the end: its page offers it. */}
           <Link
-            to={`/checkout/${slug}?modules=${module.id}`}
+            to={module.kind === 'financials' ? `/learn/${slug}/financials` : `/checkout/${slug}?modules=${module.id}`}
             onClick={onNavigate}
             className="flex items-center justify-center gap-1.5 rounded-xl border border-or/40 px-3 py-2 text-xs font-semibold text-or transition-colors hover:bg-or/10"
           >
             <Lock className="h-3.5 w-3.5" />
-            {t('player.unlockModule')}
+            {module.kind === 'financials' ? t('extra.see') : t('player.unlockModule')}
           </Link>
         </div>
       )}
