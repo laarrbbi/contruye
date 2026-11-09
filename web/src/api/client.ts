@@ -2,7 +2,12 @@ import axios from 'axios'
 import i18n from '@/i18n'
 import { isLocale, storedLocale } from '@/i18n/locales'
 
-export const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
+/**
+ * Where the API answers. «same-origin»: on this site's own /api, as the Vercel
+ * preview serves it (vercel.json); otherwise its full address.
+ */
+const configuredApi = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
+export const API_URL = configuredApi === 'same-origin' ? '' : configuredApi
 
 export const api = axios.create({
   baseURL: `${API_URL}/api`,

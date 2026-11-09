@@ -90,7 +90,8 @@ class StatsController extends Controller
                 ->on('progress.course_id', '=', 'enrollments.course_id'))
             ->where(fn ($q) => $q->whereNull('enrollments.expires_at')->orWhere('enrollments.expires_at', '>', now()))
             ->where('course_lessons.lessons_total', '>', 0)
-            ->selectRaw('COUNT(*) AS samples, SUM(LEAST(1, COALESCE(progress.done, 0) / course_lessons.lessons_total)) AS ratio_sum')
+            // Standard SQL (no LEAST, a decimal division), so it means the same in MySQL, PostgreSQL and SQLite.
+            ->selectRaw('COUNT(*) AS samples, SUM(CASE WHEN COALESCE(progress.done, 0) >= course_lessons.lessons_total THEN 1.0 ELSE COALESCE(progress.done, 0) * 1.0 / course_lessons.lessons_total END) AS ratio_sum')
             ->first();
 
         $samples = (int) ($row->samples ?? 0);

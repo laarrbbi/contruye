@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --prefix web --no-audit --no-fund",
+  "buildCommand": "VITE_API_URL=same-origin VITE_SITE_URL= npm --prefix web run build",
+  "outputDirectory": "web/dist",
+  "functions": {
+    "api/vercel.php": {
+      "runtime": "vercel-php@0.8.0",
+      "maxDuration": 60,
+      "excludeFiles": "{node_modules/**,web/node_modules/**,web/dist/**,web/public/**,video/**,reports/**,docs/**,docker/**,deploy/**,traducciones/**,.github/**,financials/test/**,api/tests/**,api/node_modules/**,api/storage/logs/**,api/storage/framework/**,curso/1_contenido/referencia/**,curso/1_contenido/pdf/curso_completo.pdf,curso/1_contenido/curso_completo.md,curso/2_plantilla_financiera/originales/**,curso/2_plantilla_financiera/herramientas/**,curso/2_plantilla_financiera/plantilla/plantilla_libre_original.json,curso/2_plantilla_financiera/plantilla/correcciones.json,curso/2_plantilla_financiera/plantilla/entradas_original.json,vercel.json,.vercelignore}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/vercel.php" },
+    { "source": "/sanctum/:path*", "destination": "/api/vercel.php" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

@@ -134,6 +134,19 @@ configuración de Nginx y Supervisor, copias de seguridad y simulacro de restaur
 En producción, el contenido y la cuenta de admin se instalan con `php artisan app:install`, nunca
 con `db:seed`, que crea cuentas y pedidos de demostración y se niega a ejecutarse en producción.
 
+### Vista previa en Vercel
+
+Para enseñar el sitio, no para venderlo: Vercel lo construye desde GitHub (`vercel.json`), sin
+servidor propio. La web es estática; la API es una función PHP (`api/vercel.php`, runtime
+`vercel-php`), que también arranca el motor de las plantillas (`financials/cli.js`).
+`deploy/vercel/build.sh` instala las dependencias y construye **una base de datos de demostración
+(SQLite)** con el curso, sus traducciones, las 52 provincias y alumnos, pedidos y empresas `[DEMO]`:
+ningún dato real, ni la exportación de Orbis. Lo que un visitante cambia dura mientras la función está
+caliente y se pierde después. Los accesos de demostración (`javier@example.es`, `admin@example.es`,
+contraseña `password`) son públicos: una vista previa de Vercel solo la abre quien tiene acceso al
+proyecto. La Lección 1.1 lleva la película del Módulo 1 en español (`web/public/video`); las demás
+irán a Bunny Stream cuando el contenido sea definitivo.
+
 ## E-mails (en cola)
 
 Cuatro Mailables en el idioma del usuario (es, en, fr, ar —de derecha a izquierda—, ru, uk), todos `ShouldQueue`: bienvenida al

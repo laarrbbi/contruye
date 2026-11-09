@@ -97,10 +97,12 @@ export function useCourse(slug: string | undefined) {
   })
 }
 
-/** Signed Bunny embed URL for a lesson. */
+/** Signed Bunny embed URL for a lesson, or (the preview, without Bunny) a video file. */
 export interface Playback {
+  /** 'embed': Bunny's player in an iframe; 'file': a video file for a <video>. */
+  type: 'embed' | 'file'
   url: string
-  expires_at: string
+  expires_at: string | null
   watermark: string | null
   /** The language the video is spoken in: the student's, or Spanish when the lesson has no version in theirs. */
   locale: string

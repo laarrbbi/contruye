@@ -29,11 +29,16 @@ return new class extends Migration
             );
         }
 
-        DB::statement('ALTER TABLE enrollments ADD UNIQUE INDEX enrollments_one_access_unique (user_id, course_id, (IFNULL(module_id, 0)))');
+        // The same index in SQLite and PostgreSQL syntax (the hosted preview runs on one of them).
+        DB::statement(DB::getDriverName() === 'mysql'
+            ? 'ALTER TABLE enrollments ADD UNIQUE INDEX enrollments_one_access_unique (user_id, course_id, (IFNULL(module_id, 0)))'
+            : 'CREATE UNIQUE INDEX enrollments_one_access_unique ON enrollments (user_id, course_id, COALESCE(module_id, 0))');
     }
 
     public function down(): void
     {
-        DB::statement('ALTER TABLE enrollments DROP INDEX enrollments_one_access_unique');
+        DB::statement(DB::getDriverName() === 'mysql'
+            ? 'ALTER TABLE enrollments DROP INDEX enrollments_one_access_unique'
+            : 'DROP INDEX enrollments_one_access_unique');
     }
 };

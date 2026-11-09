@@ -17,8 +17,9 @@ interface VideoPlayerProps {
 }
 
 /**
- * Signed Bunny Stream embed for a lesson, with loading skeleton, locked /
- * error states and a drifting watermark overlay.
+ * Signed Bunny Stream embed for a lesson (or, where Bunny is not configured, the
+ * preview's video file), with loading skeleton, locked / error states and a
+ * drifting watermark overlay.
  */
 export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: VideoPlayerProps) {
   const { t, i18n } = useTranslation()
@@ -26,11 +27,14 @@ export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: Vid
   // The lesson has no version in the student's language: say which one plays.
   const otherLanguage = playback.data && playback.data.locale !== i18n.language ? LOCALE_NAMES[playback.data.locale as Locale] : null
 
+  const isFile = playback.data?.type === 'file'
   const src = useMemo(() => {
     if (!playback.data?.url) return null
     const resume = Math.floor(startAt)
-    return resume > 0 ? `${playback.data.url}&t=${resume}` : playback.data.url
-  }, [playback.data?.url, startAt])
+    if (resume <= 0) return playback.data.url
+    // A file resumes with a media fragment; Bunny's embed with its own parameter.
+    return isFile ? `${playback.data.url}#t=${resume}` : `${playback.data.url}&t=${resume}`
+  }, [playback.data?.url, startAt, isFile])
 
   const status = isAxiosError(playback.error) ? playback.error.response?.status : undefined
   const isLocked = status === 401 || status === 403
@@ -63,7 +67,16 @@ export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: Vid
           </div>
         )}
 
-        {src && (
+        {src && isFile && (
+          <>
+            <video key={lessonId} src={src} controls preload="metadata" playsInline className="absolute inset-0 h-full w-full bg-sombre-950">
+              {t('player.videoTitle')}
+            </video>
+            {watermarkText && <WatermarkOverlay text={watermarkText} />}
+          </>
+        )}
+
+        {src && !isFile && (
           <>
             <iframe
               key={lessonId}

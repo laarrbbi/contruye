@@ -140,3 +140,17 @@ test('las 5 plantillas pequeñas dan el resultado de su ejemplo, con los paráme
   assert.throws(() => pequenas.calcular(1, { Calculadora: { B17: 1 } }), /no es una entrada/);
   assert.throws(() => pequenas.calcular(1, { 'Parámetros legales': { C5: 0.5 } }), /no es una entrada/);
 });
+
+test('la línea de órdenes (cli.js) calcula igual que el servicio, para la vista previa sin servidor', () => {
+  const { execFileSync } = require('node:child_process');
+  const cli = (peticion) => JSON.parse(execFileSync(process.execPath, [path.join(__dirname, '..', 'cli.js')], { input: JSON.stringify(peticion) }).toString());
+
+  const solar = cli({ path: '/pequenas/1/calcular', body: { datos: {}, parametros: { comunidades: { 'Comunitat Valenciana': { ajd: 0.02 } } } } });
+  assert.equal(solar.status, 200);
+  assert.equal(solar.body.hoja.celdas.B14.v, 10000); // AJD 2 % de 500.000 €
+  assert.equal(cli({ path: '/pequenas/1/calcular', body: { datos: { Calculadora: { B17: 1 } } } }).status, 422);
+  assert.equal(cli({ path: '/otra', body: {} }).status, 404);
+
+  const grande = cli({ path: '/calcular', body: { datos: veinticuatro, parametros: PARAMETROS_DEL_PAQUETE } });
+  assert.equal(Math.round(totalConIva(grande.body) * 100) / 100, 6918553.32);
+});

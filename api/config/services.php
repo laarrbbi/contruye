@@ -40,6 +40,12 @@ return [
     'plantilla' => [
         'url' => env('PLANTILLA_URL', 'http://127.0.0.1:3100'),
         'timeout' => (int) env('PLANTILLA_TIMEOUT', 60),
+        // 'http': the financials service (financials/server.js). 'process': one
+        // `node financials/cli.js` per calculation, where no service can stay up
+        // (the Vercel preview).
+        'transport' => env('PLANTILLA_TRANSPORT', 'http'),
+        'node' => env('PLANTILLA_NODE', 'node'),
+        'cli' => env('PLANTILLA_CLI', base_path('../financials/cli.js')),
     ],
 
     'stripe' => [
@@ -47,6 +53,12 @@ return [
         'enabled' => (bool) env('STRIPE_ENABLED', true),
         'secret' => env('STRIPE_SECRET'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+    ],
+
+    // A lesson video served as a file from this base («/video/» + id + «.mp4»), when
+    // Bunny Stream is not configured: the Vercel preview, before the films are on Bunny.
+    'video_files' => [
+        'base' => env('VIDEO_FILES_BASE'),
     ],
 
     'bunny' => [

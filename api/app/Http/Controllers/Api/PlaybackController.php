@@ -33,14 +33,22 @@ class PlaybackController extends Controller
         $video = $lesson->videoFor(app()->getLocale());
         abort_if($video === null, 404);
 
-        if (blank(config('services.bunny.library_id')) || blank(config('services.bunny.token_key'))) {
+        $bunny = filled(config('services.bunny.library_id')) && filled(config('services.bunny.token_key'));
+        $files = config('services.video_files.base');
+
+        // Bunny Stream not configured: a file of the preview's, behind the same gate, or nothing.
+        if (! $bunny && blank($files)) {
             abort(503, __('Video playback is temporarily unavailable. Please try again later.'));
         }
 
-        $signed = BunnyStreamService::fromConfig()->signedEmbedUrl($video['id']);
+        $signed = $bunny
+            ? ['type' => 'embed', ...BunnyStreamService::fromConfig()->signedEmbedUrl($video['id'])]
+            : ['type' => 'file', 'url' => rtrim((string) $files, '/').'/'.rawurlencode($video['id']).'.mp4', 'expires_at' => null];
 
         return response()->json([
             'data' => [
+                // 'embed': Bunny's player in an iframe; 'file': a video file.
+                'type' => $signed['type'],
                 'url' => $signed['url'],
                 'expires_at' => $signed['expires_at'],
                 // The language the video is spoken in, for the player to say when it is not the student's.

@@ -5,6 +5,7 @@ use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\LegalParameter;
 use App\Models\LegalParameterChange;
+use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\Order;
 use App\Models\Quiz;
@@ -315,4 +316,43 @@ it('writes into a copy only, keeping each cell\'s style and every other part of 
         ->and(workbookCell($copy, 'Calculadora', 'B4'))->toBe(['number', 2500000.5])
         ->and(workbookCell($copy, 'Calculadora', 'Z999'))->toBe(['text', 'nuevo']);
     unlink($copy);
+});
+
+it('calculates through the engine run as a process where no service can stay up (the Vercel preview)', function () {
+    config(['services.plantilla.transport' => 'process']);
+    [$course, $phases] = templatesCourse();
+    $student = studentOf($course, $phases[1]);
+
+    // The package's engine itself, with the parameters in force: a private seller in Madrid, ITP 6 %.
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/1/calculate", ['datos' => ['Calculadora' => ['B4' => 'Comunidad de Madrid', 'B6' => 'NO']]])
+        ->assertOk()->assertJsonPath('data.hoja.celdas.B15.v', 30000);
+
+    // The engine's own refusal comes back as a validation error, as over HTTP.
+    LegalParameter::query()->where('code', 'IVA_GENERAL')->update(['value' => 21]);
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/1/calculate", ['datos' => []])
+        ->assertUnprocessable()->assertJsonValidationErrors('datos');
+
+    // A missing engine is «not available», never an error page.
+    config(['services.plantilla.cli' => base_path('../financials/no-existe.js')]);
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/1/calculate", ['datos' => []])->assertStatus(503);
+});
+
+it('plays the preview\'s film from a file when Bunny Stream is not configured, behind the same gate', function () {
+    config(['services.bunny.library_id' => null, 'services.bunny.token_key' => null]);
+    [$course, $phases] = templatesCourse();
+    $lesson = Lesson::factory()->create(['module_id' => $phases[1]->id, 'order' => 1, 'bunny_video_id' => 'modulo-1-es', 'is_free_preview' => false]);
+    $student = studentOf($course, $phases[1]);
+
+    // No Bunny and no file location: unavailable, as before.
+    $this->actingAs($student)->getJson("/api/lessons/{$lesson->id}/playback")->assertStatus(503);
+
+    config(['services.video_files.base' => '/video/']);
+    $this->actingAs($student)->getJson("/api/lessons/{$lesson->id}/playback")->assertOk()
+        ->assertJsonPath('data.type', 'file')
+        ->assertJsonPath('data.url', '/video/modulo-1-es.mp4')
+        ->assertJsonPath('data.locale', 'es');
+
+    // The file changes how it plays, not who may play it.
+    auth()->forgetGuards();
+    $this->actingAs(studentOf($course, $phases[2]))->getJson("/api/lessons/{$lesson->id}/playback")->assertForbidden();
 });

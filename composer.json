@@ -1,0 +1,10 @@
+{
+    "name": "construye/vercel-preview",
+    "description": "Vercel preview only (vercel.json): the vercel-php runtime installs from this file and runs its `vercel` script, which builds the API function from api/ (deploy/vercel/build.sh). The app's own Composer file is api/composer.json.",
+    "type": "project",
+    "license": "proprietary",
+    "require": {},
+    "scripts": {
+        "vercel": "sh deploy/vercel/build.sh"
+    }
+}

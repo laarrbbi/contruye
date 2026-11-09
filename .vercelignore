@@ -1,0 +1,5 @@
+# Vercel preview (vercel.json): what the build never needs.
+reports/
+video/
+docker/
+.github/
