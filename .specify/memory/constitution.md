@@ -37,8 +37,8 @@ while at least one of them can.
 
 ### II. The course content is the instructor's, not ours
 
-The course is the instructor's package, version 4.0, kept unchanged in `curso/`: the module texts,
-the quizzes and the exam, the province directory, the tax tables and the financial template. Its
+The course is the instructor's package, version 4.1, kept unchanged in `curso/`: the module texts,
+the quizzes and the exam, the province directory, the tax tables and the financial templates. Its
 sequence of phases follows Nicolás Cabañas Yuste's «Fases para el desarrollo de una promoción de
 viviendas».
 
@@ -49,11 +49,16 @@ viviendas».
 - **Never reword a legal figure.** Rates, deadlines, thresholds and every law and decree number
   are quoted, not paraphrased. A text that needs correcting is corrected in the package, by the
   instructor, and re-imported.
-- **The financial template is used as is: no formula, value or label is changed**, not in
-  `PLANTILLA_LIBRE.xls`, not in its export, not in its engine. The platform only writes the input
-  cells the template's own dictionary lists, and reads results. Its 2002 parameters and the two
-  incidences documented in its specification stay until the professional decides otherwise.
-  `npm test` in `curso/2_plantilla_financiera/motor` must keep passing.
+- **The financial templates are used as delivered: no formula, value or label is changed**, not
+  in the corrected `PLANTILLA_LIBRE`, not in the five small templates, not in their exports, not in
+  their engine. The platform writes only the input cells each template's own dictionary lists, and
+  reads results. The one exception the package itself defines is the «Parámetros legales» sheet:
+  its values are set by the admin, through the engine's `setParametros`, never by a user and never
+  stored in a user's project. `npm test` in `curso/2_plantilla_financiera/motor` must keep passing.
+- **Amendment (2026-11-09, package 4.1).** The package delivers the professional's template
+  corrected cell by cell (`CAMBIOS.md`) with the taxes of 2002 moved to «Parámetros legales». The
+  corrections are the package's, pending the professional's review: until he authorises it, the
+  template is not sold (the admin switch ships off).
 - Passages marked "pendiente de validar / verificar / confirmar" (or "por validar…") keep an
   admin-only A VALIDAR badge and appear in `content-review.md`. **They are never deleted to tidy
   the text.** The delivered text has none.
@@ -69,7 +74,9 @@ A module the student does not own must not leak through any surface.
 - A free preview makes one lesson playable. It does not unlock that module's attachments,
   partner contacts or written content.
 - A module's quiz is its owners'; the final exam, the whole Anexo A and the course PDF are for
-  full access; the financial template and its files are for the owners of Financials. **Answers
+  full access; a small template is its module's owners'; the professional template and its files
+  are for the buyers of the extra (the Financials module), which no plan and no full access
+  includes. **Answers
   never leave the server before an attempt is submitted**, and the exam's answer key never does.
 - Every new endpoint that reads course material states which of the two gates it uses —
   ownership, or ownership-or-preview — and has a test asserting the withholding half, not just
@@ -160,4 +167,4 @@ rules. They were written about Ebni Academy, before the Spanish adaptation: thei
 behaviours still match, their Algerian specifics (dinars, Chargily, CCP, wilayas, French and
 Arabic) do not. Read them before arguing with one.
 
-**Version**: 2.1.0 (Spanish edition, course package 4.0) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-10-31
+**Version**: 2.2.0 (Spanish edition, course package 4.1) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-11-09

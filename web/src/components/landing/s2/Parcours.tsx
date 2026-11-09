@@ -127,16 +127,16 @@ function Plan({
 /**
  * What else is ready on the first day, as three line drawings that trace
  * themselves one after the other, each with its figure, counted from the
- * course where it can be: the lessons, the sheets of the professional's
- * model (its specification: 17 sheets, 30 795 formulas) and the assessment
- * questions. The third promise closes the chapter.
+ * course where it can be: the lessons, the five small calculation templates
+ * the course includes (the package's plantillas_pequenas/indice.json) and the
+ * assessment questions. The third promise closes the chapter.
  */
 function Bilan({ on, pinned, course }: { on: boolean; pinned: boolean; course: CourseDetail | undefined }) {
   const { t, i18n } = useTranslation()
   const box = useVu<HTMLDivElement>(0.3)
   const items = [
     { Drawing: Lecciones, value: course?.lessons_count ?? 0, label: t('landing.parcours.lessons'), at: [0.68, 0.76] as const },
-    { Drawing: Hoja, value: 17, label: t('landing.parcours.sheets'), at: [0.76, 0.84] as const },
+    { Drawing: Hoja, value: 5, label: t('landing.parcours.sheets'), at: [0.76, 0.84] as const },
     ...((course?.questions_count ?? 0) > 0
       ? [{ Drawing: Cuestionario, value: course?.questions_count ?? 0, label: t('landing.parcours.questions'), at: [0.84, 0.92] as const }]
       : []),

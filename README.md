@@ -4,10 +4,11 @@ Plataforma de formación online (LMS) en **español**, con la interfaz también 
 **francés**, **árabe** (de derecha a izquierda), **ruso** y **ucraniano** (`/en`, `/fr`, `/ar`,
 `/ru`, `/uk`), para vender y difundir un curso de promoción inmobiliaria en España. Los textos
 del curso se traducen en `traducciones/` (borradores sin revisar; el español es la referencia). Primer producto:
-**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 4.0: 12 módulos (las
-12 fases reales de una promoción, del solar a la postventa, 51 lecciones), la sección Financials
-(9 lecciones y la plantilla financiera del profesional, calculada en la plataforma), un quiz por
-módulo, un examen final y el directorio de las 52 provincias.
+**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 4.1: 12 módulos (las
+12 fases reales de una promoción, del solar a la postventa, 51 lecciones), 5 plantillas de cálculo
+incluidas (módulos 1, 2, 5, 7 y 8), un quiz por módulo, un examen final y el directorio de las 52
+provincias. Al terminar se ofrece un extra de pago, para cualquier plan: Financials (9 lecciones y
+la plantilla financiera profesional corregida, calculada en la plataforma).
 
 Es la misma plataforma que Ebni Academy (la edición argelina), adaptada a España: contenidos,
 idioma, moneda, medios de pago, provincias y facturación. Las funcionalidades no cambian.
@@ -201,20 +202,29 @@ un módulo bloqueado no se sirven.
 
 ## Contenido del curso
 
-El curso es el paquete del formador, versión 4.0, en `curso/` (empieza por `curso/LEEME.md`). La
+El curso es el paquete del formador, versión 4.1, en `curso/` (empieza por `curso/LEEME.md`). La
 secuencia de fases sigue el documento de Nicolás Cabañas Yuste. **Los textos se integran tal como
 están:** los seeders (`CurriculumV2Seeder`, `ChecklistSeeder`, `ProvinceGuideSeeder`) leen el
 paquete y guardan cada pieza sin reescribirla, y `CourseContentTest` reconstruye cada archivo
 desde la base de datos y lo compara línea a línea.
 
+**Un paquete nuevo** se copia entero en `curso/` (el anterior sale entero) y se aplica con
+`db:seed --class=CurriculumV2Seeder`, `--class=ChecklistSeeder` y `--class=CourseTranslationSeeder`:
+sobre un curso instalado, los textos en español se ponen al día en su sitio (módulo a módulo,
+lección a lección) y las checklists se casan por su texto, así que el progreso y las casillas
+marcadas se conservan. Un módulo que cambia de forma (otro número de lecciones) se deja como está
+y se avisa. `traducciones/` se pone al día con el español (`app:check-translations` lo exige).
+
 | Del paquete | En la plataforma |
 |---|---|
 | `modulos/01…12` | Los 12 módulos: objetivo, «Leyes que aplican» y «Dónde ir» al abrir el módulo; las lecciones; la checklist; «Partners en tu provincia». Tras el quiz, cada módulo tiene además sus secciones Tareas (la checklist), Leyes y Partners |
-| `modulos/13_financials…` | El módulo Financials, con la calculadora de la plantilla |
+| `modulos/13_financials…` | Financials, el extra del final del curso: sus 9 lecciones y la calculadora de la plantilla profesional |
+| `2_plantilla_financiera/plantillas_pequenas/` | Las 5 plantillas incluidas, cada una en su módulo (sección «Plantilla N»): calculadora y descarga en Excel |
 | `modulos/00`, `14`, `16`, `17` | Documentos del curso: introducción, recursos, Anexo A (una provincia cada vez), Anexo B |
 | `evaluacion/*.json` | Un quiz por módulo (13) y el examen final (40 preguntas, 60 minutos), corregidos en el servidor |
 | `datos/partners_por_provincia.json` | En cada módulo, las instituciones y partners de la provincia del alumno para esa fase |
-| `pdf/curso_sin_evaluacion.pdf`, `datos/*.xlsx`, `originales/*.xls(x)` | Descargas, detrás de su acceso |
+| `pdf/curso_sin_evaluacion.pdf`, `datos/*.xlsx`, `excel_corregido/*.xlsx` | Descargas, detrás de su acceso (la plantilla profesional y las pequeñas, con los datos del alumno) |
+| `3_textos_web/pagina_principal.md` | Los textos de la página principal (`landing.*`, `seo.home`, preguntas frecuentes) |
 | `modulos/15_estrategia_comercial.md` | No se publica: es del propietario |
 
 Las lecciones son texto (los vídeos se añaden después). El material en inglés está vacío: un
@@ -230,20 +240,40 @@ máximos de la vivienda protegida) en «Tu provincia en esta fase» y bajo el An
 cómo se comprobó y lo que el formador debe revisar: `docs/fuentes-oficiales.md`.
 `php artisan legal:check-links` vuelve a abrir cada enlace (las webs oficiales cambian de sitio sus páginas).
 
-## Financials: la plantilla financiera
+## Las plantillas de cálculo y los parámetros legales
 
-`curso/2_plantilla_financiera` es la plantilla del profesional (`PLANTILLA_LIBRE.xls`, 17 hojas,
-30.795 fórmulas) exportada celda a celda con su motor de cálculo. **Se usa tal cual: no se cambia
-ninguna fórmula, valor ni etiqueta.** `financials/` es un pequeño servicio Node.js que reutiliza
-ese motor (lo construye una vez y lo devuelve a su estado inicial antes de cada cálculo) y que
-solo llama la API. El alumno de Financials rellena los datos de partida (el formulario sale del
-diccionario de entradas de la plantilla), calcula, ve el resumen, la plantilla simplificada y
-cualquiera de las 17 hojas, y guarda escenarios.
+`curso/2_plantilla_financiera` trae la plantilla del profesional **corregida** (`PLANTILLA_LIBRE_corregida.xlsx`,
+18 hojas, unas 31.000 fórmulas; qué se corrigió: `CAMBIOS.md`), sus originales sin tocar, las **5
+plantillas pequeñas** del curso y el motor de cálculo. **Se usan tal como vienen: ni una fórmula,
+valor ni etiqueta cambian.** `financials/` es un pequeño servicio Node.js que reutiliza ese motor (lo
+construye una vez y lo devuelve a su estado inicial antes de cada cálculo) y que solo llama la API.
+
+- **Plantillas pequeñas** (incluidas): en los módulos 1, 2, 5, 7 y 8, para quien tiene el módulo. La
+  hoja de la plantilla tal como es en Excel, con sus casillas de entrada; el resto lo calcula el motor.
+- **Plantilla profesional** (Financials, el extra): no entra en ningún plan del curso ni en el acceso
+  completo; se compra aparte, a su precio y sin cupones, solo cuando el administrador la pone a la
+  venta (`/admin/templates`). **Sale desactivada:** el profesional tiene que revisar la plantilla
+  corregida y autorizar su venta. Se ofrece al aprobar el examen final, en el área del alumno que ha
+  terminado y en Financials. Quien la compra la calcula, guarda escenarios y descarga su Excel y el
+  simplificado.
+- **Parámetros legales** (IVA general y reducido, IPS, recargo del Consorcio, interés legal, AJD del
+  préstamo e ITP y AJD de las 19 comunidades): en la base de datos, desde
+  `plantilla/parametros_legales.json`. Los revisa el administrador en `/admin/templates` (de 0 a
+  menos de 100 %, con confirmación); cada cambio queda con quién, cuándo y el valor anterior. **Cada
+  cálculo de cada plantilla lleva los vigentes** (`setParametros` del motor): un cambio llega a todos
+  los alumnos en su próximo cálculo. Un proyecto solo guarda sus entradas. El alumno los ve en solo
+  lectura y elige la comunidad del solar.
+- **Descarga en Excel:** las entradas del alumno y los parámetros vigentes escritos sobre una copia
+  del `.xlsx` del paquete (`App\Support\Financials\XlsxFiller`); las fórmulas viajan intactas y el
+  cálculo iterativo, activado.
 
 ```bash
-cd curso/2_plantilla_financiera/motor && npm ci && npm test   # el motor da lo mismo que Excel
-cd financials && npm test                                     # el servicio no cambia ningún resultado
+cd curso/2_plantilla_financiera/motor && npm ci && npm test   # las 39 comprobaciones del paquete
+cd financials && npm test                                     # el servicio: parámetros, pequeñas, ningún resultado heredado
 ```
+
+Con el ejemplo del paquete (24 viviendas en la Comunitat Valenciana) la plantilla profesional da
+**6.918.553,32 €** con IVA; con el IVA general al 22 % en el administrador, 6.943.595,13 €.
 
 HyperFormula, el motor de hojas de cálculo, es GPLv3: corre en el servidor y no se distribuye al
 navegador (`ESPECIFICACION_TECNICA.md`, punto 10).

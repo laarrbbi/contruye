@@ -165,7 +165,7 @@
       },
       "needExperience": {
         "q": "¿Necesito experiencia, título o mucho capital para ser promotor inmobiliario?",
-        "a": "La ley no exige una titulación concreta para ser promotor. El capital que necesitas depende de cada proyecto: el módulo de financiación y la plantilla financiera te enseñan a calcularlo antes de comprometerte."
+        "a": "La ley no exige una titulación concreta para ser promotor. El capital que necesitas depende de cada proyecto: el módulo de financiación y las plantillas del curso te enseñan a calcularlo antes de comprometerte."
       },
       "stepByStep": {
         "q": "¿Cómo se promueve una vivienda paso a paso?",
@@ -175,10 +175,6 @@
         "q": "¿El curso sirve para cualquier provincia de España?",
         "a": "Sí. Incluye la normativa estatal, un directorio de partners para las 52 provincias y un anexo con la fiscalidad y el urbanismo de cada comunidad autónoma."
       },
-      "financials": {
-        "q": "¿Qué es la plantilla financiera de Financials?",
-        "a": "Es la hoja de cálculo de un profesional que calcula el coste total de una promoción y la financiación necesaria. Tiene 17 hojas, más de 30.000 fórmulas y un ejemplo resuelto. En el curso aprendes a rellenarla e interpretarla, y la plataforma la calcula con tus datos."
-      },
       "roles": {
         "q": "¿Qué diferencia hay entre promotor, constructor y agente inmobiliario?",
         "a": "El promotor decide, impulsa y financia la obra y responde ante el comprador. El constructor la ejecuta y el agente comercializa. En una promoción pequeña, una misma persona puede ocuparse de varios papeles, y el curso te explica las responsabilidades de cada uno."
@@ -186,6 +182,10 @@
       "company": {
         "q": "¿Puedo promover a través de una sociedad limitada?",
         "a": "Sí, es lo habitual para promover. Desde la Ley 18/2022 se puede constituir una S.L. con un capital de 1 euro, con condiciones. El curso explica cómo plantear la sociedad promotora."
+      },
+      "templates": {
+        "q": "¿Qué plantillas incluye el curso?",
+        "a": "Cinco plantillas de cálculo, incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas, más de 30.000 fórmulas y los impuestos al día."
       }
     }
   },
@@ -1008,7 +1008,7 @@
   },
   "landing": {
     "hero": {
-      "title": "CONSTRUYE te enseña a promover viviendas de renta libre paso a paso: las 12 fases, la ley que se aplica en cada una, los partners de tu provincia y la plantilla financiera de un profesional. Un solo curso, de la búsqueda del solar a la postventa.",
+      "title": "CONSTRUYE te enseña a promover viviendas de renta libre paso a paso: las 12 fases, la ley que se aplica en cada una, los partners de tu provincia y las plantillas de cálculo para decidir con números. Un solo curso, de la búsqueda del solar a la postventa.",
       "paymentNote": "Acceso de por vida: móvil, tableta, ordenador. Completo o módulo a módulo."
     },
     "curriculumIntro": {
@@ -1026,7 +1026,7 @@
     },
     "pricing": {
       "fullTitle": "Acceso completo",
-      "fullShort": "Todos los módulos y todas las herramientas, con acceso de por vida"
+      "fullShort": "Todos los módulos, las 5 plantillas de cálculo y las herramientas del curso, con acceso de por vida"
     },
     "socialProof": {
       "title": "Lo que dicen quienes ya lo han seguido.",
@@ -1067,23 +1067,25 @@
       "colUse": "Para qué te sirve",
       "i1": "{{modules}} módulos y {{lessons}} lecciones del proceso",
       "i1Use": "Saber qué hacer en cada fase",
-      "i2": "Financials: {{lessons}} lecciones y la plantilla del profesional",
+      "i2": "5 plantillas de cálculo: solar, viabilidad, préstamo, control de obra y ventas",
       "i2Use": "Calcular si una promoción sale antes de comprar",
       "i3": "Directorio de partners de las 52 provincias",
       "i3Use": "Saber a quién llamar en tu zona",
       "i4": "Anexo de fiscalidad y urbanismo por comunidad autónoma",
       "i4Use": "Aplicar la norma y los impuestos de tu comunidad",
-      "i5": "Una checklist por módulo y las descargas: plantilla y directorio en Excel, curso en PDF",
+      "i5": "Una checklist por módulo y las descargas: las 5 plantillas y el directorio de partners en Excel, el curso en PDF",
       "i5Use": "Trabajar con los documentos desde el primer día",
       "i6": "Cuestionarios por módulo y examen final",
-      "i6Use": "Comprobar lo aprendido"
+      "i6Use": "Comprobar lo aprendido",
+      "i7": "Extra opcional al terminar: la plantilla financiera profesional y sus {{lessons}} lecciones (Financials)",
+      "i7Use": "El cálculo completo mes a mes: coste por capítulos, préstamo y cash-flow"
     },
     "objections": {
       "title": "Las dudas que frenan la compra, resueltas",
       "o1Q": "«No tengo experiencia.»",
       "o1A": "El curso parte de cero y explica cada fase en orden.",
       "o2Q": "«No tengo mucho capital.»",
-      "o2A": "El módulo de financiación y la plantilla te muestran cuánto capital propio y cuánta deuda necesita cada proyecto, antes de que te comprometas.",
+      "o2A": "El módulo de financiación y la plantilla del préstamo promotor te muestran cuánto capital propio y cuánta deuda necesita cada proyecto, antes de que te comprometas.",
       "o3Q": "«Es demasiado técnico.»",
       "o3A": "Cada módulo acaba en una checklist de pasos prácticos y un cuestionario.",
       "o4Q": "«Mi provincia es distinta.»",
@@ -1106,7 +1108,7 @@
     },
     "finalCta": {
       "title": "Cada año faltan miles de viviendas. La pregunta es si vas a promover o a mirar",
-      "p1": "Tienes el método en {{phases}} fases, la plantilla financiera de un profesional, los partners de tu provincia y las leyes que aplican en cada paso. Lo único que falta es que empieces."
+      "p1": "Tienes el método en {{phases}} fases, las plantillas para decidir con números, los partners de tu provincia y las leyes que aplican en cada paso. Lo único que falta es que empieces."
     },
     "heroV2": {
       "title": "Curso de promoción inmobiliaria en España: de la idea a la entrega de llaves",
@@ -1156,9 +1158,9 @@
       "provinces": "provincias con su directorio de partners e instituciones",
       "p2": "Sabrás a qué administración ir y qué ley manda: ayuntamiento, registro, notaría, colegios profesionales y la norma que aplica en cada paso.",
       "lessons": "lecciones",
-      "sheets": "hojas de la plantilla financiera",
+      "sheets": "plantillas de cálculo incluidas: solar, viabilidad, préstamo, control de obra y ventas",
       "questions": "preguntas de evaluación",
-      "p3": "Sabrás si una promoción sale rentable antes de comprar el solar, con la misma plantilla financiera que usa un profesional: más de 30.000 fórmulas.",
+      "p3": "Sabrás si una promoción sale rentable antes de comprar el solar. Con las plantillas de viabilidad del curso y, si quieres, con la plantilla financiera completa de un profesional como extra al terminar.",
       "illustration": "Foto de ilustración",
       "residenceAlt": "Edificios de viviendas al atardecer",
       "chantierAlt": "Edificio en construcción y grúa al atardecer"
@@ -1174,19 +1176,19 @@
     "method": {
       "title": "Del solar a la postventa: las 12 fases de una promoción, explicadas paso a paso.",
       "intro": "El orden real de una promoción, sin saltarse ninguna fase:",
-      "s1": "Solar: encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas.",
-      "s2": "Viabilidad: calcular coste, financiación y margen antes de comprometer un euro.",
+      "s1": "Solar: encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas. Con la Plantilla 1: compra del solar.",
+      "s2": "Viabilidad: calcular coste, financiación y margen antes de comprometer un euro. Con la Plantilla 2: viabilidad y método residual.",
       "s3": "Proyectos técnicos: contratar y coordinar arquitecto, ingenierías y dirección facultativa.",
       "s4": "Licencias: saber qué licencia pedir, ante quién y qué pasa con el silencio administrativo.",
-      "s5": "Financiación y contratación: montar el préstamo promotor, los avales y el contrato de obra.",
+      "s5": "Financiación y contratación: montar el préstamo promotor, los avales y el contrato de obra. Con la Plantilla 3: préstamo promotor.",
       "s6": "Construcción: organizar la obra, los plazos y los seguros obligatorios.",
-      "s7": "Control de obra: vigilar certificaciones, calidad y desviaciones de coste.",
-      "s8": "Comercialización: fijar precio y vender sobre plano con las garantías que exige la ley.",
+      "s7": "Control de obra: vigilar certificaciones, calidad y desviaciones de coste. Con la Plantilla 4: control de costes de obra.",
+      "s8": "Comercialización: fijar precio y vender sobre plano con las garantías que exige la ley. Con la Plantilla 5: plan de ventas y cobros.",
       "s9": "Legalización: cerrar el fin de obra, la obra nueva, la división horizontal y la habitabilidad.",
       "s10": "Preentrega: revisar la vivienda con el comprador y corregir antes de entregar.",
       "s11": "Entrega de llaves: entregar con la documentación en regla y sin conflictos.",
       "s12": "Postventa y cierre: atender garantías y reclamaciones y cerrar la promoción económicamente.",
-      "close": "En cada fase: qué hacer, en qué orden, a quién acudir y qué ley aplica. Con checklists, un cuestionario por módulo y un examen final."
+      "close": "Cada módulo te dice qué hacer, en qué orden, a quién acudir y qué ley aplica. Con listas de comprobación prácticas, plantillas de cálculo en los módulos clave, un cuestionario por módulo y un examen final."
     },
     "maze": {
       "title": "El capital no basta. Lo que para los proyectos es la tramitación.",
@@ -1237,15 +1239,15 @@
       "l3": "Te llevas {{tools}}.",
       "tools": "herramientas",
       "footer": "Todo está dentro de la plataforma desde el primer día.",
-      "excelTitle": "La plantilla financiera",
+      "excelTitle": "Plantillas de cálculo en cada fase clave",
       "excelShort": "Calcula si una promoción sale antes de arriesgar dinero.",
-      "excelBody": "Nueve lecciones y una plantilla de 17 hojas con más de 30.000 fórmulas que calcula el coste total de una promoción: terreno, construcción, urbanización, proyectos, licencias, financiación y gestión. Se usa tal como la diseñó el profesional, con su ejemplo real resuelto, y la plataforma la calcula con tus datos.",
+      "excelBody": "Cinco plantillas incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Con los impuestos de cada comunidad al día, para que sepas si una promoción sale antes de arriesgar dinero. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas y más de 30.000 fórmulas, revisada celda a celda y con los impuestos al día.",
       "papersTitle": "Las leyes y los impuestos de tu comunidad",
       "papersShort": "La norma que aplica en cada paso, en tu comunidad.",
       "papersBody": "La normativa estatal (ley del suelo, Ley de Ordenación de la Edificación, Código Técnico de la Edificación) y un anexo con la fiscalidad y el urbanismo de cada comunidad autónoma, para que lo que aprendes valga en Alicante, en Madrid o en Sevilla.",
       "templatesTitle": "Checklists y descargas",
       "templatesShort": "Una checklist por módulo y los documentos para trabajar.",
-      "templatesBody": "Una checklist por módulo, para marcar en tu propio proyecto y guardarla en tu cuenta. Y las descargas: la plantilla financiera en Excel (completa y simplificada), el directorio de partners en Excel y el curso completo en PDF.",
+      "templatesBody": "Una checklist por módulo, para marcar en tu propio proyecto y guardarla en tu cuenta. Y las descargas: las 5 plantillas de cálculo en Excel, el directorio de partners en Excel y el curso completo en PDF.",
       "subsTitle": "Partners en las 52 provincias",
       "subsShort": "A quién acudir en tu provincia, fase a fase.",
       "subsBody": "Para cada fase, un directorio de los organismos y profesionales con los que vas a trabajar en tu provincia. No empiezas de cero cuando pisas un ayuntamiento nuevo."
@@ -1271,6 +1273,9 @@
       "outils": "Herramientas",
       "programme": "Programa y precios",
       "questions": "Preguntas"
+    },
+    "programme": {
+      "extra": "Extra al terminar el curso"
     }
   },
   "checklist": {
@@ -1310,7 +1315,7 @@
   "seo": {
     "home": {
       "title": "Curso de Promoción Inmobiliaria en España",
-      "description": "Aprende a promover viviendas en España paso a paso: {{modules}} fases, leyes, partners en las 52 provincias y plantilla financiera profesional. Empieza hoy."
+      "description": "Aprende a promover viviendas en España paso a paso: {{modules}} fases, leyes, partners en las 52 provincias y plantillas de cálculo incluidas. Empieza hoy."
     },
     "catalog": {
       "title": "Cursos de promoción inmobiliaria en España",

@@ -1,6 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useInsertionEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { phaseModules } from '@/lib/modules'
 import { isAxiosError } from 'axios'
 import { useUser } from '@/api/auth'
 import { useCourse } from '@/api/courses'
@@ -68,7 +69,7 @@ export function SalesPage() {
   // The words the server puts in this page's head (api SeoPageController).
   usePageTitle(
     isMain ? t('seo.home.title') : course?.title,
-    isMain ? (course ? t('seo.home.description', { modules: course.modules.length }) : undefined) : course?.description,
+    isMain ? (course ? t('seo.home.description', { modules: phaseModules(course.modules).length }) : undefined) : course?.description,
   )
 
   const checkoutPath = `/checkout/${slug}`

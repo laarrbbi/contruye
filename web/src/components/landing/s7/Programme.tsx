@@ -20,11 +20,13 @@ import { BANDE, H2, TEXTE } from '@/components/landing/kit/type'
 /** What the full course includes, each line with what it is for: counted from the course where it can be. */
 const INCLUDED: { key: string; values?: (course: CourseDetail) => Record<string, string | number> }[] = [
   { key: 'i1', values: (course) => ({ modules: phaseModules(course.modules).length, lessons: phaseModules(course.modules).reduce((sum, module) => sum + module.lessons.length, 0) }) },
-  { key: 'i2', values: (course) => ({ lessons: course.modules.find((module) => module.kind === 'financials')?.lessons.length ?? 0 }) },
+  { key: 'i2' },
   { key: 'i3' },
   { key: 'i4' },
   { key: 'i5' },
   { key: 'i6' },
+  // The extra at the end of the course, outside every plan: shown last, for what it is.
+  { key: 'i7', values: (course) => ({ lessons: course.modules.find((module) => module.kind === 'financials')?.lessons.length ?? 0 }) },
 ]
 const OBJECTIONS = ['o1', 'o2', 'o3', 'o4'] as const
 /** Where a buyer is stuck, and the module that answers it. */
@@ -99,6 +101,9 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
   const toggle = (id: number) => setSelected((current) => (current.includes(id) ? current.filter((other) => other !== id) : [...current, id]))
   const modulesLink = purchaseLink(`${checkoutPath}?scope=modules&modules=${[...selected].sort((a, b) => a - b).join(',')}`)
 
+  // The course's own modules, the storeys of the drawing: Financials is the extra, apart.
+  const included = phaseModules(course.modules)
+
   const previews = course.modules.reduce((sum, module) => sum + module.lessons.filter((lesson) => lesson.is_free_preview).length, 0)
 
   return (
@@ -168,7 +173,8 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
             ) : (
               <ol>
                 {course.modules.map((module) => {
-                  const sellable = canBuy && module.price_eur != null && !module.is_owned
+                  // Financials is the extra at the end, bought apart: never ticked here.
+                  const sellable = canBuy && module.kind !== 'financials' && module.price_eur != null && !module.is_owned
                   const ticked = selected.includes(module.id)
                   const shown = unfolded === module.id
                   return (
@@ -195,7 +201,9 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
                           </span>
                           {canBuy && (
                             <span className="shrink-0 text-[0.9375rem] tabular-nums text-plume/80">
-                              {module.is_owned
+                              {module.kind === 'financials'
+                                ? t('landing.programme.extra')
+                                : module.is_owned
                                 ? t('checkout.modules.owned')
                                 : module.price_eur != null
                                   ? price(module.price_eur)
@@ -261,9 +269,9 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
                 <>
                   {/* The course as a building: one storey per module, lit when it is ticked. */}
                   <div aria-hidden className="mb-7 flex items-end gap-5 border-b border-plume/10 pb-6">
-                    <svg viewBox={`0 0 132 ${course.modules.length * 11 + 12}`} className="h-44 w-auto shrink-0">
-                      {course.modules.map((module, index) => {
-                        const y = (course.modules.length - 1 - index) * 11 + 8
+                    <svg viewBox={`0 0 132 ${included.length * 11 + 12}`} className="h-44 w-auto shrink-0">
+                      {included.map((module, index) => {
+                        const y = (included.length - 1 - index) * 11 + 8
                         const lit = selected.includes(module.id) || !!module.is_owned
                         return (
                           <g key={module.id} onClick={() => module.price_eur != null && !module.is_owned && toggle(module.id)} className="cursor-pointer">
@@ -274,13 +282,13 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
                           </g>
                         )
                       })}
-                      <rect x="0" y={course.modules.length * 11 + 8} width="132" height="2" className="fill-[#5B6470]" />
+                      <rect x="0" y={included.length * 11 + 8} width="132" height="2" className="fill-[#5B6470]" />
                       <rect x="2" y="4" width="128" height="3" rx="1" className="fill-[#5B6470]" />
                     </svg>
                     <p className="pb-1">
                       <span className="titre block text-[3.25rem] leading-none tabular-nums" dir="ltr">
                         {count}
-                        <span className="text-plume/35">/{course.modules.length}</span>
+                        <span className="text-plume/35">/{included.length}</span>
                       </span>
                       <span className="etiquette mt-2 block text-plume/60">{t('landing.s1.modules')}</span>
                     </p>

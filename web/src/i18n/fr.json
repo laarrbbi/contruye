@@ -165,7 +165,7 @@
       },
       "needExperience": {
         "q": "Faut-il de l'expérience, un diplôme ou beaucoup de capital pour devenir promoteur immobilier ?",
-        "a": "La loi n'exige aucun diplôme particulier pour être promoteur. Le capital nécessaire dépend de chaque projet : le module de financement et le modèle financier vous apprennent à le calculer avant de vous engager."
+        "a": "La loi n'exige aucun diplôme particulier pour être promoteur. Le capital nécessaire dépend de chaque projet : le module de financement et les modèles de la formation vous apprennent à le calculer avant de vous engager."
       },
       "stepByStep": {
         "q": "Comment promouvoir un logement, pas à pas ?",
@@ -175,10 +175,6 @@
         "q": "La formation vaut-elle pour toutes les provinces d'Espagne ?",
         "a": "Oui. Elle inclut la réglementation nationale, un annuaire de partenaires pour les 52 provinces et une annexe avec la fiscalité et l'urbanisme de chaque communauté autonome."
       },
-      "financials": {
-        "q": "Qu'est-ce que le modèle financier de Financials ?",
-        "a": "C'est le tableur d'un professionnel qui calcule le coût total d'une promotion et le financement nécessaire. Il compte 17 feuilles, plus de 30 000 formules et un exemple résolu. Dans la formation, vous apprenez à le remplir et à l'interpréter, et la plateforme le calcule avec vos données."
-      },
       "roles": {
         "q": "Quelle différence entre promoteur, constructeur et agent immobilier ?",
         "a": "Le promoteur décide, impulse et finance l'opération et répond devant l'acheteur. Le constructeur exécute les travaux et l'agent commercialise. Dans une petite promotion, une même personne peut tenir plusieurs rôles, et la formation vous explique les responsabilités de chacun."
@@ -186,6 +182,10 @@
       "company": {
         "q": "Puis-je promouvoir via une société à responsabilité limitée ?",
         "a": "Oui, c'est le cas habituel. Depuis la Ley 18/2022, on peut constituer une S.L. avec un capital de 1 euro, sous conditions. La formation explique comment structurer la société de promotion."
+      },
+      "templates": {
+        "q": "Quels modèles la formation inclut-elle ?",
+        "a": "Cinq modèles de calcul, inclus : achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles, plus de 30 000 formules et les impôts à jour."
       }
     }
   },
@@ -1008,7 +1008,7 @@
   },
   "landing": {
     "hero": {
-      "title": "CONSTRUYE vous apprend à promouvoir des logements à prix libre pas à pas : les 12 phases, la loi qui s'applique à chacune, les partenaires de votre province et le modèle financier d'un professionnel. Une seule formation, de la recherche du terrain au service après-vente.",
+      "title": "CONSTRUYE vous apprend à promouvoir des logements à prix libre pas à pas : les 12 phases, la loi qui s'applique à chacune, les partenaires de votre province et les modèles de calcul pour décider chiffres en main. Une seule formation, de la recherche du terrain au service après-vente.",
       "paymentNote": "Accès à vie : mobile, tablette, ordinateur. Complet ou module par module."
     },
     "curriculumIntro": {
@@ -1026,7 +1026,7 @@
     },
     "pricing": {
       "fullTitle": "Accès complet",
-      "fullShort": "Tous les modules et tous les outils, avec un accès à vie"
+      "fullShort": "Tous les modules, les 5 modèles de calcul et les outils de la formation, avec un accès à vie"
     },
     "socialProof": {
       "title": "Ce qu'en disent ceux qui l'ont déjà suivie.",
@@ -1081,23 +1081,25 @@
       "colUse": "À quoi cela vous sert",
       "i1": "{{modules}} modules et {{lessons}} leçons sur le processus",
       "i1Use": "Savoir quoi faire à chaque phase",
-      "i2": "Financials : {{lessons}} leçons et le modèle du professionnel",
+      "i2": "5 modèles de calcul : terrain, viabilité, prêt, contrôle du chantier et ventes",
       "i2Use": "Calculer si une promotion est rentable avant d'acheter",
       "i3": "Annuaire des partenaires des 52 provinces",
       "i3Use": "Savoir qui appeler dans votre région",
       "i4": "Annexe sur la fiscalité et l'urbanisme par communauté autonome",
       "i4Use": "Appliquer les règles et les impôts de votre communauté",
-      "i5": "Une checklist par module et les fichiers : modèle et annuaire en Excel, formation en PDF",
+      "i5": "Une checklist par module et les fichiers : les 5 modèles et l'annuaire des partenaires en Excel, la formation en PDF",
       "i5Use": "Travailler avec les documents dès le premier jour",
       "i6": "Quiz par module et examen final",
-      "i6Use": "Vérifier ce que vous avez appris"
+      "i6Use": "Vérifier ce que vous avez appris",
+      "i7": "Extra facultatif à la fin : le modèle financier professionnel et ses {{lessons}} leçons (Financials)",
+      "i7Use": "Le calcul complet mois par mois : coût par chapitres, prêt et cash-flow"
     },
     "objections": {
       "title": "Les doutes qui freinent l'achat, levés",
       "o1Q": "« Je n'ai pas d'expérience. »",
       "o1A": "La formation part de zéro et explique chaque phase dans l'ordre.",
       "o2Q": "« Je n'ai pas beaucoup de capital. »",
-      "o2A": "Le module de financement et le modèle vous montrent combien de fonds propres et de dette exige chaque projet, avant de vous engager.",
+      "o2A": "Le module de financement et le modèle du prêt promoteur vous montrent combien de fonds propres et de dette exige chaque projet, avant de vous engager.",
       "o3Q": "« C'est trop technique. »",
       "o3A": "Chaque module se termine par une checklist d'étapes pratiques et un quiz.",
       "o4Q": "« Ma province est différente. »",
@@ -1106,7 +1108,7 @@
     "legalNotice": "La promotion immobilière comporte des risques. CONSTRUYE est une formation et ne garantit aucun résultat financier.",
     "finalCta": {
       "title": "Chaque année, il manque des milliers de logements. La question est de savoir si vous allez promouvoir ou regarder",
-      "p1": "Vous avez la méthode en {{phases}} phases, le modèle financier d'un professionnel, les partenaires de votre province et les lois qui s'appliquent à chaque étape. Il ne manque plus que vous commenciez."
+      "p1": "Vous avez la méthode en {{phases}} phases, les modèles pour décider chiffres en main, les partenaires de votre province et les lois qui s'appliquent à chaque étape. Il ne manque plus que vous commenciez."
     },
     "heroV2": {
       "title": "Formation en promotion immobilière en Espagne : de l'idée à la remise des clés",
@@ -1156,9 +1158,9 @@
       "provinces": "provinces avec leur annuaire de partenaires et d'institutions",
       "p2": "Vous saurez à quelle administration vous adresser et quelle loi s'applique : mairie, registre foncier, notaire, ordres professionnels et la règle de chaque étape.",
       "lessons": "leçons",
-      "sheets": "feuilles du modèle financier",
+      "sheets": "modèles de calcul inclus : terrain, viabilité, prêt, contrôle du chantier et ventes",
       "questions": "questions d'évaluation",
-      "p3": "Vous saurez si une promotion est rentable avant d'acheter le terrain, avec le même modèle financier qu'un professionnel : plus de 30 000 formules.",
+      "p3": "Vous saurez si une promotion est rentable avant d'acheter le terrain. Avec les modèles de viabilité de la formation et, si vous le souhaitez, le modèle financier complet d'un professionnel en extra à la fin.",
       "illustration": "Photo d'illustration",
       "residenceAlt": "Immeubles de logements au coucher du soleil",
       "chantierAlt": "Immeuble en construction et grue au coucher du soleil"
@@ -1174,19 +1176,19 @@
     "method": {
       "title": "Du terrain au service après-vente : les 12 phases d'une promotion, expliquées pas à pas.",
       "intro": "L'ordre réel d'une promotion, sans sauter une seule phase :",
-      "s1": "Terrain : trouver des terrains, lire le plan d'urbanisme et acheter sans surprise juridique ni urbanistique.",
-      "s2": "Faisabilité : calculer le coût, le financement et la marge avant d'engager un seul euro.",
+      "s1": "Terrain : trouver des terrains, lire le plan d'urbanisme et acheter sans surprise juridique ni urbanistique. Avec le modèle 1 : achat du terrain.",
+      "s2": "Viabilité : calculer le coût, le financement et la marge avant d'engager un euro. Avec le modèle 2 : viabilité et méthode résiduelle.",
       "s3": "Projets techniques : recruter et coordonner l'architecte, les bureaux d'études et la direction de chantier.",
       "s4": "Permis : savoir quel permis demander, à qui, et ce qui se passe en cas de silence de l'administration.",
-      "s5": "Financement et contrats : monter le prêt promoteur, les garanties et le contrat de travaux.",
+      "s5": "Financement et contrats : monter le prêt promoteur, les garanties et le contrat de travaux. Avec le modèle 3 : prêt promoteur.",
       "s6": "Construction : organiser le chantier, les délais et les assurances obligatoires.",
-      "s7": "Contrôle du chantier : surveiller les situations de travaux, la qualité et les dérives de coût.",
-      "s8": "Commercialisation : fixer le prix et vendre sur plan avec les garanties qu'exige la loi.",
+      "s7": "Contrôle du chantier : surveiller les situations de travaux, la qualité et les dérives de coût. Avec le modèle 4 : contrôle des coûts du chantier.",
+      "s8": "Commercialisation : fixer le prix et vendre sur plan avec les garanties qu'exige la loi. Avec le modèle 5 : plan de ventes et d'encaissements.",
       "s9": "Régularisation : clore la fin de chantier, l'acte de construction neuve, la division horizontale et le certificat d'habitabilité.",
       "s10": "Pré-livraison : visiter le logement avec l'acquéreur et corriger avant de livrer.",
       "s11": "Remise des clés : livrer avec les documents en règle et sans litige.",
       "s12": "Après-vente et clôture : traiter les garanties et les réclamations et clôturer financièrement la promotion.",
-      "close": "À chaque phase : quoi faire, dans quel ordre, à qui s'adresser et quelle loi s'applique. Avec des checklists, un quiz par module et un examen final."
+      "close": "Chaque module vous dit quoi faire, dans quel ordre, à qui vous adresser et quelle loi s'applique. Avec des listes de vérification pratiques, des modèles de calcul dans les modules clés, un quiz par module et un examen final."
     },
     "maze": {
       "title": "Le capital ne suffit pas. Ce qui arrête les projets, ce sont les démarches.",
@@ -1237,15 +1239,15 @@
       "l3": "Vous repartez avec des {{tools}}.",
       "tools": "outils",
       "footer": "Tout est dans la plateforme dès le premier jour.",
-      "excelTitle": "Le modèle financier",
+      "excelTitle": "Des modèles de calcul à chaque phase clé",
       "excelShort": "Calculez si une promotion est rentable avant de risquer de l'argent.",
-      "excelBody": "Neuf leçons et un modèle de 17 feuilles avec plus de 30 000 formules qui calcule le coût total d'une promotion : terrain, construction, viabilisation, projets, permis, financement et gestion. Il s'utilise tel que le professionnel l'a conçu, avec son exemple réel résolu, et la plateforme le calcule avec vos chiffres.",
+      "excelBody": "Cinq modèles inclus : achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. Avec les impôts de chaque communauté à jour, pour savoir si une promotion est rentable avant de risquer de l'argent. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles et plus de 30 000 formules, revu cellule par cellule et avec les impôts à jour.",
       "papersTitle": "Les lois et les impôts de votre région",
       "papersShort": "La règle qui s'applique à chaque étape, dans votre région.",
       "papersBody": "La réglementation nationale (loi sur le sol, loi d'organisation de la construction, code technique de la construction) et une annexe sur la fiscalité et l'urbanisme de chaque communauté autonome, pour que ce que vous apprenez vaille à Alicante, à Madrid ou à Séville.",
       "templatesTitle": "Checklists et téléchargements",
       "templatesShort": "Une checklist par module et les documents pour travailler.",
-      "templatesBody": "Une checklist par module, à cocher sur votre propre projet et à enregistrer dans votre compte. Et les téléchargements : le modèle financier sous Excel (complet et simplifié), l'annuaire des partenaires sous Excel et la formation complète en PDF.",
+      "templatesBody": "Une checklist par module, à cocher sur votre propre projet et à enregistrer dans votre compte. Et les téléchargements : les 5 modèles de calcul sous Excel, l'annuaire des partenaires sous Excel et la formation complète en PDF.",
       "subsTitle": "Des partenaires dans les 52 provinces",
       "subsShort": "À qui vous adresser dans votre province, phase par phase.",
       "subsBody": "Pour chaque phase, un annuaire des organismes et des professionnels avec qui vous travaillerez dans votre province. Vous ne repartez pas de zéro en entrant dans une nouvelle mairie."
@@ -1271,6 +1273,9 @@
       "outils": "Outils",
       "programme": "Programme et tarifs",
       "questions": "Questions"
+    },
+    "programme": {
+      "extra": "Extra en fin de formation"
     }
   },
   "checklist": {
@@ -1310,7 +1315,7 @@
   "seo": {
     "home": {
       "title": "Formation en promotion immobilière en Espagne",
-      "description": "Apprenez à promouvoir des logements en Espagne pas à pas : {{modules}} phases, les lois, des partenaires dans les 52 provinces et un modèle financier professionnel."
+      "description": "Apprenez à promouvoir des logements en Espagne pas à pas : {{modules}} phases, les lois, des partenaires dans les 52 provinces et des modèles de calcul inclus. Commencez aujourd'hui."
     },
     "catalog": {
       "title": "Formations à la promotion immobilière en Espagne",

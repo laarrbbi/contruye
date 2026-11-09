@@ -165,7 +165,7 @@
       },
       "needExperience": {
         "q": "Do I need experience, a degree or a lot of capital to be a property developer?",
-        "a": "The law does not require any particular qualification to be a developer. The capital you need depends on each project: the financing module and the financial model teach you to work it out before you commit."
+        "a": "The law does not require a specific qualification to be a developer. The capital you need depends on each project: the financing module and the course's templates teach you to work it out before you commit."
       },
       "stepByStep": {
         "q": "How is a housing development done, step by step?",
@@ -175,10 +175,6 @@
         "q": "Is the course valid for any province in Spain?",
         "a": "Yes. It includes the state rules, a directory of partners for all 52 provinces and an annex with the tax and planning rules of each autonomous community."
       },
-      "financials": {
-        "q": "What is the Financials financial model?",
-        "a": "It is a professional's spreadsheet that calculates the total cost of a development and the financing it needs. It has 17 sheets, more than 30,000 formulas and a worked example. In the course you learn to fill it in and read it, and the platform calculates it with your figures."
-      },
       "roles": {
         "q": "What is the difference between a developer, a builder and an estate agent?",
         "a": "The developer decides on, drives and finances the works and is liable to the buyer. The builder carries them out and the agent sells. In a small development one person can take on several roles, and the course explains the responsibilities of each."
@@ -186,6 +182,10 @@
       "company": {
         "q": "Can I develop through a limited company?",
         "a": "Yes, it is the usual way to develop. Since Ley 18/2022 an S.L. can be set up with a capital of 1 euro, under conditions. The course explains how to set up the development company."
+      },
+      "templates": {
+        "q": "Which templates does the course include?",
+        "a": "Five calculation templates, included: plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets, more than 30,000 formulas and taxes up to date."
       }
     }
   },
@@ -1008,7 +1008,7 @@
   },
   "landing": {
     "hero": {
-      "title": "CONSTRUYE teaches you to develop open-market housing step by step: the 12 phases, the law that applies in each one, the partners in your province and a professional's financial model. One course, from searching for the plot to after-sales.",
+      "title": "CONSTRUYE teaches you to develop open-market housing step by step: the 12 phases, the law that applies in each one, the partners in your province and the calculation templates to decide with figures. One course, from searching for the plot to after-sales.",
       "paymentNote": "Lifetime access: phone, tablet, computer. As a whole or module by module."
     },
     "curriculumIntro": {
@@ -1026,7 +1026,7 @@
     },
     "pricing": {
       "fullTitle": "Full access",
-      "fullShort": "Every module and every tool, with lifetime access"
+      "fullShort": "Every module, the 5 calculation templates and the course's tools, with lifetime access"
     },
     "socialProof": {
       "title": "What those who have taken it say.",
@@ -1081,23 +1081,25 @@
       "colUse": "What it is for",
       "i1": "{{modules}} modules and {{lessons}} lessons on the process",
       "i1Use": "Knowing what to do in each phase",
-      "i2": "Financials: {{lessons}} lessons and the professional's model",
-      "i2Use": "Working out whether a development pays off before buying",
+      "i2": "5 calculation templates: plot, feasibility, loan, construction control and sales",
+      "i2Use": "Work out whether a development pays off before you buy",
       "i3": "Directory of partners in all 52 provinces",
       "i3Use": "Knowing who to call in your area",
       "i4": "Annex on tax and planning by autonomous community",
       "i4Use": "Applying your community's rules and taxes",
-      "i5": "A checklist per module and the downloads: model and directory in Excel, course in PDF",
+      "i5": "A checklist per module and the downloads: the 5 templates and the partner directory in Excel, the course in PDF",
       "i5Use": "Working with the documents from day one",
       "i6": "Quizzes per module and a final exam",
-      "i6Use": "Checking what you have learned"
+      "i6Use": "Checking what you have learned",
+      "i7": "Optional extra at the end: the professional financial model and its {{lessons}} lessons (Financials)",
+      "i7Use": "The full month-by-month calculation: cost by chapter, loan and cash flow"
     },
     "objections": {
       "title": "The doubts that hold back a purchase, answered",
       "o1Q": "“I have no experience.”",
       "o1A": "The course starts from zero and explains each phase in order.",
       "o2Q": "“I don't have much capital.”",
-      "o2A": "The financing module and the model show you how much equity and how much debt each project needs, before you commit.",
+      "o2A": "The financing module and the developer loan template show you how much equity and how much debt each project needs, before you commit.",
       "o3Q": "“It's too technical.”",
       "o3A": "Each module ends with a checklist of practical steps and a quiz.",
       "o4Q": "“My province is different.”",
@@ -1106,7 +1108,7 @@
     "legalNotice": "Real estate development carries risks. CONSTRUYE is training and does not guarantee any financial result.",
     "finalCta": {
       "title": "Thousands of homes are missing every year. The question is whether you will develop or watch",
-      "p1": "You have the method in {{phases}} phases, a professional's financial model, the partners in your province and the laws that apply at each step. All that is missing is for you to start."
+      "p1": "You have the method in {{phases}} phases, the templates to decide with figures, the partners in your province and the laws that apply at each step. All that is missing is for you to start."
     },
     "heroV2": {
       "title": "Real estate development course in Spain: from the idea to handing over the keys",
@@ -1156,9 +1158,9 @@
       "provinces": "provinces with their directory of partners and institutions",
       "p2": "You will know which authority to go to and which law governs: town hall, land registry, notary, professional associations and the rule that applies at each step.",
       "lessons": "lessons",
-      "sheets": "sheets in the financial model",
+      "sheets": "calculation templates included: plot, feasibility, loan, construction control and sales",
       "questions": "assessment questions",
-      "p3": "You will know whether a development pays off before you buy the plot, with the same financial model a professional uses: more than 30,000 formulas.",
+      "p3": "You will know whether a development pays off before you buy the plot. With the course's feasibility templates and, if you wish, a professional's complete financial model as an extra at the end.",
       "illustration": "Illustration photo",
       "residenceAlt": "Apartment buildings at sunset",
       "chantierAlt": "Building under construction and a crane at sunset"
@@ -1174,19 +1176,19 @@
     "method": {
       "title": "From the plot to after-sales: the 12 phases of a development, explained step by step.",
       "intro": "The real order of a development, without skipping a phase:",
-      "s1": "Plot: find plots, read the planning rules and buy without legal or planning surprises.",
-      "s2": "Feasibility: work out cost, financing and margin before committing a single euro.",
+      "s1": "Plot: find plots, read the planning rules and buy without legal or planning surprises. With Template 1: plot purchase.",
+      "s2": "Feasibility: work out cost, financing and margin before committing a single euro. With Template 2: feasibility and residual method.",
       "s3": "Technical projects: hire and coordinate the architect, the engineers and the site management.",
       "s4": "Licences: know which licence to apply for, from whom, and what happens when the administration stays silent.",
-      "s5": "Financing and contracting: put together the developer loan, the guarantees and the construction contract.",
+      "s5": "Financing and contracting: set up the developer loan, the guarantees and the construction contract. With Template 3: developer loan.",
       "s6": "Construction: organise the works, the deadlines and the mandatory insurance.",
-      "s7": "Site control: keep watch on progress certificates, quality and cost overruns.",
-      "s8": "Sales: set the price and sell off-plan with the guarantees the law requires.",
+      "s7": "Construction control: watch progress valuations, quality and cost overruns. With Template 4: construction cost control.",
+      "s8": "Sales: set the price and sell off-plan with the guarantees the law requires. With Template 5: sales and collections plan.",
       "s9": "Legalisation: close the completion of works, the new-building deed, the horizontal division and the occupancy certificate.",
       "s10": "Pre-handover: inspect the home with the buyer and fix things before handing it over.",
       "s11": "Handing over the keys: hand over with the paperwork in order and without disputes.",
       "s12": "After-sales and close-out: deal with warranties and claims, and close the development financially.",
-      "close": "In each phase: what to do, in what order, whom to turn to and which law applies. With checklists, a quiz per module and a final exam."
+      "close": "Each module tells you what to do, in what order, whom to turn to and which law applies. With practical checklists, calculation templates in the key modules, a quiz per module and a final exam."
     },
     "maze": {
       "title": "Capital is not enough. What stops projects is the paperwork.",
@@ -1237,15 +1239,15 @@
       "l3": "You take away {{tools}}.",
       "tools": "tools",
       "footer": "Everything is inside the platform from day one.",
-      "excelTitle": "The financial model",
-      "excelShort": "Work out whether a development pays off before risking money.",
-      "excelBody": "Nine lessons and a 17-sheet model with more than 30,000 formulas that works out the total cost of a development: land, construction, site works, projects, licences, financing and management. It is used exactly as the professional designed it, with their real example worked through, and the platform runs it on your figures.",
+      "excelTitle": "Calculation templates at every key phase",
+      "excelShort": "Work out whether a development pays off before you risk money.",
+      "excelBody": "Five templates included: plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. With each community's taxes up to date, so you know whether a development pays off before you risk money. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets and more than 30,000 formulas, reviewed cell by cell and with taxes up to date.",
       "papersTitle": "The laws and taxes of your region",
       "papersShort": "The rule that applies at each step, in your region.",
       "papersBody": "State legislation (the land law, the Building Act, the Technical Building Code) and an annex with the taxation and planning rules of each autonomous community, so what you learn holds in Alicante, in Madrid or in Seville.",
       "templatesTitle": "Checklists and downloads",
       "templatesShort": "A checklist per module, and the documents to work with.",
-      "templatesBody": "A checklist per module, to tick off on your own project and save to your account. And the downloads: the financial model in Excel (full and simplified), the partner directory in Excel and the whole course as a PDF.",
+      "templatesBody": "A checklist per module, to tick off on your own project and save to your account. And the downloads: the 5 calculation templates in Excel, the partner directory in Excel and the whole course as a PDF.",
       "subsTitle": "Partners in all 52 provinces",
       "subsShort": "Whom to turn to in your province, phase by phase.",
       "subsBody": "For each phase, a directory of the bodies and professionals you will work with in your province. You do not start from scratch when you walk into a new town hall."
@@ -1271,6 +1273,9 @@
       "outils": "Tools",
       "programme": "Programme and prices",
       "questions": "Questions"
+    },
+    "programme": {
+      "extra": "Extra at the end of the course"
     }
   },
   "checklist": {
@@ -1310,7 +1315,7 @@
   "seo": {
     "home": {
       "title": "Real Estate Development Course in Spain",
-      "description": "Learn to develop housing in Spain step by step: {{modules}} phases, the laws, partners in all 52 provinces and a professional financial model. Start today."
+      "description": "Learn to develop housing in Spain step by step: {{modules}} phases, the laws, partners in the 52 provinces and calculation templates included. Start today."
     },
     "catalog": {
       "title": "Property development courses in Spain",

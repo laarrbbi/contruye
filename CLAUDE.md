@@ -3,7 +3,7 @@
 Online course platform for CONSTRUYE, a Spanish real-estate development (promoción inmobiliaria)
 course: 12 modules, one per phase of a housing development from the site to after-sales, plus
 Financials, quizzes, a final exam and a directory of the 52 provinces. Laravel 12 API + React 18
-SPA + a small Node.js service for the financial template. Spanish (authored), English, French,
+SPA + a small Node.js service for the financial templates. Spanish (authored), English, French,
 Arabic (right to left), Russian and Ukrainian.
 
 It is the Ebni Academy platform (the Algerian edition, in the sibling `ebni` repository) adapted
@@ -22,10 +22,12 @@ reports (code & schema, tests, performance, security) plus a motion audit. `06-g
 says what has been closed since, and what is left for the owner. They were written about Ebni,
 before the Spanish adaptation: the paths and behaviours still match, the Algerian specifics do not.
 
-**`curso/`** is the instructor's package, version 4.0, exactly as delivered (start with
-`curso/LEEME.md`). Its texts are integrated as written and its financial template is used as is:
-no formula, value or label changes, ever. Never edit anything under `curso/`; a correction comes
-as a new package from the instructor.
+**`curso/`** is the instructor's package, version 4.1, exactly as delivered (start with
+`curso/LEEME.md`). Its texts are integrated as written and its financial templates are used as
+delivered: no formula, value or label changes, ever; only the «Parámetros legales» sheet is set,
+by the admin. Never edit anything under `curso/`; a correction comes as a new package from the
+instructor (copied whole into `curso/`, then the curriculum, checklist and translation seeders,
+which bring an installed course up to it in place).
 
 ## Running it
 
@@ -102,7 +104,18 @@ makes that work lives in `docker/mysql-test/`.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP
-  service; `FinancialsController` is the only caller and checks access first.
+  service: the professional template and the five small ones. `App\Services\TemplateEngine` is the
+  only caller; `FinancialsController` (the professional template, the extra) and
+  `SmallTemplateController` (Plantilla 1–5, each in its module: 1, 2, 5, 7, 8) check access first.
+  `TemplateCatalog` holds inputs to each template's dictionary; `XlsxFiller` writes a user's inputs
+  and the parameters into a copy of the package's `.xlsx` for download.
+- Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
+  `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
+  and sent with every calculation. A project never stores them.
+- Financials is the extra (`FinancialsExtra`): outside every plan and full access
+  (`Course::includedModules()`), bought on its own (checkout scope `extra`), on sale only once the
+  admin switches it on with a price. Offered on the final exam once passed, on the dashboard of a
+  student who finished, and in Financials itself.
 - `.claude/skills/` — Laravel and design skills used by review passes, vendored from
   [ECC](https://github.com/affaan-m/ecc) and [emilkowalski/skills](https://github.com/emilkowalski/skills).
 

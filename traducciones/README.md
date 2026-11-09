@@ -13,7 +13,7 @@ as such, wherever a piece is not translated.
 | Course title and description, document titles (`curso.json`) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | The 13 module titles and objectives | ✓ | ✓ | ✓ | ✓ | ✓ |
 | The 60 lesson titles | ✓ | ✓ | ✓ | ✓ | ✓ |
-| The 13 checklists (119 items) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| The 13 checklists (124 items) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Modules 1 to 12 in full: the laws and where-to-go tables, the lessons (1.1 and 1.2 are the free preview), the closing sections | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Financials (module 13) in full: the template map and its 9 lessons (sheet and column names stay in Spanish, as the template and the platform show them) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ | ✓ |
