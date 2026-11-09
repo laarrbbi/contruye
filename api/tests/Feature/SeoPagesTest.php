@@ -91,6 +91,16 @@ it('serves /en in English, whatever the browser speaks', function () {
         ->toBe(SpaStrings::get('en', 'course.faq.'.SpaStrings::faqKeys()[0].'.q'));
 });
 
+it('links the law an FAQ answer names on the page, and keeps the structured data plain', function () {
+    mainCourse();
+
+    $html = $this->get('/')->assertOk()->getContent();
+    $answers = collect(seoGraph($html)['FAQPage']['mainEntity'])->pluck('acceptedAnswer.text');
+
+    expect($html)->toContain('<a class="ley" target="_blank" rel="noopener noreferrer" href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818"')
+        ->and($answers->first(fn (string $a) => str_contains($a, 'Ley 18/2022')))->not->toContain('<a');
+});
+
 it('serves French, Arabic, Russian and Ukrainian under their own prefix, Arabic right to left', function () {
     mainCourse();
 

@@ -164,6 +164,11 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-inline a.ley {
     @apply [font-weight:inherit] text-inherit decoration-primary/50 decoration-dotted underline underline-offset-[3px] transition-colors hover:text-primary hover:decoration-solid;
   }
+  /* On the sales page's night sections the brand blue does not show: the
+     underline takes the cream of the text, and gold on hover. */
+  [data-tone='night'] .md-inline a.ley {
+    @apply decoration-creme-100/60 hover:text-or hover:decoration-or;
+  }
   .md-content code {
     @apply rounded bg-secondary px-1 py-0.5 font-mono text-[0.85em];
   }

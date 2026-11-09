@@ -8,6 +8,7 @@ use App\Models\ChecklistItem;
 use App\Models\Course;
 use App\Models\CustomTask;
 use App\Models\Module;
+use App\Support\Markdown;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -59,6 +60,8 @@ class ChecklistController extends Controller
                         ? $items->map(fn (ChecklistItem $item) => [
                             'id' => $item->id,
                             'text' => $item->localizedText(),
+                            // The same text with its laws linked (config/legal.php).
+                            'text_html' => Markdown::inline($item->localizedText()),
                             'checked' => isset($checkedIds[$item->id]),
                         ])->values()
                         : [],

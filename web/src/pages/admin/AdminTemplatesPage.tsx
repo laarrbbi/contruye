@@ -228,7 +228,7 @@ function LegalCard({ legal }: { legal: AdminTemplates['legal'] }) {
                   {p.original_value === null ? '—' : formatPercent(p.original_value, locale)}
                 </td>
                 <td className="min-w-[12rem] px-3 py-2 text-xs">
-                  {p.legal_basis}
+                  <span className="md-inline" dangerouslySetInnerHTML={{ __html: p.legal_basis_html ?? '' }} />
                   {p.source && <span className="block text-muted-foreground">{p.source}</span>}
                 </td>
                 <td className="min-w-[14rem] px-3 py-2 text-xs text-muted-foreground">{p.used_in}</td>
@@ -259,7 +259,9 @@ function LegalCard({ legal }: { legal: AdminTemplates['legal'] }) {
                 <td className="px-3 py-2">
                   {cell(`${r.name}.ajd`, draft.regions[r.name]?.ajd ?? '', (value) => setDraft((d) => ({ ...d, regions: { ...d.regions, [r.name]: { ...d.regions[r.name], ajd: value } } })), `${r.name} AJD`)}
                 </td>
-                <td className="min-w-[16rem] px-3 py-2 text-xs text-muted-foreground">{r.note ?? ''}</td>
+                <td className="min-w-[16rem] px-3 py-2 text-xs text-muted-foreground">
+                  <span className="md-inline" dangerouslySetInnerHTML={{ __html: r.note_html ?? '' }} />
+                </td>
               </tr>
             ))}
           </tbody>

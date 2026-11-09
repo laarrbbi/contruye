@@ -67,7 +67,7 @@
             @foreach ($faq as $item)
                 <div>
                     <h3 class="font-semibold">{{ $item['question'] }}</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{{ $item['answer'] }}</p>
+                    <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{!! $item['answer_html'] !!}</p>
                 </div>
             @endforeach
         </section>

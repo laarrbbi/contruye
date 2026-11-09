@@ -6,6 +6,7 @@ import { Apparait, Mots } from '@/components/landing/kit/pieces'
 import { useVu, vars } from '@/components/landing/kit/tools'
 import { BANDE, H2, TEXTE } from '@/components/landing/kit/type'
 import faqContent from '@/content/faq.json'
+import { LegalText } from '@/components/legal/LegalText'
 import { paymentMethodList } from '@/lib/payments'
 import { cn } from '@/lib/utils'
 
@@ -106,7 +107,9 @@ export function Questions() {
                     className={cn('grid transition-[grid-template-rows,opacity] duration-500 ease-out-strong', shown ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0')}
                   >
                     <div className="overflow-hidden">
-                      <p className="max-w-[40rem] px-4 pb-6 text-base leading-relaxed text-creme-100/80 lg:px-6 lg:text-[1.0625rem] rtl:leading-loose">{item.answer}</p>
+                      <p className="max-w-[40rem] px-4 pb-6 text-base leading-relaxed text-creme-100/80 lg:px-6 lg:text-[1.0625rem] rtl:leading-loose">
+                        <LegalText text={item.answer} />
+                      </p>
                     </div>
                   </div>
                 </Apparait>

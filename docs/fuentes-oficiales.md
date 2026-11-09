@@ -16,12 +16,19 @@ vivienda protegida). Los datos están en `api/config/legal.php`; este documento 
 - **Dos leyes con el mismo número** se distinguen por el párrafo: «Ley 13/2015» es la reforma de la Ley
   Hipotecaria y del Catastro, salvo donde se habla de Murcia (su ley de urbanismo); «Decreto Legislativo
   1/2010» es el TRLOTAU de Castilla-La Mancha o la Ley de urbanismo de Cataluña según la fila.
-- **Comprobado:** las 347 referencias numeradas de los módulos y anexos quedan enlazadas, a 95 páginas
-  oficiales (test `LegalLinksTest`), y solo se enlaza a webs oficiales, por https.
+- **Comprobado:** las 348 referencias numeradas de los módulos y anexos quedan enlazadas, a 96 páginas
+  oficiales, y las de las cinco traducciones también, con cualquier grafía («RD-ley», «RDL», «Real
+  Decreto-ley»…). El test `LegalLinksTest` falla si una ley numerada nueva no tiene su enlace, y solo se
+  enlaza a webs oficiales, por https.
+- **Fuera de las lecciones**, lo mismo: los pasos de las checklists, la base legal de cada parámetro de
+  las plantillas (y las notas por comunidad), y las respuestas de las preguntas frecuentes de la página
+  principal («Ley 18/2022»). La web lee estas últimas de `web/src/content/legal-links.json`, que escribe
+  `php artisan legal:export-web` desde `api/config/legal.php`; el test avisa si se separan. Los cuestionarios
+  y el examen no llevan enlaces: el alumno no debe salir a buscar la respuesta en el BOE.
 
 ## Cómo se comprobó cada enlace
 
-El 8 de noviembre de 2026, uno por uno, con el título que la propia web oficial da a la página (el
+El 8 y el 9 de noviembre de 2026, uno por uno, con el título que la propia web oficial da a la página (el
 identificador del BOE y el nombre de la norma). El entorno de trabajo no podía abrir boe.es ni las webs
 autonómicas directamente, así que conviene que el propietario ejecute, desde el servidor:
 
@@ -112,6 +119,10 @@ El texto del curso no se toca (constitución, II): estas correcciones son suyas,
 | RDL 26/2021 | [Real Decreto-ley 26/2021, de 8 de noviembre, por el que se adapta el TRLRHL a la jurisprudencia del Tribunal Constitucional respecto del IIVTNU](https://www.boe.es/buscar/doc.php?id=BOE-A-2021-18276) |
 | RDL 1/2010 · LSC | [Real Decreto Legislativo 1/2010, de 2 de julio, texto refundido de la Ley de Sociedades de Capital](https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544) |
 | Ley 18/2022 | [Ley 18/2022, de 28 de septiembre, de creación y crecimiento de empresas](https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818) |
+| RD-ley 17/2018 · RDL 17/2018 · Real Decreto-ley 17/2018 | [Real Decreto-ley 17/2018, de 8 de noviembre, por el que se modifica el Texto refundido de la Ley del Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados, aprobado por el Real Decreto Legislativo 1/1993, de 24 de septiembre](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-15344) |
+| Ley 13/1996 | [Ley 13/1996, de 30 de diciembre, de Medidas Fiscales, Administrativas y del Orden Social](https://www.boe.es/buscar/act.php?id=BOE-A-1996-29117) |
+| Ley 3/2017 | [Ley 3/2017, de 27 de junio, de Presupuestos Generales del Estado para el año 2017](https://www.boe.es/buscar/act.php?id=BOE-A-2017-7387) |
+| Estatuto legal del Consorcio de Compensación de Seguros · Estatuto Legal del Consorcio de Compensación de Seguros | [Real Decreto Legislativo 7/2004, de 29 de octubre, por el que se aprueba el texto refundido del Estatuto Legal del Consorcio de Compensación de Seguros](https://www.boe.es/buscar/act.php?id=BOE-A-2004-18910) |
 | RDL 7/1996 | [Real Decreto-ley 7/1996, de 7 de junio, sobre medidas urgentes de carácter fiscal y de fomento y liberalización de la actividad económica](https://www.boe.es/buscar/act.php?id=BOE-A-1996-13002) |
 | Ley 12/2023 | [Ley 12/2023, de 24 de mayo, por el derecho a la vivienda](https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203) |
 | RD 1426/1989 | [Real Decreto 1426/1989, de 17 de noviembre, por el que se aprueba el Arancel de los Notarios](https://www.boe.es/buscar/act.php?id=BOE-A-1989-28111) |

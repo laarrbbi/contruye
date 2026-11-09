@@ -4,6 +4,8 @@ import { api } from './client'
 export interface ChecklistItemRow {
   id: number
   text: string
+  /** The text as inline HTML, with the laws it names linked to their official texts. */
+  text_html: string | null
   checked: boolean
 }
 

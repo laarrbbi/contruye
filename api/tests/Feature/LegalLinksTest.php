@@ -1,11 +1,15 @@
 <?php
 
+use App\Models\ChecklistItem;
 use App\Models\Course;
 use App\Models\CourseDocument;
 use App\Models\Enrollment;
+use App\Models\Module;
 use App\Models\Province;
 use App\Models\ProvinceGuide;
 use App\Models\User;
+use App\Services\LegalParameters;
+use App\Support\Legal\WebLinks;
 use App\Support\Markdown;
 
 it('links a law to its official text in a new tab, without changing a word', function () {
@@ -40,14 +44,18 @@ it('leaves code, existing links and lookalikes alone', function () {
     expect($html)->not->toContain('class="ley"');
 });
 
-it('links every numbered law the course cites to an official page', function () {
-    $pattern = '/\b(?:(?:Real Decreto(?:-ley| Legislativo)?|Decreto(?: Foral)?(?: Legislativo)?|Ley(?: Orgánica| Foral)?|RDL|RD|Orden)\s+(?:[A-Z]{2,4}\/)?\d+\/\d{4}|[A-Z]{2,4}\/\d+\/\d{4})/u';
+it('links every numbered law the course cites to an official page, in every language', function () {
+    // Every way the course writes a numbered law: Ley, LO, RD, RDL, RD-ley, Real Decreto(-ley,
+    // Legislativo), Decreto (Legislativo, Foral), DL, Orden, and «XXX/12/2020» order numbers.
+    $pattern = '/(?<![\p{L}\p{N}])(?:(?:Real Decreto(?:-ley| Legislativo)?|RD-ley|Decreto(?:-ley)?(?: Foral)?(?: Legislativo)?|Ley(?: Orgánica| Foral)?|LO|RDL|RD|DL|Orden)\s+(?:[A-Z]{2,4}\/)?\d+\/\d{4}|[A-Z]{2,4}\/\d+\/\d{4})/u';
+    $files = array_filter(
+        [...glob(base_path('../curso/1_contenido/modulos/*.md')), ...glob(base_path('../traducciones/*/modulos/*.md'))],
+        // The owner's commercial strategy is not published.
+        fn (string $file) => ! str_starts_with(basename($file), '15_'),
+    );
     $unlinked = [];
 
-    foreach (glob(base_path('../curso/1_contenido/modulos/*.md')) as $file) {
-        if (str_starts_with(basename($file), '15_')) {
-            continue; // the owner's commercial strategy: not published
-        }
+    foreach ($files as $file) {
         $dom = new DOMDocument;
         libxml_use_internal_errors(true);
         $dom->loadHTML('<?xml encoding="utf-8"?><div>'.Markdown::toHtml(file_get_contents($file)).'</div>');
@@ -58,7 +66,7 @@ it('links every numbered law the course cites to an official page', function () 
             $linked = $node->parentNode->nodeName === 'a' && $node->parentNode->getAttribute('class') === 'ley';
             foreach ($matches[0] as $reference) {
                 if (! $linked) {
-                    $unlinked[] = basename($file).': '.$reference;
+                    $unlinked[] = basename(dirname($file, 2)).'/'.basename($file).': '.$reference;
                 }
             }
         }
@@ -121,4 +129,34 @@ it('lists every community\'s official pages under Anexo B', function () {
         // Each official title says which language it is in, so the page can mark it: Catalan in Cataluña.
         ->and(collect(collect($regions)->firstWhere('key', 'CAT')['links'])->pluck('lang', 'kind')->all())->toBe(['planning' => 'es', 'housing' => 'ca', 'taxes' => 'ca'])
         ->and(collect(collect($regions)->firstWhere('key', 'VAL')['links'])->pluck('lang')->unique()->all())->toBe(['es']);
+});
+
+it('links the laws a checklist step and a legal parameter name, the text escaped', function () {
+    $course = Course::factory()->create(['status' => 'published']);
+    $module = Module::factory()->create(['course_id' => $course->id, 'order' => 1]);
+    ChecklistItem::factory()->create(['module_id' => $module->id, 'order' => 1, 'text_es' => 'Prepara la documentación del RD 515/1989 <b>antes</b> de vender']);
+    $student = User::factory()->create();
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => null]);
+
+    $item = $this->actingAs($student)->getJson("/api/courses/{$course->slug}/checklists")->assertOk()->json('data.modules.0.items.0');
+
+    expect($item['text'])->toBe('Prepara la documentación del RD 515/1989 <b>antes</b> de vender')
+        ->and($item['text_html'])->toBe('Prepara la documentación del <a class="ley" target="_blank" rel="noopener noreferrer" href="https://www.boe.es/buscar/act.php?id=BOE-A-1989-11181" title="Real Decreto 515/1989, de 21 de abril, sobre protección de los consumidores en cuanto a la información a suministrar en la compra-venta y arrendamiento de viviendas.">RD 515/1989</a> &lt;b&gt;antes&lt;/b&gt; de vender');
+
+    $legal = app(LegalParameters::class)->view();
+    $ajd = collect($legal['parameters'])->firstWhere('code', 'AJD_PRESTAMO');
+    $valencia = collect($legal['regions'])->firstWhere('name', 'Comunitat Valenciana');
+
+    expect($ajd['legal_basis_html'])->toContain('href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-15344"')
+        ->and(strip_tags($ajd['legal_basis_html']))->toBe($ajd['legal_basis'])
+        ->and($valencia['note_html'])->toContain('<a class="ley"')
+        ->and(strip_tags($valencia['note_html']))->toBe($valencia['note']);
+});
+
+it('gives the web app the official links of the laws its own copy names', function () {
+    $payload = WebLinks::payload();
+
+    // `php artisan legal:export-web` when this fails: the FAQ or config/legal.php changed.
+    expect(json_decode((string) file_get_contents(WebLinks::path()), true))->toBe($payload)
+        ->and(collect($payload['links'])->pluck('text')->all())->toContain('Ley 18/2022');
 });

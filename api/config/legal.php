@@ -348,6 +348,26 @@ return [
             'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818',
             'match' => ['Ley 18/2022'],
         ],
+        'ajd_hipoteca_banco' => [
+            'title' => 'Real Decreto-ley 17/2018, de 8 de noviembre, por el que se modifica el Texto refundido de la Ley del Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados, aprobado por el Real Decreto Legislativo 1/1993, de 24 de septiembre.',
+            'url' => 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-15344',
+            'match' => ['RD-ley 17/2018', 'RDL 17/2018', 'Real Decreto-ley 17/2018'],
+        ],
+        'medidas_fiscales_1996' => [
+            'title' => 'Ley 13/1996, de 30 de diciembre, de Medidas Fiscales, Administrativas y del Orden Social.',
+            'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-1996-29117',
+            'match' => ['Ley 13/1996'],
+        ],
+        'presupuestos_2017' => [
+            'title' => 'Ley 3/2017, de 27 de junio, de Presupuestos Generales del Estado para el año 2017.',
+            'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-2017-7387',
+            'match' => ['Ley 3/2017'],
+        ],
+        'estatuto_consorcio' => [
+            'title' => 'Real Decreto Legislativo 7/2004, de 29 de octubre, por el que se aprueba el texto refundido del Estatuto Legal del Consorcio de Compensación de Seguros.',
+            'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-18910',
+            'match' => ['Estatuto legal del Consorcio de Compensación de Seguros', 'Estatuto Legal del Consorcio de Compensación de Seguros'],
+        ],
         'prestamo_participativo' => [
             'title' => 'Real Decreto-ley 7/1996, de 7 de junio, sobre medidas urgentes de carácter fiscal y de fomento y liberalización de la actividad económica.',
             'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-1996-13002',

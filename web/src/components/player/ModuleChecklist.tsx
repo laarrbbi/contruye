@@ -11,11 +11,14 @@ import { cn } from '@/lib/utils'
 function CheckRow({
   checked,
   label,
+  labelHtml,
   onToggle,
   onDelete,
 }: {
   checked: boolean
   label: string
+  /** Server-rendered (escaped, laws linked); the student's own tasks have none. */
+  labelHtml?: string | null
   onToggle: () => void
   onDelete?: () => void
 }) {
@@ -42,14 +45,24 @@ function CheckRow({
         {checked && <Check className="h-3.5 w-3.5" aria-hidden />}
       </button>
 
-      <span
-        className={cn(
-          'bidi-auto flex-1 text-sm leading-relaxed',
-          checked && 'text-muted-foreground line-through decoration-muted-foreground/50',
-        )}
-      >
-        {label}
-      </span>
+      {labelHtml ? (
+        <span
+          className={cn(
+            'md-inline bidi-auto flex-1 text-sm leading-relaxed',
+            checked && 'text-muted-foreground line-through decoration-muted-foreground/50',
+          )}
+          dangerouslySetInnerHTML={{ __html: labelHtml }}
+        />
+      ) : (
+        <span
+          className={cn(
+            'bidi-auto flex-1 text-sm leading-relaxed',
+            checked && 'text-muted-foreground line-through decoration-muted-foreground/50',
+          )}
+        >
+          {label}
+        </span>
+      )}
 
       {onDelete && (
         <button
@@ -128,6 +141,7 @@ export function ModuleChecklist({
             key={item.id}
             checked={item.checked}
             label={item.text}
+            labelHtml={item.text_html}
             onToggle={() => toggleItem.mutate({ itemId: item.id, checked: !item.checked })}
           />
         ))}

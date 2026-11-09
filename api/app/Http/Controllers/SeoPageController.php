@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Services\BusinessProfile;
 use App\Services\CourseSocialProof;
 use App\Support\LocalizedUrl;
+use App\Support\Markdown;
 use App\Support\PaymentWording;
 use App\Support\SpaStrings;
 use App\Support\StructuredData;
@@ -179,7 +180,7 @@ final class SeoPageController
      * The FAQ as the sales page shows it: the same questions, in the same
      * order, and "how do I reach support?" only once a channel exists.
      *
-     * @return list<array{question: string, answer: string}>
+     * @return list<array{question: string, answer: string, answer_html: string}>
      */
     private function faq(string $locale): array
     {
@@ -194,10 +195,16 @@ final class SeoPageController
 
         return collect(SpaStrings::faqKeys())
             ->reject(fn (string $key) => $key === 'support' && ! $reachable)
-            ->map(fn (string $key) => [
-                'question' => SpaStrings::get($locale, "course.faq.{$key}.q"),
-                'answer' => $key === 'payment' ? $payment : SpaStrings::get($locale, "course.faq.{$key}.a"),
-            ])
+            ->map(function (string $key) use ($locale, $payment) {
+                $answer = $key === 'payment' ? $payment : SpaStrings::get($locale, "course.faq.{$key}.a");
+
+                return [
+                    'question' => SpaStrings::get($locale, "course.faq.{$key}.q"),
+                    'answer' => $answer,
+                    // Escaped, with the laws it names linked, as the app shows it.
+                    'answer_html' => (string) Markdown::inline($answer),
+                ];
+            })
             ->values()
             ->all();
     }

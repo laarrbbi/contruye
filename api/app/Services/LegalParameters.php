@@ -7,6 +7,7 @@ use App\Models\LegalParameterChange;
 use App\Models\LegalRegionRate;
 use App\Models\Setting;
 use App\Models\User;
+use App\Support\Markdown;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -51,6 +52,8 @@ class LegalParameters
                 'value' => $p->value,
                 'original_value' => $p->original_value,
                 'legal_basis' => $p->legal_basis,
+                // The same text with its laws linked to their official texts.
+                'legal_basis_html' => Markdown::inline($p->legal_basis),
                 'source' => $p->source,
                 'used_in' => $p->used_in,
             ])->all(),
@@ -59,6 +62,7 @@ class LegalParameters
                 'itp' => $r->itp,
                 'ajd' => $r->ajd,
                 'note' => $r->note,
+                'note_html' => Markdown::inline($r->note),
             ])->all(),
             'reviewed_at' => $this->review()['at'],
         ];

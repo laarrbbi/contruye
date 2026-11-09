@@ -25,10 +25,12 @@ export interface LegalParametersView {
     value: number
     original_value: number | null
     legal_basis: string
+    /** legal_basis as inline HTML, its laws linked to their official texts. */
+    legal_basis_html: string | null
     source: string | null
     used_in: string
   }[]
-  regions: { name: string; itp: number; ajd: number; note: string | null }[]
+  regions: { name: string; itp: number; ajd: number; note: string | null; note_html: string | null }[]
   /** ISO date or date-time of the last review. */
   reviewed_at: string | null
 }

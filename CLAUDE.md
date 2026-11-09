@@ -100,7 +100,8 @@ makes that work lives in `docker/mysql-test/`.
 - Every law the course names links to its official text (`config/legal.php`, `Support/Legal`):
   added when the Markdown is rendered, never written into the text. A new law in a new package
   needs its entry (`LegalLinksTest` fails until it has one); `docs/fuentes-oficiales.md` says how
-  each link was checked. Only official sites, https.
+  each link was checked. Only official sites, https. The app's own copy that names a law (the FAQ)
+  is linked in the browser from `web/src/content/legal-links.json`: `php artisan legal:export-web`.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP

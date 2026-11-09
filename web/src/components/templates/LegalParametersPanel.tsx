@@ -36,10 +36,12 @@ export function LegalParametersPanel({
         {region && (
           <p className="rounded-lg bg-or/10 px-3 py-2">
             <bdi lang="es">{region.name}</bdi>: ITP {formatPercent(region.itp, locale)} · AJD {formatPercent(region.ajd, locale)}
-            {region.note && (
-              <span className="mt-1 block text-xs text-muted-foreground" lang="es">
-                {region.note}
-              </span>
+            {region.note_html && (
+              <span
+                className="md-inline mt-1 block text-xs text-muted-foreground"
+                lang="es"
+                dangerouslySetInnerHTML={{ __html: region.note_html }}
+              />
             )}
           </p>
         )}
@@ -48,7 +50,10 @@ export function LegalParametersPanel({
             <div key={p.code} className="flex items-baseline justify-between gap-3 border-b border-foreground/[0.06] pb-2">
               <dt className="min-w-0" lang="es">
                 {p.label}
-                <span className="block text-xs text-muted-foreground">{p.legal_basis}</span>
+                <span
+                  className="md-inline block text-xs text-muted-foreground"
+                  dangerouslySetInnerHTML={{ __html: p.legal_basis_html ?? '' }}
+                />
               </dt>
               <dd className="shrink-0 font-semibold tabular-nums">{formatPercent(p.value, locale)}</dd>
             </div>
