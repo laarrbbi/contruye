@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ContentBlock;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Lesson;
@@ -298,4 +299,20 @@ it('exposes a module\'s partners to the admin content editor', function () {
     expect($payload['partners'])->toHaveCount(1)
         ->and($payload['partners'][0]['name'])->toBe('Notaría Prueba')
         ->and($payload['partners'][0]['note_es'])->toBe('Note admin');
+});
+
+it('tells the module\'s own sections apart, its closing «Partners en tu provincia» included', function () {
+    $course = partnerCourse();
+    $module = $course->modules()->orderBy('order')->first();
+    foreach ([['overview', "## Leyes que aplican\n\n| Ley |"], ['overview', "## Dónde ir\n\n| Lugar |"], ['section', "## Partners en tu provincia\n\nAnexo A, columna **Fase 1**: Registro de la Propiedad."]] as $index => [$type, $body]) {
+        ContentBlock::query()->create(['module_id' => $module->id, 'type' => $type, 'order' => $index + 1, 'body_es' => $body]);
+    }
+    $student = User::factory()->create();
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => null]);
+
+    $blocks = collect($this->actingAs($student)->getJson("/api/courses/{$course->slug}/learn")->assertOk()->json('data.modules'))
+        ->firstWhere('id', $module->id)['blocks'];
+
+    expect(collect($blocks)->map(fn (array $block) => [$block['type'], $block['role']])->all())
+        ->toBe([['overview', 'laws'], ['overview', 'where'], ['section', 'partners']]);
 });

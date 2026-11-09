@@ -73,8 +73,8 @@ export interface LearnContentBlock {
   body_html: string | null
   /** The language the body is in (Spanish while its translation is pending). */
   body_locale: string
-  /** overview only: "Leyes que aplican" or "Dónde ir", shown apart by the player. */
-  role?: 'laws' | 'where' | null
+  /** "Leyes que aplican" / "Dónde ir" (overview) or "Partners en tu provincia" (section), shown apart by the player. */
+  role?: 'laws' | 'where' | 'partners' | null
   /** partner_slot only: which kind of provider the slot is asking for. */
   partner_category?: string | null
   /** Always sent: lets a locked slot tease what it holds without listing it. */

@@ -220,13 +220,16 @@ class LearnCourseResource extends JsonResource
                 'body' => $block->localizedBody(),
                 'body_html' => Markdown::toHtml($block->localizedBody()),
                 'body_locale' => $block->localizedLocale('body'),
-                // Which of the module's opening sections this is, read from the
-                // instructor's Spanish heading: the player shows them apart.
-                'role' => $block->type === 'overview' ? match (true) {
-                    str_starts_with(ltrim((string) $block->body_es), '## Leyes') => 'laws',
-                    str_starts_with(ltrim((string) $block->body_es), '## Dónde') => 'where',
+                // Which of the module's sections this is, read from the
+                // instructor's Spanish heading: the player shows them apart
+                // (the laws, where to go, and the closing "Partners en tu
+                // provincia" on the module's Partners page).
+                'role' => match (true) {
+                    $block->type === 'overview' && str_starts_with(ltrim((string) $block->body_es), '## Leyes') => 'laws',
+                    $block->type === 'overview' && str_starts_with(ltrim((string) $block->body_es), '## Dónde') => 'where',
+                    $block->type === 'section' && str_starts_with(ltrim((string) $block->body_es), '## Partners') => 'partners',
                     default => null,
-                } : null,
+                },
             ];
 
             if ($block->type === 'partner_slot') {

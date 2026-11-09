@@ -9,6 +9,7 @@ import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
+import { PartnerList } from '@/components/player/PartnerList'
 import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
 import { SmallTemplateCalculator } from '@/components/templates/SmallTemplateCalculator'
 import { usePageTitle } from '@/hooks/usePageTitle'
@@ -39,6 +40,7 @@ export function ModuleSectionPage() {
   const kind = section as ModuleSection
   const laws = module.blocks.filter((b) => b.type === 'overview' && b.role === 'laws')
   const where = module.blocks.filter((b) => b.type === 'overview' && b.role === 'where')
+  const inProvince = module.blocks.filter((b) => b.type === 'section' && b.role === 'partners')
   const checklist = checklists.data?.modules.find((m) => m.id === module.id && !m.is_locked)
 
   return (
@@ -83,7 +85,24 @@ export function ModuleSectionPage() {
               ))}
             </article>
           )}
+          {/* The instructor's "Partners en tu provincia" (which column of Anexo
+              A), then that column for the student's province. */}
+          {inProvince.length > 0 && (
+            <article className="space-y-4 rounded-2xl border border-foreground/[0.08] bg-card p-6 sm:p-8">
+              {inProvince.map((block) => (
+                <MarkdownContent key={block.id} html={block.body_html} lang={block.body_locale} />
+              ))}
+            </article>
+          )}
           {module.kind === 'phase' && <ProvinceGuidePanel slug={slug} phase={module.order} showAnnexLink={data.course.full_access} />}
+          {/* The partners the academy recommends for this module (admin, «Colaboradores»). */}
+          {module.partners.length > 0 && (
+            <div className="space-y-3">
+              <SectionLabel>{t('partners.title')}</SectionLabel>
+              <p className="max-w-2xl text-sm text-foreground/70">{t('partners.intro')}</p>
+              <PartnerList partners={module.partners} />
+            </div>
+          )}
           {module.kind === 'phase' && (
             <div className="space-y-5">
               <SectionLabel>{t('moduleSection.companies')}</SectionLabel>
