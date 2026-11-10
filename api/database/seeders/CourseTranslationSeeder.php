@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Course;
+use App\Models\ProvinceGuide;
 use App\Models\Quiz;
 use App\Support\Course\CourseSource;
 use App\Support\Course\CourseTranslation;
@@ -11,7 +12,7 @@ use Illuminate\Database\Seeder;
 /**
  * Loads the translations in traducciones/<locale>/ into the `_<locale>`
  * columns of the course, its documents, modules, overview and closing
- * blocks, lessons, checklists and quizzes. CourseTranslation checks each
+ * blocks, lessons, checklists, quizzes and Anexo A's rows. CourseTranslation checks each
  * piece against the Spanish first; one mismatch and nothing is written.
  *
  * For a locale with a folder, the files are the source of truth and are
@@ -39,6 +40,7 @@ class CourseTranslationSeeder extends Seeder
             $documents = $translation->documents();
             $modules = $translation->modules();
             $assessments = $translation->assessments();
+            $phrases = $translation->provincePhrases();
 
             $course->update([
                 "title_{$locale}" => $meta['title'],
@@ -83,10 +85,16 @@ class CourseTranslationSeeder extends Seeder
 
             $this->assessments($course, $locale, $assessments);
 
+            // Anexo A's rows and facts, the phrases translated in every province.
+            foreach (ProvinceGuide::query()->get() as $guide) {
+                $guide->update(["data_{$locale}" => $phrases === [] ? null : CourseTranslation::translateProvince($guide->data, $phrases)]);
+            }
+
             $this->command?->info(sprintf(
-                '%s: %d of %d modules, %d lessons translated in full, %d quizzes%s.',
+                '%s: %d of %d modules, %d lessons translated in full, %d quizzes%s, %d documents, Anexo A rows %s.',
                 $locale, count($modules), $course->modules()->count(), $pieces,
                 count($assessments['quizzes']), $assessments['exam'] ? ' and the exam' : '',
+                count($documents), $phrases === [] ? 'in Spanish' : 'translated',
             ));
         }
     }

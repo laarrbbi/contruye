@@ -3,6 +3,7 @@
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Module;
+use App\Models\Province;
 use App\Models\Quiz;
 use App\Models\User;
 use App\Support\Course\CourseSource;
@@ -10,6 +11,7 @@ use App\Support\Course\CourseTranslation;
 use Database\Seeders\ChecklistSeeder;
 use Database\Seeders\CourseTranslationSeeder;
 use Database\Seeders\CurriculumV2Seeder;
+use Database\Seeders\ProvinceGuideSeeder;
 use Database\Seeders\ProvinceSeeder;
 use Illuminate\Support\Facades\File;
 
@@ -33,6 +35,7 @@ it('checks every translation in the repository against the Spanish, and finds th
             ->and($translation->course()['title'])->not->toBeEmpty();
         $translation->documents();
         $translation->assessments();
+        expect($translation->provincePhrases())->not->toBeEmpty();
     }
 });
 
@@ -209,4 +212,47 @@ it('gives a Russian student the quiz in Russian, without the answers, and grades
         ->postJson("/api/quiz-attempts/{$attemptId}/submit", ['answers' => $answers])->assertOk()->json('data');
 
     expect($result['score'])->toBe(count($answers))->and($result['passed'])->toBeTrue();
+});
+
+it('serves Anexo A\'s rows in the student\'s language, the names of institutions and laws as written', function () {
+    $this->seed([ProvinceSeeder::class, CurriculumV2Seeder::class, ProvinceGuideSeeder::class, CourseTranslationSeeder::class]);
+    $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
+    $student = User::factory()->create();
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => null]);
+    $alicante = Province::query()->where('code', 3)->firstOrFail();
+
+    $directory = fn (string $locale) => $this->actingAs($student)->withHeader('Accept-Language', $locale)
+        ->getJson("/api/courses/{$course->slug}/directory/{$alicante->id}")->assertOk()->json('data');
+    $english = $directory('en');
+    $spanish = $directory('es');
+    $plot = fn (array $data) => collect($data['phases'])->firstWhere('phase', 1)['rows'][0];
+
+    expect($english['data_locale'])->toBe('en')
+        ->and($plot($english)['name'])->toBe($plot($spanish)['name'])
+        ->and($plot($english)['purpose'])->toBe('Nota simple (registry extract) and certificate of encumbrances (registradores.org)')
+        ->and($plot($spanish)['purpose'])->toBe('Nota simple y certificación de cargas (registradores.org)')
+        ->and($spanish['data_locale'])->toBe('es')
+        // The planning law keeps its official name; the facts are translated, their laws still linked.
+        ->and($english['urban_law'])->toBe($spanish['urban_law'])
+        ->and($english['itp'])->toBe('9 % (11 % above 1 M€) · Ley 5/2025')
+        ->and($english['itp_html'])->toContain('BOE-A-2025-11959');
+});
+
+it('refuses an Anexo A phrase file that leaves a phrase out or loses a figure', function () {
+    $root = storage_path('framework/testing/traducciones-'.uniqid());
+    File::copyDirectory(config('curso.translations').'/en', "{$root}/en");
+    $file = "{$root}/en/datos/partners_por_provincia.json";
+    $data = json_decode(File::get($file), true);
+    unset($data['frases']['Alta de agua por vivienda']);
+    $data['frases']['Gestión de RCD (RD 105/2008)'] = 'Construction waste management (RCD)';
+    File::put($file, json_encode($data));
+
+    try {
+        expect(fn () => (new CourseTranslation(CourseSource::fromConfig(), "{$root}/en", 'en'))->provincePhrases())
+            ->toThrow(RuntimeException::class, 'not translated: Alta de agua por vivienda');
+        expect(fn () => (new CourseTranslation(CourseSource::fromConfig(), "{$root}/en", 'en'))->provincePhrases())
+            ->toThrow(RuntimeException::class, 'the figure 105/2008 is missing');
+    } finally {
+        File::deleteDirectory($root);
+    }
 });

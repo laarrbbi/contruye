@@ -8,6 +8,7 @@ import { provinceLabel, useProvinces } from '@/api/provinces'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Skeleton } from '@/components/ui/skeleton'
 import { OfficialLinks } from '@/components/legal/OfficialLinks'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 
 /**
  * "Partners en tu provincia": the rows of Anexo A for this module's phase, in
@@ -60,24 +61,26 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
           <p className="text-muted-foreground">{t('common.error')}</p>
         ) : (
           <>
+            <ContentLanguageNote locale={directory.data.data_locale} />
             <dl className="grid gap-x-4 gap-y-1 text-xs text-muted-foreground sm:grid-cols-[auto_1fr]">
               <dt className="font-medium text-foreground">{t('directory.urbanLaw')}</dt>
-              <dd>
+              {/* The law's official name, in Spanish in any language. */}
+              <dd lang="es">
                 <LinkedText html={directory.data.urban_law_html} text={directory.data.urban_law} />
               </dd>
               <dt className="font-medium text-foreground">{t('directory.firstOccupation')}</dt>
-              <dd>
+              <dd lang={directory.data.data_locale}>
                 <LinkedText html={directory.data.first_occupation_html} text={directory.data.first_occupation} />
                 {directory.data.habitability_certificate && ` · ${directory.data.habitability_certificate}`}
               </dd>
               <dt className="font-medium text-foreground">{t('directory.taxes')}</dt>
-              <dd>
+              <dd lang={directory.data.data_locale}>
                 ITP <LinkedText html={directory.data.itp_html} text={directory.data.itp} /> · AJD {directory.data.ajd} · {directory.data.sale_tax}
               </dd>
               {directory.data.foral && (
                 <>
                   <dt className="font-medium text-foreground">{t('directory.foral')}</dt>
-                  <dd>{directory.data.foral}</dd>
+                  <dd lang={directory.data.data_locale}>{directory.data.foral}</dd>
                 </>
               )}
             </dl>
@@ -94,8 +97,10 @@ export function ProvinceGuidePanel({ slug, phase, showAnnexLink }: { slug: strin
                   <tbody>
                     {rows.rows.map((row, index) => (
                       <tr key={index}>
-                        <td className="font-medium">{row.name}</td>
-                        <td>
+                        <td className="font-medium" lang="es">
+                          {row.name}
+                        </td>
+                        <td lang={directory.data.data_locale}>
                           <LinkedText html={row.purpose_html} text={row.purpose} />
                         </td>
                       </tr>

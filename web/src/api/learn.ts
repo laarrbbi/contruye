@@ -265,6 +265,8 @@ export function useCourseDocument(slug: string | undefined, documentSlug: string
 /** Anexo A for one province: its rows for each phase the student owns. */
 export interface ProvinceDirectory {
   province: { id: number; code: number; name: string }
+  /** The language of the purposes and facts (Spanish until translated); names of institutions and laws are as written. */
+  data_locale: string
   name: string
   capital: string
   ccaa: string

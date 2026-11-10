@@ -31,7 +31,9 @@ class ProvinceDirectoryController extends Controller
         $this->authorizeCourseAccess($user, $course);
 
         $guide = ProvinceGuide::query()->where('province_id', $province->id)->firstOrFail();
-        $data = $guide->data;
+        // The purposes and facts in the reader's language once translated;
+        // the names of institutions and laws are as written in any language.
+        [$data, $dataLocale] = $guide->localizedData();
 
         $accessible = $user->isAdmin()
             ? $course->modules()->pluck('id')
@@ -40,8 +42,8 @@ class ProvinceDirectoryController extends Controller
 
         $phases = [];
         $course->modules()->where('kind', 'phase')->orderBy('order')->get()
-            ->each(function (Module $module) use (&$phases, $guide, $accessible) {
-                $rows = $guide->phaseRows($module->order);
+            ->each(function (Module $module) use (&$phases, $guide, $data, $accessible) {
+                $rows = $guide->phaseRows($module->order, $data);
                 $owned = $accessible->contains($module->id);
                 $phases[] = [
                     'phase' => $module->order,
@@ -61,6 +63,8 @@ class ProvinceDirectoryController extends Controller
 
         return response()->json(['data' => [
             'province' => ['id' => $province->id, 'code' => $province->code, 'name' => $province->localizedName()],
+            // The language of the purposes and facts below (Spanish until translated).
+            'data_locale' => $dataLocale,
             'name' => $data['prov'],
             'capital' => $data['cap'],
             'ccaa' => $data['ccaa'],

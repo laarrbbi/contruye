@@ -107,13 +107,110 @@ final class CourseTranslation
             if ($slug === 'anexo-a') {
                 $body = rtrim(explode("\n---\n", $body, 2)[0], "\n");
             }
+            // The "# TITLE" line is a title, in capitals, translated as a
+            // module's title is: the acronym check reads the text under it.
+            $title = '/\A# [^\n]*\n/';
             self::assertSame("{$this->locale}/{$document['file']}", [
-                ...self::differences($document['body'], $body, 'body'),
+                ...(preg_match($title, $document['body']) === 1 && preg_match($title, $body) !== 1 ? ['body: the "# " title line is missing'] : []),
+                ...self::differences((string) preg_replace($title, '', $document['body']), (string) preg_replace($title, '', $body), 'body'),
             ]);
             $bodies[$slug] = $body;
         }
 
         return $bodies;
+    }
+
+    /** The facts of a province that are words, not only a rate. */
+    public const PROVINCE_FACTS = ['ocup', 'cedula', 'foral', 'iva', 'itp', 'ajd'];
+
+    /**
+     * Anexo A's phrases in this language (datos/partners_por_provincia.json:
+     * {"frases": {"<Spanish>": "<translation>"}}): every "what for" of the
+     * rows and every fact of a province written in words. The names of
+     * institutions and laws are not in it: they stay as written.
+     *
+     * The file must translate every phrase the package has, and only those,
+     * each keeping its figures and acronyms; no file, no translation (the
+     * Spanish is read).
+     *
+     * @return array<string, string>
+     */
+    public function provincePhrases(): array
+    {
+        $file = $this->path('datos/partners_por_provincia.json');
+        if (! is_file($file)) {
+            return [];
+        }
+        $phrases = json_decode((string) file_get_contents($file), true, flags: JSON_THROW_ON_ERROR)['frases'] ?? [];
+        $spanish = self::provincePhraseList($this->source->json('1_contenido/datos/partners_por_provincia.json'));
+
+        $errors = [];
+        foreach (array_diff($spanish, array_keys($phrases)) as $missing) {
+            $errors[] = "not translated: {$missing}";
+        }
+        foreach (array_diff(array_keys($phrases), $spanish) as $stale) {
+            $errors[] = "not in the package: {$stale}";
+        }
+        foreach ($phrases as $es => $translated) {
+            if (! is_string($translated) || trim($translated) === '') {
+                $errors[] = "empty: {$es}";
+
+                continue;
+            }
+            array_push($errors, ...self::differences((string) $es, $translated, (string) $es));
+        }
+        self::assertSame("{$this->locale}/datos/partners_por_provincia.json", $errors);
+
+        return $phrases;
+    }
+
+    /**
+     * The phrases of Anexo A's data that a translation renders: the "what
+     * for" of every row and the facts in words, each once.
+     *
+     * @param  list<array<string, mixed>>  $provinces  partners_por_provincia.json
+     * @return list<string>
+     */
+    public static function provincePhraseList(array $provinces): array
+    {
+        $phrases = [];
+        foreach ($provinces as $province) {
+            foreach ($province['phases'] as $rows) {
+                foreach ($rows as [, $purpose]) {
+                    $phrases[$purpose] = true;
+                }
+            }
+            foreach (self::PROVINCE_FACTS as $fact) {
+                $value = $province[$fact] ?? null;
+                if (is_string($value) && preg_match('/\p{L}/u', $value) === 1) {
+                    $phrases[$value] = true;
+                }
+            }
+        }
+
+        return array_map('strval', array_keys($phrases));
+    }
+
+    /**
+     * A province's data with its phrases translated; names, laws and rates
+     * as they are.
+     *
+     * @param  array<string, mixed>  $data
+     * @param  array<string, string>  $phrases
+     * @return array<string, mixed>
+     */
+    public static function translateProvince(array $data, array $phrases): array
+    {
+        foreach ($data['phases'] as $phase => $rows) {
+            $data['phases'][$phase] = array_map(fn (array $row) => [$row[0], $phrases[$row[1]] ?? $row[1]], $rows);
+        }
+        foreach (self::PROVINCE_FACTS as $fact) {
+            if (is_string($data[$fact] ?? null)) {
+                $data[$fact] = $phrases[$data[$fact]] ?? $data[$fact];
+            }
+        }
+
+        return $data;
     }
 
     /**

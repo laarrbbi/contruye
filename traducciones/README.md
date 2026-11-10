@@ -18,7 +18,8 @@ as such, wherever a piece is not translated.
 | Financials (module 13) in full: the template map and its 9 lessons (sheet and column names stay in Spanish, as the template and the platform show them) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Introduction, resources, Anexo A preface, Anexo B | Spanish | Spanish | Spanish | Spanish | Spanish |
-| Anexo A, the 52 provinces (institution names, laws) | Spanish | Spanish | Spanish | Spanish | Spanish |
+| Anexo A, the rows of each province on screen: the «what for» column and the facts (first occupation, cédula, taxes), 92 phrases (`datos/partners_por_provincia.json`) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Anexo A, names of institutions and laws, and each province's full section | Spanish (official names) | Spanish | Spanish | Spanish | Spanish |
 
 The interface (buttons, pages, e-mails, errors) is translated in full; that lives in
 `web/src/i18n/` and `api/lang/`, not here. English is written in British spelling (*licence*,

@@ -27,6 +27,7 @@ class CheckTranslations extends Command
             try {
                 $modules = $translation->modules();
                 $translation->documents();
+                $translation->provincePhrases();
                 $assessments = $translation->assessments();
             } catch (RuntimeException $e) {
                 $this->components->error($e->getMessage());
