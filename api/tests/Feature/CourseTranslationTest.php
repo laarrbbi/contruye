@@ -256,3 +256,26 @@ it('refuses an Anexo A phrase file that leaves a phrase out or loses a figure', 
         File::deleteDirectory($root);
     }
 });
+
+it('serves the course documents in the student\'s language, their laws linked as in the Spanish', function () {
+    $this->seed([ProvinceSeeder::class, CurriculumV2Seeder::class, CourseTranslationSeeder::class]);
+    $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
+    $student = User::factory()->create();
+    Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => null]);
+    $document = fn (string $slug, string $locale) => $this->actingAs($student)->withHeader('Accept-Language', $locale)
+        ->getJson("/api/courses/{$course->slug}/documents/{$slug}")->assertOk()->json('data');
+
+    foreach (['introduccion', 'recursos', 'anexo-a', 'anexo-b'] as $slug) {
+        $spanish = $document($slug, 'es');
+        foreach (['en', 'fr', 'ar', 'ru', 'uk'] as $locale) {
+            $translated = $document($slug, $locale);
+            expect($translated['body_locale'])->toBe($locale)
+                ->and(substr_count($translated['body_html'], 'class="ley"'))->toBe(substr_count($spanish['body_html'], 'class="ley"'));
+        }
+    }
+
+    // Anexo B's table reads the same phrases as each province's facts, its laws as written.
+    expect($document('anexo-b', 'en')['body_html'])
+        ->toContain('<td>First occupation licence (town hall)</td>')
+        ->toContain('Ley 2/2016</a> del Suelo de Galicia');
+});

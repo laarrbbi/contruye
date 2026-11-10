@@ -17,7 +17,7 @@ as such, wherever a piece is not translated.
 | Modules 1 to 12 in full: the laws and where-to-go tables, the lessons (1.1 and 1.2 are the free preview), the closing sections | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Financials (module 13) in full: the template map and its 9 lessons (sheet and column names stay in Spanish, as the template and the platform show them) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Quizzes (13) and final exam | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Introduction, resources, Anexo A preface, Anexo B | Spanish | Spanish | Spanish | Spanish | Spanish |
+| Introduction, resources, Anexo A preface, Anexo B (its table reads the same phrases as the province facts; community names and planning laws as written) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Anexo A, the rows of each province on screen: the «what for» column and the facts (first occupation, cédula, taxes), 92 phrases (`datos/partners_por_provincia.json`) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Anexo A, names of institutions and laws, and each province's full section | Spanish (official names) | Spanish | Spanish | Spanish | Spanish |
 
