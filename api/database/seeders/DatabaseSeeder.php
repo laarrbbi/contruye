@@ -28,8 +28,9 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CurriculumV2Seeder::class,
             ChecklistSeeder::class,
-            CourseTranslationSeeder::class,
+            // Before the translations: they also translate each province's rows.
             ProvinceGuideSeeder::class,
+            CourseTranslationSeeder::class,
             StudentSeeder::class,
             OrderSeeder::class,
         ]);

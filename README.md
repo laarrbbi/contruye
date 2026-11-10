@@ -222,7 +222,9 @@ paquete y guardan cada pieza sin reescribirla, y `CourseContentTest` reconstruye
 desde la base de datos y lo compara línea a línea.
 
 **Un paquete nuevo** se copia entero en `curso/` (el anterior sale entero) y se aplica con
-`db:seed --class=CurriculumV2Seeder`, `--class=ChecklistSeeder` y `--class=CourseTranslationSeeder`:
+`db:seed --class=CurriculumV2Seeder`, `--class=ChecklistSeeder`, `--class=ProvinceGuideSeeder` y
+`--class=CourseTranslationSeeder`, en ese orden (las traducciones también traducen las filas de cada
+provincia del Anexo A):
 sobre un curso instalado, los textos en español se ponen al día en su sitio (módulo a módulo,
 lección a lección) y las checklists se casan por su texto, así que el progreso y las casillas
 marcadas se conservan. Un módulo que cambia de forma (otro número de lecciones) se deja como está

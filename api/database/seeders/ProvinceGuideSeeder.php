@@ -10,7 +10,8 @@ use RuntimeException;
 
 /**
  * Anexo A of the course, one guide per province: what to ask and where, phase
- * by phase. Reference data, refreshed on every run.
+ * by phase. Reference data, refreshed on every run; run it before
+ * CourseTranslationSeeder, which translates these rows.
  *
  * The package names some provinces in one language ("Alicante", "Álava"); the
  * provinces table uses the official INE name ("Alicante/Alacant",
@@ -40,10 +41,19 @@ class ProvinceGuideSeeder extends Seeder
                 throw new RuntimeException("No province matches {$guide['name']}");
             }
 
-            ProvinceGuide::query()->updateOrCreate(
-                ['province_id' => $province->id],
-                ['ccaa' => $guide['ccaa'], 'section_es' => $guide['section'], 'data' => $guide['data']],
-            );
+            $existing = ProvinceGuide::query()->where('province_id', $province->id)->first();
+            $values = ['ccaa' => $guide['ccaa'], 'section_es' => $guide['section'], 'data' => $guide['data']];
+            // New rows from a new package: the translated copies were made from
+            // the old ones, so they go until CourseTranslationSeeder makes them
+            // again (the Spanish is read meanwhile, never a stale translation).
+            if ($existing !== null && $existing->data != $guide['data']) {
+                foreach (config('locales.supported') as $locale) {
+                    if ($locale !== config('locales.default')) {
+                        $values["data_{$locale}"] = null;
+                    }
+                }
+            }
+            ProvinceGuide::query()->updateOrCreate(['province_id' => $province->id], $values);
             $count++;
         }
 

@@ -4,6 +4,7 @@ use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Module;
 use App\Models\Province;
+use App\Models\ProvinceGuide;
 use App\Models\Quiz;
 use App\Models\User;
 use App\Support\Course\CourseSource;
@@ -11,6 +12,7 @@ use App\Support\Course\CourseTranslation;
 use Database\Seeders\ChecklistSeeder;
 use Database\Seeders\CourseTranslationSeeder;
 use Database\Seeders\CurriculumV2Seeder;
+use Database\Seeders\DatabaseSeeder;
 use Database\Seeders\ProvinceGuideSeeder;
 use Database\Seeders\ProvinceSeeder;
 use Illuminate\Support\Facades\File;
@@ -278,4 +280,22 @@ it('serves the course documents in the student\'s language, their laws linked as
     expect($document('anexo-b', 'en')['body_html'])
         ->toContain('<td>First occupation licence (town hall)</td>')
         ->toContain('Ley 2/2016</a> del Suelo de Galicia');
+});
+
+it('translates the province rows on a fresh demo database, and drops them when the package changes the rows', function () {
+    $this->seed(DatabaseSeeder::class);
+
+    expect(ProvinceGuide::query()->count())->toBe(52)
+        ->and(ProvinceGuide::query()->whereNull('data_en')->count())->toBe(0);
+
+    // A new package changes a row: the old translation of it is not shown, the
+    // Spanish is, until the translations are loaded again.
+    $guide = ProvinceGuide::query()->firstOrFail();
+    $data = $guide->data;
+    $data['phases']['1'][0][1] = 'Otra cosa';
+    $guide->update(['data' => $data]);
+    $this->seed(ProvinceGuideSeeder::class);
+
+    expect($guide->fresh()->data_en)->toBeNull()
+        ->and(ProvinceGuide::query()->whereNull('data_en')->count())->toBe(1);
 });

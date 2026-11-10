@@ -67,8 +67,10 @@ Spanish names of procedures are worth keeping in brackets the first time they ap
 
 ## Loading them
 
-`CourseTranslationSeeder` copies the files into the `_<locale>` columns; `php artisan app:install`
-runs it every time, and `php artisan db:seed --class=CourseTranslationSeeder` does it alone. For a
+`CourseTranslationSeeder` copies the files into the `_<locale>` columns (and each province's
+translated rows into `province_guides.data_<locale>`, so it runs after `ProvinceGuideSeeder`);
+`php artisan app:install` runs it every time, and `php artisan db:seed --class=CourseTranslationSeeder`
+does it alone. For a
 language with a folder, the files are the source of truth: a piece set back to `<!-- es -->` is
 emptied on the next run. The Spanish columns are never written.
 

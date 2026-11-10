@@ -26,8 +26,8 @@ before the Spanish adaptation: the paths and behaviours still match, the Algeria
 `curso/LEEME.md`). Its texts are integrated as written and its financial templates are used as
 delivered: no formula, value or label changes, ever; only the «Parámetros legales» sheet is set,
 by the admin. Never edit anything under `curso/`; a correction comes as a new package from the
-instructor (copied whole into `curso/`, then the curriculum, checklist and translation seeders,
-which bring an installed course up to it in place).
+instructor (copied whole into `curso/`, then the curriculum, checklist, province guide and
+translation seeders, in that order, which bring an installed course up to it in place).
 
 ## Running it
 

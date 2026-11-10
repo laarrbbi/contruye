@@ -37,7 +37,9 @@ it('installs the real content and one real admin, and nothing invented', functio
         ->and(Module::query()->count())->toBe(13)
         ->and(ChecklistItem::query()->count())->toBeGreaterThan(0)
         ->and(Quiz::query()->count())->toBe(14)
-        ->and(ProvinceGuide::query()->count())->toBe(52);
+        ->and(ProvinceGuide::query()->count())->toBe(52)
+        // The province rows are translated too: the guides exist before the translations run.
+        ->and(ProvinceGuide::query()->whereNotNull('data_en')->count())->toBe(52);
 
     $admin = User::query()->sole();
     expect($admin->email)->toBe('owner@construye-academy.es')
