@@ -1,5 +1,24 @@
-# Vercel preview (vercel.json): what the build never needs.
+# Vercel (vercel.json): what neither the build nor the site needs, never uploaded.
+# The function's excludeFiles repeats the big ones, in case a Git build ignores this file.
 reports/
 video/
 docker/
 .github/
+docs/
+api/tests/
+financials/test/
+curso/1_contenido/referencia/
+curso/1_contenido/curso_completo.md
+curso/1_contenido/pdf/curso_completo.pdf
+curso/2_plantilla_financiera/originales/
+curso/2_plantilla_financiera/herramientas/
+curso/2_plantilla_financiera/pruebas/
+curso/2_plantilla_financiera/plantilla/plantilla_libre_original.json
+curso/2_plantilla_financiera/plantilla/entradas_original.json
+curso/2_plantilla_financiera/plantilla/correcciones.json
+# Laravel's default front-end scaffolding, unused (the front end is web/): under
+# api/, Vercel would build each .js file as a function of its own.
+api/package.json
+api/vite.config.js
+api/resources/js/
+api/resources/css/

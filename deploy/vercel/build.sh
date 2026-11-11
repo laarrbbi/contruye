@@ -7,6 +7,12 @@
 set -eu
 cd "$(dirname "$0")/../.."
 
+# Vercel's PHP caches compiled files in /tmp and never checks them again
+# (opcache.file_cache, validate_timestamps=0): after the dev packages go, a later
+# `artisan` would still run the old autoloader and fail on a removed package.
+# The build's own PHP runs without that cache; the function keeps it.
+php() { command php -d opcache.enable_cli=0 "$@"; }
+
 echo "▸ API dependencies, with dev ones: the demo seeders use the factories"
 composer install --working-dir=api --no-interaction --no-progress --prefer-dist --no-scripts --ignore-platform-reqs
 

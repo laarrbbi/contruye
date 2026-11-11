@@ -8,7 +8,7 @@
     "api/vercel.php": {
       "runtime": "vercel-php@0.8.0",
       "maxDuration": 60,
-      "excludeFiles": "{node_modules/**,web/node_modules/**,web/dist/**,web/public/**,video/**,reports/**,docs/**,docker/**,deploy/**,traducciones/**,.github/**,financials/test/**,api/tests/**,api/node_modules/**,api/storage/logs/**,api/storage/framework/**,curso/1_contenido/referencia/**,curso/1_contenido/pdf/curso_completo.pdf,curso/1_contenido/curso_completo.md,curso/2_plantilla_financiera/originales/**,curso/2_plantilla_financiera/herramientas/**,curso/2_plantilla_financiera/plantilla/plantilla_libre_original.json,curso/2_plantilla_financiera/plantilla/correcciones.json,curso/2_plantilla_financiera/plantilla/entradas_original.json,vercel.json,.vercelignore}"
+      "excludeFiles": "{.git,**/.git,.vercel,.claude,node_modules,deploy,traducciones,docs,api/{tests,node_modules,storage/logs,storage/framework},web/{node_modules,dist,public,*-sources},curso/2_plantilla_financiera/{originales,herramientas,pruebas}}/**"
     }
   },
   "rewrites": [
