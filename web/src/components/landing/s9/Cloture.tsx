@@ -9,8 +9,9 @@ import { useScrollProgress, useVu, vars } from '@/components/landing/kit/tools'
 import { useMediaNow } from '@/hooks/useMediaNow'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { phaseModules } from '@/lib/modules'
-import { cn, formatPrice } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import type { PorteScene } from './porteScene'
+import { PriceTag } from '@/components/pricing/PriceTag'
 
 /** The light that comes through the opened door: warm at its heart, amber at its edge, night in the corners. */
 const LIGHT = 'bg-[radial-gradient(120%_95%_at_50%_50%,#FFF1D6_0%,#FBD9A0_32%,#E8A33D_62%,#7A4A12_86%,#070F1C_100%)]'
@@ -33,8 +34,7 @@ function weakPhone() {
  * (the door open, the light) stands behind the words and the button.
  */
 export function Cloture({ course, cta }: { course: CourseDetail; cta: HeroCta }) {
-  const { t, i18n } = useTranslation()
-  const lang = i18n.language
+  const { t } = useTranslation()
   const still = usePrefersReducedMotion()
   const wide = useMediaNow('(min-width: 1024px)')
   const [weak] = useState(weakPhone)
@@ -47,7 +47,6 @@ export function Cloture({ course, cta }: { course: CourseDetail; cta: HeroCta })
   const title = t('landing.finalCta.title', { modules })
   // One sentence to a line: the title is said in three breaths.
   const lines = title.match(/[^.!?؟]+[.!?؟]*/g)?.map((line) => line.trim()).filter(Boolean) ?? [title]
-  const price = formatPrice(course.price_eur, 'EUR', lang)
   const euro = t('course.pricing.vatIncluded')
   const closing = t('landing.finalCta.p1', { phases: phaseModules(course.modules).length })
 
@@ -111,10 +110,10 @@ export function Cloture({ course, cta }: { course: CourseDetail; cta: HeroCta })
       <BoutonOr cta={cta} className="w-full sm:w-auto [&_.btn-or]:shadow-[inset_0_1px_0_rgb(255_255_255/0.55),0_0_0_1px_rgb(20_26_34/0.9),0_18px_36px_-10px_rgb(20_26_34/0.55)]">
         {t(cta.label)}
       </BoutonOr>
-      <p className="text-center sm:text-start">
-        <span className="titre block text-[2rem] leading-none tabular-nums lg:text-[2.5rem]">{price}</span>
+      <div className="text-center sm:text-start [&_p]:justify-center sm:[&_p]:justify-start">
+        <PriceTag course={course} size="md" />
         {euro && <span className="mt-1.5 block text-sm text-plume/80">{euro}</span>}
-      </p>
+      </div>
     </div>
   )
 

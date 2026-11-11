@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next'
 import { Check } from 'lucide-react'
 import type { CourseDetail } from '@/api/courses'
 import type { HeroCta } from '@/components/landing/kit/cta'
+import { PriceTag } from '@/components/pricing/PriceTag'
 import { BoutonOr, Feuillage, Mots } from '@/components/landing/kit/pieces'
 import { between, useScrollProgress, vars } from '@/components/landing/kit/tools'
 import { useMediaNow } from '@/hooks/useMediaNow'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { paymentMethodList } from '@/lib/payments'
 import { phaseModules } from '@/lib/modules'
-import { cn, formatNumber, formatPrice } from '@/lib/utils'
+import { cn, formatNumber } from '@/lib/utils'
 
 /** Paper and night lay their content out on the same grid, so that the two copies of the pitch coincide. */
 const GRID = 'container relative flex h-full flex-col justify-center pb-8 pt-20 lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-14'
@@ -181,7 +182,6 @@ function Pitch({ course, cta, copy = false }: { course: CourseDetail | undefined
   const lang = i18n.language
   // The page has one title: the night's copy of it is only a picture of it.
   const Title = copy ? 'p' : 'h1'
-  const price = course ? formatPrice(course.price_eur, 'EUR', lang) : null
   // Prices are in euros, VAT included: said under the figure, as the checkout says it.
   const euro = course ? t('course.pricing.vatIncluded') : null
   // The size of the course, counted from it: its phases, its lessons, and the
@@ -218,11 +218,11 @@ function Pitch({ course, cta, copy = false }: { course: CourseDetail | undefined
         <BoutonOr cta={cta} className="w-full sm:w-auto">
           {t(cta.label)}
         </BoutonOr>
-        {price && (
-          <p className="flex items-baseline gap-3 sm:block">
-            <span className="titre block text-[2rem] leading-none lg:text-[2.5rem]">{price}</span>
-            {euro && <span className="text-sm text-[color:var(--doux)] sm:mt-1.5 sm:block">{euro}</span>}
-          </p>
+        {course && (
+          <div>
+            <PriceTag course={course} dark={copy} />
+            {euro && <span className="mt-1.5 block text-sm text-[color:var(--doux)]">{euro}</span>}
+          </div>
         )}
       </div>
       <p className="entree mt-4 flex items-start gap-2.5 text-sm text-[color:var(--doux)]" style={vars({ '--d': '860ms' })}>

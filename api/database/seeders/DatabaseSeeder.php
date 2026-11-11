@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             // Before the translations: they also translate each province's rows.
             ProvinceGuideSeeder::class,
             CourseTranslationSeeder::class,
+            LaunchCampaignSeeder::class,
             StudentSeeder::class,
             OrderSeeder::class,
         ]);

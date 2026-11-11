@@ -53,7 +53,7 @@ class OrderSeeder extends Seeder
         Order::query()->firstOrCreate(
             ['user_id' => $pablo->id, 'course_id' => $course->id, 'method' => 'stripe', 'status' => 'pending'],
             [
-                'amount' => 490,
+                'amount' => 499,
                 'currency' => 'EUR',
                 'stripe_session_id' => 'cs_test_'.Str::random(24),
             ],
@@ -63,7 +63,7 @@ class OrderSeeder extends Seeder
         Order::query()->firstOrCreate(
             ['user_id' => $marta->id, 'course_id' => $course->id, 'method' => 'stripe', 'status' => 'failed'],
             [
-                'amount' => $early20->apply(490),
+                'amount' => $early20->apply(499),
                 'currency' => 'EUR',
                 'coupon_id' => $early20->id,
                 'stripe_session_id' => 'cs_test_'.Str::random(24),
@@ -74,7 +74,7 @@ class OrderSeeder extends Seeder
         Order::query()->firstOrCreate(
             ['user_id' => $pablo->id, 'course_id' => $course->id, 'method' => 'manual_transfer', 'status' => 'refunded'],
             [
-                'amount' => 490,
+                'amount' => 499,
                 'currency' => 'EUR',
                 'receipt_path' => 'receipts/demo/pablo-transferencia.jpg',
                 'admin_note' => 'Pago duplicado — devuelto por transferencia el '.now()->subDays(5)->format('d/m/Y').'.',
@@ -87,7 +87,7 @@ class OrderSeeder extends Seeder
         $cashOrder = Order::query()->firstOrCreate(
             ['user_id' => $marta->id, 'course_id' => $course->id, 'method' => 'cash'],
             [
-                'amount' => $obra50->apply(490),
+                'amount' => $obra50->apply(499),
                 'currency' => 'EUR',
                 'coupon_id' => $obra50->id,
                 'status' => 'pending',

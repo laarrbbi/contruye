@@ -4,7 +4,8 @@ import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { CourseDetail } from '@/api/courses'
 import type { HeroCta } from '@/components/landing/kit/cta'
-import { cn, formatPrice } from '@/lib/utils'
+import { cn } from '@/lib/utils'
+import { PriceTag } from '@/components/pricing/PriceTag'
 
 /**
  * On a phone, the price and the button stay within reach at the bottom of
@@ -13,7 +14,7 @@ import { cn, formatPrice } from '@/lib/utils'
  * (`data-achat` on that button's block).
  */
 export function BarreAchat({ course, cta, held }: { course: CourseDetail | undefined; cta: HeroCta; held: boolean }) {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [inView, setInView] = useState(1)
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export function BarreAchat({ course, cta, held }: { course: CourseDetail | undef
       style={{ ['--focus' as string]: '#F6F2EA' }}
     >
       <div className="container flex items-center justify-between gap-3">
-        <p className="titre shrink-0 text-[1.25rem] leading-none tabular-nums">{formatPrice(course.price_eur, 'EUR', i18n.language)}</p>
+        <PriceTag course={course} size="sm" className="shrink-0" />
         <Link to={cta.to} state={cta.state} className="btn-or h-12 min-w-0 flex-1 !gap-2 !ps-4 text-[0.875rem] sm:flex-none">
           <span className="min-w-0 truncate">{t(cta.label)}</span>
           <span aria-hidden className="btn-or__fleche !h-9 !w-9">

@@ -1559,5 +1559,13 @@
     "see": "See the extra",
     "finishedTitle": "You have finished the course",
     "finishedBody": "You have passed the final exam."
+  },
+  "pricing": {
+    "tag": {
+      "before": "Before",
+      "off": "{{percent}}% off",
+      "vsModules": "{{percent}}% less than module by module",
+      "left": "{{time}} left at this price"
+    }
   }
 }

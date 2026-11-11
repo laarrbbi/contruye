@@ -48,7 +48,7 @@ class StudentSeeder extends Seeder
                 'method' => 'stripe',
             ],
             [
-                'amount' => 490,
+                'amount' => 499,
                 'currency' => 'EUR',
                 'scope' => 'full',
                 'status' => 'pending',
@@ -80,7 +80,7 @@ class StudentSeeder extends Seeder
         }
 
         // Lucía: à-la-carte order for 3 phases (10% volume tier:
-        // 3 × 49 = 147 → 132), bank transfer awaiting review — NOT enrolled.
+        // 3 × 55 = 165 → 149), bank transfer awaiting review — NOT enrolled.
         $luciaOrder = Order::query()->firstOrCreate(
             [
                 'user_id' => $lucia->id,
@@ -88,7 +88,7 @@ class StudentSeeder extends Seeder
                 'method' => 'manual_transfer',
             ],
             [
-                'amount' => 132,
+                'amount' => 149,
                 'discount_percent' => 10,
                 'currency' => 'EUR',
                 'scope' => 'modules',
@@ -102,7 +102,7 @@ class StudentSeeder extends Seeder
             foreach ($firstThreeModules as $module) {
                 $luciaOrder->orderModules()->create([
                     'module_id' => $module->id,
-                    'unit_price' => $module->price_eur ?? 49,
+                    'unit_price' => $module->price_eur ?? 55,
                 ]);
             }
         }

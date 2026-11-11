@@ -15,6 +15,7 @@ import type { HeroCta } from '@/components/landing/kit/cta'
 import { BoutonOr, Mots } from '@/components/landing/kit/pieces'
 import { useVu, vars } from '@/components/landing/kit/tools'
 import { BANDE, H2, TEXTE } from '@/components/landing/kit/type'
+import { PriceTag } from '@/components/pricing/PriceTag'
 
 
 /** What the full course includes, each line with what it is for: counted from the course where it can be. */
@@ -350,13 +351,8 @@ export function Programme({ course, cta, purchaseLink, checkoutPath }: Programme
                   )}
 
                   <div className="mt-6 border-t border-plume/15 pt-5">
-                    <p className="flex items-baseline justify-between gap-4">
-                      <span className="font-semibold">{t('landing.pricing.fullTitle')}</span>
-                      <span className="titre flex items-baseline gap-2 text-[1.75rem] leading-none tabular-nums">
-                        {course.campaign && <s className="text-base font-normal text-plume/85">{price(course.price_eur)}</s>}
-                        {price(fullPrice)}
-                      </span>
-                    </p>
+                    <p className="font-semibold">{t('landing.pricing.fullTitle')}</p>
+                    <PriceTag course={course} size="md" className="mt-2" />
                     <p className="mt-1.5 text-[0.9375rem] text-plume/80">{t('landing.pricing.fullShort', { count: course.modules.length })}</p>
                     <div data-achat>
                       <BoutonOr cta={cta} className="mt-5 w-full">

@@ -7,6 +7,10 @@ use App\Models\Module;
 use App\Models\Order;
 use App\Models\User;
 use App\Services\PricingService;
+use Database\Seeders\CurriculumV2Seeder;
+use Database\Seeders\LaunchCampaignSeeder;
+use Database\Seeders\ProvinceSeeder;
+use Illuminate\Support\Carbon;
 
 function campaignCourse(): Course
 {
@@ -333,4 +337,21 @@ it('starts a promotion with no English name; English visitors read the Spanish o
         ->getJson("/api/courses/{$course->slug}")
         ->assertOk()
         ->assertJsonPath('data.campaign.label', 'Oferta de lanzamiento');
+});
+
+it('sells the course at €399 until 30 November at 23:59 in Madrid, €499 after, and never cheaper module by module', function () {
+    $this->seed([ProvinceSeeder::class, CurriculumV2Seeder::class, LaunchCampaignSeeder::class]);
+    $course = Course::query()->where('slug', 'promocion-inmobiliaria-espana')->firstOrFail();
+    $user = User::factory()->create();
+    $quote = fn (array $body) => $this->actingAs($user)->postJson('/api/checkout/quote', ['course_id' => $course->id] + $body)->assertOk()->json('data');
+    $allModules = ['scope' => 'modules', 'module_ids' => $course->includedModules()->pluck('id')->all()];
+
+    $this->travelTo(Carbon::parse('2026-11-30 23:59:00', 'Europe/Madrid'));
+    expect($quote(['scope' => 'full'])['total'])->toBe(399);
+
+    $this->travelTo(Carbon::parse('2026-12-01 00:00:00', 'Europe/Madrid'));
+    expect($quote(['scope' => 'full'])['total'])->toBe(499)
+        // The 12 modules one by one: 12 × €55 = €660, €528 with the 20 % volume
+        // discount; the full course is the better price, so it is what is quoted.
+        ->and($quote($allModules))->toMatchArray(['scope' => 'full', 'total' => 499, 'full_price_anchor' => 660]);
 });

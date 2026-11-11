@@ -101,7 +101,7 @@ class BenchmarkSeeder extends Seeder
             $orders[] = [
                 'user_id' => $userId,
                 'course_id' => $course->id,
-                'amount' => $full ? 490 : 147,
+                'amount' => $full ? 499 : 165,
                 'currency' => 'EUR',
                 'method' => ['stripe', 'manual_transfer', 'manual_bizum', 'cash'][$index % 4],
                 'scope' => $full ? 'full' : 'modules',

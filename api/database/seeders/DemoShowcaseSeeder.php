@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Campaign;
 use App\Models\Company;
 use App\Models\Course;
 use App\Models\Enrollment;
@@ -119,17 +118,10 @@ class DemoShowcaseSeeder extends Seeder
             );
         }
 
-        // --- A running promotion, so the countdown has something to count to ---
-        Campaign::query()->firstOrCreate(
-            ['course_id' => $course->id, 'label_es' => '[DEMO] Oferta de lanzamiento'],
-            [
-                'label_en' => '[DEMO] Launch offer',
-                'percent_off' => 20,
-                'starts_at' => now()->subDay(),
-                'ends_at' => now()->addDays(3)->addHours(6),
-                'is_active' => true,
-            ],
-        );
+        // --- The running promotion is the real launch price (LaunchCampaignSeeder,
+        // in the default seed): a demo one ending "in 3 days" from each build
+        // would move its deadline on every deploy. ---
+        $this->call(LaunchCampaignSeeder::class);
 
         // --- Mixed access levels, to exercise the paywall in every state ---
         $lucia = User::query()->where('email', 'lucia@example.es')->first();

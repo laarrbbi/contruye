@@ -51,7 +51,7 @@ class CurriculumV2Seeder extends Seeder
                 'title_en' => null,
                 // Whole euros, IVA included. Placeholders until the owner
                 // sets the launch prices.
-                'price_eur' => 490,
+                'price_eur' => 499,
                 'module_discount_tiers' => PricingService::DEFAULT_TIERS,
                 'status' => 'published',
             ],
@@ -86,7 +86,7 @@ class CurriculumV2Seeder extends Seeder
                 'description_en' => null,
                 // Financials is the extra at the end: no price until the owner sets one
                 // (the admin's «Plantillas» page), and not on sale until then.
-                'price_eur' => $data['kind'] === Module::KIND_FINANCIALS ? null : 49,
+                'price_eur' => $data['kind'] === Module::KIND_FINANCIALS ? null : 55,
             ]);
 
             $order = 0;
