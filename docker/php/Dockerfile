@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+# Node, for the template engine run as a process (`node financials/cli.js`,
+# the Vercel preview's transport, and its test). Its packages are installed
+# by the financials service into the shared curso/ folder.
+COPY --from=node:22-bookworm-slim /usr/local/bin/node /usr/local/bin/node
+
 RUN echo "upload_max_filesize=10M\npost_max_size=12M\nmemory_limit=512M" \
     > /usr/local/etc/php/conf.d/construye.ini
 

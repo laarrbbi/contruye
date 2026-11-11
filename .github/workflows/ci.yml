@@ -59,6 +59,17 @@ jobs:
 
       - run: composer install --no-interaction --no-progress --prefer-dist
 
+      # The template engine run as a process (the Vercel preview's transport,
+      # tested in TemplatesTest): Node and the package's engine dependencies.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: curso/2_plantilla_financiera/motor/package-lock.json
+
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: curso/2_plantilla_financiera/motor
+
       - run: cp .env.example .env && php artisan key:generate
 
       - name: Format (pint leaves no diff)
