@@ -105,3 +105,29 @@ it('hands out the package files behind their own gate, from the package as deliv
     $this->actingAs($full)->get("/api/courses/{$course->slug}/files/directorio-partners")->assertOk();
     $this->actingAs($full)->get("/api/courses/{$course->slug}/files/no-existe")->assertNotFound();
 });
+
+it('hands out the instructor\'s templates of a module to its owners, as delivered, and says which are locked', function () {
+    [$course, $phase1, $phase2] = resourcesCourse();
+    $url = fn (string $key) => "/api/courses/{$course->slug}/files/{$key}";
+
+    // Module 1's owner has both, byte for byte the files in materiales/.
+    $first = owner($course, $phase1);
+    foreach (['esquema-bbdd-suelo' => 'Esquema_BBDD_Gestion_de_Suelo.xlsx', 'calculo-precio-solar' => 'Plantilla_calculo_precio_solar.xlsx'] as $key => $name) {
+        $response = $this->actingAs($first)->get($url($key))->assertOk();
+        expect($response->headers->get('content-disposition'))->toContain($name)
+            ->and(hash_file('sha256', $response->getFile()->getPathname()))->toBe(hash_file('sha256', base_path("../materiales/modulo_01/{$name}")));
+    }
+
+    // Another module's owner does not, and sees them locked with their module.
+    $second = owner($course, $phase2);
+    $this->actingAs($second)->get($url('calculo-precio-solar'))->assertForbidden();
+    $files = collect($this->actingAs($second)->getJson("/api/courses/{$course->slug}/learn")->assertOk()->json('data.course.files'))->keyBy('key');
+    expect($files['calculo-precio-solar'])->toMatchArray(['access' => 'module', 'module' => 1, 'is_locked' => true]);
+
+    $files = collect($this->actingAs($first)->getJson("/api/courses/{$course->slug}/learn")->assertOk()->json('data.course.files'))->keyBy('key');
+    expect($files['esquema-bbdd-suelo']['is_locked'])->toBeFalse()
+        ->and($files['curso-pdf']['is_locked'])->toBeTrue();
+
+    // The whole course includes module 1.
+    $this->actingAs(owner($course, null))->get($url('esquema-bbdd-suelo'))->assertOk();
+});

@@ -37,7 +37,11 @@ function Downloads({ data }: { data: LearnData }) {
             </span>
             {file.is_locked ? (
               <span className="shrink-0 text-xs text-muted-foreground">
-                {file.access === 'full' ? t('documents.needsFullAccess') : t('documents.needsFinancials')}
+                {file.access === 'full'
+                  ? t('documents.needsFullAccess')
+                  : file.access === 'module'
+                    ? t('documents.needsModule', { number: file.module })
+                    : t('documents.needsFinancials')}
               </span>
             ) : (
               <Button asChild size="sm" variant="outline">

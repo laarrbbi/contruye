@@ -31,4 +31,17 @@ return [
 
     'translations' => env('CURSO_TRANSLATIONS_PATH', base_path('../traducciones')),
 
+    /*
+    |--------------------------------------------------------------------------
+    | The instructor's material delivered outside the package
+    |--------------------------------------------------------------------------
+    |
+    | Templates the instructor sent on their own (materiales/, see its
+    | LEEME.md), used exactly as delivered like the package, and served by
+    | CourseFiles to the owners of their module.
+    |
+    */
+
+    'materials' => env('CURSO_MATERIALS_PATH', base_path('../materiales')),
+
 ];

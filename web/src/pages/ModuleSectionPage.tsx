@@ -1,6 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useLearn } from '@/api/learn'
+import { moduleFiles, useLearn } from '@/api/learn'
 import { useChecklists } from '@/api/checklists'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { CompanyDirectory } from '@/components/directory/CompanyDirectory'
@@ -11,6 +11,7 @@ import { PlayerShell } from '@/components/player/PlayerShell'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
 import { PartnerList } from '@/components/player/PartnerList'
 import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
+import { ModuleFiles } from '@/components/templates/ModuleFiles'
 import { SmallTemplateCalculator } from '@/components/templates/SmallTemplateCalculator'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { moduleLabel } from '@/lib/modules'
@@ -35,7 +36,8 @@ export function ModuleSectionPage() {
 
   if (isLoading || !data || !slug) return <PlayerSkeleton />
   if (!module || !MODULE_SECTIONS.includes(section as ModuleSection) || module.is_locked) return <Navigate to={`/learn/${slug}`} replace />
-  if (section === 'plantilla' && !module.template) return <Navigate to={`/learn/${slug}`} replace />
+  const files = module.kind === 'phase' ? moduleFiles(data, module.order) : []
+  if (section === 'plantilla' && !module.template && files.length === 0) return <Navigate to={`/learn/${slug}`} replace />
 
   const kind = section as ModuleSection
   const laws = module.blocks.filter((b) => b.type === 'overview' && b.role === 'laws')
@@ -61,6 +63,7 @@ export function ModuleSectionPage() {
       </header>
 
       {kind === 'plantilla' && module.template && <SmallTemplateCalculator slug={slug} number={module.template.number} />}
+      {kind === 'plantilla' && <ModuleFiles slug={slug} files={files} />}
 
       {kind === 'tareas' &&
         (checklist ? <ModuleChecklist slug={slug} module={checklist} /> : <p className="text-sm text-muted-foreground">{t('moduleSection.noTasks')}</p>)}

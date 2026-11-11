@@ -1372,10 +1372,13 @@
     "files": {
       "plantilla-simplificada": "Modèle simplifié corrigé (exemple du professionnel)",
       "directorio-partners": "Annuaire des partenaires par province (Excel)",
-      "curso-pdf": "La formation complète en PDF"
+      "curso-pdf": "La formation complète en PDF",
+      "esquema-bbdd-suelo": "Schéma de base de données de gestion foncière",
+      "calculo-precio-solar": "Calcul du prix du terrain (les grands chiffres)"
     },
     "needsFullAccess": "Avec l'accès complet",
     "needsFinancials": "Avec l'extra (modèle professionnel)",
+    "needsModule": "Avec le module {{number}}",
     "downloadsNote": "Les autres ressources de la liste seront publiées ici dès qu'elles seront disponibles. Le tableau fiscal par communauté autonome est l'annexe B."
   },
   "directory": {
@@ -1529,7 +1532,9 @@
     "notANumber": "Saisissez un nombre",
     "locked": "Le modèle fait partie de son module.",
     "error": "Le calcul n'a pas abouti. Réessayez.",
-    "howTo": "Remplissez les cases mises en évidence : les formules du modèle calculent le reste, avec les impôts en vigueur. Le fichier Excel téléchargé contient vos données."
+    "howTo": "Remplissez les cases mises en évidence : les formules du modèle calculent le reste, avec les impôts en vigueur. Le fichier Excel téléchargé contient vos données.",
+    "moreTitle": "Autres modèles du professionnel pour ce module",
+    "moreLead": "En Excel, tels que le professionnel les a préparés : téléchargez-les et travaillez avec vos données."
   },
   "legalParams": {
     "title": "Paramètres légaux appliqués",

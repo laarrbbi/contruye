@@ -89,14 +89,18 @@ class LearnCourseResource extends JsonResource
                     'access' => $document->access,
                     'is_locked' => $document->access === 'full' && ! $fullAccess,
                 ])->values(),
-                // The package's downloads and whether this student may take them.
+                // The course's downloads and whether this student may take them.
                 'files' => collect(CourseFiles::FILES)->map(fn (array $file, string $key) => [
                     'key' => $key,
                     'name' => $file['name'],
                     'access' => $file['access'],
-                    'is_locked' => $file['access'] === 'full'
-                        ? ! $fullAccess
-                        : ! $this->modules->contains(fn (Module $module) => $module->isFinancials() && $this->isAccessible($module)),
+                    // The phase module (its number) a `module` file belongs to.
+                    'module' => $file['module'] ?? null,
+                    'is_locked' => match ($file['access']) {
+                        'full' => ! $fullAccess,
+                        'module' => ! $this->modules->contains(fn (Module $module) => $module->kind === 'phase' && $module->order === $file['module'] && $this->isAccessible($module)),
+                        default => ! $this->modules->contains(fn (Module $module) => $module->isFinancials() && $this->isAccessible($module)),
+                    },
                 ])->values(),
                 'final_exam' => $finalExam === null ? null : [
                     ...$this->quizSummary($finalExam),

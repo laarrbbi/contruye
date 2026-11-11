@@ -14,6 +14,7 @@ import {
   PlayCircle,
   Scale,
 } from 'lucide-react'
+import { moduleFiles } from '@/api/learn'
 import type { LearnData, LearnModule, LearnQuizSummary } from '@/api/learn'
 import { Progress } from '@/components/ui/progress'
 import { moduleLabel } from '@/lib/modules'
@@ -71,11 +72,14 @@ function ModuleSection({
   slug,
   location,
   onNavigate,
+  hasFiles,
 }: {
   module: LearnModule
   slug: string
   location: PlayerLocation
   onNavigate?: () => void
+  /** The instructor's templates of this module: its «Plantilla» page lists them. */
+  hasFiles: boolean
 }) {
   const { t } = useTranslation()
   const completedCount = module.lessons.filter((lesson) => lesson.is_completed).length
@@ -182,7 +186,7 @@ function ModuleSection({
 
         {/* What the module leaves the promoter with, each apart: tasks, laws, partners. */}
         {module.kind === 'phase' && !module.is_locked &&
-          SECTIONS.filter(({ key }) => key !== 'plantilla' || module.template !== null).map(({ key, icon: Icon }) => {
+          SECTIONS.filter(({ key }) => key !== 'plantilla' || module.template !== null || hasFiles).map(({ key, icon: Icon }) => {
             const isCurrent = 'section' in location && location.moduleId === module.id && location.section === key
             return (
               <li key={key}>
@@ -301,7 +305,14 @@ export function PlayerSidebar({ data, location, onNavigate }: PlayerSidebarProps
         )}
 
         {data.modules.map((module) => (
-          <ModuleSection key={module.id} module={module} slug={slug} location={location} onNavigate={onNavigate} />
+          <ModuleSection
+            key={module.id}
+            module={module}
+            slug={slug}
+            location={location}
+            onNavigate={onNavigate}
+            hasFiles={module.kind === 'phase' && moduleFiles(data, module.order).length > 0}
+          />
         ))}
 
         {exam && (

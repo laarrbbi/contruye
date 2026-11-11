@@ -1372,10 +1372,13 @@
     "files": {
       "plantilla-simplificada": "Plantilla simplificada corregida (ejemplo del profesional)",
       "directorio-partners": "Directorio de partners por provincia (Excel)",
-      "curso-pdf": "El curso completo en PDF"
+      "curso-pdf": "El curso completo en PDF",
+      "esquema-bbdd-suelo": "Esquema de base de datos de gestión de suelo",
+      "calculo-precio-solar": "Cálculo del precio del solar («números gordos»)"
     },
     "needsFullAccess": "Con el acceso completo",
     "needsFinancials": "Con el extra (plantilla profesional)",
+    "needsModule": "Con el Módulo {{number}}",
     "downloadsNote": "Los demás recursos de la lista se publicarán aquí en cuanto estén disponibles. La tabla fiscal por comunidad es el Anexo B."
   },
   "directory": {
@@ -1529,7 +1532,9 @@
     "notANumber": "Escribe un número",
     "locked": "La plantilla es de su módulo.",
     "error": "No se ha podido calcular. Inténtalo de nuevo.",
-    "howTo": "Rellena las casillas resaltadas: el resto lo calculan las fórmulas de la plantilla, con los impuestos vigentes. El Excel que descargas lleva tus datos."
+    "howTo": "Rellena las casillas resaltadas: el resto lo calculan las fórmulas de la plantilla, con los impuestos vigentes. El Excel que descargas lleva tus datos.",
+    "moreTitle": "Más plantillas del profesional para este módulo",
+    "moreLead": "En Excel, tal como las preparó el profesional: descárgalas y trabaja con tus datos."
   },
   "legalParams": {
     "title": "Parámetros legales aplicados",

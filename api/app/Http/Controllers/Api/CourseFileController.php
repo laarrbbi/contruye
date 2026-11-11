@@ -6,14 +6,14 @@ use App\Http\Controllers\Api\Concerns\AuthorizesCourseAccess;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Support\Course\CourseFiles;
-use App\Support\Course\CourseSource;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
- * Downloads from the course package: the template files for the owners of
- * Financials, the province directory and the course PDF for students with
- * the whole course. Served from the package as delivered.
+ * Downloads of the course: the template files for the owners of Financials,
+ * the province directory and the course PDF for students with the whole
+ * course, and the instructor's templates of a module for its owners. Served
+ * as delivered (CourseFiles).
  */
 class CourseFileController extends Controller
 {
@@ -30,12 +30,14 @@ class CourseFileController extends Controller
         if ($file['access'] === 'full') {
             $this->authorizeFullAccess($user, $course);
         } else {
-            $module = $course->modules()->where('kind', 'financials')->first();
+            $module = $file['access'] === 'module'
+                ? $course->modules()->where('kind', 'phase')->where('order', $file['module'])->first()
+                : $course->modules()->where('kind', 'financials')->first();
             abort_if($module === null, 404);
             $this->authorizeModuleAccess($user, $module);
         }
 
-        $path = CourseSource::fromConfig()->path($file['path']);
+        $path = CourseFiles::path($file);
         abort_unless(is_file($path), 404);
 
         return response()->download($path, $file['name'], [

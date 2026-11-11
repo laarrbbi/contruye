@@ -136,8 +136,8 @@ export interface LearnData {
     total_modules_count: number
     /** Course-level texts: introduction, resources, annexes. */
     documents: { slug: string; title: string; access: 'enrolled' | 'full'; is_locked: boolean }[]
-    /** Files of the course package and whether this student may download them. */
-    files: { key: string; name: string; access: 'financials' | 'full'; is_locked: boolean }[]
+    /** Files of the course and whether this student may download them; `module` is the phase a `module` file belongs to. */
+    files: CourseFile[]
     final_exam: (LearnQuizSummary & { duration_minutes: number | null; is_locked: boolean }) | null
   }
   modules: LearnModule[]
@@ -225,6 +225,19 @@ export function reflexSheetUrl(lessonId: number) {
 }
 
 /** A file of the course package (template, directory, course PDF), same cookie-auth navigation. */
+export interface CourseFile {
+  key: string
+  name: string
+  access: 'financials' | 'full' | 'module'
+  module: number | null
+  is_locked: boolean
+}
+
+/** The instructor's templates that belong to a phase module (its number). */
+export function moduleFiles(data: LearnData, order: number): CourseFile[] {
+  return data.course.files.filter((file) => file.access === 'module' && file.module === order)
+}
+
 export function courseFileUrl(slug: string, key: string) {
   return `${API_URL}/api/courses/${slug}/files/${key}`
 }

@@ -1372,10 +1372,13 @@
     "files": {
       "plantilla-simplificada": "Corrected simplified template (the professional's example)",
       "directorio-partners": "Directory of partners by province (Excel)",
-      "curso-pdf": "The whole course as a PDF"
+      "curso-pdf": "The whole course as a PDF",
+      "esquema-bbdd-suelo": "Land management database layout",
+      "calculo-precio-solar": "Plot price calculation (back-of-the-envelope figures)"
     },
     "needsFullAccess": "With full access",
     "needsFinancials": "With the extra (professional template)",
+    "needsModule": "With Module {{number}}",
     "downloadsNote": "The other resources on the list will be published here as soon as they are available. The tax table by region is Annex B."
   },
   "directory": {
@@ -1529,7 +1532,9 @@
     "notANumber": "Enter a number",
     "locked": "The template comes with its module.",
     "error": "It could not be calculated. Please try again.",
-    "howTo": "Fill in the highlighted cells: the template's formulas calculate the rest, with the taxes in force. The Excel file you download carries your figures."
+    "howTo": "Fill in the highlighted cells: the template's formulas calculate the rest, with the taxes in force. The Excel file you download carries your figures.",
+    "moreTitle": "More templates from the professional for this module",
+    "moreLead": "In Excel, exactly as the professional prepared them: download them and work with your own figures."
   },
   "legalParams": {
     "title": "Legal parameters applied",

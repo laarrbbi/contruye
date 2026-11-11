@@ -20,6 +20,8 @@ services:
       - ./curso:/var/www/curso:ro
       # Its translations (api/config/curso.php reads ../traducciones).
       - ./traducciones:/var/www/traducciones:ro
+      # The instructor's templates sent outside the package (../materiales).
+      - ./materiales:/var/www/materiales:ro
       # The template engine's command-line entry (config/services.php,
       # plantilla.cli), for the process transport.
       - ./financials:/var/www/financials:ro
