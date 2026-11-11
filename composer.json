@@ -6,5 +6,8 @@
     "require": {},
     "scripts": {
         "vercel": "sh deploy/vercel/build.sh"
+    },
+    "config": {
+        "process-timeout": 0
     }
 }
