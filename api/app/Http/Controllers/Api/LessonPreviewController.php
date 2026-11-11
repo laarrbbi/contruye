@@ -25,7 +25,7 @@ class LessonPreviewController extends Controller
             'data' => [
                 'id' => $lesson->id,
                 'title' => $lesson->localizedTitle(),
-                'content_html' => Markdown::toHtml($lesson->localizedContent()),
+                'content_html' => Markdown::toHtml($lesson->localizedContent(), glossary: true),
                 // The player says so when the text is still the Spanish original.
                 'content_locale' => $lesson->localizedLocale('content'),
             ],

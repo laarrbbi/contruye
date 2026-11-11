@@ -53,7 +53,7 @@ class LegalParameters
                 'original_value' => $p->original_value,
                 'legal_basis' => $p->legal_basis,
                 // The same text with its laws linked to their official texts.
-                'legal_basis_html' => Markdown::inline($p->legal_basis),
+                'legal_basis_html' => Markdown::inline($p->legal_basis, glossary: true),
                 'source' => $p->source,
                 'used_in' => $p->used_in,
             ])->all(),
@@ -62,7 +62,7 @@ class LegalParameters
                 'itp' => $r->itp,
                 'ajd' => $r->ajd,
                 'note' => $r->note,
-                'note_html' => Markdown::inline($r->note),
+                'note_html' => Markdown::inline($r->note, glossary: true),
             ])->all(),
             'reviewed_at' => $this->review()['at'],
         ];

@@ -61,7 +61,7 @@ class ChecklistController extends Controller
                             'id' => $item->id,
                             'text' => $item->localizedText(),
                             // The same text with its laws linked (config/legal.php).
-                            'text_html' => Markdown::inline($item->localizedText()),
+                            'text_html' => Markdown::inline($item->localizedText(), glossary: true),
                             'checked' => isset($checkedIds[$item->id]),
                         ])->values()
                         : [],

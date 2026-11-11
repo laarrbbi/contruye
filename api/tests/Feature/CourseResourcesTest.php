@@ -78,7 +78,7 @@ it('gives a province\'s rows for the phases a student owns, and counts the other
 
     $full = $this->actingAs(owner($course, null))->getJson("/api/courses/{$course->slug}/directory/{$madrid->id}")->json('data');
     expect($full['phases'][1]['rows'])->toHaveCount(2)
-        ->and($full['section_html'])->toContain('<strong>ITP:</strong>');
+        ->and($full['section_html'])->toContain('<strong><span class="term" tabindex="0">ITP<span class="term-i"');
 
     $this->actingAs(User::factory()->create())->getJson("/api/courses/{$course->slug}/directory/{$madrid->id}")->assertForbidden();
 });

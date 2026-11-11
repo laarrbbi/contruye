@@ -2,6 +2,9 @@
 
 namespace App\Support;
 
+use App\Support\Glossary\GlossaryLinker;
+use App\Support\Glossary\GlossaryTerm;
+use App\Support\Glossary\GlossaryTermRenderer;
 use App\Support\Legal\LegalLinker;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Event\DocumentParsedEvent;
@@ -20,7 +23,10 @@ use League\CommonMark\MarkdownConverter;
  * pastes something hostile into a lesson.
  *
  * Every law the text names becomes a link to its official text
- * (Legal\LegalLinker, config/legal.php), without changing a word.
+ * (Legal\LegalLinker, config/legal.php), without changing a word. In the
+ * course's own text ($glossary), each tax and institution also gets an «i»
+ * with what it is (Glossary\GlossaryLinker, config/glossary.php); never in an
+ * e-mail or a public page, which have no tooltip.
  */
 final class Markdown
 {
@@ -31,14 +37,15 @@ final class Markdown
      * @param  bool  $lineBreaks  keep each source line on its own line — for
      *                            short texts written line by line, like a
      *                            module's "Objetivo / Duración" header
+     * @param  bool  $glossary  mark the taxes and institutions (course text in the app)
      */
-    public static function toHtml(?string $markdown, bool $lineBreaks = false): ?string
+    public static function toHtml(?string $markdown, bool $lineBreaks = false, bool $glossary = false): ?string
     {
         if ($markdown === null || trim($markdown) === '') {
             return null;
         }
 
-        return trim((string) self::converter($lineBreaks)->convert($markdown));
+        return trim((string) self::converter($lineBreaks, $glossary)->convert($markdown));
     }
 
     /**
@@ -62,14 +69,14 @@ final class Markdown
      * A short plain-text field (a province's planning law) as inline HTML:
      * escaped, with its laws linked, without the wrapping paragraph.
      */
-    public static function inline(?string $text): ?string
+    public static function inline(?string $text, bool $glossary = false): ?string
     {
         if ($text === null || trim($text) === '') {
             return null;
         }
 
         // Escape Markdown's own punctuation: the field is text, not Markdown.
-        $html = self::toHtml((string) preg_replace('/([\\\\`*_{}\[\]()#+\-.!|<>~])/', '\\\\$1', $text));
+        $html = self::toHtml((string) preg_replace('/([\\\\`*_{}\[\]()#+\-.!|<>~])/', '\\\\$1', $text), glossary: $glossary);
 
         return (string) preg_replace('#^<p>(.*)</p>$#s', '$1', (string) $html);
     }
@@ -78,11 +85,12 @@ final class Markdown
     public static function flush(): void
     {
         self::$converters = [];
+        GlossaryLinker::flush();
     }
 
-    private static function converter(bool $lineBreaks): MarkdownConverter
+    private static function converter(bool $lineBreaks, bool $glossary = false): MarkdownConverter
     {
-        $key = $lineBreaks ? 'breaks' : 'default';
+        $key = ($lineBreaks ? 'breaks' : 'default').($glossary ? '+glossary' : '');
 
         if (! isset(self::$converters[$key])) {
             $environment = new Environment([
@@ -94,6 +102,11 @@ final class Markdown
             $environment->addExtension(new CommonMarkCoreExtension);
             $environment->addExtension(new GithubFlavoredMarkdownExtension);
             $environment->addEventListener(DocumentParsedEvent::class, new LegalLinker);
+            if ($glossary) {
+                // After the laws: a term inside a law's link stays part of the link.
+                $environment->addEventListener(DocumentParsedEvent::class, new GlossaryLinker, -10);
+                $environment->addRenderer(GlossaryTerm::class, new GlossaryTermRenderer);
+            }
             self::$converters[$key] = new MarkdownConverter($environment);
         }
 

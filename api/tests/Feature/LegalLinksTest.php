@@ -150,7 +150,8 @@ it('links the laws a checklist step and a legal parameter name, the text escaped
     expect($ajd['legal_basis_html'])->toContain('href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-15344"')
         ->and(strip_tags($ajd['legal_basis_html']))->toBe($ajd['legal_basis'])
         ->and($valencia['note_html'])->toContain('<a class="ley"')
-        ->and(strip_tags($valencia['note_html']))->toBe($valencia['note']);
+        // The note as written, once the «i» of its taxes is set aside.
+        ->and(strip_tags((string) preg_replace('#<span class="term-i".*?</span><span class="term-tip".*?</span></span>#s', '', $valencia['note_html'])))->toBe($valencia['note']);
 });
 
 it('gives the web app the official links of the laws its own copy names', function () {

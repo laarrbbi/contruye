@@ -994,3 +994,22 @@ html.lenis {
   -webkit-mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
   mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.35) 22%, #000 48%);
 }
+
+/* Outside the layers: these classes come in the HTML the server renders,
+   where Tailwind's scan of web/src never sees them.
+   A tax or an institution of the course text: the term, a small «i» after
+   it, and its explanation, which GlossaryTooltip shows on hover or focus
+   (kept in the page, out of sight, for screen readers). */
+.term {
+  @apply cursor-help rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+}
+.term-i {
+  @apply ms-[0.2em] inline-flex h-[1.05em] w-[1.05em] items-center justify-center rounded-full border border-current align-[0.12em] font-serif text-[0.66em] font-semibold italic leading-none opacity-50 transition-opacity;
+}
+.term:hover .term-i,
+.term:focus .term-i {
+  @apply opacity-100;
+}
+.term-tip {
+  @apply sr-only;
+}

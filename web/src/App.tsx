@@ -7,6 +7,7 @@ import { Layout } from '@/components/layout/Layout'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { PageTitleProvider } from '@/components/PageTitleProvider'
+import { GlossaryTooltip } from '@/components/GlossaryTooltip'
 import { PublicLocale } from '@/components/PublicLocale'
 import { isRtl, type Locale } from '@/i18n'
 import { SalesPage } from '@/pages/SalesPage'
@@ -82,6 +83,8 @@ export default function App() {
       <AppDirectionProvider>
         <BrowserRouter>
           <PageTitleProvider>
+          {/* The «i» of the course's taxes and institutions, wherever they appear. */}
+          <GlossaryTooltip />
           <Routes>
 
 

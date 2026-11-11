@@ -117,7 +117,7 @@ class LearnCourseResource extends JsonResource
                 'title' => $module->localizedTitle(),
                 'description' => $module->localizedDescription(),
                 // "**Objetivo:** …" / "**Duración:** …", one per line as written.
-                'description_html' => Markdown::toHtml($module->localizedDescription(), lineBreaks: true),
+                'description_html' => Markdown::toHtml($module->localizedDescription(), lineBreaks: true, glossary: true),
                 // The language each text is read in: the student's, or the
                 // Spanish it falls back to while its translation is pending.
                 'description_locale' => $module->localizedLocale('description'),
@@ -181,7 +181,7 @@ class LearnCourseResource extends JsonResource
             'is_locked' => ! $accessible && ! $lesson->is_free_preview,
             // Written lesson content follows the same access rule as playback.
             'content' => $playable ? $lesson->localizedContent() : null,
-            'content_html' => $playable ? Markdown::toHtml($lesson->localizedContent()) : null,
+            'content_html' => $playable ? Markdown::toHtml($lesson->localizedContent(), glossary: true) : null,
             'content_locale' => $lesson->localizedLocale('content'),
             // Bullets of the lesson. Students never see the "A VALIDER" state:
             // that badge is an admin-only editorial signal.
@@ -222,7 +222,7 @@ class LearnCourseResource extends JsonResource
                 'id' => $block->id,
                 'type' => $block->type,
                 'body' => $block->localizedBody(),
-                'body_html' => Markdown::toHtml($block->localizedBody()),
+                'body_html' => Markdown::toHtml($block->localizedBody(), glossary: true),
                 'body_locale' => $block->localizedLocale('body'),
                 // Which of the module's sections this is, read from the
                 // instructor's Spanish heading: the player shows them apart

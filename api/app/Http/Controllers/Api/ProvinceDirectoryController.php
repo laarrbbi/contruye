@@ -55,7 +55,7 @@ class ProvinceDirectoryController extends Controller
                             'name' => $row[0],
                             'purpose' => $row[1],
                             // The same text with its laws linked to their official pages.
-                            'purpose_html' => Markdown::inline($row[1]),
+                            'purpose_html' => Markdown::inline($row[1], glossary: true),
                         ], $rows)
                         : [],
                 ];
@@ -69,19 +69,19 @@ class ProvinceDirectoryController extends Controller
             'capital' => $data['cap'],
             'ccaa' => $data['ccaa'],
             'urban_law' => $data['ley'],
-            'urban_law_html' => Markdown::inline($data['ley']),
+            'urban_law_html' => Markdown::inline($data['ley'], glossary: true),
             'first_occupation' => $data['ocup'],
-            'first_occupation_html' => Markdown::inline($data['ocup']),
+            'first_occupation_html' => Markdown::inline($data['ocup'], glossary: true),
             'habitability_certificate' => $data['cedula'],
             'itp' => $data['itp'],
-            'itp_html' => Markdown::inline($data['itp']),
+            'itp_html' => Markdown::inline($data['itp'], glossary: true),
             'ajd' => $data['ajd'],
             'sale_tax' => $data['iva'],
             'foral' => $data['foral'],
             // The community's planning law, tax agency and protected-housing prices.
             'official_links' => RegionalSources::for($data['ccaaKey'] ?? null),
             'phases' => $phases,
-            'section_html' => $fullAccess ? Markdown::toHtml($guide->section_es) : null,
+            'section_html' => $fullAccess ? Markdown::toHtml($guide->section_es, glossary: true) : null,
         ]]);
     }
 }
