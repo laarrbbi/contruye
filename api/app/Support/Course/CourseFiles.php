@@ -38,6 +38,15 @@ final class CourseFiles
             'module' => 1,
             'source' => 'materiales',
         ],
+        // The professional template in its original version, filled with an example (a cooperative
+        // of 22 homes), from the instructor outside the package (materiales/LEEME.md): with the
+        // extra, not in Module 2, where it would hand out the extra's model uncorrected.
+        'guia-analisis-viabilidad' => [
+            'path' => 'financials/Plantilla_Guia_Analisis_de_Viabilidad.xlsx',
+            'name' => 'Plantilla_Guia_Analisis_de_Viabilidad.xlsx',
+            'access' => 'financials',
+            'source' => 'materiales',
+        ],
         // The professional's real example (1 home of 200 m²), with «Varios» corrected: values, no formulas.
         'plantilla-simplificada' => [
             'path' => '2_plantilla_financiera/excel_corregido/Plantilla_simplificada_corregida.xlsx',

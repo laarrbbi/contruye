@@ -29,8 +29,8 @@ by the admin. Never edit anything under `curso/`; a correction comes as a new pa
 instructor (copied whole into `curso/`, then the curriculum, checklist, province guide and
 translation seeders, in that order, which bring an installed course up to it in place).
 Templates the instructor sends outside a package go, unchanged, in **`materiales/`** (its
-`LEEME.md` lists each file, its module and its checksum); `CourseFiles` serves them to the owners
-of their module, in that module's «Plantilla» page.
+`LEEME.md` lists each file, where it is offered and its checksum); `CourseFiles` serves them to the
+owners of their module (that module's «Plantilla» page) or, for the extra's material, to its buyers.
 
 ## Running it
 

@@ -131,3 +131,17 @@ it('hands out the instructor\'s templates of a module to its owners, as delivere
     // The whole course includes module 1.
     $this->actingAs(owner($course, null))->get($url('esquema-bbdd-suelo'))->assertOk();
 });
+
+it('gives the professional\'s original feasibility guide to buyers of the extra only, as delivered', function () {
+    [$course, , $phase2, $financials] = resourcesCourse();
+    $url = "/api/courses/{$course->slug}/files/guia-analisis-viabilidad";
+
+    $buyer = owner($course, $financials);
+    $response = $this->actingAs($buyer)->get($url)->assertOk();
+    expect(hash_file('sha256', $response->getFile()->getPathname()))
+        ->toBe(hash_file('sha256', base_path('../materiales/financials/Plantilla_Guia_Analisis_de_Viabilidad.xlsx')));
+
+    // It is the extra's model: not with Module 2, nor with the whole course.
+    $this->actingAs(owner($course, $phase2))->get($url)->assertForbidden();
+    $this->actingAs(owner($course, null))->get($url)->assertForbidden();
+});

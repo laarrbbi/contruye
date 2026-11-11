@@ -487,7 +487,12 @@ export function FinancialsPage() {
           </li>
           {files.map((file) => (
             <li key={file.key} className="flex items-center gap-3 px-4 py-3 text-sm">
-              <span className="min-w-0 flex-1 truncate">{file.name}</span>
+              <span className="min-w-0 flex-1">
+                <span className="block">{t(`documents.files.${file.key}`)}</span>
+                <span className="block truncate text-xs text-muted-foreground" dir="ltr">
+                  {file.name}
+                </span>
+              </span>
               <Button asChild size="sm" variant="outline">
                 <a href={courseFileUrl(data.course.slug, file.key)}>
                   <Download className="h-4 w-4" />
