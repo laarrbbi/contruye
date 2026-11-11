@@ -389,7 +389,9 @@
     "currentSection": "القسم الحالي",
     "financialsLabel": "Financials",
     "moduleOverview": "الهدف والقوانين وإلى أين تتوجّه",
-    "videoInLanguage": "لغة الفيديو: {{language}}. لا تتوفر لهذا الدرس بعدُ نسخة بلغتك."
+    "videoInLanguage": "لغة الفيديو: {{language}}. لا تتوفر لهذا الدرس بعدُ نسخة بلغتك.",
+    "moduleIntroTitle": "مقدمة {{module}}",
+    "moduleIntroLead": "قبل الدروس: هدف الوحدة والقوانين المطبّقة وإلى أين تتوجّه. وهي مشتركة بين كل دروسها؛ ويبدأ الدرس في الأسفل."
   },
   "admin": {
     "title": "الإدارة",

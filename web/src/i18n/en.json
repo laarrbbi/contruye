@@ -369,7 +369,9 @@
     "currentSection": "current section",
     "financialsLabel": "Financials",
     "moduleOverview": "Objective, laws and where to go",
-    "videoInLanguage": "Video in {{language}}: this lesson has no version in your language yet."
+    "videoInLanguage": "Video in {{language}}: this lesson has no version in your language yet.",
+    "moduleIntroTitle": "Introduction to {{module}}",
+    "moduleIntroLead": "Before the lessons: the module's objective, the laws that apply and where to go. It is shared by all its lessons; the lesson starts below."
   },
   "admin": {
     "title": "Admin",

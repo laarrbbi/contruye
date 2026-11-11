@@ -369,7 +369,9 @@
     "currentSection": "sección actual",
     "financialsLabel": "Financials",
     "moduleOverview": "Objetivo, leyes y dónde ir",
-    "videoInLanguage": "Vídeo en {{language}}: esta lección no tiene todavía versión en tu idioma."
+    "videoInLanguage": "Vídeo en {{language}}: esta lección no tiene todavía versión en tu idioma.",
+    "moduleIntroTitle": "Introducción al {{module}}",
+    "moduleIntroLead": "Antes de las lecciones: el objetivo del módulo, las leyes que aplican y dónde ir. Es común a todas sus lecciones; la lección empieza debajo."
   },
   "admin": {
     "title": "Administración",

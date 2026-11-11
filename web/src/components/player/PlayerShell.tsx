@@ -7,8 +7,9 @@ import { Button } from '@/components/ui/button'
 import { PlayerSidebar, type PlayerLocation } from './PlayerSidebar'
 
 /**
- * The course player's frame: the course navigation (a sidebar on desktop, a
- * slide-over on a phone) and the page's own column. Lessons, quizzes, the
+ * The course player's frame: the page's own column, and the course
+ * navigation beside it (a sidebar on the right on desktop, a slide-over from
+ * the same side on a phone). Lessons, quizzes, the
  * course documents and Financials all live in it.
  */
 export function PlayerShell({
@@ -32,15 +33,14 @@ export function PlayerShell({
   const sidebar = <PlayerSidebar data={data} location={location} onNavigate={() => setSidebarOpen(false)} />
 
   return (
-    <div className="lg:grid lg:grid-cols-[340px_1fr]">
-      {/* Desktop sidebar */}
-      <aside className="theme-night sticky top-16 hidden h-[calc(100vh-4rem)] lg:block">{sidebar}</aside>
-
+    // The page on the left, the course's contents on the right (mirrored in
+    // Arabic), as course marketplaces lay their players out.
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
       {/* Mobile slide-over */}
       {sidebarOpen && (
         <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
-          <div className="theme-night absolute inset-y-0 start-0 flex w-80 max-w-[85vw] flex-col shadow-xl">
+          <div className="theme-night absolute inset-y-0 end-0 flex w-80 max-w-[85vw] flex-col shadow-xl">
             <div className="flex items-center justify-between border-b px-4 py-3">
               <span className="text-sm font-semibold">{t('player.contents')}</span>
               <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(false)}>
@@ -72,6 +72,9 @@ export function PlayerShell({
           {children}
         </div>
       </div>
+
+      {/* Desktop sidebar */}
+      <aside className="theme-night sticky top-16 hidden h-[calc(100vh-4rem)] lg:block">{sidebar}</aside>
     </div>
   )
 }
