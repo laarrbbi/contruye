@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 
 /**
  * The head of a page inside the platform, in the sales page's voice: a small
- * label after an amber rule, a Poppins title, an optional lead. One per page,
+ * label after an amber rule, a title in the site's face, an optional lead. One per page,
  * so the h1 is here.
  */
 export function PageHead({

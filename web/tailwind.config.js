@@ -92,11 +92,21 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        // Poppins covers the Latin languages (á, é, ñ, ü, ç, œ are in its
-        // latin subset). It has no Cyrillic or Arabic: Russian and Ukrainian
-        // fall back to Montserrat's Cyrillic, Arabic to Cairo, in the same
-        // stack. Each subset is downloaded only when its script is on screen.
-        sans: ['Poppins', 'Montserrat', 'Cairo', 'system-ui', 'sans-serif'],
+        // The system face first: SF Pro on Apple devices (Latin, Cyrillic and
+        // Arabic). Elsewhere Inter, self-hosted (Latin and Cyrillic, main.tsx),
+        // and Cairo for Arabic. Never a face that has to be downloaded on a
+        // device that already has the right one.
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Inter Variable"',
+          'Inter',
+          'Cairo',
+          '"Segoe UI"',
+          'Roboto',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       transitionTimingFunction: {
         // Named to match the CSS variables in index.css.

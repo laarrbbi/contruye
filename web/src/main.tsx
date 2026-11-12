@@ -1,21 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-// The site's typeface: Poppins (a rounded geometric, a free equivalent of
-// Circular). Self-hosted, a few weights, font-display: swap — no third-party
-// request, no invisible text.
-import '@fontsource/poppins/latin-400.css'
-import '@fontsource/poppins/latin-500.css'
-import '@fontsource/poppins/latin-600.css'
-import '@fontsource/poppins/latin-700.css'
-import '@fontsource/poppins/latin-800.css'
-// Russian and Ukrainian, Arabic: only the subsets for those scripts, whose
-// unicode-range keeps them off the network until such a letter is on screen.
-import '@fontsource/montserrat/cyrillic-400.css'
-import '@fontsource/montserrat/cyrillic-500.css'
-import '@fontsource/montserrat/cyrillic-600.css'
-import '@fontsource/montserrat/cyrillic-700.css'
-import '@fontsource/montserrat/cyrillic-800.css'
+// The site's typeface: the system's own sans first (SF Pro on a Mac, an
+// iPhone or an iPad, the face of the reference screen), then Inter, the open
+// face drawn on the same model, self-hosted for Windows, Android and Linux.
+// The variable file carries every weight; each script's subset (Latin,
+// Cyrillic for Russian and Ukrainian) is fetched only when one of its letters
+// is on screen, font-display: swap. Arabic falls back to Cairo.
+import '@fontsource-variable/inter/wght.css'
 import '@fontsource/cairo/arabic-400.css'
 import '@fontsource/cairo/arabic-600.css'
 import '@fontsource/cairo/arabic-700.css'

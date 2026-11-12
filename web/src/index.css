@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* Poppins en titre : tracking légèrement négatif, comme la référence. */
+  /* Titles: tracking slightly tight, as on the reference screen. */
   h1, h2 {
     letter-spacing: -0.02em;
   }
@@ -217,7 +217,7 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
 }
 
 /* ─── The redesigned sales page ───────────────────────────────────────────
-   It speaks in the site's own faces, Poppins and Cairo (main.tsx), like every
+   It speaks in the site's own faces (the system sans, Inter, Cairo; main.tsx), like every
    other screen. The class sits on <html> while one of its pages is mounted
    (and on the server's first screen, drawn before the app): it only tunes
    the selection colour and the tap highlight. */

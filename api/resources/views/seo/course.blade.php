@@ -22,7 +22,7 @@
 @include('seo._header')
 <main>
     {{-- The first screen as the app draws it: cream paper, the title in
-         Poppins, the amber button with the price beside it. --}}
+         the site's face, the amber button with the price beside it. --}}
     <section class="bg-creme-100 text-plume">
         <div class="container py-16 sm:py-24">
             <p class="etiquette text-plume/70">{{ $s('landing.s1.eyebrow') }}</p>
