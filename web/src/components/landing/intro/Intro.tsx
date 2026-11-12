@@ -206,7 +206,7 @@ export function Intro({ onDone }: { onDone(): void }) {
       <div
         aria-hidden
         className={cn(
-          'absolute end-[13%] top-[19%] h-[15vmin] w-[15vmin] rounded-full bg-[#F1E7D2] shadow-[0_0_0_3px_#05080F,0_0_90px_20px_rgb(241_231_210/0.22)] transition-opacity duration-1000 ease-out-strong',
+          'absolute end-[13%] top-[19%] h-[15vmin] w-[15vmin] rounded-full max-md:top-[10%] bg-[#F1E7D2] shadow-[0_0_0_3px_#05080F,0_0_90px_20px_rgb(241_231_210/0.22)] transition-opacity duration-1000 ease-out-strong',
           phase === 'loading' ? 'opacity-0' : 'opacity-100',
         )}
       />
@@ -226,9 +226,9 @@ export function Intro({ onDone }: { onDone(): void }) {
 
       <Loader shown={phase === 'loading'} loaded={loaded} label={t('landing.intro.loading')} />
 
-      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-5 lg:px-10 lg:py-8">
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-5 pt-[max(1.25rem,env(safe-area-inset-top))] lg:px-10 lg:py-8">
         <ConstruyeLogo variant="inherit" className={cn('transition-opacity duration-500', phase === 'loading' && 'opacity-0')} />
-        <button type="button" onClick={leave} className="lien-edito etiquette -m-2 p-2 text-creme-100/85">
+        <button type="button" onClick={leave} className="lien-edito etiquette -mx-2 -my-3 px-2 py-3 text-creme-100/85 [--lien-bas:0.25rem]">
           {t('landing.intro.skip')}
         </button>
       </div>
@@ -248,7 +248,7 @@ export function Intro({ onDone }: { onDone(): void }) {
                 <ArrowRight className="h-4 w-4 rtl:-scale-x-100" strokeWidth={1.75} />
               </span>
             </button>
-            <button type="button" onClick={leave} className="lien-edito text-sm text-creme-100/85">
+            <button type="button" onClick={leave} className="lien-edito -my-2.5 py-2.5 text-sm text-creme-100/85 [--lien-bas:0.625rem]">
               {t('landing.intro.direct')}
               <ArrowUpRight aria-hidden className="h-[1em] w-[1em] translate-y-[0.12em] rtl:-scale-x-100" strokeWidth={1.5} />
             </button>

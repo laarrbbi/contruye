@@ -29,7 +29,7 @@ export function SheetGrid({ sheet, className }: { sheet: Sheet; className?: stri
   }, [sheet])
 
   return (
-    <div className={cn('max-h-[70vh] overflow-auto rounded-lg border', className)}>
+    <div className={cn('max-h-[70dvh] overflow-auto rounded-lg border', className)}>
       <table className="border-separate border-spacing-0 text-xs">
         <thead>
           <tr>

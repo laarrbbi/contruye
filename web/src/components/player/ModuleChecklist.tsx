@@ -36,6 +36,9 @@ function CheckRow({
           // Ticked tens of times a session: the press answers instantly
           // (100ms scale) and the state itself lands with no crossfade.
           'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2',
+          // A 40px target for a finger around the 20px circle (the label
+          // beside it holds links, so it cannot be the target itself).
+          'relative before:absolute before:-inset-2.5 before:content-[""]',
           'transition-transform duration-100 ease-out-strong active:scale-90',
           checked
             ? 'border-success bg-success text-white'

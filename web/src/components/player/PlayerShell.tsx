@@ -32,6 +32,23 @@ export function PlayerShell({
     setSidebarOpen(false)
   }, [locationKey])
 
+  // While the contents are open on a phone the page behind stays still, and
+  // Escape closes them, as any other dialog.
+  useEffect(() => {
+    if (!sidebarOpen) return
+    const root = document.documentElement
+    const previous = root.style.overflow
+    root.style.overflow = 'hidden'
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSidebarOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      root.style.overflow = previous
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [sidebarOpen])
+
   const sidebar = <PlayerSidebar data={data} location={location} onNavigate={() => setSidebarOpen(false)} />
 
   return (
@@ -40,17 +57,17 @@ export function PlayerShell({
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
       {/* Mobile slide-over */}
       {sidebarOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label={t('player.contents')}>
           <div className="absolute inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
-          <div className="theme-night absolute inset-y-0 end-0 flex w-80 max-w-[85vw] flex-col shadow-xl">
-            <div className="flex items-center justify-between border-b px-4 py-3">
+          <div className="theme-night absolute inset-y-0 end-0 flex w-80 max-w-[85vw] flex-col pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)] shadow-xl">
+            <div className="flex items-center justify-between border-b py-2 pe-2 ps-4">
               <span className="text-sm font-semibold">{t('player.contents')}</span>
-              <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(false)}>
+              <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(false)} autoFocus>
                 <X className="h-4 w-4" />
-                <span className="sr-only">{t('common.cancel')}</span>
+                <span className="sr-only">{t('common.close')}</span>
               </Button>
             </div>
-            <div className="min-h-0 flex-1 overflow-y-auto">{sidebar}</div>
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">{sidebar}</div>
           </div>
         </div>
       )}
@@ -61,7 +78,7 @@ export function PlayerShell({
         <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-8 lg:py-12">
           {/* Mobile toolbar */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Button variant="outline" size="sm" onClick={() => setSidebarOpen(true)}>
+            <Button variant="outline" size="sm" className="h-10" onClick={() => setSidebarOpen(true)}>
               <ListVideo className="h-4 w-4" />
               {t('player.showContents')}
             </Button>
@@ -79,7 +96,7 @@ export function PlayerShell({
       </ProtectedArea>
 
       {/* Desktop sidebar */}
-      <aside className="theme-night sticky top-16 hidden h-[calc(100vh-4rem)] lg:block">{sidebar}</aside>
+      <aside className="theme-night sticky top-16 hidden h-[calc(100dvh-4rem)] lg:block">{sidebar}</aside>
     </div>
   )
 }

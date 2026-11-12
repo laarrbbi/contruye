@@ -370,7 +370,7 @@ export function FinancialsPage() {
         </Accordion>
       </section>
 
-      <div className="sticky bottom-0 z-10 -mx-4 flex flex-wrap items-center gap-3 border-t bg-background/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6">
+      <div className="sticky bottom-0 z-10 -mx-4 flex flex-wrap items-center gap-3 border-t bg-background/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur sm:-mx-6 sm:px-6">
         <Button onClick={() => run()} disabled={calculate.isPending || invalid.size > 0}>
           <Calculator className="h-4 w-4" />
           {calculate.isPending ? t('financials.calculating') : t('financials.calculate')}

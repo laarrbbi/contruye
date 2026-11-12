@@ -52,7 +52,7 @@ export function Calculadora({
           <p className={cn(TEXTE, 'mt-6 max-w-[34rem] text-plume/85')}>{t('solar.sectionLead')}</p>
           <Link
             to={localizedPath(SOLAR_CALCULATOR_PATH, locale)}
-            className="group mt-8 inline-flex items-center gap-2 font-semibold text-plume underline decoration-or decoration-2 underline-offset-[6px] transition-colors hover:text-or-fonce"
+            className="group mt-5 inline-flex items-center gap-2 py-3 font-semibold text-plume underline decoration-or decoration-2 underline-offset-[6px] transition-colors hover:text-or-fonce"
           >
             {t('solar.pageLink')}
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:-scale-x-100" aria-hidden />

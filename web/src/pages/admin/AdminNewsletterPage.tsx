@@ -40,7 +40,7 @@ export function AdminNewsletterPage() {
         </Button>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {STATUSES.map((key) => (
           <button
             key={key}
@@ -50,9 +50,9 @@ export function AdminNewsletterPage() {
               setPage(1)
             }}
             aria-pressed={status === key}
-            className={cn('rounded-lg border bg-card p-4 text-start transition-colors hover:bg-muted', status === key && 'border-primary ring-1 ring-primary')}
+            className={cn('min-w-0 rounded-lg border bg-card p-3 text-start transition-colors hover:bg-muted sm:p-4', status === key && 'border-primary ring-1 ring-primary')}
           >
-            <span className="block text-sm text-muted-foreground">{t(`admin.newsletter.${key}`)}</span>
+            <span className="block truncate text-xs text-muted-foreground sm:text-sm">{t(`admin.newsletter.${key}`)}</span>
             <span className="mt-1 block text-2xl font-semibold tabular-nums">{counts[key] ?? 0}</span>
           </button>
         ))}

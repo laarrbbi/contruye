@@ -205,6 +205,17 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content table {
     @apply block w-full max-w-full overflow-x-auto border-collapse text-[13px];
   }
+  /* A table of the course text (MarkdownContent): the box scrolls, the table
+     inside keeps its own layout. contain: inline-size, so a wide table never
+     widens the column the text sits in; relative, so the glossary's hidden
+     explanations (.term-tip, sr-only, absolute) stay in the box too instead
+     of widening the page. */
+  .md-content .md-table {
+    @apply relative max-w-full overflow-x-auto overscroll-x-contain [contain:inline-size];
+  }
+  .md-content .md-table > table {
+    @apply table max-w-none overflow-visible;
+  }
   .md-content th {
     @apply border-b-2 border-border bg-secondary/60 px-3 py-2 text-start align-bottom font-semibold;
   }
@@ -658,7 +669,8 @@ html.lenis {
   content: '';
   position: absolute;
   inset-inline: 0;
-  bottom: 0;
+  /* Raised by the padding a link adds to be a finger's height. */
+  bottom: var(--lien-bas, 0px);
   height: 1px;
   background: currentColor;
 }
@@ -1060,5 +1072,128 @@ html.lenis {
     display: block;
     padding: 2rem;
     font-size: 1rem;
+  }
+}
+
+/* ─── Phones and tablets ──────────────────────────────────────────────────
+   What makes a page feel like a website on a phone, removed one by one.
+   Checked in a 390px browser; the touch behaviours (zoom on a field, the
+   tap delay, the home indicator) only show on a real phone. */
+html {
+  /* No font inflation when the phone turns sideways. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* No grey flash over what is tapped: every control has its own :active. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* viewport-fit=cover (index.html) lets the page run under the notch. Turned
+   sideways, the notch is on a side: the page keeps clear of it, as it did
+   before, while the bars pinned to the bottom go down to the home indicator. */
+body {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* A tap is a click at once: no 300 ms wait to see whether a second tap, a
+   double-tap zoom, is coming. Pinch-zoom stays. */
+:where(a, button, summary, label, select, input, textarea, [role='button'], [role='tab'], [role='switch'], [role='checkbox'], [role='radio'], [role='option'], [role='menuitem']) {
+  touch-action: manipulation;
+}
+
+/* iOS zooms into a field written under 16px, and stays zoomed when the field
+   is left. On a touch screen every field is 16px; with a mouse they keep the
+   size of their design. */
+@media (pointer: coarse) {
+  input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']):not([type='hidden']),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Lists on a phone (components/ui/table.tsx): a row is a card, each value
+   under its column's name, so no column and no action is pushed off the
+   right edge. */
+@media (max-width: 639.98px) {
+  table.table-stack,
+  table.table-stack > tbody {
+    display: block;
+  }
+
+  table.table-stack > thead {
+    display: none;
+  }
+
+  table.table-stack > tbody > tr {
+    display: block;
+    padding: 0.625rem 1rem;
+  }
+
+  table.table-stack > tbody > tr > td:not(.hidden) {
+    display: grid;
+    grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: center;
+    width: auto;
+    max-width: none;
+    padding: 0.3125rem 0;
+    text-align: start;
+  }
+
+  table.table-stack > tbody > tr > td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+  }
+
+  table.table-stack > tbody > tr > td > .table-cell-body {
+    display: block;
+    min-width: 0;
+  }
+
+  table.table-stack > tbody > tr > td.truncate > .table-cell-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* The actions: no name, the whole width of the card. */
+  table.table-stack > tbody > tr > td[data-label=''] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  table.table-stack > tbody > tr > td[data-label='']::before {
+    display: none;
+  }
+
+  table.table-stack > tbody > tr > td[data-label=''] > .table-cell-body {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* A course text's table of three columns or more is laid out wider than
+     the phone and scrolls sideways in its box: the columns share the width by
+     how much they hold, rather than each squeezed to a word a line. */
+  .md-content .md-table > table:has(tr > :nth-child(3)) {
+    width: max(100%, 34rem);
+  }
+
+  .md-content .md-table > table:has(tr > :nth-child(4)) {
+    width: max(100%, 44rem);
+  }
+
+  .md-content .md-table > table:has(tr > :nth-child(5)) {
+    width: max(100%, 54rem);
+  }
+
+  /* Anexo B: seven columns, three of them sentences of law. */
+  .md-content .md-table > table:has(tr > :nth-child(6)) {
+    width: max(100%, 68rem);
+  }
+
+  .md-content > table:has(tr > :nth-child(3)) :is(th, td) {
+    min-width: 9.5rem;
   }
 }

@@ -2,10 +2,20 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      viewport-fit=cover: the page runs under the home indicator and the notch,
+      and the bars pinned to the bottom pad themselves back out with
+      env(safe-area-inset-bottom). interactive-widget: on Android the keyboard
+      shrinks the page, as on iOS, instead of covering the field. Zoom stays
+      on: fields are 16px on a touch screen, which is what stops iOS zooming.
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#fbfaf7" />
 
     <!--
       seo:start — on the public pages (/, /cursos, /cursos/…, and the same

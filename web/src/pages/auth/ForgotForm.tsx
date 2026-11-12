@@ -33,7 +33,7 @@ export function ForgotForm({ onBack, active }: { onBack: { pathname: string; sea
       <Link
         to={onBack}
         tabIndex={active ? undefined : -1}
-        className="-ms-1 inline-flex items-center gap-1.5 rounded-lg px-1 py-1 text-[0.875rem] text-creme-100/65 transition-colors hover:text-[#F1B860] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F1B860]"
+        className="-my-2 -ms-1 inline-flex items-center gap-1.5 rounded-lg px-1 py-3 text-[0.875rem] text-creme-100/65 transition-colors hover:text-[#F1B860] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F1B860]"
       >
         <ArrowLeft aria-hidden className="h-4 w-4 rtl:-scale-x-100" strokeWidth={1.75} />
         {t('auth.backToLogin')}

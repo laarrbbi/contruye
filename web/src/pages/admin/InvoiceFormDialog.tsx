@@ -140,7 +140,7 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
 
   return (
     <Dialog open={target !== null} onOpenChange={(open) => !open && !pending && onClose()}>
-      <DialogContent className="max-h-[85vh] max-w-lg overflow-y-auto">
+      <DialogContent className="max-h-[85dvh] max-w-lg overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             {editing

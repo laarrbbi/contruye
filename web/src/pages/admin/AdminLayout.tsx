@@ -71,9 +71,9 @@ export function AdminLayout() {
   usePageTitle(activeItem ? `${t(activeItem.labelKey)} · ${t('admin.title')}` : t('admin.title'))
 
   return (
-    <div className="flex min-h-[calc(100vh-4rem)]">
+    <div className="flex min-h-[calc(100svh-4rem)]">
       {/* Desktop sidebar */}
-      <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-64 shrink-0 border-e bg-card md:block">
+      <aside className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 shrink-0 border-e bg-card md:block">
         <div className="px-7 pt-6 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {t('admin.title')}
         </div>

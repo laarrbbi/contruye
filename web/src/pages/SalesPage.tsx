@@ -178,7 +178,7 @@ export function SalesPage() {
       <Journal />
       <Outils />
       {course && (
-        <Suspense fallback={<div aria-busy="true" className="min-h-screen bg-papier-100" />}>
+        <Suspense fallback={<div aria-busy="true" className="min-h-svh bg-papier-100" />}>
           <BelowTheFold course={course} slug={slug} cta={cta} purchaseLink={purchaseLink} checkoutPath={checkoutPath} />
         </Suspense>
       )}

@@ -157,3 +157,8 @@ makes that work lives in `docker/mysql-test/`.
 - Demo data is prefixed `[DEMO]`.
 - The business calendar is `Europe/Madrid` (`app.business_timezone`); instants are stored in UTC.
 - Payment credentials are placeholders. Wiring the real ones is the last step of the project.
+- Phones: a list built with `components/ui/table.tsx` becomes cards under 640px (each value under
+  its column's name; `stack={false}` opts out); fields are 16px on a touch screen (iOS zooms
+  under that); bars pinned to the bottom pad themselves with `env(safe-area-inset-bottom)`;
+  heights use `dvh`/`svh`, never `vh`; a control is at least 40px to a finger. The rules close
+  `web/src/index.css`. Emulation does not show zoom, tap delay or safe areas: check on a phone.

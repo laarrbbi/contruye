@@ -74,7 +74,7 @@ function OrderDetailDialog({
   return (
     <>
     <Dialog open={orderId !== null} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] max-w-lg overflow-y-auto">
+      <DialogContent className="max-h-[85dvh] max-w-lg overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t('admin.orders.detail.title', { id: orderId ?? '' })}</DialogTitle>
           <DialogDescription>{order?.course.title}</DialogDescription>
@@ -400,7 +400,7 @@ export function AdminOrdersPage() {
             resetPage()
           }}
         >
-          <SelectTrigger className="w-[180px]" aria-label={t('admin.orders.table.status')}>
+          <SelectTrigger className="w-[calc(50vw-1.375rem)] sm:w-[180px]" aria-label={t('admin.orders.table.status')}>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -419,7 +419,7 @@ export function AdminOrdersPage() {
             resetPage()
           }}
         >
-          <SelectTrigger className="w-[180px]" aria-label={t('admin.orders.table.method')}>
+          <SelectTrigger className="w-[calc(50vw-1.375rem)] sm:w-[180px]" aria-label={t('admin.orders.table.method')}>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

@@ -185,7 +185,7 @@ export function BusinessSettingsCard() {
         </CardContent>
       </Card>
 
-      <div className="sticky bottom-0 -mx-1 flex items-center gap-3 border-t bg-background/95 px-1 py-3 backdrop-blur">
+      <div className="sticky bottom-0 -mx-1 flex items-center gap-3 border-t bg-background/95 px-1 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur">
         <Button onClick={submit} disabled={save.isPending || draft === null || !loaded}>
           {save.isPending ? t('common.loading') : t('common.save')}
         </Button>

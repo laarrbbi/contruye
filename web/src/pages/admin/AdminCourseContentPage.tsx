@@ -450,7 +450,7 @@ function SortableLessonRow({
     >
       <button
         type="button"
-        className="cursor-grab touch-none rounded p-1 text-muted-foreground hover:bg-secondary active:cursor-grabbing"
+        className="relative cursor-grab touch-none rounded p-1 text-muted-foreground before:absolute before:-inset-2 before:content-[''] hover:bg-secondary active:cursor-grabbing"
         aria-label={t('admin.content.dragToReorder')}
         {...attributes}
         {...listeners}
@@ -459,8 +459,10 @@ function SortableLessonRow({
       </button>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium">{title}</p>
+        <p className="line-clamp-2 text-sm font-medium">{title}</p>
         <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          {/* Under the title, not beside it: on a phone the title kept four letters. */}
+          {lesson.is_free_preview && <Badge variant="success">{t('admin.content.freePreviewBadge')}</Badge>}
           {lesson.bunny_video_id && (
             <span className="inline-flex items-center gap-1">
               <Video className="h-3 w-3" />
@@ -477,15 +479,13 @@ function SortableLessonRow({
         </div>
       </div>
 
-      {lesson.is_free_preview && <Badge variant="success">{t('admin.content.freePreviewBadge')}</Badge>}
-
-      <Button variant="ghost" size="icon" className="h-8 w-8" aria-label={t('admin.common.edit')} onClick={onEdit}>
+      <Button variant="ghost" size="icon" className="h-9 w-9 shrink-0" aria-label={t('admin.common.edit')} onClick={onEdit}>
         <Pencil className="h-4 w-4" />
       </Button>
       <Button
         variant="ghost"
         size="icon"
-        className="h-8 w-8"
+        className="h-9 w-9 shrink-0"
         aria-label={t('common.delete')}
         onClick={onDelete}
       >
@@ -555,7 +555,7 @@ function SortableModuleCard({
       <CardHeader className="flex-row items-center gap-2 space-y-0 p-4">
         <button
           type="button"
-          className="cursor-grab touch-none rounded p-1 text-muted-foreground hover:bg-secondary active:cursor-grabbing"
+          className="relative cursor-grab touch-none rounded p-1 text-muted-foreground before:absolute before:-inset-2 before:content-[''] hover:bg-secondary active:cursor-grabbing"
           aria-label={t('admin.content.dragToReorder')}
           {...attributes}
           {...listeners}
@@ -563,7 +563,7 @@ function SortableModuleCard({
           <GripVertical className="h-5 w-5" />
         </button>
         <div className="min-w-0 flex-1">
-          <h2 className="truncate font-semibold">
+          <h2 className="line-clamp-2 font-semibold">
             <span className="text-muted-foreground">{index + 1}.</span> {title}
           </h2>
           {/* div, not p: the A VALIDER Badge renders a div and cannot nest in a <p>. */}

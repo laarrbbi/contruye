@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { NavLink, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CreditCard, Download, FileText, IdCard, ShieldCheck, UserRound, type LucideIcon } from 'lucide-react'
@@ -42,6 +43,18 @@ export function AccountPage() {
   const current: Section = isSection(section) ? section : 'profile'
   usePageTitle(`${t(`account.nav.${current}`)} · ${t('account.title')}`)
 
+  // On a phone the sections are a row that scrolls: the open one is brought
+  // into view (an e-mail's link to /account/invoices lands on it off-screen).
+  const navRef = useRef<HTMLElement>(null)
+  useEffect(() => {
+    const nav = navRef.current
+    const link = nav?.querySelector<HTMLElement>('[aria-current="page"]')
+    if (!nav || !link || nav.scrollWidth <= nav.clientWidth) return
+    const navBox = nav.getBoundingClientRect()
+    const linkBox = link.getBoundingClientRect()
+    nav.scrollBy({ left: linkBox.left + linkBox.width / 2 - (navBox.left + navBox.width / 2), behavior: 'instant' })
+  }, [current])
+
   if (section !== undefined && !isSection(section)) return <Navigate to="/account" replace />
 
   return (
@@ -50,7 +63,11 @@ export function AccountPage() {
 
       <div className="grid gap-8 lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:gap-12">
         {/* A column of links on a wide screen; a row that scrolls on a phone. */}
-        <nav aria-label={t('account.title')} className="-mx-4 overflow-x-auto px-4 lg:mx-0 lg:overflow-visible lg:px-0">
+        <nav
+          ref={navRef}
+          aria-label={t('account.title')}
+          className="-mx-4 overflow-x-auto overscroll-x-contain px-4 [scrollbar-width:none] lg:mx-0 lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden"
+        >
           <ul className="flex gap-1 lg:sticky lg:top-24 lg:flex-col">
             {SECTIONS.map((key) => {
               const Icon = ICONS[key]
@@ -61,7 +78,7 @@ export function AccountPage() {
                     end
                     className={({ isActive }) =>
                       cn(
-                        'flex items-center gap-2.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150',
+                        'flex min-h-10 items-center gap-2.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150',
                         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                         isActive || (key === 'profile' && current === 'profile')
                           ? 'bg-foreground/[0.06] text-foreground'

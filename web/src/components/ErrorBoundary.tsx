@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { failed: 
 
     const t = i18n.t.bind(i18n)
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-background p-6 text-center">
+      <div className="flex min-h-svh flex-col items-center justify-center gap-4 bg-background p-6 text-center">
         <h1 className="text-2xl font-bold">{t('crash.title')}</h1>
         <p className="max-w-md text-muted-foreground">{t('crash.body')}</p>
         <div className="flex flex-wrap justify-center gap-3">

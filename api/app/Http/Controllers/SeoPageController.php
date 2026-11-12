@@ -387,7 +387,7 @@ final class SeoPageController
         Log::warning('SPA index not found for server-rendered pages', ['path' => $path]);
 
         return '<!doctype html><html lang="es"><head><meta charset="UTF-8" />'
-            .'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+            .'<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />'
             .'<!-- seo:start --><!-- seo:end --></head><body><div id="root"></div></body></html>';
     }
 }

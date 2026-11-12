@@ -147,7 +147,7 @@ function PartnerFormDialog({
 
   return (
     <Dialog open={open} onOpenChange={(next) => !isPending && onOpenChange(next)}>
-      <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+      <DialogContent className="max-h-[85dvh] max-w-2xl overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             {partner ? t('admin.partners.form.editTitle') : t('admin.partners.form.createTitle')}
@@ -282,7 +282,7 @@ export function AdminPartnersPage() {
       </p>
 
       <div className="flex flex-wrap items-center gap-3">
-        <div className="relative max-w-sm flex-1">
+        <div className="relative w-full sm:max-w-sm sm:flex-1">
           <Search className="pointer-events-none absolute inset-y-0 start-3 my-auto h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
@@ -293,7 +293,7 @@ export function AdminPartnersPage() {
           />
         </div>
         <Select value={provinceFilter} onValueChange={setProvinceFilter}>
-          <SelectTrigger className="w-[220px]" aria-label={t('admin.partners.filterProvince')}>
+          <SelectTrigger className="w-full sm:w-[220px]" aria-label={t('admin.partners.filterProvince')}>
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

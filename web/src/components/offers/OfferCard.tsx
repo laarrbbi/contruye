@@ -125,7 +125,7 @@ export function OfferCard({
           <button
             type="button"
             onClick={onDismiss}
-            className="absolute end-3 top-3 rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="absolute end-1.5 top-1.5 rounded-full p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <X className="h-4 w-4" />
             <span className="sr-only">{t('offers.close')}</span>
@@ -160,7 +160,7 @@ export function OfferCard({
           <div className="flex flex-wrap items-center gap-3">
             {cta('lg')}
             {onDismiss && (
-              <Button variant="ghost" size="lg" onClick={onDismiss} className="text-foreground/70">
+              <Button variant="ghost" size="lg" onClick={onDismiss} className="px-4 text-foreground/70">
                 {t('offers.notNow')}
               </Button>
             )}

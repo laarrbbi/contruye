@@ -212,10 +212,12 @@ export function QuizPage() {
             const graded = resultByNumber.get(question.numero)
             return (
               <fieldset key={question.numero} className="rounded-lg border p-4" disabled={!!result}>
-                <legend className="px-1 text-sm font-semibold leading-snug">
+                {/* Floated: the question sits inside the card instead of across
+                    its top border, which a two-line question broke on a phone. */}
+                <legend className="float-start w-full text-sm font-semibold leading-snug">
                   {question.numero}. {question.pregunta}
                 </legend>
-                <div className="mt-2 space-y-1.5">
+                <div className="clear-both space-y-1.5 pt-3">
                   {question.opciones.map((option) => {
                     const chosen = answers[question.numero] === option.letra
                     const isRight = graded?.correct_answer === option.letra
@@ -224,7 +226,7 @@ export function QuizPage() {
                       <label
                         key={option.letra}
                         className={cn(
-                          'flex cursor-pointer items-start gap-3 rounded-md border px-3 py-2 text-sm transition-colors',
+                          'flex cursor-pointer items-start gap-3 rounded-md border px-3 py-2.5 text-sm transition-colors sm:py-2',
                           chosen ? 'border-primary bg-primary/5' : 'border-transparent hover:bg-secondary',
                           isRight && 'border-success bg-success/10',
                           isWrongChoice && 'border-warning bg-warning/10',

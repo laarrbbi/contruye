@@ -138,7 +138,7 @@ function CampaignFormDialog({
 
   return (
     <Dialog open={open} onOpenChange={(next) => !isPending && onOpenChange(next)}>
-      <DialogContent className="max-h-[85vh] overflow-y-auto">
+      <DialogContent className="max-h-[85dvh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             {campaign ? t('admin.campaigns.form.editTitle') : t('admin.campaigns.form.createTitle')}

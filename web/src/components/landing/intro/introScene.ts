@@ -236,8 +236,9 @@ export function createIntroScene(canvas: HTMLCanvasElement, { compact }: { compa
   }
   const floaters: Floater[] = compact
     ? [
-        { group: key, home: [3.4, 12.5, 2], spin: 0.5, phase: 0 },
-        { group: beam, home: [-3, 13.6, 0], spin: 0.22, phase: 1.3 },
+        // Above the title's small heading, under the bar with the logo.
+        { group: key, home: [4.4, 14.3, 2], spin: 0.5, phase: 0 },
+        { group: beam, home: [-3.4, 14.4, 0], spin: 0.22, phase: 1.3 },
         { group: file, home: [-4.6, 8.6, 1], spin: 0.3, phase: 2.6 },
         { group: breeze, home: [4.6, 5.4, 2], spin: -0.3, phase: 4 },
       ]

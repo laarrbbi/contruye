@@ -137,7 +137,8 @@ export function ReferenceValuesCard({ reference }: { reference: ReferenceValuesV
                 <tbody>
                   {g.table.rows.map((row) => (
                     <tr key={row.label} className="border-t border-border/60">
-                      <th scope="row" className="whitespace-nowrap px-2 py-1 text-start font-normal tabular-nums text-muted-foreground">{row.label}</th>
+                      {/* Stays in view while a phone scrolls the tariff sideways. */}
+                      <th scope="row" className="sticky start-0 z-[1] whitespace-nowrap bg-card px-2 py-1 text-start font-normal tabular-nums text-muted-foreground">{row.label}</th>
                       {row.cells.map((cell, i) => (
                         <td key={cell.key} className="px-2 py-1">{field(cell, `${row.label} · ${g.table!.columns[i]}`)}</td>
                       ))}

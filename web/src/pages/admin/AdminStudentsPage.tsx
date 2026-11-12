@@ -36,7 +36,7 @@ function StudentDetailDialog({
 
   return (
     <Dialog open={studentId !== null} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+      <DialogContent className="max-h-[85dvh] max-w-2xl overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{student?.name ?? t('common.loading')}</DialogTitle>
           <DialogDescription dir="ltr" className="text-start">

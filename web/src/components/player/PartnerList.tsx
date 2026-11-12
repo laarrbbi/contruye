@@ -35,7 +35,7 @@ export function PartnerList({ partners }: { partners: LearnPartner[] }) {
       {visible.length === 0 ? (
         <div className="mt-3 rounded-md border border-dashed px-3 py-2 text-sm text-muted-foreground">
           <p>{t('partners.noneInProvince')}</p>
-          <Button variant="link" size="sm" className="h-auto p-0" onClick={() => setOverride({ provinceId: null })}>
+          <Button variant="link" size="sm" className="-my-2.5 h-auto px-0 py-2.5" onClick={() => setOverride({ provinceId: null })}>
             {t('partners.showAll', { count: partners.length })}
           </Button>
         </div>
@@ -48,7 +48,7 @@ export function PartnerList({ partners }: { partners: LearnPartner[] }) {
       )}
 
       {visible.length > 0 && hidden > 0 && (
-        <Button variant="link" size="sm" className="mt-1 h-auto p-0 text-xs" onClick={() => setOverride({ provinceId: null })}>
+        <Button variant="link" size="sm" className="-my-1.5 h-auto px-0 py-3 text-xs" onClick={() => setOverride({ provinceId: null })}>
           {t('partners.hiddenByFilter', { count: hidden })}
         </Button>
       )}

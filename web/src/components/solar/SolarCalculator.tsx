@@ -89,7 +89,7 @@ function Breakdown({ result, money }: { result: SolarResult; money(value: number
           <span key={part.key} className={cn('h-full transition-[width] duration-300 ease-out-strong', part.color)} style={{ width: `${(part.value / total) * 100}%` }} />
         ))}
       </div>
-      <dl className="mt-3 grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
+      <dl className="mt-3 grid gap-x-6 gap-y-1.5 text-sm min-[420px]:grid-cols-2">
         {parts.map((part) => (
           <div key={part.key} className="flex items-center justify-between gap-3">
             <dt className="flex min-w-0 items-center gap-2 text-creme-100/75">

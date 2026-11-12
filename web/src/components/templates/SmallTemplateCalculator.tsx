@@ -254,6 +254,14 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                 }
                 // A row of labels only is the header of a table (Capítulo, Presupuesto…).
                 const header = rowInputs.length === 0 && present.length > 1 && present.every((x) => typeof x.cell?.value === 'string')
+                // The explanation at the end of a row («Decide el ITP…»): on a
+                // phone it goes under the row's name instead of a third
+                // column cut off at the screen's edge.
+                const last = Math.max(0, ...present.map((x) => x.col), ...rowInputs)
+                const lastCell = present.find((x) => x.col === last)?.cell
+                const noteCol =
+                  !header && last > 1 && !rowInputs.includes(last) && lastCell && typeof lastCell.value !== 'number' ? last : null
+                const note = noteCol !== null && lastCell ? formatCellValue(lastCell.value, lastCell.nf) : ''
                 return (
                   <tr key={row} className="align-middle">
                     {grid.cols.map((col) => {
@@ -269,13 +277,18 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                           scope={header ? 'col' : undefined}
                           className={cn(
                             'border-b border-foreground/[0.06] px-2 py-2',
-                            col === 1 && 'min-w-[8.5rem] ps-4 sm:min-w-[10rem]',
+                            // On a phone the names take the room the explanations left,
+                            // and stay in view when a wide table scrolls sideways.
+                            col === 1 && 'min-w-[8.5rem] ps-4 max-sm:sticky max-sm:start-0 max-sm:z-[1] max-sm:w-full max-sm:bg-card sm:min-w-[10rem]',
                             header && 'whitespace-nowrap text-start text-xs font-medium text-muted-foreground',
                             !header && !input && numeric && 'whitespace-nowrap text-end font-medium tabular-nums',
                             !header && !input && !numeric && col > 1 && 'min-w-[10rem] text-xs text-muted-foreground',
+                            (col === noteCol || (!input && text === '' && col > 1)) && 'max-sm:min-w-0 max-sm:p-0',
                           )}
                         >
-                          {input ? (
+                          {col === noteCol ? (
+                            <span className="max-sm:hidden">{text}</span>
+                          ) : input ? (
                             <InputCell
                               input={input}
                               value={values[address] ?? ''}
@@ -284,6 +297,9 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                             />
                           ) : (
                             text
+                          )}
+                          {col === 1 && note && (
+                            <span className="mt-1 block text-xs font-normal leading-snug text-muted-foreground sm:hidden">{note}</span>
                           )}
                         </Tag>
                       )
