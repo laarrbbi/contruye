@@ -1,7 +1,9 @@
 # Vercel (vercel.json): what neither the build nor the site needs, never uploaded.
 # The function's excludeFiles repeats the big ones, in case a Git build ignores this file.
 reports/
-video/
+# The film's sources at the root only: «video/» alone also matched web/public/video,
+# so the lesson videos and the sales page's clip never reached the site.
+/video/
 docker/
 .github/
 docs/
