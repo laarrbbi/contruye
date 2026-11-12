@@ -1206,3 +1206,11 @@ body {
     min-width: 9.5rem;
   }
 }
+
+/* Subtitles of a lesson video (VideoPlayer): never smaller than 13px on a
+   phone, never larger than 20px on a desktop, on a dark band. */
+video::cue {
+  font-size: clamp(0.8125rem, 2.6vw, 1.25rem);
+  line-height: 1.35;
+  background: rgb(7 15 28 / 0.78);
+}

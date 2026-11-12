@@ -352,6 +352,8 @@ it('plays the preview\'s film from a file when Bunny Stream is not configured, b
     $this->actingAs($student)->getJson("/api/lessons/{$lesson->id}/playback")->assertOk()
         ->assertJsonPath('data.type', 'file')
         ->assertJsonPath('data.url', '/video/modulo-1-es.mp4')
+        ->assertJsonPath('data.poster', '/video/modulo-1-es.jpg')
+        ->assertJsonPath('data.captions', '/video/modulo-1-es.vtt')
         ->assertJsonPath('data.locale', 'es');
 
     // The file changes how it plays, not who may play it.

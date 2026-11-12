@@ -379,7 +379,9 @@
     "moduleOverview": "Objectif, lois et où s'adresser",
     "videoInLanguage": "Vidéo en {{language}} : cette leçon n'a pas encore de version dans votre langue.",
     "moduleIntroTitle": "Introduction au {{module}}",
-    "moduleIntroLead": "Avant les leçons : l'objectif du module, les lois applicables et où s'adresser. Elle est commune à toutes ses leçons ; la leçon commence plus bas."
+    "moduleIntroLead": "Avant les leçons : l'objectif du module, les lois applicables et où s'adresser. Elle est commune à toutes ses leçons ; la leçon commence plus bas.",
+    "speed": "Vitesse",
+    "captions": "Sous-titres"
   },
   "admin": {
     "title": "Administration",

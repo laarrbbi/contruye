@@ -134,6 +134,11 @@ makes that work lives in `docker/mysql-test/`.
 - Empleo and Obras are **Construye Fichaje**, a separate site with its own accounts and payments
   (github.com/laarrbbi/contruye_fichaje, Vercel project `construye-fichaje`): the menu links to its
   `/empleo` and `/obras` in a new tab (`lib/fichaje.ts`, `VITE_FICHAJE_URL`). Nothing of it runs here.
+- Lesson videos: Bunny Stream on the real server (set per lesson in the admin; its player has its
+  own speed and captions). Where Bunny is not configured (the Vercel preview, `VIDEO_FILES_BASE`) a
+  video is a file in `web/public/video`: `<id>.mp4` (H.264, AAC 48 kHz for iPhones), `<id>.jpg`
+  (cover) and `<id>.vtt` (subtitles), played by `VideoPlayer` with a speed selector (0.75–2×) and a
+  subtitles switch, both remembered on the device. Lección 1.1's own video: `PreviewVideoSeeder`.
 - The newsletter (`NewsletterSubscriber`, `NewsletterController`): double opt-in (the e-mail's link
   confirms on `/newsletter`, a click unsubscribes), the same answer whoever signs up, a honeypot;
   sections on the sales page (`landing/s8/Boletin`) and the calculator's page. `/admin/newsletter`

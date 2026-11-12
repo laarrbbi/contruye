@@ -106,6 +106,9 @@ export interface Playback {
   watermark: string | null
   /** The language the video is spoken in: the student's, or Spanish when the lesson has no version in theirs. */
   locale: string
+  /** A file's cover picture and subtitles (WebVTT); null for Bunny's player, which has its own. */
+  poster: string | null
+  captions: string | null
 }
 
 /**

@@ -57,7 +57,7 @@ $settings = [
     'FILESYSTEM_DISK' => 'local',
     // The template engine runs in this same function (financials/cli.js).
     'PLANTILLA_TRANSPORT' => 'process',
-    // The Module 1 film, served as a file by Vercel (web/public/video).
+    // Lesson videos served as files by Vercel (web/public/video), with their cover and subtitles.
     'VIDEO_FILES_BASE' => '/video',
     // Demo payment details, as in development: nothing can be paid on a preview.
     'PAYMENT_TRANSFER_IBAN' => 'ES00 0000 0000 0000 0000 0000',

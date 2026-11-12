@@ -41,9 +41,12 @@ class PlaybackController extends Controller
             abort(503, __('Video playback is temporarily unavailable. Please try again later.'));
         }
 
+        // A file comes with its cover and its subtitles beside it (<id>.jpg, <id>.vtt);
+        // Bunny's player has its own.
+        $file = fn (string $extension) => rtrim((string) $files, '/').'/'.rawurlencode($video['id']).'.'.$extension;
         $signed = $bunny
             ? ['type' => 'embed', ...BunnyStreamService::fromConfig()->signedEmbedUrl($video['id'])]
-            : ['type' => 'file', 'url' => rtrim((string) $files, '/').'/'.rawurlencode($video['id']).'.mp4', 'expires_at' => null];
+            : ['type' => 'file', 'url' => $file('mp4'), 'expires_at' => null];
 
         return response()->json([
             'data' => [
@@ -55,6 +58,8 @@ class PlaybackController extends Controller
                 'locale' => $video['locale'],
                 // Shown as an overlay by the player to discourage screen recording.
                 'watermark' => $user?->email,
+                'poster' => $signed['type'] === 'file' ? $file('jpg') : null,
+                'captions' => $signed['type'] === 'file' ? $file('vtt') : null,
             ],
         ]);
     }
