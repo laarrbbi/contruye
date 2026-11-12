@@ -1439,7 +1439,11 @@
       "marketing": "Marketing et publicité",
       "limpieza_mantenimiento": "Nettoyage et maintenance",
       "otros": "Autres"
-    }
+    },
+    "welcomeTitle": "Dans quelle province allez-vous promouvoir ?",
+    "welcomeBody": "Ainsi, chaque module vous montre les institutions, les partenaires et les impôts de votre province. Vous pouvez la changer à tout moment dans la liste des provinces de chaque module.",
+    "welcomeSave": "Enregistrer ma province",
+    "welcomeLater": "Plus tard"
   },
   "financials": {
     "navTitle": "Calculer le modèle",

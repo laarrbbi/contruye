@@ -1439,7 +1439,11 @@
       "marketing": "Marketing y publicidad",
       "limpieza_mantenimiento": "Limpieza y mantenimiento",
       "otros": "Otras"
-    }
+    },
+    "welcomeTitle": "¿En qué provincia vas a promover?",
+    "welcomeBody": "Así cada módulo te enseña las instituciones, los partners y los impuestos de tu provincia. Puedes cambiarla cuando quieras en la lista de provincias de cada módulo.",
+    "welcomeSave": "Guardar mi provincia",
+    "welcomeLater": "Más tarde"
   },
   "financials": {
     "navTitle": "Calcular la plantilla",

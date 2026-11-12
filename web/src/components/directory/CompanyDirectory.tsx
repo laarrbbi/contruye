@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Building2, ChevronLeft, ChevronRight, Globe, Lock, Mail, MapPin, Phone, Search } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Globe, Lock, Mail, MapPin, Phone, Search } from 'lucide-react'
 import { useUser } from '@/api/auth'
 import { useCompanies, useModuleCompanies, type DirectoryCompany, type DirectoryPage } from '@/api/directory'
 import { PartnerProvinceFilter } from '@/components/player/PartnerProvinceFilter'
@@ -130,6 +130,15 @@ function Chip({ active, onClick, label, count }: { active: boolean; onClick(): v
   )
 }
 
+/** "Promociones Azarbe SL" → "PA": the first letters of the name, legal form and "[DEMO]" aside. */
+function initials(name: string): string {
+  const words = name
+    .replace(/\[DEMO\]/i, '')
+    .split(/[\s.,]+/)
+    .filter((word) => word && !/^(s\.?l\.?u?|s\.?a\.?u?|sl|sa|slu|sau|sociedad|limitada|anonima|anónima|de|del|la|el|y|e)$/i.test(word))
+  return (words.slice(0, 2).map((word) => word[0]).join('') || name.trim()[0] || '·').toUpperCase()
+}
+
 function CompanyCard({ company }: { company: DirectoryCompany }) {
   const { t } = useTranslation()
   const place = [company.city, company.province].filter(Boolean).join(' · ')
@@ -138,8 +147,8 @@ function CompanyCard({ company }: { company: DirectoryCompany }) {
   return (
     <li className="flex flex-col gap-4 rounded-2xl border border-foreground/[0.08] bg-card p-5 shadow-[0_24px_48px_-38px_rgb(20_26_34/0.4)]">
       <div className="flex items-start gap-3">
-        <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary">
-          <Building2 className="h-4 w-4 text-foreground/70" />
+        <span aria-hidden className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-semibold text-foreground/70">
+          {initials(company.name)}
         </span>
         <div className="min-w-0">
           <p className="etiquette text-or-fonce">{t(`directory.category.${company.category}`)}</p>

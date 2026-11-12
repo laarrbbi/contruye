@@ -192,8 +192,9 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content li > input[type='checkbox'] {
     @apply me-2 align-middle accent-primary;
   }
+  /* A quiet panel, no coloured bar: notices and summaries read as part of the page. */
   .md-content blockquote {
-    @apply rounded-lg border-s-4 border-primary/40 bg-primary/5 px-4 py-3 text-foreground;
+    @apply rounded-2xl bg-foreground/[0.04] px-5 py-4 text-foreground;
   }
   .md-content blockquote > * + * {
     @apply mt-2;
@@ -1012,4 +1013,17 @@ html.lenis {
 }
 .term-tip {
   @apply sr-only;
+}
+
+/* «Errores típicos» and the like (the instructor's warning sign, set as a
+   style by CourseTypography): a discreet warm panel instead of an emoji. */
+.md-content li.aviso,
+.md-content p.aviso {
+  @apply my-3 list-none rounded-xl bg-[rgb(180_35_24/0.05)] px-4 py-3;
+}
+.md-content li.aviso {
+  @apply -ms-5;
+}
+.md-content .aviso > strong:first-child {
+  @apply text-[#b42318];
 }

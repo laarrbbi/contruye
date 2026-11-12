@@ -103,6 +103,8 @@ final class Markdown
             $environment->addExtension(new GithubFlavoredMarkdownExtension);
             $environment->addEventListener(DocumentParsedEvent::class, new LegalLinker);
             if ($glossary) {
+                // Course text: its pictograms in type, not emoji.
+                $environment->addEventListener(DocumentParsedEvent::class, new CourseTypography, 10);
                 // After the laws: a term inside a law's link stays part of the link.
                 $environment->addEventListener(DocumentParsedEvent::class, new GlossaryLinker, -10);
                 $environment->addRenderer(GlossaryTerm::class, new GlossaryTermRenderer);

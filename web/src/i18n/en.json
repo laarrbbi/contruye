@@ -1439,7 +1439,11 @@
       "marketing": "Marketing and advertising",
       "limpieza_mantenimiento": "Cleaning and maintenance",
       "otros": "Other"
-    }
+    },
+    "welcomeTitle": "Which province will you develop in?",
+    "welcomeBody": "So that each module shows you the institutions, partners and taxes of your province. You can change it at any time from the province list in each module.",
+    "welcomeSave": "Save my province",
+    "welcomeLater": "Later"
   },
   "financials": {
     "navTitle": "Calculate the template",

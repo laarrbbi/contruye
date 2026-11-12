@@ -33,7 +33,7 @@ export function ModuleOverview({ module, defaultOpen }: { module: LearnModule; d
         <MarkdownContent
           html={module.description_html}
           lang={module.description_locale}
-          className="rounded-lg bg-primary/5 px-4 py-3"
+          className="rounded-2xl bg-foreground/[0.04] px-5 py-4"
         />
         {sections.length > 0 && <ContentLanguageNote locale={sections[0].body_locale} />}
         {sections.map((block) => (

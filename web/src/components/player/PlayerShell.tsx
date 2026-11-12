@@ -5,6 +5,7 @@ import type { LearnData } from '@/api/learn'
 import { CurrentOffer } from '@/components/offers/OfferCard'
 import { Button } from '@/components/ui/button'
 import { PlayerSidebar, type PlayerLocation } from './PlayerSidebar'
+import { ProvinceWelcome } from './ProvinceWelcome'
 
 /**
  * The course player's frame: the page's own column, and the course
@@ -68,6 +69,8 @@ export function PlayerShell({
           </div>
 
           <CurrentOffer variant="compact" />
+          {/* First visit without a province: ask once, then every module opens on it. */}
+          <ProvinceWelcome />
 
           {children}
         </div>
