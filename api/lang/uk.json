@@ -101,5 +101,7 @@
     "Confirm my subscription": "Підтвердити підписку",
     "Every newsletter carries a link to unsubscribe in one click.": "У кожному листі є посилання, щоб відписатися в один клік.",
     "Check your inbox: we have sent you a link to confirm.": "Перевірте пошту: ми надіслали посилання для підтвердження.",
-    "This link is not valid any more.": "Це посилання більше не дійсне."
+    "This link is not valid any more.": "Це посилання більше не дійсне.",
+    "Unknown reference value: :key": "Невідоме довідкове значення: :key",
+    "The value of «:label» is out of range.": "Значення «:label» поза допустимим діапазоном."
 }

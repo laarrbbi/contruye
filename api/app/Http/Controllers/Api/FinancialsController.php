@@ -9,6 +9,7 @@ use App\Models\FinancialScenario;
 use App\Models\Module;
 use App\Models\User;
 use App\Services\LegalParameters;
+use App\Services\ReferenceValues;
 use App\Services\TemplateEngine;
 use App\Support\Financials\TemplateCatalog;
 use App\Support\Financials\XlsxFiller;
@@ -37,6 +38,7 @@ class FinancialsController extends Controller
     public function __construct(
         private readonly TemplateEngine $engine,
         private readonly LegalParameters $legal,
+        private readonly ReferenceValues $reference,
     ) {}
 
     public function inputs(Request $request, Course $course): JsonResponse
@@ -45,8 +47,12 @@ class FinancialsController extends Controller
 
         $catalog = TemplateCatalog::fromConfig();
 
+        $dictionary = $catalog->professionalDictionary();
+
         return response()->json(['data' => [
-            ...$catalog->professionalDictionary(),
+            ...$dictionary,
+            // Presented with the reference values the admin keeps up to date.
+            'entradas' => $this->reference->presented(ReferenceValues::PROFESSIONAL, $dictionary['entradas']),
             // The package's worked example (motor/ejemplo.js, pruebas/): a
             // promotion of 24 homes, to start from something that calculates.
             'ejemplos' => [[
@@ -87,8 +93,15 @@ class FinancialsController extends Controller
         $datos = $catalog->inputs($dictionary, $request->validate(['datos' => ['present', 'array']])['datos'], 'datos');
         $cells = $catalog->legalCells();
 
+        $sheets = $catalog->toWorkbook($dictionary, $this->reference->withDefaults(ReferenceValues::PROFESSIONAL, $datos));
+        // The tariffs the admin has brought up to date, in their cells: the
+        // file calculates what the platform calculated.
+        foreach ($this->reference->tariffsForEngine() as $sheet => $values) {
+            $sheets[$sheet] = [...($sheets[$sheet] ?? []), ...$values];
+        }
+
         $path = XlsxFiller::fill($catalog->professionalWorkbook(), [
-            ...$catalog->toWorkbook($dictionary, $datos),
+            ...$sheets,
             $cells['sheet'] => $this->legal->cellValues($cells),
         ]);
 

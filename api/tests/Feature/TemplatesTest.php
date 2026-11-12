@@ -13,8 +13,10 @@ use App\Models\QuizAttempt;
 use App\Models\User;
 use App\Services\FinancialsExtra;
 use App\Services\LegalParameters;
+use App\Services\ReferenceValues;
 use App\Support\Financials\XlsxFiller;
 use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 /*
@@ -355,4 +357,93 @@ it('plays the preview\'s film from a file when Bunny Stream is not configured, b
     // The file changes how it plays, not who may play it.
     auth()->forgetGuards();
     $this->actingAs(studentOf($course, $phases[2]))->getJson("/api/lessons/{$lesson->id}/playback")->assertForbidden();
+});
+
+/*
+ * The reference values the admin keeps up to date (financials/valores_de_referencia.json):
+ * the 2002 tariffs of the professional template and the values its inputs and
+ * the small templates' are presented with.
+ */
+
+it('lists every reference value with the package\'s beside it, for admins only', function () {
+    $admin = User::factory()->create(['role' => 'admin']);
+
+    $reference = $this->actingAs($admin)->getJson('/api/admin/templates')->assertOk()->json('data.reference');
+
+    expect(collect($reference['tariffs'])->pluck('group')->all())
+        ->toBe(['oct', 'seguro_decenal', 'avales', 'honorarios_bloque', 'honorarios_chalets', 'honorarios_actuacion', 'honorarios_coeficientes']);
+    // The OCT table: 15 tranches by 5 missions, each the package's value until changed.
+    $oct = collect($reference['tariffs'])->firstWhere('group', 'oct')['table'];
+    expect($oct['rows'])->toHaveCount(15)
+        ->and($oct['rows'][0]['cells'][0])->toMatchArray(['cell' => '3ª Construcción!R39', 'value' => 0.0119, 'package' => 0.0119, 'changed' => false]);
+    $loan = collect(collect($reference['inputs'])->firstWhere('group', 'plantillas_pequenas')['items'])->firstWhere('cell', 'Calculadora!B6');
+    expect($loan)->toMatchArray(['template' => '3', 'label' => 'Tipo de interés anual', 'package' => 0.045]);
+
+    $this->actingAs(User::factory()->create())->getJson('/api/admin/templates')->assertForbidden();
+});
+
+it('saves a value with its history, and the package\'s value again removes the change', function () {
+    $admin = User::factory()->create(['role' => 'admin', 'name' => 'Ana Admin']);
+    $url = '/api/admin/templates/reference';
+
+    $this->actingAs($admin)->putJson($url, ['values' => ['profesional|3ª Terrenos|J24' => 0.01]])
+        ->assertUnprocessable()->assertJsonValidationErrors('confirmed');
+    $this->actingAs($admin)->putJson($url, ['confirmed' => true, 'values' => ['profesional|3ª Terrenos|J24' => 7]])
+        ->assertUnprocessable();
+    $this->actingAs($admin)->putJson($url, ['confirmed' => true, 'values' => ['profesional|Datos de Partida|C9' => 1]])
+        ->assertUnprocessable()->assertJsonValidationErrors('values');
+
+    $avales = fn (array $data) => collect(collect($data['reference']['tariffs'])->firstWhere('group', 'avales')['items'])->firstWhere('cell', '3ª Terrenos!J24');
+    $data = $this->actingAs($admin)->putJson($url, ['confirmed' => true, 'values' => ['profesional|3ª Terrenos|J24' => 0.01]])->assertOk()->json('data');
+    expect($avales($data))->toMatchArray(['value' => 0.01, 'package' => 0.0075, 'changed' => true])
+        ->and($data['reference']['history'][0])->toMatchArray(['old_value' => 0.0075, 'new_value' => 0.01, 'by' => 'Ana Admin'])
+        ->and($data['reference']['reviewed_by'])->toBe('Ana Admin');
+
+    $data = $this->actingAs($admin)->putJson($url, ['confirmed' => true, 'values' => ['profesional|3ª Terrenos|J24' => 0.0075]])->assertOk()->json('data');
+    expect($avales($data)['changed'])->toBeFalse()
+        ->and(DB::table('template_reference_values')->count())->toBe(0)
+        ->and(DB::table('template_reference_changes')->count())->toBe(2);
+});
+
+it('sends the tariffs the admin changed with every calculation of the professional template, and writes them in its Excel', function () {
+    Http::fake(['*' => Http::response(['calculo' => [], 'parametros' => [], 'resumen' => [], 'vista' => [], 'hojas' => []])]);
+    [$course, $phases, $financials] = templatesCourse();
+    $buyer = studentOf($course, $financials);
+    $admin = User::factory()->create(['role' => 'admin']);
+    app(ReferenceValues::class)->save($admin, ['profesional|3ª Construcción|AI78' => 0.006, 'profesional|Datos de Partida|D147' => 0.04]);
+
+    $this->actingAs($buyer)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => ['Datos de Partida' => ['C9' => 24]]])->assertOk();
+    Http::assertSent(function (Request $request) {
+        $body = json_decode($request->body(), true);
+
+        return $body['tarifas'] === ['3ª Construcción' => ['AI78' => 0.006]]
+            // The loan's rate, left empty by the student, is the admin's.
+            && $body['datos']['Datos de Partida'] === ['C9' => 24, 'D147' => 0.04];
+    });
+
+    // The form presents the admin's value.
+    $inputs = $this->actingAs($buyer)->getJson("/api/courses/{$course->slug}/financials/inputs")->assertOk()->json('data.entradas');
+    expect(collect($inputs)->firstWhere('celda', 'D147')['defecto'])->toBe(0.04);
+
+    $path = $this->actingAs($buyer)->post("/api/courses/{$course->slug}/financials/excel", ['datos' => ['Datos de Partida' => ['C9' => 24]]])
+        ->assertOk()->getFile()->getPathname();
+    expect(workbookCell($path, '3ª Construcción', 'AI78'))->toBe(['number', 0.006])
+        ->and(workbookCell($path, 'Datos de Partida', 'D147'))->toBe(['number', 0.04]);
+});
+
+it('presents a small template\'s inputs with the admin\'s values and calculates with them when left empty', function () {
+    Http::fake(['*/pequenas/3/calcular' => Http::response(['calculo' => [], 'parametros' => [], 'hoja' => ['nombre' => 'Calculadora', 'celdas' => []]])]);
+    [$course, $phases] = templatesCourse();
+    $student = studentOf($course, $phases[5]);
+    app(ReferenceValues::class)->save(User::factory()->create(['role' => 'admin']), ['3|Calculadora|B6' => 0.039]);
+
+    $inputs = $this->actingAs($student)->getJson("/api/courses/{$course->slug}/templates/3")->assertOk()->json('data.entradas');
+    expect(collect($inputs)->firstWhere('celda', 'B6')['defecto'])->toBe(0.039);
+
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/3/calculate", ['datos' => ['Calculadora' => ['B4' => 3000000]]])->assertOk();
+    Http::assertSent(fn (Request $request) => json_decode($request->body(), true)['datos'] === ['Calculadora' => ['B4' => 3000000, 'B6' => 0.039]]);
+
+    // What the student types wins.
+    $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/3/calculate", ['datos' => ['Calculadora' => ['B4' => 3000000, 'B6' => 0.05]]])->assertOk();
+    Http::assertSent(fn (Request $request) => json_decode($request->body(), true)['datos'] === ['Calculadora' => ['B4' => 3000000, 'B6' => 0.05]]);
 });

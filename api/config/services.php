@@ -46,6 +46,9 @@ return [
         'transport' => env('PLANTILLA_TRANSPORT', 'http'),
         'node' => env('PLANTILLA_NODE', 'node'),
         'cli' => env('PLANTILLA_CLI', base_path('../financials/cli.js')),
+        // The reference values the admin keeps up to date: the 2002 tariffs of
+        // the professional template and the values inputs are presented with.
+        'reference' => env('PLANTILLA_REFERENCE', base_path('../financials/valores_de_referencia.json')),
     ],
 
     'stripe' => [

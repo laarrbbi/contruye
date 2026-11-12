@@ -101,5 +101,7 @@
     "Confirm my subscription": "Confirmar mi suscripción",
     "Every newsletter carries a link to unsubscribe in one click.": "Cada boletín lleva un enlace para darte de baja con un clic.",
     "Check your inbox: we have sent you a link to confirm.": "Revisa tu correo: te hemos enviado un enlace para confirmar.",
-    "This link is not valid any more.": "Este enlace ya no es válido."
+    "This link is not valid any more.": "Este enlace ya no es válido.",
+    "Unknown reference value: :key": "Valor de referencia desconocido: :key",
+    "The value of «:label» is out of range.": "El valor de «:label» está fuera de rango."
 }

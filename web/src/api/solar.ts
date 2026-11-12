@@ -5,8 +5,8 @@ import { api } from './client'
 export interface SolarOptions {
   template: { number: number; title: string }
   communities: string[]
-  defaults: { community: string; price: number; seller_company: boolean; buildable_m2: number }
-  /** Notaría, plusvalía and due diligence: the template's defaults, which the full template lets you change. */
+  defaults: { community: string; price: number; seller_company: boolean; buildable_m2: number; notary_rate: number; due_diligence: number }
+  /** The plusvalía: the template's default, which the full template lets you change. */
   defaulted: { label: string; value: number; type: string }[]
   vat: number
   regions: { name: string; itp: number; ajd: number; note: string | null }[]
@@ -18,14 +18,20 @@ export interface SolarInput {
   price: number
   seller_company: boolean
   buildable_m2: number
+  notary_rate: number
+  due_diligence: number
 }
 
-/** Three results of Plantilla 1; the rest of it is Module 1's. */
+/** The results of Plantilla 1 the sample gives; the VAT line and the money on the day are Module 1's. */
 export interface SolarResult {
   land_cost: number
   per_m2: number
   tax_rate: number
   tax: 'ITP' | 'AJD'
+  tax_amount: number
+  notary: number
+  price: number
+  due_diligence: number
 }
 
 export function useSolarOptions() {

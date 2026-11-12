@@ -29,13 +29,18 @@ class SolarCalculatorController extends Controller
             'price' => ['required', 'numeric', 'min:1', 'max:1000000000'],
             'seller_company' => ['required', 'boolean'],
             'buildable_m2' => ['required', 'numeric', 'min:1', 'max:10000000'],
+            'notary_rate' => ['sometimes', 'numeric', 'min:0', 'max:0.05'],
+            'due_diligence' => ['sometimes', 'numeric', 'min:0', 'max:10000000'],
         ]);
+        $defaults = $this->teaser->options()['defaults'];
 
         return response()->json(['data' => $this->teaser->calculate([
             'community' => $data['community'],
             'price' => $data['price'] + 0,
             'seller_company' => (bool) $data['seller_company'],
             'buildable_m2' => $data['buildable_m2'] + 0,
+            'notary_rate' => ($data['notary_rate'] ?? $defaults['notary_rate']) + 0,
+            'due_diligence' => ($data['due_diligence'] ?? $defaults['due_diligence']) + 0,
         ])]);
     }
 }

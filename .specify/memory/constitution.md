@@ -59,6 +59,18 @@ viviendas».
   corrected cell by cell (`CAMBIOS.md`) with the taxes of 2002 moved to «Parámetros legales». The
   corrections are the package's, pending the professional's review: until he authorises it, the
   template is not sold (the admin switch ships off).
+- **Amendment (2026-11-12, owner's decision).** Besides «Parámetros legales», the admin keeps two
+  kinds of reference values up to date (`financials/valores_de_referencia.json`,
+  `ReferenceValues`, `/admin/templates`). (1) The fixed values of the professional template that
+  the package itself calls 2002 values to update (ESPECIFICACION_TECNICA.md §7): the OCT tariff,
+  the ten-year insurance rates and surcharges, the guarantee costs, the fee tables and
+  coefficients. 193 cells, each a plain number in the package, never a formula and never an
+  input. Our wrapper (`financials/`) writes them before each calculation and restores the
+  package's value after; `curso/` is not touched and its 39 checks still pass. (2) The value an
+  input is presented with (loan rates, fees, ICIO…), which the student can still change. Every
+  change keeps the package's value beside it and a history; the package's value is one click
+  away. What sits inside a formula (notary and registry fees, fixed fees and costs, the peseta tranche
+  limits) is not editable: it comes with a new package from the professional.
 - Passages marked "pendiente de validar / verificar / confirmar" (or "por validar…") keep an
   admin-only A VALIDAR badge and appear in `content-review.md`. **They are never deleted to tidy
   the text.** The delivered text has none.
@@ -78,15 +90,16 @@ A module the student does not own must not leak through any surface.
   are for the buyers of the extra (the Financials module), which no plan and no full access
   includes. **Answers
   never leave the server before an attempt is submitted**, and the exam's answer key never does.
-- **Amendment (2026-11-12, owner's decision).** Plantilla 1 · Compra del solar has a public
-  sample on the sales page and on `/calculadora-precio-solar`, to show what the course's tools do:
-  four of its seven inputs (community, price, who sells, buildable floor area; the other three at
-  the template's own defaults) and three of its results (cost of the plot without VAT, land cost
-  per m² of floor area, the ITP or AJD rate applied), run by the package's engine with the legal
-  parameters in force (`SolarTeaser`). The other inputs, each tax line, the money needed on the
-  day and the Excel stay with the owners of Module 1; the sample names them, locked, and never
-  sends their values (`SolarCalculatorTest`). The rates of every community it lists are the
-  legal parameters the admin keeps, with their review date.
+- **Amendment (2026-11-12, owner's decision, widened the same day).** Plantilla 1 · Compra del
+  solar has a public sample on the sales page and on `/calculadora-precio-solar`, to show what the
+  course's tools do: six of its seven inputs (community, price, who sells, buildable floor area,
+  notary and registry share, due diligence; the plusvalía stays at the template's default) and
+  its results but two (cost of the plot without VAT, land cost per m² of floor area, the ITP or
+  AJD rate and amount, notary and registry), run by the package's engine with the legal
+  parameters in force (`SolarTeaser`). The plusvalía, the VAT line, the money needed on the day
+  and the Excel stay with the owners of Module 1; the sample names them, locked, and never sends
+  their values (`SolarCalculatorTest`). The rates of every community it lists are the legal
+  parameters the admin keeps, with their review date.
 - Every new endpoint that reads course material states which of the two gates it uses —
   ownership, or ownership-or-preview — and has a test asserting the withholding half, not just
   the 403.

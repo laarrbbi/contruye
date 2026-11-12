@@ -953,6 +953,29 @@
         "home": "Página principal",
         "calculator": "Calculadora"
       }
+    },
+    "reference": {
+      "title": "Valores de referencia de las plantillas",
+      "lead": "Lo que no fija la ley pero cambia con el mercado: las tarifas que la plantilla profesional trae de 2002 y los valores con que se presentan las entradas. Cada valor, con el del paquete al lado; lo que cambies se aplica en el siguiente cálculo y en las descargas en Excel, y queda en el historial.",
+      "tariffsTitle": "Tarifas del original (plantilla profesional)",
+      "tariffsLead": "Valores fijos de la plantilla que el paquete dice que son de 2002 (ESPECIFICACION_TECNICA.md §7) y que conviene actualizar: control técnico, seguro decenal, avales, honorarios. Solo se escriben estas celdas; ninguna fórmula cambia.",
+      "inputsTitle": "Valores con que se presentan las entradas",
+      "inputsLead": "El valor que el alumno encuentra escrito al abrir la plantilla (tipo de interés, comisión de apertura, ICIO…). Él lo puede cambiar; si lo deja vacío, se calcula con este.",
+      "formulas": "No están aquí, porque van dentro de fórmulas: los aranceles de notaría y registro, algunos honorarios y gastos fijos (estudio geotécnico, auditorías…) y los límites de tramo convertidos de pesetas. Cambiarlos es cambiar la fórmula: llegan con un paquete nuevo del profesional. El detalle, en docs/valores-de-referencia.md.",
+      "package": "Paquete",
+      "reset": "Volver al valor del paquete ({{value}})",
+      "count_one": "{{count}} valor",
+      "count_other": "{{count}} valores",
+      "changed_one": "{{count}} cambiado",
+      "changed_other": "{{count}} cambiados",
+      "save_one": "Guardar {{count}} cambio",
+      "save_other": "Guardar {{count}} cambios",
+      "save_zero": "Sin cambios",
+      "discard": "Deshacer los cambios",
+      "confirmTitle": "¿Guardar estos valores de referencia?",
+      "confirmBody": "Se aplican desde el siguiente cálculo de cada alumno y en las descargas en Excel. Queda constancia en el historial.",
+      "historyTitle": "Historial de los valores de referencia",
+      "smallTemplate": "Plantilla {{number}}"
     }
   },
   "reviews": {
@@ -1705,7 +1728,9 @@
       "seller": "¿Quién vende?",
       "sellerCompany": "Una empresa, con IVA",
       "sellerPerson": "Un particular",
-      "buildable": "Edificabilidad (m² de techo)"
+      "buildable": "Edificabilidad (m² de techo)",
+      "notary": "Notaría y registro (% del precio)",
+      "dueDiligence": "Due diligence, tasación y estudios"
     },
     "result": {
       "landCost": "Coste del solar (sin IVA)",
@@ -1713,9 +1738,13 @@
       "perM2Unit": "€/m² de techo",
       "taxRate": "Tipo de {{tax}} aplicado",
       "calculating": "Calculando…",
-      "error": "No se ha podido calcular. Inténtalo de nuevo en un momento."
+      "error": "No se ha podido calcular. Inténtalo de nuevo en un momento.",
+      "breakdown": "En qué se va el dinero",
+      "price": "Precio",
+      "notary": "Notaría y registro",
+      "dueDiligence": "Due diligence y estudios"
     },
-    "defaultsNote": "Con los valores por defecto de la plantilla: notaría y registro, {{notary}} del precio; plusvalía, {{plusvalia}}; due diligence, tasación y estudios, {{dd}}. En el curso los cambias.",
+    "defaultsNote": "Plusvalía, API y otros: {{plusvalia}} por defecto (la plusvalía municipal la paga el vendedor salvo pacto). En el curso la cambias.",
     "locked": {
       "title": "Con la Plantilla 1 completa (Módulo 1)",
       "iva": "IVA del solar (lo adelantas y lo recuperas)",
@@ -1724,7 +1753,8 @@
       "excel": "La plantilla en Excel, con tus datos",
       "cta": "Desbloquear la plantilla completa",
       "ctaPrice": "Módulo 1 · {{price}}",
-      "open": "Abrir la plantilla completa"
+      "open": "Abrir la plantilla completa",
+      "plusvalia": "Plusvalía, API y otros gastos (si los asumes)"
     },
     "disclaimer": "Es una estimación con los parámetros vigentes de la plantilla. Antes de comprar, pide presupuesto a la notaría y confirma el tipo con tu comunidad autónoma.",
     "how": {
@@ -1770,7 +1800,7 @@
       },
       "full": {
         "q": "¿Qué añade la plantilla completa del curso?",
-        "a": "Es la Plantilla 1 del Módulo 1: ajustas la notaría y el registro, la plusvalía y la due diligence, ves cada impuesto por separado y el dinero que necesitas el día de la compra, y la descargas en Excel con tus datos."
+        "a": "Es la Plantilla 1 del Módulo 1: añades la plusvalía y los demás gastos que asumas, ves el IVA del solar y el dinero que necesitas el día de la compra, y la descargas en Excel con tus datos."
       }
     },
     "course": {

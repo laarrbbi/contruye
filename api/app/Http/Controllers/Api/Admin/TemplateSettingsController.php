@@ -11,6 +11,7 @@ use App\Models\LegalParameterChange;
 use App\Models\LegalRegionRate;
 use App\Services\FinancialsExtra;
 use App\Services\LegalParameters;
+use App\Services\ReferenceValues;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -31,6 +32,7 @@ class TemplateSettingsController extends Controller
     public function __construct(
         private readonly FinancialsExtra $extra,
         private readonly LegalParameters $legal,
+        private readonly ReferenceValues $reference,
     ) {}
 
     public function show(): JsonResponse
@@ -123,6 +125,25 @@ class TemplateSettingsController extends Controller
                         'at' => $c->created_at?->toIso8601String(),
                     ]),
             ],
+            // The 2002 tariffs of the professional template and the values the inputs are presented with.
+            'reference' => $this->reference->view(),
         ];
+    }
+
+    /**
+     * The reference values the admin brings up to date. A value equal to the
+     * package's goes back to being the package's.
+     */
+    public function updateReference(Request $request): JsonResponse
+    {
+        $data = $request->validate([
+            'confirmed' => ['accepted'],
+            'values' => ['required', 'array'],
+        ]);
+
+        $changes = $this->reference->save($request->user(), $data['values']);
+        AuditLog::record($request->user(), 'reference_values.reviewed', null, ['changes' => $changes]);
+
+        return response()->json(['data' => $this->payload()]);
     }
 }

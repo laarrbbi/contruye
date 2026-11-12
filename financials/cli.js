@@ -2,7 +2,7 @@
 //
 // Para donde el servicio no puede quedarse escuchando (la vista previa en
 // Vercel: la API lo arranca en su misma función). Recibe por stdin
-//   { "path": "/calcular" | "/pequenas/N/calcular", "body": { datos, hojas?, parametros? } }
+//   { "path": "/calcular" | "/pequenas/N/calcular", "body": { datos, hojas?, parametros?, tarifas? } }
 // y escribe por stdout { "status": 200 | 422 | 404 | 500, "body": … }: lo mismo
 // que respondería server.js, con las mismas clases y el mismo motor.
 'use strict';
@@ -12,13 +12,13 @@ const esObjeto = (x) => typeof x === 'object' && x !== null && !Array.isArray(x)
 
 function calcular(peticion) {
   const { path, body = {} } = esObjeto(peticion) ? peticion : {};
-  const { datos = {}, hojas = [], parametros = {} } = esObjeto(body) ? body : {};
-  if (!esObjeto(datos) || !esObjeto(parametros) || !Array.isArray(hojas)) {
+  const { datos = {}, hojas = [], parametros = {}, tarifas = {} } = esObjeto(body) ? body : {};
+  if (!esObjeto(datos) || !esObjeto(parametros) || !esObjeto(tarifas) || !Array.isArray(hojas)) {
     return { status: 422, body: { error: 'Se espera { datos: { hoja: { celda: valor } }, parametros: {}, hojas: [] }' } };
   }
   const pequena = /^\/pequenas\/([1-9])\/calcular$/.exec(String(path));
   if (pequena) return { status: 200, body: new PlantillasPequenas().calcular(Number(pequena[1]), datos, parametros) };
-  if (path === '/calcular') return { status: 200, body: new Calculadora().calcular(datos, hojas, parametros) };
+  if (path === '/calcular') return { status: 200, body: new Calculadora().calcular(datos, hojas, parametros, tarifas) };
   return { status: 404, body: { error: 'No encontrado' } };
 }
 

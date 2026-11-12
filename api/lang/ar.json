@@ -101,5 +101,7 @@
     "Confirm my subscription": "تأكيد اشتراكي",
     "Every newsletter carries a link to unsubscribe in one click.": "تحمل كل نشرة رابطًا لإلغاء الاشتراك بنقرة واحدة.",
     "Check your inbox: we have sent you a link to confirm.": "تفقّد بريدك: أرسلنا إليك رابطًا للتأكيد.",
-    "This link is not valid any more.": "لم يعد هذا الرابط صالحًا."
+    "This link is not valid any more.": "لم يعد هذا الرابط صالحًا.",
+    "Unknown reference value: :key": "قيمة مرجعية غير معروفة: :key",
+    "The value of «:label» is out of range.": "قيمة «:label» خارج النطاق."
 }

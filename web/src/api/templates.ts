@@ -128,9 +128,41 @@ export interface LegalChange {
   at: string | null
 }
 
+/** A value the admin keeps up to date: a 2002 tariff of the professional template, or the value an input is presented with. */
+export interface ReferenceValue {
+  key: string
+  label: string
+  type: 'porcentaje' | 'importe' | 'superficie' | 'coeficiente'
+  max: number
+  value: number
+  package: number
+  changed: boolean
+  template: string
+  cell: string
+  note: string | null
+}
+
+export interface ReferenceGroup {
+  group: string
+  title: string
+  description: string
+  table: { columns: string[]; rows: { label: string; cells: ReferenceValue[] }[] } | null
+  items: ReferenceValue[]
+}
+
+export interface ReferenceValuesView {
+  note: string
+  tariffs: ReferenceGroup[]
+  inputs: ReferenceGroup[]
+  reviewed_at: string | null
+  reviewed_by: string | null
+  history: { key: string; label: string; old_value: number; new_value: number; by: string | null; at: string }[]
+}
+
 export interface AdminTemplates {
   extra: { enabled: boolean; price_eur: number | null; on_sale: boolean; buyers: number }
   legal: LegalParametersView & { reviewed_by: string | null; history: LegalChange[] }
+  reference: ReferenceValuesView
 }
 
 export function useAdminTemplates() {
@@ -148,6 +180,17 @@ export function useUpdateExtra() {
   return useMutation({
     mutationFn: async (body: { enabled: boolean; price_eur: number | null }) => {
       const { data } = await api.put('/admin/templates/extra', body)
+      return data.data as AdminTemplates
+    },
+    onSuccess: (data) => qc.setQueryData(['admin-templates'], data),
+  })
+}
+
+export function useUpdateReference() {
+  const qc = useQueryClient()
+  return useMutation({
+    mutationFn: async (values: Record<string, number>) => {
+      const { data } = await api.put('/admin/templates/reference', { values, confirmed: true })
       return data.data as AdminTemplates
     },
     onSuccess: (data) => qc.setQueryData(['admin-templates'], data),

@@ -953,6 +953,29 @@
         "home": "Page d'accueil",
         "calculator": "Calculateur"
       }
+    },
+    "reference": {
+      "title": "Valeurs de référence des modèles",
+      "lead": "Ce que la loi ne fixe pas mais que le marché fait évoluer : les tarifs que le modèle professionnel garde de 2002 et les valeurs avec lesquelles les entrées sont présentées. Chaque valeur à côté de celle du paquet ; ce que vous changez s'applique dès le calcul suivant et dans les téléchargements Excel, et reste dans l'historique.",
+      "tariffsTitle": "Tarifs de l'original (modèle professionnel)",
+      "tariffsLead": "Valeurs fixes du modèle que le paquet dit dater de 2002 (ESPECIFICACION_TECNICA.md §7) et qu'il convient de mettre à jour : contrôle technique, assurance décennale, cautions, honoraires. Seules ces cellules sont écrites ; aucune formule ne change.",
+      "inputsTitle": "Valeurs de présentation des entrées",
+      "inputsLead": "La valeur que l'élève trouve remplie en ouvrant le modèle (taux d'intérêt, frais de dossier, ICIO…). Il peut la changer ; laissée vide, c'est celle-ci qui sert.",
+      "formulas": "Absents ici, car ils sont dans des formules : les émoluments de notaire et de registre, certains honoraires et frais fixes (étude géotechnique, audits…) et les limites de tranche converties des pesetas. Les changer, c'est changer la formule : ils arrivent avec un nouveau paquet du professionnel. Détail dans docs/valores-de-referencia.md.",
+      "package": "Paquet",
+      "reset": "Revenir à la valeur du paquet ({{value}})",
+      "count_one": "{{count}} valeur",
+      "count_other": "{{count}} valeurs",
+      "changed_one": "{{count}} modifiée",
+      "changed_other": "{{count}} modifiées",
+      "save_one": "Enregistrer {{count}} modification",
+      "save_other": "Enregistrer {{count}} modifications",
+      "save_zero": "Aucune modification",
+      "discard": "Annuler les modifications",
+      "confirmTitle": "Enregistrer ces valeurs de référence ?",
+      "confirmBody": "Elles s'appliquent dès le calcul suivant de chaque élève et dans les téléchargements Excel. Le changement reste dans l'historique.",
+      "historyTitle": "Historique des valeurs de référence",
+      "smallTemplate": "Modèle {{number}}"
     }
   },
   "reviews": {
@@ -1705,7 +1728,9 @@
       "seller": "Qui vend ?",
       "sellerCompany": "Une entreprise, avec TVA",
       "sellerPerson": "Un particulier",
-      "buildable": "Surface constructible (m² de plancher)"
+      "buildable": "Surface constructible (m² de plancher)",
+      "notary": "Notaire et registre (% du prix)",
+      "dueDiligence": "Due diligence, expertise et études"
     },
     "result": {
       "landCost": "Coût du terrain (hors TVA)",
@@ -1713,9 +1738,13 @@
       "perM2Unit": "€/m² de plancher",
       "taxRate": "Taux d'{{tax}} appliqué",
       "calculating": "Calcul en cours…",
-      "error": "Le calcul a échoué. Réessayez dans un instant."
+      "error": "Le calcul a échoué. Réessayez dans un instant.",
+      "breakdown": "Où va l'argent",
+      "price": "Prix",
+      "notary": "Notaire et registre",
+      "dueDiligence": "Due diligence et études"
     },
-    "defaultsNote": "Avec les valeurs par défaut du modèle : notaire et registre, {{notary}} du prix ; plus-value municipale, {{plusvalia}} ; due diligence, expertise et études, {{dd}}. Dans le cours, vous les modifiez.",
+    "defaultsNote": "Plus-value, agence et autres : {{plusvalia}} par défaut (le vendeur paie la plus-value municipale sauf accord contraire). Dans le cours, vous la modifiez.",
     "locked": {
       "title": "Avec le Modèle 1 complet (Module 1)",
       "iva": "TVA du terrain (vous l'avancez et la récupérez)",
@@ -1724,7 +1753,8 @@
       "excel": "Le modèle en Excel, avec vos chiffres",
       "cta": "Débloquer le modèle complet",
       "ctaPrice": "Module 1 · {{price}}",
-      "open": "Ouvrir le modèle complet"
+      "open": "Ouvrir le modèle complet",
+      "plusvalia": "Plus-value, agence et autres frais (si vous les prenez en charge)"
     },
     "disclaimer": "C'est une estimation avec les paramètres en vigueur du modèle. Avant d'acheter, demandez un devis au notaire et confirmez le taux auprès de votre communauté autonome.",
     "how": {
@@ -1770,7 +1800,7 @@
       },
       "full": {
         "q": "Qu'ajoute le modèle complet du cours ?",
-        "a": "C'est le Modèle 1 du Module 1 : vous ajustez le notaire et le registre, la plus-value et la due diligence, voyez chaque impôt séparément et l'argent nécessaire le jour de l'achat, et le téléchargez en Excel avec vos chiffres."
+        "a": "C'est le Modèle 1 du Module 1 : vous ajoutez la plus-value et les autres frais que vous prenez en charge, voyez la TVA du terrain et l'argent nécessaire le jour de l'achat, et le téléchargez en Excel avec vos chiffres."
       }
     },
     "course": {

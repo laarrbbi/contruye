@@ -22,7 +22,10 @@ use Illuminate\Validation\ValidationException;
  */
 class TemplateEngine
 {
-    public function __construct(private readonly LegalParameters $legal) {}
+    public function __construct(
+        private readonly LegalParameters $legal,
+        private readonly ReferenceValues $reference,
+    ) {}
 
     /**
      * The professional template (the Financials extra).
@@ -33,7 +36,12 @@ class TemplateEngine
      */
     public function professional(array $inputs, array $sheets = []): array
     {
-        return $this->post('/calcular', ['datos' => (object) $inputs, 'hojas' => array_values($sheets)]);
+        return $this->post('/calcular', [
+            'datos' => (object) $this->reference->withDefaults(ReferenceValues::PROFESSIONAL, $inputs),
+            'hojas' => array_values($sheets),
+            // The 2002 tariffs the admin has brought up to date (the engine restores the rest).
+            'tarifas' => (object) $this->reference->tariffsForEngine(),
+        ]);
     }
 
     /**
@@ -44,7 +52,7 @@ class TemplateEngine
      */
     public function small(int $number, array $inputs): array
     {
-        return $this->post("/pequenas/{$number}/calcular", ['datos' => (object) $inputs]);
+        return $this->post("/pequenas/{$number}/calcular", ['datos' => (object) $this->reference->withDefaults((string) $number, $inputs)]);
     }
 
     /**

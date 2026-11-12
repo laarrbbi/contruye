@@ -114,7 +114,8 @@ makes that work lives in `docker/mysql-test/`.
   `ProtectedArea` (no select/copy/print, the reader's e-mail as a faint pattern). Two devices per
   account (`DeviceSessions`). All of it: `docs/proteccion-contenido.md`.
 - The solar calculator (`SolarTeaser`, `SolarCalculatorController`, public): a sample of Plantilla 1
-  (4 inputs, 3 results, the rest locked to Module 1; constitution III, amendment 2026-11-12) on the
+  (6 of 7 inputs, its results but the VAT line and the money on the day, which stay with Module 1;
+  constitution III, amendment 2026-11-12) on the
   sales page right under the first screen (`landing/s7/Calculadora`) and on its own page `/calculadora-precio-solar`
   (`SolarCalculatorPage`; server-rendered for search engines by `SeoPageController::solarCalculator`,
   with the ITP/AJD of every community, an FAQ and its structured data, in the sitemap).
@@ -135,6 +136,12 @@ makes that work lives in `docker/mysql-test/`.
 - Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
   `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
   and sent with every calculation. A project never stores them.
+- Reference values (`ReferenceValues`, `financials/valores_de_referencia.json`, tables
+  `template_reference_values` and `_changes`): the 2002 tariffs of the professional template (OCT,
+  ten-year insurance, guarantees, fee tables; 193 plain-value cells, the wrapper's whitelist) and
+  the values 30 inputs are presented with, kept up to date in `/admin/templates` beside the
+  package's values (constitution II, amendment 2026-11-12). What sits inside formulas comes with a
+  new package. The analysis: `docs/valores-de-referencia.md`.
 - Financials is the extra (`FinancialsExtra`): outside every plan and full access
   (`Course::includedModules()`), bought on its own (checkout scope `extra`), on sale only once the
   admin switches it on with a price. Offered on the final exam once passed, on the dashboard of a

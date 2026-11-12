@@ -2,6 +2,8 @@
 
 use App\Models\Course;
 use App\Models\LegalRegionRate;
+use App\Models\User;
+use App\Services\ReferenceValues;
 use Illuminate\Support\Facades\Http;
 
 /*
@@ -29,27 +31,33 @@ it('offers the template\'s communities, defaults and the rates in force, without
         ->assertJsonPath('data.defaults.community', 'Comunitat Valenciana')
         ->assertJsonPath('data.defaults.seller_company', true)
         ->assertJsonPath('data.labels.land_cost', 'Coste del solar (sin IVA)')
-        ->assertJsonPath('data.locked.4', 'Dinero que necesitas el día de la compra')
+        ->assertJsonPath('data.locked', ['IVA del solar (lo adelantas y lo recuperas)', 'Dinero que necesitas el día de la compra'])
+        ->assertJsonPath('data.defaults.notary_rate', 0.005)
+        ->assertJsonPath('data.defaults.due_diligence', 3000)
+        ->assertJsonPath('data.defaulted.0.label', 'Plusvalía (si la asumes), API y otros')
         ->assertJsonPath('data.vat', 0.21)
         ->assertJsonCount(19, 'data.regions')
         ->assertJsonPath('data.regions.0.name', 'Andalucía');
 });
 
-it('gives three results and withholds every other line of the template', function () {
+it('gives its results and withholds the VAT line and the money needed on the day', function () {
     Http::fake(['*/pequenas/1/calcular' => Http::response(solarSheet())]);
 
-    $response = $this->postJson(SOLAR, ['community' => 'Comunidad de Madrid', 'price' => 500000, 'seller_company' => true, 'buildable_m2' => 2000])
+    $response = $this->postJson(SOLAR, ['community' => 'Comunidad de Madrid', 'price' => 500000, 'seller_company' => true, 'buildable_m2' => 2000, 'notary_rate' => 0.006, 'due_diligence' => 4000])
         ->assertOk()
-        ->assertExactJson(['data' => ['land_cost' => 509250, 'per_m2' => 254.625, 'tax_rate' => 0.0075, 'tax' => 'AJD']]);
+        ->assertExactJson(['data' => [
+            'land_cost' => 509250, 'per_m2' => 254.625, 'tax_rate' => 0.0075, 'tax' => 'AJD',
+            'tax_amount' => 3750.22, 'notary' => 2500.33, 'price' => 500000, 'due_diligence' => 4000,
+        ]]);
 
-    // The VAT, the AJD and notary lines and the money needed on the day are Module 1's.
-    foreach (['105000.11', '3750.22', '2500.33', '614250.44'] as $locked) {
+    // The VAT line and the money needed on the day are Module 1's.
+    foreach (['105000.11', '614250.44'] as $locked) {
         expect($response->getContent())->not->toContain($locked);
     }
 
-    // Only the four public inputs reach the engine; the template keeps its own defaults for the rest.
+    // Only the six public inputs reach the engine; the plusvalía keeps the template's default.
     Http::assertSent(fn ($request) => (array) $request->data()['datos'] === ['Calculadora' => [
-        'B4' => 'Comunidad de Madrid', 'B5' => 500000, 'B6' => 'SI', 'B7' => 2000,
+        'B4' => 'Comunidad de Madrid', 'B5' => 500000, 'B6' => 'SI', 'B7' => 2000, 'B8' => 0.006, 'B10' => 4000,
     ]]);
 });
 
@@ -62,6 +70,7 @@ it('refuses what the template would not take', function (array $input, string $f
     'no price' => [['price' => 0], 'price'],
     'no floor area' => [['buildable_m2' => -5], 'buildable_m2'],
     'a seller that is neither' => [['seller_company' => 'quizá'], 'seller_company'],
+    'a notary share above 5 %' => [['notary_rate' => 0.5], 'notary_rate'],
 ]);
 
 it('runs the package\'s own engine with the rates the admin sets', function () {
@@ -73,7 +82,9 @@ it('runs the package\'s own engine with the rates the admin sets', function () {
         ->assertJsonPath('data.land_cost', 535500)
         ->assertJsonPath('data.per_m2', 267.75)
         ->assertJsonPath('data.tax_rate', 0.06)
-        ->assertJsonPath('data.tax', 'ITP');
+        ->assertJsonPath('data.tax', 'ITP')
+        ->assertJsonPath('data.tax_amount', 30000)
+        ->assertJsonPath('data.notary', 2500);
 
     LegalRegionRate::query()->where('name', 'Comunidad de Madrid')->update(['itp' => 0.07]);
     $this->postJson(SOLAR, $input)->assertOk()->assertJsonPath('data.land_cost', 540500);
@@ -112,4 +123,16 @@ it('lists the calculator\'s page in the sitemap and links it from the home page'
         ->toContain('<loc>https://construye.example/fr/calculadora-precio-solar</loc>');
 
     expect($this->get('/')->assertOk()->getContent())->toContain('href="/calculadora-precio-solar"');
+});
+
+it('starts from the reference values the admin keeps up to date', function () {
+    config(['services.plantilla.transport' => 'process']);
+    $admin = User::factory()->create(['role' => 'admin']);
+    app(ReferenceValues::class)->save($admin, ['1|Calculadora|B8' => 0.007]);
+
+    $this->getJson(SOLAR)->assertOk()->assertJsonPath('data.defaults.notary_rate', 0.007);
+
+    // Left empty, the notary's share is the admin's: 0.7 % of 500,000 €.
+    $this->postJson(SOLAR, ['community' => 'Comunidad de Madrid', 'price' => 500000, 'seller_company' => false, 'buildable_m2' => 2000])
+        ->assertOk()->assertJsonPath('data.notary', 3500);
 });

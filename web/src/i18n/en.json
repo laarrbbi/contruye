@@ -953,6 +953,29 @@
         "home": "Home page",
         "calculator": "Calculator"
       }
+    },
+    "reference": {
+      "title": "Reference values of the templates",
+      "lead": "What the law does not set but the market changes: the tariffs the professional template carries from 2002 and the values inputs are presented with. Each value beside the package's; what you change applies from the next calculation and in the Excel downloads, and stays in the history.",
+      "tariffsTitle": "Tariffs of the original (professional template)",
+      "tariffsLead": "Fixed values of the template that the package says are from 2002 (ESPECIFICACION_TECNICA.md §7) and should be updated: technical control, ten-year insurance, guarantees, fees. Only these cells are written; no formula changes.",
+      "inputsTitle": "Values the inputs are presented with",
+      "inputsLead": "The value the student finds filled in when opening the template (interest rate, opening fee, ICIO…). They can change it; left empty, this one is used.",
+      "formulas": "Not here, because they sit inside formulas: notary and land-registry fees, some fixed fees and costs (geotechnical study, audits…) and the tranche limits converted from pesetas. Changing them means changing the formula: they come with a new package from the professional. Details in docs/valores-de-referencia.md.",
+      "package": "Package",
+      "reset": "Back to the package's value ({{value}})",
+      "count_one": "{{count}} value",
+      "count_other": "{{count}} values",
+      "changed_one": "{{count}} changed",
+      "changed_other": "{{count}} changed",
+      "save_one": "Save {{count}} change",
+      "save_other": "Save {{count}} changes",
+      "save_zero": "No changes",
+      "discard": "Undo the changes",
+      "confirmTitle": "Save these reference values?",
+      "confirmBody": "They apply from each student's next calculation and in the Excel downloads. The change is kept in the history.",
+      "historyTitle": "History of the reference values",
+      "smallTemplate": "Template {{number}}"
     }
   },
   "reviews": {
@@ -1705,7 +1728,9 @@
       "seller": "Who is selling?",
       "sellerCompany": "A company, with VAT",
       "sellerPerson": "A private person",
-      "buildable": "Buildable floor area (m²)"
+      "buildable": "Buildable floor area (m²)",
+      "notary": "Notary and registry (% of the price)",
+      "dueDiligence": "Due diligence, valuation and studies"
     },
     "result": {
       "landCost": "Cost of the plot (excl. VAT)",
@@ -1713,9 +1738,13 @@
       "perM2Unit": "€/m² of floor area",
       "taxRate": "{{tax}} rate applied",
       "calculating": "Calculating…",
-      "error": "The calculation failed. Try again in a moment."
+      "error": "The calculation failed. Try again in a moment.",
+      "breakdown": "Where the money goes",
+      "price": "Price",
+      "notary": "Notary and registry",
+      "dueDiligence": "Due diligence and studies"
     },
-    "defaultsNote": "With the template's default values: notary and registry, {{notary}} of the price; municipal capital gains tax, {{plusvalia}}; due diligence, valuation and studies, {{dd}}. In the course you change them.",
+    "defaultsNote": "Municipal capital gains tax, agency and others: {{plusvalia}} by default (the seller pays the plusvalía unless agreed otherwise). In the course you change it.",
     "locked": {
       "title": "With the full Template 1 (Module 1)",
       "iva": "VAT on the plot (you advance it and recover it)",
@@ -1724,7 +1753,8 @@
       "excel": "The template in Excel, with your figures",
       "cta": "Unlock the full template",
       "ctaPrice": "Module 1 · {{price}}",
-      "open": "Open the full template"
+      "open": "Open the full template",
+      "plusvalia": "Capital gains tax, agency and other costs (if you take them on)"
     },
     "disclaimer": "This is an estimate with the template's current parameters. Before buying, ask the notary for a quote and confirm the rate with your autonomous community.",
     "how": {
@@ -1770,7 +1800,7 @@
       },
       "full": {
         "q": "What does the course's full template add?",
-        "a": "It is Template 1 of Module 1: you adjust the notary and registry, the capital gains tax and the due diligence, see each tax separately and the money you need on the day of purchase, and download it in Excel with your figures."
+        "a": "It is Template 1 of Module 1: you add the capital gains tax and the other costs you take on, see the VAT on the plot and the money you need on the day of purchase, and download it in Excel with your figures."
       }
     },
     "course": {

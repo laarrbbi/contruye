@@ -9,7 +9,7 @@
 //
 //   GET  /salud                 → { ok: true }
 //   GET  /hojas                 → las 18 hojas de la plantilla profesional y su tamaño
-//   POST /calcular              { datos, hojas?, parametros? } → { calculo, resumen, vista, parametros, hojas }
+//   POST /calcular              { datos, hojas?, parametros?, tarifas? } → { calculo, resumen, vista, parametros, hojas }
 //   POST /pequenas/:n/calcular  { datos, parametros? } → { calculo, parametros, hoja }
 'use strict';
 const http = require('node:http');
@@ -50,12 +50,12 @@ function crearServidor(calculadora, pequenas) {
         try { peticion = JSON.parse(await leerCuerpo(req)); } catch (e) {
           return responder(res, e.estado || 400, { error: e.estado ? e.message : 'JSON no válido' });
         }
-        const { datos = {}, hojas = [], parametros = {} } = peticion || {};
-        if (!esObjeto(datos) || !esObjeto(parametros) || !Array.isArray(hojas)) {
+        const { datos = {}, hojas = [], parametros = {}, tarifas = {} } = peticion || {};
+        if (!esObjeto(datos) || !esObjeto(parametros) || !esObjeto(tarifas) || !Array.isArray(hojas)) {
           return responder(res, 422, { error: 'Se espera { datos: { hoja: { celda: valor } }, parametros: {}, hojas: [] }' });
         }
         if (pequena) return responder(res, 200, pequenas.calcular(Number(pequena[1]), datos, parametros));
-        return responder(res, 200, calculadora.calcular(datos, hojas, parametros));
+        return responder(res, 200, calculadora.calcular(datos, hojas, parametros, tarifas));
       }
       return responder(res, 404, { error: 'No encontrado' });
     } catch (e) {

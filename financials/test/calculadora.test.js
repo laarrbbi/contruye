@@ -154,3 +154,24 @@ test('la línea de órdenes (cli.js) calcula igual que el servicio, para la vist
   const grande = cli({ path: '/calcular', body: { datos: veinticuatro, parametros: PARAMETROS_DEL_PAQUETE } });
   assert.equal(Math.round(totalConIva(grande.body) * 100) / 100, 6918553.32);
 });
+
+test('las tarifas de referencia que fija la plataforma cambian el resultado, solo en sus celdas y solo en ese cálculo', () => {
+  // La tarifa del OCT, misión E, del tramo de 300.506,05 a 450.759,08 €, y la tasa básica del seguro decenal.
+  const conTarifas = calculadora.calcular(veinticuatro, [], PARAMETROS_DEL_PAQUETE, {
+    '3ª Construcción': { R39: 0.02, AI78: 0.008 },
+    '3ª Terrenos': { J24: 0.01 },
+  });
+  assert.equal(calculadora.motor.valor('3ª Construcción', 'AI78'), 0.008);
+  assert.notEqual(Math.round(totalConIva(conTarifas) * 100) / 100, 6918553.32);
+
+  // El cálculo siguiente, sin tarifas, vuelve a las del paquete.
+  const despues = calculadora.calcular(veinticuatro, [], PARAMETROS_DEL_PAQUETE);
+  assert.equal(calculadora.motor.valor('3ª Construcción', 'AI78'), 0.005225);
+  assert.equal(Math.round(totalConIva(despues) * 100) / 100, 6918553.32);
+
+  // Ni una fórmula, ni una entrada, ni un valor que no sea un número.
+  assert.throws(() => calculadora.calcular(veinticuatro, [], {}, { '3ª Construcción': { T39: 0.1 } }), /no es una tarifa de referencia/);
+  assert.throws(() => calculadora.calcular(veinticuatro, [], {}, { 'Datos de Partida': { D147: 0.1 } }), /no es una tarifa de referencia/);
+  assert.throws(() => calculadora.calcular(veinticuatro, [], {}, { '3ª Construcción': { R39: '1 %' } }), /se espera un número/);
+  assert.equal(Math.round(totalConIva(calculadora.calcular(veinticuatro)) * 100) / 100, 6918553.32);
+});

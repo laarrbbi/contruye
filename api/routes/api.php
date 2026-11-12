@@ -221,6 +221,7 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::get('templates', [AdminTemplateSettingsController::class, 'show']);
     Route::put('templates/extra', [AdminTemplateSettingsController::class, 'updateExtra']);
     Route::put('templates/legal', [AdminTemplateSettingsController::class, 'updateLegal']);
+    Route::put('templates/reference', [AdminTemplateSettingsController::class, 'updateReference']);
 
     // Order review
     Route::get('orders', [AdminOrderController::class, 'index']);

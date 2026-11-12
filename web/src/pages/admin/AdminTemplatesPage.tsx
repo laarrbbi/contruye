@@ -20,6 +20,7 @@ import { Label } from '@/components/ui/label'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Switch } from '@/components/ui/switch'
 import { parseLocaleNumber } from '@/lib/sheet'
+import { ReferenceValuesCard } from './ReferenceValuesCard'
 import { cn, formatPercent, intlLocale } from '@/lib/utils'
 
 /** A fraction as the percentage the admin types: 0.0325 → «3,25». */
@@ -53,6 +54,7 @@ export function AdminTemplatesPage() {
           <ExtraCard extra={data.extra} />
           <LegalCard legal={data.legal} />
           <HistoryCard legal={data.legal} />
+          <ReferenceValuesCard reference={data.reference} />
         </>
       )}
     </div>

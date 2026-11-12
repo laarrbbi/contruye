@@ -84,5 +84,7 @@
     "Confirm my subscription": "Confirm my subscription",
     "Every newsletter carries a link to unsubscribe in one click.": "Every newsletter carries a link to unsubscribe in one click.",
     "Check your inbox: we have sent you a link to confirm.": "Check your inbox: we have sent you a link to confirm.",
-    "This link is not valid any more.": "This link is not valid any more."
+    "This link is not valid any more.": "This link is not valid any more.",
+    "Unknown reference value: :key": "Unknown reference value: :key",
+    "The value of «:label» is out of range.": "The value of «:label» is out of range."
 }

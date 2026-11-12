@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Module;
 use App\Models\User;
 use App\Services\LegalParameters;
+use App\Services\ReferenceValues;
 use App\Services\TemplateEngine;
 use App\Support\Financials\TemplateCatalog;
 use App\Support\Financials\XlsxFiller;
@@ -29,6 +30,7 @@ class SmallTemplateController extends Controller
     public function __construct(
         private readonly TemplateEngine $engine,
         private readonly LegalParameters $legal,
+        private readonly ReferenceValues $reference,
     ) {}
 
     /** The five, with the module each belongs to and whether this student has it. */
@@ -63,7 +65,8 @@ class SmallTemplateController extends Controller
             'excel' => $template['excel'],
             'regla' => $dictionary['regla'],
             'porcentajes' => $dictionary['porcentajes'],
-            'entradas' => $dictionary['entradas'],
+            // Presented with the reference values the admin keeps up to date.
+            'entradas' => $this->reference->presented((string) $number, $dictionary['entradas']),
             // What the template applies: read only, with the date of the last review.
             'legal' => $this->legal->view(),
         ]]);
@@ -88,7 +91,7 @@ class SmallTemplateController extends Controller
         $cells = $catalog->legalCells();
 
         $path = XlsxFiller::fill($catalog->smallWorkbook($number), [
-            ...$catalog->toWorkbook($dictionary, $datos),
+            ...$catalog->toWorkbook($dictionary, $this->reference->withDefaults((string) $number, $datos)),
             $cells['sheet'] => $this->legal->cellValues($cells),
         ]);
 

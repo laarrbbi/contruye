@@ -46,11 +46,69 @@ function NumberField({
   )
 }
 
+/** A share typed as people write it, «0,5» for 0.5 %, kept as a fraction. */
+function PercentField({ id, value, onChange, locale }: { id: string; value: number; onChange(value: number): void; locale: string }) {
+  const comma = new Intl.NumberFormat(locale).format(1.5).includes(',')
+  const [text, setText] = useState(() => String(Math.round(value * 10000) / 100).replace('.', comma ? ',' : '.'))
+  return (
+    <div dir="ltr" className="relative">
+      <input
+        id={id}
+        dir="ltr"
+        inputMode="decimal"
+        autoComplete="off"
+        value={text}
+        onChange={(event) => {
+          const typed = event.target.value.replace(/[^\d.,]/g, '').slice(0, 6)
+          setText(typed)
+          const number = Number(typed.replace(',', '.'))
+          if (typed !== '' && Number.isFinite(number) && number <= 5) onChange(number / 100)
+        }}
+        className="h-12 w-full rounded-xl border border-plume/15 bg-white pe-14 ps-4 text-start text-[1.0625rem] font-medium tabular-nums text-plume outline-none transition-colors focus-visible:border-plume/40 focus-visible:ring-2 focus-visible:ring-or/40"
+      />
+      <span className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-sm text-plume/55">%</span>
+    </div>
+  )
+}
+
+/** The parts of the cost of the plot, as a bar and its legend. */
+function Breakdown({ result, money }: { result: SolarResult; money(value: number): string }) {
+  const { t } = useTranslation()
+  const parts = [
+    { key: 'price', label: t('solar.result.price'), value: result.price, color: 'bg-creme-100' },
+    { key: 'tax', label: result.tax, value: result.tax_amount, color: 'bg-or' },
+    { key: 'notary', label: t('solar.result.notary'), value: result.notary, color: 'bg-[#7FA7D9]' },
+    { key: 'dd', label: t('solar.result.dueDiligence'), value: result.due_diligence, color: 'bg-creme-100/40' },
+  ]
+  const total = parts.reduce((sum, part) => sum + part.value, 0) || 1
+  return (
+    <div className="mt-5 border-t border-creme-100/10 pt-4">
+      <p className="text-[0.8125rem] text-creme-100/70">{t('solar.result.breakdown')}</p>
+      <div aria-hidden className="mt-2.5 flex h-2.5 overflow-hidden rounded-full bg-creme-100/10">
+        {parts.map((part) => (
+          <span key={part.key} className={cn('h-full transition-[width] duration-300 ease-out-strong', part.color)} style={{ width: `${(part.value / total) * 100}%` }} />
+        ))}
+      </div>
+      <dl className="mt-3 grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm">
+        {parts.map((part) => (
+          <div key={part.key} className="flex items-center justify-between gap-3">
+            <dt className="flex min-w-0 items-center gap-2 text-creme-100/75">
+              <span aria-hidden className={cn('h-2 w-2 shrink-0 rounded-full', part.color)} />
+              <span className="truncate">{part.label}</span>
+            </dt>
+            <dd className="shrink-0 font-medium tabular-nums">{money(part.value)}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+
 /**
- * The public sample of Plantilla 1 · Compra del solar: four of its inputs and
- * three of its results, calculated by the package's engine on the server as
- * the visitor types. What the full template adds is listed, locked, with the
- * way to Module 1.
+ * The public sample of Plantilla 1 · Compra del solar: six of its seven
+ * inputs and its results but the VAT line and the money needed on the day,
+ * calculated by the package's engine on the server as the visitor types.
+ * What the full template adds is listed, locked, with the way to Module 1.
  */
 export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; className?: string }) {
   const { t, i18n } = useTranslation()
@@ -70,7 +128,7 @@ export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; cl
   // Calculated a moment after the last keystroke; an older answer never replaces a newer one.
   const { mutate } = calculation
   useEffect(() => {
-    if (!input || input.price <= 0 || input.buildable_m2 <= 0) return
+    if (!input || input.price <= 0 || input.buildable_m2 <= 0 || input.notary_rate > 0.05) return
     const ticket = ++latest.current
     const timer = window.setTimeout(() => {
       mutate(input, { onSuccess: (data) => ticket === latest.current && setResult(data) })
@@ -156,6 +214,18 @@ export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; cl
           </label>
           <NumberField id={`${ids}-buildable`} value={input?.buildable_m2 ?? 0} onChange={(buildable_m2) => edit({ buildable_m2 })} suffix="m²" locale={locale} />
         </div>
+        <div className="space-y-2">
+          <label htmlFor={`${ids}-notary`} className={label}>
+            {t('solar.form.notary')}
+          </label>
+          {input && <PercentField id={`${ids}-notary`} value={input.notary_rate} onChange={(notary_rate) => edit({ notary_rate })} locale={locale} />}
+        </div>
+        <div className="space-y-2">
+          <label htmlFor={`${ids}-dd`} className={label}>
+            {t('solar.form.dueDiligence')}
+          </label>
+          <NumberField id={`${ids}-dd`} value={input?.due_diligence ?? 0} onChange={(due_diligence) => edit({ due_diligence })} suffix="€" locale={locale} />
+        </div>
       </div>
 
       {/* The three results: the night panel of the page, so they read first. */}
@@ -182,6 +252,7 @@ export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; cl
             <p className="mt-0.5 text-lg font-semibold tabular-nums">{result ? percent(result.tax_rate) : '—'}</p>
           </div>
         </div>
+        {result && <Breakdown result={result} money={(value) => money(value)} />}
         {calculation.isError && (
           <p role="alert" className="mt-4 text-sm text-creme-100/80">
             {apiErrorMessage(calculation.error) ?? t('solar.result.error')}
@@ -196,13 +267,7 @@ export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; cl
           {t('solar.locked.title')}
         </p>
         <ul className="mt-3 divide-y divide-plume/[0.07]">
-          {[
-            t('solar.locked.iva'),
-            input?.seller_company === false ? 'ITP' : 'AJD',
-            t('solar.locked.notary'),
-            t('solar.locked.cashDay'),
-            t('solar.locked.excel'),
-          ].map((item) => (
+          {[t('solar.locked.iva'), t('solar.locked.cashDay'), t('solar.locked.plusvalia'), t('solar.locked.excel')].map((item) => (
             <li key={item} className="flex items-center justify-between gap-4 py-2.5 text-sm text-plume/75">
               <span>{item}</span>
               <span aria-hidden className="h-2.5 w-20 shrink-0 rounded-full bg-plume/[0.08]" />
@@ -217,14 +282,8 @@ export function SolarCalculator({ unlock, className }: { unlock: SolarUnlock; cl
           {unlock.label}
           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" aria-hidden />
         </Link>
-        {defaulted.length === 3 && (
-          <p className="mt-4 text-xs leading-relaxed text-plume/55">
-            {t('solar.defaultsNote', {
-              notary: percent(defaulted[0].value),
-              plusvalia: money(defaulted[1].value),
-              dd: money(defaulted[2].value),
-            })}
-          </p>
+        {defaulted.length === 1 && (
+          <p className="mt-4 text-xs leading-relaxed text-plume/55">{t('solar.defaultsNote', { plusvalia: money(defaulted[0].value) })}</p>
         )}
       </div>
     </div>

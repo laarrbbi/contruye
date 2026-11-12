@@ -1,0 +1,846 @@
+{
+ "nota": "Valores de referencia de las plantillas que no son parámetros legales y que conviene mantener al día. «tarifas»: valores fijos de la plantilla profesional (PLANTILLA_LIBRE), de 2002 según ESPECIFICACION_TECNICA.md §7; solo se escriben estas celdas, nunca una fórmula, y antes de cada cálculo vuelven al valor del paquete. «entradas»: el valor con que se presenta una entrada del usuario (él lo puede cambiar). Lo que va dentro de una fórmula (aranceles de notaría y registro, honorarios y gastos fijos, límites de tramo en pesetas) no está aquí: cambiarlo es cambiar la fórmula, y eso llega con un paquete nuevo del profesional.",
+ "tarifas": [
+  {
+   "grupo": "oct",
+   "hoja": "3ª Construcción",
+   "tipo": "porcentaje",
+   "max": 0.2,
+   "titulo": "Control técnico (OCT): tarifa por tramo de presupuesto de ejecución material",
+   "descripcion": "Porcentaje sobre el PEM de cada misión del organismo de control técnico, por tramo. Tarifa del original (2002). El primer tramo (hasta 300.506,05 €) tiene un importe fijo dentro de una fórmula.",
+   "tabla": {
+    "columnas": [
+     {
+      "col": "R",
+      "etiqueta": "Misión E"
+     },
+     {
+      "col": "S",
+      "etiqueta": "Misión I"
+     },
+     {
+      "col": "V",
+      "etiqueta": "Misión F+(F+)"
+     },
+     {
+      "col": "W",
+      "etiqueta": "Misión OS"
+     },
+     {
+      "col": "AC",
+      "etiqueta": "Misión PH+TH"
+     }
+    ],
+    "filas": [
+     {
+      "fila": 39,
+      "etiqueta": "300.506,05 – 450.759,08 €"
+     },
+     {
+      "fila": 40,
+      "etiqueta": "450.759,08 – 601.012,11 €"
+     },
+     {
+      "fila": 41,
+      "etiqueta": "601.012,11 – 751.265,14 €"
+     },
+     {
+      "fila": 42,
+      "etiqueta": "751.265,14 – 901.518,17 €"
+     },
+     {
+      "fila": 43,
+      "etiqueta": "901.518,17 – 1.051.771,20 €"
+     },
+     {
+      "fila": 44,
+      "etiqueta": "1.051.771,20 – 1.202.024,23 €"
+     },
+     {
+      "fila": 45,
+      "etiqueta": "1.202.024,23 – 1.803.036,33 €"
+     },
+     {
+      "fila": 46,
+      "etiqueta": "1.803.036,33 – 2.404.048,43 €"
+     },
+     {
+      "fila": 47,
+      "etiqueta": "2.404.048,43 – 3.005.060,53 €"
+     },
+     {
+      "fila": 48,
+      "etiqueta": "3.005.060,53 – 4.507.590,79 €"
+     },
+     {
+      "fila": 49,
+      "etiqueta": "4.507.590,79 – 6.010.121,05 €"
+     },
+     {
+      "fila": 50,
+      "etiqueta": "6.010.121,05 – 9.015.181,57 €"
+     },
+     {
+      "fila": 51,
+      "etiqueta": "9.015.181,57 – 10.517.711,83 €"
+     },
+     {
+      "fila": 52,
+      "etiqueta": "10.517.711,83 – 12.020.242,09 €"
+     },
+     {
+      "fila": 53,
+      "etiqueta": "12.020.242,09 – 15.025.302,61 €"
+     }
+    ]
+   },
+   "celdas": [
+    {
+     "celda": "Y37",
+     "etiqueta": "Bonificación del paquete E+I+F+(F+)"
+    },
+    {
+     "celda": "AA37",
+     "etiqueta": "Bonificación del paquete E+I+F+(F+)+OS"
+    },
+    {
+     "celda": "AA51",
+     "etiqueta": "Global E+I+F+(F+)+OS escrito a mano en el original (tramo 13)"
+    },
+    {
+     "celda": "Y52",
+     "etiqueta": "Global E+I+F+(F+) escrito a mano en el original (tramo 14)"
+    },
+    {
+     "celda": "Y53",
+     "etiqueta": "Global E+I+F+(F+) escrito a mano en el original (tramo 15)"
+    }
+   ]
+  },
+  {
+   "grupo": "seguro_decenal",
+   "hoja": "3ª Construcción",
+   "tipo": "porcentaje",
+   "max": 1,
+   "titulo": "Seguro decenal: tasas, recargos y forma de pago de la prima",
+   "descripcion": "Tasas y condiciones del seguro decenal del original (2002). Los impuestos de la prima (IPS, CLEA) son parámetros legales.",
+   "celdas": [
+    {
+     "celda": "AI78",
+     "etiqueta": "Tasa básica, bloque, hasta 90.151.815,66 € de PEM (chalets: +10 %, en fórmula)"
+    },
+    {
+     "celda": "AI79",
+     "etiqueta": "Tasa básica, bloque, por encima de 90.151.815,66 €"
+    },
+    {
+     "celda": "AH82",
+     "etiqueta": "Impermeabilización de cubiertas, terrazas y tejados (s/ tasa básica)"
+    },
+    {
+     "celda": "AH85",
+     "etiqueta": "Impermeabilización de fachadas (s/ tasa básica)"
+    },
+    {
+     "celda": "AH87",
+     "etiqueta": "Indexación o revalorización de la suma asegurada (sobreprima)"
+    },
+    {
+     "celda": "AH90",
+     "etiqueta": "Renuncia a recurso contra contratistas y subcontratistas (incremento de prima)"
+    },
+    {
+     "celda": "AH93",
+     "etiqueta": "Renuncia a recurso contra proyectistas y dirección facultativa (incremento de prima)"
+    },
+    {
+     "celda": "AH98",
+     "etiqueta": "Franquicia: máximo sobre la unidad registral"
+    },
+    {
+     "celda": "AF59",
+     "etiqueta": "Primer pago: prima neta a la emisión de la póliza"
+    },
+    {
+     "celda": "AF60",
+     "etiqueta": "Primer pago: IPS"
+    },
+    {
+     "celda": "AF62",
+     "etiqueta": "Segundo pago: prima neta al entrar en vigor la cobertura"
+    },
+    {
+     "celda": "AF63",
+     "etiqueta": "Segundo pago: IPS"
+    }
+   ]
+  },
+  {
+   "grupo": "avales",
+   "hoja": null,
+   "tipo": "porcentaje",
+   "max": 0.5,
+   "titulo": "Avales y seguro de las cantidades a cuenta",
+   "descripcion": "Coste de los avales del suelo y de la garantía de las cantidades entregadas a cuenta, del original (2002). El interés legal del dinero es un parámetro legal.",
+   "celdas": [
+    {
+     "hoja": "3ª Terrenos",
+     "celda": "J24",
+     "etiqueta": "Interés del aval del suelo (trimestral)"
+    },
+    {
+     "hoja": "3ª Licencias y Varios",
+     "celda": "L4",
+     "etiqueta": "Coste anual del aval de las cantidades a cuenta (depósito)"
+    },
+    {
+     "hoja": "3ª Licencias y Varios",
+     "celda": "K10",
+     "etiqueta": "Tasa anual del seguro individual de las cantidades a cuenta"
+    }
+   ]
+  },
+  {
+   "grupo": "honorarios_bloque",
+   "hoja": "3ª Proyectos",
+   "tipo": "porcentaje",
+   "max": 0.5,
+   "titulo": "Honorarios de proyecto por superficie: bloque",
+   "descripcion": "Tabla de honorarios del original (2002): porcentaje según la superficie construida total de la promoción en bloque.",
+   "tabla": {
+    "columnas": [
+     {
+      "col": "S",
+      "etiqueta": "Honorarios"
+     }
+    ],
+    "filas": [
+     {
+      "fila": 4,
+      "etiqueta": "hasta 50 m²"
+     },
+     {
+      "fila": 5,
+      "etiqueta": "hasta 100 m²"
+     },
+     {
+      "fila": 6,
+      "etiqueta": "hasta 200 m²"
+     },
+     {
+      "fila": 7,
+      "etiqueta": "hasta 400 m²"
+     },
+     {
+      "fila": 8,
+      "etiqueta": "hasta 600 m²"
+     },
+     {
+      "fila": 9,
+      "etiqueta": "hasta 800 m²"
+     },
+     {
+      "fila": 10,
+      "etiqueta": "hasta 1.000 m²"
+     },
+     {
+      "fila": 11,
+      "etiqueta": "hasta 2.000 m²"
+     },
+     {
+      "fila": 12,
+      "etiqueta": "hasta 3.000 m²"
+     },
+     {
+      "fila": 13,
+      "etiqueta": "hasta 4.000 m²"
+     },
+     {
+      "fila": 14,
+      "etiqueta": "hasta 6.000 m²"
+     },
+     {
+      "fila": 15,
+      "etiqueta": "hasta 8.000 m²"
+     },
+     {
+      "fila": 16,
+      "etiqueta": "hasta 10.000 m²"
+     },
+     {
+      "fila": 17,
+      "etiqueta": "hasta 12.000 m²"
+     },
+     {
+      "fila": 18,
+      "etiqueta": "hasta 14.000 m²"
+     },
+     {
+      "fila": 19,
+      "etiqueta": "hasta 16.000 m²"
+     },
+     {
+      "fila": 20,
+      "etiqueta": "hasta 18.000 m²"
+     },
+     {
+      "fila": 21,
+      "etiqueta": "hasta 20.000 m²"
+     },
+     {
+      "fila": 22,
+      "etiqueta": "hasta 25.000 m²"
+     },
+     {
+      "fila": 23,
+      "etiqueta": "hasta 30.000 m²"
+     },
+     {
+      "fila": 24,
+      "etiqueta": "hasta 35.000 m²"
+     },
+     {
+      "fila": 25,
+      "etiqueta": "hasta 40.000 m²"
+     },
+     {
+      "fila": 26,
+      "etiqueta": "hasta 50.000 m²"
+     },
+     {
+      "fila": 27,
+      "etiqueta": "hasta 65.000 m²"
+     },
+     {
+      "fila": 28,
+      "etiqueta": "hasta 80.000 m²"
+     },
+     {
+      "fila": 29,
+      "etiqueta": "hasta 100.000 m²"
+     },
+     {
+      "fila": 30,
+      "etiqueta": "hasta 120.000 m²"
+     },
+     {
+      "fila": 31,
+      "etiqueta": "hasta 140.000 m²"
+     },
+     {
+      "fila": 32,
+      "etiqueta": "hasta 180.000 m²"
+     },
+     {
+      "fila": 33,
+      "etiqueta": "hasta 200.000 m²"
+     },
+     {
+      "fila": 34,
+      "etiqueta": "más de 200.000 m²"
+     }
+    ]
+   }
+  },
+  {
+   "grupo": "honorarios_chalets",
+   "hoja": "3ª Proyectos",
+   "tipo": "porcentaje",
+   "max": 0.5,
+   "titulo": "Honorarios de proyecto por superficie: chalets",
+   "descripcion": "La misma tabla para promociones de chalets.",
+   "tabla": {
+    "columnas": [
+     {
+      "col": "AD",
+      "etiqueta": "Honorarios"
+     }
+    ],
+    "filas": [
+     {
+      "fila": 4,
+      "etiqueta": "hasta 50 m²"
+     },
+     {
+      "fila": 5,
+      "etiqueta": "hasta 100 m²"
+     },
+     {
+      "fila": 6,
+      "etiqueta": "hasta 200 m²"
+     },
+     {
+      "fila": 7,
+      "etiqueta": "hasta 400 m²"
+     },
+     {
+      "fila": 8,
+      "etiqueta": "hasta 600 m²"
+     },
+     {
+      "fila": 9,
+      "etiqueta": "hasta 800 m²"
+     },
+     {
+      "fila": 10,
+      "etiqueta": "hasta 1.000 m²"
+     },
+     {
+      "fila": 11,
+      "etiqueta": "hasta 2.000 m²"
+     },
+     {
+      "fila": 12,
+      "etiqueta": "hasta 3.000 m²"
+     },
+     {
+      "fila": 13,
+      "etiqueta": "hasta 4.000 m²"
+     },
+     {
+      "fila": 14,
+      "etiqueta": "hasta 6.000 m²"
+     },
+     {
+      "fila": 15,
+      "etiqueta": "hasta 8.000 m²"
+     },
+     {
+      "fila": 16,
+      "etiqueta": "hasta 10.000 m²"
+     },
+     {
+      "fila": 17,
+      "etiqueta": "hasta 12.000 m²"
+     },
+     {
+      "fila": 18,
+      "etiqueta": "hasta 14.000 m²"
+     },
+     {
+      "fila": 19,
+      "etiqueta": "hasta 16.000 m²"
+     },
+     {
+      "fila": 20,
+      "etiqueta": "hasta 18.000 m²"
+     },
+     {
+      "fila": 21,
+      "etiqueta": "hasta 20.000 m²"
+     },
+     {
+      "fila": 22,
+      "etiqueta": "hasta 25.000 m²"
+     },
+     {
+      "fila": 23,
+      "etiqueta": "hasta 30.000 m²"
+     },
+     {
+      "fila": 24,
+      "etiqueta": "hasta 35.000 m²"
+     },
+     {
+      "fila": 25,
+      "etiqueta": "hasta 40.000 m²"
+     },
+     {
+      "fila": 26,
+      "etiqueta": "hasta 50.000 m²"
+     },
+     {
+      "fila": 27,
+      "etiqueta": "hasta 65.000 m²"
+     },
+     {
+      "fila": 28,
+      "etiqueta": "hasta 80.000 m²"
+     },
+     {
+      "fila": 29,
+      "etiqueta": "hasta 100.000 m²"
+     },
+     {
+      "fila": 30,
+      "etiqueta": "hasta 120.000 m²"
+     },
+     {
+      "fila": 31,
+      "etiqueta": "hasta 140.000 m²"
+     },
+     {
+      "fila": 32,
+      "etiqueta": "hasta 180.000 m²"
+     },
+     {
+      "fila": 33,
+      "etiqueta": "hasta 200.000 m²"
+     },
+     {
+      "fila": 34,
+      "etiqueta": "más de 200.000 m²"
+     }
+    ]
+   }
+  },
+  {
+   "grupo": "honorarios_actuacion",
+   "hoja": "3ª Proyectos",
+   "tipo": "porcentaje",
+   "max": 0.5,
+   "titulo": "Trabajos de edificación: porcentaje por superficie de actuación",
+   "descripcion": "Porcentaje sobre el PEM según los m² de actuación (el límite de cada tramo también se puede cambiar).",
+   "celdas": [
+    {
+     "celda": "AM9",
+     "etiqueta": "Tramo 1: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN9",
+     "etiqueta": "Tramo 1: porcentaje"
+    },
+    {
+     "celda": "AM10",
+     "etiqueta": "Tramo 2: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN10",
+     "etiqueta": "Tramo 2: porcentaje"
+    },
+    {
+     "celda": "AM11",
+     "etiqueta": "Tramo 3: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN11",
+     "etiqueta": "Tramo 3: porcentaje"
+    },
+    {
+     "celda": "AM12",
+     "etiqueta": "Tramo 4: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN12",
+     "etiqueta": "Tramo 4: porcentaje"
+    },
+    {
+     "celda": "AM13",
+     "etiqueta": "Tramo 5: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN13",
+     "etiqueta": "Tramo 5: porcentaje"
+    },
+    {
+     "celda": "AM14",
+     "etiqueta": "Tramo 6: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN14",
+     "etiqueta": "Tramo 6: porcentaje"
+    },
+    {
+     "celda": "AM15",
+     "etiqueta": "Tramo 7: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN15",
+     "etiqueta": "Tramo 7: porcentaje"
+    },
+    {
+     "celda": "AM16",
+     "etiqueta": "Tramo 8: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN16",
+     "etiqueta": "Tramo 8: porcentaje"
+    },
+    {
+     "celda": "AM17",
+     "etiqueta": "Tramo 9: hasta (m²)",
+     "tipo": "superficie",
+     "max": 10000000
+    },
+    {
+     "celda": "AN17",
+     "etiqueta": "Tramo 9: porcentaje"
+    },
+    {
+     "celda": "AN18",
+     "etiqueta": "Tramo 10 (resto): porcentaje"
+    }
+   ]
+  },
+  {
+   "grupo": "honorarios_coeficientes",
+   "hoja": "3ª Proyectos",
+   "tipo": "coeficiente",
+   "max": 10,
+   "titulo": "Honorarios: módulo básico, coeficientes por uso y reparto por fase",
+   "descripcion": "Presupuesto de referencia de los honorarios: superficie × módulo básico (Mb) × coeficiente del uso. Y el reparto de los honorarios del arquitecto entre las fases. Valores del original (2002).",
+   "celdas": [
+    {
+     "celda": "L21",
+     "etiqueta": "Módulo básico (Mb), bloque",
+     "tipo": "importe",
+     "max": 1000000
+    },
+    {
+     "celda": "N23",
+     "etiqueta": "Coeficiente, bloque: residencial"
+    },
+    {
+     "celda": "N24",
+     "etiqueta": "Coeficiente, bloque: locales"
+    },
+    {
+     "celda": "N25",
+     "etiqueta": "Coeficiente, bloque: garajes vinculados"
+    },
+    {
+     "celda": "N26",
+     "etiqueta": "Coeficiente, bloque: garajes no vinculados"
+    },
+    {
+     "celda": "N27",
+     "etiqueta": "Coeficiente, bloque: terrazas"
+    },
+    {
+     "celda": "N28",
+     "etiqueta": "Coeficiente, bloque: trasteros"
+    },
+    {
+     "celda": "Y23",
+     "etiqueta": "Coeficiente, chalets: residencial"
+    },
+    {
+     "celda": "Y24",
+     "etiqueta": "Coeficiente, chalets: locales"
+    },
+    {
+     "celda": "Y25",
+     "etiqueta": "Coeficiente, chalets: garajes vinculados"
+    },
+    {
+     "celda": "Y26",
+     "etiqueta": "Coeficiente, chalets: garajes no vinculados"
+    },
+    {
+     "celda": "Y27",
+     "etiqueta": "Coeficiente, chalets: terrazas"
+    },
+    {
+     "celda": "Y28",
+     "etiqueta": "Coeficiente, chalets: buhardilla"
+    },
+    {
+     "celda": "AJ28",
+     "etiqueta": "Reparto: proyecto básico",
+     "tipo": "porcentaje",
+     "max": 1
+    },
+    {
+     "celda": "AJ29",
+     "etiqueta": "Reparto: proyecto de ejecución",
+     "tipo": "porcentaje",
+     "max": 1
+    },
+    {
+     "celda": "AJ30",
+     "etiqueta": "Reparto: dirección de arquitecto",
+     "tipo": "porcentaje",
+     "max": 1
+    },
+    {
+     "celda": "AJ31",
+     "etiqueta": "Reparto: dirección de aparejador",
+     "tipo": "porcentaje",
+     "max": 1
+    }
+   ]
+  }
+ ],
+ "entradas": [
+  {
+   "grupo": "plantillas_pequenas",
+   "titulo": "Plantillas del curso (1 a 5)",
+   "descripcion": "El valor con que se presenta cada entrada al alumno; él lo puede cambiar.",
+   "celdas": [
+    {
+     "plantilla": "1",
+     "hoja": "Calculadora",
+     "celda": "B8"
+    },
+    {
+     "plantilla": "1",
+     "hoja": "Calculadora",
+     "celda": "B10"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B9"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B11"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B12"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B13"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B14"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B15"
+    },
+    {
+     "plantilla": "2",
+     "hoja": "Calculadora",
+     "celda": "B16"
+    },
+    {
+     "plantilla": "3",
+     "hoja": "Calculadora",
+     "celda": "B5"
+    },
+    {
+     "plantilla": "3",
+     "hoja": "Calculadora",
+     "celda": "B6"
+    },
+    {
+     "plantilla": "3",
+     "hoja": "Calculadora",
+     "celda": "B7"
+    },
+    {
+     "plantilla": "4",
+     "hoja": "Calculadora",
+     "celda": "B19"
+    }
+   ]
+  },
+  {
+   "grupo": "profesional",
+   "titulo": "Plantilla profesional (Financials)",
+   "descripcion": "El valor con que se presenta cada entrada de la plantilla profesional; el alumno lo puede cambiar.",
+   "celdas": [
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D102"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D115"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D116"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D128"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D129"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D130"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D131"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D147"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D148"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D153"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "Datos de Partida",
+     "celda": "D157"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "C7"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "C57"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "K7"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "K57"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "S7"
+    },
+    {
+     "plantilla": "profesional",
+     "hoja": "3ª Pólizas de Crédito",
+     "celda": "S57"
+    }
+   ]
+  }
+ ]
+}
