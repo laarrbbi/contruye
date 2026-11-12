@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import {
   HardHat,
+  Hourglass,
   LandPlot,
   Milestone,
   Plane,
-  TriangleAlert,
   type LucideIcon,
 } from "lucide-react";
 import { Mots } from "@/components/landing/kit/pieces";
@@ -204,17 +204,17 @@ export function Circuit() {
                     <p className="text-[1.25rem] font-semibold leading-snug lg:text-[1.5rem]">
                       {t(`landing.maze.${gate}`)}
                     </p>
+                    {/* What skipping the step costs: in time, as the section
+                        says («se paga en meses»), so an hourglass in the gold
+                        of the line rather than a red warning. */}
                     {mistake && (
-                      <p
-                        className={cn(
-                          "mt-3 inline-flex max-w-[24rem] items-start gap-2.5 rounded-xl bg-[rgb(180_35_24/0.06)] px-3.5 py-2.5 text-start text-[0.9375rem] leading-snug text-revision ring-1 ring-[rgb(180_35_24/0.14)]",
-                        )}
-                      >
-                        <TriangleAlert
+                      <p className="mt-4 inline-flex max-w-[24rem] items-start gap-3 text-start text-[0.9375rem] leading-snug text-plume/75">
+                        <span
                           aria-hidden
-                          className="mt-0.5 h-4 w-4 shrink-0"
-                          strokeWidth={1.75}
-                        />
+                          className="mt-px grid h-6 w-6 shrink-0 place-items-center rounded-full bg-or/15 text-or-fonce"
+                        >
+                          <Hourglass className="h-3.5 w-3.5" strokeWidth={1.75} />
+                        </span>
                         {t(`landing.costOfError.${mistake}Short`)}
                       </p>
                     )}
