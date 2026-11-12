@@ -18,7 +18,7 @@ import { moduleFiles } from '@/api/learn'
 import type { LearnData, LearnModule, LearnQuizSummary } from '@/api/learn'
 import { Progress } from '@/components/ui/progress'
 import { moduleLabel } from '@/lib/modules'
-import { cn, formatDuration } from '@/lib/utils'
+import { cn, formatDuration, formatNumber } from '@/lib/utils'
 
 /** Where the student is in the player: a lesson, a quiz, a document, Financials or the exam. */
 export type PlayerLocation =
@@ -81,7 +81,7 @@ function ModuleSection({
   /** The instructor's templates of this module: its «Plantilla» page lists them. */
   hasFiles: boolean
 }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const completedCount = module.lessons.filter((lesson) => lesson.is_completed).length
   const percent = module.lessons.length > 0 ? Math.round((completedCount / module.lessons.length) * 100) : 0
 
@@ -201,7 +201,7 @@ function ModuleSection({
                     {key === 'plantilla' && module.template ? t('templates.label', { number: module.template.number }) : t(`moduleSection.${key}`)}
                   </span>
                   {key === 'partners' && module.companies_count > 0 && (
-                    <span className="shrink-0 text-xs tabular-nums text-muted-foreground">{module.companies_count.toLocaleString()}</span>
+                    <span className="shrink-0 text-xs tabular-nums text-muted-foreground">{formatNumber(module.companies_count, i18n.language)}</span>
                   )}
                 </Link>
               </li>

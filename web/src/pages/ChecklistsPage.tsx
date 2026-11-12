@@ -5,6 +5,7 @@ import { isAxiosError } from 'axios'
 import { ArrowLeft, ClipboardList, Lock } from 'lucide-react'
 import { useChecklists } from '@/api/checklists'
 import { ModuleChecklist } from '@/components/player/ModuleChecklist'
+import { ProtectedArea } from '@/components/protection/ProtectedArea'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { LoadingAnnouncement, Skeleton } from '@/components/ui/skeleton'
@@ -65,57 +66,59 @@ export function ChecklistsPage() {
   const percent = total > 0 ? Math.round((done / total) * 100) : 0
 
   return (
-    <div className="container max-w-3xl space-y-8 py-8 sm:py-12">
-      <div className="space-y-4">
-        <Button asChild variant="ghost" size="sm" className="-ms-2 text-muted-foreground">
-          <Link to={`/learn/${slug}`}>
-            <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
-            {t('checklist.backToCourse')}
-          </Link>
-        </Button>
+    <ProtectedArea>
+      <div className="container max-w-3xl space-y-8 py-8 sm:py-12">
+        <div className="space-y-4">
+          <Button asChild variant="ghost" size="sm" className="-ms-2 text-muted-foreground">
+            <Link to={`/learn/${slug}`}>
+              <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+              {t('checklist.backToCourse')}
+            </Link>
+          </Button>
 
-        <div className="space-y-2">
-          <h1 className="titre flex items-center gap-3 text-[clamp(2rem,1.45rem+2vw,3.25rem)]">
-            <ClipboardList className="h-7 w-7 shrink-0" />
-            {t('checklist.pageTitle')}
-          </h1>
-          <p className="text-muted-foreground">{t('checklist.pageSubtitle')}</p>
-        </div>
-
-        <div className="space-y-1.5 rounded-lg border bg-secondary/40 p-4">
-          <div className="flex items-baseline justify-between gap-3 text-sm">
-            <span className="font-semibold">{t('checklist.overallProgress')}</span>
-            <span className="tabular-nums text-muted-foreground">
-              {done}/{total} — {percent}%
-            </span>
+          <div className="space-y-2">
+            <h1 className="titre flex items-center gap-3 text-[clamp(2rem,1.45rem+2vw,3.25rem)]">
+              <ClipboardList className="h-7 w-7 shrink-0" />
+              {t('checklist.pageTitle')}
+            </h1>
+            <p className="text-muted-foreground">{t('checklist.pageSubtitle')}</p>
           </div>
-          <Progress value={percent} aria-label={t('checklist.overallProgress')} />
+
+          <div className="space-y-1.5 rounded-lg border bg-secondary/40 p-4">
+            <div className="flex items-baseline justify-between gap-3 text-sm">
+              <span className="font-semibold">{t('checklist.overallProgress')}</span>
+              <span className="tabular-nums text-muted-foreground">
+                {done}/{total} — {percent}%
+              </span>
+            </div>
+            <Progress value={percent} aria-label={t('checklist.overallProgress')} />
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {data.modules.map((module) => (
+            <article key={module.id} className="space-y-2">
+              <h2 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
+                {t('player.moduleLabel', { number: module.order })} — <bdi>{module.title}</bdi>
+              </h2>
+
+              {module.is_locked ? (
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-dashed bg-secondary/30 px-4 py-3">
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Lock className="h-4 w-4 shrink-0" />
+                    {t('checklist.lockedTease', { count: module.items_count })}
+                  </span>
+                  <Button asChild size="sm" variant="outline">
+                    <Link to={`/checkout/${slug}?modules=${module.id}`}>{t('player.unlockModule')}</Link>
+                  </Button>
+                </div>
+              ) : (
+                <ModuleChecklist slug={slug} module={module} />
+              )}
+            </article>
+          ))}
         </div>
       </div>
-
-      <div className="space-y-6">
-        {data.modules.map((module) => (
-          <article key={module.id} className="space-y-2">
-            <h2 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-              {t('player.moduleLabel', { number: module.order })} — <bdi>{module.title}</bdi>
-            </h2>
-
-            {module.is_locked ? (
-              <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-dashed bg-secondary/30 px-4 py-3">
-                <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Lock className="h-4 w-4 shrink-0" />
-                  {t('checklist.lockedTease', { count: module.items_count })}
-                </span>
-                <Button asChild size="sm" variant="outline">
-                  <Link to={`/checkout/${slug}?modules=${module.id}`}>{t('player.unlockModule')}</Link>
-                </Button>
-              </div>
-            ) : (
-              <ModuleChecklist slug={slug} module={module} />
-            )}
-          </article>
-        ))}
-      </div>
-    </div>
+    </ProtectedArea>
   )
 }

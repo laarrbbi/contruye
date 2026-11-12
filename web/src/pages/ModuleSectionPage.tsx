@@ -1,6 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { moduleFiles, useLearn } from '@/api/learn'
+import { moduleFiles, useLearn, useModuleContent } from '@/api/learn'
 import { useChecklists } from '@/api/checklists'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { CompanyDirectory } from '@/components/directory/CompanyDirectory'
@@ -32,6 +32,8 @@ export function ModuleSectionPage() {
   const { data, isLoading } = useLearn(slug)
   const checklists = useChecklists(slug)
   const module = data?.modules.find((m) => m.id === Number(moduleId))
+  // The laws and where-to-go texts come with the module's own content, not the outline.
+  const content = useModuleContent(slug, module && !module.is_locked && (section === 'leyes' || section === 'partners') ? module.id : null)
   usePageTitle(module ? `${t(`moduleSection.${section}`)} · ${moduleLabel(module, t)}` : undefined)
 
   if (isLoading || !data || !slug) return <PlayerSkeleton />
@@ -40,9 +42,10 @@ export function ModuleSectionPage() {
   if (section === 'plantilla' && !module.template && files.length === 0) return <Navigate to={`/learn/${slug}`} replace />
 
   const kind = section as ModuleSection
-  const laws = module.blocks.filter((b) => b.type === 'overview' && b.role === 'laws')
-  const where = module.blocks.filter((b) => b.type === 'overview' && b.role === 'where')
-  const inProvince = module.blocks.filter((b) => b.type === 'section' && b.role === 'partners')
+  const blocks = content.data?.blocks ?? []
+  const laws = blocks.filter((b) => b.type === 'overview' && b.role === 'laws')
+  const where = blocks.filter((b) => b.type === 'overview' && b.role === 'where')
+  const inProvince = blocks.filter((b) => b.type === 'section' && b.role === 'partners')
   const checklist = checklists.data?.modules.find((m) => m.id === module.id && !m.is_locked)
 
   return (
@@ -71,7 +74,9 @@ export function ModuleSectionPage() {
       {kind === 'leyes' && (
         <article className="space-y-4 rounded-2xl border border-foreground/[0.08] bg-card p-6 sm:p-8">
           {laws.length > 0 && <ContentLanguageNote locale={laws[0].body_locale} />}
-          {laws.length > 0 ? (
+          {content.isLoading ? (
+            <p className="text-sm text-muted-foreground">{t('common.loading')}</p>
+          ) : laws.length > 0 ? (
             laws.map((block) => <MarkdownContent key={block.id} html={block.body_html} lang={block.body_locale} />)
           ) : (
             <p className="text-sm text-muted-foreground">{t('moduleSection.noLaws')}</p>

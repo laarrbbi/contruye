@@ -5,6 +5,7 @@ import type { LearnData } from '@/api/learn'
 import { CurrentOffer } from '@/components/offers/OfferCard'
 import { Button } from '@/components/ui/button'
 import { PlayerSidebar, type PlayerLocation } from './PlayerSidebar'
+import { ProtectedArea } from '@/components/protection/ProtectedArea'
 import { ProvinceWelcome } from './ProvinceWelcome'
 
 /**
@@ -54,8 +55,9 @@ export function PlayerShell({
         </div>
       )}
 
-      {/* Page column. Not a <main>: the site layout already provides it. */}
-      <div className="min-w-0">
+      {/* Page column. Not a <main>: the site layout already provides it.
+          The course material inside it is protected (ProtectedArea). */}
+      <ProtectedArea className="min-w-0">
         <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-8 lg:py-12">
           {/* Mobile toolbar */}
           <div className="flex items-center gap-2 lg:hidden">
@@ -74,7 +76,7 @@ export function PlayerShell({
 
           {children}
         </div>
-      </div>
+      </ProtectedArea>
 
       {/* Desktop sidebar */}
       <aside className="theme-night sticky top-16 hidden h-[calc(100vh-4rem)] lg:block">{sidebar}</aside>

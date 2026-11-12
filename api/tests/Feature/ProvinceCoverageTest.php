@@ -236,12 +236,13 @@ it('serialises partner coverage to owners and never leaks it through a free prev
 
     // The free-preview lesson of the locked module ships the slot with the
     // count only — no phone number anywhere in the response.
-    $previewLesson = collect($lockedPayload['lessons'])->firstWhere('id', $previewBlockLesson->id);
-    $slot = collect($previewLesson['blocks'])->firstWhere('type', 'partner_slot');
+    $previewContent = $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/lessons/{$previewBlockLesson->id}/content")->assertOk()->json('data');
+    $slot = collect($previewContent['blocks'])->firstWhere('type', 'partner_slot');
 
     // Nothing anywhere under the locked module carries the contact — the
     // owned module legitimately does, which is why the check is scoped.
-    $lockedJson = json_encode($lockedPayload);
+    $lockedJson = json_encode($lockedPayload).json_encode($previewContent);
 
     expect($slot['partners'])->toBe([])
         ->and($slot['partners_count'])->toBe(1)
@@ -284,14 +285,15 @@ it('teases the partner count on a locked slot instead of hiding it entirely', fu
         ->assertOk();
 
     $module = collect($json->json('data.modules'))->firstWhere('id', $locked->id);
-    $lesson = collect($module['lessons'])->firstWhere('id', $preview->id);
+    $lesson = $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/lessons/{$preview->id}/content")->assertOk()->json('data');
     $slot = collect($lesson['blocks'])->firstWhere('type', 'partner_slot');
 
     // Withheld, but counted — the UI can say what the module holds without
     // pretending it holds nothing.
     expect($slot['partners'])->toBe([])
         ->and($slot['partners_count'])->toBe(1)
-        ->and(json_encode($module))->not->toContain('611122233');
+        ->and(json_encode($module).json_encode($lesson))->not->toContain('611122233');
 });
 
 it('rejects malformed partner list filters instead of failing with a 500', function () {

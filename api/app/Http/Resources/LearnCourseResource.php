@@ -29,6 +29,12 @@ use Illuminate\Support\Collection;
  *
  * Expects `modules.lessons` eager-loaded (ordered), the user's progress rows
  * keyed by lesson_id, and the set of accessible module ids.
+ *
+ * Without content (what /learn sends) it is the course's outline: titles,
+ * locks, progress, block roles — no lesson text, no module text. Those come
+ * one lesson and one module at a time (lessonContent, moduleContent), each
+ * request behind the access gate and the content meter, so the whole course
+ * never leaves the server in a single response.
  */
 class LearnCourseResource extends JsonResource
 {
@@ -42,6 +48,7 @@ class LearnCourseResource extends JsonResource
         private readonly Collection $progressByLesson,
         private readonly Collection $accessibleModuleIds,
         private readonly Collection $attemptsByQuiz = new Collection,
+        private readonly bool $withContent = true,
     ) {
         parent::__construct($course);
     }
@@ -115,9 +122,9 @@ class LearnCourseResource extends JsonResource
                 'order' => $module->order,
                 'kind' => $module->kind,
                 'title' => $module->localizedTitle(),
-                'description' => $module->localizedDescription(),
+                'description' => $this->withContent ? $module->localizedDescription() : null,
                 // "**Objetivo:** …" / "**Duración:** …", one per line as written.
-                'description_html' => Markdown::toHtml($module->localizedDescription(), lineBreaks: true, glossary: true),
+                'description_html' => $this->withContent ? $this->descriptionHtml($module) : null,
                 // The language each text is read in: the student's, or the
                 // Spanish it falls back to while its translation is pending.
                 'description_locale' => $module->localizedLocale('description'),
@@ -152,7 +159,7 @@ class LearnCourseResource extends JsonResource
                 // Companies of the directory this module sends the promoter to (shown, not hidden ones).
                 'companies_count' => $module->kind === 'phase' ? Company::visibleCountForPhase($module->order) : 0,
                 'blocks' => $this->isAccessible($module)
-                    ? $this->blocks($module->contentBlocks, $module)
+                    ? $this->blocks($module->contentBlocks, $module, $this->withContent)
                     : [],
                 'lessons' => $module->lessons
                     ->map(fn (Lesson $lesson) => $this->lessonArray($lesson, $this->isAccessible($module), $module))
@@ -180,13 +187,13 @@ class LearnCourseResource extends JsonResource
             'is_free_preview' => $lesson->is_free_preview,
             'is_locked' => ! $accessible && ! $lesson->is_free_preview,
             // Written lesson content follows the same access rule as playback.
-            'content' => $playable ? $lesson->localizedContent() : null,
-            'content_html' => $playable ? Markdown::toHtml($lesson->localizedContent(), glossary: true) : null,
+            'content' => $playable && $this->withContent ? $lesson->localizedContent() : null,
+            'content_html' => $playable && $this->withContent ? Markdown::toHtml($lesson->localizedContent(), glossary: true) : null,
             'content_locale' => $lesson->localizedLocale('content'),
             // Bullets of the lesson. Students never see the "A VALIDER" state:
             // that badge is an admin-only editorial signal.
-            'key_points' => $playable ? $lesson->localizedKeyPoints() : [],
-            'blocks' => $playable ? $this->blocks($lesson->contentBlocks, $module) : [],
+            'key_points' => $playable && $this->withContent ? $lesson->localizedKeyPoints() : [],
+            'blocks' => $playable && $this->withContent ? $this->blocks($lesson->contentBlocks, $module) : [],
             'has_reflex_sheet' => $playable && $lesson->is_reflex_sheet,
             // False while the lesson's video has not been shot yet, so the
             // player can say "próximamente" instead of showing an error.
@@ -215,14 +222,15 @@ class LearnCourseResource extends JsonResource
      * @param  Collection<int, ContentBlock>  $blocks
      * @return list<array<string, mixed>>
      */
-    private function blocks(Collection $blocks, Module $module): array
+    private function blocks(Collection $blocks, Module $module, bool $withBodies = true): array
     {
-        return $blocks->sortBy('order')->map(function (ContentBlock $block) use ($module) {
+        return $blocks->sortBy('order')->map(function (ContentBlock $block) use ($module, $withBodies) {
             $payload = [
                 'id' => $block->id,
                 'type' => $block->type,
-                'body' => $block->localizedBody(),
-                'body_html' => Markdown::toHtml($block->localizedBody(), glossary: true),
+                // Without bodies (the outline), a block says only what it is.
+                'body' => $withBodies ? $block->localizedBody() : null,
+                'body_html' => $withBodies ? Markdown::toHtml($block->localizedBody(), glossary: true) : null,
                 'body_locale' => $block->localizedLocale('body'),
                 // Which of the module's sections this is, read from the
                 // instructor's Spanish heading: the player shows them apart
@@ -270,6 +278,50 @@ class LearnCourseResource extends JsonResource
 
             return $payload;
         })->values()->all();
+    }
+
+    /**
+     * One lesson's text, bullets and blocks, for the player page that shows it;
+     * null when the student may not read it (a locked lesson that is not a
+     * free preview).
+     *
+     * @return array<string, mixed>|null
+     */
+    public function lessonContent(Lesson $lesson, Module $module): ?array
+    {
+        if (! $this->isAccessible($module) && ! $lesson->is_free_preview) {
+            return null;
+        }
+
+        return [
+            'id' => $lesson->id,
+            'content_html' => Markdown::toHtml($lesson->localizedContent(), glossary: true),
+            'content_locale' => $lesson->localizedLocale('content'),
+            'key_points' => $lesson->localizedKeyPoints(),
+            'blocks' => $this->blocks($lesson->contentBlocks, $module),
+        ];
+    }
+
+    /**
+     * One module's introduction (shown for every module, as on the sales
+     * page) and, for an owned module, its sections: the laws, where to go,
+     * the partners in your province.
+     *
+     * @return array<string, mixed>
+     */
+    public function moduleContent(Module $module): array
+    {
+        return [
+            'id' => $module->id,
+            'description_html' => $this->descriptionHtml($module),
+            'description_locale' => $module->localizedLocale('description'),
+            'blocks' => $this->isAccessible($module) ? $this->blocks($module->contentBlocks, $module) : [],
+        ];
+    }
+
+    private function descriptionHtml(Module $module): ?string
+    {
+        return Markdown::toHtml($module->localizedDescription(), lineBreaks: true, glossary: true);
     }
 
     /**

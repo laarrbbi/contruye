@@ -172,7 +172,7 @@ function CompanyCard({ company }: { company: DirectoryCompany }) {
             <dt className="sr-only">{t('directory.phone')}</dt>
             <Phone aria-hidden className="h-3.5 w-3.5 shrink-0" />
             <dd>
-              <a href={`tel:${company.phone.replace(/[^\d+]/g, '')}`} dir="ltr" className="hover:underline">
+              <a href={`tel:${company.phone.replace(/[^\d+]/g, '')}`} dir="ltr" className="allow-select hover:underline">
                 {company.phone}
               </a>
             </dd>
@@ -183,7 +183,7 @@ function CompanyCard({ company }: { company: DirectoryCompany }) {
             <dt className="sr-only">{t('directory.website')}</dt>
             <Globe aria-hidden className="h-3.5 w-3.5 shrink-0" />
             <dd className="min-w-0 truncate">
-              <a href={company.website} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">
+              <a href={company.website} target="_blank" rel="noopener noreferrer" dir="ltr" className="allow-select hover:underline">
                 {host}
               </a>
             </dd>
@@ -194,7 +194,7 @@ function CompanyCard({ company }: { company: DirectoryCompany }) {
             <dt className="sr-only">{t('directory.email')}</dt>
             <Mail aria-hidden className="h-3.5 w-3.5 shrink-0" />
             <dd className="min-w-0 truncate">
-              <a href={`mailto:${company.email}`} dir="ltr" className="hover:underline">
+              <a href={`mailto:${company.email}`} dir="ltr" className="allow-select hover:underline">
                 {company.email}
               </a>
             </dd>

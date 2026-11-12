@@ -111,15 +111,12 @@ it('serves lesson content only for accessible or free-preview lessons', function
         'module_id' => $owned->id,
     ]);
 
-    $modules = collect(
-        $this->actingAs($student)->getJson("/api/courses/{$course->slug}/learn")->json('data.modules')
-    );
+    $content = fn (Lesson $lesson) => $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/lessons/{$lesson->id}/content");
 
-    $lessons = $modules->flatMap(fn ($m) => $m['lessons'])->keyBy('id');
-
-    expect($lessons[$ownedLesson->id]['content'])->toBe('Checklist de la nota simple')
-        ->and($lessons[$lockedLesson->id]['content'])->toBeNull()   // paid content withheld
-        ->and($lessons[$preview->id]['content'])->toBe('Extracto gratuito'); // free preview shown
+    expect($content($ownedLesson)->assertOk()->json('data.content_html'))->toBe('<p>Checklist de la nota simple</p>');
+    $content($lockedLesson)->assertForbidden();   // paid content withheld
+    expect($content($preview)->assertOk()->json('data.content_html'))->toBe('<p>Extracto gratuito</p>'); // free preview shown
 });
 
 it('returns lesson content in the requested language', function () {
@@ -135,16 +132,14 @@ it('returns lesson content in the requested language', function () {
         'module_id' => null,
     ]);
 
-    $en = $this->actingAs($student)
-        ->withHeader('Accept-Language', 'en')
-        ->getJson("/api/courses/{$course->slug}/learn")->json('data.modules.0.lessons.0.content');
+    $lessonId = $this->actingAs($student)->getJson("/api/courses/{$course->slug}/learn")->json('data.modules.0.lessons.0.id');
+    $url = "/api/courses/{$course->slug}/lessons/{$lessonId}/content";
 
-    $es = $this->actingAs($student)
-        ->withHeader('Accept-Language', 'es')
-        ->getJson("/api/courses/{$course->slug}/learn")->json('data.modules.0.lessons.0.content');
+    $en = $this->actingAs($student)->withHeader('Accept-Language', 'en')->getJson($url)->json('data.content_html');
+    $es = $this->actingAs($student)->withHeader('Accept-Language', 'es')->getJson($url)->json('data.content_html');
 
-    expect($en)->toBe('English content')
-        ->and($es)->toBe('Contenido ES');
+    expect($en)->toBe('<p>English content</p>')
+        ->and($es)->toBe('<p>Contenido ES</p>');
 });
 
 it('lets an admin manage partners and attach them to a module in order', function () {

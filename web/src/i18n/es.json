@@ -1663,5 +1663,8 @@
       "closeTitle": "Cerrar tu cuenta",
       "closeLead": "Escríbenos y la cerramos. Las facturas emitidas se conservan el tiempo que exige la normativa fiscal."
     }
+  },
+  "protection": {
+    "printNote": "La impresión del material del curso no está disponible. Las plantillas y las fichas se descargan desde la plataforma."
   }
 }

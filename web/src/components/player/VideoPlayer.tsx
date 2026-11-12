@@ -69,7 +69,19 @@ export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: Vid
 
         {src && isFile && (
           <>
-            <video key={lessonId} src={src} controls preload="metadata" playsInline className="absolute inset-0 h-full w-full bg-sombre-950">
+            {/* No download button, no picture-in-picture (a floating window
+                would leave the watermark behind), no "save video as". */}
+            <video
+              key={lessonId}
+              src={src}
+              controls
+              controlsList="nodownload noremoteplayback"
+              disablePictureInPicture
+              onContextMenu={(event) => event.preventDefault()}
+              preload="metadata"
+              playsInline
+              className="absolute inset-0 h-full w-full bg-sombre-950"
+            >
               {t('player.videoTitle')}
             </video>
             {watermarkText && <WatermarkOverlay text={watermarkText} />}
@@ -84,7 +96,8 @@ export function VideoPlayer({ lessonId, startAt = 0, watermark, className }: Vid
               title={t('player.videoTitle')}
               className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              // Not picture-in-picture: the floating window would leave the watermark behind.
+              allow="accelerometer; autoplay; encrypted-media; gyroscope"
               allowFullScreen
             />
             {watermarkText && <WatermarkOverlay text={watermarkText} />}

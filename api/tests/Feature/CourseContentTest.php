@@ -179,13 +179,19 @@ it('serves the texts rendered, to owners, without the editorial flags', function
 
     $data = $this->actingAs($student)->getJson("/api/courses/{$this->course->slug}/learn")->assertOk()->json('data');
     $module1 = collect($data['modules'])->firstWhere('order', 1);
+    // The texts themselves come one page at a time.
+    $module1Content = $this->actingAs($student)
+        ->getJson("/api/courses/{$this->course->slug}/modules/{$module1['id']}/content")->assertOk()->json('data');
+    $lesson1Content = $this->actingAs($student)
+        ->getJson("/api/courses/{$this->course->slug}/lessons/{$module1['lessons'][0]['id']}/content")->assertOk()->json('data');
 
     expect($module1['kind'])->toBe('phase')
-        ->and($module1['description_html'])->toContain('<strong>Objetivo:</strong>')
+        ->and($module1Content['description_html'])->toContain('<strong>Objetivo:</strong>')
         // "Leyes que aplican" and "Dónde ir", with their tables.
         ->and(collect($module1['blocks'])->where('type', 'overview'))->toHaveCount(2)
-        ->and(collect($module1['blocks'])->firstWhere('type', 'overview')['body_html'])->toContain('<table>')
-        ->and($module1['lessons'][0]['content_html'])->toContain('<li>')
+        ->and(collect($module1Content['blocks'])->firstWhere('type', 'overview')['body_html'])->toContain('<table>')
+        ->and($lesson1Content['content_html'])->toContain('<li>')
+        ->and(json_encode([$module1Content, $lesson1Content]))->not->toContain('needs_validation')
         ->and($module1['quiz']['questions_count'])->toBe(10)
         ->and(json_encode($data))->not->toContain('needs_validation')
         // The answers of the quizzes are never in the player's payload.

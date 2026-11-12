@@ -37,6 +37,9 @@
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
+        <!-- The reader's invisible mark is tested on its own (ContentProtectionTest);
+             elsewhere the served HTML is compared as rendered. -->
+        <env name="CONTENT_FINGERPRINT" value="false"/>
         <env name="PULSE_ENABLED" value="false"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>

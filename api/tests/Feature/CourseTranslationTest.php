@@ -9,6 +9,7 @@ use App\Models\Quiz;
 use App\Models\User;
 use App\Support\Course\CourseSource;
 use App\Support\Course\CourseTranslation;
+use App\Support\Markdown;
 use Database\Seeders\ChecklistSeeder;
 use Database\Seeders\CourseTranslationSeeder;
 use Database\Seeders\CurriculumV2Seeder;
@@ -109,7 +110,9 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
         ->and($module['description_locale'])->toBe('ru')
         ->and($lessons[0]['title'])->toBe('Урок 1.1 — Определите продукт и найдите участок')
         ->and($lessons[0]['content_locale'])->toBe('ru')
-        ->and($lessons[0]['content'])->toContain('Ley 12/2023')->toContain('CASA47')
+        ->and($this->actingAs($student)->withHeader('Accept-Language', 'ru')
+            ->getJson("/api/courses/{$course->slug}/lessons/{$lessons[0]['id']}/content")->json('data.content_html'))
+        ->toContain('Ley 12/2023')->toContain('CASA47')
         // Module 1 is translated in full, its tables included.
         ->and(collect($module['blocks'])->pluck('body_locale')->unique()->all())->toBe(['ru']);
 
@@ -127,12 +130,16 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
         $this->seed(CourseTranslationSeeder::class);
         $pending = $learn('ru')['modules'][0]['lessons'][2];
 
+        $pendingHtml = $this->actingAs($student)->withHeader('Accept-Language', 'ru')
+            ->getJson("/api/courses/{$course->slug}/lessons/{$pending['id']}/content")->json('data.content_html');
+
         expect($pending['title'])->toStartWith('Урок 1.3')
             ->and($pending['content_locale'])->toBe('es')
-            ->and($pending['content'])->toBe(
+            ->and($pendingHtml)->toBe(Markdown::toHtml(
                 Module::query()->where('course_id', $course->id)->orderBy('order')->first()
                     ->lessons()->orderBy('order')->skip(2)->first()->content_es,
-            );
+                glossary: true,
+            ));
     } finally {
         File::deleteDirectory($root);
         config(['curso.translations' => $realRoot]);

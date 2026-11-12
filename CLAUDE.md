@@ -107,6 +107,15 @@ makes that work lives in `docker/mysql-test/`.
   is linked in the browser from `web/src/content/legal-links.json`: `php artisan legal:export-web`.
 - Quizzes and the final exam are graded in `QuizController`; answers never go out before a
   submission, the exam's key never does.
+- The course text never leaves in one response: `/learn` is the outline, each lesson's and
+  module's text comes from `LearnContentController`, metered per student (`MeterCourseContent`,
+  alias `content`, on every route that serves material) and marked with the reader's invisible
+  fingerprint (`ContentFingerprint`, `php artisan content:trace`). The player column is a
+  `ProtectedArea` (no select/copy/print, the reader's e-mail as a faint pattern). Two devices per
+  account (`DeviceSessions`). All of it: `docs/proteccion-contenido.md`.
+- The account page (`/account/:section`, `AccountController`): details, invoice details (they
+  pre-fill the owner's invoice form; `FiscalId` checks a NIF/NIE/CIF), invoices, orders and payment
+  methods, password and devices, a JSON copy of the student's own data.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP
   service: the professional template and the five small ones. `App\Services\TemplateEngine` is the
   only caller; `FinancialsController` (the professional template, the extra) and

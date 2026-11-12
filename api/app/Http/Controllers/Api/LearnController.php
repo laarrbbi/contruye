@@ -15,8 +15,9 @@ class LearnController extends Controller
     use AuthorizesCourseAccess;
 
     /**
-     * Course-player payload: modules/lessons in order plus the
-     * authenticated user's progress (enrolled students or admins only).
+     * Course-player outline: modules/lessons in order plus the authenticated
+     * user's progress (enrolled students or admins only). The texts are not
+     * in it: LearnContentController serves them one page at a time.
      */
     public function show(Request $request, Course $course): LearnCourseResource
     {
@@ -25,7 +26,7 @@ class LearnController extends Controller
         $this->authorizeCourseAccess($user, $course);
 
         $course->load([
-            'modules.lessons.contentBlocks',
+            'modules.lessons',
             'modules.contentBlocks',
             'modules.partners.provinces',
             'modules.quiz',
@@ -53,6 +54,6 @@ class LearnController extends Controller
             ->get()
             ->groupBy('quiz_id');
 
-        return new LearnCourseResource($course, $progressByLesson, $accessibleModuleIds, $attemptsByQuiz);
+        return new LearnCourseResource($course, $progressByLesson, $accessibleModuleIds, $attemptsByQuiz, withContent: false);
     }
 }

@@ -156,6 +156,54 @@ export function useLearn(slug: string | undefined) {
   })
 }
 
+/** One lesson's text, bullets and blocks: fetched when the lesson is opened, never with the outline. */
+export interface LessonContent {
+  id: number
+  content_html: string | null
+  content_locale: string
+  key_points: string[]
+  blocks: LearnContentBlock[]
+}
+
+/** One module's introduction and (for an owned module) its sections, with their text. */
+export interface ModuleContent {
+  id: number
+  description_html: string | null
+  description_locale: string
+  blocks: LearnContentBlock[]
+}
+
+/**
+ * The texts come one page at a time (the outline from useLearn has none), so
+ * the whole course is never in one response. Kept a while once read, so going
+ * back and forth between two lessons asks the server once.
+ */
+export function useLessonContent(slug: string | undefined, lessonId: number | null) {
+  return useQuery<LessonContent>({
+    queryKey: ['lesson-content', slug, lessonId],
+    enabled: !!slug && lessonId !== null,
+    retry: false,
+    staleTime: 10 * 60 * 1000,
+    queryFn: async () => {
+      const { data } = await api.get(`/courses/${slug}/lessons/${lessonId}/content`)
+      return data.data as LessonContent
+    },
+  })
+}
+
+export function useModuleContent(slug: string | undefined, moduleId: number | null) {
+  return useQuery<ModuleContent>({
+    queryKey: ['module-content', slug, moduleId],
+    enabled: !!slug && moduleId !== null,
+    retry: false,
+    staleTime: 10 * 60 * 1000,
+    queryFn: async () => {
+      const { data } = await api.get(`/courses/${slug}/modules/${moduleId}/content`)
+      return data.data as ModuleContent
+    },
+  })
+}
+
 export interface ProgressResponse {
   lesson_id: number
   last_position_seconds: number

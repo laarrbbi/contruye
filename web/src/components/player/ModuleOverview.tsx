@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { BookOpen, ChevronDown } from 'lucide-react'
-import type { LearnModule } from '@/api/learn'
+import { useModuleContent, type LearnModule } from '@/api/learn'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { moduleLabel } from '@/lib/modules'
@@ -11,11 +11,12 @@ import { moduleLabel } from '@/lib/modules'
  * introduction, so it is never read as the lesson. Open on the module's first
  * lesson, folded on the others, so it is one click away all along.
  */
-export function ModuleOverview({ module, defaultOpen }: { module: LearnModule; defaultOpen: boolean }) {
+export function ModuleOverview({ slug, module, defaultOpen }: { slug: string; module: LearnModule; defaultOpen: boolean }) {
   const { t } = useTranslation()
-  const sections = module.blocks.filter((block) => block.type === 'overview')
+  const { data: content } = useModuleContent(slug, module.id)
+  const sections = (content?.blocks ?? []).filter((block) => block.type === 'overview')
 
-  if (!module.description_html && sections.length === 0) return null
+  if (!content || (!content.description_html && sections.length === 0)) return null
 
   return (
     <details className="group rounded-lg border" open={defaultOpen}>
@@ -31,8 +32,8 @@ export function ModuleOverview({ module, defaultOpen }: { module: LearnModule; d
         {/* Said once, plainly: this is the module's opening, not the lesson. */}
         <p className="text-sm text-muted-foreground">{t('player.moduleIntroLead')}</p>
         <MarkdownContent
-          html={module.description_html}
-          lang={module.description_locale}
+          html={content.description_html}
+          lang={content.description_locale}
           className="rounded-2xl bg-foreground/[0.04] px-5 py-4"
         />
         {sections.length > 0 && <ContentLanguageNote locale={sections[0].body_locale} />}

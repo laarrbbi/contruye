@@ -93,5 +93,6 @@
     "You already have the professional template.": "Ya tienes la plantilla profesional.",
     "Each value must be between 0 and 100 %.": "Cada valor debe estar entre 0 y 100 %.",
     "Unknown autonomous community: :name": "Comunidad autónoma desconocida: :name",
-    "This fiscal id is not valid. Check the number and its letter.": "Este NIF no es válido. Revisa el número y su letra."
+    "This fiscal id is not valid. Check the number and its letter.": "Este NIF no es válido. Revisa el número y su letra.",
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Has abierto muchas páginas del curso en poco tiempo. Espera unos minutos y sigue."
 }

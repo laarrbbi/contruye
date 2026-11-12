@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Support\Legal\RegionalSources;
 use App\Support\Markdown;
+use App\Support\Protection\ContentFingerprint;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class CourseDocumentController extends Controller
             'slug' => $document->slug,
             'title' => $document->localizedTitle(),
             'access' => $document->access,
-            'body_html' => Markdown::toHtml($document->localizedBody(), glossary: true),
+            'body_html' => ContentFingerprint::stamp(Markdown::toHtml($document->localizedBody(), glossary: true), $user),
             'body_locale' => $document->localizedLocale('body'),
             // Anexo B (tax and planning per community): each community's official pages.
             'regions' => $document->slug === 'anexo-b' ? RegionalSources::all() : null,

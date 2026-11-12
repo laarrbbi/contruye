@@ -1663,5 +1663,8 @@
       "closeTitle": "Close your account",
       "closeLead": "Write to us and we will close it. Invoices already issued are kept for as long as tax rules require."
     }
+  },
+  "protection": {
+    "printNote": "Printing the course material is not available. Templates and sheets can be downloaded from the platform."
   }
 }

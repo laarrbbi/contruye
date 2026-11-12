@@ -77,14 +77,21 @@ it('empties every carrier of the written curriculum in a locked lesson', functio
         ->and($paidPayload['blocks'])->toBe([])
         ->and($paidPayload['has_reflex_sheet'])->toBeFalse();
 
+    // Its text is refused on its own address too.
+    $this->actingAs($student)->getJson("/api/courses/{$course->slug}/lessons/{$paid->id}/content")->assertForbidden();
+
     // ...while the free preview sitting in the SAME locked module keeps its
     // content, so the gate stays playability and never collapses into
     // ownership — which would silently take the teaser away.
     expect($previewPayload['is_locked'])->toBeFalse()
-        ->and($previewPayload['content'])->toBe('Ce que couvre ce module.')
-        ->and($previewPayload['key_points'])->toBe(['Aperçu offert'])
-        ->and($previewPayload['has_reflex_sheet'])->toBeTrue()
-        ->and(collect($previewPayload['blocks'])->pluck('body')->all())->toBe(['Extrait offert.']);
+        ->and($previewPayload['has_reflex_sheet'])->toBeTrue();
+
+    $previewContent = $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/lessons/{$preview->id}/content")->assertOk()->json('data');
+
+    expect($previewContent['content_html'])->toContain('Ce que couvre ce module.')
+        ->and($previewContent['key_points'])->toBe(['Aperçu offert'])
+        ->and(collect($previewContent['blocks'])->pluck('body')->all())->toBe(['Extrait offert.']);
 
     // Nothing of the paid lesson survives anywhere under the locked module.
     $json = json_encode($lockedPayload);
@@ -170,10 +177,21 @@ it('serves module-level legal and expert-tip blocks only to owners', function ()
     $ownedPayload = $modules->firstWhere('id', $owned->id);
     $lockedPayload = $modules->firstWhere('id', $locked->id);
 
+    // The outline names the owned module's blocks without their text…
     expect(collect($ownedPayload['blocks'])->pluck('type')->all())->toBe(['legal', 'expert_tip'])
-        ->and(collect($ownedPayload['blocks'])->pluck('body')->all())
-        ->toContain('Ley 38/1999 — disposición adicional primera.')
+        ->and(collect($ownedPayload['blocks'])->pluck('body')->filter()->all())->toBe([])
         ->and($lockedPayload['blocks'])->toBe([]);
+
+    // …which comes with the module's own content, for its owner only.
+    $ownedContent = $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/modules/{$owned->id}/content")->assertOk()->json('data');
+    $lockedContent = $this->actingAs($student)
+        ->getJson("/api/courses/{$course->slug}/modules/{$locked->id}/content")->assertOk()->json('data');
+
+    expect(collect($ownedContent['blocks'])->pluck('body')->all())
+        ->toContain('Ley 38/1999 — disposición adicional primera.')
+        ->and($lockedContent['blocks'])->toBe([])
+        ->and(json_encode($lockedContent))->not->toContain('No firme nunca');
 
     // partner_slot is not the only block type the lock has to cover: the
     // statutory references and the practitioner advice are paid content too.

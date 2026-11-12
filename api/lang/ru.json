@@ -93,5 +93,6 @@
     "You already have the professional template.": "У вас уже есть профессиональная модель.",
     "Each value must be between 0 and 100 %.": "Каждое значение должно быть от 0 до 100 %.",
     "Unknown autonomous community: :name": "Неизвестное автономное сообщество: :name",
-    "This fiscal id is not valid. Check the number and its letter.": "Этот налоговый номер недействителен. Проверьте цифры и букву."
+    "This fiscal id is not valid. Check the number and its letter.": "Этот налоговый номер недействителен. Проверьте цифры и букву.",
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Вы открыли много страниц курса за короткое время. Подождите несколько минут и продолжайте."
 }

@@ -29,6 +29,7 @@ use App\Http\Controllers\Api\CourseFileController;
 use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\FinancialsController;
 use App\Http\Controllers\Api\FinancialsExtraController;
+use App\Http\Controllers\Api\LearnContentController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\LessonPreviewController;
 use App\Http\Controllers\Api\OfferController;
@@ -63,7 +64,7 @@ Route::get('/courses/{course:slug}/reviews', [ReviewController::class, 'index'])
 
 // Playback: free-preview lessons are playable by guests; everything else
 // requires an enrolled (or admin) authenticated user — enforced in-controller.
-Route::get('/lessons/{lesson}/playback', [PlaybackController::class, 'show']);
+Route::get('/lessons/{lesson}/playback', [PlaybackController::class, 'show'])->middleware('content');
 // The written sample of the same free-preview lessons, read on the sales page.
 Route::get('/lessons/{lesson}/preview', [LessonPreviewController::class, 'show']);
 
@@ -108,11 +109,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/me/offers/{stage}/{action}', [OfferController::class, 'record'])
         ->whereIn('stage', Offer::STAGES)->whereIn('action', ['seen', 'click', 'dismiss'])->middleware('throttle:60,1');
 
-    // Course player (enrolled students / admins)
+    // Course player (enrolled students / admins): the outline, then each
+    // page's texts on their own, metered ('content': MeterCourseContent).
     Route::get('/courses/{course:slug}/learn', [LearnController::class, 'show']);
+    Route::get('/courses/{course:slug}/lessons/{lesson}/content', [LearnContentController::class, 'lesson'])
+        ->whereNumber('lesson')->middleware('content');
+    Route::get('/courses/{course:slug}/modules/{module}/content', [LearnContentController::class, 'module'])
+        ->whereNumber('module')->middleware('content');
 
     // Per-module action checklists + the student's own tasks
-    Route::get('/courses/{course:slug}/checklists', [ChecklistController::class, 'index']);
+    Route::get('/courses/{course:slug}/checklists', [ChecklistController::class, 'index'])->middleware('content');
     Route::put('/checklist-items/{item}', [ChecklistController::class, 'toggle'])->whereNumber('item');
     Route::post('/modules/{module}/tasks', [ChecklistController::class, 'storeTask'])->whereNumber('module');
     Route::patch('/tasks/{task}', [ChecklistController::class, 'updateTask'])->whereNumber('task');
@@ -120,19 +126,19 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/lessons/{lesson}/progress', [ProgressController::class, 'heartbeat']);
     Route::post('/lessons/{lesson}/complete', [ProgressController::class, 'complete']);
     Route::get('/lessons/{lesson}/attachments/{index}', [AttachmentController::class, 'download'])
-        ->whereNumber('index');
+        ->whereNumber('index')->middleware('content');
     // Printable safety sheet — same access gate as the lesson.
-    Route::get('/lessons/{lesson}/reflex-sheet', [ReflexSheetController::class, 'download']);
+    Route::get('/lessons/{lesson}/reflex-sheet', [ReflexSheetController::class, 'download'])->middleware('content');
 
     // Course documents (introduction, resources, annexes) and package downloads
     Route::get('/courses/{course:slug}/documents/{slug}', [CourseDocumentController::class, 'show'])
-        ->where('slug', '[a-z0-9-]+');
+        ->where('slug', '[a-z0-9-]+')->middleware('content');
     Route::get('/courses/{course:slug}/files/{key}', [CourseFileController::class, 'download'])
-        ->where('key', '[a-z0-9-]+')->middleware('throttle:30,1');
+        ->where('key', '[a-z0-9-]+')->middleware(['throttle:30,1', 'content']);
 
     // Anexo A: the student's province, phase by phase
     Route::get('/courses/{course:slug}/directory/{province}', [ProvinceDirectoryController::class, 'show'])
-        ->whereNumber('province');
+        ->whereNumber('province')->middleware('content');
     // The company directory: a module's companies, and the Partners page.
     Route::get('/courses/{course:slug}/modules/{module}/companies', [CompanyDirectoryController::class, 'module'])
         ->middleware('throttle:120,1');
@@ -140,7 +146,7 @@ Route::middleware('auth:sanctum')->group(function () {
         ->middleware('throttle:120,1');
 
     // Module quizzes and the final exam (graded on the server)
-    Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->whereNumber('quiz');
+    Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->whereNumber('quiz')->middleware('content');
     Route::post('/quizzes/{quiz}/attempts', [QuizController::class, 'start'])
         ->whereNumber('quiz')->middleware('throttle:30,1');
     Route::post('/quiz-attempts/{attempt}/submit', [QuizController::class, 'submit'])

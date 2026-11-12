@@ -1027,3 +1027,38 @@ html.lenis {
 .md-content .aviso > strong:first-child {
   @apply text-[#b42318];
 }
+
+/* ─── Course material: not selectable, not printable (ProtectedArea) ─────────
+   Outside the layers: the class is set from a component, the rules must hold
+   whatever Tailwind keeps. Fields stay selectable: what a student types is
+   theirs. Printed, the material gives way to a notice. */
+.course-protected {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.course-protected :is(input, textarea, select, [contenteditable='true'], .allow-select) {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.course-protected img {
+  -webkit-user-drag: none;
+}
+
+.course-protected-print-note {
+  display: none;
+}
+
+@media print {
+  .course-protected {
+    display: none !important;
+  }
+
+  .course-protected-print-note {
+    display: block;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+}

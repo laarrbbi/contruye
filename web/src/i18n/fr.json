@@ -1663,5 +1663,8 @@
       "closeTitle": "Fermer votre compte",
       "closeLead": "Écrivez-nous et nous le fermons. Les factures émises sont conservées aussi longtemps que l'exige la réglementation fiscale."
     }
+  },
+  "protection": {
+    "printNote": "L'impression du contenu du cours n'est pas disponible. Les modèles et les fiches se téléchargent depuis la plateforme."
   }
 }

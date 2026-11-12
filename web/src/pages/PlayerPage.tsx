@@ -5,7 +5,16 @@ import { usePageTitle } from '@/hooks/usePageTitle'
 import { isAxiosError } from 'axios'
 import { Calculator, ClipboardCheck, CircleCheck, Download, FileDown, Lock, Video } from 'lucide-react'
 import { useUser } from '@/api/auth'
-import { attachmentUrl, reflexSheetUrl, sendProgress, useLearn, useToggleComplete, type LearnLesson } from '@/api/learn'
+import {
+  attachmentUrl,
+  reflexSheetUrl,
+  sendProgress,
+  useLearn,
+  useLessonContent,
+  useModuleContent,
+  useToggleComplete,
+  type LearnLesson,
+} from '@/api/learn'
 import { useChecklists } from '@/api/checklists'
 import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { Button } from '@/components/ui/button'
@@ -19,6 +28,18 @@ import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { moduleLabel } from '@/lib/modules'
 import { cn, formatDuration } from '@/lib/utils'
 import { PlayerSkeleton } from '@/components/player/PlayerSkeleton'
+import { apiErrorMessage } from '@/api/orders'
+
+/** Still lines where the lesson's text is about to be, the second it takes to arrive. */
+function LessonTextSkeleton() {
+  return (
+    <div aria-hidden className="space-y-3">
+      {['w-11/12', 'w-full', 'w-10/12', 'w-9/12'].map((width) => (
+        <div key={width} className={cn('h-3.5 rounded-full bg-foreground/[0.06]', width)} />
+      ))}
+    </div>
+  )
+}
 
 const HEARTBEAT_INTERVAL_MS = 30_000
 
@@ -46,6 +67,12 @@ export function PlayerPage() {
     () => data?.modules.find((module) => module.lessons.some((l) => l.id === currentLessonId)) ?? null,
     [data, currentLessonId],
   )
+
+  // The texts of this page, each fetched on its own (the outline has none).
+  const isLastOfModule = currentModule?.lessons[currentModule.lessons.length - 1]?.id === currentLessonId
+  const lessonContent = useLessonContent(slug, currentLesson && !currentLesson.is_locked ? currentLesson.id : null)
+  const moduleContent = useModuleContent(slug, currentModule && !currentModule.is_locked && isLastOfModule ? currentModule.id : null)
+  const lessonText = lessonContent.data
 
   // Prev/next only visit playable lessons, so navigation skips locked modules.
   const previousLesson = useMemo(() => {
@@ -127,7 +154,6 @@ export function PlayerPage() {
   }
 
   const isFirstOfModule = currentModule?.lessons[0]?.id === currentLesson.id
-  const isLastOfModule = currentModule?.lessons[currentModule.lessons.length - 1]?.id === currentLesson.id
   const moduleChecklist = checklists.data?.modules.find(
     (m) => m.id === currentModule?.id && !m.is_locked && (m.items.length > 0 || m.custom_tasks.length > 0),
   )
@@ -208,26 +234,32 @@ export function PlayerPage() {
 
       {/* The module's objective, laws and where to go */}
       {!currentLesson.is_locked && currentModule && !currentModule.is_locked && (
-        <ModuleOverview key={currentModule.id} module={currentModule} defaultOpen={isFirstOfModule} />
+        <ModuleOverview key={currentModule.id} slug={data.course.slug} module={currentModule} defaultOpen={isFirstOfModule} />
       )}
 
       {/* The lesson, as the instructor wrote it */}
-      {!currentLesson.is_locked && currentLesson.content_html && (
+      {!currentLesson.is_locked && lessonContent.isLoading && <LessonTextSkeleton />}
+      {!currentLesson.is_locked && lessonContent.isError && (
+        <p role="alert" className="rounded-2xl bg-foreground/[0.04] px-5 py-4 text-sm text-foreground/70">
+          {apiErrorMessage(lessonContent.error) ?? t('common.error')}
+        </p>
+      )}
+      {!currentLesson.is_locked && lessonText?.content_html && (
         <article aria-label={currentLesson.title} className="space-y-3">
-          <ContentLanguageNote locale={currentLesson.content_locale} />
-          <MarkdownContent html={currentLesson.content_html} lang={currentLesson.content_locale} />
+          <ContentLanguageNote locale={lessonText.content_locale} />
+          <MarkdownContent html={lessonText.content_html} lang={lessonText.content_locale} />
         </article>
       )}
 
       {/* Key points of the lesson */}
-      {!currentLesson.is_locked && currentLesson.key_points.length > 0 && (
+      {!currentLesson.is_locked && lessonText && lessonText.key_points.length > 0 && (
         <section className="rounded-2xl border border-foreground/[0.08] bg-card p-6 shadow-[0_24px_48px_-34px_rgb(20_26_34/0.38)] sm:p-8">
           <h2 className="etiquette flex items-center gap-3 text-foreground/60">
             <span aria-hidden className="h-px w-6 shrink-0 bg-or" />
             {t('player.keyPoints')}
           </h2>
           <ul className="mt-5 space-y-3">
-            {currentLesson.key_points.map((point, index) => (
+            {lessonText.key_points.map((point, index) => (
               <li key={index} className="flex gap-3 text-[0.9375rem] leading-relaxed">
                 <span className="mt-[0.6rem] h-px w-3 shrink-0 bg-or" aria-hidden />
                 <span className="bidi-auto">{point}</span>
@@ -248,7 +280,7 @@ export function PlayerPage() {
       )}
 
       {/* Tagged blocks of the lesson */}
-      {!currentLesson.is_locked && <ContentBlocks blocks={currentLesson.blocks} />}
+      {!currentLesson.is_locked && lessonText && <ContentBlocks blocks={lessonText.blocks} />}
 
       {/* Attachments */}
       {currentLesson.attachments.length > 0 && (
@@ -276,7 +308,7 @@ export function PlayerPage() {
           partners, the checklist, the calculator and the quiz. */}
       {!currentLesson.is_locked && currentModule && !currentModule.is_locked && isLastOfModule && (
         <>
-          <ContentBlocks blocks={currentModule.blocks.filter((block) => block.type === 'section')} />
+          <ContentBlocks blocks={(moduleContent.data?.blocks ?? []).filter((block) => block.type === 'section')} />
 
           {currentModule.kind === 'phase' && (
             <ProvinceGuidePanel slug={data.course.slug} phase={currentModule.order} showAnnexLink={data.course.full_access} />

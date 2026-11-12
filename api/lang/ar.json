@@ -93,5 +93,6 @@
     "You already have the professional template.": "لديك النموذج الاحترافي بالفعل.",
     "Each value must be between 0 and 100 %.": "يجب أن تكون كل قيمة بين 0 و100 %.",
     "Unknown autonomous community: :name": "منطقة ذاتية الحكم غير معروفة: :name",
-    "This fiscal id is not valid. Check the number and its letter.": "هذا الرقم الضريبي غير صالح. تحقّق من الرقم والحرف المرافق له."
+    "This fiscal id is not valid. Check the number and its letter.": "هذا الرقم الضريبي غير صالح. تحقّق من الرقم والحرف المرافق له.",
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "فتحت صفحات كثيرة من الدورة في وقت قصير. انتظر بضع دقائق ثم تابع."
 }

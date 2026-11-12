@@ -77,13 +77,13 @@ function PartnerRow({ partner }: { partner: LearnPartner }) {
       {partner.description && <p className="bidi-auto mt-1 text-sm text-muted-foreground">{partner.description}</p>}
       <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
         {partner.phone && (
-          <a href={`tel:${partner.phone}`} dir="ltr" className="flex items-center gap-1.5 text-primary hover:underline">
+          <a href={`tel:${partner.phone}`} dir="ltr" className="allow-select flex items-center gap-1.5 text-primary hover:underline">
             <Phone className="h-3.5 w-3.5 shrink-0" />
             {partner.phone}
           </a>
         )}
         {partner.email && (
-          <a href={`mailto:${partner.email}`} dir="ltr" className="flex items-center gap-1.5 text-primary hover:underline">
+          <a href={`mailto:${partner.email}`} dir="ltr" className="allow-select flex items-center gap-1.5 text-primary hover:underline">
             <Mail className="h-3.5 w-3.5 shrink-0" />
             {partner.email}
           </a>
