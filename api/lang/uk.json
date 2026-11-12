@@ -92,5 +92,6 @@
     "The professional template is for the students of the course.": "Професійна модель — для слухачів курсу.",
     "You already have the professional template.": "У вас уже є професійна модель.",
     "Each value must be between 0 and 100 %.": "Кожне значення має бути від 0 до 100 %.",
-    "Unknown autonomous community: :name": "Невідома автономна спільнота: :name"
+    "Unknown autonomous community: :name": "Невідома автономна спільнота: :name",
+    "This fiscal id is not valid. Check the number and its letter.": "Цей податковий номер недійсний. Перевірте цифри та літеру."
 }

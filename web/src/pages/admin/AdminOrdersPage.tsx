@@ -215,7 +215,12 @@ function OrderDetailDialog({
                     variant="outline"
                     size="sm"
                     onClick={() =>
-                      setInvoiceTarget({ orderId: order.id, defaultBuyerName: order.user.name })
+                      setInvoiceTarget({
+                        orderId: order.id,
+                        defaultBuyerName: order.user.billing?.name || order.user.name,
+                        defaultBuyerAddress: order.user.billing?.address ?? undefined,
+                        defaultBuyerNif: order.user.billing?.nif ?? undefined,
+                      })
                     }
                   >
                     <FilePlus2 className="h-4 w-4" />

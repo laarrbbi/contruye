@@ -26,6 +26,12 @@ class UserResource extends JsonResource
                 'name' => $this->province->localizedName(),
             ]),
             'province_id' => $this->province_id,
+            // The details the student wants on their invoices (account page).
+            'billing' => [
+                'name' => $this->billing_name,
+                'nif' => $this->billing_nif,
+                'address' => $this->billing_address,
+            ],
             'created_at' => $this->created_at?->toISOString(),
         ];
     }

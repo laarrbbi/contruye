@@ -22,7 +22,7 @@ class RegisterRequest extends FormRequest
      * does keep that 0. RegisterPage.tsx carries the same pattern; the D flag
      * makes "$" the end of the string, as it already is in JavaScript.
      */
-    private const PHONE_PATTERN = '/^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34|330)[1-9]\d{7,14})$/D';
+    public const PHONE_PATTERN = '/^(?:[67]\d{8}|\+34[67]\d{8}|\+(?!34|330)[1-9]\d{7,14})$/D';
 
     public function authorize(): bool
     {
@@ -67,7 +67,7 @@ class RegisterRequest extends FormRequest
      * two drift, the form lets a number through and the API sends it back
      * refused, or the other way round.
      */
-    private static function normalisePhone(string $raw): string
+    public static function normalisePhone(string $raw): string
     {
         // Separators, listed one by one because \s is not the same set here
         // (with /u) and in JavaScript: ASCII whitespace; the no-break and other

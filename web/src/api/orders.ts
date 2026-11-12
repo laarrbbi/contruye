@@ -121,7 +121,7 @@ export interface Order {
   created_at: string
   has_receipt: boolean
   /** Present once the admin has issued a factura; `url` is cookie-auth navigable. */
-  invoice?: { number: string; issued_at: string; url: string } | null
+  invoice?: { number: string; issued_at: string; url: string; total_gross_c: number; currency: Currency } | null
   /** Present only for manual orders that are still actionable. */
   payment_instructions?: PaymentInstructions
 }

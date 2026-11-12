@@ -424,7 +424,14 @@ export interface AdminOrderModule {
 
 export interface AdminOrder {
   id: number
-  user: { id: number; name: string; email: string; phone: string | null }
+  user: {
+    id: number
+    name: string
+    email: string
+    phone: string | null
+    /** What the student saved for their invoices (account page). */
+    billing?: { name: string | null; nif: string | null; address: string | null }
+  }
   course: { id: number; slug: string; title: string }
   coupon_id: number | null
   amount: number

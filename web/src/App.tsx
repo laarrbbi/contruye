@@ -1,6 +1,6 @@
 import { lazy, type ReactNode } from 'react'
 import { buyingPath } from '@/lib/buyingPath'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { DirectionProvider } from '@radix-ui/react-direction'
 import { useTranslation } from 'react-i18next'
 import { Layout } from '@/components/layout/Layout'
@@ -34,7 +34,7 @@ const ResetPasswordPage = lazy(() => import('@/pages/ResetPasswordPage').then((m
 const DashboardPage = lazy(() => import('@/pages/DashboardPage').then((m) => ({ default: m.DashboardPage })))
 const CheckoutSuccessPage = lazy(() => import('@/pages/CheckoutSuccessPage').then((m) => ({ default: m.CheckoutSuccessPage })))
 const CheckoutFailurePage = lazy(() => import('@/pages/CheckoutFailurePage').then((m) => ({ default: m.CheckoutFailurePage })))
-const MyOrdersPage = lazy(() => import('@/pages/MyOrdersPage').then((m) => ({ default: m.MyOrdersPage })))
+const AccountPage = lazy(() => import('@/pages/AccountPage').then((m) => ({ default: m.AccountPage })))
 const PlayerPage = lazy(() => import('@/pages/PlayerPage').then((m) => ({ default: m.PlayerPage })))
 const ChecklistsPage = lazy(() => import('@/pages/ChecklistsPage').then((m) => ({ default: m.ChecklistsPage })))
 const QuizPage = lazy(() => import('@/pages/QuizPage').then((m) => ({ default: m.QuizPage })))
@@ -123,7 +123,10 @@ export default function App() {
                 <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
                 <Route path="/checkout/failure" element={<CheckoutFailurePage />} />
                 <Route path="/checkout/:slug" element={<CheckoutPage />} />
-                <Route path="/orders" element={<MyOrdersPage />} />
+                <Route path="/account" element={<AccountPage />} />
+                <Route path="/account/:section" element={<AccountPage />} />
+                {/* Orders live in the account now; old links and e-mails keep working. */}
+                <Route path="/orders" element={<Navigate to="/account/orders" replace />} />
                 <Route path="/orders/:id/pay" element={<ManualPaymentPage />} />
               </Route>
 

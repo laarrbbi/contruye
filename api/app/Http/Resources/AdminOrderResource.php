@@ -23,6 +23,13 @@ class AdminOrderResource extends JsonResource
                 'name' => $this->user->name,
                 'email' => $this->user->email,
                 'phone' => $this->user->phone,
+                // What the student asked to have on their invoices: it
+                // pre-fills the invoice form, the owner still issues it.
+                'billing' => [
+                    'name' => $this->user->billing_name,
+                    'nif' => $this->user->billing_nif,
+                    'address' => $this->user->billing_address,
+                ],
             ],
             'course' => [
                 'id' => $this->course->id,

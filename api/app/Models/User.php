@@ -30,6 +30,9 @@ class User extends Authenticatable
         'role',
         'locale',
         'province_id',
+        'billing_name',
+        'billing_nif',
+        'billing_address',
     ];
 
     /**

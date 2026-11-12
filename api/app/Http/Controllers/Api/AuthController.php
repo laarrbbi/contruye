@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\UpdateProfileRequest;
 use App\Http\Resources\UserResource;
 use App\Mail\WelcomeMail;
 use App\Models\User;
+use App\Support\Account\DeviceSessions;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -27,6 +28,7 @@ class AuthController extends Controller
 
         Auth::login($user);
         $request->session()->regenerate();
+        DeviceSessions::keepNewest($user, config('auth.max_devices'), $request->session()->getId());
 
         Mail::to($user)->queue(new WelcomeMail($user));
 
@@ -42,6 +44,7 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
+        DeviceSessions::keepNewest($request->user(), config('auth.max_devices'), $request->session()->getId());
 
         return UserResource::make($request->user());
     }
@@ -65,15 +68,10 @@ class AuthController extends Controller
      * Update the signed-in user's own preferences. Identity fields (email,
      * role, password) are deliberately not editable here.
      */
-    public function updateMe(Request $request): UserResource
+    public function updateMe(UpdateProfileRequest $request): UserResource
     {
-        $data = $request->validate([
-            'province_id' => ['sometimes', 'nullable', 'integer', 'exists:provinces,id'],
-            'locale' => ['sometimes', 'string', Rule::in(config('locales.supported'))],
-        ]);
-
         $user = $request->user();
-        $user->update($data);
+        $user->update($request->validated());
 
         return UserResource::make($user->load('province'));
     }

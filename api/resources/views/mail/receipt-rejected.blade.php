@@ -22,5 +22,5 @@
         {{ __('Please upload a new receipt from your orders page.') }}
     </p>
 
-    <x-mail.button :href="rtrim(config('app.frontend_url'), '/').'/orders'">{{ __('View my orders') }}</x-mail.button>
+    <x-mail.button :href="rtrim(config('app.frontend_url'), '/').'/account/orders'">{{ __('View my orders') }}</x-mail.button>
 @endsection

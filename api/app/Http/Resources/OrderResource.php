@@ -45,6 +45,8 @@ class OrderResource extends JsonResource
             'invoice' => $this->whenLoaded('invoice', fn () => $this->invoice === null ? null : [
                 'number' => $this->invoice->number,
                 'issued_at' => $this->invoice->issued_at?->toDateString(),
+                'total_gross_c' => $this->invoice->total_gross_c,
+                'currency' => $this->invoice->currency,
                 'url' => url("/api/orders/{$this->id}/invoice"),
             ]),
             'payment_instructions' => $this->when(

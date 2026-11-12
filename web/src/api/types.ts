@@ -13,6 +13,8 @@ export interface User {
   /** Where the learner is building — partner lists default to it. */
   province_id: number | null
   province?: { id: number; code: number; name: string } | null
+  /** What the student wants on their invoices (account page). */
+  billing?: { name: string | null; nif: string | null; address: string | null }
   created_at: string
 }
 

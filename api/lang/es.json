@@ -92,5 +92,6 @@
     "The professional template is for the students of the course.": "La plantilla profesional es para los alumnos del curso.",
     "You already have the professional template.": "Ya tienes la plantilla profesional.",
     "Each value must be between 0 and 100 %.": "Cada valor debe estar entre 0 y 100 %.",
-    "Unknown autonomous community: :name": "Comunidad autónoma desconocida: :name"
+    "Unknown autonomous community: :name": "Comunidad autónoma desconocida: :name",
+    "This fiscal id is not valid. Check the number and its letter.": "Este NIF no es válido. Revisa el número y su letra."
 }

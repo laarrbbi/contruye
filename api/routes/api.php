@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\Admin\CampaignController as AdminCampaignController;
 use App\Http\Controllers\Api\Admin\CashOrderController as AdminCashOrderController;
 use App\Http\Controllers\Api\Admin\CompanyController as AdminCompanyController;
@@ -90,6 +91,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
     Route::patch('/me', [AuthController::class, 'updateMe']);
+
+    // The account page: e-mail and password behind the current password (and a
+    // tight throttle, so it cannot be used to guess it), the devices signed in,
+    // a copy of the student's own data.
+    Route::put('/me/email', [AccountController::class, 'updateEmail'])->middleware('throttle:6,1');
+    Route::put('/me/password', [AccountController::class, 'updatePassword'])->middleware('throttle:6,1');
+    Route::get('/me/sessions', [AccountController::class, 'sessions']);
+    Route::delete('/me/sessions', [AccountController::class, 'closeOtherSessions']);
+    Route::delete('/me/sessions/{session}', [AccountController::class, 'closeSession'])->where('session', '[0-9a-f]{24}');
+    Route::get('/me/export', [AccountController::class, 'export'])->middleware('throttle:6,1');
     Route::get('/enrollments', [EnrollmentController::class, 'index']);
 
     // The offers whose moment has come (after the purchase, the milestone, the end).

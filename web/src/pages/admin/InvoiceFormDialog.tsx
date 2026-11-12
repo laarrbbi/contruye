@@ -38,6 +38,9 @@ export interface InvoiceFormTarget {
   orderId?: number
   /** Prefill for the buyer name (the account name). */
   defaultBuyerName?: string
+  /** What the student saved on their account for their invoices. */
+  defaultBuyerAddress?: string
+  defaultBuyerNif?: string
   /** Edit mode: the existing invoice to correct. */
   invoice?: AdminInvoice
 }
@@ -72,8 +75,8 @@ export function InvoiceFormDialog({ target, onClose }: InvoiceFormDialogProps) {
     setError(null)
     setForm({
       buyer_name: editing?.buyer_name ?? target.defaultBuyerName ?? '',
-      buyer_address: editing?.buyer_address ?? '',
-      buyer_nif: editing?.buyer_nif ?? '',
+      buyer_address: editing?.buyer_address ?? target.defaultBuyerAddress ?? '',
+      buyer_nif: editing?.buyer_nif ?? target.defaultBuyerNif ?? '',
       iva_rate: editing?.iva_rate ?? 21,
       notes: editing?.notes ?? '',
     })

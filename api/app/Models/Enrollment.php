@@ -49,6 +49,12 @@ class Enrollment extends Model
         return $this->belongsTo(Course::class);
     }
 
+    /** The module a per-module enrollment opens; null for the whole course. */
+    public function module(): BelongsTo
+    {
+        return $this->belongsTo(Module::class);
+    }
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);

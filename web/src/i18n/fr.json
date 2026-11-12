@@ -1573,5 +1573,95 @@
       "vsModules": "{{percent}} % de moins qu'au module",
       "left": "Encore {{time}} à ce prix"
     }
+  },
+  "account": {
+    "eyebrow": "Votre compte",
+    "title": "Mon compte",
+    "save": "Enregistrer",
+    "saved": "Enregistré.",
+    "currentPassword": "Mot de passe actuel",
+    "nav": {
+      "profile": "Informations personnelles",
+      "billing": "Facturation",
+      "invoices": "Factures",
+      "orders": "Commandes et paiements",
+      "security": "Sécurité",
+      "data": "Vos données"
+    },
+    "profile": {
+      "title": "Informations personnelles",
+      "memberSince": "Élève depuis {{date}}.",
+      "name": "Nom complet",
+      "phone": "Téléphone mobile",
+      "phoneHint": "Pour vous joindre au sujet de votre commande si besoin.",
+      "province": "Province",
+      "provinceHint": "Les partenaires et le guide de chaque module s'ouvrent sur elle.",
+      "noProvince": "Aucune province",
+      "language": "Langue",
+      "languageHint": "Celle de la plateforme et des e-mails que nous vous envoyons.",
+      "email": "E-mail",
+      "emailLead": "Il sert à vous connecter, et vos factures y arrivent.",
+      "changeEmail": "Modifier",
+      "emailDialogTitle": "Changer d'adresse e-mail",
+      "emailDialogBody": "Saisissez la nouvelle adresse et votre mot de passe actuel pour confirmer.",
+      "newEmail": "Nouvelle adresse e-mail",
+      "emailSave": "Changer l'e-mail"
+    },
+    "billing": {
+      "title": "Informations de facturation",
+      "lead": "Ce que vous voulez voir figurer sur vos factures. Si vous achetez en tant qu'entreprise ou professionnel, indiquez sa raison sociale et son numéro fiscal.",
+      "name": "Nom ou raison sociale",
+      "nameHint": "Vide : votre nom complet.",
+      "nif": "Numéro fiscal (NIF, NIE ou CIF)",
+      "nifHint": "Si vous vivez hors d'Espagne, le numéro fiscal de votre pays.",
+      "address": "Adresse complète",
+      "addressHint": "Rue et numéro, code postal, ville et pays.",
+      "note": "Elles servent pour les factures émises à partir de maintenant. Une facture déjà émise ne change pas."
+    },
+    "invoices": {
+      "title": "Factures",
+      "lead": "Toutes les factures de vos achats, en PDF.",
+      "empty": "Pas encore de facture. Quand la facture d'un paiement est émise, elle apparaît ici.",
+      "download": "Télécharger le PDF",
+      "hint": "Besoin de votre numéro fiscal ou de celui de votre entreprise sur la facture ? Ajoutez-le avant son émission, dans"
+    },
+    "orders": {
+      "title": "Commandes",
+      "lead": "Vos achats, leur état et ce que vous pouvez faire pour chacun."
+    },
+    "methods": {
+      "title": "Moyens de paiement",
+      "lead": "Nous ne gardons aucune carte : chaque paiement se fait sur le moment, avec le moyen de votre choix.",
+      "stripe": "Le paiement se fait sur la page sécurisée de Stripe. Construye ne voit ni ne garde le numéro de votre carte.",
+      "manual_transfer": "Nous vous donnons l'IBAN et le libellé ; vous envoyez le justificatif et nous ouvrons l'accès après vérification.",
+      "manual_bizum": "Nous vous donnons le numéro et le libellé ; vous envoyez la capture et nous ouvrons l'accès après vérification.",
+      "lastUsed": "Dernière utilisation le {{date}}.",
+      "notUsed": "Pas encore utilisé."
+    },
+    "security": {
+      "passwordTitle": "Mot de passe",
+      "passwordLead": "Le changer vous déconnecte de tous vos autres appareils.",
+      "newPassword": "Nouveau mot de passe",
+      "passwordHint": "10 caractères au moins.",
+      "confirmPassword": "Répétez le nouveau mot de passe",
+      "passwordSave": "Changer le mot de passe",
+      "passwordSaved": "Mot de passe changé.",
+      "devicesTitle": "Appareils connectés",
+      "devicesLead": "Appareils connectés en même temps : {{count}} au plus. Se connecter sur un autre ferme celui qui n'a pas servi depuis le plus longtemps.",
+      "thisDevice": "Cet appareil",
+      "unknownDevice": "Appareil inconnu",
+      "lastActive": "Dernière activité : {{date}}",
+      "close": "Déconnecter",
+      "closeOthers": "Déconnecter les autres",
+      "noList": "La liste des appareils n'est pas disponible sur ce serveur.",
+      "logout": "Se déconnecter de cet appareil"
+    },
+    "data": {
+      "exportTitle": "Une copie de vos données",
+      "exportLead": "Un fichier avec votre compte, vos informations de facturation, vos commandes, vos modules et votre progression.",
+      "export": "Télécharger mes données",
+      "closeTitle": "Fermer votre compte",
+      "closeLead": "Écrivez-nous et nous le fermons. Les factures émises sont conservées aussi longtemps que l'exige la réglementation fiscale."
+    }
   }
 }

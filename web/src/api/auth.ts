@@ -43,14 +43,25 @@ export function useUser() {
   })
 }
 
+export interface ProfilePayload {
+  name?: string
+  phone?: string
+  province_id?: number | null
+  locale?: Locale
+  billing_name?: string | null
+  billing_nif?: string | null
+  billing_address?: string | null
+}
+
 /**
- * Update the signed-in user's own preferences (currently their province). The
- * `['user']` cache is patched so every partner filter reacts at once.
+ * Update the signed-in user's own details (name, phone, province, language,
+ * invoice details). The `['user']` cache is patched so every partner filter
+ * reacts at once.
  */
 export function useUpdateProfile() {
   const qc = useQueryClient()
   return useMutation({
-    mutationFn: async (payload: { province_id?: number | null; locale?: Locale }) => {
+    mutationFn: async (payload: ProfilePayload) => {
       const { data } = await api.patch('/me', payload)
       return data.data as User
     },

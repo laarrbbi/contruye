@@ -92,5 +92,6 @@
     "The professional template is for the students of the course.": "Le modèle professionnel est réservé aux élèves de la formation.",
     "You already have the professional template.": "Vous avez déjà le modèle professionnel.",
     "Each value must be between 0 and 100 %.": "Chaque valeur doit être comprise entre 0 et 100 %.",
-    "Unknown autonomous community: :name": "Communauté autonome inconnue : :name"
+    "Unknown autonomous community: :name": "Communauté autonome inconnue : :name",
+    "This fiscal id is not valid. Check the number and its letter.": "Ce numéro fiscal n'est pas valide. Vérifiez le numéro et sa lettre."
 }

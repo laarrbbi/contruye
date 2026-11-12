@@ -92,5 +92,6 @@
     "The professional template is for the students of the course.": "النموذج الاحترافي مخصّص لطلاب الدورة.",
     "You already have the professional template.": "لديك النموذج الاحترافي بالفعل.",
     "Each value must be between 0 and 100 %.": "يجب أن تكون كل قيمة بين 0 و100 %.",
-    "Unknown autonomous community: :name": "منطقة ذاتية الحكم غير معروفة: :name"
+    "Unknown autonomous community: :name": "منطقة ذاتية الحكم غير معروفة: :name",
+    "This fiscal id is not valid. Check the number and its letter.": "هذا الرقم الضريبي غير صالح. تحقّق من الرقم والحرف المرافق له."
 }

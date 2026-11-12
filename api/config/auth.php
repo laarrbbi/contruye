@@ -75,6 +75,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Devices per account
+    |--------------------------------------------------------------------------
+    |
+    | How many devices one account can be signed in on at once. Signing in on
+    | one more closes the one used longest ago (DeviceSessions::keepNewest):
+    | a student keeps their computer and their phone, an account passed round
+    | a group does not stay open everywhere.
+    |
+    */
+
+    'max_devices' => (int) env('AUTH_MAX_DEVICES', 2),
+
+    /*
+    |--------------------------------------------------------------------------
     | Resetting Passwords
     |--------------------------------------------------------------------------
     |

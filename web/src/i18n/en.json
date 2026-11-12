@@ -1573,5 +1573,95 @@
       "vsModules": "{{percent}}% less than module by module",
       "left": "{{time}} left at this price"
     }
+  },
+  "account": {
+    "eyebrow": "Your account",
+    "title": "My account",
+    "save": "Save changes",
+    "saved": "Saved.",
+    "currentPassword": "Current password",
+    "nav": {
+      "profile": "Personal details",
+      "billing": "Billing details",
+      "invoices": "Invoices",
+      "orders": "Orders and payments",
+      "security": "Security",
+      "data": "Your data"
+    },
+    "profile": {
+      "title": "Personal details",
+      "memberSince": "Student since {{date}}.",
+      "name": "Full name",
+      "phone": "Mobile phone",
+      "phoneHint": "So we can reach you about your order if needed.",
+      "province": "Province",
+      "provinceHint": "Each module's partners and guide open on it.",
+      "noProvince": "No province",
+      "language": "Language",
+      "languageHint": "The platform's and the e-mails we send you.",
+      "email": "E-mail",
+      "emailLead": "You sign in with it and your invoices arrive there.",
+      "changeEmail": "Change",
+      "emailDialogTitle": "Change your e-mail",
+      "emailDialogBody": "Type the new address and your current password to confirm it.",
+      "newEmail": "New e-mail",
+      "emailSave": "Change e-mail"
+    },
+    "billing": {
+      "title": "Billing details",
+      "lead": "What you want on your invoices. If you buy as a company or a professional, enter its legal name and tax id.",
+      "name": "Name or company name",
+      "nameHint": "Empty: your full name.",
+      "nif": "Tax id (NIF, NIE or CIF)",
+      "nifHint": "If you live outside Spain, your country's tax number.",
+      "address": "Full address",
+      "addressHint": "Street and number, postcode, city and country.",
+      "note": "They are used on invoices issued from now on. An invoice already issued does not change."
+    },
+    "invoices": {
+      "title": "Invoices",
+      "lead": "Every invoice for your purchases, as a PDF.",
+      "empty": "No invoices yet. When a payment's invoice is issued, it appears here.",
+      "download": "Download PDF",
+      "hint": "Need your tax id or your company's on the invoice? Add it before it is issued, in"
+    },
+    "orders": {
+      "title": "Orders",
+      "lead": "Your purchases, their status and what you can do with each."
+    },
+    "methods": {
+      "title": "Payment methods",
+      "lead": "We do not store any card: each payment is made there and then, with the method you choose.",
+      "stripe": "Paid on Stripe's secure page. Construye never sees or stores your card number.",
+      "manual_transfer": "We give you the IBAN and the reference; you upload the receipt and we open access once it is checked.",
+      "manual_bizum": "We give you the number and the reference; you upload the screenshot and we open access once it is checked.",
+      "lastUsed": "Last used on {{date}}.",
+      "notUsed": "Not used yet."
+    },
+    "security": {
+      "passwordTitle": "Password",
+      "passwordLead": "Changing it signs you out on all your other devices.",
+      "newPassword": "New password",
+      "passwordHint": "At least 10 characters.",
+      "confirmPassword": "Repeat the new password",
+      "passwordSave": "Change password",
+      "passwordSaved": "Password changed.",
+      "devicesTitle": "Devices signed in",
+      "devicesLead": "Devices signed in at the same time: {{count}} at most. Signing in on another closes the one unused for longest.",
+      "thisDevice": "This device",
+      "unknownDevice": "Unknown device",
+      "lastActive": "Last active: {{date}}",
+      "close": "Sign out",
+      "closeOthers": "Sign out the others",
+      "noList": "The device list is not available on this server.",
+      "logout": "Sign out on this device"
+    },
+    "data": {
+      "exportTitle": "A copy of your data",
+      "exportLead": "One file with your account, billing details, orders, modules and progress.",
+      "export": "Download my data",
+      "closeTitle": "Close your account",
+      "closeLead": "Write to us and we will close it. Invoices already issued are kept for as long as tax rules require."
+    }
   }
 }

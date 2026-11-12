@@ -1573,5 +1573,95 @@
       "vsModules": "{{percent}} % menos que por módulos",
       "left": "A este precio durante {{time}} más"
     }
+  },
+  "account": {
+    "eyebrow": "Tu cuenta",
+    "title": "Mi cuenta",
+    "save": "Guardar cambios",
+    "saved": "Guardado.",
+    "currentPassword": "Contraseña actual",
+    "nav": {
+      "profile": "Datos personales",
+      "billing": "Datos de facturación",
+      "invoices": "Facturas",
+      "orders": "Pedidos y pagos",
+      "security": "Seguridad",
+      "data": "Tus datos"
+    },
+    "profile": {
+      "title": "Datos personales",
+      "memberSince": "Alumno desde {{date}}.",
+      "name": "Nombre completo",
+      "phone": "Teléfono móvil",
+      "phoneHint": "Para avisarte de tu pedido si hace falta.",
+      "province": "Provincia",
+      "provinceHint": "Los partners y la guía de cada módulo se abren en ella.",
+      "noProvince": "Sin provincia",
+      "language": "Idioma",
+      "languageHint": "El de la plataforma y el de los correos que te enviamos.",
+      "email": "Correo electrónico",
+      "emailLead": "Con él entras en la plataforma y te llegan las facturas.",
+      "changeEmail": "Cambiar",
+      "emailDialogTitle": "Cambiar el correo electrónico",
+      "emailDialogBody": "Escribe el nuevo correo y tu contraseña actual para confirmarlo.",
+      "newEmail": "Nuevo correo electrónico",
+      "emailSave": "Cambiar el correo"
+    },
+    "billing": {
+      "title": "Datos de facturación",
+      "lead": "Lo que quieres que figure en tus facturas. Si compras como empresa o como profesional, pon su razón social y su NIF.",
+      "name": "Nombre o razón social",
+      "nameHint": "Vacío: tu nombre completo.",
+      "nif": "NIF, NIE o CIF",
+      "nifHint": "Si vives fuera de España, el número fiscal de tu país.",
+      "address": "Dirección completa",
+      "addressHint": "Calle y número, código postal, ciudad y país.",
+      "note": "Se usan en las facturas que se emitan a partir de ahora. Una factura ya emitida no cambia."
+    },
+    "invoices": {
+      "title": "Facturas",
+      "lead": "Todas las facturas de tus compras, en PDF.",
+      "empty": "Aún no tienes facturas. Cuando se emite la factura de un pago, aparece aquí.",
+      "download": "Descargar PDF",
+      "hint": "¿Necesitas tu NIF o el de tu empresa en la factura? Añádelo antes de que se emita, en"
+    },
+    "orders": {
+      "title": "Pedidos",
+      "lead": "Tus compras, su estado y lo que puedes hacer con cada una."
+    },
+    "methods": {
+      "title": "Métodos de pago",
+      "lead": "No guardamos ninguna tarjeta: cada pago se hace en el momento, con el método que elijas.",
+      "stripe": "Se paga en la página segura de Stripe. Construye no ve ni guarda el número de tu tarjeta.",
+      "manual_transfer": "Te damos el IBAN y el concepto; subes el justificante y abrimos el acceso al comprobarlo.",
+      "manual_bizum": "Te damos el número y el concepto; subes la captura y abrimos el acceso al comprobarlo.",
+      "lastUsed": "Usado por última vez el {{date}}.",
+      "notUsed": "Aún no lo has usado."
+    },
+    "security": {
+      "passwordTitle": "Contraseña",
+      "passwordLead": "Al cambiarla se cierra la sesión en todos tus demás dispositivos.",
+      "newPassword": "Nueva contraseña",
+      "passwordHint": "Al menos 10 caracteres.",
+      "confirmPassword": "Repite la nueva contraseña",
+      "passwordSave": "Cambiar la contraseña",
+      "passwordSaved": "Contraseña cambiada.",
+      "devicesTitle": "Dispositivos con la sesión abierta",
+      "devicesLead": "Dispositivos con la cuenta abierta a la vez: {{count}} como máximo. Al entrar en otro, se cierra el que lleva más tiempo sin usarse.",
+      "thisDevice": "Este dispositivo",
+      "unknownDevice": "Dispositivo desconocido",
+      "lastActive": "Última actividad: {{date}}",
+      "close": "Cerrar sesión",
+      "closeOthers": "Cerrar las demás",
+      "noList": "La lista de dispositivos no está disponible en este servidor.",
+      "logout": "Cerrar sesión en este dispositivo"
+    },
+    "data": {
+      "exportTitle": "Una copia de tus datos",
+      "exportLead": "Un archivo con tu cuenta, tus datos de facturación, tus pedidos, tus módulos y tu progreso.",
+      "export": "Descargar mis datos",
+      "closeTitle": "Cerrar tu cuenta",
+      "closeLead": "Escríbenos y la cerramos. Las facturas emitidas se conservan el tiempo que exige la normativa fiscal."
+    }
   }
 }

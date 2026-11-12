@@ -75,5 +75,6 @@
     "The professional template is for the students of the course.": "The professional template is for the students of the course.",
     "You already have the professional template.": "You already have the professional template.",
     "Each value must be between 0 and 100 %.": "Each value must be between 0 and 100 %.",
-    "Unknown autonomous community: :name": "Unknown autonomous community: :name"
+    "Unknown autonomous community: :name": "Unknown autonomous community: :name",
+    "This fiscal id is not valid. Check the number and its letter.": "This fiscal id is not valid. Check the number and its letter."
 }

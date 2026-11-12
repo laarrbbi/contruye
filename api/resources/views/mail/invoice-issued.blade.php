@@ -17,5 +17,5 @@
         {{ __('Amount:') }} <strong>{{ Money::format($invoice->total_gross_c / 100, $invoice->currency) }}</strong>
     </p>
 
-    <x-mail.button :href="rtrim(config('app.frontend_url'), '/').'/orders'">{{ __('My orders') }}</x-mail.button>
+    <x-mail.button :href="rtrim(config('app.frontend_url'), '/').'/account/invoices'">{{ __('My orders') }}</x-mail.button>
 @endsection

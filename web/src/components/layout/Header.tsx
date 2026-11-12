@@ -1,6 +1,6 @@
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Check, ChevronDown, Globe, Handshake, LogOut, LayoutDashboard, Receipt, ShieldCheck } from 'lucide-react'
+import { Check, ChevronDown, Globe, Handshake, LogOut, LayoutDashboard, ShieldCheck, UserRound } from 'lucide-react'
 import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
@@ -60,7 +60,7 @@ export function Header() {
         // The player belongs to "my courses": it stays lit while learning.
         { to: '/dashboard', label: t('nav.myCourses'), icon: LayoutDashboard, also: /^\/learn(\/|$)/ },
         { to: '/partners', label: t('nav.partners'), icon: Handshake },
-        { to: '/orders', label: t('nav.myOrders'), icon: Receipt },
+        { to: '/account', label: t('nav.account'), icon: UserRound },
         ...(user.role === 'admin' ? [{ to: '/admin', label: t('nav.admin'), icon: ShieldCheck }] : []),
       ]
     : []
