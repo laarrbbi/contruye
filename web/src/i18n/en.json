@@ -1666,5 +1666,95 @@
   },
   "protection": {
     "printNote": "Printing the course material is not available. Templates and sheets can be downloaded from the platform."
+  },
+  "solar": {
+    "eyebrow": "Free calculator",
+    "free": "Free, no sign-up",
+    "sectionTitle": "What does a building plot really cost you?",
+    "sectionLead": "The price is not the cost. Choose the region, who sells and the buildable floor area: the course's Template 1 adds the taxes and tells you what the land costs for every square metre you will build.",
+    "pageLink": "The taxes on a plot in each region",
+    "seoTitle": "Building plot price calculator for Spain: ITP, AJD and VAT",
+    "seoDescription": "Work out for free what a building plot really costs in your Spanish region: ITP or VAT and AJD, notary and land registry, and the land cost per m² of floor area.",
+    "pageTitle": "Building plot price calculator",
+    "lead": "What you pay for a plot is not its price. Add the ITP if a private person sells it, or the AJD (and the VAT, which you advance) if a company does, the notary and the land registry, and the preliminary studies. Enter the price, the region and the buildable floor area: the calculator is Template 1 of the CONSTRUYE course.",
+    "form": {
+      "community": "Autonomous community of the plot",
+      "price": "Price of the plot",
+      "seller": "Who is selling?",
+      "sellerCompany": "A company, with VAT",
+      "sellerPerson": "A private person",
+      "buildable": "Buildable floor area (m²)"
+    },
+    "result": {
+      "landCost": "Cost of the plot (excl. VAT)",
+      "perM2": "Land cost per m² of floor area",
+      "perM2Unit": "€/m² of floor area",
+      "taxRate": "{{tax}} rate applied",
+      "calculating": "Calculating…",
+      "error": "The calculation failed. Try again in a moment."
+    },
+    "defaultsNote": "With the template's default values: notary and registry, {{notary}} of the price; municipal capital gains tax, {{plusvalia}}; due diligence, valuation and studies, {{dd}}. In the course you change them.",
+    "locked": {
+      "title": "With the full Template 1 (Module 1)",
+      "iva": "VAT on the plot (you advance it and recover it)",
+      "notary": "Notary and land registry",
+      "cashDay": "Money you need on the day of purchase",
+      "excel": "The template in Excel, with your figures",
+      "cta": "Unlock the full template",
+      "ctaPrice": "Module 1 · {{price}}",
+      "open": "Open the full template"
+    },
+    "disclaimer": "This is an estimate with the template's current parameters. Before buying, ask the notary for a quote and confirm the rate with your autonomous community.",
+    "how": {
+      "title": "How it is calculated",
+      "itpTerm": "If a private person sells",
+      "itp": "you pay the Transfer Tax (ITP) of the region where the plot is.",
+      "ajdTerm": "If a company sells",
+      "ajd": "you pay the VAT ({{vat}}), which you advance and a developer company (SL) recovers, and the Stamp Duty (AJD) of the region.",
+      "costTerm": "Cost of the plot (excl. VAT)",
+      "cost": "price + ITP or AJD + notary and registry + municipal capital gains tax if you take it on + due diligence, valuation and studies.",
+      "perM2Term": "Land cost per m²",
+      "perM2": "cost of the plot excl. VAT ÷ m² of floor area the buildability allows."
+    },
+    "rates": {
+      "title": "ITP and AJD on a plot in each autonomous community",
+      "lead": "The rates the calculator applies, reviewed on {{date}}. Where a region has banded rates, the note says which one is used.",
+      "community": "Autonomous community",
+      "itp": "ITP (private seller)",
+      "ajd": "AJD (company seller)",
+      "note": "Note"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "taxes": {
+        "q": "What taxes do you pay when buying a building plot in Spain?",
+        "a": "It depends on who sells. If a private person sells, the Transfer Tax (ITP) of the autonomous community where the plot is. If a company sells, VAT ({{vat}}) plus the Stamp Duty (AJD) of that community. In both cases, add the notary and the land registry."
+      },
+      "vat": {
+        "q": "Is the VAT on the plot a cost?",
+        "a": "You advance it on the day of purchase and recover it: a developer company (SL) deducts it. That is why the calculator gives the cost of the plot without VAT; the full template also tells you the money you need on the day of purchase, VAT included."
+      },
+      "perM2": {
+        "q": "What is the land cost per m² of floor area?",
+        "a": "What the land costs you for every square metre of floor area you will be able to build: the cost of the plot without VAT divided by its buildable floor area. It lets you compare one plot with another."
+      },
+      "plusvalia": {
+        "q": "Who pays the municipal capital gains tax (plusvalía)?",
+        "a": "The seller, unless agreed otherwise. If you take it on in your purchase, add it: the full template has a cell for it."
+      },
+      "rates": {
+        "q": "Where do each region's rates come from?",
+        "a": "From the template's «Parámetros legales» sheet, which the CONSTRUYE team keeps up to date; the date of the last review is under the table. Where a region has banded rates, the note in the table says which one applies."
+      },
+      "full": {
+        "q": "What does the course's full template add?",
+        "a": "It is Template 1 of Module 1: you adjust the notary and registry, the capital gains tax and the due diligence, see each tax separately and the money you need on the day of purchase, and download it in Excel with your figures."
+      }
+    },
+    "course": {
+      "title": "The first of five templates",
+      "body": "The CONSTRUYE course follows the 12 phases of a housing development, from the plot to after-sales, with a calculation template in modules 1, 2, 5, 7 and 8.",
+      "cta": "See the course"
+    }
   }
 }

@@ -113,6 +113,11 @@ makes that work lives in `docker/mysql-test/`.
   fingerprint (`ContentFingerprint`, `php artisan content:trace`). The player column is a
   `ProtectedArea` (no select/copy/print, the reader's e-mail as a faint pattern). Two devices per
   account (`DeviceSessions`). All of it: `docs/proteccion-contenido.md`.
+- The solar calculator (`SolarTeaser`, `SolarCalculatorController`, public): a sample of Plantilla 1
+  (4 inputs, 3 results, the rest locked to Module 1; constitution III, amendment 2026-11-12) on the
+  sales page (`landing/s7/Calculadora`) and on its own page `/calculadora-precio-solar`
+  (`SolarCalculatorPage`; server-rendered for search engines by `SeoPageController::solarCalculator`,
+  with the ITP/AJD of every community, an FAQ and its structured data, in the sitemap).
 - The account page (`/account/:section`, `AccountController`): details, invoice details (they
   pre-fill the owner's invoice form; `FiscalId` checks a NIF/NIE/CIF), invoices, orders and payment
   methods, password and devices, a JSON copy of the student's own data.

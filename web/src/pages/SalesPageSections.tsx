@@ -5,6 +5,7 @@ import { Questions } from '@/components/landing/s8/Questions'
 import { Cloture } from '@/components/landing/s9/Cloture'
 import { Pied } from '@/components/landing/kit/Pied'
 import { Aube } from '@/components/landing/kit/Passages'
+import { Calculadora } from '@/components/landing/s7/Calculadora'
 import { Programme } from '@/components/landing/s7/Programme'
 import { BANDE, H2, TEXTE } from '@/components/landing/kit/type'
 import { useReviews } from '@/api/reviews'
@@ -13,7 +14,7 @@ import { isDemo } from '@/lib/demo'
 import { cn } from '@/lib/utils'
 
 /**
- * The end of the sales page: the syllabus and its prices, the reviews once
+ * The end of the sales page: the solar calculator, the syllabus and its prices, the reviews once
  * there are real ones, the questions, and the handover. Its own chunk, since
  * it needs the course's modules and the configurator: see SalesPage.
  */
@@ -41,6 +42,8 @@ export function SalesPageSections({
   return (
     <>
       <Aube />
+      {/* The first tool to try, before the syllabus and its prices. */}
+      <Calculadora course={course} purchaseLink={purchaseLink} checkoutPath={checkoutPath} />
       <Programme course={course} cta={cta} purchaseLink={purchaseLink} checkoutPath={checkoutPath} />
       {showReviews && (
         <section data-tone="paper" className="bg-creme-100 text-plume">

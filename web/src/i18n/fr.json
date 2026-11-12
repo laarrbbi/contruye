@@ -1666,5 +1666,95 @@
   },
   "protection": {
     "printNote": "L'impression du contenu du cours n'est pas disponible. Les modèles et les fiches se téléchargent depuis la plateforme."
+  },
+  "solar": {
+    "eyebrow": "Calculateur gratuit",
+    "free": "Gratuit, sans inscription",
+    "sectionTitle": "Combien vous coûte vraiment un terrain à bâtir ?",
+    "sectionLead": "Le prix n'est pas le coût. Choisissez la communauté autonome, le vendeur et la surface constructible : le Modèle 1 du cours additionne les impôts et vous dit ce que vous coûte le terrain pour chaque mètre que vous allez construire.",
+    "pageLink": "Les impôts d'un terrain dans chaque communauté",
+    "seoTitle": "Calculateur du prix d'un terrain en Espagne : ITP, AJD et TVA",
+    "seoDescription": "Calculez gratuitement ce que vous coûte vraiment un terrain à bâtir dans votre communauté autonome : ITP ou TVA et AJD, notaire et registre, et le coût du sol par m² de plancher.",
+    "pageTitle": "Calculateur du prix d'un terrain à bâtir",
+    "lead": "Ce que vous payez pour un terrain n'est pas son prix. Ajoutez l'ITP si un particulier le vend, ou l'AJD (et la TVA, que vous avancez) si c'est une entreprise, le notaire et le registre, et les études préalables. Saisissez le prix, la communauté et la surface constructible : le calculateur est le Modèle 1 du cours CONSTRUYE.",
+    "form": {
+      "community": "Communauté autonome du terrain",
+      "price": "Prix du terrain",
+      "seller": "Qui vend ?",
+      "sellerCompany": "Une entreprise, avec TVA",
+      "sellerPerson": "Un particulier",
+      "buildable": "Surface constructible (m² de plancher)"
+    },
+    "result": {
+      "landCost": "Coût du terrain (hors TVA)",
+      "perM2": "Coût du sol par m² de plancher",
+      "perM2Unit": "€/m² de plancher",
+      "taxRate": "Taux d'{{tax}} appliqué",
+      "calculating": "Calcul en cours…",
+      "error": "Le calcul a échoué. Réessayez dans un instant."
+    },
+    "defaultsNote": "Avec les valeurs par défaut du modèle : notaire et registre, {{notary}} du prix ; plus-value municipale, {{plusvalia}} ; due diligence, expertise et études, {{dd}}. Dans le cours, vous les modifiez.",
+    "locked": {
+      "title": "Avec le Modèle 1 complet (Module 1)",
+      "iva": "TVA du terrain (vous l'avancez et la récupérez)",
+      "notary": "Notaire et registre",
+      "cashDay": "Argent nécessaire le jour de l'achat",
+      "excel": "Le modèle en Excel, avec vos chiffres",
+      "cta": "Débloquer le modèle complet",
+      "ctaPrice": "Module 1 · {{price}}",
+      "open": "Ouvrir le modèle complet"
+    },
+    "disclaimer": "C'est une estimation avec les paramètres en vigueur du modèle. Avant d'acheter, demandez un devis au notaire et confirmez le taux auprès de votre communauté autonome.",
+    "how": {
+      "title": "Comment c'est calculé",
+      "itpTerm": "Si un particulier vend",
+      "itp": "vous payez l'impôt sur les transmissions patrimoniales (ITP) de la communauté où se trouve le terrain.",
+      "ajdTerm": "Si une entreprise vend",
+      "ajd": "vous payez la TVA ({{vat}}), que vous avancez et qu'une société de promotion (SL) récupère, et l'impôt sur les actes juridiques documentés (AJD) de la communauté.",
+      "costTerm": "Coût du terrain (hors TVA)",
+      "cost": "prix + ITP ou AJD + notaire et registre + plus-value si vous la prenez en charge + due diligence, expertise et études.",
+      "perM2Term": "Coût du sol par m²",
+      "perM2": "coût du terrain hors TVA ÷ m² de plancher permis par la constructibilité."
+    },
+    "rates": {
+      "title": "ITP et AJD d'un terrain dans chaque communauté autonome",
+      "lead": "Les taux appliqués par le calculateur, revus le {{date}}. Là où la communauté a des taux par tranches, la note indique celui qui est utilisé.",
+      "community": "Communauté autonome",
+      "itp": "ITP (vendeur particulier)",
+      "ajd": "AJD (vendeur entreprise)",
+      "note": "Note"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "taxes": {
+        "q": "Quels impôts paie-t-on en achetant un terrain à bâtir en Espagne ?",
+        "a": "Cela dépend du vendeur. Si c'est un particulier, l'impôt sur les transmissions patrimoniales (ITP) de la communauté autonome où se trouve le terrain. Si c'est une entreprise, la TVA ({{vat}}) plus l'impôt sur les actes juridiques documentés (AJD) de cette communauté. Dans les deux cas, ajoutez le notaire et le registre."
+      },
+      "vat": {
+        "q": "La TVA du terrain est-elle un coût ?",
+        "a": "Vous l'avancez le jour de l'achat et la récupérez : une société de promotion (SL) la déduit. C'est pourquoi le calculateur donne le coût du terrain hors TVA ; le modèle complet vous indique aussi l'argent nécessaire le jour de l'achat, TVA comprise."
+      },
+      "perM2": {
+        "q": "Qu'est-ce que le coût du sol par m² de plancher ?",
+        "a": "Ce que vous coûte le terrain pour chaque mètre carré de plancher que vous pourrez construire : le coût du terrain hors TVA divisé par sa surface constructible. Il permet de comparer un terrain à un autre."
+      },
+      "plusvalia": {
+        "q": "Qui paie la plus-value municipale (plusvalía) ?",
+        "a": "Le vendeur, sauf accord contraire. Si vous la prenez en charge, ajoutez-la : le modèle complet a sa case."
+      },
+      "rates": {
+        "q": "D'où viennent les taux de chaque communauté ?",
+        "a": "De la feuille « Parámetros legales » du modèle, que l'équipe CONSTRUYE tient à jour ; la date de la dernière révision figure sous le tableau. Là où une communauté a des taux par tranches, la note du tableau indique celui qui s'applique."
+      },
+      "full": {
+        "q": "Qu'ajoute le modèle complet du cours ?",
+        "a": "C'est le Modèle 1 du Module 1 : vous ajustez le notaire et le registre, la plus-value et la due diligence, voyez chaque impôt séparément et l'argent nécessaire le jour de l'achat, et le téléchargez en Excel avec vos chiffres."
+      }
+    },
+    "course": {
+      "title": "Le premier de cinq modèles",
+      "body": "Le cours CONSTRUYE suit les 12 phases d'une promotion de logements, du terrain au service après-vente, avec un modèle de calcul dans les modules 1, 2, 5, 7 et 8.",
+      "cta": "Voir le cours"
+    }
   }
 }

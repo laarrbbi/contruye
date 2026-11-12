@@ -78,6 +78,15 @@ A module the student does not own must not leak through any surface.
   are for the buyers of the extra (the Financials module), which no plan and no full access
   includes. **Answers
   never leave the server before an attempt is submitted**, and the exam's answer key never does.
+- **Amendment (2026-11-12, owner's decision).** Plantilla 1 · Compra del solar has a public
+  sample on the sales page and on `/calculadora-precio-solar`, to show what the course's tools do:
+  four of its seven inputs (community, price, who sells, buildable floor area; the other three at
+  the template's own defaults) and three of its results (cost of the plot without VAT, land cost
+  per m² of floor area, the ITP or AJD rate applied), run by the package's engine with the legal
+  parameters in force (`SolarTeaser`). The other inputs, each tax line, the money needed on the
+  day and the Excel stay with the owners of Module 1; the sample names them, locked, and never
+  sends their values (`SolarCalculatorTest`). The rates of every community it lists are the
+  legal parameters the admin keeps, with their review date.
 - Every new endpoint that reads course material states which of the two gates it uses —
   ownership, or ownership-or-preview — and has a test asserting the withholding half, not just
   the 403.

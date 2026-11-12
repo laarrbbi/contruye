@@ -49,7 +49,7 @@ final class TemplateCatalog
     /**
      * The five small templates, by number: title, the module (by its order) it belongs to, its files.
      *
-     * @return array<int, array{number: int, title: string, module_order: int, module_label: string, excel: string, inputs: string}>
+     * @return array<int, array{number: int, title: string, module_order: int, module_label: string, excel: string, template: string, inputs: string}>
      */
     public function small(): array
     {
@@ -62,6 +62,7 @@ final class TemplateCatalog
                 'module_order' => (int) $module[1],
                 'module_label' => $entry['modulo'],
                 'excel' => $entry['excel'],
+                'template' => $entry['plantilla'],
                 'inputs' => $entry['entradas'],
             ];
         }
@@ -73,6 +74,12 @@ final class TemplateCatalog
     public function smallDictionary(int $number): array
     {
         return $this->source->json(self::BASE.'/plantillas_pequenas/'.$this->small()[$number]['inputs']);
+    }
+
+    /** @return array<string, mixed> the template as the package delivers it: its sheets, cells and formulas */
+    public function smallTemplate(int $number): array
+    {
+        return $this->source->json(self::BASE.'/plantillas_pequenas/'.$this->small()[$number]['template']);
     }
 
     public function smallWorkbook(int $number): string

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\LegalRegionRate;
 use App\Services\BusinessProfile;
 use App\Services\CourseSocialProof;
+use App\Support\Financials\SolarTeaser;
 use App\Support\LocalizedUrl;
 use App\Support\Markdown;
 use App\Support\PaymentWording;
@@ -12,6 +14,7 @@ use App\Support\SpaStrings;
 use App\Support\StructuredData;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
@@ -33,6 +36,12 @@ final class SeoPageController
         'es' => 'Español', 'en' => 'English', 'fr' => 'Français',
         'ar' => 'العربية', 'ru' => 'Русский', 'uk' => 'Українська',
     ];
+
+    /** The solar calculator's page, the same path in every language. */
+    public const SOLAR_PATH = '/calculadora-precio-solar';
+
+    /** Its questions, in the order the page shows them (web/src/i18n, solar.faq). */
+    public const SOLAR_FAQ = ['taxes', 'vat', 'perM2', 'plusvalia', 'rates', 'full'];
 
     private const OG_LOCALES = [
         'es' => 'es_ES', 'en' => 'en_GB', 'fr' => 'fr_FR',
@@ -80,6 +89,73 @@ final class SeoPageController
         return $this->page($locale, $head, $body);
     }
 
+    /**
+     * The solar calculator's page: what a plot really costs with its taxes,
+     * the rates of every autonomous community, and the questions people ask.
+     * The rates and dates are the legal parameters in force; the calculator
+     * itself runs in the app (SolarCalculatorController).
+     */
+    public function solarCalculator(Request $request, SolarTeaser $teaser): Response
+    {
+        $locale = (string) $request->route('locale');
+        app()->setLocale($locale);
+
+        $path = self::SOLAR_PATH;
+        $url = LocalizedUrl::to($path, $locale);
+        $options = $teaser->options();
+        $percent = fn (float $value) => self::percent($value, $locale);
+        $reviewedAt = $options['reviewed_at'] !== null
+            ? Carbon::parse($options['reviewed_at'])->locale($locale)->isoFormat('LL')
+            : null;
+        // The page's words, with the figures they name filled in from the parameters in force.
+        $s = fn (string $key) => strtr(SpaStrings::get($locale, "solar.{$key}"), [
+            '{{vat}}' => $percent($options['vat']),
+            '{{date}}' => (string) $reviewedAt,
+        ]);
+
+        $faq = collect(self::SOLAR_FAQ)->map(fn (string $key) => [
+            'question' => $s("faq.{$key}.q"),
+            'answer' => $s("faq.{$key}.a"),
+        ])->all();
+
+        $title = $s('pageTitle');
+        $head = $this->head($locale, $path, $s('seoTitle'), $s('seoDescription'), [
+            StructuredData::organization(),
+            StructuredData::website(),
+            StructuredData::webApplication($title, $s('seoDescription'), $url, $locale),
+            StructuredData::faq($faq, $url),
+            StructuredData::breadcrumbs([
+                ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
+                ['name' => $title, 'url' => $url],
+            ]),
+        ]);
+
+        $body = view('seo.solar-calculator', [
+            'locale' => $locale,
+            'header' => $this->header($locale, $path),
+            's' => $s,
+            'percent' => $percent,
+            'regions' => $options['regions'],
+            'reviewedAt' => $reviewedAt,
+            'faq' => $faq,
+            'courseUrl' => LocalizedUrl::path('/', $locale),
+        ])->render();
+
+        return $this->page($locale, $head, $body);
+    }
+
+    /** "6 %", "0,75 %", "7.5%": a rate as the reader's language writes it. */
+    private static function percent(float $value, string $locale): string
+    {
+        $formatter = new \NumberFormatter(match ($locale) {
+            'en' => 'en_GB', 'fr' => 'fr_FR', 'ar' => 'ar@numbers=latn', 'ru' => 'ru_RU', 'uk' => 'uk_UA',
+            default => 'es_ES',
+        }, \NumberFormatter::PERCENT);
+        $formatter->setAttribute(\NumberFormatter::MAX_FRACTION_DIGITS, 2);
+
+        return (string) $formatter->format($value);
+    }
+
     public function robots(): Response
     {
         // /api stays open: Google renders the app, and the app reads the
@@ -91,6 +167,7 @@ final class SeoPageController
             'Disallow: /dashboard',
             'Disallow: /learn',
             'Disallow: /orders',
+            'Disallow: /account',
             'Disallow: /reset-password',
             '',
             'Sitemap: '.rtrim((string) config('app.url'), '/').'/sitemap.xml',
@@ -106,6 +183,10 @@ final class SeoPageController
 
         $pages = collect([['path' => '/', 'lastmod' => $main?->updated_at]]);
         $pages->push(['path' => '/cursos', 'lastmod' => $courses->max('updated_at')]);
+        // The calculator's page changes when its rates do.
+        $pages->push(['path' => self::SOLAR_PATH, 'lastmod' => LegalRegionRate::query()->max('updated_at') !== null
+            ? Carbon::parse(LegalRegionRate::query()->max('updated_at'))
+            : null]);
         foreach ($courses as $course) {
             if ($course->slug !== config('seo.main_course')) {
                 $pages->push(['path' => "/cursos/{$course->slug}", 'lastmod' => $course->updated_at]);
@@ -171,6 +252,8 @@ final class SeoPageController
             'faq' => $faq,
             'paymentNote' => PaymentWording::sentence($locale, SpaStrings::get($locale, 'landing.hero.paymentNote')),
             'checkoutUrl' => '/register?redirect='.rawurlencode("/checkout/{$slug}"),
+            // The main page links the solar calculator's own page.
+            'solarUrl' => $isMain ? LocalizedUrl::path(self::SOLAR_PATH, $locale) : null,
         ])->render();
 
         return $this->page($locale, $head, $body);

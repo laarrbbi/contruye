@@ -156,6 +156,29 @@ final class StructuredData
     }
 
     /**
+     * A free tool in the browser (the solar calculator): what it is, in which
+     * language, and that it costs nothing.
+     *
+     * @return array<string, mixed>
+     */
+    public static function webApplication(string $name, string $description, string $url, string $locale): array
+    {
+        return [
+            '@type' => 'WebApplication',
+            '@id' => $url.'#app',
+            'name' => $name,
+            'description' => $description,
+            'url' => $url,
+            'inLanguage' => $locale,
+            'applicationCategory' => 'FinanceApplication',
+            'operatingSystem' => 'Web',
+            'isAccessibleForFree' => true,
+            'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR'],
+            'publisher' => ['@id' => self::base().'/#organization'],
+        ];
+    }
+
+    /**
      * @param  list<array{name: string, url: string}>  $crumbs
      * @return array<string, mixed>
      */

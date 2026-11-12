@@ -26,6 +26,7 @@ const AuthPage = lazy(() => buyingPath.register().then((m) => ({ default: m.Auth
 const CheckoutPage = lazy(() => buyingPath.checkout().then((m) => ({ default: m.CheckoutPage })))
 const ManualPaymentPage = lazy(() => buyingPath.manualPayment().then((m) => ({ default: m.ManualPaymentPage })))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })))
+const SolarCalculatorPage = lazy(() => import('@/pages/SolarCalculatorPage').then((m) => ({ default: m.SolarCalculatorPage })))
 const HomePage = lazy(() => import('@/pages/HomePage').then((m) => ({ default: m.HomePage })))
 // The redesign's hero on its own, in each language, to show the owner before
 // the other sections are built. Its own chunk: the live sales page above does
@@ -99,6 +100,7 @@ export default function App() {
                   <Route index element={<SalesPage />} />
                   <Route path="cursos" element={<HomePage />} />
                   <Route path="cursos/:slug" element={<SalesPage />} />
+                  <Route path="calculadora-precio-solar" element={<SolarCalculatorPage />} />
                 </Route>
               ))}
               {/* The app's own screens. deploy/nginx/construye.conf lists them too:

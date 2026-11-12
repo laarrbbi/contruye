@@ -1666,5 +1666,95 @@
   },
   "protection": {
     "printNote": "La impresión del material del curso no está disponible. Las plantillas y las fichas se descargan desde la plataforma."
+  },
+  "solar": {
+    "eyebrow": "Calculadora gratuita",
+    "free": "Gratis y sin registro",
+    "sectionTitle": "¿Cuánto te cuesta de verdad un solar?",
+    "sectionLead": "El precio no es el coste. Elige la comunidad, quién vende y los metros de techo: la Plantilla 1 del curso suma los impuestos y te dice cuánto te cuesta el suelo por cada metro que vas a construir.",
+    "pageLink": "Los impuestos de un solar en cada comunidad",
+    "seoTitle": "Calculadora del precio de un solar: ITP, AJD e IVA",
+    "seoDescription": "Calcula gratis lo que te cuesta de verdad un solar en tu comunidad autónoma: ITP o IVA y AJD, notaría y registro, y la repercusión del suelo por m² de techo.",
+    "pageTitle": "Calculadora del precio de un solar",
+    "lead": "Lo que pagas por un solar no es su precio. Súmale el ITP si lo vende un particular, o el AJD (y el IVA, que adelantas) si lo vende una empresa, la notaría y el registro y los estudios previos. Escribe el precio, la comunidad y la edificabilidad: la calculadora es la Plantilla 1 del curso CONSTRUYE.",
+    "form": {
+      "community": "Comunidad autónoma del solar",
+      "price": "Precio del solar",
+      "seller": "¿Quién vende?",
+      "sellerCompany": "Una empresa, con IVA",
+      "sellerPerson": "Un particular",
+      "buildable": "Edificabilidad (m² de techo)"
+    },
+    "result": {
+      "landCost": "Coste del solar (sin IVA)",
+      "perM2": "Repercusión del suelo (€/m² de techo)",
+      "perM2Unit": "€/m² de techo",
+      "taxRate": "Tipo de {{tax}} aplicado",
+      "calculating": "Calculando…",
+      "error": "No se ha podido calcular. Inténtalo de nuevo en un momento."
+    },
+    "defaultsNote": "Con los valores por defecto de la plantilla: notaría y registro, {{notary}} del precio; plusvalía, {{plusvalia}}; due diligence, tasación y estudios, {{dd}}. En el curso los cambias.",
+    "locked": {
+      "title": "Con la Plantilla 1 completa (Módulo 1)",
+      "iva": "IVA del solar (lo adelantas y lo recuperas)",
+      "notary": "Notaría y registro",
+      "cashDay": "Dinero que necesitas el día de la compra",
+      "excel": "La plantilla en Excel, con tus datos",
+      "cta": "Desbloquear la plantilla completa",
+      "ctaPrice": "Módulo 1 · {{price}}",
+      "open": "Abrir la plantilla completa"
+    },
+    "disclaimer": "Es una estimación con los parámetros vigentes de la plantilla. Antes de comprar, pide presupuesto a la notaría y confirma el tipo con tu comunidad autónoma.",
+    "how": {
+      "title": "Cómo se calcula",
+      "itpTerm": "Si vende un particular",
+      "itp": "pagas el Impuesto sobre Transmisiones Patrimoniales (ITP) de la comunidad donde está el solar.",
+      "ajdTerm": "Si vende una empresa",
+      "ajd": "pagas el IVA ({{vat}}), que adelantas y una SL promotora recupera, y el impuesto de Actos Jurídicos Documentados (AJD) de la comunidad.",
+      "costTerm": "Coste del solar (sin IVA)",
+      "cost": "precio + ITP o AJD + notaría y registro + plusvalía si la asumes + due diligence, tasación y estudios.",
+      "perM2Term": "Repercusión del suelo",
+      "perM2": "coste del solar sin IVA ÷ m² de techo que permite la edificabilidad."
+    },
+    "rates": {
+      "title": "ITP y AJD de un solar en cada comunidad autónoma",
+      "lead": "Los tipos que aplica la calculadora, revisados el {{date}}. Donde la comunidad tiene tipos por tramos, la nota dice cuál se usa.",
+      "community": "Comunidad autónoma",
+      "itp": "ITP (vende un particular)",
+      "ajd": "AJD (vende una empresa)",
+      "note": "Nota"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "taxes": {
+        "q": "¿Qué impuestos se pagan al comprar un solar?",
+        "a": "Depende de quién venda. Si vende un particular, el Impuesto sobre Transmisiones Patrimoniales (ITP) de la comunidad autónoma donde está el solar. Si vende una empresa, el IVA ({{vat}}) más el impuesto de Actos Jurídicos Documentados (AJD) de esa comunidad. En los dos casos se suman la notaría y el registro."
+      },
+      "vat": {
+        "q": "¿El IVA del solar es un coste?",
+        "a": "Lo adelantas el día de la compra y lo recuperas: una SL promotora lo deduce. Por eso la calculadora da el coste del solar sin IVA; la plantilla completa te dice además el dinero que necesitas el día de la compra, con el IVA."
+      },
+      "perM2": {
+        "q": "¿Qué es la repercusión del suelo?",
+        "a": "Lo que te cuesta el suelo por cada metro cuadrado de techo que vas a poder construir: el coste del solar sin IVA dividido entre su edificabilidad. Sirve para comparar un solar con otro."
+      },
+      "plusvalia": {
+        "q": "¿Quién paga la plusvalía municipal?",
+        "a": "El vendedor, salvo pacto. Si en tu compra la asumes tú, súmala: la plantilla completa tiene su casilla."
+      },
+      "rates": {
+        "q": "¿De dónde salen los tipos de cada comunidad?",
+        "a": "De la hoja «Parámetros legales» de la plantilla, que el equipo de CONSTRUYE mantiene al día; la fecha de la última revisión está bajo la tabla. Donde una comunidad tiene tipos por tramos, la nota de la tabla dice cuál se aplica."
+      },
+      "full": {
+        "q": "¿Qué añade la plantilla completa del curso?",
+        "a": "Es la Plantilla 1 del Módulo 1: ajustas la notaría y el registro, la plusvalía y la due diligence, ves cada impuesto por separado y el dinero que necesitas el día de la compra, y la descargas en Excel con tus datos."
+      }
+    },
+    "course": {
+      "title": "La primera de cinco plantillas",
+      "body": "El curso CONSTRUYE sigue las 12 fases de una promoción de viviendas, del solar a la postventa, con una plantilla de cálculo en los módulos 1, 2, 5, 7 y 8.",
+      "cta": "Ver el curso"
+    }
   }
 }

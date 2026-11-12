@@ -44,6 +44,7 @@ use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\ReflexSheetController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SmallTemplateController;
+use App\Http\Controllers\Api\SolarCalculatorController;
 use App\Http\Controllers\Api\WebhookController;
 use App\Models\Offer;
 use Illuminate\Support\Facades\Route;
@@ -85,6 +86,10 @@ Route::match(['get', 'post'], '/offers/unsubscribe/{user}', [OfferLinkController
     ->name('offers.unsubscribe')->middleware(['signed', 'throttle:30,1']);
 
 // Live pricing quote (guest-friendly; owned modules excluded when authenticated)
+// The public sample of Plantilla 1 (Compra del solar): the sales page's calculator.
+Route::get('/public/solar-calculator', [SolarCalculatorController::class, 'show'])->middleware('throttle:60,1');
+Route::post('/public/solar-calculator', [SolarCalculatorController::class, 'calculate'])->middleware('throttle:30,1');
+
 Route::post('/checkout/quote', [CheckoutController::class, 'quote']);
 Route::get('/checkout/methods', [CheckoutController::class, 'methods'])->middleware('throttle:60,1');
 

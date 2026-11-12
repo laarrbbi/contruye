@@ -19,6 +19,7 @@ foreach (config('locales.supported') as $locale) {
         Route::get('/', [SeoPageController::class, 'home'])->defaults('locale', $locale);
         Route::get('/cursos', [SeoPageController::class, 'catalog'])->defaults('locale', $locale);
         Route::get('/cursos/{slug}', [SeoPageController::class, 'course'])->defaults('locale', $locale);
+        Route::get(SeoPageController::SOLAR_PATH, [SeoPageController::class, 'solarCalculator'])->defaults('locale', $locale);
     });
 }
 

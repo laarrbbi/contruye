@@ -6,7 +6,7 @@ import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { ContactOptions } from '@/components/ContactOptions'
 import { IsolatedValue } from '@/components/IsolatedValue'
 import { LOCALES, type Locale } from '@/i18n'
-import { localizedPath } from '@/i18n/paths'
+import { localizedPath, SOLAR_CALCULATOR_PATH } from '@/i18n/paths'
 
 /** The small heading over each footer column. */
 const COLUMN_TITLE = 'text-xs font-semibold uppercase tracking-wider text-foreground/70 rtl:tracking-normal'
@@ -33,6 +33,7 @@ export function Footer() {
   const links = [
     { to: localizedPath('/', locale), label: t('nav.home') },
     { to: localizedPath('/cursos', locale), label: t('footer.courses') },
+    { to: localizedPath(SOLAR_CALCULATOR_PATH, locale), label: t('solar.pageTitle') },
     ...(user
       ? [{ to: '/dashboard', label: t('nav.myCourses') }]
       : [
