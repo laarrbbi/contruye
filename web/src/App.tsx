@@ -27,6 +27,8 @@ const CheckoutPage = lazy(() => buyingPath.checkout().then((m) => ({ default: m.
 const ManualPaymentPage = lazy(() => buyingPath.manualPayment().then((m) => ({ default: m.ManualPaymentPage })))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })))
 const SolarCalculatorPage = lazy(() => import('@/pages/SolarCalculatorPage').then((m) => ({ default: m.SolarCalculatorPage })))
+const NewsletterPage = lazy(() => import('@/pages/NewsletterPage').then((m) => ({ default: m.NewsletterPage })))
+const AdminNewsletterPage = lazy(() => import('@/pages/admin/AdminNewsletterPage').then((m) => ({ default: m.AdminNewsletterPage })))
 const HomePage = lazy(() => import('@/pages/HomePage').then((m) => ({ default: m.HomePage })))
 // The redesign's hero on its own, in each language, to show the owner before
 // the other sections are built. Its own chunk: the live sales page above does
@@ -111,6 +113,8 @@ export default function App() {
                 <Route path="/forgot-password" element={null} />
               </Route>
               <Route path="/reset-password" element={<ResetPasswordPage />} />
+              {/* Where the newsletter's e-mail links land: confirm, or leave. */}
+              <Route path="/newsletter" element={<NewsletterPage />} />
 
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
@@ -148,6 +152,7 @@ export default function App() {
                   <Route path="offers" element={<AdminOffersPage />} />
                   <Route path="templates" element={<AdminTemplatesPage />} />
                   <Route path="coupons" element={<AdminCouponsPage />} />
+                  <Route path="newsletter" element={<AdminNewsletterPage />} />
                 </Route>
               </Route>
 

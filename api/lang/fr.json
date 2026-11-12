@@ -94,5 +94,12 @@
     "Each value must be between 0 and 100 %.": "Chaque valeur doit être comprise entre 0 et 100 %.",
     "Unknown autonomous community: :name": "Communauté autonome inconnue : :name",
     "This fiscal id is not valid. Check the number and its letter.": "Ce numéro fiscal n'est pas valide. Vérifiez le numéro et sa lettre.",
-    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Vous avez ouvert beaucoup de pages du cours en peu de temps. Patientez quelques minutes, puis continuez."
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Vous avez ouvert beaucoup de pages du cours en peu de temps. Patientez quelques minutes, puis continuez.",
+    "Confirm your subscription to the CONSTRUYE newsletter": "Confirmez votre inscription à la newsletter de CONSTRUYE",
+    "Someone, hopefully you, asked to receive the CONSTRUYE newsletter at this address.": "Quelqu'un, nous l'espérons vous, a demandé à recevoir la newsletter de CONSTRUYE à cette adresse.",
+    "Confirm it with the button below. If it was not you, ignore this e-mail: without confirmation we will not write to you again.": "Confirmez-le avec le bouton ci-dessous. Si ce n'était pas vous, ignorez cet e-mail : sans confirmation, nous ne vous écrirons plus.",
+    "Confirm my subscription": "Confirmer mon inscription",
+    "Every newsletter carries a link to unsubscribe in one click.": "Chaque newsletter contient un lien pour vous désinscrire en un clic.",
+    "Check your inbox: we have sent you a link to confirm.": "Consultez votre boîte mail : nous vous avons envoyé un lien de confirmation.",
+    "This link is not valid any more.": "Ce lien n'est plus valide."
 }

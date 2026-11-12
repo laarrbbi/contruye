@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\InvoicingSettingsController as AdminInvoicingSettingsController;
 use App\Http\Controllers\Api\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Api\Admin\ModuleController as AdminModuleController;
+use App\Http\Controllers\Api\Admin\NewsletterController as AdminNewsletterController;
 use App\Http\Controllers\Api\Admin\OfferController as AdminOfferController;
 use App\Http\Controllers\Api\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Api\Admin\PartnerController as AdminPartnerController;
@@ -32,6 +33,7 @@ use App\Http\Controllers\Api\FinancialsExtraController;
 use App\Http\Controllers\Api\LearnContentController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\LessonPreviewController;
+use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\OfferController;
 use App\Http\Controllers\Api\OfferLinkController;
 use App\Http\Controllers\Api\OrderController;
@@ -86,6 +88,11 @@ Route::match(['get', 'post'], '/offers/unsubscribe/{user}', [OfferLinkController
     ->name('offers.unsubscribe')->middleware(['signed', 'throttle:30,1']);
 
 // Live pricing quote (guest-friendly; owned modules excluded when authenticated)
+// The newsletter: sign-up (double opt-in), confirmation and unsubscription by token.
+Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->middleware('throttle:5,1');
+Route::post('/newsletter/confirm', [NewsletterController::class, 'confirm'])->middleware('throttle:20,1');
+Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->middleware('throttle:20,1');
+
 // The public sample of Plantilla 1 (Compra del solar): the sales page's calculator.
 Route::get('/public/solar-calculator', [SolarCalculatorController::class, 'show'])->middleware('throttle:60,1');
 Route::post('/public/solar-calculator', [SolarCalculatorController::class, 'calculate'])->middleware('throttle:30,1');
@@ -227,6 +234,8 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     // Invoicing: seller settings + issued invoices (factura on demand)
     Route::get('invoicing/settings', [AdminInvoicingSettingsController::class, 'show']);
     Route::put('invoicing/settings', [AdminInvoicingSettingsController::class, 'update']);
+    Route::get('newsletter', [AdminNewsletterController::class, 'index']);
+    Route::get('newsletter/export', [AdminNewsletterController::class, 'export']);
     Route::get('invoices', [AdminInvoiceController::class, 'index']);
     Route::post('orders/{order}/invoice', [AdminInvoiceController::class, 'store'])->whereNumber('order');
     Route::put('invoices/{invoice}', [AdminInvoiceController::class, 'update'])->whereNumber('invoice');

@@ -94,5 +94,12 @@
     "Each value must be between 0 and 100 %.": "Каждое значение должно быть от 0 до 100 %.",
     "Unknown autonomous community: :name": "Неизвестное автономное сообщество: :name",
     "This fiscal id is not valid. Check the number and its letter.": "Этот налоговый номер недействителен. Проверьте цифры и букву.",
-    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Вы открыли много страниц курса за короткое время. Подождите несколько минут и продолжайте."
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Вы открыли много страниц курса за короткое время. Подождите несколько минут и продолжайте.",
+    "Confirm your subscription to the CONSTRUYE newsletter": "Подтвердите подписку на рассылку CONSTRUYE",
+    "Someone, hopefully you, asked to receive the CONSTRUYE newsletter at this address.": "Кто-то — надеемся, вы — попросил присылать рассылку CONSTRUYE на этот адрес.",
+    "Confirm it with the button below. If it was not you, ignore this e-mail: without confirmation we will not write to you again.": "Подтвердите это кнопкой ниже. Если это были не вы, просто проигнорируйте письмо: без подтверждения мы больше вам не напишем.",
+    "Confirm my subscription": "Подтвердить подписку",
+    "Every newsletter carries a link to unsubscribe in one click.": "В каждом письме есть ссылка, чтобы отписаться в один клик.",
+    "Check your inbox: we have sent you a link to confirm.": "Проверьте почту: мы отправили ссылку для подтверждения.",
+    "This link is not valid any more.": "Эта ссылка больше не действует."
 }

@@ -168,6 +168,7 @@ final class SeoPageController
             'Disallow: /learn',
             'Disallow: /orders',
             'Disallow: /account',
+            'Disallow: /newsletter',
             'Disallow: /reset-password',
             '',
             'Sitemap: '.rtrim((string) config('app.url'), '/').'/sitemap.xml',

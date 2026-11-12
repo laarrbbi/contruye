@@ -94,5 +94,12 @@
     "Each value must be between 0 and 100 %.": "Кожне значення має бути від 0 до 100 %.",
     "Unknown autonomous community: :name": "Невідома автономна спільнота: :name",
     "This fiscal id is not valid. Check the number and its letter.": "Цей податковий номер недійсний. Перевірте цифри та літеру.",
-    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Ви відкрили багато сторінок курсу за короткий час. Зачекайте кілька хвилин і продовжуйте."
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "Ви відкрили багато сторінок курсу за короткий час. Зачекайте кілька хвилин і продовжуйте.",
+    "Confirm your subscription to the CONSTRUYE newsletter": "Підтвердьте підписку на розсилку CONSTRUYE",
+    "Someone, hopefully you, asked to receive the CONSTRUYE newsletter at this address.": "Хтось — сподіваємося, ви — попросив надсилати розсилку CONSTRUYE на цю адресу.",
+    "Confirm it with the button below. If it was not you, ignore this e-mail: without confirmation we will not write to you again.": "Підтвердьте це кнопкою нижче. Якщо це були не ви, просто проігноруйте лист: без підтвердження ми більше вам не напишемо.",
+    "Confirm my subscription": "Підтвердити підписку",
+    "Every newsletter carries a link to unsubscribe in one click.": "У кожному листі є посилання, щоб відписатися в один клік.",
+    "Check your inbox: we have sent you a link to confirm.": "Перевірте пошту: ми надіслали посилання для підтвердження.",
+    "This link is not valid any more.": "Це посилання більше не дійсне."
 }

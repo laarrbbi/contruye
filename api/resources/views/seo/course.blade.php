@@ -41,6 +41,15 @@
         </div>
     </section>
 
+    @if ($solarUrl)
+        {{-- The free calculator of the sales page, and its own page. --}}
+        <section class="container space-y-3 py-12">
+            <h2 class="text-2xl font-semibold text-primary">{{ $s('solar.sectionTitle') }}</h2>
+            <p class="max-w-3xl leading-relaxed text-muted-foreground">{{ $s('solar.sectionLead') }}</p>
+            <p><a href="{{ $solarUrl }}" class="font-semibold underline">{{ $s('solar.pageLink') }}</a></p>
+        </section>
+    @endif
+
     <section class="container space-y-6 py-12">
         <h2 class="text-2xl font-semibold text-primary">{{ $course->localizedTitle($locale) }}</h2>
         {{-- dir="auto": material not yet translated reads in Spanish, in its own direction. --}}
@@ -60,15 +69,6 @@
             @endforeach
         </ol>
     </section>
-
-    @if ($solarUrl)
-        {{-- The free calculator of the sales page, and its own page. --}}
-        <section class="container space-y-3 py-12">
-            <h2 class="text-2xl font-semibold text-primary">{{ $s('solar.sectionTitle') }}</h2>
-            <p class="max-w-3xl leading-relaxed text-muted-foreground">{{ $s('solar.sectionLead') }}</p>
-            <p><a href="{{ $solarUrl }}" class="font-semibold underline">{{ $s('solar.pageLink') }}</a></p>
-        </section>
-    @endif
 
     @if ($faq !== [])
         <section class="container space-y-4 py-12">

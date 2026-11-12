@@ -390,7 +390,8 @@
       "business": "Empresa y contacto",
       "companies": "Directorio de empresas",
       "offers": "Ofertas",
-      "templates": "Plantillas"
+      "templates": "Plantillas",
+      "newsletter": "Boletín"
     },
     "common": {
       "actions": "Acciones",
@@ -933,6 +934,25 @@
       "what": "Qué",
       "before": "Antes",
       "after": "Después"
+    },
+    "newsletter": {
+      "title": "Boletín",
+      "lead": "Las direcciones que han confirmado su suscripción (doble opt-in) y de dónde llegaron. Exporta las confirmadas para tu herramienta de envíos: cada una lleva su enlace de baja, que todo envío debe incluir.",
+      "confirmed": "Confirmadas",
+      "pending": "Pendientes",
+      "unsubscribed": "Bajas",
+      "export": "Exportar las confirmadas (CSV)",
+      "search": "Buscar un correo",
+      "empty": "Aún no hay suscriptores.",
+      "email": "Correo",
+      "status": "Estado",
+      "source": "Origen",
+      "date": "Fecha",
+      "all": "Todas",
+      "sources": {
+        "home": "Página principal",
+        "calculator": "Calculadora"
+      }
     }
   },
   "reviews": {
@@ -1274,7 +1294,9 @@
       "journal": "La oportunidad",
       "outils": "Herramientas",
       "programme": "Programa y precios",
-      "questions": "Preguntas"
+      "questions": "Preguntas",
+      "calculadora": "Calculadora",
+      "boletin": "Boletín"
     },
     "programme": {
       "extra": "Extra al terminar el curso"
@@ -1755,6 +1777,30 @@
       "title": "La primera de cinco plantillas",
       "body": "El curso CONSTRUYE sigue las 12 fases de una promoción de viviendas, del solar a la postventa, con una plantilla de cálculo en los módulos 1, 2, 5, 7 y 8.",
       "cta": "Ver el curso"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Boletín",
+    "title": "El boletín de CONSTRUYE",
+    "lead": "Novedades del curso y cambios en los impuestos que aplican sus plantillas (ITP, AJD, IVA). Te das de baja con un clic.",
+    "email": "Tu correo electrónico",
+    "placeholder": "nombre@correo.es",
+    "submit": "Suscribirme",
+    "sending": "Enviando…",
+    "done": "Revisa tu correo: te hemos enviado un enlace para confirmar.",
+    "notice": "Solo usamos tu correo para enviarte el boletín. Te pedimos confirmarlo por correo y cada envío lleva un enlace para darte de baja.",
+    "error": "No se ha podido enviar. Inténtalo de nuevo en un momento.",
+    "page": {
+      "confirming": "Confirmando tu suscripción…",
+      "confirmed": "Suscripción confirmada",
+      "confirmedBody": "Recibirás el boletín de CONSTRUYE en {{email}}.",
+      "unsubscribeTitle": "Darte de baja del boletín",
+      "unsubscribeBody": "Dejarás de recibir el boletín de CONSTRUYE en esta dirección.",
+      "unsubscribeButton": "Darme de baja",
+      "unsubscribed": "Te has dado de baja",
+      "unsubscribedBody": "No volverás a recibir el boletín en {{email}}. Puedes suscribirte de nuevo cuando quieras.",
+      "invalid": "Este enlace ya no es válido.",
+      "back": "Volver al inicio"
     }
   }
 }

@@ -390,7 +390,8 @@
       "business": "Entreprise et contact",
       "companies": "Annuaire des entreprises",
       "offers": "Offres",
-      "templates": "Modèles"
+      "templates": "Modèles",
+      "newsletter": "Newsletter"
     },
     "common": {
       "actions": "Actions",
@@ -933,6 +934,25 @@
       "what": "Quoi",
       "before": "Avant",
       "after": "Après"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "lead": "Les adresses qui ont confirmé leur inscription (double opt-in) et leur provenance. Exportez les confirmées pour votre outil d'envoi : chacune porte son lien de désinscription, que chaque envoi doit inclure.",
+      "confirmed": "Confirmées",
+      "pending": "En attente",
+      "unsubscribed": "Désinscrites",
+      "export": "Exporter les confirmées (CSV)",
+      "search": "Rechercher un e-mail",
+      "empty": "Aucun inscrit pour l'instant.",
+      "email": "E-mail",
+      "status": "Statut",
+      "source": "Provenance",
+      "date": "Date",
+      "all": "Toutes",
+      "sources": {
+        "home": "Page d'accueil",
+        "calculator": "Calculateur"
+      }
     }
   },
   "reviews": {
@@ -1274,7 +1294,9 @@
       "journal": "L'opportunité",
       "outils": "Outils",
       "programme": "Programme et tarifs",
-      "questions": "Questions"
+      "questions": "Questions",
+      "calculadora": "Calculateur",
+      "boletin": "Newsletter"
     },
     "programme": {
       "extra": "Extra en fin de formation"
@@ -1755,6 +1777,30 @@
       "title": "Le premier de cinq modèles",
       "body": "Le cours CONSTRUYE suit les 12 phases d'une promotion de logements, du terrain au service après-vente, avec un modèle de calcul dans les modules 1, 2, 5, 7 et 8.",
       "cta": "Voir le cours"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "La newsletter de CONSTRUYE",
+    "lead": "Les nouveautés du cours et les changements des impôts qu'appliquent ses modèles (ITP, AJD, TVA). Désinscription en un clic.",
+    "email": "Votre e-mail",
+    "placeholder": "nom@email.fr",
+    "submit": "M'inscrire",
+    "sending": "Envoi…",
+    "done": "Consultez votre boîte mail : nous vous avons envoyé un lien de confirmation.",
+    "notice": "Nous n'utilisons votre e-mail que pour vous envoyer la newsletter. Nous vous demandons de confirmer par e-mail, et chaque envoi contient un lien de désinscription.",
+    "error": "L'envoi a échoué. Réessayez dans un instant.",
+    "page": {
+      "confirming": "Confirmation de votre inscription…",
+      "confirmed": "Inscription confirmée",
+      "confirmedBody": "Vous recevrez la newsletter de CONSTRUYE à {{email}}.",
+      "unsubscribeTitle": "Se désinscrire de la newsletter",
+      "unsubscribeBody": "Vous ne recevrez plus la newsletter de CONSTRUYE à cette adresse.",
+      "unsubscribeButton": "Me désinscrire",
+      "unsubscribed": "Vous êtes désinscrit",
+      "unsubscribedBody": "Vous ne recevrez plus la newsletter à {{email}}. Vous pouvez vous réinscrire quand vous voulez.",
+      "invalid": "Ce lien n'est plus valide.",
+      "back": "Retour à l'accueil"
     }
   }
 }

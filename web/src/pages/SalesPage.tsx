@@ -13,6 +13,7 @@ import { BarreAchat } from '@/components/landing/kit/BarreAchat'
 import { Sommaire } from '@/components/landing/kit/Sommaire'
 import { Presentation } from '@/components/landing/s1/Presentation'
 import { Parcours } from '@/components/landing/s2/Parcours'
+import { Calculadora } from '@/components/landing/s7/Calculadora'
 import { Methode } from '@/components/landing/s3/Methode'
 import { Aube } from '@/components/landing/kit/Passages'
 import { Circuit } from '@/components/landing/s4/Circuit'
@@ -168,6 +169,8 @@ export function SalesPage() {
       <CampaignBanner campaign={campaign} slug={slug} className="relative z-20" />
       <Presentation course={course} cta={cta} awake={!intro} flush={!campaign} />
       {/* Below: the sections of the earlier version, rebuilt one by one after S1. */}
+      {/* Right under the first screen: the free tool to try, the solar calculator. */}
+      {course && <Calculadora course={course} purchaseLink={purchaseLink} checkoutPath={checkoutPath} />}
       <Parcours course={course} />
       <Methode />
       <Aube />

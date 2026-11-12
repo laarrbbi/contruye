@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import { useCourse } from '@/api/courses'
 import { useSolarOptions } from '@/api/solar'
 import { BANDE, H2, TEXTE } from '@/components/landing/kit/type'
+import { NewsletterSignup } from '@/components/newsletter/NewsletterSignup'
 import { SolarCalculator } from '@/components/solar/SolarCalculator'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { usePageTitle } from '@/hooks/usePageTitle'
@@ -157,6 +158,17 @@ export function SolarCalculatorPage() {
             </AccordionItem>
           ))}
         </Accordion>
+      </section>
+
+      {/* The newsletter: when the rates change, the people who use the calculator hear of it. */}
+      <section className="container grid gap-8 border-t border-plume/15 py-16 lg:grid-cols-12 lg:gap-16 lg:py-20">
+        <div className="lg:col-span-5">
+          <h2 className="titre text-[clamp(1.6rem,1.25rem+1.2vw,2.25rem)]">{t('newsletter.title')}</h2>
+          <p className="mt-4 text-plume/80">{t('newsletter.lead')}</p>
+        </div>
+        <div className="flex items-end lg:col-span-7">
+          <NewsletterSignup source="calculator" tone="paper" className="w-full" />
+        </div>
       </section>
 
       <section className="theme-night bg-[linear-gradient(160deg,#16294A,#0B1A2E_60%,#070F1C)] text-creme-100">

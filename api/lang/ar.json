@@ -94,5 +94,12 @@
     "Each value must be between 0 and 100 %.": "يجب أن تكون كل قيمة بين 0 و100 %.",
     "Unknown autonomous community: :name": "منطقة ذاتية الحكم غير معروفة: :name",
     "This fiscal id is not valid. Check the number and its letter.": "هذا الرقم الضريبي غير صالح. تحقّق من الرقم والحرف المرافق له.",
-    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "فتحت صفحات كثيرة من الدورة في وقت قصير. انتظر بضع دقائق ثم تابع."
+    "You have opened a lot of course pages in a short time. Wait a few minutes and carry on.": "فتحت صفحات كثيرة من الدورة في وقت قصير. انتظر بضع دقائق ثم تابع.",
+    "Confirm your subscription to the CONSTRUYE newsletter": "أكّد اشتراكك في النشرة البريدية لـ CONSTRUYE",
+    "Someone, hopefully you, asked to receive the CONSTRUYE newsletter at this address.": "طلب أحدهم، ونأمل أن تكون أنت، تلقّي النشرة البريدية لـ CONSTRUYE على هذا العنوان.",
+    "Confirm it with the button below. If it was not you, ignore this e-mail: without confirmation we will not write to you again.": "أكّد ذلك بالزر أدناه. إن لم تكن أنت، فتجاهل هذه الرسالة: لن نراسلك مجددًا دون تأكيد.",
+    "Confirm my subscription": "تأكيد اشتراكي",
+    "Every newsletter carries a link to unsubscribe in one click.": "تحمل كل نشرة رابطًا لإلغاء الاشتراك بنقرة واحدة.",
+    "Check your inbox: we have sent you a link to confirm.": "تفقّد بريدك: أرسلنا إليك رابطًا للتأكيد.",
+    "This link is not valid any more.": "لم يعد هذا الرابط صالحًا."
 }

@@ -390,7 +390,8 @@
       "business": "Business & contact",
       "companies": "Company directory",
       "offers": "Offers",
-      "templates": "Templates"
+      "templates": "Templates",
+      "newsletter": "Newsletter"
     },
     "common": {
       "actions": "Actions",
@@ -933,6 +934,25 @@
       "what": "What",
       "before": "Before",
       "after": "After"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "lead": "The addresses that confirmed their subscription (double opt-in) and where they came from. Export the confirmed ones for your mailing tool: each carries its unsubscribe link, which every issue must include.",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "unsubscribed": "Unsubscribed",
+      "export": "Export confirmed (CSV)",
+      "search": "Search an e-mail",
+      "empty": "No subscribers yet.",
+      "email": "E-mail",
+      "status": "Status",
+      "source": "Source",
+      "date": "Date",
+      "all": "All",
+      "sources": {
+        "home": "Home page",
+        "calculator": "Calculator"
+      }
     }
   },
   "reviews": {
@@ -1274,7 +1294,9 @@
       "journal": "The opportunity",
       "outils": "Tools",
       "programme": "Programme and prices",
-      "questions": "Questions"
+      "questions": "Questions",
+      "calculadora": "Calculator",
+      "boletin": "Newsletter"
     },
     "programme": {
       "extra": "Extra at the end of the course"
@@ -1755,6 +1777,30 @@
       "title": "The first of five templates",
       "body": "The CONSTRUYE course follows the 12 phases of a housing development, from the plot to after-sales, with a calculation template in modules 1, 2, 5, 7 and 8.",
       "cta": "See the course"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "The CONSTRUYE newsletter",
+    "lead": "News about the course and changes in the taxes its templates apply (ITP, AJD, VAT). Unsubscribe in one click.",
+    "email": "Your e-mail",
+    "placeholder": "name@email.com",
+    "submit": "Subscribe",
+    "sending": "Sending…",
+    "done": "Check your inbox: we have sent you a link to confirm.",
+    "notice": "We only use your e-mail to send you the newsletter. We ask you to confirm it by e-mail, and every issue carries a link to unsubscribe.",
+    "error": "It could not be sent. Try again in a moment.",
+    "page": {
+      "confirming": "Confirming your subscription…",
+      "confirmed": "Subscription confirmed",
+      "confirmedBody": "You will receive the CONSTRUYE newsletter at {{email}}.",
+      "unsubscribeTitle": "Unsubscribe from the newsletter",
+      "unsubscribeBody": "You will stop receiving the CONSTRUYE newsletter at this address.",
+      "unsubscribeButton": "Unsubscribe",
+      "unsubscribed": "You have unsubscribed",
+      "unsubscribedBody": "You will not receive the newsletter at {{email}} again. You can subscribe again whenever you like.",
+      "invalid": "This link is not valid any more.",
+      "back": "Back to the home page"
     }
   }
 }
