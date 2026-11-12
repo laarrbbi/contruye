@@ -115,10 +115,21 @@ makes that work lives in `docker/mysql-test/`.
   account (`DeviceSessions`). All of it: `docs/proteccion-contenido.md`.
 - The solar calculator (`SolarTeaser`, `SolarCalculatorController`, public): a sample of Plantilla 1
   (6 of 7 inputs, its results but the VAT line and the money on the day, which stay with Module 1;
-  constitution III, amendment 2026-11-12) on the
-  sales page right under the first screen (`landing/s7/Calculadora`) and on its own page `/calculadora-precio-solar`
+  constitution III, amendment 2026-11-12) on its own page `/calculadora-precio-solar`, «Calculadora»
+  in the menu, not on the sales page (the owner's call)
   (`SolarCalculatorPage`; server-rendered for search engines by `SeoPageController::solarCalculator`,
   with the ITP/AJD of every community, an FAQ and its structured data, in the sitemap).
+- The menu (`components/layout/Header.tsx`): a signed-in user's places (Mis cursos, Partners, Mi
+  cuenta, Administración) and, for everyone, the sections Calculadora, Noticias, Empleo and Obras.
+  Below 1024px they move into a menu (the account menu once signed in).
+- The news (`NewsPost`, `NewsController`, `/admin/news`): pieces the owner writes, Spanish required,
+  the other languages optional (Spanish shows where one is missing), a date (shown from that day)
+  and a picture on the local disk. `/noticias` and `/noticias/<slug>` are public pages, rendered
+  for search engines with `NewsArticle` data and listed in the sitemap once a piece is out. The
+  table ships empty: nothing is published that nobody wrote.
+- Empleo and Obras are **Construye Fichaje**, a separate site with its own accounts and payments
+  (github.com/laarrbbi/contruye_fichaje, Vercel project `construye-fichaje`): the menu links to its
+  `/empleo` and `/obras` in a new tab (`lib/fichaje.ts`, `VITE_FICHAJE_URL`). Nothing of it runs here.
 - The newsletter (`NewsletterSubscriber`, `NewsletterController`): double opt-in (the e-mail's link
   confirms on `/newsletter`, a click unsubscribes), the same answer whoever signs up, a honeypot;
   sections on the sales page (`landing/s8/Boletin`) and the calculator's page. `/admin/newsletter`

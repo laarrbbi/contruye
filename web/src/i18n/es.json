@@ -18,7 +18,13 @@
     "registerShort": "Registrarse",
     "main": "Navegación principal",
     "account": "Mi cuenta",
-    "partners": "Partners"
+    "partners": "Partners",
+    "calculator": "Calculadora",
+    "news": "Noticias",
+    "empleo": "Empleo",
+    "obras": "Obras",
+    "menu": "Menú",
+    "newTab": "(se abre Construye Fichaje en otra pestaña)"
   },
   "auth": {
     "loginTitle": "Iniciar sesión",
@@ -391,7 +397,8 @@
       "companies": "Directorio de empresas",
       "offers": "Ofertas",
       "templates": "Plantillas",
-      "newsletter": "Boletín"
+      "newsletter": "Boletín",
+      "news": "Noticias"
     },
     "common": {
       "actions": "Acciones",
@@ -976,6 +983,45 @@
       "confirmBody": "Se aplican desde el siguiente cálculo de cada alumno y en las descargas en Excel. Queda constancia en el historial.",
       "historyTitle": "Historial de los valores de referencia",
       "smallTemplate": "Plantilla {{number}}"
+    },
+    "news": {
+      "title": "Noticias",
+      "lead": "Lo que escribas aquí aparece en Noticias, en el menú, y en Google. Escribe en español; las demás lenguas son opcionales: si falta una, se muestra el español.",
+      "new": "Nueva noticia",
+      "empty": "Todavía no hay noticias. La primera que publiques abre la sección.",
+      "editTitle": "Editar la noticia",
+      "createTitle": "Nueva noticia",
+      "deleteConfirm": "¿Borrar «{{title}}»? No se puede deshacer.",
+      "slug": "Dirección",
+      "slugHint": "Se crea sola a partir del título. Minúsculas, números y guiones.",
+      "titleField": "Título",
+      "summary": "Resumen",
+      "summaryHint": "Una o dos frases: salen en la lista y en Google.",
+      "body": "Texto",
+      "bodyHint": "Admite Markdown: **negrita**, listas con «-», enlaces.",
+      "published": "Publicada",
+      "publishedAt": "Fecha",
+      "publishedAtHint": "Se muestra desde esa fecha. Vacía: la de hoy al publicar.",
+      "image": "Imagen",
+      "imageHint": "JPG, PNG o WebP, hasta 4 MB.",
+      "imageUpload": "Subir una imagen",
+      "imageRemove": "Quitar la imagen",
+      "imageAfterSave": "Guarda la noticia para añadirle una imagen.",
+      "imageError": "No se ha podido subir la imagen.",
+      "spanishRequired": "El español es obligatorio.",
+      "status": {
+        "draft": "Borrador",
+        "scheduled": "Programada",
+        "published": "Publicada"
+      },
+      "view": "Ver",
+      "table": {
+        "title": "Título",
+        "status": "Estado",
+        "date": "Fecha"
+      },
+      "fallback": "Opcional: sin texto en {{language}}, se muestra el español.",
+      "saved": "Guardada"
     }
   },
   "reviews": {
@@ -1318,7 +1364,6 @@
       "outils": "Herramientas",
       "programme": "Programa y precios",
       "questions": "Preguntas",
-      "calculadora": "Calculadora",
       "boletin": "Boletín"
     },
     "programme": {
@@ -1715,9 +1760,6 @@
   "solar": {
     "eyebrow": "Calculadora gratuita",
     "free": "Gratis y sin registro",
-    "sectionTitle": "¿Cuánto te cuesta de verdad un solar?",
-    "sectionLead": "El precio no es el coste. Elige la comunidad, quién vende y los metros de techo: la Plantilla 1 del curso suma los impuestos y te dice cuánto te cuesta el suelo por cada metro que vas a construir.",
-    "pageLink": "Los impuestos de un solar en cada comunidad",
     "seoTitle": "Calculadora del precio de un solar: ITP, AJD e IVA",
     "seoDescription": "Calcula gratis lo que te cuesta de verdad un solar en tu comunidad autónoma: ITP o IVA y AJD, notaría y registro, y la repercusión del suelo por m² de techo.",
     "pageTitle": "Calculadora del precio de un solar",
@@ -1832,5 +1874,18 @@
       "invalid": "Este enlace ya no es válido.",
       "back": "Volver al inicio"
     }
+  },
+  "news": {
+    "title": "Noticias",
+    "eyebrow": "Construye Academy",
+    "lead": "Novedades de Construye y de la promoción inmobiliaria en España.",
+    "seoDescription": "Noticias de Construye Academy sobre la promoción inmobiliaria en España: leyes, impuestos, mercado y novedades del curso.",
+    "empty": "Todavía no hay noticias. Vuelve pronto.",
+    "back": "Todas las noticias",
+    "readMore": "Leer la noticia",
+    "notFound": "Esta noticia no existe o ya no está publicada.",
+    "inSpanish": "Esta noticia aún no está traducida: la lees en español.",
+    "newer": "Más recientes",
+    "older": "Anteriores"
   }
 }

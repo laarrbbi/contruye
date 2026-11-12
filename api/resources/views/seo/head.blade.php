@@ -17,8 +17,10 @@
     <meta property="og:title" content="{{ $title }}" />
     <meta property="og:description" content="{{ $description }}" />
     <meta property="og:image" content="{{ $image }}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+@if ($imageSize)
+    <meta property="og:image:width" content="{{ $imageSize[0] }}" />
+    <meta property="og:image:height" content="{{ $imageSize[1] }}" />
+@endif
     <meta property="og:image:alt" content="{{ $imageAlt }}" />
     <meta name="twitter:card" content="summary_large_image" />
 @foreach ($verification as $name => $value)

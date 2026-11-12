@@ -103,5 +103,7 @@
     "Check your inbox: we have sent you a link to confirm.": "Перевірте пошту: ми надіслали посилання для підтвердження.",
     "This link is not valid any more.": "Це посилання більше не дійсне.",
     "Unknown reference value: :key": "Невідоме довідкове значення: :key",
-    "The value of «:label» is out of range.": "Значення «:label» поза допустимим діапазоном."
+    "The value of «:label» is out of range.": "Значення «:label» поза допустимим діапазоном.",
+    "A piece of news needs a title in Spanish.": "Новині потрібен заголовок іспанською.",
+    "A published piece of news needs its text in Spanish.": "Опублікованій новині потрібен текст іспанською."
 }

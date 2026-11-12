@@ -114,7 +114,7 @@ it('serves the calculator\'s page to search engines, with the rates of every com
         ->toContain('Building plot price calculator</h1>');
 });
 
-it('lists the calculator\'s page in the sitemap and links it from the home page', function () {
+it('lists the calculator\'s page in the sitemap and links it from the menu of every public page', function () {
     config(['seo.spa_index' => base_path('../web/index.html'), 'app.url' => 'https://construye.example']);
     Course::factory()->create(['slug' => config('seo.main_course'), 'status' => 'published']);
 

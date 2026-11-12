@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\LegalRegionRate;
+use App\Models\NewsPost;
 use App\Services\BusinessProfile;
 use App\Services\CourseSocialProof;
 use App\Support\Financials\SolarTeaser;
@@ -39,6 +40,9 @@ final class SeoPageController
 
     /** The solar calculator's page, the same path in every language. */
     public const SOLAR_PATH = '/calculadora-precio-solar';
+
+    /** The news (Noticias, in the menu): the list, and one page per piece under it. */
+    public const NEWS_PATH = '/noticias';
 
     /** Its questions, in the order the page shows them (web/src/i18n, solar.faq). */
     public const SOLAR_FAQ = ['taxes', 'vat', 'perM2', 'plusvalia', 'rates', 'full'];
@@ -144,6 +148,83 @@ final class SeoPageController
         return $this->page($locale, $head, $body);
     }
 
+    /** The news: the published pieces, newest first. */
+    public function news(Request $request): Response
+    {
+        $locale = (string) $request->route('locale');
+        app()->setLocale($locale);
+
+        $posts = NewsPost::visible()->orderByDesc('published_at')->orderByDesc('id')->limit(50)->get();
+        $url = LocalizedUrl::to(self::NEWS_PATH, $locale);
+        $title = SpaStrings::get($locale, 'news.title');
+        $postUrl = fn (NewsPost $post) => LocalizedUrl::to(self::NEWS_PATH.'/'.$post->slug, $locale);
+
+        $head = $this->head($locale, self::NEWS_PATH, $title, SpaStrings::get($locale, 'news.seoDescription'), [
+            StructuredData::organization(),
+            StructuredData::website(),
+            StructuredData::itemList($posts->map($postUrl)->all()),
+            StructuredData::breadcrumbs([
+                ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
+                ['name' => $title, 'url' => $url],
+            ]),
+        ]);
+
+        $body = view('seo.news', [
+            'locale' => $locale,
+            'header' => $this->header($locale, self::NEWS_PATH),
+            'title' => $title,
+            'lead' => SpaStrings::get($locale, 'news.lead'),
+            'empty' => SpaStrings::get($locale, 'news.empty'),
+            'posts' => $posts,
+            'postPath' => fn (NewsPost $post) => LocalizedUrl::path(self::NEWS_PATH.'/'.$post->slug, $locale),
+            'date' => fn (NewsPost $post) => $post->published_at?->locale($locale)->isoFormat('LL'),
+        ])->render();
+
+        return $this->page($locale, $head, $body);
+    }
+
+    /** One piece of news, with its own title, description, picture and article data. */
+    public function newsPost(Request $request): Response
+    {
+        $locale = (string) $request->route('locale');
+        app()->setLocale($locale);
+
+        $post = NewsPost::visible()->where('slug', (string) $request->route('slug'))->first();
+        if ($post === null) {
+            return $this->page(null, null, null, 404);
+        }
+
+        $path = self::NEWS_PATH.'/'.$post->slug;
+        $url = LocalizedUrl::to($path, $locale);
+        $title = (string) $post->localizedTitle($locale);
+        $description = Str::limit((string) ($post->localizedSummary($locale) ?? Markdown::toText($post->localizedBody($locale))), 155);
+
+        $head = $this->head($locale, $path, $title, $description, [
+            StructuredData::organization(),
+            StructuredData::website(),
+            StructuredData::newsArticle($post, $locale, $url),
+            StructuredData::breadcrumbs([
+                ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
+                ['name' => SpaStrings::get($locale, 'news.title'), 'url' => LocalizedUrl::to(self::NEWS_PATH, $locale)],
+                ['name' => $title, 'url' => $url],
+            ]),
+        ], $post->imageUrl());
+
+        $body = view('seo.news-post', [
+            'locale' => $locale,
+            'header' => $this->header($locale, $path),
+            'post' => $post,
+            'title' => $title,
+            'lang' => $post->localizedLocale('body', $locale),
+            'html' => $post->bodyHtml($locale),
+            'date' => $post->published_at?->locale($locale)->isoFormat('LL'),
+            'back' => LocalizedUrl::path(self::NEWS_PATH, $locale),
+            'backLabel' => SpaStrings::get($locale, 'news.back'),
+        ])->render();
+
+        return $this->page($locale, $head, $body);
+    }
+
     /** "6 %", "0,75 %", "7.5%": a rate as the reader's language writes it. */
     private static function percent(float $value, string $locale): string
     {
@@ -191,6 +272,14 @@ final class SeoPageController
         foreach ($courses as $course) {
             if ($course->slug !== config('seo.main_course')) {
                 $pages->push(['path' => "/cursos/{$course->slug}", 'lastmod' => $course->updated_at]);
+            }
+        }
+        // The news: its list once there is a piece, and every piece.
+        $news = NewsPost::visible()->orderByDesc('published_at')->get(['id', 'slug', 'published_at', 'updated_at']);
+        if ($news->isNotEmpty()) {
+            $pages->push(['path' => self::NEWS_PATH, 'lastmod' => $news->max('updated_at')]);
+            foreach ($news as $post) {
+                $pages->push(['path' => self::NEWS_PATH.'/'.$post->slug, 'lastmod' => $post->updated_at]);
             }
         }
 
@@ -253,8 +342,6 @@ final class SeoPageController
             'faq' => $faq,
             'paymentNote' => PaymentWording::sentence($locale, SpaStrings::get($locale, 'landing.hero.paymentNote')),
             'checkoutUrl' => '/register?redirect='.rawurlencode("/checkout/{$slug}"),
-            // The main page links the solar calculator's own page.
-            'solarUrl' => $isMain ? LocalizedUrl::path(self::SOLAR_PATH, $locale) : null,
         ])->render();
 
         return $this->page($locale, $head, $body);
@@ -296,7 +383,8 @@ final class SeoPageController
     /**
      * @param  list<array<string, mixed>>  $nodes
      */
-    private function head(string $locale, string $path, string $title, string $description, array $nodes): string
+    /** @param  ?string  $image  the page's own picture (a piece of news), of unknown size; else the site's */
+    private function head(string $locale, string $path, string $title, string $description, array $nodes, ?string $image = null): string
     {
         return view('seo.head', [
             'title' => $title.' — '.SpaStrings::get($locale, 'app.name'),
@@ -305,19 +393,25 @@ final class SeoPageController
             'alternates' => LocalizedUrl::alternates($path),
             'ogLocale' => self::OG_LOCALES[$locale],
             'ogLocaleAlternates' => array_values(array_diff_key(self::OG_LOCALES, [$locale => true])),
-            'image' => rtrim((string) config('app.url'), '/').'/og-image.jpg',
+            'image' => $image ?? rtrim((string) config('app.url'), '/').'/og-image.jpg',
+            'imageSize' => $image === null ? [1200, 630] : null,
             'imageAlt' => SpaStrings::get($locale, 'landing.heroV2.title'),
             'verification' => array_filter((array) config('seo.verification')),
             'jsonLd' => StructuredData::encode($nodes),
         ])->render();
     }
 
-    /** @return array{home: string, name: string, languages: list<array{locale: string, name: string, href: string}>} */
+    /** @return array{home: string, name: string, links: list<array{href: string, label: string}>, languages: list<array{locale: string, name: string, href: string}>} */
     private function header(string $locale, string $path): array
     {
         return [
             'home' => LocalizedUrl::path('/', $locale),
             'name' => SpaStrings::get($locale, 'app.name'),
+            // The sections of the app's menu that are pages of this site.
+            'links' => [
+                ['href' => LocalizedUrl::path(self::SOLAR_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.calculator')],
+                ['href' => LocalizedUrl::path(self::NEWS_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.news')],
+            ],
             'languages' => collect(config('locales.supported'))
                 ->reject(fn (string $other) => $other === $locale)
                 ->map(fn (string $other) => [

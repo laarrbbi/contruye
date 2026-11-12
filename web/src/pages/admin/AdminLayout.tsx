@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { RouteFallback } from '@/components/RouteFallback'
 import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
-import { BookOpen, Building, Building2, Calculator, Gift, Handshake, LayoutDashboard, Mail, Megaphone, Menu, Receipt, ShoppingCart, Star, TicketPercent, Users, X } from 'lucide-react'
+import { BookOpen, Building, Building2, Calculator, Gift, Handshake, LayoutDashboard, Mail, Megaphone, Menu, Newspaper, Receipt, ShoppingCart, Star, TicketPercent, Users, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
@@ -27,6 +27,7 @@ const navItems: NavItem[] = [
   { to: '/admin/partners', labelKey: 'admin.nav.partners', icon: Handshake },
   { to: '/admin/companies', labelKey: 'admin.nav.companies', icon: Building },
   { to: '/admin/coupons', labelKey: 'admin.nav.coupons', icon: TicketPercent },
+  { to: '/admin/news', labelKey: 'admin.nav.news', icon: Newspaper },
   { to: '/admin/newsletter', labelKey: 'admin.nav.newsletter', icon: Mail },
   { to: '/admin/business', labelKey: 'admin.nav.business', icon: Building2 },
 ]

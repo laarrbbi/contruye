@@ -4,6 +4,7 @@ namespace App\Support;
 
 use App\Models\Course;
 use App\Models\Module;
+use App\Models\NewsPost;
 use App\Services\BusinessProfile;
 use App\Services\PaymentMethods;
 
@@ -176,6 +177,31 @@ final class StructuredData
             'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'EUR'],
             'publisher' => ['@id' => self::base().'/#organization'],
         ];
+    }
+
+    /**
+     * A piece of news: its headline, date, language and picture, by Construye
+     * Academy. Only what the piece really has.
+     *
+     * @return array<string, mixed>
+     */
+    public static function newsArticle(NewsPost $post, string $locale, string $url): array
+    {
+        $organization = ['@id' => self::base().'/#organization'];
+
+        return array_filter([
+            '@type' => 'NewsArticle',
+            '@id' => $url.'#article',
+            'headline' => mb_strimwidth((string) $post->localizedTitle($locale), 0, 110, '…'),
+            'description' => $post->localizedSummary($locale),
+            'datePublished' => $post->published_at?->toIso8601String(),
+            'dateModified' => $post->updated_at?->toIso8601String(),
+            'inLanguage' => $post->localizedLocale('body', $locale),
+            'mainEntityOfPage' => $url,
+            'image' => $post->imageUrl() !== null ? [$post->imageUrl()] : null,
+            'author' => $organization,
+            'publisher' => $organization,
+        ], fn ($value) => $value !== null);
     }
 
     /**

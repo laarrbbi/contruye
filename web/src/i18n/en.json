@@ -18,7 +18,13 @@
     "registerShort": "Sign up",
     "main": "Main navigation",
     "account": "My account",
-    "partners": "Partners"
+    "partners": "Partners",
+    "calculator": "Calculator",
+    "news": "News",
+    "empleo": "Jobs",
+    "obras": "Building work",
+    "menu": "Menu",
+    "newTab": "(opens Construye Fichaje in a new tab)"
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -391,7 +397,8 @@
       "companies": "Company directory",
       "offers": "Offers",
       "templates": "Templates",
-      "newsletter": "Newsletter"
+      "newsletter": "Newsletter",
+      "news": "News"
     },
     "common": {
       "actions": "Actions",
@@ -976,6 +983,45 @@
       "confirmBody": "They apply from each student's next calculation and in the Excel downloads. The change is kept in the history.",
       "historyTitle": "History of the reference values",
       "smallTemplate": "Template {{number}}"
+    },
+    "news": {
+      "title": "News",
+      "lead": "What you write here appears under News in the menu, and on Google. Write in Spanish; the other languages are optional: where one is missing, the Spanish shows.",
+      "new": "New piece",
+      "empty": "No news yet. The first piece you publish opens the section.",
+      "editTitle": "Edit the piece",
+      "createTitle": "New piece",
+      "deleteConfirm": "Delete «{{title}}»? This cannot be undone.",
+      "slug": "Address",
+      "slugHint": "Made from the title. Lower case, numbers and hyphens.",
+      "titleField": "Title",
+      "summary": "Summary",
+      "summaryHint": "One or two sentences: shown in the list and on Google.",
+      "body": "Text",
+      "bodyHint": "Markdown works: **bold**, lists with «-», links.",
+      "published": "Published",
+      "publishedAt": "Date",
+      "publishedAtHint": "Shows from that date. Empty: today, when published.",
+      "image": "Picture",
+      "imageHint": "JPG, PNG or WebP, up to 4 MB.",
+      "imageUpload": "Upload a picture",
+      "imageRemove": "Remove the picture",
+      "imageAfterSave": "Save the piece to add a picture to it.",
+      "imageError": "The picture could not be uploaded.",
+      "spanishRequired": "Spanish is required.",
+      "status": {
+        "draft": "Draft",
+        "scheduled": "Scheduled",
+        "published": "Published"
+      },
+      "view": "View",
+      "table": {
+        "title": "Title",
+        "status": "Status",
+        "date": "Date"
+      },
+      "fallback": "Optional: without a text in {{language}}, the Spanish shows.",
+      "saved": "Saved"
     }
   },
   "reviews": {
@@ -1318,7 +1364,6 @@
       "outils": "Tools",
       "programme": "Programme and prices",
       "questions": "Questions",
-      "calculadora": "Calculator",
       "boletin": "Newsletter"
     },
     "programme": {
@@ -1715,9 +1760,6 @@
   "solar": {
     "eyebrow": "Free calculator",
     "free": "Free, no sign-up",
-    "sectionTitle": "What does a building plot really cost you?",
-    "sectionLead": "The price is not the cost. Choose the region, who sells and the buildable floor area: the course's Template 1 adds the taxes and tells you what the land costs for every square metre you will build.",
-    "pageLink": "The taxes on a plot in each region",
     "seoTitle": "Building plot price calculator for Spain: ITP, AJD and VAT",
     "seoDescription": "Work out for free what a building plot really costs in your Spanish region: ITP or VAT and AJD, notary and land registry, and the land cost per m² of floor area.",
     "pageTitle": "Building plot price calculator",
@@ -1832,5 +1874,18 @@
       "invalid": "This link is not valid any more.",
       "back": "Back to the home page"
     }
+  },
+  "news": {
+    "title": "News",
+    "eyebrow": "Construye Academy",
+    "lead": "What is new at Construye and in property development in Spain.",
+    "seoDescription": "News from Construye Academy on property development in Spain: laws, taxes, the market and what is new in the course.",
+    "empty": "No news yet. Come back soon.",
+    "back": "All the news",
+    "readMore": "Read the piece",
+    "notFound": "This piece of news does not exist or is no longer published.",
+    "inSpanish": "This piece is not translated yet: you are reading it in Spanish.",
+    "newer": "Newer",
+    "older": "Older"
   }
 }

@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils'
 /** The page's sections, by the id each one carries. */
 const ITEMS = [
   ['presentation', 'presentation'],
-  ['calculadora', 'calculadora'],
   ['parcours', 'parcours'],
   ['methode', 'methode'],
   ['pour-qui', 'pourQui'],

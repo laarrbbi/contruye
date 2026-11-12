@@ -18,7 +18,13 @@
     "registerShort": "S'inscrire",
     "main": "Navigation principale",
     "account": "Mon compte",
-    "partners": "Partenaires"
+    "partners": "Partenaires",
+    "calculator": "Calculateur",
+    "news": "Actualités",
+    "empleo": "Emploi",
+    "obras": "Travaux",
+    "menu": "Menu",
+    "newTab": "(ouvre Construye Fichaje dans un nouvel onglet)"
   },
   "auth": {
     "loginTitle": "Se connecter",
@@ -391,7 +397,8 @@
       "companies": "Annuaire des entreprises",
       "offers": "Offres",
       "templates": "Modèles",
-      "newsletter": "Newsletter"
+      "newsletter": "Newsletter",
+      "news": "Actualités"
     },
     "common": {
       "actions": "Actions",
@@ -976,6 +983,45 @@
       "confirmBody": "Elles s'appliquent dès le calcul suivant de chaque élève et dans les téléchargements Excel. Le changement reste dans l'historique.",
       "historyTitle": "Historique des valeurs de référence",
       "smallTemplate": "Modèle {{number}}"
+    },
+    "news": {
+      "title": "Actualités",
+      "lead": "Ce que vous écrivez ici apparaît dans Actualités, dans le menu, et sur Google. Écrivez en espagnol ; les autres langues sont facultatives : si l’une manque, l’espagnol s’affiche.",
+      "new": "Nouvelle actualité",
+      "empty": "Pas encore d’actualités. La première que vous publiez ouvre la section.",
+      "editTitle": "Modifier l’actualité",
+      "createTitle": "Nouvelle actualité",
+      "deleteConfirm": "Supprimer « {{title}} » ? C’est définitif.",
+      "slug": "Adresse",
+      "slugHint": "Créée à partir du titre. Minuscules, chiffres et tirets.",
+      "titleField": "Titre",
+      "summary": "Résumé",
+      "summaryHint": "Une ou deux phrases : affichées dans la liste et sur Google.",
+      "body": "Texte",
+      "bodyHint": "Markdown accepté : **gras**, listes avec « - », liens.",
+      "published": "Publiée",
+      "publishedAt": "Date",
+      "publishedAtHint": "Affichée à partir de cette date. Vide : aujourd’hui, à la publication.",
+      "image": "Image",
+      "imageHint": "JPG, PNG ou WebP, jusqu’à 4 Mo.",
+      "imageUpload": "Ajouter une image",
+      "imageRemove": "Retirer l’image",
+      "imageAfterSave": "Enregistrez l’actualité pour lui ajouter une image.",
+      "imageError": "L’image n’a pas pu être envoyée.",
+      "spanishRequired": "L’espagnol est obligatoire.",
+      "status": {
+        "draft": "Brouillon",
+        "scheduled": "Programmée",
+        "published": "Publiée"
+      },
+      "view": "Voir",
+      "table": {
+        "title": "Titre",
+        "status": "État",
+        "date": "Date"
+      },
+      "fallback": "Facultatif : sans texte en {{language}}, l’espagnol s’affiche.",
+      "saved": "Enregistrée"
     }
   },
   "reviews": {
@@ -1318,7 +1364,6 @@
       "outils": "Outils",
       "programme": "Programme et tarifs",
       "questions": "Questions",
-      "calculadora": "Calculateur",
       "boletin": "Newsletter"
     },
     "programme": {
@@ -1715,9 +1760,6 @@
   "solar": {
     "eyebrow": "Calculateur gratuit",
     "free": "Gratuit, sans inscription",
-    "sectionTitle": "Combien vous coûte vraiment un terrain à bâtir ?",
-    "sectionLead": "Le prix n'est pas le coût. Choisissez la communauté autonome, le vendeur et la surface constructible : le Modèle 1 du cours additionne les impôts et vous dit ce que vous coûte le terrain pour chaque mètre que vous allez construire.",
-    "pageLink": "Les impôts d'un terrain dans chaque communauté",
     "seoTitle": "Calculateur du prix d'un terrain en Espagne : ITP, AJD et TVA",
     "seoDescription": "Calculez gratuitement ce que vous coûte vraiment un terrain à bâtir dans votre communauté autonome : ITP ou TVA et AJD, notaire et registre, et le coût du sol par m² de plancher.",
     "pageTitle": "Calculateur du prix d'un terrain à bâtir",
@@ -1832,5 +1874,18 @@
       "invalid": "Ce lien n'est plus valide.",
       "back": "Retour à l'accueil"
     }
+  },
+  "news": {
+    "title": "Actualités",
+    "eyebrow": "Construye Academy",
+    "lead": "Les nouveautés de Construye et de la promotion immobilière en Espagne.",
+    "seoDescription": "Actualités de Construye Academy sur la promotion immobilière en Espagne : lois, impôts, marché et nouveautés du cours.",
+    "empty": "Pas encore d’actualités. Revenez bientôt.",
+    "back": "Toutes les actualités",
+    "readMore": "Lire l’article",
+    "notFound": "Cette actualité n’existe pas ou n’est plus publiée.",
+    "inSpanish": "Cette actualité n’est pas encore traduite : vous la lisez en espagnol.",
+    "newer": "Plus récentes",
+    "older": "Plus anciennes"
   }
 }

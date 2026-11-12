@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\InvoicingSettingsController as AdminInvoicingSettingsController;
 use App\Http\Controllers\Api\Admin\LessonController as AdminLessonController;
 use App\Http\Controllers\Api\Admin\ModuleController as AdminModuleController;
+use App\Http\Controllers\Api\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Api\Admin\NewsletterController as AdminNewsletterController;
 use App\Http\Controllers\Api\Admin\OfferController as AdminOfferController;
 use App\Http\Controllers\Api\Admin\OrderController as AdminOrderController;
@@ -33,6 +34,7 @@ use App\Http\Controllers\Api\FinancialsExtraController;
 use App\Http\Controllers\Api\LearnContentController;
 use App\Http\Controllers\Api\LearnController;
 use App\Http\Controllers\Api\LessonPreviewController;
+use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\OfferController;
 use App\Http\Controllers\Api\OfferLinkController;
@@ -93,7 +95,12 @@ Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->middlewa
 Route::post('/newsletter/confirm', [NewsletterController::class, 'confirm'])->middleware('throttle:20,1');
 Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->middleware('throttle:20,1');
 
-// The public sample of Plantilla 1 (Compra del solar): the sales page's calculator.
+// The news (Noticias): published pieces, and their pictures.
+Route::get('/news', [NewsController::class, 'index'])->middleware('throttle:60,1');
+Route::get('/news/{slug}', [NewsController::class, 'show'])->middleware('throttle:60,1');
+Route::get('/news/{slug}/image', [NewsController::class, 'image'])->middleware('throttle:120,1');
+
+// The public sample of Plantilla 1 (Compra del solar): the calculator's page.
 Route::get('/public/solar-calculator', [SolarCalculatorController::class, 'show'])->middleware('throttle:60,1');
 Route::post('/public/solar-calculator', [SolarCalculatorController::class, 'calculate'])->middleware('throttle:30,1');
 
@@ -235,6 +242,13 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     // Invoicing: seller settings + issued invoices (factura on demand)
     Route::get('invoicing/settings', [AdminInvoicingSettingsController::class, 'show']);
     Route::put('invoicing/settings', [AdminInvoicingSettingsController::class, 'update']);
+    Route::get('news', [AdminNewsController::class, 'index']);
+    Route::post('news', [AdminNewsController::class, 'store']);
+    Route::put('news/{post}', [AdminNewsController::class, 'update'])->whereNumber('post');
+    Route::delete('news/{post}', [AdminNewsController::class, 'destroy'])->whereNumber('post');
+    Route::post('news/{post}/image', [AdminNewsController::class, 'uploadImage'])->whereNumber('post');
+    Route::delete('news/{post}/image', [AdminNewsController::class, 'deleteImage'])->whereNumber('post');
+    Route::get('news/{post}/image', [AdminNewsController::class, 'image'])->whereNumber('post');
     Route::get('newsletter', [AdminNewsletterController::class, 'index']);
     Route::get('newsletter/export', [AdminNewsletterController::class, 'export']);
     Route::get('invoices', [AdminInvoiceController::class, 'index']);

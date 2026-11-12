@@ -103,5 +103,7 @@
     "Check your inbox: we have sent you a link to confirm.": "Consultez votre boîte mail : nous vous avons envoyé un lien de confirmation.",
     "This link is not valid any more.": "Ce lien n'est plus valide.",
     "Unknown reference value: :key": "Valeur de référence inconnue : :key",
-    "The value of «:label» is out of range.": "La valeur de « :label » est hors limites."
+    "The value of «:label» is out of range.": "La valeur de « :label » est hors limites.",
+    "A piece of news needs a title in Spanish.": "Une actualité a besoin d'un titre en espagnol.",
+    "A published piece of news needs its text in Spanish.": "Une actualité publiée a besoin de son texte en espagnol."
 }
