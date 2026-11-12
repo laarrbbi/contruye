@@ -15,7 +15,6 @@ import { cn, formatNumber } from '@/lib/utils'
 /** Paper and night lay their content out on the same grid, so that the two copies of the pitch coincide. */
 const GRID = 'container relative flex h-full flex-col justify-center pb-8 pt-20 lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-14'
 const ART = 'relative z-20 mx-auto aspect-square w-[min(100%,56svh)] lg:aspect-[8/7] lg:w-full'
-const CAPTION = 'etiquette mt-5 text-center lg:text-start'
 
 /**
  * The picture is wider than its frame: the frame looks at the middle of the
@@ -134,7 +133,6 @@ export function Presentation({ course, cta, awake, flush }: Props) {
             {wide && <Pitch course={course} cta={cta} />}
             <div className="lg:col-span-6">
               <Art frame={frame} />
-              <Caption shown={still ? 1 : 'calc(var(--photo, 0) * (1 - var(--iris, 0)))'} />
             </div>
           </div>
 
@@ -155,7 +153,6 @@ export function Presentation({ course, cta, awake, flush }: Props) {
                 {wide && <Pitch course={course} cta={cta} copy />}
                 <div className="lg:col-span-6">
                   <div className={cn(ART, 'invisible')} />
-                  <Caption shown={1} />
                 </div>
               </div>
             </div>
@@ -163,16 +160,6 @@ export function Presentation({ course, cta, awake, flush }: Props) {
         </div>
       </div>
     </section>
-  )
-}
-
-/** What the picture is, said plainly under it: a stock photo, not a project of the course. */
-function Caption({ shown }: { shown: number | string }) {
-  const { t } = useTranslation()
-  return (
-    <p className={cn(CAPTION, 'text-[color:var(--doux)]')} style={{ opacity: shown }}>
-      {t('landing.s1.caption')}
-    </p>
   )
 }
 

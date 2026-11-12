@@ -19,12 +19,14 @@
     "main": "Navegación principal",
     "account": "Mi cuenta",
     "partners": "Partners",
-    "calculator": "Calculadora",
+    "calculator": "Valorador de solares",
     "news": "Noticias",
     "empleo": "Empleo",
     "obras": "Obras",
     "menu": "Menú",
-    "newTab": "(se abre Construye Fichaje en otra pestaña)"
+    "newTab": "(se abre Construye Fichaje en otra pestaña)",
+    "dataCenters": "Data centers",
+    "soon": "Pronto"
   },
   "auth": {
     "loginTitle": "Iniciar sesión",
@@ -958,7 +960,8 @@
       "all": "Todas",
       "sources": {
         "home": "Página principal",
-        "calculator": "Calculadora"
+        "calculator": "Calculadora",
+        "datacenters": "Data centers"
       }
     },
     "reference": {
@@ -1207,7 +1210,6 @@
     },
     "s1": {
       "eyebrow": "El curso para promover vivienda en España, fase a fase",
-      "caption": "Foto de ilustración",
       "alt": "Curso de promoción inmobiliaria – edificios de viviendas al atardecer (foto de ilustración)",
       "modules": "módulos",
       "phases": "fases",
@@ -1887,5 +1889,15 @@
     "inSpanish": "Esta noticia aún no está traducida: la lees en español.",
     "newer": "Más recientes",
     "older": "Anteriores"
+  },
+  "dataCenters": {
+    "eyebrow": "Próximamente",
+    "title": "Curso de construcción de data centers",
+    "lead": "CONSTRUYE prepara un nuevo curso: la construcción de centros de datos. Todavía no está abierto.",
+    "notify": "Te avisamos cuando se abra: deja tu correo y recibirás el boletín de CONSTRUYE.",
+    "meanwhile": "Mientras tanto",
+    "current": "El curso de promoción inmobiliaria en España, ya disponible",
+    "seoTitle": "Curso de construcción de data centers (próximamente)",
+    "seoDescription": "Próximamente en Construye Academy: un curso sobre la construcción de centros de datos. Apúntate y te avisamos cuando se abra."
   }
 }

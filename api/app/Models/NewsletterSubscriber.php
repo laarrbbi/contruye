@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class NewsletterSubscriber extends Model
 {
-    public const SOURCES = ['home', 'calculator'];
+    public const SOURCES = ['home', 'calculator', 'datacenters'];
 
     protected $fillable = [
         'email',

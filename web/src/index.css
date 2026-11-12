@@ -172,6 +172,15 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content code {
     @apply rounded bg-secondary px-1 py-0.5 font-mono text-[0.85em];
   }
+  /* A block written as code (Module 2's CRP structure): one quiet panel whose
+     long lines wrap, instead of a line wider than the phone pushing the whole
+     page sideways. */
+  .md-content pre {
+    @apply max-w-full whitespace-pre-wrap break-words rounded-2xl bg-foreground/[0.04] px-4 py-3.5 font-mono text-[0.8125rem] leading-relaxed sm:px-5 sm:py-4;
+  }
+  .md-content pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
   .md-content ul {
     @apply list-disc space-y-1.5 ps-5;
   }

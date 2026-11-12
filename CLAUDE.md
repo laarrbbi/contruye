@@ -115,13 +115,17 @@ makes that work lives in `docker/mysql-test/`.
   account (`DeviceSessions`). All of it: `docs/proteccion-contenido.md`.
 - The solar calculator (`SolarTeaser`, `SolarCalculatorController`, public): a sample of Plantilla 1
   (6 of 7 inputs, its results but the VAT line and the money on the day, which stay with Module 1;
-  constitution III, amendment 2026-11-12) on its own page `/calculadora-precio-solar`, «Calculadora»
-  in the menu, not on the sales page (the owner's call)
+  constitution III, amendment 2026-11-12) on its own page `/calculadora-precio-solar`, «Valorador de
+  solares» in the menu, not on the sales page (the owner's call)
   (`SolarCalculatorPage`; server-rendered for search engines by `SeoPageController::solarCalculator`,
   with the ITP/AJD of every community, an FAQ and its structured data, in the sitemap).
-- The menu (`components/layout/Header.tsx`): a signed-in user's places (Mis cursos, Partners, Mi
-  cuenta, Administración) and, for everyone, the sections Calculadora, Noticias, Empleo and Obras.
-  Below 1024px they move into a menu (the account menu once signed in).
+- The menu (`components/layout/Header.tsx`): a signed-in user's places (Mis cursos, Partners; Mi
+  cuenta and Administración in the account menu) and, for everyone, the sections Valorador de
+  solares, Noticias, Empleo, Obras and Data centers (tagged «Pronto»). Below 1280px they move into a
+  menu (the account menu once signed in).
+- Data centers (`/data-centers`, `DataCentersPage`, `SeoPageController::dataCenters`): the next
+  course, announced and nothing more (no programme, price or date until there is one); a sign-up to
+  the newsletter with the source `datacenters`, so the owner counts who is waiting for it.
 - The news (`NewsPost`, `NewsController`, `/admin/news`): pieces the owner writes, Spanish required,
   the other languages optional (Spanish shows where one is missing), a date (shown from that day)
   and a picture on the local disk. `/noticias` and `/noticias/<slug>` are public pages, rendered

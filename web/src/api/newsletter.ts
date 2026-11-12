@@ -1,7 +1,7 @@
 import { keepPreviousData, useMutation, useQuery } from '@tanstack/react-query'
 import { API_URL, api } from './client'
 
-export type NewsletterSource = 'home' | 'calculator'
+export type NewsletterSource = 'home' | 'calculator' | 'datacenters'
 export type NewsletterStatus = 'pending' | 'confirmed' | 'unsubscribed'
 
 export function useNewsletterSignup() {

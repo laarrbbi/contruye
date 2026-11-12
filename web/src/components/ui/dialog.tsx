@@ -39,7 +39,7 @@ const DialogContent = React.forwardRef<
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
-          'fixed left-[50%] top-[50%] z-50 grid max-h-[90dvh] w-[calc(100%-1.5rem)] max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 overflow-y-auto overscroll-contain rounded-lg border bg-background p-5 shadow-lg sm:p-6 duration-200 ease-out-strong data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-150 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg',
+          'fixed left-[50%] top-[50%] z-50 grid max-h-[90dvh] w-[calc(100%-1.5rem)] max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 overflow-y-auto overscroll-contain rounded-lg border bg-background p-5 shadow-lg focus:outline-none sm:p-6 duration-200 ease-out-strong data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-150 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg',
           className,
         )}
         {...props}
@@ -56,17 +56,21 @@ const DialogContent = React.forwardRef<
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn('flex flex-col space-y-1.5 text-center sm:text-start', className)} {...props} />
+  // Clear of the close button in the corner.
+  <div className={cn('flex flex-col space-y-1.5 px-7 text-center sm:px-0 sm:pe-8 sm:text-start', className)} {...props} />
 )
 DialogHeader.displayName = 'DialogHeader'
 
 // Sticks to the bottom of a dialog that scrolls (DialogContent caps its
 // height), so the primary action is never below the fold of a long form. It
 // carries the dialog's bottom padding itself, so a short dialog looks the same.
+// Pinned to the bottom of a long dialog, over its padding: the sticky offset
+// is minus that padding, or the bar slid up over the last field (the
+// province prompt's select was cut in half).
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      'sticky bottom-0 -mx-6 -mb-6 flex flex-col-reverse gap-2 bg-background px-6 pb-6 pt-3 sm:flex-row sm:justify-end',
+      'sticky -bottom-5 -mx-5 -mb-5 flex flex-col-reverse gap-2 bg-background px-5 pb-5 pt-3 sm:-bottom-6 sm:-mx-6 sm:-mb-6 sm:flex-row sm:justify-end sm:px-6 sm:pb-6',
       className,
     )}
     {...props}

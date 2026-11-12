@@ -19,12 +19,14 @@
     "main": "Main navigation",
     "account": "My account",
     "partners": "Partners",
-    "calculator": "Calculator",
+    "calculator": "Plot valuator",
     "news": "News",
     "empleo": "Jobs",
     "obras": "Building work",
     "menu": "Menu",
-    "newTab": "(opens Construye Fichaje in a new tab)"
+    "newTab": "(opens Construye Fichaje in a new tab)",
+    "dataCenters": "Data centers",
+    "soon": "Soon"
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -958,7 +960,8 @@
       "all": "All",
       "sources": {
         "home": "Home page",
-        "calculator": "Calculator"
+        "calculator": "Calculator",
+        "datacenters": "Data centers"
       }
     },
     "reference": {
@@ -1207,7 +1210,6 @@
     },
     "s1": {
       "eyebrow": "The course for developing housing in Spain, phase by phase",
-      "caption": "Illustration photo",
       "alt": "Real estate development course – apartment buildings at sunset (illustration photo)",
       "modules": "modules",
       "phases": "phases",
@@ -1887,5 +1889,15 @@
     "inSpanish": "This piece is not translated yet: you are reading it in Spanish.",
     "newer": "Newer",
     "older": "Older"
+  },
+  "dataCenters": {
+    "eyebrow": "Coming soon",
+    "title": "Data center construction course",
+    "lead": "CONSTRUYE is preparing a new course: building data centers. It is not open yet.",
+    "notify": "We will tell you when it opens: leave your e-mail and you will get the CONSTRUYE newsletter.",
+    "meanwhile": "Meanwhile",
+    "current": "The property development course for Spain, available now",
+    "seoTitle": "Data center construction course (coming soon)",
+    "seoDescription": "Coming soon at Construye Academy: a course on building data centers. Sign up and we will tell you when it opens."
   }
 }

@@ -44,6 +44,9 @@ final class SeoPageController
     /** The news (Noticias, in the menu): the list, and one page per piece under it. */
     public const NEWS_PATH = '/noticias';
 
+    /** The next course, announced: building data centers (coming soon). */
+    public const DATA_CENTERS_PATH = '/data-centers';
+
     /** Its questions, in the order the page shows them (web/src/i18n, solar.faq). */
     public const SOLAR_FAQ = ['taxes', 'vat', 'perM2', 'plusvalia', 'rates', 'full'];
 
@@ -183,6 +186,34 @@ final class SeoPageController
         return $this->page($locale, $head, $body);
     }
 
+    /** The data centers course: announced, with nothing more said than exists (constitution I). */
+    public function dataCenters(Request $request): Response
+    {
+        $locale = (string) $request->route('locale');
+        app()->setLocale($locale);
+
+        $s = fn (string $key) => SpaStrings::get($locale, "dataCenters.{$key}");
+        $url = LocalizedUrl::to(self::DATA_CENTERS_PATH, $locale);
+
+        $head = $this->head($locale, self::DATA_CENTERS_PATH, $s('seoTitle'), $s('seoDescription'), [
+            StructuredData::organization(),
+            StructuredData::website(),
+            StructuredData::breadcrumbs([
+                ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
+                ['name' => $s('title'), 'url' => $url],
+            ]),
+        ]);
+
+        $body = view('seo.data-centers', [
+            'locale' => $locale,
+            'header' => $this->header($locale, self::DATA_CENTERS_PATH),
+            's' => $s,
+            'courseUrl' => LocalizedUrl::path('/', $locale),
+        ])->render();
+
+        return $this->page($locale, $head, $body);
+    }
+
     /** One piece of news, with its own title, description, picture and article data. */
     public function newsPost(Request $request): Response
     {
@@ -274,6 +305,7 @@ final class SeoPageController
                 $pages->push(['path' => "/cursos/{$course->slug}", 'lastmod' => $course->updated_at]);
             }
         }
+        $pages->push(['path' => self::DATA_CENTERS_PATH, 'lastmod' => null]);
         // The news: its list once there is a piece, and every piece.
         $news = NewsPost::visible()->orderByDesc('published_at')->get(['id', 'slug', 'published_at', 'updated_at']);
         if ($news->isNotEmpty()) {
@@ -411,6 +443,7 @@ final class SeoPageController
             'links' => [
                 ['href' => LocalizedUrl::path(self::SOLAR_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.calculator')],
                 ['href' => LocalizedUrl::path(self::NEWS_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.news')],
+                ['href' => LocalizedUrl::path(self::DATA_CENTERS_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.dataCenters')],
             ],
             'languages' => collect(config('locales.supported'))
                 ->reject(fn (string $other) => $other === $locale)

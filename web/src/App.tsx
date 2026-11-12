@@ -27,6 +27,7 @@ const CheckoutPage = lazy(() => buyingPath.checkout().then((m) => ({ default: m.
 const ManualPaymentPage = lazy(() => buyingPath.manualPayment().then((m) => ({ default: m.ManualPaymentPage })))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })))
 const SolarCalculatorPage = lazy(() => import('@/pages/SolarCalculatorPage').then((m) => ({ default: m.SolarCalculatorPage })))
+const DataCentersPage = lazy(() => import('@/pages/DataCentersPage').then((m) => ({ default: m.DataCentersPage })))
 const NewsPage = lazy(() => import('@/pages/NewsPage').then((m) => ({ default: m.NewsPage })))
 const NewsPostPage = lazy(() => import('@/pages/NewsPostPage').then((m) => ({ default: m.NewsPostPage })))
 const AdminNewsPage = lazy(() => import('@/pages/admin/AdminNewsPage').then((m) => ({ default: m.AdminNewsPage })))
@@ -108,6 +109,7 @@ export default function App() {
                   <Route path="calculadora-precio-solar" element={<SolarCalculatorPage />} />
                   <Route path="noticias" element={<NewsPage />} />
                   <Route path="noticias/:slug" element={<NewsPostPage />} />
+                  <Route path="data-centers" element={<DataCentersPage />} />
                 </Route>
               ))}
               {/* The app's own screens. deploy/nginx/construye.conf lists them too:

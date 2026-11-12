@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { MapPin } from 'lucide-react'
 import { useUpdateProfile, useUser } from '@/api/auth'
@@ -22,6 +22,7 @@ export function ProvinceWelcome() {
   const { data: provinces } = useProvinces()
   const updateProfile = useUpdateProfile()
   const [choice, setChoice] = useState<string | undefined>(undefined)
+  const content = useRef<HTMLDivElement>(null)
   const [later, setLater] = useState(() => {
     try {
       return sessionStorage.getItem(LATER_KEY) === '1'
@@ -43,7 +44,16 @@ export function ProvinceWelcome() {
 
   return (
     <Dialog open={open} onOpenChange={(next) => !next && postpone()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent
+        ref={content}
+        className="sm:max-w-md"
+        // The dialog takes the focus, not the select: opened on its own, the
+        // field wore its focus ring before anyone had touched it.
+        onOpenAutoFocus={(event) => {
+          event.preventDefault()
+          content.current?.focus({ preventScroll: true })
+        }}
+      >
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <MapPin className="h-5 w-5 shrink-0 text-primary" aria-hidden />

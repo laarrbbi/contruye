@@ -5,6 +5,7 @@ import {
   Building2,
   Calculator,
   Check,
+  Server,
   ChevronDown,
   Globe,
   Handshake,
@@ -21,7 +22,7 @@ import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
 import { LOCALES, LOCALE_NAMES, isRtl, setLocale, type Locale } from '@/i18n'
-import { NEWS_PATH, SOLAR_CALCULATOR_PATH, isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
+import { DATA_CENTERS_PATH, NEWS_PATH, SOLAR_CALCULATOR_PATH, isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
 import { FICHAJE_EMPLEO_URL, FICHAJE_OBRAS_URL } from '@/lib/fichaje'
 import { useHeaderTone } from '@/lib/headerTone'
 import { cn } from '@/lib/utils'
@@ -45,8 +46,10 @@ interface NavItem {
   also?: RegExp
   /** Another site (Construye Fichaje): opens in a new tab, marked as such. */
   external?: boolean
-  /** Only from this width up in the bar (it is in the account menu anyway). */
-  wide?: boolean
+  /** In the account menu only, not in the bar: there is no room for it beside the sections. */
+  menuOnly?: boolean
+  /** Not open yet: a small «Pronto» tag beside it. */
+  soon?: boolean
 }
 
 /** "Javier Morales" → "JM"; one word → its first letter. */
@@ -82,14 +85,16 @@ export function Header() {
     if (isPublicPage(path)) navigate(localizedPath(path, locale) + location.search + location.hash)
   }
 
-  // The sections everyone can open: the free calculator, the news, and the
-  // two sides of Construye Fichaje, a separate site.
+  // The sections everyone can open: the plot valuator (Plantilla 1), the
+  // news, the two sides of Construye Fichaje (a separate site), and the next
+  // course, announced.
   const sections: NavItem[] = [
     { to: localizedPath(SOLAR_CALCULATOR_PATH, current), label: t('nav.calculator'), icon: Calculator },
     // NavLink keeps it lit on each piece of news too (/noticias/…).
     { to: localizedPath(NEWS_PATH, current), label: t('nav.news'), icon: Newspaper },
     { to: FICHAJE_EMPLEO_URL, label: t('nav.empleo'), icon: HardHat, external: true },
     { to: FICHAJE_OBRAS_URL, label: t('nav.obras'), icon: Building2, external: true },
+    { to: localizedPath(DATA_CENTERS_PATH, current), label: t('nav.dataCenters'), icon: Server, soon: true },
   ]
 
   // The places of a signed-in user.
@@ -98,19 +103,25 @@ export function Header() {
         // The player belongs to "my courses": it stays lit while learning.
         { to: '/dashboard', label: t('nav.myCourses'), icon: LayoutDashboard, also: /^\/learn(\/|$)/ },
         { to: '/partners', label: t('nav.partners'), icon: Handshake },
-        { to: '/account', label: t('nav.account'), icon: UserRound, wide: true },
-        ...(user.role === 'admin' ? [{ to: '/admin', label: t('nav.admin'), icon: ShieldCheck }] : []),
+        { to: '/account', label: t('nav.account'), icon: UserRound, menuOnly: true },
+        ...(user.role === 'admin' ? [{ to: '/admin', label: t('nav.admin'), icon: ShieldCheck, menuOnly: true }] : []),
       ]
     : []
 
-  // On a wide screen everything sits next to the logo, the sections after
-  // «Mis cursos» and «Partners»; on a smaller one it moves into a menu (the
-  // account menu once signed in).
-  const bar: NavItem[] = user ? [...own.slice(0, 2), ...sections, ...own.slice(2)] : sections
+  // On a wide screen (1280px and more) everything sits next to the logo, the
+  // sections after «Mis cursos» and «Partners»; on a smaller one it moves into
+  // a menu (the account menu once signed in).
+  const bar: NavItem[] = (user ? [...own.slice(0, 2), ...sections, ...own.slice(2)] : sections).filter((item) => !item.menuOnly)
+
+  const soonTag = (onNight: boolean) => (
+    <span className={cn('ms-1 rounded-full bg-or/20 px-1.5 py-px text-[0.625rem] font-semibold uppercase tracking-wide', onNight ? 'text-or' : 'text-or-fonce')}>
+      {t('nav.soon')}
+    </span>
+  )
 
   const barClass = (active: boolean) =>
     cn(
-      'inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors duration-150 xl:px-3',
+      'inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors duration-150',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
       night
         ? cn('text-blanc hover:bg-blanc/10', active && 'bg-blanc/10')
@@ -120,7 +131,7 @@ export function Header() {
     )
 
   /** One entry of a dropdown menu: a page here, or the other site in a new tab. */
-  const menuEntry = ({ to, label, icon: Icon, external }: NavItem) => (
+  const menuEntry = ({ to, label, icon: Icon, external, soon }: NavItem) => (
     <DropdownMenuItem key={to} asChild className="gap-2">
       {external ? (
         <a href={to} target="_blank" rel="noopener">
@@ -133,6 +144,7 @@ export function Header() {
         <Link to={to}>
           <Icon className="h-4 w-4 text-muted-foreground" aria-hidden />
           {label}
+          {soon && soonTag(false)}
         </Link>
       )}
     </DropdownMenuItem>
@@ -163,10 +175,10 @@ export function Header() {
           <ConstruyeLogo variant={night ? 'inherit' : 'brand'} wordmarkClassName="hidden min-[440px]:flex" />
         </Link>
 
-        <nav aria-label={t('nav.main')} className="-ms-2 hidden min-w-0 items-center gap-0.5 lg:flex">
-          {bar.map(({ to, label, also, external, wide }) =>
+        <nav aria-label={t('nav.main')} className="-ms-2 hidden min-w-0 items-center gap-0.5 xl:flex">
+          {bar.map(({ to, label, also, external, soon }) =>
             external ? (
-              <a key={to} href={to} target="_blank" rel="noopener" className={cn(barClass(false), wide && 'hidden xl:inline-flex')}>
+              <a key={to} href={to} target="_blank" rel="noopener" className={barClass(false)}>
                 {label}
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-60 rtl:-scale-x-100" aria-hidden />
                 <span className="sr-only">{t('nav.newTab')}</span>
@@ -175,11 +187,10 @@ export function Header() {
               <NavLink
                 key={to}
                 to={to}
-                className={({ isActive }) =>
-                  cn(barClass(isActive || (also?.test(location.pathname) ?? false)), wide && 'hidden xl:inline-flex')
-                }
+                className={({ isActive }) => barClass(isActive || (also?.test(location.pathname) ?? false))}
               >
                 {label}
+                {soon && soonTag(night)}
               </NavLink>
             ),
           )}
@@ -190,7 +201,7 @@ export function Header() {
           {!user && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className={cn('px-2 lg:hidden', quiet ?? 'text-muted-foreground hover:text-foreground')}>
+                <Button variant="ghost" size="sm" className={cn('px-2 xl:hidden', quiet ?? 'text-muted-foreground hover:text-foreground')}>
                   <Menu className="h-5 w-5" aria-hidden />
                   <span className="sr-only">{t('nav.menu')}</span>
                 </Button>
@@ -273,8 +284,8 @@ export function Header() {
                 <DropdownMenuSeparator />
                 {own.map(menuEntry)}
                 {/* The sections, here too below the width where the bar has them. */}
-                <DropdownMenuSeparator className="lg:hidden" />
-                <div className="lg:hidden">{sections.map(menuEntry)}</div>
+                <DropdownMenuSeparator className="xl:hidden" />
+                <div className="xl:hidden">{sections.map(menuEntry)}</div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                   className="gap-2"
