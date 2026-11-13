@@ -9,6 +9,7 @@
 - Está hecha para una promoción de **vivienda libre en régimen de cooperativa**: los socios compran a coste, la gestora cobra un porcentaje de gestión y la financiación es un préstamo hipotecario que se subroga a los socios.
 - **Dos archivos:**
   - **PLANTILLA_LIBRE_corregida.xlsx**: el modelo completo. 18 hojas (las 17 del original más «Parámetros legales») y unas 31.000 fórmulas enlazadas.
+  - **Guia_Analisis_de_Viabilidad_corregida.xlsx**: el mismo modelo con un ejemplo completo del profesional (22 viviendas) y sus notas en las casillas. Es un estudio previo: verás el aviso de calendario, porque su ejemplo tiene pagos antes del primer mes del cash-flow (Lección F.8).
   - **Plantilla simplificada de Análisis de Viabilidad**: la hoja de resumen del modelo completo ("3ª Coste Total Promoción") con un ejemplo real: 1 vivienda de 200 m².
 - **Cálculo iterativo:** la plantilla tiene referencias circulares a propósito (Lección F.7). El archivo corregido ya trae activado el cálculo iterativo (100 iteraciones, cambio máximo 0,001). Si Excel avisa de «referencia circular», compruébalo en *Archivo → Opciones → Fórmulas → Habilitar cálculo iterativo*. En LibreOffice, recalcula varias veces (Ctrl+Mayús+F9) hasta que los importes no cambien. En la plataforma ya viene resuelto.
 
@@ -181,6 +182,7 @@ La plantilla original se construyó hacia 2002. La versión del curso está revi
 - La liquidación del IVA del cash-flow estaba enlazada a mano para el calendario del ejemplo. Ahora se calcula sola cada trimestre.
 - Había errores visibles (#VALUE! y #DIV/0!) y controles «O.K.» que fallaban por decimales.
 - El control de calidad de la obra estaba fijo al 1,5 % dentro de una fórmula. Ahora es un dato (Datos de Partida D102).
+- Nuevo **aviso de calendario** junto al mes cero (Datos de Partida E79). El cash-flow empieza el mes siguiente al mes cero y dura 48 meses: si un pago cae fuera, el aviso lo dice. Antes ese pago desaparecía de la caja sin que nadie lo viera.
 
 ## Lección F.9 — De la plantilla a la decisión de un promotor
 

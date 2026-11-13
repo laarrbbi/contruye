@@ -136,6 +136,7 @@
 - **Contingencies:** set aside 3–5 % of the construction cost from the very first CRP.
 - **Legal costs** (lawyers, notary, registry) and **corporate structure** costs: include them even if they look small.
 - To put all this in methodically, use **Template 2 · Quick feasibility and residual method** (included): sales, costs by item, margin and maximum land price. If you want the month-by-month detail (cost by chapter, loan and cash flow), the extra at the end of the course is the full professional model (**FINANCIALS** section).
+- **A complete preliminary study, worked through:** the professional's **Feasibility analysis guide** (*Guía de análisis de viabilidad*: 22 homes, with its notes on the timetable) comes with the professional template, in the extra at the end of the course.
 
 ## Lesson 2.4 — Ratios and the decision
 

@@ -9,6 +9,7 @@
 - It is designed for an **open-market housing development run as a cooperative** (*vivienda libre en régimen de cooperativa*): the members buy at cost, the management company (*gestora*) charges a management percentage, and the financing is a mortgage loan that the members take over (*subrogación*).
 - **Two files:**
   - **PLANTILLA_LIBRE_corregida.xlsx**: the full model. 18 sheets (the original's 17 plus «Parámetros legales») and some 31.000 linked formulas.
+  - **Guia_Analisis_de_Viabilidad_corregida.xlsx**: the same model with a complete example from the professional (22 homes) and the professional's notes in the cells. It is a preliminary study: you will see the timetable warning, because its example has payments before the first month of the cash flow (Lesson F.8).
   - **Simplified feasibility model** (*Plantilla simplificada de Análisis de Viabilidad*): the full model's summary sheet ("3ª Coste Total Promoción") with a real example: 1 home of 200 m².
 - **Iterative calculation:** the model has deliberate circular references (Lesson F.7). The corrected file already comes with iterative calculation turned on (100 iterations, maximum change 0,001). If Excel warns of a «circular reference», check it in *File → Options → Formulas → Enable iterative calculation*. In LibreOffice, recalculate several times (Ctrl+Shift+F9) until the amounts stop changing. On the platform this is already taken care of.
 
@@ -181,6 +182,7 @@ The original model was built around 2002. The course's version has been reviewed
 - The cash flow's IVA settlement was linked by hand to the example's calendar. Now it is calculated by itself every quarter.
 - There were visible errors (#VALUE! and #DIV/0!) and «O.K.» checks that failed because of decimals.
 - The quality control of the works was fixed at 1,5 % inside a formula. Now it is an input (Datos de Partida D102).
+- New **timetable warning** next to month zero (Datos de Partida E79). The cash flow starts the month after month zero and runs for 48 months: if a payment falls outside, the warning says so. Before, that payment vanished from the cash flow without anyone noticing.
 
 ## Lesson F.9 — From the model to a developer's decision
 

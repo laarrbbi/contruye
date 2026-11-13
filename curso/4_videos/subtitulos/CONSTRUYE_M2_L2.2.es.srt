@@ -1,0 +1,239 @@
+1
+00:00:00,400 --> 00:00:04,315
+Esta es la lección dos punto dos: el
+encaje y el estudio de mercado.
+
+2
+00:00:04,635 --> 00:00:08,265
+Antes de calcular nada, necesitas
+saber qué cabe en el solar,
+
+3
+00:00:08,265 --> 00:00:10,347
+y a qué precio se vende en la zona.
+
+4
+00:00:11,667 --> 00:00:15,328
+Primero, el encaje. Encarga al
+arquitecto un estudio de cabida.
+
+5
+00:00:15,328 --> 00:00:17,594
+En el sector se llama encargar un mono.
+
+6
+00:00:17,914 --> 00:00:22,723
+Estima la edificabilidad computable, y las
+superficies construidas y útiles.
+
+7
+00:00:23,043 --> 00:00:27,541
+Distribuye las viviendas, las zonas comunes,
+las escaleras y los ascensores,
+
+8
+00:00:27,541 --> 00:00:29,198
+los garajes y los trasteros.
+
+9
+00:00:29,518 --> 00:00:33,948
+Comprueba las tipologías, la iluminación, la
+ventilación y la accesibilidad.
+
+10
+00:00:33,948 --> 00:00:38,029
+Y te dice si hace falta otro instrumento
+de planeamiento o de gestión.
+
+11
+00:00:38,349 --> 00:00:41,661
+Sin mono, la cuenta de resultado
+es una suposición.
+
+12
+00:00:42,981 --> 00:00:44,977
+Distingue cuatro superficies.
+
+13
+00:00:45,297 --> 00:00:47,638
+La útil es lo que pisa el comprador.
+
+14
+00:00:47,958 --> 00:00:53,042
+La construida es la útil más los muros: más o
+menos, la útil por uno coma uno cinco,
+
+15
+00:00:53,042 --> 00:00:53,950
+a uno coma dos.
+
+16
+00:00:54,270 --> 00:00:58,769
+La construida con comunes suma la parte de
+portales, escaleras y ascensores:
+
+17
+00:00:58,769 --> 00:01:03,683
+la útil por uno coma dos cinco, a uno coma tres
+cinco. Es la que se suele anunciar.
+
+18
+00:01:04,003 --> 00:01:08,666
+Y la computable es la que cuenta para la
+edificabilidad, según tu plan general.
+
+19
+00:01:09,986 --> 00:01:13,001
+Para sacar el precio de venta,
+sigue cuatro pasos.
+
+20
+00:01:13,320 --> 00:01:18,249
+Uno: recorre las promociones en venta a uno a
+tres kilómetros. Llama como comprador,
+
+21
+00:01:18,249 --> 00:01:22,827
+y anota el precio por metro, la tipología, las
+calidades y el ritmo de ventas.
+
+22
+00:01:23,147 --> 00:01:27,357
+Dos: compáralo con los precios escriturados
+de Registradores y Notarios,
+
+23
+00:01:27,357 --> 00:01:28,585
+no con los de oferta.
+
+24
+00:01:28,905 --> 00:01:33,384
+Tres: lee los informes trimestrales de las
+tasadoras y de las consultoras.
+
+25
+00:01:33,704 --> 00:01:34,112
+Cuatro:
+
+26
+00:01:34,112 --> 00:01:38,955
+aplica un descuento del tres al cinco por ciento
+sobre la oferta de la competencia,
+
+27
+00:01:38,955 --> 00:01:41,113
+para tus primeras ventas sobre plano.
+
+28
+00:01:42,433 --> 00:01:44,576
+Un mix de producto orientativo.
+
+29
+00:01:44,896 --> 00:01:48,141
+De un dormitorio, entre el diez y
+el veinte por ciento:
+
+30
+00:01:48,141 --> 00:01:50,855
+el precio por metro más alto,
+para inversores.
+
+31
+00:01:51,175 --> 00:01:55,377
+De dos dormitorios, entre el treinta y
+cinco y el cuarenta por ciento:
+
+32
+00:01:55,377 --> 00:01:58,859
+es el más demandado. Y de tres, otro
+tanto, para familias.
+
+33
+00:01:59,179 --> 00:02:03,770
+De cuatro, entre el cinco y el diez por
+ciento: ticket alto y rotación lenta.
+
+34
+00:02:03,770 --> 00:02:07,466
+Los áticos llevan una prima del veinte
+al cuarenta por ciento.
+
+35
+00:02:07,786 --> 00:02:10,903
+Y los garajes y trasteros van por
+unidad: el garaje,
+
+36
+00:02:10,903 --> 00:02:15,339
+entre diez mil y treinta y cinco mil euros
+según la ciudad, y el trastero,
+
+37
+00:02:15,339 --> 00:02:16,898
+entre tres mil y ocho mil.
+
+38
+00:02:18,218 --> 00:02:19,911
+Mide también el mercado.
+
+39
+00:02:20,231 --> 00:02:24,894
+La absorción: cuántas viviendas se venden al
+mes en las promociones comparables,
+
+40
+00:02:24,894 --> 00:02:26,818
+y en cuánto tiempo se vende todo.
+
+41
+00:02:27,138 --> 00:02:32,176
+La oferta futura: las promociones con licencia
+concedida o en trámite en la zona.
+
+42
+00:02:32,496 --> 00:02:35,371
+El perfil del comprador, la
+demanda por tipología,
+
+43
+00:02:35,371 --> 00:02:39,108
+y el precio por separado de la
+vivienda, el garaje y el trastero.
+
+44
+00:02:39,428 --> 00:02:43,362
+Y contrasta siempre los precios
+anunciados con operaciones reales.
+
+45
+00:02:44,682 --> 00:02:47,024
+Cuidado con tres errores típicos.
+
+46
+00:02:47,344 --> 00:02:49,056
+Usar precios de anuncio.
+
+47
+00:02:49,376 --> 00:02:53,168
+Diseñar el mix que le gusta al promotor,
+y no el que pide la zona.
+
+48
+00:02:53,488 --> 00:02:57,201
+Y olvidar que los garajes que no se
+venden se quedan en el balance.
+
+49
+00:02:58,521 --> 00:03:01,409
+En resumen: primero el mono,
+luego las superficies,
+
+50
+00:03:01,409 --> 00:03:04,808
+el precio con operaciones reales, y
+el mix que pide la zona.
+
+51
+00:03:05,128 --> 00:03:08,392
+En la próxima lección verás los
+costes, con precisión.

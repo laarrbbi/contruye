@@ -1,0 +1,16 @@
+Lección 2.4 — Ratios y decisión
+
+Esta es la lección dos punto cuatro: los ratios y la decisión. Con la cuenta hecha, tres ratios y tres escenarios te dicen si la operación se hace o no.
+
+El margen sobre ventas: el beneficio antes de impuestos, entre los ingresos. Mínimo, un quince por ciento. El ROE: el beneficio neto, entre los fondos propios. El objetivo, más de un veinte por ciento anual. Y la TIR del proyecto y del equity, sobre el flujo de caja mensual. El objetivo, entre un quince y un veinte por ciento de proyecto, y más de un veinte del equity. Una promoción dura, normalmente, de tres a cuatro años, desde la compra del suelo hasta la última escritura.
+
+El impuesto de sociedades, para los periodos que empiezan en dos mil veintiséis. El tipo general es del veinticinco por ciento. Una entidad de nueva creación paga el quince, en su primer periodo con base positiva y en el siguiente. Una empresa de reducida dimensión, con menos de diez millones de cifra de negocio, el veintitrés. Y una microempresa, con menos de un millón, el diecinueve por ciento en los primeros cincuenta mil euros, y el veintiuno en el resto. Navarra y el País Vasco tienen su propia normativa foral. Y confírmalo con tu asesor: hay exclusiones, y la cifra de negocio de una promoción cambia mucho de un año a otro.
+
+Haz siempre tres escenarios. El optimista: vendes al cien por cien del precio, y la obra no se desvía. El base: vendes al noventa y cinco por ciento, y la obra sube un cinco. Y el pesimista: vendes entre el ochenta y cinco y el noventa por ciento, la obra sube entre un diez y un quince, y hay seis meses de retraso.
+
+La decisión: adelante, solo si el escenario pesimista sigue sin pérdidas.
+
+Cuidado con tres errores típicos. Calcular el margen con el IVA dentro. No meter el calendario: la TIR depende del tiempo. Y olvidar el impuesto de sociedades en el ROE.
+
+En resumen: mide el margen, el ROE y la TIR, aplica el impuesto que te toca, haz tres escenarios, y sigue adelante solo si el pesimista no pierde. En la próxima lección verás la negociación, la estructura y la aprobación de la inversión.
+

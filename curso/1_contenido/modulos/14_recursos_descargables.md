@@ -24,6 +24,8 @@
 | 20 | **Plantilla 3 · Préstamo promotor** (incluida) | Importe, comisión, intereses y coste financiero (Módulo 5) |
 | 21 | **Plantilla 4 · Control de costes de obra** (incluida) | Presupuesto, certificado, previsión y desviaciones por capítulo (Módulo 7) |
 | 22 | **Plantilla 5 · Plan de ventas y cobros** (incluida) | Reserva, contrato, aplazado, escritura y cantidades a cuenta (Módulo 8) |
-| Extra | **Plantilla financiera profesional completa** (de pago, al terminar el curso) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 hojas: coste, préstamo, gestión, forma de pago, cash-flow y resumen. Incluye la versión simplificada con el ejemplo real del profesional |
+| 23 | **Plantilla del profesional · Base de datos de gestión de suelo** (incluida) | Solares, propietarios, clientes y captadores, con listas desplegables y ficha del solar (Módulo 1) |
+| 24 | **Plantilla del profesional · Números gordos del solar** (incluida) | Precio del solar por repercusión, coste, precio de venta y beneficio en una hoja (Módulo 1) |
+| Extra | **Plantilla financiera profesional completa** (de pago, al terminar el curso) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 hojas: coste, préstamo, gestión, forma de pago, cash-flow y resumen. Incluye la versión simplificada con el ejemplo real del profesional y la **Guía de análisis de viabilidad**: un estudio previo completo resuelto (22 viviendas) |
 
 

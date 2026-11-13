@@ -4,7 +4,7 @@ Versión 2 · 08/11/2026 · Larbi
 
 Texto completo de la home de CONSTRUYE, en el orden en que lo lee el visitante: logros, credenciales, oportunidad, programa, oferta y cierre. Lo que está entre [COMPLETAR] son datos que solo vosotros tenéis.
 
-Cambio respecto a la versión 1: el curso incluye 5 plantillas pequeñas de cálculo. La plantilla financiera profesional completa ya no se vende como producto de entrada: es el extra opcional que se ofrece al terminar el curso.
+Cambio respecto a la versión 1: el curso incluye 7 plantillas (5 de CONSTRUYE y 2 del profesional). La plantilla financiera profesional completa ya no se vende como producto de entrada: es el extra opcional que se ofrece al terminar el curso.
 
 ## 1. SEO: lo que va en el código de la página
 
@@ -14,7 +14,7 @@ La home compite por «curso de promoción inmobiliaria» y «cómo ser promotor 
 | --- | --- |
 | URL | / (home) |
 | Title (53 caracteres) | Curso de Promoción Inmobiliaria en España \| CONSTRUYE |
-| Meta description | Aprende a promover viviendas en España paso a paso: 12 fases, leyes, partners en las 52 provincias y plantillas de cálculo incluidas. Empieza hoy. |
+| Meta description | Aprende a promover viviendas en España paso a paso: 12 fases, leyes, partners en las 52 provincias y 7 plantillas incluidas. Empieza hoy. |
 | H1 | Curso de promoción inmobiliaria en España: de la idea a la entrega de llaves |
 | Palabra clave principal | curso de promoción inmobiliaria |
 | Palabras clave secundarias | cómo ser promotor inmobiliario · promoción de viviendas · curso promotor inmobiliario · estudio de viabilidad inmobiliaria · plantilla análisis de viabilidad promoción · promoción vivienda renta libre · cómo promover viviendas |
@@ -47,7 +47,7 @@ Título de la barra: **Lo que ya está hecho y te espera el primer día**
 | 12 | fases de la promoción, del solar a la postventa |
 | 60 | lecciones: 51 del proceso y 9 de análisis financiero |
 | 52 | provincias con su directorio de partners e instituciones |
-| 5 | plantillas de cálculo incluidas: solar, viabilidad, préstamo, control de obra y ventas |
+| 7 | plantillas incluidas: base de datos de suelo, números gordos, compra del solar, viabilidad, préstamo, control de obra y ventas |
 | 166 | preguntas de evaluación, con examen final |
 
 Si alguna cifra de trayectoria todavía no es real, se quita de la barra: una cifra inflada cuesta más credibilidad de la que da. Las cinco últimas ya son ciertas hoy.
@@ -113,7 +113,7 @@ Cada fase se escribe como un resultado que el visitante quiere conseguir, no com
 
 | Fase | Lo que consigues |
 | --- | --- |
-| 1. Solar | Encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas. Con la Plantilla 1: compra del solar |
+| 1. Solar | Encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas. Con la base de datos de suelo y los números gordos del profesional, y la Plantilla 1: compra del solar |
 | 2. Análisis de viabilidad | Calcular coste, financiación y margen antes de comprometer un euro. Con la Plantilla 2: viabilidad y método residual |
 | 3. Proyectos técnicos | Contratar y coordinar arquitecto, ingenierías y dirección facultativa |
 | 4. Licencias y autorizaciones | Saber qué licencia pedir, ante quién y qué pasa con el silencio administrativo |
@@ -128,7 +128,7 @@ Cada fase se escribe como un resultado que el visitante quiere conseguir, no com
 
 ### Tres cosas que marcan la diferencia
 
-**1. Plantillas de cálculo en cada fase clave.** Cinco plantillas incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Con los impuestos de cada comunidad al día, para que sepas si una promoción sale antes de arriesgar dinero. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas y más de 30.000 fórmulas, revisada celda a celda y con los impuestos al día.
+**1. Plantillas en cada fase clave.** Siete plantillas incluidas, dos de ellas del propio profesional: base de datos de gestión de suelo, números gordos del solar, compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Con los impuestos de cada comunidad al día, para que sepas si una promoción sale antes de arriesgar dinero. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas y más de 30.000 fórmulas, revisada celda a celda y con los impuestos al día.
 
 **2. Partners en las 52 provincias.** Para cada fase, un directorio de los organismos y profesionales con los que vas a trabajar en tu provincia. No empiezas de cero cuando pisas un ayuntamiento nuevo.
 
@@ -165,7 +165,7 @@ El visitante decide aquí. Se le dice con claridad si el curso es para él, qué
 | Incluido | Para qué te sirve |
 | --- | --- |
 | 12 módulos y 51 lecciones del proceso | Saber qué hacer en cada fase |
-| 5 plantillas de cálculo: solar, viabilidad, préstamo, control de obra y ventas | Calcular si una promoción sale antes de comprar |
+| 7 plantillas: base de datos de suelo, números gordos del solar, compra del solar, viabilidad, préstamo, control de obra y ventas | Organizar tu cartera de suelo y calcular si una promoción sale antes de comprar |
 | Directorio de partners de las 52 provincias | Saber a quién llamar en tu zona |
 | Anexo de fiscalidad y urbanismo por comunidad autónoma | Aplicar la norma y los impuestos de tu comunidad |
 | 17 modelos y documentos descargables y estrategia comercial | Trabajar con modelos desde el primer día |
@@ -212,7 +212,7 @@ Sí. Incluye la normativa estatal, un directorio de partners para las 52 provinc
 
 ### ¿Qué plantillas incluye el curso?
 
-Cinco plantillas de cálculo, incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas, más de 30.000 fórmulas y los impuestos al día.
+Siete plantillas incluidas: base de datos de gestión de suelo y números gordos del solar (las dos del profesional), compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas, más de 30.000 fórmulas y los impuestos al día.
 
 ### ¿Qué diferencia hay entre promotor, constructor y agente inmobiliario?
 
@@ -247,6 +247,7 @@ No es una página de la home: es la oferta que ve el alumno al terminar el curso
 - **Qué incluye:**
   - La plantilla en Excel y la calculadora en la plataforma.
   - La versión simplificada con el ejemplo real del profesional.
+  - La Guía de análisis de viabilidad del profesional: un estudio previo completo resuelto, de 22 viviendas.
   - Las 9 lecciones de Financials: qué dato va en cada casilla y cómo leer el resultado.
   - Los impuestos al día: cuando cambia la ley, se actualizan solos.
 - **Precio:** [COMPLETAR]
@@ -284,7 +285,7 @@ No es una página de la home: es la oferta que ve el alumno al terminar el curso
 
 1. **El nombre del profesor.** Pongo a Nicolás Cabañas Yuste porque su documento de fases es la base del curso. Si el Máster en Urbanismo es de otra persona, se cambia el nombre.
 2. **La plantilla profesional.** Ya está corregida y con los impuestos de 2026 en la hoja «Parámetros legales». Falta que Nicolás la revise y autorice venderla como extra.
-3. **Las cifras del curso** (12 fases, 60 lecciones, 52 provincias, 5 plantillas, 166 preguntas) salen del contenido actual. Si cambia el contenido, se cambian aquí.
+3. **Las cifras del curso** (12 fases, 60 lecciones, 52 provincias, 7 plantillas, 166 preguntas) salen del contenido actual. Si cambia el contenido, se cambian aquí.
 
 ### Fuentes de las cifras de mercado
 

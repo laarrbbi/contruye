@@ -1,0 +1,20 @@
+Lección 2.3 — Costes con precisión
+
+Esta es la lección dos punto tres: los costes, con precisión. Vas a ver qué entra en cada coste, cuánto cuesta construir, y cómo calcular lo máximo que puedes pagar por el suelo.
+
+El coste del suelo no es solo su precio. Súmale el ITP o el AJD que no recuperas, la notaría, el registro, el topográfico, la geotecnia y los abogados. Y el coste financiero del suelo, y las cargas de urbanización.
+
+El método residual: el precio máximo del suelo es igual a los ingresos, menos el resto de costes, menos el beneficio que buscas. El suelo vale lo que el proyecto permite pagar.
+
+El coste de ejecución material, en dos mil veinticinco y dos mil veintiséis, sobre rasante. Estándar: de novecientos a mil cien euros por metro construido. Media alta: de mil cien a mil cuatrocientos. Y lujo: desde mil cuatrocientos. El sótano, de quinientos a ochocientos euros por metro, y más si hay agua o pantallas. Pide siempre precio a constructoras locales: cambia mucho de una provincia a otra.
+
+Distingue los presupuestos. El PEM, de ejecución material, lo calcula el arquitecto en el proyecto. El PEC, por contrata, es el PEM más los gastos generales, del trece al diecisiete por ciento, y el beneficio industrial, del seis. Esa referencia viene de la contratación pública: en obra privada, se negocia. Y el IVA de la obra es del diez por ciento, y se recupera.
+
+Y los demás costes, como referencia. El arquitecto, entre el tres y el cinco por ciento del PEM. Y el arquitecto técnico, entre el uno y medio y el tres. La coordinación de seguridad y salud, las ingenierías, y el organismo de control técnico. El ICIO, hasta el cuatro por ciento del coste real de la obra: mira la ordenanza. Y el seguro decenal, entre el cero coma ocho y el uno coma cinco por ciento del coste de construcción. Los avales o el seguro de cantidades a cuenta, entre el cero coma cinco y el uno coma cinco por ciento anual. La comercialización, del dos al cuatro por ciento de las ventas. Y los gastos financieros, del tres al seis por ciento de los ingresos.
+
+Reserva para imprevistos entre el tres y el cinco por ciento del coste de construcción, desde la primera cuenta. E incluye los gastos jurídicos y de estructura societaria, aunque parezcan pequeños. Para meter todo esto con método, tienes la Plantilla dos: viabilidad rápida y método residual, incluida en el curso.
+
+Cuidado con tres errores típicos. No incluir las acometidas: la electricidad y el agua pueden costar decenas de miles de euros. Olvidar el coste de los avales. Y poner el ICIO sobre el PEM sin mirar la ordenanza.
+
+En resumen: suma todo el coste del suelo, pide precio a constructoras locales, distingue el PEM del PEC, y reserva para imprevistos. En la próxima lección verás los ratios, y cómo decidir.
+

@@ -13,7 +13,7 @@ use App\Support\Course\CourseSource;
 use Illuminate\Database\Seeder;
 
 /**
- * Installs the course from the instructor's package (curso/, version 4.1):
+ * Installs the course from the instructor's package (curso/, version 5):
  * the 12 modules and Financials with their lessons, the course documents
  * (introduction, resources, annexes), the module quizzes and the final exam.
  * Run again over a course already installed, it brings the Spanish texts up

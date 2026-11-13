@@ -52,10 +52,28 @@ Todo lo que fija la ley y estaba escrito dentro de las fórmulas sale ahora de u
 - Las cuentas cuadran: con los impuestos de 2002, la plantilla corregida da los mismos importes por capítulo que el original (diferencia máxima 0,48 € en una promoción de 6 M€, por pasar las pesetas a euros al céntimo), salvo las acometidas que faltaban.
 - La escala de timbres en euros coincide con la vigente.
 
-## 5. Lo que necesita a Nicolás
+## 5. Las 3 plantillas que envió el 11/11/2026
+
+Sus archivos siguen intactos en `originales/`.
+
+- **Guía de análisis de viabilidad** (`Plantilla_Guia_Analisis_de_Viabilidad.xlsx`).
+  - Es el mismo modelo de PLANTILLA_LIBRE: mismas fórmulas, con la hoja *Datos de Partida* reordenada y un ejemplo de 22 viviendas. Con su ejemplo, el modelo original da lo mismo que su Excel en 5.832 de 5.832 celdas comprobadas.
+  - Va en el extra, sobre la plantilla corregida: `excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx`, con sus datos y sus notas como comentarios en las casillas.
+  - Su ejemplo tiene **fechas que no cuadran con el cash-flow**. El suelo y la primera disposición del préstamo están en el mes cero, y los proyectos se pagan antes (la obra empieza 6 meses después de la compra; su propia nota dice unos 10). El cash-flow empieza el mes siguiente al mes cero, así que esos pagos se quedan fuera: le faltan 1,8 M€ de pagos sin IVA. En su Excel pasa lo mismo y sus controles salen en FALSO.
+  - Además capta 21 socios para 22 viviendas, y el plan de pagos de los socios no cubre el coste.
+  - Para que nadie vuelva a perder pagos sin enterarse, la plantilla corregida tiene un **aviso de calendario nuevo** junto al mes cero (*Datos de Partida* E79).
+- **Cálculo del precio del solar («números gordos»)** → `plantillas_pequenas/numeros_gordos_solar.xlsx` (y su calculadora).
+  - Los porcentajes llevaban un ×100 dentro de las fórmulas, así que se escribía 1,40 % para decir «coste × 1,4» y 1,30 % para «coste × 1,3». Ahora son 40 % y 30 %, con el mismo resultado.
+  - El **beneficio industrial** era el 30 % de las ventas (599.550 € en su ejemplo). Ahora es ventas − coste: 461.193 € (un 23,1 % sobre ventas).
+  - Techo residencial ahora es =C6 (estaba repetido a mano), y la edificabilidad terciaria es un coeficiente m²t/m²s sin ×100.
+  - Nuevas filas: margen sobre ventas y coste total.
+- **Esquema de la base de datos de gestión de suelo** → `plantillas_pequenas/base_datos_suelo.xlsx`. Hecha a partir de su esquema: hojas de solares, propietarios, clientes y captadores, sus listas desplegables y una ficha del solar para enviar por email. Las zonas de su lista eran de Castellón-Valencia-Alicante; se han dejado generales y se pueden ampliar.
+
+## 6. Lo que necesita a Nicolás
 
 1. **Revisar y dar el visto bueno** a estas correcciones, y autorizar la venta de la plantilla como extra del curso.
 2. **Valores de mercado de 2002** que la ley no fija y siguen como en el original (ya en euros): tarifas del OCT y del seguro decenal, honorarios por tramos, tasaciones, captación de socios (1.505 € por vivienda), consejo rector, auditorías, local de asambleas, prima del seguro de cantidades a cuenta (0,7 %), interés del aval del suelo (0,75 % trimestral) y aranceles de notaría y registro simplificados. ¿Tiene valores actuales?
 3. **Seguro de cantidades a cuenta** (*3ª Licencias y Varios* K15:K51): la fórmula reparte la prima en 82,85 % con recargo y 14,78 % con un 16 % que hemos tratado como IVA general. ¿Es IVA o es otro concepto? Los seguros no llevan IVA.
 4. **Cooperativa o promotora:** la plantilla es de cooperativa. ¿Tiene versión para promotora con SL (precio de venta y margen)?
-5. **Su ejemplo:** la hoja *Datos de Partida* rellena del ejemplo del simplificado, para cerrar la comprobación al 100 %. Con los datos reconstruidos, el plan de pagos de los socios recauda 2.260 € más que el coste y los controles del plan lo señalan.
+5. **Las fechas de su guía:** ¿ajustamos su ejemplo a su propia nota de calendario (obra unos 10 meses después de la compra del suelo y mes cero un mes antes del primer pago)? Así el cash-flow recoge todos los pagos y los controles salen en O.K.
+6. **Su ejemplo del simplificado:** la hoja *Datos de Partida* rellena del ejemplo del simplificado, para cerrar la comprobación al 100 %. Con los datos reconstruidos, el plan de pagos de los socios recauda 2.260 € más que el coste y los controles del plan lo señalan.

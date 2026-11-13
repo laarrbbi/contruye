@@ -12,6 +12,8 @@
 | `originales/PLANTILLA_LIBRE.xls` | El archivo original, byte a byte (MD5 `61de546ad0e5d84fbfd5a2ed2e652ab4`) |
 | `originales/Plantilla_simplificada_Analisis_de_Viabilidad.xlsx` | El archivo simplificado original, byte a byte |
 | `excel_corregido/PLANTILLA_LIBRE_corregida.xlsx` | La plantilla corregida en Excel: 18 hojas, cálculo iterativo activado, lista de comunidades en Datos de Partida D93 |
+| `excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx` | La guía del profesional (ejemplo de 22 viviendas y sus notas) sobre la plantilla corregida |
+| `originales/Plantilla_Guia_Analisis_de_Viabilidad.xlsx`, `Plantilla_calculo_precio_solar.xlsx`, `Esquema_BBDD_Gestion_de_Suelo.xlsx` | Los 3 archivos que envió el profesional el 11/11/2026, sin tocar |
 | `excel_corregido/Plantilla_simplificada_corregida.xlsx` | El simplificado con «Varios» con IVA y los totales con IVA corregidos (cifras del ejemplo de 2002) |
 | `plantilla/plantilla_libre.json` | **La plantilla corregida** que usa el motor: 18 hojas, 31.065 fórmulas y las 64 celdas de corte de ciclo |
 | `plantilla/plantilla_libre_original.json` | El export exacto del original (17 hojas, 30.795 fórmulas), sin ningún cambio |
@@ -20,10 +22,11 @@
 | `plantilla/parametros_legales.json` | Los parámetros legales: código, celda, valor vigente, valor de 2002, base legal, y los ITP/AJD de las 19 comunidades |
 | `plantilla/correcciones.json` | Registro de las 6.469 celdas cambiadas, por grupos, con el antes y el después |
 | `plantilla/vista_simplificada.json` | Correspondencia entre el archivo simplificado y la hoja del modelo (420 celdas) |
-| `plantillas_pequenas/` | Las 5 plantillas pequeñas del curso (Excel + JSON para el mismo motor) e `indice.json` |
+| `plantillas_pequenas/` | Las 5 plantillas pequeñas del curso, los números gordos del solar (Excel + JSON) y la base de datos de suelo (Excel), con `indice.json` |
+| `pruebas/escenario_guia_profesional.json` | El ejemplo de la guía del profesional, pasado a las celdas de entrada de la plantilla |
 | `motor/plantillaEngine.js` | Motor de cálculo (Node.js + HyperFormula 2.7.1) |
 | `motor/ejemplo.js` | Ejemplo de uso con una promoción de 24 viviendas |
-| `pruebas/validar.js` | 39 pruebas automáticas: original frente a Excel y LibreOffice, corregida, parámetros legales y plantillas pequeñas |
+| `pruebas/validar.js` | 44 pruebas automáticas: original frente a Excel y LibreOffice, corregida, parámetros legales y plantillas pequeñas |
 | `herramientas/` | Los scripts que generan la plantilla corregida, las entradas, el Excel corregido y las plantillas pequeñas, y el que comprueba el Excel en LibreOffice |
 
 ## 2. Los dos archivos
@@ -162,6 +165,7 @@ Detalle en `CAMBIOS.md`. Resumen:
 | 7 | Liquidación del IVA del cash-flow enlazada a mano a 4 celdas para el calendario del ejemplo (V34, AC209, AI209, BG209) | Liquidación automática trimestral (filas 34, 209 y 259-262) | Cobros = pagos en cualquier calendario |
 | 8 | #VALUE! en etiquetas (2º Auxiliar B151:B169, 4º Auxiliar1 B136:B154) y #DIV/0! en 3ª Proyectos (12 celdas) | Etiqueta del bloque y división protegida | 0 errores |
 | 9 | Coeficientes construida/útil del resumen mal enlazados (8º Resumen F22, F30; 2º Auxiliar I20, I68) | Cada fila muestra el suyo | Solo presentación |
+| 10b | Un pago con fecha fuera de los 48 meses del cash-flow desaparecía de la caja | Aviso nuevo en Datos de Partida E79 | El usuario ve si su calendario cuadra |
 | 10 | 144 controles «O.K.» con igualdad exacta | Tolerancia de 1 céntimo (1 € donde usaban INT) | Todos en O.K. con datos coherentes |
 | 11 | Control de calidad de obra fijo al 1,5 % (3ª Proyectos D53) | Dato nuevo en Datos de Partida D102 (1,5 % por defecto) | Editable |
 | 12 | Etiquetas: «PVP CONSTRUCCIÓN», «CONTROL CALIDAD OBRA» en D115, errata en C116 | Corregidas | Solo texto |
@@ -169,7 +173,7 @@ Detalle en `CAMBIOS.md`. Resumen:
 
 ## 9. Validación
 
-`cd motor && npm install && npm test` (unos 60 s). 39 pruebas:
+`cd motor && npm install && npm test` (unos 60 s). 44 pruebas:
 
 | Prueba | Resultado |
 |---|---|
@@ -182,6 +186,8 @@ Detalle en `CAMBIOS.md`. Resumen:
 | Excel corregido abierto en LibreOffice con 24 viviendas | 0 errores, todos los controles en O.K. y **los mismos importes que el motor** |
 | Parámetros legales | Cambiar IVA o AJD desde `setParametros` cambia los resultados; el usuario no puede escribirlos; valores mal escritos (21 en vez de 0,21) se rechazan |
 | 5 plantillas pequeñas | 0 errores, resultados del ejemplo comprobados a mano y en LibreOffice |
+| Guía del profesional | Con su ejemplo, el original da lo mismo que su Excel (5.832 celdas); sobre la corregida, 0 errores y salta el aviso de calendario (su ejemplo tiene pagos antes del mes cero) |
+| Números gordos y base de datos de suelo | Mismos resultados que el original salvo el beneficio corregido; 0 errores en LibreOffice; la ficha de la base de datos funciona |
 
 ## 10. Integración en el software
 

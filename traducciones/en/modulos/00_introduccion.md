@@ -17,6 +17,7 @@
 > - **Annex A** holds the directory of the 52 provinces, with the partners for each phase.
 > - **Annex B** holds the taxes of each autonomous community.
 > - Modules 1, 2, 5, 7 and 8 come with their **small template**, included in the course: plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan.
+> - Module 1 also comes with two **templates from the professional**: the land management database and the plot's rough numbers (*números gordos*).
 > - At the end, the **FINANCIALS** section presents the **optional extra**: the complete professional financial template, corrected and with up-to-date taxes, the very one the platform calculates with.
 
 > **Legal notice for students.** Market figures are indicative (2025-2026). Regional rates and planning rules change: always confirm them in the official gazette or on the body's electronic office before you sign. This course does not replace the advice of a lawyer, a tax adviser or a registered professional.
@@ -31,7 +32,7 @@
 | Level | Intermediate → professional |
 | Structure | 12 modules (12 real phases) · 51 lessons + Financials section |
 | Assessment | 12 module quizzes + Financials quiz (minimum 70 %) + final exam of 40 questions (minimum 80 %) |
-| Resources | 5 small templates included + 17 downloadable models and documents · Optional extra at the end: the complete professional financial template |
+| Resources | 7 templates included (5 from CONSTRUYE and 2 from the professional) + 17 downloadable models and documents · Optional extra at the end: the complete professional financial template and a worked feasibility guide |
 | Directory | 52 provinces × 12 phases (Annex A) |
 | Legal framework | Reviewed as of October 2026 |
 

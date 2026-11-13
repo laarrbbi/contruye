@@ -136,6 +136,7 @@
 - **Imprévus (aléas) :** réservez 3–5 % du coût de construction dès le premier CRP.
 - **Frais juridiques** (avocats, notaire, registre) et de **structure sociétaire** : incluez-les même s'ils semblent faibles.
 - Pour tout intégrer avec méthode, utilisez le **modèle 2 · Viabilité rapide et méthode résiduelle** (inclus) : ventes, coûts par poste, marge et prix maximal du terrain. Si vous voulez le détail mois par mois (coût par chapitres, prêt et cash-flow), l'extra de fin de formation est le modèle professionnel complet (section **FINANCIALS**).
+- **Une étude préalable complète, résolue :** le **Guide d'analyse de viabilité** du professionnel (*Guía de análisis de viabilidad* : 22 logements, avec ses notes de calendrier) accompagne le modèle professionnel, dans l'extra de fin de formation.
 
 ## Leçon 2.4 — Ratios et décision
 

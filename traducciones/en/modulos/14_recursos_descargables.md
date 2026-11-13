@@ -24,4 +24,6 @@
 | 20 | **Template 3 · Developer loan** (included) | Amount, fee, interest and financial cost (Module 5) |
 | 21 | **Template 4 · Construction cost control** (included) | Budget, certified, forecast and deviations by chapter (Module 7) |
 | 22 | **Template 5 · Sales and collections plan** (included) | Reservation, contract, deferred payments, deed and payments on account (Module 8) |
-| Extra | **Complete professional financial template** (paid, at the end of the course) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 sheets: cost, loan, management, payment terms, cash flow and summary. Includes the simplified version with the professional's real example |
+| 23 | **Professional's template · Land management database** (included) | Plots, owners, clients and scouts, with drop-down lists and a plot sheet (Module 1) |
+| 24 | **Professional's template · Plot rough numbers** (included) | Plot price from the land cost per square metre built, cost, sale price and profit on one sheet (Module 1) |
+| Extra | **Complete professional financial template** (paid, at the end of the course) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 sheets: cost, loan, management, payment terms, cash flow and summary. Includes the simplified version with the professional's real example and the **Feasibility analysis guide**: a complete preliminary study, worked through (22 homes) |

@@ -1,8 +1,8 @@
 # CONSTRUYE · Contenido, plantillas y textos de la web
 
-Curso profesional de promoción de viviendas de renta libre en España. Versión 4.1, noviembre de 2026.
+Curso profesional de promoción de viviendas de renta libre en España. Versión 5, noviembre de 2026. Novedad del v5: los vídeos de los Módulos 1 y 2 (`4_videos/`).
 
-**Modelo del producto:** el curso incluye 5 plantillas pequeñas de cálculo (módulos 1, 2, 5, 7 y 8). La plantilla financiera profesional completa (`PLANTILLA_LIBRE`, sección Financials) es un **extra opcional de pago que se ofrece al terminar el curso**.
+**Modelo del producto:** el curso incluye 7 plantillas: 5 de CONSTRUYE (módulos 1, 2, 5, 7 y 8) y 2 del profesional en el Módulo 1 (base de datos de gestión de suelo y números gordos del solar). La plantilla financiera profesional completa (`PLANTILLA_LIBRE`, sección Financials) es un **extra opcional de pago que se ofrece al terminar el curso**, con la Guía de análisis de viabilidad resuelta del profesional.
 
 ## 1_contenido · El curso
 
@@ -12,9 +12,9 @@ Curso profesional de promoción de viviendas de renta libre en España. Versión
 | `curso_sin_evaluacion.md` | El mismo contenido sin quizzes, sin examen y sin la estrategia comercial |
 | `indice.json` | Orden de las secciones y su archivo |
 | `modulos/00_introduccion.md` | Presentación, ficha, las 12 fases y las leyes generales |
-| `modulos/01_…` a `12_…` | Los 12 módulos (51 lecciones). Cada uno con: leyes que aplican, dónde ir, lecciones, checklist y partners de la provincia. Los módulos 1, 2, 5, 7 y 8 indican su plantilla pequeña |
+| `modulos/01_…` a `12_…` | Los 12 módulos (51 lecciones). Cada uno con: leyes que aplican, dónde ir, lecciones, checklist y partners de la provincia. Los módulos 1, 2, 5, 7 y 8 indican su plantilla; el 1, también las dos del profesional |
 | `modulos/13_financials_plantilla_financiera.md` | Financials (9 lecciones): el extra del final del curso, la plantilla profesional corregida |
-| `modulos/14_recursos_descargables.md` | Recursos para el alumno: 17 documentos, las 5 plantillas pequeñas y el extra |
+| `modulos/14_recursos_descargables.md` | Recursos para el alumno: 17 documentos, las 7 plantillas incluidas y el extra |
 | `modulos/15_estrategia_comercial.md` | Posicionamiento, precios y funcionamiento previsto del curso |
 | `modulos/16_anexo_a_partners_por_provincia.md` | Directorio de las 52 provincias: institución o partner para cada fase |
 | `modulos/17_anexo_b_fiscalidad_por_ccaa.md` | ITP, AJD, IVA, primera ocupación, cédula y ley urbanística por comunidad |
@@ -33,9 +33,16 @@ Curso profesional de promoción de viviendas de renta libre en España. Versión
 - **Plantilla profesional corregida** (`excel_corregido/` y `plantilla/plantilla_libre.json`): la del profesional, revisada celda a celda, con los errores corregidos y los impuestos en la hoja **«Parámetros legales»**. Qué se ha cambiado: `2_plantilla_financiera/CAMBIOS.md`.
 - **Parámetros legales** (`plantilla/parametros_legales.json`): IVA, ITP y AJD de las 19 comunidades, IPS, recargo del Consorcio, interés legal del dinero y AJD del préstamo. Los cambia el administrador y se aplican a todas las plantillas de todos los usuarios.
 - **5 plantillas pequeñas** (`plantillas_pequenas/`): compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra, plan de ventas y cobros. Mismo motor, mismos parámetros legales.
+- **2 plantillas del profesional** (`plantillas_pequenas/`): base de datos de gestión de suelo (Excel) y números gordos del solar (Excel y calculadora). Y en el extra, su **Guía de análisis de viabilidad** sobre la plantilla corregida (`excel_corregido/`).
 - Los originales del profesional siguen sin tocar en `originales/`.
-- Empieza por `2_plantilla_financiera/LEEME.md`. `cd 2_plantilla_financiera/motor && npm install && npm test` repite las 39 comprobaciones.
+- Empieza por `2_plantilla_financiera/LEEME.md`. `cd 2_plantilla_financiera/motor && npm install && npm test` repite las 44 comprobaciones.
 
 ## 3_textos_web · La página principal
 
 - `pagina_principal.md`: el texto completo de la home (SEO, hero, logros, profesor, oportunidad, programa, oferta, FAQ y cierre) y la oferta del extra de fin de curso. Lo que está entre [COMPLETAR] se deja así hasta tener el dato real.
+
+## 4_videos · Los vídeos de las lecciones
+
+- 9 vídeos de los Módulos 1 y 2 (lecciones 1.1 a 1.4 y 2.1 a 2.5), con subtítulos en español (.vtt y .srt), portada y transcripción de cada uno.
+- La lección 1.1 sustituye al vídeo ya publicado: misma voz, con los arranques de frase corregidos.
+- Empieza por `4_videos/LEEME.md` y `4_videos/videos.json`. Las instrucciones para montarlos están en `PROMPT_PARA_CLAUDE_CODE.md`. Las del contenido y las plantillas (v4) siguen en `PROMPT_v4_contenido_y_plantillas.md`.

@@ -1,0 +1,150 @@
+{
+ "plantilla": "Números gordos del solar",
+ "regla": "Solo se escriben estas celdas.",
+ "porcentajes": "En tanto por uno (0,30 = 30 %).",
+ "entradas": [
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C4",
+   "etiqueta": "Situación urbanística",
+   "tipo": "texto",
+   "unidad": "",
+   "defecto": "Urbano consolidado",
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C5",
+   "etiqueta": "Superficie del solar",
+   "tipo": "numero",
+   "unidad": "m²s",
+   "defecto": 344,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C6",
+   "etiqueta": "Edificabilidad residencial (techo total)",
+   "tipo": "numero",
+   "unidad": "m²t",
+   "defecto": 1586.49,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C7",
+   "etiqueta": "Edificabilidad terciario/comercial",
+   "tipo": "numero",
+   "unidad": "m²t/m²s",
+   "defecto": 0,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C11",
+   "etiqueta": "Ocupación",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 1,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C12",
+   "etiqueta": "Alturas",
+   "tipo": "texto",
+   "unidad": "",
+   "defecto": "B+5",
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C13",
+   "etiqueta": "Producto resultante",
+   "tipo": "texto",
+   "unidad": "",
+   "defecto": "18 viviendas (2 son áticos)",
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C15",
+   "etiqueta": "Repercusión del suelo",
+   "tipo": "numero",
+   "unidad": "€/m²t",
+   "defecto": 45,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C16",
+   "etiqueta": "Costes de urbanización",
+   "tipo": "numero",
+   "unidad": "€/m²t",
+   "defecto": 0,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C17",
+   "etiqueta": "Coste de construcción",
+   "tipo": "numero",
+   "unidad": "€/m²t",
+   "defecto": 660,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C18",
+   "etiqueta": "Licencias, proyectos y otros",
+   "tipo": "porcentaje",
+   "unidad": "% s/ construcción",
+   "defecto": 0.4,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C20",
+   "etiqueta": "Beneficio sobre coste",
+   "tipo": "porcentaje",
+   "unidad": "%",
+   "defecto": 0.3,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  },
+  {
+   "seccion": "Solar",
+   "hoja": "Números gordos",
+   "celda": "C21",
+   "etiqueta": "Vivienda tipo",
+   "tipo": "numero",
+   "unidad": "m²c",
+   "defecto": 90,
+   "nota": "Ejemplo del profesional",
+   "defecto_es_formula": false
+  }
+ ]
+}

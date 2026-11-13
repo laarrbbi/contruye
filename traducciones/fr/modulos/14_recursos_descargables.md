@@ -24,4 +24,6 @@
 | 20 | **Modèle 3 · Prêt promoteur** (inclus) | Montant, commission, intérêts et coût financier (Module 5) |
 | 21 | **Modèle 4 · Contrôle des coûts du chantier** (inclus) | Budget, montant certifié, prévision et écarts par chapitre (Module 7) |
 | 22 | **Modèle 5 · Plan de ventes et d'encaissements** (inclus) | Réservation, contrat, paiements différés, acte et acomptes (Module 8) |
-| Extra | **Modèle financier professionnel complet** (payant, à la fin du cours) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 feuilles : coût, prêt, gestion, modalités de paiement, cash-flow et synthèse. Comprend la version simplifiée avec l'exemple réel du professionnel |
+| 23 | **Modèle du professionnel · Base de données de gestion foncière** (inclus) | Terrains, propriétaires, clients et apporteurs, avec listes déroulantes et fiche du terrain (Module 1) |
+| 24 | **Modèle du professionnel · Grands chiffres du terrain** (inclus) | Prix du terrain par incidence foncière, coût, prix de vente et bénéfice sur une feuille (Module 1) |
+| Extra | **Modèle financier professionnel complet** (payant, à la fin du cours) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 feuilles : coût, prêt, gestion, modalités de paiement, cash-flow et synthèse. Comprend la version simplifiée avec l'exemple réel du professionnel et le **Guide d'analyse de viabilité** : une étude préalable complète résolue (22 logements) |

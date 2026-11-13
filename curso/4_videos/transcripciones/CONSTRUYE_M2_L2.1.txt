@@ -1,0 +1,14 @@
+Lección 2.1 — La Cuenta de Resultado Promotor (CRP)
+
+Bienvenido al Módulo dos: el análisis de viabilidad. En esta lección vas a montar la cuenta de resultado promotor, la CRP: la cuenta que te dice si una promoción gana dinero.
+
+La cuenta empieza por los ingresos: la venta de viviendas, garajes, trasteros y locales, sin IVA. A los ingresos les restas el suelo, con sus impuestos no recuperables, notaría, registro y due diligence. Y la construcción. Después, la urbanización exterior y las acometidas, los honorarios técnicos, las licencias, el ICIO y las tasas, y los seguros. Y por último, la comercialización, los gastos generales y de gestión, y los gastos financieros. Lo que queda es el beneficio antes de impuestos. Le restas el impuesto de sociedades, y tienes el beneficio neto.
+
+Trabaja siempre sin IVA en la cuenta. El IVA que soportas lo recuperas al repercutir el diez por ciento en las ventas.
+
+Estos son los pesos orientativos de cada partida sobre los ingresos. El suelo, entre el quince y el treinta por ciento. La construcción, entre el cuarenta y cinco y el cincuenta y cinco. Los honorarios técnicos, entre el cinco y el ocho. Las licencias y tasas, entre el dos y el cuatro. Y los gastos financieros, entre el tres y el seis. La comercialización, entre el dos y el cuatro. Los gastos generales, entre el tres y el cinco. Y los seguros, entre el uno y el dos. Y el beneficio antes de impuestos, entre el quince y el veinticinco por ciento.
+
+Y una regla: por debajo del quince por ciento de margen sobre ventas, el riesgo no compensa.
+
+En resumen: ingresos sin IVA, menos todos los costes, igual a beneficio. Y si el margen no llega al quince por ciento, no compensa. En la próxima lección verás cómo sacar los ingresos: el encaje y el estudio de mercado.
+

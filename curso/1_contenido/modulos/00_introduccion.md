@@ -17,6 +17,7 @@
 > - El **Anexo A** tiene el directorio de las 52 provincias, con los partners de cada fase.
 > - El **Anexo B** tiene la fiscalidad de cada comunidad autónoma.
 > - Los módulos 1, 2, 5, 7 y 8 traen su **plantilla pequeña**, incluida en el curso: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros.
+> - El Módulo 1 trae además dos **plantillas del profesional**: la base de datos de gestión de suelo y los números gordos del solar.
 > - Al final, la sección **FINANCIALS** presenta el **extra opcional**: la plantilla financiera profesional completa, corregida y con los impuestos al día, la misma que calcula la plataforma.
 
 > **Aviso legal para el alumno.** Las cifras de mercado son orientativas (2025-2026). Los tipos autonómicos y las normas urbanísticas cambian: confírmalos siempre en el boletín oficial o la sede electrónica del organismo antes de firmar. Este curso no sustituye el asesoramiento de abogado, asesor fiscal o técnico colegiado.
@@ -31,7 +32,7 @@
 | Nivel | Intermedio → profesional |
 | Estructura | 12 módulos (12 fases reales) · 51 lecciones + sección Financials |
 | Evaluación | 12 quizzes de módulo + quiz de Financials (mínimo 70 %) + examen final de 40 preguntas (mínimo 80 %) |
-| Recursos | 5 plantillas pequeñas incluidas + 17 modelos y documentos descargables · Extra opcional al final: la plantilla financiera profesional completa |
+| Recursos | 7 plantillas incluidas (5 de CONSTRUYE y 2 del profesional) + 17 modelos y documentos descargables · Extra opcional al final: la plantilla financiera profesional completa y una guía de viabilidad resuelta |
 | Directorio | 52 provincias × 12 fases (Anexo A) |
 | Marco legal | Revisado a octubre de 2026 |
 

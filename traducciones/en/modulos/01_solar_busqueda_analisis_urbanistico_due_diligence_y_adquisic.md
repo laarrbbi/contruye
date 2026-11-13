@@ -52,10 +52,12 @@
   6. Public land: CASA47 (the state body that has replaced SEPES since 2025) and your community's land agency (Annex A).
   7. Investment funds and financial institutions selling land portfolios.
   8. Off-market deals: agreements with owners through a swap for future homes or by contributing the land to the company.
+- **Keep your land portfolio in a database** from the first plot: each plot with its zone, classification, zoning, planning status, areas, buildability, price and payment terms, and who owns it and who brought it to you. Keep your clients too, with what they are looking for, and your land scouts (*captadores*). Use the **Professional's template · Land management database** (included): it comes with drop-down lists and a plot sheet ready to send by e-mail.
 - **10-minute filter before you spend more time:**
   - Buildability × sale price in the area ÷ asking price → if the land exceeds 30 % of revenue, drop it unless the location is prime.
   - Is it open-market housing, or is there a protected-housing reserve?
   - Does anything need demolishing, or anyone need moving out?
+  - To run this filter with numbers, use the **Professional's template · Plot rough numbers** (*números gordos*, included). From the buildable floor area, the land cost per square metre built (*repercusión*), the construction cost and the profit you are after, it gives you the plot price, the sale price you need and the profit. If the plot passes the filter, refine the purchase with Template 1 and the feasibility with Template 2 (Module 2).
 - ⚠️ **Typical mistakes:** falling in love with the location without running the numbers; buying "developable" land thinking it is buildable; not checking whether the town hall is changing the plan.
 
 ## Lesson 1.2 — Planning analysis: what you can build
@@ -143,6 +145,8 @@
 
 ## Module 1 checklist
 
+- [ ] Plot entered in your land management database, with its owner and its scout
+- [ ] Plot's rough numbers done before spending more time on it
 - [ ] Template 1 · Site purchase (included) filled in with the price, the autonomous community and the actual costs
 - [ ] Product sheet defined (type, buyers, unit mix, specification, target price)
 - [ ] Up-to-date nota simple and certificate of encumbrances

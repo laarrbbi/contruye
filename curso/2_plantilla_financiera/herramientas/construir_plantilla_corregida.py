@@ -301,6 +301,8 @@ ITP, AJD = f"{Q}$B$36", f"{Q}$B$37"
 
 setc('5 Etiquetas y datos', DP, 'C93', 'COMUNIDAD AUTÓNOMA DEL SOLAR (ITP / AJD)', 'Nueva casilla: los tipos de ITP y AJD dependen de la comunidad.', es_formula=False)
 setc('5 Etiquetas y datos', DP, 'D93', CCAA_DEFECTO, 'Nuevo dato: comunidad autónoma de la promoción (lista de la hoja Parámetros legales).', es_formula=False)
+setc('4 Controles', DP, 'E79', "=IF(ABS('6ª Cash-flow'!BP238-'3ª Coste Total Promoción'!C24)<1,\"Calendario O.K.: todos los pagos caen dentro de los 48 meses del cash-flow\",\"AVISO: hay pagos fuera del cash-flow (antes del mes siguiente al mes cero o después del mes 48). Revisa el mes cero y las fechas\")",
+     'Aviso nuevo junto al mes cero: el cash-flow empieza el mes siguiente al mes cero y dura 48 meses; un pago con fecha fuera de ese tramo no entraba en la caja y nadie lo veía.')
 
 def param_cell(hoja, celda, cod, motivo, esperado):
     old = get(hoja, celda); assert abs(old - esperado) < 1e-12, (hoja, celda, old)

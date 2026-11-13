@@ -1,0 +1,20 @@
+Lección 1.2 — Análisis urbanístico: qué puedes construir
+
+Esta es la lección uno punto dos: el análisis urbanístico. Antes de pagar por un solar, tienes que saber exactamente qué puedes construir en él.
+
+Primero, quién manda. La comunidad autónoma hace la ley de urbanismo. Y el ayuntamiento aplica su plan general y sus ordenanzas.
+
+Estos son los documentos que tienes que leer. El plan general te dice la clasificación del suelo: urbano, urbanizable o rústico. Y su calificación: residencial, terciario o dotacional. La ficha de zona, u ordenanza, con los parámetros del solar. El plan parcial, el plan especial o el estudio de detalle, si el solar está dentro de un ámbito. Y el catálogo de patrimonio: si el edificio que hay está protegido, no lo puedes derribar.
+
+Ahora, los parámetros que tienes que sacar. La edificabilidad: los metros de techo por cada metro de suelo. La altura máxima, en plantas y en metros. La ocupación máxima en planta. Y los retranqueos a fachada, linderos y fondo. Los usos permitidos y compatibles, y las plazas de aparcamiento exigidas. Lo habitual es una por vivienda, o por cada cien metros, pero depende de la ordenanza. La densidad máxima de viviendas por hectárea, si la hay, porque limita el número de pisos. Y qué computa como edificabilidad: terrazas, sótanos o áticos. Cambia mucho de un municipio a otro.
+
+Un ejemplo: un solar de mil metros, con una edificabilidad de dos metros de techo por metro de suelo, te da dos mil metros de techo. Y haz la cuenta con la superficie topográfica, la real, no con la del Catastro.
+
+Cómo hacerlo en la práctica, en tres pasos. Uno: descarga el plan general del visor municipal, o del visor autonómico de planeamiento. Dos: pide a tu arquitecto un estudio de volumetría. En una o dos semanas te dice cuántas viviendas caben de verdad. Tres: pide al ayuntamiento el informe o la cédula urbanística por escrito. Si es vinculante o no depende de la ley autonómica, así que no lo des por hecho.
+
+Antes de comprar, comprueba también cuatro cosas. Si hace falta otro instrumento de planeamiento o de gestión: un estudio de detalle, una reparcelación o un proyecto de urbanización. Cada uno añade meses. Las alineaciones, los patios, la densidad y las dotaciones que te exigen. El riesgo de inundación, en el visor del Sistema Nacional de Cartografía de Zonas Inundables. Y la protección patrimonial del inmueble, o de su entorno.
+
+Cuidado con tres errores típicos. Calcular con la superficie catastral, en vez de la topográfica. Olvidar que los sótanos o los áticos computan. Y no comprobar si hay un plan en tramitación que suspende las licencias.
+
+En resumen: sabe quién manda, lee los documentos, saca los parámetros, y pide la volumetría y la cédula por escrito. En la próxima lección verás la due diligence: cómo comprar sin sorpresas.
+

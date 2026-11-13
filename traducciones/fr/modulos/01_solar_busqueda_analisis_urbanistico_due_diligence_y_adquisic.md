@@ -52,10 +52,12 @@
   6. Foncier public : CASA47 (entité d'État qui remplace SEPES depuis 2025) et l'organisme foncier de votre communauté (Annexe A).
   7. Fonds d'investissement et établissements financiers qui vendent des portefeuilles fonciers.
   8. Opérations hors marché : accords avec des propriétaires par échange contre des logements futurs ou apport du terrain à la société.
+- **Tenez votre portefeuille foncier dans une base de données** dès le premier terrain : chaque terrain avec sa zone, son classement, sa qualification, sa situation d'urbanisme, ses surfaces, sa constructibilité, son prix et ses modalités de paiement, ainsi que son propriétaire et la personne qui vous l'a apporté. Enregistrez aussi vos clients, avec ce qu'ils recherchent, et vos apporteurs d'affaires (*captadores*). Utilisez le **modèle du professionnel · Base de données de gestion foncière** (inclus) : il contient les listes déroulantes et une fiche du terrain prête à envoyer par e-mail.
 - **Filtre de 10 minutes avant d'y consacrer plus de temps :**
   - Constructibilité × prix de vente du secteur ÷ prix demandé → si le terrain dépasse 30 % des recettes, écartez-le sauf emplacement prime.
   - Est-ce du logement libre ou y a-t-il une réserve de logement aidé ?
   - Faut-il démolir ou faire partir quelqu'un ?
+  - Pour faire ce filtre avec des chiffres, utilisez le **modèle du professionnel · Grands chiffres du terrain** (*números gordos*, inclus). À partir de la surface constructible, de l'incidence foncière (*repercusión*), du coût de construction et du bénéfice visé, il vous donne le prix du terrain, le prix de vente nécessaire et le bénéfice. Si le terrain passe le filtre, affinez l'achat avec le modèle 1 et la viabilité avec le modèle 2 (module 2).
 - ⚠️ **Erreurs typiques :** tomber amoureux de l'emplacement sans calculer ; acheter du sol « urbanisable » en le croyant constructible ; ne pas vérifier si la mairie est en train de modifier le plan.
 
 ## Leçon 1.2 — Analyse d'urbanisme : ce que vous pouvez construire
@@ -143,6 +145,8 @@
 
 ## Checklist du module 1
 
+- [ ] Terrain enregistré dans votre base de données de gestion foncière, avec son propriétaire et son apporteur
+- [ ] Grands chiffres du terrain faits avant d'y consacrer plus de temps
 - [ ] Modèle 1 · Achat du terrain (inclus) rempli avec le prix, la communauté autonome et les frais réels
 - [ ] Fiche produit définie (type, public, typologies, qualité, prix cible)
 - [ ] Nota simple et certificat des charges à jour

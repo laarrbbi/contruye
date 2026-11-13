@@ -145,5 +145,27 @@ console.log('7. Plantillas pequeñas del curso: mismo motor y mismos parámetros
   ok(s.valor('Calculadora', 'B15') === 30000, 'Compra a un particular en Madrid: ITP 6 % de 500.000 € = 30.000 €');
 }
 
+console.log('8. Plantillas del profesional (11/11/2026)');
+{
+  const dir = path.join(__dirname, '..', 'plantillas_pequenas');
+  const ng = PlantillaEngine.desdeArchivos(dir, 'numeros_gordos_solar.json', 'numeros_gordos_solar.entradas.json'); ng.calcular();
+  const N = 'Números gordos', v = a => ng.valor(N, a);
+  ok(errores(ng) === 0 && Math.abs(v('C14') - 71392.05) < 0.01 && Math.abs(v('C19') - 969) < 1e-9 && Math.abs(v('C23') - 1259.7) < 1e-9,
+     'Números gordos: mismo precio del solar (71.392,05 €), coste (969 €/m²t) y precio de venta (1.259,70 €/m²t) que el original, sin los ×100');
+  ok(Math.abs(v('C25') - (v('C24') - v('C27'))) < 0.01 && Math.abs(v('C25') - 461192.64) < 0.01 && Math.abs(v('C26') - 0.3 / 1.3) < 1e-9,
+     `Números gordos: beneficio = ventas − coste = ${v('C25').toFixed(2)} € (el original daba el 30 % de las ventas, 599.550,44 €); margen sobre ventas ${(v('C26') * 100).toFixed(2)} %`);
+  // Guía de análisis de viabilidad: el modelo original con su ejemplo da lo mismo que su Excel
+  const esc = P('escenario_guia_profesional.json'), ref = P('valores_guia_profesional.json');
+  const o = orig(); o.setDatos(esc); const ro = o.calcular(); let n = 0, ig = 0;
+  // Estudio Económico T18 es una fecha calculada sobre una fecha vacía (el ejemplo no tiene urbanización): el Excel de 2026 da un día más que el de 2002
+  for (const [h, c] of Object.entries(ref)) for (const [a, x] of Object.entries(c)) { if (h === 'Estudio Económico' && a === 'T18') continue; const y = o.valor(h, a); if (typeof y !== 'number') continue; n++; if (Math.abs(x - y) <= 1e-6 * Math.max(1, Math.abs(x))) ig++; }
+  ok(ro.convergido && n > 5000 && ig === n, `Guía del profesional: con su ejemplo (22 viviendas), el modelo original da lo mismo que su Excel en ${ig} de ${n} celdas de coste, préstamo, gestión, estudio económico y resumen`);
+  const g = corr(); g.setDatos(paraCorregida(esc)); const rg = g.calcular();
+  const aviso = String(g.valor('Datos de Partida', 'E79'));
+  ok(rg.convergido && errores(g) === 0 && aviso.startsWith('AVISO'), 'Guía sobre la plantilla corregida: converge y 0 errores. El aviso de calendario salta: su ejemplo tiene pagos antes del primer mes del cash-flow (suelo y proyectos en el mes cero o antes)');
+  const b = corr(); b.setDatos(paraCorregida(P('escenario_24_viviendas.json'))); b.calcular();
+  ok(String(b.valor('Datos de Partida', 'E79')).startsWith('Calendario O.K.'), 'Con fechas coherentes (24 viviendas), el aviso de calendario dice «Calendario O.K.»');
+}
+
 console.log(fallos ? `\n${fallos} prueba(s) fallida(s)` : '\nTodas las pruebas correctas');
 process.exitCode = fallos ? 1 : 0;

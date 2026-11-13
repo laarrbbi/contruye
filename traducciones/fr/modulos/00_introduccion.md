@@ -17,6 +17,7 @@
 > - L'**Annexe A** contient l'annuaire des 52 provinces, avec les partenaires de chaque phase.
 > - L'**Annexe B** contient la fiscalité de chaque communauté autonome.
 > - Les modules 1, 2, 5, 7 et 8 ont leur **petit modèle**, inclus dans le cours : achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier, et plan de ventes et d'encaissements.
+> - Le module 1 comprend en outre deux **modèles du professionnel** : la base de données de gestion foncière et les grands chiffres du terrain (*números gordos*).
 > - À la fin, la section **FINANCIALS** présente l'**extra facultatif** : le modèle financier professionnel complet, corrigé et à jour des impôts, celui-là même avec lequel la plateforme calcule.
 
 > **Avertissement juridique.** Les chiffres de marché sont indicatifs (2025-2026). Les taux régionaux et les règles d'urbanisme changent : vérifiez-les toujours au bulletin officiel ou sur le site électronique de l'organisme avant de signer. Ce cours ne remplace pas le conseil d'un avocat, d'un conseiller fiscal ou d'un technicien inscrit à son ordre.
@@ -31,7 +32,7 @@
 | Niveau | Intermédiaire → professionnel |
 | Structure | 12 modules (12 phases réelles) · 51 leçons + section Financials |
 | Évaluation | 12 quiz de module + quiz de Financials (minimum 70 %) + examen final de 40 questions (minimum 80 %) |
-| Ressources | 5 petits modèles inclus + 17 modèles et documents téléchargeables · Extra facultatif à la fin : le modèle financier professionnel complet |
+| Ressources | 7 modèles inclus (5 de CONSTRUYE et 2 du professionnel) + 17 modèles et documents téléchargeables · Extra facultatif à la fin : le modèle financier professionnel complet et un guide de viabilité résolu |
 | Annuaire | 52 provinces × 12 phases (Annexe A) |
 | Cadre juridique | Révisé en octobre 2026 |
 

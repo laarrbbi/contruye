@@ -9,6 +9,7 @@
 - Il est conçu pour une promotion de **logement libre en régime de coopérative** (*vivienda libre en régimen de cooperativa*) : les associés achètent au coût, la société de gestion (*gestora*) perçoit un pourcentage de gestion et le financement est un prêt hypothécaire auquel les associés sont subrogés (*subrogación*).
 - **Deux fichiers :**
   - **PLANTILLA_LIBRE_corregida.xlsx** : le modèle complet. 18 feuilles (les 17 de l'original plus « Parámetros legales ») et environ 31.000 formules liées.
+  - **Guia_Analisis_de_Viabilidad_corregida.xlsx** : le même modèle avec un exemple complet du professionnel (22 logements) et ses notes dans les cellules. C'est une étude préalable : vous verrez l'avertissement de calendrier, car son exemple comporte des paiements avant le premier mois du cash-flow (leçon F.8).
   - **Modèle simplifié d'analyse de faisabilité** (*Plantilla simplificada de Análisis de Viabilidad*) : la feuille de synthèse du modèle complet (« 3ª Coste Total Promoción ») avec un exemple réel : 1 logement de 200 m².
 - **Calcul itératif :** le modèle contient des références circulaires voulues (leçon F.7). Le fichier corrigé a déjà le calcul itératif activé (100 itérations, écart maximal 0,001). Si Excel signale une « référence circulaire », vérifiez-le dans *Fichier → Options → Formules → Activer le calcul itératif*. Dans LibreOffice, recalculez plusieurs fois (Ctrl+Maj+F9) jusqu'à ce que les montants ne changent plus. Sur la plateforme, c'est déjà réglé.
 
@@ -181,6 +182,7 @@ Le modèle original a été construit vers 2002. La version de la formation a é
 - La liquidation de l'IVA du cash-flow était liée à la main au calendrier de l'exemple. Elle se calcule désormais d'elle-même chaque trimestre.
 - Il y avait des erreurs visibles (#VALUE! et #DIV/0!) et des contrôles « O.K. » qui échouaient à cause des décimales.
 - Le contrôle qualité des travaux était fixé à 1,5 % dans une formule. C'est désormais une donnée (Datos de Partida D102).
+- Nouvel **avertissement de calendrier** à côté du mois zéro (Datos de Partida E79). Le cash-flow commence le mois suivant le mois zéro et dure 48 mois : si un paiement tombe en dehors, l'avertissement le signale. Auparavant, ce paiement disparaissait de la trésorerie sans que personne ne le voie.
 
 ## Leçon F.9 — Du modèle à la décision d'un promoteur
 

@@ -52,10 +52,12 @@
   6. Suelo público: CASA47 (entidad estatal que sustituye a SEPES desde 2025) y la entidad de suelo de tu comunidad (Anexo A).
   7. Fondos de inversión y entidades financieras que venden carteras de suelo.
   8. Operaciones fuera de mercado: acuerdos con propietarios mediante permuta por viviendas futuras o aportación del suelo a la sociedad.
+- **Lleva tu cartera de suelo en una base de datos** desde el primer solar: cada solar con su zona, clasificación, calificación, situación urbanística, superficies, edificabilidad, precio y forma de pago, y quién es su propietario y quién te lo ha traído. Guarda también a tus clientes con lo que buscan y a tus captadores. Usa la **Plantilla del profesional · Base de datos de gestión de suelo** (incluida): trae las listas desplegables y una ficha del solar lista para enviar por email.
 - **Filtro de 10 minutos antes de dedicar más tiempo:**
   - Edificabilidad × precio de venta de la zona ÷ precio pedido → si el suelo pasa del 30 % de los ingresos, descártalo salvo zona prime.
   - ¿Es vivienda libre o tiene reserva de protegida?
   - ¿Hay que derribar o desalojar a alguien?
+  - Para hacer este filtro con números usa la **Plantilla del profesional · Números gordos del solar** (incluida). Con el techo edificable, la repercusión del suelo, el coste de construcción y el beneficio que buscas, te da el precio del solar, el precio de venta que necesitas y el beneficio. Si pasa el filtro, afina la compra con la Plantilla 1 y la viabilidad con la Plantilla 2 (Módulo 2).
 - ⚠️ **Errores típicos:** enamorarse de la ubicación sin calcular; comprar suelo "urbanizable" pensando que es edificable; no mirar si el ayuntamiento está modificando el plan.
 
 ## Lección 1.2 — Análisis urbanístico: qué puedes construir
@@ -143,6 +145,8 @@
 
 ## Checklist del Módulo 1
 
+- [ ] Solar dado de alta en tu base de datos de gestión de suelo, con su propietario y su captador
+- [ ] Números gordos del solar hechos antes de dedicarle más tiempo
 - [ ] Plantilla 1 · Compra del solar (incluida) rellena con el precio, la comunidad autónoma y los gastos reales
 - [ ] Ficha de producto definida (tipo, público, tipologías, calidades, precio objetivo)
 - [ ] Nota simple y certificación de cargas actualizadas

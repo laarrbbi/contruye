@@ -1,5 +1,5 @@
 {
- "nota": "Plantillas pequeñas incluidas en el curso. La plantilla profesional completa (PLANTILLA_LIBRE) es el extra de pago del final del curso.",
+ "nota": "Plantillas incluidas en el curso: las 5 de CONSTRUYE y 2 del profesional. La plantilla financiera profesional completa (PLANTILLA_LIBRE corregida), su versión simplificada y la Guía de análisis de viabilidad son el extra de pago del final del curso.",
  "plantillas": [
   {
    "numero": 1,
@@ -45,6 +45,49 @@
    "plantilla": "5_plan_ventas_cobros.json",
    "entradas": "5_plan_ventas_cobros.entradas.json",
    "n_entradas": 7
+  }
+ ],
+ "plantillas_del_profesional": [
+  {
+   "id": "base_datos_suelo",
+   "titulo": "Plantilla del profesional · Base de datos de gestión de suelo",
+   "modulo": "Módulo 1 · Solar",
+   "leccion": "1.1",
+   "excel": "base_datos_suelo.xlsx",
+   "plantilla": null,
+   "entradas": null,
+   "uso": "Descarga (Excel). Solares, propietarios, clientes y captadores, con listas y ficha del solar",
+   "original": "originales/Esquema_BBDD_Gestion_de_Suelo.xlsx"
+  },
+  {
+   "id": "numeros_gordos_solar",
+   "titulo": "Plantilla del profesional · Números gordos del solar",
+   "modulo": "Módulo 1 · Solar",
+   "leccion": "1.1",
+   "excel": "numeros_gordos_solar.xlsx",
+   "plantilla": "numeros_gordos_solar.json",
+   "entradas": "numeros_gordos_solar.entradas.json",
+   "uso": "Calculadora y descarga. Filtro rápido: precio del solar por repercusión, coste, precio de venta y beneficio",
+   "original": "originales/Plantilla_calculo_precio_solar.xlsx"
+  }
+ ],
+ "extra": [
+  {
+   "titulo": "Plantilla financiera profesional (corregida)",
+   "excel": "../excel_corregido/PLANTILLA_LIBRE_corregida.xlsx",
+   "plantilla": "../plantilla/plantilla_libre.json",
+   "entradas": "../plantilla/entradas.json"
+  },
+  {
+   "titulo": "Plantilla simplificada con el ejemplo real (corregida)",
+   "excel": "../excel_corregido/Plantilla_simplificada_corregida.xlsx"
+  },
+  {
+   "titulo": "Guía de análisis de viabilidad: ejemplo completo del profesional (22 viviendas)",
+   "modulo": "Módulo 2 · Análisis de viabilidad",
+   "excel": "../excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx",
+   "escenario": "../pruebas/escenario_guia_profesional.json",
+   "original": "originales/Plantilla_Guia_Analisis_de_Viabilidad.xlsx"
   }
  ]
 }

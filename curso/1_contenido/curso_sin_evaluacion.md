@@ -17,6 +17,7 @@
 > - El **Anexo A** tiene el directorio de las 52 provincias, con los partners de cada fase.
 > - El **Anexo B** tiene la fiscalidad de cada comunidad autónoma.
 > - Los módulos 1, 2, 5, 7 y 8 traen su **plantilla pequeña**, incluida en el curso: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros.
+> - El Módulo 1 trae además dos **plantillas del profesional**: la base de datos de gestión de suelo y los números gordos del solar.
 > - Al final, la sección **FINANCIALS** presenta el **extra opcional**: la plantilla financiera profesional completa, corregida y con los impuestos al día, la misma que calcula la plataforma.
 
 > **Aviso legal para el alumno.** Las cifras de mercado son orientativas (2025-2026). Los tipos autonómicos y las normas urbanísticas cambian: confírmalos siempre en el boletín oficial o la sede electrónica del organismo antes de firmar. Este curso no sustituye el asesoramiento de abogado, asesor fiscal o técnico colegiado.
@@ -30,7 +31,7 @@
 | Duración | ≈ 24 h de contenido + anexos |
 | Nivel | Intermedio → profesional |
 | Estructura | 12 módulos (12 fases reales) · 51 lecciones + sección Financials |
-| Recursos | 5 plantillas pequeñas incluidas + 17 modelos y documentos descargables · Extra opcional al final: la plantilla financiera profesional completa |
+| Recursos | 7 plantillas incluidas (5 de CONSTRUYE y 2 del profesional) + 17 modelos y documentos descargables · Extra opcional al final: la plantilla financiera profesional completa y una guía de viabilidad resuelta |
 | Directorio | 52 provincias × 12 fases (Anexo A) |
 | Marco legal | Revisado a octubre de 2026 |
 
@@ -131,10 +132,12 @@
   6. Suelo público: CASA47 (entidad estatal que sustituye a SEPES desde 2025) y la entidad de suelo de tu comunidad (Anexo A).
   7. Fondos de inversión y entidades financieras que venden carteras de suelo.
   8. Operaciones fuera de mercado: acuerdos con propietarios mediante permuta por viviendas futuras o aportación del suelo a la sociedad.
+- **Lleva tu cartera de suelo en una base de datos** desde el primer solar: cada solar con su zona, clasificación, calificación, situación urbanística, superficies, edificabilidad, precio y forma de pago, y quién es su propietario y quién te lo ha traído. Guarda también a tus clientes con lo que buscan y a tus captadores. Usa la **Plantilla del profesional · Base de datos de gestión de suelo** (incluida): trae las listas desplegables y una ficha del solar lista para enviar por email.
 - **Filtro de 10 minutos antes de dedicar más tiempo:**
   - Edificabilidad × precio de venta de la zona ÷ precio pedido → si el suelo pasa del 30 % de los ingresos, descártalo salvo zona prime.
   - ¿Es vivienda libre o tiene reserva de protegida?
   - ¿Hay que derribar o desalojar a alguien?
+  - Para hacer este filtro con números usa la **Plantilla del profesional · Números gordos del solar** (incluida). Con el techo edificable, la repercusión del suelo, el coste de construcción y el beneficio que buscas, te da el precio del solar, el precio de venta que necesitas y el beneficio. Si pasa el filtro, afina la compra con la Plantilla 1 y la viabilidad con la Plantilla 2 (Módulo 2).
 - ⚠️ **Errores típicos:** enamorarse de la ubicación sin calcular; comprar suelo "urbanizable" pensando que es edificable; no mirar si el ayuntamiento está modificando el plan.
 
 ## Lección 1.2 — Análisis urbanístico: qué puedes construir
@@ -222,6 +225,8 @@
 
 ## Checklist del Módulo 1
 
+- [ ] Solar dado de alta en tu base de datos de gestión de suelo, con su propietario y su captador
+- [ ] Números gordos del solar hechos antes de dedicarle más tiempo
 - [ ] Plantilla 1 · Compra del solar (incluida) rellena con el precio, la comunidad autónoma y los gastos reales
 - [ ] Ficha de producto definida (tipo, público, tipologías, calidades, precio objetivo)
 - [ ] Nota simple y certificación de cargas actualizadas
@@ -384,6 +389,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 - **Imprevistos (contingencias):** reserva un 3–5 % del coste de construcción desde la primera CRP.
 - **Gastos jurídicos** (abogados, notaría, registro) y de **estructura societaria**: inclúyelos aunque parezcan pequeños.
 - Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y cash-flow), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
+- **Un estudio previo completo, resuelto:** la **Guía de análisis de viabilidad** del profesional (22 viviendas, con sus notas de calendario) va con la plantilla profesional, en el extra del final del curso.
 
 ## Lección 2.4 — Ratios y decisión
 
@@ -1740,6 +1746,7 @@ Anexo A, columna **Fase 12**: hacienda (AEAT o foral), Registro Mercantil, asegu
 - Está hecha para una promoción de **vivienda libre en régimen de cooperativa**: los socios compran a coste, la gestora cobra un porcentaje de gestión y la financiación es un préstamo hipotecario que se subroga a los socios.
 - **Dos archivos:**
   - **PLANTILLA_LIBRE_corregida.xlsx**: el modelo completo. 18 hojas (las 17 del original más «Parámetros legales») y unas 31.000 fórmulas enlazadas.
+  - **Guia_Analisis_de_Viabilidad_corregida.xlsx**: el mismo modelo con un ejemplo completo del profesional (22 viviendas) y sus notas en las casillas. Es un estudio previo: verás el aviso de calendario, porque su ejemplo tiene pagos antes del primer mes del cash-flow (Lección F.8).
   - **Plantilla simplificada de Análisis de Viabilidad**: la hoja de resumen del modelo completo ("3ª Coste Total Promoción") con un ejemplo real: 1 vivienda de 200 m².
 - **Cálculo iterativo:** la plantilla tiene referencias circulares a propósito (Lección F.7). El archivo corregido ya trae activado el cálculo iterativo (100 iteraciones, cambio máximo 0,001). Si Excel avisa de «referencia circular», compruébalo en *Archivo → Opciones → Fórmulas → Habilitar cálculo iterativo*. En LibreOffice, recalcula varias veces (Ctrl+Mayús+F9) hasta que los importes no cambien. En la plataforma ya viene resuelto.
 
@@ -1912,6 +1919,7 @@ La plantilla original se construyó hacia 2002. La versión del curso está revi
 - La liquidación del IVA del cash-flow estaba enlazada a mano para el calendario del ejemplo. Ahora se calcula sola cada trimestre.
 - Había errores visibles (#VALUE! y #DIV/0!) y controles «O.K.» que fallaban por decimales.
 - El control de calidad de la obra estaba fijo al 1,5 % dentro de una fórmula. Ahora es un dato (Datos de Partida D102).
+- Nuevo **aviso de calendario** junto al mes cero (Datos de Partida E79). El cash-flow empieza el mes siguiente al mes cero y dura 48 meses: si un pago cae fuera, el aviso lo dice. Antes ese pago desaparecía de la caja sin que nadie lo viera.
 
 ## Lección F.9 — De la plantilla a la decisión de un promotor
 
@@ -1969,7 +1977,9 @@ La plantilla original se construyó hacia 2002. La versión del curso está revi
 | 20 | **Plantilla 3 · Préstamo promotor** (incluida) | Importe, comisión, intereses y coste financiero (Módulo 5) |
 | 21 | **Plantilla 4 · Control de costes de obra** (incluida) | Presupuesto, certificado, previsión y desviaciones por capítulo (Módulo 7) |
 | 22 | **Plantilla 5 · Plan de ventas y cobros** (incluida) | Reserva, contrato, aplazado, escritura y cantidades a cuenta (Módulo 8) |
-| Extra | **Plantilla financiera profesional completa** (de pago, al terminar el curso) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 hojas: coste, préstamo, gestión, forma de pago, cash-flow y resumen. Incluye la versión simplificada con el ejemplo real del profesional |
+| 23 | **Plantilla del profesional · Base de datos de gestión de suelo** (incluida) | Solares, propietarios, clientes y captadores, con listas desplegables y ficha del solar (Módulo 1) |
+| 24 | **Plantilla del profesional · Números gordos del solar** (incluida) | Precio del solar por repercusión, coste, precio de venta y beneficio en una hoja (Módulo 1) |
+| Extra | **Plantilla financiera profesional completa** (de pago, al terminar el curso) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 hojas: coste, préstamo, gestión, forma de pago, cash-flow y resumen. Incluye la versión simplificada con el ejemplo real del profesional y la **Guía de análisis de viabilidad**: un estudio previo completo resuelto (22 viviendas) |
 
 ---
 

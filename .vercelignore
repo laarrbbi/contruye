@@ -14,7 +14,13 @@ curso/1_contenido/curso_completo.md
 curso/1_contenido/pdf/curso_completo.pdf
 curso/2_plantilla_financiera/originales/
 curso/2_plantilla_financiera/herramientas/
-curso/2_plantilla_financiera/pruebas/
+# The package's checks stay out, but not the two worked examples the professional
+# template's calculator loads (FinancialsController::inputs).
+curso/2_plantilla_financiera/pruebas/*
+!curso/2_plantilla_financiera/pruebas/escenario_24_viviendas.json
+!curso/2_plantilla_financiera/pruebas/escenario_guia_profesional.json
+# The package's lesson videos: the site serves its copies in web/public/video.
+curso/4_videos/
 curso/2_plantilla_financiera/plantilla/plantilla_libre_original.json
 curso/2_plantilla_financiera/plantilla/entradas_original.json
 curso/2_plantilla_financiera/plantilla/correcciones.json

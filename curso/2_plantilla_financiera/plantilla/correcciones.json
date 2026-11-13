@@ -7,7 +7,7 @@
   "1 Importes · IVA cash-flow": 244,
   "2 Errores visibles": 31,
   "3 Resumen": 4,
-  "4 Controles": 144,
+  "4 Controles": 145,
   "5 Etiquetas y datos": 8,
   "6 Parámetros legales": 73,
   "7 Pesetas a euros": 102
@@ -3433,6 +3433,14 @@
    "antes": null,
    "despues": "Comunitat Valenciana",
    "motivo": "Nuevo dato: comunidad autónoma de la promoción (lista de la hoja Parámetros legales)."
+  },
+  {
+   "grupo": "4 Controles",
+   "hoja": "Datos de Partida",
+   "celda": "E79",
+   "antes": null,
+   "despues": "=IF(ABS('6ª Cash-flow'!BP238-'3ª Coste Total Promoción'!C24)<1,\"Calendario O.K.: todos los pagos caen dentro de los 48 meses del cash-flow\",\"AVISO: hay pagos fuera del cash-flow (antes del mes siguiente al mes cero o después del mes 48). Revisa el mes cero y las fechas\")",
+   "motivo": "Aviso nuevo junto al mes cero: el cash-flow empieza el mes siguiente al mes cero y dura 48 meses; un pago con fecha fuera de ese tramo no entraba en la caja y nadie lo veía."
   },
   {
    "grupo": "6 Parámetros legales",
