@@ -167,6 +167,12 @@ makes that work lives in `docker/mysql-test/`.
   (`pruebas/escenario_guia_profesional.json` without D133 and D154). Every calculation of the
   professional template returns Datos de Partida E79, the calendar warning shown beside month zero
   (D79): «AVISO…» when a payment falls outside the 48 months of the cash flow.
+- Under each lesson's text (`LessonResources` in the player, `config/lesson_resources.php`): the
+  websites the lesson names, each at its checked official address (`docs/enlaces-de-las-lecciones.md`;
+  `mention` must be the lesson's own words, `LessonResourcesTest`), then the partners it calls on:
+  the academy's own (`Partner` categories, `inmobiliaria` included) and the directory's companies of
+  those kinds (`/lessons/{lesson}/companies`, the module's gate). Then the module's introduction
+  (objective, laws, where to go), below the lesson: the owner wants the lesson read first.
 - Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
   `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
   and sent with every calculation. A project never stores them.

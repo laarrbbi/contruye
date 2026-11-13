@@ -52,7 +52,9 @@ it('lists only what a lesson names, at an https address, with real kinds of part
     }
 
     // The land portals of lesson 1.1, and the real-estate agencies under them.
-    expect($config['1.1']['companies'])->toContain('agencias_inmobiliarias')
+    $mentions = array_column($config['1.1']['links'], 'mention');
+    expect($mentions)->toContain('Idealista', 'Fotocasa', 'SAREB', 'Subastas: BOE')
+        ->and($config['1.1']['companies'])->toContain('agencias_inmobiliarias')
         ->and($config['1.1']['partners'])->toContain('inmobiliaria');
 });
 
@@ -78,7 +80,9 @@ it('sends a lesson\'s links with its text, and its partners behind the module\'s
 
     $resources = $this->actingAs($owner)->getJson("/api/courses/{$course->slug}/lessons/{$lesson->id}/content")
         ->assertOk()->json('data.resources');
-    expect($resources['companies'])->toContain('agencias_inmobiliarias')
+    expect(collect($resources['links'])->pluck('url')->contains(fn (string $url) => str_contains($url, 'idealista.com')))->toBeTrue()
+        ->and($resources['links'][0])->toHaveKeys(['name', 'url'])->not->toHaveKey('mention')
+        ->and($resources['companies'])->toContain('agencias_inmobiliarias')
         ->and($resources['companies_count'])->toBe(1)
         ->and($resources['partners'])->toContain('inmobiliaria');
 
@@ -91,7 +95,7 @@ it('sends a lesson\'s links with its text, and its partners behind the module\'s
     $visitor = User::factory()->create();
     Enrollment::factory()->create(['user_id' => $visitor->id, 'course_id' => $course->id, 'module_id' => $other->id]);
     $this->actingAs($visitor)->getJson("/api/courses/{$course->slug}/lessons/{$lesson->id}/content")
-        ->assertOk()->assertJsonPath('data.resources.companies.0', 'agencias_inmobiliarias');
+        ->assertOk()->assertJsonPath('data.resources.links.0.url', $resources['links'][0]['url']);
     $this->actingAs($visitor)->getJson("/api/courses/{$course->slug}/lessons/{$lesson->id}/companies")->assertForbidden();
 
     // A lesson that calls on no company has no list.
