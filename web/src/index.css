@@ -1207,6 +1207,26 @@ body {
   }
 }
 
+/* A dialog's button bar (components/ui/dialog.tsx), pinned to the bottom of a
+   long dialog: shadows without blur paint the dialog's padding at its sides
+   and below it, never above it (that would cover the last field again). */
+.dialog-footer {
+  --pad: 1.25rem;
+  --paper: hsl(var(--background));
+  box-shadow:
+    0 var(--pad) 0 var(--paper),
+    var(--pad) 0 0 var(--paper),
+    calc(-1 * var(--pad)) 0 0 var(--paper),
+    var(--pad) var(--pad) 0 var(--paper),
+    calc(-1 * var(--pad)) var(--pad) 0 var(--paper);
+}
+
+@media (min-width: 640px) {
+  .dialog-footer {
+    --pad: 1.5rem;
+  }
+}
+
 /* Subtitles of a lesson video (VideoPlayer): never smaller than 13px on a
    phone, never larger than 20px on a desktop, on a dark band. */
 video::cue {

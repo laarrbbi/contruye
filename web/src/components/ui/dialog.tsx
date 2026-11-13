@@ -62,15 +62,16 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 DialogHeader.displayName = 'DialogHeader'
 
 // Sticks to the bottom of a dialog that scrolls (DialogContent caps its
-// height), so the primary action is never below the fold of a long form. It
-// carries the dialog's bottom padding itself, so a short dialog looks the same.
-// Pinned to the bottom of a long dialog, over its padding: the sticky offset
-// is minus that padding, or the bar slid up over the last field (the
-// province prompt's select was cut in half).
+// height), so the primary action is never below the fold of a long form.
+// Its box stays inside the dialog's padding, with no negative margins: Safari
+// keeps a sticky box inside its parent and lifted the bar over the last field
+// (the province prompt's select, cut in half). The dialog's padding around the
+// bar is painted by .dialog-footer (index.css), so what scrolls under it
+// does not show at its sides or below it.
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      'sticky -bottom-5 -mx-5 -mb-5 flex flex-col-reverse gap-2 bg-background px-5 pb-5 pt-3 sm:-bottom-6 sm:-mx-6 sm:-mb-6 sm:flex-row sm:justify-end sm:px-6 sm:pb-6',
+      'dialog-footer sticky bottom-0 flex flex-col-reverse gap-2 bg-background pt-3 sm:flex-row sm:justify-end',
       className,
     )}
     {...props}
