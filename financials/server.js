@@ -11,6 +11,7 @@
 //   GET  /hojas                 → las 18 hojas de la plantilla profesional y su tamaño
 //   POST /calcular              { datos, hojas?, parametros?, tarifas? } → { calculo, resumen, vista, parametros, hojas }
 //   POST /pequenas/:n/calcular  { datos, parametros? } → { calculo, parametros, hoja }
+//                               (:n = 1 a 5, o el id de una plantilla del profesional: numeros_gordos_solar)
 'use strict';
 const http = require('node:http');
 const { Calculadora, PlantillasPequenas, EntradaNoValida } = require('./calculadora');
@@ -38,13 +39,15 @@ function leerCuerpo(req) {
 }
 
 const esObjeto = (x) => typeof x === 'object' && x !== null && !Array.isArray(x);
+// Una plantilla pequeña por su número, o una del profesional por su id.
+const clave = (x) => (/^\d$/.test(x) ? Number(x) : x);
 
 function crearServidor(calculadora, pequenas) {
   return http.createServer(async (req, res) => {
     try {
       if (req.method === 'GET' && req.url === '/salud') return responder(res, 200, { ok: true });
       if (req.method === 'GET' && req.url === '/hojas') return responder(res, 200, { hojas: calculadora.hojasDisponibles });
-      const pequena = req.url.match(/^\/pequenas\/([1-9])\/calcular$/);
+      const pequena = req.url.match(/^\/pequenas\/([1-9]|[a-z][a-z_]{0,40})\/calcular$/);
       if (req.method === 'POST' && (req.url === '/calcular' || pequena)) {
         let peticion;
         try { peticion = JSON.parse(await leerCuerpo(req)); } catch (e) {
@@ -54,7 +57,7 @@ function crearServidor(calculadora, pequenas) {
         if (!esObjeto(datos) || !esObjeto(parametros) || !esObjeto(tarifas) || !Array.isArray(hojas)) {
           return responder(res, 422, { error: 'Se espera { datos: { hoja: { celda: valor } }, parametros: {}, hojas: [] }' });
         }
-        if (pequena) return responder(res, 200, pequenas.calcular(Number(pequena[1]), datos, parametros));
+        if (pequena) return responder(res, 200, pequenas.calcular(clave(pequena[1]), datos, parametros));
         return responder(res, 200, calculadora.calcular(datos, hojas, parametros, tarifas));
       }
       return responder(res, 404, { error: 'No encontrado' });

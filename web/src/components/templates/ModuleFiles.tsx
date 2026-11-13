@@ -4,8 +4,9 @@ import { courseFileUrl, type CourseFile } from '@/api/learn'
 import { Button } from '@/components/ui/button'
 
 /**
- * The instructor's own templates for this module, downloaded as he delivered
- * them (materiales/): the module's owners only, as the API checks again.
+ * The module's templates to download (Module 1: the professional's land
+ * management database, as the package delivers it): the module's owners
+ * only, as the API checks again.
  */
 export function ModuleFiles({ slug, files }: { slug: string; files: CourseFile[] }) {
   const { t } = useTranslation()

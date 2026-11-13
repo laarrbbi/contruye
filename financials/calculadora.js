@@ -7,7 +7,8 @@
 //   de Financials). Construir su motor cuesta unos 3 s, así que se construye
 //   una vez y se reutiliza.
 // - PlantillasPequenas: las 5 plantillas incluidas en el curso (módulos 1, 2,
-//   5, 7 y 8). Sin ciclos: calculan en milisegundos.
+//   5, 7 y 8) y las del profesional que traen calculadora (los números gordos
+//   del solar, Módulo 1). Sin ciclos: calculan en milisegundos.
 //
 // Antes de cada cálculo, cada motor vuelve exactamente al estado de recién
 // construido: cada celda de entrada a su contenido original (valor o fórmula
@@ -55,11 +56,14 @@ function celdasDeTarifa() {
 }
 
 // Un motor y lo necesario para devolverlo a su estado de recién construido.
+// Una plantilla sin hoja «Parámetros legales» (los números gordos del solar no
+// llevan impuestos) no recibe parámetros: el motor no tendría dónde ponerlos.
 class Plantilla {
   constructor(plantilla, entradas, tarifas = []) {
     this.plantilla = plantilla;
     this.entradas = entradas;
-    this.motor = new PlantillaEngine(plantilla, entradas, PARAMETROS_LEGALES);
+    const conParametros = plantilla.hojas.some((h) => h.nombre === 'Parámetros legales');
+    this.motor = new PlantillaEngine(plantilla, entradas, conParametros ? PARAMETROS_LEGALES : null);
 
     // Contenido original de cada celda de entrada: su fórmula por defecto o
     // su valor, tal como viene en la plantilla (null si estaba vacía).
@@ -96,7 +100,7 @@ class Plantilla {
       hf.setCellContents({ sheet: this.motor.ids[t.hoja], row, col }, [[t.contenido]]);
     }
     hf.resumeEvaluation();
-    this.motor.setParametros(PARAMETROS_DEL_PAQUETE);
+    if (this.motor.parametros) this.motor.setParametros(PARAMETROS_DEL_PAQUETE);
   }
 
   // tarifas = { hoja: { celda: número } }: solo las celdas de la lista, solo números.
@@ -124,7 +128,7 @@ class Plantilla {
   preparar(datos, parametros, tarifas) {
     this.restablecer();
     try {
-      this.motor.setParametros(parametros || {});
+      if (this.motor.parametros) this.motor.setParametros(parametros || {});
       this.fijarTarifas(tarifas);
       this.motor.setDatos(datos || {});
     } catch (e) {
@@ -167,30 +171,36 @@ class Calculadora extends Plantilla {
       resumen: this.motor.resumenCoste(),
       vista: this.motor.vistaSimplificada(this.vista),
       parametros: this.motor.parametrosVigentes(),
+      // El aviso de calendario junto al mes cero (Datos de Partida E79): «AVISO…»
+      // si algún pago cae fuera de los 48 meses del cash-flow.
+      calendario: this.motor.valor('Datos de Partida', 'E79'),
       hojas: Object.fromEntries(hojas.map((nombre) => [nombre, this.hoja(nombre)])),
     };
   }
 }
 
-// Las 5 plantillas pequeñas del curso, por número (plantillas_pequenas/indice.json).
+// Las 5 plantillas pequeñas del curso, por número, y las del profesional con
+// calculadora, por su id (plantillas_pequenas/indice.json).
 class PlantillasPequenas {
   constructor() {
     this.indice = leer('plantillas_pequenas', 'indice.json');
-    this.plantillas = new Map(this.indice.plantillas.map((p) => [
-      p.numero,
-      new Plantilla(leer('plantillas_pequenas', p.plantilla), leer('plantillas_pequenas', p.entradas)),
-    ]));
+    const cargar = (p) => new Plantilla(leer('plantillas_pequenas', p.plantilla), leer('plantillas_pequenas', p.entradas));
+    this.plantillas = new Map([
+      ...this.indice.plantillas.map((p) => [p.numero, cargar(p)]),
+      ...(this.indice.plantillas_del_profesional || []).filter((p) => p.plantilla).map((p) => [p.id, cargar(p)]),
+    ]);
   }
 
-  calcular(numero, datos, parametros = {}) {
-    const plantilla = this.plantillas.get(numero);
-    if (!plantilla) throw new EntradaNoValida(`No hay plantilla ${numero}`);
+  // clave = el número (1 a 5) o el id de una plantilla del profesional ('numeros_gordos_solar').
+  calcular(clave, datos, parametros = {}) {
+    const plantilla = this.plantillas.get(clave);
+    if (!plantilla) throw new EntradaNoValida(`No hay plantilla ${clave}`);
     plantilla.preparar(datos, parametros);
     const calculo = plantilla.motor.calcular();
     return {
       calculo,
       parametros: plantilla.motor.parametrosVigentes(),
-      // La hoja de la plantilla (la primera; la otra es «Parámetros legales»).
+      // La hoja de la plantilla (la primera; la otra, si la hay, es «Parámetros legales»).
       hoja: plantilla.hoja(plantilla.plantilla.hojas[0].nombre),
     };
   }

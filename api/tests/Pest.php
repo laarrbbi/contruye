@@ -177,3 +177,34 @@ function offerStages(User $student): array
 {
     return collect(test()->actingAs($student)->getJson('/api/me/offers')->assertOk()->json('data'))->pluck('stage')->all();
 }
+
+/** A cell of a workbook as stored: [type, value or formula]. */
+function workbookCell(string $path, string $sheet, string $address): array
+{
+    $zip = new ZipArchive;
+    $zip->open($path);
+    $rels = simplexml_load_string($zip->getFromName('xl/_rels/workbook.xml.rels'));
+    $targets = [];
+    foreach ($rels->Relationship as $rel) {
+        $target = ltrim((string) $rel['Target'], '/');
+        $targets[(string) $rel['Id']] = str_starts_with($target, 'xl/') ? $target : 'xl/'.$target;
+    }
+    $workbook = simplexml_load_string($zip->getFromName('xl/workbook.xml'));
+    $part = null;
+    foreach ($workbook->sheets->sheet as $entry) {
+        if ((string) $entry['name'] === $sheet) {
+            $part = $targets[(string) $entry->attributes('http://schemas.openxmlformats.org/officeDocument/2006/relationships')['id']];
+        }
+    }
+    $xml = simplexml_load_string($zip->getFromName($part));
+    $zip->close();
+    $xml->registerXPathNamespace('m', 'http://schemas.openxmlformats.org/spreadsheetml/2006/main');
+    $cell = $xml->xpath("//m:c[@r='{$address}']")[0] ?? null;
+
+    return match (true) {
+        $cell === null => ['none', null],
+        isset($cell->f) => ['formula', (string) $cell->f],
+        (string) $cell['t'] === 'inlineStr' => ['text', (string) $cell->is->t],
+        default => ['number', (float) $cell->v],
+    };
+}

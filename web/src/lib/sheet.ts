@@ -53,7 +53,13 @@ function cleanSection(section: string): string {
     .replace(/\\(.)/g, '$1')
 }
 
-export function formatCellValue(value: unknown, format: string | undefined, locale = 'es-ES'): string {
+/**
+ * A number as its cell's format shows it. With `units`, the unit a format
+ * writes after the number in quotes («#,##0.00\\ "m²t"») is shown too, as
+ * Excel does: the small templates' calculator asks for it; the professional
+ * template's sheets keep their old «Pts» suffixes out.
+ */
+export function formatCellValue(value: unknown, format: string | undefined, locale = 'es-ES', options: { units?: boolean } = {}): string {
   if (value === null || value === undefined) return ''
   if (typeof value === 'boolean') return value ? 'VERDADERO' : 'FALSO'
   if (typeof value === 'string') return value
@@ -66,7 +72,8 @@ export function formatCellValue(value: unknown, format: string | undefined, loca
   // Accounting formats print zero as a dash in their third section.
   if (value === 0 && sections[2] !== undefined && /"-|\\-/.test(sections[2])) return '-'
 
-  const section = cleanSection(value < 0 && sections[1] ? sections[1] : sections[0])
+  const rawSection = value < 0 && sections[1] ? sections[1] : sections[0]
+  const section = cleanSection(rawSection)
   const lower = section.toLowerCase()
 
   // Dates: day, month and year codes, no digit placeholders.
@@ -92,8 +99,12 @@ export function formatCellValue(value: unknown, format: string | undefined, loca
     maximumFractionDigits: digits,
     useGrouping: section.includes(','),
   })
+  // A unit in quotes at the end of the format («\\ "€"», «" m²t/m²s"»), where asked for.
+  const unit = options.units ? /(\\ )?"([^"]+)"\s*$/.exec(rawSection) : null
   // A currency written into the format («#,##0.00 €») is shown, as Excel does.
-  const shown = section.includes('€') ? `${text} €` : text
+  const shown = unit
+    ? `${text}${unit[1] || unit[2].startsWith(' ') ? ' ' : ''}${unit[2].trim()}`
+    : section.includes('€') ? `${text} €` : text
   // "(1,234)" formats show negatives in brackets.
   if (value < 0) return sections[1] && sections[1].includes('(') ? `(${shown})` : `-${shown}`
   return shown

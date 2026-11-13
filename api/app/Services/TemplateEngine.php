@@ -45,14 +45,16 @@ class TemplateEngine
     }
 
     /**
-     * One of the five small templates of the course, by its number.
+     * One of the small templates of the course, by its number ('1' to '5'),
+     * or the professional's «números gordos», by its id. The service applies
+     * the legal parameters only to a template that has them.
      *
      * @param  array<string, array<string, int|float|string>>  $inputs
      * @return array<string, mixed>
      */
-    public function small(int $number, array $inputs): array
+    public function small(int|string $key, array $inputs): array
     {
-        return $this->post("/pequenas/{$number}/calcular", ['datos' => (object) $this->reference->withDefaults((string) $number, $inputs)]);
+        return $this->post("/pequenas/{$key}/calcular", ['datos' => (object) $this->reference->withDefaults((string) $key, $inputs)]);
     }
 
     /**

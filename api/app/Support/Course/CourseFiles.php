@@ -4,12 +4,16 @@ namespace App\Support\Course;
 
 /**
  * The files of the course a student can download, by key. Each is served as
- * delivered, never copied or altered, from the package (curso/) or, for the
- * instructor's templates sent outside it, from materiales/ (`source`), behind
- * the gate its `access` names:
+ * delivered, never altered, from the package (curso/) or, for the
+ * instructor's templates sent outside it, from materiales/ (`source`; none at
+ * the moment: package v5 brought them all), behind the gate its `access` names:
  * - `financials`: a student who bought the extra (the Financials module);
  * - `full`: a student with the whole course;
  * - `module`: the owners of the phase module numbered `module`.
+ *
+ * A corrected template (`legal`) is the one exception: like every template
+ * a student downloads, it carries the legal parameters in force, written into
+ * a copy (CourseFileController); nothing else of it changes.
  *
  * The corrected professional template itself is not here: a student downloads
  * it filled with their inputs and the legal parameters in force
@@ -21,31 +25,26 @@ namespace App\Support\Course;
  */
 final class CourseFiles
 {
-    /** @var array<string, array{path: string, name: string, access: 'financials'|'full'|'module', module?: int, source?: 'curso'|'materiales'}> */
+    /** @var array<string, array{path: string, name: string, access: 'financials'|'full'|'module', module?: int, source?: 'curso'|'materiales', legal?: bool}> */
     public const FILES = [
-        // Module 1, from the instructor outside the package (materiales/LEEME.md).
-        'esquema-bbdd-suelo' => [
-            'path' => 'modulo_01/Esquema_BBDD_Gestion_de_Suelo.xlsx',
-            'name' => 'Esquema_BBDD_Gestion_de_Suelo.xlsx',
+        // Module 1: the professional's land management database (package v5, built from
+        // the professional's schema; indice.json, plantillas_del_profesional). A download
+        // only: the other one there, the «números gordos», is a calculator (SmallTemplateController).
+        'base-datos-suelo' => [
+            'path' => '2_plantilla_financiera/plantillas_pequenas/base_datos_suelo.xlsx',
+            'name' => 'base_datos_suelo.xlsx',
             'access' => 'module',
             'module' => 1,
-            'source' => 'materiales',
         ],
-        'calculo-precio-solar' => [
-            'path' => 'modulo_01/Plantilla_calculo_precio_solar.xlsx',
-            'name' => 'Plantilla_calculo_precio_solar.xlsx',
-            'access' => 'module',
-            'module' => 1,
-            'source' => 'materiales',
-        ],
-        // The professional template in its original version, filled with an example (a cooperative
-        // of 22 homes), from the instructor outside the package (materiales/LEEME.md): with the
-        // extra, not in Module 2, where it would hand out the extra's model uncorrected.
+        // The professional's feasibility guide (22 homes, with notes in the cells) over the
+        // corrected template: with the extra. A corrected template like PLANTILLA_LIBRE, so
+        // it goes out with the legal parameters in force (and the tariffs the admin
+        // updated) written into a copy, as the platform calculates it (`legal`).
         'guia-analisis-viabilidad' => [
-            'path' => 'financials/Plantilla_Guia_Analisis_de_Viabilidad.xlsx',
-            'name' => 'Plantilla_Guia_Analisis_de_Viabilidad.xlsx',
+            'path' => '2_plantilla_financiera/excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx',
+            'name' => 'Guia_Analisis_de_Viabilidad_corregida.xlsx',
             'access' => 'financials',
-            'source' => 'materiales',
+            'legal' => true,
         ],
         // The professional's real example (1 home of 200 m²), with «Varios» corrected: values, no formulas.
         'plantilla-simplificada' => [
@@ -66,7 +65,7 @@ final class CourseFiles
     ];
 
     /**
-     * @return array{path: string, name: string, access: string, module?: int, source?: string}|null
+     * @return array{path: string, name: string, access: string, module?: int, source?: string, legal?: bool}|null
      */
     public static function find(string $key): ?array
     {

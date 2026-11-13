@@ -22,7 +22,8 @@ export type ModuleSection = (typeof MODULE_SECTIONS)[number]
 /**
  * What a module leaves the promoter with, each on its own page after the
  * quiz: the tasks (the module's checklist and the student's own), the
- * module's small template when it has one (modules 1, 2, 5, 7 and 8), the
+ * module's small template when it has one (modules 1, 2, 5, 7 and 8), with
+ * the professional's calculator and downloads beside it in Module 1, the
  * laws that apply, and the partners (where to go, the province's institutions
  * and the companies of the directory for this phase).
  */
@@ -39,7 +40,8 @@ export function ModuleSectionPage() {
   if (isLoading || !data || !slug) return <PlayerSkeleton />
   if (!module || !MODULE_SECTIONS.includes(section as ModuleSection) || module.is_locked) return <Navigate to={`/learn/${slug}`} replace />
   const files = module.kind === 'phase' ? moduleFiles(data, module.order) : []
-  if (section === 'plantilla' && !module.template && files.length === 0) return <Navigate to={`/learn/${slug}`} replace />
+  const professional = module.professional_templates ?? []
+  if (section === 'plantilla' && !module.template && files.length === 0 && professional.length === 0) return <Navigate to={`/learn/${slug}`} replace />
 
   const kind = section as ModuleSection
   const blocks = content.data?.blocks ?? []
@@ -65,7 +67,15 @@ export function ModuleSectionPage() {
         <p className="mt-3 max-w-2xl text-foreground/70">{t(`moduleSection.${kind}Lead`)}</p>
       </header>
 
-      {kind === 'plantilla' && module.template && <SmallTemplateCalculator slug={slug} number={module.template.number} />}
+      {kind === 'plantilla' && module.template && <SmallTemplateCalculator slug={slug} templateKey={module.template.number} />}
+      {/* The professional's own calculators for this module (the «números gordos», Module 1). */}
+      {kind === 'plantilla' &&
+        professional.map((template) => (
+          <section key={template.key} className="space-y-5">
+            <SectionLabel>{t(`templates.professional.${template.key}`)}</SectionLabel>
+            <SmallTemplateCalculator slug={slug} templateKey={template.key} />
+          </section>
+        ))}
       {kind === 'plantilla' && <ModuleFiles slug={slug} files={files} />}
 
       {kind === 'tareas' &&

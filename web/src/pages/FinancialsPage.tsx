@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { isAxiosError } from 'axios'
-import { Calculator, Download, Lock, Save, Trash2 } from 'lucide-react'
+import { CalendarClock, Calculator, Download, Lock, Save, Trash2 } from 'lucide-react'
 import { courseFileUrl, useLearn } from '@/api/learn'
 import {
   TEMPLATE_SHEETS,
@@ -25,6 +25,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { formatCellValue, parseLocaleNumber, serialToIso } from '@/lib/sheet'
+import { cn } from '@/lib/utils'
 import { downloadWorkbook } from '@/api/templates'
 import { ExtraOffer } from '@/components/extra/ExtraOffer'
 import { LegalParametersPanel } from '@/components/templates/LegalParametersPanel'
@@ -37,6 +38,8 @@ const keyOf = (input: Pick<TemplateInput, 'hoja' | 'celda'>) => `${input.hoja}!$
 /** What the form shows for a value of the template (or of a saved scenario). */
 function toRaw(input: TemplateInput, value: number | string | null | undefined): string {
   if (value === null || value === undefined) return ''
+  // No date (0) where the template's own default is no date: the field stays empty, and means the same.
+  if (input.tipo === 'fecha' && value === 0 && input.defecto === 0) return ''
   if (input.tipo === 'fecha' && typeof value === 'number') return serialToIso(value)
   if (typeof value === 'number') return String(value).replace('.', ',')
   return value
@@ -51,16 +54,32 @@ function defaultLabel(input: TemplateInput, formulaLabel: string): string {
   return typeof input.defecto === 'number' ? formatCellValue(input.defecto, undefined) : String(input.defecto)
 }
 
+/** The calendar warning of Datos de Partida E79, as the template writes it: «AVISO…» or «Calendario O.K.…». */
+function CalendarNotice({ text }: { text: string }) {
+  const warning = text.startsWith('AVISO')
+  return (
+    <p className={cn('flex items-start gap-1.5 text-[11px] leading-snug', warning ? 'font-medium text-or-fonce' : 'text-muted-foreground')} lang="es">
+      <CalendarClock className="mt-px h-3.5 w-3.5 shrink-0" aria-hidden />
+      <span>
+        {text} <span className="font-mono text-[10px] opacity-70">E79</span>
+      </span>
+    </p>
+  )
+}
+
 function Field({
   input,
   value,
   invalid,
   onChange,
+  notice,
 }: {
   input: TemplateInput
   value: string
   invalid: boolean
   onChange: (value: string) => void
+  /** The template's own word on this value, after a calculation (the calendar beside month zero). */
+  notice?: string | null
 }) {
   const { t } = useTranslation()
   const id = `in-${input.hoja}-${input.celda}`.replace(/[^a-zA-Z0-9-]/g, '_')
@@ -111,6 +130,7 @@ function Field({
         {[input.unidad, percent !== null ? `= ${formatCellValue(percent, '0.00%')}` : null, input.nota].filter(Boolean).join(' · ')}
       </p>
       {invalid && <p className="text-[11px] text-destructive">{t('financials.notANumber')}</p>}
+      {notice && <CalendarNotice text={notice} />}
     </div>
   )
 }
@@ -230,6 +250,10 @@ export function FinancialsPage() {
     : null
   const files = data.course.files.filter((file) => file.access === 'financials' && !file.is_locked)
   const community = values['Datos de Partida!D93'] || String(inputs.data.entradas.find((input) => input.celda === 'D93')?.defecto ?? '')
+  const example = inputs.data.ejemplos.find((e) => e.key === '24-viviendas') ?? inputs.data.ejemplos[0]
+  const guideExample = inputs.data.ejemplos.find((e) => e.key === 'guia-profesional')
+  // Beside month zero (Datos de Partida D79): whether every payment falls inside the 48 months of the cash flow.
+  const calendar = typeof result?.calendario === 'string' && result.calendario !== '' ? result.calendario : null
 
   return (
     <PlayerShell data={data} location={{ financials: true }}>
@@ -282,11 +306,24 @@ export function FinancialsPage() {
             onClick={() => {
               setScenarioId(null)
               setScenarioName('')
-              load(inputs.data!.ejemplos[0]?.datos ?? {})
+              load(example?.datos ?? {})
             }}
           >
             {t('financials.loadExample')}
           </Button>
+          {guideExample && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setScenarioId(null)
+                setScenarioName('')
+                load(guideExample.datos)
+              }}
+            >
+              {t('financials.loadGuideExample')}
+            </Button>
+          )}
           <Button
             variant="ghost"
             size="sm"
@@ -361,6 +398,7 @@ export function FinancialsPage() {
                       value={values[keyOf(field)] ?? ''}
                       invalid={invalid.has(keyOf(field))}
                       onChange={(value) => setValues((prev) => ({ ...prev, [keyOf(field)]: value }))}
+                      notice={keyOf(field) === 'Datos de Partida!D79' ? calendar : null}
                     />
                   ))}
                 </div>
@@ -383,6 +421,12 @@ export function FinancialsPage() {
           </span>
         )}
         {calcError && <p className="w-full text-sm text-destructive">{calcError}</p>}
+        {/* Where the form is folded away: the same warning, so a payment left out of the cash flow is never missed. */}
+        {calendar?.startsWith('AVISO') && (
+          <div className="w-full">
+            <CalendarNotice text={calendar} />
+          </div>
+        )}
       </div>
 
       {result && (

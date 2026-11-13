@@ -183,12 +183,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/scenarios/{scenario}', [FinancialsController::class, 'destroyScenario'])->whereNumber('scenario');
     });
 
-    // The five small templates of the course, each in its module
+    // The templates with a calculator, each in its module: the five small ones
+    // by number, the professional's «números gordos» (Module 1) by its id
     Route::prefix('/courses/{course:slug}/templates')->group(function () {
         Route::get('/', [SmallTemplateController::class, 'index']);
-        Route::get('/{number}', [SmallTemplateController::class, 'show'])->whereNumber('number');
-        Route::post('/{number}/calculate', [SmallTemplateController::class, 'calculate'])->whereNumber('number')->middleware('throttle:60,1');
-        Route::post('/{number}/excel', [SmallTemplateController::class, 'excel'])->whereNumber('number')->middleware('throttle:20,1');
+        Route::get('/{key}', [SmallTemplateController::class, 'show'])->where('key', '[1-9]|[a-z][a-z_]{0,40}');
+        Route::post('/{key}/calculate', [SmallTemplateController::class, 'calculate'])->where('key', '[1-9]|[a-z][a-z_]{0,40}')->middleware('throttle:60,1');
+        Route::post('/{key}/excel', [SmallTemplateController::class, 'excel'])->where('key', '[1-9]|[a-z][a-z_]{0,40}')->middleware('throttle:20,1');
     });
 
     // Checkout + orders

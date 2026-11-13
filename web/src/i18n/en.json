@@ -193,7 +193,7 @@
       },
       "templates": {
         "q": "Which templates does the course include?",
-        "a": "Five calculation templates, included: plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets, more than 30,000 formulas and taxes up to date."
+        "a": "Seven templates included: a land management database and the plot's rough numbers (the professional's two), plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets, more than 30,000 formulas and taxes up to date."
       }
     }
   },
@@ -1122,7 +1122,7 @@
     },
     "pricing": {
       "fullTitle": "Full access",
-      "fullShort": "Every module, the 5 calculation templates and the course's tools, with lifetime access"
+      "fullShort": "Every module, the 7 templates and the course's tools, with lifetime access"
     },
     "socialProof": {
       "title": "What those who have taken it say.",
@@ -1177,13 +1177,13 @@
       "colUse": "What it is for",
       "i1": "{{modules}} modules and {{lessons}} lessons on the process",
       "i1Use": "Knowing what to do in each phase",
-      "i2": "5 calculation templates: plot, feasibility, loan, construction control and sales",
-      "i2Use": "Work out whether a development pays off before you buy",
+      "i2": "7 templates: land database, the plot's rough numbers, plot purchase, feasibility, loan, construction control and sales",
+      "i2Use": "Organise your land portfolio and work out whether a development pays off before you buy",
       "i3": "Directory of partners in all 52 provinces",
       "i3Use": "Knowing who to call in your area",
       "i4": "Annex on tax and planning by autonomous community",
       "i4Use": "Applying your community's rules and taxes",
-      "i5": "A checklist per module and the downloads: the 5 templates and the partner directory in Excel, the course in PDF",
+      "i5": "A checklist per module and the downloads: the 7 templates and the partner directory in Excel, the course in PDF",
       "i5Use": "Working with the documents from day one",
       "i6": "Quizzes per module and a final exam",
       "i6Use": "Checking what you have learned",
@@ -1253,7 +1253,7 @@
       "provinces": "provinces with their directory of partners and institutions",
       "p2": "You will know which authority to go to and which law governs: town hall, land registry, notary, professional associations and the rule that applies at each step.",
       "lessons": "lessons",
-      "sheets": "calculation templates included: plot, feasibility, loan, construction control and sales",
+      "sheets": "templates included: land database, rough numbers, plot purchase, feasibility, loan, construction control and sales",
       "questions": "assessment questions",
       "p3": "You will know whether a development pays off before you buy the plot. With the course's feasibility templates and, if you wish, a professional's complete financial model as an extra at the end.",
       "illustration": "Illustration photo",
@@ -1271,7 +1271,7 @@
     "method": {
       "title": "From the plot to after-sales: the 12 phases of a development, explained step by step.",
       "intro": "The real order of a development, without skipping a phase:",
-      "s1": "Plot: find plots, read the planning rules and buy without legal or planning surprises. With Template 1: plot purchase.",
+      "s1": "Plot: find plots, read the planning rules and buy without legal or planning surprises. With the professional's land database and rough numbers, and Template 1: plot purchase.",
       "s2": "Feasibility: work out cost, financing and margin before committing a single euro. With Template 2: feasibility and residual method.",
       "s3": "Technical projects: hire and coordinate the architect, the engineers and the site management.",
       "s4": "Licences: know which licence to apply for, from whom, and what happens when the administration stays silent.",
@@ -1334,15 +1334,15 @@
       "l3": "You take away {{tools}}.",
       "tools": "tools",
       "footer": "Everything is inside the platform from day one.",
-      "excelTitle": "Calculation templates at every key phase",
+      "excelTitle": "Templates at every key phase",
       "excelShort": "Work out whether a development pays off before you risk money.",
-      "excelBody": "Five templates included: plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. With each community's taxes up to date, so you know whether a development pays off before you risk money. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets and more than 30,000 formulas, reviewed cell by cell and with taxes up to date.",
+      "excelBody": "Seven templates included, two of them the professional's own: land management database, the plot's rough numbers, plot purchase, feasibility and residual method, developer loan, construction cost control, and sales and collections plan. With each community's taxes up to date, so you know whether a development pays off before you risk money. At the end of the course you can add, as an extra, a professional's complete financial model: 18 sheets and more than 30,000 formulas, reviewed cell by cell and with taxes up to date.",
       "papersTitle": "The laws and taxes of your region",
       "papersShort": "The rule that applies at each step, in your region.",
       "papersBody": "State legislation (the land law, the Building Act, the Technical Building Code) and an annex with the taxation and planning rules of each autonomous community, so what you learn holds in Alicante, in Madrid or in Seville.",
       "templatesTitle": "Checklists and downloads",
       "templatesShort": "A checklist per module, and the documents to work with.",
-      "templatesBody": "A checklist per module, to tick off on your own project and save to your account. And the downloads: the 5 calculation templates in Excel, the partner directory in Excel and the whole course as a PDF.",
+      "templatesBody": "A checklist per module, to tick off on your own project and save to your account. And the downloads: the 7 templates in Excel, the partner directory in Excel and the whole course as a PDF.",
       "subsTitle": "Partners in all 52 provinces",
       "subsShort": "Whom to turn to in your province, phase by phase.",
       "subsBody": "For each phase, a directory of the bodies and professionals you will work with in your province. You do not start from scratch when you walk into a new town hall."
@@ -1411,7 +1411,7 @@
   "seo": {
     "home": {
       "title": "Real Estate Development Course in Spain",
-      "description": "Learn to develop housing in Spain step by step: {{modules}} phases, the laws, partners in the 52 provinces and calculation templates included. Start today."
+      "description": "Learn to develop housing in Spain step by step: {{modules}} phases, the laws, partners in the 52 provinces and 7 templates included. Start today."
     },
     "catalog": {
       "title": "Property development courses in Spain",
@@ -1469,9 +1469,8 @@
       "plantilla-simplificada": "Corrected simplified template (the professional's example)",
       "directorio-partners": "Directory of partners by province (Excel)",
       "curso-pdf": "The whole course as a PDF",
-      "esquema-bbdd-suelo": "Land management database layout",
-      "calculo-precio-solar": "Plot price calculation (back-of-the-envelope figures)",
-      "guia-analisis-viabilidad": "Feasibility analysis guide: the professional's example (original version, 2002 taxes)"
+      "base-datos-suelo": "Professional's template · Land management database",
+      "guia-analisis-viabilidad": "The professional's feasibility analysis guide (22 homes), over the corrected template"
     },
     "needsFullAccess": "With full access",
     "needsFinancials": "With the extra (professional template)",
@@ -1551,6 +1550,7 @@
     "notANumber": "Not a number.",
     "scenarios": "My scenarios",
     "loadExample": "Load the 24-home example",
+    "loadGuideExample": "Load the example from the professional's guide",
     "reset": "Clear",
     "scenarioName": "Scenario name",
     "save": "Save",
@@ -1634,8 +1634,12 @@
     "locked": "The template comes with its module.",
     "error": "It could not be calculated. Please try again.",
     "howTo": "Fill in the highlighted cells: the template's formulas calculate the rest, with the taxes in force. The Excel file you download carries your figures.",
-    "moreTitle": "More templates from the professional for this module",
-    "moreLead": "In Excel, exactly as the professional prepared them: download them and work with your own figures."
+    "howToNoTaxes": "Fill in the highlighted cells: the template's formulas calculate the rest. The Excel file you download carries your figures.",
+    "moreTitle": "More templates for this module",
+    "moreLead": "In Excel: download them and work with your own figures.",
+    "professional": {
+      "numeros_gordos_solar": "Professional's template · Plot rough numbers"
+    }
   },
   "legalParams": {
     "title": "Legal parameters applied",
@@ -1650,6 +1654,7 @@
     "includes": {
       "excel": "The template in Excel and the calculator on the platform.",
       "simplified": "The simplified version with the professional's real example.",
+      "guide": "The professional's feasibility analysis guide: a complete preliminary study, worked through, of 22 homes.",
       "lessons": "The 9 Financials lessons: which figure goes in each cell and how to read the result.",
       "taxes": "Taxes up to date: when the law changes, they update by themselves."
     },
@@ -1850,8 +1855,8 @@
       }
     },
     "course": {
-      "title": "The first of five templates",
-      "body": "The CONSTRUYE course follows the 12 phases of a housing development, from the plot to after-sales, with a calculation template in modules 1, 2, 5, 7 and 8.",
+      "title": "One of the course's 7 templates",
+      "body": "The CONSTRUYE course follows the 12 phases of a housing development, from the plot to after-sales, with a calculation template in modules 1, 2, 5, 7 and 8, and two of the professional's templates in Module 1.",
       "cta": "See the course"
     }
   },

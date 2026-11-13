@@ -36,7 +36,9 @@ export interface LegalParametersView {
 }
 
 export interface SmallTemplateSummary {
-  number: number
+  /** The number ('1' to '5') of a small template, or the id of the professional's («numeros_gordos_solar»). */
+  key: string
+  number: number | null
   title: string
   module_id: number | null
   module_order: number
@@ -44,7 +46,9 @@ export interface SmallTemplateSummary {
 }
 
 export interface SmallTemplate {
-  number: number
+  key: string
+  /** 1 to 5; none for the professional's «números gordos». */
+  number: number | null
   title: string
   module_id: number
   /** The file name of the template in Excel. */
@@ -52,12 +56,13 @@ export interface SmallTemplate {
   regla: string
   porcentajes: string
   entradas: SmallTemplateInput[]
-  legal: LegalParametersView
+  /** None for a template with no taxes in it (the «números gordos»). */
+  legal: LegalParametersView | null
 }
 
 export interface SmallTemplateResult {
   calculo: { iteraciones: number; convergido: boolean }
-  parametros: Record<string, unknown>
+  parametros: Record<string, unknown> | null
   hoja: Sheet
 }
 
@@ -69,23 +74,26 @@ export interface ExtraView {
   module_id: number | null
 }
 
-export function useSmallTemplate(slug: string | undefined, number: number | undefined) {
+/** A template with a calculator: a small one by its number, or the professional's by its id. */
+export type TemplateKey = number | string
+
+export function useSmallTemplate(slug: string | undefined, key: TemplateKey | undefined) {
   return useQuery<SmallTemplate>({
-    queryKey: ['small-template', slug, number],
-    enabled: !!slug && !!number,
+    queryKey: ['small-template', slug, String(key)],
+    enabled: !!slug && !!key,
     retry: false,
     staleTime: 5 * 60_000,
     queryFn: async () => {
-      const { data } = await api.get(`/courses/${slug}/templates/${number}`)
+      const { data } = await api.get(`/courses/${slug}/templates/${key}`)
       return data.data as SmallTemplate
     },
   })
 }
 
-export function useCalculateSmallTemplate(slug: string | undefined, number: number | undefined) {
+export function useCalculateSmallTemplate(slug: string | undefined, key: TemplateKey | undefined) {
   return useMutation({
     mutationFn: async (datos: InputValues) => {
-      const { data } = await api.post(`/courses/${slug}/templates/${number}/calculate`, { datos })
+      const { data } = await api.post(`/courses/${slug}/templates/${key}/calculate`, { datos })
       return data.data as SmallTemplateResult
     },
   })

@@ -175,3 +175,43 @@ test('las tarifas de referencia que fija la plataforma cambian el resultado, sol
   assert.throws(() => calculadora.calcular(veinticuatro, [], {}, { '3ª Construcción': { R39: '1 %' } }), /se espera un número/);
   assert.equal(Math.round(totalConIva(calculadora.calcular(veinticuatro)) * 100) / 100, 6918553.32);
 });
+
+test('los números gordos del solar (plantilla del profesional) dan su ejemplo, sin parámetros legales que aplicar', () => {
+  const r = pequenas.calcular('numeros_gordos_solar', {});
+  const v = (celda) => r.hoja.celdas[celda].v;
+  // Los mismos resultados que comprueba el paquete (validar.js, apartado 8).
+  assert.ok(Math.abs(v('C14') - 71392.05) < 0.01, `precio del solar ${v('C14')}`);
+  assert.ok(Math.abs(v('C19') - 969) < 1e-9 && Math.abs(v('C23') - 1259.7) < 1e-9);
+  assert.ok(Math.abs(v('C25') - 461192.64) < 0.01, `beneficio ${v('C25')}`);
+  assert.equal(r.parametros, null);
+  // La plataforma manda siempre los parámetros vigentes: esta plantilla no los usa y calcula igual.
+  const conParametros = pequenas.calcular('numeros_gordos_solar', {}, PARAMETROS_DEL_PAQUETE);
+  assert.equal(conParametros.hoja.celdas.C14.v, v('C14'));
+  // Sus entradas cambian el resultado, solo en ese cálculo.
+  const otra = pequenas.calcular('numeros_gordos_solar', { 'Números gordos': { C15: 60 } });
+  assert.ok(Math.abs(otra.hoja.celdas.C14.v - 1586.49 * 60) < 0.01);
+  assert.ok(Math.abs(pequenas.calcular('numeros_gordos_solar', {}).hoja.celdas.C14.v - 71392.05) < 0.01);
+  // Solo se escriben sus entradas; una plantilla sin calculadora no existe aquí.
+  assert.throws(() => pequenas.calcular('numeros_gordos_solar', { 'Números gordos': { C25: 1 } }), /no es una entrada/);
+  assert.throws(() => pequenas.calcular('base_datos_suelo', {}), /No hay plantilla/);
+});
+
+test('el aviso de calendario (Datos de Partida E79) sale con el cálculo de la plantilla profesional', () => {
+  assert.match(calculadora.calcular(veinticuatro).calendario, /^Calendario O\.K\./);
+  // El ejemplo de la guía del profesional, sin D133 ni D154 (ahora son parámetros legales): sus pagos caen antes del cash-flow.
+  const guia = escenario('escenario_guia_profesional.json');
+  delete guia['Datos de Partida'].D133;
+  delete guia['Datos de Partida'].D154;
+  const r = calculadora.calcular(guia, [], PARAMETROS_DEL_PAQUETE);
+  assert.ok(r.calculo.convergido);
+  assert.match(r.calendario, /^AVISO/);
+});
+
+test('la línea de órdenes calcula también los números gordos', () => {
+  const { execFileSync } = require('node:child_process');
+  const cli = (peticion) => JSON.parse(execFileSync(process.execPath, [path.join(__dirname, '..', 'cli.js')], { input: JSON.stringify(peticion) }).toString());
+  const r = cli({ path: '/pequenas/numeros_gordos_solar/calcular', body: { datos: {}, parametros: PARAMETROS_DEL_PAQUETE } });
+  assert.equal(r.status, 200);
+  assert.ok(Math.abs(r.body.hoja.celdas.C14.v - 71392.05) < 0.01);
+  assert.equal(cli({ path: '/pequenas/no_existe/calcular', body: { datos: {} } }).status, 422);
+});

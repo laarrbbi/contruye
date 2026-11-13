@@ -77,8 +77,14 @@ class LearnCourseResource extends JsonResource
         $ownedIncluded = $included->filter(fn (Module $module) => $this->accessibleModuleIds->contains($module->id))->count();
         $fullAccess = $included->isNotEmpty() && $ownedIncluded >= $included->count();
         $finalExam = $this->quizzes->firstWhere('kind', 'final');
-        $templates = collect(TemplateCatalog::fromConfig()->small())
+        $catalog = TemplateCatalog::fromConfig();
+        $templates = collect($catalog->small())
             ->mapWithKeys(fn (array $t) => [$t['module_order'] => ['number' => $t['number'], 'title' => $t['title']]]);
+        // The professional's templates with a calculator (the «números gordos», Module 1), by module.
+        $professionals = collect($catalog->professionals())
+            ->filter(fn (array $t) => $t['template'] !== null)
+            ->groupBy('module_order')
+            ->map(fn ($group) => $group->map(fn (array $t) => ['key' => $t['id'], 'title' => $t['title']])->values());
 
         return [
             'course' => [
@@ -118,6 +124,8 @@ class LearnCourseResource extends JsonResource
             'modules' => $this->modules->map(fn (Module $module) => [
                 // The small template the module carries (1 to 5), if any: its calculator is the module's.
                 'template' => $module->kind === 'phase' ? ($templates[$module->order] ?? null) : null,
+                // And the professional's calculators it carries, beside it.
+                'professional_templates' => $module->kind === 'phase' ? ($professionals[$module->order] ?? []) : [],
                 'id' => $module->id,
                 'order' => $module->order,
                 'kind' => $module->kind,

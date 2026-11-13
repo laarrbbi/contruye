@@ -122,6 +122,8 @@ export interface LearnModule {
   companies_count: number
   /** The small template the module carries (Plantilla 1 to 5), whose calculator is the module's. */
   template: { number: number; title: string } | null
+  /** The professional's calculators the module carries beside its own template (the «números gordos», Module 1). */
+  professional_templates: { key: string; title: string }[]
   lessons: LearnLesson[]
 }
 

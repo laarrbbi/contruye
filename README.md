@@ -4,9 +4,9 @@ Plataforma de formación online (LMS) en **español**, con la interfaz también 
 **francés**, **árabe** (de derecha a izquierda), **ruso** y **ucraniano** (`/en`, `/fr`, `/ar`,
 `/ru`, `/uk`), para vender y difundir un curso de promoción inmobiliaria en España. Los textos
 del curso se traducen en `traducciones/` (borradores sin revisar; el español es la referencia). Primer producto:
-**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 4.1: 12 módulos (las
-12 fases reales de una promoción, del solar a la postventa, 51 lecciones), 5 plantillas de cálculo
-incluidas (módulos 1, 2, 5, 7 y 8), un quiz por módulo, un examen final y el directorio de las 52
+**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 5: 12 módulos (las
+12 fases reales de una promoción, del solar a la postventa, 51 lecciones), 7 plantillas
+incluidas (5 de CONSTRUYE en los módulos 1, 2, 5, 7 y 8, y 2 del profesional en el Módulo 1), un quiz por módulo, un examen final y el directorio de las 52
 provincias. Al terminar se ofrece un extra de pago, para cualquier plan: Financials (9 lecciones y
 la plantilla financiera profesional corregida, calculada en la plataforma).
 
@@ -215,7 +215,7 @@ un módulo bloqueado no se sirven.
 
 ## Contenido del curso
 
-El curso es el paquete del formador, versión 4.1, en `curso/` (empieza por `curso/LEEME.md`). La
+El curso es el paquete del formador, versión 5, en `curso/` (empieza por `curso/LEEME.md`). La
 secuencia de fases sigue el documento de Nicolás Cabañas Yuste. **Los textos se integran tal como
 están:** los seeders (`CurriculumV2Seeder`, `ChecklistSeeder`, `ProvinceGuideSeeder`) leen el
 paquete y guardan cada pieza sin reescribirla, y `CourseContentTest` reconstruye cada archivo
@@ -234,7 +234,9 @@ y se avisa. `traducciones/` se pone al día con el español (`app:check-translat
 |---|---|
 | `modulos/01…12` | Los 12 módulos: objetivo, «Leyes que aplican» y «Dónde ir» al abrir el módulo; las lecciones; la checklist; «Partners en tu provincia». Tras el quiz, cada módulo tiene además sus secciones Tareas (la checklist), Leyes y Partners |
 | `modulos/13_financials…` | Financials, el extra del final del curso: sus 9 lecciones y la calculadora de la plantilla profesional |
-| `2_plantilla_financiera/plantillas_pequenas/` | Las 5 plantillas incluidas, cada una en su módulo (sección «Plantilla N»): calculadora y descarga en Excel |
+| `2_plantilla_financiera/plantillas_pequenas/` | Las 5 plantillas de CONSTRUYE, cada una en su módulo (sección «Plantilla N»): calculadora y descarga en Excel. Y las 2 del profesional, en la sección «Plantilla» del Módulo 1: los números gordos del solar (calculadora y Excel) y la base de datos de gestión de suelo (descarga) |
+| `excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx`, `pruebas/escenario_guia_profesional.json` | En el extra: la guía de análisis de viabilidad del profesional (descarga, con los parámetros vigentes) y su ejemplo, que se carga en la calculadora de la plantilla profesional |
+| `4_videos/` | Los vídeos de las lecciones de los Módulos 1 y 2 (copias en `web/public/video`, `PreviewVideoSeeder`) |
 | `modulos/00`, `14`, `16`, `17` | Documentos del curso: introducción, recursos, Anexo A (una provincia cada vez), Anexo B |
 | `evaluacion/*.json` | Un quiz por módulo (13) y el examen final (40 preguntas, 60 minutos), corregidos en el servidor |
 | `datos/partners_por_provincia.json` | En cada módulo, las instituciones y partners de la provincia del alumno para esa fase |
@@ -242,7 +244,7 @@ y se avisa. `traducciones/` se pone al día con el español (`app:check-translat
 | `3_textos_web/pagina_principal.md` | Los textos de la página principal (`landing.*`, `seo.home`, preguntas frecuentes) |
 | `modulos/15_estrategia_comercial.md` | No se publica: es del propietario |
 
-Las lecciones son texto (los vídeos se añaden después). El material en inglés está vacío: un
+Las lecciones son texto; las de los Módulos 1 y 2 traen además su vídeo (`4_videos/` del paquete v5). El material en inglés está vacío: un
 lector en inglés ve el texto en español. `make review` regenera `api/content-review.md`.
 
 ## Leyes enlazadas a su fuente oficial
@@ -283,7 +285,7 @@ construye una vez y lo devuelve a su estado inicial antes de cada cálculo) y qu
   cálculo iterativo, activado.
 
 ```bash
-cd curso/2_plantilla_financiera/motor && npm ci && npm test   # las 39 comprobaciones del paquete
+cd curso/2_plantilla_financiera/motor && npm ci && npm test   # las 44 comprobaciones del paquete
 cd financials && npm test                                     # el servicio: parámetros, pequeñas, ningún resultado heredado
 ```
 

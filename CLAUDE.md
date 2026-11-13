@@ -22,7 +22,7 @@ reports (code & schema, tests, performance, security) plus a motion audit. `06-g
 says what has been closed since, and what is left for the owner. They were written about Ebni,
 before the Spanish adaptation: the paths and behaviours still match, the Algerian specifics do not.
 
-**`curso/`** is the instructor's package, version 4.1, exactly as delivered (start with
+**`curso/`** is the instructor's package, version 5, exactly as delivered (start with
 `curso/LEEME.md`). Its texts are integrated as written and its financial templates are used as
 delivered: no formula, value or label changes, ever; only the «Parámetros legales» sheet is set,
 by the admin. Never edit anything under `curso/`; a correction comes as a new package from the
@@ -31,6 +31,7 @@ translation seeders, in that order, which bring an installed course up to it in 
 Templates the instructor sends outside a package go, unchanged, in **`materiales/`** (its
 `LEEME.md` lists each file, where it is offered and its checksum); `CourseFiles` serves them to the
 owners of their module (that module's «Plantilla» page) or, for the extra's material, to its buyers.
+It is empty now: the three that came loose on 11/11/2026 are in package v5.
 
 ## Running it
 
@@ -60,7 +61,7 @@ public coupon codes. It refuses to run in production; a live database is filled 
 | Benchmark | `docker compose exec -T php php artisan bench:endpoints` |
 | Company directory: import | `docker compose exec -T php php artisan directory:import <file.xlsx>…` (Orbis export; see README «Directorio de empresas» on data rights) |
 | Front-end build / lint | `npm --prefix web run build` · `npm --prefix web run lint` |
-| Financial templates (engine = Excel; service) | `npm --prefix curso/2_plantilla_financiera/motor test` (the package's 39 checks) · `npm --prefix financials test` |
+| Financial templates (engine = Excel; service) | `npm --prefix curso/2_plantilla_financiera/motor test` (the package's 44 checks) · `npm --prefix financials test` |
 
 Tests run against `mysql-test`. `--parallel` gives each worker its own database; the grant that
 makes that work lives in `docker/mysql-test/`.
@@ -150,11 +151,22 @@ makes that work lives in `docker/mysql-test/`.
   pre-fill the owner's invoice form; `FiscalId` checks a NIF/NIE/CIF), invoices, orders and payment
   methods, password and devices, a JSON copy of the student's own data.
 - `financials/` wraps the package's engine (`curso/2_plantilla_financiera/motor`) in an HTTP
-  service: the professional template and the five small ones. `App\Services\TemplateEngine` is the
+  service: the professional template, the five small ones and the professional's «números gordos
+  del solar» (no legal sheet: it gets no parameters). `App\Services\TemplateEngine` is the
   only caller; `FinancialsController` (the professional template, the extra) and
-  `SmallTemplateController` (Plantilla 1–5, each in its module: 1, 2, 5, 7, 8) check access first.
+  `SmallTemplateController` (Plantilla 1–5, each in its module: 1, 2, 5, 7, 8, by number; the
+  «números gordos», Module 1, by its id `numeros_gordos_solar`) check access first.
   `TemplateCatalog` holds inputs to each template's dictionary; `XlsxFiller` writes a user's inputs
   and the parameters into a copy of the package's `.xlsx` for download.
+- The 7 templates included (package v5, `plantillas_pequenas/indice.json`): the 5 of CONSTRUYE and
+  the professional's 2 in Module 1, on its «Plantilla» page under Plantilla 1: the «números gordos»
+  (calculator and Excel) and the land management database (`base_datos_suelo.xlsx`, a download,
+  `CourseFiles`). The extra adds the professional's feasibility guide
+  (`Guia_Analisis_de_Viabilidad_corregida.xlsx`, served with the legal parameters in force written
+  in) and, in its calculator, «Cargar el ejemplo de la guía del profesional»
+  (`pruebas/escenario_guia_profesional.json` without D133 and D154). Every calculation of the
+  professional template returns Datos de Partida E79, the calendar warning shown beside month zero
+  (D79): «AVISO…» when a payment falls outside the 48 months of the cash flow.
 - Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
   `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
   and sent with every calculation. A project never stores them.

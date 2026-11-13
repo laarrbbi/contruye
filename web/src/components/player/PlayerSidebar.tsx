@@ -186,7 +186,7 @@ function ModuleSection({
 
         {/* What the module leaves the promoter with, each apart: tasks, laws, partners. */}
         {module.kind === 'phase' && !module.is_locked &&
-          SECTIONS.filter(({ key }) => key !== 'plantilla' || module.template !== null || hasFiles).map(({ key, icon: Icon }) => {
+          SECTIONS.filter(({ key }) => key !== 'plantilla' || module.template !== null || hasFiles || (module.professional_templates ?? []).length > 0).map(({ key, icon: Icon }) => {
             const isCurrent = 'section' in location && location.moduleId === module.id && location.section === key
             return (
               <li key={key}>

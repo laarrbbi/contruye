@@ -9,16 +9,20 @@ import {
   useSmallTemplate,
   type SmallTemplateInput,
   type SmallTemplateResult,
+  type TemplateKey,
 } from '@/api/templates'
 import { LegalParametersPanel } from '@/components/templates/LegalParametersPanel'
 import { Button } from '@/components/ui/button'
-import { decodeAddress, formatCellValue, parseLocaleNumber } from '@/lib/sheet'
+import { decodeAddress, formatCellValue as formatCell, parseLocaleNumber } from '@/lib/sheet'
 import { cn } from '@/lib/utils'
 
 /** Rows 1 and 2 of each template are its title and its instructions: the page says both. */
 const FIRST_ROW = 3
 
 const COMMUNITIES = 'lista: comunidades'
+
+/** A result as its template formats it, with the unit its format writes after the number. */
+const formatCellValue = (value: unknown, nf: string | undefined) => formatCell(value, nf, 'es-ES', { units: true })
 
 /** What the form shows for a value: percentages as a percentage, decimals with a comma. */
 function toRaw(input: SmallTemplateInput, value: number | string | null): string {
@@ -28,22 +32,22 @@ function toRaw(input: SmallTemplateInput, value: number | string | null): string
   return String(shown).replace('.', ',')
 }
 
-function storageKey(slug: string, number: number) {
-  return `construye.template.${slug}.${number}`
+function storageKey(slug: string, key: TemplateKey) {
+  return `construye.template.${slug}.${key}`
 }
 
-function readSaved(slug: string, number: number): Record<string, string> | null {
+function readSaved(slug: string, key: TemplateKey): Record<string, string> | null {
   try {
-    const raw = localStorage.getItem(storageKey(slug, number))
+    const raw = localStorage.getItem(storageKey(slug, key))
     return raw ? (JSON.parse(raw) as Record<string, string>) : null
   } catch {
     return null
   }
 }
 
-function save(slug: string, number: number, values: Record<string, string>) {
+function save(slug: string, key: TemplateKey, values: Record<string, string>) {
   try {
-    localStorage.setItem(storageKey(slug, number), JSON.stringify(values))
+    localStorage.setItem(storageKey(slug, key), JSON.stringify(values))
   } catch {
     // A private window: the inputs simply are not remembered.
   }
@@ -100,16 +104,17 @@ function InputCell({
 }
 
 /**
- * One of the five small templates of the course, on the platform: its own
+ * One of the small templates of the course (by its number), or the
+ * professional's «números gordos» (by its id), on the platform: its own
  * sheet, laid out as in Excel, with its input cells to fill (highlighted) and
  * everything else calculated by the template's formulas on the server, with
- * the legal parameters in force. Recalculates as the student types, and
- * downloads the same template in Excel with their inputs.
+ * the legal parameters in force where the template has them. Recalculates as
+ * the student types, and downloads the same template in Excel with their inputs.
  */
-export function SmallTemplateCalculator({ slug, number }: { slug: string; number: number }) {
+export function SmallTemplateCalculator({ slug, templateKey }: { slug: string; templateKey: TemplateKey }) {
   const { t } = useTranslation()
-  const template = useSmallTemplate(slug, number)
-  const calculate = useCalculateSmallTemplate(slug, number)
+  const template = useSmallTemplate(slug, templateKey)
+  const calculate = useCalculateSmallTemplate(slug, templateKey)
   const [values, setValues] = useState<Record<string, string> | null>(null)
   const [result, setResult] = useState<SmallTemplateResult | null>(null)
   const [downloading, setDownloading] = useState(false)
@@ -124,8 +129,8 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
 
   // The example of the template, or what this student left last time.
   useEffect(() => {
-    if (template.data && values === null) setValues({ ...defaults, ...(readSaved(slug, number) ?? {}) })
-  }, [template.data, defaults, values, slug, number])
+    if (template.data && values === null) setValues({ ...defaults, ...(readSaved(slug, templateKey) ?? {}) })
+  }, [template.data, defaults, values, slug, templateKey])
 
   const invalid = useMemo(() => {
     const bad = new Set<string>()
@@ -155,7 +160,7 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
   const latest = useRef(0)
   useEffect(() => {
     if (values === null || invalid.size > 0) return
-    save(slug, number, values)
+    save(slug, templateKey, values)
     const ticket = ++latest.current
     const timer = window.setTimeout(() => {
       mutate(JSON.parse(datosKey) as InputValues, { onSuccess: (data) => ticket === latest.current && setResult(data) })
@@ -163,12 +168,14 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
     return () => window.clearTimeout(timer)
     // `values` is saved with the inputs it produced; datosKey decides the calculation.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [datosKey, invalid.size, mutate, slug, number])
+  }, [datosKey, invalid.size, mutate, slug, templateKey])
 
   const grid = useMemo(() => {
     if (!result) return null
     let maxRow = 0
     let maxCol = 0
+    // The column of the names: A in the five small templates, B in the professional's.
+    let minCol = Infinity
     const cells = new Map<string, { address: string; value: unknown; nf?: string }>()
     for (const [address, cell] of Object.entries(result.hoja.celdas)) {
       const { row, col } = decodeAddress(address)
@@ -176,13 +183,20 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
       cells.set(`${row}:${col}`, { address, value: cell.v, nf: cell.nf })
       maxRow = Math.max(maxRow, row)
       maxCol = Math.max(maxCol, col)
+      minCol = Math.min(minCol, col)
     }
     for (const input of inputs.values()) {
       const { row, col } = decodeAddress(input.celda)
       maxRow = Math.max(maxRow, row)
       maxCol = Math.max(maxCol, col)
     }
-    return { cells, rows: Array.from({ length: maxRow - FIRST_ROW + 1 }, (_, i) => i + FIRST_ROW), cols: Array.from({ length: maxCol }, (_, i) => i + 1) }
+    const first = Number.isFinite(minCol) ? minCol : 1
+    return {
+      cells,
+      first,
+      rows: Array.from({ length: maxRow - FIRST_ROW + 1 }, (_, i) => i + FIRST_ROW),
+      cols: Array.from({ length: maxCol - first + 1 }, (_, i) => i + first),
+    }
   }, [result, inputs])
 
   if (template.isError) {
@@ -208,7 +222,7 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
             setDownloading(true)
             setDownloadError(false)
             try {
-              await downloadWorkbook(`/courses/${slug}/templates/${number}/excel`, datos, template.data.excel)
+              await downloadWorkbook(`/courses/${slug}/templates/${templateKey}/excel`, datos, template.data.excel)
             } catch {
               setDownloadError(true)
             } finally {
@@ -242,8 +256,19 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                 if (present.length === 0 && rowInputs.length === 0) {
                   return <tr key={row} aria-hidden><td colSpan={grid.cols.length} className="h-3" /></tr>
                 }
-                // A row with one text and nothing else is a heading («RESULTADO»).
-                if (rowInputs.length === 0 && present.length === 1 && present[0].col === 1 && typeof present[0].cell?.value === 'string') {
+                // A row with one text and nothing else is a heading («RESULTADO»),
+                // or, when it is a sentence, a note («Cifras sin IVA…»).
+                if (rowInputs.length === 0 && present.length === 1 && present[0].col === grid.first && typeof present[0].cell?.value === 'string') {
+                  const text = String(present[0].cell?.value)
+                  if (text.length > 40) {
+                    return (
+                      <tr key={row}>
+                        <td colSpan={grid.cols.length} className="px-4 pb-3 pt-4 text-xs leading-relaxed text-muted-foreground">
+                          {text}
+                        </td>
+                      </tr>
+                    )
+                  }
                   return (
                     <tr key={row}>
                       <th colSpan={grid.cols.length} scope="colgroup" className="etiquette border-b border-foreground/[0.08] px-4 pb-2 pt-4 text-start text-or-fonce">
@@ -260,7 +285,7 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                 const last = Math.max(0, ...present.map((x) => x.col), ...rowInputs)
                 const lastCell = present.find((x) => x.col === last)?.cell
                 const noteCol =
-                  !header && last > 1 && !rowInputs.includes(last) && lastCell && typeof lastCell.value !== 'number' ? last : null
+                  !header && last > grid.first && !rowInputs.includes(last) && lastCell && typeof lastCell.value !== 'number' ? last : null
                 const note = noteCol !== null && lastCell ? formatCellValue(lastCell.value, lastCell.nf) : ''
                 return (
                   <tr key={row} className="align-middle">
@@ -279,11 +304,11 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                             'border-b border-foreground/[0.06] px-2 py-2',
                             // On a phone the names take the room the explanations left,
                             // and stay in view when a wide table scrolls sideways.
-                            col === 1 && 'min-w-[8.5rem] ps-4 max-sm:sticky max-sm:start-0 max-sm:z-[1] max-sm:w-full max-sm:bg-card sm:min-w-[10rem]',
+                            col === grid.first && 'min-w-[8.5rem] ps-4 max-sm:sticky max-sm:start-0 max-sm:z-[1] max-sm:w-full max-sm:bg-card sm:min-w-[10rem]',
                             header && 'whitespace-nowrap text-start text-xs font-medium text-muted-foreground',
                             !header && !input && numeric && 'whitespace-nowrap text-end font-medium tabular-nums',
-                            !header && !input && !numeric && col > 1 && 'min-w-[10rem] text-xs text-muted-foreground',
-                            (col === noteCol || (!input && text === '' && col > 1)) && 'max-sm:min-w-0 max-sm:p-0',
+                            !header && !input && !numeric && col > grid.first && 'min-w-[10rem] text-xs text-muted-foreground',
+                            (col === noteCol || (!input && text === '' && col > grid.first)) && 'max-sm:min-w-0 max-sm:p-0',
                           )}
                         >
                           {col === noteCol ? (
@@ -298,7 +323,7 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
                           ) : (
                             text
                           )}
-                          {col === 1 && note && (
+                          {col === grid.first && note && (
                             <span className="mt-1 block text-xs font-normal leading-snug text-muted-foreground sm:hidden">{note}</span>
                           )}
                         </Tag>
@@ -311,9 +336,10 @@ export function SmallTemplateCalculator({ slug, number }: { slug: string; number
           </table>
         )}
       </div>
-      <p className="text-xs text-muted-foreground">{t('templates.howTo')}</p>
+      {/* The «números gordos» carry no taxes: no word about the ones in force. */}
+      <p className="text-xs text-muted-foreground">{t(template.data && !template.data.legal ? 'templates.howToNoTaxes' : 'templates.howTo')}</p>
 
-      {template.data && <LegalParametersPanel legal={template.data.legal} community={community} />}
+      {template.data?.legal && <LegalParametersPanel legal={template.data.legal} community={community} />}
     </div>
   )
 }

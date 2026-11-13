@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { cn, formatPrice } from '@/lib/utils'
 
 /** What the extra includes, as the offer of the package's home page text lists it (section 9). */
-const INCLUDES = ['excel', 'simplified', 'lessons', 'taxes'] as const
+const INCLUDES = ['excel', 'simplified', 'guide', 'lessons', 'taxes'] as const
 
 function Includes({ className }: { className?: string }) {
   const { t } = useTranslation()

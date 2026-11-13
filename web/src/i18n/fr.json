@@ -193,7 +193,7 @@
       },
       "templates": {
         "q": "Quels modèles la formation inclut-elle ?",
-        "a": "Cinq modèles de calcul, inclus : achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles, plus de 30 000 formules et les impôts à jour."
+        "a": "Sept modèles inclus : base de données de gestion foncière et grands chiffres du terrain (les deux du professionnel), achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles, plus de 30 000 formules et les impôts à jour."
       }
     }
   },
@@ -1122,7 +1122,7 @@
     },
     "pricing": {
       "fullTitle": "Accès complet",
-      "fullShort": "Tous les modules, les 5 modèles de calcul et les outils de la formation, avec un accès à vie"
+      "fullShort": "Tous les modules, les 7 modèles et les outils de la formation, avec un accès à vie"
     },
     "socialProof": {
       "title": "Ce qu'en disent ceux qui l'ont déjà suivie.",
@@ -1177,13 +1177,13 @@
       "colUse": "À quoi cela vous sert",
       "i1": "{{modules}} modules et {{lessons}} leçons sur le processus",
       "i1Use": "Savoir quoi faire à chaque phase",
-      "i2": "5 modèles de calcul : terrain, viabilité, prêt, contrôle du chantier et ventes",
-      "i2Use": "Calculer si une promotion est rentable avant d'acheter",
+      "i2": "7 modèles : base de données foncière, grands chiffres du terrain, achat du terrain, viabilité, prêt, contrôle du chantier et ventes",
+      "i2Use": "Organiser votre portefeuille foncier et calculer si une promotion est rentable avant d'acheter",
       "i3": "Annuaire des partenaires des 52 provinces",
       "i3Use": "Savoir qui appeler dans votre région",
       "i4": "Annexe sur la fiscalité et l'urbanisme par communauté autonome",
       "i4Use": "Appliquer les règles et les impôts de votre communauté",
-      "i5": "Une checklist par module et les fichiers : les 5 modèles et l'annuaire des partenaires en Excel, la formation en PDF",
+      "i5": "Une checklist par module et les fichiers : les 7 modèles et l'annuaire des partenaires en Excel, la formation en PDF",
       "i5Use": "Travailler avec les documents dès le premier jour",
       "i6": "Quiz par module et examen final",
       "i6Use": "Vérifier ce que vous avez appris",
@@ -1253,7 +1253,7 @@
       "provinces": "provinces avec leur annuaire de partenaires et d'institutions",
       "p2": "Vous saurez à quelle administration vous adresser et quelle loi s'applique : mairie, registre foncier, notaire, ordres professionnels et la règle de chaque étape.",
       "lessons": "leçons",
-      "sheets": "modèles de calcul inclus : terrain, viabilité, prêt, contrôle du chantier et ventes",
+      "sheets": "modèles inclus : base de données foncière, grands chiffres, achat du terrain, viabilité, prêt, contrôle du chantier et ventes",
       "questions": "questions d'évaluation",
       "p3": "Vous saurez si une promotion est rentable avant d'acheter le terrain. Avec les modèles de viabilité de la formation et, si vous le souhaitez, le modèle financier complet d'un professionnel en extra à la fin.",
       "illustration": "Photo d'illustration",
@@ -1271,7 +1271,7 @@
     "method": {
       "title": "Du terrain au service après-vente : les 12 phases d'une promotion, expliquées pas à pas.",
       "intro": "L'ordre réel d'une promotion, sans sauter une seule phase :",
-      "s1": "Terrain : trouver des terrains, lire le plan d'urbanisme et acheter sans surprise juridique ni urbanistique. Avec le modèle 1 : achat du terrain.",
+      "s1": "Terrain : trouver des terrains, lire le plan d'urbanisme et acheter sans surprise juridique ni urbanistique. Avec la base de données foncière et les grands chiffres du professionnel, et le modèle 1 : achat du terrain.",
       "s2": "Viabilité : calculer le coût, le financement et la marge avant d'engager un euro. Avec le modèle 2 : viabilité et méthode résiduelle.",
       "s3": "Projets techniques : recruter et coordonner l'architecte, les bureaux d'études et la direction de chantier.",
       "s4": "Permis : savoir quel permis demander, à qui, et ce qui se passe en cas de silence de l'administration.",
@@ -1334,15 +1334,15 @@
       "l3": "Vous repartez avec des {{tools}}.",
       "tools": "outils",
       "footer": "Tout est dans la plateforme dès le premier jour.",
-      "excelTitle": "Des modèles de calcul à chaque phase clé",
+      "excelTitle": "Des modèles à chaque phase clé",
       "excelShort": "Calculez si une promotion est rentable avant de risquer de l'argent.",
-      "excelBody": "Cinq modèles inclus : achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. Avec les impôts de chaque communauté à jour, pour savoir si une promotion est rentable avant de risquer de l'argent. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles et plus de 30 000 formules, revu cellule par cellule et avec les impôts à jour.",
+      "excelBody": "Sept modèles inclus, dont deux du professionnel lui-même : base de données de gestion foncière, grands chiffres du terrain, achat du terrain, viabilité et méthode résiduelle, prêt promoteur, contrôle des coûts du chantier et plan de ventes et d'encaissements. Avec les impôts de chaque communauté à jour, pour savoir si une promotion est rentable avant de risquer de l'argent. À la fin de la formation, vous pouvez ajouter en extra le modèle financier complet d'un professionnel : 18 feuilles et plus de 30 000 formules, revu cellule par cellule et avec les impôts à jour.",
       "papersTitle": "Les lois et les impôts de votre région",
       "papersShort": "La règle qui s'applique à chaque étape, dans votre région.",
       "papersBody": "La réglementation nationale (loi sur le sol, loi d'organisation de la construction, code technique de la construction) et une annexe sur la fiscalité et l'urbanisme de chaque communauté autonome, pour que ce que vous apprenez vaille à Alicante, à Madrid ou à Séville.",
       "templatesTitle": "Checklists et téléchargements",
       "templatesShort": "Une checklist par module et les documents pour travailler.",
-      "templatesBody": "Une checklist par module, à cocher sur votre propre projet et à enregistrer dans votre compte. Et les téléchargements : les 5 modèles de calcul sous Excel, l'annuaire des partenaires sous Excel et la formation complète en PDF.",
+      "templatesBody": "Une checklist par module, à cocher sur votre propre projet et à enregistrer dans votre compte. Et les téléchargements : les 7 modèles sous Excel, l'annuaire des partenaires sous Excel et la formation complète en PDF.",
       "subsTitle": "Des partenaires dans les 52 provinces",
       "subsShort": "À qui vous adresser dans votre province, phase par phase.",
       "subsBody": "Pour chaque phase, un annuaire des organismes et des professionnels avec qui vous travaillerez dans votre province. Vous ne repartez pas de zéro en entrant dans une nouvelle mairie."
@@ -1411,7 +1411,7 @@
   "seo": {
     "home": {
       "title": "Formation en promotion immobilière en Espagne",
-      "description": "Apprenez à promouvoir des logements en Espagne pas à pas : {{modules}} phases, les lois, des partenaires dans les 52 provinces et des modèles de calcul inclus. Commencez aujourd'hui."
+      "description": "Apprenez à promouvoir des logements en Espagne pas à pas : {{modules}} phases, les lois, des partenaires dans les 52 provinces et 7 modèles inclus. Commencez aujourd'hui."
     },
     "catalog": {
       "title": "Formations à la promotion immobilière en Espagne",
@@ -1469,9 +1469,8 @@
       "plantilla-simplificada": "Modèle simplifié corrigé (exemple du professionnel)",
       "directorio-partners": "Annuaire des partenaires par province (Excel)",
       "curso-pdf": "La formation complète en PDF",
-      "esquema-bbdd-suelo": "Schéma de base de données de gestion foncière",
-      "calculo-precio-solar": "Calcul du prix du terrain (les grands chiffres)",
-      "guia-analisis-viabilidad": "Guide d'analyse de viabilité : exemple du professionnel (version d'origine, impôts de 2002)"
+      "base-datos-suelo": "Modèle du professionnel · Base de données de gestion foncière",
+      "guia-analisis-viabilidad": "Guide d'analyse de viabilité du professionnel (22 logements), sur le modèle corrigé"
     },
     "needsFullAccess": "Avec l'accès complet",
     "needsFinancials": "Avec l'extra (modèle professionnel)",
@@ -1551,6 +1550,7 @@
     "notANumber": "Ce n'est pas un nombre.",
     "scenarios": "Mes scénarios",
     "loadExample": "Charger l'exemple de 24 logements",
+    "loadGuideExample": "Charger l'exemple du guide du professionnel",
     "reset": "Vider",
     "scenarioName": "Nom du scénario",
     "save": "Enregistrer",
@@ -1634,8 +1634,12 @@
     "locked": "Le modèle fait partie de son module.",
     "error": "Le calcul n'a pas abouti. Réessayez.",
     "howTo": "Remplissez les cases mises en évidence : les formules du modèle calculent le reste, avec les impôts en vigueur. Le fichier Excel téléchargé contient vos données.",
-    "moreTitle": "Autres modèles du professionnel pour ce module",
-    "moreLead": "En Excel, tels que le professionnel les a préparés : téléchargez-les et travaillez avec vos données."
+    "howToNoTaxes": "Remplissez les cases mises en évidence : les formules du modèle calculent le reste. Le fichier Excel téléchargé contient vos données.",
+    "moreTitle": "Autres modèles pour ce module",
+    "moreLead": "En Excel : téléchargez-les et travaillez avec vos données.",
+    "professional": {
+      "numeros_gordos_solar": "Modèle du professionnel · Les grands chiffres du terrain"
+    }
   },
   "legalParams": {
     "title": "Paramètres légaux appliqués",
@@ -1650,6 +1654,7 @@
     "includes": {
       "excel": "Le modèle en Excel et le calculateur sur la plateforme.",
       "simplified": "La version simplifiée avec l'exemple réel du professionnel.",
+      "guide": "Le guide d'analyse de viabilité du professionnel : une étude préalable complète résolue, de 22 logements.",
       "lessons": "Les 9 leçons de Financials : quelle donnée va dans chaque case et comment lire le résultat.",
       "taxes": "Les impôts à jour : quand la loi change, ils se mettent à jour d'eux-mêmes."
     },
@@ -1850,8 +1855,8 @@
       }
     },
     "course": {
-      "title": "Le premier de cinq modèles",
-      "body": "Le cours CONSTRUYE suit les 12 phases d'une promotion de logements, du terrain au service après-vente, avec un modèle de calcul dans les modules 1, 2, 5, 7 et 8.",
+      "title": "L'un des 7 modèles de la formation",
+      "body": "Le cours CONSTRUYE suit les 12 phases d'une promotion de logements, du terrain au service après-vente, avec un modèle de calcul dans les modules 1, 2, 5, 7 et 8, et deux modèles du professionnel dans le module 1.",
       "cta": "Voir le cours"
     }
   },

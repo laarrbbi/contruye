@@ -53,11 +53,16 @@ class FinancialsController extends Controller
             ...$dictionary,
             // Presented with the reference values the admin keeps up to date.
             'entradas' => $this->reference->presented(ReferenceValues::PROFESSIONAL, $dictionary['entradas']),
-            // The package's worked example (motor/ejemplo.js, pruebas/): a
-            // promotion of 24 homes, to start from something that calculates.
+            // The package's worked examples (pruebas/): a promotion of 24
+            // homes (motor/ejemplo.js), to start from something that
+            // calculates, and the one of the professional's feasibility guide
+            // (22 homes), its dates as the template stores them.
             'ejemplos' => [[
                 'key' => '24-viviendas',
                 'datos' => $catalog->professionalExample(),
+            ], [
+                'key' => 'guia-profesional',
+                'datos' => $catalog->toWorkbook($dictionary, $catalog->professionalGuideExample()),
             ]],
             // What the template applies: read only, with the date of the last review.
             'legal' => $this->legal->view(),

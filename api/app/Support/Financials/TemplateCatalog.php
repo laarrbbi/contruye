@@ -11,7 +11,10 @@ use Illuminate\Validation\ValidationException;
  * The course's calculation templates, as the package describes them:
  * - the professional template (plantilla/, the Financials extra);
  * - the five small ones included in the course (plantillas_pequenas/), each
- *   in its module: Plantilla 1 in module 1, 2 in 2, 3 in 5, 4 in 7, 5 in 8.
+ *   in its module: Plantilla 1 in module 1, 2 in 2, 3 in 5, 4 in 7, 5 in 8;
+ * - the professional's own two in Module 1 (indice.json, plantillas_del_profesional):
+ *   the land management database, a download, and the plot's «números gordos»,
+ *   a calculator like the small ones but with no legal parameters to apply.
  *
  * Each has a dictionary of input cells (entradas.json): the only cells a user
  * writes, with their type. inputs() holds a user's values to it.
@@ -44,6 +47,134 @@ final class TemplateCatalog
     public function professionalExample(): array
     {
         return $this->source->json(self::BASE.'/pruebas/escenario_24_viviendas.json');
+    }
+
+    /**
+     * The example of the professional's feasibility guide (22 homes), as the
+     * package passes it to the template's inputs, without Datos de Partida
+     * D133 and D154: in the corrected template they are legal parameters.
+     *
+     * @return array<string, array<string, int|float|string>>
+     */
+    public function professionalGuideExample(): array
+    {
+        $example = $this->source->json(self::BASE.'/pruebas/escenario_guia_profesional.json');
+        unset($example['Datos de Partida']['D133'], $example['Datos de Partida']['D154']);
+
+        // A choice from a list as the dictionary spells it: the guide writes
+        // «BLOQUE» where the list says «bloque» (D121). Excel and the engine
+        // compare texts without case, so no amount changes; only the two cells
+        // that repeat the word (3ª Construcción S30 and AI31) read it in lower case.
+        foreach ($this->professionalDictionary()['entradas'] as $input) {
+            $value = $example[$input['hoja']][$input['celda']] ?? null;
+            if (is_string($value) && str_starts_with($input['tipo'], 'lista:')) {
+                $options = $input['opciones'] ?? explode('/', trim(substr($input['tipo'], 6)));
+                foreach ($options as $option) {
+                    if (mb_strtolower($option) === mb_strtolower($value)) {
+                        $example[$input['hoja']][$input['celda']] = $option;
+                    }
+                }
+            }
+        }
+
+        return $example;
+    }
+
+    /** The professional's feasibility guide over the corrected template: the extra's. */
+    public function professionalGuideWorkbook(): string
+    {
+        return $this->source->path(self::BASE.'/excel_corregido/Guia_Analisis_de_Viabilidad_corregida.xlsx');
+    }
+
+    /**
+     * The professional's templates included in the course, by id: title, the
+     * module (by its order) and lesson they go with, their Excel file and,
+     * for the one with a calculator, its template and dictionary.
+     *
+     * @return array<string, array{id: string, title: string, module_order: int, lesson: string, excel: string, template: string|null, inputs: string|null}>
+     */
+    public function professionals(): array
+    {
+        $templates = [];
+        foreach ($this->source->json(self::BASE.'/plantillas_pequenas/indice.json')['plantillas_del_profesional'] ?? [] as $entry) {
+            preg_match('/Módulo (\d+)/u', $entry['modulo'], $module);
+            $templates[$entry['id']] = [
+                'id' => $entry['id'],
+                'title' => $entry['titulo'],
+                'module_order' => (int) $module[1],
+                'lesson' => (string) $entry['leccion'],
+                'excel' => $entry['excel'],
+                'template' => $entry['plantilla'],
+                'inputs' => $entry['entradas'],
+            ];
+        }
+
+        return $templates;
+    }
+
+    /**
+     * A template with a calculator, by its key: a small one by its number
+     * ('1' to '5'), or one of the professional's by its id. Null for a key
+     * the package does not have, or for a template that is a download only.
+     *
+     * @return array{key: string, number: int|null, title: string, module_order: int, excel: string, template: string, inputs: string}|null
+     */
+    public function calculator(string $key): ?array
+    {
+        if (ctype_digit($key)) {
+            $small = $this->small()[(int) $key] ?? null;
+
+            return $small === null ? null : [
+                'key' => $key,
+                'number' => $small['number'],
+                'title' => $small['title'],
+                'module_order' => $small['module_order'],
+                'excel' => $small['excel'],
+                'template' => $small['template'],
+                'inputs' => $small['inputs'],
+            ];
+        }
+
+        $professional = $this->professionals()[$key] ?? null;
+
+        return $professional === null || $professional['template'] === null ? null : [
+            'key' => $key,
+            'number' => null,
+            'title' => $professional['title'],
+            'module_order' => $professional['module_order'],
+            'excel' => $professional['excel'],
+            'template' => $professional['template'],
+            'inputs' => (string) $professional['inputs'],
+        ];
+    }
+
+    /**
+     * @param  array{inputs: string}  $calculator
+     * @return array<string, mixed>
+     */
+    public function calculatorDictionary(array $calculator): array
+    {
+        return $this->source->json(self::BASE.'/plantillas_pequenas/'.$calculator['inputs']);
+    }
+
+    /** @param  array{excel: string}  $calculator */
+    public function calculatorWorkbook(array $calculator): string
+    {
+        return $this->source->path(self::BASE.'/plantillas_pequenas/'.$calculator['excel']);
+    }
+
+    /**
+     * Whether a calculator's template carries the «Parámetros legales» sheet
+     * (the five small ones do; the professional's «números gordos» has no taxes).
+     *
+     * @param  array{template: string}  $calculator
+     */
+    public function calculatorHasLegalSheet(array $calculator): bool
+    {
+        $sheet = $this->source->json(self::BASE.'/plantilla/parametros_legales.json')['hoja'];
+
+        return collect($this->source->json(self::BASE.'/plantillas_pequenas/'.$calculator['template'])['hojas'])
+            ->contains(fn (array $h) => $h['nombre'] === $sheet);
     }
 
     /**

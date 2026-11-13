@@ -2,13 +2,15 @@
 //
 // Para donde el servicio no puede quedarse escuchando (la vista previa en
 // Vercel: la API lo arranca en su misma función). Recibe por stdin
-//   { "path": "/calcular" | "/pequenas/N/calcular", "body": { datos, hojas?, parametros?, tarifas? } }
+//   { "path": "/calcular" | "/pequenas/N/calcular" | "/pequenas/numeros_gordos_solar/calcular", "body": { datos, hojas?, parametros?, tarifas? } }
 // y escribe por stdout { "status": 200 | 422 | 404 | 500, "body": … }: lo mismo
 // que respondería server.js, con las mismas clases y el mismo motor.
 'use strict';
 const { Calculadora, PlantillasPequenas, EntradaNoValida } = require('./calculadora');
 
 const esObjeto = (x) => typeof x === 'object' && x !== null && !Array.isArray(x);
+// Una plantilla pequeña por su número, o una del profesional por su id.
+const clave = (x) => (/^\d$/.test(x) ? Number(x) : x);
 
 function calcular(peticion) {
   const { path, body = {} } = esObjeto(peticion) ? peticion : {};
@@ -16,8 +18,8 @@ function calcular(peticion) {
   if (!esObjeto(datos) || !esObjeto(parametros) || !esObjeto(tarifas) || !Array.isArray(hojas)) {
     return { status: 422, body: { error: 'Se espera { datos: { hoja: { celda: valor } }, parametros: {}, hojas: [] }' } };
   }
-  const pequena = /^\/pequenas\/([1-9])\/calcular$/.exec(String(path));
-  if (pequena) return { status: 200, body: new PlantillasPequenas().calcular(Number(pequena[1]), datos, parametros) };
+  const pequena = /^\/pequenas\/([1-9]|[a-z][a-z_]{0,40})\/calcular$/.exec(String(path));
+  if (pequena) return { status: 200, body: new PlantillasPequenas().calcular(clave(pequena[1]), datos, parametros) };
   if (path === '/calcular') return { status: 200, body: new Calculadora().calcular(datos, hojas, parametros, tarifas) };
   return { status: 404, body: { error: 'No encontrado' } };
 }

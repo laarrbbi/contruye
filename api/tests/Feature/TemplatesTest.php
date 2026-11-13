@@ -20,11 +20,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 /*
- * Package 4.1: five small templates included in the course, each in its
- * module; the professional template as a paid extra at the end, off until
- * the admin switches it on; the legal parameters every template applies,
- * kept by the admin with their history. The engine itself is tested in
- * financials/test and in the package (39 checks); here the service is faked.
+ * Package v5: five small templates included in the course, each in its
+ * module, and the professional's two in Module 1 (the land database, a
+ * download; the «números gordos», a calculator); the professional template
+ * as a paid extra at the end, with the professional's feasibility guide, off
+ * until the admin switches it on; the legal parameters every template
+ * applies, kept by the admin with their history. The engine itself is tested
+ * in financials/test and in the package (44 checks); here the service is
+ * faked, but where a test says it runs the engine as a process.
  */
 
 /** The course's modules 1 to 8 and Financials, as the package numbers them. */
@@ -43,37 +46,6 @@ function studentOf(Course $course, ?Module $module): User
     Enrollment::factory()->create(['user_id' => $user->id, 'course_id' => $course->id, 'module_id' => $module?->id]);
 
     return $user;
-}
-
-/** A cell of a workbook as stored: [type, value or formula]. */
-function workbookCell(string $path, string $sheet, string $address): array
-{
-    $zip = new ZipArchive;
-    $zip->open($path);
-    $rels = simplexml_load_string($zip->getFromName('xl/_rels/workbook.xml.rels'));
-    $targets = [];
-    foreach ($rels->Relationship as $rel) {
-        $target = ltrim((string) $rel['Target'], '/');
-        $targets[(string) $rel['Id']] = str_starts_with($target, 'xl/') ? $target : 'xl/'.$target;
-    }
-    $workbook = simplexml_load_string($zip->getFromName('xl/workbook.xml'));
-    $part = null;
-    foreach ($workbook->sheets->sheet as $entry) {
-        if ((string) $entry['name'] === $sheet) {
-            $part = $targets[(string) $entry->attributes('http://schemas.openxmlformats.org/officeDocument/2006/relationships')['id']];
-        }
-    }
-    $xml = simplexml_load_string($zip->getFromName($part));
-    $zip->close();
-    $xml->registerXPathNamespace('m', 'http://schemas.openxmlformats.org/spreadsheetml/2006/main');
-    $cell = $xml->xpath("//m:c[@r='{$address}']")[0] ?? null;
-
-    return match (true) {
-        $cell === null => ['none', null],
-        isset($cell->f) => ['formula', (string) $cell->f],
-        (string) $cell['t'] === 'inlineStr' => ['text', (string) $cell->is->t],
-        default => ['number', (float) $cell->v],
-    };
 }
 
 it('starts from the package\'s legal parameters, and the engine gets them whole', function () {
@@ -235,8 +207,10 @@ it('gives each small template to the owners of its module, and calculates it wit
     $module5 = studentOf($course, $phases[5]);
 
     $list = $this->actingAs($module5)->getJson("/api/courses/{$course->slug}/templates")->assertOk()->json('data');
-    expect(collect($list)->map(fn ($t) => [$t['number'], $t['module_order'], $t['is_locked']])->all())->toBe([
-        [1, 1, true], [2, 2, true], [3, 5, false], [4, 7, true], [5, 8, true],
+    expect(collect($list)->map(fn ($t) => [$t['key'], $t['number'], $t['module_order'], $t['is_locked']])->all())->toBe([
+        ['1', 1, 1, true], ['2', 2, 2, true], ['3', 3, 5, false], ['4', 4, 7, true], ['5', 5, 8, true],
+        // The professional's «números gordos», with Plantilla 1 in Module 1.
+        ['numeros_gordos_solar', null, 1, true],
     ]);
 
     $this->actingAs($module5)->getJson("/api/courses/{$course->slug}/templates/1")->assertForbidden();
@@ -448,4 +422,68 @@ it('presents a small template\'s inputs with the admin\'s values and calculates 
     // What the student types wins.
     $this->actingAs($student)->postJson("/api/courses/{$course->slug}/templates/3/calculate", ['datos' => ['Calculadora' => ['B4' => 3000000, 'B6' => 0.05]]])->assertOk();
     Http::assertSent(fn (Request $request) => json_decode($request->body(), true)['datos'] === ['Calculadora' => ['B4' => 3000000, 'B6' => 0.05]]);
+});
+
+it('gives Module 1\'s owners the professional\'s «números gordos»: a calculator with no taxes in it, and its Excel with their inputs', function () {
+    config(['services.plantilla.transport' => 'process']);
+    [$course, $phases] = templatesCourse();
+    $student = studentOf($course, $phases[1]);
+    $url = "/api/courses/{$course->slug}/templates/numeros_gordos_solar";
+
+    // Another module's owner does not have it; a download-only template is no calculator.
+    $this->actingAs(studentOf($course, $phases[2]))->getJson($url)->assertForbidden();
+    $this->actingAs($student)->getJson("/api/courses/{$course->slug}/templates/base_datos_suelo")->assertNotFound();
+
+    $show = $this->actingAs($student)->getJson($url)->assertOk()->json('data');
+    expect($show['key'])->toBe('numeros_gordos_solar')
+        ->and($show['number'])->toBeNull()
+        ->and($show['title'])->toBe('Plantilla del profesional · Números gordos del solar')
+        ->and($show['excel'])->toBe('numeros_gordos_solar.xlsx')
+        ->and($show['entradas'])->toHaveCount(13)
+        // No taxes in it: no legal parameters to show.
+        ->and($show['legal'])->toBeNull();
+
+    // The package's engine, with the professional's example: the plot's price and the profit (ventas − coste).
+    $result = $this->actingAs($student)->postJson("{$url}/calculate", ['datos' => []])->assertOk()->json('data');
+    expect(round($result['hoja']['celdas']['C14']['v'], 2))->toBe(71392.05)
+        ->and(round($result['hoja']['celdas']['C25']['v'], 2))->toBe(461192.64)
+        // Each result with the format its Excel gives it, where the template's JSON has none.
+        ->and($result['hoja']['celdas']['C25']['nf'])->toBe('#,##0.00\\ "€"')
+        ->and($result['hoja']['celdas']['C26']['nf'])->toBe('0.00%');
+    $result = $this->actingAs($student)->postJson("{$url}/calculate", ['datos' => ['Números gordos' => ['C15' => 60]]])->assertOk()->json('data');
+    expect(round($result['hoja']['celdas']['C14']['v'], 2))->toBe(round(1586.49 * 60, 2));
+    // Only its input cells.
+    $this->actingAs($student)->postJson("{$url}/calculate", ['datos' => ['Números gordos' => ['C25' => 1]]])->assertUnprocessable();
+
+    $response = $this->actingAs($student)->post("{$url}/excel", ['datos' => ['Números gordos' => ['C15' => 60, 'C4' => 'Urbano']]])->assertOk();
+    $path = $response->getFile()->getPathname();
+    expect($response->headers->get('content-disposition'))->toContain('numeros_gordos_solar.xlsx')
+        ->and(workbookCell($path, 'Números gordos', 'C15'))->toBe(['number', 60.0])
+        ->and(workbookCell($path, 'Números gordos', 'C4'))->toBe(['text', 'Urbano'])
+        ->and(workbookCell($path, 'Números gordos', 'C25'))->toBe(['formula', 'C24-C19*C10']);
+});
+
+it('offers the extra\'s buyers the example of the professional\'s guide, and the calendar warning beside month zero', function () {
+    config(['services.plantilla.transport' => 'process']);
+    [$course, , $financials] = templatesCourse();
+    $buyer = studentOf($course, $financials);
+
+    $examples = collect($this->actingAs($buyer)->getJson("/api/courses/{$course->slug}/financials/inputs")->assertOk()->json('data.ejemplos'))->keyBy('key');
+    expect($examples->keys()->all())->toBe(['24-viviendas', 'guia-profesional']);
+    $guide = $examples['guia-profesional']['datos'];
+    // D133 and D154 are legal parameters in the corrected template: not in the example.
+    expect($guide['Datos de Partida'])->not->toHaveKeys(['D133', 'D154'])
+        ->and($guide['Datos de Partida']['C9'])->toBe(22)
+        // Its dates as the template stores them (01/01/2005).
+        ->and($guide['Datos de Partida']['D79'])->toBe(38353)
+        // «BLOQUE» in the guide, «bloque» in the template's list: the list's spelling.
+        ->and($guide['Datos de Partida']['D121'])->toBe('bloque')
+        ->and($guide)->toHaveKeys(['3ª Proyectos', '3ª Pólizas de Crédito']);
+
+    // Its payments fall before the cash flow: the template says so in Datos de Partida E79.
+    $this->actingAs($buyer)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => $guide])
+        ->assertOk()->assertJsonPath('data.calculo.convergido', true)
+        ->assertJson(fn ($json) => $json->where('data.calendario', fn (string $text) => str_starts_with($text, 'AVISO'))->etc());
+    $this->actingAs($buyer)->postJson("/api/courses/{$course->slug}/financials/calculate", ['datos' => $examples['24-viviendas']['datos']])
+        ->assertOk()->assertJson(fn ($json) => $json->where('data.calendario', fn (string $text) => str_starts_with($text, 'Calendario O.K.'))->etc());
 });

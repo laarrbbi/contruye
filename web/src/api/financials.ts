@@ -47,6 +47,8 @@ export interface CalculationResult {
   calculo: { iteraciones: number; cambio_maximo: number; convergido: boolean }
   resumen: { concepto: string; neto: number | string | null; con_iva?: number | string | null; iva?: number | string | null; pct?: number | string | null }[]
   vista: { celda: string; texto: string | null; valor?: number | string | null }[]
+  /** The calendar warning beside month zero (Datos de Partida E79): «AVISO…» when a payment falls outside the 48 months of the cash flow. */
+  calendario?: string | number | null
   hojas: Record<string, Sheet>
 }
 

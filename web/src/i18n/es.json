@@ -193,7 +193,7 @@
       },
       "templates": {
         "q": "¿Qué plantillas incluye el curso?",
-        "a": "Cinco plantillas de cálculo, incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas, más de 30.000 fórmulas y los impuestos al día."
+        "a": "Siete plantillas incluidas: base de datos de gestión de suelo y números gordos del solar (las dos del profesional), compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas, más de 30.000 fórmulas y los impuestos al día."
       }
     }
   },
@@ -1122,7 +1122,7 @@
     },
     "pricing": {
       "fullTitle": "Acceso completo",
-      "fullShort": "Todos los módulos, las 5 plantillas de cálculo y las herramientas del curso, con acceso de por vida"
+      "fullShort": "Todos los módulos, las 7 plantillas y las herramientas del curso, con acceso de por vida"
     },
     "socialProof": {
       "title": "Lo que dicen quienes ya lo han seguido.",
@@ -1163,13 +1163,13 @@
       "colUse": "Para qué te sirve",
       "i1": "{{modules}} módulos y {{lessons}} lecciones del proceso",
       "i1Use": "Saber qué hacer en cada fase",
-      "i2": "5 plantillas de cálculo: solar, viabilidad, préstamo, control de obra y ventas",
-      "i2Use": "Calcular si una promoción sale antes de comprar",
+      "i2": "7 plantillas: base de datos de suelo, números gordos del solar, compra del solar, viabilidad, préstamo, control de obra y ventas",
+      "i2Use": "Organizar tu cartera de suelo y calcular si una promoción sale antes de comprar",
       "i3": "Directorio de partners de las 52 provincias",
       "i3Use": "Saber a quién llamar en tu zona",
       "i4": "Anexo de fiscalidad y urbanismo por comunidad autónoma",
       "i4Use": "Aplicar la norma y los impuestos de tu comunidad",
-      "i5": "Una checklist por módulo y las descargas: las 5 plantillas y el directorio de partners en Excel, el curso en PDF",
+      "i5": "Una checklist por módulo y las descargas: las 7 plantillas y el directorio de partners en Excel, el curso en PDF",
       "i5Use": "Trabajar con los documentos desde el primer día",
       "i6": "Cuestionarios por módulo y examen final",
       "i6Use": "Comprobar lo aprendido",
@@ -1253,7 +1253,7 @@
       "provinces": "provincias con su directorio de partners e instituciones",
       "p2": "Sabrás a qué administración ir y qué ley manda: ayuntamiento, registro, notaría, colegios profesionales y la norma que aplica en cada paso.",
       "lessons": "lecciones",
-      "sheets": "plantillas de cálculo incluidas: solar, viabilidad, préstamo, control de obra y ventas",
+      "sheets": "plantillas incluidas: base de datos de suelo, números gordos, compra del solar, viabilidad, préstamo, control de obra y ventas",
       "questions": "preguntas de evaluación",
       "p3": "Sabrás si una promoción sale rentable antes de comprar el solar. Con las plantillas de viabilidad del curso y, si quieres, con la plantilla financiera completa de un profesional como extra al terminar.",
       "illustration": "Foto de ilustración",
@@ -1271,7 +1271,7 @@
     "method": {
       "title": "Del solar a la postventa: las 12 fases de una promoción, explicadas paso a paso.",
       "intro": "El orden real de una promoción, sin saltarse ninguna fase:",
-      "s1": "Solar: encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas. Con la Plantilla 1: compra del solar.",
+      "s1": "Solar: encontrar solares, leer el planeamiento y comprar sin sorpresas jurídicas ni urbanísticas. Con la base de datos de suelo y los números gordos del profesional, y la Plantilla 1: compra del solar.",
       "s2": "Viabilidad: calcular coste, financiación y margen antes de comprometer un euro. Con la Plantilla 2: viabilidad y método residual.",
       "s3": "Proyectos técnicos: contratar y coordinar arquitecto, ingenierías y dirección facultativa.",
       "s4": "Licencias: saber qué licencia pedir, ante quién y qué pasa con el silencio administrativo.",
@@ -1334,15 +1334,15 @@
       "l3": "Te llevas {{tools}}.",
       "tools": "herramientas",
       "footer": "Todo está dentro de la plataforma desde el primer día.",
-      "excelTitle": "Plantillas de cálculo en cada fase clave",
+      "excelTitle": "Plantillas en cada fase clave",
       "excelShort": "Calcula si una promoción sale antes de arriesgar dinero.",
-      "excelBody": "Cinco plantillas incluidas: compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Con los impuestos de cada comunidad al día, para que sepas si una promoción sale antes de arriesgar dinero. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas y más de 30.000 fórmulas, revisada celda a celda y con los impuestos al día.",
+      "excelBody": "Siete plantillas incluidas, dos de ellas del propio profesional: base de datos de gestión de suelo, números gordos del solar, compra del solar, viabilidad y método residual, préstamo promotor, control de costes de obra y plan de ventas y cobros. Con los impuestos de cada comunidad al día, para que sepas si una promoción sale antes de arriesgar dinero. Al terminar el curso puedes añadir, como extra, la plantilla financiera completa de un profesional: 18 hojas y más de 30.000 fórmulas, revisada celda a celda y con los impuestos al día.",
       "papersTitle": "Las leyes y los impuestos de tu comunidad",
       "papersShort": "La norma que aplica en cada paso, en tu comunidad.",
       "papersBody": "La normativa estatal (ley del suelo, Ley de Ordenación de la Edificación, Código Técnico de la Edificación) y un anexo con la fiscalidad y el urbanismo de cada comunidad autónoma, para que lo que aprendes valga en Alicante, en Madrid o en Sevilla.",
       "templatesTitle": "Checklists y descargas",
       "templatesShort": "Una checklist por módulo y los documentos para trabajar.",
-      "templatesBody": "Una checklist por módulo, para marcar en tu propio proyecto y guardarla en tu cuenta. Y las descargas: las 5 plantillas de cálculo en Excel, el directorio de partners en Excel y el curso completo en PDF.",
+      "templatesBody": "Una checklist por módulo, para marcar en tu propio proyecto y guardarla en tu cuenta. Y las descargas: las 7 plantillas en Excel, el directorio de partners en Excel y el curso completo en PDF.",
       "subsTitle": "Partners en las 52 provincias",
       "subsShort": "A quién acudir en tu provincia, fase a fase.",
       "subsBody": "Para cada fase, un directorio de los organismos y profesionales con los que vas a trabajar en tu provincia. No empiezas de cero cuando pisas un ayuntamiento nuevo."
@@ -1411,7 +1411,7 @@
   "seo": {
     "home": {
       "title": "Curso de Promoción Inmobiliaria en España",
-      "description": "Aprende a promover viviendas en España paso a paso: {{modules}} fases, leyes, partners en las 52 provincias y plantillas de cálculo incluidas. Empieza hoy."
+      "description": "Aprende a promover viviendas en España paso a paso: {{modules}} fases, leyes, partners en las 52 provincias y 7 plantillas incluidas. Empieza hoy."
     },
     "catalog": {
       "title": "Cursos de promoción inmobiliaria en España",
@@ -1469,9 +1469,8 @@
       "plantilla-simplificada": "Plantilla simplificada corregida (ejemplo del profesional)",
       "directorio-partners": "Directorio de partners por provincia (Excel)",
       "curso-pdf": "El curso completo en PDF",
-      "esquema-bbdd-suelo": "Esquema de base de datos de gestión de suelo",
-      "calculo-precio-solar": "Cálculo del precio del solar («números gordos»)",
-      "guia-analisis-viabilidad": "Guía de análisis de viabilidad: ejemplo del profesional (versión original, impuestos de 2002)"
+      "base-datos-suelo": "Plantilla del profesional · Base de datos de gestión de suelo",
+      "guia-analisis-viabilidad": "Guía de análisis de viabilidad del profesional (22 viviendas), sobre la plantilla corregida"
     },
     "needsFullAccess": "Con el acceso completo",
     "needsFinancials": "Con el extra (plantilla profesional)",
@@ -1551,6 +1550,7 @@
     "notANumber": "No es un número.",
     "scenarios": "Mis escenarios",
     "loadExample": "Cargar el ejemplo de 24 viviendas",
+    "loadGuideExample": "Cargar el ejemplo de la guía del profesional",
     "reset": "Vaciar",
     "scenarioName": "Nombre del escenario",
     "save": "Guardar",
@@ -1634,8 +1634,12 @@
     "locked": "La plantilla es de su módulo.",
     "error": "No se ha podido calcular. Inténtalo de nuevo.",
     "howTo": "Rellena las casillas resaltadas: el resto lo calculan las fórmulas de la plantilla, con los impuestos vigentes. El Excel que descargas lleva tus datos.",
-    "moreTitle": "Más plantillas del profesional para este módulo",
-    "moreLead": "En Excel, tal como las preparó el profesional: descárgalas y trabaja con tus datos."
+    "howToNoTaxes": "Rellena las casillas resaltadas: el resto lo calculan las fórmulas de la plantilla. El Excel que descargas lleva tus datos.",
+    "moreTitle": "Más plantillas para este módulo",
+    "moreLead": "En Excel: descárgalas y trabaja con tus datos.",
+    "professional": {
+      "numeros_gordos_solar": "Plantilla del profesional · Números gordos del solar"
+    }
   },
   "legalParams": {
     "title": "Parámetros legales aplicados",
@@ -1650,6 +1654,7 @@
     "includes": {
       "excel": "La plantilla en Excel y la calculadora en la plataforma.",
       "simplified": "La versión simplificada con el ejemplo real del profesional.",
+      "guide": "La Guía de análisis de viabilidad del profesional: un estudio previo completo resuelto, de 22 viviendas.",
       "lessons": "Las 9 lecciones de Financials: qué dato va en cada casilla y cómo leer el resultado.",
       "taxes": "Los impuestos al día: cuando cambia la ley, se actualizan solos."
     },
@@ -1850,8 +1855,8 @@
       }
     },
     "course": {
-      "title": "La primera de cinco plantillas",
-      "body": "El curso CONSTRUYE sigue las 12 fases de una promoción de viviendas, del solar a la postventa, con una plantilla de cálculo en los módulos 1, 2, 5, 7 y 8.",
+      "title": "Una de las 7 plantillas del curso",
+      "body": "El curso CONSTRUYE sigue las 12 fases de una promoción de viviendas, del solar a la postventa, con una plantilla de cálculo en los módulos 1, 2, 5, 7 y 8, y dos plantillas del profesional en el Módulo 1.",
       "cta": "Ver el curso"
     }
   },
