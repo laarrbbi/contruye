@@ -138,7 +138,9 @@ makes that work lives in `docker/mysql-test/`.
   own speed and captions). Where Bunny is not configured (the Vercel preview, `VIDEO_FILES_BASE`) a
   video is a file in `web/public/video`: `<id>.mp4` (H.264, AAC 48 kHz for iPhones), `<id>.jpg`
   (cover) and `<id>.vtt` (subtitles), played by `VideoPlayer` with a speed selector (0.75–2×) and a
-  subtitles switch, both remembered on the device. Lección 1.1's own video: `PreviewVideoSeeder`.
+  subtitles switch, both remembered on the device. The lesson videos of Modules 1 and 2 (package
+  v5, `4_videos/`: 1.1–1.4 and 2.1–2.5, copied as delivered, ids ending in `-v5` so a new cut is a
+  new address): `PreviewVideoSeeder`, which places each by its lesson's heading.
 - The newsletter (`NewsletterSubscriber`, `NewsletterController`): double opt-in (the e-mail's link
   confirms on `/newsletter`, a click unsubscribes), the same answer whoever signs up, a honeypot;
   sections on the sales page (`landing/s8/Boletin`) and the calculator's page. `/admin/newsletter`
