@@ -966,6 +966,7 @@ export const PARTNER_CATEGORIES = [
   'constructora',
   'abogado',
   'marketing',
+  'inmobiliaria',
   'otro',
 ] as const
 

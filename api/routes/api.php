@@ -161,6 +161,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // The company directory: a module's companies, and the Partners page.
     Route::get('/courses/{course:slug}/modules/{module}/companies', [CompanyDirectoryController::class, 'module'])
         ->middleware('throttle:120,1');
+    Route::get('/courses/{course:slug}/lessons/{lesson}/companies', [CompanyDirectoryController::class, 'lesson'])
+        ->whereNumber('lesson')->middleware('throttle:120,1');
     Route::get('/courses/{course:slug}/companies', [CompanyDirectoryController::class, 'index'])
         ->middleware('throttle:120,1');
 

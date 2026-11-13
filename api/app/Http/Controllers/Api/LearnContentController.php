@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\User;
+use App\Support\Course\LessonResources;
 use App\Support\Protection\ContentFingerprint;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -39,6 +40,8 @@ class LearnContentController extends Controller
 
         $content['content_html'] = ContentFingerprint::stamp($content['content_html'], $user);
         $content['blocks'] = $this->stampBlocks($content['blocks'], $user);
+        // Under the text: the websites the lesson names and the partners it calls on.
+        $content['resources'] = LessonResources::payload($lesson);
 
         return response()->json(['data' => $content]);
     }

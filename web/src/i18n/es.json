@@ -381,7 +381,12 @@
     "moduleIntroTitle": "Introducción al {{module}}",
     "moduleIntroLead": "Antes de las lecciones: el objetivo del módulo, las leyes que aplican y dónde ir. Es común a todas sus lecciones; la lección empieza debajo.",
     "speed": "Velocidad",
-    "captions": "Subtítulos"
+    "captions": "Subtítulos",
+    "lessonLinks": "Las webs de esta lección",
+    "lessonLinksLead": "Las que nombra la lección, en su dirección oficial. Se abren en una pestaña nueva.",
+    "opensInNewTab": "(se abre en una pestaña nueva)",
+    "lessonPartners": "Partners para esta lección",
+    "lessonPartnersLead": "Los profesionales a los que te envía la lección: los colaboradores de CONSTRUYE y las empresas del directorio, empezando por tu provincia."
   },
   "admin": {
     "title": "Administración",
@@ -1079,6 +1084,7 @@
       "constructora": "Constructora",
       "abogado": "Abogado",
       "marketing": "Marketing y comercialización",
+      "inmobiliaria": "Inmobiliaria",
       "otro": "Otros"
     },
     "filterLabel": "Mi provincia",

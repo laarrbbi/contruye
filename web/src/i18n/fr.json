@@ -381,7 +381,12 @@
     "moduleIntroTitle": "Introduction au {{module}}",
     "moduleIntroLead": "Avant les leçons : l'objectif du module, les lois applicables et où s'adresser. Elle est commune à toutes ses leçons ; la leçon commence plus bas.",
     "speed": "Vitesse",
-    "captions": "Sous-titres"
+    "captions": "Sous-titres",
+    "lessonLinks": "Les sites de cette leçon",
+    "lessonLinksLead": "Ceux que cite la leçon, à leur adresse officielle. Ils s'ouvrent dans un nouvel onglet.",
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)",
+    "lessonPartners": "Partenaires pour cette leçon",
+    "lessonPartnersLead": "Les professionnels vers lesquels la leçon vous oriente : les partenaires de CONSTRUYE et les entreprises de l'annuaire, en commençant par votre province."
   },
   "admin": {
     "title": "Administration",
@@ -1079,6 +1084,7 @@
       "constructora": "Entreprise de construction",
       "abogado": "Avocat",
       "marketing": "Marketing et commercialisation",
+      "inmobiliaria": "Agence immobilière",
       "otro": "Autres"
     },
     "filterLabel": "Ma province",

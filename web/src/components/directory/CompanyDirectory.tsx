@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ChevronLeft, ChevronRight, Globe, Lock, Mail, MapPin, Phone, Search } from 'lucide-react'
 import { useUser } from '@/api/auth'
-import { useCompanies, useModuleCompanies, type DirectoryCompany, type DirectoryPage } from '@/api/directory'
+import { useCompanies, useLessonCompanies, useModuleCompanies, type DirectoryCompany, type DirectoryPage } from '@/api/directory'
 import { PartnerProvinceFilter } from '@/components/player/PartnerProvinceFilter'
 import { SectionLabel } from '@/components/inside/PageHead'
 import { Button } from '@/components/ui/button'
@@ -15,10 +15,11 @@ import { cn } from '@/lib/utils'
  * The companies a promoter works with, from the directory: searchable,
  * filtered to the student's province by default, by kind of company.
  *
- * In a module (`moduleId`), the kinds its lessons send the promoter to; on the
- * Partners page (no `moduleId`), every owned module's, with a module filter.
+ * In a module (`moduleId`), the kinds its lessons send the promoter to; under a
+ * lesson (`lessonId`), the kinds that lesson calls on; on the Partners page
+ * (neither), every owned module's, with a module filter.
  */
-export function CompanyDirectory({ slug, moduleId = null }: { slug: string; moduleId?: number | null }) {
+export function CompanyDirectory({ slug, moduleId = null, lessonId = null }: { slug: string; moduleId?: number | null; lessonId?: number | null }) {
   const { t } = useTranslation()
   const { data: user } = useUser()
   const [search, setSearch] = useState('')
@@ -32,10 +33,12 @@ export function CompanyDirectory({ slug, moduleId = null }: { slug: string; modu
   // A new filter starts again from the first page.
   useEffect(() => setPage(1), [q, category, province, module])
 
-  const filters = { q, category, province, page, module: moduleId ? undefined : module }
-  const forModule = useModuleCompanies(slug, moduleId, filters)
-  const forAll = useCompanies(moduleId ? undefined : slug, filters)
-  const result = moduleId ? forModule : forAll
+  const scoped = Boolean(moduleId || lessonId)
+  const filters = { q, category, province, page, module: scoped ? undefined : module }
+  const forLesson = useLessonCompanies(slug, lessonId, filters)
+  const forModule = useModuleCompanies(slug, lessonId ? null : moduleId, filters)
+  const forAll = useCompanies(scoped ? undefined : slug, filters)
+  const result = lessonId ? forLesson : moduleId ? forModule : forAll
   const data: DirectoryPage | undefined = result.data
 
   return (
@@ -46,7 +49,7 @@ export function CompanyDirectory({ slug, moduleId = null }: { slug: string; modu
           <Search aria-hidden className="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t('directory.searchPlaceholder')} className="h-11 ps-9" />
         </label>
-        {!moduleId && data?.phases && (
+        {!scoped && data?.phases && (
           <select
             value={module ?? ''}
             onChange={(e) => setModule(e.target.value ? Number(e.target.value) : null)}

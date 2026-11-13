@@ -44,6 +44,17 @@ export function useModuleCompanies(slug: string | undefined, moduleId: number | 
   })
 }
 
+/** The companies a lesson calls on (its module must be owned). */
+export function useLessonCompanies(slug: string | undefined, lessonId: number | null, filters: DirectoryFilters) {
+  return useQuery<DirectoryPage>({
+    queryKey: ['companies', slug, 'lesson', lessonId, filters],
+    enabled: Boolean(slug && lessonId),
+    placeholderData: keepPreviousData,
+    retry: false,
+    queryFn: async () => (await api.get(`/courses/${slug}/lessons/${lessonId}/companies`, { params: params(filters) })).data,
+  })
+}
+
 /** The Partners page: the companies of every owned module. */
 export function useCompanies(slug: string | undefined, filters: DirectoryFilters) {
   return useQuery<DirectoryPage>({

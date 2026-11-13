@@ -8,8 +8,9 @@ import { moduleLabel } from '@/lib/modules'
 /**
  * What opens each module in the instructor's text: its objective, duration
  * and result, then "Leyes que aplican" and "Dónde ir". Titled as the module's
- * introduction, so it is never read as the lesson. Open on the module's first
- * lesson, folded on the others, so it is one click away all along.
+ * introduction, so it is never read as the lesson, and shown under the
+ * lesson's text (the owner's call: read first, the lesson). Open on the
+ * module's first lesson, folded on the others, so it is one click away all along.
  */
 export function ModuleOverview({ slug, module, defaultOpen }: { slug: string; module: LearnModule; defaultOpen: boolean }) {
   const { t } = useTranslation()

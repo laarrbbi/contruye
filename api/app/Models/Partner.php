@@ -27,6 +27,8 @@ class Partner extends Model
         'constructora',
         'abogado',
         'marketing',
+        // Real-estate agencies: where a lesson sends the promoter to find land or to sell.
+        'inmobiliaria',
         'otro',
     ];
 

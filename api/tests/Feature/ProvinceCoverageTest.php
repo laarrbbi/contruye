@@ -147,7 +147,7 @@ it('filters the admin list by province and names the categories missing there', 
         ->toEqualCanonicalizing(['Notaría Soria', 'Banco'])
         // notario and banco are covered; every other trade is a gap.
         ->and($response->json('meta.gaps'))
-        ->toEqualCanonicalizing(['asesor_fiscal', 'arquitectura', 'aseguradora', 'constructora', 'abogado', 'marketing', 'otro']);
+        ->toEqualCanonicalizing(['asesor_fiscal', 'arquitectura', 'aseguradora', 'constructora', 'abogado', 'marketing', 'inmobiliaria', 'otro']);
 
     expect($bank->fresh()->is_national)->toBeTrue();
 

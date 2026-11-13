@@ -20,6 +20,7 @@ import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { Button } from '@/components/ui/button'
 import { PlayerShell } from '@/components/player/PlayerShell'
 import { ContentBlocks } from '@/components/player/ContentBlocks'
+import { LessonResources } from '@/components/player/LessonResources'
 import { ModuleOverview } from '@/components/player/ModuleOverview'
 import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
@@ -232,11 +233,6 @@ export function PlayerPage() {
         </>
       )}
 
-      {/* The module's objective, laws and where to go */}
-      {!currentLesson.is_locked && currentModule && !currentModule.is_locked && (
-        <ModuleOverview key={currentModule.id} slug={data.course.slug} module={currentModule} defaultOpen={isFirstOfModule} />
-      )}
-
       {/* The lesson, as the instructor wrote it */}
       {!currentLesson.is_locked && lessonContent.isLoading && <LessonTextSkeleton />}
       {!currentLesson.is_locked && lessonContent.isError && (
@@ -302,6 +298,17 @@ export function PlayerPage() {
             ))}
           </ul>
         </section>
+      )}
+
+      {/* Under the text: the websites the lesson names and the partners it calls on. */}
+      {!currentLesson.is_locked && currentModule && lessonText?.resources && (
+        <LessonResources slug={data.course.slug} lessonId={currentLesson.id} module={currentModule} resources={lessonText.resources} />
+      )}
+
+      {/* The module's objective, laws and where to go: after the lesson, not
+          before it, so the lesson is what the student reads first. */}
+      {!currentLesson.is_locked && currentModule && !currentModule.is_locked && (
+        <ModuleOverview key={currentModule.id} slug={data.course.slug} module={currentModule} defaultOpen={isFirstOfModule} />
       )}
 
       {/* What closes the module, after its last lesson: the province's

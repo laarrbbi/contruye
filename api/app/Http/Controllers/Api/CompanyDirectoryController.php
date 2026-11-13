@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\Concerns\AuthorizesCourseAccess;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Models\Course;
+use App\Models\Lesson;
 use App\Models\Module;
+use App\Support\Course\LessonResources;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -33,6 +35,23 @@ class CompanyDirectoryController extends Controller
         $this->authorizeModuleAccess($request->user(), $module);
 
         return $this->listing($request, Company::categoriesForPhase($module->order));
+    }
+
+    /**
+     * GET /courses/{course}/lessons/{lesson}/companies — the kinds of company
+     * a lesson calls on (config/lesson_resources.php), under its text, behind
+     * its module's gate.
+     */
+    public function lesson(Request $request, Course $course, Lesson $lesson): JsonResponse
+    {
+        $module = $lesson->module;
+        abort_unless($module !== null && $module->course_id === $course->id, 404);
+        $this->authorizeModuleAccess($request->user(), $module);
+
+        $categories = LessonResources::entry($lesson)['companies'];
+        abort_if($categories === [], 404);
+
+        return $this->listing($request, $categories);
     }
 
     /** GET /courses/{course}/companies — the Partners page */

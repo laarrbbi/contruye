@@ -44,6 +44,7 @@ export type PartnerCategory =
   | 'constructora'
   | 'abogado'
   | 'marketing'
+  | 'inmobiliaria'
   | 'otro'
 
 /** A recommended provider for this module. Only sent for owned modules. */
@@ -165,6 +166,19 @@ export interface LessonContent {
   content_locale: string
   key_points: string[]
   blocks: LearnContentBlock[]
+  /** Under the text: the websites the lesson names, and the kinds of partner it calls on. */
+  resources?: LessonResourcesView
+}
+
+/** What a lesson sends the student to (config/lesson_resources.php on the server). */
+export interface LessonResourcesView {
+  /** Each website the lesson names, at its official address. */
+  links: { name: string; url: string }[]
+  /** Kinds of company of the directory (agencias_inmobiliarias…), and how many there are. */
+  companies: string[]
+  companies_count: number
+  /** Kinds of the academy's own partners (inmobiliaria, banco…). */
+  partners: PartnerCategory[]
 }
 
 /** One module's introduction and (for an owned module) its sections, with their text. */

@@ -381,7 +381,12 @@
     "moduleIntroTitle": "Introduction to {{module}}",
     "moduleIntroLead": "Before the lessons: the module's objective, the laws that apply and where to go. It is shared by all its lessons; the lesson starts below.",
     "speed": "Speed",
-    "captions": "Subtitles"
+    "captions": "Subtitles",
+    "lessonLinks": "This lesson's websites",
+    "lessonLinksLead": "The ones the lesson names, at their official address. They open in a new tab.",
+    "opensInNewTab": "(opens in a new tab)",
+    "lessonPartners": "Partners for this lesson",
+    "lessonPartnersLead": "The professionals the lesson sends you to: CONSTRUYE's partners and the companies of the directory, starting with your province."
   },
   "admin": {
     "title": "Admin",
@@ -1079,6 +1084,7 @@
       "constructora": "Builder",
       "abogado": "Lawyer",
       "marketing": "Marketing and sales",
+      "inmobiliaria": "Real-estate agency",
       "otro": "Other"
     },
     "filterLabel": "My province",
