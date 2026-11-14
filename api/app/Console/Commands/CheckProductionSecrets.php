@@ -38,6 +38,10 @@ class CheckProductionSecrets extends Command
         'services.stripe.secret' => 'Stripe checkouts cannot be created.',
     ];
 
+    private const ASSISTANT = [
+        'assistant.anthropic.api_key' => 'Nicolás is switched on (ASSISTANT_ENABLED) without a key: it answers no one.',
+    ];
+
     public function handle(): int
     {
         $blank = $this->blankSecrets();
@@ -76,7 +80,8 @@ class CheckProductionSecrets extends Command
     private function blankSecrets(): array
     {
         $required = self::ALWAYS
-            + (PaymentMethods::stripeEnabled() ? self::STRIPE : []);
+            + (PaymentMethods::stripeEnabled() ? self::STRIPE : [])
+            + (config('assistant.enabled') ? self::ASSISTANT : []);
 
         $blank = [];
 

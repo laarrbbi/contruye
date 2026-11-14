@@ -105,5 +105,17 @@
     "Unknown reference value: :key": "Невідоме довідкове значення: :key",
     "The value of «:label» is out of range.": "Значення «:label» поза допустимим діапазоном.",
     "A piece of news needs a title in Spanish.": "Новині потрібен заголовок іспанською.",
-    "A published piece of news needs its text in Spanish.": "Опублікованій новині потрібен текст іспанською."
+    "A published piece of news needs its text in Spanish.": "Опублікованій новині потрібен текст іспанською.",
+    "I can only help with the course, and I keep how I work to myself. Ask me about the course and I will gladly help.": "Я можу допомогти лише з курсом, а те, як я влаштований, залишаю при собі. Запитайте мене про курс — із радістю допоможу.",
+    "I have no access to keys or to the platform's settings, and could not share them. Ask me about the course.": "Я не маю доступу до ключів і налаштувань платформи й не зміг би ними поділитися. Запитайте мене про курс.",
+    "I cannot see anyone's account, orders, invoices or personal data, not even yours. For your account, go to My account or write to support.": "Я не бачу нічиїх акаунтів, замовлень, рахунків і особистих даних, навіть ваших. Щодо акаунта відкрийте «Мій акаунт» або напишіть у підтримку.",
+    "I cannot give that answer. Ask me in another way about the course.": "Я не можу дати таку відповідь. Запитайте мене про курс інакше.",
+    "I cannot help with that. Ask me about the course: a phase, a document, a tax, a template.": "Із цим я допомогти не можу. Запитайте мене про курс: про етап, документ, податок, шаблон.",
+    "I could not answer just now. Try again in a few minutes; no credits were used.": "Зараз не вдалося відповісти. Спробуйте за кілька хвилин; кредити не списано.",
+    "You have used this month's credits. They come back on the first of next month.": "Ви витратили кредити цього місяця. Вони відновляться 1-го числа наступного місяця.",
+    "Wait for the answer to your previous question.": "Дочекайтеся відповіді на попереднє запитання.",
+    "The assistant answers the course's students.": "Асистент відповідає студентам курсу.",
+    "The assistant is resting until tomorrow. Try again then.": "Асистент відпочиває до завтра. Спробуйте тоді.",
+    "The assistant is not open yet.": "Асистент ще не відкритий.",
+    "The assistant is not available right now.": "Асистент зараз недоступний."
 }

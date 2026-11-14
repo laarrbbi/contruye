@@ -105,5 +105,17 @@
     "Unknown reference value: :key": "Valeur de référence inconnue : :key",
     "The value of «:label» is out of range.": "La valeur de « :label » est hors limites.",
     "A piece of news needs a title in Spanish.": "Une actualité a besoin d'un titre en espagnol.",
-    "A published piece of news needs its text in Spanish.": "Une actualité publiée a besoin de son texte en espagnol."
+    "A published piece of news needs its text in Spanish.": "Une actualité publiée a besoin de son texte en espagnol.",
+    "I can only help with the course, and I keep how I work to myself. Ask me about the course and I will gladly help.": "Je ne peux vous aider que sur le cours, et je garde pour moi la façon dont je fonctionne. Posez-moi une question sur le cours et je vous aiderai volontiers.",
+    "I have no access to keys or to the platform's settings, and could not share them. Ask me about the course.": "Je n'ai accès à aucune clé ni aux réglages de la plateforme, et je ne pourrais pas les partager. Posez-moi une question sur le cours.",
+    "I cannot see anyone's account, orders, invoices or personal data, not even yours. For your account, go to My account or write to support.": "Je ne vois ni le compte, ni les commandes, ni les factures, ni les données personnelles de personne, pas même les vôtres. Pour votre compte, allez dans « Mon compte » ou écrivez au support.",
+    "I cannot give that answer. Ask me in another way about the course.": "Je ne peux pas vous donner cette réponse. Posez-moi votre question sur le cours autrement.",
+    "I cannot help with that. Ask me about the course: a phase, a document, a tax, a template.": "Je ne peux pas vous aider sur ce point. Posez-moi une question sur le cours : une phase, un document, un impôt, un modèle.",
+    "I could not answer just now. Try again in a few minutes; no credits were used.": "Je n'ai pas pu répondre pour l'instant. Réessayez dans quelques minutes ; aucun crédit n'a été utilisé.",
+    "You have used this month's credits. They come back on the first of next month.": "Vous avez utilisé les crédits de ce mois-ci. Ils reviennent le 1er du mois prochain.",
+    "Wait for the answer to your previous question.": "Attendez la réponse à votre question précédente.",
+    "The assistant answers the course's students.": "L'assistant répond aux élèves du cours.",
+    "The assistant is resting until tomorrow. Try again then.": "L'assistant se repose jusqu'à demain. Réessayez à ce moment-là.",
+    "The assistant is not open yet.": "L'assistant n'est pas encore ouvert.",
+    "The assistant is not available right now.": "L'assistant n'est pas disponible pour le moment."
 }

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\Assistant\AnthropicLlm;
+use App\Services\Assistant\Llm;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Contracts\Validation\UncompromisedVerifier;
 use Illuminate\Http\Client\Factory as HttpFactory;
@@ -28,6 +30,9 @@ class AppServiceProvider extends ServiceProvider
             UncompromisedVerifier::class,
             fn ($verifier, $app) => new NotPwnedVerifier($app[HttpFactory::class], 5),
         );
+
+        // Nicolás's model: Claude through the official SDK. The tests bind a fake.
+        $this->app->singleton(Llm::class, AnthropicLlm::class);
     }
 
     /**
@@ -61,6 +66,16 @@ class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('checkout', function (Request $request) {
             return Limit::perMinute(10)->by($request->user()?->id ?: $request->ip());
+        });
+
+        // Nicolás: questions per student, per minute and per day (credits are the monthly ceiling).
+        RateLimiter::for('assistant', function (Request $request) {
+            $key = 'assistant:'.($request->user()?->id ?: $request->ip());
+
+            return [
+                Limit::perMinute((int) config('assistant.limits.per_minute'))->by($key.':m'),
+                Limit::perDay((int) config('assistant.limits.per_day'))->by($key.':d'),
+            ];
         });
     }
 }

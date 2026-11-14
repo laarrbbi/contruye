@@ -105,5 +105,17 @@
     "Unknown reference value: :key": "قيمة مرجعية غير معروفة: :key",
     "The value of «:label» is out of range.": "قيمة «:label» خارج النطاق.",
     "A piece of news needs a title in Spanish.": "يحتاج الخبر إلى عنوان بالإسبانية.",
-    "A published piece of news needs its text in Spanish.": "يحتاج الخبر المنشور إلى نصه بالإسبانية."
+    "A published piece of news needs its text in Spanish.": "يحتاج الخبر المنشور إلى نصه بالإسبانية.",
+    "I can only help with the course, and I keep how I work to myself. Ask me about the course and I will gladly help.": "لا أستطيع مساعدتك إلا في ما يخص الدورة، وأحتفظ لنفسي بطريقة عملي. اسألني عن الدورة وسأساعدك بكل سرور.",
+    "I have no access to keys or to the platform's settings, and could not share them. Ask me about the course.": "ليس لدي وصول إلى أي مفاتيح ولا إلى إعدادات المنصة، ولا يمكنني مشاركتها. اسألني عن الدورة.",
+    "I cannot see anyone's account, orders, invoices or personal data, not even yours. For your account, go to My account or write to support.": "لا يمكنني رؤية حساب أي شخص ولا طلباته ولا فواتيره ولا بياناته الشخصية، ولا حتى بياناتك. لحسابك، اذهب إلى «حسابي» أو راسل الدعم.",
+    "I cannot give that answer. Ask me in another way about the course.": "لا يمكنني تقديم هذه الإجابة. اسألني عن الدورة بطريقة أخرى.",
+    "I cannot help with that. Ask me about the course: a phase, a document, a tax, a template.": "لا أستطيع المساعدة في ذلك. اسألني عن الدورة: مرحلة، وثيقة، ضريبة، نموذج.",
+    "I could not answer just now. Try again in a few minutes; no credits were used.": "لم أتمكن من الإجابة الآن. حاول مجددًا بعد بضع دقائق؛ لم يُستهلك أي رصيد.",
+    "You have used this month's credits. They come back on the first of next month.": "لقد استهلكت رصيد هذا الشهر. يتجدد في اليوم الأول من الشهر القادم.",
+    "Wait for the answer to your previous question.": "انتظر الإجابة عن سؤالك السابق.",
+    "The assistant answers the course's students.": "يجيب المساعد على طلاب الدورة.",
+    "The assistant is resting until tomorrow. Try again then.": "المساعد في استراحة حتى الغد. حاول مجددًا حينها.",
+    "The assistant is not open yet.": "المساعد غير متاح بعد.",
+    "The assistant is not available right now.": "المساعد غير متاح حاليًا."
 }

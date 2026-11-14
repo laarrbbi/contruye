@@ -105,5 +105,17 @@
     "Unknown reference value: :key": "Valor de referencia desconocido: :key",
     "The value of «:label» is out of range.": "El valor de «:label» está fuera de rango.",
     "A piece of news needs a title in Spanish.": "Una noticia necesita un título en español.",
-    "A published piece of news needs its text in Spanish.": "Una noticia publicada necesita su texto en español."
+    "A published piece of news needs its text in Spanish.": "Una noticia publicada necesita su texto en español.",
+    "I can only help with the course, and I keep how I work to myself. Ask me about the course and I will gladly help.": "Solo puedo ayudarte con el curso, y cómo funciono por dentro me lo guardo. Pregúntame sobre el curso y te ayudo encantado.",
+    "I have no access to keys or to the platform's settings, and could not share them. Ask me about the course.": "No tengo acceso a claves ni a la configuración de la plataforma, y no podría compartirlas. Pregúntame sobre el curso.",
+    "I cannot see anyone's account, orders, invoices or personal data, not even yours. For your account, go to My account or write to support.": "No puedo ver la cuenta, los pedidos, las facturas ni los datos personales de nadie, tampoco los tuyos. Para tu cuenta, entra en «Mi cuenta» o escribe al soporte.",
+    "I cannot give that answer. Ask me in another way about the course.": "No puedo darte esa respuesta. Pregúntame de otra forma sobre el curso.",
+    "I cannot help with that. Ask me about the course: a phase, a document, a tax, a template.": "Con eso no puedo ayudarte. Pregúntame sobre el curso: una fase, un documento, un impuesto, una plantilla.",
+    "I could not answer just now. Try again in a few minutes; no credits were used.": "No he podido responder ahora mismo. Inténtalo de nuevo en unos minutos; no se ha gastado ningún crédito.",
+    "You have used this month's credits. They come back on the first of next month.": "Has gastado los créditos de este mes. Vuelven el día 1 del mes que viene.",
+    "Wait for the answer to your previous question.": "Espera a la respuesta de tu pregunta anterior.",
+    "The assistant answers the course's students.": "El asistente responde a los alumnos del curso.",
+    "The assistant is resting until tomorrow. Try again then.": "El asistente descansa hasta mañana. Vuelve a intentarlo entonces.",
+    "The assistant is not open yet.": "El asistente aún no está abierto.",
+    "The assistant is not available right now.": "El asistente no está disponible ahora mismo."
 }

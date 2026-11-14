@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AccountController;
+use App\Http\Controllers\Api\Admin\AssistantController as AdminAssistantController;
 use App\Http\Controllers\Api\Admin\CampaignController as AdminCampaignController;
 use App\Http\Controllers\Api\Admin\CashOrderController as AdminCashOrderController;
 use App\Http\Controllers\Api\Admin\CompanyController as AdminCompanyController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Api\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Api\Admin\StatsController as AdminStatsController;
 use App\Http\Controllers\Api\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\Api\Admin\TemplateSettingsController as AdminTemplateSettingsController;
+use App\Http\Controllers\Api\AssistantController;
 use App\Http\Controllers\Api\AttachmentController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BusinessController;
@@ -103,6 +105,9 @@ Route::get('/news/{slug}/image', [NewsController::class, 'image'])->middleware('
 // The public sample of Plantilla 1 (Compra del solar): the calculator's page.
 Route::get('/public/solar-calculator', [SolarCalculatorController::class, 'show'])->middleware('throttle:60,1');
 Route::post('/public/solar-calculator', [SolarCalculatorController::class, 'calculate'])->middleware('throttle:30,1');
+
+// Nicolás, the course's AI assistant: whether it has opened (the menu's «Pronto»)
+Route::get('/public/assistant', [AssistantController::class, 'public'])->middleware('throttle:60,1');
 
 Route::post('/checkout/quote', [CheckoutController::class, 'quote']);
 Route::get('/checkout/methods', [CheckoutController::class, 'methods'])->middleware('throttle:60,1');
@@ -203,6 +208,15 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Leave / update your own review (enrolled students only)
     Route::post('/courses/{course:slug}/reviews', [ReviewController::class, 'store']);
+
+    // Nicolás: the student's own conversations, a question (metered like the course material it quotes)
+    Route::prefix('/assistant')->group(function () {
+        Route::get('/', [AssistantController::class, 'status']);
+        Route::get('/conversations', [AssistantController::class, 'conversations']);
+        Route::get('/conversations/{conversation}', [AssistantController::class, 'show'])->whereNumber('conversation')->middleware('content');
+        Route::delete('/conversations/{conversation}', [AssistantController::class, 'destroy'])->whereNumber('conversation');
+        Route::post('/messages', [AssistantController::class, 'ask'])->middleware(['throttle:assistant', 'content']);
+    });
 });
 
 Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function () {
@@ -266,6 +280,11 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'admin'])->group(function ()
     Route::get('reviews', [AdminReviewController::class, 'index']);
     Route::post('reviews/{review}/moderate', [AdminReviewController::class, 'moderate'])->whereNumber('review');
     Route::delete('reviews/{review}', [AdminReviewController::class, 'destroy'])->whereNumber('review');
+
+    // Nicolás: readiness, costs, traces, credits
+    Route::get('assistant', [AdminAssistantController::class, 'show']);
+    Route::get('assistant/traces', [AdminAssistantController::class, 'traces']);
+    Route::post('assistant/credits', [AdminAssistantController::class, 'grant'])->middleware('throttle:30,1');
 
     // Dashboard + students
     Route::get('stats', [AdminStatsController::class, 'index']);
