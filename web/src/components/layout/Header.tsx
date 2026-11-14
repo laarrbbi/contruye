@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
@@ -13,6 +14,7 @@ import {
   LayoutDashboard,
   LogOut,
   Menu,
+  MessagesSquare,
   Newspaper,
   ShieldCheck,
   UserRound,
@@ -21,8 +23,9 @@ import {
 import { ConstruyeLogo } from '@/components/brand/ConstruyeMark'
 import { Button } from '@/components/ui/button'
 import { useLogout, useUser } from '@/api/auth'
+import { usePublicAssistant } from '@/api/assistant'
 import { LOCALES, LOCALE_NAMES, isRtl, setLocale, type Locale } from '@/i18n'
-import { DATA_CENTERS_PATH, NEWS_PATH, SOLAR_CALCULATOR_PATH, isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
+import { ASSISTANT_PATH, DATA_CENTERS_PATH, NEWS_PATH, SOLAR_CALCULATOR_PATH, isPublicPage, localizedPath, splitLocalePath } from '@/i18n/paths'
 import { FICHAJE_EMPLEO_URL, FICHAJE_OBRAS_URL } from '@/lib/fichaje'
 import { useHeaderTone } from '@/lib/headerTone'
 import { cn } from '@/lib/utils'
@@ -62,6 +65,7 @@ function initials(name: string): string {
 export function Header() {
   const { t, i18n } = useTranslation()
   const { data: user } = useUser()
+  const { data: assistant } = usePublicAssistant()
   const logout = useLogout()
   const navigate = useNavigate()
   const location = useLocation()
@@ -86,14 +90,16 @@ export function Header() {
   }
 
   // The sections everyone can open: the plot valuator (Plantilla 1), the
-  // news, the two sides of Construye Fichaje (a separate site), and the next
-  // course, announced.
+  // news, the two sides of Construye Fichaje (a separate site), Nicolás (the
+  // course's AI, «Pronto» until it opens to students) and the next course,
+  // announced.
   const sections: NavItem[] = [
     { to: localizedPath(SOLAR_CALCULATOR_PATH, current), label: t('nav.calculator'), icon: Calculator },
     // NavLink keeps it lit on each piece of news too (/noticias/…).
     { to: localizedPath(NEWS_PATH, current), label: t('nav.news'), icon: Newspaper },
     { to: FICHAJE_EMPLEO_URL, label: t('nav.empleo'), icon: HardHat, external: true },
     { to: FICHAJE_OBRAS_URL, label: t('nav.obras'), icon: Building2, external: true },
+    { to: localizedPath(ASSISTANT_PATH, current), label: t('nav.assistant'), icon: MessagesSquare, soon: !assistant?.launched },
     { to: localizedPath(DATA_CENTERS_PATH, current), label: t('nav.dataCenters'), icon: Server, soon: true },
   ]
 
@@ -112,6 +118,35 @@ export function Header() {
   // sections after «Mis cursos» and «Partners»; on a smaller one it moves into
   // a menu (the account menu once signed in).
   const bar: NavItem[] = (user ? [...own.slice(0, 2), ...sections, ...own.slice(2)] : sections).filter((item) => !item.menuOnly)
+
+  // Whether the bar fits beside the logo and the buttons. Its width depends
+  // on the language (Russian and French are much longer than English) and on
+  // who is signed in: when it does not fit, the sections go to the menu as
+  // below 1280px, instead of running under the language button. Measured
+  // before paint; out of the flow and invisible while folded, so it can still
+  // be measured.
+  const row = useRef<HTMLDivElement>(null)
+  const logo = useRef<HTMLAnchorElement>(null)
+  const navRef = useRef<HTMLElement>(null)
+  const actions = useRef<HTMLDivElement>(null)
+  const [fits, setFits] = useState(true)
+  const later = bar.filter((item) => item.soon)
+  const barKey = bar.map((item) => item.label + (item.soon ? '·' : '')).join('|')
+  useLayoutEffect(() => {
+    const measure = () => {
+      const [r, l, n, a] = [row.current, logo.current, navRef.current, actions.current]
+      if (!r || !l || !n || !a || window.innerWidth < 1280) return setFits(true)
+      const style = getComputedStyle(r)
+      const gap = parseFloat(style.columnGap) || 0
+      const available = r.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - l.offsetWidth - a.scrollWidth - 2 * gap
+      // The bar starts 8px early (-ms-2): it has that much more room.
+      setFits(n.scrollWidth <= available + 8)
+    }
+    measure()
+    const observer = new ResizeObserver(measure)
+    for (const element of [row.current, navRef.current, actions.current]) if (element) observer.observe(element)
+    return () => observer.disconnect()
+  }, [barKey])
 
   const soonTag = (onNight: boolean) => (
     <span className={cn('ms-1 rounded-full bg-or/20 px-1.5 py-px text-[0.625rem] font-semibold uppercase tracking-wide', onNight ? 'text-or' : 'text-or-fonce')}>
@@ -166,8 +201,8 @@ export function Header() {
     >
       {/* On the player and the admin, the logo lines up with the sidebar
           below it; elsewhere it lines up with the page's own column. */}
-      <div className={cn('flex h-16 items-center gap-6', appShell ? 'px-4 lg:px-6' : 'container')}>
-        <Link to={localizedPath('/', current)} className="shrink-0">
+      <div ref={row} className={cn('flex h-16 items-center gap-6', appShell ? 'px-4 lg:px-6' : 'container')}>
+        <Link ref={logo} to={localizedPath('/', current)} className="shrink-0">
           <span className="sr-only">{t('app.name')}</span>
           {/* Below 440px the wordmark gives way: logo, language, sign-in and
               sign-up did not fit a 390px phone and the whole site scrolled
@@ -175,8 +210,12 @@ export function Header() {
           <ConstruyeLogo variant={night ? 'inherit' : 'brand'} wordmarkClassName="hidden min-[440px]:flex" />
         </Link>
 
-        <nav aria-label={t('nav.main')} className="-ms-2 hidden min-w-0 items-center gap-0.5 xl:flex">
-          {bar.map(({ to, label, also, external, soon }) =>
+        <nav
+          ref={navRef}
+          aria-label={t('nav.main')}
+          className={cn('-ms-2 hidden min-w-0 items-center gap-0.5 xl:flex', !fits && 'pointer-events-none invisible absolute')}
+        >
+          {bar.filter((item) => !item.soon).map(({ to, label, also, external, soon }) =>
             external ? (
               <a key={to} href={to} target="_blank" rel="noopener" className={barClass(false)}>
                 {label}
@@ -194,14 +233,27 @@ export function Header() {
               </NavLink>
             ),
           )}
+          {/* What is announced and not open yet, together under one «Pronto»:
+              each one alone took a tag's worth of room the bar does not have. */}
+          {later.length > 0 && (
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(barClass(later.some((item) => location.pathname.endsWith(item.to.replace(/^\/[a-z]{2}(?=\/)/, '')))), 'group')}>
+                {t('nav.soon')}
+                <ChevronDown aria-hidden className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                {later.map(menuEntry)}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
         </nav>
 
-        <div className="ms-auto flex min-w-0 items-center gap-1 sm:gap-2">
+        <div ref={actions} className="ms-auto flex min-w-0 items-center gap-1 sm:gap-2">
           {/* A visitor's menu below the width where the sections fit in the bar. */}
           {!user && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className={cn('px-2 xl:hidden', quiet ?? 'text-muted-foreground hover:text-foreground')}>
+                <Button variant="ghost" size="sm" className={cn('px-2', fits && 'xl:hidden', quiet ?? 'text-muted-foreground hover:text-foreground')}>
                   <Menu className="h-5 w-5" aria-hidden />
                   <span className="sr-only">{t('nav.menu')}</span>
                 </Button>
@@ -284,8 +336,8 @@ export function Header() {
                 <DropdownMenuSeparator />
                 {own.map(menuEntry)}
                 {/* The sections, here too below the width where the bar has them. */}
-                <DropdownMenuSeparator className="xl:hidden" />
-                <div className="xl:hidden">{sections.map(menuEntry)}</div>
+                <DropdownMenuSeparator className={cn(fits && 'xl:hidden')} />
+                <div className={cn(fits && 'xl:hidden')}>{sections.map(menuEntry)}</div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                   className="gap-2"

@@ -47,6 +47,9 @@ final class SeoPageController
     /** The next course, announced: building data centers (coming soon). */
     public const DATA_CENTERS_PATH = '/data-centers';
 
+    /** Nicolás, the course's AI assistant: coming soon until it opens (config/assistant.php). */
+    public const ASSISTANT_PATH = '/nicolas-ia';
+
     /** Its questions, in the order the page shows them (web/src/i18n, solar.faq). */
     public const SOLAR_FAQ = ['taxes', 'vat', 'perM2', 'plusvalia', 'rates', 'full'];
 
@@ -214,6 +217,35 @@ final class SeoPageController
         return $this->page($locale, $head, $body);
     }
 
+    /** Nicolás, the AI assistant: what it does, said as what is built; when it opens, nothing more (constitution I). */
+    public function assistant(Request $request): Response
+    {
+        $locale = (string) $request->route('locale');
+        app()->setLocale($locale);
+
+        $s = fn (string $key) => SpaStrings::get($locale, "assistantPage.{$key}");
+        $url = LocalizedUrl::to(self::ASSISTANT_PATH, $locale);
+
+        $head = $this->head($locale, self::ASSISTANT_PATH, $s('seoTitle'), $s('seoDescription'), [
+            StructuredData::organization(),
+            StructuredData::website(),
+            StructuredData::breadcrumbs([
+                ['name' => SpaStrings::get($locale, 'app.name'), 'url' => LocalizedUrl::to('/', $locale)],
+                ['name' => $s('title'), 'url' => $url],
+            ]),
+        ]);
+
+        $body = view('seo.assistant', [
+            'locale' => $locale,
+            'header' => $this->header($locale, self::ASSISTANT_PATH),
+            's' => $s,
+            'features' => array_map(fn (string $key) => ['title' => $s("features.{$key}.title"), 'body' => $s("features.{$key}.body")], ['course', 'templates', 'language', 'private', 'credits']),
+            'courseUrl' => LocalizedUrl::path('/', $locale),
+        ])->render();
+
+        return $this->page($locale, $head, $body);
+    }
+
     /** One piece of news, with its own title, description, picture and article data. */
     public function newsPost(Request $request): Response
     {
@@ -305,6 +337,7 @@ final class SeoPageController
                 $pages->push(['path' => "/cursos/{$course->slug}", 'lastmod' => $course->updated_at]);
             }
         }
+        $pages->push(['path' => self::ASSISTANT_PATH, 'lastmod' => null]);
         $pages->push(['path' => self::DATA_CENTERS_PATH, 'lastmod' => null]);
         // The news: its list once there is a piece, and every piece.
         $news = NewsPost::visible()->orderByDesc('published_at')->get(['id', 'slug', 'published_at', 'updated_at']);
@@ -443,6 +476,7 @@ final class SeoPageController
             'links' => [
                 ['href' => LocalizedUrl::path(self::SOLAR_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.calculator')],
                 ['href' => LocalizedUrl::path(self::NEWS_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.news')],
+                ['href' => LocalizedUrl::path(self::ASSISTANT_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.assistant')],
                 ['href' => LocalizedUrl::path(self::DATA_CENTERS_PATH, $locale), 'label' => SpaStrings::get($locale, 'nav.dataCenters')],
             ],
             'languages' => collect(config('locales.supported'))

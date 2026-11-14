@@ -26,7 +26,8 @@
     "menu": "Menu",
     "newTab": "(opens Construye Fichaje in a new tab)",
     "dataCenters": "Data centers",
-    "soon": "Soon"
+    "soon": "Soon",
+    "assistant": "Nicolás AI"
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -407,7 +408,8 @@
       "offers": "Offers",
       "templates": "Templates",
       "newsletter": "Newsletter",
-      "news": "News"
+      "news": "News",
+      "assistant": "Nicolás AI"
     },
     "common": {
       "actions": "Actions",
@@ -968,7 +970,8 @@
       "sources": {
         "home": "Home page",
         "calculator": "Calculator",
-        "datacenters": "Data centers"
+        "datacenters": "Data centers",
+        "assistant": "Nicolás AI"
       }
     },
     "reference": {
@@ -1032,6 +1035,72 @@
       },
       "fallback": "Optional: without a text in {{language}}, the Spanish shows.",
       "saved": "Saved"
+    },
+    "assistant": {
+      "title": "Nicolás AI",
+      "lead": "The course's AI assistant: whether it is ready to open, what it costs and the trace of every question. What each student asked is not shown here, nor is the key.",
+      "state": {
+        "launched": "Open to students",
+        "preview": "Administrators only (preview)",
+        "off": "Closed"
+      },
+      "readiness": "To open it to students",
+      "checks": {
+        "key": "Anthropic API key (ANTHROPIC_API_KEY)",
+        "enabled": "Switched on (ASSISTANT_ENABLED=true)",
+        "index": "Course index: {{chunks}} pieces",
+        "eval": "Evaluation passed for this version",
+        "budget": "Spent today: ${{spent}} of ${{budget}}"
+      },
+      "howTo": "To open it: set the key, run php artisan assistant:index and php artisan assistant:eval, and switch on ASSISTANT_ENABLED. All in docs/asistente-ia.md.",
+      "models": "Models",
+      "small": "Small, for simple questions",
+      "large": "Large, for analyses",
+      "creditsEach": "Credits per answer: {{count}}",
+      "version": "Instructions version: {{prompt}} · index: {{index}}",
+      "last30": "Last 30 days",
+      "questions": "Questions",
+      "cost": "Cost",
+      "credits": "Credits",
+      "routes": {
+        "cache": "Cache",
+        "small": "Small model",
+        "large": "Large model",
+        "escalated": "Handed to the large one",
+        "blocked": "Blocked",
+        "refused": "No credits",
+        "unavailable": "Unavailable"
+      },
+      "statuses": {
+        "ok": "Answered",
+        "blocked": "Blocked",
+        "refusal": "Declined by the model",
+        "error": "Error"
+      },
+      "evals": "Evaluations",
+      "evalPassed": "Passed",
+      "evalFailed": "Not passed",
+      "evalNever": "This version has not been evaluated yet.",
+      "evalScore": "{{passed}} of {{total}}",
+      "failures": "Failed cases: {{cases}}",
+      "traces": "The trace of every question",
+      "flaggedOnly": "Flagged only",
+      "allRoutes": "All",
+      "date": "Date",
+      "student": "Student",
+      "route": "Route",
+      "model": "Model",
+      "tokens": "Tokens (input / output / cache)",
+      "time": "Time",
+      "flags": "Flags",
+      "noTraces": "No questions yet.",
+      "grant": "Credits for a student",
+      "grantLead": "Added to this month's balance; a negative number corrects a grant. It stays in the record.",
+      "grantEmail": "Student's e-mail",
+      "grantCredits": "Credits",
+      "grantNote": "Reason",
+      "grantSubmit": "Grant",
+      "granted": "Done: {{credits}} credits for {{email}}. Balance: {{balance}}."
     }
   },
   "reviews": {
@@ -1912,5 +1981,71 @@
     "current": "The property development course for Spain, available now",
     "seoTitle": "Data center construction course (coming soon)",
     "seoDescription": "Coming soon at Construye Academy: a course on building data centers. Sign up and we will tell you when it opens."
+  },
+  "assistantPage": {
+    "eyebrow": "Nicolás AI · Soon",
+    "title": "Nicolás, the course's artificial intelligence",
+    "lead": "An assistant specialised in real-estate development and construction that answers with the content of the CONSTRUYE course. We are preparing it: it is not open yet.",
+    "featuresTitle": "What it will do",
+    "features": {
+      "course": {
+        "title": "Answers with the course",
+        "body": "Every answer comes from the course's lessons, module texts and documents, and says which lesson it comes from so you can open it."
+      },
+      "templates": {
+        "title": "Calculates with the templates",
+        "body": "It does the numbers with the course's templates and the legal parameters in force, and tells you which figures it used."
+      },
+      "language": {
+        "title": "In your language",
+        "body": "It answers in the language you choose on the platform: Spanish, English, French, Arabic, Russian or Ukrainian."
+      },
+      "private": {
+        "title": "Only what is yours",
+        "body": "It sees what you can read in the course and nothing else: no other accounts, nobody's data."
+      },
+      "credits": {
+        "title": "With monthly credits",
+        "body": "It will work with a balance of credits renewed every month, like the AI assistants you already know."
+      }
+    },
+    "disclaimer": "Nicolás is an AI: it is not the course's instructor and does not replace a lawyer, a tax adviser or a chartered professional.",
+    "notify": "We will let you know when it opens: leave your e-mail and you will get the CONSTRUYE newsletter.",
+    "meanwhile": "Meanwhile",
+    "current": "The real-estate development course in Spain, available now",
+    "signIn": "Sign in to talk to Nicolás.",
+    "signInAction": "Sign in",
+    "enrolOnly": "Nicolás answers the course's students.",
+    "enrolAction": "See the course",
+    "preview": "Preview for administrators: students do not see it yet. It opens when you switch it on and it passes the evaluation.",
+    "seoTitle": "Nicolás AI, the course's artificial intelligence assistant (coming soon)",
+    "seoDescription": "Coming soon at Construye Academy: Nicolás, an AI specialised in real-estate development and construction that answers with the course's content and calculates with its templates."
+  },
+  "assistantChat": {
+    "conversations": "Conversations",
+    "newConversation": "New conversation",
+    "noConversations": "You have not asked anything yet.",
+    "delete": "Delete the conversation",
+    "deleteConfirm": "Delete this conversation? This cannot be undone.",
+    "cancel": "Cancel",
+    "placeholder": "Ask Nicolás about the course…",
+    "send": "Send",
+    "thinking": "Nicolás is writing…",
+    "sources": "Sources in the course",
+    "fromCache": "Frequent answer: no credits used.",
+    "you": "You",
+    "credits": "Credits this month: {{count}}",
+    "renews": "They renew on {{date}}.",
+    "cost": "Per answer: {{small}} · per in-depth analysis: {{large}}.",
+    "disclaimer": "Nicolás is an AI and can be wrong: check what matters in the lesson cited.",
+    "emptyTitle": "How can I help?",
+    "emptyLead": "Ask about a phase, a document or a tax, or ask for a calculation with one of the course's templates.",
+    "suggestions": {
+      "one": "What is a nota simple and what is it for?",
+      "two": "Which taxes do I pay when I buy a plot?",
+      "three": "What guarantees do I give if I take deposits from buyers?"
+    },
+    "error": "It could not be sent. Try again.",
+    "loading": "Loading…"
   }
 }

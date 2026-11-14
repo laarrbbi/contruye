@@ -12,6 +12,7 @@ use App\Models\CourseDocument;
 use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
+use App\Models\NewsletterSubscriber;
 use App\Models\User;
 use App\Services\Assistant\Availability;
 use App\Services\Assistant\Credits;
@@ -26,6 +27,7 @@ use App\Services\Assistant\Scope;
 use App\Services\Assistant\Tools;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Tests\Support\FakeLlm;
 
 /*
@@ -564,4 +566,22 @@ it('refuses to deploy a switched-on assistant without its key', function () {
     config(['assistant.enabled' => true, 'assistant.anthropic.api_key' => '']);
 
     $this->artisan('app:check-secrets')->expectsOutputToContain('assistant.anthropic.api_key');
+});
+
+it('serves its coming-soon page to search engines in every language, lists it, and signs up who wants to hear', function () {
+    config(['seo.spa_index' => base_path('../web/index.html'), 'app.url' => 'https://construye.example']);
+    Course::factory()->create(['slug' => config('seo.main_course'), 'status' => 'published']);
+    Mail::fake();
+
+    expect($this->get('/nicolas-ia')->assertOk()->getContent())
+        ->toContain('<link rel="canonical" href="https://construye.example/nicolas-ia"')
+        ->toContain('Nicolás, la inteligencia artificial del curso</h1>')
+        ->toContain('Responde con el curso')
+        ->not->toContain('noindex');
+    expect($this->get('/en/nicolas-ia')->assertOk()->getContent())->toContain('Nicolás, the course&#039;s artificial intelligence</h1>');
+    expect($this->get('/sitemap.xml')->getContent())->toContain('<loc>https://construye.example/nicolas-ia</loc>')->toContain('<loc>https://construye.example/uk/nicolas-ia</loc>');
+    expect($this->get('/')->getContent())->toContain('href="/nicolas-ia"');
+
+    $this->postJson('/api/newsletter', ['email' => 'ia@example.es', 'source' => 'assistant'])->assertStatus(202);
+    expect(NewsletterSubscriber::query()->sole()->source)->toBe('assistant');
 });

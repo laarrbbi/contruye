@@ -70,6 +70,9 @@ trap 'printf "\n\033[31mDeploy failed after maintenance mode began: the site is 
 # The course translations (traducciones/), checked before maintenance mode,
 # re-read on every deploy: a corrected file goes live with the code.
 "$PHP" artisan db:seed --class=CourseTranslationSeeder --force
+# Nicolás's index of the course, rebuilt from what was just seeded. A changed
+# course is a new version: students get it once its evaluation passes (below).
+"$PHP" artisan assistant:index
 
 step "Caches"
 "$PHP" artisan optimize
@@ -100,6 +103,12 @@ fi
 
 "$PHP" artisan up
 trap - ERR
+
+if [ "$(env_get ASSISTANT_ENABLED)" = "true" ]; then
+  step "Nicolás: the evaluation set, if this version has not passed it yet (calls the model)"
+  # A failure keeps students on «Pronto» for this version; the site stays up.
+  "$PHP" artisan assistant:eval --if-needed || printf '\033[33mThe evaluation did not pass: students do not get this version of Nicolás. See /admin/assistant and docs/asistente-ia.md.\033[0m\n'
+fi
 
 step "Health check"
 APP_URL="$(env_get APP_URL)"

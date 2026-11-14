@@ -122,8 +122,19 @@ makes that work lives in `docker/mysql-test/`.
   with the ITP/AJD of every community, an FAQ and its structured data, in the sitemap).
 - The menu (`components/layout/Header.tsx`): a signed-in user's places (Mis cursos, Partners; Mi
   cuenta and Administración in the account menu) and, for everyone, the sections Valorador de
-  solares, Noticias, Empleo, Obras and Data centers (tagged «Pronto»). Below 1280px they move into a
+  solares, Noticias, Empleo, Obras, Nicolás IA («Pronto» until launched) and Data centers (tagged
+  «Pronto»). Below 1280px they move into a
   menu (the account menu once signed in).
+- Nicolás IA (`/nicolas-ia`, `AssistantPage`, «Pronto» in the menu until it opens;
+  `app/Services/Assistant`, `config/assistant.php`, `docs/asistente-ia.md`): the course's AI
+  assistant on the Claude API (official PHP SDK; Haiku 5.5 small, Opus 5.5 large, a router, the
+  small one can hand over). RAG over the course index (`assistant:index`; never quizzes or the
+  exam), filtered by the player's gate (`Scope`); tools with the student's rights only (search,
+  templates of owned modules, legal parameters); a guard on both sides; monthly credits in an
+  append-only ledger; a frequent-question cache keyed by scope and version; a daily budget; a
+  trace for every question (`/admin/assistant`). Students get a version only when
+  `ASSISTANT_ENABLED`, the key, and `assistant:eval` passed for that prompt, models and index;
+  admins can try it once the key is set. Tests use `Tests\Support\FakeLlm`, never the network.
 - Data centers (`/data-centers`, `DataCentersPage`, `SeoPageController::dataCenters`): the next
   course, announced and nothing more (no programme, price or date until there is one); a sign-up to
   the newsletter with the source `datacenters`, so the owner counts who is waiting for it.

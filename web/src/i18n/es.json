@@ -26,7 +26,8 @@
     "menu": "Menú",
     "newTab": "(se abre Construye Fichaje en otra pestaña)",
     "dataCenters": "Data centers",
-    "soon": "Pronto"
+    "soon": "Pronto",
+    "assistant": "Nicolás IA"
   },
   "auth": {
     "loginTitle": "Iniciar sesión",
@@ -407,7 +408,8 @@
       "offers": "Ofertas",
       "templates": "Plantillas",
       "newsletter": "Boletín",
-      "news": "Noticias"
+      "news": "Noticias",
+      "assistant": "Nicolás IA"
     },
     "common": {
       "actions": "Acciones",
@@ -968,7 +970,8 @@
       "sources": {
         "home": "Página principal",
         "calculator": "Calculadora",
-        "datacenters": "Data centers"
+        "datacenters": "Data centers",
+        "assistant": "Nicolás IA"
       }
     },
     "reference": {
@@ -1032,6 +1035,72 @@
       },
       "fallback": "Opcional: sin texto en {{language}}, se muestra el español.",
       "saved": "Guardada"
+    },
+    "assistant": {
+      "title": "Nicolás IA",
+      "lead": "El asistente de IA del curso: si está listo para abrirse, lo que cuesta y el rastro de cada pregunta. Aquí no se ve lo que preguntó cada alumno, ni la clave.",
+      "state": {
+        "launched": "Abierto a los alumnos",
+        "preview": "Solo administradores (vista previa)",
+        "off": "Cerrado"
+      },
+      "readiness": "Para abrirlo a los alumnos",
+      "checks": {
+        "key": "Clave de la API de Anthropic (ANTHROPIC_API_KEY)",
+        "enabled": "Activado (ASSISTANT_ENABLED=true)",
+        "index": "Índice del curso: {{chunks}} fragmentos",
+        "eval": "Evaluación superada para esta versión",
+        "budget": "Gasto de hoy: {{spent}} $ de {{budget}} $"
+      },
+      "howTo": "Para abrirlo: pon la clave, ejecuta php artisan assistant:index y php artisan assistant:eval, y activa ASSISTANT_ENABLED. Todo en docs/asistente-ia.md.",
+      "models": "Modelos",
+      "small": "Pequeño, para las preguntas sencillas",
+      "large": "Grande, para los análisis",
+      "creditsEach": "Créditos por respuesta: {{count}}",
+      "version": "Versión de las instrucciones: {{prompt}} · índice: {{index}}",
+      "last30": "Últimos 30 días",
+      "questions": "Preguntas",
+      "cost": "Coste",
+      "credits": "Créditos",
+      "routes": {
+        "cache": "Caché",
+        "small": "Modelo pequeño",
+        "large": "Modelo grande",
+        "escalated": "Pasada al grande",
+        "blocked": "Bloqueada",
+        "refused": "Sin créditos",
+        "unavailable": "No disponible"
+      },
+      "evals": "Evaluaciones",
+      "evalPassed": "Superada",
+      "evalFailed": "No superada",
+      "evalNever": "Esta versión aún no se ha evaluado.",
+      "evalScore": "{{passed}} de {{total}}",
+      "failures": "Casos fallados: {{cases}}",
+      "traces": "El rastro de cada pregunta",
+      "flaggedOnly": "Solo con avisos",
+      "allRoutes": "Todas",
+      "date": "Fecha",
+      "student": "Alumno",
+      "route": "Ruta",
+      "model": "Modelo",
+      "tokens": "Tokens (entrada / salida / caché)",
+      "time": "Tiempo",
+      "flags": "Avisos",
+      "noTraces": "Todavía no hay preguntas.",
+      "grant": "Créditos para un alumno",
+      "grantLead": "Se suman a su saldo de este mes; un número negativo corrige una concesión. Queda en el registro.",
+      "grantEmail": "Correo del alumno",
+      "grantCredits": "Créditos",
+      "grantNote": "Motivo",
+      "grantSubmit": "Conceder",
+      "granted": "Hecho: {{credits}} créditos para {{email}}. Saldo: {{balance}}.",
+      "statuses": {
+        "ok": "Respondida",
+        "blocked": "Bloqueada",
+        "refusal": "Rechazada por el modelo",
+        "error": "Error"
+      }
     }
   },
   "reviews": {
@@ -1912,5 +1981,71 @@
     "current": "El curso de promoción inmobiliaria en España, ya disponible",
     "seoTitle": "Curso de construcción de data centers (próximamente)",
     "seoDescription": "Próximamente en Construye Academy: un curso sobre la construcción de centros de datos. Apúntate y te avisamos cuando se abra."
+  },
+  "assistantPage": {
+    "eyebrow": "Nicolás IA · Pronto",
+    "title": "Nicolás, la inteligencia artificial del curso",
+    "lead": "Un asistente especializado en promoción inmobiliaria y construcción que responde con el contenido del curso CONSTRUYE. Lo estamos preparando: todavía no está abierto.",
+    "featuresTitle": "Lo que hará",
+    "features": {
+      "course": {
+        "title": "Responde con el curso",
+        "body": "Cada respuesta sale de las lecciones, los textos de los módulos y los documentos del curso, y dice de qué lección viene para que puedas abrirla."
+      },
+      "templates": {
+        "title": "Calcula con las plantillas",
+        "body": "Hace los números con las plantillas del curso y los parámetros legales vigentes, y te explica qué datos ha puesto."
+      },
+      "language": {
+        "title": "En tu idioma",
+        "body": "Contesta en el idioma que elijas en la plataforma: español, inglés, francés, árabe, ruso o ucraniano."
+      },
+      "private": {
+        "title": "Solo lo tuyo",
+        "body": "Ve lo que tú puedes leer en el curso y nada más: ni otras cuentas ni los datos de nadie."
+      },
+      "credits": {
+        "title": "Con créditos cada mes",
+        "body": "Funcionará con un saldo de créditos que se renueva cada mes, como los asistentes de IA que ya conoces."
+      }
+    },
+    "disclaimer": "Nicolás es una IA: no es el profesor del curso ni sustituye a un abogado, un asesor fiscal o un técnico colegiado.",
+    "notify": "Te avisamos cuando se abra: deja tu correo y recibirás el boletín de CONSTRUYE.",
+    "meanwhile": "Mientras tanto",
+    "current": "El curso de promoción inmobiliaria en España, ya disponible",
+    "signIn": "Inicia sesión para hablar con Nicolás.",
+    "signInAction": "Iniciar sesión",
+    "enrolOnly": "Nicolás responde a los alumnos del curso.",
+    "enrolAction": "Ver el curso",
+    "preview": "Vista previa para administradores: los alumnos todavía no lo ven. Se abre cuando lo activas y pasa la evaluación.",
+    "seoTitle": "Nicolás IA, el asistente de inteligencia artificial del curso (próximamente)",
+    "seoDescription": "Próximamente en Construye Academy: Nicolás, una IA especializada en promoción inmobiliaria y construcción que responde con el contenido del curso y calcula con sus plantillas."
+  },
+  "assistantChat": {
+    "conversations": "Conversaciones",
+    "newConversation": "Nueva conversación",
+    "noConversations": "Aún no has preguntado nada.",
+    "delete": "Borrar la conversación",
+    "deleteConfirm": "¿Borrar esta conversación? No se puede deshacer.",
+    "cancel": "Cancelar",
+    "placeholder": "Pregunta a Nicolás sobre el curso…",
+    "send": "Enviar",
+    "thinking": "Nicolás está escribiendo…",
+    "sources": "Fuentes del curso",
+    "fromCache": "Respuesta frecuente: no ha gastado créditos.",
+    "you": "Tú",
+    "credits": "Créditos este mes: {{count}}",
+    "renews": "Se renuevan el {{date}}.",
+    "cost": "Por respuesta: {{small}} · por un análisis a fondo: {{large}}.",
+    "disclaimer": "Nicolás es una IA y puede equivocarse: comprueba lo importante en la lección citada.",
+    "emptyTitle": "¿En qué te ayudo?",
+    "emptyLead": "Pregunta por una fase, un documento o un impuesto, o pídele un cálculo con una plantilla del curso.",
+    "suggestions": {
+      "one": "¿Qué es la nota simple y para qué me sirve?",
+      "two": "¿Qué impuestos pago al comprar un solar?",
+      "three": "¿Qué garantías doy si cobro entregas a cuenta?"
+    },
+    "error": "No se ha podido enviar. Inténtalo de nuevo.",
+    "loading": "Cargando…"
   }
 }

@@ -29,6 +29,8 @@ export APP_ENV=local APP_DEBUG=false DB_CONNECTION=sqlite DB_DATABASE="$DB" \
   php artisan migrate --force --seed
   php artisan db:seed --class=DemoShowcaseSeeder --force
   php artisan db:seed --class=PreviewVideoSeeder --force
+  # Nicolás's index of the demo course (the preview has no key: it stays «Pronto»).
+  php artisan assistant:index
 )
 
 echo "▸ The key this deployment signs its cookies with (new on every deploy)"

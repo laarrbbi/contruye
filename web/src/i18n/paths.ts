@@ -6,7 +6,7 @@ import type { Locale } from './locales'
  * code (/en, /fr, /ar, /ru, /uk). The server renders the same URLs with their
  * own head (api/routes/seo.php, api/app/Support/LocalizedUrl.php).
  */
-const PUBLIC_PAGE = /^\/(?:cursos(?:\/[^/]+)?|calculadora-precio-solar|noticias(?:\/[^/]+)?|data-centers)?\/?$/
+const PUBLIC_PAGE = /^\/(?:cursos(?:\/[^/]+)?|calculadora-precio-solar|noticias(?:\/[^/]+)?|data-centers|nicolas-ia)?\/?$/
 
 /** '/en/cursos' → { locale: 'en', path: '/cursos' }; '/login' → { locale: null, path: '/login' }. */
 export function splitLocalePath(pathname: string): { locale: Exclude<Locale, 'es'> | null; path: string } {
@@ -28,6 +28,9 @@ export const SOLAR_CALCULATOR_PATH = '/calculadora-precio-solar'
 
 /** The news (SeoPageController::NEWS_PATH): the list, and one page per piece under it. */
 export const NEWS_PATH = '/noticias'
+
+/** Nicolás, the course's AI assistant: coming soon until it opens (SeoPageController::ASSISTANT_PATH). */
+export const ASSISTANT_PATH = '/nicolas-ia'
 
 /** The data centers course, coming soon (SeoPageController::DATA_CENTERS_PATH). */
 export const DATA_CENTERS_PATH = '/data-centers'

@@ -30,10 +30,11 @@ use Illuminate\Console\Command;
  *   php artisan assistant:eval              # run, record, exit 1 if it fails
  *   php artisan assistant:eval --case=nota-simple --case=inyeccion
  *   php artisan assistant:eval --list       # the cases, no call
+ *   php artisan assistant:eval --if-needed  # deploy.sh: only when this version has not passed
  */
 class AssistantEval extends Command
 {
-    protected $signature = 'assistant:eval {--case=* : run only these cases (not recorded as a pass)} {--list : list the cases and exit}';
+    protected $signature = 'assistant:eval {--case=* : run only these cases (not recorded as a pass)} {--list : list the cases and exit} {--if-needed : do nothing when this version has already passed}';
 
     protected $description = 'Run the AI assistant\'s evaluation set against the current prompt, models and index';
 
@@ -61,6 +62,12 @@ class AssistantEval extends Command
             $this->error('ANTHROPIC_API_KEY is not set: the evaluation needs the real model.');
 
             return self::FAILURE;
+        }
+
+        if ($this->option('if-needed') && $availability->evalPassed()) {
+            $this->info('This version has already passed its evaluation.');
+
+            return self::SUCCESS;
         }
 
         $versionKey = $availability->versionKey();

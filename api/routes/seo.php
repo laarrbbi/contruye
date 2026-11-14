@@ -23,6 +23,7 @@ foreach (config('locales.supported') as $locale) {
         Route::get(SeoPageController::NEWS_PATH, [SeoPageController::class, 'news'])->defaults('locale', $locale);
         Route::get(SeoPageController::NEWS_PATH.'/{slug}', [SeoPageController::class, 'newsPost'])->defaults('locale', $locale);
         Route::get(SeoPageController::DATA_CENTERS_PATH, [SeoPageController::class, 'dataCenters'])->defaults('locale', $locale);
+        Route::get(SeoPageController::ASSISTANT_PATH, [SeoPageController::class, 'assistant'])->defaults('locale', $locale);
     });
 }
 

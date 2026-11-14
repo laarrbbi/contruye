@@ -12,3 +12,6 @@ Artisan::command('inspire', function () {
 // Needs the scheduler running (docker compose: `scheduler`; production:
 // deploy/supervisor/construye-scheduler.conf).
 Schedule::command('offers:send')->everyTenMinutes()->withoutOverlapping();
+
+// Nicolás: traces older than assistant.trace_days and expired cached answers go.
+Schedule::command('assistant:prune')->dailyAt('04:10')->withoutOverlapping();

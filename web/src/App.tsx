@@ -28,11 +28,13 @@ const ManualPaymentPage = lazy(() => buyingPath.manualPayment().then((m) => ({ d
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })))
 const SolarCalculatorPage = lazy(() => import('@/pages/SolarCalculatorPage').then((m) => ({ default: m.SolarCalculatorPage })))
 const DataCentersPage = lazy(() => import('@/pages/DataCentersPage').then((m) => ({ default: m.DataCentersPage })))
+const AssistantPage = lazy(() => import('@/pages/AssistantPage').then((m) => ({ default: m.AssistantPage })))
 const NewsPage = lazy(() => import('@/pages/NewsPage').then((m) => ({ default: m.NewsPage })))
 const NewsPostPage = lazy(() => import('@/pages/NewsPostPage').then((m) => ({ default: m.NewsPostPage })))
 const AdminNewsPage = lazy(() => import('@/pages/admin/AdminNewsPage').then((m) => ({ default: m.AdminNewsPage })))
 const NewsletterPage = lazy(() => import('@/pages/NewsletterPage').then((m) => ({ default: m.NewsletterPage })))
 const AdminNewsletterPage = lazy(() => import('@/pages/admin/AdminNewsletterPage').then((m) => ({ default: m.AdminNewsletterPage })))
+const AdminAssistantPage = lazy(() => import('@/pages/admin/AdminAssistantPage').then((m) => ({ default: m.AdminAssistantPage })))
 const HomePage = lazy(() => import('@/pages/HomePage').then((m) => ({ default: m.HomePage })))
 // The redesign's hero on its own, in each language, to show the owner before
 // the other sections are built. Its own chunk: the live sales page above does
@@ -110,6 +112,7 @@ export default function App() {
                   <Route path="noticias" element={<NewsPage />} />
                   <Route path="noticias/:slug" element={<NewsPostPage />} />
                   <Route path="data-centers" element={<DataCentersPage />} />
+                  <Route path="nicolas-ia" element={<AssistantPage />} />
                 </Route>
               ))}
               {/* The app's own screens. deploy/nginx/construye.conf lists them too:
@@ -161,6 +164,7 @@ export default function App() {
                   <Route path="coupons" element={<AdminCouponsPage />} />
                   <Route path="news" element={<AdminNewsPage />} />
                   <Route path="newsletter" element={<AdminNewsletterPage />} />
+                  <Route path="assistant" element={<AdminAssistantPage />} />
                 </Route>
               </Route>
 
