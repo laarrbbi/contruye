@@ -75,7 +75,7 @@ final class CourseTables
      */
     private static function rows(?string $markdown): array
     {
-        $lines = preg_split('/\R/', (string) $markdown) ?: [];
+        $lines = preg_split('/\R/u', (string) $markdown) ?: [];
         $rows = [];
         foreach ($lines as $i => $line) {
             $line = trim($line);

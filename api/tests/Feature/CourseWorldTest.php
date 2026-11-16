@@ -38,7 +38,7 @@ function worldTableRows(string $text, string $heading): array
         return [];
     }
     $rows = [];
-    foreach (preg_split('/\R/', $m[1]) as $line) {
+    foreach (preg_split('/\R/u', $m[1]) as $line) {
         if (str_starts_with($line, '|') && preg_match('/^\|[\s:|-]+\|$/', trim($line)) !== 1) {
             $rows[] = array_map('trim', explode('|', trim($line, "| \t")));
         }
@@ -50,7 +50,7 @@ function worldTableRows(string $text, string $heading): array
 /** @return list<string> the header cells of the table a row belongs to */
 function worldTableHeaderOf(string $text, string $row): array
 {
-    $lines = preg_split('/\R/', $text);
+    $lines = preg_split('/\R/u', $text);
     $at = array_search(trim($row), array_map('trim', $lines), true);
     if ($at === false) {
         return [];
@@ -137,7 +137,7 @@ it('quotes the lessons as written and names only what the course names', functio
             // A tax's note is the lesson's words on that tax, on its line.
             foreach ($step['taxes'] ?? [] as $tax) {
                 if (isset($tax['note'])) {
-                    $line = collect(preg_split('/\R/', $text))->first(fn (string $l) => str_contains($l, $tax['name']));
+                    $line = collect(preg_split('/\R/u', $text))->first(fn (string $l) => str_contains($l, $tax['name']));
                     expect($line)->not->toBeNull()->and((string) $line)->toContain($tax['note']);
                 }
             }

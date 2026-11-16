@@ -3,6 +3,7 @@
 use App\Models\Course;
 use App\Models\Module;
 use App\Support\Course\CourseTables;
+use Database\Seeders\CourseTranslationSeeder;
 use Database\Seeders\CurriculumV2Seeder;
 
 /*
@@ -19,7 +20,7 @@ function courseFile(string $pattern): string
 }
 
 it('reads «Las 12 fases» as the introduction writes them', function () {
-    $this->seed(CurriculumV2Seeder::class);
+    $this->seed([CurriculumV2Seeder::class, CourseTranslationSeeder::class]);
     $course = Course::query()->firstOrFail();
     $introduction = courseFile('00_*.md');
 
@@ -31,8 +32,13 @@ it('reads «Las 12 fases» as the introduction writes them', function () {
         expect($introduction)->toContain("| {$number} | {$phase['name']} | {$phase['outcome']} |");
     }
 
-    // A translated introduction gives the same twelve, in its language.
-    expect(array_keys(CourseTables::phases($course, 'en')))->toBe(range(1, 12));
+    // Every translated introduction gives the same twelve, in its language
+    // (Cyrillic and Arabic letters carry the byte a non-Unicode \R splits on).
+    foreach (['en', 'fr', 'ar', 'ru', 'uk'] as $locale) {
+        $translated = CourseTables::phases($course, $locale);
+        expect(array_keys($translated))->toBe(range(1, 12), "«Las 12 fases» in {$locale}")
+            ->and($translated[1]['name'])->not->toBe('Solar', "«Las 12 fases» in {$locale} is the translation");
+    }
 });
 
 it('reads a module\'s «Dónde ir» rows, numbered as they stand', function () {
