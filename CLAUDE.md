@@ -142,7 +142,8 @@ makes that work lives in `docker/mysql-test/`.
   lesson's verbatim words, papers, taxes at the rates in force, checklist, place, what gets built) is
   served behind the module's gate and metered; the geometry is in the bundle. `CourseWorldTest`
   checks every quote and name is the course's and every piece/place exists in the engine. Module 1
-  is scripted; the others have their end states (the «whole promotion» tour) and wait for theirs.
+  is scripted; the others have their end states (the «whole promotion» tour) and wait for theirs:
+  their storyboard drafts, quotes checked against the course, are in `docs/aprendizaje-3d/`.
 - Data centers (`/data-centers`, `DataCentersPage`, `SeoPageController::dataCenters`): the next
   course, announced and nothing more (no programme, price or date until there is one); a sign-up to
   the newsletter with the source `datacenters`, so the owner counts who is waiting for it.
