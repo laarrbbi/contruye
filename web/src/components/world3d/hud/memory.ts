@@ -1,9 +1,10 @@
 /**
  * Where the student left a module's 3D steps, kept in this browser only (a
- * convenience, never the record of anything): the step, the steps they have
- * seen, and the lesson it belongs to, so the lesson's «Ver en 3D» card can
- * offer to carry on. Every access is wrapped: private windows and blocked
- * storage simply start from the beginning.
+ * convenience, never the record of anything) and under their account, so a
+ * shared computer does not hand one student's place to another: the step, the
+ * steps they have seen, and the lesson it belongs to, so the lesson's «Ver en
+ * 3D» card can offer to carry on. Every access is wrapped: private windows and
+ * blocked storage simply start from the beginning.
  */
 export interface WorldMemory {
   /** 1-based step, or 0 for the module's end. */
@@ -15,12 +16,12 @@ export interface WorldMemory {
   title: string
 }
 
-const key = (slug: string, moduleId: number) => `construye.w3d.${slug}.${moduleId}`
+const key = (userId: number, slug: string, moduleId: number) => `construye.w3d.${userId}.${slug}.${moduleId}`
 
-export function readMemory(slug: string | undefined, moduleId: number | null | undefined): WorldMemory | null {
-  if (!slug || !moduleId) return null
+export function readMemory(userId: number | null | undefined, slug: string | undefined, moduleId: number | null | undefined): WorldMemory | null {
+  if (!userId || !slug || !moduleId) return null
   try {
-    const raw = window.localStorage.getItem(key(slug, moduleId))
+    const raw = window.localStorage.getItem(key(userId, slug, moduleId))
     if (!raw) return null
     const value = JSON.parse(raw) as Partial<WorldMemory>
     if (typeof value.paso !== 'number' || !Array.isArray(value.visited)) return null
@@ -37,10 +38,10 @@ export function readMemory(slug: string | undefined, moduleId: number | null | u
   }
 }
 
-export function writeMemory(slug: string | undefined, moduleId: number | null | undefined, memory: WorldMemory): void {
-  if (!slug || !moduleId) return
+export function writeMemory(userId: number | null | undefined, slug: string | undefined, moduleId: number | null | undefined, memory: WorldMemory): void {
+  if (!userId || !slug || !moduleId) return
   try {
-    window.localStorage.setItem(key(slug, moduleId), JSON.stringify(memory))
+    window.localStorage.setItem(key(userId, slug, moduleId), JSON.stringify(memory))
   } catch {
     // Storage full or blocked: the URL still keeps the step.
   }

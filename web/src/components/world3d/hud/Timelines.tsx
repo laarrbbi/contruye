@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Check, Lock } from 'lucide-react'
 import { lessonName, lessonsOf, type WorldOverview, type WorldOverviewModule, type WorldStep } from '@/api/world'
@@ -34,7 +35,6 @@ export function StepDots({ steps, index, visited, onSelect }: { steps: WorldStep
               )}
             >
               {t('world3d.lesson', { number: lesson.number })}
-              <span className="font-medium"> · {lessonName(lesson.title)}</span>
             </button>
             <ol className="mt-1.5 flex items-center gap-1">
               {Array.from({ length: lesson.count }, (_, j) => {
@@ -86,19 +86,14 @@ export function ModuleStrip({ overview, currentOrder, onSelect }: { overview: Wo
   const { t, i18n } = useTranslation()
 
   return (
-    <div className="flex min-w-0 items-center gap-3">
-      <p className="w-[5.5rem] shrink-0 text-[0.78rem] font-bold leading-tight text-plume">{t('world3d.modulesTitle', { count: overview.modules.length })}</p>
-      <ol
-        className="grid min-w-0 flex-1 gap-1"
-        style={{
-          gridTemplateColumns: `repeat(${overview.modules.length}, minmax(0, 1fr))`,
-        }}
-      >
+    <div className="min-w-0">
+      <p className="mb-1.5 text-[0.72rem] font-bold uppercase tracking-wider text-plume">{t('world3d.modulesTitle', { count: overview.modules.length })}</p>
+      <ol className="flex min-w-0 gap-1.5 overflow-x-auto overscroll-contain pb-1 pt-1.5 [scrollbar-width:thin]">
         {overview.modules.map((m) => {
           const current = m.order === currentOrder
           const label = moduleLabel(t, m)
           return (
-            <li key={m.id} className="min-w-0">
+            <li key={m.id} className="min-w-[6.75rem] flex-1">
               <button
                 type="button"
                 onClick={() => onSelect(m.id)}
@@ -106,23 +101,23 @@ export function ModuleStrip({ overview, currentOrder, onSelect }: { overview: Wo
                 aria-label={label}
                 aria-current={current ? 'step' : undefined}
                 className={cn(
-                  'relative flex h-12 w-full flex-col items-center justify-center gap-0.5 rounded-lg px-0.5 text-center transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  'relative flex h-14 w-full flex-col items-center justify-center gap-0.5 rounded-xl px-1.5 text-center transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                   current
                     ? 'bg-[#006FFE] text-white shadow-[0_8px_18px_-10px_rgb(0_111_254/0.9)]'
                     : m.is_locked
-                      ? 'bg-foreground/[0.035] text-foreground/40 hover:bg-foreground/[0.07]'
-                      : 'bg-foreground/[0.06] text-foreground/75 hover:bg-foreground/[0.1]',
+                      ? 'bg-foreground/[0.035] text-foreground/45 hover:bg-foreground/[0.07]'
+                      : 'bg-foreground/[0.06] text-foreground/80 hover:bg-foreground/[0.1]',
                 )}
               >
-                <span className="flex items-center gap-0.5 text-[0.62rem] font-bold leading-none tabular-nums">
+                <span className={cn('flex items-center gap-1 text-[0.6rem] font-bold uppercase leading-none tracking-wider', current ? 'text-white/85' : 'text-foreground/50')}>
                   {m.is_locked && <Lock className="h-2.5 w-2.5" aria-hidden />}
-                  {m.order}
+                  {t('world3d.module', { number: m.order })}
                 </span>
-                <span lang={i18n.language} className="line-clamp-2 w-full hyphens-auto break-words text-[0.66rem] font-semibold leading-[1.1]">
+                <span lang={i18n.language} className="line-clamp-2 w-full hyphens-auto break-words text-[0.78rem] font-bold leading-[1.15]">
                   {m.phase?.name ?? m.title}
                 </span>
                 {m.steps > 0 && !m.is_locked && (
-                  <span aria-hidden className={cn('absolute -top-1.5 end-1 rounded px-1 text-[0.5rem] font-bold leading-[0.9rem]', current ? 'bg-or text-plume' : 'bg-[#006FFE] text-white')}>
+                  <span aria-hidden className={cn('absolute -top-1.5 end-1.5 rounded px-1 text-[0.58rem] font-bold leading-[0.95rem]', current ? 'bg-or text-plume' : 'bg-[#006FFE] text-white')}>
                     3D
                   </span>
                 )}
@@ -194,6 +189,10 @@ export function StepList({
   onSelect(i: number): void
 }) {
   const { t } = useTranslation()
+  const current = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    current.current?.scrollIntoView({ block: 'center' })
+  }, [])
 
   return (
     <div className="space-y-5">
@@ -210,6 +209,7 @@ export function StepList({
               return (
                 <li key={step.key}>
                   <button
+                    ref={state === 'current' ? current : undefined}
                     type="button"
                     onClick={() => onSelect(i)}
                     aria-current={state === 'current' ? 'step' : undefined}

@@ -1125,6 +1125,11 @@ html.lenis {
     display: none;
   }
 }
+/* What scrolls fades at its foot: there is more below. */
+.w3d-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 1.75rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 1.75rem), transparent);
+}
 /* A strip that scrolls sideways fades at its edges: a cut label reads as "more". */
 .w3d-fade-x {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);

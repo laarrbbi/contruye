@@ -117,12 +117,12 @@ class CourseWorldController extends Controller
                 'people' => $step['people'] ?? [],
                 'figures' => $step['figures'] ?? [],
                 'plazo' => $step['plazo'] ?? null,
-                'quote_rows' => $this->quoteRows($step),
+                'quote_rows' => $this->quoteRows($step, $user),
                 'where' => array_values(array_filter(array_map(fn (int $row) => isset($where[$row]) ? [
-                    'institution_html' => self::cell($where[$row]['institution']),
-                    'ask_html' => self::cell($where[$row]['ask']),
-                    'get_html' => self::cell($where[$row]['get']),
-                    'plazo_html' => self::cell($where[$row]['plazo']),
+                    'institution_html' => self::cell($where[$row]['institution'], $user),
+                    'ask_html' => self::cell($where[$row]['ask'], $user),
+                    'get_html' => self::cell($where[$row]['get'], $user),
+                    'plazo_html' => self::cell($where[$row]['plazo'], $user),
                 ] : null, $step['where'] ?? []))),
                 // The student's own offices (Anexo A); null when they have not said their province.
                 'offices' => ($step['offices'] ?? []) === [] ? [] : ($offices === null ? null : array_values(array_filter(array_map(
@@ -164,6 +164,8 @@ class CourseWorldController extends Controller
             'content_locale' => 'es',
             'steps' => $steps,
             'checklist_total' => $items->count(),
+            // Every item of the module with the student's tick, the ones no step names included.
+            'checklist' => $items->map(fn (ChecklistItem $item) => ['id' => $item->id, 'checked' => in_array($item->id, $checked, true)])->values(),
         ]]);
     }
 
@@ -196,7 +198,7 @@ class CourseWorldController extends Controller
      * @param  array<string, mixed>  $step
      * @return list<array{label: string, value_html: ?string}>|null
      */
-    private function quoteRows(array $step): ?array
+    private function quoteRows(array $step, User $user): ?array
     {
         $quote = trim((string) $step['quote']);
         if (! isset($step['columns']) || ! str_starts_with($quote, '|')) {
@@ -204,13 +206,16 @@ class CourseWorldController extends Controller
         }
         $cells = array_map('trim', explode('|', trim($quote, '| ')));
 
-        return array_map(fn (string $label, int $i) => ['label' => $label, 'value_html' => self::cell($cells[$i] ?? '')], $step['columns'], array_keys($step['columns']));
+        return array_map(fn (string $label, int $i) => ['label' => $label, 'value_html' => self::cell($cells[$i] ?? '', $user)], $step['columns'], array_keys($step['columns']));
     }
 
-    /** A table cell of the course, Markdown and all («**Ayuntamiento · Urbanismo**»), as inline HTML. */
-    private static function cell(?string $markdown): ?string
+    /**
+     * A table cell of the course, Markdown and all («**Ayuntamiento · Urbanismo**»), as inline HTML,
+     * with the reader's fingerprint (stamped while it is still a paragraph, as the module page's cells are).
+     */
+    private static function cell(?string $markdown, User $user): ?string
     {
-        $html = Markdown::toHtml($markdown);
+        $html = ContentFingerprint::stamp(Markdown::toHtml($markdown), $user);
 
         return $html === null ? null : (string) preg_replace('#^<p>(.*)</p>$#s', '$1', $html);
     }

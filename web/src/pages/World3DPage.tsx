@@ -3,6 +3,7 @@ import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
   ArrowLeft,
+  Building2,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -26,10 +27,12 @@ import {
 } from 'lucide-react'
 import { useUser } from '@/api/auth'
 import { useToggleChecklistItem } from '@/api/checklists'
+import { apiErrorMessage } from '@/api/orders'
 import { lessonsOf, piecesAt, useWorldModule, useWorldOverview } from '@/api/world'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import { ProvinceWelcome } from '@/components/player/ProvinceWelcome'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { ProtectedArea } from '@/components/protection/ProtectedArea'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
@@ -64,7 +67,7 @@ export function World3DPage() {
   const { slug } = useParams<{ slug: string }>()
   const [params, setParams] = useSearchParams()
   const location = useLocation()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   usePageTitle(t('world3d.title'))
   const reduced = usePrefersReducedMotion()
   const wideQuery = useMediaQuery('(min-width: 1024px)')
@@ -124,6 +127,7 @@ export function World3DPage() {
   const [stepsOpen, setStepsOpen] = useState(false)
   const [video, setVideo] = useState<{ id: number; title: string } | null>(null)
   const [howOpen, setHowOpen] = useState(() => !readFlag('help'))
+  const [provinceOpen, setProvinceOpen] = useState(false)
   const [barHeight, setBarHeight] = useState(0)
   const [checked, setChecked] = useState<Record<number, boolean>>({})
   const [visited, setVisited] = useState<Set<number>>(() => new Set())
@@ -132,13 +136,23 @@ export function World3DPage() {
   const narration = useNarration()
   const toggle = useToggleChecklistItem(slug, moduleRow?.id ?? 0)
 
+  const provinceId = user?.province_id ?? null
+  const shownProvince = useRef(provinceId)
+  useEffect(() => {
+    if (shownProvince.current === provinceId) return
+    shownProvince.current = provinceId
+    if (world.data) void world.refetch()
+    // Only a change of province matters.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [provinceId])
+
   // ── Coming back: the address first, then the lesson asked for, then where this browser left it ──
   const restoredFor = useRef<number | null>(null)
   useEffect(() => {
     if (!world.data || !moduleRow || restoredFor.current === moduleRow.id) return
     restoredFor.current = moduleRow.id
     setChecked({})
-    const memory = readMemory(slug, moduleRow.id)
+    const memory = readMemory(user?.id, slug, moduleRow.id)
     setVisited(new Set((memory?.visited ?? []).filter((i) => i >= 0 && i < total)))
     if (params.get('paso') !== null) {
       setResumed(false)
@@ -171,7 +185,7 @@ export function World3DPage() {
   useEffect(() => {
     if (!world.data || !moduleRow || restoredFor.current !== moduleRow.id || index < 0) return
     const at = steps[Math.min(index, total - 1)]
-    writeMemory(slug, moduleRow.id, {
+    writeMemory(user?.id, slug, moduleRow.id, {
       paso: index >= total ? 0 : index + 1,
       visited: [...visited],
       lessonId: at?.lesson?.id ?? null,
@@ -179,7 +193,7 @@ export function World3DPage() {
       total,
       title: at?.title ?? '',
     })
-  }, [index, visited, world.data, moduleRow, steps, total, slug])
+  }, [index, visited, world.data, moduleRow, steps, total, slug, user?.id])
 
   // ── The scene ──────────────────────────────────────────────────────────
   const canvas = useRef<HTMLCanvasElement>(null)
@@ -231,8 +245,9 @@ export function World3DPage() {
       const h = header.current?.getBoundingClientRect()
       const p = panel.current?.getBoundingClientRect()
       setBarHeight(Math.round(b?.height ?? 0))
+      const rtl = document.documentElement.dir === 'rtl'
       scene.current?.setInsets({
-        right: isWide && p ? p.width + 32 : 0,
+        right: isWide && p ? (rtl ? -1 : 1) * (p.width + 32) : 0,
         bottom: (b?.height ?? 0) + 16,
         top: h ? h.height + 16 : 0,
       })
@@ -245,7 +260,7 @@ export function World3DPage() {
       observer.disconnect()
       window.removeEventListener('resize', measure)
     }
-  }, [ready, wide, sheetOpen, world.data, moduleRow?.id, tour, index])
+  }, [ready, wide, sheetOpen, world.data, moduleRow?.id, tour, index, i18n.language])
 
   // ── What the scene shows: the step, or the module's start and end ──────
   useEffect(() => {
@@ -326,10 +341,14 @@ export function World3DPage() {
     const text = `${step.title}. ${plainText(step.quote_html)}`
     const advance = () => setStep(Math.min(indexRef.current + 1, total))
     if (voiceOn) {
+      let pending = 0
       narration.speak(text, locale, () => {
-        if (playing) window.setTimeout(advance, 900)
+        if (playing) pending = window.setTimeout(advance, 900)
       })
-      return () => narration.stop()
+      return () => {
+        window.clearTimeout(pending)
+        narration.stop()
+      }
     }
     narration.stop()
     if (!playing) return
@@ -338,8 +357,8 @@ export function World3DPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, voiceOn, playing])
   useEffect(() => {
-    if (index >= total && playing) setPlaying(false)
-  }, [index, total, playing])
+    if (index >= total) setPlaying(false)
+  }, [index, total])
 
   // Keys: ← → along the steps (mirrored right to left), Home and End, Esc stops the tour.
   useEffect(() => {
@@ -404,13 +423,14 @@ export function World3DPage() {
     )
     return [...found.values()].sort((a, b) => a.order - b.order)
   }, [steps])
-  const ticked = checklistItems.filter((item) => checked[item.id] ?? item.checked).length
+  const ticked = (world.data?.checklist ?? []).filter((item) => checked[item.id] ?? item.checked).length
 
   const selectModule = (id: number) => {
     narration.stop()
     setPlaying(false)
     setTour(null)
     setModulesOpen(false)
+    if (id === moduleRow?.id) return
     setParams({ modulo: String(id) }, { replace: true })
   }
   const startTour = () => {
@@ -446,7 +466,7 @@ export function World3DPage() {
   const backLabel = backLesson ? t('world3d.backToLesson', { number: backLesson.number }) : t('world3d.backToCourse')
   const tourModule = tour !== null && tour > 0 ? (modules[tour - 1] ?? null) : null
   const nextModule = moduleRow ? (modules.find((m) => m.order === moduleRow.order + 1) ?? null) : null
-  const memoryNow = useMemo(() => (index < 0 && moduleRow ? readMemory(slug, moduleRow.id) : null), [index, moduleRow, slug])
+  const memoryNow = useMemo(() => (index < 0 && moduleRow ? readMemory(user?.id, slug, moduleRow.id) : null), [index, moduleRow, slug, user?.id])
   const resumeAt = memoryNow && memoryNow.paso >= 1 && memoryNow.paso <= total ? memoryNow.paso - 1 : null
 
   // ── What the step panel holds ──────────────────────────────────────────
@@ -454,6 +474,15 @@ export function World3DPage() {
   if (moduleRow && tour === null) {
     if (!scripted) {
       panelContent = <ModuleSoonPanel slug={slug ?? ''} module={moduleRow} total={modules.length} firstScripted={firstScripted} onSelectModule={selectModule} onTour={startTour} />
+    } else if (world.isError) {
+      panelContent = (
+        <div role="alert" className="space-y-3 p-5 text-sm">
+          <p>{apiErrorMessage(world.error) ?? t('common.error')}</p>
+          <button type="button" onClick={() => void world.refetch()} className="inline-flex min-h-10 items-center rounded-lg border px-3.5 font-semibold hover:bg-muted">
+            {t('world3d.retry')}
+          </button>
+        </div>
+      )
     } else if (!world.data) {
       panelContent = <p className="p-5 text-sm text-muted-foreground">{t('world3d.loading')}</p>
     } else if (step) {
@@ -473,7 +502,7 @@ export function World3DPage() {
           onToggle={onToggle}
           resumed={resumed}
           onRestart={() => {
-            setStep(-1)
+            setStep(0)
             focusTitle()
           }}
           next={steps[index + 1] ?? null}
@@ -482,6 +511,7 @@ export function World3DPage() {
           onVideo={openVideo}
           from3d={from3d}
           compact={!wide}
+          onChooseProvince={() => setProvinceOpen(true)}
         />
       )
     } else if (index >= total) {
@@ -494,6 +524,7 @@ export function World3DPage() {
           papers={papers.map(([name]) => name)}
           taxes={taxes.map(([name]) => name)}
           checklistDone={ticked}
+          seen={seen.length}
           next={nextModule}
           onSelectModule={selectModule}
           onRestart={() => {
@@ -513,10 +544,6 @@ export function World3DPage() {
           onStart={(i) => {
             setStep(i)
             focusTitle()
-          }}
-          onPlay={() => {
-            setStep(0)
-            setPlaying(true)
           }}
         />
       )
@@ -633,7 +660,8 @@ export function World3DPage() {
               </div>
               <div className="mt-2.5">{moduleHeading}</div>
               {world.data && tour === null && (
-                <div className="mt-3 flex flex-wrap gap-1.5">
+                <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                  <span className="me-0.5 text-[0.7rem] font-bold uppercase tracking-wider text-foreground/50">{t('world3d.folderTitle')}</span>
                   <Folder
                     icon={<FileText className="h-4 w-4 text-[#006FFE]" aria-hidden />}
                     label={t('world3d.kpiPapers')}
@@ -711,7 +739,10 @@ export function World3DPage() {
                     onClick={togglePlay}
                     aria-pressed={playing}
                     title={t('world3d.playHint')}
-                    className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#006FFE] px-3.5 text-sm font-bold text-white transition-colors hover:bg-[#005FE0] active:scale-95"
+                    className={cn(
+                      'inline-flex h-10 items-center gap-2 rounded-xl border px-3.5 text-sm font-bold transition-colors active:scale-95',
+                      playing ? 'border-[#006FFE] bg-[#006FFE]/10 text-[#006FFE]' : 'border-[#006FFE]/40 bg-white text-[#006FFE] hover:bg-[#006FFE]/[0.06]',
+                    )}
                   >
                     {playing ? <Pause className="h-4 w-4" aria-hidden /> : <Play className="h-4 w-4" aria-hidden />}
                     {playLabel}
@@ -723,16 +754,19 @@ export function World3DPage() {
                 <div className="min-w-0 flex-1 overflow-x-auto overscroll-contain pb-0.5 [scrollbar-width:thin]">
                   <StepDots steps={steps} index={index} visited={visited} onSelect={setStep} />
                 </div>
+                {overview.data && <TourButton touring={false} onClick={startTour} />}
               </div>
             )}
-            <div className={cn('flex items-center gap-3', world.data && tour === null && total > 0 && 'mt-3 border-t border-foreground/[0.08] pt-3')}>
-              {overview.data && (
-                <div className="min-w-0 flex-1">
-                  <ModuleStrip overview={overview.data} currentOrder={tour !== null ? (tourModule?.order ?? 0) : (moduleRow?.order ?? 0)} onSelect={selectModule} />
-                </div>
-              )}
-              {overview.data && <TourButton touring={tour !== null} onClick={startTour} />}
-            </div>
+            {(!world.data || tour !== null || total === 0) && overview.data && (
+              <div className="mb-2.5 flex justify-end">
+                <TourButton touring={tour !== null} onClick={startTour} />
+              </div>
+            )}
+            {overview.data && (
+              <div className={cn(world.data && tour === null && total > 0 && 'mt-3 border-t border-foreground/[0.08] pt-3')}>
+                <ModuleStrip overview={overview.data} currentOrder={tour !== null ? (tourModule?.order ?? 0) : (moduleRow?.order ?? 0)} onSelect={selectModule} />
+              </div>
+            )}
           </div>
         </>
       ) : (
@@ -774,7 +808,7 @@ export function World3DPage() {
           {/* ── Phone: one dock with the step (folded or open) and ‹ ▶ › ── */}
           <div
             ref={bar}
-            className={cn(CARD, 'pointer-events-auto absolute inset-x-2 bottom-[calc(0.5rem+env(safe-area-inset-bottom,0px))] z-10 flex max-h-[min(74svh,calc(100%-5rem))] flex-col overflow-hidden')}
+            className={cn(CARD, 'pointer-events-auto absolute inset-x-2 bottom-[calc(0.5rem+env(safe-area-inset-bottom,0px))] z-10 flex max-h-[min(60svh,calc(100%-5rem))] flex-col overflow-hidden')}
           >
             {tour !== null ? (
               <div className="flex items-center gap-3 p-2.5">
@@ -827,22 +861,47 @@ export function World3DPage() {
                 )}
                 {world.data && total > 0 && (
                   <div className="flex shrink-0 items-center gap-1.5 border-t border-foreground/[0.08] px-2 py-2">
-                    <IconButton label={t('world3d.previous')} onClick={() => setStep(Math.max(index - 1, -1))}>
-                      <ChevronLeft className="h-5 w-5 rtl:-scale-x-100" />
-                    </IconButton>
-                    <IconButton label={playLabel} primary onClick={togglePlay}>
+                    {index >= 0 && (
+                      <IconButton label={t('world3d.previous')} onClick={() => setStep(Math.max(index - 1, -1))}>
+                        <ChevronLeft className="h-5 w-5 rtl:-scale-x-100" />
+                      </IconButton>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (index < 0) {
+                          setStep(0)
+                          setSheetOpen(true)
+                        } else if (index >= total) setSheetOpen(true)
+                        else setStep(index + 1)
+                      }}
+                      className="flex min-h-11 min-w-0 flex-1 items-center justify-between gap-2 rounded-xl bg-[#006FFE] px-3.5 py-1 text-start text-white active:scale-[0.99]"
+                    >
+                      <span className="min-w-0">
+                        <span className="block truncate text-sm font-bold">
+                          {index < 0
+                            ? t('world3d.startSteps', { count: total })
+                            : index >= total
+                              ? t('world3d.finishSummary')
+                              : index === total - 1
+                                ? t('world3d.finishModule')
+                                : t('world3d.nextStep')}
+                        </span>
+                        {index >= 0 && index < total - 1 && <span className="block truncate text-[0.7rem] text-white/80">{steps[index + 1]?.title}</span>}
+                      </span>
+                      <ChevronRight className="h-5 w-5 shrink-0 rtl:-scale-x-100" aria-hidden />
+                    </button>
+                    <IconButton label={playLabel} active={playing} onClick={togglePlay}>
                       {playing ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-                    </IconButton>
-                    <IconButton label={t('world3d.next')} onClick={() => setStep(Math.min(index + 1, total))}>
-                      <ChevronRight className="h-5 w-5 rtl:-scale-x-100" />
                     </IconButton>
                     <button
                       type="button"
                       onClick={() => setStepsOpen(true)}
-                      className="ms-auto inline-flex h-10 items-center gap-1.5 rounded-xl bg-foreground/[0.06] px-3 text-sm font-semibold tabular-nums"
+                      aria-label={t('world3d.stepsTitle')}
+                      className="inline-flex h-10 shrink-0 items-center gap-1 rounded-xl bg-foreground/[0.06] px-2.5 text-sm font-semibold tabular-nums"
                     >
                       <ListOrdered className="h-4 w-4" aria-hidden />
-                      {index >= 0 && index < total ? t('world3d.stepOf', { index: index + 1, total }) : t('world3d.stepsTitle')}
+                      {index >= 0 && index < total ? `${index + 1}/${total}` : null}
                     </button>
                   </div>
                 )}
@@ -890,10 +949,12 @@ export function World3DPage() {
         </DialogContent>
       </Dialog>
 
+      <ProvinceWelcome auto={false} forceOpen={provinceOpen} onClose={() => setProvinceOpen(false)} />
+
       <Dialog open={howOpen && ready && !failed} onOpenChange={(open) => !open && closeHow()}>
         <DialogContent className="max-w-md border-0 bg-transparent p-0 text-white shadow-none">
           <DialogTitle className="sr-only">{t('world3d.howTitle')}</DialogTitle>
-          <HowItWorks onDone={closeHow} className="rounded-2xl p-5" />
+          <HowItWorks onDone={closeHow} phone={!wide} className="rounded-2xl p-5" />
         </DialogContent>
       </Dialog>
     </div>
@@ -927,10 +988,10 @@ function Folder({
           className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-foreground/[0.05] px-2.5 text-xs font-semibold text-foreground/80 hover:bg-foreground/[0.09] data-[state=open]:bg-foreground/[0.09]"
         >
           {icon}
+          {label}:
           <span key={count} className="w3d-pop text-sm font-bold tabular-nums text-plume">
             {count}
           </span>
-          {label}
           <ChevronDown className="h-3.5 w-3.5 opacity-60" aria-hidden />
         </button>
       </DropdownMenuTrigger>
@@ -969,7 +1030,7 @@ function TourButton({ touring, onClick, wide }: { touring: boolean; onClick(): v
         wide && 'w-full',
       )}
     >
-      {touring ? <Pause className="h-4 w-4" aria-hidden /> : <Play className="h-4 w-4" aria-hidden />}
+      {touring ? <Pause className="h-4 w-4" aria-hidden /> : <Building2 className="h-4 w-4" aria-hidden />}
       {touring ? t('world3d.tourStop') : t('world3d.tour')}
     </button>
   )

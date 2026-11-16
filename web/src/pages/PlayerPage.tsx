@@ -61,7 +61,12 @@ export function PlayerPage() {
   const location = useLocation()
   const from3dState = (location.state as { from3d?: unknown } | null)?.from3d
   const from3d = typeof from3dState === 'string' && from3dState.startsWith(`/learn/${slug}/mundo-3d`) ? from3dState : null
-  const from3dStep = from3d ? Number(new URLSearchParams(from3d.split('?')[1] ?? '').get('paso')) || null : null
+  // Where the way back goes: the step this browser last saw in that module (the 3D page moves
+  // by replacing its address, so the one carried here can be older), else the address carried.
+  const from3dQuery = new URLSearchParams(from3d?.split('?')[1] ?? '')
+  const from3dMemory = from3d ? readMemory(user?.id, slug, Number(from3dQuery.get('modulo')) || null) : null
+  const from3dStep = from3dMemory && from3dMemory.paso >= 1 ? from3dMemory.paso : from3d ? Number(from3dQuery.get('paso')) || null : null
+  const back3d = from3d && from3dMemory && from3dMemory.paso >= 1 ? `/learn/${slug}/mundo-3d?modulo=${from3dQuery.get('modulo')}&paso=${from3dMemory.paso}` : from3d
 
   const flatLessons = useMemo<LearnLesson[]>(
     () => (data ? data.modules.flatMap((module) => module.lessons) : []),
@@ -166,7 +171,7 @@ export function PlayerPage() {
 
   const isFirstOfModule = currentModule?.lessons[0]?.id === currentLesson.id
   // Aprendizaje 3D: where this browser left the module's steps, to carry on from the lesson.
-  const world3d = currentModule && worldModules.has(currentModule.id) ? readMemory(data.course.slug, currentModule.id) : null
+  const world3d = currentModule && worldModules.has(currentModule.id) ? readMemory(user?.id, data.course.slug, currentModule.id) : null
   const world3dHere = world3d && world3d.paso >= 1 && world3d.lessonId === currentLesson.id ? world3d : null
   const world3dElsewhere = world3d && world3d.paso >= 1 && !world3dHere ? world3d : null
   const moduleChecklist = checklists.data?.modules.find(
@@ -175,10 +180,10 @@ export function PlayerPage() {
 
   return (
     <PlayerShell data={data} location={{ lessonId: currentLesson.id }}>
-      {from3d && (
+      {back3d && (
         <div className="sticky top-16 z-20 -mt-1 mb-4">
           <Link
-            to={from3d}
+            to={back3d}
             className="inline-flex min-h-11 items-center gap-2 rounded-full bg-plume px-4 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgb(11_26_46/0.7)] transition-transform duration-150 hover:-translate-y-0.5"
           >
             <ArrowLeft className="h-4 w-4 rtl:-scale-x-100" aria-hidden />

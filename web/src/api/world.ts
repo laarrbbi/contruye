@@ -84,6 +84,8 @@ export interface WorldModule {
   content_locale: string
   steps: WorldStep[]
   checklist_total: number
+  /** Every item of the module with the student's tick (the steps name most of them, not all). */
+  checklist: { id: number; checked: boolean }[]
 }
 
 export function useWorldOverview(slug: string | undefined) {

@@ -232,6 +232,9 @@ it('serves a module\'s steps to its owners only, with the student\'s regional ra
         ->and($world['start'])->toBe(config('course_world.start'))
         ->and($world['region'])->toMatchArray(['name' => 'Comunitat Valenciana'])
         ->and($world['checklist_total'])->toBe(16)
+        // Every item with its tick, the ones no step names included (the counter reaches 16 of 16).
+        ->and($world['checklist'])->toHaveCount(16)
+        ->and(collect($world['checklist'])->firstWhere('id', $firstItem->id)['checked'])->toBeTrue()
         ->and($world['province'])->toBe(Province::query()->findOrFail($provinceId)->localizedName())
         ->and($world['module']['description_html'])->toContain('Objetivo')->toContain('Resultado');
 

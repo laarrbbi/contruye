@@ -22,6 +22,7 @@ import { useUser } from '@/api/auth'
 import { useLessonCompanies } from '@/api/directory'
 import type { WorldStep } from '@/api/world'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { isRtl } from '@/i18n'
 import { cn, intlLocale } from '@/lib/utils'
 import { plainText } from './useNarration'
@@ -114,6 +115,8 @@ export interface StepPanelProps {
   from3d: string
   /** A phone: the dock below carries ‹ ▶ ›, so the panel's own arrows go. */
   compact?: boolean
+  /** Opens the province picker here, for the offices and the regional rates. */
+  onChooseProvince(): void
 }
 
 /**
@@ -127,8 +130,29 @@ export interface StepPanelProps {
  * and the next step, always in view.
  */
 export function StepPanel(props: StepPanelProps) {
-  const { slug, moduleId, step, index, total, locale, placeName, province, checked, checklistDone, checklistTotal, onToggle, resumed, onRestart, next, onNext, onPrev, onVideo, from3d, compact } =
-    props
+  const {
+    slug,
+    moduleId,
+    step,
+    index,
+    total,
+    locale,
+    placeName,
+    province,
+    checked,
+    checklistDone,
+    checklistTotal,
+    onToggle,
+    resumed,
+    onRestart,
+    next,
+    onNext,
+    onPrev,
+    onVideo,
+    from3d,
+    compact,
+    onChooseProvince,
+  } = props
   const { t, i18n } = useTranslation()
   const { data: user } = useUser()
   const partners = useLessonCompanies(slug, step.lesson?.id ?? null, {
@@ -151,7 +175,7 @@ export function StepPanel(props: StepPanelProps) {
         {resumed && (
           <p className="mb-2.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg bg-or/15 px-3 py-1.5 text-xs font-semibold text-or-fonce">
             {t('world3d.resumed')}
-            <button type="button" onClick={onRestart} className="min-h-7 underline underline-offset-2 hover:no-underline">
+            <button type="button" onClick={onRestart} className="min-h-10 px-1 underline underline-offset-2 hover:no-underline">
               {t('world3d.restart')}
             </button>
           </p>
@@ -178,10 +202,13 @@ export function StepPanel(props: StepPanelProps) {
             </span>
           )}
         </p>
+        <div className="mt-2.5 empty:hidden">
+          <ContentLanguageNote locale={locale} />
+        </div>
       </header>
 
       {/* ── The course's words, section by section ── */}
-      <div key={step.key} className="w3d-enter min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5">
+      <div key={step.key} className="w3d-enter w3d-fade-bottom min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 pb-8 pt-4 sm:px-5">
         <Section icon={BookOpen} title={t('world3d.lessonSays')}>
           {step.quote_rows ? (
             <dl className="space-y-2.5 border-s-[3px] border-or ps-3.5">
@@ -236,9 +263,9 @@ export function StepPanel(props: StepPanelProps) {
               {step.offices === null ? (
                 <p className="rounded-xl bg-foreground/[0.04] px-3.5 py-3 text-sm text-foreground/75">
                   {t('world3d.officesNoProvince')}{' '}
-                  <Link to="/account/profile" className="font-semibold text-[#006FFE] hover:underline">
+                  <button type="button" onClick={onChooseProvince} className="inline-flex min-h-10 items-center font-semibold text-[#006FFE] underline-offset-2 hover:underline">
                     {t('world3d.chooseProvince')}
-                  </Link>
+                  </button>
                 </p>
               ) : (
                 step.offices.length > 0 && (
@@ -304,9 +331,9 @@ export function StepPanel(props: StepPanelProps) {
                   {tax.rate === null && (tax.code === 'itp' || tax.code === 'ajd') && (
                     <p className="mt-0.5 text-xs text-foreground/70">
                       {t('world3d.taxNoProvince')}{' '}
-                      <Link to="/account/profile" className="font-semibold text-[#006FFE] hover:underline">
+                      <button type="button" onClick={onChooseProvince} className="inline-flex min-h-10 items-center font-semibold text-[#006FFE] underline-offset-2 hover:underline">
                         {t('world3d.chooseProvince')}
-                      </Link>
+                      </button>
                     </p>
                   )}
                   {tax.note && (
@@ -318,7 +345,7 @@ export function StepPanel(props: StepPanelProps) {
               ))}
             </ul>
             {step.taxes.some((tax) => tax.code === 'itp' || tax.code === 'ajd') && (
-              <Link to={`/learn/${slug}/docs/anexo-b`} className="mt-2 inline-flex min-h-9 items-center gap-1.5 text-sm font-semibold text-[#006FFE] hover:underline">
+              <Link to={`/learn/${slug}/docs/anexo-b`} className="mt-1 inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-[#006FFE] hover:underline">
                 {t('world3d.taxesByRegion')}
                 <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
               </Link>
@@ -340,13 +367,8 @@ export function StepPanel(props: StepPanelProps) {
         )}
 
         {step.checklist.length > 0 && (
-          <Section
-            icon={ClipboardCheck}
-            title={t('world3d.checklistTitle', {
-              done: checklistDone,
-              total: checklistTotal,
-            })}
-          >
+          <Section icon={ClipboardCheck} title={t('world3d.tasksThisStep')}>
+            <p className="-mt-1.5 mb-1.5 text-xs font-semibold text-muted-foreground">{t('world3d.tasksInModule', { done: checklistDone, total: checklistTotal })}</p>
             <ul className="space-y-1">
               {step.checklist.map((item) => {
                 const isChecked = checked[item.id] ?? item.checked
@@ -365,7 +387,7 @@ export function StepPanel(props: StepPanelProps) {
                 )
               })}
             </ul>
-            <Link to={`/learn/${slug}/modules/${moduleId}/tareas`} className="mt-1 inline-flex min-h-9 items-center gap-1.5 px-2 text-sm font-semibold text-[#006FFE] hover:underline">
+            <Link to={`/learn/${slug}/modules/${moduleId}/tareas`} className="mt-1 inline-flex min-h-10 items-center gap-1.5 px-2 text-sm font-semibold text-[#006FFE] hover:underline">
               {t('world3d.checklistAll')}
               <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
             </Link>

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { ArrowRight, CheckCircle2, ChevronRight, ClipboardCheck, FileText, GraduationCap, Landmark, Lock, Play, RotateCcw } from 'lucide-react'
 import { lessonName, type WorldLesson, type WorldModule, type WorldOverviewModule, type WorldPhase } from '@/api/world'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
 import { isRtl } from '@/i18n'
 import { cn } from '@/lib/utils'
 
@@ -29,7 +30,7 @@ function Outcome({ phase }: { phase: WorldPhase | null }) {
 }
 
 /** The first time: what to click, in four lines. Also behind the «?» button. */
-export function HowItWorks({ onDone, className }: { onDone?(): void; className?: string }) {
+export function HowItWorks({ onDone, className, phone }: { onDone?(): void; className?: string; phone?: boolean }) {
   const { t } = useTranslation()
   return (
     <div className={cn('rounded-xl bg-plume p-4 text-white', className)}>
@@ -40,7 +41,7 @@ export function HowItWorks({ onDone, className }: { onDone?(): void; className?:
             <span aria-hidden className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/15 text-xs font-bold">
               {n}
             </span>
-            {t(`world3d.how${n}`)}
+            {t(n === 4 && phone ? 'world3d.how4Phone' : `world3d.how${n}`)}
           </li>
         ))}
       </ol>
@@ -54,31 +55,17 @@ export function HowItWorks({ onDone, className }: { onDone?(): void; className?:
 }
 
 /**
- * Before the first step: which module this is, what the course says it is for (its «Objetivo», «Duración» and «Resultado»), and its
- * lessons as ways in. «Empezar» (or «Seguir en el paso N»), and «Reproducir»
- * to let it run on its own.
+ * Before the first step: which module this is, what the course says it is
+ * for (its «Objetivo», «Duración» and «Resultado»), and its lessons as ways
+ * in. One main button: «Empezar», or «Seguir en el paso N».
  */
-export function ModuleStartPanel({
-  world,
-  total,
-  lessons,
-  resumeAt,
-  onStart,
-  onPlay,
-}: {
-  world: WorldModule
-  total: number
-  lessons: WorldLesson[]
-  resumeAt: number | null
-  onStart(index: number): void
-  onPlay(): void
-}) {
+export function ModuleStartPanel({ world, total, lessons, resumeAt, onStart }: { world: WorldModule; total: number; lessons: WorldLesson[]; resumeAt: number | null; onStart(index: number): void }) {
   const { t } = useTranslation()
   const steps = world.steps.length
 
   return (
     <>
-      <div className="w3d-enter min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5">
+      <div className="w3d-enter w3d-fade-bottom min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-4 sm:px-5">
         <Eyebrow>{t('world3d.moduleOf', { number: world.module.order, total })}</Eyebrow>
         <h2 id="w3d-step-title" tabIndex={-1} className="mt-1 text-[1.35rem] font-bold leading-tight text-plume outline-none">
           {world.module.title}
@@ -91,6 +78,9 @@ export function ModuleStartPanel({
             tasks: world.checklist_total,
           })}
         </p>
+        <div className="mt-3 empty:hidden">
+          <ContentLanguageNote locale={world.content_locale} />
+        </div>
 
         <h3 className="mt-5 text-[0.95rem] font-bold text-plume">{t('world3d.lessonsTitle')}</h3>
         <ol className="mt-2 space-y-1.5">
@@ -129,10 +119,6 @@ export function ModuleStartPanel({
             <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
           </button>
         )}
-        <button type="button" onClick={onPlay} className={SECONDARY}>
-          <Play className="h-4 w-4 text-[#006FFE]" aria-hidden />
-          {t('world3d.playModule')}
-        </button>
       </footer>
     </>
   )
@@ -151,6 +137,7 @@ export function ModuleEndPanel({
   papers,
   taxes,
   checklistDone,
+  seen,
   next,
   onSelectModule,
   onRestart,
@@ -162,6 +149,8 @@ export function ModuleEndPanel({
   papers: string[]
   taxes: string[]
   checklistDone: number
+  /** How many of the module's steps the student has seen. */
+  seen: number
   next: WorldOverviewModule | null
   onSelectModule(moduleId: number): void
   onRestart(): void
@@ -175,9 +164,14 @@ export function ModuleEndPanel({
         <div>
           <Eyebrow>{t('world3d.moduleOf', { number: world.module.order, total })}</Eyebrow>
           <h2 id="w3d-step-title" tabIndex={-1} className="mt-1 text-[1.35rem] font-bold leading-tight text-plume outline-none">
-            {t('world3d.moduleDoneTitle', { number: world.module.order })}
+            {seen < world.steps.length ? t('world3d.moduleEndTitle', { number: world.module.order }) : t('world3d.moduleDoneTitle', { number: world.module.order })}
           </h2>
+          {seen < world.steps.length && <p className="mt-1.5 text-sm font-medium text-foreground/70">{t('world3d.seenSteps', { seen, total: world.steps.length })}</p>}
           <Outcome phase={phase} />
+          <button type="button" onClick={onRestart} className="mt-1 inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-[#006FFE] hover:underline">
+            <RotateCcw className="h-4 w-4" aria-hidden />
+            {t('world3d.repeatModule')}
+          </button>
         </div>
 
         {papers.length > 0 && (
@@ -225,17 +219,9 @@ export function ModuleEndPanel({
           <span aria-hidden className="mt-2.5 block h-1.5 overflow-hidden rounded-full bg-foreground/10">
             <span className="block h-full rounded-full bg-success" style={{ width: `${tasks ? (checklistDone / tasks) * 100 : 0}%` }} />
           </span>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Link to={`/learn/${slug}/modules/${world.module.id}/tareas`} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg border px-3 text-sm font-semibold hover:bg-muted">
-              {t('world3d.checklistComplete')}
-            </Link>
-            {world.module.quiz_id && (
-              <Link to={`/learn/${slug}/quizzes/${world.module.quiz_id}`} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg border px-3 text-sm font-semibold hover:bg-muted">
-                <GraduationCap className="h-4 w-4 text-[#006FFE]" aria-hidden />
-                {t('world3d.takeQuiz', { number: world.module.order })}
-              </Link>
-            )}
-          </div>
+          <Link to={`/learn/${slug}/modules/${world.module.id}/tareas`} className="mt-3 inline-flex min-h-10 items-center gap-1.5 rounded-lg border px-3 text-sm font-semibold hover:bg-muted">
+            {t('world3d.checklistComplete')}
+          </Link>
         </section>
 
         {next && (
@@ -245,23 +231,23 @@ export function ModuleEndPanel({
               {t('world3d.module', { number: next.order })} · {next.phase?.name ?? next.title}
             </p>
             {next.phase && <p className="mt-1 text-sm text-white/75">{next.phase.outcome}</p>}
-            <button
-              type="button"
-              onClick={() => onSelectModule(next.id)}
-              className="mt-3 inline-flex min-h-10 items-center gap-2 rounded-lg bg-white px-3.5 text-sm font-bold text-plume hover:bg-white/90"
-            >
-              {next.is_locked && <Lock className="h-4 w-4" aria-hidden />}
-              {t('world3d.seeModule', { number: next.order })}
-              <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
-            </button>
           </section>
         )}
       </div>
-      <footer className="shrink-0 border-t border-foreground/[0.08] px-4 py-3 sm:px-5">
-        <button type="button" onClick={onRestart} className={SECONDARY}>
-          <RotateCcw className="h-4 w-4" aria-hidden />
-          {t('world3d.repeatModule')}
-        </button>
+      <footer className="shrink-0 space-y-2 border-t border-foreground/[0.08] px-4 py-3 sm:px-5">
+        {world.module.quiz_id && (
+          <Link to={`/learn/${slug}/quizzes/${world.module.quiz_id}`} className={PRIMARY}>
+            <GraduationCap className="h-4 w-4" aria-hidden />
+            {t('world3d.takeQuiz', { number: world.module.order })}
+          </Link>
+        )}
+        {next && (
+          <button type="button" onClick={() => onSelectModule(next.id)} className={world.module.quiz_id ? SECONDARY : PRIMARY}>
+            {next.is_locked && <Lock className="h-4 w-4" aria-hidden />}
+            {t('world3d.seeModule', { number: next.order })}
+            <ArrowRight className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
+          </button>
+        )}
       </footer>
     </>
   )

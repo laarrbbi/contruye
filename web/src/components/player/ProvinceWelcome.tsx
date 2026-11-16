@@ -15,8 +15,11 @@ const LATER_KEY = 'construye.province-welcome.later'
  * module's «Tu provincia en esta fase» and the Partners page open on it; the
  * province list in each module still changes it. «Más tarde» asks again on
  * another day, never twice in the same browser session.
+ *
+ * `forceOpen` opens it on request (the 3D page's «Elegir mi provincia»), and
+ * `auto={false}` keeps it from opening on its own there.
  */
-export function ProvinceWelcome() {
+export function ProvinceWelcome({ forceOpen = false, auto = true, onClose }: { forceOpen?: boolean; auto?: boolean; onClose?(): void } = {}) {
   const { t } = useTranslation()
   const { data: user } = useUser()
   const { data: provinces } = useProvinces()
@@ -31,9 +34,11 @@ export function ProvinceWelcome() {
     }
   })
 
-  const open = !!user && user.role !== 'admin' && user.province_id == null && !later
+  const open = forceOpen || (auto && !!user && user.role !== 'admin' && user.province_id == null && !later)
 
   const postpone = () => {
+    onClose?.()
+    if (forceOpen) return
     try {
       sessionStorage.setItem(LATER_KEY, '1')
     } catch {
@@ -78,7 +83,7 @@ export function ProvinceWelcome() {
           <Button variant="ghost" onClick={postpone}>
             {t('directory.welcomeLater')}
           </Button>
-          <Button disabled={!choice || updateProfile.isPending} onClick={() => choice && updateProfile.mutate({ province_id: Number(choice) })}>
+          <Button disabled={!choice || updateProfile.isPending} onClick={() => choice && updateProfile.mutate({ province_id: Number(choice) }, { onSuccess: () => onClose?.() })}>
             {t('directory.welcomeSave')}
           </Button>
         </DialogFooter>
