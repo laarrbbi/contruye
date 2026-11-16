@@ -12,6 +12,7 @@ use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\ProvinceGuide;
 use App\Models\User;
+use App\Support\Course\CourseTables;
 use App\Support\Course\LessonResources;
 use App\Support\Markdown;
 use App\Support\Protection\ContentFingerprint;
@@ -22,15 +23,19 @@ use Illuminate\Http\Request;
  * The 3D world of the course (config/course_world.php).
  *
  * overview(): what stands on the plot after each module and which modules
- * have their script, for any student of the course. Geometry only: no
- * course text, so a student sees the whole promotion grow, including the
+ * have their script, for any student of the course: geometry, and each
+ * module's phase as the introduction names it («Las 12 fases»: its short name
+ * and what comes out of it), the introduction being open to every student.
+ * No lesson text, so a student sees the whole promotion grow, including the
  * modules they have not bought.
  *
  * module(): a module's script, step after step: the lesson's own words, the
  * papers, taxes (at the rates in force, ITP and AJD those of the student's
  * region), the checklist items with the student's ticks, the place the camera
- * flies to and what gets built. Behind the module's gate and metered, like
- * the lesson's text; the quotes carry the reader's fingerprint.
+ * flies to and what gets built; at an institution, the module's «Dónde ir»
+ * row and the student's own office (Anexo A), the websites the lesson names,
+ * its «Errores típicos». Behind the module's gate and metered, like the
+ * lesson's text; the course's words carry the reader's fingerprint.
  */
 class CourseWorldController extends Controller
 {
@@ -52,6 +57,7 @@ class CourseWorldController extends Controller
         $this->authorizeCourseAccess($user, $course);
         $accessible = $user->isAdmin() ? $course->modules()->pluck('id') : $user->accessibleModuleIds($course);
         $config = config('course_world');
+        $phases = CourseTables::phases($course);
 
         $modules = $course->modules()->where('kind', '!=', Module::KIND_FINANCIALS)->orderBy('order')->get()
             ->map(fn (Module $module) => [
@@ -62,6 +68,7 @@ class CourseWorldController extends Controller
                 'end' => $config['modules'][$module->order]['end'] ?? [],
                 'dusk' => (float) ($config['modules'][$module->order]['dusk'] ?? 0),
                 'steps' => count($config['steps'][$module->order] ?? []),
+                'phase' => $phases[$module->order] ?? null,
             ]);
 
         return response()->json(['data' => [
@@ -87,6 +94,10 @@ class CourseWorldController extends Controller
         $parameters = LegalParameter::query()->pluck('value', 'code');
         $region = $this->region($user);
         $previous = $course->modules()->where('kind', '!=', Module::KIND_FINANCIALS)->where('order', '<', $module->order)->orderByDesc('order')->value('order');
+        $where = CourseTables::whereToGo($module);
+        $offices = $user->province_id === null ? null
+            : ProvinceGuide::query()->where('province_id', $user->province_id)->first()?->phaseRows($module->order);
+        $stamp = fn (?string $html) => ContentFingerprint::stamp($html, $user);
 
         $steps = [];
         foreach ($script as $i => $step) {
@@ -106,6 +117,20 @@ class CourseWorldController extends Controller
                 'people' => $step['people'] ?? [],
                 'figures' => $step['figures'] ?? [],
                 'plazo' => $step['plazo'] ?? null,
+                'quote_rows' => $this->quoteRows($step),
+                'where' => array_values(array_filter(array_map(fn (int $row) => isset($where[$row]) ? [
+                    'institution_html' => self::cell($where[$row]['institution']),
+                    'ask_html' => self::cell($where[$row]['ask']),
+                    'get_html' => self::cell($where[$row]['get']),
+                    'plazo_html' => self::cell($where[$row]['plazo']),
+                ] : null, $step['where'] ?? []))),
+                // The student's own offices (Anexo A); null when they have not said their province.
+                'offices' => ($step['offices'] ?? []) === [] ? [] : ($offices === null ? null : array_values(array_filter(array_map(
+                    fn (int $row) => isset($offices[$row - 1]) ? ['name' => (string) $offices[$row - 1][0], 'purpose' => (string) ($offices[$row - 1][1] ?? '')] : null,
+                    $step['offices'],
+                )))),
+                'links' => $this->links($lesson, $step['links'] ?? []),
+                'warning_html' => isset($step['warning']) ? $stamp(Markdown::toHtml($step['warning'])) : null,
                 'taxes' => array_map(fn (array $tax) => $this->tax($tax, $parameters->all(), $region), $step['taxes'] ?? []),
                 'checklist' => array_values(array_filter(array_map(function (int $order) use ($items, $checked) {
                     $item = $items[$order - 1] ?? null;
@@ -121,7 +146,15 @@ class CourseWorldController extends Controller
         }
 
         return response()->json(['data' => [
-            'module' => ['id' => $module->id, 'order' => $module->order, 'title' => $module->localizedTitle()],
+            'module' => [
+                'id' => $module->id,
+                'order' => $module->order,
+                'title' => $module->localizedTitle(),
+                // «Objetivo», «Duración», «Resultado», as the module opens.
+                'description_html' => $stamp(Markdown::toHtml($module->localizedDescription(), lineBreaks: true, glossary: true)),
+                'quiz_id' => $module->quiz()->value('id'),
+            ],
+            'province' => $user->province?->localizedName(),
             // Where the plot stands when the module begins: where the one before ended.
             'start' => $previous === null ? $config['start'] : ($config['modules'][$previous]['end'] ?? $config['start']),
             'start_dusk' => (float) ($previous === null ? 0 : ($config['modules'][$previous]['dusk'] ?? 0)),
@@ -139,20 +172,64 @@ class CourseWorldController extends Controller
      * of the student's region); by name only, as the lesson writes it, when
      * the platform keeps no rate for it (ICIO, plusvalía…).
      *
-     * @param  array{code?: string, name?: string}  $tax
+     * @param  array{code?: string, name?: string, note?: string}  $tax
      * @param  array<string, mixed>  $parameters
-     * @return array{code: ?string, name: string, rate: ?float, region: ?string}
+     * @return array{code: ?string, name: string, rate: ?float, region: ?string, note: ?string}
      */
     private function tax(array $tax, array $parameters, ?LegalRegionRate $region): array
     {
         $code = $tax['code'] ?? null;
         $name = $tax['name'] ?? strtoupper((string) $code);
+        $note = $tax['note'] ?? null;
         if ($code === 'itp' || $code === 'ajd') {
-            return ['code' => $code, 'name' => $name, 'rate' => $region === null ? null : (float) $region->{$code}, 'region' => $region?->name];
+            return ['code' => $code, 'name' => $name, 'rate' => $region === null ? null : (float) $region->{$code}, 'region' => $region?->name, 'note' => $note];
         }
         $parameter = self::PARAMETERS[$code] ?? null;
 
-        return ['code' => $code, 'name' => $name, 'rate' => $parameter !== null && isset($parameters[$parameter]) ? (float) $parameters[$parameter] : null, 'region' => null];
+        return ['code' => $code, 'name' => $name, 'rate' => $parameter !== null && isset($parameters[$parameter]) ? (float) $parameters[$parameter] : null, 'region' => null, 'note' => $note];
+    }
+
+    /**
+     * A quote that is a row of one of the lesson's tables, cell by cell under
+     * that table's own header (`columns`); null for any other quote.
+     *
+     * @param  array<string, mixed>  $step
+     * @return list<array{label: string, value_html: ?string}>|null
+     */
+    private function quoteRows(array $step): ?array
+    {
+        $quote = trim((string) $step['quote']);
+        if (! isset($step['columns']) || ! str_starts_with($quote, '|')) {
+            return null;
+        }
+        $cells = array_map('trim', explode('|', trim($quote, '| ')));
+
+        return array_map(fn (string $label, int $i) => ['label' => $label, 'value_html' => self::cell($cells[$i] ?? '')], $step['columns'], array_keys($step['columns']));
+    }
+
+    /** A table cell of the course, Markdown and all («**Ayuntamiento · Urbanismo**»), as inline HTML. */
+    private static function cell(?string $markdown): ?string
+    {
+        $html = Markdown::toHtml($markdown);
+
+        return $html === null ? null : (string) preg_replace('#^<p>(.*)</p>$#s', '$1', $html);
+    }
+
+    /**
+     * The websites a step names, from its lesson's entry in
+     * config/lesson_resources.php (official addresses, checked there).
+     *
+     * @param  list<string>  $names
+     * @return list<array{name: string, url: string}>
+     */
+    private function links(?Lesson $lesson, array $names): array
+    {
+        if ($lesson === null || $names === []) {
+            return [];
+        }
+        $links = collect(LessonResources::entry($lesson)['links'])->keyBy('name');
+
+        return array_values(array_filter(array_map(fn (string $name) => isset($links[$name]) ? ['name' => $name, 'url' => $links[$name]['url']] : null, $names)));
     }
 
     /**

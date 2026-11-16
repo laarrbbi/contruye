@@ -25,7 +25,19 @@
 | the camera flies; `adds`/`removes` change what stands from this step on,
 | `show` only during it; `emit` makes papers or taxes rise from the place.
 | Taxes are codes of the legal parameters in force (`legal_parameters` and,
-| for ITP and AJD, the student's region), never rates written here.
+| for ITP and AJD, the student's region), never rates written here; a tax's
+| `note` is the lesson's own words on it.
+|
+| What makes a step say more, still in the course's words:
+| - `where`: rows of the module's «Dónde ir» table, numbered from 1 as they
+|   stand (institution, what you ask for, what they give you, deadline and
+|   cost), read from the stored module text (App\Support\Course\CourseTables).
+| - `offices`: rows of the module's phase in Anexo A, for the student's own
+|   province (the same rows, in the same order, in every province).
+| - `links`: websites the lesson names, by their name in
+|   config/lesson_resources.php.
+| - `warning`: the lesson's «Errores típicos» line, as written.
+| - `columns`: for a quote that is a row of a table, that table's header.
 |
 | Served behind the module's gate (CourseWorldController), metered like the
 | lesson's text. Everything else — the geometry — is in the web bundle and
@@ -65,13 +77,15 @@ return [
                 'show' => ['plot.services']],
             ['lesson' => '1.1', 'place' => 'promotor', 'title' => 'Los canales para encontrarlo',
                 'quote' => 'Red propia: notarios (herencias), abogados, administradores de fincas, agentes de suelo, propietarios de casas viejas en zonas con edificabilidad sin agotar.',
-                'people' => ['notarios', 'abogados', 'administradores de fincas', 'agentes de suelo']],
+                'people' => ['notarios', 'abogados', 'administradores de fincas', 'agentes de suelo'],
+                'where' => [8, 9], 'offices' => [5, 6], 'links' => ['Portal de Subastas del BOE', 'SAREB', 'CASA47']],
             ['lesson' => '1.1', 'place' => 'promotor', 'title' => 'Tu cartera de suelo, en una base de datos',
                 'quote' => '**Lleva tu cartera de suelo en una base de datos** desde el primer solar: cada solar con su zona, clasificación, calificación, situación urbanística, superficies, edificabilidad, precio y forma de pago, y quién es su propietario y quién te lo ha traído.',
                 'documents' => ['Base de datos de gestión de suelo'], 'checklist' => [1], 'emit' => ['paper']],
             ['lesson' => '1.1', 'place' => 'site', 'title' => 'El filtro de 10 minutos',
                 'quote' => 'Edificabilidad × precio de venta de la zona ÷ precio pedido → si el suelo pasa del 30 % de los ingresos, descártalo salvo zona prime.',
-                'documents' => ['Números gordos del solar'], 'figures' => ['30 %'], 'checklist' => [2]],
+                'documents' => ['Números gordos del solar'], 'figures' => ['30 %'], 'checklist' => [2],
+                'warning' => '**Errores típicos:** enamorarse de la ubicación sin calcular; comprar suelo "urbanizable" pensando que es edificable; no mirar si el ayuntamiento está modificando el plan.'],
 
             // ── Lección 1.2 — Análisis urbanístico: qué puedes construir ──
             ['lesson' => '1.2', 'place' => 'ayuntamiento', 'title' => 'Quién manda',
@@ -85,29 +99,36 @@ return [
                 'documents' => ['estudio de volumetría'], 'people' => ['arquitecto'], 'plazo' => '1-2 semanas', 'checklist' => [8], 'emit' => ['paper']],
             ['lesson' => '1.2', 'place' => 'ayuntamiento', 'title' => 'El informe o cédula urbanística',
                 'quote' => 'Pide al ayuntamiento el **informe o cédula urbanística** por escrito. Su valor vinculante depende de la ley autonómica: no lo des por vinculante sin comprobarlo.',
-                'documents' => ['Informe o cédula urbanística'], 'plazo' => '1-3 meses', 'checklist' => [7], 'emit' => ['paper']],
+                'documents' => ['Informe o cédula urbanística'], 'checklist' => [7], 'emit' => ['paper'],
+                'where' => [4], 'offices' => [3],
+                'warning' => '**Errores típicos:** calcular con la superficie catastral en vez de la topográfica; olvidar que los sótanos o áticos computan; no comprobar si hay un plan en tramitación que suspende licencias.'],
             ['lesson' => '1.2', 'place' => 'organismo_sectorial', 'title' => 'El riesgo de inundación',
                 'quote' => '**Riesgo de inundación** en el visor del Sistema Nacional de Cartografía de Zonas Inundables (SNCZI, MITECO).',
-                'checklist' => [12]],
+                'checklist' => [12], 'links' => ['Sistema Nacional de Cartografía de Zonas Inundables (SNCZI, MITECO)']],
 
             // ── Lección 1.3 — Due diligence: comprar sin sorpresas ──
             ['lesson' => '1.3', 'place' => 'registro_propiedad', 'title' => 'Nota simple y certificación de cargas',
                 'quote' => 'Nota simple → titular, cargas (hipotecas, embargos), servidumbres, condiciones resolutorias, afecciones urbanísticas.',
-                'documents' => ['Nota simple', 'Certificación de dominio y cargas'], 'plazo' => 'Inmediato online · ≈ 9 €', 'checklist' => [5], 'emit' => ['paper', 'paper']],
+                'documents' => ['Nota simple', 'Certificación de dominio y cargas'], 'checklist' => [5], 'emit' => ['paper', 'paper'],
+                'where' => [1, 2], 'offices' => [1], 'links' => ['Registradores de España · nota simple'],
+                'warning' => '**Errores típicos:** fiarse solo de la nota simple antigua del vendedor; no pedir el certificado de IBI; comprar con ocupantes sin plan de salida.'],
             ['lesson' => '1.3', 'place' => 'catastro', 'title' => 'Catastro, Registro y realidad',
                 'quote' => '**Coincidencia Catastro–Registro–realidad.** Si no coinciden, encarga levantamiento topográfico y regulariza (procedimientos de la Ley 13/2015 de reforma hipotecaria y catastral) antes de comprar o condiciona la compra.',
-                'documents' => ['Consulta y certificación catastral'], 'checklist' => [6], 'emit' => ['paper']],
+                'documents' => ['Consulta y certificación catastral'], 'checklist' => [6], 'emit' => ['paper'],
+                'where' => [3], 'offices' => [2], 'links' => ['Sede Electrónica del Catastro']],
             ['lesson' => '1.3', 'place' => 'site', 'title' => 'El levantamiento topográfico',
                 'quote' => 'Levantamiento **topográfico** (superficie real, cotas, linderos).',
                 'checklist' => [6], 'adds' => ['plot.survey']],
             ['lesson' => '1.3', 'place' => 'ayuntamiento', 'title' => 'El IBI y las tasas pendientes',
                 'quote' => '**IBI:** la finca responde del IBI impagado (afección real, art. 64 TRLRHL). Pide certificado de deudas.',
-                'documents' => ['Certificado de deudas de IBI y tasas'], 'taxes' => [['name' => 'IBI']], 'plazo' => '1-15 días', 'checklist' => [9], 'emit' => ['tax', 'paper']],
+                'documents' => ['Certificado de deudas de IBI y tasas'], 'taxes' => [['name' => 'IBI']], 'checklist' => [9], 'emit' => ['tax', 'paper'],
+                'where' => [5]],
             ['lesson' => '1.3', 'place' => 'site', 'title' => 'Las servidumbres sectoriales',
                 'quote' => 'Servidumbres de cauces, costas, carreteras, ferrocarril y aeropuertos (servidumbres aeronáuticas, AESA).',
-                'people' => ['AESA'], 'checklist' => [13], 'show' => ['plot.easement']],
+                'people' => ['AESA'], 'checklist' => [13], 'show' => ['plot.easement'],
+                'offices' => [7], 'links' => ['AESA · servidumbres aeronáuticas']],
             ['lesson' => '1.3', 'place' => 'suministros', 'title' => 'Acometidas y servicios',
-                'quote' => '**Acometidas y servicios:** confirma con las compañías (agua, saneamiento, electricidad, telecomunicaciones) que hay capacidad y dónde está el punto de conexión.',
+                'quote' => '**Acometidas y servicios:** confirma con las compañías (agua, saneamiento, electricidad, telecomunicaciones) que hay capacidad y dónde está el punto de conexión. Si la distribuidora exige un centro de transformación o refuerzo de red, puede suponer decenas de miles de euros y meses de plazo.',
                 'people' => ['distribuidora'], 'checklist' => [11], 'show' => ['plot.services']],
             ['lesson' => '1.3', 'place' => 'site', 'title' => 'La geotecnia preliminar',
                 'quote' => '**Geotecnia preliminar** si vas a hacer sótanos: el nivel freático cambia la cuenta.',
@@ -116,21 +137,27 @@ return [
             // ── Lección 1.4 — La compra: forma, fiscalidad y sociedad ──
             ['lesson' => '1.4', 'place' => 'notaria', 'title' => 'La opción de compra',
                 'quote' => '**Opción de compra:** pagas una prima (3-10 %) por un plazo (6-24 meses). Inscríbela en el Registro para que valga frente a terceros.',
-                'documents' => ['Escritura pública'], 'figures' => ['3-10 %', '6-24 meses'], 'emit' => ['paper']],
+                'documents' => ['Escritura pública'], 'figures' => ['3-10 %', '6-24 meses'], 'emit' => ['paper'],
+                'where' => [6], 'offices' => [4]],
             ['lesson' => '1.4', 'place' => 'registro_mercantil', 'title' => 'La SPE: una sociedad por promoción',
                 'quote' => 'Una SL por promoción: aísla riesgos, ordena la contabilidad, facilita la entrada de socios y el cierre.',
-                'documents' => ['Constitución de la SPE', 'NIF provisional (AEAT, modelo 036)'], 'plazo' => '1-3 semanas', 'checklist' => [15], 'emit' => ['stamp']],
+                'documents' => ['Constitución de la SPE', 'NIF provisional (AEAT, modelo 036)'], 'checklist' => [15], 'emit' => ['stamp'],
+                'where' => [7], 'links' => ['Registro Mercantil Central · denominaciones sociales', 'Agencia Tributaria · sede electrónica (modelo 036)', 'CIRCE · crear la sociedad en línea (PAE Electrónico)']],
             ['lesson' => '1.4', 'place' => 'hacienda', 'title' => 'Si vende un empresario: IVA y AJD',
                 'quote' => '| Empresario vende **terreno edificable** (solar) | IVA 21 % + AJD de la escritura (Anexo B) | IVA sí, se deduce. AJD no |',
+                'columns' => ['Vendedor y tipo de suelo', 'Impuesto', '¿Recuperable?'],
                 'taxes' => [['code' => 'iva_general', 'name' => 'IVA'], ['code' => 'ajd', 'name' => 'AJD']], 'checklist' => [3], 'emit' => ['tax', 'tax']],
             ['lesson' => '1.4', 'place' => 'hacienda', 'title' => 'Si vende un particular: ITP',
                 'quote' => '| **Particular** vende | ITP de la comunidad (Anexo B). Sin AJD | No |',
+                'columns' => ['Vendedor y tipo de suelo', 'Impuesto', '¿Recuperable?'],
                 'taxes' => [['code' => 'itp', 'name' => 'ITP']], 'checklist' => [3], 'emit' => ['tax']],
             ['lesson' => '1.4', 'place' => 'notaria', 'title' => 'La firma ante notario',
                 'quote' => 'Notaría: por ley la escritura matriz la paga el vendedor y la copia el comprador (art. 1455 CC), salvo pacto. Entre empresarios se pacta.',
-                'documents' => ['Escritura pública'], 'taxes' => [['name' => 'Plusvalía municipal (IIVTNU)']], 'checklist' => [16], 'emit' => ['stamp']],
+                'documents' => ['Escritura pública'], 'taxes' => [['name' => 'Plusvalía municipal (IIVTNU)', 'note' => 'la paga el vendedor']], 'checklist' => [16], 'emit' => ['stamp'],
+                'where' => [6], 'offices' => [4],
+                'warning' => '**Errores típicos:** comprar a nombre personal y luego aportar a la sociedad (doble tributación); pagar ITP cuando el vendedor podía renunciar a la exención y repercutir IVA deducible.'],
             ['lesson' => '1.4', 'place' => 'site', 'title' => 'Solar escriturado',
-                'quote' => 'solar escriturado a nombre de la SPE o con opción de compra firmada.',
+                'quote' => '**Resultado:** solar escriturado a nombre de la SPE o con opción de compra firmada.',
                 'adds' => ['plot.fence'], 'removes' => ['plot.forsale', 'plot.survey', 'plot.envelope'], 'emit' => ['stamp']],
         ],
     ],

@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react'
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { isAxiosError } from 'axios'
-import { ArrowRight, Boxes, Calculator, ClipboardCheck, CircleCheck, Download, FileDown, Lock, Video } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Boxes, Calculator, ClipboardCheck, CircleCheck, Download, FileDown, Lock, Video } from 'lucide-react'
 import { useUser } from '@/api/auth'
 import {
   attachmentUrl,
@@ -17,6 +17,7 @@ import {
 } from '@/api/learn'
 import { useChecklists } from '@/api/checklists'
 import { useWorldOverview } from '@/api/world'
+import { readMemory } from '@/components/world3d/hud/memory'
 import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { Button } from '@/components/ui/button'
 import { PlayerShell } from '@/components/player/PlayerShell'
@@ -56,6 +57,11 @@ export function PlayerPage() {
   // Which modules have their 3D script: the lesson offers its steps in the 3D world.
   const worldOverview = useWorldOverview(slug)
   const worldModules = useMemo(() => new Set((worldOverview.data?.modules ?? []).filter((m) => m.steps > 0 && !m.is_locked).map((m) => m.id)), [worldOverview.data])
+  // Came from the 3D page («Abrir la lección»): a way back to the very step.
+  const location = useLocation()
+  const from3dState = (location.state as { from3d?: unknown } | null)?.from3d
+  const from3d = typeof from3dState === 'string' && from3dState.startsWith(`/learn/${slug}/mundo-3d`) ? from3dState : null
+  const from3dStep = from3d ? Number(new URLSearchParams(from3d.split('?')[1] ?? '').get('paso')) || null : null
 
   const flatLessons = useMemo<LearnLesson[]>(
     () => (data ? data.modules.flatMap((module) => module.lessons) : []),
@@ -159,12 +165,27 @@ export function PlayerPage() {
   }
 
   const isFirstOfModule = currentModule?.lessons[0]?.id === currentLesson.id
+  // Aprendizaje 3D: where this browser left the module's steps, to carry on from the lesson.
+  const world3d = currentModule && worldModules.has(currentModule.id) ? readMemory(data.course.slug, currentModule.id) : null
+  const world3dHere = world3d && world3d.paso >= 1 && world3d.lessonId === currentLesson.id ? world3d : null
+  const world3dElsewhere = world3d && world3d.paso >= 1 && !world3dHere ? world3d : null
   const moduleChecklist = checklists.data?.modules.find(
     (m) => m.id === currentModule?.id && !m.is_locked && (m.items.length > 0 || m.custom_tasks.length > 0),
   )
 
   return (
     <PlayerShell data={data} location={{ lessonId: currentLesson.id }}>
+      {from3d && (
+        <div className="sticky top-16 z-20 -mt-1 mb-4">
+          <Link
+            to={from3d}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-plume px-4 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgb(11_26_46/0.7)] transition-transform duration-150 hover:-translate-y-0.5"
+          >
+            <ArrowLeft className="h-4 w-4 rtl:-scale-x-100" aria-hidden />
+            {from3dStep ? t('world3d.backTo3dStep', { index: from3dStep }) : t('world3d.backTo3d')}
+          </Link>
+        </div>
+      )}
       {currentLesson.is_locked ? (
         /* Locked lesson: tease the title, sell the module. */
         <div className="rounded-xl border bg-secondary/40 p-8 text-center">
@@ -237,8 +258,13 @@ export function PlayerPage() {
 
           {/* Aprendizaje 3D: this lesson's steps in the town, for a module that has its script. */}
           {currentModule && worldModules.has(currentModule.id) && (
+            <div className="space-y-2">
             <Link
-              to={`/learn/${data.course.slug}/mundo-3d?modulo=${currentModule.id}&leccion=${currentLesson.id}`}
+              to={
+                world3dHere
+                  ? `/learn/${data.course.slug}/mundo-3d?modulo=${currentModule.id}&paso=${world3dHere.paso}`
+                  : `/learn/${data.course.slug}/mundo-3d?modulo=${currentModule.id}&leccion=${currentLesson.id}`
+              }
               className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-[radial-gradient(120%_120%_at_85%_0%,#1F3A5F,#0B1A2E_60%)] p-4 text-white shadow-[0_24px_48px_-30px_rgb(11_26_46/0.8)] transition-transform duration-200 hover:-translate-y-0.5 sm:p-5"
             >
               <span aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,rgb(246_242_234/0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgb(246_242_234/0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
@@ -247,11 +273,23 @@ export function PlayerPage() {
               </span>
               <span className="relative min-w-0 flex-1">
                 <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-or">{t('world3d.title')}</span>
-                <span className="block font-semibold">{t('world3d.cta')}</span>
-                <span className="mt-0.5 block text-sm text-white/70">{t('world3d.ctaText')}</span>
+                <span className="block font-semibold">
+                  {world3dHere ? t('world3d.ctaResume', { index: world3dHere.paso, total: world3dHere.total }) : t('world3d.cta')}
+                </span>
+                <span className="mt-0.5 block text-sm text-white/70">{world3dHere ? world3dHere.title : t('world3d.ctaText')}</span>
               </span>
               <ArrowRight aria-hidden className="relative h-5 w-5 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 rtl:-scale-x-100" />
             </Link>
+            {world3dElsewhere && (
+              <Link
+                to={`/learn/${data.course.slug}/mundo-3d?modulo=${currentModule.id}&paso=${world3dElsewhere.paso}`}
+                className="inline-flex min-h-10 items-center gap-1.5 px-1 text-sm font-semibold text-primary hover:underline"
+              >
+                {t('world3d.ctaElsewhere', { index: world3dElsewhere.paso, lesson: world3dElsewhere.lesson ?? '' })}
+                <ArrowRight aria-hidden className="h-4 w-4 rtl:-scale-x-100" />
+              </Link>
+            )}
+            </div>
           )}
         </>
       )}

@@ -140,7 +140,12 @@ makes that work lives in `docker/mysql-test/`.
   the institutions the course sends the promoter to and, in the middle, the plot where the course's
   own example (B+5, 18 homes) is built module after module. A module's script (steps with the
   lesson's verbatim words, papers, taxes at the rates in force, checklist, place, what gets built) is
-  served behind the module's gate and metered; the geometry is in the bundle. `CourseWorldTest`
+  served behind the module's gate and metered; the geometry is in the bundle. A step can also show,
+  in the course's words, its «Dónde ir» row, the student's own office (Anexo A), the lesson's
+  websites and «Errores típicos» (`where`, `offices`, `links`, `warning`; `CourseTables` reads the
+  tables, and the modules are named by the introduction's «Las 12 fases»). The step lives in the
+  address (`?paso=`) and this browser remembers each module's (`hud/memory.ts`), so the lesson and
+  its video are left and come back to. `CourseWorldTest`
   checks every quote and name is the course's and every piece/place exists in the engine. Module 1
   is scripted; the others have their end states (the «whole promotion» tour) and wait for theirs:
   their storyboard drafts, quotes checked against the course, are in `docs/aprendizaje-3d/`.

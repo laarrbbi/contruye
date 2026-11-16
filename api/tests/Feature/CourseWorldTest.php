@@ -4,9 +4,11 @@ use App\Models\ChecklistItem;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Module;
+use App\Models\Province;
 use App\Models\User;
 use Database\Seeders\ChecklistSeeder;
 use Database\Seeders\CurriculumV2Seeder;
+use Database\Seeders\ProvinceGuideSeeder;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -21,6 +23,43 @@ function worldModuleText(int $order): string
     $files = glob(rtrim((string) config('curso.path'), '/').'/1_contenido/modulos/'.sprintf('%02d', $order).'_*.md');
 
     return $files === [] ? '' : (string) file_get_contents($files[0]);
+}
+
+/** A lesson's section of a module's file: from its heading to the next one. */
+function worldLessonSection(string $text, string $number): string
+{
+    return preg_match('/^## Lección '.preg_quote($number, '/').' .*?(?=^## |\z)/msu', $text, $m) === 1 ? $m[0] : '';
+}
+
+/** @return list<list<string>> the data rows of the first table under a "## " heading */
+function worldTableRows(string $text, string $heading): array
+{
+    if (preg_match('/^## '.preg_quote($heading, '/').'\R(.*?)(?=^## |\z)/msu', $text, $m) !== 1) {
+        return [];
+    }
+    $rows = [];
+    foreach (preg_split('/\R/', $m[1]) as $line) {
+        if (str_starts_with($line, '|') && preg_match('/^\|[\s:|-]+\|$/', trim($line)) !== 1) {
+            $rows[] = array_map('trim', explode('|', trim($line, "| \t")));
+        }
+    }
+
+    return array_slice($rows, 1); // the header
+}
+
+/** @return list<string> the header cells of the table a row belongs to */
+function worldTableHeaderOf(string $text, string $row): array
+{
+    $lines = preg_split('/\R/', $text);
+    $at = array_search(trim($row), array_map('trim', $lines), true);
+    if ($at === false) {
+        return [];
+    }
+    while ($at > 0 && str_starts_with(trim($lines[$at - 1]), '|')) {
+        $at--;
+    }
+
+    return array_map('trim', explode('|', trim($lines[$at], "| \t")));
 }
 
 /** @return list<string> the keys the 3D engine knows: its pieces (site.ts, worldScene.ts) or its places (places.ts) */
@@ -49,6 +88,10 @@ function worldEngineKeys(string $kind): array
 it('quotes the lessons as written and names only what the course names', function () {
     $config = config('course_world');
     expect($config['steps'])->not->toBeEmpty();
+    $resources = config('lesson_resources.lessons');
+    $provinces = json_decode((string) file_get_contents(rtrim((string) config('curso.path'), '/').'/1_contenido/datos/partners_por_provincia.json'), true);
+    expect($provinces)->toHaveCount(52);
+    $institutions = ['registro_propiedad' => 'Registro de la Propiedad', 'catastro' => 'Catastro', 'ayuntamiento' => 'Ayuntamiento', 'notaria' => 'Notaría', 'registro_mercantil' => 'Registro Mercantil'];
 
     foreach ($config['steps'] as $order => $steps) {
         $text = worldModuleText($order);
@@ -69,6 +112,46 @@ it('quotes the lessons as written and names only what the course names', functio
             }
             if (isset($step['plazo'])) {
                 expect(mb_stripos($flat, $step['plazo']))->not->toBeFalse("{$where}: the course gives no plazo «{$step['plazo']}»");
+            }
+
+            // The lesson's «Errores típicos», inside the step's own lesson.
+            if (isset($step['warning'])) {
+                $lesson = preg_replace('/\s+/u', ' ', worldLessonSection($text, $step['lesson']));
+                expect(str_contains($lesson, $step['warning']))->toBeTrue("{$where}: the warning is not Lección {$step['lesson']}'s");
+            }
+
+            // «Dónde ir» rows exist, and at an institution they are that institution's.
+            $whereRows = worldTableRows($text, 'Dónde ir');
+            foreach ($step['where'] ?? [] as $row) {
+                expect($whereRows)->toHaveKey($row - 1);
+                if (isset($institutions[$step['place']])) {
+                    expect($whereRows[$row - 1][0])->toContain($institutions[$step['place']]);
+                }
+            }
+
+            // A table row is shown under its own table's header.
+            if (isset($step['columns'])) {
+                expect(worldTableHeaderOf($text, $step['quote']))->toBe($step['columns']);
+            }
+
+            // A tax's note is the lesson's words on that tax, on its line.
+            foreach ($step['taxes'] ?? [] as $tax) {
+                if (isset($tax['note'])) {
+                    $line = collect(preg_split('/\R/', $text))->first(fn (string $l) => str_contains($l, $tax['name']));
+                    expect($line)->not->toBeNull()->and((string) $line)->toContain($tax['note']);
+                }
+            }
+
+            // Websites by their name for that lesson (config/lesson_resources.php).
+            $names = array_column($resources[$step['lesson']]['links'] ?? [], 'name');
+            foreach ($step['links'] ?? [] as $name) {
+                expect($names)->toContain($name);
+            }
+
+            // Anexo A rows mean the same office in every province.
+            foreach ($step['offices'] ?? [] as $row) {
+                $purposes = array_values(array_unique(array_map(fn (array $p) => $p['phases'][(string) $order][$row - 1][1] ?? '', $provinces)));
+                expect($purposes)->toHaveCount(1)->and($purposes[0])->not->toBe('');
             }
         }
     }
@@ -119,14 +202,14 @@ it('calls only on pieces and places the 3D engine has', function () {
 });
 
 it('serves a module\'s steps to its owners only, with the student\'s regional rates and ticks', function () {
-    $this->seed([CurriculumV2Seeder::class, ChecklistSeeder::class]);
+    $this->seed([CurriculumV2Seeder::class, ChecklistSeeder::class, ProvinceGuideSeeder::class]);
     $course = Course::query()->firstOrFail();
     $one = Module::query()->where('course_id', $course->id)->where('order', 1)->firstOrFail();
     $two = Module::query()->where('course_id', $course->id)->where('order', 2)->firstOrFail();
 
-    // Alicante, in the Comunitat Valenciana (the provinces come with the migrations).
+    // Alicante, in the Comunitat Valenciana (the provinces come with the migrations, its guide with Anexo A).
     $provinceId = (int) DB::table('provinces')->where('code', 3)->value('id');
-    DB::table('province_guides')->updateOrInsert(['province_id' => $provinceId], ['ccaa' => 'Comunitat Valenciana', 'section_es' => '', 'data' => '{}', 'created_at' => now(), 'updated_at' => now()]);
+    expect(DB::table('province_guides')->where('province_id', $provinceId)->value('ccaa'))->toBe('Comunitat Valenciana');
 
     $student = User::factory()->create(['province_id' => $provinceId]);
     Enrollment::factory()->create(['user_id' => $student->id, 'course_id' => $course->id, 'module_id' => $one->id]);
@@ -139,13 +222,39 @@ it('serves a module\'s steps to its owners only, with the student\'s regional ra
     expect($overview['start'])->toBe(config('course_world.start'))
         ->and(collect($overview['modules'])->firstWhere('order', 1))->toMatchArray(['id' => $one->id, 'is_locked' => false, 'steps' => count(config('course_world.steps.1'))])
         ->and(collect($overview['modules'])->firstWhere('order', 2))->toMatchArray(['is_locked' => true])
-        ->and(collect($overview['modules'])->pluck('order')->all())->toBe(range(1, 12));
+        ->and(collect($overview['modules'])->pluck('order')->all())->toBe(range(1, 12))
+        // Each module named as «Las 12 fases» names its phase.
+        ->and($overview['modules'][0]['phase'])->toBe(['name' => 'Solar', 'outcome' => 'Solar comprado (u opcionado) sin sorpresas'])
+        ->and($overview['modules'][11]['phase']['name'])->toBe('Postventa y cierre');
 
     $world = $this->actingAs($student)->getJson("/api/courses/{$course->slug}/modules/{$one->id}/world")->assertOk()->json('data');
     expect($world['steps'])->toHaveCount(count(config('course_world.steps.1')))
         ->and($world['start'])->toBe(config('course_world.start'))
         ->and($world['region'])->toMatchArray(['name' => 'Comunitat Valenciana'])
-        ->and($world['checklist_total'])->toBe(16);
+        ->and($world['checklist_total'])->toBe(16)
+        ->and($world['province'])->toBe(Province::query()->findOrFail($provinceId)->localizedName())
+        ->and($world['module']['description_html'])->toContain('Objetivo')->toContain('Resultado');
+
+    // At the Ayuntamiento: the «Dónde ir» row, as the module's table writes it.
+    $cedula = $world['steps'][8];
+    expect($cedula['where'][0]['institution_html'])->toContain('<strong>Ayuntamiento · Urbanismo</strong>')->not->toContain('**')
+        ->and($cedula['where'][0]['ask_html'])->toContain('Informe o cédula urbanística')
+        ->and($cedula['where'][0]['plazo_html'])->toContain('1-3 meses')
+        ->and($cedula['offices'][0]['name'])->toBe('Ayuntamiento de Alicante y municipios de la provincia · Urbanismo')
+        ->and($cedula['warning_html'])->toContain('Errores típicos');
+
+    // The student's own Catastro office, and the website the lesson names.
+    $catastro = $world['steps'][11];
+    expect($catastro['offices'][0]['name'])->toBe('Gerencia del Catastro de Alicante')
+        ->and($catastro['links'])->toBe([['name' => 'Sede Electrónica del Catastro', 'url' => 'https://www.sedecatastro.gob.es/']]);
+
+    // A table row under its table's header; a tax with the lesson's note.
+    $vat = $world['steps'][19];
+    expect(array_column($vat['quote_rows'], 'label'))->toBe(['Vendedor y tipo de suelo', 'Impuesto', '¿Recuperable?'])
+        ->and($vat['quote_rows'][1]['value_html'])->toContain('IVA 21 %')
+        ->and($vat['quote_rows'][0]['value_html'])->toContain('<strong>terreno edificable</strong>')->not->toContain('**');
+    $plusvalia = collect($world['steps'][21]['taxes'])->firstWhere('name', 'Plusvalía municipal (IIVTNU)');
+    expect($plusvalia['note'])->toBe('la paga el vendedor');
 
     $first = $world['steps'][0];
     expect($first['lesson']['number'])->toBe('1.1')
@@ -171,5 +280,8 @@ it('serves a module\'s steps to its owners only, with the student\'s regional ra
     $this->actingAs($student)->getJson("/api/courses/{$course->slug}/modules/{$two->id}/world")->assertForbidden();
     $admin = User::factory()->admin()->create();
     $this->actingAs($admin)->getJson("/api/courses/{$course->slug}/modules/{$two->id}/world")->assertNotFound();
-    $this->actingAs($admin)->getJson("/api/courses/{$course->slug}/modules/{$one->id}/world")->assertOk();
+    // No province chosen: the step says so instead of showing someone else's office.
+    $adminWorld = $this->actingAs($admin)->getJson("/api/courses/{$course->slug}/modules/{$one->id}/world")->assertOk()->json('data');
+    expect($adminWorld['steps'][11]['offices'])->toBeNull()
+        ->and($adminWorld['steps'][0]['offices'])->toBe([]);
 });

@@ -22,16 +22,31 @@ solar», Módulo 1): solar de 344 m², planta baja + 5, plantas de 316,04 · 316
   topografía en el solar, servidumbres (el techo de AESA sobre el solar), compañías suministradoras,
   geotecnia, notaría (opción de compra y firma), Registro Mercantil (la SPE), Hacienda (IVA + AJD o
   ITP). Al firmar, el vallado de CONSTRUYE rodea el solar.
-- **Cada paso**: la lección y su número, el lugar, **las palabras del curso tal como están escritas**
-  (con la huella invisible del lector), los papeles, los impuestos **al tipo vigente** (ITP y AJD de
-  la comunidad del alumno, IVA de los parámetros legales), quién interviene, las cifras, el plazo de la
-  tabla «Dónde ir», los puntos del checklist (se marcan desde aquí y se guardan), tres **partners de
-  la lección en la provincia del alumno**, y los botones **Ver el vídeo** y **Abrir la lección**.
-- **Contadores** arriba (paso, papeles reunidos, impuestos vistos, checklist), **línea de pasos**
-  abajo agrupada por lección, **reproducción automática** al ritmo del texto y **voz** (la del
-  dispositivo, en el idioma del contenido), flechas del teclado, zoom, nombres on/off, vista general.
-- **La promoción entera**: la línea de los 12 módulos (los bloqueados con candado) enseña cómo queda
-  el solar al terminar cada uno, y **«Ver la promoción entera»** recorre los 12 con la cámara girando:
+- **Cada paso**, en un panel por secciones con títulos claros: arriba la lección (número y título),
+  «Paso 9 de 23» con su barra, el título del paso y **dónde** ocurre. Debajo: **lo que dice la
+  lección**, tal como está escrito (con la huella invisible del lector; una fila de tabla, con las
+  cabeceras de su tabla); **Dónde ir**: la fila de la tabla «Dónde ir» del módulo (qué pides, qué te
+  dan, plazo y coste), **la oficina de la provincia del alumno** (Anexo A: «Gerencia del Catastro de
+  Alicante») y la web oficial para hacerlo en línea; los **papeles**; los **impuestos al tipo
+  vigente** (ITP y AJD de la comunidad del alumno, IVA de los parámetros legales) con la nota del
+  curso («la paga el vendedor»); **quién interviene**; los **errores típicos** de la lección; **tu
+  checklist** (se marca desde aquí y se guarda); y los **partners de la lección en la provincia del
+  alumno**, con su oficio y un botón para llamar. Al pie, siempre a la vista: **Ver el vídeo** (se
+  abre encima, sin salir), **Abrir la lección** y **Siguiente paso** con el título del siguiente.
+- **Arriba**, el módulo por su nombre («Módulo 1 de 12», el título entero y «Qué sale de esta fase»
+  de la introducción) y **la carpeta**: papeles, impuestos y checklist reunidos en los pasos vistos,
+  cada uno con el paso de donde sale. **Abajo**, los pasos agrupados bajo cada lección y **«Los 12
+  módulos del curso»** con sus nombres («Las 12 fases»: Solar, Viabilidad…), el actual marcado, los
+  que tienen sus pasos en 3D con «3D», los bloqueados con candado. **Herramientas** con su nombre:
+  vista general, zoom, nombres de los edificios, voz, «Cómo funciona» (la primera visita lo enseña
+  solo). **Reproducir** pasa los pasos al ritmo del texto, con la voz del dispositivo si se activa.
+- **Volver donde lo dejaste**: el paso va en la dirección (`?modulo=1&paso=9`); se sale a la lección o
+  al vídeo y se vuelve al mismo paso («Volver al 3D · paso 9» en la lección), y este navegador
+  recuerda dónde se dejó cada módulo («Seguir en el 3D · paso 9 de 23» en la tarjeta de la lección).
+- **En el teléfono**: el módulo y «Módulos» arriba, el 3D a la vista y abajo una sola barra con el
+  paso plegado (se abre para leerlo), ‹ ▶ › y la lista de pasos.
+- **La promoción entera**: la línea de los 12 módulos enseña cómo queda el solar al terminar cada
+  uno, y **«Ver la promoción entera»** recorre los 12 con la cámara girando:
   vallado → maqueta → planos → licencia y casetas → grúa → excavación, cimentación, estructura planta
   a planta, fachadas, cubierta, instalaciones, acabados y calle → oficina de ventas y viviendas
   vendidas → atardecer con las ventanas encendidas y la llave de latón.
