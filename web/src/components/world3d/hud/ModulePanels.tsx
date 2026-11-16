@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { ArrowRight, CheckCircle2, ChevronRight, ClipboardCheck, FileText, GraduationCap, Landmark, Lock, Play, RotateCcw } from 'lucide-react'
 import { lessonName, type WorldLesson, type WorldModule, type WorldOverviewModule, type WorldPhase } from '@/api/world'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { isRtl } from '@/i18n'
 import { cn } from '@/lib/utils'
 
 const PRIMARY =
@@ -187,7 +188,12 @@ export function ModuleEndPanel({
             </h3>
             <ul className="flex flex-wrap gap-1.5">
               {papers.map((paper) => (
-                <li key={paper} lang={world.content_locale} className="rounded-full bg-[#006FFE]/[0.08] px-3 py-1.5 text-sm font-medium text-[#0055C4]">
+                <li
+                  key={paper}
+                  lang={world.content_locale}
+                  dir={isRtl(world.content_locale) ? 'rtl' : 'ltr'}
+                  className="rounded-full bg-[#006FFE]/[0.08] px-3 py-1.5 text-sm font-medium text-[#0055C4]"
+                >
                   {paper}
                 </li>
               ))}
@@ -203,7 +209,7 @@ export function ModuleEndPanel({
             </h3>
             <ul className="flex flex-wrap gap-1.5">
               {taxes.map((tax) => (
-                <li key={tax} lang={world.content_locale} className="rounded-full bg-or/15 px-3 py-1.5 text-sm font-medium text-or-fonce">
+                <li key={tax} lang={world.content_locale} dir={isRtl(world.content_locale) ? 'rtl' : 'ltr'} className="rounded-full bg-or/15 px-3 py-1.5 text-sm font-medium text-or-fonce">
                   {tax}
                 </li>
               ))}

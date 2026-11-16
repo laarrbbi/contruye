@@ -22,6 +22,7 @@ import { useUser } from '@/api/auth'
 import { useLessonCompanies } from '@/api/directory'
 import type { WorldStep } from '@/api/world'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { isRtl } from '@/i18n'
 import { cn, intlLocale } from '@/lib/utils'
 import { plainText } from './useNarration'
 
@@ -63,6 +64,7 @@ function Chips({ icon: Icon, items, tone, lang }: { icon: typeof FileText; items
         <li
           key={item}
           lang={lang}
+          dir={isRtl(lang) ? 'rtl' : 'ltr'}
           className={cn(
             'w3d-pop inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium',
             tone === 'paper' ? 'bg-[#006FFE]/[0.08] text-[#0055C4]' : 'bg-foreground/[0.06] text-foreground/80',
@@ -82,7 +84,7 @@ function WhereLine({ label, html, strong, lang }: { label: string; html: string 
   return (
     <div className="grid grid-cols-[6.25rem_1fr] gap-2">
       <dt className="pt-px text-xs font-semibold text-muted-foreground">{label}</dt>
-      <dd lang={lang} className={cn('md-inline text-sm leading-snug', strong && 'font-semibold text-foreground')} dangerouslySetInnerHTML={{ __html: html }} />
+      <dd lang={lang} dir={isRtl(lang) ? 'rtl' : 'ltr'} className={cn('md-inline text-sm leading-snug', strong && 'font-semibold text-foreground')} dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   )
 }
@@ -139,6 +141,8 @@ export function StepPanel(props: StepPanelProps) {
   const figures = step.figures.filter((figure) => !said.includes(figure))
   const hasWhere = step.where.length > 0 || step.offices === null || step.offices.length > 0 || step.links.length > 0
   const lessonUrl = step.lesson ? `/learn/${slug}/lessons/${step.lesson.id}` : null
+  // The course's words keep their own direction inside a right-to-left page.
+  const dir = isRtl(locale) ? 'rtl' : 'ltr'
 
   return (
     <>
@@ -183,10 +187,10 @@ export function StepPanel(props: StepPanelProps) {
             <dl className="space-y-2.5 border-s-[3px] border-or ps-3.5">
               {step.quote_rows.map((row) => (
                 <div key={row.label}>
-                  <dt lang={locale} className="text-xs font-semibold text-muted-foreground">
+                  <dt lang={locale} dir={dir} className="text-xs font-semibold text-muted-foreground">
                     {row.label}
                   </dt>
-                  <dd lang={locale} className="md-inline text-[0.95rem] leading-relaxed" dangerouslySetInnerHTML={{ __html: row.value_html ?? '' }} />
+                  <dd lang={locale} dir={dir} className="md-inline text-[0.95rem] leading-relaxed" dangerouslySetInnerHTML={{ __html: row.value_html ?? '' }} />
                 </div>
               ))}
             </dl>
@@ -215,6 +219,7 @@ export function StepPanel(props: StepPanelProps) {
                 <div key={i} className="w3d-pop rounded-xl border border-foreground/10 bg-white p-3.5">
                   <p
                     lang={locale}
+                    dir={dir}
                     className="md-inline text-[0.95rem] font-bold leading-snug"
                     dangerouslySetInnerHTML={{
                       __html: row.institution_html ?? '',
@@ -241,7 +246,7 @@ export function StepPanel(props: StepPanelProps) {
                     <p className="text-xs font-bold uppercase tracking-wide text-[#006FFE]">{t('world3d.officesIn', { province })}</p>
                     <ul className="mt-2 space-y-2">
                       {step.offices.map((office) => (
-                        <li key={office.name} lang={locale}>
+                        <li key={office.name} lang={locale} dir={dir}>
                           <span className="block text-sm font-semibold leading-snug">{office.name}</span>
                           {office.purpose && <span className="block text-xs leading-snug text-muted-foreground">{office.purpose}</span>}
                         </li>
@@ -259,7 +264,7 @@ export function StepPanel(props: StepPanelProps) {
                       <li key={link.url}>
                         <a href={link.url} target="_blank" rel="noopener noreferrer" className="group flex min-h-11 items-center gap-3 rounded-xl border bg-white px-3 py-2 hover:border-[#006FFE]/40">
                           <span className="min-w-0 flex-1">
-                            <span lang={locale} className="block text-sm font-semibold leading-snug">
+                            <span lang={locale} dir={dir} className="block text-sm font-semibold leading-snug">
                               {link.name}
                             </span>
                             <span dir="ltr" className="block truncate text-xs text-muted-foreground">
@@ -290,7 +295,7 @@ export function StepPanel(props: StepPanelProps) {
               {step.taxes.map((tax) => (
                 <li key={`${tax.code}-${tax.name}`} className="w3d-pop rounded-xl bg-or/10 px-3.5 py-2.5">
                   <div className="flex items-baseline justify-between gap-3">
-                    <span lang={locale} className="bidi-auto text-[0.95rem] font-semibold">
+                    <span lang={locale} dir={dir} className="bidi-auto text-[0.95rem] font-semibold">
                       {tax.name}
                     </span>
                     {tax.rate !== null && <span className="shrink-0 text-lg font-bold tabular-nums text-plume">{percent(tax.rate, i18n.language)}</span>}
@@ -305,7 +310,7 @@ export function StepPanel(props: StepPanelProps) {
                     </p>
                   )}
                   {tax.note && (
-                    <p lang={locale} className="mt-0.5 text-sm text-foreground/80 first-letter:uppercase">
+                    <p lang={locale} dir={dir} className="mt-0.5 text-sm text-foreground/80 first-letter:uppercase">
                       {tax.note}
                     </p>
                   )}
@@ -350,7 +355,6 @@ export function StepPanel(props: StepPanelProps) {
                     <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-lg px-2 py-2 text-sm hover:bg-muted">
                       <input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-[#006FFE]" checked={isChecked} onChange={(event) => onToggle(item.id, event.target.checked)} />
                       <span
-                        lang={locale}
                         className={cn('md-inline leading-snug', isChecked && 'text-muted-foreground line-through')}
                         dangerouslySetInnerHTML={{
                           __html: item.text_html ?? '',
