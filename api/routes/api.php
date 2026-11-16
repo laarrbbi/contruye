@@ -30,6 +30,7 @@ use App\Http\Controllers\Api\CompanyDirectoryController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\CourseDocumentController;
 use App\Http\Controllers\Api\CourseFileController;
+use App\Http\Controllers\Api\CourseWorldController;
 use App\Http\Controllers\Api\EnrollmentController;
 use App\Http\Controllers\Api\FinancialsController;
 use App\Http\Controllers\Api\FinancialsExtraController;
@@ -143,6 +144,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Per-module action checklists + the student's own tasks
     Route::get('/courses/{course:slug}/checklists', [ChecklistController::class, 'index'])->middleware('content');
+    // The 3D world: what stands after each module (geometry), and a module's script (behind its gate, metered)
+    Route::get('/courses/{course:slug}/world', [CourseWorldController::class, 'overview']);
+    Route::get('/courses/{course:slug}/modules/{module}/world', [CourseWorldController::class, 'module'])->whereNumber('module')->middleware('content');
     Route::put('/checklist-items/{item}', [ChecklistController::class, 'toggle'])->whereNumber('item');
     Route::post('/modules/{module}/tasks', [ChecklistController::class, 'storeTask'])->whereNumber('module');
     Route::patch('/tasks/{task}', [ChecklistController::class, 'updateTask'])->whereNumber('task');

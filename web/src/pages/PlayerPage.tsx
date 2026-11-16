@@ -3,7 +3,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { usePageTitle } from '@/hooks/usePageTitle'
 import { isAxiosError } from 'axios'
-import { Calculator, ClipboardCheck, CircleCheck, Download, FileDown, Lock, Video } from 'lucide-react'
+import { ArrowRight, Boxes, Calculator, ClipboardCheck, CircleCheck, Download, FileDown, Lock, Video } from 'lucide-react'
 import { useUser } from '@/api/auth'
 import {
   attachmentUrl,
@@ -16,6 +16,7 @@ import {
   type LearnLesson,
 } from '@/api/learn'
 import { useChecklists } from '@/api/checklists'
+import { useWorldOverview } from '@/api/world'
 import { ModuleChecklist } from '@/components/player/ModuleChecklist'
 import { Button } from '@/components/ui/button'
 import { PlayerShell } from '@/components/player/PlayerShell'
@@ -52,6 +53,9 @@ export function PlayerPage() {
   const { data, isLoading, isError, error } = useLearn(slug)
   const toggleComplete = useToggleComplete(slug)
   const checklists = useChecklists(slug)
+  // Which modules have their 3D script: the lesson offers its steps in the 3D world.
+  const worldOverview = useWorldOverview(slug)
+  const worldModules = useMemo(() => new Set((worldOverview.data?.modules ?? []).filter((m) => m.steps > 0 && !m.is_locked).map((m) => m.id)), [worldOverview.data])
 
   const flatLessons = useMemo<LearnLesson[]>(
     () => (data ? data.modules.flatMap((module) => module.lessons) : []),
@@ -230,6 +234,25 @@ export function PlayerPage() {
               {currentLesson.is_completed ? t('player.markIncomplete') : t('player.markComplete')}
             </Button>
           </div>
+
+          {/* Aprendizaje 3D: this lesson's steps in the town, for a module that has its script. */}
+          {currentModule && worldModules.has(currentModule.id) && (
+            <Link
+              to={`/learn/${data.course.slug}/mundo-3d?modulo=${currentModule.id}&leccion=${currentLesson.id}`}
+              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl bg-[radial-gradient(120%_120%_at_85%_0%,#1F3A5F,#0B1A2E_60%)] p-4 text-white shadow-[0_24px_48px_-30px_rgb(11_26_46/0.8)] transition-transform duration-200 hover:-translate-y-0.5 sm:p-5"
+            >
+              <span aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,rgb(246_242_234/0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgb(246_242_234/0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
+              <span aria-hidden className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#006FFE]">
+                <Boxes className="h-6 w-6" />
+              </span>
+              <span className="relative min-w-0 flex-1">
+                <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-or">{t('world3d.title')}</span>
+                <span className="block font-semibold">{t('world3d.cta')}</span>
+                <span className="mt-0.5 block text-sm text-white/70">{t('world3d.ctaText')}</span>
+              </span>
+              <ArrowRight aria-hidden className="relative h-5 w-5 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 rtl:-scale-x-100" />
+            </Link>
+          )}
         </>
       )}
 
