@@ -6,3 +6,6 @@ node_modules/
 
 # Screenshots from local browser checks
 web/shots/
+
+# graphify: the code graph is built locally (or by the cloud setup script), never committed
+graphify-out/

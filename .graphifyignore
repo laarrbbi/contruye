@@ -1,0 +1,27 @@
+# graphify (docs/graphify.md): code only. The course texts, translations, docs,
+# reports, media and generated or vendored code stay out of the graph.
+docs/
+reports/
+specs/
+traducciones/
+materiales/
+video/
+curso/1_contenido/
+curso/3_textos_web/
+curso/4_videos/
+curso/2_plantilla_financiera/originales/
+curso/2_plantilla_financiera/excel_corregido/
+curso/2_plantilla_financiera/herramientas/
+curso/2_plantilla_financiera/plantilla/
+curso/2_plantilla_financiera/plantillas_pequenas/
+curso/2_plantilla_financiera/pruebas/
+**/node_modules/
+api/vendor/
+api/storage/
+api/bootstrap/cache/
+api/public/
+web/dist/
+web/public/
+web/shots/
+web/scripts/
+**/*.sqlite
