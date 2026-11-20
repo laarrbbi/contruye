@@ -25,6 +25,7 @@ import { ContentBlocks } from '@/components/player/ContentBlocks'
 import { LessonResources } from '@/components/player/LessonResources'
 import { ModuleOverview } from '@/components/player/ModuleOverview'
 import { ModuleReference } from '@/components/player/ModuleReference'
+import { SectionTitle } from '@/components/player/SectionTitle'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
@@ -311,7 +312,8 @@ export function PlayerPage() {
       {!currentLesson.is_locked && lessonText?.content_html && (
         <article aria-label={currentLesson.title} className="space-y-3">
           <ContentLanguageNote locale={lessonText.content_locale} />
-          <MarkdownContent html={lessonText.content_html} lang={lessonText.content_locale} />
+          {/* «leccion»: the text's own parts (Ejemplo, Resumen, Tu checklist) under the page's section titles. */}
+          <MarkdownContent html={lessonText.content_html} lang={lessonText.content_locale} className="leccion" />
         </article>
       )}
 
@@ -385,9 +387,18 @@ export function PlayerPage() {
           things up, and the quiz last. */}
       {!currentLesson.is_locked && currentModule && !currentModule.is_locked && isLastOfModule && (
         <>
-          <ContentBlocks blocks={moduleSections.filter((block) => block.role !== 'partners')} />
+          <div className="secciones-modulo">
+            <ContentBlocks blocks={moduleSections.filter((block) => block.role !== 'partners')} />
+          </div>
 
-          {moduleChecklist && <ModuleChecklist slug={slug} module={moduleChecklist} />}
+          {moduleChecklist && (
+            <section aria-labelledby={`checklist-${currentModule.id}`} className="space-y-4">
+              <SectionTitle id={`checklist-${currentModule.id}`} lead={t('checklist.subtitle')}>
+                {t('player.checklistTitle', { module: moduleLabel(currentModule, t) })}
+              </SectionTitle>
+              <ModuleChecklist slug={slug} module={moduleChecklist} titled={false} />
+            </section>
+          )}
 
           {currentModule.kind === 'financials' && (
             <Link
@@ -411,6 +422,8 @@ export function PlayerPage() {
           />
 
           {currentModule.quiz && (
+            <section aria-labelledby={`quiz-${currentModule.id}`} className="space-y-4">
+            <SectionTitle id={`quiz-${currentModule.id}`}>{t('player.quizTitle', { module: moduleLabel(currentModule, t) })}</SectionTitle>
             <Link
               to={`/learn/${data.course.slug}/quizzes/${currentModule.quiz.id}`}
               className="flex items-center gap-4 rounded-lg border p-4 transition-colors hover:bg-secondary"
@@ -425,6 +438,7 @@ export function PlayerPage() {
                 </span>
               </span>
             </Link>
+            </section>
           )}
         </>
       )}

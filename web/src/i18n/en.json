@@ -390,6 +390,8 @@
     "lessonPartnersLead": "The professionals the lesson sends you to: CONSTRUYE's partners and the companies of the directory, starting with your province.",
     "referenceTitle": "For reference: laws and potential companies for {{module}}",
     "referenceLead": "It is the complete list and it is for information: you do not need to study it. The laws that apply in this module and, for this phase, your province's institutions and potential companies.",
+    "checklistTitle": "{{module}} checklist",
+    "quizTitle": "{{module}} quiz",
     "lessonTemplates": "This lesson's templates",
     "lessonTemplatesLead": "The lesson relies on these templates of the module: a calculator on the platform and an Excel download.",
     "openTemplates": "Open the templates"

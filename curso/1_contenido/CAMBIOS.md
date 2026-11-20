@@ -50,25 +50,38 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
 - **Al empezar cada módulo** (los 12): una línea «Dónde estamos» en su cabecera: qué es el módulo y de
   dónde viene la promoción, con las palabras del objetivo y del resultado de cada módulo y de «Las 12
   fases» de la introducción.
-- **En el Módulo 1, como muestra para los demás:**
+- **En el Módulo 1, como muestra para los demás** (segunda versión, con las notas del propietario del
+  20/11: el ejemplo siempre debajo de la lección, más detallado, y cada parte con su título):
   - Al empezar cada lección, «Dónde estamos»: qué se ha hecho y qué toca ahora.
-  - El ejemplo de **Nicolás, el promotor**: una SL normal que construye vivienda libre para vender y
-    elige siempre la opción más clásica. Su solar es el del ejemplo del profesional en la plantilla
-    Números gordos del solar (344 m² de suelo urbano consolidado, 1.586,49 m² de techo en B+5, 18
-    viviendas, 2 áticos), el mismo edificio que se construye en el Aprendizaje 3D. Notaría y registro,
-    el 0,5 % de la Plantilla 1. Ningún otro número: los precios de ese ejemplo son de 2002 (660 €/m² de
-    construcción, frente a los 900–1.100 €/m² de la Lección 2.3), y para seguir el ejemplo en el
-    Módulo 2 hacen falta los del profesor.
-  - Lección 1.1: «Un solar de cada canal» (un ejemplo por cada canal de la lista, sin cifras).
-  - Lección 1.3: «Quién se encarga de cada cosa», las comprobaciones de las listas agrupadas por quién
-    las da o las hace (Registro, Catastro, ayuntamiento, abogado, topógrafo…), sin tocar las listas.
-  - Al terminar cada lección, «Resumen» y «Tu checklist» (los pasos de la checklist del módulo que
-    cierra esa lección); antes de la checklist, «Resumen del Módulo 1» con «Dónde deberías estar en tu
-    proyecto».
+  - En la lección 1.1, «Un solar de cada canal» (un ejemplo por cada canal de la lista, sin cifras), y en
+    la 1.3, «Quién se encarga de cada cosa», las comprobaciones de las listas agrupadas por quién las da o
+    las hace (Registro, Catastro, ayuntamiento, abogado, topógrafo…), sin tocar las listas.
+  - Al terminar cada lección, debajo de ella y cada uno con su título: «Ejemplo: Nicolás, el promotor»,
+    «Resumen» y «Tu checklist» (los pasos de la checklist del módulo que cierra esa lección, con sus
+    mismas palabras).
+  - **El ejemplo de Nicolás, el promotor**: una SL normal que construye vivienda libre para vender y
+    elige siempre la opción más clásica, contado como en una conversación profesional: qué hizo, adónde
+    fue (notaría, Registro de la Propiedad, Catastro, ayuntamiento, Registro Mercantil, Agencia
+    Tributaria…), cómo lo hizo, y a veces dónde encontrar a quién acudir en las listas que da la
+    plataforma (las empresas potenciales de la lección, las instituciones de la provincia al final del
+    módulo). Su solar es el del ejemplo del profesional en la plantilla Números gordos del solar (344 m² de
+    suelo urbano consolidado, 1.586,49 m² de techo en B+5, 18 viviendas, 2 áticos), el mismo edificio que
+    se construye en el Aprendizaje 3D. Las demás cifras son las de las lecciones y de la tabla «Dónde ir»
+    del módulo (nota simple ≈ 9 €, certificación 2-10 días, informe urbanístico 1-3 meses, prima 3-10 %
+    por 6-24 meses, notaría y registro en torno al 0,5 % de la Plantilla 1); ninguna más: los precios de
+    ese ejemplo son de 2002 (660 €/m² de construcción, frente a los 900–1.100 €/m² de la Lección 2.3), y
+    para seguir el ejemplo en el Módulo 2 hacen falta los del profesor.
+  - Antes de la checklist del módulo, «Resumen del Módulo 1» con «Dónde deberías estar en tu proyecto».
+  - **Traducciones:** esta segunda versión está solo en español, a la espera de que la apruebe el
+    propietario. Mientras, en los demás idiomas las cuatro lecciones del Módulo 1 se leen en español (el
+    reproductor lo dice); el resto del módulo sigue traducido.
 - **En la plataforma** (sin tocar el texto): las referencias «Lección 4.2», «Módulo 9» llevan a esa
   lección; las plantillas salen bajo la lección que las nombra; al terminar cada módulo, su resumen, la
   checklist, las leyes y las empresas de la provincia juntas («Para consultar», informativas) y el test
-  al final; «empresas potenciales» en lugar de «partners».
+  al final; «empresas potenciales» en lugar de «partners». Cada parte de la página de una lección tiene
+  su título, con la forma de «Resumen del Módulo 1» y una línea encima: el ejemplo, el resumen y la
+  checklist de la lección, sus plantillas, sus webs, sus empresas potenciales, la introducción del
+  módulo, su resumen, su checklist, «Para consultar» y el test.
 
 ## Solo forma (las palabras del profesor, sin cambiar el contenido)
 

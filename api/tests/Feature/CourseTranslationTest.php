@@ -103,17 +103,21 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
     $russian = $learn('ru');
     $module = $russian['modules'][0];
     $lessons = $module['lessons'];
+    // A lesson read in Russian: 2.1 (Module 1's lessons wait for the owner's
+    // approval of their new structure in Spanish before they are translated again).
+    $translated = $russian['modules'][1]['lessons'][0];
 
-    // Translated: the free preview lessons, every title, objective and checklist.
+    // Translated: every title, objective and checklist, and the lessons.
     expect($russian['course']['title'])->toBe('Девелопмент рыночного жилья в Испании')
         ->and($module['title'])->toStartWith('Участок')
         ->and($module['description_locale'])->toBe('ru')
         ->and($lessons[0]['title'])->toBe('Урок 1.1 — Определите продукт и найдите участок')
-        ->and($lessons[0]['content_locale'])->toBe('ru')
+        ->and($translated['title'])->toBe('Урок 2.1 — Счёт результатов девелопера (CRP)')
+        ->and($translated['content_locale'])->toBe('ru')
         ->and($this->actingAs($student)->withHeader('Accept-Language', 'ru')
-            ->getJson("/api/courses/{$course->slug}/lessons/{$lessons[0]['id']}/content")->json('data.content_html'))
-        ->toContain('Ley 12/2023')->toContain('CASA47')
-        // Module 1 is translated in full, its tables included.
+            ->getJson("/api/courses/{$course->slug}/lessons/{$translated['id']}/content")->json('data.content_html'))
+        ->toContain('ДОХОДЫ')->toContain('ICIO')
+        // Module 1's own sections are translated in full, its tables included.
         ->and(collect($module['blocks'])->pluck('body_locale')->unique()->all())->toBe(['ru']);
 
     // Not translated yet: the Spanish, with its language said. A copy of the
@@ -155,12 +159,12 @@ it('serves a student the translated text, and the Spanish, labelled as such, whe
     $spanish = $learn('es');
     expect($spanish['modules'][0]['lessons'][0]['title'])->toBe('Lección 1.1 — Define el producto y encuentra el solar')
         ->and($spanish['modules'][0]['lessons'][0]['content_locale'])->toBe('es')
-        ->and($learn('ar')['modules'][0]['lessons'][1]['content_locale'])->toBe('ar');
+        ->and($learn('ar')['modules'][1]['lessons'][1]['content_locale'])->toBe('ar');
 });
 
 it('empties a translation that is taken back to Spanish on the next run', function () {
     $this->seed([ProvinceSeeder::class, CurriculumV2Seeder::class, ChecklistSeeder::class, CourseTranslationSeeder::class]);
-    $lesson = Course::query()->firstOrFail()->modules()->orderBy('order')->first()->lessons()->orderBy('order')->first();
+    $lesson = Course::query()->firstOrFail()->modules()->orderBy('order')->skip(1)->first()->lessons()->orderBy('order')->first();
     expect($lesson->content_fr)->not->toBeNull();
 
     // A folder with no module files: every French piece reads the Spanish again.

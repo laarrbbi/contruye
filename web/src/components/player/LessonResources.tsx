@@ -3,8 +3,8 @@ import { ArrowUpRight, Calculator, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { LearnModule, LessonResourcesView } from '@/api/learn'
 import { CompanyDirectory } from '@/components/directory/CompanyDirectory'
-import { SectionLabel } from '@/components/inside/PageHead'
 import { PartnerList } from './PartnerList'
+import { SectionTitle } from './SectionTitle'
 
 /** «https://www.idealista.com/venta-terrenos/» → «idealista.com». */
 function host(url: string): string {
@@ -48,36 +48,36 @@ export function LessonResources({
   return (
     <div className="space-y-10">
       {templates && (
-        <section className="flex flex-col gap-4 rounded-2xl border border-primary/25 bg-primary/[0.04] p-5 sm:flex-row sm:items-center">
-          <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <Calculator className="h-5 w-5" />
-          </span>
-          <div className="min-w-0 flex-1">
-            <h2 className="text-sm font-semibold">{t('player.lessonTemplates')}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{t('player.lessonTemplatesLead')}</p>
-            <ul className="mt-2 space-y-0.5 text-sm font-medium">
+        <section aria-labelledby={`plantillas-${lessonId}`} className="space-y-4">
+          <SectionTitle id={`plantillas-${lessonId}`} lead={t('player.lessonTemplatesLead')}>
+            {t('player.lessonTemplates')}
+          </SectionTitle>
+          <div className="flex flex-col gap-4 rounded-2xl border border-primary/25 bg-primary/[0.04] p-5 sm:flex-row sm:items-center">
+            <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <Calculator className="h-5 w-5" />
+            </span>
+            <ul className="min-w-0 flex-1 space-y-0.5 text-sm font-medium">
               {templateTitles.map((title) => (
                 <li key={title} className="bidi-auto">
                   {title}
                 </li>
               ))}
             </ul>
+            <Link
+              to={`/learn/${slug}/modules/${module.id}/plantilla`}
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              {t('player.openTemplates')}
+            </Link>
           </div>
-          <Link
-            to={`/learn/${slug}/modules/${module.id}/plantilla`}
-            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            {t('player.openTemplates')}
-          </Link>
         </section>
       )}
       {resources.links.length > 0 && (
-        <section className="rounded-2xl border border-foreground/[0.08] bg-card">
-          <div className="border-b px-5 py-4">
-            <h2 className="text-sm font-semibold">{t('player.lessonLinks')}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{t('player.lessonLinksLead')}</p>
-          </div>
-          <ul className="divide-y">
+        <section aria-labelledby={`webs-${lessonId}`} className="space-y-4">
+          <SectionTitle id={`webs-${lessonId}`} lead={t('player.lessonLinksLead')}>
+            {t('player.lessonLinks')}
+          </SectionTitle>
+          <ul className="divide-y rounded-2xl border border-foreground/[0.08] bg-card">
             {resources.links.map((link) => (
               <li key={link.url}>
                 <a
@@ -105,9 +105,10 @@ export function LessonResources({
       )}
 
       {(partners.length > 0 || companies) && (
-        <section className="space-y-5">
-          <SectionLabel>{t('player.lessonPartners')}</SectionLabel>
-          <p className="max-w-2xl text-sm text-foreground/70">{t('player.lessonPartnersLead')}</p>
+        <section aria-labelledby={`empresas-${lessonId}`} className="space-y-5">
+          <SectionTitle id={`empresas-${lessonId}`} lead={t('player.lessonPartnersLead')}>
+            {t('player.lessonPartners')}
+          </SectionTitle>
           {partners.length > 0 && <PartnerList partners={partners} />}
           {companies && <CompanyDirectory slug={slug} lessonId={lessonId} />}
         </section>

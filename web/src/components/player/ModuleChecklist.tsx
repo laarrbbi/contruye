@@ -89,9 +89,12 @@ function CheckRow({
 export function ModuleChecklist({
   slug,
   module,
+  titled = true,
 }: {
   slug: string | undefined
   module: ModuleChecklistData
+  /** False where the page already titles it (the lesson page's SectionTitle): the card keeps its progress. */
+  titled?: boolean
 }) {
   const { t } = useTranslation()
   const toggleItem = useToggleChecklistItem(slug, module.id)
@@ -121,16 +124,20 @@ export function ModuleChecklist({
     <section className="rounded-lg border">
       <div className="space-y-2 border-b px-4 py-3">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="flex items-center gap-2 text-sm font-semibold">
-            <ClipboardList className="h-4 w-4 shrink-0 text-primary" />
-            {t('checklist.title')}
-          </h2>
+          {titled ? (
+            <h2 className="flex items-center gap-2 text-sm font-semibold">
+              <ClipboardList className="h-4 w-4 shrink-0 text-primary" />
+              {t('checklist.title')}
+            </h2>
+          ) : (
+            <Progress value={percent} className="h-1.5 flex-1" aria-label={t('checklist.title')} />
+          )}
           <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
             {done}/{total}
           </span>
         </div>
-        <Progress value={percent} className="h-1.5" aria-label={t('checklist.title')} />
-        <p className="text-xs text-muted-foreground">{t('checklist.subtitle')}</p>
+        {titled && <Progress value={percent} className="h-1.5" aria-label={t('checklist.title')} />}
+        {titled && <p className="text-xs text-muted-foreground">{t('checklist.subtitle')}</p>}
         {failed && (
           <p role="status" className="text-xs font-medium text-destructive">
             {t('checklist.saveFailed')}

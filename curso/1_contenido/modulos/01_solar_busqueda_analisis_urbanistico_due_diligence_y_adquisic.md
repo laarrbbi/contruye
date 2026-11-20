@@ -35,8 +35,6 @@
 
 > **Dónde estamos:** empiezas desde cero. Antes de buscar decides qué vas a promover; con eso en la cabeza buscas solares y los apuntas en tu base de datos.
 
-> **Ejemplo · Nicolás, el promotor:** a lo largo del curso seguimos a Nicolás, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas. Va paso a paso, como el texto de cada módulo, y elige siempre la opción más clásica.
-
 - **Antes de buscar, define qué vas a promover.** Es el filtro con el que mirarás cada solar.
   - **Tipo de promoción:** vivienda libre, protegida (régimen de tu comunidad autónoma), asequible incentivada (Ley 12/2023) o mixta. Cambia el precio máximo, el IVA (4 % en protegida de régimen especial), la financiación y el comprador.
   - **Público objetivo:** primera vivienda, reposición, inversor, comprador extranjero o segunda residencia.
@@ -44,8 +42,6 @@
   - **Nivel de calidades**, garajes, trasteros y zonas comunes (piscina, jardín, gimnasio, coworking).
   - **Precio objetivo de venta** (€/m²) y **presupuesto máximo de suelo** (método residual, Módulo 2).
   - Resultado: una **ficha de producto** de una página.
-
-> **Ejemplo:** Nicolás define su producto: vivienda libre, para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2) y calidades medias. Lo resume en su ficha de producto de una página.
 
 - **Analiza la ubicación** de cada solar: comunicaciones, transporte, servicios, equipamientos (colegios, sanidad, comercio) y demanda residencial de la zona.
 
@@ -81,11 +77,29 @@
   - Para hacer este filtro con números usa la **Plantilla del profesional · Números gordos del solar** (incluida). Con el techo edificable, la repercusión del suelo, el coste de construcción y el beneficio que buscas, te da el precio del solar, el precio de venta que necesitas y el beneficio. Si pasa el filtro, afina la compra con la Plantilla 1 y la viabilidad con la Plantilla 2 (Módulo 2).
 - ⚠️ **Errores típicos:** enamorarse de la ubicación sin calcular; comprar suelo "urbanizable" pensando que es edificable; no mirar si el ayuntamiento está modificando el plan.
 
-> **Ejemplo:** Nicolás empieza por el canal más rentable, su red propia: un administrador de fincas le habla de un solar de 344 m² en suelo urbano consolidado, con servicios. Lo da de alta en su base de datos, con su propietario y con quien se lo ha traído, y lo pasa por la plantilla Números gordos del solar: 1.586,49 m² de techo en B+5, que dan 18 viviendas (2 son áticos). Son los datos del ejemplo del profesional que trae la plantilla, y el edificio que verás crecer en el Aprendizaje 3D. Como le encaja, sigue con la Lección 1.2.
+### Ejemplo: Nicolás, el promotor
 
-> **Resumen:** primero defines qué vas a promover (tu ficha de producto); después buscas suelo urbano consolidado por los canales de la lista, lo apuntas en tu base de datos y descartas en 10 minutos lo que no da los números.
->
-> **Tu checklist:** solar dado de alta en tu base de datos · números gordos del solar · ficha de producto.
+A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
+
+**Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias. Con esa ficha mira cada solar con el mismo filtro.
+
+**Después, a buscar.** Empezó por el canal más rentable, su red propia. Visitó a los **notarios** y a los **administradores de fincas** de su zona, que son los primeros en saber de una herencia o de un propietario que quiere vender, y les dejó su ficha de producto: qué busca, dónde y para qué. A los agentes de suelo los sacó de la lista que te hemos dado: las agencias inmobiliarias de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Mientras tanto, seguía la sección de suelo de Idealista y Fotocasa.
+
+**El solar que le llegó.** Un administrador de fincas le habló de un solar de 344 m² en suelo urbano consolidado, con servicios. Ese mismo día lo dio de alta en su **base de datos de gestión de suelo**, con su propietario y con quien se lo había traído.
+
+**El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Son los datos del ejemplo del profesional que trae la plantilla, y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
+
+Los números le encajan, pero todavía no compra: primero comprueba en el planeamiento que de verdad se puede construir eso (Lección 1.2).
+
+### Resumen
+
+Primero defines qué vas a promover (tu ficha de producto); después buscas suelo urbano consolidado por los canales de la lista, lo apuntas en tu base de datos y descartas en 10 minutos lo que no da los números.
+
+### Tu checklist
+
+- Solar dado de alta en tu base de datos de gestión de suelo, con su propietario y su captador
+- Números gordos del solar hechos antes de dedicarle más tiempo
+- Ficha de producto definida (tipo, público, tipologías, calidades, precio objetivo)
 
 ## Lección 1.2 — Análisis urbanístico: qué puedes construir
 
@@ -118,11 +132,33 @@
   - **Riesgo de inundación** en el visor del Sistema Nacional de Cartografía de Zonas Inundables (SNCZI, MITECO).
   - **Protección patrimonial** del inmueble o del entorno (catálogo municipal).
 
-> **Ejemplo:** Nicolás descarga el PGOU del visor municipal y lee la ficha de zona de su solar. Encarga el estudio de volumetría a un estudio de arquitectura de la zona, el que llevará después el proyecto (Módulo 3), y le confirma lo que daban los números gordos: B+5, 18 viviendas, 2 de ellas áticos. Pide al ayuntamiento el informe urbanístico por escrito y mira el riesgo de inundación en el SNCZI y el catálogo municipal.
+### Ejemplo: Nicolás, el promotor
 
-> **Resumen:** del PGOU y de la ficha de zona sacas los parámetros del solar; el arquitecto te dice cuántas viviendas caben de verdad y el ayuntamiento te lo da por escrito. Antes de comprar, comprueba también inundación, patrimonio y si hace falta otro instrumento de planeamiento.
->
-> **Tu checklist:** informe o cédula urbanística del ayuntamiento por escrito · estudio de volumetría del arquitecto · riesgo de inundación y protección patrimonial revisados.
+Con el solar en su base de datos, Nicolás quiso saber qué se podía construir de verdad antes de comprometerse. Te cuento por dónde fue.
+
+**En el visor municipal.** Descargó el PGOU del visor del ayuntamiento y buscó la **ficha de zona** de su solar. De ahí sacó los parámetros: edificabilidad, altura máxima, ocupación, retranqueos, usos y plazas de aparcamiento. Miró con lupa qué computa como edificabilidad, porque su edificio lleva áticos.
+
+**Con el arquitecto.** Encargó el **estudio de volumetría** a un estudio de arquitectura de su zona; los de tu provincia los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. Eligió el que llevará después el proyecto (Módulo 3), para no empezar dos veces. En una o dos semanas, el arquitecto le confirmó lo que daban los números gordos: B+5, 18 viviendas, 2 de ellas áticos.
+
+**En el ayuntamiento.** Fue al departamento de **urbanismo** y pidió el **informe urbanístico** por escrito. Lo pidió el primer día, porque tarda (de 1 a 3 meses, según la tabla «Dónde ir» del módulo), y no lo dio por vinculante hasta comprobar qué dice la ley de su comunidad.
+
+**Lo que miró antes de seguir:**
+
+- El riesgo de inundación, en el visor del **SNCZI** (lo tienes en las webs de esta lección).
+- El **catálogo municipal** de patrimonio: ni el solar ni su entorno están protegidos.
+- Que no hace falta otro instrumento de planeamiento (estudio de detalle, reparcelación o proyecto de urbanización), que le habría añadido meses.
+
+Todo cuadra con los números gordos. Ahora toca comprobar que el solar no tiene problemas: la due diligence (Lección 1.3).
+
+### Resumen
+
+Del PGOU y de la ficha de zona sacas los parámetros del solar; el arquitecto te dice cuántas viviendas caben de verdad y el ayuntamiento te lo da por escrito. Antes de comprar, comprueba también inundación, patrimonio y si hace falta otro instrumento de planeamiento.
+
+### Tu checklist
+
+- Informe o cédula urbanística del ayuntamiento por escrito
+- Estudio de volumetría del arquitecto
+- Riesgo de inundación y protección patrimonial revisados
 
 ## Lección 1.3 — Due diligence: comprar sin sorpresas
 
@@ -164,11 +200,39 @@
   - **Compañías de suministro:** la capacidad de las acometidas y el punto de conexión.
   - **Tú:** el €/m²t frente al mercado y la CRP preliminar (Módulo 2).
 
-> **Ejemplo:** Nicolás encarga la due diligence legal a un abogado urbanista de su provincia y el levantamiento a un topógrafo. Él mismo pide la nota simple en línea y el certificado de deudas de IBI al ayuntamiento, y confirma con las compañías que hay capacidad de luz y agua. Todo coincide y no hay cargas ni ocupantes: puede comprar.
+### Ejemplo: Nicolás, el promotor
 
-> **Resumen:** la due diligence mira el solar desde cuatro lados (legal, fiscal, técnico y económico) y confirma acometidas, contratos y superficies. Si algo no cuadra, se regulariza antes o se condiciona la compra.
->
-> **Tu checklist:** nota simple y certificación de cargas · referencia catastral y topográfico coincidentes · certificado de deudas de IBI y tasas · geotecnia preliminar si hay sótanos · capacidad de acometidas · servidumbres sectoriales.
+Con el planeamiento claro, Nicolás no firmó nada hasta tener hecha la due diligence. Te cuento cómo se la repartió.
+
+**Lo que hizo él mismo:**
+
+- La **nota simple**, en línea, en la sede de los Registradores (está en las webs de esta lección): es inmediata y cuesta en torno a 9 €. Ahí vio el titular, la superficie registral y que el solar no tenía cargas.
+- La **consulta catastral**, en la Sede Electrónica del Catastro: referencia catastral, superficie y plano.
+- El **certificado de deudas de IBI y tasas**, en **gestión tributaria del ayuntamiento**: si el vendedor debe el IBI, responde la finca.
+- Las **acometidas**: llamó a las compañías de agua, saneamiento, electricidad y telecomunicaciones para confirmar que había capacidad y dónde estaba el punto de conexión.
+
+**Lo que encargó:**
+
+- La due diligence legal, a un **abogado urbanista** de su provincia, que revisó la nota simple y las cargas, los contratos sobre la finca y que no hubiera ocupantes. Los despachos los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, en el Colegio de Abogados de tu provincia.
+- El **levantamiento topográfico**, a un topógrafo, para contrastar la superficie real con la del Registro y la del Catastro.
+- Las **servidumbres** (cauces, costas, carreteras, ferrocarril y aeropuertos), a su arquitecto.
+- Antes de firmar, la **certificación de dominio y cargas** al **Registro de la Propiedad** (de 2 a 10 días): la nota simple solo informa; la certificación tiene fe pública.
+
+**El resultado.** El Registro, el Catastro y la medición del topógrafo coinciden; no hay cargas, ni ocupantes, ni deudas de IBI, ni servidumbres que le afecten, y hay capacidad de luz y agua. Con la CRP preliminar (Módulo 2) comprobó que lo que paga por m² de techo encaja con el mercado. Puede pasar a la compra (Lección 1.4).
+
+### Resumen
+
+La due diligence mira el solar desde cuatro lados (legal, fiscal, técnico y económico) y confirma acometidas, contratos y superficies. Si algo no cuadra, se regulariza antes o se condiciona la compra.
+
+### Tu checklist
+
+- Nota simple y certificación de cargas actualizadas
+- Referencia catastral y topográfico coincidentes
+- Certificado de deudas de IBI y tasas
+- Geotecnia preliminar si hay sótanos
+- Capacidad de acometidas confirmada con las compañías
+- Revisión de servidumbres sectoriales (cauces, costas, carreteras, patrimonio)
+- CRP preliminar con precio máximo del suelo (Módulo 2)
 
 ## Lección 1.4 — La compra: forma, fiscalidad y sociedad
 
@@ -201,11 +265,35 @@
   - En Navarra y País Vasco, el IS y el IVA los gestiona la hacienda foral.
 - ⚠️ **Errores típicos:** comprar a nombre personal y luego aportar a la sociedad (doble tributación); pagar ITP cuando el vendedor podía renunciar a la exención y repercutir IVA deducible.
 
-> **Ejemplo:** Nicolás constituye primero su sociedad, una SL para esta promoción (la SPE), y nunca compra a nombre personal. Con el propietario, un particular, firma ante notario una opción de compra y la inscribe en el Registro: paga una prima y se asegura el plazo para hacer la viabilidad (Módulo 2) y conseguir la financiación. Cuando compre, como vende un particular, la compra pagará el ITP de su comunidad (Anexo B) y no IVA; notaría y registro, en torno al 0,5 % del precio; la plusvalía municipal, el vendedor.
+### Ejemplo: Nicolás, el promotor
 
-> **Resumen:** compra a nombre de tu sociedad, nunca a nombre personal; elige la forma (compraventa, opción, condición suspensiva, arras o permuta) según lo que te falte por comprobar, y mira quién vende para saber qué impuesto paga la compra.
->
-> **Tu checklist:** Plantilla 1 · Compra del solar · SPE constituida · opción de compra o escritura firmada e inscrita.
+Con la due diligence limpia, Nicolás se preparó para comprar. Te cuento en qué orden lo hizo.
+
+**Primero, su sociedad.** Nicolás no compra nunca a nombre personal: constituyó su SPE, una SL solo para esta promoción, y la dotó de fondos propios reales, porque un banco no financia una SL sin ellos. Se apoyó en una asesoría (la encontrarás entre las empresas potenciales de esta lección) y siguió los pasos de la lección:
+
+1. La **denominación**, en el Registro Mercantil Central (está en las webs de esta lección).
+2. La **cuenta bancaria** y la aportación del capital.
+3. La **escritura de constitución**, en la notaría.
+4. El **NIF provisional**, en la Agencia Tributaria (modelo 036).
+5. La **inscripción** en el Registro Mercantil de su provincia, y con ella el NIF definitivo.
+
+Hay una vía más rápida, en línea: CIRCE / PAE.
+
+**Después, la opción de compra.** El propietario es un particular. Como a Nicolás todavía le faltan la viabilidad (Módulo 2) y la financiación, no compra directamente: firma una **opción de compra en la notaría** y la **inscribe en el Registro de la Propiedad**, para que valga frente a terceros. Paga una prima y se asegura el plazo que necesita (la lección habla de una prima del 3-10 % por un plazo de 6-24 meses). La notaría la podrás encontrar en la lista que te hemos dado: el Colegio Notarial de tu provincia, al final del módulo.
+
+**Los gastos, en la Plantilla 1.** Como vende un particular, la compra pagará el **ITP** de su comunidad (Anexo B) y no IVA. Notaría y registro, en torno al 0,5 % del precio; pidió presupuesto a la notaría para afinarlo. La plusvalía municipal la paga el vendedor. Lo metió todo en la **Plantilla 1 · Compra del solar**, con su comunidad autónoma.
+
+**Dónde está ahora.** Tiene el solar asegurado a nombre de su SPE, con la opción de compra inscrita. Con eso pasa al Módulo 2, a decidir con números si la promoción se hace.
+
+### Resumen
+
+Compra a nombre de tu sociedad, nunca a nombre personal; elige la forma (compraventa, opción, condición suspensiva, arras o permuta) según lo que te falte por comprobar, y mira quién vende para saber qué impuesto paga la compra.
+
+### Tu checklist
+
+- Plantilla 1 · Compra del solar (incluida) rellena con el precio, la comunidad autónoma y los gastos reales
+- SPE constituida
+- Opción de compra o escritura firmada e inscrita
 
 ## Resumen del Módulo 1
 

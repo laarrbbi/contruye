@@ -208,7 +208,9 @@ makes that work lives in `docker/mysql-test/`.
   introduction (objective, where to go), below the lesson: the owner wants the lesson read first.
   After the module's last lesson, in the owner's order: its summary (a «## Resumen…» section, role
   `summary`), the checklist, then the laws and the province's institutions and companies together,
-  labelled as reference material (`ModuleReference`), and the quiz last.
+  labelled as reference material (`ModuleReference`), and the quiz last. Every part of the page is
+  under one title, the form of the module summary's heading (`SectionTitle`; in a lesson's text its
+  «### » titles, drawn the same: `.md-content.leccion h3`).
 - «Lección 4.2», «Módulo 9» in a course text (any of the six languages) link to that place in the
   player (`Course\CourseReferenceLinker`, web `CourseReferencesProvider`); plain text where there is
   no outline, and never inside a short field such as a checklist step (`Markdown::inline`).

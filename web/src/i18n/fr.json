@@ -390,6 +390,8 @@
     "lessonPartnersLead": "Les professionnels vers lesquels la leçon vous oriente : les partenaires de CONSTRUYE et les entreprises de l'annuaire, en commençant par votre province.",
     "referenceTitle": "À consulter : lois et entreprises potentielles du {{module}}",
     "referenceLead": "C'est la liste complète, à titre informatif : inutile de l'étudier. Les lois applicables dans ce module et, pour cette phase, les institutions et les entreprises potentielles de votre province.",
+    "checklistTitle": "Checklist du {{module}}",
+    "quizTitle": "Quiz du {{module}}",
     "lessonTemplates": "Les modèles de cette leçon",
     "lessonTemplatesLead": "La leçon s'appuie sur ces modèles du module : calculateur sur la plateforme et téléchargement Excel.",
     "openTemplates": "Ouvrir les modèles"

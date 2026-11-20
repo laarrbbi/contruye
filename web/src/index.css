@@ -157,6 +157,23 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content h4:first-child {
     @apply mt-0;
   }
+  /* Each part of a lesson's page (the example, the summary, the websites,
+     the companies, the checklist…) under one title, the form of the module
+     summary's heading, with a rule above so it is plain where it starts
+     (SectionTitle). In the lesson's text its parts are «### » titles; the
+     module's closing sections open with their «## » one. */
+  .seccion {
+    @apply border-t border-foreground/10 pt-8;
+  }
+  .seccion-titulo {
+    @apply text-lg font-bold leading-snug text-primary;
+  }
+  .md-content.leccion h3 {
+    @apply mt-10 border-t border-foreground/10 pt-8 text-lg font-bold leading-snug text-primary;
+  }
+  .secciones-modulo .md-content > h2:first-child {
+    @apply border-t border-foreground/10 pt-8;
+  }
   .md-content strong {
     @apply font-semibold text-foreground;
   }

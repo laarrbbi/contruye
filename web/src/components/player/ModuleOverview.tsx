@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { BookOpen, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useModuleContent, type LearnModule } from '@/api/learn'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
@@ -22,16 +22,18 @@ export function ModuleOverview({ slug, module, defaultOpen }: { slug: string; mo
   if (!content || (!content.description_html && sections.length === 0)) return null
 
   return (
-    <details className="group rounded-lg border" open={defaultOpen}>
-      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 [&::-webkit-details-marker]:hidden">
-        <BookOpen className="h-4 w-4 shrink-0 text-primary" />
-        <span className="flex-1">
-          <span className="block text-sm font-semibold">{t('player.moduleIntroTitle', { module: moduleLabel(module, t) })}</span>
-          <span className="block text-xs text-muted-foreground">{t('player.moduleOverview')}</span>
+    // Titled like every other part of the page (SectionTitle), folding under its title.
+    <details className="group seccion" open={defaultOpen}>
+      <summary className="flex min-h-11 cursor-pointer list-none items-start gap-3 [&::-webkit-details-marker]:hidden">
+        <span className="min-w-0 flex-1">
+          <span className="seccion-titulo bidi-auto block">{t('player.moduleIntroTitle', { module: moduleLabel(module, t) })}</span>
+          <span className="mt-1.5 block text-sm text-muted-foreground">{t('player.moduleOverview')}</span>
         </span>
-        <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+        <span aria-hidden className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-foreground/10">
+          <ChevronDown className="h-4 w-4 text-primary transition-transform group-open:rotate-180" />
+        </span>
       </summary>
-      <div className="space-y-5 border-t px-4 py-4">
+      <div className="mt-5 space-y-5">
         {/* Said once, plainly: this is the module's opening, not the lesson. */}
         <p className="text-sm text-muted-foreground">{t('player.moduleIntroLead')}</p>
         <MarkdownContent
