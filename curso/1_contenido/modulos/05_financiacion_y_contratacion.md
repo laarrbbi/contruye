@@ -40,10 +40,10 @@
 | Disposición | Por certificaciones de obra |
 
 - **Lo que exige el banco:**
-  - **Preventas:** 30–50 % de las viviendas con contrato privado y anticipo.
+  - **Preventas:** 70–90 % de las viviendas con contrato privado y anticipo.
   - **Fondos propios:** 30–40 % del coste (el suelo pagado suele contar).
   - Tasación homologada (hipótesis de edificio terminado).
-  - Hipoteca sobre el suelo y la obra futura (escritura de obra nueva en construcción).
+  - Hipoteca sobre la obra futura (escritura de obra nueva en construcción).
   - Licencia, proyecto de ejecución, contrato de obra, presupuesto, planning y CRP.
   - Pólizas: decenal, TRC, RC.
   - Avales personales de los socios en promotores pequeños.
@@ -98,9 +98,8 @@
 ## Lección 5.4 — El contrato de obra
 
 - **Modalidades:**
-  - **Precio cerrado (llave en mano):** certeza de coste. Exige un proyecto muy bien definido.
+  - **Precio cerrado (llave en mano):** certeza de coste. Exige un proyecto muy bien definido. Lo habitual y aconsejable.
   - **Por unidades de obra (mediciones):** pagas lo realmente ejecutado. Más riesgo de desviación.
-  - **Mixto:** lo habitual.
 - **Cláusulas imprescindibles:**
   1. Objeto: proyecto de ejecución visado como documento contractual.
   2. Precio, revisión de precios (si la hay) y calendario de certificaciones.

@@ -31,6 +31,7 @@
 ## Lesson 11.1 — The deed of sale
 
 - **Contents:** parties, registered property and description, price and payment terms (with earlier payments identified), encumbrances (free of encumbrances, or with the take-over chosen by the buyer), statements (ten-year insurance, licences, energy certificate, cédula), costs.
+- At the signing of the sale at the notary's, the home buyer is given the **Building Book**.
 - **Who pays what:**
 
 | Cost | Buyer | Developer |
@@ -86,7 +87,7 @@
 - **Taxes on the sale:** the buyer pays the AJD on their community's form 600 within the regional deadline (usually 30 working days); many notaries handle it. You declare the IVA charged on your form 303.
 - **Registry:** the notary sends an electronic copy to the Land Registry the same day; then the copy with the tax paid is filed and registered in the buyer's name.
 - **Cadastre:** the notary and the registry report the change of owner; no declaration needs filing.
-- **Municipal plusvalía:** self-assess it within 30 working days for each sale (Module 12).
+- **Municipal plusvalía:** as it is a new build, the developer does not have to self-assess the municipal plusvalía.
 - **Utilities:** new contracts or changes of holder into the buyer's name.
 - **Documents:** hand over what belongs to the buyer and to the owners' association's property manager.
 

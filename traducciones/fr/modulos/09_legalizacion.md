@@ -54,7 +54,7 @@
   - Vérification de la sécurité, de l'accessibilité et du fonctionnement de l'immeuble.
 - **Documentation finale :** plans de l'ouvrage exécuté, certificats, essais, manuels, fiches techniques et garanties des fabricants.
 
-## Leçon 9.2 — Ouvrage neuf et division horizontale
+## Leçon 9.2 — Déclaration d'ouvrage neuf et division horizontale
 
 - **Ouvrage neuf en construction** (au démarrage) : permis + certificat du technicien attestant que la description est conforme au projet. Il permet à la banque d'hypothéquer la construction future.
 - **Ouvrage neuf achevé** (ou procès-verbal d'achèvement), art. 28 TRLSRU. Il vous faut :
@@ -74,12 +74,11 @@
 - **Régularisez** dans l'acte les surfaces, annexes et parties communes si l'ouvrage diffère du projet initial, et vérifiez que les lots obtenus correspondent aux plans et aux titres.
 - **Étiquette énergétique :** obtenez-la et remettez-la aux acheteurs ; elle est obligatoire dans l'offre et dans la vente (RD 390/2021).
 
-## Leçon 9.3 — Première occupation et cédula de habitabilidad
+## Leçon 9.3 — Permis de première occupation
 
 - **Première occupation (mairie) :** atteste que l'immeuble est conforme au permis et peut être utilisé.
-  - Selon la communauté autonome, c'est un **permis** (décision expresse) ou une **déclaration responsable / déclaration préalable** (effet immédiat et contrôle a posteriori). Madrid (Ley 1/2020), l'Andalousie (LISTA) et la Galice (Ley 2/2016) fonctionnent par déclaration responsable ou déclaration préalable. Voir l'annexe B.
   - Pièces habituelles : CFO, certificats des installations, certificat énergétique, photos, intégration au Cadastre ou justificatif, certificat des branchements, liquidation définitive de l'ICIO.
-- **Cédula de habitabilidad :** en 2026, elle subsiste en **Catalogne, Navarre, Canaries, Estrémadure, Baléares, La Rioja, Asturies et Région de Murcie**. Elle est délivrée par l'organisme régional ou insulaire et elle est généralement nécessaire pour souscrire les contrats de fourniture définitifs et pour vendre.
+- **Cédula de habitabilidad :** c'est le même document que le permis de première occupation ; il ne s'agit pas d'actes ou de documents distincts. Pour les transmissions ultérieures, ce serait un permis de deuxième occupation. En 2026, elle subsiste en **Catalogne, Navarre, Canaries, Estrémadure, Baléares, La Rioja, Asturies et Région de Murcie**. Elle est délivrée par l'organisme régional ou insulaire et elle est généralement nécessaire pour souscrire les contrats de fourniture définitifs et pour vendre.
 - ⚠️ **Erreurs typiques :** demander la première occupation avec des installations non enregistrées ; ne pas avoir le branchement électrique définitif (le distributeur met des mois) ; oublier la cédula dans les communautés qui l'exigent.
 
 ## Leçon 9.4 — Le Livre de l'immeuble
@@ -92,6 +91,24 @@
   4. Certificats des installations et des essais.
   5. Instructions d'utilisation et d'entretien de l'immeuble et de ses installations.
   6. Plan d'entretien avec les vérifications obligatoires (ascenseur, PCI, thermique, électricité).
+- **Sommaire du Livre de l'immeuble :**
+  - **Partie I. Caractéristiques de l'immeuble.**
+    - Pour l'ensemble de l'immeuble :
+      - Description : plan de situation ; photographies des façades ; caractéristiques des fondations et de la structure ; caractéristiques de l'enveloppe et des cloisons ; caractéristiques de la toiture ; description et tracé des installations ; caractéristiques des revêtements ; comportement et performance énergétiques de l'immeuble ; caractéristiques face au bruit et aux vibrations.
+      - Entreprises et professionnels intervenants : promoteurs ; auteurs du projet ; maîtrise d'œuvre ; consultants, conseillers et collaborateurs ; entreprise de construction ; entreprises sous-traitantes et installateurs ; autres intervenants.
+      - Attestation de la qualité.
+      - Historique des travaux.
+      - Liste des unités d'occupation.
+    - Pour chaque unité d'occupation :
+      - Identification et description des unités.
+      - Historique des interventions dans chaque unité d'intervention.
+  - **Partie II. Règles et instructions d'utilisation, de conservation et d'entretien.**
+    - Manuel d'utilisation et d'entretien.
+    - Registre des opérations d'entretien et de réparation.
+    - Résumé du Livre pour la copropriété.
+  - **Partie III. Règles de conduite en cas de sinistre ou en situation d'urgence.**
+    - Pour l'ensemble de l'immeuble.
+    - Pour chaque unité d'occupation.
 - **Remise :** le promoteur le remet à la copropriété (président ou syndic). Chaque acheteur reçoit la partie qui concerne son logement.
 
 ## Leçon 9.5 — Dossier de garanties

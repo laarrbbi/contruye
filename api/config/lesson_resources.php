@@ -16,6 +16,9 @@
 |   (config/directory.php), listed under the links behind the module's gate.
 | - `partners`: the kinds of the academy's own partners (Partner::CATEGORIES)
 |   attached to the module that the lesson calls on.
+| - `templates`: the lesson names a template of its module («Plantilla 1»,
+|   «Plantilla del profesional · …»): the player offers that module's templates
+|   under the text (LessonResourcesTest checks the lesson says «Plantilla»).
 |
 | The course text, its videos and its order are the instructor's and do not
 | change: this only adds what to open and whom to call, below the lesson.
@@ -24,6 +27,7 @@
 return [
     'lessons' => [
         '1.1' => [
+            'templates' => true,
             'links' => [
                 ['name' => 'Idealista', 'url' => 'https://www.idealista.com/', 'mention' => 'Idealista'],
                 ['name' => 'Fotocasa · terrenos en venta', 'url' => 'https://www.fotocasa.es/es/comprar/terrenos/espana/todas-las-zonas/l', 'mention' => 'Fotocasa'],
@@ -58,6 +62,7 @@ return [
             'partners' => ['abogado', 'arquitectura'],
         ],
         '1.4' => [
+            'templates' => true,
             'links' => [
                 ['name' => 'Registro Mercantil Central · denominaciones sociales', 'url' => 'https://www.rmc.es/IntroDenominaciones.aspx', 'mention' => 'Registro Mercantil Central'],
                 ['name' => 'Agencia Tributaria · sede electrónica (modelo 036)', 'url' => 'https://sede.agenciatributaria.gob.es/', 'mention' => 'modelo 036'],
@@ -68,8 +73,6 @@ return [
         ],
         '2.2' => [
             'links' => [
-                ['name' => 'Registradores · Estadística Registral Inmobiliaria', 'url' => 'https://www.registradores.org/actualidad/portal-estadistico-registral/estadisticas-de-propiedad', 'mention' => 'Registradores'],
-                ['name' => 'Portal Estadístico del Notariado', 'url' => 'https://penotariado.com/', 'mention' => 'Notarios'],
                 ['name' => 'Tinsa · informes', 'url' => 'https://www.tinsa.es/informes/', 'mention' => 'Tinsa'],
                 ['name' => 'Sociedad de Tasación', 'url' => 'https://www.st-tasacion.es/', 'mention' => 'Sociedad de Tasación'],
                 ['name' => 'Gloval · informes', 'url' => 'https://www.gloval.es/informes/', 'mention' => 'Gloval'],
@@ -80,6 +83,9 @@ return [
             ],
             'companies' => ['arquitectura'],
             'partners' => ['arquitectura'],
+        ],
+        '2.3' => [
+            'templates' => true,
         ],
         '2.5' => [
             'companies' => ['abogados'],

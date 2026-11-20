@@ -43,6 +43,7 @@
 - **Paso a paso:**
   1. Reunión previa con el técnico municipal con el anteproyecto. Pregunta qué informes sectoriales van a pedir.
   2. Presenta en la sede electrónica: solicitud, proyecto (básico o de ejecución según el ayuntamiento), estudio de seguridad y salud, estudio de gestión de residuos, autorizaciones sectoriales que ya tengas, justificante de tasas e ICIO si la ordenanza lo exige al solicitar, fianza de residuos si la pide la ordenanza.
+     - **Autorizaciones sectoriales (Lección 4.2):** son los permisos de otros organismos (Confederación, Costas, carreteras, AESA, patrimonio) cuando el solar toca una zona de protección. Forman parte de la documentación de esta licencia de obras.
   3. El ayuntamiento revisa si está completo. Si falta algo te requiere y tienes **10 días** para subsanar.
   4. Informe técnico (arquitecto municipal) e informe jurídico.
   5. Resolución. Si es favorable, la licencia fija plazos de inicio y terminación y condiciones.
@@ -77,7 +78,7 @@
   - **Obras de urbanización pendientes:** proyecto de urbanización aprobado; muchos ayuntamientos exigen un aval si urbanizas a la vez que edificas.
   - Autorizaciones de las instalaciones que lo requieran.
 
-## Lección 4.3 — Abrir la obra legalmente
+## Lección 4.3 — Inicio de las obras
 
 - **Orden de actuaciones antes del primer camión:**
   1. Licencia concedida y condiciones leídas (fianzas, cartel, plazos).

@@ -65,10 +65,17 @@
 
 ## Leçon 10.3 — Le notaire
 
+- **Au démarrage du chantier,** l'ouvrage est d'abord documenté par la signature devant notaire de l'acte correspondant de « Déclaration d'ouvrage neuf et division horizontale », que l'on présente au Registre de la propriété pour inscription. Le Registre l'inscrit avec la mention « En construction ».
+- **À la fin du chantier,** on signe l'**acte de fin de travaux** (Escritura Final de Obra), que l'on présente au Registre de la propriété pour inscription. L'ouvrage est inscrit comme ouvrage neuf achevé et la mention « en construction » disparaît.
+- **Pour l'acte de fin de travaux,** il faut remettre au notaire les documents suivants :
+  1. Livre de l'immeuble sur support numérique (il doit contenir expressément le procès-verbal de réception de l'ouvrage).
+  2. Certificat de fin de chantier.
+  3. Assurance décennale.
+  4. Permis de première occupation.
+  5. Certificat de performance énergétique.
+  6. Surfaces géoréférencées.
 - **3-4 semaines avant :**
   - L'acheteur choisit le notaire (droit du consommateur). Proposez le vôtre, sans l'imposer.
-  - Envoyez à chaque notaire : ouvrage neuf et division horizontale inscrits, permis ou déclaration de première occupation, cédula le cas échéant, décennale, certificat énergétique, nota simple à jour du bien, certificat de la copropriété attestant l'absence d'impayés.
-  - Demandez à la banque le **certificat de dette** de chaque lot et la quittance pour lever sa part (ou les documents de reprise du prêt si l'acheteur la choisit).
   - Préparez le **décompte de liquidation** par acheteur : prix, paiements reçus avec IVA, montant restant dû.
 - **L'acheteur apporte :** DNI ou NIE, justificatifs de l'origine des fonds, preuves des paiements antérieurs, et son prêt, qui se signe le même jour (avec les documents reçus au moins 10 jours calendaires avant et l'acte préalable notarié réalisé au plus tard la veille, Ley 5/2019).
 - **Moyens de paiement :** le notaire identifie chaque paiement (chèque nominatif ou virement). Rien en espèces au-delà de la limite légale.
@@ -78,7 +85,6 @@
 - [ ] Trois tournées de reprises soldées
 - [ ] Documentation de livraison préparée par logement
 - [ ] Notaires et dates confirmés
-- [ ] Certificats de dette et quittances de la banque
 - [ ] Décomptes de liquidation par acheteur
 - [ ] Contrôle anti-blanchiment de chaque acheteur
 

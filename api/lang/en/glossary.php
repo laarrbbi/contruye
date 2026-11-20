@@ -132,4 +132,8 @@ return [
         'name' => 'Labour authority',
         'text' => 'The autonomous community\'s labour department: receives the notice of opening of the workplace and keeps the REA.',
     ],
+    'opcion_compra' => [
+        'name' => 'Sale contract with a purchase option (contrato de compraventa con opción de compra)',
+        'text' => 'In exchange for a premium (3-10 % in the course), the owner grants you the right to buy the plot within a set period (6-24 months) on the agreed terms. It gives you time for the studies and the financing without obliging you to buy. Register it with the Land Registry so that it holds against third parties (Lesson 1.4).',
+    ],
 ];

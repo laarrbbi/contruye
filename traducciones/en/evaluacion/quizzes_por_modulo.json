@@ -1214,12 +1214,12 @@
           {
             "letra": "B",
             "texto": "30–50 %",
-            "correcta": true
+            "correcta": false
           },
           {
             "letra": "C",
-            "texto": "70 %",
-            "correcta": false
+            "texto": "70–90 %",
+            "correcta": true
           },
           {
             "letra": "D",

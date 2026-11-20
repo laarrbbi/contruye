@@ -54,7 +54,7 @@
   - Check of the building's safety, accessibility and operation.
 - **Final documentation:** as-built drawings, certificates, tests, manuals, data sheets and manufacturers' warranties.
 
-## Lesson 9.2 — New building and horizontal division
+## Lesson 9.2 — Declaration of new building and horizontal division
 
 - **New building under construction** (at the start): licence + the professional's certificate that the description matches the design. It lets the bank take a mortgage over the future building.
 - **Completed new building** (or completion record), art. 28 TRLSRU. You need:
@@ -74,12 +74,11 @@
 - **Regularise** in the deed the areas, appurtenances and common elements if what was built differs from the original design, and check that the resulting properties match the drawings and titles.
 - **Energy label:** get it and give it to the buyers; it is compulsory when offering and selling (RD 390/2021).
 
-## Lesson 9.3 — First occupation and certificate of habitability
+## Lesson 9.3 — First occupation licence
 
 - **First occupation (town hall):** certifies that the building matches the licence and can be used.
-  - Depending on the autonomous community it is a **licence** (express decision) or a **responsible declaration / prior notification** (immediate effect and later check). Madrid (Ley 1/2020), Andalucía (LISTA) and Galicia (Ley 2/2016) work with a responsible declaration or prior notification. See Annex B.
   - Usual documents: CFO, installation certificates, energy certificate, photos, Cadastre entry or proof of filing, certificate of the utility connections, final ICIO assessment.
-- **Certificate of habitability (*cédula de habitabilidad*):** in 2026 it still exists in **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias and Región de Murcia**. It is issued by the regional or island body and is usually needed to sign permanent utility contracts and to sell.
+- **Certificate of habitability (*cédula de habitabilidad*):** it is the same document as the first occupation licence; they are not different acts or documents. For subsequent transfers it would be a second occupation licence. In 2026 it still exists in **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias and Región de Murcia**. It is issued by the regional or island body and is usually needed to sign permanent utility contracts and to sell.
 - ⚠️ **Typical mistakes:** applying for first occupation with unregistered installations; not having the permanent electricity connection done (the distributor takes months); forgetting the cédula in the communities that require it.
 
 ## Lesson 9.4 — The Building Book
@@ -92,6 +91,24 @@
   4. Installation and test certificates.
   5. Use and maintenance instructions for the building and its installations.
   6. Maintenance plan with the compulsory inspections (lift, PCI, thermal, electrical).
+- **Index of the Building Book:**
+  - **Part I. Characteristics of the building.**
+    - For the building as a whole:
+      - Description: site plan; photographs of the façades; characteristics of the foundations and structure; characteristics of the envelope and partitions; characteristics of the roof; description and layout of the installations; characteristics of the coverings; energy performance and efficiency of the building; performance against noise and vibration.
+      - Companies and professionals involved: developers; authors of the design; site supervision team; consultants, advisers and collaborators; contractor; subcontractors and installers; other parties.
+      - Quality accreditation.
+      - History of the works.
+      - List of the occupancy units.
+    - For each occupancy unit:
+      - Identification and description of the units.
+      - History of the interventions in each action unit.
+  - **Part II. Rules and instructions for use, upkeep and maintenance.**
+    - Use and maintenance manual.
+    - Log of maintenance and repair operations.
+    - Summary of the Book for the owners' association.
+  - **Part III. Rules of action in the event of an accident or in emergency situations.**
+    - For the building as a whole.
+    - For each occupancy unit.
 - **Handing it over:** the developer gives it to the owners' association (chair or property manager). Each buyer gets the part for their home.
 
 ## Lesson 9.5 — Warranty file

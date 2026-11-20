@@ -133,6 +133,7 @@
 | **Particular** vende | ITP de la comunidad (Anexo B). Sin AJD | No |
 
 - **Gastos de la compra:**
+  - **En porcentaje:** notaría y registro, en torno al 0,5 % del precio (estimado, el valor de la Plantilla 1; pide presupuesto para afinar). Súmale el impuesto de la tabla de arriba con el tipo de tu comunidad (Anexo B).
   - Notaría: por ley la escritura matriz la paga el vendedor y la copia el comprador (art. 1455 CC), salvo pacto. Entre empresarios se pacta.
   - Registro: comprador.
   - Plusvalía municipal (IIVTNU): la paga el vendedor.

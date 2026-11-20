@@ -4,7 +4,7 @@ Plataforma de formación online (LMS) en **español**, con la interfaz también 
 **francés**, **árabe** (de derecha a izquierda), **ruso** y **ucraniano** (`/en`, `/fr`, `/ar`,
 `/ru`, `/uk`), para vender y difundir un curso de promoción inmobiliaria en España. Los textos
 del curso se traducen en `traducciones/` (borradores sin revisar; el español es la referencia). Primer producto:
-**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 5: 12 módulos (las
+**CONSTRUYE · «Promoción de viviendas de renta libre en España»**, versión 5.1: 12 módulos (las
 12 fases reales de una promoción, del solar a la postventa, 51 lecciones), 7 plantillas
 incluidas (5 de CONSTRUYE en los módulos 1, 2, 5, 7 y 8, y 2 del profesional en el Módulo 1), un quiz por módulo, un examen final y el directorio de las 52
 provincias. Al terminar se ofrece un extra de pago, para cualquier plan: Financials (9 lecciones y
@@ -215,7 +215,7 @@ un módulo bloqueado no se sirven.
 
 ## Contenido del curso
 
-El curso es el paquete del formador, versión 5, en `curso/` (empieza por `curso/LEEME.md`). La
+El curso es el paquete del formador, versión 5.1, en `curso/` (empieza por `curso/LEEME.md`): el v5 con las correcciones del formador del 19/11/2026, aplicadas a petición del propietario (`curso/1_contenido/CAMBIOS.md`). La
 secuencia de fases sigue el documento de Nicolás Cabañas Yuste. **Los textos se integran tal como
 están:** los seeders (`CurriculumV2Seeder`, `ChecklistSeeder`, `ProvinceGuideSeeder`) leen el
 paquete y guardan cada pieza sin reescribirla, y `CourseContentTest` reconstruye cada archivo

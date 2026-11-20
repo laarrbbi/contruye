@@ -133,6 +133,7 @@
 | A **private individual** sells | The community's ITP (Annex B). No AJD | No |
 
 - **Costs of the purchase:**
+  - **As a percentage:** notary and Land Registry, around 0,5 % of the price (an estimate, the value in Template 1; ask for a quote to refine it). Add the tax from the table above, at your community's rate (Annex B).
   - Notary: by law the seller pays for the original deed and the buyer for the copy (art. 1455 CC), unless agreed otherwise. Between businesses it is negotiated.
   - Land Registry: the buyer.
   - Municipal plusvalía (IIVTNU): paid by the seller.

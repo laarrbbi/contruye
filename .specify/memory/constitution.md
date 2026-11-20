@@ -71,6 +71,14 @@ viviendas».
   change keeps the package's value beside it and a history; the package's value is one click
   away. What sits inside a formula (notary and registry fees, fixed fees and costs, the peseta tranche
   limits) is not editable: it comes with a new package from the professional.
+- **Amendment (2026-11-20, owner's decision, package 5.1).** The instructor sent corrections as
+  messages and three Word documents instead of a package. At the owner's request they are applied in
+  `curso/` by us, with the owner's own wording notes: only what the notes name, the documents'
+  words as written (typos and the reader's person aside), every change, its place and its source in
+  `curso/1_contenido/CAMBIOS.md`, with what is left for the instructor to confirm. A correction
+  that contradicts a quiz's key moves the key with it (the pre-sales answer); one that touches
+  passages the notes do not name is listed there, not spread. The instructor's next package starts
+  from these files.
 - Passages marked "pendiente de validar / verificar / confirmar" (or "por validar…") keep an
   admin-only A VALIDAR badge and appear in `content-review.md`. **They are never deleted to tidy
   the text.** The delivered text has none.
@@ -189,4 +197,4 @@ rules. They were written about Ebni Academy, before the Spanish adaptation: thei
 behaviours still match, their Algerian specifics (dinars, Chargily, CCP, wilayas, French and
 Arabic) do not. Read them before arguing with one.
 
-**Version**: 2.2.0 (Spanish edition, course package 4.1) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-11-09
+**Version**: 2.3.0 (Spanish edition, course package 5.1) | **Ratified**: 2026-09-26 | **Last Amended**: 2026-11-20

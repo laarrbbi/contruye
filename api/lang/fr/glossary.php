@@ -132,4 +132,8 @@ return [
         'name' => 'Autorité du travail',
         'text' => 'Le département du travail de la communauté autonome : reçoit la déclaration d\'ouverture du chantier et tient le REA.',
     ],
+    'opcion_compra' => [
+        'name' => 'Contrat de vente avec option d\'achat (contrato de compraventa con opción de compra)',
+        'text' => 'Contre une prime (3-10 % dans le cours), le propriétaire vous accorde le droit d\'acheter le terrain pendant un délai (6-24 mois) aux conditions convenues. Il vous laisse le temps des études et du financement sans vous obliger à acheter. Inscrivez-le au Registre de la propriété pour qu\'il soit opposable aux tiers (Leçon 1.4).',
+    ],
 ];

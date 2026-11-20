@@ -60,12 +60,11 @@
 
 ## Leçon 2.2 — Implantation et recettes : l'étude de marché
 
-- **D'abord l'implantation (« mono »).** Commandez à l'architecte une étude de capacité ou *test fit* : dans le métier, on dit « commander un mono ».
+- **D'abord l'implantation.** Commandez à un cabinet d'architecture sérieux l'étude d'implantation de la promotion à réaliser. L'essentiel de ce que fait l'architecte dans cette étude :
   - Elle estime la constructibilité prise en compte et les surfaces construites et utiles.
   - Elle répartit logements, parties communes, cages d'escalier et d'ascenseur, garages et caves.
   - Elle vérifie typologies, éclairement, ventilation et accessibilité.
   - Elle dit s'il faut un instrument de planification ou de gestion supplémentaire.
-  - Sans mono, le CRP n'est qu'une supposition.
 
 - **Surfaces :**
   - Utile : ce que l'acheteur foule.
@@ -73,10 +72,9 @@
   - Construite avec parties communes : + quote-part des halls, escaliers, ascenseurs (≈ utile × 1,25–1,35). C'est celle que l'on affiche en général.
   - Prise en compte : celle qui compte dans la constructibilité selon votre PGOU.
 - **Comment établir le prix de vente :**
-  1. Visitez les promotions en vente dans un rayon de 1-3 km. Appelez en tant qu'acheteur. Notez le €/m², la typologie, les prestations et le rythme des ventes.
-  2. Comparez avec les prix des actes signés chez les registraires et les notaires (pas avec les prix d'annonce).
-  3. Lisez les rapports trimestriels de Tinsa, Sociedad de Tasación, Gloval et des cabinets de conseil (CBRE, JLL, Savills, Colliers).
-  4. Appliquez une décote de 3-5 % sur l'offre concurrente pour vos premières ventes sur plan.
+  1. **Étude de marché :** regardez ce qu'il y a autour et qui sont vos concurrents. Visitez les promotions en vente dans un rayon de 1-3 km et simulez un achat (technique du client mystère). Notez le €/m², la typologie et les prestations.
+  2. Lisez les rapports trimestriels de Tinsa, Sociedad de Tasación, Gloval et des cabinets de conseil (CBRE, JLL, Savills, Colliers).
+  3. Appliquez une décote de 3-5 % sur l'offre concurrente pour vos premières ventes sur plan.
 - **Mix produit indicatif :**
 
 | Typologie | % | Note |
@@ -106,8 +104,8 @@
   - Standard : 900–1.100 €/m² construit
   - Moyen-haut de gamme : 1.100–1.400 €/m²
   - Luxe : à partir de 1.400 €/m²
-  - Sous-sol : 500–800 €/m² (plus en présence d'eau ou de parois)
-  - Demandez toujours des prix à des entreprises locales : ils varient beaucoup selon la province.
+  - Sous-sol (niveaux enterrés) : 500–800 €/m²
+  - Demandez toujours des prix à des entreprises locales : ils varient selon la province.
 - **Budgets :**
   - **PEM** (exécution matérielle) : l'architecte le calcule dans le projet.
   - **PEC** (prix entreprise) = PEM + frais généraux (13–17 %) + bénéfice industriel (6 %). Cette référence vient de la commande publique (RD 1098/2001) ; dans le privé, elle se négocie.
@@ -125,7 +123,7 @@
 | ICIO | jusqu'à 4 % du coût réel des travaux (voir l'ordonnance) |
 | Taxe de permis | selon l'ordonnance |
 | Assurance décennale | 0,8–1,5 % du coût de construction |
-| TRC + RC | 0,2–0,5 % |
+| TRC (tous risques chantier : dommages à l'ouvrage pendant l'exécution) + RC (responsabilité civile : dommages aux tiers pendant les travaux) | 0,2–0,5 % |
 | Cautions ou assurance des sommes versées d'avance | 0,5–1,5 % par an sur le montant garanti |
 | Notaire et registre de l'ouvrage neuf et de la division horizontale | selon le tarif |
 | Commercialisation | 2–4 % des ventes |
@@ -138,6 +136,173 @@
 - Pour tout intégrer avec méthode, utilisez le **modèle 2 · Viabilité rapide et méthode résiduelle** (inclus) : ventes, coûts par poste, marge et prix maximal du terrain. Si vous voulez le détail mois par mois (coût par chapitres, prêt et cash-flow), l'extra de fin de formation est le modèle professionnel complet (section **FINANCIALS**).
 - **Une étude préalable complète, résolue :** le **Guide d'analyse de viabilité** du professionnel (*Guía de análisis de viabilidad* : 22 logements, avec ses notes de calendrier) accompagne le modèle professionnel, dans l'extra de fin de formation.
 
+### Structure des coûts d'une promotion immobilière
+
+La structure des coûts d'une promotion immobilière se divise en plusieurs rubriques :
+
+- Coûts d'aménagement et de consolidation du terrain.
+- Coûts d'acquisition du terrain.
+- Coûts des honoraires techniques de la maîtrise d'œuvre.
+- Coûts de construction.
+- Coûts de promotion.
+- Coûts de commercialisation.
+- Financement et coûts au regard des prix et des conditions de vente.
+- Recommandations concernant les prix et les conditions de vente.
+
+#### Coûts de promotion
+
+La répartition des coûts de promotion.
+
+Au moment de lancer un projet immobilier, il faut prendre en compte tous les coûts qui interviennent dans sa réalisation. Ici, le **contrôleur de gestion** (*controller*) est la personne chargée de superviser et de définir les politiques de contrôle de gestion, en analysant les résultats par rapport aux budgets, en observant les écarts et en proposant des corrections.
+
+Elle se charge en outre de superviser et de définir les politiques de contrôle de gestion, en suivant les budgets et en repérant les écarts éventuels.
+
+Elle organise aussi le bon flux entre les données économiques et le système de contrôle.
+
+Le contrôleur de gestion doit ici participer à l'élaboration des plans et des idées de la direction, afin de pouvoir anticiper à partir des informations recueillies.
+
+L'application de ce contrôle suppose la mise en place d'un ensemble d'actions, de procédures, de techniques et de processus qui forment ce que l'on appelle le système de contrôle.
+
+#### Coûts des honoraires techniques de la maîtrise d'œuvre
+
+En partant de l'étude préalable à la construction :
+
+**Étude préalable.** C'est la phase préliminaire où s'expriment, de manière élémentaire et schématique, les idées qui développent la commande, au moyen de croquis ou de dessins, à l'échelle ou non.
+
+Elle comprend la collecte et l'organisation des informations nécessaires, la définition du programme technique des besoins et une estimation indicative du coût, qui permettent au promoteur de prendre une première décision. Cette phase comprendra les documents suivants :
+
+- Mémoire explicatif.
+- Croquis ou dessins, à l'échelle ou non.
+- Estimation du coût.
+
+Honoraires en euros : `H = 0,05 · C · PEM · Ktotal`
+
+Coefficient de complexité : `Ktotal = 1 + ΣKparc`
+
+**Avant-projet.** C'est la phase du travail où sont exposés les aspects fondamentaux des caractéristiques générales de l'ouvrage : fonctionnelles, formelles, constructives et économiques, afin d'en donner une première image globale et d'établir un budget prévisionnel. Cette phase comprendra les documents suivants :
+
+- Mémoire justificatif des solutions générales retenues.
+- Plans des niveaux, élévations et coupes à l'échelle, non cotés.
+- Budget prévisionnel avec une estimation globale, par surface construite ou par toute autre méthode jugée appropriée.
+
+Honoraires en euros : `H = 0,05 · C · PEM · Ktotal`
+
+Coefficient de complexité : `Ktotal = 1 + ΣKparc`
+
+**Projet de base.** C'est la phase du travail où les caractéristiques générales de l'ouvrage sont définies de façon précise, par l'adoption et la justification de solutions concrètes.
+
+Son contenu suffit pour demander, une fois obtenu le visa requis de l'ordre professionnel (*visado colegial*), le permis municipal ou d'autres autorisations administratives, mais pas pour réaliser la construction. Cette phase comprendra au moins les documents suivants :
+
+- Mémoire décrivant les caractéristiques générales de l'ouvrage et justifiant les solutions concrètes qui répondent à la finalité administrative visée au paragraphe précédent.
+- Plans généraux à l'échelle et cotés : niveaux, élévations et coupes.
+- Budget, avec une estimation globale de chaque chapitre, corps de métier et technique.
+
+Ces documents doivent être développés conformément aux dispositions du CTE, lorsqu'il s'applique.
+
+Honoraires en euros : `H = 0,4 · C · PEM · Ktotal`
+
+Coefficient de complexité : `Ktotal = 1 + ΣKparc`
+
+**Projet d'exécution.** Phase du travail où l'on développe le projet de base, avec la définition complète des détails et des spécifications de tous les matériaux, éléments, systèmes constructifs et équipements, de sorte que l'ouvrage soit défini dans sa totalité.
+
+Son contenu sera celui qui est nécessaire à la réalisation des travaux, avec le visa requis de l'ordre et le permis correspondant. Cette phase comprendra au moins les documents suivants :
+
+- Mémoire des fondations, de la structure et des corps de métier.
+- Plans des fondations et de la structure.
+- Plans de détail.
+- Schémas et dimensionnement des installations.
+- Cahier des clauses techniques, générales et particulières.
+- État des métrés.
+- Budgets obtenus par application des prix unitaires des travaux.
+
+Ces documents doivent être développés conformément aux dispositions du CTE, lorsqu'il s'applique. Dans la pratique professionnelle, les dossiers du projet de base et du projet d'exécution peuvent être présentés séparément ou fusionnés en un seul, sous l'appellation commune de projet de base et d'exécution.
+
+Honoraires en euros : `H = 0,7 · C · PEM · Ktotal`
+
+Variables de complexité :
+
+- Conditions contractuelles (Kc) :
+  - Mission partielle : Kc = 0,20.
+  - Urgence particulière dans la rédaction du projet : Kc = 0,10.
+  - Complexité particulière du programme fonctionnel : Kc = 0,10.
+  - Complexité particulière du niveau documentaire : Kc = 0,20.
+- Complexité particulière des démarches administratives (Ka) :
+  - Démarches municipales complexes : Ka = 0,10.
+  - Démarches auprès d'organismes autres que la commune : Ka = 0,10.
+- Conditions de la parcelle (Ku) :
+  - Situation dans un ensemble historique : Ku = 0,10.
+  - Bâtiments mitoyens en mauvais état : Ku = 0,10.
+- Construction en sous-sol (Ks) :
+  - 1 à 2 sous-sols : Ks = 0,05.
+  - 3 sous-sols ou plus : Ks = 0,10.
+- Caractéristiques du terrain (Kt) :
+  - Conditions géotechniques particulièrement difficiles : Kt = 0,05.
+  - Fondations spéciales : Kt = 0,05.
+- Caractéristiques structurelles (Ke) :
+  - Structures à grandes portées, matériaux spéciaux : Ke = 0,05.
+- Caractéristiques des installations (Ki) :
+  - Complexité technologique des installations : Ki = 0,05.
+- Caractéristiques des revêtements et finitions (Ko) :
+  - Complexité technologique d'autres éléments : Ko = 0,05.
+
+**Direction des travaux.** Selon l'article 12 de la Ley de Ordenación de la Edificación : le directeur des travaux est l'intervenant qui, au sein de la maîtrise d'œuvre, dirige la réalisation de l'ouvrage dans ses aspects techniques, esthétiques, urbanistiques et environnementaux, conformément au projet qui le définit, au permis de construire et aux autres autorisations requises ainsi qu'aux conditions du contrat, afin d'assurer son adéquation à l'objectif fixé.
+
+C'est la phase où l'architecte assure la coordination de l'équipe technique de la maîtrise d'œuvre, l'interprétation technique, économique et esthétique du projet d'exécution, ainsi que l'adoption des mesures nécessaires pour mener à bien le développement du projet d'exécution, en établissant les adaptations, détails complémentaires et modifications qui peuvent être nécessaires pour achever la réalisation de l'ouvrage, conformément au projet d'exécution correspondant.
+
+Cette phase comprendra :
+
+- La tenue du registre des ordres.
+- La délivrance du certificat de fin de chantier.
+
+Les documents que le directeur des travaux doit établir pendant cette phase, lorsque le CTE s'applique, sont ceux qu'indique son annexe II, « Documentation du suivi de l'ouvrage » (*Documentación del seguimiento de obra*).
+
+Honoraires en euros : `H = 0,95 · C · PEM · Ktotal`
+
+Coefficient de complexité : `Ktotal = 1 + ΣKparc`
+
+**Décompte et réception.** L'article 6 de la Ley de Ordenación de la Edificación dispose :
+
+1. La réception de l'ouvrage est l'acte par lequel le constructeur, une fois l'ouvrage achevé, le remet au promoteur, qui l'accepte. Elle peut être prononcée avec ou sans réserves et doit porter sur la totalité de l'ouvrage ou sur des phases complètes et achevées de celui-ci, lorsque les parties en conviennent ainsi.
+2. La réception doit être consignée dans un procès-verbal signé au moins par le promoteur et le constructeur (la réglementation le précise davantage).
+
+Cette phase peut comprendre :
+
+- Approuver le décompte final des unités d'ouvrage exécutées.
+- Signer le procès-verbal de réception de l'ouvrage.
+
+Honoraires en euros : `H = 0,95 · C · PEM · Ktotal`
+
+Coefficient de complexité : `Ktotal = 1 + ΣKparc`
+
+**Considérations particulières.** Cette rubrique regroupe les missions, ou leurs conditions, qui, tout en relevant de ce chapitre, présentent des particularités suffisantes pour être traitées explicitement. Ces considérations couvrent :
+
+- Travaux d'extension, de rénovation et de réhabilitation.
+- Bâtiments répétés.
+- Documents indépendants.
+- Projets de travaux de faible importance.
+
+#### Coûts de construction
+
+Quand on parle des coûts de construction, il faut tenir compte des coûts **de référence du bâtiment**.
+
+Comme leur nom l'indique, ce sont essentiellement des valeurs qui servent de référence pour des situations générales dans un périmètre donné. Les valeurs obtenues forment une fourchette entre un maximum et un minimum indicatifs pour le bâtiment.
+
+Les coûts de référence du bâtiment découlent d'une méthode dépourvue de tout fondement légal, née de la disparition des coûts minimaux de référence que fixaient les ordres professionnels concernés ; leur seule finalité est d'orienter l'utilisateur sur les coûts de construction.
+
+Cette méthode a été mise au point par le service des normes techniques, de la supervision et du contrôle (*Área de Normativa Técnica, Supervisión y Control*) et, depuis, elle est intégrée comme outil dans les différentes éditions de la base de données de la construction. C'est une procédure simple et explicite, mise à la disposition des utilisateurs comme première approche des coûts de construction ou comme référence.
+
+Certaines institutions, en vertu de leurs attributions et compétences, l'ont reprise telle quelle ou l'ont perfectionnée en l'adaptant à leurs besoins concrets.
+
+Par conséquent, les coûts de référence ne priment pas sur ceux établis par l'architecte et n'ont donc pas de caractère obligatoire pour déterminer la taxe d'urbanisme et l'impôt sur les constructions, installations et travaux (ICIO), que gèrent les mairies.
+
+#### Coûts de commercialisation
+
+Pour les coûts de commercialisation, on peut distinguer plusieurs types :
+
+- **Publicité.** Elle comprend les dépenses de publicité dans tout média et, pour certaines sociétés immobilières, la location du bureau de vente et d'accueil du public.
+- **Vente.** Parmi les coûts de la commercialisation ou de la vente des biens figurent les commerciaux, chargés de présenter les produits à vendre, ici les biens immobiliers.
+- **Service après-vente.** Ce service est chargé de suivre la gestion et le contrôle du processus de réception de la promotion : il faut tenir compte du fait que c'est pendant les premiers mois après la vente que naissent le plus de réclamations, et qu'elles exigent une solution rapide et efficace.
+
 ## Leçon 2.4 — Ratios et décision
 
 - **Marge sur ventes** = résultat avant impôts ÷ recettes. Minimum 15 %.
@@ -149,7 +314,7 @@
   - Entité nouvellement créée : 15 % sur le premier exercice bénéficiaire et le suivant
   - Entreprise de taille réduite (chiffre d'affaires < 10 M€) : 23 %
   - Micro-entreprise (< 1 M€) : 19 % sur les premiers 50.000 € et 21 % au-delà
-  - Navarre et Pays basque : réglementation forale propre
+  - Navarre et Pays basque : réglementation propre
   - Faites-le confirmer par votre conseiller : il existe des exclusions (sociétés patrimoniales), et le chiffre d'affaires d'une promotion varie beaucoup d'une année à l'autre.
 - **Scénarios de sensibilité :**
 
@@ -165,8 +330,8 @@
 ## Leçon 2.5 — Négociation, structure et approbation de l'investissement
 
 - **Négociation avec le propriétaire du terrain :**
-  - Prix, modalités de paiement (comptant, différé avec caution, en partie en logements), délais.
-  - **Exclusivité** et délai suffisant pour mener les études et obtenir le financement : signez-les dans une lettre d'intention ou un document de réservation.
+  - Prix, modalités de paiement (comptant, différé avec caution, avec option d'achat, une partie du prix sous forme d'échange de biens immobiliers), délais.
+  - **Option d'achat** et délai suffisant pour mener les études et obtenir le financement : formalisez-la par un contrat de vente avec option d'achat.
   - **Conditions suspensives :** faisabilité d'urbanisme, registrale, technique et financière ; obtention du permis.
   - Formules : vente directe, option d'achat, **échange (permuta)** contre des logements futurs ou **apport du terrain** à la société contre des parts.
 - **Structure juridique et sociétaire :**
@@ -190,7 +355,7 @@
 ## Checklist du module 2
 
 - [ ] Modèle 2 · Viabilité rapide et méthode résiduelle (inclus) rempli avec des prix de vente et des coûts vérifiés
-- [ ] Étude de marché avec des prix réellement signés chez le notaire
+- [ ] Étude de marché
 - [ ] Mix produit arrêté avec l'architecte
 - [ ] Budget de construction comparé avec 2 entreprises locales
 - [ ] ICIO et taxes réelles de l'ordonnance municipale
@@ -198,7 +363,7 @@
 - [ ] Trésorerie mensuelle avec TIR et besoins en fonds propres
 - [ ] Prix maximal du terrain par la méthode résiduelle
 - [ ] Esquisse d'implantation de l'architecte
-- [ ] Exclusivité et conditions suspensives négociées
+- [ ] Option d'achat et conditions suspensives négociées
 - [ ] Pacte d'associés et structure de la SPV
 - [ ] Note d'investissement approuvée avec jalons et critères de sortie
 

@@ -23,6 +23,13 @@ Con un script, sobre `curso/` (paquete v5), antes de escribir estos archivos:
 
 Cuando un módulo pase a `course_world.php`, `CourseWorldTest` vuelve a comprobar cada cita y cada nombre.
 
+**Paquete 5.1 (20/11/2026).** Las correcciones del profesor cambiaron texto que citan 11 pasos de estos
+borradores: en el Módulo 2, el encaje («mono»), los puntos 1 y 2 del precio de venta, «varía mucho por
+provincia» y la exclusividad; en el 5, las preventas (ahora 70–90 %); en el 9, el párrafo quitado de la
+primera ocupación y la cédula; en el 10, los dos pasos quitados de la notaría; en el 11, la plusvalía. Al
+guionizar esos módulos, esas citas se cambian por el texto corregido (`curso/1_contenido/CAMBIOS.md`). Los
+títulos de las lecciones 4.3, 9.2 y 9.3 también han cambiado.
+
 ## Los módulos
 
 | Módulo | Lecciones | Pasos | Guion |

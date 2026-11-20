@@ -31,6 +31,7 @@
 ## Lección 11.1 — La escritura de compraventa
 
 - **Contenido:** partes, finca registral y descripción, precio y forma de pago (con los pagos anteriores identificados), cargas (libre de cargas o con subrogación elegida por el comprador), manifestaciones (decenal, licencias, certificado energético, cédula), gastos.
+- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio**.
 - **Quién paga qué:**
 
 | Gasto | Comprador | Promotor |
@@ -86,7 +87,7 @@
 - **Impuestos de la compraventa:** el comprador liquida el AJD con el modelo 600 de su comunidad en el plazo autonómico (habitualmente 30 días hábiles); muchas notarías lo gestionan. Tú declaras el IVA repercutido en tu modelo 303.
 - **Registro:** la notaría envía copia electrónica al Registro de la Propiedad el mismo día; después se presenta la copia con el impuesto liquidado y se inscribe a nombre del comprador.
 - **Catastro:** notaría y registro comunican el cambio de titular; no hace falta presentar declaración.
-- **Plusvalía municipal:** autoliquídala en 30 días hábiles por cada venta (Módulo 12).
+- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
 - **Suministros:** altas o cambios de titularidad a nombre del comprador.
 - **Documentación:** entrega lo que corresponda al comprador y al administrador de la comunidad.
 

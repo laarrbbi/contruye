@@ -31,6 +31,7 @@
 ## Leçon 11.1 — L'acte de vente
 
 - **Contenu :** parties, lot inscrit et description, prix et modalités de paiement (avec les paiements antérieurs identifiés), charges (libre de charges ou avec reprise du prêt choisie par l'acheteur), déclarations (décennale, permis, certificat énergétique, cédula), frais.
+- Lors de la signature de la vente chez le notaire, l'acheteur du logement reçoit le **Livre de l'immeuble**.
 - **Qui paie quoi :**
 
 | Frais | Acheteur | Promoteur |
@@ -86,7 +87,7 @@
 - **Impôts de la vente :** l'acheteur liquide l'AJD avec le formulaire 600 de sa communauté dans le délai régional (habituellement 30 jours ouvrables) ; beaucoup de notaires s'en chargent. Vous déclarez l'IVA facturée dans votre formulaire 303.
 - **Registre :** le notaire envoie une copie électronique au Registre de la propriété le jour même ; on présente ensuite la copie avec l'impôt acquitté et le lot est inscrit au nom de l'acheteur.
 - **Cadastre :** notaire et registre communiquent le changement de propriétaire ; aucune déclaration n'est nécessaire.
-- **Plus-value municipale :** autoliquidez-la dans les 30 jours ouvrables pour chaque vente (Module 12).
+- **Plus-value municipale :** s'agissant d'un ouvrage neuf, le promoteur n'a pas à autoliquider la plus-value municipale.
 - **Fournitures :** ouvertures ou changements de titulaire au nom de l'acheteur.
 - **Documentation :** remettez ce qui revient à l'acheteur et au syndic de la copropriété.
 

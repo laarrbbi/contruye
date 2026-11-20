@@ -60,12 +60,11 @@
 
 ## Lesson 2.2 — Fit and revenue: the market study
 
-- **Fit study first ("mono").** Ask the architect for a capacity study or *test fit*: in the trade it is called "ordering a *mono*".
+- **Fit study first.** Commission a reliable architecture practice to do the corresponding fit study for the development you plan to build. The most important things the architect does:
   - It estimates the buildability that counts and the built and usable areas.
   - It lays out the homes, common areas, stair and lift cores, garages and storerooms.
   - It checks unit types, daylight, ventilation and accessibility.
   - It tells you whether an additional planning or management instrument is needed.
-  - Without a *mono*, the CRP is guesswork.
 
 - **Areas:**
   - Usable: what the buyer walks on.
@@ -73,10 +72,9 @@
   - Built including common areas: + a share of entrance halls, stairs and lifts (≈ usable × 1,25–1,35). This is the one usually advertised.
   - Computable: the one that counts towards buildability under your PGOU.
 - **How to get the sale price:**
-  1. Visit the developments on sale within 1-3 km. Call as a buyer. Note €/m², unit type, specification and sales pace.
-  2. Compare with the prices recorded in deeds by the Registrars and Notaries (not asking prices).
-  3. Read the quarterly reports of Tinsa, Sociedad de Tasación, Gloval and the consultancies (CBRE, JLL, Savills, Colliers).
-  4. Apply a 3-5 % discount to the competition's asking prices for your first off-plan sales.
+  1. **Market study:** look at what is around you and who your competition is. Visit the developments on sale within 1-3 km and simulate a purchase (mystery shopping). Note €/m², unit type and specification.
+  2. Read the quarterly reports of Tinsa, Sociedad de Tasación, Gloval and the consultancies (CBRE, JLL, Savills, Colliers).
+  3. Apply a 3-5 % discount to the competition's asking prices for your first off-plan sales.
 - **Indicative product mix:**
 
 | Unit type | % | Note |
@@ -106,8 +104,8 @@
   - Standard: 900–1.100 €/m² built
   - Upper-mid: 1.100–1.400 €/m²
   - Luxury: from 1.400 €/m²
-  - Basement: 500–800 €/m² (more if there is groundwater or retaining walls)
-  - Always ask local contractors for prices: they vary a lot by province.
+  - Basement (below ground): 500–800 €/m²
+  - Always ask local contractors for prices: they vary by province.
 - **Budgets:**
   - **PEM** (material execution budget): the architect calculates it in the design.
   - **PEC** (contract budget) = PEM + overheads (13–17 %) + contractor's profit (6 %). That benchmark comes from public procurement (RD 1098/2001); on private works it is negotiated.
@@ -125,7 +123,7 @@
 | ICIO | up to 4 % of the actual cost of the works (check the by-law) |
 | Licence fee | per by-law |
 | Ten-year insurance | 0,8–1,5 % of the construction cost |
-| TRC + RC | 0,2–0,5 % |
+| TRC (contractors' all risks: damage to the works during construction) + RC (third-party liability: damage to third parties during the works) | 0,2–0,5 % |
 | Guarantees or insurance for advance payments | 0,5–1,5 % a year on the amount guaranteed |
 | Notary and registry for new building and horizontal division | per official scale |
 | Sales and marketing | 2–4 % of sales |
@@ -138,6 +136,173 @@
 - To put all this in methodically, use **Template 2 · Quick feasibility and residual method** (included): sales, costs by item, margin and maximum land price. If you want the month-by-month detail (cost by chapter, loan and cash flow), the extra at the end of the course is the full professional model (**FINANCIALS** section).
 - **A complete preliminary study, worked through:** the professional's **Feasibility analysis guide** (*Guía de análisis de viabilidad*: 22 homes, with its notes on the timetable) comes with the professional template, in the extra at the end of the course.
 
+### Cost structure of a property development
+
+The cost structure of a property development is divided into the following headings:
+
+- Land development and consolidation costs.
+- Plot acquisition costs.
+- Professional fees of the technical team.
+- Construction costs.
+- Development costs.
+- Sales and marketing costs.
+- Financing, and costs in relation to sale prices and terms.
+- Recommendations on sale prices and terms.
+
+#### Development costs
+
+The breakdown of development costs.
+
+When you start a property project, you must take into account all the costs involved in creating it. Here the **Controller** is the person in charge of supervising and defining the management control policies, analysing results against the budgets, spotting deviations and proposing corrections.
+
+They also supervise and define the management control policies, reviewing the budgets and identifying possible deviations.
+
+In turn, they organise the proper flow between the financial data and the control system.
+
+In this case, the Controller must take part in drawing up management's plans and ideas, so as to be able to anticipate on the basis of the information gathered.
+
+Applying this control involves putting in place a set of actions, procedures, techniques and processes that make up what is called the control system.
+
+#### Professional fees of the technical team
+
+Considering the preliminary study before building:
+
+**Preliminary study.** This is the preliminary stage in which the ideas that develop the commission are expressed in a basic, schematic way, through sketches or drawings, to scale or not.
+
+It includes gathering and organising the information needed, setting out the technical brief of requirements and an indicative estimate of the cost, so that the developer can take an initial decision. This stage will include the following documents:
+
+- Explanatory report.
+- Sketches or drawings, to scale or not.
+- Cost estimate.
+
+Fees in euros: `H = 0,05 · C · PEM · Ktotal`
+
+Complexity coefficient: `Ktotal = 1 + ΣKparc`
+
+**Outline design.** This is the stage of the work that sets out the fundamental aspects of the general characteristics of the building (functional, formal, constructional and economic), in order to give a first overall picture of it and establish a preliminary budget. This stage will include the following documents:
+
+- Report justifying the general solutions adopted.
+- Plans, elevations and sections to scale, without dimensions.
+- Preliminary budget with an overall estimate, by built area or by another method considered suitable.
+
+Fees in euros: `H = 0,05 · C · PEM · Ktotal`
+
+Complexity coefficient: `Ktotal = 1 + ΣKparc`
+
+**Basic design.** This is the stage of the work in which the general characteristics of the building are defined precisely, by adopting and justifying specific solutions.
+
+Its content is enough to apply for the municipal licence or other administrative authorisations, once the compulsory endorsement by the professional body (*visado*) has been obtained, but not enough to carry out the construction. This stage will include at least the following documents:
+
+- Report describing the general characteristics of the building and justifying the specific solutions that meet the administrative purpose referred to in the previous paragraph.
+- General drawings to scale and dimensioned: plans, elevations and sections.
+- Budget, with an overall estimate for each chapter, trade and technology.
+
+These must be developed as specified in the CTE, where it applies.
+
+Fees in euros: `H = 0,4 · C · PEM · Ktotal`
+
+Complexity coefficient: `Ktotal = 1 + ΣKparc`
+
+**Construction design.** The stage of the work in which the basic design is developed, with full details and specifications of all the materials, elements, construction systems and equipment, defining the building in its entirety.
+
+Its content will be what is needed to carry out the works, with the compulsory endorsement by the professional body and the corresponding licence. This stage will include at least the following documents:
+
+- Report on the foundations, structure and trades.
+- Foundation and structure drawings.
+- Detail drawings.
+- Diagrams and sizing of the building services.
+- Specifications: technical, general and particular conditions.
+- Statement of measurements.
+- Budgets obtained by applying unit prices for the work.
+
+These must be developed as specified in the CTE, where it applies. In professional practice, the documents for the basic and construction designs may be submitted separately, or merged into one under the common name: basic and construction design.
+
+Fees in euros: `H = 0,7 · C · PEM · Ktotal`
+
+Complexity variables:
+
+- For contractual conditions (Kc):
+  - Partial commission: Kc = 0,20.
+  - Special urgency in drafting the design: Kc = 0,10.
+  - Special complexity of the functional brief: Kc = 0,10.
+  - Special complexity of the level of documentation: Kc = 0,20.
+- For special complexity of the administrative procedures (Ka):
+  - Complex municipal procedures: Ka = 0,10.
+  - Procedures before bodies other than the municipality: Ka = 0,10.
+- For the conditions of the plot (Ku):
+  - Located in a historic ensemble: Ku = 0,10.
+  - Adjoining buildings in poor condition: Ku = 0,10.
+- For construction below ground (Ks):
+  - 1 to 2 basements: Ks = 0,05.
+  - 3 or more basements: Ks = 0,10.
+- For the characteristics of the ground (Kt):
+  - Particularly difficult geotechnical conditions: Kt = 0,05.
+  - Special foundations: Kt = 0,05.
+- For structural characteristics (Ke):
+  - Long-span structures, special materials: Ke = 0,05.
+- For the characteristics of the building services (Ki):
+  - Technological complexity of the building services: Ki = 0,05.
+- For the characteristics of coverings and finishes (Ko):
+  - Technological complexity of other elements: Ko = 0,05.
+
+**Works direction.** Under article 12 of the Ley de Ordenación de la Edificación: the works director is the party who, as part of the site supervision team, directs the progress of the works in their technical, aesthetic, planning and environmental aspects, in accordance with the design that defines them, the building licence and the other compulsory authorisations, and the terms of the contract, in order to ensure that they are fit for the intended purpose.
+
+This is the stage in which the architect coordinates the technical and professional team on the works, interprets the construction design technically, economically and aesthetically, and takes the measures needed to see the construction design through, setting out the adaptations, additional details and changes that may be required to complete the works in full, in accordance with the corresponding construction design.
+
+This stage will include:
+
+- Filling in the orders book.
+- Issuing the final completion certificate.
+
+The documentation the works director must produce at this stage, where the CTE applies, is that listed in its annex II, «Documentación del seguimiento de obra» (documentation for monitoring the works).
+
+Fees in euros: `H = 0,95 · C · PEM · Ktotal`
+
+Complexity coefficient: `Ktotal = 1 + ΣKparc`
+
+**Final account and handover.** Article 6 of the Ley de Ordenación de la Edificación states:
+
+1. Handover of the works is the act by which the contractor, once the works are finished, delivers them to the developer and the developer accepts them. It may take place with or without reservations and must cover the whole of the works, or complete and finished phases of them when the parties so agree.
+2. The handover must be set down in a record signed at least by the developer and the contractor (the regulations expand on this).
+
+This stage may include the following:
+
+- Approving the final account for the units of work carried out.
+- Signing the handover record of the works.
+
+Fees in euros: `H = 0,95 · C · PEM · Ktotal`
+
+Complexity coefficient: `Ktotal = 1 + ΣKparc`
+
+**Special considerations.** This heading covers the commissions, or conditions of them, which, while belonging to this Chapter, have specific features that justify considering them explicitly. These considerations cover:
+
+- Extension, alteration and refurbishment works.
+- Repeated buildings.
+- Separate documents.
+- Designs for minor works.
+
+#### Construction costs
+
+When talking about construction costs, you need to take into account the **building reference costs**.
+
+Basically, as the name suggests, they are values meant as a reference for general situations within a given area. The values obtained form a range between an indicative maximum and minimum for building.
+
+Building reference costs come from a method that has no legal basis whatsoever, and which originated when the minimum reference costs that the respective professional associations (*Colegios Profesionales*) used to set disappeared; its sole purpose is to give users guidance on construction costs.
+
+This method was developed by the Technical Standards, Supervision and Control Area (*Área de Normativa Técnica, Supervisión y Control*), and since then it has been included as a tool in the various editions of the construction database. It is a simple, explicit procedure made available to users as a first approximation to construction costs, or as a reference.
+
+Some institutions, within their powers and responsibilities, have adopted it as it is or refined it to suit their specific needs.
+
+Therefore, reference costs do not prevail over those set by the architect, and so they are not binding for calculating the planning fee and the tax on construction, installations and works (ICIO), which is managed by the town halls.
+
+#### Sales and marketing costs
+
+Within sales and marketing costs we can distinguish different types:
+
+- **Advertising.** It covers the costs of advertising in any media and, for some property companies, the rental of the sales and customer service cabin.
+- **Sales.** Some of the costs of marketing or selling the properties will be the sales staff, who are responsible for giving information about the products for sale, in this case the properties.
+- **After-sales service.** This service is responsible for overseeing the management and control of the development's handover process, bearing in mind that the first months after the sale are when most complaints arise, and they need a quick and effective solution.
+
 ## Lesson 2.4 — Ratios and the decision
 
 - **Margin on sales** = profit before tax ÷ revenue. Minimum 15 %.
@@ -149,7 +314,7 @@
   - Newly created entity: 15 % in the first period with a positive tax base and the next one
   - Small company (turnover < 10 M€): 23 %
   - Micro-company (< 1 M€): 19 % on the first 50.000 € and 21 % on the rest
-  - Navarra and País Vasco: their own foral rules
+  - Navarra and País Vasco: their own rules
   - Confirm it with your adviser: there are exclusions (asset-holding entities), and a development's turnover varies a lot from one year to the next.
 - **Sensitivity scenarios:**
 
@@ -165,8 +330,8 @@
 ## Lesson 2.5 — Negotiation, structure and approval of the investment
 
 - **Negotiating with the plot's owner:**
-  - Price, payment terms (cash, deferred with a guarantee, partly in homes), deadlines.
-  - **Exclusivity** and enough time to do the studies and get financing: sign it in a letter of intent or reservation document.
+  - Price, payment terms (cash, deferred with a guarantee, with an option to buy, part of the price in a property swap), deadlines.
+  - **Option to buy** and enough time to do the studies and get financing: formalise it with a sale contract with a purchase option.
   - **Conditions precedent:** planning, registry, technical and financial feasibility; obtaining the licence.
   - Formulas: direct sale, option to buy, **swap** for future homes, or **contribution of the land** to the company in exchange for shares.
 - **Legal and corporate structure:**
@@ -190,15 +355,15 @@
 ## Module 2 checklist
 
 - [ ] Template 2 · Quick feasibility and residual method (included) filled in with checked sale prices and costs
-- [ ] Market study with prices actually recorded in deeds
+- [ ] Market study
 - [ ] Product mix agreed with the architect
 - [ ] Construction budget checked against 2 local contractors
 - [ ] ICIO and real fees from the municipal by-law
 - [ ] CRP with three scenarios
 - [ ] Monthly cash flow with IRR (TIR) and equity requirements
 - [ ] Maximum land price by the residual method
-- [ ] Architect's fit study (mono)
-- [ ] Exclusivity and conditions precedent negotiated
+- [ ] Architect's fit study
+- [ ] Option to buy and conditions precedent negotiated
 - [ ] Shareholders' agreement and SPV structure
 - [ ] Investment memorandum approved with milestones and exit criteria
 

@@ -9,6 +9,7 @@
 |---|---|
 | **RD 515/1989**, información al consumidor en la compraventa de viviendas | Qué tienes que tener a disposición del comprador: planos, memoria de calidades, precio total, forma de pago, datos registrales, licencia |
 | **TRLGDCU (RDL 1/2007)**, art. 61 | La publicidad obliga: lo que anuncias forma parte del contrato |
+| **Ley 10/2025** (reforma del art. 20 TRLGDCU) | El consumidor debe conocer el precio final completo y todos los gastos que se le pretendan repercutir |
 | **TRLGDCU, art. 89.3** | Cláusulas abusivas: **no puedes cargar al comprador** la plusvalía municipal, los gastos de obra nueva y división horizontal, la hipoteca del promotor y su cancelación, las acometidas a suministros generales; **ni obligarle a subrogarse** en tu préstamo |
 | **LOE, DA 1.ª** | Garantía individual y cuenta especial para todo lo cobrado antes de la entrega |
 | **Ley 12/2023**, art. 31 | Información mínima al comprador en la operación de compra de vivienda |
@@ -44,6 +45,15 @@
 - **Materiales:** renders, planos acotados por tipología, memoria de calidades, dossier PDF, vídeo, tour virtual, piso piloto (físico o virtual).
 - **Canales:** web propia con formulario, Idealista, Fotocasa, pisos.com, Google Ads, Meta Ads, base de datos propia, compradores extranjeros (portales internacionales) en costa.
 - **Obligatorio en todo anuncio:** calificación energética de proyecto, y nada que no puedas cumplir (la publicidad es vinculante).
+- **Es muy importante respetar las normas en materia de consumidores y usuarios**, porque la reforma del artículo 20 de la Ley General para la Defensa de los Consumidores y Usuarios, introducida por la Ley 10/2025, refuerza algo muy claro: el consumidor debe conocer el precio final completo y todos los gastos que se le pretendan repercutir. Es decir: se acabaron los precios "gancho", las sorpresas de última hora y las comisiones camufladas.
+  - El pasado 28/12/2025 entró en vigor la Ley 10/2025, de 26 de diciembre, por la que se regulan los servicios de atención a la clientela, y marcó un antes y un después en la publicidad inmobiliaria en España. Aunque formalmente se enmarca dentro de la normativa de atención a la clientela, su impacto real es mucho más amplio, ya que introduce cambios directos en la Ley General para la Defensa de los Consumidores y Usuarios. El resultado son nuevas obligaciones que afectan de lleno a precios, honorarios, alquileres y reputación online.
+  - **Anuncios con precio cerrado desde el primer momento.** La ley impone una exigencia clara: el consumidor debe conocer el precio final completo desde el primer anuncio. Esto significa que la publicidad deberá reflejar, obligatoriamente, el precio real del inmueble, los impuestos correspondientes (IVA, ITP, AJD, según proceda), los honorarios de la agencia cuando recaigan sobre el consumidor y cualquier otro gasto obligatorio asociado a la operación.
+  - Queda expresamente prohibido el llamado "precio por goteo", es decir, anunciar un importe inicial y añadir costes más adelante. Prácticas habituales, como informar de la comisión solo durante la visita, pasarán a ser ilegales.
+  - **Más protección, no solo para compradores.** Una de las novedades más relevantes es la ampliación del concepto de clientela. La protección legal ya no se limita al comprador: incluye también al vendedor, al inquilino y a cualquier persona a la que se le ofrezca un servicio inmobiliario, aunque finalmente no se formalice ningún contrato. Desde el instante en que existe una oferta comercial, nacen las obligaciones de información, claridad y transparencia.
+  - La Ley 10/2025 también pone límites al uso de algoritmos y sistemas automáticos de fijación de precios en contextos de emergencia, como incendios, inundaciones o catástrofes naturales. Esta medida afecta especialmente al alquiler turístico y temporal, donde este tipo de herramientas es habitual.
+  - **Las valoraciones en internet pasan a estar reguladas.** Las agencias deberán garantizar que las reseñas sean auténticas, verificables, recientes y correspondientes a clientes que hayan utilizado el servicio en los últimos 30 días. Además, será obligatorio informar de forma clara sobre el sistema de verificación empleado.
+  - **Sanciones:** las consecuencias de incumplir la ley pueden ser muy graves, hasta 1.000.000 €, con posibilidad de aumentar la sanción si existe beneficio económico. Infracciones leves: desde 150 €; infracciones graves: hasta 100.000 €.
+  - La norma consolida un principio clave: lo que no aparece claramente en el anuncio no se puede cobrar después. La publicidad deja de ser un simple reclamo y pasa a formar parte del contenido contractual.
 - **Ten preparada la documentación del RD 515/1989** en la oficina de ventas antes de anunciar.
 
 - **Política de precios:** fija precios iniciales y una política de revisión por fases de venta (por ejemplo, subir un 2–3 % al alcanzar el 30 % y el 60 % vendido) y respétala.
@@ -60,6 +70,26 @@
 
 ## Lección 8.3 — Reserva y contrato privado
 
+- **Obligación de informar y documentación a entregar al comprador de vivienda:**
+  - En la Comunitat Valenciana la obligación de informar al comprador de **viviendas de obra nueva de renta libre** se rige principalmente por:
+    - Real Decreto 515/1989 (protección al consumidor en compraventa de viviendas).
+    - Ley 12/2023 por el derecho a la vivienda (artículo 31).
+    - Ley 38/1999 de Ordenación de la Edificación (LOE).
+    - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (publicidad veraz y cómputo de superficies).
+  - El promotor o vendedor debe tener a disposición del comprador y entregarle una documentación específica dividida en dos fases.
+- **1. Información obligatoria antes de firmar o entregar cantidades a cuenta (fase comercial).** Antes de firmar reservas, arras o contrato de compraventa, el promotor debe facilitar de forma gratuita y clara:
+  - **Identificación del promotor:** nombre o razón social, domicilio y datos de inscripción en el Registro Mercantil.
+  - **Planos y superficies:** plano general del emplazamiento de la vivienda y plano detallado de la misma (incluyendo zonas comunes y anejos como garaje o trastero), con indicación expresa de la **superficie útil y construida** (en la Comunitat Valenciana debe respetarse el criterio legal de cómputo de superficies de la Ley 8/2004).
+  - **Memoria de calidades:** descripción detallada de los materiales empleados en la construcción, aislamientos térmicos y acústicos, instalaciones y acabados.
+  - **Situación jurídica y urbanística:** copia de las autorizaciones y licencias urbanísticas (licencia de obras) y acreditación de la titularidad del terreno y cargas existentes (nota simple registral).
+  - **Condiciones económicas:** precio total de la vivienda y sus anejos, desglosando impuestos (en obra nueva se aplica **IVA**, generalmente el 10 %, más el **Impuesto de Actos Jurídicos Documentados (AJD)** en la Comunitat Valenciana), forma de pago y, si se ofrece subrogación hipotecaria, las condiciones del préstamo.
+  - **Garantías de cantidades anticipadas (en venta sobre plano):** si el comprador entrega dinero a cuenta antes de que la obra esté terminada, el promotor está obligado por ley (disposición adicional primera de la LOE) a entregarle un **aval bancario o seguro de caución** individualizado que garantice la devolución de las cantidades entregadas más los intereses legales si la obra no se inicia o no se entrega en plazo, además de ingresar ese dinero en una cuenta bancaria especial.
+- **2. Documentación a entregar con la vivienda (fase de entrega y escritura).** En el momento de la firma de la escritura pública y entrega de llaves, el comprador debe recibir:
+  - **Licencia de primera ocupación o declaración responsable:** en la Comunitat Valenciana (según la normativa urbanística valenciana, LOTUP), este documento acredita que la obra terminada cumple la normativa y es apta para ser habitada; es imprescindible para contratar los suministros definitivos de agua y luz.
+  - **Certificado de eficiencia energética (CEE):** registrado en el organismo competente de la Generalitat Valenciana (IVACE), con su correspondiente etiqueta energética.
+  - **Libro del Edificio:** documento que reúne el proyecto, las actas de recepción, la relación de agentes que han intervenido en la obra y el manual de uso y mantenimiento del inmueble.
+  - **Seguro decenal de daños:** póliza suscrita por el promotor que cubre durante 10 años los daños estructurales del edificio (cimentación, vigas, forjados, muros de carga).
+  - **Boletines de instalaciones y contratos:** certificados de las instalaciones de electricidad, agua, gas y telecomunicaciones para poder dar de alta los suministros, junto con los estatutos de la comunidad de propietarios si ya están redactados.
 - **Reserva:**
   - Importe: 3.000–10.000 €.
   - Ya es una cantidad a cuenta: **debe estar garantizada** (DA 1.ª LOE).

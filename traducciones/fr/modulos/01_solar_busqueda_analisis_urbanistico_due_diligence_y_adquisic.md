@@ -133,6 +133,7 @@
 | Un **particulier** vend | ITP de la communauté (annexe B). Pas d'AJD | Non |
 
 - **Frais d'achat :**
+  - **En pourcentage :** notaire et registre, environ 0,5 % du prix (estimation, la valeur du modèle 1 ; demandez un devis pour affiner). Ajoutez-y l'impôt du tableau ci-dessus, au taux de votre communauté (annexe B).
   - Notaire : selon la loi, l'original de l'acte est à la charge du vendeur et la copie à celle de l'acheteur (art. 1455 CC), sauf accord contraire. Entre entreprises, cela se négocie.
   - Registre : acheteur.
   - Plus-value municipale (IIVTNU) : payée par le vendeur.

@@ -1,6 +1,8 @@
 # CONSTRUYE · Contenido, plantillas y textos de la web
 
-Curso profesional de promoción de viviendas de renta libre en España. Versión 5, noviembre de 2026. Novedad del v5: los vídeos de los Módulos 1 y 2 (`4_videos/`).
+Curso profesional de promoción de viviendas de renta libre en España. Versión 5.1, noviembre de 2026. Novedad del v5: los vídeos de los Módulos 1 y 2 (`4_videos/`).
+
+**Versión 5.1 (20/11/2026):** las correcciones del profesor del 19/11/2026 (mensajes y tres documentos de Word) y las notas de redacción del propietario, aplicadas en `1_contenido/modulos/` y en las dos ediciones completas. Qué ha cambiado, dónde, de quién viene y qué queda por confirmar: `1_contenido/CAMBIOS.md`. Los vídeos de `4_videos/` son del v5 y se rehacen con este texto.
 
 **Modelo del producto:** el curso incluye 7 plantillas: 5 de CONSTRUYE (módulos 1, 2, 5, 7 y 8) y 2 del profesional en el Módulo 1 (base de datos de gestión de suelo y números gordos del solar). La plantilla financiera profesional completa (`PLANTILLA_LIBRE`, sección Financials) es un **extra opcional de pago que se ofrece al terminar el curso**, con la Guía de análisis de viabilidad resuelta del profesional.
 

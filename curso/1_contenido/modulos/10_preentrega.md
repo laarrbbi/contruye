@@ -65,10 +65,17 @@
 
 ## Lección 10.3 — La notaría
 
+- **Al principio de la obra,** se documenta inicialmente mediante la elevación a público de la correspondiente escritura de "Declaración de Obra Nueva y División Horizontal" y se presenta en el Registro de la Propiedad para su inscripción. El Registro la inscribe con la anotación de "En construcción".
+- **Al finalizar la obra** se formaliza la **Escritura Final de Obra** y se presenta en el Registro de la Propiedad para su inscripción. Se inscribe como obra nueva terminada, desapareciendo la anotación de "en construcción".
+- **Para la Escritura Final de Obra,** hay que presentar en notaría la siguiente documentación:
+  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra).
+  2. Certificado final de obra.
+  3. Seguro decenal.
+  4. Licencia de primera ocupación.
+  5. Certificado de eficiencia energética.
+  6. Superficies georreferenciadas.
 - **3-4 semanas antes:**
   - El comprador elige notaría (derecho del consumidor). Ofrece la tuya, sin imponerla.
-  - Envía a cada notaría: obra nueva y división horizontal inscritas, licencia o declaración de primera ocupación, cédula si aplica, decenal, certificado energético, nota simple actualizada de la finca, certificado de la comunidad de estar al corriente.
-  - Pide al banco el **certificado de deuda** de cada finca y la carta de pago para cancelar su parte (o la documentación de subrogación si el comprador la elige).
   - Prepara la **nota de liquidación** por comprador: precio, pagos recibidos con IVA, importe pendiente.
 - **El comprador lleva:** DNI o NIE, documentación del origen de los fondos, justificantes de pagos anteriores, la hipoteca, que se firma el mismo día (con la documentación recibida al menos 10 días naturales antes y el acta previa notarial hecha al menos el día anterior, Ley 5/2019).
 - **Medios de pago:** el notario identifica cada pago (cheque nominativo o transferencia). Nada en efectivo por encima del límite legal.
@@ -78,7 +85,6 @@
 - [ ] Tres rondas de repasos cerradas
 - [ ] Documentación de entrega preparada por vivienda
 - [ ] Notarías y fechas confirmadas
-- [ ] Certificados de deuda y cartas de pago del banco
 - [ ] Notas de liquidación por comprador
 - [ ] Comprobación de blanqueo de cada comprador
 

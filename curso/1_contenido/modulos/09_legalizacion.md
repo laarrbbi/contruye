@@ -54,7 +54,7 @@
   - Comprobación de seguridad, accesibilidad y funcionamiento del edificio.
 - **Documentación final:** planos de obra ejecutada, certificados, ensayos, manuales, fichas técnicas y garantías de fabricantes.
 
-## Lección 9.2 — Obra nueva y división horizontal
+## Lección 9.2 — Declaración de obra nueva y división horizontal
 
 - **Obra nueva en construcción** (al empezar): licencia + certificado del técnico de que la descripción coincide con el proyecto. Sirve para que el banco hipoteque la obra futura.
 - **Obra nueva terminada** (o acta de finalización), art. 28 TRLSRU. Necesitas:
@@ -74,12 +74,11 @@
 - **Regulariza** en la escritura las superficies, anexos y elementos comunes si lo construido difiere del proyecto inicial, y comprueba que las fincas resultantes coinciden con planos y títulos.
 - **Etiqueta energética:** obténla y facilítala a los compradores; es obligatoria en la oferta y en la venta (RD 390/2021).
 
-## Lección 9.3 — Primera ocupación y cédula de habitabilidad
+## Lección 9.3 — Licencia de primera ocupación
 
 - **Primera ocupación (ayuntamiento):** acredita que el edificio se ajusta a la licencia y puede usarse.
-  - Según la comunidad autónoma es **licencia** (resolución expresa) o **declaración responsable / comunicación previa** (eficacia inmediata y comprobación posterior). Madrid (Ley 1/2020), Andalucía (LISTA) y Galicia (Ley 2/2016) funcionan con declaración responsable o comunicación previa. Mira el Anexo B.
   - Documentos habituales: CFO, certificados de instalaciones, certificado energético, fotos, alta en el Catastro o justificante, certificado de las acometidas, liquidación definitiva del ICIO.
-- **Cédula de habitabilidad:** en 2026 la mantienen **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias y Región de Murcia**. La emite el organismo autonómico o insular y suele ser necesaria para contratar suministros definitivos y para vender.
+- **Cédula de habitabilidad:** es el mismo documento que la licencia de primera ocupación; no son actos o documentos distintos. Para ulteriores transmisiones sería licencia de segunda ocupación. En 2026 la mantienen **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias y Región de Murcia**. La emite el organismo autonómico o insular y suele ser necesaria para contratar suministros definitivos y para vender.
 - ⚠️ **Errores típicos:** pedir la primera ocupación con instalaciones sin registrar; no tener la acometida eléctrica definitiva hecha (la distribuidora tarda meses); olvidar la cédula en las comunidades que la exigen.
 
 ## Lección 9.4 — El Libro del Edificio
@@ -92,6 +91,24 @@
   4. Certificados de instalaciones y de ensayos.
   5. Instrucciones de uso y mantenimiento del edificio y sus instalaciones.
   6. Plan de mantenimiento con revisiones obligatorias (ascensor, PCI, térmicas, eléctricas).
+- **Índice del Libro del Edificio:**
+  - **Parte I. Características del edificio.**
+    - Del conjunto del edificio:
+      - Descripción: plano del emplazamiento; fotografías de las fachadas; características de cimentación y estructura; características de cerramiento y particiones; características de la cubierta; descripción y trazado de las instalaciones; características de los revestimientos; comportamiento y eficiencia energética del edificio; características ante ruido y vibraciones.
+      - Empresas y profesionales intervinientes: promotores; autores del proyecto; dirección facultativa; consultores, asesores y colaboradores; empresa constructora; empresas subcontratistas e instaladores; otros agentes.
+      - Acreditación de la calidad.
+      - Historia de las obras.
+      - Relación de las unidades de ocupación.
+    - De cada unidad de ocupación:
+      - Identificación y descripción de las unidades.
+      - Historia de las intervenciones en cada unidad de actuación.
+  - **Parte II. Normas e instrucciones de uso, conservación y mantenimiento.**
+    - Manual de uso y mantenimiento.
+    - Registro de operaciones de mantenimiento y reparación.
+    - Resumen del Libro para la Comunidad.
+  - **Parte III. Normas de actuación en caso de siniestro o en situaciones de emergencia.**
+    - Del conjunto del edificio.
+    - De cada unidad de ocupación.
 - **Entrega:** el promotor lo entrega a la comunidad de propietarios (presidente o administrador). A cada comprador se le da la parte de su vivienda.
 
 ## Lección 9.5 — Expediente de garantías

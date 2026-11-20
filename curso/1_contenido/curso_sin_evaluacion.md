@@ -213,6 +213,7 @@
 | **Particular** vende | ITP de la comunidad (Anexo B). Sin AJD | No |
 
 - **Gastos de la compra:**
+  - **En porcentaje:** notaría y registro, en torno al 0,5 % del precio (estimado, el valor de la Plantilla 1; pide presupuesto para afinar). Súmale el impuesto de la tabla de arriba con el tipo de tu comunidad (Anexo B).
   - Notaría: por ley la escritura matriz la paga el vendedor y la copia el comprador (art. 1455 CC), salvo pacto. Entre empresarios se pacta.
   - Registro: comprador.
   - Plusvalía municipal (IIVTNU): la paga el vendedor.
@@ -313,12 +314,11 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 ## Lección 2.2 — Encaje e ingresos: el estudio de mercado
 
-- **Primero el encaje ("mono").** Encarga al arquitecto un estudio de cabida o *test fit*: en el sector se llama "encargar un mono".
+- **Primero el encaje.** Encarga a un estudio de arquitectura solvente el correspondiente encaje de la promoción a realizar. Lo más importante de lo que hace el arquitecto:
   - Estima la edificabilidad computable y las superficies construidas y útiles.
   - Distribuye viviendas, zonas comunes, núcleos de escalera y ascensor, garajes y trasteros.
   - Comprueba tipologías, iluminación, ventilación y accesibilidad.
   - Dice si hace falta un instrumento de planeamiento o gestión adicional.
-  - Sin mono, la CRP es una suposición.
 
 - **Superficies:**
   - Útil: lo que pisa el comprador.
@@ -326,10 +326,9 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
   - Construida con comunes: + parte de portales, escaleras, ascensores (≈ útil × 1,25–1,35). Es la que se suele anunciar.
   - Computable: la que cuenta para la edificabilidad según tu PGOU.
 - **Cómo sacar el precio de venta:**
-  1. Recorre las promociones en venta en 1-3 km. Llama como comprador. Anota €/m², tipología, calidades y ritmo de ventas.
-  2. Compara con los precios escriturados de Registradores y Notarios (no con los de oferta).
-  3. Lee los informes trimestrales de Tinsa, Sociedad de Tasación, Gloval y los de consultoras (CBRE, JLL, Savills, Colliers).
-  4. Aplica descuento del 3-5 % sobre la oferta de la competencia para tus primeras ventas sobre plano.
+  1. **Estudio de mercado:** mira qué hay alrededor y quién es tu competencia. Recorre las promociones en venta en 1-3 km y simula la compra (técnica de simulación). Anota €/m², tipología y calidades.
+  2. Lee los informes trimestrales de Tinsa, Sociedad de Tasación, Gloval y los de consultoras (CBRE, JLL, Savills, Colliers).
+  3. Aplica descuento del 3-5 % sobre la oferta de la competencia para tus primeras ventas sobre plano.
 - **Mix de producto orientativo:**
 
 | Tipología | % | Nota |
@@ -359,8 +358,8 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
   - Estándar: 900–1.100 €/m² construido
   - Media-alta: 1.100–1.400 €/m²
   - Lujo: desde 1.400 €/m²
-  - Sótano: 500–800 €/m² (más si hay agua o pantallas)
-  - Pide siempre precio a constructoras locales: varía mucho por provincia.
+  - Sótano (bajo rasante): 500–800 €/m²
+  - Pide siempre precio a constructoras locales: varía por provincia.
 - **Presupuestos:**
   - **PEM** (ejecución material): lo calcula el arquitecto en el proyecto.
   - **PEC** (por contrata) = PEM + gastos generales (13–17 %) + beneficio industrial (6 %). Esa referencia viene de la contratación pública (RD 1098/2001); en obra privada se negocia.
@@ -378,7 +377,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 | ICIO | hasta 4 % del coste real de la obra (mira la ordenanza) |
 | Tasa de licencia | según ordenanza |
 | Seguro decenal | 0,8–1,5 % del coste de construcción |
-| TRC + RC | 0,2–0,5 % |
+| TRC (todo riesgo construcción: daños a la obra durante la ejecución) + RC (responsabilidad civil: daños a terceros durante la obra) | 0,2–0,5 % |
 | Avales o seguro de cantidades a cuenta | 0,5–1,5 % anual sobre lo garantizado |
 | Notaría y registro de obra nueva y división horizontal | según arancel |
 | Comercialización | 2–4 % de las ventas |
@@ -391,6 +390,173 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 - Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y cash-flow), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
 - **Un estudio previo completo, resuelto:** la **Guía de análisis de viabilidad** del profesional (22 viviendas, con sus notas de calendario) va con la plantilla profesional, en el extra del final del curso.
 
+### Estructura de costes de una promoción inmobiliaria
+
+La estructura de costes de una promoción inmobiliaria se divide en los siguientes apartados:
+
+- Costes de desarrollo y consolidación del suelo.
+- Costes de adquisición de solar.
+- Costes de honorarios técnicos facultativos.
+- Costes de construcción.
+- Costes de promoción.
+- Costes de comercialización.
+- Financiación y costes respecto a los precios y condiciones de venta.
+- Recomendaciones respecto a los precios y condiciones de venta.
+
+#### Costes de promoción
+
+La distribución de los costes de promoción.
+
+A la hora de iniciar un proyecto inmobiliario, se deben de considerar todos aquellos costes que participan en la creación del mismo. En este caso el **Controller** es la persona encargada de supervisar y definir las políticas de control de gestión, analizando los resultados respecto a los presupuestos, observando las desviaciones y proponiendo correcciones.
+
+Además, esta se encarga de supervisar y definir las políticas de control de gestión visualizando los presupuestos y apreciando las posibles desviaciones.
+
+A su vez se encarga de organizar el flujo adecuado entre los datos económicos y el sistema de control.
+
+El Controller en este caso, debe de participar en la elaboración de los planes e ideas de la dirección con el objetivo de poder anticiparse en base a la información que se recoja.
+
+La aplicación de este control conlleva la implantación de un conjunto de acciones, procedimientos, técnicas y procesos que configuran lo que se denomina el sistema de control.
+
+#### Costes de honorarios técnicos facultativos
+
+Considerando el estudio previo a la edificación:
+
+**Estudio previo.** Constituye la fase preliminar en la que se expresan las ideas que desarrollan el encargo de modo elemental y esquemático, mediante croquis o dibujos, a escala o sin ella.
+
+Incluye la recogida y sistematización de la información precisa, el planteamiento del programa técnico de necesidades y una estimación orientativa del coste económico, que permitan al promotor adoptar una decisión inicial. Esta fase incluirá los siguientes documentos:
+
+- Memoria expositiva.
+- Croquis o dibujos a escala o sin ella.
+- Estimación de coste.
+
+Honorarios en euros: `H = 0,05 · C · PEM · Ktotal`
+
+Coeficiente de complejidad: `Ktotal = 1 + ΣKparc`
+
+**Anteproyecto.** Es la fase del trabajo en la que se exponen los aspectos fundamentales de las características generales de la obra: funcionales, formales, constructivas y económicas, al objeto de proporcionar una primera imagen global de la misma y establecer un avance del presupuesto. Esta fase incluirá los siguientes documentos:
+
+- Memoria justificativa de las soluciones de tipo general adoptadas.
+- Planos de plantas, alzados y secciones a escala, sin acotar.
+- Avance del presupuesto con estimación global, por superficie construida u otro método que se considere idóneo.
+
+Honorarios en euros: `H = 0,05 · C · PEM · Ktotal`
+
+Coeficiente de complejidad: `Ktotal = 1 + ΣKparc`
+
+**Proyecto básico.** Es la fase del trabajo en la que se definen de modo preciso las características generales de la obra, mediante la adopción y justificación de soluciones concretas.
+
+Su contenido es suficiente para solicitar, una vez obtenido el preceptivo visado colegial, la licencia municipal u otras autorizaciones administrativas, pero insuficiente para llevar a cabo la construcción. Esta fase incluirá al menos los siguientes documentos:
+
+- Memoria descriptiva de las características generales de la obra y justificativa de las soluciones concretas que satisfagan con el fin administrativo a que se refiere el párrafo anterior.
+- Planos generales a escala y acotados, de plantas, alzados y secciones.
+- Presupuesto, con estimación global de cada capítulo, oficio y tecnología.
+
+Debiendo éstos desarrollarse conforme a lo especificado en el CTE en el caso que sea de aplicación.
+
+Honorarios en euros: `H = 0,4 · C · PEM · Ktotal`
+
+Coeficiente de complejidad: `Ktotal = 1 + ΣKparc`
+
+**Proyecto de ejecución.** Fase del trabajo en la que se desarrolla el proyecto básico, con la determinación completa de detalles y especificaciones de todos los materiales, elementos, sistemas constructivos y equipos, definiendo la obra en su totalidad.
+
+Su contenido será el necesario para la realización de las obras contando con el preceptivo visado colegial y la licencia correspondiente. Esta fase incluirá al menos los siguientes documentos:
+
+- Memoria de cimentación, estructura y oficios.
+- Planos de cimentación y estructura.
+- Planos de detalle.
+- Esquemas y dimensionamiento de instalaciones.
+- Pliego de condiciones técnicas, generales y particulares.
+- Estado de mediciones.
+- Presupuestos obtenidos por aplicación de precios unitarios de obra.
+
+Debiendo éstos desarrollarse conforme a lo especificado en el CTE en el caso que sea de aplicación. En la práctica profesional, las documentaciones correspondientes a los proyectos básicos y de ejecución podrán presentarse por separado, o bien podrán fusionarse en una sola, bajo la denominación común: proyecto básico y de ejecución.
+
+Honorarios en euros: `H = 0,7 · C · PEM · Ktotal`
+
+Variables de complejidad:
+
+- Por condiciones contractuales (Kc):
+  - Misión parcial: Kc = 0,20.
+  - Especial urgencia en la redacción de proyecto: Kc = 0,10.
+  - Especial complejidad del programa funcional: Kc = 0,10.
+  - Especial complejidad del nivel documental: Kc = 0,20.
+- Por especial complejidad de tramitación administrativa (Ka):
+  - Tramitación municipal compleja: Ka = 0,10.
+  - Tramitación ante organismos distintos del municipio: Ka = 0,10.
+- Por condiciones de la parcela (Ku):
+  - Ubicación en conjunto histórico: Ku = 0,10.
+  - Edificios medianeros en mal estado: Ku = 0,10.
+- Por construcción bajo rasante (Ks):
+  - 1 a 2 sótanos: Ks = 0,05.
+  - 3 o más sótanos: Ks = 0,10.
+- Por características del terreno (Kt):
+  - Condiciones geotécnicas de especial dificultad: Kt = 0,05.
+  - Cimentaciones especiales: Kt = 0,05.
+- Por características estructurales (Ke):
+  - Estructuras de grandes luces, materiales especiales: Ke = 0,05.
+- Por características de las instalaciones (Ki):
+  - Complejidad tecnológica de las instalaciones: Ki = 0,05.
+- Por características de revestimientos y acabados (Ko):
+  - Complejidad tecnológica de otros elementos: Ko = 0,05.
+
+**Dirección de obra.** Según el artículo 12 de la Ley de Ordenación de la Edificación: el director de obra es el agente que, formando parte de la dirección facultativa, dirige el desarrollo de la obra en los aspectos técnicos, estéticos, urbanísticos y medioambientales, de conformidad con el proyecto que la define, la licencia de edificación y demás autorizaciones preceptivas y las condiciones del contrato, con el objeto de asegurar su adecuación al fin propuesto.
+
+Constituye la fase en la que el Arquitecto lleva a cabo la coordinación del equipo técnico-facultativo de la obra, la interpretación técnica, económica y estética del proyecto de ejecución, así como la adopción de las medidas necesarias para llevar a término el desarrollo del Proyecto de ejecución, estableciendo las adaptaciones, detalles complementarios y modificaciones que puedan requerirse con el fin de alcanzar la realización total de la obra, de acuerdo con lo que establece el Proyecto de Ejecución correspondiente.
+
+Esta fase incluirá:
+
+- Cumplimentación del libro de órdenes.
+- Emisión del certificado final de obra.
+
+La documentación a elaborar en esta fase por parte del director de obra, en el caso de aplicación del CTE será la indicada en el Anexo II del mismo, «Documentación del seguimiento de obra».
+
+Honorarios en euros: `H = 0,95 · C · PEM · Ktotal`
+
+Coeficiente de complejidad: `Ktotal = 1 + ΣKparc`
+
+**Liquidación y recepción.** El artículo 6 de la Ley de Ordenación de la Edificación establece:
+
+1. La recepción de la obra es el acto por el cual el constructor, una vez concluida ésta, hace entrega de la misma al promotor y es aceptada por éste. Podrá realizarse con o sin reservas y deberá abarcar la totalidad de la obra o fases completas y terminadas de la misma, cuando así se acuerde por las partes.
+2. La recepción deberá consignarse en un acta firmada, al menos, por el promotor y el constructor (en la normativa se amplía).
+
+Esta fase podrá incluir lo siguiente:
+
+- Conformar la liquidación final de las unidades de obra ejecutadas.
+- Suscribir el acta de recepción de la obra.
+
+Honorarios en euros: `H = 0,95 · C · PEM · Ktotal`
+
+Coeficiente de complejidad: `Ktotal = 1 + ΣKparc`
+
+**Consideraciones especiales.** Se incluyen en este apartado aquellos encargos o condiciones de los mismos que perteneciendo a este Capítulo, tienen cualidades específicas suficientes como para ser considerados de forma explícita. Dichas consideraciones engloban:
+
+- Obras de ampliación, reforma y rehabilitación.
+- Edificios repetidos.
+- Documentos independientes.
+- Proyectos de obras de pequeña entidad.
+
+#### Costes de construcción
+
+A la hora de hablar de los costes de construcción es necesario tener en cuenta los costes **de referencia de la edificación**.
+
+Básicamente como su nombre indica son aquellos valores que tienen un sentido de referencia para situaciones generales dentro de un determinado ámbito. Los valores que se obtienen forman un intervalo entre un máximo y un mínimo orientativos para la edificación.
+
+Los costes de referencia de la edificación se derivan de la existencia de un método que carece de soporte legal alguno, y cuyo origen se encuentra en la desaparición de los costes mínimos de referencia que establecían los correspondientes Colegios Profesionales, siendo su finalidad la mera orientación al usuario acerca de los costes de construcción.
+
+Este método se desarrolló por el Área de Normativa Técnica, Supervisión y Control, y desde entonces se incorporó como una utilidad en las diferentes ediciones de la base de datos de la construcción. Se trata de un procedimiento sencillo y explícito que se pone a disposición de los usuarios como una primera aproximación a los costes de la construcción o como referencia.
+
+Algunas instituciones en base a sus atribuciones y competencias lo han incorporado como tal o lo han perfeccionado adecuándolo a sus necesidades concretas.
+
+Por lo tanto, los costes de referencia no van a predominar sobre los establecidos por el arquitecto, por lo tanto no tienen un carácter obligatorio para la determinación de la tasa urbanística y del impuesto de construcciones, instalaciones y obras, que es gestionado por los ayuntamientos.
+
+#### Costes de comercialización
+
+En relación a los costes de comercialización podemos distinguir diferentes tipos:
+
+- **Publicidad.** Comprende aquellos gastos relacionados con la publicidad en cualquier medio de comunicación y en el caso de algunas inmobiliarias el alquiler de la caseta de ventas y atención al público.
+- **Venta.** Algunos de los costes que engloban la comercialización o venta de los inmuebles van a ser los comerciales, encargados de informar de los productos a vender, siendo en este caso los inmuebles.
+- **Servicio de postventa.** Este servicio es el encargado de revisar la gestión y control del proceso de recepción de la promoción ya que se ha de tener en cuenta que durante los primeros meses después de la venta es donde se generan más reclamaciones y estas requieren de una solución rápida y efectiva.
+
 ## Lección 2.4 — Ratios y decisión
 
 - **Margen sobre ventas** = beneficio antes de impuestos ÷ ingresos. Mínimo 15 %.
@@ -402,7 +568,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
   - Entidad de nueva creación: 15 % en el primer período con base positiva y el siguiente
   - Empresa de reducida dimensión (cifra de negocio < 10 M€): 23 %
   - Microempresa (< 1 M€): 19 % los primeros 50.000 € y 21 % el resto
-  - Navarra y País Vasco: normativa foral propia
+  - Navarra y País Vasco: normativa propia
   - Confírmalo con tu asesor: hay exclusiones (entidades patrimoniales) y la cifra de negocio de una promoción varía mucho de un año a otro.
 - **Escenarios de sensibilidad:**
 
@@ -418,8 +584,8 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 ## Lección 2.5 — Negociación, estructura y aprobación de la inversión
 
 - **Negociación con el propietario del solar:**
-  - Precio, forma de pago (al contado, aplazado con aval, parte en viviendas), plazos.
-  - **Exclusividad** y plazo suficiente para hacer los estudios y conseguir financiación: fírmalo en una carta de intenciones o documento de reserva.
+  - Precio, forma de pago (al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles), plazos.
+  - **Opción de compra** y plazo suficiente para hacer los estudios y conseguir financiación: formalízala mediante un contrato de compraventa con opción de compra.
   - **Condiciones suspensivas:** viabilidad urbanística, registral, técnica y financiera; obtención de licencia.
   - Fórmulas: compraventa directa, opción de compra, **permuta** por viviendas futuras o **aportación del suelo** a la sociedad a cambio de participaciones.
 - **Estructura jurídica y societaria:**
@@ -443,15 +609,15 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 ## Checklist del Módulo 2
 
 - [ ] Plantilla 2 · Viabilidad rápida y método residual (incluida) rellena con precios de venta y costes contrastados
-- [ ] Estudio de mercado con precios escriturados
+- [ ] Estudio de mercado
 - [ ] Mix de producto cerrado con el arquitecto
 - [ ] Presupuesto de construcción contrastado con 2 constructoras locales
 - [ ] ICIO y tasas reales de la ordenanza municipal
 - [ ] CRP con tres escenarios
 - [ ] Flujo de caja mensual con TIR y necesidades de fondos propios
 - [ ] Precio máximo de suelo por método residual
-- [ ] Encaje (mono) del arquitecto
-- [ ] Exclusividad y condiciones suspensivas negociadas
+- [ ] Encaje del arquitecto
+- [ ] Opción de compra y condiciones suspensivas negociadas
 - [ ] Pacto de socios y estructura de la SPV
 - [ ] Memoria de inversión aprobada con hitos y criterios de salida
 
@@ -631,6 +797,7 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
 - **Paso a paso:**
   1. Reunión previa con el técnico municipal con el anteproyecto. Pregunta qué informes sectoriales van a pedir.
   2. Presenta en la sede electrónica: solicitud, proyecto (básico o de ejecución según el ayuntamiento), estudio de seguridad y salud, estudio de gestión de residuos, autorizaciones sectoriales que ya tengas, justificante de tasas e ICIO si la ordenanza lo exige al solicitar, fianza de residuos si la pide la ordenanza.
+     - **Autorizaciones sectoriales (Lección 4.2):** son los permisos de otros organismos (Confederación, Costas, carreteras, AESA, patrimonio) cuando el solar toca una zona de protección. Forman parte de la documentación de esta licencia de obras.
   3. El ayuntamiento revisa si está completo. Si falta algo te requiere y tienes **10 días** para subsanar.
   4. Informe técnico (arquitecto municipal) e informe jurídico.
   5. Resolución. Si es favorable, la licencia fija plazos de inicio y terminación y condiciones.
@@ -665,7 +832,7 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   - **Obras de urbanización pendientes:** proyecto de urbanización aprobado; muchos ayuntamientos exigen un aval si urbanizas a la vez que edificas.
   - Autorizaciones de las instalaciones que lo requieran.
 
-## Lección 4.3 — Abrir la obra legalmente
+## Lección 4.3 — Inicio de las obras
 
 - **Orden de actuaciones antes del primer camión:**
   1. Licencia concedida y condiciones leídas (fianzas, cartel, plazos).
@@ -759,10 +926,10 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
 | Disposición | Por certificaciones de obra |
 
 - **Lo que exige el banco:**
-  - **Preventas:** 30–50 % de las viviendas con contrato privado y anticipo.
+  - **Preventas:** 70–90 % de las viviendas con contrato privado y anticipo.
   - **Fondos propios:** 30–40 % del coste (el suelo pagado suele contar).
   - Tasación homologada (hipótesis de edificio terminado).
-  - Hipoteca sobre el suelo y la obra futura (escritura de obra nueva en construcción).
+  - Hipoteca sobre la obra futura (escritura de obra nueva en construcción).
   - Licencia, proyecto de ejecución, contrato de obra, presupuesto, planning y CRP.
   - Pólizas: decenal, TRC, RC.
   - Avales personales de los socios en promotores pequeños.
@@ -817,9 +984,8 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
 ## Lección 5.4 — El contrato de obra
 
 - **Modalidades:**
-  - **Precio cerrado (llave en mano):** certeza de coste. Exige un proyecto muy bien definido.
+  - **Precio cerrado (llave en mano):** certeza de coste. Exige un proyecto muy bien definido. Lo habitual y aconsejable.
   - **Por unidades de obra (mediciones):** pagas lo realmente ejecutado. Más riesgo de desviación.
-  - **Mixto:** lo habitual.
 - **Cláusulas imprescindibles:**
   1. Objeto: proyecto de ejecución visado como documento contractual.
   2. Precio, revisión de precios (si la hay) y calendario de certificaciones.
@@ -1140,6 +1306,7 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 |---|---|
 | **RD 515/1989**, información al consumidor en la compraventa de viviendas | Qué tienes que tener a disposición del comprador: planos, memoria de calidades, precio total, forma de pago, datos registrales, licencia |
 | **TRLGDCU (RDL 1/2007)**, art. 61 | La publicidad obliga: lo que anuncias forma parte del contrato |
+| **Ley 10/2025** (reforma del art. 20 TRLGDCU) | El consumidor debe conocer el precio final completo y todos los gastos que se le pretendan repercutir |
 | **TRLGDCU, art. 89.3** | Cláusulas abusivas: **no puedes cargar al comprador** la plusvalía municipal, los gastos de obra nueva y división horizontal, la hipoteca del promotor y su cancelación, las acometidas a suministros generales; **ni obligarle a subrogarse** en tu préstamo |
 | **LOE, DA 1.ª** | Garantía individual y cuenta especial para todo lo cobrado antes de la entrega |
 | **Ley 12/2023**, art. 31 | Información mínima al comprador en la operación de compra de vivienda |
@@ -1175,6 +1342,15 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 - **Materiales:** renders, planos acotados por tipología, memoria de calidades, dossier PDF, vídeo, tour virtual, piso piloto (físico o virtual).
 - **Canales:** web propia con formulario, Idealista, Fotocasa, pisos.com, Google Ads, Meta Ads, base de datos propia, compradores extranjeros (portales internacionales) en costa.
 - **Obligatorio en todo anuncio:** calificación energética de proyecto, y nada que no puedas cumplir (la publicidad es vinculante).
+- **Es muy importante respetar las normas en materia de consumidores y usuarios**, porque la reforma del artículo 20 de la Ley General para la Defensa de los Consumidores y Usuarios, introducida por la Ley 10/2025, refuerza algo muy claro: el consumidor debe conocer el precio final completo y todos los gastos que se le pretendan repercutir. Es decir: se acabaron los precios "gancho", las sorpresas de última hora y las comisiones camufladas.
+  - El pasado 28/12/2025 entró en vigor la Ley 10/2025, de 26 de diciembre, por la que se regulan los servicios de atención a la clientela, y marcó un antes y un después en la publicidad inmobiliaria en España. Aunque formalmente se enmarca dentro de la normativa de atención a la clientela, su impacto real es mucho más amplio, ya que introduce cambios directos en la Ley General para la Defensa de los Consumidores y Usuarios. El resultado son nuevas obligaciones que afectan de lleno a precios, honorarios, alquileres y reputación online.
+  - **Anuncios con precio cerrado desde el primer momento.** La ley impone una exigencia clara: el consumidor debe conocer el precio final completo desde el primer anuncio. Esto significa que la publicidad deberá reflejar, obligatoriamente, el precio real del inmueble, los impuestos correspondientes (IVA, ITP, AJD, según proceda), los honorarios de la agencia cuando recaigan sobre el consumidor y cualquier otro gasto obligatorio asociado a la operación.
+  - Queda expresamente prohibido el llamado "precio por goteo", es decir, anunciar un importe inicial y añadir costes más adelante. Prácticas habituales, como informar de la comisión solo durante la visita, pasarán a ser ilegales.
+  - **Más protección, no solo para compradores.** Una de las novedades más relevantes es la ampliación del concepto de clientela. La protección legal ya no se limita al comprador: incluye también al vendedor, al inquilino y a cualquier persona a la que se le ofrezca un servicio inmobiliario, aunque finalmente no se formalice ningún contrato. Desde el instante en que existe una oferta comercial, nacen las obligaciones de información, claridad y transparencia.
+  - La Ley 10/2025 también pone límites al uso de algoritmos y sistemas automáticos de fijación de precios en contextos de emergencia, como incendios, inundaciones o catástrofes naturales. Esta medida afecta especialmente al alquiler turístico y temporal, donde este tipo de herramientas es habitual.
+  - **Las valoraciones en internet pasan a estar reguladas.** Las agencias deberán garantizar que las reseñas sean auténticas, verificables, recientes y correspondientes a clientes que hayan utilizado el servicio en los últimos 30 días. Además, será obligatorio informar de forma clara sobre el sistema de verificación empleado.
+  - **Sanciones:** las consecuencias de incumplir la ley pueden ser muy graves, hasta 1.000.000 €, con posibilidad de aumentar la sanción si existe beneficio económico. Infracciones leves: desde 150 €; infracciones graves: hasta 100.000 €.
+  - La norma consolida un principio clave: lo que no aparece claramente en el anuncio no se puede cobrar después. La publicidad deja de ser un simple reclamo y pasa a formar parte del contenido contractual.
 - **Ten preparada la documentación del RD 515/1989** en la oficina de ventas antes de anunciar.
 
 - **Política de precios:** fija precios iniciales y una política de revisión por fases de venta (por ejemplo, subir un 2–3 % al alcanzar el 30 % y el 60 % vendido) y respétala.
@@ -1191,6 +1367,26 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 
 ## Lección 8.3 — Reserva y contrato privado
 
+- **Obligación de informar y documentación a entregar al comprador de vivienda:**
+  - En la Comunitat Valenciana la obligación de informar al comprador de **viviendas de obra nueva de renta libre** se rige principalmente por:
+    - Real Decreto 515/1989 (protección al consumidor en compraventa de viviendas).
+    - Ley 12/2023 por el derecho a la vivienda (artículo 31).
+    - Ley 38/1999 de Ordenación de la Edificación (LOE).
+    - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (publicidad veraz y cómputo de superficies).
+  - El promotor o vendedor debe tener a disposición del comprador y entregarle una documentación específica dividida en dos fases.
+- **1. Información obligatoria antes de firmar o entregar cantidades a cuenta (fase comercial).** Antes de firmar reservas, arras o contrato de compraventa, el promotor debe facilitar de forma gratuita y clara:
+  - **Identificación del promotor:** nombre o razón social, domicilio y datos de inscripción en el Registro Mercantil.
+  - **Planos y superficies:** plano general del emplazamiento de la vivienda y plano detallado de la misma (incluyendo zonas comunes y anejos como garaje o trastero), con indicación expresa de la **superficie útil y construida** (en la Comunitat Valenciana debe respetarse el criterio legal de cómputo de superficies de la Ley 8/2004).
+  - **Memoria de calidades:** descripción detallada de los materiales empleados en la construcción, aislamientos térmicos y acústicos, instalaciones y acabados.
+  - **Situación jurídica y urbanística:** copia de las autorizaciones y licencias urbanísticas (licencia de obras) y acreditación de la titularidad del terreno y cargas existentes (nota simple registral).
+  - **Condiciones económicas:** precio total de la vivienda y sus anejos, desglosando impuestos (en obra nueva se aplica **IVA**, generalmente el 10 %, más el **Impuesto de Actos Jurídicos Documentados (AJD)** en la Comunitat Valenciana), forma de pago y, si se ofrece subrogación hipotecaria, las condiciones del préstamo.
+  - **Garantías de cantidades anticipadas (en venta sobre plano):** si el comprador entrega dinero a cuenta antes de que la obra esté terminada, el promotor está obligado por ley (disposición adicional primera de la LOE) a entregarle un **aval bancario o seguro de caución** individualizado que garantice la devolución de las cantidades entregadas más los intereses legales si la obra no se inicia o no se entrega en plazo, además de ingresar ese dinero en una cuenta bancaria especial.
+- **2. Documentación a entregar con la vivienda (fase de entrega y escritura).** En el momento de la firma de la escritura pública y entrega de llaves, el comprador debe recibir:
+  - **Licencia de primera ocupación o declaración responsable:** en la Comunitat Valenciana (según la normativa urbanística valenciana, LOTUP), este documento acredita que la obra terminada cumple la normativa y es apta para ser habitada; es imprescindible para contratar los suministros definitivos de agua y luz.
+  - **Certificado de eficiencia energética (CEE):** registrado en el organismo competente de la Generalitat Valenciana (IVACE), con su correspondiente etiqueta energética.
+  - **Libro del Edificio:** documento que reúne el proyecto, las actas de recepción, la relación de agentes que han intervenido en la obra y el manual de uso y mantenimiento del inmueble.
+  - **Seguro decenal de daños:** póliza suscrita por el promotor que cubre durante 10 años los daños estructurales del edificio (cimentación, vigas, forjados, muros de carga).
+  - **Boletines de instalaciones y contratos:** certificados de las instalaciones de electricidad, agua, gas y telecomunicaciones para poder dar de alta los suministros, junto con los estatutos de la comunidad de propietarios si ya están redactados.
 - **Reserva:**
   - Importe: 3.000–10.000 €.
   - Ya es una cantidad a cuenta: **debe estar garantizada** (DA 1.ª LOE).
@@ -1328,7 +1524,7 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   - Comprobación de seguridad, accesibilidad y funcionamiento del edificio.
 - **Documentación final:** planos de obra ejecutada, certificados, ensayos, manuales, fichas técnicas y garantías de fabricantes.
 
-## Lección 9.2 — Obra nueva y división horizontal
+## Lección 9.2 — Declaración de obra nueva y división horizontal
 
 - **Obra nueva en construcción** (al empezar): licencia + certificado del técnico de que la descripción coincide con el proyecto. Sirve para que el banco hipoteque la obra futura.
 - **Obra nueva terminada** (o acta de finalización), art. 28 TRLSRU. Necesitas:
@@ -1348,12 +1544,11 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
 - **Regulariza** en la escritura las superficies, anexos y elementos comunes si lo construido difiere del proyecto inicial, y comprueba que las fincas resultantes coinciden con planos y títulos.
 - **Etiqueta energética:** obténla y facilítala a los compradores; es obligatoria en la oferta y en la venta (RD 390/2021).
 
-## Lección 9.3 — Primera ocupación y cédula de habitabilidad
+## Lección 9.3 — Licencia de primera ocupación
 
 - **Primera ocupación (ayuntamiento):** acredita que el edificio se ajusta a la licencia y puede usarse.
-  - Según la comunidad autónoma es **licencia** (resolución expresa) o **declaración responsable / comunicación previa** (eficacia inmediata y comprobación posterior). Madrid (Ley 1/2020), Andalucía (LISTA) y Galicia (Ley 2/2016) funcionan con declaración responsable o comunicación previa. Mira el Anexo B.
   - Documentos habituales: CFO, certificados de instalaciones, certificado energético, fotos, alta en el Catastro o justificante, certificado de las acometidas, liquidación definitiva del ICIO.
-- **Cédula de habitabilidad:** en 2026 la mantienen **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias y Región de Murcia**. La emite el organismo autonómico o insular y suele ser necesaria para contratar suministros definitivos y para vender.
+- **Cédula de habitabilidad:** es el mismo documento que la licencia de primera ocupación; no son actos o documentos distintos. Para ulteriores transmisiones sería licencia de segunda ocupación. En 2026 la mantienen **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias y Región de Murcia**. La emite el organismo autonómico o insular y suele ser necesaria para contratar suministros definitivos y para vender.
 - ⚠️ **Errores típicos:** pedir la primera ocupación con instalaciones sin registrar; no tener la acometida eléctrica definitiva hecha (la distribuidora tarda meses); olvidar la cédula en las comunidades que la exigen.
 
 ## Lección 9.4 — El Libro del Edificio
@@ -1366,6 +1561,24 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   4. Certificados de instalaciones y de ensayos.
   5. Instrucciones de uso y mantenimiento del edificio y sus instalaciones.
   6. Plan de mantenimiento con revisiones obligatorias (ascensor, PCI, térmicas, eléctricas).
+- **Índice del Libro del Edificio:**
+  - **Parte I. Características del edificio.**
+    - Del conjunto del edificio:
+      - Descripción: plano del emplazamiento; fotografías de las fachadas; características de cimentación y estructura; características de cerramiento y particiones; características de la cubierta; descripción y trazado de las instalaciones; características de los revestimientos; comportamiento y eficiencia energética del edificio; características ante ruido y vibraciones.
+      - Empresas y profesionales intervinientes: promotores; autores del proyecto; dirección facultativa; consultores, asesores y colaboradores; empresa constructora; empresas subcontratistas e instaladores; otros agentes.
+      - Acreditación de la calidad.
+      - Historia de las obras.
+      - Relación de las unidades de ocupación.
+    - De cada unidad de ocupación:
+      - Identificación y descripción de las unidades.
+      - Historia de las intervenciones en cada unidad de actuación.
+  - **Parte II. Normas e instrucciones de uso, conservación y mantenimiento.**
+    - Manual de uso y mantenimiento.
+    - Registro de operaciones de mantenimiento y reparación.
+    - Resumen del Libro para la Comunidad.
+  - **Parte III. Normas de actuación en caso de siniestro o en situaciones de emergencia.**
+    - Del conjunto del edificio.
+    - De cada unidad de ocupación.
 - **Entrega:** el promotor lo entrega a la comunidad de propietarios (presidente o administrador). A cada comprador se le da la parte de su vivienda.
 
 ## Lección 9.5 — Expediente de garantías
@@ -1466,10 +1679,17 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 
 ## Lección 10.3 — La notaría
 
+- **Al principio de la obra,** se documenta inicialmente mediante la elevación a público de la correspondiente escritura de "Declaración de Obra Nueva y División Horizontal" y se presenta en el Registro de la Propiedad para su inscripción. El Registro la inscribe con la anotación de "En construcción".
+- **Al finalizar la obra** se formaliza la **Escritura Final de Obra** y se presenta en el Registro de la Propiedad para su inscripción. Se inscribe como obra nueva terminada, desapareciendo la anotación de "en construcción".
+- **Para la Escritura Final de Obra,** hay que presentar en notaría la siguiente documentación:
+  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra).
+  2. Certificado final de obra.
+  3. Seguro decenal.
+  4. Licencia de primera ocupación.
+  5. Certificado de eficiencia energética.
+  6. Superficies georreferenciadas.
 - **3-4 semanas antes:**
   - El comprador elige notaría (derecho del consumidor). Ofrece la tuya, sin imponerla.
-  - Envía a cada notaría: obra nueva y división horizontal inscritas, licencia o declaración de primera ocupación, cédula si aplica, decenal, certificado energético, nota simple actualizada de la finca, certificado de la comunidad de estar al corriente.
-  - Pide al banco el **certificado de deuda** de cada finca y la carta de pago para cancelar su parte (o la documentación de subrogación si el comprador la elige).
   - Prepara la **nota de liquidación** por comprador: precio, pagos recibidos con IVA, importe pendiente.
 - **El comprador lleva:** DNI o NIE, documentación del origen de los fondos, justificantes de pagos anteriores, la hipoteca, que se firma el mismo día (con la documentación recibida al menos 10 días naturales antes y el acta previa notarial hecha al menos el día anterior, Ley 5/2019).
 - **Medios de pago:** el notario identifica cada pago (cheque nominativo o transferencia). Nada en efectivo por encima del límite legal.
@@ -1479,7 +1699,6 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 - [ ] Tres rondas de repasos cerradas
 - [ ] Documentación de entrega preparada por vivienda
 - [ ] Notarías y fechas confirmadas
-- [ ] Certificados de deuda y cartas de pago del banco
 - [ ] Notas de liquidación por comprador
 - [ ] Comprobación de blanqueo de cada comprador
 
@@ -1525,6 +1744,7 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 ## Lección 11.1 — La escritura de compraventa
 
 - **Contenido:** partes, finca registral y descripción, precio y forma de pago (con los pagos anteriores identificados), cargas (libre de cargas o con subrogación elegida por el comprador), manifestaciones (decenal, licencias, certificado energético, cédula), gastos.
+- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio**.
 - **Quién paga qué:**
 
 | Gasto | Comprador | Promotor |
@@ -1580,7 +1800,7 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 - **Impuestos de la compraventa:** el comprador liquida el AJD con el modelo 600 de su comunidad en el plazo autonómico (habitualmente 30 días hábiles); muchas notarías lo gestionan. Tú declaras el IVA repercutido en tu modelo 303.
 - **Registro:** la notaría envía copia electrónica al Registro de la Propiedad el mismo día; después se presenta la copia con el impuesto liquidado y se inscribe a nombre del comprador.
 - **Catastro:** notaría y registro comunican el cambio de titular; no hace falta presentar declaración.
-- **Plusvalía municipal:** autoliquídala en 30 días hábiles por cada venta (Módulo 12).
+- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
 - **Suministros:** altas o cambios de titularidad a nombre del comprador.
 - **Documentación:** entrega lo que corresponda al comprador y al administrador de la comunidad.
 

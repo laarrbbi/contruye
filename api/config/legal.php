@@ -90,7 +90,12 @@ return [
         'trlotup' => [
             'title' => 'Decreto Legislativo 1/2021, de 18 de junio, del Consell de aprobación del texto refundido de la Ley de ordenación del territorio, urbanismo y paisaje.',
             'url' => 'https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283',
-            'match' => ['Decreto Legislativo 1/2021', 'TRLOTUP'],
+            'match' => ['Decreto Legislativo 1/2021', 'TRLOTUP', 'LOTUP'],
+        ],
+        'vivienda_valencia' => [
+            'title' => 'Ley 8/2004, de 20 de octubre, de la Vivienda de la Comunidad Valenciana.',
+            'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-19752',
+            'match' => ['Ley 8/2004'],
         ],
         'medidas_fiscales_valencia_2025' => [
             'title' => 'Ley 5/2025, de 30 de mayo, de medidas fiscales, de gestión administrativa y financiera, y de organización de la Generalitat.',
@@ -296,7 +301,12 @@ return [
         'informacion_vivienda' => [
             'title' => 'Real Decreto 515/1989, de 21 de abril, sobre protección de los consumidores en cuanto a la información a suministrar en la compra-venta y arrendamiento de viviendas.',
             'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-1989-11181',
-            'match' => ['RD 515/1989'],
+            'match' => ['RD 515/1989', 'Real Decreto 515/1989'],
+        ],
+        'atencion_clientela' => [
+            'title' => 'Ley 10/2025, de 26 de diciembre, por la que se regulan los servicios de atención a la clientela.',
+            'url' => 'https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698',
+            'match' => ['Ley 10/2025'],
         ],
         'credito_inmobiliario' => [
             'title' => 'Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario.',

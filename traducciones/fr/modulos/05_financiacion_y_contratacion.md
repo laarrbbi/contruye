@@ -40,10 +40,10 @@
 | Tirages | Selon les situations de travaux |
 
 - **Ce qu'exige la banque :**
-  - **Préventes :** 30–50 % des logements avec contrat privé et acompte.
+  - **Préventes :** 70–90 % des logements avec contrat privé et acompte.
   - **Fonds propres :** 30–40 % du coût (le terrain payé compte en général).
   - Expertise agréée (hypothèse d'immeuble achevé).
-  - Hypothèque sur le terrain et la construction future (acte d'ouvrage neuf en construction).
+  - Hypothèque sur la construction future (acte d'ouvrage neuf en construction).
   - Permis, projet d'exécution, contrat de travaux, budget, planning et CRP.
   - Polices : décennale, TRC, RC.
   - Cautions personnelles des associés chez les petits promoteurs.
@@ -98,9 +98,8 @@
 ## Leçon 5.4 — Le contrat de travaux
 
 - **Modalités :**
-  - **Prix forfaitaire (clé en main) :** certitude de coût. Exige un projet très bien défini.
+  - **Prix forfaitaire (clé en main) :** certitude de coût. Exige un projet très bien défini. La formule habituelle et conseillée.
   - **Au métré (unités d'ouvrage) :** vous payez ce qui est réellement exécuté. Plus de risque de dérive.
-  - **Mixte :** le plus courant.
 - **Clauses indispensables :**
   1. Objet : le projet d'exécution visé comme document contractuel.
   2. Prix, révision des prix (le cas échéant) et calendrier des situations.

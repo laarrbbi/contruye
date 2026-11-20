@@ -132,4 +132,8 @@ return [
         'name' => 'Autoridad laboral',
         'text' => 'La consejería de trabajo de la comunidad autónoma: recibe la comunicación de apertura del centro de trabajo y lleva el REA.',
     ],
+    'opcion_compra' => [
+        'name' => 'Contrato de compraventa con opción de compra',
+        'text' => 'El propietario te concede, a cambio de una prima (en el curso, 3-10 %), el derecho a comprar el solar durante un plazo (6-24 meses) en las condiciones pactadas. Te da tiempo para los estudios y la financiación sin obligarte a comprar. Inscríbelo en el Registro para que valga frente a terceros (Lección 1.4).',
+    ],
 ];

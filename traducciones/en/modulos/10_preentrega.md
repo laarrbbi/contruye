@@ -65,10 +65,17 @@
 
 ## Lesson 10.3 — The notary
 
+- **At the start of the works,** the building is first documented by executing before a notary the corresponding public deed of "Declaration of New Building and Horizontal Division" (*Declaración de Obra Nueva y División Horizontal*), which is filed at the Land Registry for registration. The Registry registers it with the note "Under construction" (*En construcción*).
+- **When the works are finished,** the **Final Completion Deed** (*Escritura Final de Obra*) is executed and filed at the Land Registry for registration. It is registered as a completed new building, and the "under construction" note disappears.
+- **For the Final Completion Deed,** the following documents must be presented at the notary's:
+  1. The Building Book in digital form (it must expressly include the handover record of the works).
+  2. Final completion certificate.
+  3. Ten-year insurance.
+  4. First occupation licence.
+  5. Energy efficiency certificate.
+  6. Georeferenced areas.
 - **3-4 weeks before:**
   - The buyer chooses the notary (a consumer right). Offer yours, without imposing it.
-  - Send each notary: new building and horizontal division registered, licence or declaration of first occupation, cédula if it applies, ten-year insurance, energy certificate, up-to-date *nota simple* of the property, certificate from the owners' association that it is up to date.
-  - Ask the bank for the **debt certificate** for each property and the redemption letter to cancel its share (or the take-over documents if the buyer chooses that).
   - Prepare the **settlement statement** for each buyer: price, payments received with IVA, amount outstanding.
 - **The buyer brings:** DNI or NIE, documents on the origin of the funds, proof of earlier payments, and their mortgage, which is signed the same day (with the documents received at least 10 calendar days beforehand and the notary's preliminary record done at least the day before, Ley 5/2019).
 - **Means of payment:** the notary identifies each payment (named cheque or bank transfer). Nothing in cash above the legal limit.
@@ -78,7 +85,6 @@
 - [ ] Three snagging rounds closed
 - [ ] Handover documentation prepared for each home
 - [ ] Notaries and dates confirmed
-- [ ] Debt certificates and redemption letters from the bank
 - [ ] Settlement statements for each buyer
 - [ ] Money-laundering check on each buyer
 

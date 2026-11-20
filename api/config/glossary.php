@@ -50,5 +50,16 @@ return [
         'oct' => ['match' => ['OCT']],
         'rea' => ['match' => ['REA']],
         'autoridad_laboral' => ['match' => ['autoridad laboral', 'Autoridad laboral']],
+
+        // Contracts. A phrase the translations put in their own words is
+        // listed as each of them writes it.
+        'opcion_compra' => ['match' => [
+            'contrato de compraventa con opción de compra',
+            'sale contract with a purchase option',
+            "contrat de vente avec option d'achat",
+            'عقد بيع مع خيار الشراء',
+            'договор купли-продажи с опционом на покупку',
+            'договір купівлі-продажу з опціоном на купівлю',
+        ]],
     ],
 ];

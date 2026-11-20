@@ -43,6 +43,7 @@
 - **Step by step:**
   1. Preliminary meeting with the municipal officer, with the outline design. Ask which sectoral reports they will require.
   2. File through the e-office: application, design (basic or construction, depending on the town hall), health and safety study, waste management study, any sectoral authorisations you already have, proof of payment of fees and ICIO if the by-law requires it on application, waste deposit if the by-law asks for one.
+     - **Sectoral authorisations (Lesson 4.2):** these are the permits from other bodies (river basin authority, Coasts, roads, AESA, heritage) when the plot touches a protection zone. They form part of the documentation for this building licence.
   3. The town hall checks that the file is complete. If something is missing it sends you a request, and you have **10 days** to correct it.
   4. Technical report (municipal architect) and legal report.
   5. Decision. If favourable, the licence sets the start and completion deadlines and conditions.
@@ -77,7 +78,7 @@
   - **Outstanding urbanisation works:** approved urbanisation project; many town halls require a guarantee if you urbanise while you build.
   - Authorisations for the installations that need them.
 
-## Lesson 4.3 — Opening the site legally
+## Lesson 4.3 — Starting the works
 
 - **Order of steps before the first lorry:**
   1. Licence granted and its conditions read (deposits, site board, deadlines).

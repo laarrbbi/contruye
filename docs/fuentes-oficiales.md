@@ -43,6 +43,10 @@ actualizar.
 Mientras se comprobaban, 21 de los 74 identificadores del BOE que cabía suponer resultaron ser de otra
 norma; todos se corrigieron con el identificador que da el BOE.
 
+El 20 de noviembre de 2026 se añadieron, comprobadas del mismo modo, las dos normas que trae la corrección
+del curso (paquete 5.1): la Ley 10/2025 (BOE-A-2025-26698) y la Ley 8/2004 de la Vivienda de la Comunidad
+Valenciana (BOE-A-2004-19752; el identificador que cabía suponer, 19443, era de otra norma).
+
 ## Para el formador: normas citadas que han cambiado
 
 El texto del curso no se toca (constitución, II): estas correcciones son suyas, en un paquete nuevo.
@@ -67,7 +71,8 @@ El texto del curso no se toca (constitución, II): estas correcciones son suyas,
 | Ley 5/2022 | [Ley 5/2022, de 15 de julio, de Ordenación del Territorio y Urbanismo de Cantabria](https://www.boe.es/buscar/act.php?id=BOE-A-2022-13844) |
 | Ley 5/1999 | [Ley 5/1999, de 8 de abril, de Urbanismo de Castilla y León](https://www.boe.es/buscar/act.php?id=BOE-A-1999-12599) |
 | Decreto 22/2004 | [Decreto 22/2004, de 29 de enero, por el que se aprueba el Reglamento de Urbanismo de Castilla y León](https://www.boe.es/buscar/act.php?id=BOCL-h-2004-90152) |
-| Decreto Legislativo 1/2021 · TRLOTUP | [Decreto Legislativo 1/2021, de 18 de junio, del Consell de aprobación del texto refundido de la Ley de ordenación del territorio, urbanismo y paisaje](https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283) |
+| Decreto Legislativo 1/2021 · TRLOTUP · LOTUP | [Decreto Legislativo 1/2021, de 18 de junio, del Consell de aprobación del texto refundido de la Ley de ordenación del territorio, urbanismo y paisaje](https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283) |
+| Ley 8/2004 | [Ley 8/2004, de 20 de octubre, de la Vivienda de la Comunidad Valenciana](https://www.boe.es/buscar/act.php?id=BOE-A-2004-19752) |
 | Ley 5/2025 | [Ley 5/2025, de 30 de mayo, de medidas fiscales, de gestión administrativa y financiera, y de organización de la Generalitat](https://www.boe.es/buscar/doc.php?id=BOE-A-2025-11959) |
 | Ley 11/2018 · LOTUS | [Ley 11/2018, de 21 de diciembre, de ordenación territorial y urbanística sostenible de Extremadura](https://www.boe.es/buscar/act.php?id=BOE-A-2019-1790) |
 | Ley 2/2016 | [Ley 2/2016, de 10 de febrero, del suelo de Galicia](https://www.boe.es/buscar/act.php?id=BOE-A-2016-3191) |
@@ -108,7 +113,8 @@ El texto del curso no se toca (constitución, II): estas correcciones son suyas,
 | RD 1000/2010 | [Real Decreto 1000/2010, de 5 de agosto, sobre visado colegial obligatorio](https://www.boe.es/buscar/act.php?id=BOE-A-2010-12618) |
 | Ley 49/1960 · LPH | [Ley 49/1960, de 21 de julio, sobre propiedad horizontal](https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906) |
 | RDL 1/2007 · TRLGDCU | [Real Decreto Legislativo 1/2007, de 16 de noviembre, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios y otras leyes complementarias](https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555) |
-| RD 515/1989 | [Real Decreto 515/1989, de 21 de abril, sobre protección de los consumidores en cuanto a la información a suministrar en la compra-venta y arrendamiento de viviendas](https://www.boe.es/buscar/act.php?id=BOE-A-1989-11181) |
+| Ley 10/2025 | [Ley 10/2025, de 26 de diciembre, por la que se regulan los servicios de atención a la clientela](https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698) |
+| RD 515/1989 · Real Decreto 515/1989 | [Real Decreto 515/1989, de 21 de abril, sobre protección de los consumidores en cuanto a la información a suministrar en la compra-venta y arrendamiento de viviendas](https://www.boe.es/buscar/act.php?id=BOE-A-1989-11181) |
 | Ley 5/2019 | [Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario](https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814) |
 | Ley 10/2010 | [Ley 10/2010, de 28 de abril, de prevención del blanqueo de capitales y de la financiación del terrorismo](https://www.boe.es/buscar/act.php?id=BOE-A-2010-6737) |
 | Ley 37/1992 · LIVA | [Ley 37/1992, de 28 de diciembre, del Impuesto sobre el Valor Añadido](https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740) |

@@ -40,10 +40,10 @@
 | Drawdown | Against construction valuations |
 
 - **What the bank requires:**
-  - **Pre-sales:** 30–50 % of the homes with a private contract and an advance payment.
+  - **Pre-sales:** 70–90 % of the homes with a private contract and an advance payment.
   - **Equity:** 30–40 % of the cost (land already paid for usually counts).
   - Approved valuation (finished-building hypothesis).
-  - Mortgage over the land and the future building (deed of new building under construction).
+  - Mortgage over the future building (deed of new building under construction).
   - Licence, construction design, construction contract, budget, programme and CRP.
   - Policies: ten-year, TRC, RC.
   - Personal guarantees from the shareholders, for small developers.
@@ -98,9 +98,8 @@
 ## Lesson 5.4 — The construction contract
 
 - **Types:**
-  - **Fixed price (turnkey):** certainty of cost. It needs a very well-defined design.
+  - **Fixed price (turnkey):** certainty of cost. It needs a very well-defined design. The usual and advisable choice.
   - **By units of work (measurements):** you pay for what is actually built. More risk of overrun.
-  - **Mixed:** the usual one.
 - **Clauses you cannot do without:**
   1. Purpose: the endorsed construction design as a contract document.
   2. Price, price review (if any) and valuation calendar.

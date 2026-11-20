@@ -43,6 +43,7 @@
 - **Étape par étape :**
   1. Réunion préalable avec le technicien municipal, avant-projet en main. Demandez quels avis sectoriels seront exigés.
   2. Déposez sur le guichet électronique : demande, projet (de base ou d'exécution selon la mairie), étude de sécurité et de santé, étude de gestion des déchets, autorisations sectorielles déjà obtenues, justificatif des taxes et de l'ICIO si l'ordonnance l'exige au dépôt, caution déchets si l'ordonnance la demande.
+     - **Autorisations sectorielles (leçon 4.2) :** ce sont les autorisations délivrées par d'autres organismes (Confédération, Costas, routes, AESA, patrimoine) lorsque le terrain touche une zone de protection. Elles font partie du dossier de ce permis de construire.
   3. La mairie vérifie que le dossier est complet. S'il manque une pièce, elle vous le demande et vous avez **10 jours** pour régulariser.
   4. Avis technique (architecte municipal) et avis juridique.
   5. Décision. Si elle est favorable, le permis fixe les délais de démarrage et d'achèvement et les conditions.
@@ -77,7 +78,7 @@
   - **Travaux d'aménagement en attente :** projet de viabilisation approuvé ; beaucoup de mairies exigent une caution si vous viabilisez en même temps que vous construisez.
   - Autorisations des installations qui en exigent.
 
-## Leçon 4.3 — Ouvrir le chantier en toute légalité
+## Leçon 4.3 — Le démarrage des travaux
 
 - **Ordre des démarches avant le premier camion :**
   1. Permis obtenu et conditions lues (cautions, panneau, délais).

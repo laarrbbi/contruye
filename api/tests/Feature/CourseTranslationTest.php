@@ -48,7 +48,7 @@ it('refuses a translation that changes a law number, drops an acronym, a table r
     $spanish = CourseSource::fromConfig()->read('1_contenido/modulos/10_preentrega.md');
     $parsed = CourseTranslation::parseModule($spanish, $spanish, 'test');
     expect($parsed['lessons'])->toHaveCount(3)
-        ->and($parsed['checklist'])->toHaveCount(6)
+        ->and($parsed['checklist'])->toHaveCount(5)
         ->and($parsed['lessons'][2]['content'])->toContain('Ley 5/2019');
 
     $broken = [
