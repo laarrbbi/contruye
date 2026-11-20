@@ -40,14 +40,16 @@ final class Markdown
      *                            short texts written line by line, like a
      *                            module's "Objetivo / Duración" header
      * @param  bool  $glossary  mark the taxes and institutions (course text in the app)
+     * @param  bool  $references  with $glossary, link «Lección 4.2», «Módulo 9» to that place;
+     *                            off for a short field shown inside a control (a checklist step)
      */
-    public static function toHtml(?string $markdown, bool $lineBreaks = false, bool $glossary = false): ?string
+    public static function toHtml(?string $markdown, bool $lineBreaks = false, bool $glossary = false, bool $references = true): ?string
     {
         if ($markdown === null || trim($markdown) === '') {
             return null;
         }
 
-        return trim((string) self::converter($lineBreaks, $glossary)->convert($markdown));
+        return trim((string) self::converter($lineBreaks, $glossary, $glossary && $references)->convert($markdown));
     }
 
     /**
@@ -78,7 +80,9 @@ final class Markdown
         }
 
         // Escape Markdown's own punctuation: the field is text, not Markdown.
-        $html = self::toHtml((string) preg_replace('/([\\\\`*_{}\[\]()#+\-.!|<>~])/', '\\\\$1', $text), glossary: $glossary);
+        // No links to lessons: such a field sits inside a control (a checklist
+        // step's label) or a table cell, where a link would be a second click.
+        $html = self::toHtml((string) preg_replace('/([\\\\`*_{}\[\]()#+\-.!|<>~])/', '\\\\$1', $text), glossary: $glossary, references: false);
 
         return (string) preg_replace('#^<p>(.*)</p>$#s', '$1', (string) $html);
     }
@@ -90,9 +94,9 @@ final class Markdown
         GlossaryLinker::flush();
     }
 
-    private static function converter(bool $lineBreaks, bool $glossary = false): MarkdownConverter
+    private static function converter(bool $lineBreaks, bool $glossary = false, bool $references = false): MarkdownConverter
     {
-        $key = ($lineBreaks ? 'breaks' : 'default').($glossary ? '+glossary' : '');
+        $key = ($lineBreaks ? 'breaks' : 'default').($glossary ? '+glossary' : '').($references ? '+references' : '');
 
         if (! isset(self::$converters[$key])) {
             $environment = new Environment([
@@ -108,7 +112,9 @@ final class Markdown
                 // Course text: its pictograms in type, not emoji.
                 $environment->addEventListener(DocumentParsedEvent::class, new CourseTypography, 10);
                 // «Lección 4.2», «Módulo 9»: a link to that place in the player.
-                $environment->addEventListener(DocumentParsedEvent::class, new CourseReferenceLinker, -5);
+                if ($references) {
+                    $environment->addEventListener(DocumentParsedEvent::class, new CourseReferenceLinker, -5);
+                }
                 // After the laws: a term inside a law's link stays part of the link.
                 $environment->addEventListener(DocumentParsedEvent::class, new GlossaryLinker, -10);
                 $environment->addRenderer(GlossaryTerm::class, new GlossaryTermRenderer);

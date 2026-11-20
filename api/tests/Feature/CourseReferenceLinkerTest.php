@@ -33,7 +33,10 @@ it('leaves headings, code, laws, plurals and decimals alone, and every surface b
 
     expect($html)->not->toContain('ref-curso')
         // Without the switch (e-mails, the public pages): no link either.
-        ->and(Markdown::toHtml('Mira la Lección 4.2.'))->not->toContain('ref-curso');
+        ->and(Markdown::toHtml('Mira la Lección 4.2.'))->not->toContain('ref-curso')
+        // Nor in a short field shown inside a control: a checklist step is a label to tick.
+        ->and(Markdown::inline('CRP preliminar con precio máximo del suelo (Módulo 2)', glossary: true))->not->toContain('ref-curso')
+        ->and(Markdown::toHtml('CRP preliminar (Módulo 2)', glossary: true))->toContain('ref-curso');
 });
 
 it('sends lesson 4.1 to the sectoral authorisations of lesson 4.2', function () {
