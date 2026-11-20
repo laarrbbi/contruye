@@ -2,6 +2,7 @@
 
 > **Objective:** every buyer receives a home without defects, and the notary has everything ready before signing day.
 > **Duration:** 70 min · **Result:** snagging lists closed, handover documentation for each home and signing calendar.
+> **Where we are:** with the building legalised (Module 9), you prepare the handover: you go through each home with its buyer, prepare its documents and get the notary ready for the signings.
 
 ## Laws that apply
 

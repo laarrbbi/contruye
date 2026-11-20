@@ -2,6 +2,7 @@
 
 > **Objectif :** obtenir le permis de construire dans le délai le plus court et ouvrir le chantier sans aucune infraction.
 > **Durée :** 100 min · **Résultat :** permis accordé, ICIO liquidé, ouverture du centre de travail déclarée et procès-verbal d'implantation signé.
+> **Où en sommes-nous :** avec le projet du module 3, vous demandez le permis de construire et préparez le chantier pour démarrer sans rien enfreindre. Les autorisations sectorielles d'autres organismes (leçon 4.2) font partie du dossier du permis (leçon 4.1).
 
 ## Lois applicables
 

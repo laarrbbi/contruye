@@ -2,6 +2,7 @@
 
 > **Objetivo:** firmar, cobrar, constituir la comunidad y entregar viviendas habitables desde el primer día.
 > **Duración:** 115 min · **Resultado:** escrituras firmadas, préstamo promotor amortizado, comunidad constituida y actas de entrega.
+> **Dónde estamos:** con las viviendas repasadas y la notaría preparada (Módulo 10), llega la firma: escrituras, cobro, comunidad de propietarios, suministros y entrega de llaves.
 
 ## Leyes que aplican
 

@@ -2,6 +2,7 @@
 
 > **Objective:** turn the finished works into homes that can be conveyed, mortgaged and lived in.
 > **Duration:** 105 min · **Result:** first occupation (and cédula where required), deed of completed new building and horizontal division registered, Building Book.
+> **Where we are:** with the works finished and handed over (Module 6), you legalise them: first occupation, the deed of completed new building and horizontal division, and the Building Book, so that each home can be sold by deed, mortgaged and lived in.
 
 ## Laws that apply
 

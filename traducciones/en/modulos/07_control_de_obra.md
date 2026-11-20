@@ -2,6 +2,7 @@
 
 > **Objective:** finish the works on time, on budget and with the documented quality that the bank, the insurer and the buyers will ask you for.
 > **Duration:** 100 min · **Result:** control system with valuations, signed variations, monthly report and complete quality documentation.
+> **Where we are:** while the building goes up (Module 6), you make sure the works come in on time, on budget and with the documented quality the bank, the insurer and the buyers will ask you for.
 
 ## Laws that apply
 

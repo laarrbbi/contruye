@@ -2,6 +2,7 @@
 
 > **Objetivo:** financiar la obra, contratar al constructor adecuado y cubrir todos los riesgos con seguros y garantías.
 > **Duración:** 120 min · **Resultado:** préstamo promotor firmado, seguros contratados, cuenta especial de anticipos abierta y contrato de obra firmado.
+> **Dónde estamos:** con el proyecto (Módulo 3) y la licencia (Módulo 4), financias la promoción y contratas: el préstamo promotor, los seguros y garantías, y la constructora. Sin esto la obra no empieza.
 
 ## Leyes que aplican
 

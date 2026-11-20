@@ -2,6 +2,7 @@
 
 > **Objetivo:** obtener la licencia de obras en el menor plazo posible y abrir la obra sin incumplir nada.
 > **Duración:** 100 min · **Resultado:** licencia concedida, ICIO liquidado, centro de trabajo comunicado y acta de replanteo firmada.
+> **Dónde estamos:** con el proyecto del Módulo 3, pides la licencia de obras y dejas la obra lista para empezar sin incumplir nada. Las autorizaciones sectoriales de otros organismos (Lección 4.2) forman parte de la documentación de la licencia (Lección 4.1).
 
 ## Leyes que aplican
 

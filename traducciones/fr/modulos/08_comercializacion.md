@@ -2,6 +2,7 @@
 
 > **Objectif :** vendre sur plan les logements qu'exige la banque, et le reste avant la livraison, en respectant le droit de la consommation, la lutte anti-blanchiment et les garanties.
 > **Durée :** 110 min · **Résultat :** plan commercial, documentation légale de vente, contrats privés avec garanties et CRM.
+> **Où en sommes-nous :** la vente avance en parallèle de tout ce qui précède : elle commence avec l'achat du terrain, et les contrats privés avec acomptes arrivent avec le permis et les garanties (leçon 8.1). Vous vendez sur plan les logements qu'exige la banque, et le reste avant la livraison.
 
 ## Lois applicables
 

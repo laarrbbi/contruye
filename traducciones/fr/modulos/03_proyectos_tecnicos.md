@@ -2,6 +2,7 @@
 
 > **Objectif :** disposer d'un projet qui obtient le permis, que l'on peut construire au prix prévu et que l'assureur décennal accepte.
 > **Durée :** 110 min · **Résultat :** projet de base et projet d'exécution, avec étude de sécurité et de santé, géotechnique et gestion des déchets.
+> **Où en sommes-nous :** avec le GO du module 2, vous commandez les projets techniques : l'architecte et son équipe transforment l'étude d'implantation en projet de base, avec lequel vous demandez le permis, et en projet d'exécution, avec lequel on construit. Rien ne se construit encore.
 
 ## Lois applicables
 

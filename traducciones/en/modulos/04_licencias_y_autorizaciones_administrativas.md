@@ -2,6 +2,7 @@
 
 > **Objective:** get the building licence in the shortest possible time and open the site without breaching anything.
 > **Duration:** 100 min · **Result:** licence granted, ICIO paid, workplace opening notified and setting-out record signed.
+> **Where we are:** with the design from Module 3, you apply for the building licence and get the works ready to start without breaching anything. The sectoral authorisations from other bodies (Lesson 4.2) are part of the licence documentation (Lesson 4.1).
 
 ## Laws that apply
 

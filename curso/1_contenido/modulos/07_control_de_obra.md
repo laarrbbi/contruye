@@ -2,6 +2,7 @@
 
 > **Objetivo:** que la obra salga en plazo, en coste y con la calidad documentada que te van a pedir el banco, la aseguradora y los compradores.
 > **Duración:** 100 min · **Resultado:** sistema de control con certificaciones, modificados firmados, informe mensual y documentación de calidad completa.
+> **Dónde estamos:** mientras se construye (Módulo 6), controlas que la obra salga en plazo, en coste y con la calidad documentada que te van a pedir el banco, la aseguradora y los compradores.
 
 ## Leyes que aplican
 

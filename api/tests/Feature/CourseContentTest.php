@@ -77,11 +77,16 @@ it('stores every module file without dropping or changing a line', function () {
             $rebuilt[] = '## '.$lesson->title_es;
             $rebuilt[] = $lesson->content_es;
         }
+        // The closing sections, with the checklist where the file has it (after a module's summary).
+        $closing = $blocks->where('type', 'section')->values();
+        foreach ($closing->take($parsed['closing_before_checklist']) as $block) {
+            $rebuilt[] = $block->body_es;
+        }
         $rebuilt[] = '## '.$parsed['checklist_heading'];
         foreach ($module->checklistItems->sortBy('order') as $item) {
             $rebuilt[] = '- [ ] '.$item->text_es;
         }
-        foreach ($blocks->where('type', 'section') as $block) {
+        foreach ($closing->skip($parsed['closing_before_checklist']) as $block) {
             $rebuilt[] = $block->body_es;
         }
 

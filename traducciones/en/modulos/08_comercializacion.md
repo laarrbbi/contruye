@@ -2,6 +2,7 @@
 
 > **Objective:** sell off-plan the homes the bank requires, and the rest before handover, complying with consumer law, anti-money-laundering rules and the guarantees.
 > **Duration:** 110 min · **Result:** sales plan, legal sales documentation, private contracts with guarantees and CRM.
+> **Where we are:** sales run alongside everything before: they start with the land purchase, and the private contracts with advance payments come with the licence and the guarantees (Lesson 8.1). You sell off-plan the homes the bank requires and the rest before handover.
 
 ## Laws that apply
 

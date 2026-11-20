@@ -2,6 +2,7 @@
 
 > **Objectif :** signer, encaisser, constituer la copropriété et livrer des logements habitables dès le premier jour.
 > **Durée :** 115 min · **Résultat :** actes signés, prêt promoteur remboursé, copropriété constituée et procès-verbaux de livraison.
+> **Où en sommes-nous :** les logements revus et le notaire prêt (module 10), vient la signature : actes, encaissement, copropriété, raccordements et remise des clés.
 
 ## Lois applicables
 

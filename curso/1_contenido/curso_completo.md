@@ -83,6 +83,7 @@
 
 > **Objetivo:** comprar un solar que se pueda edificar, al precio que permite el proyecto y sin cargas ocultas.
 > **Duración:** 120 min · **Resultado:** solar escriturado a nombre de la SPE o con opción de compra firmada.
+> **Dónde estamos:** es el primer paso de la promoción. Empiezas sin solar y sin sociedad; en este módulo encuentras el solar, compruebas qué se puede construir en él y que no tiene problemas, y lo compras a nombre de tu sociedad.
 
 ## Leyes que aplican
 
@@ -113,6 +114,10 @@
 
 ## Lección 1.1 — Define el producto y encuentra el solar
 
+> **Dónde estamos:** empiezas desde cero. Antes de buscar decides qué vas a promover; con eso en la cabeza buscas solares y los apuntas en tu base de datos.
+
+> **Ejemplo · Nicolás, el promotor:** a lo largo del curso seguimos a Nicolás, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas. Va paso a paso, como el texto de cada módulo, y elige siempre la opción más clásica.
+
 - **Antes de buscar, define qué vas a promover.** Es el filtro con el que mirarás cada solar.
   - **Tipo de promoción:** vivienda libre, protegida (régimen de tu comunidad autónoma), asequible incentivada (Ley 12/2023) o mixta. Cambia el precio máximo, el IVA (4 % en protegida de régimen especial), la financiación y el comprador.
   - **Público objetivo:** primera vivienda, reposición, inversor, comprador extranjero o segunda residencia.
@@ -120,6 +125,9 @@
   - **Nivel de calidades**, garajes, trasteros y zonas comunes (piscina, jardín, gimnasio, coworking).
   - **Precio objetivo de venta** (€/m²) y **presupuesto máximo de suelo** (método residual, Módulo 2).
   - Resultado: una **ficha de producto** de una página.
+
+> **Ejemplo:** Nicolás define su producto: vivienda libre, para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2) y calidades medias. Lo resume en su ficha de producto de una página.
+
 - **Analiza la ubicación** de cada solar: comunicaciones, transporte, servicios, equipamientos (colegios, sanidad, comercio) y demanda residencial de la zona.
 
 - **Qué buscas:** suelo urbano consolidado, con servicios (acceso rodado, agua, saneamiento, electricidad) y con alineaciones fijadas. Es lo único que permite pedir licencia sin urbanizar antes.
@@ -133,6 +141,19 @@
   6. Suelo público: CASA47 (entidad estatal que sustituye a SEPES desde 2025) y la entidad de suelo de tu comunidad (Anexo A).
   7. Fondos de inversión y entidades financieras que venden carteras de suelo.
   8. Operaciones fuera de mercado: acuerdos con propietarios mediante permuta por viviendas futuras o aportación del suelo a la sociedad.
+- **Un solar de cada canal**, como los verías en tu base de datos:
+
+| Canal | Un solar de ejemplo |
+|---|---|
+| Red propia | Una casa vieja de una herencia que te trae un notario o un administrador de fincas |
+| Búsqueda activa en el PGOU | Una manzana con edificabilidad sin agotar: escribes al propietario a la dirección del Catastro |
+| Portales | Un solar anunciado en la sección de suelo de Idealista o Fotocasa |
+| SAREB y servicers bancarios | Un solar de la cartera de un servicer |
+| Subastas | Un solar embargado en el Portal de Subastas del BOE |
+| Suelo público | Una parcela en venta o en concurso de CASA47 o de la entidad de suelo de tu comunidad |
+| Fondos y entidades financieras | Un solar dentro de una cartera de suelo |
+| Fuera de mercado | Un propietario que cambia su solar por viviendas futuras (permuta) |
+
 - **Lleva tu cartera de suelo en una base de datos** desde el primer solar: cada solar con su zona, clasificación, calificación, situación urbanística, superficies, edificabilidad, precio y forma de pago, y quién es su propietario y quién te lo ha traído. Guarda también a tus clientes con lo que buscan y a tus captadores. Usa la **Plantilla del profesional · Base de datos de gestión de suelo** (incluida): trae las listas desplegables y una ficha del solar lista para enviar por email.
 - **Filtro de 10 minutos antes de dedicar más tiempo:**
   - Edificabilidad × precio de venta de la zona ÷ precio pedido → si el suelo pasa del 30 % de los ingresos, descártalo salvo zona prime.
@@ -141,7 +162,15 @@
   - Para hacer este filtro con números usa la **Plantilla del profesional · Números gordos del solar** (incluida). Con el techo edificable, la repercusión del suelo, el coste de construcción y el beneficio que buscas, te da el precio del solar, el precio de venta que necesitas y el beneficio. Si pasa el filtro, afina la compra con la Plantilla 1 y la viabilidad con la Plantilla 2 (Módulo 2).
 - ⚠️ **Errores típicos:** enamorarse de la ubicación sin calcular; comprar suelo "urbanizable" pensando que es edificable; no mirar si el ayuntamiento está modificando el plan.
 
+> **Ejemplo:** Nicolás empieza por el canal más rentable, su red propia: un administrador de fincas le habla de un solar de 344 m² en suelo urbano consolidado, con servicios. Lo da de alta en su base de datos, con su propietario y con quien se lo ha traído, y lo pasa por la plantilla Números gordos del solar: 1.586,49 m² de techo en B+5, que dan 18 viviendas (2 son áticos). Son los datos del ejemplo del profesional que trae la plantilla, y el edificio que verás crecer en el Aprendizaje 3D. Como le encaja, sigue con la Lección 1.2.
+
+> **Resumen:** primero defines qué vas a promover (tu ficha de producto); después buscas suelo urbano consolidado por los canales de la lista, lo apuntas en tu base de datos y descartas en 10 minutos lo que no da los números.
+>
+> **Tu checklist:** solar dado de alta en tu base de datos · números gordos del solar · ficha de producto.
+
 ## Lección 1.2 — Análisis urbanístico: qué puedes construir
+
+> **Dónde estamos:** en la Lección 1.1 definiste tu producto y encontraste en tu base de datos solares que pasan el filtro de los 10 minutos. Ahora analizas a fondo cada dato que apuntaste en tu plantilla: qué dice el planeamiento y cuántas viviendas caben de verdad.
 
 - **Quién manda:** la comunidad autónoma hace la ley de urbanismo y el ayuntamiento aplica su PGOU y sus ordenanzas.
 - **Documentos que debes leer:**
@@ -170,7 +199,15 @@
   - **Riesgo de inundación** en el visor del Sistema Nacional de Cartografía de Zonas Inundables (SNCZI, MITECO).
   - **Protección patrimonial** del inmueble o del entorno (catálogo municipal).
 
+> **Ejemplo:** Nicolás descarga el PGOU del visor municipal y lee la ficha de zona de su solar. Encarga el estudio de volumetría a un estudio de arquitectura de la zona, el que llevará después el proyecto (Módulo 3), y le confirma lo que daban los números gordos: B+5, 18 viviendas, 2 de ellas áticos. Pide al ayuntamiento el informe urbanístico por escrito y mira el riesgo de inundación en el SNCZI y el catálogo municipal.
+
+> **Resumen:** del PGOU y de la ficha de zona sacas los parámetros del solar; el arquitecto te dice cuántas viviendas caben de verdad y el ayuntamiento te lo da por escrito. Antes de comprar, comprueba también inundación, patrimonio y si hace falta otro instrumento de planeamiento.
+>
+> **Tu checklist:** informe o cédula urbanística del ayuntamiento por escrito · estudio de volumetría del arquitecto · riesgo de inundación y protección patrimonial revisados.
+
 ## Lección 1.3 — Due diligence: comprar sin sorpresas
+
+> **Dónde estamos:** ya sabes qué se puede construir en el solar (Lección 1.2). Antes de comprarlo compruebas que no tiene problemas legales, fiscales, técnicos ni económicos: es la due diligence.
 
 - **Legal:**
   - Nota simple → titular, cargas (hipotecas, embargos), servidumbres, condiciones resolutorias, afecciones urbanísticas.
@@ -196,7 +233,27 @@
 - **Contratos vigentes sobre la finca:** arrendamientos, opciones de terceros, derechos de tanteo y retracto, litigios.
 - **Superficie registral, catastral y real:** contrasta las tres.
 
+- **Quién se encarga de cada cosa** (a quién pides cada comprobación de las listas de arriba):
+  - **Registro de la Propiedad:** la nota simple, la certificación de dominio y cargas y la superficie registral.
+  - **Catastro:** la referencia y la superficie catastral.
+  - **Ayuntamiento:** en urbanismo, los litigios o expedientes de disciplina, las cargas de urbanización y el arbolado protegido; en gestión tributaria, el certificado de deudas de IBI y tasas.
+  - **Consejería de Cultura de la comunidad:** los yacimientos arqueológicos.
+  - **Abogado** (lo habitual, uno urbanista): revisa la nota simple y las cargas, los arrendatarios u ocupantes, los contratos vigentes sobre la finca y la regularización si Catastro, Registro y realidad no coinciden.
+  - **Topógrafo:** el levantamiento (superficie real, cotas, linderos).
+  - **Laboratorio de geotecnia:** la geotecnia preliminar.
+  - **Arquitecto o ingeniería:** el derribo (proyecto, amianto con empresa inscrita en el RERA, residuos con gestor autorizado), los suelos contaminados y las servidumbres de cauces, costas, carreteras, ferrocarril y aeropuertos.
+  - **Compañías de suministro:** la capacidad de las acometidas y el punto de conexión.
+  - **Tú:** el €/m²t frente al mercado y la CRP preliminar (Módulo 2).
+
+> **Ejemplo:** Nicolás encarga la due diligence legal a un abogado urbanista de su provincia y el levantamiento a un topógrafo. Él mismo pide la nota simple en línea y el certificado de deudas de IBI al ayuntamiento, y confirma con las compañías que hay capacidad de luz y agua. Todo coincide y no hay cargas ni ocupantes: puede comprar.
+
+> **Resumen:** la due diligence mira el solar desde cuatro lados (legal, fiscal, técnico y económico) y confirma acometidas, contratos y superficies. Si algo no cuadra, se regulariza antes o se condiciona la compra.
+>
+> **Tu checklist:** nota simple y certificación de cargas · referencia catastral y topográfico coincidentes · certificado de deudas de IBI y tasas · geotecnia preliminar si hay sótanos · capacidad de acometidas · servidumbres sectoriales.
+
 ## Lección 1.4 — La compra: forma, fiscalidad y sociedad
+
+> **Dónde estamos:** ya has encontrado el solar, sabes qué puedes construir (Lección 1.2) y la due diligence ha salido bien (Lección 1.3). Pasamos a la compra: cómo se firma, qué impuestos paga y a nombre de qué sociedad.
 
 - **Formas de comprar:**
   - **Compraventa directa.**
@@ -224,6 +281,18 @@
   - Pasos: denominación (Registro Mercantil Central) → cuenta bancaria y aportación → escritura ante notario → NIF provisional (AEAT, modelo 036) → inscripción en el Registro Mercantil provincial → NIF definitivo. Vía rápida: CIRCE / PAE.
   - En Navarra y País Vasco, el IS y el IVA los gestiona la hacienda foral.
 - ⚠️ **Errores típicos:** comprar a nombre personal y luego aportar a la sociedad (doble tributación); pagar ITP cuando el vendedor podía renunciar a la exención y repercutir IVA deducible.
+
+> **Ejemplo:** Nicolás constituye primero su sociedad, una SL para esta promoción (la SPE), y nunca compra a nombre personal. Con el propietario, un particular, firma ante notario una opción de compra y la inscribe en el Registro: paga una prima y se asegura el plazo para hacer la viabilidad (Módulo 2) y conseguir la financiación. Cuando compre, como vende un particular, la compra pagará el ITP de su comunidad (Anexo B) y no IVA; notaría y registro, en torno al 0,5 % del precio; la plusvalía municipal, el vendedor.
+
+> **Resumen:** compra a nombre de tu sociedad, nunca a nombre personal; elige la forma (compraventa, opción, condición suspensiva, arras o permuta) según lo que te falte por comprobar, y mira quién vende para saber qué impuesto paga la compra.
+>
+> **Tu checklist:** Plantilla 1 · Compra del solar · SPE constituida · opción de compra o escritura firmada e inscrita.
+
+## Resumen del Módulo 1
+
+Has definido tu producto, has encontrado un solar y lo has apuntado en tu base de datos, has comprobado qué se puede construir y que no tiene problemas, y lo has asegurado a nombre de tu sociedad.
+
+**Dónde deberías estar en tu proyecto:** con el solar comprado o con la opción de compra firmada a nombre de tu SPE, los números gordos y la Plantilla 1 hechos, y guardados el informe urbanístico, el estudio de volumetría y la due diligence. Con eso pasas al Módulo 2, donde decides con números si la promoción se hace.
 
 ## Checklist del Módulo 1
 
@@ -288,6 +357,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 > **Objetivo:** decidir con números si la operación se hace, y a qué precio de suelo.
 > **Duración:** 130 min · **Resultado:** Cuenta de Resultado Promotor (CRP) con tres escenarios y decisión GO / NO GO.
+> **Dónde estamos:** con el solar asegurado en el Módulo 1 (comprado o con opción de compra), decides con números si la promoción se hace y cuánto puedes pagar por el suelo: es el análisis de viabilidad.
 
 ## Leyes que aplican
 
@@ -697,6 +767,7 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 
 > **Objetivo:** tener un proyecto que obtenga licencia, que se pueda construir al precio previsto y que la aseguradora decenal acepte.
 > **Duración:** 110 min · **Resultado:** proyecto básico y proyecto de ejecución, con estudio de seguridad y salud, geotecnia y gestión de residuos.
+> **Dónde estamos:** con el GO del Módulo 2, encargas los proyectos técnicos: el arquitecto y su equipo convierten el encaje en el proyecto básico, con el que pides la licencia, y en el de ejecución, con el que se construye. Todavía no se construye nada.
 
 ## Leyes que aplican
 
@@ -850,6 +921,7 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
 
 > **Objetivo:** obtener la licencia de obras en el menor plazo posible y abrir la obra sin incumplir nada.
 > **Duración:** 100 min · **Resultado:** licencia concedida, ICIO liquidado, centro de trabajo comunicado y acta de replanteo firmada.
+> **Dónde estamos:** con el proyecto del Módulo 3, pides la licencia de obras y dejas la obra lista para empezar sin incumplir nada. Las autorizaciones sectoriales de otros organismos (Lección 4.2) forman parte de la documentación de la licencia (Lección 4.1).
 
 ## Leyes que aplican
 
@@ -1013,6 +1085,7 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
 
 > **Objetivo:** financiar la obra, contratar al constructor adecuado y cubrir todos los riesgos con seguros y garantías.
 > **Duración:** 120 min · **Resultado:** préstamo promotor firmado, seguros contratados, cuenta especial de anticipos abierta y contrato de obra firmado.
+> **Dónde estamos:** con el proyecto (Módulo 3) y la licencia (Módulo 4), financias la promoción y contratas: el préstamo promotor, los seguros y garantías, y la constructora. Sin esto la obra no empieza.
 
 ## Leyes que aplican
 
@@ -1190,6 +1263,7 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
 
 > **Objetivo:** entender cómo se ejecuta un edificio residencial, en qué orden y qué normativa controla cada parte.
 > **Duración:** 150 min · **Resultado:** obra terminada, certificado final de obra visado y acta de recepción firmada.
+> **Dónde estamos:** con la licencia, la financiación y la constructora (Módulos 4 y 5), empieza la obra. Este módulo explica cómo se construye el edificio, en qué orden y qué normativa controla cada parte, hasta el final de obra y la recepción.
 
 ## Leyes que aplican
 
@@ -1351,6 +1425,7 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
 
 > **Objetivo:** que la obra salga en plazo, en coste y con la calidad documentada que te van a pedir el banco, la aseguradora y los compradores.
 > **Duración:** 100 min · **Resultado:** sistema de control con certificaciones, modificados firmados, informe mensual y documentación de calidad completa.
+> **Dónde estamos:** mientras se construye (Módulo 6), controlas que la obra salga en plazo, en coste y con la calidad documentada que te van a pedir el banco, la aseguradora y los compradores.
 
 ## Leyes que aplican
 
@@ -1517,6 +1592,7 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 
 > **Objetivo:** vender sobre plano las viviendas que exige el banco y el resto antes de la entrega, cumpliendo consumo, blanqueo y garantías.
 > **Duración:** 110 min · **Resultado:** plan comercial, documentación legal de venta, contratos privados con garantías y CRM.
+> **Dónde estamos:** la venta corre en paralelo a todo lo anterior: empieza con la compra del suelo, y los contratos privados con anticipos llegan con la licencia y los avales (Lección 8.1). Vendes sobre plano las viviendas que exige el banco y el resto antes de la entrega.
 
 ## Leyes que aplican
 
@@ -1721,6 +1797,7 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
 
 > **Objetivo:** convertir la obra terminada en viviendas que se pueden escriturar, hipotecar y habitar.
 > **Duración:** 105 min · **Resultado:** primera ocupación (y cédula donde se exige), escritura de obra nueva terminada y división horizontal inscritas, Libro del Edificio.
+> **Dónde estamos:** con la obra terminada y recibida (Módulo 6), la legalizas: primera ocupación, escritura de obra nueva terminada y división horizontal, y Libro del Edificio, para que cada vivienda se pueda escriturar, hipotecar y habitar.
 
 ## Leyes que aplican
 
@@ -1896,6 +1973,7 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 
 > **Objetivo:** que cada comprador reciba una vivienda sin defectos y que la notaría tenga todo listo antes del día de la firma.
 > **Duración:** 70 min · **Resultado:** hojas de repasos cerradas, documentación de entrega por vivienda y calendario de firmas.
+> **Dónde estamos:** con el edificio legalizado (Módulo 9), preparas la entrega: repasas cada vivienda con su comprador, preparas su documentación y dejas lista la notaría para las firmas.
 
 ## Leyes que aplican
 
@@ -2020,6 +2098,7 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 
 > **Objetivo:** firmar, cobrar, constituir la comunidad y entregar viviendas habitables desde el primer día.
 > **Duración:** 115 min · **Resultado:** escrituras firmadas, préstamo promotor amortizado, comunidad constituida y actas de entrega.
+> **Dónde estamos:** con las viviendas repasadas y la notaría preparada (Módulo 10), llega la firma: escrituras, cobro, comunidad de propietarios, suministros y entrega de llaves.
 
 ## Leyes que aplican
 
@@ -2164,6 +2243,7 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 
 > **Objetivo:** atender las garantías con orden y cerrar la operación en lo económico, fiscal y societario.
 > **Duración:** 90 min · **Resultado:** servicio postventa operativo, liquidación con el constructor, impuestos cerrados y SPE liquidada o en reserva.
+> **Dónde estamos:** con las llaves entregadas (Módulo 11), atiendes las garantías de los compradores y cierras la promoción en lo económico, lo fiscal y lo societario.
 
 ## Leyes que aplican
 

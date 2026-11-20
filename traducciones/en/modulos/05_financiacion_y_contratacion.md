@@ -2,6 +2,7 @@
 
 > **Objective:** finance the works, hire the right contractor and cover every risk with insurance and guarantees.
 > **Duration:** 120 min · **Result:** development loan signed, insurance taken out, special account for buyers' advance payments opened and construction contract signed.
+> **Where we are:** with the design (Module 3) and the licence (Module 4), you finance the development and sign the contracts: the development loan, the insurance and guarantees, and the contractor. Without this the works do not start.
 
 ## Laws that apply
 

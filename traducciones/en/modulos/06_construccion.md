@@ -2,6 +2,7 @@
 
 > **Objective:** understand how a residential building is built, in what order and which rules govern each part.
 > **Duration:** 150 min · **Result:** works finished, final completion certificate endorsed and handover record signed.
+> **Where we are:** with the licence, the financing and the contractor in place (Modules 4 and 5), the works begin. This module explains how the building is built, in what order and which rules govern each part, up to completion and handover.
 
 ## Laws that apply
 

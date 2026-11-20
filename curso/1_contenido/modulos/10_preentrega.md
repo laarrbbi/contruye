@@ -2,6 +2,7 @@
 
 > **Objetivo:** que cada comprador reciba una vivienda sin defectos y que la notaría tenga todo listo antes del día de la firma.
 > **Duración:** 70 min · **Resultado:** hojas de repasos cerradas, documentación de entrega por vivienda y calendario de firmas.
+> **Dónde estamos:** con el edificio legalizado (Módulo 9), preparas la entrega: repasas cada vivienda con su comprador, preparas su documentación y dejas lista la notaría para las firmas.
 
 ## Leyes que aplican
 

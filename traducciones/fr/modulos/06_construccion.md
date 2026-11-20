@@ -2,6 +2,7 @@
 
 > **Objectif :** comprendre comment se construit un immeuble résidentiel, dans quel ordre et quelle réglementation encadre chaque partie.
 > **Durée :** 150 min · **Résultat :** chantier terminé, certificat final de chantier visé et procès-verbal de réception signé.
+> **Où en sommes-nous :** avec le permis, le financement et le constructeur (modules 4 et 5), le chantier commence. Ce module explique comment se construit le bâtiment, dans quel ordre et quelles règles encadrent chaque partie, jusqu'à la fin des travaux et la réception.
 
 ## Lois applicables
 

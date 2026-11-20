@@ -2,6 +2,7 @@
 
 > **Objective:** decide on the numbers whether the deal goes ahead, and at what land price.
 > **Duration:** 130 min · **Result:** developer's profit and loss account (CRP) with three scenarios and a GO / NO GO decision.
+> **Where we are:** with the plot secured in Module 1 (bought or under a purchase option), you decide on the numbers whether the development goes ahead and how much you can pay for the land: this is the feasibility analysis.
 
 ## Laws that apply
 

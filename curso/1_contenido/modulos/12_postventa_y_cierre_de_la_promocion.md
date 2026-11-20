@@ -2,6 +2,7 @@
 
 > **Objetivo:** atender las garantías con orden y cerrar la operación en lo económico, fiscal y societario.
 > **Duración:** 90 min · **Resultado:** servicio postventa operativo, liquidación con el constructor, impuestos cerrados y SPE liquidada o en reserva.
+> **Dónde estamos:** con las llaves entregadas (Módulo 11), atiendes las garantías de los compradores y cierras la promoción en lo económico, lo fiscal y lo societario.
 
 ## Leyes que aplican
 

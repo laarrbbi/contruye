@@ -2,6 +2,7 @@
 
 > **Objetivo:** vender sobre plano las viviendas que exige el banco y el resto antes de la entrega, cumpliendo consumo, blanqueo y garantías.
 > **Duración:** 110 min · **Resultado:** plan comercial, documentación legal de venta, contratos privados con garantías y CRM.
+> **Dónde estamos:** la venta corre en paralelo a todo lo anterior: empieza con la compra del suelo, y los contratos privados con anticipos llegan con la licencia y los avales (Lección 8.1). Vendes sobre plano las viviendas que exige el banco y el resto antes de la entrega.
 
 ## Leyes que aplican
 

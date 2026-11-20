@@ -2,6 +2,7 @@
 
 > **Objectif :** que chaque acheteur reçoive un logement sans défaut et que le notaire ait tout prêt avant le jour de la signature.
 > **Durée :** 70 min · **Résultat :** fiches de reprises soldées, documentation de livraison par logement et calendrier des signatures.
+> **Où en sommes-nous :** l'immeuble régularisé (module 9), vous préparez la livraison : vous passez chaque logement en revue avec son acheteur, préparez ses documents et préparez le notaire pour les signatures.
 
 ## Lois applicables
 

@@ -2,6 +2,7 @@
 
 > **Objective:** sign, get paid, set up the owners' association and hand over homes that can be lived in from day one.
 > **Duration:** 115 min · **Result:** deeds signed, development loan repaid, owners' association set up and handover records.
+> **Where we are:** with the homes checked and the notary ready (Module 10), the signing comes: deeds, payment, owners' association, utilities and handing over the keys.
 
 ## Laws that apply
 

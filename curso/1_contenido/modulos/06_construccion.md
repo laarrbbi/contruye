@@ -2,6 +2,7 @@
 
 > **Objetivo:** entender cómo se ejecuta un edificio residencial, en qué orden y qué normativa controla cada parte.
 > **Duración:** 150 min · **Resultado:** obra terminada, certificado final de obra visado y acta de recepción firmada.
+> **Dónde estamos:** con la licencia, la financiación y la constructora (Módulos 4 y 5), empieza la obra. Este módulo explica cómo se construye el edificio, en qué orden y qué normativa controla cada parte, hasta el final de obra y la recepción.
 
 ## Leyes que aplican
 

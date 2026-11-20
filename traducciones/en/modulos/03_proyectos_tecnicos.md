@@ -2,6 +2,7 @@
 
 > **Objective:** have a design that gets the licence, can be built at the planned price and is accepted by the ten-year insurer.
 > **Duration:** 110 min · **Result:** basic design and construction design, with the health and safety study, geotechnical study and waste management.
+> **Where we are:** with the GO from Module 2, you commission the technical designs: the architect and their team turn the fit study into the basic design, with which you apply for the licence, and the construction design, with which the building is built. Nothing is being built yet.
 
 ## Laws that apply
 

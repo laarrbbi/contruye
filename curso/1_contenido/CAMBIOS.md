@@ -43,6 +43,33 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lección 2.5 | Forma de pago: al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles. En lugar de la exclusividad, la opción de compra, «formalízala mediante un contrato de compraventa con opción de compra» (con su «i» en la plataforma). Checklist: «Opción de compra y condiciones suspensivas negociadas» |
 | Lección 4.1 | Junto a las autorizaciones sectoriales, qué son y que forman parte de esta licencia, con la referencia a la Lección 4.2 |
 
+## Estructura que pide el propietario: el Módulo 1 como muestra
+
+Bloques nuevos, aparte del texto del profesor, que no cambia:
+
+- **Al empezar cada módulo** (los 12): una línea «Dónde estamos» en su cabecera: qué es el módulo y de
+  dónde viene la promoción, con las palabras del objetivo y del resultado de cada módulo y de «Las 12
+  fases» de la introducción.
+- **En el Módulo 1, como muestra para los demás:**
+  - Al empezar cada lección, «Dónde estamos»: qué se ha hecho y qué toca ahora.
+  - El ejemplo de **Nicolás, el promotor**: una SL normal que construye vivienda libre para vender y
+    elige siempre la opción más clásica. Su solar es el del ejemplo del profesional en la plantilla
+    Números gordos del solar (344 m² de suelo urbano consolidado, 1.586,49 m² de techo en B+5, 18
+    viviendas, 2 áticos), el mismo edificio que se construye en el Aprendizaje 3D. Notaría y registro,
+    el 0,5 % de la Plantilla 1. Ningún otro número: los precios de ese ejemplo son de 2002 (660 €/m² de
+    construcción, frente a los 900–1.100 €/m² de la Lección 2.3), y para seguir el ejemplo en el
+    Módulo 2 hacen falta los del profesor.
+  - Lección 1.1: «Un solar de cada canal» (un ejemplo por cada canal de la lista, sin cifras).
+  - Lección 1.3: «Quién se encarga de cada cosa», las comprobaciones de las listas agrupadas por quién
+    las da o las hace (Registro, Catastro, ayuntamiento, abogado, topógrafo…), sin tocar las listas.
+  - Al terminar cada lección, «Resumen» y «Tu checklist» (los pasos de la checklist del módulo que
+    cierra esa lección); antes de la checklist, «Resumen del Módulo 1» con «Dónde deberías estar en tu
+    proyecto».
+- **En la plataforma** (sin tocar el texto): las referencias «Lección 4.2», «Módulo 9» llevan a esa
+  lección; las plantillas salen bajo la lección que las nombra; al terminar cada módulo, su resumen, la
+  checklist, las leyes y las empresas de la provincia juntas («Para consultar», informativas) y el test
+  al final; «empresas potenciales» en lugar de «partners».
+
 ## Solo forma (las palabras del profesor, sin cambiar el contenido)
 
 - Erratas de los textos recibidos: «menes» → «meses»; «entro» → «entró»; «marco» → «marcó»; «reflejar,obligatoriamente» → «reflejar, obligatoriamente».

@@ -2,6 +2,7 @@
 
 > **Objetivo:** convertir la obra terminada en viviendas que se pueden escriturar, hipotecar y habitar.
 > **Duración:** 105 min · **Resultado:** primera ocupación (y cédula donde se exige), escritura de obra nueva terminada y división horizontal inscritas, Libro del Edificio.
+> **Dónde estamos:** con la obra terminada y recibida (Módulo 6), la legalizas: primera ocupación, escritura de obra nueva terminada y división horizontal, y Libro del Edificio, para que cada vivienda se pueda escriturar, hipotecar y habitar.
 
 ## Leyes que aplican
 

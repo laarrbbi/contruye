@@ -2,6 +2,7 @@
 
 > **Objectif :** financer le chantier, choisir le bon constructeur et couvrir tous les risques par des assurances et des garanties.
 > **Durée :** 120 min · **Résultat :** prêt promoteur signé, assurances souscrites, compte spécial des acomptes ouvert et contrat de travaux signé.
+> **Où en sommes-nous :** avec le projet (module 3) et le permis (module 4), vous financez la promotion et signez les contrats : le prêt promoteur, les assurances et garanties, et le constructeur. Sans cela, le chantier ne démarre pas.
 
 ## Lois applicables
 

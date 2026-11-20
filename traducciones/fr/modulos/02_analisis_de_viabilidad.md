@@ -2,6 +2,7 @@
 
 > **Objectif :** décider chiffres en main si l'opération se fait, et à quel prix de terrain.
 > **Durée :** 130 min · **Résultat :** compte de résultat du promoteur (CRP) avec trois scénarios et décision GO / NO GO.
+> **Où en sommes-nous :** le terrain sécurisé au module 1 (acheté ou sous option d'achat), vous décidez chiffres en main si la promotion se fait et combien vous pouvez payer le terrain : c'est l'étude de faisabilité.
 
 ## Lois applicables
 

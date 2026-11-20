@@ -2,6 +2,7 @@
 
 > **Objectif :** transformer le chantier terminé en logements que l'on peut vendre par acte, hypothéquer et habiter.
 > **Durée :** 105 min · **Résultat :** première occupation (et cédula là où elle est exigée), acte d'ouvrage neuf achevé et division horizontale inscrits, Livre de l'immeuble.
+> **Où en sommes-nous :** le chantier terminé et réceptionné (module 6), vous le régularisez : première occupation, acte d'ouvrage neuf achevé et division horizontale, et Livre de l'immeuble, pour que chaque logement puisse être vendu par acte, hypothéqué et habité.
 
 ## Lois applicables
 

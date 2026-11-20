@@ -2,6 +2,7 @@
 
 > **Objetivo:** tener un proyecto que obtenga licencia, que se pueda construir al precio previsto y que la aseguradora decenal acepte.
 > **Duración:** 110 min · **Resultado:** proyecto básico y proyecto de ejecución, con estudio de seguridad y salud, geotecnia y gestión de residuos.
+> **Dónde estamos:** con el GO del Módulo 2, encargas los proyectos técnicos: el arquitecto y su equipo convierten el encaje en el proyecto básico, con el que pides la licencia, y en el de ejecución, con el que se construye. Todavía no se construye nada.
 
 ## Leyes que aplican
 

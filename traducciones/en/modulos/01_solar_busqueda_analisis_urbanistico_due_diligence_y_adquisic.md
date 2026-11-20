@@ -2,6 +2,7 @@
 
 > **Objective:** buy a plot that can be built on, at the price the project can bear and with no hidden encumbrances.
 > **Duration:** 120 min · **Result:** plot conveyed by deed to the SPE (project company) or an option to buy signed.
+> **Where we are:** this is the first step of the development. You start with no plot and no company; in this module you find the plot, check what can be built on it and that it has no problems, and buy it in your company's name.
 
 ## Laws that apply
 
@@ -32,6 +33,10 @@
 
 ## Lesson 1.1 — Define the product and find the plot
 
+> **Where we are:** you start from scratch. Before you search, you decide what you are going to develop; with that in mind, you look for plots and record them in your database.
+
+> **Example · Nicolás, the developer:** throughout the course we follow Nicolás, who has just started out in property development. He is not a big property group: he has set up an ordinary SL to build open-market homes and sell them. He goes step by step, as the text of each module does, and always picks the most conventional option.
+
 - **Before you search, decide what you are going to develop.** It is the filter you will look at every plot through.
   - **Type of development:** open-market housing, protected housing (your autonomous community's scheme), incentivised affordable housing (Ley 12/2023) or mixed. It changes the maximum price, the IVA (4 % on protected housing under the special scheme), the financing and the buyer.
   - **Target buyers:** first home, trading up, investor, foreign buyer or second home.
@@ -39,6 +44,9 @@
   - **Specification level**, garages, storerooms and common areas (pool, garden, gym, coworking).
   - **Target sale price** (€/m²) and **maximum land budget** (residual method, Module 2).
   - Result: a one-page **product sheet**.
+
+> **Example:** Nicolás defines his product: open-market housing for first-home buyers, with 2-bedroom homes (the most in demand) and 3-bedroom ones for families (Lesson 2.2), and a mid-range specification. He sums it up in his one-page product sheet.
+
 - **Analyse the location** of each plot: transport links, public transport, services, facilities (schools, healthcare, shops) and housing demand in the area.
 
 - **What you are looking for:** consolidated urban land, with services (road access, water, sewerage, electricity) and with set building lines. It is the only land on which you can apply for a licence without urbanising first.
@@ -52,6 +60,19 @@
   6. Public land: CASA47 (the state body that has replaced SEPES since 2025) and your community's land agency (Annex A).
   7. Investment funds and financial institutions selling land portfolios.
   8. Off-market deals: agreements with owners through a swap for future homes or by contributing the land to the company.
+- **One plot from each channel**, as you would see them in your database:
+
+| Channel | An example plot |
+|---|---|
+| Your own network | An old house from an inheritance, brought to you by a notary or a property manager |
+| Active search in the PGOU | A block with unused buildability: you write to the owner at the address from the Cadastre |
+| Portals | A plot advertised in the land section of Idealista or Fotocasa |
+| SAREB and bank servicers | A plot from a servicer's portfolio |
+| Auctions | A seized plot on the BOE Auction Portal |
+| Public land | A parcel for sale or tender by CASA47 or by your community's land agency |
+| Funds and financial institutions | A plot within a land portfolio |
+| Off-market | An owner who swaps their plot for future homes (*permuta*) |
+
 - **Keep your land portfolio in a database** from the first plot: each plot with its zone, classification, zoning, planning status, areas, buildability, price and payment terms, and who owns it and who brought it to you. Keep your clients too, with what they are looking for, and your land scouts (*captadores*). Use the **Professional's template · Land management database** (included): it comes with drop-down lists and a plot sheet ready to send by e-mail.
 - **10-minute filter before you spend more time:**
   - Buildability × sale price in the area ÷ asking price → if the land exceeds 30 % of revenue, drop it unless the location is prime.
@@ -60,7 +81,15 @@
   - To run this filter with numbers, use the **Professional's template · Plot rough numbers** (*números gordos*, included). From the buildable floor area, the land cost per square metre built (*repercusión*), the construction cost and the profit you are after, it gives you the plot price, the sale price you need and the profit. If the plot passes the filter, refine the purchase with Template 1 and the feasibility with Template 2 (Module 2).
 - ⚠️ **Typical mistakes:** falling in love with the location without running the numbers; buying "developable" land thinking it is buildable; not checking whether the town hall is changing the plan.
 
+> **Example:** Nicolás starts with the most profitable channel, his own network: a property manager tells him about a 344 m² plot on consolidated urban land, with services. He enters it in his database, with its owner and the person who brought it to him, and runs it through the Plot rough numbers template: 1.586,49 m² of floor area in B+5 (ground floor plus five), which gives 18 homes (2 of them penthouses). These are the figures of the professional's example that comes with the template, and the building you will watch go up in 3D learning. Since it fits, he moves on to Lesson 1.2.
+
+> **Summary:** first you define what you are going to develop (your product sheet); then you look for consolidated urban land through the channels on the list, record it in your database and, in 10 minutes, drop anything whose numbers do not work.
+>
+> **Your checklist:** plot entered in your database · plot's rough numbers · product sheet.
+
 ## Lesson 1.2 — Planning analysis: what you can build
+
+> **Where we are:** in Lesson 1.1 you defined your product and found plots in your database that pass the 10-minute filter. Now you analyse in depth each piece of data you recorded in your template: what the planning rules say and how many homes really fit.
 
 - **Who decides:** the autonomous community makes the planning law, and the town hall applies its PGOU and by-laws.
 - **Documents you must read:**
@@ -89,7 +118,15 @@
   - **Flood risk** in the viewer of the National Flood Zone Mapping System (SNCZI, MITECO).
   - **Heritage protection** of the building or its surroundings (municipal catalogue).
 
+> **Example:** Nicolás downloads the PGOU from the municipal viewer and reads his plot's zone sheet. He commissions the massing study from a local architecture practice, the one that will later draw up the design (Module 3), and they confirm what the rough numbers gave: B+5, 18 homes, 2 of them penthouses. He asks the town hall for the planning report in writing and checks the flood risk in the SNCZI and the municipal catalogue.
+
+> **Summary:** from the PGOU and the zone sheet you work out the plot's parameters; the architect tells you how many homes really fit, and the town hall gives it to you in writing. Before buying, also check flood risk, heritage and whether another planning instrument is needed.
+>
+> **Your checklist:** written planning report or certificate from the town hall · massing study from the architect · flood risk and heritage protection checked.
+
 ## Lesson 1.3 — Due diligence: buying without surprises
+
+> **Where we are:** you now know what can be built on the plot (Lesson 1.2). Before buying it, you check that it has no legal, tax, technical or financial problems: that is due diligence.
 
 - **Legal:**
   - *Nota simple* → owner, encumbrances (mortgages, attachments), easements, conditions subsequent, planning charges.
@@ -115,7 +152,27 @@
 - **Contracts in force on the property:** leases, third-party options, rights of first refusal and pre-emption, litigation.
 - **Registered, cadastral and actual area:** compare all three.
 
+- **Who handles what** (whom you ask for each check in the lists above):
+  - **Land Registry:** the *nota simple*, the certificate of title and encumbrances, and the registered area.
+  - **Cadastre:** the cadastral reference and area.
+  - **Town hall:** at the planning department, litigation or enforcement proceedings, urbanisation charges and protected trees; at the tax office, the certificate of IBI and local-tax debts.
+  - **The community's culture department:** archaeological sites.
+  - **Lawyer** (usually a planning lawyer): reviews the *nota simple* and the encumbrances, the tenants or occupants, the contracts in force on the property, and the regularisation if the Cadastre, the Registry and reality do not match.
+  - **Surveyor:** the topographic survey (actual area, levels, boundaries).
+  - **Geotechnical laboratory:** the preliminary geotechnical study.
+  - **Architect or engineering firm:** the demolition (project, asbestos with a company entered in the RERA, waste with an authorised waste manager), contaminated land, and easements for watercourses, coasts, roads, railways and airports.
+  - **Utility companies:** the capacity of the connections and the connection point.
+  - **You:** the €/m²t against the market and the preliminary CRP (Module 2).
+
+> **Example:** Nicolás commissions the legal due diligence from a planning lawyer in his province and the survey from a surveyor. He orders the *nota simple* online himself, asks the town hall for the IBI debt certificate, and confirms with the companies that there is capacity for electricity and water. Everything matches and there are no encumbrances or occupants: he can buy.
+
+> **Summary:** due diligence looks at the plot from four sides (legal, tax, technical and financial) and confirms utility connections, contracts and areas. If something does not add up, it is regularised first or the purchase is made conditional on it.
+>
+> **Your checklist:** *nota simple* and certificate of encumbrances · matching cadastral reference and topographic survey · certificate of IBI and local-tax debts · preliminary geotechnical study if there are basements · utility connection capacity · sectoral easements.
+
 ## Lesson 1.4 — The purchase: form, tax and company
+
+> **Where we are:** you have found the plot, you know what you can build (Lesson 1.2) and the due diligence has gone well (Lesson 1.3). We move on to the purchase: how it is signed, which taxes apply and in the name of which company.
 
 - **Ways to buy:**
   - **Direct sale.**
@@ -143,6 +200,18 @@
   - Steps: company name (Central Companies Registry) → bank account and contribution → deed before a notary → provisional NIF (AEAT, form 036) → registration at the provincial Companies Registry → final NIF. Fast track: CIRCE / PAE.
   - In Navarra and País Vasco, IS and IVA are managed by the foral tax authority.
 - ⚠️ **Typical mistakes:** buying in your own name and then contributing the land to the company (taxed twice); paying ITP when the seller could have waived the exemption and charged deductible IVA.
+
+> **Example:** Nicolás first incorporates his company, an SL for this development (the SPE), and never buys in his own name. With the owner, a private individual, he signs an option to buy before a notary and registers it at the Land Registry: he pays a premium and secures the time to do the feasibility study (Module 2) and get the financing. When he buys, as the seller is a private individual, the purchase will pay his community's ITP (Annex B), not IVA; notary and Land Registry, around 0,5 % of the price; and the seller pays the municipal plusvalía.
+
+> **Summary:** buy in your company's name, never in your own; choose the form (direct sale, option, condition precedent, deposit or swap) according to what you still have to check, and look at who is selling to know which tax applies to the purchase.
+>
+> **Your checklist:** Template 1 · Site purchase · SPE incorporated · option to buy or deed signed and registered.
+
+## Module 1 summary
+
+You have defined your product, found a plot and recorded it in your database, checked what can be built on it and that it has no problems, and secured it in your company's name.
+
+**Where you should be in your project:** with the plot bought, or the option to buy signed, in your SPE's name; the rough numbers and Template 1 done; and the planning report, the massing study and the due diligence kept on file. With that you move on to Module 2, where you decide, with numbers, whether the development goes ahead.
 
 ## Module 1 checklist
 

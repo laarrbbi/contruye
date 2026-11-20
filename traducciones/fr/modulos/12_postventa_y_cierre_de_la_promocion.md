@@ -2,6 +2,7 @@
 
 > **Objectif :** traiter les garanties avec méthode et clôturer l'opération sur les plans économique, fiscal et sociétaire.
 > **Durée :** 90 min · **Résultat :** service après-vente opérationnel, décompte final avec le constructeur, impôts soldés et SPE liquidée ou mise en réserve.
+> **Où en sommes-nous :** les clés remises (module 11), vous gérez les garanties des acheteurs et clôturez la promotion sur le plan financier, fiscal et sociétaire.
 
 ## Lois applicables
 

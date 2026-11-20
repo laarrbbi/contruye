@@ -211,7 +211,7 @@ makes that work lives in `docker/mysql-test/`.
   labelled as reference material (`ModuleReference`), and the quiz last.
 - «Lección 4.2», «Módulo 9» in a course text (any of the six languages) link to that place in the
   player (`Course\CourseReferenceLinker`, web `CourseReferencesProvider`); plain text where there is
-  no outline.
+  no outline, and never inside a short field such as a checklist step (`Markdown::inline`).
 - Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
   `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
   and sent with every calculation. A project never stores them.

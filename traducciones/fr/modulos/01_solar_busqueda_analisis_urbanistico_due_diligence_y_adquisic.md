@@ -2,6 +2,7 @@
 
 > **Objectif :** acheter un terrain constructible, au prix que permet le projet et sans charges cachées.
 > **Durée :** 120 min · **Résultat :** terrain acquis par acte au nom de la SPE ou option d'achat signée.
+> **Où en sommes-nous :** c'est la première étape de la promotion. Vous commencez sans terrain et sans société ; dans ce module, vous trouvez le terrain, vous vérifiez ce que l'on peut y construire et qu'il ne présente aucun problème, et vous l'achetez au nom de votre société.
 
 ## Lois applicables
 
@@ -32,6 +33,10 @@
 
 ## Leçon 1.1 — Définir le produit et trouver le terrain
 
+> **Où en sommes-nous :** vous partez de zéro. Avant de chercher, vous décidez ce que vous allez promouvoir ; avec cela en tête, vous cherchez des terrains et vous les notez dans votre base de données.
+
+> **Exemple · Nicolás, le promoteur :** tout au long du cours, nous suivons Nicolás, qui vient de se lancer dans la promotion. Ce n'est pas un grand groupe : il a monté une SL ordinaire pour construire des logements libres et les vendre. Il avance pas à pas, comme le texte de chaque module, et choisit toujours l'option la plus classique.
+
 - **Avant de chercher, définissez ce que vous allez promouvoir.** C'est le filtre avec lequel vous regarderez chaque terrain.
   - **Type de promotion :** logement libre, logement aidé (régime de votre communauté autonome), logement abordable incitatif (Ley 12/2023) ou mixte. Cela change le prix maximal, l'IVA (4 % pour le logement aidé de régime spécial), le financement et l'acheteur.
   - **Public cible :** résidence principale, achat de remplacement, investisseur, acheteur étranger ou résidence secondaire.
@@ -39,6 +44,9 @@
   - **Niveau de qualité**, garages, débarras et parties communes (piscine, jardin, salle de sport, coworking).
   - **Prix de vente cible** (€/m²) et **budget maximal du terrain** (méthode résiduelle, Module 2).
   - Résultat : une **fiche produit** d'une page.
+
+> **Exemple :** Nicolás définit son produit : du logement libre destiné à la résidence principale, avec des logements de 2 chambres (les plus demandés) et de 3 chambres pour les familles (Leçon 2.2), et un niveau de qualité moyen. Il le résume dans sa fiche produit d'une page.
+
 - **Analysez l'emplacement** de chaque terrain : accès, transports, services, équipements (écoles, santé, commerces) et demande résidentielle du secteur.
 
 - **Ce que vous cherchez :** du sol urbain consolidé, viabilisé (accès carrossable, eau, assainissement, électricité) et avec des alignements fixés. C'est le seul qui permet de demander le permis sans aménager avant.
@@ -52,6 +60,19 @@
   6. Foncier public : CASA47 (entité d'État qui remplace SEPES depuis 2025) et l'organisme foncier de votre communauté (Annexe A).
   7. Fonds d'investissement et établissements financiers qui vendent des portefeuilles fonciers.
   8. Opérations hors marché : accords avec des propriétaires par échange contre des logements futurs ou apport du terrain à la société.
+- **Un terrain par canal**, comme vous les verriez dans votre base de données :
+
+| Canal | Un exemple de terrain |
+|---|---|
+| Réseau propre | Une maison ancienne issue d'une succession, que vous apporte un notaire ou un administrateur de biens |
+| Recherche active dans le PGOU | Un îlot dont la constructibilité n'est pas épuisée : vous écrivez au propriétaire à l'adresse du Cadastre |
+| Portails | Un terrain annoncé dans la rubrique terrains d'Idealista ou de Fotocasa |
+| SAREB et servicers bancaires | Un terrain du portefeuille d'un servicer |
+| Enchères | Un terrain saisi sur le Portail des enchères du BOE |
+| Foncier public | Une parcelle mise en vente ou en appel d'offres par CASA47 ou par l'organisme foncier de votre communauté |
+| Fonds et établissements financiers | Un terrain compris dans un portefeuille foncier |
+| Hors marché | Un propriétaire qui échange son terrain contre des logements futurs (permuta) |
+
 - **Tenez votre portefeuille foncier dans une base de données** dès le premier terrain : chaque terrain avec sa zone, son classement, sa qualification, sa situation d'urbanisme, ses surfaces, sa constructibilité, son prix et ses modalités de paiement, ainsi que son propriétaire et la personne qui vous l'a apporté. Enregistrez aussi vos clients, avec ce qu'ils recherchent, et vos apporteurs d'affaires (*captadores*). Utilisez le **modèle du professionnel · Base de données de gestion foncière** (inclus) : il contient les listes déroulantes et une fiche du terrain prête à envoyer par e-mail.
 - **Filtre de 10 minutes avant d'y consacrer plus de temps :**
   - Constructibilité × prix de vente du secteur ÷ prix demandé → si le terrain dépasse 30 % des recettes, écartez-le sauf emplacement prime.
@@ -60,7 +81,15 @@
   - Pour faire ce filtre avec des chiffres, utilisez le **modèle du professionnel · Grands chiffres du terrain** (*números gordos*, inclus). À partir de la surface constructible, de l'incidence foncière (*repercusión*), du coût de construction et du bénéfice visé, il vous donne le prix du terrain, le prix de vente nécessaire et le bénéfice. Si le terrain passe le filtre, affinez l'achat avec le modèle 1 et la viabilité avec le modèle 2 (module 2).
 - ⚠️ **Erreurs typiques :** tomber amoureux de l'emplacement sans calculer ; acheter du sol « urbanisable » en le croyant constructible ; ne pas vérifier si la mairie est en train de modifier le plan.
 
+> **Exemple :** Nicolás commence par le canal le plus rentable, son propre réseau : un administrateur de biens lui parle d'un terrain de 344 m² en sol urbain consolidé, viabilisé. Il l'enregistre dans sa base de données, avec son propriétaire et la personne qui le lui a apporté, et le fait passer par le modèle Grands chiffres du terrain : 1.586,49 m² de plancher en B+5, qui donnent 18 logements (dont 2 attiques). Ce sont les données de l'exemple du professionnel fourni avec le modèle, et l'immeuble que vous verrez grandir dans l'Apprentissage 3D. Comme le terrain lui convient, il passe à la Leçon 1.2.
+
+> **Résumé :** d'abord, vous définissez ce que vous allez promouvoir (votre fiche produit) ; ensuite, vous cherchez du sol urbain consolidé par les canaux de la liste, vous le notez dans votre base de données et vous écartez en 10 minutes ce que les chiffres ne justifient pas.
+>
+> **Votre checklist :** terrain enregistré dans votre base de données · grands chiffres du terrain · fiche produit.
+
 ## Leçon 1.2 — Analyse d'urbanisme : ce que vous pouvez construire
+
+> **Où en sommes-nous :** dans la Leçon 1.1, vous avez défini votre produit et trouvé dans votre base de données des terrains qui passent le filtre des 10 minutes. Vous analysez maintenant en détail chaque donnée notée dans votre modèle : ce que dit la planification et combien de logements tiennent vraiment.
 
 - **Qui décide :** la communauté autonome fait la loi d'urbanisme et la mairie applique son PGOU et ses ordonnances.
 - **Documents à lire :**
@@ -89,7 +118,15 @@
   - Le **risque d'inondation** dans le visualiseur du Système national de cartographie des zones inondables (SNCZI, MITECO).
   - La **protection patrimoniale** du bâtiment ou de ses abords (catalogue municipal).
 
+> **Exemple :** Nicolás télécharge le PGOU depuis le visualiseur municipal et lit la fiche de zone de son terrain. Il commande l'étude de volumétrie à un cabinet d'architecture du secteur, celui qui se chargera ensuite du projet (Module 3), et le cabinet lui confirme ce que donnaient les grands chiffres : B+5, 18 logements, dont 2 attiques. Il demande à la mairie la note d'urbanisme par écrit et vérifie le risque d'inondation dans le SNCZI et le catalogue municipal.
+
+> **Résumé :** du PGOU et de la fiche de zone, vous tirez les paramètres du terrain ; l'architecte vous dit combien de logements tiennent vraiment et la mairie vous le donne par écrit. Avant d'acheter, vérifiez aussi le risque d'inondation, le patrimoine et s'il faut un autre instrument de planification.
+>
+> **Votre checklist :** note ou certificat d'urbanisme de la mairie par écrit · étude de volumétrie de l'architecte · risque d'inondation et protection patrimoniale vérifiés.
+
 ## Leçon 1.3 — Due diligence : acheter sans mauvaises surprises
+
+> **Où en sommes-nous :** vous savez déjà ce que l'on peut construire sur le terrain (Leçon 1.2). Avant de l'acheter, vous vérifiez qu'il ne présente aucun problème juridique, fiscal, technique ou économique : c'est la due diligence.
 
 - **Juridique :**
   - Nota simple → titulaire, charges (hypothèques, saisies), servitudes, conditions résolutoires, contraintes d'urbanisme.
@@ -115,7 +152,27 @@
 - **Contrats en cours sur le bien :** baux, options de tiers, droits de préemption et de retrait (tanteo y retracto), litiges.
 - **Surface inscrite, cadastrale et réelle :** comparez les trois.
 
+- **Qui s'occupe de quoi** (à qui demander chaque vérification des listes ci-dessus) :
+  - **Registre de la propriété (Registro de la Propiedad) :** la nota simple, le certificat de propriété et de charges et la surface inscrite.
+  - **Cadastre :** la référence et la surface cadastrales.
+  - **Mairie :** à l'urbanisme, les litiges ou procédures disciplinaires, les charges d'aménagement et les arbres protégés ; à la gestion fiscale, le certificat de dettes d'IBI et de taxes.
+  - **Département de la culture de la communauté :** les sites archéologiques.
+  - **Avocat** (le plus souvent, spécialisé en urbanisme) : il examine la nota simple et les charges, les locataires ou occupants, les contrats en cours sur le bien et la régularisation si Cadastre, Registre et réalité ne concordent pas.
+  - **Topographe :** le relevé (surface réelle, cotes, limites).
+  - **Laboratoire de géotechnique :** l'étude géotechnique préliminaire.
+  - **Architecte ou bureau d'études :** la démolition (projet, amiante avec une entreprise inscrite au RERA, déchets avec un gestionnaire agréé), les sols pollués et les servitudes des cours d'eau, du littoral, des routes, du chemin de fer et des aéroports.
+  - **Compagnies de distribution :** la capacité des raccordements et le point de raccordement.
+  - **Vous :** le €/m²t par rapport au marché et le CRP préliminaire (Module 2).
+
+> **Exemple :** Nicolás confie la due diligence juridique à un avocat de sa province spécialisé en urbanisme, et le relevé à un topographe. Il demande lui-même la nota simple en ligne et le certificat de dettes d'IBI à la mairie, et confirme auprès des compagnies qu'il y a la capacité nécessaire en électricité et en eau. Tout concorde et il n'y a ni charges ni occupants : il peut acheter.
+
+> **Résumé :** la due diligence examine le terrain sous quatre angles (juridique, fiscal, technique et économique) et confirme raccordements, contrats et surfaces. Si quelque chose ne concorde pas, on régularise avant ou on soumet l'achat à condition.
+>
+> **Votre checklist :** nota simple et certificat des charges · référence cadastrale et relevé topographique concordants · certificat de dettes d'IBI et de taxes · étude géotechnique préliminaire s'il y a des sous-sols · capacité des raccordements · servitudes sectorielles.
+
 ## Leçon 1.4 — L'achat : forme, fiscalité et société
+
+> **Où en sommes-nous :** vous avez déjà trouvé le terrain, vous savez ce que vous pouvez construire (Leçon 1.2) et la due diligence s'est bien passée (Leçon 1.3). Passons à l'achat : comment il se signe, quels impôts s'y appliquent et au nom de quelle société.
 
 - **Formes d'achat :**
   - **Vente directe.**
@@ -143,6 +200,18 @@
   - Étapes : dénomination (Registre central du commerce) → compte bancaire et apport → acte devant notaire → NIF provisoire (AEAT, formulaire 036) → immatriculation au Registre du commerce provincial → NIF définitif. Voie rapide : CIRCE / PAE.
   - En Navarre et au Pays basque, l'IS et l'IVA sont gérés par l'administration fiscale forale.
 - ⚠️ **Erreurs typiques :** acheter en nom propre puis apporter le terrain à la société (double imposition) ; payer l'ITP alors que le vendeur pouvait renoncer à l'exonération et facturer une IVA déductible.
+
+> **Exemple :** Nicolás constitue d'abord sa société, une SL pour cette promotion (la SPE), et n'achète jamais en nom propre. Avec le propriétaire, un particulier, il signe devant notaire une option d'achat et l'inscrit au Registre : il paie une prime et s'assure le délai nécessaire pour étudier la viabilité (Module 2) et obtenir le financement. Quand il achètera, comme le vendeur est un particulier, l'achat sera soumis à l'ITP de sa communauté (annexe B) et non à l'IVA ; notaire et registre, environ 0,5 % du prix ; la plus-value municipale, à la charge du vendeur.
+
+> **Résumé :** achetez au nom de votre société, jamais en nom propre ; choisissez la forme (vente, option, condition suspensive, arrhes ou échange) selon ce qu'il vous reste à vérifier, et regardez qui vend pour savoir quel impôt s'applique à l'achat.
+>
+> **Votre checklist :** modèle 1 · Achat du terrain · SPE constituée · option d'achat ou acte signé et inscrit.
+
+## Résumé du module 1
+
+Vous avez défini votre produit, vous avez trouvé un terrain et l'avez noté dans votre base de données, vous avez vérifié ce que l'on peut y construire et qu'il ne présente aucun problème, et vous l'avez sécurisé au nom de votre société.
+
+**Où vous devriez en être dans votre projet :** le terrain acheté ou l'option d'achat signée au nom de votre SPE, les grands chiffres et le modèle 1 faits, et la note d'urbanisme, l'étude de volumétrie et la due diligence conservées. Avec cela, vous passez au Module 2, où vous décidez, chiffres à l'appui, si la promotion se fait.
 
 ## Checklist du module 1
 

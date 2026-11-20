@@ -2,6 +2,7 @@
 
 > **Objectif :** que le chantier se termine dans les délais, dans le budget et avec la qualité documentée que vous demanderont la banque, l'assureur et les acheteurs.
 > **Durée :** 100 min · **Résultat :** système de contrôle avec situations de travaux, avenants signés, rapport mensuel et documentation qualité complète.
+> **Où en sommes-nous :** pendant la construction (module 6), vous vérifiez que le chantier respecte les délais, les coûts et la qualité documentée que vous demanderont la banque, l'assureur et les acheteurs.
 
 ## Lois applicables
 

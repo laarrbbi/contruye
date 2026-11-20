@@ -105,8 +105,13 @@ final class CourseSource
      *   heading: string, title: string, kind: 'phase'|'financials', number: ?int,
      *   description: string,
      *   overview: list<string>, lessons: list<array{title: string, content: string}>,
-     *   checklist_heading: ?string, checklist: list<string>, closing: list<string>
+     *   checklist_heading: ?string, checklist: list<string>, closing: list<string>,
+     *   closing_before_checklist: int
      * }
+     *
+     * A section after the lessons is a closing one, before or after the
+     * checklist; closing_before_checklist counts those before it (a module's
+     * summary), so the file can be put back together as it is.
      */
     public static function parseModule(string $markdown): array
     {
@@ -155,6 +160,7 @@ final class CourseSource
 
         $overview = $lessons = $checklist = $closing = [];
         $checklistHeading = null;
+        $closingBeforeChecklist = 0;
 
         foreach ($sections as $section) {
             $body = trim(implode("\n", $section['body']), "\n");
@@ -163,6 +169,7 @@ final class CourseSource
                 $lessons[] = ['title' => $section['heading'], 'content' => $body];
             } elseif (str_starts_with($section['heading'], 'Checklist')) {
                 $checklistHeading = $section['heading'];
+                $closingBeforeChecklist = count($closing);
                 foreach (explode("\n", $body) as $line) {
                     if (trim($line) === '') {
                         continue;
@@ -190,6 +197,7 @@ final class CourseSource
             'checklist_heading' => $checklistHeading,
             'checklist' => $checklist,
             'closing' => $closing,
+            'closing_before_checklist' => $closingBeforeChecklist,
         ];
     }
 

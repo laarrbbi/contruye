@@ -2,6 +2,7 @@
 
 > **Objetivo:** decidir con números si la operación se hace, y a qué precio de suelo.
 > **Duración:** 130 min · **Resultado:** Cuenta de Resultado Promotor (CRP) con tres escenarios y decisión GO / NO GO.
+> **Dónde estamos:** con el solar asegurado en el Módulo 1 (comprado o con opción de compra), decides con números si la promoción se hace y cuánto puedes pagar por el suelo: es el análisis de viabilidad.
 
 ## Leyes que aplican
 

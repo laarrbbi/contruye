@@ -2,6 +2,7 @@
 
 > **Objective:** handle warranty claims in an orderly way and close the deal financially, for tax and at company level.
 > **Duration:** 90 min · **Result:** after-sales service running, final account settled with the contractor, taxes closed and SPE wound up or kept in reserve.
+> **Where we are:** with the keys handed over (Module 11), you handle the buyers' guarantees and close the development financially, for tax and as a company.
 
 ## Laws that apply
 
