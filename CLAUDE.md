@@ -22,12 +22,18 @@ reports (code & schema, tests, performance, security) plus a motion audit. `06-g
 says what has been closed since, and what is left for the owner. They were written about Ebni,
 before the Spanish adaptation: the paths and behaviours still match, the Algerian specifics do not.
 
-**`curso/`** is the instructor's package, version 5, exactly as delivered (start with
+**`curso/`** is the instructor's package, version 5.1 (v5 as delivered plus his corrections of 19/11/2026; start with
 `curso/LEEME.md`). Its texts are integrated as written and its financial templates are used as
 delivered: no formula, value or label changes, ever; only the «Parámetros legales» sheet is set,
 by the admin. Never edit anything under `curso/`; a correction comes as a new package from the
 instructor (copied whole into `curso/`, then the curriculum, checklist, province guide and
-translation seeders, in that order, which bring an installed course up to it in place).
+translation seeders, in that order, which bring an installed course up to it in place). The one
+exception so far is package 5.1: the instructor's corrections of 19/11/2026 came as messages and
+Word documents, and at the owner's request we applied them, with the owner's wording notes, in
+`curso/1_contenido/` (each change, its source and what is left to confirm:
+`curso/1_contenido/CAMBIOS.md`; constitution II, amendment 2026-11-20). A lesson cannot be added
+without losing progress (CurriculumV2Seeder leaves a module whose lesson count changed), so new
+text goes inside an existing lesson.
 Templates the instructor sends outside a package go, unchanged, in **`materiales/`** (its
 `LEEME.md` lists each file, where it is offered and its checksum); `CourseFiles` serves them to the
 owners of their module (that module's «Plantilla» page) or, for the extra's material, to its buyers.
@@ -192,12 +198,20 @@ makes that work lives in `docker/mysql-test/`.
   (`pruebas/escenario_guia_profesional.json` without D133 and D154). Every calculation of the
   professional template returns Datos de Partida E79, the calendar warning shown beside month zero
   (D79): «AVISO…» when a payment falls outside the 48 months of the cash flow.
-- Under each lesson's text (`LessonResources` in the player, `config/lesson_resources.php`): the
-  websites the lesson names, each at its checked official address (`docs/enlaces-de-las-lecciones.md`;
-  `mention` must be the lesson's own words, `LessonResourcesTest`), then the partners it calls on:
-  the academy's own (`Partner` categories, `inmobiliaria` included) and the directory's companies of
-  those kinds (`/lessons/{lesson}/companies`, the module's gate). Then the module's introduction
-  (objective, laws, where to go), below the lesson: the owner wants the lesson read first.
+- Under each lesson's text (`LessonResources` in the player, `config/lesson_resources.php`): first,
+  when the lesson names a template of its module (`templates`: 1.1, 1.4, 2.3), that module's
+  templates; then the websites the lesson names, each at its checked official address
+  (`docs/enlaces-de-las-lecciones.md`; `mention` must be the lesson's own words,
+  `LessonResourcesTest`), then the «empresas potenciales» it calls on (the owner's word for
+  partners): the academy's own (`Partner` categories, `inmobiliaria` included) and the directory's
+  companies of those kinds (`/lessons/{lesson}/companies`, the module's gate). Then the module's
+  introduction (objective, where to go), below the lesson: the owner wants the lesson read first.
+  After the module's last lesson, in the owner's order: its summary (a «## Resumen…» section, role
+  `summary`), the checklist, then the laws and the province's institutions and companies together,
+  labelled as reference material (`ModuleReference`), and the quiz last.
+- «Lección 4.2», «Módulo 9» in a course text (any of the six languages) link to that place in the
+  player (`Course\CourseReferenceLinker`, web `CourseReferencesProvider`); plain text where there is
+  no outline.
 - Legal parameters (`LegalParameters`, tables `legal_parameters`, `legal_region_rates`,
   `legal_parameter_changes`): seeded from the package, edited in `/admin/templates` with a history,
   and sent with every calculation. A project never stores them.

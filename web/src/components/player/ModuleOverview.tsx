@@ -7,7 +7,8 @@ import { moduleLabel } from '@/lib/modules'
 
 /**
  * What opens each module in the instructor's text: its objective, duration
- * and result, then "Leyes que aplican" and "Dónde ir". Titled as the module's
+ * and result, then "Dónde ir" ("Leyes que aplican" closes the module, before
+ * its quiz: ModuleReference). Titled as the module's
  * introduction, so it is never read as the lesson, and shown under the
  * lesson's text (the owner's call: read first, the lesson). Open on the
  * module's first lesson, folded on the others, so it is one click away all along.
@@ -15,7 +16,8 @@ import { moduleLabel } from '@/lib/modules'
 export function ModuleOverview({ slug, module, defaultOpen }: { slug: string; module: LearnModule; defaultOpen: boolean }) {
   const { t } = useTranslation()
   const { data: content } = useModuleContent(slug, module.id)
-  const sections = (content?.blocks ?? []).filter((block) => block.type === 'overview')
+  // The laws close the module, with its institutions and companies (ModuleReference).
+  const sections = (content?.blocks ?? []).filter((block) => block.type === 'overview' && block.role !== 'laws')
 
   if (!content || (!content.description_html && sections.length === 0)) return null
 

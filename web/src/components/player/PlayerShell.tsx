@@ -1,12 +1,14 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ListVideo, X } from 'lucide-react'
+import { useNavigationType } from 'react-router-dom'
 import type { LearnData } from '@/api/learn'
 import { CurrentOffer } from '@/components/offers/OfferCard'
 import { Button } from '@/components/ui/button'
 import { PlayerSidebar, type PlayerLocation } from './PlayerSidebar'
 import { ProtectedArea } from '@/components/protection/ProtectedArea'
 import { ProvinceWelcome } from './ProvinceWelcome'
+import { CourseReferencesProvider } from '@/components/course/CourseReferences'
 
 /**
  * The course player's frame: the page's own column, and the course
@@ -32,6 +34,17 @@ export function PlayerShell({
     setSidebarOpen(false)
   }, [locationKey])
 
+  // A new place in the course opens at its top. The shell stays mounted from
+  // one lesson to the next, so «Lección siguiente» and the contents would
+  // otherwise leave the page at the foot of the lesson just read. At once,
+  // not smoothly (the page sets smooth scrolling). Back and forward are left
+  // to the browser.
+  const navigationType = useNavigationType()
+  useEffect(() => {
+    if (navigationType !== 'POP') window.scrollTo({ top: 0, behavior: 'instant' })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locationKey])
+
   // While the contents are open on a phone the page behind stays still, and
   // Escape closes them, as any other dialog.
   useEffect(() => {
@@ -51,7 +64,7 @@ export function PlayerShell({
 
   const sidebar = <PlayerSidebar data={data} location={location} onNavigate={() => setSidebarOpen(false)} />
 
-  return (
+  const page = (
     // The page on the left, the course's contents on the right (mirrored in
     // Arabic), as course marketplaces lay their players out.
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
@@ -99,4 +112,7 @@ export function PlayerShell({
       <aside className="theme-night sticky top-16 hidden h-[calc(100dvh-4rem)] lg:block">{sidebar}</aside>
     </div>
   )
+
+  // «Lección 4.2» in a text opens that lesson.
+  return <CourseReferencesProvider data={data}>{page}</CourseReferencesProvider>
 }

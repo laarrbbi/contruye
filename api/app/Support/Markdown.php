@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Support\Course\CourseReferenceLinker;
 use App\Support\Glossary\GlossaryLinker;
 use App\Support\Glossary\GlossaryTerm;
 use App\Support\Glossary\GlossaryTermRenderer;
@@ -26,7 +27,8 @@ use League\CommonMark\MarkdownConverter;
  * (Legal\LegalLinker, config/legal.php), without changing a word. In the
  * course's own text ($glossary), each tax and institution also gets an «i»
  * with what it is (Glossary\GlossaryLinker, config/glossary.php); never in an
- * e-mail or a public page, which have no tooltip.
+ * e-mail or a public page, which have no tooltip. There too, a reference to
+ * another lesson or module («Lección 4.2») links to it (Course\CourseReferenceLinker).
  */
 final class Markdown
 {
@@ -105,6 +107,8 @@ final class Markdown
             if ($glossary) {
                 // Course text: its pictograms in type, not emoji.
                 $environment->addEventListener(DocumentParsedEvent::class, new CourseTypography, 10);
+                // «Lección 4.2», «Módulo 9»: a link to that place in the player.
+                $environment->addEventListener(DocumentParsedEvent::class, new CourseReferenceLinker, -5);
                 // After the laws: a term inside a law's link stays part of the link.
                 $environment->addEventListener(DocumentParsedEvent::class, new GlossaryLinker, -10);
                 $environment->addRenderer(GlossaryTerm::class, new GlossaryTermRenderer);

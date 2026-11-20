@@ -149,8 +149,12 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content h3 {
     @apply mt-5 text-base font-semibold leading-snug;
   }
+  .md-content h4 {
+    @apply mt-4 text-[0.9375rem] font-semibold leading-snug text-primary;
+  }
   .md-content h2:first-child,
-  .md-content h3:first-child {
+  .md-content h3:first-child,
+  .md-content h4:first-child {
     @apply mt-0;
   }
   .md-content strong {
@@ -163,6 +167,14 @@ html[dir='rtl'] :is(h1, h2, h3, [class*='tracking-']) {
   .md-content a.ley,
   .md-inline a.ley {
     @apply [font-weight:inherit] text-inherit decoration-primary/50 decoration-dotted underline underline-offset-[3px] transition-colors hover:text-primary hover:decoration-solid;
+  }
+  /* Another lesson or module the text names («Lección 4.2»): a link to it
+     inside the course; plain text where there is no outline to open it in. */
+  .md-content.refs-on a.ref-curso {
+    @apply cursor-pointer decoration-primary/60 underline-offset-[3px];
+  }
+  .md-content:not(.refs-on) a.ref-curso {
+    @apply pointer-events-none [font-weight:inherit] text-inherit no-underline;
   }
   /* On the sales page's night sections the brand blue does not show: the
      underline takes the cream of the text, and gold on hover. */

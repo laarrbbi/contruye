@@ -74,8 +74,8 @@ export interface LearnContentBlock {
   body_html: string | null
   /** The language the body is in (Spanish while its translation is pending). */
   body_locale: string
-  /** "Leyes que aplican" / "Dónde ir" (overview) or "Partners en tu provincia" (section), shown apart by the player. */
-  role?: 'laws' | 'where' | 'partners' | null
+  /** "Leyes que aplican" / "Dónde ir" (overview), "Partners en tu provincia" or "Resumen del módulo" (section), shown apart by the player. */
+  role?: 'laws' | 'where' | 'partners' | 'summary' | null
   /** partner_slot only: which kind of provider the slot is asking for. */
   partner_category?: string | null
   /** Always sent: lets a locked slot tease what it holds without listing it. */
@@ -179,6 +179,8 @@ export interface LessonResourcesView {
   companies_count: number
   /** Kinds of the academy's own partners (inmobiliaria, banco…). */
   partners: PartnerCategory[]
+  /** The lesson names a template of its module: the player offers them under the text. */
+  templates?: boolean
 }
 
 /** One module's introduction and (for an owned module) its sections, with their text. */

@@ -58,6 +58,16 @@ it('lists only what a lesson names, at an https address, with real kinds of part
         ->and($config['1.1']['partners'])->toContain('inmobiliaria');
 });
 
+it('offers a module\'s templates only under a lesson that names one', function () {
+    $lessons = packageLessons();
+    $offering = array_keys(array_filter(config('lesson_resources.lessons'), fn (array $entry) => $entry['templates'] ?? false));
+
+    expect($offering)->toEqualCanonicalizing(['1.1', '1.4', '2.3']);
+    foreach ($offering as $number) {
+        expect(str_contains($lessons[$number], 'Plantilla'))->toBeTrue("Lección {$number} names no template");
+    }
+});
+
 function resourcesSetup(): array
 {
     $course = Course::factory()->create(['status' => 'published']);
@@ -99,6 +109,6 @@ it('sends a lesson\'s links with its text, and its partners behind the module\'s
     $this->actingAs($visitor)->getJson("/api/courses/{$course->slug}/lessons/{$lesson->id}/companies")->assertForbidden();
 
     // A lesson that calls on no company has no list.
-    expect(LessonResources::payload($plain))->toBe(['links' => [], 'companies' => [], 'companies_count' => 0, 'partners' => []]);
+    expect(LessonResources::payload($plain))->toBe(['links' => [], 'companies' => [], 'companies_count' => 0, 'partners' => [], 'templates' => false]);
     $this->actingAs($owner)->getJson("/api/courses/{$course->slug}/lessons/{$plain->id}/companies")->assertNotFound();
 });

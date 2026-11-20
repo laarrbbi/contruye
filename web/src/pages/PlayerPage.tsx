@@ -24,7 +24,7 @@ import { PlayerShell } from '@/components/player/PlayerShell'
 import { ContentBlocks } from '@/components/player/ContentBlocks'
 import { LessonResources } from '@/components/player/LessonResources'
 import { ModuleOverview } from '@/components/player/ModuleOverview'
-import { ProvinceGuidePanel } from '@/components/player/ProvinceGuidePanel'
+import { ModuleReference } from '@/components/player/ModuleReference'
 import { VideoPlayer } from '@/components/player/VideoPlayer'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { ContentLanguageNote } from '@/components/player/ContentLanguageNote'
@@ -89,6 +89,8 @@ export function PlayerPage() {
   const lessonContent = useLessonContent(slug, currentLesson && !currentLesson.is_locked ? currentLesson.id : null)
   const moduleContent = useModuleContent(slug, currentModule && !currentModule.is_locked && isLastOfModule ? currentModule.id : null)
   const lessonText = lessonContent.data
+  // The module's closing sections, in the order the instructor wrote them: its summary first.
+  const moduleSections = (moduleContent.data?.blocks ?? []).filter((block) => block.type === 'section')
 
   // Prev/next only visit playable lessons, so navigation skips locked modules.
   const previousLesson = useMemo(() => {
@@ -377,15 +379,13 @@ export function PlayerPage() {
         <ModuleOverview key={currentModule.id} slug={data.course.slug} module={currentModule} defaultOpen={isFirstOfModule} />
       )}
 
-      {/* What closes the module, after its last lesson: the province's
-          partners, the checklist, the calculator and the quiz. */}
+      {/* What closes the module, after its last lesson (the owner's order):
+          the module's summary, the checklist, the calculator, then the laws
+          and the province's institutions and companies together, to look
+          things up, and the quiz last. */}
       {!currentLesson.is_locked && currentModule && !currentModule.is_locked && isLastOfModule && (
         <>
-          <ContentBlocks blocks={(moduleContent.data?.blocks ?? []).filter((block) => block.type === 'section')} />
-
-          {currentModule.kind === 'phase' && (
-            <ProvinceGuidePanel slug={data.course.slug} phase={currentModule.order} showAnnexLink={data.course.full_access} />
-          )}
+          <ContentBlocks blocks={moduleSections.filter((block) => block.role !== 'partners')} />
 
           {moduleChecklist && <ModuleChecklist slug={slug} module={moduleChecklist} />}
 
@@ -401,6 +401,14 @@ export function PlayerPage() {
               </span>
             </Link>
           )}
+
+          <ModuleReference
+            slug={data.course.slug}
+            module={currentModule}
+            laws={(moduleContent.data?.blocks ?? []).filter((block) => block.type === 'overview' && block.role === 'laws')}
+            partners={moduleSections.filter((block) => block.role === 'partners')}
+            showAnnexLink={data.course.full_access}
+          />
 
           {currentModule.quiz && (
             <Link

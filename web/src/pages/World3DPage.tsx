@@ -45,6 +45,8 @@ import { plainText, useNarration } from '@/components/world3d/hud/useNarration'
 import type { PlaceKey } from '@/components/world3d/places'
 import type { WorldHandle } from '@/components/world3d/worldScene'
 import { cn } from '@/lib/utils'
+import { useLearn } from '@/api/learn'
+import { CourseReferencesProvider } from '@/components/course/CourseReferences'
 
 const CARD = 'rounded-2xl border border-white/60 bg-white/[0.93] shadow-[0_10px_40px_-16px_rgb(20_26_34/0.45)] backdrop-blur-md'
 // A bottom sheet on a phone, built on the dialog.
@@ -75,6 +77,8 @@ export function World3DPage() {
   const { data: user } = useUser()
 
   const overview = useWorldOverview(slug)
+  // The outline, so that «Lección 1.4» in a step's text opens that lesson.
+  const outline = useLearn(slug)
   const modules = useMemo(() => overview.data?.modules ?? [], [overview.data])
   const requested = Number(params.get('modulo')) || null
   const moduleRow = useMemo(() => modules.find((m) => m.id === requested) ?? modules.find((m) => m.steps > 0 && !m.is_locked) ?? modules[0] ?? null, [modules, requested])
@@ -616,7 +620,7 @@ export function World3DPage() {
     </>
   )
 
-  return (
+  const page = (
     <div ref={stage} data-plein className="relative h-[calc(100dvh-4rem)] w-full overflow-hidden bg-[#DCE6F2] text-plume">
       <canvas ref={canvas} className="absolute inset-0 h-full w-full touch-none select-none" aria-label={t('world3d.canvasLabel')} />
       {/* The labels' own stacking (CSS2DRenderer orders them by depth) stays under the panels. */}
@@ -959,6 +963,8 @@ export function World3DPage() {
       </Dialog>
     </div>
   )
+
+  return <CourseReferencesProvider data={outline.data}>{page}</CourseReferencesProvider>
 }
 
 /** A counter of the folder that opens its list: each paper, tax or task, and the step it comes from. */

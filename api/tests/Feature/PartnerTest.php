@@ -296,10 +296,10 @@ it('exposes a module\'s partners to the admin content editor', function () {
         ->and($payload['partners'][0]['note_es'])->toBe('Note admin');
 });
 
-it('tells the module\'s own sections apart, its closing «Partners en tu provincia» included', function () {
+it('tells the module\'s own sections apart: its summary and its closing «Partners en tu provincia» included', function () {
     $course = partnerCourse();
     $module = $course->modules()->orderBy('order')->first();
-    foreach ([['overview', "## Leyes que aplican\n\n| Ley |"], ['overview', "## Dónde ir\n\n| Lugar |"], ['section', "## Partners en tu provincia\n\nAnexo A, columna **Fase 1**: Registro de la Propiedad."]] as $index => [$type, $body]) {
+    foreach ([['overview', "## Leyes que aplican\n\n| Ley |"], ['overview', "## Dónde ir\n\n| Lugar |"], ['section', "## Resumen del Módulo 1\n\nHas definido tu producto."], ['section', "## Partners en tu provincia\n\nAnexo A, columna **Fase 1**: Registro de la Propiedad."]] as $index => [$type, $body]) {
         ContentBlock::query()->create(['module_id' => $module->id, 'type' => $type, 'order' => $index + 1, 'body_es' => $body]);
     }
     $student = User::factory()->create();
@@ -309,5 +309,5 @@ it('tells the module\'s own sections apart, its closing «Partners en tu provinc
         ->firstWhere('id', $module->id)['blocks'];
 
     expect(collect($blocks)->map(fn (array $block) => [$block['type'], $block['role']])->all())
-        ->toBe([['overview', 'laws'], ['overview', 'where'], ['section', 'partners']]);
+        ->toBe([['overview', 'laws'], ['overview', 'where'], ['section', 'summary'], ['section', 'partners']]);
 });

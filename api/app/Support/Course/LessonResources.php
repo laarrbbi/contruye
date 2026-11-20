@@ -28,7 +28,7 @@ final class LessonResources
      * The lesson's entry, as configured: links, directory categories and
      * academy partner categories.
      *
-     * @return array{links: list<array{name: string, url: string, mention: string}>, companies: list<string>, partners: list<string>}
+     * @return array{links: list<array{name: string, url: string, mention: string}>, companies: list<string>, partners: list<string>, templates: bool}
      */
     public static function entry(Lesson $lesson): array
     {
@@ -39,15 +39,17 @@ final class LessonResources
             'links' => array_values($entry['links'] ?? []),
             'companies' => array_values(array_intersect($entry['companies'] ?? [], array_keys(config('directory.categories')))),
             'partners' => array_values(array_intersect($entry['partners'] ?? [], Partner::CATEGORIES)),
+            'templates' => (bool) ($entry['templates'] ?? false),
         ];
     }
 
     /**
      * What the student's page gets with the lesson's text, behind the same
      * gate: the links, and the kinds of partner with how many companies of
-     * the directory there are for them.
+     * the directory there are for them, and whether it names a template of
+     * its module (the player offers them under the text).
      *
-     * @return array{links: list<array{name: string, url: string}>, companies: list<string>, companies_count: int, partners: list<string>}
+     * @return array{links: list<array{name: string, url: string}>, companies: list<string>, companies_count: int, partners: list<string>, templates: bool}
      */
     public static function payload(Lesson $lesson): array
     {
@@ -58,6 +60,7 @@ final class LessonResources
             'companies' => $entry['companies'],
             'companies_count' => $entry['companies'] === [] ? 0 : Company::query()->visible()->whereIn('category', $entry['companies'])->count(),
             'partners' => $entry['partners'],
+            'templates' => $entry['templates'],
         ];
     }
 }

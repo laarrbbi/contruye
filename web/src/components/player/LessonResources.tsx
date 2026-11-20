@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { ArrowUpRight, Globe } from 'lucide-react'
+import { ArrowUpRight, Calculator, Globe } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import type { LearnModule, LessonResourcesView } from '@/api/learn'
 import { CompanyDirectory } from '@/components/directory/CompanyDirectory'
 import { SectionLabel } from '@/components/inside/PageHead'
@@ -20,7 +21,9 @@ function host(url: string): string {
  * its official address, then the partners for what it asks of the promoter
  * (real-estate agencies where it talks of finding land): the academy's own,
  * and the companies of the directory. The partners follow the module's gate:
- * a free lesson read without the module shows the links only.
+ * a free lesson read without the module shows the links only. First of all,
+ * when the lesson names a template of its module, the templates themselves
+ * (the owner's call: the template where the text talks about it).
  */
 export function LessonResources({
   slug,
@@ -37,10 +40,37 @@ export function LessonResources({
   const partners = module.is_locked ? [] : module.partners.filter((partner) => resources.partners.includes(partner.category))
   const companies = !module.is_locked && resources.companies.length > 0 && resources.companies_count > 0
 
-  if (resources.links.length === 0 && partners.length === 0 && !companies) return null
+  const templateTitles = [...(module.template ? [module.template.title] : []), ...(module.professional_templates ?? []).map((tpl) => tpl.title)]
+  const templates = !!resources.templates && !module.is_locked && templateTitles.length > 0
+
+  if (!templates && resources.links.length === 0 && partners.length === 0 && !companies) return null
 
   return (
     <div className="space-y-10">
+      {templates && (
+        <section className="flex flex-col gap-4 rounded-2xl border border-primary/25 bg-primary/[0.04] p-5 sm:flex-row sm:items-center">
+          <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <Calculator className="h-5 w-5" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-sm font-semibold">{t('player.lessonTemplates')}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{t('player.lessonTemplatesLead')}</p>
+            <ul className="mt-2 space-y-0.5 text-sm font-medium">
+              {templateTitles.map((title) => (
+                <li key={title} className="bidi-auto">
+                  {title}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link
+            to={`/learn/${slug}/modules/${module.id}/plantilla`}
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            {t('player.openTemplates')}
+          </Link>
+        </section>
+      )}
       {resources.links.length > 0 && (
         <section className="rounded-2xl border border-foreground/[0.08] bg-card">
           <div className="border-b px-5 py-4">
