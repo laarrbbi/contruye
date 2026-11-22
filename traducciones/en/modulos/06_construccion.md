@@ -33,6 +33,8 @@
 
 ## Lesson 6.1 — Earthworks, foundations and structure
 
+> **Where we are:** with the site legally open (Module 4) and the contractor hired (Module 5), construction starts from the bottom: preliminary work, earthworks, foundations and structure.
+
 - **Preliminary work:** hoardings, site cabins, site connections, topographic setting-out, protection of party walls, diversion of services, demolition (with asbestos removed by a company entered in the RERA if there is any).
 - **Earthworks:**
   - Basement excavation. Diaphragm walls or retaining walls if there are party walls.
@@ -48,8 +50,47 @@
 - ⚠️ **Typical mistakes:** not having enough geotechnical information before excavating; pouring concrete without the reinforcement check; losing the concrete delivery notes and certificates (the OCT asks for them).
 
 - **Do not forget:** clearing and cleaning the plot before excavating, and having the geotechnical engineer approve the formation level before laying the foundations.
+- **Who handles what** (whom you ask for each item in the list above):
+  - **Contractor** (with its subcontractors): the preliminary work (hoardings, site cabins, topographic setting-out, protection of party walls, diversion of services), the clearing and cleaning, the earthworks, the foundations and the structure.
+  - **Electricity distributor and municipal water company:** the site connections. You apply for them, at the start.
+  - **Company entered in the RERA:** the asbestos removal, if there is a demolition and the building contains asbestos.
+  - **Authorised waste manager:** the soil that is not reused, with its certificates.
+  - **Geotechnical engineer** (the laboratory from the geotechnical study): defines the foundations and approves the formation level.
+  - **Structural engineer** (the engineering firms are coordinated by the architect): designs the foundations and the structure.
+  - **Director of works execution:** checks the reinforcement and the pours.
+  - **Accredited laboratory:** tests the concrete (test cubes, strength at 28 days) and the steel.
+  - **OCT:** inspects for the insurer.
+  - **You (developer):** you keep the delivery notes and the certificates for the concrete, the steel and the soil.
+
+### Example: Nicolás, the developer
+
+With the licence, the loan and the turnkey contract signed, the contractor moved onto the plot on the day of the setting-out record (Lesson 4.3). Ahead, 20 months of works. Let me tell you how Nicolás started them.
+
+**First, the supplies.** At the start, he asked the **electricity distributor** for the connection point and the site supply, and the **municipal water company** for the site connection. In the due diligence (Lesson 1.3) he had already confirmed that there was capacity; now he did not wait, because connection lead times are long. You have the distributor in your province at the end of the module.
+
+**Before the workers came on site.** He asked the contractor for its people's training and **Construction Professional Card** (issued by the **Fundación Laboral de la Construcción**) and went over with it the list of subcontractors in the contract (Lesson 5.4). You will find the earthworks companies and contractors in your province in the list we have given you, among the potential companies for this lesson.
+
+**The preliminary work.** Hoardings, site cabins, site connections, clearing and cleaning of the plot and topographic setting-out. There was nothing to demolish (Lesson 1.1), so there was no asbestos and no demolition.
+
+**No basement, less risk.** His building is a B+5 with no basement: there was no basement excavation, no diaphragm walls and no groundwater pumping, which is the great source of cost overruns. The contractor took the soil from the foundations to an **authorised waste manager**, and Nicolás opened a folder for the management certificates, which will keep coming in throughout the works.
+
+**The foundations, approved.** The geotechnical engineer defined them and the design's structural engineer designed them. Before laying the foundations, the geotechnical engineer from the laboratory that did the study (Module 3) approved the formation level.
+
+**The first pour.** Nicolás went to the site with the site supervision team. He watched the director of works execution check the reinforcement before the structure was poured, in reinforced concrete cast in situ, the usual; the accredited laboratory take the test cubes it will crush at 28 days; and the OCT inspect for the insurer. Since that day he has kept every delivery note and every certificate for the concrete and the steel, and every test report: the OCT is going to ask him for them.
+
+### Summary
+
+Before excavating, the preliminary work done and the site supplies applied for; without enough geotechnical information there is no excavating and no laying of foundations. The structure is controlled on site (reinforcement, pours, tests) and every delivery note and every certificate is filed.
+
+### Your checklist
+
+- Site utilities and connection point requested at the start
+- Concrete and steel certificates and test results filed
+- Waste management certificates
 
 ## Lesson 6.2 — Façades, windows and roofs
+
+> **Where we are:** with the structure up (Lesson 6.1), the building is closed in: façades, windows and roofs, which meet the CTE and do not let water through.
 
 - **Façade:** it must meet DB HE1 (thermal transmittance), HS1 (damp), HR (noise) and SI (external fire spread).
   - Brick + insulation + internal lining.
@@ -61,8 +102,38 @@
 
 - **Thermal bridges and construction junctions:** check them on site; they cause a lot of condensation claims after sale.
 - **Watertightness tests** on façades and windows as well as roofs and terraces, and a check of the insulation.
+- **Who handles what** (whom you ask for each item in the list above):
+  - **Designer** (the architect): defines in the design the façade, the windows and the roof, with the values required for your climate zone.
+  - **Contractor** (with its subcontractors): builds the façade, fits the windows and does the roof and the waterproofing.
+  - **Director of works execution:** checks the materials and the execution on site, reviews the thermal bridges and the construction junctions and checks the insulation.
+  - **Accredited laboratory:** the watertightness tests (flooding or spraying), with their record.
+  - **OCT:** reviews the waterproofing of roofs and of basements, if there are any.
+
+### Example: Nicolás, the developer
+
+With the structure finished, it was time to close in the building. Nicolás knew from the lesson that many after-sales claims start here, so he went to the site more often. Let me tell you what he paid attention to.
+
+**The façade and the windows, as in the design.** His architect designed the most classic façade: brick, insulation and internal lining. The windows are thermally broken aluminium with low-emissivity double glazing. When they arrived on site, his director of works execution checked that they came with the values required for his climate zone, the ones in the design.
+
+**The junctions, reviewed on site.** On his visits with the site supervision team he asked them to look at the thermal bridges and the construction junctions, and to check the insulation: they cause a lot of condensation claims after sale, and he is the one who is liable to the buyer (Lesson 5.2).
+
+**The roof, tested with a record.** The roof is flat: waterproofing, insulation and protection, with the terraces of the two penthouses. Before it was finished, the accredited laboratory did the **watertightness test** by flooding, with the director of works execution present, and drew up its record. The façades and the windows were tested too, by spraying.
+
+**The OCT, on the waterproofing.** The OCT reviewed it for the insurer, because it is the most frequent after-sales claim. With no basement, there were only roofs and terraces to review.
+
+**To the file.** The test record went into the same folder as the concrete certificates: he will need it at the end of the works (Lesson 6.5).
+
+### Summary
+
+Façade, windows and roof meet what the CTE requires for your climate zone. Thermal bridges and waterproofing are reviewed on site, and watertightness is tested, with a record, before finishing.
+
+### Your checklist
+
+- Roof watertightness test with its record
 
 ## Lesson 6.3 — Building services
+
+> **Where we are:** with the building closed in (Lesson 6.2), the building services go in: water and drainage, HVAC, electrical, telecoms, fire and lift, each with its own regulation.
 
 - They account for 20–30 % of the PEM. Coordinate them from the design stage (BIM helps).
 - **Water and drainage:** CTE HS4 and HS5, separate system if the municipality has one.
@@ -82,8 +153,49 @@
 
 - **Renewable energy:** photovoltaic or other systems when CTE HE5 requires it or the design provides for it.
 - **Garage extraction, earthing and control systems** complete the building services.
+- **Who handles what** (whom you ask for each item in the list above):
+  - **Designer and engineering firms** (coordinated by the architect): the design or technical report for each installation, coordinated from the design stage.
+  - **Telecommunications engineer or qualified professional:** the ICT design (Lesson 3.3) and the ICT completion certificate.
+  - **Authorised or qualified installers** (normally, the contractor's subcontractors): carry out each installation and give you its certificate: the CIE for the electrical installation, the RITE certificate, the ICT installer's certificate (*boletín*) and the qualified fire installer's certificate.
+  - **Authorised maintenance company:** the lift, with its CE marking, and its maintenance.
+  - **The autonomous community's Industry Service:** the registration of the installations (electrical, thermal, fire, lift), as each one is finished.
+  - **Director of works execution and accredited laboratory:** check the execution and do the tests on the installations (Lesson 7.2).
+  - **You (developer):** you keep a copy of each certificate and each registration for the completion of the works (Lesson 6.5).
+
+### Example: Nicolás, the developer
+
+With the building closed in, the installers came in. The building services account for 20–30 % of the PEM, so Nicolás followed them closely. Let me tell you how.
+
+**Coordinated from the design.** His architect coordinated the engineering firms from the design stage (Module 3), and on site the site supervision team meets the installers every fortnight (Lesson 7.4).
+
+**Aerothermal, no gas.** His design has what is usual today: aerothermal heat pumps for hot water, heating and cooling. They count as renewable for the minimum hot-water contribution required by CTE HE4, and the building has no gas.
+
+**Electrical and telecoms.** Centralised meters, main supply line and individual feeders to each home; and the ICT, with its RITI and RITS rooms and the fibre, coaxial and twisted-pair networks up to each of the 18 homes.
+
+**Fire and lift.** The extinguishers and what DB SI requires, with a qualified installer; the lift, with its CE marking and an authorised maintenance company.
+
+**One certificate per installation.** As each installation was finished, Nicolás asked for its paperwork and checked that it was registered with the Comunitat Valenciana's **Industry Service**:
+
+- Electrical: the authorised installer's CIE.
+- Thermal: the installer's certificate, as the RITE requires.
+- Fire: the qualified installer's certificate.
+- The lift.
+
+For the ICT he kept the completion certificate and the installer's certificate (*boletín*). Everything went into his folder for the completion of the works (Lesson 6.5).
+
+You have the Industry Service of your province at the end of the module. You will find building services companies in the list we have given you, among the potential companies for this lesson.
+
+### Summary
+
+The building services are coordinated from the design and each one meets its regulation. Each installer gives you their certificate, and the installations are registered with Industry as each one is finished.
+
+### Your checklist
+
+- Installers' certificates registered with Industry (electrical, thermal, PCI, lift, ICT)
 
 ## Lesson 6.4 — Finishes and external works
+
+> **Where we are:** with the building services in (Lesson 6.3), the works enter their last part: the finishes of the homes, the common areas and the external works.
 
 - Partitions (ceramic or plasterboard), floors (porcelain tile, parquet), wall tiling, paint, internal joinery, wardrobes, kitchen (units and, depending on the segment, appliances).
 - Common areas: entrance hall, stairs, lift, gardens, pool (regional rules for communal pools if they apply).
@@ -97,8 +209,35 @@
   - **Communal pool:** technical and health criteria of RD 742/2013 and the regional pools decree.
   - **Children's play areas:** standards UNE-EN 1176 and 1177 (equipment and surfacing).
   - Plot boundaries, external lighting, permanent connections and the associated urbanisation works.
+- **Who handles what** (whom you ask for each item in the list above):
+  - **Contractor** (with its subcontractors): the partitions, floors, wall tiling, paint, internal joinery, wardrobes and kitchen; the common areas (with the pool and the children's play areas, if there are any), the garage and the urbanisation works, internal and external.
+  - **Director of works execution:** checks that every finish and every material is the one in the design.
+  - **Town hall:** takes over the urbanisation works that become public domain, if the licence requires it.
+  - **You (developer):** you freeze the specification in the contract with the buyers and decide on every change, which is a variation (Lesson 7.3).
+
+### Example: Nicolás, the developer
+
+With the building services in, Nicolás's works moved on to the finishes. It is what his buyers will see, and where it is hardest to say no. Let me tell you how he handled it.
+
+**The finishes, as in the specification.** A mid-range specification, for first-home buyers: ceramic partitions, porcelain tile floors, wall tiling, paint, internal joinery, wardrobes and the kitchen with its units. All as the specification (*memoria de calidades*) in the contracts with his buyers says.
+
+**The specification, frozen.** He followed the lesson's tip: the specification is not touched. If a buyer asks him for a change, the answer is the same for everyone: every sales change halfway through the works is a variation, with a written order and the price agreed beforehand (Lesson 7.3).
+
+**The common areas.** Entrance hall, stairs and lift: he followed them with the site supervision team on their visits, because they are the first thing anyone entering the building sees.
+
+**Outside, what the licence requires.** He went back to the conditions of his licence (Lesson 4.3) to see what external works it required of him and which part, being public domain, he would have to hand over to the town hall. For that he had his item in Template 2: external works and utility connections, 50.000 €.
+
+**The permanent connections.** With the electricity distributor and the municipal water company he moved from the site connections he had applied for at the start (Lesson 6.1) to the permanent ones.
+
+With the finishes done, all he has left is to close the works in writing (Lesson 6.5).
+
+### Summary
+
+The finishes, the common areas and the external works complete the construction. Freeze the specification in the contract with the buyers: every sales change halfway through the works is a variation.
 
 ## Lesson 6.5 — Completion and handover
+
+> **Where we are:** the works are finished (Lessons 6.1 to 6.4). Now you close them in writing: the final completion certificate, the handover record and the documentation of what was built.
 
 - **Final completion certificate (CFO):** signed by the works director and the director of works execution; it certifies that the works were built according to the design. **Compulsory endorsement** (RD 1000/2010).
 - **Handover record (art. 6 LOE):**
@@ -108,6 +247,45 @@
   - **The 1, 3 and 10-year warranties run from handover without reservations, or from when the reservations are remedied** (art. 17.1 LOE).
 - **Documentation of the works as built (art. 7 LOE):** the works director hands it to the developer (design with its changes, list of parties, use and maintenance instructions, certificates). It is the basis of the Building Book (Module 9).
 - **Ask the contractor for:** as-built drawings, equipment warranties, installers' certificates, waste management certificates, manuals.
+- **Who handles what** (whom you ask for each item in the list above):
+  - **Works director and director of works execution:** sign the final completion certificate.
+  - **Association of Architects and Association of Technical Architects:** endorse the final completion certificate.
+  - **You (developer) and the contractor, with the site supervision team:** you sign the handover record, without reservations, with reservations or with a reasoned rejection.
+  - **Contractor:** remedies the reservations within the period in the record and hands you the as-built drawings, the equipment warranties, the installers' and waste management certificates and the manuals.
+  - **Works director:** hands you the documentation of the works as built (design with its changes, list of parties, use and maintenance instructions, certificates).
+  - **You (developer):** you keep everything for the Building Book (Module 9).
+
+### Example: Nicolás, the developer
+
+With the works finished, Nicolás took nothing for granted until he had it signed. Let me tell you in what order he closed them.
+
+**First, the final completion certificate.** It was signed by his works director, the architect from the practice that did the design, and by his director of works execution, the technical architect. It certifies that the works were built according to the design. Each of them had it endorsed at their professional association, the Association of Architects and the Association of Technical Architects, because endorsement is compulsory.
+
+**Then, handover, within 30 days.** From the completion date set in the certificate he had 30 days to sign the record; if there is neither a record nor a reasoned rejection within that period, handover is deemed tacit. He walked round the building with the contractor and the site supervision team, and they signed the **handover record** with reservations: a snagging list and a deadline to put it right.
+
+**When the warranties start.** The 1, 3 and 10-year warranties do not run from the signing, but from when those reservations are remedied. That is why he puts in writing the date on which the contractor closes them. And the 5 % retention on each valuation stays in his hands until one year after handover, as his contract says (Lesson 5.4).
+
+**The documentation of the works as built.** His works director handed him the design with its changes, the list of parties, the use and maintenance instructions and the certificates. It is the basis of the Building Book (Module 9).
+
+**And the contractor's.** He had agreed it in the contract (Lesson 5.4): as-built drawings, equipment warranties (the aerothermal system, the lift), installers' certificates, waste management certificates and manuals. He put it all together in the folder he opened on the first day, with the concrete certificates and the record of the roof test.
+
+**Where he is now.** The building is finished and handed over. The next step is to legalise it (Module 9); before that, in Module 7, you will see how he controlled these same works while they were being built.
+
+### Summary
+
+The works are closed with the endorsed final completion certificate and with the handover record, signed within 30 days of the completion date in the CFO. The warranties run from handover without reservations or from when the reservations are remedied; keep the documentation of the works as built for the Building Book.
+
+### Your checklist
+
+- CFO endorsed
+- Handover record signed
+- Final documentation from the contractor and the site supervision team
+
+## Module 6 summary
+
+You have followed the construction of the building in its order: preliminary work, earthworks, foundations and structure; façades, windows and roofs; building services; finishes, common areas and external works. At the end, you have closed the works in writing with the final completion certificate and the handover record.
+
+**Where you should be in your project:** with the works finished, the final completion certificate endorsed and the handover record signed, and with the concrete, installers' and waste certificates and the final documentation from the contractor and the site supervision team in your folder. Module 7 comes back to these same works: how you control them while they are being built, so that they come in on time, on budget and with the quality documented.
 
 ## Module 6 checklist
 

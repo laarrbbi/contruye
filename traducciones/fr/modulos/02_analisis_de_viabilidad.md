@@ -26,6 +26,8 @@
 
 ## Leçon 2.1 — Le compte de résultat du promoteur (CRP)
 
+> **Où en sommes-nous :** le terrain sécurisé au Module 1, vous commencez l'étude de faisabilité par son outil central, le compte de résultat du promoteur (CRP) : le compte avec lequel vous décidez, chiffres en main, si l'opération se fait.
+
 - **Structure :**
 ```
   RECETTES (vente de logements, garages, caves, locaux ; hors IVA)
@@ -59,7 +61,30 @@
 
 - **Règle :** en dessous de 15 % de marge sur les ventes, le risque ne vaut pas la peine.
 
+### Exemple : Nicolás, le promoteur
+
+L'option d'achat inscrite, Nicolás s'est attelé à son CRP. Je vous raconte comment il l'a monté.
+
+**D'abord, hors IVA.** Tout son compte est hors IVA, comme le dit la leçon : l'IVA qu'il paiera sur les travaux, il la récupère en facturant 10 % sur les ventes. L'ITP de l'achat, en revanche, il ne le récupère pas, parce que c'est un particulier qui vend (Leçon 1.4) : c'est pourquoi il entre dans le coût du terrain. Il l'a revu avec son cabinet de conseil, celui de la société.
+
+**Ensuite, les lignes de sa promotion.** Il a suivi la structure de la leçon de haut en bas :
+
+- **Recettes :** ses 18 logements, dont 2 attiques.
+- **Terrain :** le prix du terrain, 71.392,05 €, avec son ITP.
+- **Coûts :** construction, viabilisation et raccordements, honoraires techniques, permis, assurances, commercialisation, frais généraux et frais financiers, une ligne chacun.
+- **Tout en bas :** le résultat avant impôts et, après l'impôt sur les sociétés, le résultat net.
+
+**L'outil.** Pour n'oublier aucun poste, il a ouvert le **modèle 2 · Viabilité rapide et méthode résiduelle**, qui contient ces lignes (vous l'avez dans la Leçon 2.3). Il y a saisi ce qu'il savait déjà : Communauté valencienne ; terrain hors IVA, parce que c'est un particulier qui vend ; 1.586,49 m² construits et 18 logements. Pour chaque poste, il a laissé le pourcentage que propose le modèle. Il lui manque deux données : le prix de vente, qu'il obtient dans la Leçon 2.2, et le coût de construction, qu'il affine dans la Leçon 2.3.
+
+**Son étalon.** Il a noté le tableau des poids pour comparer chaque poste quand il l'aura : la construction, entre 45 et 55 % des recettes ; le résultat avant impôts, entre 15 et 25 %. Et la règle : en dessous de 15 % de marge sur les ventes, le risque ne vaut pas la peine. Du terrain, il sait déjà qu'il pèse peu : dans les grands chiffres, il représentait 3,6 % des recettes (Leçon 1.1), très en dessous des 15–30 % du tableau, parce que ce sont les prix de l'exemple du professionnel.
+
+### Résumé
+
+Le CRP retranche des recettes hors IVA tous les coûts de la promotion, du terrain aux frais financiers, et vous laisse le résultat avant impôts. Comparez chaque poste aux poids indicatifs : en dessous de 15 % de marge sur les ventes, cela ne vaut pas la peine.
+
 ## Leçon 2.2 — Implantation et recettes : l'étude de marché
+
+> **Où en sommes-nous :** dans la Leçon 2.1, vous avez monté la structure de votre CRP. Vous le remplissez maintenant par le haut : l'implantation de l'architecte vous dit quelles surfaces vous vendez, et l'étude de marché, à quel prix.
 
 - **D'abord l'implantation.** Commandez à un cabinet d'architecture sérieux l'étude d'implantation de la promotion à réaliser. L'essentiel de ce que fait l'architecte dans cette étude :
   - Elle estime la constructibilité prise en compte et les surfaces construites et utiles.
@@ -97,7 +122,33 @@
   - **Prix séparé** du logement, du garage et de la cave.
   - Confrontez toujours les prix affichés aux transactions réelles.
 
+### Exemple : Nicolás, le promoteur
+
+Il manquait au CRP de Nicolás sa première ligne, les recettes. Je vous raconte comment il les a obtenues.
+
+**D'abord, l'implantation.** Il est retourné au cabinet d'architecture qui lui avait fait l'étude de volumétrie (Leçon 1.2), celui qui se chargera du projet (Module 3), et lui a commandé l'étude d'implantation de la promotion. L'architecte a estimé la constructibilité prise en compte et les surfaces construites et utiles ; il a réparti les logements, les parties communes et la cage d'escalier et d'ascenseur ; il a vérifié typologies, éclairement, ventilation et accessibilité, et lui a confirmé qu'il ne faut pas d'autre instrument de planification. Résultat : 1.586,49 m² construits en B+5, sans sous-sol, avec 18 logements, dont 2 attiques.
+
+**Ensuite, l'étude de marché, à pied.** Il a regardé ce qu'il y avait autour et qui étaient ses concurrents : il a visité les promotions en vente dans un rayon de 1-3 km autour de son terrain et, dans chacune, il s'est présenté comme acheteur : c'est la technique du client mystère. Il a noté le €/m², la typologie et les prestations. Il a aussi lu les rapports trimestriels de Tinsa, Sociedad de Tasación et Gloval.
+
+**Ce qui bouge dans le secteur.** Il a aussi mesuré le reste de ce que demande la leçon : l'absorption des promotions comparables, l'offre future (il s'est renseigné au service de l'urbanisme de la mairie et a consulté la statistique des visas de l'ordre des architectes) et le profil de l'acheteur.
+
+**Le mix, avec l'architecte.** Avec ce que demande le secteur, et non avec ce qui lui plaisait à lui, il a arrêté le mix : des logements de 2 chambres, les plus demandés, et de 3 chambres pour les familles, avec des prestations moyennes, pour la résidence principale.
+
+**Son prix.** Il a appliqué la décote de 3-5 % sur l'offre concurrente que conseille la leçon pour les premières ventes sur plan. Il obtient **1.259,70 € le m² construit, hors IVA** : celui-là même que lui demandaient les grands chiffres (Leçon 1.1). Sur 18 logements, un prix moyen de 111.027,86 € hors IVA (122.130,64 € avec 10 % d'IVA) et des ventes de 1.998.501,45 €. Il l'a saisi dans le modèle 2.
+
+### Résumé
+
+L'architecte vous donne l'implantation et les surfaces que vous vendez ; l'étude de marché, faite à pied et en regardant la concurrence, vous donne le prix. Avec les deux, vous arrêtez le mix et les recettes de votre CRP.
+
+### Votre checklist
+
+- Étude de marché
+- Mix produit arrêté avec l'architecte
+- Esquisse d'implantation de l'architecte
+
 ## Leçon 2.3 — Des coûts précis
+
+> **Où en sommes-nous :** vous avez déjà les recettes de votre CRP (Leçon 2.2). Place aux coûts, poste par poste, et avec eux à la méthode résiduelle : combien vous pouvez payer le terrain.
 
 - **Terrain :** prix + ITP/AJD non récupérable + notaire + registre + relevé topographique + géotechnique + avocats + coût financier du terrain + charges d'aménagement.
 - **Méthode résiduelle :** `Prix maximal du terrain = Recettes − autres coûts − bénéfice visé`. Le terrain vaut ce que le projet permet de payer.
@@ -129,6 +180,16 @@
 | Notaire et registre de l'ouvrage neuf et de la division horizontale | selon le tarif |
 | Commercialisation | 2–4 % des ventes |
 | Frais financiers | 3–6 % des recettes |
+- **Qui s'occupe de quoi** (à qui demander le prix de chaque poste du tableau ci-dessus) :
+  - **Architecte :** le projet et la direction des travaux, ainsi que les bureaux d'études (structure, installations), qu'il coordonne.
+  - **Architecte technique et coordinateur sécurité et santé** (ordre des architectes techniques ou aparejadores, Module 3) : la direction de l'exécution et la coordination sécurité et santé.
+  - **Laboratoire de géotechnique :** la géotechnique.
+  - **OCT :** sa vérification du projet (Module 3) et des travaux (Module 7).
+  - **Mairie :** l'ICIO et la taxe de permis, dans son ordonnance fiscale.
+  - **Courtier en assurances :** l'assurance décennale, la TRC, la RC et l'assurance des sommes versées d'avance ; les cautions, la **banque** (Module 5).
+  - **Notaire et Registre de la propriété :** l'ouvrage neuf et la division horizontale, selon le tarif.
+  - **Agence immobilière ou de commercialisation :** la commercialisation (Module 8).
+  - **Banque :** les frais financiers (Leçon 5.1).
 
 - ⚠️ **Erreurs typiques :** ne pas inclure les raccordements (électricité et eau peuvent coûter des dizaines de milliers d'euros) ; oublier le coût des cautions ; calculer l'ICIO sur le PEM sans lire l'ordonnance.
 
@@ -304,7 +365,43 @@ Pour les coûts de commercialisation, on peut distinguer plusieurs types :
 - **Vente.** Parmi les coûts de la commercialisation ou de la vente des biens figurent les commerciaux, chargés de présenter les produits à vendre, ici les biens immobiliers.
 - **Service après-vente.** Ce service est chargé de suivre la gestion et le contrôle du processus de réception de la promotion : il faut tenir compte du fait que c'est pendant les premiers mois après la vente que naissent le plus de réclamations, et qu'elles exigent une solution rapide et efficace.
 
+### Exemple : Nicolás, le promoteur
+
+Les recettes dans le modèle 2, Nicolás est passé aux coûts. Je vous raconte d'où il a tiré chacun d'eux.
+
+**Le terrain.** Il l'avait de la Leçon 1.4 : 81.174,29 € dans le modèle 1, avec ITP, notaire, registre, due diligence, expertise et études. Dans le modèle 2, le terrain entre avec son ITP de 9 % : 77.817,33 €. Le modèle lui-même prévient qu'il ne comprend ni notaire ni registre, et que cela s'affine avec le modèle 1.
+
+**La construction.** Il a demandé des prix à deux entreprises de construction locales, parce qu'ils varient selon la province (les devis fermes, à trois, arrivent dans la Leçon 5.3). Dans l'exemple, la construction est à 660 €/m², celle de l'exemple du professionnel : 1.047.083,40 €. Elle est moins chère que celle d'aujourd'hui : la leçon donne 900–1.100 €/m² pour la construction standard en 2025-2026. Dans votre promotion, mettez le prix que vous donneront vos entreprises.
+
+**L'ICIO et les taxes, dans l'ordonnance.** À la mairie, il a demandé l'ordonnance fiscale de l'ICIO et des taxes (tableau « Où s'adresser ») : le taux exact de sa commune et la base sur laquelle il se calcule. Il ne l'a pas calculé sur le PEM sans la lire, ce qui est l'une des erreurs typiques. L'ordonnance en main, il a laissé permis, ICIO et taxes à 5 % de la construction, comme le propose le modèle : 52.354,17 €.
+
+**Le reste, avec les pourcentages du modèle :**
+
+- Honoraires techniques, 8 % de la construction : 83.766,67 €.
+- Assurances, OCT, contrôle qualité et autres, 3 % : 31.412,50 €.
+- Viabilisation et raccordements : 50.000 €. Il ne les a pas oubliés : c'est une autre erreur typique.
+- Commercialisation, 3 % des ventes : 59.955,04 €.
+- Frais financiers, 4 % des ventes : 79.940,06 €. Il les affinera avec la banque (Leçon 5.1).
+- Frais généraux, 2 % des ventes : 39.970,03 €.
+
+Au total, **1.444.481,87 € de coûts hors terrain**. Les imprévus n'ont pas de ligne propre dans le modèle : il les teste dans les scénarios de la Leçon 2.4, avec des travaux 5 % puis 10–15 % plus chers.
+
+**La méthode résiduelle.** Avec une marge visée de 18 % des ventes, le modèle applique la formule de la leçon : des ventes, il retranche les coûts hors terrain et le bénéfice visé, et ce qui reste est ce qu'il peut payer pour le terrain avec son ITP. Le **prix maximal du terrain ressort à 178.247,08 €**. Le propriétaire en demande 71.392,05 €.
+
+### Résumé
+
+Chaque coût entre dans le CRP avec sa référence : le terrain avec tout ce que vous ne récupérez pas, la construction avec le prix d'entreprises locales et l'ICIO avec l'ordonnance de votre commune. Avec eux, la méthode résiduelle vous dit le maximum que vous pouvez payer pour le terrain.
+
+### Votre checklist
+
+- Modèle 2 · Viabilité rapide et méthode résiduelle (inclus) rempli avec des prix de vente et des coûts vérifiés
+- Budget de construction comparé avec 2 entreprises locales
+- ICIO et taxes réelles de l'ordonnance municipale
+- Prix maximal du terrain par la méthode résiduelle
+
 ## Leçon 2.4 — Ratios et décision
+
+> **Où en sommes-nous :** votre CRP a déjà ses recettes (Leçon 2.2) et ses coûts (Leçon 2.3). Vous calculez maintenant les ratios, vous testez trois scénarios et vous décidez, chiffres en main, si l'opération se fait : GO / NO GO.
 
 - **Marge sur ventes** = résultat avant impôts ÷ recettes. Minimum 15 %.
 - **ROE** = résultat net ÷ fonds propres. Objectif > 20 % par an.
@@ -328,7 +425,40 @@ Pour les coûts de commercialisation, on peut distinguer plusieurs types :
 - **Décision :** GO seulement si le scénario pessimiste reste sans perte.
 - ⚠️ **Erreurs typiques :** calculer la marge IVA comprise ; ne pas intégrer le calendrier (le TRI dépend du temps) ; oublier l'IS dans le ROE.
 
+### Exemple : Nicolás, le promoteur
+
+Le modèle 2 complet, c'était à Nicolás de décider. Je vous raconte comment il s'y est pris.
+
+**La marge sur ventes.** Son CRP, hors IVA : ventes, 1.998.501,45 € ; coût total de la promotion, 1.522.299,21 € ; résultat avant impôts, 476.202,24 €. La marge, c'est le résultat divisé par les recettes : 476.202,24 € ÷ 1.998.501,45 € = 24 %. Elle dépasse largement le minimum de 15 %.
+
+**Le terrain.** Il paie une incidence foncière de 45 € par m² construit. La méthode résiduelle lui permet de payer jusqu'à 178.247,08 € pour le terrain ; le propriétaire en demande 71.392,05 €, soit 106.855,03 € de moins que le maximum.
+
+**Les trois scénarios.** L'optimiste, c'est son CRP tel quel : ventes à 100 % du prix et travaux sans dérive. Pour les deux autres, il est revenu au modèle 2 et a fait varier le prix de vente et le coût de construction comme l'indique le tableau :
+
+- **Central** (ventes à 95 %, travaux +5 %) : bénéfice de 324.539,59 €, une marge de 17 %.
+- **Pessimiste** (ventes à 90 %, travaux +10 %) : bénéfice de 172.876,94 €, soit 9,6 %. Les 6 mois de retard, le modèle ne les calcule pas : avec le prêt que lui propose la banque, ce sont 23.976,21 € d'intérêts en plus (4,5 % par an sur 1.065.609,45 €, pendant six mois). Il reste sans perte.
+- **L'extrême du tableau** (ventes à 85 %, travaux +15 % et le retard) : le bénéfice tombe à 21.214,28 € avant ces intérêts, si bien qu'il est à l'équilibre. Il le surveillera avec les jalons de sortie de sa note d'investissement (Leçon 2.5).
+
+**Le calendrier.** Le TRI (TIR) dépend du temps, et le modèle 2 ne va pas mois par mois. Avec son cabinet de conseil, il a monté le flux de trésorerie mensuel : quand il paie le terrain, les projets et chaque situation de travaux, et quand il encaisse les ventes, avec 20 mois de travaux et 4 de plus jusqu'aux actes de vente. Il en a tiré le TRI du projet et celui des fonds propres. Le modèle professionnel de l'extra le fait mois par mois (Leçon 2.3).
+
+**Les fonds propres.** Il a eu avec sa banque l'échange préalable du tableau « Où s'adresser » : conditions indicatives et ce qu'elle lui demandera en préventes. Avec un prêt de 70 % du coût, ses fonds propres représentent 30 % : 456.689,76 €, et le terrain payé compte. Il le bouclera avec le modèle 3 (Leçon 5.1). Les banques de votre province, vous les trouverez à la fin du module.
+
+**L'impôt, pour le ROE.** Le ROE se calcule sur le résultat net, après l'impôt sur les sociétés. Sa SPE est nouvelle : dans la liste de la leçon, le taux de 15 % des entités nouvellement créées lui correspondrait, et il l'a fait confirmer par son cabinet de conseil.
+
+**GO.** Marge de 24 %, terrain très en dessous du maximum et un scénario pessimiste qui gagne encore : Nicolás décide de faire la promotion, en sachant que dans le pire extrême du tableau il est à l'équilibre. Prochaine étape : acheter (Leçon 2.5).
+
+### Résumé
+
+La marge sur ventes (minimum 15 %), le ROE et le TRI vous disent si l'opération en vaut la peine : toujours hors IVA et avec le calendrier intégré. Vous testez trois scénarios et ne donnez le GO que si le pessimiste reste sans perte.
+
+### Votre checklist
+
+- CRP avec trois scénarios
+- Trésorerie mensuelle avec TIR et besoins en fonds propres
+
 ## Leçon 2.5 — Négociation, structure et approbation de l'investissement
+
+> **Où en sommes-nous :** avec le GO de la Leçon 2.4, vous bouclez l'opération : vous négociez avec le propriétaire, vous organisez la société et les associés, vous approuvez l'investissement et vous achetez le terrain.
 
 - **Négociation avec le propriétaire du terrain :**
   - Prix, modalités de paiement (comptant, différé avec caution, avec option d'achat, une partie du prix sous forme d'échange de biens immobiliers), délais.
@@ -352,6 +482,53 @@ Pour les coûts de commercialisation, on peut distinguer plusieurs types :
   3. Liquidation des impôts : ITP/AJD avec le formulaire 600 de votre communauté, dans le délai (habituellement 30 jours ouvrables) ; IVA facturée par le vendeur si l'opération y est soumise.
   4. Inscription au Registre de la propriété.
   5. Mainlevée ou régularisation des charges convenues et prise de possession effective.
+- **Qui s'occupe de quoi** (à qui demander chaque point des listes ci-dessus) :
+  - **Vous :** la négociation avec le propriétaire (prix, modalités de paiement, délais) et la note d'investissement.
+  - **Avocat :** il examine le contrat de vente avec option d'achat et les conditions suspensives, et rédige le pacte d'associés.
+  - **Cabinet de conseil ou conseiller fiscal :** les apports des associés (capital ou prêt d'associé) et la fiscalité de l'achat et de la promotion.
+  - **Notaire :** les procurations notariées et l'acte authentique de vente.
+  - **Assemblée des associés** (ou comité d'investissement) : l'approbation de l'investissement.
+  - **Banque :** les garanties qu'elle vous demande, comme les cautions personnelles.
+  - **Registre de la propriété :** la nota simple du jour et l'inscription.
+  - **Mairie · Gestion fiscale :** les certificats d'IBI et de dettes.
+  - **Administration fiscale de votre communauté :** l'ITP/AJD avec le formulaire 600, dans le délai.
+  - **Vendeur :** l'IVA qu'il facture, si la vente est soumise à l'IVA ; la mainlevée ou la régularisation des charges convenues et la remise de la possession.
+
+### Exemple : Nicolás, le promoteur
+
+Avec le GO, Nicolás a bouclé l'opération. Je vous raconte dans quel ordre.
+
+**Ce qu'il a négocié avec le propriétaire.** Il l'avait verrouillé dans l'option d'achat de la Leçon 1.4 : le prix, 71.392,05 € ; les modalités de paiement, avec option d'achat, et un délai suffisant pour mener les études et obtenir le financement, ce que demande la leçon. Par écrit, les conditions suspensives de faisabilité d'urbanisme, registrale et technique : si l'une d'elles n'était pas remplie, il n'achetait pas.
+
+**La structure.** Sa SPE existe déjà (Leçon 1.4) : une société nouvelle, dédiée à cette seule promotion, ce que la leçon appelle SPV, qui isole le risque. Avec son cabinet de conseil, il a décidé comment entrent les fonds propres (capital ou prêt d'associé) et a vérifié la fiscalité avant de signer : l'achat paie l'ITP, parce que c'est un particulier qui vend, et les ventes porteront 10 % d'IVA. Il a signé le **pacte d'associés** de sa SPE avec ce que demande la leçon : majorités renforcées, répartition des rôles, apports complémentaires en cas de dérive, blocage, sortie et répartition des résultats. Il sait que la banque lui demandera des cautions personnelles (Leçon 5.1).
+
+**La note d'investissement.** Il y a réuni le terrain, son produit, le CRP, le flux de trésorerie, les trois scénarios, les risques, le calendrier et le financement. Il a fixé un budget de 1.522.299,21 €, une rentabilité minimale de 15 % de marge sur les ventes, son calendrier et son financement. Et les jalons de contrôle et critères de sortie, avec les exemples de la leçon et un délai pour chacun : permis non accordé, préventes inférieures à 30 % et appel d'offres des travaux plus de 8 % au-dessus du budget. Elle a été approuvée par l'**assemblée des associés** de sa SPE.
+
+**L'achat.** L'investissement approuvé, il a levé son option :
+
+1. Le jour de la signature, une **nota simple du jour** au **Registre de la propriété** et les certificats d'IBI et de dettes à la **gestion fiscale de la mairie**.
+2. L'**acte authentique de vente**, chez le même notaire que l'option.
+3. L'**ITP** de la Communauté valencienne, 9 % : 6.425,28 €, avec le formulaire 600 et dans le délai (habituellement 30 jours ouvrables).
+4. L'**inscription** au Registre de la propriété, au nom de sa SPE.
+5. Sans charges à lever (Leçon 1.3), la prise de possession du terrain.
+
+Le terrain appartient désormais à sa SPE, acte signé et inscrit. Il passe au Module 3 : les projets techniques.
+
+### Résumé
+
+Vous négociez le prix, les modalités de paiement et les conditions ; vous organisez par écrit la société et les associés ; l'assemblée approuve une note d'investissement avec jalons et critères de sortie, et vous achetez le terrain : acte, impôts liquidés et inscription.
+
+### Votre checklist
+
+- Option d'achat et conditions suspensives négociées
+- Pacte d'associés et structure de la SPV
+- Note d'investissement approuvée avec jalons et critères de sortie
+
+## Résumé du module 2
+
+Vous avez monté votre CRP hors IVA, vous avez obtenu les recettes avec l'implantation de l'architecte et une étude de marché faite à pied, vous avez affiné chaque coût et le prix maximal du terrain par la méthode résiduelle, et vous avez testé trois scénarios avant de décider. Avec le GO, vous avez négocié, organisé la société, approuvé l'investissement et acheté le terrain.
+
+**Où vous devriez en être dans votre projet :** votre compte de résultat du promoteur (CRP) avec trois scénarios et la décision GO / NO GO prise ; si c'est GO, la note d'investissement approuvée et le terrain acheté au nom de votre SPE (ou l'option prête à être levée). Avec cela, vous passez au Module 3, où vous commandez les projets techniques.
 
 ## Checklist du module 2
 

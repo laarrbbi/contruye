@@ -84,6 +84,26 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
   - **Traducciones:** esta segunda versión está solo en español, a la espera de que la apruebe el
     propietario. Mientras, en los demás idiomas las cuatro lecciones del Módulo 1 se leen en español (el
     reproductor lo dice); el resto del módulo sigue traducido.
+- **En los Módulos 2 a 12** (22/11, con el modelo del Módulo 1 aprobado por el propietario): en cada
+  lección, «Dónde estamos» al empezar y, debajo de la lección, «Ejemplo: Nicolás, el promotor»,
+  «Resumen» y «Tu checklist» (los pasos de la checklist del módulo que cierra cada lección, con sus
+  palabras; las Lecciones 2.1, 6.4 y 7.1 no cierran ninguno); «Quién se encarga de cada cosa» después
+  de las listas largas (desde la 4.3, con el agente de la LOE de cada trámite); «Resumen del Módulo N»
+  con «Dónde deberías estar en tu proyecto» antes de la checklist; en la 4.1, que los trámites, tasas
+  y plazos cambian según el municipio y la comunidad («revísalos con tu gestor o tu abogado»); en la
+  5.2, «Lo que Nicolás no hace» (lo que la lección dice que es obligatorio).
+  - **Las cifras de Nicolás** son las de las plantillas del curso calculadas en la plataforma, con los
+    datos del ejemplo del profesional en Números gordos del solar (construcción 660 €/m², suelo
+    45 €/m² de techo, precio de venta el que da la plantilla) en Alicante: Plantilla 1 (ITP 9 %,
+    coste del solar 81.174,29 €), Plantilla 2 (ventas 1.998.501,45 €, coste 1.522.299,21 €,
+    beneficio 476.202,24 €, 24 %; escenarios de la 2.4: base 17 %, pesimista 9,6 %), Plantilla 3
+    (préstamo 1.065.609,45 €, coste financiero 73.936,57 €), Plantilla 4 (a mitad de obra,
+    desviación +16.454 €, +2 %), Plantilla 5 (cantidades a cuenta 439.670,33 €); en las demás
+    partidas, los valores que trae cada plantilla. Los precios son los de ese ejemplo, más bajos que
+    los de hoy, y el ejemplo lo dice (Lección 2.3).
+  - **Lo que espera al profesor no entra en el ejemplo:** si la promotora paga la plusvalía, la
+    hipoteca y la escritura de obra nueva en construcción, la cédula de habitabilidad.
+  - **Traducciones:** los bloques nuevos, en los cinco idiomas.
 - **En la plataforma** (sin tocar el texto): las referencias «Lección 4.2», «Módulo 9» llevan a esa
   lección; las plantillas salen bajo la lección que las nombra; al terminar cada módulo, su resumen, la
   checklist, las leyes y las empresas de la provincia juntas («Para consultar», informativas) y el test

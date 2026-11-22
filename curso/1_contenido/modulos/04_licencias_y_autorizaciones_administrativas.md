@@ -38,6 +38,8 @@
 
 ## Lección 4.1 — La licencia de obras
 
+> **Dónde estamos:** con el proyecto del Módulo 3, pides la licencia de obras al ayuntamiento: primero confirmas qué título te corresponde y después presentas la solicitud completa. Los trámites, las tasas y los plazos cambian según el municipio y la comunidad autónoma: revísalos con tu gestor o tu abogado.
+
 - **Primero, el régimen de intervención:** confirma qué título corresponde según la ley autonómica y la ordenanza (licencia, declaración responsable o comunicación previa) y si necesitas **licencias separadas** de demolición, movimiento de tierras, urbanización o tala de arbolado.
 
 - **Qué título necesitas:** para obra nueva residencial, **licencia de obras mayor**. Algunas leyes autonómicas permiten declaración responsable en casos concretos; para nueva planta la regla sigue siendo la licencia expresa (art. 11.4 TRLSRU).
@@ -56,7 +58,34 @@
   - Se devenga al iniciar la obra. Liquidación provisional al pedir o conceder la licencia y definitiva al terminar, con el coste real.
 - ⚠️ **Errores típicos:** presentar el proyecto incompleto (cada requerimiento añade semanas); no preguntar antes por los informes sectoriales; empezar con el silencio pensando que es positivo.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el proyecto del Módulo 3, Nicolás fue a por la licencia. Te cuento cómo lo hizo.
+
+**Primero, qué título le tocaba.** Lo confirmó con su abogado urbanista, el de la due diligence (Lección 1.3): para su edificio de nueva planta, B+5 con 18 viviendas, **licencia de obras mayor**, con resolución expresa. No había nada que derribar (Lección 1.1) ni nada que urbanizar (Lección 1.2); le quedaba saber si su ayuntamiento pedía licencia aparte para el movimiento de tierras o la tala de arbolado. Los despachos y los estudios de arquitectura de tu provincia los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección.
+
+**La reunión previa.** Antes de presentar nada fue con su arquitecto a **urbanismo del ayuntamiento**, a ver al técnico municipal con el anteproyecto. Llevaba tres preguntas: qué informes sectoriales le iban a pedir (Lección 4.2), con qué proyecto se pide la licencia en su municipio (el básico o el de ejecución) y si hacía falta alguna licencia separada. Lo que le pidieran aparte lo presentaría con la licencia de obras.
+
+**La solicitud, completa.** La presentó en la **sede electrónica del ayuntamiento** con todo lo de la lección: la solicitud, el proyecto, el estudio de seguridad y salud (no el básico: su obra pasa de los 450.759,08 € de la Lección 3.4), el estudio de gestión de residuos y lo que su ordenanza pide al solicitar: el justificante de tasas e ICIO y la fianza de residuos. Autorizaciones sectoriales no le hacían falta (Lección 4.2).
+
+**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 52.354,17 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
+
+**Después, esperar sin moverse.** Si el ayuntamiento le hubiera requerido algo, tenía 10 días para subsanar; por eso lo presentó completo: cada requerimiento añade semanas. Vinieron el informe técnico del arquitecto municipal y el jurídico (la tabla «Dónde ir» habla de 1-6 meses según el municipio), y mientras tanto no entró ni una máquina en el solar: en obra nueva el silencio es negativo. La resolución llegó favorable, con sus plazos y condiciones (Lección 4.4).
+
+### Resumen
+
+Confirma qué título necesitas y si hacen falta licencias separadas, reúnete antes con el técnico municipal y presenta la solicitud completa, con las tasas y el ICIO. En obra nueva el silencio es negativo: sin resolución expresa no empiezas.
+
+### Tu checklist
+
+- Reunión previa con urbanismo
+- Solicitud completa (proyecto, ESS, residuos, tasas, fianzas)
+- ICIO liquidado
+- Licencias de demolición, movimiento de tierras o tala si aplican
+
 ## Lección 4.2 — Autorizaciones sectoriales
+
+> **Dónde estamos:** en la Lección 4.1 preparaste la solicitud de la licencia de obras. Ahora compruebas qué autorizaciones sectoriales de otros organismos necesitas, que forman parte de esa solicitud, y preparas las actuaciones complementarias para poder trabajar.
 
 - **Cómo saber cuáles necesitas:** mira en el visor del PGOU y en los visores sectoriales (Confederación, Costas, carreteras, AESA, patrimonio) si el solar toca alguna zona de protección. Pídelas en paralelo: no esperes a que te las reclame el ayuntamiento.
 
@@ -79,7 +108,35 @@
   - **Obras de urbanización pendientes:** proyecto de urbanización aprobado; muchos ayuntamientos exigen un aval si urbanizas a la vez que edificas.
   - Autorizaciones de las instalaciones que lo requieran.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la solicitud en marcha, Nicolás comprobó qué permisos de otros organismos necesitaba y preparó lo que hace falta para trabajar. Te cuento cómo.
+
+**Primero, las zonas de protección.** Miró en el visor del PGOU y en los visores sectoriales si su solar tocaba alguna zona de la tabla: un río o un barranco a menos de 100 m, el litoral, una carretera, una vía de tren, las alturas de un aeropuerto, una zona arqueológica o un BIC. Las webs de la Confederación Hidrográfica, de Costas, de ADIF y de AESA las tienes en las webs de esta lección. Su arquitecto ya había revisado las servidumbres en la due diligence (Lección 1.3), y en la reunión previa preguntó al técnico municipal qué informes sectoriales le iban a pedir (Lección 4.1).
+
+**El resultado.** Su solar no toca ninguna zona de protección: no necesita autorizaciones sectoriales. Si hubiera necesitado alguna, la habría pedido en paralelo, sin esperar a que se la reclamara el ayuntamiento: algunas tardan de 2 a 6 meses (tabla «Dónde ir»). En Alicante, el organismo de cuenca es la Confederación Hidrográfica del Júcar o, en el sur, la del Segura; los organismos de tu provincia los podrás encontrar al final del módulo.
+
+**Después, lo que hace falta para trabajar.** Sin permisos de otros organismos, le quedaban las actuaciones complementarias:
+
+- **Acometidas:** las solicitudes de suministro y de punto de conexión a la distribuidora eléctrica, a la empresa de aguas y al resto de compañías. Ya sabía que había capacidad (Lección 1.3); las pidió pronto, porque los plazos de conexión son largos (Módulo 6).
+- **Ocupación de vía pública:** vallas, andamios, contenedores y acopios, con su tasa municipal, en el ayuntamiento.
+- **Grúa torre:** el proyecto de instalación, el montaje por una empresa autorizada y el registro en el Servicio de Industria de su comunidad. Preguntó también si su ayuntamiento pide autorización por el vuelo sobre la vía pública.
+- **Cortes de tráfico** para los hormigonados y las descargas: autorización municipal y policía local.
+
+La vía pública, la grúa y los cortes de tráfico los cerró con la constructora, cuando la tuvo contratada (Lecciones 5.3 y 5.4): es ella la que sabe qué grúa monta, dónde van los contenedores y qué días hormigona. Obras de urbanización pendientes no tenía: su solar ya tiene servicios.
+
+### Resumen
+
+Mira en los visores si tu solar toca alguna zona de protección y pide en paralelo las autorizaciones que necesites: forman parte de la licencia. Y prepara lo que hace falta para trabajar: acometidas, vía pública, grúa y cortes de tráfico.
+
+### Tu checklist
+
+- Autorizaciones sectoriales identificadas y pedidas en paralelo
+- Ocupación de vía pública, grúa y cortes de tráfico autorizados
+
 ## Lección 4.3 — Inicio de las obras
+
+> **Dónde estamos:** tienes la licencia concedida (Lecciones 4.1 y 4.2). Ahora preparas el inicio de las obras: lo que tiene que estar hecho, y en qué orden, antes de que entre el primer camión, para abrir la obra sin incumplir nada.
 
 - **Orden de actuaciones antes del primer camión:**
   1. Licencia concedida y condiciones leídas (fianzas, cartel, plazos).
@@ -92,6 +149,14 @@
   8. **Acta de comprobación del replanteo** firmada por director de obra, director de ejecución y constructor. Fija la fecha de inicio del plazo de obra.
   9. **Cartel de obra** según la ordenanza (número de licencia, promotor, técnicos, constructor, plazos).
   10. Comunicación de inicio al ayuntamiento si la ordenanza la pide.
+- **Quién se encarga de cada cosa** (quién hace cada paso del orden de arriba):
+  - **Tú, el promotor:** lees la licencia y sus condiciones (fianzas, cartel, plazos), designas por escrito al coordinador de seguridad y salud, te encargas de que el cartel de obra esté colocado y haces la comunicación de inicio al ayuntamiento si la ordenanza la pide.
+  - **Constructor (el contratista):** redacta su plan de seguridad y salud, presenta la comunicación de apertura del centro de trabajo con ese plan, está inscrito en el REA con sus subcontratistas, tiene el libro de subcontratación habilitado y firma el acta de comprobación del replanteo.
+  - **Coordinador de seguridad y salud:** aprueba el plan de seguridad y salud del contratista y lleva el libro de incidencias.
+  - **Dirección facultativa** (director de obra y director de ejecución): lleva el libro de órdenes y asistencias y firma, con el constructor, el acta de comprobación del replanteo.
+  - **Autoridad laboral de la CCAA:** recibe la comunicación de apertura, lleva el REA y habilita el libro de subcontratación.
+  - **Colegio de Arquitectos / de Aparejadores:** el libro de órdenes y asistencias y el libro de incidencias, al inicio.
+  - **Ayuntamiento:** concede la licencia con sus condiciones y dice en su ordenanza qué lleva el cartel y si pide la comunicación de inicio.
 - **Escritura de declaración de obra nueva y división horizontal** (Módulo 9), salvo que se trate de una vivienda unifamiliar aislada y solo se declare la obra nueva porque no hay fincas que dividir.
   - El promotor puede obtener, en su caso, financiación externa, es decir, un préstamo promotor para el desarrollo de la promoción. La documentación que solicitará la entidad de crédito es relativa a la solvencia del promotor y garantías de cobro, así como del proyecto a desarrollar.
   - Por lo que respecta al préstamo hipotecario a conceder al comprador, la entidad de crédito no concede hipoteca alguna hasta que no esté inscrita en el Registro la escritura final de obra; es decir, mientras siga inscrita la anotación de "en construcción", no se formaliza hipoteca a la compra.
@@ -99,7 +164,40 @@
 
 - **Organiza la dirección facultativa antes de empezar:** designa por escrito al arquitecto director de obra, al arquitecto técnico director de ejecución, al coordinador de seguridad y salud, a los técnicos especialistas y al control de calidad, con el alcance de cada uno.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia concedida, Nicolás preparó el inicio de las obras. Te lo cuento en el orden de la lección, aunque varios pasos los cerró con la constructora ya contratada (Lecciones 5.3 y 5.4): sin constructor no hay plan de seguridad, ni comunicación de apertura, ni acta de replanteo.
+
+**Primero, la dirección facultativa, por escrito.** Designó por escrito, con el alcance de cada uno, al arquitecto director de obra (el estudio que hizo el proyecto), al arquitecto técnico director de ejecución y al coordinador de seguridad y salud (contratados en el Módulo 3), a los técnicos especialistas de las ingenierías y al control de calidad.
+
+**El plan de seguridad y la apertura.** La constructora redactó su plan de seguridad y salud y el coordinador lo aprobó. Con el plan aprobado, la constructora presentó la **comunicación de apertura del centro de trabajo** a la **autoridad laboral** de la comunidad: en la Comunitat Valenciana, el INVASSAT. La de tu provincia la podrás encontrar al final del módulo.
+
+**Las empresas, en el REA.** Nicolás comprobó, en la consulta pública del **REA** (la tienes en las webs de esta lección), que la constructora y cada subcontratista estaban inscritos, y que la constructora tenía el libro de subcontratación habilitado.
+
+**Los libros.** Al inicio, la dirección facultativa abrió el libro de órdenes y asistencias, y el coordinador, el libro de incidencias: los dan el Colegio de Arquitectos y el de Aparejadores (tabla «Dónde ir»).
+
+**El acta de replanteo.** La firmaron el director de obra, el director de ejecución y el constructor. Desde esa fecha cuenta el plazo de obra: en su Plantilla 3, 20 meses (Lección 5.1).
+
+**El cartel y el ayuntamiento.** Colocó el cartel con lo que pide la ordenanza (número de licencia, promotor, técnicos, constructor, plazos) y comunicó el inicio al ayuntamiento, a la vez que al banco, a la aseguradora decenal y al OCT (Lección 5.4).
+
+**La escritura.** Su edificio tiene 18 viviendas: hay fincas que dividir. Al principio de la obra firmó en su notaría la **escritura de declaración de obra nueva y división horizontal**, con la licencia y el certificado del técnico de que la descripción coincide con el proyecto, y el **Registro de la Propiedad** la inscribió «en construcción» (Lecciones 9.2 y 10.3).
+
+**Lo que no hizo.** Ni una máquina entró en el solar antes de la comunicación de apertura: empezar el vaciado antes es una infracción grave en prevención.
+
+### Resumen
+
+Antes del primer camión, en orden: licencia leída, coordinador designado, plan de seguridad aprobado, comunicación de apertura, REA, libros, acta de replanteo y cartel. Y la dirección facultativa, designada por escrito antes de empezar.
+
+### Tu checklist
+
+- Coordinador designado y plan de seguridad aprobado
+- Comunicación de apertura, REA y libro de subcontratación
+- Libros de órdenes e incidencias
+- Acta de replanteo firmada y cartel de obra colocado
+
 ## Lección 4.4 — Plazos, prórrogas y caducidad
+
+> **Dónde estamos:** tienes la licencia concedida y sabes qué hace falta para abrir la obra (Lección 4.3). Te queda controlar sus plazos: el de inicio, el de terminación, la prórroga y la caducidad.
 
 | Concepto | Regla práctica |
 |---|---|
@@ -109,6 +207,32 @@
 | Caducidad | No es automática: el ayuntamiento abre expediente con audiencia. Declarada, necesitas licencia nueva |
 
 - **Consejo:** pide la licencia cuando tengas la financiación encarrilada. Una licencia que caduca en un mercado que cae es un coste enorme.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia en la mano, Nicolás leyó despacio sus condiciones. Te cuento cómo controla los plazos.
+
+**Las condiciones, el primer día.** Revisó lo que le pedía la licencia: las fianzas, el cartel y, sobre todo, los plazos. La licencia fija el plazo de inicio y el de terminación (lo habitual: de 6 meses a 1 año para empezar y de 2 a 3 años para terminar). Los apuntó en su calendario ese mismo día. El de inicio le corre mientras firma el préstamo y contrata la constructora (Módulo 5); el de terminación, mientras dura la obra: en su Plantilla 3, 20 meses de obra (Lección 5.1).
+
+**La prórroga, antes de que venza.** Si ve que no llega a algún plazo, la pedirá por escrito antes de que venza. Sabe que normalmente se concede una vez.
+
+**La caducidad.** No es automática: el ayuntamiento abre un expediente con audiencia. Pero, si se declara, necesita una licencia nueva y vuelve al principio de la Lección 4.1.
+
+**El consejo, seguido.** Pidió la licencia con la financiación encarrilada: antes de presentar la solicitud ya había hablado con su banco del préstamo promotor, que cierra en el Módulo 5. Una licencia que caduca en un mercado que cae es un coste enorme.
+
+### Resumen
+
+La licencia fija el plazo de inicio y el de terminación. La prórroga se pide por escrito antes de que venza, y la caducidad no es automática, pero declarada obliga a pedir una licencia nueva: pide la licencia con la financiación encarrilada.
+
+### Tu checklist
+
+- Licencia concedida y condiciones revisadas
+
+## Resumen del Módulo 4
+
+Has confirmado qué título necesitas, te has reunido con urbanismo, has presentado la solicitud completa y has obtenido la licencia de obras, con las autorizaciones sectoriales que te tocaran pedidas en paralelo y el ICIO liquidado. Has preparado las actuaciones para poder trabajar y el inicio de las obras en el orden de la Lección 4.3, y tienes los plazos de la licencia en tu calendario.
+
+**Dónde deberías estar en tu proyecto:** con la licencia concedida y el ICIO liquidado, y la apertura de la obra preparada para cerrarla con tu constructora: el centro de trabajo comunicado y el acta de replanteo firmada. Con eso pasas al Módulo 5, donde financias la promoción y contratas la constructora: sin eso la obra no empieza.
 
 ## Checklist del Módulo 4
 

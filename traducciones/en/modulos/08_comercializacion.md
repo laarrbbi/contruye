@@ -33,6 +33,8 @@
 
 ## Lesson 8.1 — Marketing and launch
 
+> **Where we are:** you have followed the development up to the control of the works (Module 7), but sales run in parallel from the land purchase onwards. In this lesson you prepare the marketing and the launch: what you do at each milestone of the development, with which materials and channels, and with what price in each advert.
+
 | Development milestone | Sales action |
 |---|---|
 | Land purchase | Brand, holding website, lead capture |
@@ -60,7 +62,39 @@
 - **Pricing policy:** set the opening prices and a review policy by sales phase (for example, raise them 2–3 % on reaching 30 % and 60 % sold), and stick to it.
 - **Organise the sale:** sales office, viewings, phone enquiries and customer management.
 
+### Example: Nicolás, the developer
+
+Nicolás started selling on the day he bought the plot, with the lesson's table of milestones. Let me tell you how he did it.
+
+**Milestone by milestone.**
+
+- **With the plot bought:** the development's brand, a holding website with a form and a list of interested buyers.
+- **With the basic design:** the soft launch. He wrote to that list, without taking any money.
+- **With the licence applied for:** the official launch: the website, Idealista, Fotocasa and pisos.com (you have them among this lesson's websites), the agency he sells through (Lesson 8.2) and the sales office.
+- **With the licence granted and the guarantees ready:** the private contracts with guaranteed advance payments (Lesson 8.3).
+- **Afterwards:** "works under way" at the start and, with the structure finished, site visits with hard hats.
+
+**The materials.** His architect prepared the dimensioned plans of each unit type (2 and 3 bedrooms and the penthouses) and the specification. He commissioned the renders, the PDF brochure and the virtual tour from a marketing company in his area; you will find the ones in your province among the potential companies for this lesson. Every advert carries the design's energy rating and nothing he will not deliver: advertising is binding.
+
+**The price, in full from the first advert.** Ley 10/2025 requires the full final price from the first advert, with no teaser prices, so each of Nicolás's adverts gives the price of the home, the IVA at 10 %, the AJD the buyer pays on their deed (in the Comunitat Valenciana, 1,4 %, Annex B) and the total. A home at the average price is advertised with its 111.027,86 €, the 11.102,79 € of IVA (122.130,65 € with IVA), the AJD and the total. He pays the agency's commission, and the advert says that the buyer pays none. What is not in the advert, he will not charge later.
+
+**Before advertising.** He left the RD 515/1989 documentation in the sales office (the list is in Lesson 8.3), and at his community's consumer office he found out about the complaint forms and the regional requirements.
+
+**His pricing policy.** The opening prices are those of his market study (Lesson 2.2). The review is the one in the lesson's example: raise them 2–3 % on reaching 30 % and 60 % sold. He wrote it down before the launch, so as to stick to it.
+
+### Summary
+
+Sales start with the land purchase and follow the development's milestones. Every advert carries the energy rating and the full final price, with its taxes and costs: what you advertise is part of the contract.
+
+### Your checklist
+
+- RD 515/1989 documentation in the sales office
+- Energy rating in the advertising
+- Price review policy set
+
 ## Lesson 8.2 — Sales channel
+
+> **Where we are:** you now have the materials, the channels and the pricing policy (Lesson 8.1). Now you decide who sells your homes: an in-house team, collaborating agencies or both.
 
 - **In-house team:** sales director, sales staff, customer service. More control and margin; a fixed cost.
 - **Collaborating agencies:**
@@ -69,7 +103,35 @@
   - In Cataluña, the Comunitat Valenciana and Canarias, check that the agency is on the **compulsory regional register**.
 - **Mixed:** your own office + a network of agencies. The most common.
 
+### Example: Nicolás, the developer
+
+The most common is the mixed system, your own office plus a network of agencies. But Nicolás has a single development of 18 homes, and an in-house team, although it gives more control and margin, is a fixed cost. He chose to sell through an estate agency in his area. Let me tell you how he chose it and what he signed with it.
+
+**First, finding it.** He looked for agencies that knew his area and his buyer: first home, 2 and 3 bedrooms. You will find the ones in your province in the list we have given you: among the potential companies for this lesson and, at the end of the module, through your province's COAPI. He spoke to several and chose one.
+
+**On the register.** He is building in the Comunitat Valenciana, one of the three communities with a compulsory register of agents, so before signing anything he checked that the agency was on the **regional register of agents** (you also have it at the end of the module).
+
+**The collaboration agreement, in writing**, with what the lesson asks for:
+
+- **Commission:** within the usual range for standard homes (2,5–3 %). He pays it, not the buyer, and he has it budgeted under sales and marketing in his Template 2: 3 % of sales, 59.955,04 €.
+- **When it is earned:** at the deed of each home, when he gets paid.
+- **Exclusivity:** the agency sells his development exclusively, because it is the only one he works with.
+- **Minimum prices:** those of his pricing policy (Lesson 8.1). Nothing below them without his signature.
+- **Use of the brand:** the agency advertises with the development's brand and materials, and always with the full final price of each home (Lesson 8.1).
+
+**How they work.** The agency staffs the sales office and handles the viewings and the phone. Nicolás handles the reservations, the contracts, the guarantees and the follow-up of each buyer (Lessons 8.3 and 8.4).
+
+### Summary
+
+You can sell with an in-house team, with collaborating agencies or with both, which is the most common. With an agency, put in writing the commission, when it is earned, exclusivity, minimum prices and use of the brand, and in Cataluña, the Comunitat Valenciana and Canarias check that it is on the regional register.
+
+### Your checklist
+
+- Collaboration agreements with registered agencies
+
 ## Lesson 8.3 — Reservation and private contract
+
+> **Where we are:** you have the homes advertised (Lesson 8.1) and the agency that sells them (Lesson 8.2). The first buyer arrives: what you have to give them before they pay anything, how the reservation is made, what the private contract contains and how you guarantee what you collect.
 
 - **Duty to inform, and the documents to give the home buyer:**
   - In the Comunitat Valenciana, the duty to inform the buyer of **new-build open-market homes** is governed mainly by:
@@ -92,6 +154,17 @@
   - **Building Book:** the document that brings together the design, the handover records, the list of parties involved in the works and the property's use and maintenance manual.
   - **Ten-year damage insurance:** a policy taken out by the developer that covers structural damage to the building for 10 years (foundations, beams, floor slabs, load-bearing walls).
   - **Installation certificates and contracts:** certificates for the electricity, water, gas and telecoms installations so the utilities can be connected, together with the owners' association's statutes if they have already been drawn up.
+- **Who handles what** (whom you ask for each document in the two lists above):
+  - **You (the developer):** your company's identification (company name, address and Companies Registry details), the financial terms (total price, taxes and payment terms) and handing everything over to the buyer.
+  - **Designer (your architect):** the plans of the location and of the home, with the usable and built area, and the specification.
+  - **Town hall:** the building licence and, at the end, the first occupation licence or the responsible declaration (Lesson 9.3).
+  - **Land Registry:** the *nota simple*, with the ownership of the land and its encumbrances.
+  - **Bank or insurer:** each buyer's individual bank guarantee or surety insurance; the bank, also, the special account.
+  - **Qualified professional:** the energy efficiency certificate, which is registered with the IVACE.
+  - **Works director:** the documentation of the works as built, with which you complete the Building Book (Lesson 9.4).
+  - **Ten-year insurer:** the ten-year damage insurance policy, which you take out.
+  - **Authorised installers:** the certificates for the electricity, water, gas and telecoms installations.
+  - **Notary:** the deed declaring the new building and the horizontal division, which includes the owners' association's statutes (Lesson 9.2).
 - **Reservation:**
   - Amount: 3.000–10.000 €.
   - It is already an advance payment: **it must be guaranteed** (DA 1.ª LOE).
@@ -131,7 +204,50 @@
 - **Record** every payment, guarantee, incident and contract change for each buyer.
 - **Coordinate** the documents with the lawyers, the bank and the insurer of the advance payments.
 
+### Example: Nicolás, the developer
+
+Nicolás is building in Alicante: his case is the one in this lesson, the Comunitat Valenciana. Let me tell you how he sold his homes.
+
+**Before collecting a single euro, the guarantees.** He did not sign the first reservation until his bank's guarantee line (Module 5) and the special account, into which everything he collects goes, were working. Each buyer receives their individual guarantee, for what they have paid plus statutory interest.
+
+**What he gives each buyer before signing**, free of charge and in writing:
+
+- His SPE's identification: company name, address and Companies Registry details.
+- The plans of the location and of the home, with the common areas and the usable and built area, measured by his architect using the Valencian legal criterion.
+- The specification.
+- A copy of the building licence and the Land Registry *nota simple*.
+- The total price with IVA at 10 % and the AJD, and the payment terms.
+- The details of the guarantee and of the special account.
+
+And he tells them what they will receive with the deed: first occupation, the energy certificate registered with the IVACE, the Building Book, the ten-year insurance and the installation certificates (Module 9).
+
+**The numbers, in Template 5.** With 18 homes at an average of 111.027,86 € excluding IVA (122.130,65 € with IVA):
+
+- **Reservation:** 6.000 €, with a deadline to sign the private contract and, in writing, what happens to the money if it is not signed.
+- **Private contract:** 10 % of the price: 6.213,06 € with IVA, after deducting the reservation.
+- **During the works:** another 10 %, in 18 instalments of 678,50 €.
+- **At the deed:** 97.704,52 €, the remaining 80 %.
+
+Before handover he collects 24.426,13 € per home: **439.670,33 € of advance payments** across the whole development, which he has to guarantee with a bank guarantee or insurance; he guarantees them with his bank's guarantees.
+
+**The contract.** He started from the template of the developers' association in his area, and it was reviewed by his lawyer and by the notary he chose in Module 1; you will find the law firms and the notaries among the potential companies for this lesson. It shows the IVA separately, the licence, the handover date, the right to terminate if he does not deliver on time, the free choice of notary and none of the costs that cannot be charged to the buyer.
+
+**Money laundering.** He wrote his procedure following the SEPBLAC guidelines: DNI or NIE, beneficial owner if a company is buying, origin of the funds, everything through the bank and nothing in cash, and the documents kept for 10 years.
+
+### Summary
+
+Before collecting anything, give the buyer the compulsory information and guarantee every euro with a bank guarantee or insurance and the special account: the reservation is already an advance payment. The private contract sets the price, payments, guarantees, handover and costs, and on every sale you apply the anti-money-laundering checks.
+
+### Your checklist
+
+- Template 5 · Sales and collections plan (included) filled in with the pricing and payment policy
+- Guarantee line and special account working before the first reservation is collected
+- Private contract template reviewed by a lawyer or notary
+- Anti-money-laundering procedure
+
 ## Lesson 8.4 — CRM and extras
+
+> **Where we are:** you are now signing reservations and private contracts with the advance payments guaranteed (Lesson 8.3). Now you follow each prospect and each buyer through to the deed: the CRM, keeping in touch during the works, the options and the sales follow-up.
 
 - **CRM:** each prospect with source, unit type wanted, budget, financing, status and next action.
 - **Keeping in touch with buyers during the works:**
@@ -149,6 +265,41 @@
   - **Cancellations:** apply the contract (refund through the guarantee if the breach is yours; the agreed penalty if it is the buyer's).
   - **Substitutions (assignment of contract):** only with your consent, in writing, and with a new guarantee in the assignee's name.
   - Open an **individual file for each buyer** from the reservation: it is the basis of the handover file.
+
+### Example: Nicolás, the developer
+
+With the first reservations signed, Nicolás needed to know at every moment how sales were going. Let me tell you how he organised it.
+
+**The CRM, from the first prospect.** Each contact the agency passes on to him or that comes in through the website is recorded with its source, the unit type wanted, the budget, the financing, the status and the next action. Every week he goes over it with the agency: homes reserved, sold and available.
+
+**The bank's pre-sales.** His bank required 70–90 % of the homes with a private contract and an advance payment: 13 of the 18 (Lesson 5.1). His Template 5 gives him a pace of 2 homes a month, 9 months to sell everything; with the CRM he followed the pre-sales week by week until he reached the 13. Sales also go in the monthly report he sends his bank (Lesson 7.4).
+
+**A file for each buyer.** From the reservation, each buyer has their own: identification, private contract, guarantee, payments, incidents and appendices. It will be the basis of the handover file (Module 10).
+
+**Keeping in touch during the works:**
+
+- A welcome, with a named contact: himself.
+- A photo or video of progress every month, and an update at each milestone: structure, roof, finishes.
+- 3 to 4 months before the finishes, the choice of options, with a closed catalogue (2-3 floor finishes, upgraded kitchen, wardrobes) with price and deadline. He accepts no changes after the deadline, and those outside the catalogue, only if they are feasible, are authorised by the site supervision team and go into an appendix with price and deadline (Lesson 8.3).
+- One month before the deed, the date and the documents. Before that, in good time, he coordinates the mortgage of each buyer who needs one (valuation, offer, signing).
+
+**If a buyer pulls out.** He applies the contract: the refund through the guarantee if the breach were his, the agreed penalty if it is the buyer's. If a buyer wants to assign their contract, he only accepts it in writing and with the new guarantee in the name of the incoming buyer.
+
+### Summary
+
+The CRM tells you every week what is reserved, sold and available, and when you reach the bank's pre-sales. Keep each buyer informed during the works, close the options with price and deadline, and open a file for each buyer from the reservation.
+
+### Your checklist
+
+- CRM following up each buyer
+- Pre-sales required by the bank reached
+- Individual file for each buyer
+
+## Module 8 summary
+
+You have launched the development milestone by milestone, with the energy rating and the full final price in every advert; you have chosen your sales channel and signed with registered agencies; you have given each buyer the compulsory information and signed reservations and private contracts with every euro guaranteed; and you keep a CRM and a file for each buyer.
+
+**Where you should be in your project:** with the sales plan, the legal sales documentation, the private contracts with guarantees and the CRM up and running, Template 5 done and the pre-sales the bank requires signed. While you finish selling, the works come to an end: you move on to Module 9, where you legalise them.
 
 ## Module 8 checklist
 

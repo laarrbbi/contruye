@@ -471,6 +471,8 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 ## Lección 2.1 — La Cuenta de Resultado Promotor (CRP)
 
+> **Dónde estamos:** con el solar asegurado en el Módulo 1, empiezas el análisis de viabilidad por su herramienta central, la Cuenta de Resultado Promotor (CRP): la cuenta con la que decides con números si la operación se hace.
+
 - **Estructura:**
 ```
   INGRESOS (venta de viviendas, garajes, trasteros, locales; sin IVA)
@@ -504,7 +506,30 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 - **Regla:** por debajo del 15 % de margen sobre ventas, el riesgo no compensa.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la opción de compra inscrita, Nicolás se puso con su CRP. Te cuento cómo la montó.
+
+**Primero, sin IVA.** Toda su cuenta va sin IVA, como dice la lección: el IVA que soporte en la obra lo recupera al repercutir el 10 % en las ventas. El ITP de la compra, en cambio, no lo recupera, porque vende un particular (Lección 1.4): por eso entra en el coste del suelo. Lo repasó con su asesoría, la de la sociedad.
+
+**Después, las líneas de su promoción.** Siguió la estructura de la lección de arriba abajo:
+
+- **Ingresos:** sus 18 viviendas, 2 de ellas áticos.
+- **Suelo:** el precio del solar, 71.392,05 €, con su ITP.
+- **Costes:** construcción, urbanización y acometidas, honorarios técnicos, licencias, seguros, comercialización, gastos generales y gastos financieros, una línea cada uno.
+- **Abajo del todo:** el beneficio antes de impuestos y, después del Impuesto sobre Sociedades, el beneficio neto.
+
+**La herramienta.** Para no dejarse ninguna partida abrió la **Plantilla 2 · Viabilidad rápida y método residual**, que trae estas líneas (la tienes en la Lección 2.3). Metió lo que ya sabía: Comunitat Valenciana; solar sin IVA, porque vende un particular; 1.586,49 m² construidos y 18 viviendas. En cada partida dejó el porcentaje que trae la plantilla. Le faltan dos datos: el precio de venta, que saca en la Lección 2.2, y el coste de construcción, que afina en la Lección 2.3.
+
+**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 3,6 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque son los precios del ejemplo del profesional.
+
+### Resumen
+
+La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suelo a los gastos financieros, y te deja el beneficio antes de impuestos. Compara cada partida con los pesos orientativos: por debajo del 15 % de margen sobre ventas, no compensa.
+
 ## Lección 2.2 — Encaje e ingresos: el estudio de mercado
+
+> **Dónde estamos:** en la Lección 2.1 montaste la estructura de tu CRP. Ahora la llenas por arriba: el encaje del arquitecto te dice qué superficies vendes y el estudio de mercado, a qué precio.
 
 - **Primero el encaje.** Encarga a un estudio de arquitectura solvente el correspondiente encaje de la promoción a realizar. Lo más importante de lo que hace el arquitecto:
   - Estima la edificabilidad computable y las superficies construidas y útiles.
@@ -542,7 +567,33 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
   - **Precio por separado** de vivienda, garaje y trastero.
   - Contrasta siempre los precios anunciados con operaciones reales.
 
+### Ejemplo: Nicolás, el promotor
+
+A la CRP de Nicolás le faltaba la primera línea, los ingresos. Te cuento cómo los sacó.
+
+**Primero, el encaje.** Volvió al estudio de arquitectura que le hizo la volumetría (Lección 1.2), el mismo que llevará el proyecto (Módulo 3), y le encargó el encaje de la promoción. El arquitecto estimó la edificabilidad computable y las superficies construidas y útiles; distribuyó las viviendas, las zonas comunes y el núcleo de escalera y ascensor; comprobó tipologías, iluminación, ventilación y accesibilidad, y le confirmó que no hace falta otro instrumento de planeamiento. Resultado: 1.586,49 m² construidos en B+5, sin sótano, con 18 viviendas, 2 de ellas áticos.
+
+**Después, el estudio de mercado, a pie.** Miró qué había alrededor y quién era su competencia: recorrió las promociones en venta a 1-3 km de su solar y en cada una hizo de comprador, que es la técnica de simulación. Anotó el €/m², la tipología y las calidades. Leyó también los informes trimestrales de Tinsa, Sociedad de Tasación y Gloval.
+
+**Lo que se mueve en la zona.** Midió también lo demás que pide la lección: la absorción de las promociones comparables, la oferta futura (preguntó en urbanismo del ayuntamiento y miró la estadística de visados del Colegio de Arquitectos) y el perfil del comprador.
+
+**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias, para primera vivienda.
+
+**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **1.259,70 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 111.027,86 € sin IVA (122.130,64 € con el 10 % de IVA) y unas ventas de 1.998.501,45 €. Lo metió en la Plantilla 2.
+
+### Resumen
+
+El arquitecto te da el encaje y las superficies que vendes; el estudio de mercado, hecho a pie y mirando a la competencia, te da el precio. Con los dos cierras el mix y los ingresos de tu CRP.
+
+### Tu checklist
+
+- Estudio de mercado
+- Mix de producto cerrado con el arquitecto
+- Encaje del arquitecto
+
 ## Lección 2.3 — Costes con precisión
+
+> **Dónde estamos:** ya tienes los ingresos de tu CRP (Lección 2.2). Ahora los costes, partida por partida, y con ellos el método residual: cuánto puedes pagar por el suelo.
 
 - **Suelo:** precio + ITP/AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
 - **Método residual:** `Precio máximo del suelo = Ingresos − resto de costes − beneficio objetivo`. El suelo vale lo que el proyecto permite pagar.
@@ -574,6 +625,16 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 | Notaría y registro de obra nueva y división horizontal | según arancel |
 | Comercialización | 2–4 % de las ventas |
 | Gastos financieros | 3–6 % de los ingresos |
+- **Quién se encarga de cada cosa** (a quién pides el precio de cada partida de la tabla de arriba):
+  - **Arquitecto:** el proyecto y la dirección de obra, y las ingenierías (estructura, instalaciones), que coordina él.
+  - **Arquitecto técnico y coordinador de seguridad y salud** (Colegio de Aparejadores y Arquitectos Técnicos, Módulo 3): la dirección de ejecución y la coordinación de seguridad y salud.
+  - **Laboratorio de geotecnia:** la geotecnia.
+  - **OCT:** su revisión del proyecto (Módulo 3) y de la obra (Módulo 7).
+  - **Ayuntamiento:** el ICIO y la tasa de licencia, en su ordenanza fiscal.
+  - **Corredor de seguros:** el seguro decenal, el TRC, la RC y el seguro de cantidades a cuenta; los avales, el **banco** (Módulo 5).
+  - **Notaría y Registro de la Propiedad:** la obra nueva y la división horizontal, según arancel.
+  - **Inmobiliaria o agencia:** la comercialización (Módulo 8).
+  - **Banco:** los gastos financieros (Lección 5.1).
 
 - ⚠️ **Errores típicos:** no incluir acometidas (electricidad y agua pueden costar decenas de miles de euros); olvidar el coste de los avales; poner el ICIO sobre el PEM sin mirar la ordenanza.
 
@@ -749,7 +810,43 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
 - **Venta.** Algunos de los costes que engloban la comercialización o venta de los inmuebles van a ser los comerciales, encargados de informar de los productos a vender, siendo en este caso los inmuebles.
 - **Servicio de postventa.** Este servicio es el encargado de revisar la gestión y control del proceso de recepción de la promoción ya que se ha de tener en cuenta que durante los primeros meses después de la venta es donde se generan más reclamaciones y estas requieren de una solución rápida y efectiva.
 
+### Ejemplo: Nicolás, el promotor
+
+Con los ingresos en la Plantilla 2, Nicolás fue a por los costes. Te cuento de dónde sacó cada uno.
+
+**El suelo.** Lo tenía de la Lección 1.4: 81.174,29 € en la Plantilla 1, con ITP, notaría, registro, due diligence, tasación y estudios. En la Plantilla 2 el solar entra con su ITP del 9 %: 77.817,33 €. La propia plantilla avisa de que va sin notaría ni registro, y de que eso se afina con la Plantilla 1.
+
+**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). En el ejemplo, la construcción va a 660 €/m², la del ejemplo del profesional: 1.047.083,40 €. Es más barata que la de hoy: la lección da 900–1.100 €/m² para la construcción estándar en 2025-2026. En tu promoción, pon el precio que te den tus constructoras.
+
+**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 52.354,17 €.
+
+**El resto, con los porcentajes de la plantilla:**
+
+- Honorarios técnicos, 8 % de la construcción: 83.766,67 €.
+- Seguros, OCT, control de calidad y otros, 3 %: 31.412,50 €.
+- Urbanización y acometidas: 50.000 €. No las olvidó: es otro error típico.
+- Comercialización, 3 % de las ventas: 59.955,04 €.
+- Gastos financieros, 4 % de las ventas: 79.940,06 €. Los afinará con el banco (Lección 5.1).
+- Gastos generales, 2 % de las ventas: 39.970,03 €.
+
+En total, **1.444.481,87 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
+
+**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 178.247,08 €**. El propietario pide 71.392,05 €.
+
+### Resumen
+
+Cada coste entra en la CRP con su referencia: el suelo con todo lo que no recuperas, la construcción con el precio de constructoras locales y el ICIO con la ordenanza de tu municipio. Con ellos, el método residual te dice lo máximo que puedes pagar por el suelo.
+
+### Tu checklist
+
+- Plantilla 2 · Viabilidad rápida y método residual (incluida) rellena con precios de venta y costes contrastados
+- Presupuesto de construcción contrastado con 2 constructoras locales
+- ICIO y tasas reales de la ordenanza municipal
+- Precio máximo de suelo por método residual
+
 ## Lección 2.4 — Ratios y decisión
+
+> **Dónde estamos:** tu CRP ya tiene ingresos (Lección 2.2) y costes (Lección 2.3). Ahora sacas los ratios, pruebas tres escenarios y decides con números si la operación se hace: GO / NO GO.
 
 - **Margen sobre ventas** = beneficio antes de impuestos ÷ ingresos. Mínimo 15 %.
 - **ROE** = beneficio neto ÷ fondos propios. Objetivo > 20 % anual.
@@ -773,7 +870,40 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
 - **Decisión:** GO solo si el pesimista sigue sin pérdidas.
 - ⚠️ **Errores típicos:** calcular el margen con IVA dentro; no meter el calendario (la TIR depende del tiempo); olvidar el IS en el ROE.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la Plantilla 2 completa, a Nicolás le tocaba decidir. Te cuento cómo lo hizo.
+
+**El margen sobre ventas.** Su CRP, sin IVA: ventas, 1.998.501,45 €; coste total de la promoción, 1.522.299,21 €; beneficio antes de impuestos, 476.202,24 €. El margen es el beneficio entre los ingresos: 476.202,24 € ÷ 1.998.501,45 € = 24 %. Pasa con holgura del mínimo del 15 %.
+
+**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 178.247,08 € por el solar; el propietario pide 71.392,05 €, 106.855,03 € por debajo del máximo.
+
+**Los tres escenarios.** El optimista es su CRP tal cual: ventas al 100 % del precio y obra sin desvíos. Para los otros dos volvió a la Plantilla 2 y movió el precio de venta y el coste de construcción como dice la tabla:
+
+- **Base** (ventas al 95 %, obra +5 %): beneficio de 324.539,59 €, un margen del 17 %.
+- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 172.876,94 €, un 9,6 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 23.976,21 € más de intereses (el 4,5 % anual sobre 1.065.609,45 €, medio año). Sigue sin pérdidas.
+- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 21.214,28 € antes de esos intereses, así que se queda en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
+
+**El calendario.** La TIR depende del tiempo, y la Plantilla 2 no va mes a mes. Con su asesoría montó el flujo de caja mensual: cuándo paga el solar, los proyectos y cada certificación de obra, y cuándo cobra las ventas, con 20 meses de obra y 4 más hasta las escrituras de venta. De ahí sacó la TIR del proyecto y la del equity. La plantilla profesional del extra lo trae mes a mes (Lección 2.3).
+
+**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 456.689,76 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
+
+**El impuesto, para el ROE.** El ROE va sobre el beneficio neto, después del Impuesto sobre Sociedades. Su SPE es nueva: en la lista de la lección le correspondería el 15 % de entidad de nueva creación, y se lo hizo confirmar a su asesoría.
+
+**GO.** Margen del 24 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda en tablas. Lo siguiente, comprar (Lección 2.5).
+
+### Resumen
+
+El margen sobre ventas (mínimo 15 %), el ROE y la TIR te dicen si la operación compensa: siempre sin IVA y con el calendario dentro. Pruebas tres escenarios y das el GO solo si el pesimista sigue sin pérdidas.
+
+### Tu checklist
+
+- CRP con tres escenarios
+- Flujo de caja mensual con TIR y necesidades de fondos propios
+
 ## Lección 2.5 — Negociación, estructura y aprobación de la inversión
+
+> **Dónde estamos:** con el GO de la Lección 2.4, cierras la operación: negocias con el propietario, ordenas la sociedad y los socios, apruebas la inversión y compras el solar.
 
 - **Negociación con el propietario del solar:**
   - Precio, forma de pago (al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles), plazos.
@@ -797,6 +927,53 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
   3. Liquidación de impuestos: ITP/AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
   4. Inscripción en el Registro de la Propiedad.
   5. Cancelación o regularización de las cargas pactadas y toma de posesión efectiva.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de las listas de arriba):
+  - **Tú:** la negociación con el propietario (precio, forma de pago, plazos) y la memoria de inversión.
+  - **Abogado:** revisa el contrato de compraventa con opción de compra y las condiciones suspensivas, y redacta el pacto de socios.
+  - **Asesoría o asesor fiscal:** las aportaciones de los socios (capital o préstamo de socio) y la fiscalidad de la compra y de la promoción.
+  - **Notaría:** los poderes notariales y la escritura pública de compraventa.
+  - **Junta de socios** (o comité de inversión): la aprobación de la inversión.
+  - **Banco:** las garantías que te pida, como los avales personales.
+  - **Registro de la Propiedad:** la nota simple del día y la inscripción.
+  - **Ayuntamiento · Gestión tributaria:** los certificados de IBI y de deudas.
+  - **Administración tributaria de tu comunidad:** el ITP/AJD con el modelo 600, en su plazo.
+  - **Vendedor:** el IVA que repercuta, si la venta tributa por IVA; la cancelación o regularización de las cargas pactadas y la entrega de la posesión.
+
+### Ejemplo: Nicolás, el promotor
+
+Con el GO, Nicolás cerró la operación. Te cuento en qué orden.
+
+**Lo negociado con el propietario.** Lo dejó atado en la opción de compra de la Lección 1.4: el precio, 71.392,05 €; la forma de pago, con opción de compra, y un plazo suficiente para hacer los estudios y conseguir financiación, que es lo que pide la lección. Por escrito, las condiciones suspensivas de viabilidad urbanística, registral y técnica: si alguna fallaba, no compraba.
+
+**La estructura.** Su SPE ya existe (Lección 1.4): una sociedad nueva solo para esta promoción, lo que la lección llama SPV, que aísla el riesgo. Con su asesoría decidió cómo entran los fondos propios (capital o préstamo de socio) y revisó la fiscalidad antes de firmar: la compra paga ITP, porque vende un particular, y las ventas llevarán el 10 % de IVA. Firmó el **pacto de socios** de su SPE con lo que pide la lección: mayorías reforzadas, reparto de funciones, aportaciones adicionales si hay desviaciones, bloqueo, salida y reparto de resultados. Sabe que el banco le pedirá avales personales (Lección 5.1).
+
+**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 1.522.299,21 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
+
+**La compra.** Con la inversión aprobada, ejerció su opción:
+
+1. El día de la firma, una **nota simple del día** en el **Registro de la Propiedad** y los certificados de IBI y de deudas en **gestión tributaria del ayuntamiento**.
+2. La **escritura pública de compraventa**, en la misma notaría de la opción.
+3. El **ITP** de la Comunitat Valenciana, el 9 %: 6.425,28 €, con el modelo 600 y en su plazo (habitualmente 30 días hábiles).
+4. La **inscripción** en el Registro de la Propiedad, a nombre de su SPE.
+5. Sin cargas que cancelar (Lección 1.3), la toma de posesión del solar.
+
+El solar ya es de su SPE, escriturado e inscrito. Pasa al Módulo 3: los proyectos técnicos.
+
+### Resumen
+
+Negocias precio, forma de pago y condiciones; ordenas por escrito la sociedad y los socios; la junta aprueba una memoria de inversión con hitos y criterios de salida, y compras el solar: escritura, impuestos liquidados e inscripción.
+
+### Tu checklist
+
+- Opción de compra y condiciones suspensivas negociadas
+- Pacto de socios y estructura de la SPV
+- Memoria de inversión aprobada con hitos y criterios de salida
+
+## Resumen del Módulo 2
+
+Has montado tu CRP sin IVA, has sacado los ingresos con el encaje del arquitecto y un estudio de mercado hecho a pie, has afinado cada coste y el precio máximo del suelo por el método residual, y has probado tres escenarios antes de decidir. Con el GO, has negociado, has ordenado la sociedad, has aprobado la inversión y has comprado el solar.
+
+**Dónde deberías estar en tu proyecto:** con tu Cuenta de Resultado Promotor (CRP) con tres escenarios y la decisión GO / NO GO tomada; si es GO, con la memoria de inversión aprobada y el solar comprado a nombre de tu SPE (o la opción lista para ejercer). Con eso pasas al Módulo 3, donde encargas los proyectos técnicos.
 
 ## Checklist del Módulo 2
 
@@ -885,6 +1062,8 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 
 ## Lección 3.1 — La LOE y el equipo técnico
 
+> **Dónde estamos:** con el GO del Módulo 2 y el solar comprado, empiezas los proyectos técnicos. Primero, el equipo: qué hace cada agente según la LOE y cómo contratas a cada técnico.
+
 | Agente | Artículo LOE | Qué hace |
 |---|---|---|
 | Promotor | 9 | Decide, financia, encarga. Contrata los seguros. Responde solidariamente con los demás agentes frente a los compradores (art. 17.3) |
@@ -899,7 +1078,37 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 - **Contrata por escrito** a cada técnico: alcance, honorarios, plazos, visitas mínimas de obra, seguro de RC profesional.
 - ⚠️ **Error típico:** contratar el proyecto "barato" y luego pagar la diferencia en modificados de obra.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el solar a nombre de su SPE, Nicolás formó su equipo técnico. Te cuento cómo.
+
+**Él es el promotor.** Es el primero de la tabla: decide, financia, encarga y contrata los seguros, y responde solidariamente con los demás agentes frente a los compradores. Por eso eligió a cada técnico con calma y lo contrató todo por escrito.
+
+**El arquitecto.** En vivienda, el proyectista y el director de obra tienen que ser arquitectos. Siguió con el estudio de arquitectura de su zona que le hizo la volumetría (Lección 1.2) y el encaje (Lección 2.2): hace el proyecto y la dirección de obra. Las ingenierías de estructura e instalaciones las coordina el arquitecto. Los estudios de arquitectura y las ingenierías de tu provincia los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección.
+
+**El arquitecto técnico y el coordinador.** Para la dirección de ejecución, que en vivienda lleva un arquitecto técnico, y para la coordinación de seguridad y salud fue al **Colegio de Aparejadores y Arquitectos Técnicos** de su provincia, que le dio profesionales colegiados (tabla «Dónde ir»). El de tu provincia lo tienes al final del módulo.
+
+**Los contratos.** Firmó uno con cada técnico (el arquitecto, el arquitecto técnico, el coordinador de seguridad y salud y cada ingeniería) con lo que pide la lección:
+
+- el alcance del trabajo;
+- los honorarios, que comparó con la partida de su CRP (el 8 % de la construcción: 83.766,67 €, Lección 2.3);
+- los plazos;
+- las visitas mínimas de obra;
+- el seguro de RC profesional de cada uno.
+
+**Lo que no hizo.** No eligió al más barato: un proyecto barato se paga después en modificados de obra. El laboratorio de geotecnia y el OCT llegan en las Lecciones 3.2 y 3.3.
+
+### Resumen
+
+La LOE dice qué hace cada agente y quién responde. Como promotor eliges a cada técnico (en vivienda, arquitecto para el proyecto y la dirección de obra, arquitecto técnico para la dirección de ejecución) y lo contratas por escrito: alcance, honorarios, plazos, visitas y seguro.
+
+### Tu checklist
+
+- Contratos firmados con arquitecto, arquitecto técnico, CSS e ingenierías
+
 ## Lección 3.2 — El Código Técnico de la Edificación (CTE)
+
+> **Dónde estamos:** ya tienes el equipo contratado (Lección 3.1). Ahora repasas las exigencias técnicas que tu proyecto tiene que cumplir: el Código Técnico de la Edificación (CTE) y las normas obligatorias que están fuera de él.
 
 | Documento básico | Qué regula |
 |---|---|
@@ -913,7 +1122,33 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 - **Fuera del CTE pero obligatorios:** Código Estructural, NCSE-02 (sismo), REBT, RITE, ICT, RIPCI.
 - **Radón (HS6):** obligatorio en los municipios del anejo B del DB HS. Míralo antes de proyectar el sótano.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el equipo contratado, Nicolás repasó con su arquitecto lo que el CTE y las normas de fuera le exigen a su edificio. Te cuento lo que le tocó.
+
+**El terreno, primero.** La cimentación se calcula con el DB SE-C, y para eso hace falta el estudio geotécnico. Nicolás lo encargó a un **laboratorio de geotecnia inscrito en el registro de la Comunitat Valenciana** (tabla «Dónde ir»), antes del anteproyecto (Lección 3.3). El laboratorio le da el tipo de cimentación, el nivel freático y las tensiones admisibles. Los laboratorios de tu provincia los tienes al final del módulo.
+
+**El sismo.** Alicante es una de las provincias que la tabla del módulo señala para la NCSE-02, la norma sismorresistente. No está en el CTE, pero es obligatoria: el arquitecto y la ingeniería de estructuras la meten en el cálculo, junto con el Código Estructural.
+
+**El ascensor.** Su edificio es B+5: desde la entrada hay que salvar más de dos plantas, así que el DB SUA (SUA 9) le exige un ascensor accesible. Ya iba en el encaje (Lección 2.2).
+
+**La energía.** El DB HE entra entero: envolvente, instalaciones térmicas, iluminación, renovables para el agua caliente y recarga de vehículo eléctrico. Para el HE5, la lección da un umbral de 1.000 m² construidos y su edificio tiene 1.586,49 m²: le pidió al arquitecto que confirmara si entra, como aconseja la lección.
+
+**El radón.** No lleva sótano, pero miró con el arquitecto si su municipio está en el anejo B del DB HS.
+
+**Lo demás de fuera del CTE.** El REBT, el RITE, la ICT y el RIPCI los lleva cada ingeniería en su parte, coordinada por el arquitecto. Y la normativa autonómica de accesibilidad y de habitabilidad, que a veces pide más que el CTE en superficies mínimas y accesibilidad.
+
+### Resumen
+
+El CTE fija en sus documentos básicos lo que tiene que cumplir el edificio (estructura, incendio, accesibilidad, energía, ruido y salubridad), y hay normas fuera de él que también son obligatorias. Repásalas con tu arquitecto antes de proyectar: el terreno, el sismo, el ascensor, la energía y el radón.
+
+### Tu checklist
+
+- Estudio geotécnico
+
 ## Lección 3.3 — Fases del proyecto
+
+> **Dónde estamos:** tienes el equipo (Lección 3.1) y sabes qué le exige el CTE a tu edificio (Lección 3.2). Ahora el proyecto avanza por fases: anteproyecto, proyecto básico para pedir la licencia y proyecto de ejecución para construir.
 
 1. **Estudio previo / anteproyecto** (2-4 semanas): volumetría, tipologías, número de viviendas. No se visa. Sirve para cerrar el mix con el equipo comercial.
 2. **Proyecto básico** (4-8 semanas): define el edificio y justifica la normativa urbanística y las exigencias básicas del CTE. Con él se pide la licencia en la mayoría de municipios (algunos piden el de ejecución). El visado del básico es voluntario salvo que lo exija el ayuntamiento.
@@ -929,6 +1164,14 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
   - Proyecto de ICT (RD 346/2011), firmado por ingeniero de telecomunicación o técnico competente
   - Certificado de eficiencia energética de proyecto (RD 390/2021)
   - Plan de control de calidad
+- **Quién se encarga de cada cosa** (quién prepara cada documento de la lista de arriba):
+  - **Arquitecto (proyectista):** la memoria descriptiva, constructiva y de cumplimiento del CTE; los planos de plantas, alzados, secciones y detalles; el pliego de condiciones; las mediciones y el presupuesto (PEM); el estudio de gestión de residuos y el plan de control de calidad.
+  - **Ingenierías** (las coordina el arquitecto): los planos de estructura e instalaciones.
+  - **Ingeniero de telecomunicación o técnico competente:** el proyecto de ICT.
+  - **Arquitecto o ingeniería de instalaciones:** el certificado de eficiencia energética de proyecto.
+  - **Laboratorio de geotecnia:** el estudio geotécnico, que va como anexo.
+  - **Técnico competente que designa el promotor** (Lección 3.4): el estudio o estudio básico de seguridad y salud.
+  - **Tú (promotor):** encargas y pagas cada uno, y designas por escrito al técnico de seguridad y salud.
 - **Consejo:** antes de visar, pide al OCT y a dos constructoras que revisen el proyecto. Cada error que encuentres ahí cuesta diez veces menos que en obra.
 
 - **Levantamientos y estudios técnicos antes del anteproyecto:**
@@ -943,7 +1186,40 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 - **En el proyecto básico,** pide los informes previos de organismos sectoriales cuando hagan falta.
 - **En el de ejecución,** coordina arquitectura, estructura, electricidad, climatización, fontanería y saneamiento (con BIM si puedes) y prepara mediciones, presupuesto y documentación para licitar.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el geotécnico hecho, el arquitecto de Nicolás se puso con el proyecto. Te cuento cómo fue cada fase.
+
+**Antes de dibujar.** Nicolás pidió al topógrafo de la Lección 1.3 el topográfico **georreferenciado**, que le sirve también para coordinar Catastro y Registro, y consultó a las compañías de agua, saneamiento, electricidad, gas y telecomunicaciones por sus redes. No había edificios que derribar (Lección 1.1).
+
+**El anteproyecto.** Le dio al arquitecto su programa de necesidades: 18 viviendas de 2 y 3 dormitorios, 2 de ellas áticos, calidades medias, ascensor y sin sótano. En unas semanas (la lección habla de 2-4) tuvo el anteproyecto, que no se visa, y lo validó con su mix comercial de la Lección 2.2. Antes de pasar a básico ajustó el diseño a su coste objetivo: los 1.259,70 €/m² de venta y la construcción de su CRP.
+
+**El proyecto básico.** Define el edificio y justifica la normativa urbanística y el CTE: es con el que pedirá la licencia (Módulo 4). Preguntó en urbanismo si su ayuntamiento exige visarlo, porque si no, es voluntario. Su solar no tiene servidumbres (Lección 1.3), así que no le hicieron falta informes previos de organismos sectoriales.
+
+**El proyecto de ejecución.** El arquitecto coordinó arquitectura, estructura, electricidad, climatización, fontanería y saneamiento con las ingenierías, y preparó las mediciones, el presupuesto y la documentación para licitar la obra (Módulo 5). Las ingenierías de tu provincia las podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección.
+
+**Antes de visar, la revisión.** Siguió el consejo de la lección:
+
+- El **OCT** revisó el proyecto y emitió el **informe D0** para la aseguradora decenal.
+- A través de un **corredor de seguros**, la **aseguradora decenal** hizo la prerrevisión del riesgo y le dio las condiciones del seguro antes de cerrar el proyecto.
+- Dos constructoras lo repasaron también: cada error que sale aquí cuesta diez veces menos que en obra.
+
+Los OCT de tu provincia los tienes al final del módulo.
+
+### Resumen
+
+El proyecto avanza por fases: el anteproyecto cierra el mix, el básico sirve para pedir la licencia y el de ejecución, con visado obligatorio, para contratar y construir. Antes de visar, que lo revisen el OCT, la aseguradora decenal y dos constructoras.
+
+### Tu checklist
+
+- Anteproyecto validado con el mix comercial
+- Proyecto básico (visado si lo exige el ayuntamiento)
+- Revisión del proyecto por el OCT (informe D0)
+- Prerrevisión de la aseguradora decenal
+
 ## Lección 3.4 — Seguridad y salud en el proyecto
+
+> **Dónde estamos:** el proyecto de ejecución está casi listo (Lección 3.3). Le falta la seguridad y salud: qué documento lleva tu obra, quién lo redacta y quién coordina.
 
 | Documento | Cuándo | Quién lo redacta |
 |---|---|---|
@@ -956,6 +1232,38 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
   - En ejecución: obligatorio si interviene más de una empresa, o una empresa y autónomos, o varios autónomos. En una promoción, siempre.
   - Lo designa el promotor. Custodia el **libro de incidencias**.
 - **Responsabilidad:** un accidente grave puede acabar en responsabilidad penal (arts. 316-318 Código Penal). Designa coordinador por escrito y comprueba que visita la obra.
+
+### Ejemplo: Nicolás, el promotor
+
+Al proyecto de ejecución de Nicolás le faltaba la seguridad y salud. Te cuento cómo la resolvió.
+
+**¿Estudio o estudio básico?** La tabla pide el estudio completo a partir de 450.759,08 € de PEM, y su obra pasa de largo: la construcción de su CRP está en 1.047.083,40 € (Lección 2.3). Lleva el **estudio de seguridad y salud**, no el básico.
+
+**Quién lo redacta.** Un técnico competente que designa el promotor. Nicolás designó por escrito al coordinador de seguridad y salud que contrató a través del Colegio de Aparejadores (Lección 3.1). En proyecto ya hacía falta, porque intervienen varios proyectistas: el arquitecto, las ingenierías y el técnico de la ICT.
+
+**El coordinador en obra.** En ejecución también es obligatorio: con la constructora entrarán subcontratas y autónomos, y en una promoción hay coordinador siempre. Lo designa Nicolás, por escrito. Custodiará el **libro de incidencias**, que se pide en el colegio al empezar (Módulo 4).
+
+**El plan, cuando haya constructora.** Cada contratista hará su plan de seguridad y salud antes de empezar, y lo aprobará el coordinador en ejecución. Llega con el contrato de obra (Módulo 5).
+
+**La responsabilidad.** Un accidente grave puede acabar en responsabilidad penal. Por eso dejó la designación por escrito y puso en el contrato del coordinador sus visitas mínimas de obra (Lección 3.1): así puede comprobar que va.
+
+**El visado.** Con el estudio de seguridad y salud dentro, el arquitecto llevó el proyecto de ejecución al **Colegio Oficial de Arquitectos**, que comprueba identidad, habilitación, seguro y que el proyecto está completo. Lleva todo lo de la lista de la Lección 3.3: el geotécnico, la gestión de residuos, la ICT y el certificado de eficiencia energética.
+
+**Dónde está ahora.** Tiene el proyecto básico para pedir la licencia y el de ejecución visado, con el informe D0 del OCT y las condiciones de la aseguradora decenal. Pasa al Módulo 4: la licencia de obras.
+
+### Resumen
+
+Según el tamaño de la obra, tu proyecto lleva estudio o estudio básico de seguridad y salud, y cada contratista hará su plan antes de empezar. Al coordinador lo designas tú, por escrito: en una promoción, en ejecución lo hay siempre.
+
+### Tu checklist
+
+- Proyecto de ejecución visado con ESS, gestión de residuos, ICT y eficiencia energética
+
+## Resumen del Módulo 3
+
+Has formado tu equipo técnico y lo has contratado por escrito, has repasado lo que el CTE exige a tu edificio y has encargado el estudio geotécnico, has llevado el proyecto por sus fases con la revisión del OCT y la prerrevisión de la aseguradora decenal, y has resuelto la seguridad y salud del proyecto.
+
+**Dónde deberías estar en tu proyecto:** con el proyecto básico y el proyecto de ejecución, con estudio de seguridad y salud, geotecnia y gestión de residuos, y el de ejecución visado. Con eso pasas al Módulo 4, donde pides la licencia de obras.
 
 ## Checklist del Módulo 3
 
@@ -1047,6 +1355,8 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
 
 ## Lección 4.1 — La licencia de obras
 
+> **Dónde estamos:** con el proyecto del Módulo 3, pides la licencia de obras al ayuntamiento: primero confirmas qué título te corresponde y después presentas la solicitud completa. Los trámites, las tasas y los plazos cambian según el municipio y la comunidad autónoma: revísalos con tu gestor o tu abogado.
+
 - **Primero, el régimen de intervención:** confirma qué título corresponde según la ley autonómica y la ordenanza (licencia, declaración responsable o comunicación previa) y si necesitas **licencias separadas** de demolición, movimiento de tierras, urbanización o tala de arbolado.
 
 - **Qué título necesitas:** para obra nueva residencial, **licencia de obras mayor**. Algunas leyes autonómicas permiten declaración responsable en casos concretos; para nueva planta la regla sigue siendo la licencia expresa (art. 11.4 TRLSRU).
@@ -1065,7 +1375,34 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   - Se devenga al iniciar la obra. Liquidación provisional al pedir o conceder la licencia y definitiva al terminar, con el coste real.
 - ⚠️ **Errores típicos:** presentar el proyecto incompleto (cada requerimiento añade semanas); no preguntar antes por los informes sectoriales; empezar con el silencio pensando que es positivo.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el proyecto del Módulo 3, Nicolás fue a por la licencia. Te cuento cómo lo hizo.
+
+**Primero, qué título le tocaba.** Lo confirmó con su abogado urbanista, el de la due diligence (Lección 1.3): para su edificio de nueva planta, B+5 con 18 viviendas, **licencia de obras mayor**, con resolución expresa. No había nada que derribar (Lección 1.1) ni nada que urbanizar (Lección 1.2); le quedaba saber si su ayuntamiento pedía licencia aparte para el movimiento de tierras o la tala de arbolado. Los despachos y los estudios de arquitectura de tu provincia los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección.
+
+**La reunión previa.** Antes de presentar nada fue con su arquitecto a **urbanismo del ayuntamiento**, a ver al técnico municipal con el anteproyecto. Llevaba tres preguntas: qué informes sectoriales le iban a pedir (Lección 4.2), con qué proyecto se pide la licencia en su municipio (el básico o el de ejecución) y si hacía falta alguna licencia separada. Lo que le pidieran aparte lo presentaría con la licencia de obras.
+
+**La solicitud, completa.** La presentó en la **sede electrónica del ayuntamiento** con todo lo de la lección: la solicitud, el proyecto, el estudio de seguridad y salud (no el básico: su obra pasa de los 450.759,08 € de la Lección 3.4), el estudio de gestión de residuos y lo que su ordenanza pide al solicitar: el justificante de tasas e ICIO y la fianza de residuos. Autorizaciones sectoriales no le hacían falta (Lección 4.2).
+
+**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 52.354,17 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
+
+**Después, esperar sin moverse.** Si el ayuntamiento le hubiera requerido algo, tenía 10 días para subsanar; por eso lo presentó completo: cada requerimiento añade semanas. Vinieron el informe técnico del arquitecto municipal y el jurídico (la tabla «Dónde ir» habla de 1-6 meses según el municipio), y mientras tanto no entró ni una máquina en el solar: en obra nueva el silencio es negativo. La resolución llegó favorable, con sus plazos y condiciones (Lección 4.4).
+
+### Resumen
+
+Confirma qué título necesitas y si hacen falta licencias separadas, reúnete antes con el técnico municipal y presenta la solicitud completa, con las tasas y el ICIO. En obra nueva el silencio es negativo: sin resolución expresa no empiezas.
+
+### Tu checklist
+
+- Reunión previa con urbanismo
+- Solicitud completa (proyecto, ESS, residuos, tasas, fianzas)
+- ICIO liquidado
+- Licencias de demolición, movimiento de tierras o tala si aplican
+
 ## Lección 4.2 — Autorizaciones sectoriales
+
+> **Dónde estamos:** en la Lección 4.1 preparaste la solicitud de la licencia de obras. Ahora compruebas qué autorizaciones sectoriales de otros organismos necesitas, que forman parte de esa solicitud, y preparas las actuaciones complementarias para poder trabajar.
 
 - **Cómo saber cuáles necesitas:** mira en el visor del PGOU y en los visores sectoriales (Confederación, Costas, carreteras, AESA, patrimonio) si el solar toca alguna zona de protección. Pídelas en paralelo: no esperes a que te las reclame el ayuntamiento.
 
@@ -1088,7 +1425,35 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   - **Obras de urbanización pendientes:** proyecto de urbanización aprobado; muchos ayuntamientos exigen un aval si urbanizas a la vez que edificas.
   - Autorizaciones de las instalaciones que lo requieran.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la solicitud en marcha, Nicolás comprobó qué permisos de otros organismos necesitaba y preparó lo que hace falta para trabajar. Te cuento cómo.
+
+**Primero, las zonas de protección.** Miró en el visor del PGOU y en los visores sectoriales si su solar tocaba alguna zona de la tabla: un río o un barranco a menos de 100 m, el litoral, una carretera, una vía de tren, las alturas de un aeropuerto, una zona arqueológica o un BIC. Las webs de la Confederación Hidrográfica, de Costas, de ADIF y de AESA las tienes en las webs de esta lección. Su arquitecto ya había revisado las servidumbres en la due diligence (Lección 1.3), y en la reunión previa preguntó al técnico municipal qué informes sectoriales le iban a pedir (Lección 4.1).
+
+**El resultado.** Su solar no toca ninguna zona de protección: no necesita autorizaciones sectoriales. Si hubiera necesitado alguna, la habría pedido en paralelo, sin esperar a que se la reclamara el ayuntamiento: algunas tardan de 2 a 6 meses (tabla «Dónde ir»). En Alicante, el organismo de cuenca es la Confederación Hidrográfica del Júcar o, en el sur, la del Segura; los organismos de tu provincia los podrás encontrar al final del módulo.
+
+**Después, lo que hace falta para trabajar.** Sin permisos de otros organismos, le quedaban las actuaciones complementarias:
+
+- **Acometidas:** las solicitudes de suministro y de punto de conexión a la distribuidora eléctrica, a la empresa de aguas y al resto de compañías. Ya sabía que había capacidad (Lección 1.3); las pidió pronto, porque los plazos de conexión son largos (Módulo 6).
+- **Ocupación de vía pública:** vallas, andamios, contenedores y acopios, con su tasa municipal, en el ayuntamiento.
+- **Grúa torre:** el proyecto de instalación, el montaje por una empresa autorizada y el registro en el Servicio de Industria de su comunidad. Preguntó también si su ayuntamiento pide autorización por el vuelo sobre la vía pública.
+- **Cortes de tráfico** para los hormigonados y las descargas: autorización municipal y policía local.
+
+La vía pública, la grúa y los cortes de tráfico los cerró con la constructora, cuando la tuvo contratada (Lecciones 5.3 y 5.4): es ella la que sabe qué grúa monta, dónde van los contenedores y qué días hormigona. Obras de urbanización pendientes no tenía: su solar ya tiene servicios.
+
+### Resumen
+
+Mira en los visores si tu solar toca alguna zona de protección y pide en paralelo las autorizaciones que necesites: forman parte de la licencia. Y prepara lo que hace falta para trabajar: acometidas, vía pública, grúa y cortes de tráfico.
+
+### Tu checklist
+
+- Autorizaciones sectoriales identificadas y pedidas en paralelo
+- Ocupación de vía pública, grúa y cortes de tráfico autorizados
+
 ## Lección 4.3 — Inicio de las obras
+
+> **Dónde estamos:** tienes la licencia concedida (Lecciones 4.1 y 4.2). Ahora preparas el inicio de las obras: lo que tiene que estar hecho, y en qué orden, antes de que entre el primer camión, para abrir la obra sin incumplir nada.
 
 - **Orden de actuaciones antes del primer camión:**
   1. Licencia concedida y condiciones leídas (fianzas, cartel, plazos).
@@ -1101,6 +1466,14 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   8. **Acta de comprobación del replanteo** firmada por director de obra, director de ejecución y constructor. Fija la fecha de inicio del plazo de obra.
   9. **Cartel de obra** según la ordenanza (número de licencia, promotor, técnicos, constructor, plazos).
   10. Comunicación de inicio al ayuntamiento si la ordenanza la pide.
+- **Quién se encarga de cada cosa** (quién hace cada paso del orden de arriba):
+  - **Tú, el promotor:** lees la licencia y sus condiciones (fianzas, cartel, plazos), designas por escrito al coordinador de seguridad y salud, te encargas de que el cartel de obra esté colocado y haces la comunicación de inicio al ayuntamiento si la ordenanza la pide.
+  - **Constructor (el contratista):** redacta su plan de seguridad y salud, presenta la comunicación de apertura del centro de trabajo con ese plan, está inscrito en el REA con sus subcontratistas, tiene el libro de subcontratación habilitado y firma el acta de comprobación del replanteo.
+  - **Coordinador de seguridad y salud:** aprueba el plan de seguridad y salud del contratista y lleva el libro de incidencias.
+  - **Dirección facultativa** (director de obra y director de ejecución): lleva el libro de órdenes y asistencias y firma, con el constructor, el acta de comprobación del replanteo.
+  - **Autoridad laboral de la CCAA:** recibe la comunicación de apertura, lleva el REA y habilita el libro de subcontratación.
+  - **Colegio de Arquitectos / de Aparejadores:** el libro de órdenes y asistencias y el libro de incidencias, al inicio.
+  - **Ayuntamiento:** concede la licencia con sus condiciones y dice en su ordenanza qué lleva el cartel y si pide la comunicación de inicio.
 - **Escritura de declaración de obra nueva y división horizontal** (Módulo 9), salvo que se trate de una vivienda unifamiliar aislada y solo se declare la obra nueva porque no hay fincas que dividir.
   - El promotor puede obtener, en su caso, financiación externa, es decir, un préstamo promotor para el desarrollo de la promoción. La documentación que solicitará la entidad de crédito es relativa a la solvencia del promotor y garantías de cobro, así como del proyecto a desarrollar.
   - Por lo que respecta al préstamo hipotecario a conceder al comprador, la entidad de crédito no concede hipoteca alguna hasta que no esté inscrita en el Registro la escritura final de obra; es decir, mientras siga inscrita la anotación de "en construcción", no se formaliza hipoteca a la compra.
@@ -1108,7 +1481,40 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
 
 - **Organiza la dirección facultativa antes de empezar:** designa por escrito al arquitecto director de obra, al arquitecto técnico director de ejecución, al coordinador de seguridad y salud, a los técnicos especialistas y al control de calidad, con el alcance de cada uno.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia concedida, Nicolás preparó el inicio de las obras. Te lo cuento en el orden de la lección, aunque varios pasos los cerró con la constructora ya contratada (Lecciones 5.3 y 5.4): sin constructor no hay plan de seguridad, ni comunicación de apertura, ni acta de replanteo.
+
+**Primero, la dirección facultativa, por escrito.** Designó por escrito, con el alcance de cada uno, al arquitecto director de obra (el estudio que hizo el proyecto), al arquitecto técnico director de ejecución y al coordinador de seguridad y salud (contratados en el Módulo 3), a los técnicos especialistas de las ingenierías y al control de calidad.
+
+**El plan de seguridad y la apertura.** La constructora redactó su plan de seguridad y salud y el coordinador lo aprobó. Con el plan aprobado, la constructora presentó la **comunicación de apertura del centro de trabajo** a la **autoridad laboral** de la comunidad: en la Comunitat Valenciana, el INVASSAT. La de tu provincia la podrás encontrar al final del módulo.
+
+**Las empresas, en el REA.** Nicolás comprobó, en la consulta pública del **REA** (la tienes en las webs de esta lección), que la constructora y cada subcontratista estaban inscritos, y que la constructora tenía el libro de subcontratación habilitado.
+
+**Los libros.** Al inicio, la dirección facultativa abrió el libro de órdenes y asistencias, y el coordinador, el libro de incidencias: los dan el Colegio de Arquitectos y el de Aparejadores (tabla «Dónde ir»).
+
+**El acta de replanteo.** La firmaron el director de obra, el director de ejecución y el constructor. Desde esa fecha cuenta el plazo de obra: en su Plantilla 3, 20 meses (Lección 5.1).
+
+**El cartel y el ayuntamiento.** Colocó el cartel con lo que pide la ordenanza (número de licencia, promotor, técnicos, constructor, plazos) y comunicó el inicio al ayuntamiento, a la vez que al banco, a la aseguradora decenal y al OCT (Lección 5.4).
+
+**La escritura.** Su edificio tiene 18 viviendas: hay fincas que dividir. Al principio de la obra firmó en su notaría la **escritura de declaración de obra nueva y división horizontal**, con la licencia y el certificado del técnico de que la descripción coincide con el proyecto, y el **Registro de la Propiedad** la inscribió «en construcción» (Lecciones 9.2 y 10.3).
+
+**Lo que no hizo.** Ni una máquina entró en el solar antes de la comunicación de apertura: empezar el vaciado antes es una infracción grave en prevención.
+
+### Resumen
+
+Antes del primer camión, en orden: licencia leída, coordinador designado, plan de seguridad aprobado, comunicación de apertura, REA, libros, acta de replanteo y cartel. Y la dirección facultativa, designada por escrito antes de empezar.
+
+### Tu checklist
+
+- Coordinador designado y plan de seguridad aprobado
+- Comunicación de apertura, REA y libro de subcontratación
+- Libros de órdenes e incidencias
+- Acta de replanteo firmada y cartel de obra colocado
+
 ## Lección 4.4 — Plazos, prórrogas y caducidad
+
+> **Dónde estamos:** tienes la licencia concedida y sabes qué hace falta para abrir la obra (Lección 4.3). Te queda controlar sus plazos: el de inicio, el de terminación, la prórroga y la caducidad.
 
 | Concepto | Regla práctica |
 |---|---|
@@ -1118,6 +1524,32 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
 | Caducidad | No es automática: el ayuntamiento abre expediente con audiencia. Declarada, necesitas licencia nueva |
 
 - **Consejo:** pide la licencia cuando tengas la financiación encarrilada. Una licencia que caduca en un mercado que cae es un coste enorme.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia en la mano, Nicolás leyó despacio sus condiciones. Te cuento cómo controla los plazos.
+
+**Las condiciones, el primer día.** Revisó lo que le pedía la licencia: las fianzas, el cartel y, sobre todo, los plazos. La licencia fija el plazo de inicio y el de terminación (lo habitual: de 6 meses a 1 año para empezar y de 2 a 3 años para terminar). Los apuntó en su calendario ese mismo día. El de inicio le corre mientras firma el préstamo y contrata la constructora (Módulo 5); el de terminación, mientras dura la obra: en su Plantilla 3, 20 meses de obra (Lección 5.1).
+
+**La prórroga, antes de que venza.** Si ve que no llega a algún plazo, la pedirá por escrito antes de que venza. Sabe que normalmente se concede una vez.
+
+**La caducidad.** No es automática: el ayuntamiento abre un expediente con audiencia. Pero, si se declara, necesita una licencia nueva y vuelve al principio de la Lección 4.1.
+
+**El consejo, seguido.** Pidió la licencia con la financiación encarrilada: antes de presentar la solicitud ya había hablado con su banco del préstamo promotor, que cierra en el Módulo 5. Una licencia que caduca en un mercado que cae es un coste enorme.
+
+### Resumen
+
+La licencia fija el plazo de inicio y el de terminación. La prórroga se pide por escrito antes de que venza, y la caducidad no es automática, pero declarada obliga a pedir una licencia nueva: pide la licencia con la financiación encarrilada.
+
+### Tu checklist
+
+- Licencia concedida y condiciones revisadas
+
+## Resumen del Módulo 4
+
+Has confirmado qué título necesitas, te has reunido con urbanismo, has presentado la solicitud completa y has obtenido la licencia de obras, con las autorizaciones sectoriales que te tocaran pedidas en paralelo y el ICIO liquidado. Has preparado las actuaciones para poder trabajar y el inicio de las obras en el orden de la Lección 4.3, y tienes los plazos de la licencia en tu calendario.
+
+**Dónde deberías estar en tu proyecto:** con la licencia concedida y el ICIO liquidado, y la apertura de la obra preparada para cerrarla con tu constructora: el centro de trabajo comunicado y el acta de replanteo firmada. Con eso pasas al Módulo 5, donde financias la promoción y contratas la constructora: sin eso la obra no empieza.
 
 ## Checklist del Módulo 4
 
@@ -1206,6 +1638,8 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
 
 ## Lección 5.1 — El préstamo promotor
 
+> **Dónde estamos:** con el proyecto (Módulo 3) y la licencia (Módulo 4), buscas el dinero para construir. Empiezas por el préstamo promotor: cuánto te presta el banco, qué te exige y cómo se dispone.
+
 | Concepto | Referencia 2025-2026 |
 |---|---|
 | Importe | 60–70 % del coste total (o del valor de tasación terminado, según banco) |
@@ -1227,7 +1661,41 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
 - **Subrogación:** al escriturar, el comprador puede asumir su parte del préstamo como hipoteca propia (con las garantías de la Ley 5/2019). Si no se subroga, se cancela esa parte con el pago del comprador.
 - ⚠️ **Errores típicos:** no negociar el coste de los avales dentro del préstamo; no prever la caja entre certificación y disposición (5-15 días); firmar sin cláusula de liberación de hipoteca por vivienda.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia concedida, Nicolás fue a por el dinero para construir. Te cuento cómo preparó su préstamo promotor.
+
+**Primero, al banco.** Llevó a su banco lo que pide la lección: la licencia, el proyecto de ejecución, el presupuesto, el planning y la CRP de su Plantilla 2. Los bancos los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, la banca con presencia en tu provincia. La **sociedad de tasación** del banco tasó la promoción en hipótesis de edificio terminado (el valor para el LTV) y, con la tasación, el banco le dio su **oferta vinculante**.
+
+**Después, la Plantilla 3.** Con la oferta rellenó la **Plantilla 3 · Préstamo promotor**, partiendo del coste total de su Plantilla 2, 1.522.299,21 €:
+
+- El banco financia el 70 %: **1.065.609,45 €**. Sus fondos propios son el 30 %, 456.689,76 €, y el solar, ya pagado, cuenta dentro de ellos.
+- Interés del 4,5 % anual y comisión de apertura del 0,75 %: 7.992,07 €.
+- 20 meses de obra, en los que dispone por certificaciones, y 4 meses más hasta las escrituras de venta: 39.960,35 € de intereses durante la obra (sobre la mitad del préstamo, porque se dispone poco a poco) y 15.984,14 € hasta las escrituras.
+- Tasación, notaría y registro: 10.000 €.
+
+Coste financiero total: **73.936,57 €**, alrededor del 5 % del coste, algo menos de los 79.940,06 € que había puesto en la Plantilla 2.
+
+**Las preventas.** El banco exige el 70–90 % de las viviendas con contrato privado y anticipo: con 18 viviendas, **13 como mínimo**. Cómo las vende lo verás en el Módulo 8; cada euro que cobre irá garantizado y a la cuenta especial (Lección 5.2).
+
+**Lo que negoció.** En la misma negociación pidió la **línea de avales** para las cantidades a cuenta, con su coste dentro del préstamo. Dejó caja propia para los 5-15 días entre cada certificación y su disposición. Y, como promotor pequeño, el banco le pidió su aval personal como socio.
+
+**Cómo pagará la obra.** Cada mes, el director de ejecución certifica, el tasador del banco verifica el avance, el banco libera el importe y Nicolás paga al constructor.
+
+La firma queda para cuando tenga los dos papeles que le faltan de la lista del banco: las pólizas (Lección 5.2) y el contrato de obra (Lección 5.4).
+
+### Resumen
+
+El préstamo promotor financia una parte del coste y se dispone por certificaciones de obra. El banco exige preventas, fondos propios, tasación, la documentación del proyecto y las pólizas: calcula el coste financiero con la Plantilla 3 y negocia los avales dentro del préstamo.
+
+### Tu checklist
+
+- Plantilla 3 · Préstamo promotor (incluida) rellena con la oferta del banco
+- Tasación y oferta vinculante del banco
+
 ## Lección 5.2 — Seguros y garantías
+
+> **Dónde estamos:** tienes la oferta del banco para el préstamo promotor (Lección 5.1), que te pide las pólizas. Ahora cubres todos los riesgos con seguros y garantías: el decenal, el TRC, la responsabilidad civil y las cantidades a cuenta que cobres a los compradores.
 
 - **Garantías de la LOE (art. 17)**, contadas **desde la fecha de recepción de la obra sin reservas, o desde la subsanación de las reservas**:
 
@@ -1255,7 +1723,38 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
   - Si no terminas o no obtienes la primera ocupación (o cédula) en plazo, el comprador recupera su dinero con intereses.
   - Cobrar sin garantía es una infracción en materia de consumo.
 
+### Ejemplo: Nicolás, el promotor
+
+Frente a sus compradores responde Nicolás en los tres plazos de la tabla (1, 3 y 10 años), contados desde la recepción de la obra. Te cuento cómo se cubrió.
+
+**Con un corredor.** Volvió al corredor de seguros que le hizo la prerrevisión de la aseguradora decenal (Módulo 3) y le pidió las pólizas comparadas. Las aseguradoras las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, el Colegio de Mediadores de Seguros de tu provincia.
+
+**El decenal.** Lo contrata él, como promotor, y sus beneficiarios son los propietarios sucesivos de las viviendas. La aseguradora exige un OCT desde el proyecto, y Nicolás ya tenía su informe D0 (Módulo 3). El coste, del 0,8 al 1,5 % de su construcción de 1.047.083,40 €: entre 8.376,67 € y 15.706,25 €, una parte de los 31.412,50 € de seguros, OCT, control de calidad y otros de su Plantilla 2.
+
+**El TRC y la RC.** El todo riesgo construcción cubre los daños a la obra durante la ejecución: no lo exige la ley, lo exige el banco. La responsabilidad civil cubre los daños a terceros durante la obra: es recomendable y el banco normalmente la exige. Contrató las dos con el corredor.
+
+**Las cantidades a cuenta.** Antes de cobrar la primera reserva (Módulo 8), abrió en su banco la **cuenta especial**, separada, solo disponible para la construcción. Cada comprador tendrá su aval, de la línea de avales del banco (Lección 5.1). Con su plan de cobros (Plantilla 5, Módulo 8), cada uno le habrá adelantado 24.426,13 € antes de la entrega: 439.670,33 € entre las 18 viviendas, garantizados con el interés legal.
+
+**Lo que Nicolás no hace.** La lección dice qué es obligatorio; saltárselo sería ilegal. Nicolás nunca:
+
+- cobra una reserva, un pago a la firma o un pago durante la obra sin la garantía de ese comprador: cobrar sin garantía es una infracción en materia de consumo;
+- ingresa un anticipo fuera de la cuenta especial;
+- cubre a varios compradores con una sola garantía: es individual por comprador y cubre lo entregado más el interés legal;
+- promueve viviendas sin seguro decenal: es obligatorio, y sin él no hay escritura de obra nueva terminada ni inscripción;
+- asegura la obra por menos de su coste final, honorarios incluidos, ni acepta una franquicia de más del 1 %.
+
+### Resumen
+
+El decenal es obligatorio en vivienda y exige OCT; el TRC y la RC los pide el banco. Cada euro que cobres antes de la entrega va garantizado, comprador a comprador, y a una cuenta especial.
+
+### Tu checklist
+
+- Cuenta especial de cantidades a cuenta abierta
+- Decenal (con OCT), TRC y RC contratados
+
 ## Lección 5.3 — Elegir constructora
+
+> **Dónde estamos:** con el préstamo promotor en marcha y los seguros contratados (Lecciones 5.1 y 5.2), eliges al constructor adecuado: preparas el pliego de licitación, invitas a 3-5 constructoras y comparas sus ofertas por capítulos.
 
 - **Pliego de licitación:** proyecto de ejecución, mediciones, calidades, plazos parciales, forma de pago, penalidades, retenciones, seguros exigidos.
 - **Invita a 3-5 constructoras** con:
@@ -1265,13 +1764,50 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
   - Certificados de estar al corriente con AEAT y Seguridad Social.
   - Equipo propio: jefe de obra, encargado, producción.
   - Clasificación de contratista del Estado: no es obligatoria en obra privada, pero es una buena señal de solvencia.
+- **Quién se encarga de cada cosa** (dónde compruebas cada punto de la lista de arriba):
+  - **Tú, el promotor:** visitas sus obras similares terminadas y hablas con sus promotores.
+  - **Registro Mercantil:** las cuentas anuales de los tres últimos años.
+  - **Autoridad laboral** (consulta pública del REA): la inscripción en el REA.
+  - **AEAT y Seguridad Social (TGSS):** los certificados de estar al corriente; los pide la constructora y te los entrega.
+  - **El constructor** (cada constructora invitada): te presenta su equipo propio (jefe de obra, encargado, producción) y, si la tiene, su clasificación de contratista del Estado.
 - **Comparativo por capítulos:** nunca compares solo el total. Busca partidas infravaloradas o que faltan.
 - **Señal de alarma:** una oferta un 15-20 % por debajo de la media suele significar errores, materiales peores o una empresa que se quedará sin caja.
 
 - **Revisa también en cada oferta:** exclusiones, medios propios y documentación laboral, preventiva, fiscal y de seguros de la empresa.
 - **Garantía de cumplimiento:** además de la retención, puedes pedir aval de fiel cumplimiento (habitual: 5–10 % del precio).
 
+### Ejemplo: Nicolás, el promotor
+
+Con la financiación y los seguros encarrilados, Nicolás buscó quién le construyera el edificio. Te cuento cómo eligió.
+
+**Primero, el pliego.** Con su arquitecto preparó el **pliego de licitación**: el proyecto de ejecución visado, las mediciones, las calidades, los plazos parciales, la forma de pago, las penalidades, las retenciones y los seguros que exige. Así todas ofertan lo mismo.
+
+**Tres constructoras.** Pidió presupuesto a tres constructoras de su zona; las de tu provincia las podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. Antes de abrir sus ofertas comprobó cada una:
+
+- Visitó obras suyas parecidas, ya terminadas, y habló con sus promotores.
+- Sacó sus cuentas anuales de los tres últimos años del **Registro Mercantil**.
+- Miró en la consulta pública del **REA** que estuvieran inscritas.
+- Les pidió los certificados de estar al corriente con la **AEAT** y la **Seguridad Social**.
+- Preguntó por su equipo propio: jefe de obra, encargado y producción.
+
+El Registro Mercantil, el REA, la AEAT y la Seguridad Social los tienes en las webs de esta lección.
+
+**Las ofertas, capítulo a capítulo.** No miró el total: comparó cada capítulo, buscando partidas infravaloradas o que faltaran, y revisó en cada oferta las exclusiones, los medios propios y la documentación laboral, preventiva, fiscal y de seguros de la empresa. Si una hubiera venido un 15-20 % por debajo de la media, la habría mirado con lupa: suele significar errores, materiales peores o una empresa que se quedará sin caja.
+
+**La elegida.** Se quedó con la que tenía obra parecida terminada, las cuentas sanas, su equipo propio y la oferta completa en todos los capítulos: **1.047.083,40 €** por toda la obra, lo que había puesto en su Plantilla 2 (660 €/m²). La contrata en la Lección 5.4.
+
+### Resumen
+
+Prepara un pliego para que todas oferten lo mismo, invita a 3-5 constructoras y comprueba sus obras, sus cuentas, el REA y los certificados. Compara capítulo a capítulo, nunca solo el total, y desconfía de la oferta muy por debajo de la media.
+
+### Tu checklist
+
+- Licitación con 3-5 constructoras y comparativo por capítulos
+- REA y certificados de AEAT y TGSS del contratista
+
 ## Lección 5.4 — El contrato de obra
+
+> **Dónde estamos:** ya has elegido constructora (Lección 5.3). Ahora firmas con ella el contrato de obra, con sus cláusulas imprescindibles, y preparas el inicio de la obra.
 
 - **Modalidades:**
   - **Precio cerrado (llave en mano):** certeza de coste. Exige un proyecto muy bien definido. Lo habitual y aconsejable.
@@ -1299,6 +1835,46 @@ Anexo A, columna **Fase 4**: ayuntamiento, organismo de cuenca, Costas (provinci
   - Laboratorio y control de calidad contratados.
   - Acta de replanteo y comienzo de obra.
   - Comunicación del inicio al ayuntamiento, al banco y a la aseguradora decenal y al OCT.
+- **Quién se encarga de cada cosa** (quién hace cada paso de la preparación de arriba):
+  - **Constructor:** la implantación (casetas, vallado, accesos, acometidas provisionales de luz y agua, medios auxiliares), su plan de seguridad y salud y su plan de gestión de residuos.
+  - **Coordinador de seguridad y salud:** aprueba el plan de seguridad y salud del contratista (Lección 4.3).
+  - **Dirección facultativa:** aprueba el plan de gestión de residuos; el director de obra y el director de ejecución firman con el constructor el acta de replanteo.
+  - **Tú, el promotor:** aceptas el plan de gestión de residuos, contratas el laboratorio y el control de calidad y comunicas el inicio al ayuntamiento, al banco, a la aseguradora decenal y al OCT.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la constructora elegida, Nicolás firmó el contrato de obra. Te cuento cómo lo cerró.
+
+**A precio cerrado, llave en mano.** Eligió lo habitual y aconsejable: **1.047.083,40 €** por toda la obra. Pudo hacerlo porque su proyecto de ejecución está muy bien definido y lo revisó el OCT (Módulo 3): con un proyecto incompleto, cada laguna habría sido un modificado.
+
+**Cláusula a cláusula, con su abogado.** Lo revisó con un abogado; los despachos y las constructoras de tu provincia los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. Lo que miró con más cuidado:
+
+- El proyecto de ejecución visado, como documento contractual.
+- El calendario de certificaciones (una al mes, Lección 5.1) y el pago a 60 días como máximo.
+- La **retención de garantía del 5 % de cada certificación**, hasta un año después de la recepción.
+- El plazo total desde el acta de replanteo, con sus hitos, y las penalidades por retraso, con su tope.
+- La subcontratación: lista previa, REA, tres niveles como máximo y los certificados de la AEAT y la TGSS de cada subcontrata.
+- Los seguros de la constructora: RC, accidentes y su parte del TRC.
+- Los modificados: solo con orden escrita y con el precio pactado antes de ejecutar.
+
+**La preparación del inicio.** La constructora implantó la obra (casetas, vallado, accesos, acometidas provisionales, medios auxiliares) y presentó su plan de gestión de residuos, que aprobó la dirección facultativa y aceptó Nicolás. Él contrató el laboratorio y el control de calidad y comunicó el inicio al ayuntamiento, al banco, a la aseguradora decenal y al OCT.
+
+**Y la firma del préstamo.** Con el contrato de obra firmado y las pólizas contratadas, volvió al banco con los dos papeles que le faltaban (Lección 5.1) y firmó el **préstamo promotor** y la **línea de avales**. Con eso, y con el orden de la Lección 4.3, la obra puede empezar (Módulo 6).
+
+### Resumen
+
+Contrata a precio cerrado, llave en mano, con un proyecto muy bien definido, y no firmes sin las cláusulas imprescindibles: retención, plazo, penalidades, subcontratación y modificados por escrito. Antes del primer día, la obra implantada, los planes aprobados y el inicio comunicado.
+
+### Tu checklist
+
+- Préstamo promotor y línea de avales firmados
+- Contrato de obra firmado con retenciones, penalidades y régimen de modificados
+
+## Resumen del Módulo 5
+
+Has preparado el préstamo promotor con la tasación, la oferta vinculante y la Plantilla 3, has cubierto los riesgos con el seguro decenal, el TRC, la responsabilidad civil y la garantía de las cantidades a cuenta, has elegido constructora comparando sus ofertas capítulo a capítulo y has firmado con ella el contrato de obra; con él en la mano, has firmado el préstamo.
+
+**Dónde deberías estar en tu proyecto:** con el préstamo promotor firmado, los seguros contratados, la cuenta especial de anticipos abierta y el contrato de obra firmado. Con eso, y con la apertura de la obra en el orden de la Lección 4.3, pasas al Módulo 6: empieza la obra.
 
 ## Checklist del Módulo 5
 
@@ -1386,6 +1962,8 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
 
 ## Lección 6.1 — Movimiento de tierras, cimentación y estructura
 
+> **Dónde estamos:** con la obra abierta legalmente (Módulo 4) y la constructora contratada (Módulo 5), empieza la construcción por abajo: trabajos previos, movimiento de tierras, cimentación y estructura.
+
 - **Trabajos previos:** vallado, casetas, acometidas de obra, replanteo topográfico, protección de medianeras, desvío de servicios, derribo (con retirada de amianto por empresa inscrita en el RERA si lo hay).
 - **Movimiento de tierras:**
   - Vaciado de sótanos. Pantallas o muros de contención si hay medianeras.
@@ -1401,8 +1979,47 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
 - ⚠️ **Errores típicos:** no tener geotecnia suficiente antes de excavar; hormigonar sin la revisión de armaduras; perder los albaranes y certificados del hormigón (los pide el OCT).
 
 - **No olvides:** desbroce y limpieza del solar antes de excavar, y que el geotécnico valide el fondo de excavación antes de cimentar.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Constructor** (con sus subcontratas): los trabajos previos (vallado, casetas, replanteo topográfico, protección de medianeras, desvío de servicios), el desbroce y la limpieza, el movimiento de tierras, la cimentación y la estructura.
+  - **Distribuidora eléctrica y empresa municipal de aguas:** las acometidas de obra. Las pides tú, al inicio.
+  - **Empresa inscrita en el RERA:** la retirada del amianto, si hay derribo y el edificio lo tiene.
+  - **Gestor autorizado de residuos:** las tierras que no se reutilizan, con sus certificados.
+  - **Geotécnico** (el laboratorio del estudio geotécnico): define la cimentación y valida el fondo de excavación.
+  - **Estructurista** (las ingenierías las coordina el arquitecto): calcula la cimentación y la estructura.
+  - **Director de ejecución:** controla las armaduras y el hormigonado.
+  - **Laboratorio acreditado:** ensaya el hormigón (probetas, resistencia a 28 días) y el acero.
+  - **OCT:** inspecciona para la aseguradora.
+  - **Tú (promotor):** guardas los albaranes y los certificados del hormigón, del acero y de las tierras.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la licencia, el préstamo y el contrato llave en mano firmados, la constructora entró en el solar el día del acta de replanteo (Lección 4.3). Por delante, 20 meses de obra. Te cuento cómo los empezó Nicolás.
+
+**Primero, los suministros.** Al empezar, pidió a la **distribuidora eléctrica** el punto de conexión y el suministro de obra, y a la **empresa municipal de aguas** la acometida de obra. En la due diligence (Lección 1.3) ya había confirmado que había capacidad; ahora no esperó, porque los plazos de conexión son largos. La distribuidora de tu provincia la tienes al final del módulo.
+
+**Antes de que entraran los trabajadores.** Pidió a la constructora la formación y la **Tarjeta Profesional de la Construcción** de su gente (la da la **Fundación Laboral de la Construcción**) y repasó con ella la lista de subcontratas del contrato (Lección 5.4). Las empresas de movimiento de tierras y las constructoras de tu provincia las podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección.
+
+**Los trabajos previos.** Vallado, casetas, acometidas de obra, desbroce y limpieza del solar y replanteo topográfico. No había nada que derribar (Lección 1.1), así que no hubo amianto ni derribo.
+
+**Sin sótano, menos riesgo.** Su edificio es un B+5 sin sótano: no hubo vaciado, ni pantallas, ni bombeo del agua freática, que es la gran fuente de sobrecostes. Las tierras de la cimentación las llevó la constructora a un **gestor autorizado de residuos**, y Nicolás abrió una carpeta para los certificados de gestión, que le irán llegando durante toda la obra.
+
+**La cimentación, validada.** La definió el geotécnico y la calculó el estructurista del proyecto. Antes de cimentar, el geotécnico del laboratorio que hizo el estudio (Módulo 3) validó el fondo de excavación.
+
+**El primer hormigonado.** Nicolás fue a la obra con la dirección facultativa. Vio al director de ejecución revisar las armaduras antes de hormigonar la estructura, de hormigón armado in situ, lo habitual; al laboratorio acreditado, sacar las probetas que romperá a 28 días; y al OCT, inspeccionar para la aseguradora. Desde ese día guarda cada albarán y cada certificado del hormigón y del acero, y cada acta de ensayo: el OCT se los va a pedir.
+
+### Resumen
+
+Antes de excavar, los trabajos previos y los suministros de obra pedidos; sin geotecnia suficiente no se excava ni se cimenta. La estructura se controla en obra (armaduras, hormigonado, ensayos) y cada albarán y cada certificado se archivan.
+
+### Tu checklist
+
+- Suministros de obra y punto de conexión pedidos al inicio
+- Certificados del hormigón, acero y ensayos archivados
+- Certificados de gestión de residuos
 
 ## Lección 6.2 — Fachadas, carpinterías y cubiertas
+
+> **Dónde estamos:** con la estructura levantada (Lección 6.1), se cierra el edificio: fachadas, carpinterías y cubiertas, que cumplen el CTE y no dejan pasar el agua.
 
 - **Fachada:** cumple DB HE1 (transmitancia), HS1 (humedad), HR (ruido) y SI (propagación exterior del fuego).
   - Ladrillo + aislamiento + trasdosado.
@@ -1414,8 +2031,38 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
 
 - **Puentes térmicos y encuentros constructivos:** revísalos en obra; son el origen de muchas condensaciones en postventa.
 - **Pruebas de estanqueidad** de fachadas y carpinterías además de cubiertas y terrazas, y comprobación del aislamiento.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Proyectista** (el arquitecto): define en el proyecto la fachada, las carpinterías y la cubierta, con los valores exigidos para tu zona climática.
+  - **Constructor** (con sus subcontratas): ejecuta la fachada, coloca las carpinterías y hace la cubierta y las impermeabilizaciones.
+  - **Director de ejecución:** controla en obra los materiales y la ejecución, revisa los puentes térmicos y los encuentros constructivos y comprueba el aislamiento.
+  - **Laboratorio acreditado:** las pruebas de estanqueidad (inundación o riego), con su acta.
+  - **OCT:** revisa la impermeabilización de cubiertas y de sótanos, si los hay.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la estructura terminada, tocaba cerrar el edificio. Nicolás sabía por la lección que aquí nacen muchas reclamaciones de postventa, así que fue a la obra más a menudo. Te cuento en qué se fijó.
+
+**La fachada y las ventanas, las del proyecto.** Su arquitecto proyectó la fachada más clásica: ladrillo, aislamiento y trasdosado. Las carpinterías son de aluminio con rotura de puente térmico y doble vidrio bajo emisivo. Cuando llegaron a la obra, su director de ejecución comprobó que traían los valores exigidos para su zona climática, los del proyecto.
+
+**Los encuentros, revisados en obra.** En las visitas con la dirección facultativa pidió que miraran los puentes térmicos y los encuentros constructivos, y que se comprobara el aislamiento: son el origen de muchas condensaciones en postventa, y frente al comprador responde él (Lección 5.2).
+
+**La cubierta, probada con acta.** La cubierta es plana: impermeabilización, aislamiento y protección, con las terrazas de los dos áticos. Antes de acabarla, el laboratorio acreditado hizo la **prueba de estanqueidad** por inundación, con el director de ejecución delante, y levantó su acta. Las fachadas y las carpinterías también se probaron, con riego.
+
+**El OCT, en la impermeabilización.** La revisó el OCT para la aseguradora, porque es la incidencia más frecuente en postventa. Sin sótano, solo había cubiertas y terrazas que revisar.
+
+**Al archivo.** El acta de la prueba fue a la misma carpeta que los certificados del hormigón: la necesitará al final de la obra (Lección 6.5).
+
+### Resumen
+
+Fachada, carpinterías y cubierta cumplen lo que el CTE pide para tu zona climática. Los puentes térmicos y las impermeabilizaciones se revisan en obra, y la estanqueidad se prueba, con acta, antes de acabar.
+
+### Tu checklist
+
+- Prueba de estanqueidad de cubiertas con acta
 
 ## Lección 6.3 — Instalaciones
+
+> **Dónde estamos:** con el edificio cerrado (Lección 6.2), entran las instalaciones: agua y saneamiento, climatización, electricidad, telecomunicaciones, incendios y ascensor, cada una con su reglamento.
 
 - Pesan el 20–30 % del PEM. Coordínalas desde el proyecto (BIM ayuda).
 - **Agua y saneamiento:** CTE HS4 y HS5, red separativa si el municipio la tiene.
@@ -1435,8 +2082,49 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
 
 - **Energías renovables:** fotovoltaica u otros sistemas cuando lo exija el CTE HE5 o lo prevea el proyecto.
 - **Extracción de garajes, puesta a tierra y sistemas de control** completan las instalaciones.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Proyectista e ingenierías** (las coordina el arquitecto): el proyecto o la memoria técnica de cada instalación, coordinadas desde el proyecto.
+  - **Ingeniero de telecomunicación o técnico competente:** el proyecto de ICT (Lección 3.3) y el certificado de fin de obra de la ICT.
+  - **Instaladores autorizados o habilitados** (normalmente, subcontratas del constructor): ejecutan cada instalación y te dan su certificado: el CIE de la eléctrica, el del RITE, el boletín de la ICT y el del instalador habilitado de incendios.
+  - **Empresa conservadora autorizada:** el ascensor, con su marcado CE, y su conservación.
+  - **Servicio de Industria de la comunidad autónoma:** el registro de las instalaciones (electricidad, térmicas, incendios, ascensor), al terminar cada una.
+  - **Director de ejecución y laboratorio acreditado:** controlan la ejecución y hacen las pruebas de las instalaciones (Lección 7.2).
+  - **Tú (promotor):** guardas una copia de cada certificado y de cada registro para el final de obra (Lección 6.5).
+
+### Ejemplo: Nicolás, el promotor
+
+Con el edificio cerrado, entraron los instaladores. Las instalaciones pesan el 20–30 % del PEM, así que Nicolás las siguió de cerca. Te cuento cómo.
+
+**Coordinadas desde el proyecto.** Su arquitecto coordinó las ingenierías desde el proyecto (Módulo 3), y en obra la dirección facultativa se reúne con los instaladores cada quince días (Lección 7.4).
+
+**Aerotermia, sin gas.** Su proyecto lleva lo que hoy es lo habitual: aerotermia para el agua caliente, la calefacción y la refrigeración. Cuenta como renovable para la contribución mínima del agua caliente que pide el CTE HE4, y el edificio no lleva gas.
+
+**Electricidad y telecomunicaciones.** Centralización de contadores, línea general y derivaciones individuales a cada vivienda; y la ICT, con sus recintos RITI y RITS y la fibra, el coaxial y los pares hasta cada una de las 18 viviendas.
+
+**Incendios y ascensor.** Los extintores y lo que pide el DB SI, con un instalador habilitado; el ascensor, con su marcado CE y una empresa conservadora autorizada.
+
+**Un certificado por instalación.** Al terminar cada instalación, Nicolás pidió su papel y comprobó que quedaba registrado en el **Servicio de Industria** de la Comunitat Valenciana:
+
+- La eléctrica: el CIE del instalador autorizado.
+- La térmica: el certificado del instalador, como pide el RITE.
+- Incendios: el del instalador habilitado.
+- El ascensor.
+
+De la ICT guardó el certificado de fin de obra y el boletín del instalador. Todo fue a su carpeta para el final de obra (Lección 6.5).
+
+El Servicio de Industria de tu provincia lo tienes al final del módulo. Las empresas de instalaciones las podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección.
+
+### Resumen
+
+Las instalaciones se coordinan desde el proyecto y cada una cumple su reglamento. Cada instalador te da su certificado, y las instalaciones se registran en Industria al terminar cada una.
+
+### Tu checklist
+
+- Certificados de instaladores registrados en Industria (eléctrica, térmica, PCI, ascensor, ICT)
 
 ## Lección 6.4 — Acabados y urbanización
+
+> **Dónde estamos:** con las instalaciones hechas (Lección 6.3), la obra entra en su última parte: los acabados de las viviendas, las zonas comunes y la urbanización.
 
 - Tabiquería (cerámica o placa de yeso laminado), solados (gres porcelánico, parquet), alicatados, pintura, carpintería interior, armarios, cocina (muebles y, según segmento, electrodomésticos).
 - Zonas comunes: portal, escaleras, ascensor, jardines, piscina (normativa autonómica de piscinas de uso colectivo si aplica).
@@ -1450,8 +2138,35 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
   - **Piscina comunitaria:** criterios técnico-sanitarios del RD 742/2013 y decreto autonómico de piscinas.
   - **Zonas infantiles:** normas UNE-EN 1176 y 1177 (equipamiento y suelos).
   - Cerramientos de parcela, alumbrado exterior, conexiones definitivas y obras de urbanización asociadas.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Constructor** (con sus subcontratas): la tabiquería, los solados, los alicatados, la pintura, la carpintería interior, los armarios y la cocina; las zonas comunes (con la piscina y las zonas infantiles, si las hay), el garaje y la urbanización, interior y exterior.
+  - **Director de ejecución:** controla que cada acabado y cada material son los del proyecto.
+  - **Ayuntamiento:** recibe la urbanización que sea dominio público, si la licencia lo exige.
+  - **Tú (promotor):** congelas la memoria de calidades del contrato con los compradores y decides cada cambio, que es un modificado (Lección 7.3).
+
+### Ejemplo: Nicolás, el promotor
+
+Con las instalaciones dentro, la obra de Nicolás entró en los acabados. Es lo que verán sus compradores, y donde más cuesta decir que no. Te cuento cómo lo llevó.
+
+**Los acabados, los de la memoria.** Calidades medias, para primera vivienda: tabiquería cerámica, gres porcelánico en los suelos, alicatados, pintura, carpintería interior, armarios y la cocina con sus muebles. Todo como dice la memoria de calidades de los contratos con sus compradores.
+
+**La memoria, congelada.** Siguió el consejo de la lección: la memoria de calidades no se toca. Si un comprador le pide un cambio, la respuesta es la misma para todos: cada cambio comercial a mitad de obra es un modificado, con orden escrita y precio pactado antes (Lección 7.3).
+
+**Las zonas comunes.** Portal, escaleras y ascensor: los fue siguiendo con la dirección facultativa en sus visitas, porque son lo primero que ve quien entra en el edificio.
+
+**Fuera, lo que pide la licencia.** Volvió a las condiciones de su licencia (Lección 4.3) para ver qué urbanización exterior le pedía y qué parte, por ser dominio público, tendría que entregar al ayuntamiento. Para eso tenía su partida en la Plantilla 2: urbanización y acometidas, 50.000 €.
+
+**Las conexiones definitivas.** Con la distribuidora eléctrica y la empresa municipal de aguas pasó de las acometidas de obra que pidió al empezar (Lección 6.1) a las definitivas.
+
+Con los acabados terminados, solo le queda cerrar la obra por escrito (Lección 6.5).
+
+### Resumen
+
+Los acabados, las zonas comunes y la urbanización terminan la obra. Congela la memoria de calidades del contrato con los compradores: cada cambio comercial a mitad de obra es un modificado.
 
 ## Lección 6.5 — Final de obra y recepción
+
+> **Dónde estamos:** la obra está terminada (Lecciones 6.1 a 6.4). Ahora la cierras por escrito: el certificado final de obra, el acta de recepción y la documentación de lo construido.
 
 - **Certificado final de obra (CFO):** lo firman el director de obra y el director de ejecución; acredita que la obra se ha ejecutado según el proyecto. **Visado obligatorio** (RD 1000/2010).
 - **Acta de recepción (art. 6 LOE):**
@@ -1461,6 +2176,45 @@ Anexo A, columna **Fase 5**: banca con presencia en tu provincia, Colegio de Med
   - **Las garantías de 1, 3 y 10 años corren desde la recepción sin reservas, o desde que se subsanan las reservas** (art. 17.1 LOE).
 - **Documentación de la obra ejecutada (art. 7 LOE):** el director de obra se la entrega al promotor (proyecto con modificaciones, relación de agentes, instrucciones de uso y mantenimiento, certificados). Es la base del Libro del Edificio (Módulo 9).
 - **Pide al constructor:** planos de lo construido, garantías de equipos, certificados de instaladores, certificados de gestión de residuos, manuales.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Director de obra y director de ejecución:** firman el certificado final de obra.
+  - **Colegio de Arquitectos y Colegio de Aparejadores:** visan el certificado final de obra.
+  - **Tú (promotor) y el constructor, con la dirección facultativa:** firmáis el acta de recepción, sin reservas, con reservas o con rechazo motivado.
+  - **Constructor:** subsana las reservas en el plazo del acta y te entrega los planos de lo construido, las garantías de equipos, los certificados de instaladores y de gestión de residuos y los manuales.
+  - **Director de obra:** te entrega la documentación de la obra ejecutada (proyecto con modificaciones, relación de agentes, instrucciones de uso y mantenimiento, certificados).
+  - **Tú (promotor):** guardas todo para el Libro del Edificio (Módulo 9).
+
+### Ejemplo: Nicolás, el promotor
+
+Con la obra terminada, Nicolás no dio nada por hecho hasta tenerlo firmado. Te cuento en qué orden la cerró.
+
+**Primero, el certificado final de obra.** Lo firmaron su director de obra, el arquitecto del estudio que hizo el proyecto, y su director de ejecución, el arquitecto técnico. Acredita que la obra se ha ejecutado según el proyecto. Cada uno lo visó en su colegio, el de Arquitectos y el de Aparejadores, porque el visado es obligatorio.
+
+**Después, la recepción, dentro de los 30 días.** Desde la fecha de terminación que fija el certificado tenía 30 días para firmar el acta; si no hay acta ni rechazo motivado en ese plazo, la recepción se entiende tácita. Recorrió el edificio con la constructora y la dirección facultativa, y firmaron el **acta de recepción** con reservas: una lista de repasos y un plazo para corregirlos.
+
+**Cuándo empiezan las garantías.** Las de 1, 3 y 10 años no le corren desde la firma, sino desde que se subsanan esas reservas. Por eso deja por escrito la fecha en que la constructora las cierra. Y la retención del 5 % de cada certificación sigue en su poder hasta un año después de la recepción, como dice su contrato (Lección 5.4).
+
+**La documentación de la obra ejecutada.** Su director de obra le entregó el proyecto con sus modificaciones, la relación de agentes, las instrucciones de uso y mantenimiento y los certificados. Es la base del Libro del Edificio (Módulo 9).
+
+**Y la de la constructora.** Lo tenía pactado en el contrato (Lección 5.4): planos de lo construido, garantías de los equipos (la aerotermia, el ascensor), certificados de los instaladores, certificados de gestión de residuos y manuales. Lo juntó todo en la carpeta que abrió el primer día, con los certificados del hormigón y el acta de la prueba de la cubierta.
+
+**Dónde está ahora.** El edificio está terminado y recibido. Lo siguiente es legalizarlo (Módulo 9); antes, en el Módulo 7, verás cómo controló esta misma obra mientras se hacía.
+
+### Resumen
+
+La obra se cierra con el certificado final de obra visado y con el acta de recepción, firmada dentro de los 30 días siguientes a la fecha de terminación del CFO. Las garantías corren desde la recepción sin reservas o desde que se subsanan las reservas; guarda la documentación de la obra ejecutada para el Libro del Edificio.
+
+### Tu checklist
+
+- CFO visado
+- Acta de recepción firmada
+- Documentación final del constructor y de la dirección facultativa
+
+## Resumen del Módulo 6
+
+Has seguido la construcción del edificio en su orden: trabajos previos, movimiento de tierras, cimentación y estructura; fachadas, carpinterías y cubiertas; instalaciones; acabados, zonas comunes y urbanización. Al terminar, has cerrado la obra por escrito con el certificado final de obra y el acta de recepción.
+
+**Dónde deberías estar en tu proyecto:** con la obra terminada, el certificado final de obra visado y el acta de recepción firmada, y con los certificados del hormigón, de los instaladores y de los residuos y la documentación final del constructor y de la dirección facultativa en tu carpeta. El Módulo 7 vuelve sobre esta misma obra: cómo la controlas mientras se construye, para que salga en plazo, en coste y con la calidad documentada.
 
 ## Checklist del Módulo 6
 
@@ -1543,6 +2297,8 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
 
 ## Lección 7.1 — La dirección facultativa
 
+> **Dónde estamos:** mientras la constructora levanta el edificio (Módulo 6), tú controlas que la obra salga en plazo, en coste y con la calidad documentada. Empiezas por quien la dirige: la dirección facultativa.
+
 | Figura | Titulación en vivienda | Qué hace |
 |---|---|---|
 | Director de obra | Arquitecto | Dirige el desarrollo técnico, resuelve dudas del proyecto, firma el CFO |
@@ -1556,7 +2312,31 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
   - Informe mensual al promotor.
 - **Exige en el contrato** un número mínimo de visitas y que contesten las consultas de obra en 48-72 h.
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás no es técnico. Su forma de controlar la obra empieza por saber quién la dirige y por tenerlo todo por escrito. Te cuento cómo lo organizó.
+
+**Su dirección facultativa.**
+
+- **Director de obra:** el arquitecto del estudio que hizo la volumetría y el proyecto (Módulo 3). Dirige el desarrollo técnico, resuelve las dudas del proyecto y firmará el CFO.
+- **Director de ejecución:** el arquitecto técnico que contrató a través de su colegio. Controla la ejecución, los materiales y los ensayos, y cada mes mide y certifica la obra.
+- **Coordinador de seguridad y salud:** el que contrató también en el Módulo 3. Aprobó el plan de seguridad antes de empezar (Lección 4.3), coordina a las empresas y custodia el libro de incidencias.
+
+**Visitas y respuestas, en el contrato.** En los contratos por escrito que firmó con ellos (Lección 3.1) puso un número mínimo de visitas y que contesten las consultas de obra en 48-72 h.
+
+**Todo por escrito.** Cada visita y cada orden van al **libro de órdenes y asistencias**; lo de seguridad, al **libro de incidencias**. Los dos se habilitaron al inicio (Módulo 4). Cada semana va a la obra, a la reunión con la dirección facultativa y el jefe de obra de la constructora, y de cada reunión sale un acta. Cada mes recibe el informe mensual de la dirección facultativa.
+
+**El project manager es él.** No contrató uno externo: el control de coste, plazo y modificados lo lleva él mismo, que es lo que la tabla «Dónde ir» llama project manager propio. Para lo técnico se apoya en su director de ejecución.
+
+Si a ti te falta alguno de estos técnicos, los estudios de arquitectura y las ingenierías de tu provincia los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección.
+
+### Resumen
+
+La dirección facultativa dirige y controla la obra: el director de obra, el director de ejecución, que además certifica, y el coordinador de seguridad. Todo queda por escrito en sus libros, actas e informes, y en su contrato pones visitas mínimas y plazos de respuesta.
+
 ## Lección 7.2 — El OCT y el control de calidad
+
+> **Dónde estamos:** con la dirección facultativa organizada (Lección 7.1), te ocupas de la calidad documentada que te van a pedir la aseguradora y los compradores: el OCT y el control de calidad.
 
 - **El OCT no lo exige la ley:** lo exige la aseguradora del seguro decenal. Sin OCT no hay decenal y sin decenal no hay escritura de obra nueva terminada.
 - **Qué revisa:**
@@ -1569,8 +2349,44 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
 
 - **No conformidades:** registra cada una (qué, dónde, quién la detecta), ordena la subsanación y ciérrala con evidencia (foto, ensayo, acta).
 - Guarda el **seguimiento de las pruebas finales** con el resto de la documentación de calidad.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Aseguradora decenal:** exige el OCT y recibe su informe de cierre.
+  - **OCT:** el informe D0 del proyecto, las inspecciones en obra (cimentación, estructura, cubiertas y sótanos) y el informe de cierre.
+  - **Proyectista** (el arquitecto): el plan de control de calidad, que va en el proyecto de ejecución (Lección 3.3).
+  - **Laboratorio acreditado:** las probetas de cada amasada (a 28 días, y algunas series también a 7), el acero con su certificado y las pruebas de estanqueidad y de instalaciones.
+  - **Fabricantes y suministradores:** el certificado del acero y los certificados de productos con marcado CE.
+  - **Constructor:** te da los albaranes del hormigón y subsana cada no conformidad.
+  - **Dirección facultativa:** controla la calidad en obra y ordena por escrito la subsanación, en el libro de órdenes (Lección 7.1).
+  - **Tú (promotor):** llevas el registro de no conformidades, no das ninguna por cerrada sin evidencia (foto, ensayo, acta) y archivas albaranes, actas de ensayo, certificados y el seguimiento de las pruebas finales.
+
+### Ejemplo: Nicolás, el promotor
+
+Para Nicolás, el OCT no es un trámite: sin OCT no hay decenal y sin decenal no hay escritura de obra nueva terminada. Te cuento cómo llevó la calidad de su obra.
+
+**El OCT, desde el proyecto.** Es el que revisó su proyecto en el Módulo 3 (el informe D0) y el que pidió su aseguradora decenal. En obra inspeccionó en los momentos que marca la lección: la cimentación, la estructura (las armaduras, antes de hormigonar) y las cubiertas. Sin sótano, no hubo sótanos que revisar. Al final entregará a la aseguradora su informe de cierre. Los OCT que cita la lección los tienes en las webs de esta lección.
+
+**El laboratorio, según el plan.** El plan de control de calidad va en su proyecto de ejecución (Lección 3.3), y lo tenía aprobado antes del primer hormigonado. Con ese plan, el laboratorio acreditado saca probetas de cada amasada y las rompe a 28 días, algunas series también a 7 para anticipar; comprueba que el acero llega con el certificado del fabricante, y hace las pruebas de estanqueidad y de instalaciones. Los laboratorios de tu provincia los tienes al final del módulo.
+
+**Su carpeta de calidad.** Ahí van los albaranes del hormigón, las actas de ensayo y los certificados de los productos con marcado CE. Se los va a pedir el OCT, y después el Libro del Edificio (Módulo 9). Cada informe del OCT entra en la carpeta el día que llega.
+
+**Las no conformidades, cerradas con pruebas.** Lleva un registro de cada una: qué es, dónde está y quién la detecta (el director de ejecución, el OCT o el laboratorio). La dirección facultativa ordena la subsanación en el libro de órdenes, y Nicolás no la da por cerrada hasta tener la evidencia: una foto, un ensayo o un acta.
+
+**Al final de la obra.** El seguimiento de las pruebas finales va a la misma carpeta, con el resto de la documentación de calidad.
+
+### Resumen
+
+El OCT no lo exige la ley, sino la aseguradora: revisa el proyecto y la obra y emite el informe de cierre. El laboratorio ensaya según el plan de control; tú archivas cada documento y cierras cada no conformidad con evidencia.
+
+### Tu checklist
+
+- Plan de control de calidad aprobado
+- Informes del OCT al día
+- Ensayos del laboratorio archivados
+- Registro de no conformidades al día
 
 ## Lección 7.3 — Control económico
+
+> **Dónde estamos:** con la calidad bajo control (Lección 7.2), controlas el coste: cada certificación, cada modificado y la previsión de coste final, para que la obra salga en el coste previsto.
 
 - **Tu presupuesto de control:** el del contrato por capítulos + reserva de imprevistos (3-5 %).
 - **Cada mes:**
@@ -1596,8 +2412,56 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
 - **Precios contradictorios:** precio de una unidad de obra que no estaba en el presupuesto. Se pacta por escrito antes de ejecutarla.
 - Controla **retenciones, anticipos y pagos**, y también impuestos, honorarios, intereses y gastos generales.
 - Actualiza cada mes la **previsión de coste final y de tesorería**.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Director de ejecución:** mide y certifica la obra cada mes.
+  - **Constructor:** pacta contigo, por escrito y antes de ejecutar, el precio de cada modificado y de cada precio contradictorio.
+  - **Dirección facultativa:** firma contigo la orden escrita de cada modificado.
+  - **Tasador del banco:** verifica cada certificación antes de que dispongas del préstamo.
+  - **Tú (promotor, o tu project manager):** revisas cada certificación contra el presupuesto por capítulos, aplicas la retención del 5 %, pagas en plazo, miras cada mes las tres cifras y actualizas la previsión de coste final y de tesorería, con retenciones, anticipos, pagos, impuestos, honorarios, intereses y gastos generales.
+
+### Ejemplo: Nicolás, el promotor
+
+Para el coste, Nicolás usa la **Plantilla 4 · Control de costes de obra** desde la primera certificación. Te cuento cómo la tenía a mitad de obra.
+
+**Su presupuesto de control.** El del contrato llave en mano, por capítulos: 1.047.083 €. Y, como pide la lección, le suma una reserva de imprevistos del 3-5 %.
+
+**Cada mes, el mismo circuito:**
+
+1. Su director de ejecución mide y certifica la obra del mes.
+2. Nicolás revisa la certificación contra el presupuesto por capítulos, en la plantilla.
+3. Aplica la retención del 5 % de su contrato.
+4. El tasador del banco verifica el avance, y el banco libera el dinero del préstamo.
+5. Paga a la constructora en plazo, como mucho a 60 días.
+
+**A mitad de obra.** Con el 40 % de la obra ejecutada, lleva certificados a origen 427.809 €. Retenido hasta hoy, el 5 %: 21.390,45 €, que no devolverá hasta un año después de la recepción (Lección 5.4). A pagar a la constructora hasta hoy, con IVA y menos la retención: 449.199,45 €.
+
+**La desviación: +2 %.** La previsión de coste final le sale en 1.063.537 €: 16.454 € más que lo contratado. La plantilla le dice de dónde viene:
+
+- Movimiento de tierras: +997 €.
+- Cimentación: +2.992 €.
+- Albañilería: +4.986 €.
+- Acabados: +7.479 €.
+
+**Lo que hace, como dice la lección.** Un 2 % cabe en su reserva de imprevistos, pero no lo deja correr:
+
+- Nada se ejecuta sin orden escrita firmada por él y por la dirección facultativa, con el precio pactado antes; lo mismo con cada precio contradictorio. Cada modificado actualiza su coste a fin de obra.
+- Lo que más pesa, los acabados, todavía no se ha hecho: no acepta mejoras de calidades por presión comercial (en la tabla, +2–5 %) y mantiene congelada la memoria de calidades (Lección 6.4).
+- Cada mes concilia el coste presupuestado, el comprometido y el real, y actualiza la previsión de coste final y de tesorería.
+
+### Resumen
+
+Cada mes revisas la certificación por capítulos, aplicas la retención del 5 % y pagas en plazo cuando el tasador del banco la ha verificado. Ningún modificado sin orden escrita y precio pactado antes, y la previsión de coste final, al día.
+
+### Tu checklist
+
+- Plantilla 4 · Control de costes de obra (incluida) rellena actualizada con cada certificación
+- Certificaciones revisadas y retención aplicada
+- Todos los modificados firmados y valorados antes de ejecutar
+- Coste presupuestado, comprometido y real conciliados
 
 ## Lección 7.4 — Plazo y reporting
+
+> **Dónde estamos:** con la calidad y el coste bajo control (Lecciones 7.2 y 7.3), te queda el plazo y el reporting: el planning, las reuniones y el informe mensual que te piden el banco y los socios.
 
 - **Planning (Gantt):** lo hace el constructor, lo aprueba la dirección facultativa, tú lo controlas cada semana. Identifica la **ruta crítica**: si se retrasa una actividad de esa ruta, se retrasa la obra.
 - **Reuniones:**
@@ -1625,6 +2489,50 @@ Anexo A, columna **Fase 6**: Servicio de Industria, distribuidora eléctrica, Fu
   - Actualiza las previsiones de ventas, cobros y cancelación de deuda.
   - Coordina el calendario de entregas con el comercial.
   - Mantén el control de liquidez hasta la liquidación final de la promoción.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de la lista de arriba):
+  - **Constructor:** hace el planning y lo actualiza; su jefe de obra va a la reunión semanal.
+  - **Dirección facultativa:** aprueba el planning y va a las reuniones de obra, económica y de instalaciones.
+  - **Instaladores:** la reunión quincenal de instalaciones, con la dirección facultativa.
+  - **Banco y su tasadora:** comprueban cada certificación antes de cada disposición del préstamo.
+  - **Comercial:** coordina contigo el calendario de entregas.
+  - **Tú (promotor, o tu project manager):** controlas el planning cada semana, preparas el informe mensual con sus KPIs, documentas cada ampliación de plazo, cumples las condiciones de disposición del préstamo, actualizas las previsiones de ventas, cobros y cancelación de deuda y llevas el control de liquidez.
+
+### Ejemplo: Nicolás, el promotor
+
+Nicolás tiene 20 meses de obra (Plantilla 3), y de ese plazo dependen los intereses del préstamo y la fecha de entrega a sus compradores. Te cuento cómo lo vigila.
+
+**El planning.** Lo hizo la constructora y lo aprobó la dirección facultativa; Nicolás lo controla cada semana. Pidió que le marcaran la **ruta crítica**: si se retrasa una actividad de esa ruta, se retrasa la obra.
+
+**Las reuniones.** Cada semana, la reunión de obra con la dirección facultativa y el jefe de obra; él va como project manager. Cada mes, la económica, con la dirección facultativa y la Plantilla 4 delante. Y cada quince días, la dirección facultativa se reúne con los instaladores.
+
+**El informe mensual.** Lo prepara con los KPIs de la lección y lo envía al banco. Así iba a mitad de obra:
+
+- **Avance físico:** el 40 % de la obra ejecutada.
+- **Avance económico:** lo certificado frente a lo contratado, 427.809 € de 1.047.083 €.
+- **Desviación de plazo:** los días frente al planning.
+- **Coste a fin de obra:** 1.063.537 €.
+- **Margen actualizado:** baja en los 16.454 € de la desviación y, con los números de su Plantilla 2, sigue muy por encima del 15 % mínimo habitual (Módulo 2).
+- **Ventas:** las unidades vendidas y cobradas frente a su plan de la Plantilla 5 (Módulo 8), 2 viviendas al mes.
+
+**Los retrasos, por escrito.** Tiene previstos los típicos: suministros, clima, permisos e incidencias. Si hace falta una ampliación de plazo, la documenta por escrito, porque afecta a las penalidades de su contrato, al préstamo y a sus compradores.
+
+**El banco y las ventas.** Cumple las condiciones de disposición del préstamo y justifica cada certificación ante el banco y su tasadora. Actualiza las previsiones de ventas, cobros y cancelación de deuda, y coordina el calendario de entregas con la inmobiliaria que le vende las viviendas (Módulo 8). Y mantendrá el control de liquidez hasta la liquidación final de la promoción.
+
+### Resumen
+
+El planning lo hace el constructor, lo aprueba la dirección facultativa y tú lo controlas cada semana, con la vista en la ruta crítica. Cada mes, un informe con avance, coste, margen y ventas para el banco y los socios, y toda ampliación de plazo, por escrito.
+
+### Tu checklist
+
+- Planning actualizado cada semana
+- Informe mensual (coste, plazo, ventas) enviado a socios y banco
+- Ampliaciones de plazo documentadas
+
+## Resumen del Módulo 7
+
+Has montado el control de tu obra: la dirección facultativa con sus libros y sus informes; el OCT y el laboratorio, con la documentación de calidad y las no conformidades cerradas; cada certificación revisada con su retención; cada modificado firmado antes de ejecutarlo; el planning de cada semana y el informe mensual.
+
+**Dónde deberías estar en tu proyecto:** con un sistema de control con certificaciones, modificados firmados, informe mensual y documentación de calidad completa, y la Plantilla 4 al día con cada certificación. Con eso pasas al Módulo 8, la venta, que corre en paralelo a la obra: vendes sobre plano las viviendas que exige el banco y el resto antes de la entrega.
 
 ## Checklist del Módulo 7
 
@@ -1715,6 +2623,8 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 
 ## Lección 8.1 — Marketing y lanzamiento
 
+> **Dónde estamos:** has seguido la promoción hasta el control de la obra (Módulo 7), pero la venta corre en paralelo desde la compra del suelo. En esta lección preparas el marketing y el lanzamiento: qué haces en cada hito de la promoción, con qué materiales y canales, y con qué precio en cada anuncio.
+
 | Hito de la promoción | Acción comercial |
 |---|---|
 | Compra del suelo | Marca, web en construcción, captación de interesados |
@@ -1742,7 +2652,39 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 - **Política de precios:** fija precios iniciales y una política de revisión por fases de venta (por ejemplo, subir un 2–3 % al alcanzar el 30 % y el 60 % vendido) y respétala.
 - **Organiza la venta:** oficina de ventas, visitas, atención telefónica y gestión de clientes.
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás empezó a vender el día en que compró el solar, con la tabla de hitos de la lección. Te cuento cómo lo hizo.
+
+**Hito a hito.**
+
+- **Con el solar comprado:** la marca de la promoción, una web en construcción con un formulario y una lista de interesados.
+- **Con el proyecto básico:** el lanzamiento suave. Escribió a esa lista, sin cobrar nada.
+- **Con la licencia solicitada:** el lanzamiento oficial: la web, Idealista, Fotocasa y pisos.com (los tienes en las webs de esta lección), la agencia con la que vende (Lección 8.2) y la oficina de ventas.
+- **Con la licencia concedida y los avales listos:** los contratos privados con anticipos garantizados (Lección 8.3).
+- **Después:** «obra en marcha» al empezar y, con la estructura terminada, visitas a obra con casco.
+
+**Los materiales.** Su arquitecto le preparó los planos acotados de cada tipología (2 y 3 dormitorios y los áticos) y la memoria de calidades. Los renders, el dossier en PDF y el tour virtual los encargó a una empresa de marketing de su zona; las de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Cada anuncio lleva la calificación energética de proyecto y nada que no vaya a cumplir: la publicidad es vinculante.
+
+**El precio, completo desde el primer anuncio.** La Ley 10/2025 obliga a dar el precio final completo desde el primer anuncio, sin precios gancho, así que cada anuncio de Nicolás da el precio de la vivienda, el IVA del 10 %, el AJD que el comprador paga en su escritura (en la Comunitat Valenciana, el 1,4 %, Anexo B) y el total. Una vivienda del precio medio se anuncia con sus 111.027,86 €, los 11.102,79 € de IVA (122.130,65 € con IVA), el AJD y el total. La comisión de la agencia la paga él, y el anuncio dice que el comprador no paga ninguna. Lo que no está en el anuncio, no lo cobrará después.
+
+**Antes de anunciar.** Dejó en la oficina de ventas la documentación del RD 515/1989 (la lista, en la Lección 8.3), y en la oficina de consumo de su comunidad se informó de las hojas de reclamaciones y los requisitos autonómicos.
+
+**Su política de precios.** Los precios iniciales son los de su estudio de mercado (Lección 2.2). La revisión, la del ejemplo de la lección: subir un 2–3 % al alcanzar el 30 % y el 60 % vendido. La escribió antes del lanzamiento, para respetarla.
+
+### Resumen
+
+La venta empieza con la compra del suelo y sigue los hitos de la promoción. Cada anuncio lleva la calificación energética y el precio final completo, con sus impuestos y gastos: lo que anuncias forma parte del contrato.
+
+### Tu checklist
+
+- Documentación del RD 515/1989 en la oficina de ventas
+- Calificación energética en la publicidad
+- Política de revisión de precios fijada
+
 ## Lección 8.2 — Canal de ventas
+
+> **Dónde estamos:** ya tienes los materiales, los canales y la política de precios (Lección 8.1). Ahora decides quién vende tus viviendas: un equipo propio, agencias colaboradoras o las dos cosas.
 
 - **Equipo propio:** director comercial, comerciales, atención al cliente. Más control y margen; coste fijo.
 - **Agencias colaboradoras:**
@@ -1751,7 +2693,35 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
   - En Cataluña, Comunitat Valenciana y Canarias, comprueba que la agencia está en el **registro autonómico obligatorio**.
 - **Mixto:** oficina propia + red de agencias. Es lo más habitual.
 
+### Ejemplo: Nicolás, el promotor
+
+Lo más habitual es el sistema mixto, oficina propia y red de agencias. Pero Nicolás tiene una sola promoción de 18 viviendas, y un equipo propio, aunque da más control y margen, es un coste fijo. Eligió vender con una agencia inmobiliaria de su zona. Te cuento cómo la eligió y qué firmó con ella.
+
+**Primero, encontrarla.** Buscó agencias que conocieran su zona y a su comprador: primera vivienda, de 2 y 3 dormitorios. Las de tu provincia las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, en el COAPI de tu provincia. Habló con varias y eligió una.
+
+**Inscrita en el registro.** Construye en la Comunitat Valenciana, una de las tres comunidades con registro obligatorio de agentes, así que antes de firmar nada comprobó que la agencia estaba inscrita en el **registro autonómico de agentes** (también lo tienes al final del módulo).
+
+**El contrato de colaboración, por escrito**, con lo que pide la lección:
+
+- **Comisión:** dentro de lo habitual en vivienda estándar (2,5–3 %). La paga él, no el comprador, y la tiene presupuestada en la comercialización de su Plantilla 2: el 3 % de las ventas, 59.955,04 €.
+- **Cuándo se devenga:** a la escritura de cada vivienda, cuando él cobra.
+- **Exclusividad:** la agencia vende en exclusiva su promoción, porque es la única con la que trabaja.
+- **Precios mínimos:** los de su política de precios (Lección 8.1). Por debajo, nada sin su firma.
+- **Uso de la marca:** la agencia anuncia con la marca y los materiales de la promoción, y siempre con el precio final completo de cada vivienda (Lección 8.1).
+
+**Cómo trabajan.** La agencia atiende la oficina de ventas, las visitas y el teléfono. Nicolás lleva las reservas, los contratos, las garantías y el seguimiento de cada comprador (Lecciones 8.3 y 8.4).
+
+### Resumen
+
+Puedes vender con equipo propio, con agencias colaboradoras o con los dos, que es lo más habitual. Con una agencia, firma por escrito la comisión, cuándo se devenga, la exclusividad, los precios mínimos y el uso de la marca, y en Cataluña, la Comunitat Valenciana y Canarias comprueba que está en el registro autonómico.
+
+### Tu checklist
+
+- Contratos de colaboración con agencias inscritas
+
 ## Lección 8.3 — Reserva y contrato privado
+
+> **Dónde estamos:** tienes las viviendas anunciadas (Lección 8.1) y la agencia que las vende (Lección 8.2). Llega el primer comprador: qué tienes que darle antes de que pague nada, cómo se hace la reserva, qué lleva el contrato privado y cómo garantizas lo que cobras.
 
 - **Obligación de informar y documentación a entregar al comprador de vivienda:**
   - En la Comunitat Valenciana la obligación de informar al comprador de **viviendas de obra nueva de renta libre** se rige principalmente por:
@@ -1774,6 +2744,17 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
   - **Libro del Edificio:** documento que reúne el proyecto, las actas de recepción, la relación de agentes que han intervenido en la obra y el manual de uso y mantenimiento del inmueble.
   - **Seguro decenal de daños:** póliza suscrita por el promotor que cubre durante 10 años los daños estructurales del edificio (cimentación, vigas, forjados, muros de carga).
   - **Boletines de instalaciones y contratos:** certificados de las instalaciones de electricidad, agua, gas y telecomunicaciones para poder dar de alta los suministros, junto con los estatutos de la comunidad de propietarios si ya están redactados.
+- **Quién se encarga de cada cosa** (a quién pides cada documento de las dos listas de arriba):
+  - **Tú (el promotor):** la identificación de tu sociedad (razón social, domicilio y datos del Registro Mercantil), las condiciones económicas (precio total, impuestos y forma de pago) y la entrega de todo al comprador.
+  - **Proyectista (tu arquitecto):** los planos del emplazamiento y de la vivienda, con la superficie útil y construida, y la memoria de calidades.
+  - **Ayuntamiento:** la licencia de obras y, al terminar, la licencia de primera ocupación o la declaración responsable (Lección 9.3).
+  - **Registro de la Propiedad:** la nota simple, con la titularidad del terreno y sus cargas.
+  - **Banco o aseguradora:** el aval bancario o el seguro de caución individual de cada comprador; el banco, además, la cuenta especial.
+  - **Técnico competente:** el certificado de eficiencia energética, que se registra en el IVACE.
+  - **Director de obra:** la documentación de la obra ejecutada, con la que completas tú el Libro del Edificio (Lección 9.4).
+  - **Aseguradora decenal:** la póliza del seguro decenal, que contratas tú.
+  - **Instaladores autorizados:** los certificados de las instalaciones de electricidad, agua, gas y telecomunicaciones.
+  - **Notaría:** la escritura de declaración de obra nueva y división horizontal, que lleva los estatutos de la comunidad (Lección 9.2).
 - **Reserva:**
   - Importe: 3.000–10.000 €.
   - Ya es una cantidad a cuenta: **debe estar garantizada** (DA 1.ª LOE).
@@ -1813,7 +2794,50 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
 - **Registra** cada pago, garantía, incidencia y modificación contractual por comprador.
 - **Coordina** la documentación con abogados, banco y aseguradora de las cantidades a cuenta.
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás construye en Alicante: su caso es el de esta lección, la Comunitat Valenciana. Te cuento cómo vendió sus viviendas.
+
+**Antes de cobrar un euro, las garantías.** No firmó la primera reserva hasta tener operativas la línea de avales de su banco (Módulo 5) y la cuenta especial, donde entra todo lo que cobra. Cada comprador recibe su aval individual, por lo entregado más los intereses legales.
+
+**Lo que da a cada comprador antes de firmar**, gratis y por escrito:
+
+- La identificación de su SPE: razón social, domicilio y datos del Registro Mercantil.
+- Los planos del emplazamiento y de la vivienda, con las zonas comunes y la superficie útil y construida, medidas por su arquitecto con el criterio legal valenciano.
+- La memoria de calidades.
+- La copia de la licencia de obras y la nota simple del Registro de la Propiedad.
+- El precio total con el IVA del 10 % y el AJD, y la forma de pago.
+- Los datos de su aval y de la cuenta especial.
+
+Y le dice qué recibirá con la escritura: primera ocupación, certificado energético registrado en el IVACE, Libro del Edificio, seguro decenal y boletines (Módulo 9).
+
+**Los números, en la Plantilla 5.** Con 18 viviendas a 111.027,86 € de media sin IVA (122.130,65 € con IVA):
+
+- **Reserva:** 6.000 €, con plazo para firmar el contrato privado y, por escrito, qué pasa con el dinero si no se firma.
+- **Contrato privado:** el 10 % del precio: 6.213,06 € con IVA, descontada la reserva.
+- **Durante la obra:** otro 10 %, en 18 cuotas de 678,50 €.
+- **En la escritura:** 97.704,52 €, el 80 % restante.
+
+Antes de la entrega cobra 24.426,13 € por vivienda: **439.670,33 € de cantidades a cuenta** en toda la promoción, que tiene que garantizar con aval o seguro; él las garantiza con los avales de su banco.
+
+**El contrato.** Partió del modelo de la asociación de promotores de su zona, y lo revisaron su abogado y la notaría que eligió en el Módulo 1; los despachos y las notarías los podrás encontrar en las empresas potenciales de esta lección. Lleva el IVA desglosado, la licencia, la fecha de entrega, el derecho a resolver si no entrega en plazo, la libre elección de notario y ningún gasto de los que no se le pueden cargar.
+
+**Blanqueo.** Escribió su procedimiento con las pautas del SEPBLAC: DNI o NIE, titular real si compra una sociedad, origen de los fondos, todo por banco y nada en efectivo, y la documentación guardada 10 años.
+
+### Resumen
+
+Antes de cobrar nada, da al comprador la información obligatoria y garantiza cada euro con aval o seguro y cuenta especial: la reserva ya es una cantidad a cuenta. El contrato privado fija precio, pagos, garantías, entrega y gastos, y en cada venta aplicas la prevención de blanqueo.
+
+### Tu checklist
+
+- Plantilla 5 · Plan de ventas y cobros (incluida) rellena con la política de precios y de pagos
+- Línea de avales y cuenta especial operativas antes de cobrar la primera reserva
+- Modelo de contrato privado revisado por abogado o notario
+- Procedimiento de prevención de blanqueo
+
 ## Lección 8.4 — CRM y opciones
+
+> **Dónde estamos:** ya firmas reservas y contratos privados con las cantidades a cuenta garantizadas (Lección 8.3). Ahora sigues a cada interesado y a cada comprador hasta la escritura: el CRM, el contacto durante la obra, las opciones y el seguimiento de las ventas.
 
 - **CRM:** cada interesado con origen, tipología buscada, presupuesto, financiación, estado y próxima acción.
 - **Contacto con compradores durante la obra:**
@@ -1831,6 +2855,41 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
   - **Cancelaciones:** aplica el contrato (devolución con la garantía si el incumplimiento es tuyo; penalización pactada si es del comprador).
   - **Sustituciones (cesión de contrato):** solo con tu consentimiento, por escrito, y con la nueva garantía a nombre del cesionario.
   - Abre un **expediente individual por comprador** desde la reserva: es la base del expediente de entrega.
+
+### Ejemplo: Nicolás, el promotor
+
+Con las primeras reservas firmadas, Nicolás necesitaba saber en cada momento cómo iba la venta. Te cuento cómo lo organizó.
+
+**El CRM, desde el primer interesado.** Cada contacto que le pasa la agencia o que entra por la web queda con su origen, la tipología que busca, su presupuesto, su financiación, su estado y la próxima acción. Cada semana lo repasa con la agencia: viviendas reservadas, vendidas y disponibles.
+
+**Las preventas del banco.** Su banco le pedía el 70–90 % de las viviendas con contrato privado y anticipo: 13 de las 18 (Lección 5.1). Su Plantilla 5 le da un ritmo de 2 viviendas al mes, 9 meses para venderlo todo; con el CRM siguió las preventas semana a semana hasta llegar a las 13. Las ventas van también en el informe mensual que manda a su banco (Lección 7.4).
+
+**Un expediente por comprador.** Desde la reserva, cada comprador tiene el suyo: identificación, contrato privado, aval, pagos, incidencias y anexos. Será la base del expediente de entrega (Módulo 10).
+
+**El contacto durante la obra:**
+
+- Una bienvenida, con un interlocutor asignado: él mismo.
+- Una foto o un vídeo del avance cada mes, y un aviso en cada hito: estructura, cubierta, acabados.
+- De 3 a 4 meses antes de los acabados, la elección de opciones, con un catálogo cerrado (2-3 suelos, cocina mejorada, armarios) con precio y fecha tope. Fuera de plazo no acepta cambios, y los que se salen del catálogo, solo si son viables, los autoriza la dirección facultativa y quedan en un anexo con precio y plazo (Lección 8.3).
+- Un mes antes de escriturar, la fecha y la documentación. Antes, con tiempo, coordina la hipoteca de cada comprador que la necesita (tasación, oferta, firma).
+
+**Si un comprador se va.** Aplica el contrato: la devolución con la garantía si el incumplimiento fuera suyo, la penalización pactada si es del comprador. Si un comprador quiere ceder su contrato, solo lo acepta por escrito y con la nueva garantía a nombre del que entra.
+
+### Resumen
+
+El CRM te dice cada semana qué está reservado, vendido y disponible, y cuándo llegas a las preventas del banco. Mantén informado a cada comprador durante la obra, cierra las opciones con precio y fecha tope y abre desde la reserva un expediente por comprador.
+
+### Tu checklist
+
+- CRM con seguimiento de cada comprador
+- Preventas exigidas por el banco alcanzadas
+- Expediente individual de cada comprador
+
+## Resumen del Módulo 8
+
+Has lanzado la promoción por hitos, con la calificación energética y el precio final completo en cada anuncio; has elegido tu canal de ventas y has firmado con agencias inscritas; has dado a cada comprador la información obligatoria y has firmado reservas y contratos privados con cada euro garantizado; y llevas un CRM y un expediente por comprador.
+
+**Dónde deberías estar en tu proyecto:** con el plan comercial, la documentación legal de venta, los contratos privados con garantías y el CRM en marcha, la Plantilla 5 hecha y firmadas las preventas que exige el banco. Mientras terminas de vender, la obra acaba: pasas al Módulo 9, donde la legalizas.
 
 ## Checklist del Módulo 8
 
@@ -1920,6 +2979,8 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
 
 ## Lección 9.1 — Documentación técnica del final de obra
 
+> **Dónde estamos:** la obra está terminada y recibida (Módulo 6). Antes de pedir nada, reúnes la documentación técnica del final de obra, haces la inspección final y pones en servicio las instalaciones.
+
 | Documento | Quién lo emite |
 |---|---|
 | Certificado final de obra (visado) | Director de obra + director de ejecución |
@@ -1942,8 +3003,51 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   - Contratos y suministros definitivos.
   - Comprobación de seguridad, accesibilidad y funcionamiento del edificio.
 - **Documentación final:** planos de obra ejecutada, certificados, ensayos, manuales, fichas técnicas y garantías de fabricantes.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de las listas de arriba):
+  - **Dirección facultativa (director de obra y director de ejecución):** la inspección final de viviendas, garajes, trasteros y zonas comunes frente al proyecto, la licencia y la memoria de calidades; la lista de defectos y repasos; la comprobación de seguridad, accesibilidad y funcionamiento del edificio, y los planos de obra ejecutada.
+  - **Director de ejecución:** el control del cierre de los repasos y la relación de controles y ensayos.
+  - **Constructor:** la corrección de los defectos y repasos, y los manuales, las fichas técnicas y las garantías de fabricantes de lo que ha puesto en obra.
+  - **Instaladores autorizados:** las pruebas de las instalaciones generales e individuales, sus certificados y la puesta en servicio del ascensor y del resto de equipos.
+  - **Servicio de Industria de la CCAA:** el registro de los certificados de las instalaciones reglamentadas.
+  - **Compañías de suministro:** los contratos y suministros definitivos.
+  - **Tú (el promotor):** pedir los suministros definitivos y reunir y archivar toda la documentación, que es la base del Libro del Edificio (Lección 9.4).
+
+### Ejemplo: Nicolás, el promotor
+
+Con el acta de recepción firmada, Nicolás no fue al ayuntamiento ni a la notaría hasta tener todos los papeles del final de obra. Te cuento cómo los reunió.
+
+**Primero, la inspección final.** Recorrió las 18 viviendas y las zonas comunes con su arquitecto (director de obra), su arquitecto técnico (director de ejecución) y el jefe de obra de la constructora, con el proyecto, la licencia y la memoria de calidades en la mano: la misma memoria que dio a sus compradores, porque la publicidad le obliga (Lección 8.1). Apuntaron cada defecto y cada repaso en una lista; la constructora los corrigió y el director de ejecución controló que se cerraran.
+
+**Las pruebas y la puesta en servicio.** Los instaladores probaron las instalaciones generales y las de cada vivienda y pusieron en servicio el ascensor y los equipos. La acometida eléctrica definitiva la tenía pedida con tiempo a la distribuidora, que tarda meses (lo avisa la Lección 9.3).
+
+**Los papeles, cada uno de quien lo emite** (la tabla de la lección):
+
+- El **CFO**, firmado por su arquitecto y su arquitecto técnico y visado en los **Colegios de Arquitectos y Aparejadores** (de 1 a 2 semanas).
+- Los certificados de las instalaciones, de los instaladores autorizados, registrados en el **Servicio de Industria de la CCAA** (de 1 a 4 semanas).
+- El **certificado de eficiencia energética** del edificio terminado, que firmó su arquitecto como técnico competente, inscrito en el **registro autonómico de certificados energéticos**: en la Comunitat Valenciana, el IVACE (Lección 8.3).
+- El certificado de fin de obra de la ICT, del técnico de telecomunicaciones y el instalador.
+- El **informe final del OCT**. Con él, la aseguradora le emitió la **póliza decenal definitiva**, a través de su corredor.
+- Los certificados del gestor de residuos, la relación de controles y ensayos del director de ejecución y los planos de lo construido de la dirección facultativa.
+
+El Servicio de Industria y el registro de certificados energéticos de tu provincia los tienes al final del módulo.
+
+**Todo, a una carpeta.** Planos, certificados, ensayos, manuales, fichas técnicas y garantías de fabricantes: es la base del Libro del Edificio (Lección 9.4). Con eso ya puede pedir la primera ocupación y preparar la escritura final de obra.
+
+### Resumen
+
+Antes de pedir la primera ocupación o ir a la notaría, revisa toda la obra frente al proyecto, prueba y pon en servicio las instalaciones y reúne cada documento firmado por quien lo emite: el CFO visado, las instalaciones y el certificado energético registrados, y el informe final del OCT con la póliza decenal definitiva.
+
+### Tu checklist
+
+- CFO visado
+- Instalaciones registradas en Industria
+- Certificado energético registrado
+- Póliza decenal definitiva
+- Inspección final y puesta en servicio de instalaciones
 
 ## Lección 9.2 — Declaración de obra nueva y división horizontal
+
+> **Dónde estamos:** tienes la documentación técnica del final de obra (Lección 9.1). Ahora la llevas a la notaría y al Registro de la Propiedad: la obra nueva terminada y la división horizontal, para que cada vivienda pase a ser una finca.
 
 - **Obra nueva en construcción** (al empezar): licencia + certificado del técnico de que la descripción coincide con el proyecto. Sirve para que el banco hipoteque la obra futura.
 - **Obra nueva terminada** (o acta de finalización), art. 28 TRLSRU. Necesitas:
@@ -1963,14 +3067,85 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
 - **Regulariza** en la escritura las superficies, anexos y elementos comunes si lo construido difiere del proyecto inicial, y comprueba que las fincas resultantes coinciden con planos y títulos.
 - **Etiqueta energética:** obténla y facilítala a los compradores; es obligatoria en la oferta y en la venta (RD 390/2021).
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás firmó la escritura de declaración de obra nueva y división horizontal al principio de la obra (Lección 4.3), y el Registro de la Propiedad la inscribió con la anotación «en construcción» (Lección 10.3). Ahí ya iban el edificio y sus 18 viviendas, cada una con su número, planta, superficie, linderos y cuota de participación, los elementos comunes y los estatutos de la comunidad, que preparó con su abogado. Con la obra terminada le toca la escritura final de obra. Te cuento cómo la hizo.
+
+**Primero, comprobar.** Con su arquitecto comprobó que lo construido coincide con el proyecto y que las fincas resultantes cuadran con los planos y los títulos. No hubo superficies, anexos ni elementos comunes que regularizar.
+
+**Lo que llevó a la notaría.** Lo que pide la lección para la obra nueva terminada, con los seis documentos de la Lección 10.3:
+
+1. El Libro del Edificio en medio digital, con el acta de recepción de la obra (Lección 9.4).
+2. El certificado final de obra visado (Lección 9.1).
+3. El seguro decenal: sin él, ni el notario autoriza ni el registrador inscribe la obra nueva terminada.
+4. La licencia de primera ocupación (te cuento cómo la consiguió en la Lección 9.3).
+5. El certificado de eficiencia energética.
+6. Las superficies georreferenciadas, que le preparó su arquitecto con el topógrafo de la Lección 1.3.
+
+**La firma y la inscripción.** Firmó la escritura final de obra en su notaría, que la presentó en el **Registro de la Propiedad** (15 días hábiles, prorrogables). Se inscribió como obra nueva terminada y desapareció la anotación «en construcción». Desde ese día cada una de sus 18 viviendas es una finca registral propia. La notaría y el abogado los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección.
+
+**El Catastro.** El alta de la obra nueva la comunican el notario y el registrador; si no, se presenta el modelo 902-N. Nicolás comprobó en la Sede Electrónica del Catastro que estaba hecha (puede tardar de 1 a 6 meses).
+
+**Lo que paga él.** La notaría y el registro, según arancel, y el AJD de su comunidad (Anexo B) sobre el valor de la obra nueva y de la división horizontal. Son gastos suyos: no se los repercute a sus compradores. Y la etiqueta energética del edificio terminado se la da a cada uno.
+
+### Resumen
+
+La obra nueva terminada se declara en la notaría con el certificado final de obra, la primera ocupación, el seguro decenal, el certificado energético y el resto de lo que pide la notaría, y se inscribe en el Registro: cada vivienda pasa a ser una finca. Sus gastos son del promotor y no se repercuten al comprador consumidor.
+
+### Tu checklist
+
+- Escritura de obra nueva terminada y división horizontal firmada e inscrita
+- Catastro actualizado
+
 ## Lección 9.3 — Licencia de primera ocupación
+
+> **Dónde estamos:** en la Lección 9.2 has visto que la escritura de obra nueva terminada necesita la primera ocupación. Ahora la pides al ayuntamiento: acredita que el edificio se ajusta a la licencia y puede usarse.
 
 - **Primera ocupación (ayuntamiento):** acredita que el edificio se ajusta a la licencia y puede usarse.
   - Documentos habituales: CFO, certificados de instalaciones, certificado energético, fotos, alta en el Catastro o justificante, certificado de las acometidas, liquidación definitiva del ICIO.
+- **Quién se encarga de cada cosa** (a quién pides cada documento de la lista de arriba):
+  - **Director de obra y director de ejecución:** el CFO, visado en sus colegios.
+  - **Instaladores autorizados:** los certificados de instalaciones, registrados en el Servicio de Industria de la CCAA.
+  - **Técnico competente:** el certificado energético, inscrito en el registro autonómico de certificados energéticos.
+  - **Catastro:** el alta de la obra nueva o su justificante (la comunican el notario y el registrador; si no, el modelo 902-N).
+  - **Compañías de suministro:** el certificado de las acometidas.
+  - **Ayuntamiento:** la liquidación definitiva del ICIO, que pagas tú.
+  - **Tú (el promotor):** las fotos y la solicitud, con todo lo de esta lista, en el ayuntamiento.
 - **Cédula de habitabilidad:** es el mismo documento que la licencia de primera ocupación; no son actos o documentos distintos. Para ulteriores transmisiones sería licencia de segunda ocupación. En 2026 la mantienen **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias y Región de Murcia**. La emite el organismo autonómico o insular y suele ser necesaria para contratar suministros definitivos y para vender.
 - ⚠️ **Errores típicos:** pedir la primera ocupación con instalaciones sin registrar; no tener la acometida eléctrica definitiva hecha (la distribuidora tarda meses); olvidar la cédula en las comunidades que la exigen.
 
+### Ejemplo: Nicolás, el promotor
+
+Con los papeles del final de obra reunidos (Lección 9.1), Nicolás fue a por la primera ocupación. Te cuento cómo lo hizo.
+
+**Primero, al ayuntamiento.** Con la obra terminada, la **licencia de primera ocupación** la otorga el ayuntamiento: fue al departamento de **urbanismo** del suyo a pedirla.
+
+**La solicitud, completa.** La presentó en el ayuntamiento con:
+
+- El CFO visado.
+- Los certificados de las instalaciones, ya registrados en el Servicio de Industria: pedirla con instalaciones sin registrar es el primer error típico de la lección.
+- El certificado energético del edificio terminado, inscrito en el registro.
+- Las fotos del edificio terminado.
+- El alta en el Catastro o su justificante (la Sede Electrónica del Catastro la tienes en las webs de esta lección).
+- El certificado de las acometidas, con la acometida eléctrica definitiva ya hecha.
+- La liquidación definitiva del ICIO, que pagó en el propio ayuntamiento.
+
+**El plazo.** Para la licencia, de 1 a 3 meses, según la tabla «Dónde ir». Nicolás lo tenía previsto en su calendario, porque sin la primera ocupación no hay escritura final de obra (Lección 9.2), y en la Comunitat Valenciana sus compradores la necesitan para contratar el agua y la luz definitivas (Lección 8.3).
+
+El ayuntamiento y el resto de las instituciones de tu provincia para esta fase los tienes al final del módulo.
+
+### Resumen
+
+La licencia de primera ocupación acredita ante el ayuntamiento que el edificio se ajusta a la licencia y puede usarse. Pídela con la solicitud completa, con las instalaciones registradas y la acometida definitiva hecha.
+
+### Tu checklist
+
+- Primera ocupación (licencia o declaración responsable)
+- Cédula de habitabilidad (si tu CCAA la exige)
+
 ## Lección 9.4 — El Libro del Edificio
+
+> **Dónde estamos:** con la documentación del final de obra (Lección 9.1) y la primera ocupación (Lección 9.3), lo reúnes todo en el Libro del Edificio: qué se ha construido, quién ha intervenido y cómo se usa y se mantiene el edificio.
 
 - **Obligatorio** (art. 7 LOE) y regulado con más detalle por decretos autonómicos.
 - **Contenido:**
@@ -1980,6 +3155,15 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   4. Certificados de instalaciones y de ensayos.
   5. Instrucciones de uso y mantenimiento del edificio y sus instalaciones.
   6. Plan de mantenimiento con revisiones obligatorias (ascensor, PCI, térmicas, eléctricas).
+- **Quién se encarga de cada cosa** (quién te da cada parte del contenido de arriba):
+  - **Director de obra (tu arquitecto):** el proyecto con las modificaciones aprobadas y las instrucciones de uso y mantenimiento del edificio, que van en la documentación de la obra ejecutada que te entrega al terminar (Lección 6.5).
+  - **Director de ejecución (tu arquitecto técnico):** los certificados de ensayos, con la relación de controles y ensayos.
+  - **Instaladores autorizados:** los certificados de instalaciones y las instrucciones de uso y mantenimiento de cada instalación.
+  - **Dirección facultativa, con los instaladores:** el plan de mantenimiento con las revisiones obligatorias.
+  - **Constructor:** las garantías de los equipos y materiales que ha puesto en obra.
+  - **Ayuntamiento:** las licencias.
+  - **Aseguradora decenal:** el seguro decenal.
+  - **Tú (el promotor):** la relación de agentes que han intervenido, y reunirlo todo en el Libro y entregarlo.
 - **Índice del Libro del Edificio** (**Plantilla del profesor · Libro del Edificio**, incluida, en Word para rellenar):
   - **Parte I. Características del edificio.**
     - Del conjunto del edificio:
@@ -2000,13 +3184,70 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
     - De cada unidad de ocupación.
 - **Entrega:** el promotor lo entrega a la comunidad de propietarios (presidente o administrador). A cada comprador se le da la parte de su vivienda.
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás no empezó el Libro del Edificio de cero: usó la **Plantilla del profesor · Libro del Edificio**, el índice en Word que tienes debajo de esta lección, y lo rellenó con su arquitecto (director de obra) y su arquitecto técnico (director de ejecución). Te cuento cómo se repartieron el trabajo.
+
+**La base.** Al terminar la obra, el director de obra le entregó la documentación de la obra ejecutada: el proyecto con sus modificaciones, la relación de agentes, las instrucciones de uso y mantenimiento y los certificados (Lección 6.5). Con eso y con la carpeta del final de obra (Lección 9.1) tenían casi todo.
+
+**Parte I, características del edificio.**
+
+- **La descripción** del conjunto (emplazamiento, fotografías de las fachadas, cimentación y estructura, cerramientos y particiones, cubierta, instalaciones, revestimientos, eficiencia energética, ruido y vibraciones) la escribió el arquitecto a partir del proyecto.
+- **Las empresas y profesionales intervinientes** las puso Nicolás, con sus contratos: su SPE como promotora, el estudio de arquitectura y las ingenierías que coordinó, la dirección facultativa, la constructora con sus subcontratistas e instaladores, y los demás agentes, como el OCT y el laboratorio.
+- **La acreditación de la calidad y la historia de las obras**, del director de ejecución: controles, ensayos, actas y certificados.
+- **Las unidades de ocupación:** sus 18 viviendas, 2 de ellas áticos, cada una con su identificación, su descripción y su historia, con los cambios que pidió su comprador en el anexo del contrato (Lección 8.3).
+
+**Parte II, uso, conservación y mantenimiento.** El manual de uso y mantenimiento, con las revisiones obligatorias del ascensor, la PCI y las instalaciones térmicas y eléctricas, lo prepararon el arquitecto y el arquitecto técnico con las instrucciones de los instaladores. El registro de operaciones de mantenimiento queda listo para que lo lleve la comunidad, con el resumen del Libro para la Comunidad.
+
+**Parte III, siniestros y emergencias**, para el conjunto del edificio y para cada vivienda.
+
+**Las entregas.** Guardó una copia en medio digital con el acta de recepción, para la notaría (Lección 10.3). El Libro completo es para la comunidad de propietarios, su presidente o su administrador; a cada comprador le da la parte de su vivienda en la firma de la compraventa (Lección 11.1). Antes, comprobó con su arquitecto lo que añade el decreto de su comunidad autónoma.
+
+### Resumen
+
+El Libro del Edificio es obligatorio: reúne el proyecto con sus cambios, quién ha intervenido, licencias, seguros, garantías, certificados y cómo se usa y se mantiene el edificio. Rellena la plantilla del profesor con tu dirección facultativa y entrégalo a la comunidad, con la parte de cada vivienda para su comprador.
+
+### Tu checklist
+
+- Libro del Edificio completo
+
 ## Lección 9.5 — Expediente de garantías
+
+> **Dónde estamos:** tienes el Libro del Edificio completo (Lección 9.4). Para cerrar la legalización preparas el expediente de garantías: el seguro decenal, las garantías de equipos y materiales, las responsabilidades de cada agente y cómo atenderás las incidencias después de la entrega.
 
 - **Completa el seguro decenal:** póliza definitiva tras el informe final del OCT.
 - **Recopila las garantías** de instalaciones, equipos y materiales (aerotermia, ascensor, carpinterías, impermeabilizaciones).
 - **Documenta las responsabilidades** de cada agente de la edificación: relación de agentes y sus contratos (art. 7 LOE).
 - **Prepara el expediente de garantías** para compradores y para la comunidad.
 - **Define el procedimiento de incidencias** que se aplicará después de la entrega (Módulo 12).
+
+### Ejemplo: Nicolás, el promotor
+
+Antes de entregar las llaves, Nicolás quiso tener en un solo expediente a quién llamar si algo falla. Te cuento qué metió.
+
+**El seguro decenal.** La póliza definitiva, que la aseguradora le emitió tras el informe final del OCT (Lección 9.1). Su número y la aseguradora van en el certificado que recibirá cada comprador (Lección 10.2).
+
+**Las garantías de equipos y materiales.** Se las pidió a la constructora al recibir la obra: las del ascensor, las carpinterías, las impermeabilizaciones y el resto de los equipos, cada una con su fabricante o su instalador y su plazo.
+
+**Quién responde de qué.** La relación de agentes con sus contratos por escrito: el arquitecto y el arquitecto técnico de la dirección facultativa, el coordinador de seguridad y salud, la constructora, el OCT y el laboratorio. Al lado, los plazos de garantía de la ley, contados desde la recepción sin reservas (Lección 5.2): 1 año para los acabados, del constructor; 3 años para la habitabilidad y 10 para la estructura, de todos los agentes según su intervención. Nicolás, como promotor, responde frente al comprador en todos, solidariamente en los de 3 y 10 años.
+
+**Para quién.** Un expediente para la comunidad, con las zonas comunes y las instalaciones generales, y otro por comprador, con lo de su vivienda, que se suma al expediente que abrió en la reserva (Lección 8.4).
+
+**El procedimiento de incidencias.** Lo dejó escrito para después de la entrega: un canal único, cada incidencia con su número, su clasificación por el plazo de garantía y la orden por escrito a la constructora o al agente que responda. Si no responde, repara él y lo cobra de la retención del 5 % de cada certificación, que guarda hasta un año después de la recepción (Lección 5.4). Lo pondrá en marcha en el Módulo 12.
+
+### Resumen
+
+Cierra la legalización con un expediente de garantías: la póliza decenal definitiva, las garantías de equipos y materiales, la relación de agentes con sus responsabilidades y el procedimiento de incidencias para después de la entrega, para cada comprador y para la comunidad.
+
+### Tu checklist
+
+- Expediente de garantías preparado
+
+## Resumen del Módulo 9
+
+Has reunido la documentación técnica del final de obra y has puesto en servicio las instalaciones, has firmado e inscrito la escritura final de obra, has obtenido la primera ocupación, has completado el Libro del Edificio con la plantilla del profesor y has preparado el expediente de garantías.
+
+**Dónde deberías estar en tu proyecto:** con la primera ocupación, la escritura de obra nueva terminada y división horizontal inscritas, el Catastro actualizado y el Libro del Edificio completo: cada vivienda es una finca lista para escriturar a su comprador. Con eso pasas al Módulo 10, donde preparas la entrega: repasos, documentación por vivienda y notaría.
 
 ## Checklist del Módulo 9
 
@@ -2089,6 +3330,8 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 
 ## Lección 10.1 — Repasos (snagging)
 
+> **Dónde estamos:** el edificio está legalizado (Módulo 9) y se acerca la entrega. Empiezas por los repasos: tres rondas para que cada comprador reciba una vivienda sin defectos.
+
 - **Ronda 1 · interna (6-8 semanas antes):** técnico del promotor + jefe de obra revisan cada vivienda con una hoja de repasos por estancia. El constructor corrige.
 - **Ronda 2 · comprador (3-4 semanas antes):** visita guiada, el comprador apunta sus defectos, se firma la hoja de preentrega con plazo de corrección.
 - **Ronda 3 · verificación:** comprobación final antes de la firma.
@@ -2108,7 +3351,33 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 
 - **Consejo:** usa una app o una hoja con fotos y cierra cada punto con fecha y firma.
 
+### Ejemplo: Nicolás, el promotor
+
+Con el edificio legalizado, Nicolás no quería que ningún comprador encontrara un defecto el día de las llaves. Te cuento cómo organizó los repasos.
+
+**Primero, la hoja.** Preparó una hoja de repasos por estancia para cada una de las 18 viviendas, con las zonas de la tabla de la lección: acabados, carpinterías, electricidad, fontanería, climatización, humedades, telecomunicaciones y zonas comunes. La llevó en una app con fotos, para cerrar cada punto con fecha y firma.
+
+**Ronda 1, la interna.** Entre seis y ocho semanas antes de la entrega recorrió cada vivienda con su arquitecto técnico, el de la dirección de ejecución, que hizo de técnico del promotor, y con el jefe de obra de la constructora. Miró con más cuidado los techos bajo la cubierta y las terrazas, que es donde salen las humedades; el edificio no tiene sótano. La constructora corrigió todo lo que apuntaron.
+
+**Ronda 2, con cada comprador.** Tres o cuatro semanas antes, citó a cada comprador a una visita guiada. El comprador apuntaba sus defectos y los dos firmaban la hoja de preentrega, con su plazo de corrección.
+
+**Ronda 3, la verificación.** Antes de cada firma comprobó, punto por punto, que la hoja estaba cerrada.
+
+**Por qué tanto cuidado.** Lo dice la tabla «Leyes que aplican» del módulo: lo que no se repase ahora se reclama después como garantía. Y la tabla «Dónde ir» le recuerda qué pedir a la constructora: la corrección de los repasos en plazo y, si no cumple, con cargo a la retención. Nicolás todavía tenía retenido el 5 % de cada certificación (Lección 5.4), así que podía encargar la corrección a otra empresa. Las empresas de acabados de tu provincia las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección. No le hizo falta: la constructora cumplió los plazos.
+
+Con las tres rondas cerradas, pasa a preparar los papeles de cada vivienda (Lección 10.2).
+
+### Resumen
+
+Repasas cada vivienda en tres rondas: una interna con el jefe de obra, otra con el comprador, que firma la hoja de preentrega con su plazo de corrección, y una verificación final antes de la firma. Cada punto se cierra con fecha, firma y foto.
+
+### Tu checklist
+
+- Tres rondas de repasos cerradas
+
 ## Lección 10.2 — Documentación por vivienda
+
+> **Dónde estamos:** con las viviendas repasadas (Lección 10.1), preparas la documentación de entrega de cada una y compruebas que cada comprador ha cumplido sus pagos antes de convocarle.
 
 | Documento | Nota |
 |---|---|
@@ -2126,8 +3395,48 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 - **Por cada comprador, antes de convocarle:** confirma que ha cumplido los pagos del contrato y revisa la situación de pagos, impuestos y gastos que corresponden a cada parte.
 - **Completa el expediente de entrega** con: identificación registral de la vivienda y anexos; tarjetas y códigos de acceso; normas de la comunidad, datos del administrador y cuotas previstas; acta de inspección con incidencias y compromisos de subsanación.
 - **En la visita** explica el funcionamiento de equipos, climatización, ventilación y domótica si existe.
+- **Quién se encarga de cada cosa** (a quién pides cada documento de la tabla y del expediente de arriba):
+  - **Notaría:** la copia de la escritura, después de la firma.
+  - **Registro de la Propiedad:** la identificación registral de la vivienda y sus anexos (cada vivienda es una finca desde la división horizontal, Lección 9.2).
+  - **Aseguradora decenal:** el certificado de la póliza, con su número.
+  - **Director de obra y director de ejecución (la dirección facultativa):** los planos de la vivienda, sacados de los planos de lo construido (Lección 9.1).
+  - **Técnico competente:** el certificado y la etiqueta de eficiencia energética del edificio terminado.
+  - **Constructor:** las garantías de los equipos, los juegos de llaves y mandos y las tarjetas y códigos de acceso (Lección 6.5), y la corrección de las incidencias del acta de inspección.
+  - **Instalador eléctrico y compañías de suministro:** el CIE, registrado en Industria; el CUPS eléctrico y el contador de agua.
+  - **Administrador de fincas:** los datos del administrador y las cuotas previstas.
+  - **Tú (el promotor):** el manual de uso y mantenimiento (extracto del Libro del Edificio), los estatutos y las normas de la comunidad, la comprobación de los pagos de cada comprador, el acta de inspección y la explicación en la visita.
+
+### Ejemplo: Nicolás, el promotor
+
+Con las viviendas repasadas, Nicolás preparó una carpeta para cada una de las 18. Te cuento de dónde sacó cada papel.
+
+**Lo que ya tenía del Módulo 9.** Del **Libro del Edificio** que montó con la plantilla del profesor (Lección 9.4) sacó, para cada vivienda, su manual de uso y mantenimiento. El certificado y la etiqueta de eficiencia energética del edificio terminado, ya registrados, valían para las 18.
+
+**Lo que pidió:**
+
+- Los **planos de cada vivienda**, con superficies y la situación de cuadros y llaves de paso, a su arquitecto, de los planos de lo construido.
+- El **certificado de la póliza decenal**, con su número y la aseguradora, a su corredor de seguros.
+- Las **garantías de los equipos** y los juegos de llaves de la vivienda y del portal, a la constructora, que se los entregó con su documentación final (Lección 6.5).
+- Los **datos para suministros**: el CIE de la instalación eléctrica, el CUPS de cada vivienda y su contador de agua.
+- Los **datos de la comunidad**: los estatutos de su escritura de división horizontal, la cuota de cada vivienda y el administrador de fincas que iba a proponer a la junta (Lección 11.2).
+
+**Antes de convocar a nadie, los pagos.** En su CRM (Módulo 8) comprobó que cada comprador había cumplido lo de su contrato. En una vivienda de precio medio, según su Plantilla 5: la reserva de 6.000 €, el resto del 10 % a la firma del contrato privado (6.213,06 €) y las 18 cuotas de 678,50 € durante la obra. En total, 24.426,13 € con IVA. Repasó también qué pagos, impuestos y gastos corresponden a cada parte; los verás en la Lección 11.1.
+
+**El expediente de entrega.** Completó cada carpeta con la identificación registral de la vivienda, las tarjetas y códigos de acceso, las normas de la comunidad con las cuotas previstas y el acta de inspección de la Lección 10.1, con sus incidencias y compromisos de subsanación. Y en la visita explicó a cada comprador cómo funcionan los equipos, la climatización y la ventilación.
+
+Con las 18 carpetas listas, solo le falta la notaría (Lección 10.3).
+
+### Resumen
+
+Cada vivienda tiene su carpeta de entrega: decenal, garantías, manual de uso, planos, certificado energético, datos de la comunidad y de suministros, llaves y, tras la firma, la copia de la escritura. Antes de convocar a un comprador, comprueba que ha cumplido sus pagos.
+
+### Tu checklist
+
+- Documentación de entrega preparada por vivienda
 
 ## Lección 10.3 — La notaría
+
+> **Dónde estamos:** con las viviendas repasadas y su documentación preparada (Lecciones 10.1 y 10.2), dejas lista la notaría: la escritura final de obra y, 3-4 semanas antes de firmar, la fecha y la nota de liquidación de cada comprador.
 
 - **Al principio de la obra,** se documenta inicialmente mediante la elevación a público de la correspondiente escritura de "Declaración de Obra Nueva y División Horizontal" y se presenta en el Registro de la Propiedad para su inscripción. El Registro la inscribe con la anotación de "En construcción".
 - **Al finalizar la obra** se formaliza la **Escritura Final de Obra** y se presenta en el Registro de la Propiedad para su inscripción. Se inscribe como obra nueva terminada, desapareciendo la anotación de "en construcción".
@@ -2143,6 +3452,45 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
   - Prepara la **nota de liquidación** por comprador: precio, pagos recibidos con IVA, importe pendiente.
 - **El comprador lleva:** DNI o NIE, documentación del origen de los fondos, justificantes de pagos anteriores, la hipoteca, que se firma el mismo día (con la documentación recibida al menos 10 días naturales antes y el acta previa notarial hecha al menos el día anterior, Ley 5/2019).
 - **Medios de pago:** el notario identifica cada pago (cheque nominativo o transferencia). Nada en efectivo por encima del límite legal.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de las listas de arriba):
+  - **Tú (el promotor):** el Libro del Edificio en medio digital, con el acta de recepción de la obra, a partir de la documentación que te entrega el director de obra (Lección 6.5); la nota de liquidación de cada comprador; ofrecer tu notaría, sin imponerla.
+  - **Director de obra y director de ejecución:** el certificado final de obra, visado en sus colegios (Lección 9.1).
+  - **Aseguradora decenal:** el seguro decenal, con la póliza definitiva tras el informe final del OCT (Lección 9.5).
+  - **Ayuntamiento:** la licencia de primera ocupación.
+  - **Técnico competente:** el certificado de eficiencia energética, inscrito en el registro autonómico.
+  - **Topógrafo:** las superficies georreferenciadas.
+  - **Notaría:** la escritura final de obra y, el día de la firma, la identificación de cada pago.
+  - **Registro de la Propiedad:** la inscripción como obra nueva terminada, sin la anotación «en construcción».
+  - **El comprador:** elige notaría, lleva su DNI o NIE, el origen de sus fondos y los justificantes de sus pagos, y hace el acta previa de su hipoteca ante notario al menos el día anterior.
+  - **Banco del comprador:** la fecha de firma de la hipoteca y su documentación, al menos 10 días naturales antes.
+
+### Ejemplo: Nicolás, el promotor
+
+Con las carpetas preparadas, Nicolás volvió a su notaría, la que eligió en la Lección 1.4. Te cuento los dos pasos que dio allí.
+
+**La escritura final de obra, ya inscrita.** La obra pasó dos veces por esta notaría. Al principio, con la escritura de declaración de obra nueva y división horizontal, que el **Registro de la Propiedad** inscribió con la anotación «en construcción». Al final, en el Módulo 9 (Lección 9.2), con la escritura final de obra y los seis documentos de esta lección: el Libro del Edificio en medio digital con el acta de recepción, el certificado final de obra, el seguro decenal, la licencia de primera ocupación, el certificado de eficiencia energética y las superficies georreferenciadas. El Registro la inscribió como obra nueva terminada y desapareció la anotación «en construcción». Lo comprobó antes de citar a nadie, porque mientras siga esa anotación el banco de un comprador no formaliza su hipoteca (Lección 4.3).
+
+**Las firmas, tres o cuatro semanas antes.** Ofreció su notaría a cada comprador, sin imponerla, porque elegir notario es un derecho del consumidor. Con la notaría de cada uno y con los bancos de los compradores con hipoteca confirmó las fechas y cerró el calendario de firmas. A esos compradores les recordó los plazos: la documentación de su banco, al menos 10 días naturales antes, y el acta previa ante notario, al menos el día anterior.
+
+**Una nota de liquidación por comprador.** En una vivienda de precio medio: precio, 122.130,65 € con IVA; pagos recibidos, 24.426,13 € con IVA; importe pendiente, 97.704,52 €, lo que cobrará en la escritura (Lección 11.3).
+
+**El blanqueo.** El promotor es sujeto obligado. Nicolás pidió a cada comprador su DNI o NIE, la documentación del origen de sus fondos y los justificantes de sus pagos anteriores, y le avisó de que pagaría con cheque nominativo o transferencia: nada en efectivo por encima del límite legal. Las notarías de tu provincia las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, en el Colegio Notarial.
+
+### Resumen
+
+La obra pasa dos veces por la notaría: al principio, la declaración de obra nueva y división horizontal, inscrita «en construcción»; al final, la escritura final de obra con sus seis documentos, que la inscribe como terminada. Antes de las firmas, cada comprador elige notaría, recibe su nota de liquidación y acredita sus fondos.
+
+### Tu checklist
+
+- Notarías y fechas confirmadas
+- Notas de liquidación por comprador
+- Comprobación de blanqueo de cada comprador
+
+## Resumen del Módulo 10
+
+Has repasado cada vivienda en tres rondas, has preparado su documentación de entrega y has comprobado los pagos de cada comprador. Con la escritura final de obra ya inscrita (Lección 9.2), has dejado listas las firmas: notarías y fechas, notas de liquidación y la comprobación del blanqueo.
+
+**Dónde deberías estar en tu proyecto:** con las hojas de repasos cerradas, la documentación de entrega de cada vivienda y el calendario de firmas, la escritura final de obra inscrita y una nota de liquidación por comprador. Con eso pasas al Módulo 11, a firmar las escrituras, cobrar y entregar las llaves.
 
 ## Checklist del Módulo 10
 
@@ -2219,6 +3567,8 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 
 ## Lección 11.1 — La escritura de compraventa
 
+> **Dónde estamos:** con las viviendas repasadas y la notaría preparada (Módulo 10), llega el día de la firma. Empiezas por la escritura de compraventa: qué contiene, quién paga qué y qué pasa con el préstamo promotor.
+
 - **Contenido:** partes, finca registral y descripción, precio y forma de pago (con los pagos anteriores identificados), cargas (libre de cargas o con subrogación elegida por el comprador), manifestaciones (decenal, licencias, certificado energético, cédula), gastos.
 - Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio** (Lección 9.4).
 - **Quién paga qué:**
@@ -2238,7 +3588,33 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 - **Cobro:** cheque bancario nominativo o transferencia confirmada en la notaría. Si el comprador se subroga, su parte del préstamo pasa a ser su hipoteca y el banco descuenta ese importe.
 - **Préstamo promotor:** con cada escritura se cancela o subroga la parte de esa finca. Al vender la última, debe quedar a cero.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la escritura final de obra inscrita y el calendario cerrado, empezaron las firmas. Te cuento cómo fue una, porque las 18 se hicieron igual.
+
+**En la notaría.** La escritura de compraventa recogía lo que dice la lección: las partes, la finca registral y su descripción, el precio y la forma de pago, con los pagos anteriores identificados, las cargas, las manifestaciones (decenal, licencias y certificado energético) y los gastos. Nicolás llevó la nota de liquidación de ese comprador (Lección 10.3), para que los pagos anteriores cuadraran con lo que ya había cobrado. Y en la firma le entregó el **Libro del Edificio** (Lección 9.4).
+
+**Quién paga qué.** Siguió la tabla de la lección sin cargar al comprador nada de lo que le toca a él: la tabla «Leyes que aplican» le recuerda que hay gastos e impuestos que no puede repercutir.
+
+- **El comprador:** el IVA del 10 %, que Nicolás le repercute; el AJD de la compraventa (Anexo B); su copia de la escritura; el registro de su compra y, si compra con hipoteca, la tasación y sus copias.
+- **Su banco:** el AJD, la notaría, el registro y la gestoría de la hipoteca.
+- **Nicolás:** la matriz de la escritura; la obra nueva y la división horizontal; las acometidas generales de suministros.
+
+**El préstamo promotor.** Con cada escritura, el banco de Nicolás canceló la parte del préstamo promotor de esa vivienda con lo que Nicolás cobró en la firma (Lección 11.3). Así, al firmar la última de las 18, el préstamo de 1.065.609,45 € de su Plantilla 3 quedó a cero, dentro de los 4 meses que había previsto hasta las escrituras de venta.
+
+**Dónde fue.** A su notaría y a la que eligió cada comprador. Si un comprador te pide una notaría o un banco de tu provincia, los tienes en las empresas potenciales de esta lección.
+
+### Resumen
+
+La escritura de compraventa recoge las partes, la finca, el precio con los pagos anteriores, las cargas, las manifestaciones y los gastos, y con ella el comprador recibe el Libro del Edificio. Cada parte paga lo suyo, según la tabla. Con cada firma se cancela o subroga la parte del préstamo promotor de esa finca, y con la última queda a cero.
+
+### Tu checklist
+
+- Parte del préstamo promotor cancelada o subrogada en cada firma
+
 ## Lección 11.2 — La comunidad de propietarios
+
+> **Dónde estamos:** con la primera escritura firmada (Lección 11.1) nace la comunidad de propietarios. Ahora la constituyes: junta, presupuesto y cuotas, fondo de reserva, NIF, cuenta y contratos de mantenimiento.
 
 - **Nace** con la primera venta: desde ese momento hay más de un propietario. Mientras tengas viviendas sin vender, pagas sus cuotas.
 - **Pasos:**
@@ -2250,8 +3626,45 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
   6. Libro de actas diligenciado en el Registro de la Propiedad.
   7. Contratos de mantenimiento: ascensor, PCI, limpieza, jardinería, seguro del edificio.
 - **Administrador de fincas:** recomendable desde el primer día. Pide un colegiado.
+- **Quién se encarga de cada cosa** (quién hace cada paso de la lista de arriba):
+  - **Tú (el promotor), como propietario de las viviendas sin vender:** convocas la junta constitutiva, con su orden del día, y pagas las cuotas de las viviendas que te quedan.
+  - **La junta de propietarios:** elige presidente y, si se decide, secretario y administrador; aprueba el presupuesto ordinario, las cuotas por coeficiente y el fondo de reserva.
+  - **Administrador de fincas** (colegiado; Colegio de Administradores de Fincas): lo nombra la junta, si se decide, y desde ese día lleva la comunidad.
+  - **AEAT:** el NIF de la comunidad (modelo 036).
+  - **Banco:** la cuenta de la comunidad.
+  - **Registro de la Propiedad:** la diligencia del libro de actas.
+  - **Empresas de mantenimiento y aseguradora:** los contratos de ascensor, PCI, limpieza y jardinería, y el seguro del edificio.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la primera escritura nació la comunidad: desde ese día, el edificio tenía más de un propietario. Te cuento cómo la puso en marcha Nicolás.
+
+**Primero, el administrador.** No esperó: la lección lo recomienda desde el primer día. Buscó un **administrador de fincas** colegiado; lo podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección y, al final del módulo, en el Colegio de Administradores de Fincas de tu provincia.
+
+**La junta constitutiva.** Nicolás la convocó con su orden del día. En ella:
+
+1. Los propietarios eligieron presidente y nombraron administrador al que había propuesto Nicolás.
+2. Aprobaron el presupuesto ordinario y las cuotas de cada vivienda por su coeficiente, el de la división horizontal.
+3. Dotaron el fondo de reserva con al menos el 10 % del presupuesto ordinario.
+
+**Los trámites.** Con el administrador sacó el NIF de la comunidad en la **Agencia Tributaria** (modelo 036), abrió su cuenta en el **banco** y llevó el libro de actas a diligenciar al **Registro de la Propiedad**.
+
+**El mantenimiento.** Se firmaron los contratos de mantenimiento del ascensor, de la protección contra incendios y de la limpieza, y el seguro del edificio. Así, la comunidad funciona desde el primer día.
+
+**Sus propias cuotas.** Mientras le quedaron viviendas por escriturar, Nicolás pagó sus cuotas, como cualquier otro propietario.
+
+### Resumen
+
+La comunidad nace con la primera venta. La constituyes en una junta (presidente, presupuesto, cuotas por coeficiente y un fondo de reserva de al menos el 10 %), le das NIF, cuenta y libro de actas, y contratas su mantenimiento. Mientras te queden viviendas sin vender, pagas sus cuotas.
+
+### Tu checklist
+
+- Junta constitutiva, NIF, cuenta y fondo de reserva
+- Contratos de mantenimiento de la comunidad
 
 ## Lección 11.3 — Suministros y cobro final
+
+> **Dónde estamos:** la comunidad está en marcha (Lección 11.2). Ahora dejas preparados los suministros de cada vivienda, para que sea habitable desde el primer día, y cobras lo que falta en cada escritura.
 
 | Suministro | Qué necesitas | Quién contrata |
 |---|---|---|
@@ -2262,7 +3675,34 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 
 - **Ojo:** las altas de luz pueden retrasarse semanas si la acometida definitiva o el centro de transformación no están legalizados. Empieza con la distribuidora en el Módulo 6.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la comunidad en marcha, Nicolás tenía dos cosas que cerrar en cada vivienda: que se pudiera vivir en ella desde el primer día y cobrar lo que faltaba. Te cuento cómo lo hizo.
+
+**Los suministros, preparados.** Los contratos los firma cada comprador, pero el promotor puede dejarlos preparados. En la carpeta de cada vivienda (Lección 10.2) iban el CIE registrado y el CUPS, para la luz, y el contador individual, para el agua, con la licencia de primera ocupación. Con eso, cada comprador dio de alta la luz con su comercializadora, el agua con la empresa municipal y las telecomunicaciones con su operador, sobre la ICT certificada.
+
+**Sin retrasos con la luz.** La lección avisa: las altas de luz pueden retrasarse semanas si la acometida definitiva o el centro de transformación no están legalizados. Nicolás había confirmado la capacidad con las compañías antes de comprar (Lección 1.3) y había empezado con la distribuidora en el Módulo 6. La distribuidora eléctrica y el servicio de aguas de tu provincia los tienes al final del módulo.
+
+**El cobro final.** En cada escritura, el comprador pagó el importe pendiente de su nota de liquidación (Lección 10.3), con cheque bancario nominativo o transferencia confirmada en la notaría (Lección 11.1). En una vivienda de precio medio, según su Plantilla 5:
+
+- Precio con IVA: 122.130,65 €.
+- Cobrado antes de la entrega (reserva, contrato privado y cuotas): 24.426,13 €.
+- Cobrado en la escritura: **97.704,52 €**.
+
+Los compradores con hipoteca pagaron con el dinero de su banco, en la misma firma. Con las 18 escrituras cobradas así, las viviendas estaban pagadas del todo y solo quedaba entregar las llaves (Lección 11.4).
+
+### Resumen
+
+Cada comprador contrata sus suministros, pero tú se los dejas preparados: CIE, CUPS, contador y primera ocupación. Empieza pronto con la distribuidora, porque las altas de luz pueden retrasarse semanas. En la escritura cobras lo que falta, con cheque bancario nominativo o transferencia confirmada en la notaría.
+
+### Tu checklist
+
+- Escrituras firmadas y cobro de cada vivienda
+- Altas de suministros
+
 ## Lección 11.4 — Entrega de la posesión
+
+> **Dónde estamos:** con la escritura firmada y cobrada (Lecciones 11.1 y 11.3), entregas la posesión: visita final, acta de entrega y explicación de la vivienda.
 
 - **El mismo día de la firma o con cita:**
   - Visita final con el comprador y comprobación de repasos.
@@ -2271,7 +3711,35 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 - **Lectura de contadores** en el acta, y registro de incidencias pendientes con su compromiso de resolución.
 - **Garantías:** los plazos de 1, 3 y 10 años de la LOE corren **desde la recepción de la obra sin reservas, o desde la subsanación de las reservas** (art. 17.1 LOE), no desde la entrega a cada comprador. Explícaselo por escrito.
 
+### Ejemplo: Nicolás, el promotor
+
+Nicolás entregó cada vivienda el mismo día de la firma, al salir de la notaría, o con cita a los compradores que lo prefirieron. Te cuento cómo era una entrega.
+
+**La visita final.** Con el comprador, y con su hoja de preentrega de la Lección 10.1 en la mano, comprobaron que los repasos que había apuntado en la segunda ronda estaban corregidos.
+
+**El acta de entrega de posesión.** La firmaron los dos, con:
+
+- La fecha y el estado de la vivienda.
+- Las lecturas de los contadores de luz y agua.
+- Las llaves de la vivienda y del portal y las tarjetas de acceso entregadas.
+- La documentación: la carpeta de la Lección 10.2.
+- Las incidencias pendientes, si quedaba alguna, con su compromiso de resolución.
+
+**La explicación.** Le enseñó el cuadro eléctrico, la climatización y las llaves de paso, y el mantenimiento que le toca, que tiene en su manual de uso.
+
+**Las garantías, por escrito.** Le dejó escrito que los plazos de 1, 3 y 10 años no empiezan el día de su entrega: corren desde la recepción de la obra sin reservas, o desde la subsanación de las reservas (Lección 6.5). Así nadie se lleva una sorpresa cuando llegue la postventa (Módulo 12).
+
+### Resumen
+
+La posesión se entrega con una visita final, un acta firmada (fecha, estado, contadores, llaves, documentación e incidencias pendientes) y la explicación de la vivienda. Deja por escrito que las garantías corren desde la recepción de la obra, no desde la entrega.
+
+### Tu checklist
+
+- Actas de entrega firmadas
+
 ## Lección 11.5 — Trámites después de la firma
+
+> **Dónde estamos:** las llaves están entregadas (Lección 11.4). Quedan los trámites después de la firma: impuestos de la compraventa, Registro, Catastro, suministros y documentación.
 
 - **Impuestos de la compraventa:** el comprador liquida el AJD con el modelo 600 de su comunidad en el plazo autonómico (habitualmente 30 días hábiles); muchas notarías lo gestionan. Tú declaras el IVA repercutido en tu modelo 303.
 - **Registro:** la notaría envía copia electrónica al Registro de la Propiedad el mismo día; después se presenta la copia con el impuesto liquidado y se inscribe a nombre del comprador.
@@ -2279,6 +3747,43 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 - **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
 - **Suministros:** altas o cambios de titularidad a nombre del comprador.
 - **Documentación:** entrega lo que corresponda al comprador y al administrador de la comunidad.
+- **Quién se encarga de cada cosa** (quién hace cada trámite de la lista de arriba):
+  - **El comprador:** liquida el AJD con el modelo 600 de su comunidad, en el plazo autonómico (muchas notarías lo gestionan), y pone los suministros a su nombre, con altas o cambios de titularidad.
+  - **Notaría:** envía la copia electrónica al Registro de la Propiedad el mismo día de la firma.
+  - **Registro de la Propiedad:** con la copia y el impuesto liquidado, inscribe la vivienda a nombre del comprador.
+  - **Notaría y Registro:** comunican al Catastro el cambio de titular; nadie presenta declaración.
+  - **Tú (el promotor):** declaras el IVA repercutido en tu modelo 303 y entregas la documentación al comprador y al administrador. La plusvalía municipal no la autoliquidas: al ser obra nueva, no procede la autoliquidación para la promotora.
+
+### Ejemplo: Nicolás, el promotor
+
+Con las llaves entregadas, a Nicolás le quedaban los trámites de cada firma. Te cuento cómo se los repartió.
+
+**Lo que hizo la notaría.** El mismo día de cada firma envió la copia electrónica al **Registro de la Propiedad**. Después se presentó la copia con el impuesto liquidado y el Registro inscribió la vivienda a nombre del comprador. El cambio de titular en el Catastro lo comunicaron la notaría y el Registro: nadie tuvo que presentar declaración.
+
+**Lo que hizo cada comprador.** Liquidó el AJD de su compraventa con el modelo 600 de la Comunitat Valenciana, en el plazo autonómico; muchas notarías lo gestionan. Y puso los suministros a su nombre, sobre las altas que había dado (Lección 11.3).
+
+**Lo que hizo Nicolás:**
+
+- Declaró el IVA repercutido en cada escritura en su modelo 303 del trimestre, en la Agencia Tributaria.
+- De la plusvalía municipal, nada que autoliquidar: al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- Entregó a cada comprador y al administrador de la comunidad la documentación que les correspondía.
+- Fue comprobando, vivienda por vivienda, que la escritura quedaba inscrita y los suministros a nombre de su comprador.
+
+Cuando la última de las 18 quedó inscrita, la promoción estaba vendida, escriturada y entregada. Le quedaba lo que viene después: las garantías y el cierre (Módulo 12).
+
+### Resumen
+
+Después de la firma, el comprador liquida el AJD y pone los suministros a su nombre; la notaría manda la escritura al Registro, que la inscribe y, con la notaría, avisa al Catastro. Tú declaras el IVA repercutido y entregas la documentación. Al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+
+### Tu checklist
+
+- Escrituras presentadas en el Registro y suministros a nombre de cada comprador
+
+## Resumen del Módulo 11
+
+Has firmado la escritura de cada vivienda y has cobrado lo pendiente, cancelando en cada firma la parte del préstamo promotor de esa finca. Has constituido la comunidad de propietarios con su mantenimiento, has dejado preparados los suministros, has entregado la posesión con un acta y has cerrado los trámites de después de la firma.
+
+**Dónde deberías estar en tu proyecto:** con las escrituras firmadas, el préstamo promotor amortizado, la comunidad constituida y las actas de entrega firmadas, y cada vivienda inscrita y con sus suministros a nombre de su comprador. Con eso pasas al Módulo 12, a atender las garantías y cerrar la promoción.
 
 ## Checklist del Módulo 11
 
@@ -2361,6 +3866,8 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 
 ## Lección 12.1 — Traspaso a la comunidad
 
+> **Dónde estamos:** con las llaves entregadas (Módulo 11), empiezas el cierre: traspasas a la comunidad su documentación, sus contratos de mantenimiento y sus llaves, con un acta.
+
 - Entrega al presidente o al administrador:
   - Libro del Edificio.
   - Documentación de zonas comunes e instalaciones.
@@ -2371,7 +3878,35 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 
 - **Organiza desde el principio el mantenimiento** de ascensores, equipos, piscina, jardines y demás servicios comunes, y entrega el libro de actas (se legaliza en el Registro de la Propiedad, art. 19 LPH).
 
+### Ejemplo: Nicolás, el promotor
+
+Con las 18 viviendas entregadas, el edificio ya no era de Nicolás: era de sus propietarios. Te cuento cómo se lo traspasó a la comunidad.
+
+**Qué entregó.** Citó al presidente y al administrador de fincas y les entregó, contra un **acta de traspaso** firmada:
+
+- El **Libro del Edificio** completo (Lección 9.4).
+- La documentación de las zonas comunes y de las instalaciones.
+- Los contratos de mantenimiento en vigor: ascensor, protección contra incendios y limpieza.
+- Las llaves de las zonas comunes.
+- El libro de actas, ya legalizado en el Registro de la Propiedad.
+
+**El mantenimiento, desde el principio.** Como los contratos se firmaron con la junta constitutiva (Lección 11.2), el ascensor y los equipos tuvieron su mantenimiento desde el primer día.
+
+**Por qué con acta.** El acta deja escrito qué entregó, a quién y cuándo. Lo que no se traspasa son las garantías: esas siguen con él, y las atiende con su servicio postventa (Lección 12.2).
+
+Si tu comunidad todavía no tiene administrador, lo podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección.
+
+### Resumen
+
+Al terminar las entregas, traspasas a la comunidad el Libro del Edificio, la documentación de zonas comunes e instalaciones, los contratos de mantenimiento, el fondo de reserva si lo has dotado, las llaves y el libro de actas, y firmas un acta de traspaso. Y deja organizado el mantenimiento desde el principio.
+
+### Tu checklist
+
+- Acta de traspaso a la comunidad
+
 ## Lección 12.2 — El servicio postventa
+
+> **Dónde estamos:** el edificio ya está en manos de la comunidad (Lección 12.1). Desde ahora atiendes las garantías de los compradores con un servicio postventa ordenado.
 
 - **Protocolo:**
   1. Canal único (formulario o email) con número de incidencia.
@@ -2398,8 +3933,45 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
   - Garantía (art. 17.1 LOE): 1, 3 y 10 años desde la recepción de la obra sin reservas, o desde la subsanación de las reservas.
   - Prescripción de la acción (art. 18 LOE): 2 años desde que se producen los daños.
   - Además existen las garantías contractuales y la acción por incumplimiento del contrato (art. 1964 CC: 5 años).
+- **Quién se encarga de cada cosa** (quién hace cada paso del protocolo y de las listas de arriba):
+  - **Tú (el promotor):** el canal único con número de incidencia, la respuesta en 48-72 h, la orden por escrito con fotos y plazo y, si nadie responde, la reparación con cargo a la retención de garantía. Frente al comprador respondes tú.
+  - **Tu técnico:** la visita técnica y la clasificación de cada incidencia por naturaleza y por urgencia.
+  - **Constructor o gremio responsable:** la reparación, en el plazo de la orden.
+  - **Aseguradora decenal:** los daños estructurales, en cuanto los sepas.
+  - **El propietario:** firma el cierre de cada incidencia.
+  - **Agentes de la edificación** (proyectista, director de obra, director de ejecución, constructor): contra el responsable repites lo que hayas pagado, en 2 años desde que pagas.
+  - **Junta Arbitral de Consumo de la CCAA:** el arbitraje de las reclamaciones de los compradores.
+
+### Ejemplo: Nicolás, el promotor
+
+Con el edificio traspasado, a Nicolás le quedaban las garantías. Te cuento cómo montó su servicio postventa.
+
+**El protocolo.** Lo había definido en el expediente de garantías (Lección 9.5) y lo explicó a cada comprador en la entrega:
+
+1. Un canal único, un email, que da un número a cada incidencia.
+2. Respuesta en 48-72 h. Es una buena práctica, no un plazo legal.
+3. Visita técnica de su arquitecto técnico, que clasifica cada incidencia por naturaleza (acabado, 1 año; habitabilidad, 3 años; estructura, 10 años; o mal uso) y por urgencia: en 24 h si hay fugas, falta de suministro o riesgo para personas.
+4. Orden por escrito a la constructora o al gremio responsable, con fotos y plazo.
+5. Si no responde, repara él y lo paga con la retención de garantía, que todavía tiene: el 5 % de cada certificación, hasta un año después de la recepción (Lección 5.4).
+6. Cierre firmado por el propietario.
+
+**Las primeras incidencias.** Fueron de las más frecuentes de la tabla: ajustes de puertas y ventanas. Ninguna era urgente, y la constructora las corrigió en el plazo de su orden escrita. Los gremios de tu provincia (acabados, instalaciones, limpieza y mantenimiento) los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección.
+
+**Si un día hay un daño estructural.** Lo comunicará a la **aseguradora decenal** en cuanto lo sepa. Y tiene claros los plazos: el comprador tiene 2 años desde que aparece el daño para reclamar, y él, el mismo plazo desde que paga para repetir contra el agente responsable. No los confunde con los de garantía, que son de 1, 3 y 10 años desde la recepción.
+
+**Si un comprador no está conforme.** Puede llevar su reclamación al arbitraje de la **Junta Arbitral de Consumo** de la Comunitat Valenciana. La de tu comunidad la tienes al final del módulo.
+
+### Resumen
+
+Cada incidencia sigue un protocolo: canal único, respuesta rápida, visita y clasificación por naturaleza y urgencia, orden escrita al responsable y cierre firmado. Los daños estructurales van a la decenal, y no confundas los plazos de garantía (1, 3 y 10 años) con el de reclamación (2 años).
+
+### Tu checklist
+
+- Protocolo de postventa operativo
 
 ## Lección 12.3 — Cierre económico y fiscal
+
+> **Dónde estamos:** el servicio postventa funciona (Lección 12.2). Ahora cierras la promoción en lo económico y lo fiscal: liquidas con la constructora, cierras cuentas e impuestos y comparas la rentabilidad real con la CRP aprobada.
 
 - **Liquidación con la constructora:** aprueba la certificación final y liquida el contrato (retenciones, penalidades, extras). Devuelve la retención cuando venza su plazo.
 - **Cierra cuentas** con técnicos, suministradores y proveedores, y resuelve facturas y garantías pendientes.
@@ -2416,8 +3988,48 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 - **IVA:** trimestral (303) y resumen anual (390). Si alquilas viviendas que no has vendido, regulariza el IVA deducido (el alquiler de vivienda está exento).
 - **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
 - **IBI:** de las viviendas que sigan siendo tuyas a 1 de enero.
+- **Quién se encarga de cada cosa** (quién hace cada cosa de la lista de arriba):
+  - **Director de ejecución:** mide y certifica, también la obra de la certificación final (Lección 7.3).
+  - **Tú (el promotor):** apruebas la certificación final, liquidas el contrato con la constructora (retenciones, penalidades, extras) y le devuelves la retención cuando vence su plazo; cierras cuentas con técnicos, suministradores y proveedores; y comparas la rentabilidad real con la CRP aprobada, con la Plantilla 2.
+  - **Asesoría contable:** la conciliación, la contabilidad de las existencias y de los gastos financieros, y las declaraciones de IS (modelos 200 y 202) e IVA (303 y 390).
+  - **AEAT o hacienda foral:** recibe esas declaraciones.
+  - **Ayuntamiento:** el IBI de las viviendas que sigan siendo tuyas a 1 de enero.
+
+### Ejemplo: Nicolás, el promotor
+
+Con la postventa en marcha, Nicolás se sentó con su asesoría, la de la Lección 1.4, a cerrar los números. Te cuento cómo lo hizo.
+
+**La liquidación con la constructora.** Su arquitecto técnico, como director de ejecución, midió y certificó la obra, y Nicolás aprobó la certificación final. La obra terminó en 1.063.537 €, 16.454 € (un 2 %) por encima de los 1.047.083 € contratados: la desviación que ya había visto venir a mitad de obra con la Plantilla 4 (Lección 7.3). Liquidó el contrato con sus retenciones y sus extras, y apuntó la fecha para devolver la retención: un año después de la recepción (Lección 5.4).
+
+**Las cuentas.** Cerró cuentas con sus técnicos, suministradores y proveedores, y resolvió las facturas y garantías pendientes. Con la asesoría concilió los ingresos por ventas, los costes, los intereses y los gastos generales.
+
+**La rentabilidad real.** Volvió a calcular la Plantilla 2 con los datos reales y la comparó con la CRP aprobada, que daba un beneficio antes de impuestos de 476.202,24 €:
+
+- **Ventas:** las 18 viviendas, vendidas y escrituradas al precio de su plan de ventas (Plantilla 5).
+- **Coste de la obra:** 16.454 € más (+2 %).
+- **Plazo y coste financiero:** firmó las escrituras en los 4 meses previstos, y el coste financiero real fue de 73.936,57 €, algo menos de los 79.940,06 € que había puesto en la CRP.
+
+**La contabilidad.** Todos los costes estaban activados como existencias: promoción en curso y, al final, edificio terminado. En cada escritura, la asesoría reconoció la venta y dio de baja el coste proporcional. Como la promoción duró más de un año, los intereses del préstamo promotor se activaron como mayor coste de las existencias.
+
+**Los impuestos, en la Agencia Tributaria:**
+
+- **IVA:** el repercutido de toda la promoción, 199.850,15 € según su Plantilla 5, declarado trimestre a trimestre en el 303 y resumido en el 390. No alquila ninguna vivienda, así que no tiene IVA que regularizar.
+- **Impuesto sobre Sociedades:** la declaración anual (modelo 200) y los pagos fraccionados (modelo 202). El tipo, de los que da la lección, se lo aplicó su asesoría según su sociedad.
+- **Plusvalía municipal:** como dice la Lección 11.5, al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+
+### Resumen
+
+Liquida con la constructora, cierra cuentas y concilia; vuelve a calcular la Plantilla 2 con los datos reales y compárala con la CRP aprobada. Los costes son existencias, los intereses se activan si la promoción dura más de un año, y el IS y el IVA se cierran con sus modelos.
+
+### Tu checklist
+
+- Liquidación final con el constructor
+- IS, IVA y plusvalías liquidados
+- Rentabilidad real comparada con la CRP aprobada
 
 ## Lección 12.4 — Cierre de la SPE
+
+> **Dónde estamos:** con las cuentas y los impuestos cerrados (Lección 12.3), queda la sociedad: decides si la SPE se extingue o se queda en reserva, y archivas el expediente de la promoción.
 
 - **Antes de liquidar:**
   1. Cancelación registral total del préstamo promotor.
@@ -2440,6 +4052,47 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
   - Cumple las obligaciones contables, fiscales y mercantiles de la sociedad.
   - Mantén la documentación disponible para inspecciones y reclamaciones.
   - Evalúa las desviaciones de coste, plazo y ventas para la siguiente promoción.
+- **Quién se encarga de cada cosa** (quién hace cada paso de las listas de arriba):
+  - **Banco, notaría y Registro de la Propiedad:** la cancelación registral total del préstamo promotor.
+  - **Constructor, proveedores y técnicos:** la liquidación final y el cobro de lo pendiente.
+  - **Asesoría contable:** los impuestos al día y las obligaciones contables, fiscales y mercantiles de la sociedad mientras exista.
+  - **Junta general de socios:** el acuerdo de disolución y el nombramiento de liquidador.
+  - **Liquidador:** el balance final y el reparto entre socios.
+  - **Notaría:** la escritura de extinción.
+  - **Registro Mercantil:** la inscripción de la extinción y, mientras la sociedad siga, el depósito de cuentas.
+  - **AEAT o hacienda foral:** la baja censal (modelo 036).
+  - **Tú, con tu equipo:** la reunión de lecciones aprendidas, el expediente archivado con sus plazos, el cierre de los contratos temporales y la evaluación de las desviaciones.
+
+### Ejemplo: Nicolás, el promotor
+
+Con las cuentas cerradas, a Nicolás le quedaba su sociedad. Te cuento qué decidió.
+
+**Antes de nada, los cuatro puntos de la lección.** Comprobó que estaban hechos: el préstamo promotor, a cero desde la última escritura (Lección 11.1) y cancelado también en el Registro; la liquidación final con la constructora (Lección 12.3); los pagos a todos los proveedores y técnicos; y los impuestos al día.
+
+**La decisión: la SPE, en reserva.** Lo habló con su asesoría y con un abogado; los dos los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. La extinción no borra las garantías: después, los socios responden hasta lo que recibieron en la liquidación. Por eso hizo lo que hacen muchos promotores: mantener la SPE inactiva hasta que pasen los plazos. Mientras tanto, su asesoría le lleva las obligaciones contables, fiscales y mercantiles, con el depósito de cuentas en el **Registro Mercantil**. Cuando llegue el día, la cerrará con los pasos de la lección: junta general con el acuerdo de disolución y el liquidador, balance final y reparto, escritura de extinción en la **notaría**, inscripción en el Registro Mercantil y baja censal en la **Agencia Tributaria**.
+
+**El expediente.** Archivó el expediente completo de la promoción (proyectos, licencias, certificados, contratos, facturas y garantías) con sus plazos de conservación: la contabilidad y las facturas, 6 años; la documentación tributaria, mientras pueda revisarse (4 años, o más si hay bases negativas o deducciones pendientes); la técnica y la de garantías, al menos 10 años más los 2 de prescripción. Y cerró los contratos temporales de la obra: el seguro de la obra, los suministros de obra y las casetas.
+
+**Las lecciones aprendidas.** Reunió a su equipo (el arquitecto, el arquitecto técnico, la constructora, la inmobiliaria y la asesoría) y repasaron qué funcionó, qué no y qué cambia en la próxima. Apuntó las desviaciones de la Lección 12.3: la obra, un 2 % por encima del presupuesto, y el coste financiero, algo por debajo de la CRP.
+
+Con ese informe, Nicolás ya mira solares para su segunda promoción. Empieza otra vez por el Módulo 1.
+
+### Resumen
+
+Antes de liquidar la SPE, deja a cero el préstamo promotor, la constructora, los proveedores y los impuestos. Después decides: extinción (junta, liquidador, balance, escritura, Registro Mercantil y baja censal) o reserva, sabiendo que la extinción no borra las garantías. Cierra con las lecciones aprendidas y el expediente archivado con sus plazos.
+
+### Tu checklist
+
+- Préstamo promotor cancelado en el Registro
+- Decisión sobre la SPE: extinción o reserva
+- Informe de lecciones aprendidas
+- Expediente archivado con plazos de conservación
+
+## Resumen del Módulo 12
+
+Has traspasado el edificio a la comunidad, has montado un servicio postventa con su protocolo, has liquidado con la constructora, has cerrado cuentas e impuestos, has comparado la rentabilidad real con la CRP aprobada y has decidido qué hacer con tu SPE, con el expediente archivado y las lecciones aprendidas por escrito.
+
+**Dónde deberías estar en tu proyecto:** con el servicio postventa operativo, la liquidación con el constructor hecha, los impuestos cerrados y la SPE liquidada o en reserva. Es el final de la promoción: empezaste en el Módulo 1 sin solar y sin sociedad, y terminas con las viviendas vendidas, escrituradas y entregadas, y sus garantías en marcha. Tu informe de lecciones aprendidas es el punto de partida de la siguiente, que empieza otra vez en el Módulo 1.
 
 ## Checklist del Módulo 12
 

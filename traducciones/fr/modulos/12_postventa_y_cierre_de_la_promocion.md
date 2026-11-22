@@ -29,6 +29,8 @@
 
 ## Leçon 12.1 — Transfert à la copropriété
 
+> **Où en sommes-nous :** les clés remises (Module 11), vous commencez la clôture : vous transférez à la copropriété sa documentation, ses contrats d'entretien et ses clés, avec un procès-verbal.
+
 - Remettez au président ou au syndic :
   - Le Livre de l'immeuble.
   - La documentation des parties communes et des installations.
@@ -39,7 +41,35 @@
 
 - **Organisez dès le départ l'entretien** des ascenseurs, équipements, piscine, jardins et autres services communs, et remettez le registre des procès-verbaux (il est visé au Registre de la propriété, art. 19 LPH).
 
+### Exemple : Nicolás, le promoteur
+
+Les 18 logements livrés, l'immeuble n'appartenait plus à Nicolás : il appartenait à ses propriétaires. Je vous raconte comment il l'a transféré à la copropriété.
+
+**Ce qu'il a remis.** Il a convoqué le président et le syndic et leur a remis, contre un **procès-verbal de transfert** signé :
+
+- Le **Livre de l'immeuble** complet (Leçon 9.4).
+- La documentation des parties communes et des installations.
+- Les contrats d'entretien en vigueur : ascenseur, protection contre l'incendie et nettoyage.
+- Les clés des parties communes.
+- Le registre des procès-verbaux, déjà visé au Registre de la propriété.
+
+**L'entretien, dès le départ.** Comme les contrats avaient été signés lors de l'assemblée constitutive (Leçon 11.2), l'ascenseur et les équipements ont été entretenus dès le premier jour.
+
+**Pourquoi avec un procès-verbal.** Le procès-verbal consigne par écrit ce qu'il a remis, à qui et quand. Ce qui ne se transfère pas, ce sont les garanties : elles restent à sa charge, et il les traite avec son service après-vente (Leçon 12.2).
+
+Si votre copropriété n'a pas encore de syndic, vous le trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon.
+
+### Résumé
+
+Les livraisons terminées, vous transférez à la copropriété le Livre de l'immeuble, la documentation des parties communes et des installations, les contrats d'entretien, le fonds de réserve si vous l'avez constitué, les clés et le registre des procès-verbaux, et vous signez un procès-verbal de transfert. Et organisez l'entretien dès le départ.
+
+### Votre checklist
+
+- Procès-verbal de transfert à la copropriété
+
 ## Leçon 12.2 — Le service après-vente
+
+> **Où en sommes-nous :** l'immeuble est désormais entre les mains de la copropriété (Leçon 12.1). À partir de maintenant, vous traitez les garanties des acheteurs avec un service après-vente organisé.
 
 - **Protocole :**
   1. Canal unique (formulaire ou email) avec un numéro de dossier.
@@ -66,8 +96,45 @@
   - Garantie (art. 17.1 LOE) : 1, 3 et 10 ans à compter de la réception des travaux sans réserves, ou de la levée des réserves.
   - Prescription de l'action (art. 18 LOE) : 2 ans à compter de la survenance des dommages.
   - S'y ajoutent les garanties contractuelles et l'action pour inexécution du contrat (art. 1964 CC : 5 ans).
+- **Qui s'occupe de quoi** (qui fait chaque étape du protocole et des listes ci-dessus) :
+  - **Vous (le promoteur) :** le canal unique avec un numéro de dossier, la réponse sous 48-72 h, l'ordre écrit avec photos et délai et, si personne ne répond, la réparation sur la retenue de garantie. Envers l'acheteur, c'est vous qui répondez.
+  - **Votre technicien :** la visite technique et le classement de chaque désordre par nature et par urgence.
+  - **Constructeur ou corps d'état responsable :** la réparation, dans le délai de l'ordre.
+  - **Assureur décennal :** les dommages structurels, dès que vous en avez connaissance.
+  - **Le propriétaire :** il signe la clôture de chaque désordre.
+  - **Intervenants de la construction** (auteur du projet, directeur des travaux, directeur de l'exécution, constructeur) : vous vous retournez contre le responsable pour ce que vous avez payé, dans les 2 ans à compter de votre paiement.
+  - **Commission arbitrale de la consommation de la CCAA :** l'arbitrage des réclamations des acheteurs.
+
+### Exemple : Nicolás, le promoteur
+
+L'immeuble transféré, il restait à Nicolás les garanties. Je vous raconte comment il a monté son service après-vente.
+
+**Le protocole.** Il l'avait défini dans le dossier de garanties (Leçon 9.5) et l'a expliqué à chaque acheteur lors de la livraison :
+
+1. Un canal unique, une adresse email, qui attribue un numéro à chaque désordre.
+2. Réponse sous 48-72 h. C'est une bonne pratique, pas un délai légal.
+3. Visite technique de son architecte technique, qui classe chaque désordre par nature (finition, 1 an ; habitabilité, 3 ans ; structure, 10 ans ; ou mauvais usage) et par urgence : sous 24 h en cas de fuite, de coupure de fourniture ou de risque pour les personnes.
+4. Ordre écrit au constructeur ou au corps d'état responsable, avec photos et délai.
+5. S'il ne répond pas, il répare lui-même et paie avec la retenue de garantie, qu'il détient encore : 5 % de chaque situation, jusqu'à un an après la réception (Leçon 5.4).
+6. Clôture signée par le propriétaire.
+
+**Les premiers désordres.** Ils faisaient partie des plus fréquents du tableau : des réglages de portes et de fenêtres. Aucun n'était urgent, et le constructeur les a corrigés dans le délai de son ordre écrit. Les corps d'état de votre province (finitions, installations, nettoyage et entretien), vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon.
+
+**Si un jour survient un dommage structurel.** Il le déclarera à l'**assureur décennal** dès qu'il en aura connaissance. Et il a les délais en tête : l'acheteur dispose de 2 ans à compter de l'apparition du dommage pour réclamer, et lui, du même délai à compter de son paiement pour se retourner contre l'intervenant responsable. Il ne les confond pas avec ceux de la garantie, qui sont de 1, 3 et 10 ans à compter de la réception.
+
+**Si un acheteur n'est pas satisfait.** Il peut porter sa réclamation devant la **commission arbitrale de la consommation** de la Communauté valencienne. Celle de votre communauté, vous l'avez à la fin du module.
+
+### Résumé
+
+Chaque désordre suit un protocole : canal unique, réponse rapide, visite et classement par nature et par urgence, ordre écrit au responsable et clôture signée. Les dommages structurels vont à la décennale, et ne confondez pas les délais de garantie (1, 3 et 10 ans) avec celui de la réclamation (2 ans).
+
+### Votre checklist
+
+- Protocole d'après-vente opérationnel
 
 ## Leçon 12.3 — Clôture économique et fiscale
+
+> **Où en sommes-nous :** le service après-vente fonctionne (Leçon 12.2). Vous clôturez maintenant la promotion sur les plans économique et fiscal : vous soldez le contrat avec le constructeur, vous clôturez les comptes et les impôts et vous comparez la rentabilité réelle au CRP approuvé.
 
 - **Décompte avec l'entreprise :** approuvez la situation finale et soldez le contrat (retenues, pénalités, suppléments). Restituez la retenue à son échéance.
 - **Soldez les comptes** avec les techniciens, fournisseurs et prestataires, et réglez les factures et garanties en suspens.
@@ -84,8 +151,48 @@
 - **IVA :** trimestrielle (303) et récapitulatif annuel (390). Si vous louez des logements invendus, régularisez l'IVA déduite (la location de logements est exonérée).
 - **Plus-value municipale :** s'agissant d'un ouvrage neuf, l'autoliquidation de la plus-value municipale ne s'applique pas au promoteur (Leçon 11.5). Choisissez la méthode la plus favorable (objective ou réelle). Sans hausse de valeur, pas d'impôt.
 - **IBI :** pour les logements qui vous appartiennent encore au 1 janvier.
+- **Qui s'occupe de quoi** (qui fait chaque élément de la liste ci-dessus) :
+  - **Directeur de l'exécution :** il mesure et certifie, y compris l'ouvrage de la situation finale (Leçon 7.3).
+  - **Vous (le promoteur) :** vous approuvez la situation finale, soldez le contrat avec le constructeur (retenues, pénalités, suppléments) et lui restituez la retenue à son échéance ; vous soldez les comptes avec les techniciens, fournisseurs et prestataires ; et vous comparez la rentabilité réelle au CRP approuvé, avec le Modèle 2.
+  - **Cabinet comptable :** le rapprochement, la comptabilité des stocks et des charges financières, et les déclarations d'IS (formulaires 200 et 202) et d'IVA (303 et 390).
+  - **AEAT ou administration fiscale forale :** elle reçoit ces déclarations.
+  - **Mairie :** l'IBI des logements qui vous appartiennent encore au 1 janvier.
+
+### Exemple : Nicolás, le promoteur
+
+Le service après-vente en place, Nicolás s'est assis avec son cabinet de conseil, celui de la Leçon 1.4, pour clôturer les chiffres. Je vous raconte comment il s'y est pris.
+
+**Le décompte avec le constructeur.** Son architecte technique, en tant que directeur de l'exécution, a mesuré et certifié l'ouvrage, et Nicolás a approuvé la situation finale. L'ouvrage s'est terminé à 1.063.537 €, 16.454 € (2 %) au-dessus des 1.047.083 € contractés : l'écart qu'il avait déjà vu venir à mi-chantier avec le Modèle 4 (Leçon 7.3). Il a soldé le contrat avec ses retenues et ses suppléments, et noté la date de restitution de la retenue : un an après la réception (Leçon 5.4).
+
+**Les comptes.** Il a soldé les comptes avec ses techniciens, fournisseurs et prestataires, et réglé les factures et garanties en suspens. Avec le cabinet, il a rapproché les recettes des ventes, les coûts, les intérêts et les frais généraux.
+
+**La rentabilité réelle.** Il a recalculé le Modèle 2 avec les données réelles et l'a comparé au CRP approuvé, qui donnait un bénéfice avant impôts de 476.202,24 € :
+
+- **Ventes :** les 18 logements, vendus et passés par acte au prix de son plan de ventes (Modèle 5).
+- **Coût de l'ouvrage :** 16.454 € de plus (+2 %).
+- **Délai et coût financier :** il a signé les actes dans les 4 mois prévus, et le coût financier réel a été de 73.936,57 €, un peu moins que les 79.940,06 € qu'il avait inscrits dans le CRP.
+
+**La comptabilité.** Tous les coûts étaient inscrits en stocks : promotion en cours et, à la fin, immeuble achevé. À chaque acte, le cabinet a comptabilisé la vente et sorti le coût correspondant. Comme la promotion a duré plus d'un an, les intérêts du prêt promoteur ont été incorporés au coût des stocks.
+
+**Les impôts, auprès de l'administration fiscale (Agencia Tributaria) :**
+
+- **IVA :** l'IVA facturée sur toute la promotion, 199.850,15 € selon son Modèle 5, déclarée trimestre après trimestre dans le 303 et récapitulée dans le 390. Il ne loue aucun logement ; il n'a donc pas d'IVA à régulariser.
+- **Impôt sur les sociétés :** la déclaration annuelle (formulaire 200) et les acomptes (formulaire 202). Le taux, parmi ceux que donne la leçon, c'est son cabinet qui le lui a appliqué selon sa société.
+- **Plus-value municipale :** comme le dit la Leçon 11.5, s'agissant d'un ouvrage neuf, l'autoliquidation de la plus-value municipale ne s'applique pas au promoteur.
+
+### Résumé
+
+Soldez le contrat avec le constructeur, clôturez les comptes et rapprochez-les ; recalculez le Modèle 2 avec les données réelles et comparez-le au CRP approuvé. Les coûts sont des stocks, les intérêts sont incorporés si la promotion dure plus d'un an, et l'IS et l'IVA se clôturent avec leurs formulaires.
+
+### Votre checklist
+
+- Décompte final avec le constructeur
+- IS, IVA et plus-values liquidés
+- Rentabilité réelle comparée au CRP approuvé
 
 ## Leçon 12.4 — Clôture de la SPE
+
+> **Où en sommes-nous :** les comptes et les impôts clôturés (Leçon 12.3), il reste la société : vous décidez si la SPE est dissoute ou mise en réserve, et vous archivez le dossier de la promotion.
 
 - **Avant de liquider :**
   1. Mainlevée totale au Registre du prêt promoteur.
@@ -108,6 +215,47 @@
   - Remplissez les obligations comptables, fiscales et sociétaires de la société.
   - Gardez la documentation disponible pour les contrôles et les réclamations.
   - Évaluez les écarts de coût, de délai et de ventes pour la promotion suivante.
+- **Qui s'occupe de quoi** (qui fait chaque étape des listes ci-dessus) :
+  - **Banque, notaire et Registre de la propriété :** la mainlevée totale au Registre du prêt promoteur.
+  - **Constructeur, fournisseurs et techniciens :** le décompte final et l'encaissement de ce qui reste dû.
+  - **Cabinet comptable :** les impôts à jour et les obligations comptables, fiscales et sociétaires de la société tant qu'elle existe.
+  - **Assemblée générale des associés :** la décision de dissolution et la nomination du liquidateur.
+  - **Liquidateur :** le bilan final et la répartition entre associés.
+  - **Notaire :** l'acte d'extinction.
+  - **Registre du commerce :** l'inscription de l'extinction et, tant que la société subsiste, le dépôt des comptes.
+  - **AEAT ou administration fiscale forale :** la radiation fiscale (formulaire 036).
+  - **Vous, avec votre équipe :** la réunion de retour d'expérience, le dossier archivé avec ses durées de conservation, la clôture des contrats temporaires et l'évaluation des écarts.
+
+### Exemple : Nicolás, le promoteur
+
+Les comptes clôturés, il restait à Nicolás sa société. Je vous raconte ce qu'il a décidé.
+
+**Avant tout, les quatre points de la leçon.** Il a vérifié qu'ils étaient faits : le prêt promoteur, soldé depuis le dernier acte (Leçon 11.1) et radié aussi au Registre ; le décompte final avec le constructeur (Leçon 12.3) ; les paiements à tous les fournisseurs et techniciens ; et les impôts à jour.
+
+**La décision : la SPE, en réserve.** Il en a parlé avec son cabinet de conseil et avec un avocat ; vous les trouverez tous les deux dans la liste que nous vous avons donnée, dans les entreprises potentielles de cette leçon. L'extinction n'efface pas les garanties : ensuite, les associés répondent à hauteur de ce qu'ils ont reçu lors de la liquidation. C'est pourquoi il a fait ce que font beaucoup de promoteurs : garder la SPE en sommeil jusqu'à l'expiration des délais. En attendant, son cabinet tient ses obligations comptables, fiscales et sociétaires, avec le dépôt des comptes au **Registre du commerce**. Le jour venu, il la fermera en suivant les étapes de la leçon : assemblée générale avec la décision de dissolution et le liquidateur, bilan final et répartition, acte d'extinction chez le **notaire**, inscription au Registre du commerce et radiation fiscale auprès de l'**administration fiscale (Agencia Tributaria)**.
+
+**Le dossier.** Il a archivé le dossier complet de la promotion (projets, permis, certificats, contrats, factures et garanties) avec ses durées de conservation : la comptabilité et les factures, 6 ans ; la documentation fiscale, tant qu'elle peut être contrôlée (4 ans, ou plus s'il existe des bases négatives ou des déductions en attente) ; la documentation technique et celle des garanties, au moins 10 ans plus les 2 ans de prescription. Et il a clôturé les contrats temporaires du chantier : l'assurance de chantier, les fournitures de chantier et les baraques.
+
+**Les enseignements tirés.** Il a réuni son équipe (l'architecte, l'architecte technique, l'entreprise de construction, l'agence immobilière et le cabinet de conseil) et ils ont passé en revue ce qui a marché, ce qui n'a pas marché et ce qui change la prochaine fois. Il a noté les écarts de la Leçon 12.3 : l'ouvrage, 2 % au-dessus du budget, et le coût financier, un peu en dessous du CRP.
+
+Avec ce rapport, Nicolás regarde déjà des terrains pour sa deuxième promotion. Il recommence par le Module 1.
+
+### Résumé
+
+Avant de liquider la SPE, soldez le prêt promoteur, le constructeur, les fournisseurs et les impôts. Ensuite, vous décidez : l'extinction (assemblée, liquidateur, bilan, acte, Registre du commerce et radiation fiscale) ou la mise en réserve, en sachant que l'extinction n'efface pas les garanties. Terminez par le retour d'expérience et le dossier archivé avec ses durées de conservation.
+
+### Votre checklist
+
+- Prêt promoteur radié au Registre
+- Décision sur la SPE : dissolution ou mise en réserve
+- Rapport des enseignements tirés
+- Dossier archivé avec les durées de conservation
+
+## Résumé du module 12
+
+Vous avez transféré l'immeuble à la copropriété, monté un service après-vente avec son protocole, soldé le contrat avec le constructeur, clôturé les comptes et les impôts, comparé la rentabilité réelle au CRP approuvé et décidé du sort de votre SPE, avec le dossier archivé et les enseignements tirés par écrit.
+
+**Où vous devriez en être dans votre projet :** le service après-vente opérationnel, le décompte final avec le constructeur fait, les impôts soldés et la SPE liquidée ou mise en réserve. C'est la fin de la promotion : vous avez commencé au Module 1 sans terrain et sans société, et vous terminez avec les logements vendus, passés par acte et livrés, et leurs garanties en place. Votre rapport des enseignements tirés est le point de départ de la suivante, qui recommence au Module 1.
 
 ## Checklist du module 12
 

@@ -26,6 +26,8 @@
 
 ## Lección 2.1 — La Cuenta de Resultado Promotor (CRP)
 
+> **Dónde estamos:** con el solar asegurado en el Módulo 1, empiezas el análisis de viabilidad por su herramienta central, la Cuenta de Resultado Promotor (CRP): la cuenta con la que decides con números si la operación se hace.
+
 - **Estructura:**
 ```
   INGRESOS (venta de viviendas, garajes, trasteros, locales; sin IVA)
@@ -59,7 +61,30 @@
 
 - **Regla:** por debajo del 15 % de margen sobre ventas, el riesgo no compensa.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la opción de compra inscrita, Nicolás se puso con su CRP. Te cuento cómo la montó.
+
+**Primero, sin IVA.** Toda su cuenta va sin IVA, como dice la lección: el IVA que soporte en la obra lo recupera al repercutir el 10 % en las ventas. El ITP de la compra, en cambio, no lo recupera, porque vende un particular (Lección 1.4): por eso entra en el coste del suelo. Lo repasó con su asesoría, la de la sociedad.
+
+**Después, las líneas de su promoción.** Siguió la estructura de la lección de arriba abajo:
+
+- **Ingresos:** sus 18 viviendas, 2 de ellas áticos.
+- **Suelo:** el precio del solar, 71.392,05 €, con su ITP.
+- **Costes:** construcción, urbanización y acometidas, honorarios técnicos, licencias, seguros, comercialización, gastos generales y gastos financieros, una línea cada uno.
+- **Abajo del todo:** el beneficio antes de impuestos y, después del Impuesto sobre Sociedades, el beneficio neto.
+
+**La herramienta.** Para no dejarse ninguna partida abrió la **Plantilla 2 · Viabilidad rápida y método residual**, que trae estas líneas (la tienes en la Lección 2.3). Metió lo que ya sabía: Comunitat Valenciana; solar sin IVA, porque vende un particular; 1.586,49 m² construidos y 18 viviendas. En cada partida dejó el porcentaje que trae la plantilla. Le faltan dos datos: el precio de venta, que saca en la Lección 2.2, y el coste de construcción, que afina en la Lección 2.3.
+
+**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 3,6 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque son los precios del ejemplo del profesional.
+
+### Resumen
+
+La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suelo a los gastos financieros, y te deja el beneficio antes de impuestos. Compara cada partida con los pesos orientativos: por debajo del 15 % de margen sobre ventas, no compensa.
+
 ## Lección 2.2 — Encaje e ingresos: el estudio de mercado
+
+> **Dónde estamos:** en la Lección 2.1 montaste la estructura de tu CRP. Ahora la llenas por arriba: el encaje del arquitecto te dice qué superficies vendes y el estudio de mercado, a qué precio.
 
 - **Primero el encaje.** Encarga a un estudio de arquitectura solvente el correspondiente encaje de la promoción a realizar. Lo más importante de lo que hace el arquitecto:
   - Estima la edificabilidad computable y las superficies construidas y útiles.
@@ -97,7 +122,33 @@
   - **Precio por separado** de vivienda, garaje y trastero.
   - Contrasta siempre los precios anunciados con operaciones reales.
 
+### Ejemplo: Nicolás, el promotor
+
+A la CRP de Nicolás le faltaba la primera línea, los ingresos. Te cuento cómo los sacó.
+
+**Primero, el encaje.** Volvió al estudio de arquitectura que le hizo la volumetría (Lección 1.2), el mismo que llevará el proyecto (Módulo 3), y le encargó el encaje de la promoción. El arquitecto estimó la edificabilidad computable y las superficies construidas y útiles; distribuyó las viviendas, las zonas comunes y el núcleo de escalera y ascensor; comprobó tipologías, iluminación, ventilación y accesibilidad, y le confirmó que no hace falta otro instrumento de planeamiento. Resultado: 1.586,49 m² construidos en B+5, sin sótano, con 18 viviendas, 2 de ellas áticos.
+
+**Después, el estudio de mercado, a pie.** Miró qué había alrededor y quién era su competencia: recorrió las promociones en venta a 1-3 km de su solar y en cada una hizo de comprador, que es la técnica de simulación. Anotó el €/m², la tipología y las calidades. Leyó también los informes trimestrales de Tinsa, Sociedad de Tasación y Gloval.
+
+**Lo que se mueve en la zona.** Midió también lo demás que pide la lección: la absorción de las promociones comparables, la oferta futura (preguntó en urbanismo del ayuntamiento y miró la estadística de visados del Colegio de Arquitectos) y el perfil del comprador.
+
+**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias, para primera vivienda.
+
+**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **1.259,70 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 111.027,86 € sin IVA (122.130,64 € con el 10 % de IVA) y unas ventas de 1.998.501,45 €. Lo metió en la Plantilla 2.
+
+### Resumen
+
+El arquitecto te da el encaje y las superficies que vendes; el estudio de mercado, hecho a pie y mirando a la competencia, te da el precio. Con los dos cierras el mix y los ingresos de tu CRP.
+
+### Tu checklist
+
+- Estudio de mercado
+- Mix de producto cerrado con el arquitecto
+- Encaje del arquitecto
+
 ## Lección 2.3 — Costes con precisión
+
+> **Dónde estamos:** ya tienes los ingresos de tu CRP (Lección 2.2). Ahora los costes, partida por partida, y con ellos el método residual: cuánto puedes pagar por el suelo.
 
 - **Suelo:** precio + ITP/AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
 - **Método residual:** `Precio máximo del suelo = Ingresos − resto de costes − beneficio objetivo`. El suelo vale lo que el proyecto permite pagar.
@@ -129,6 +180,16 @@
 | Notaría y registro de obra nueva y división horizontal | según arancel |
 | Comercialización | 2–4 % de las ventas |
 | Gastos financieros | 3–6 % de los ingresos |
+- **Quién se encarga de cada cosa** (a quién pides el precio de cada partida de la tabla de arriba):
+  - **Arquitecto:** el proyecto y la dirección de obra, y las ingenierías (estructura, instalaciones), que coordina él.
+  - **Arquitecto técnico y coordinador de seguridad y salud** (Colegio de Aparejadores y Arquitectos Técnicos, Módulo 3): la dirección de ejecución y la coordinación de seguridad y salud.
+  - **Laboratorio de geotecnia:** la geotecnia.
+  - **OCT:** su revisión del proyecto (Módulo 3) y de la obra (Módulo 7).
+  - **Ayuntamiento:** el ICIO y la tasa de licencia, en su ordenanza fiscal.
+  - **Corredor de seguros:** el seguro decenal, el TRC, la RC y el seguro de cantidades a cuenta; los avales, el **banco** (Módulo 5).
+  - **Notaría y Registro de la Propiedad:** la obra nueva y la división horizontal, según arancel.
+  - **Inmobiliaria o agencia:** la comercialización (Módulo 8).
+  - **Banco:** los gastos financieros (Lección 5.1).
 
 - ⚠️ **Errores típicos:** no incluir acometidas (electricidad y agua pueden costar decenas de miles de euros); olvidar el coste de los avales; poner el ICIO sobre el PEM sin mirar la ordenanza.
 
@@ -304,7 +365,43 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
 - **Venta.** Algunos de los costes que engloban la comercialización o venta de los inmuebles van a ser los comerciales, encargados de informar de los productos a vender, siendo en este caso los inmuebles.
 - **Servicio de postventa.** Este servicio es el encargado de revisar la gestión y control del proceso de recepción de la promoción ya que se ha de tener en cuenta que durante los primeros meses después de la venta es donde se generan más reclamaciones y estas requieren de una solución rápida y efectiva.
 
+### Ejemplo: Nicolás, el promotor
+
+Con los ingresos en la Plantilla 2, Nicolás fue a por los costes. Te cuento de dónde sacó cada uno.
+
+**El suelo.** Lo tenía de la Lección 1.4: 81.174,29 € en la Plantilla 1, con ITP, notaría, registro, due diligence, tasación y estudios. En la Plantilla 2 el solar entra con su ITP del 9 %: 77.817,33 €. La propia plantilla avisa de que va sin notaría ni registro, y de que eso se afina con la Plantilla 1.
+
+**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). En el ejemplo, la construcción va a 660 €/m², la del ejemplo del profesional: 1.047.083,40 €. Es más barata que la de hoy: la lección da 900–1.100 €/m² para la construcción estándar en 2025-2026. En tu promoción, pon el precio que te den tus constructoras.
+
+**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 52.354,17 €.
+
+**El resto, con los porcentajes de la plantilla:**
+
+- Honorarios técnicos, 8 % de la construcción: 83.766,67 €.
+- Seguros, OCT, control de calidad y otros, 3 %: 31.412,50 €.
+- Urbanización y acometidas: 50.000 €. No las olvidó: es otro error típico.
+- Comercialización, 3 % de las ventas: 59.955,04 €.
+- Gastos financieros, 4 % de las ventas: 79.940,06 €. Los afinará con el banco (Lección 5.1).
+- Gastos generales, 2 % de las ventas: 39.970,03 €.
+
+En total, **1.444.481,87 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
+
+**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 178.247,08 €**. El propietario pide 71.392,05 €.
+
+### Resumen
+
+Cada coste entra en la CRP con su referencia: el suelo con todo lo que no recuperas, la construcción con el precio de constructoras locales y el ICIO con la ordenanza de tu municipio. Con ellos, el método residual te dice lo máximo que puedes pagar por el suelo.
+
+### Tu checklist
+
+- Plantilla 2 · Viabilidad rápida y método residual (incluida) rellena con precios de venta y costes contrastados
+- Presupuesto de construcción contrastado con 2 constructoras locales
+- ICIO y tasas reales de la ordenanza municipal
+- Precio máximo de suelo por método residual
+
 ## Lección 2.4 — Ratios y decisión
+
+> **Dónde estamos:** tu CRP ya tiene ingresos (Lección 2.2) y costes (Lección 2.3). Ahora sacas los ratios, pruebas tres escenarios y decides con números si la operación se hace: GO / NO GO.
 
 - **Margen sobre ventas** = beneficio antes de impuestos ÷ ingresos. Mínimo 15 %.
 - **ROE** = beneficio neto ÷ fondos propios. Objetivo > 20 % anual.
@@ -328,7 +425,40 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
 - **Decisión:** GO solo si el pesimista sigue sin pérdidas.
 - ⚠️ **Errores típicos:** calcular el margen con IVA dentro; no meter el calendario (la TIR depende del tiempo); olvidar el IS en el ROE.
 
+### Ejemplo: Nicolás, el promotor
+
+Con la Plantilla 2 completa, a Nicolás le tocaba decidir. Te cuento cómo lo hizo.
+
+**El margen sobre ventas.** Su CRP, sin IVA: ventas, 1.998.501,45 €; coste total de la promoción, 1.522.299,21 €; beneficio antes de impuestos, 476.202,24 €. El margen es el beneficio entre los ingresos: 476.202,24 € ÷ 1.998.501,45 € = 24 %. Pasa con holgura del mínimo del 15 %.
+
+**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 178.247,08 € por el solar; el propietario pide 71.392,05 €, 106.855,03 € por debajo del máximo.
+
+**Los tres escenarios.** El optimista es su CRP tal cual: ventas al 100 % del precio y obra sin desvíos. Para los otros dos volvió a la Plantilla 2 y movió el precio de venta y el coste de construcción como dice la tabla:
+
+- **Base** (ventas al 95 %, obra +5 %): beneficio de 324.539,59 €, un margen del 17 %.
+- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 172.876,94 €, un 9,6 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 23.976,21 € más de intereses (el 4,5 % anual sobre 1.065.609,45 €, medio año). Sigue sin pérdidas.
+- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 21.214,28 € antes de esos intereses, así que se queda en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
+
+**El calendario.** La TIR depende del tiempo, y la Plantilla 2 no va mes a mes. Con su asesoría montó el flujo de caja mensual: cuándo paga el solar, los proyectos y cada certificación de obra, y cuándo cobra las ventas, con 20 meses de obra y 4 más hasta las escrituras de venta. De ahí sacó la TIR del proyecto y la del equity. La plantilla profesional del extra lo trae mes a mes (Lección 2.3).
+
+**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 456.689,76 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
+
+**El impuesto, para el ROE.** El ROE va sobre el beneficio neto, después del Impuesto sobre Sociedades. Su SPE es nueva: en la lista de la lección le correspondería el 15 % de entidad de nueva creación, y se lo hizo confirmar a su asesoría.
+
+**GO.** Margen del 24 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda en tablas. Lo siguiente, comprar (Lección 2.5).
+
+### Resumen
+
+El margen sobre ventas (mínimo 15 %), el ROE y la TIR te dicen si la operación compensa: siempre sin IVA y con el calendario dentro. Pruebas tres escenarios y das el GO solo si el pesimista sigue sin pérdidas.
+
+### Tu checklist
+
+- CRP con tres escenarios
+- Flujo de caja mensual con TIR y necesidades de fondos propios
+
 ## Lección 2.5 — Negociación, estructura y aprobación de la inversión
+
+> **Dónde estamos:** con el GO de la Lección 2.4, cierras la operación: negocias con el propietario, ordenas la sociedad y los socios, apruebas la inversión y compras el solar.
 
 - **Negociación con el propietario del solar:**
   - Precio, forma de pago (al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles), plazos.
@@ -352,6 +482,53 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
   3. Liquidación de impuestos: ITP/AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
   4. Inscripción en el Registro de la Propiedad.
   5. Cancelación o regularización de las cargas pactadas y toma de posesión efectiva.
+- **Quién se encarga de cada cosa** (a quién pides cada cosa de las listas de arriba):
+  - **Tú:** la negociación con el propietario (precio, forma de pago, plazos) y la memoria de inversión.
+  - **Abogado:** revisa el contrato de compraventa con opción de compra y las condiciones suspensivas, y redacta el pacto de socios.
+  - **Asesoría o asesor fiscal:** las aportaciones de los socios (capital o préstamo de socio) y la fiscalidad de la compra y de la promoción.
+  - **Notaría:** los poderes notariales y la escritura pública de compraventa.
+  - **Junta de socios** (o comité de inversión): la aprobación de la inversión.
+  - **Banco:** las garantías que te pida, como los avales personales.
+  - **Registro de la Propiedad:** la nota simple del día y la inscripción.
+  - **Ayuntamiento · Gestión tributaria:** los certificados de IBI y de deudas.
+  - **Administración tributaria de tu comunidad:** el ITP/AJD con el modelo 600, en su plazo.
+  - **Vendedor:** el IVA que repercuta, si la venta tributa por IVA; la cancelación o regularización de las cargas pactadas y la entrega de la posesión.
+
+### Ejemplo: Nicolás, el promotor
+
+Con el GO, Nicolás cerró la operación. Te cuento en qué orden.
+
+**Lo negociado con el propietario.** Lo dejó atado en la opción de compra de la Lección 1.4: el precio, 71.392,05 €; la forma de pago, con opción de compra, y un plazo suficiente para hacer los estudios y conseguir financiación, que es lo que pide la lección. Por escrito, las condiciones suspensivas de viabilidad urbanística, registral y técnica: si alguna fallaba, no compraba.
+
+**La estructura.** Su SPE ya existe (Lección 1.4): una sociedad nueva solo para esta promoción, lo que la lección llama SPV, que aísla el riesgo. Con su asesoría decidió cómo entran los fondos propios (capital o préstamo de socio) y revisó la fiscalidad antes de firmar: la compra paga ITP, porque vende un particular, y las ventas llevarán el 10 % de IVA. Firmó el **pacto de socios** de su SPE con lo que pide la lección: mayorías reforzadas, reparto de funciones, aportaciones adicionales si hay desviaciones, bloqueo, salida y reparto de resultados. Sabe que el banco le pedirá avales personales (Lección 5.1).
+
+**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 1.522.299,21 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
+
+**La compra.** Con la inversión aprobada, ejerció su opción:
+
+1. El día de la firma, una **nota simple del día** en el **Registro de la Propiedad** y los certificados de IBI y de deudas en **gestión tributaria del ayuntamiento**.
+2. La **escritura pública de compraventa**, en la misma notaría de la opción.
+3. El **ITP** de la Comunitat Valenciana, el 9 %: 6.425,28 €, con el modelo 600 y en su plazo (habitualmente 30 días hábiles).
+4. La **inscripción** en el Registro de la Propiedad, a nombre de su SPE.
+5. Sin cargas que cancelar (Lección 1.3), la toma de posesión del solar.
+
+El solar ya es de su SPE, escriturado e inscrito. Pasa al Módulo 3: los proyectos técnicos.
+
+### Resumen
+
+Negocias precio, forma de pago y condiciones; ordenas por escrito la sociedad y los socios; la junta aprueba una memoria de inversión con hitos y criterios de salida, y compras el solar: escritura, impuestos liquidados e inscripción.
+
+### Tu checklist
+
+- Opción de compra y condiciones suspensivas negociadas
+- Pacto de socios y estructura de la SPV
+- Memoria de inversión aprobada con hitos y criterios de salida
+
+## Resumen del Módulo 2
+
+Has montado tu CRP sin IVA, has sacado los ingresos con el encaje del arquitecto y un estudio de mercado hecho a pie, has afinado cada coste y el precio máximo del suelo por el método residual, y has probado tres escenarios antes de decidir. Con el GO, has negociado, has ordenado la sociedad, has aprobado la inversión y has comprado el solar.
+
+**Dónde deberías estar en tu proyecto:** con tu Cuenta de Resultado Promotor (CRP) con tres escenarios y la decisión GO / NO GO tomada; si es GO, con la memoria de inversión aprobada y el solar comprado a nombre de tu SPE (o la opción lista para ejercer). Con eso pasas al Módulo 3, donde encargas los proyectos técnicos.
 
 ## Checklist del Módulo 2
 

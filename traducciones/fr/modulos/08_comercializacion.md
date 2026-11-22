@@ -33,6 +33,8 @@
 
 ## Leçon 8.1 — Marketing et lancement
 
+> **Où en sommes-nous :** vous avez suivi la promotion jusqu'au contrôle du chantier (Module 7), mais la vente avance en parallèle depuis l'achat du terrain. Dans cette leçon, vous préparez le marketing et le lancement : ce que vous faites à chaque étape de la promotion, avec quels supports et quels canaux, et avec quel prix dans chaque annonce.
+
 | Étape de la promotion | Action commerciale |
 |---|---|
 | Achat du terrain | Marque, site en construction, captation de prospects |
@@ -60,7 +62,39 @@
 - **Politique de prix :** fixez des prix de départ et une règle de révision par étapes de vente (par exemple, +2–3 % à 30 % et à 60 % de vendu) et tenez-vous-y.
 - **Organisez la vente :** bureau de vente, visites, accueil téléphonique et gestion des clients.
 
+### Exemple : Nicolás, le promoteur
+
+Nicolás a commencé à vendre le jour où il a acheté le terrain, avec le tableau des étapes de la leçon. Je vous raconte comment il s'y est pris.
+
+**Étape par étape.**
+
+- **Avec le terrain acheté :** la marque de la promotion, un site en construction avec un formulaire et une liste de prospects.
+- **Avec le projet de base :** le lancement discret. Il a écrit à cette liste, sans rien encaisser.
+- **Avec le permis demandé :** le lancement officiel : le site, Idealista, Fotocasa et pisos.com (vous les trouverez dans les sites de cette leçon), l'agence avec laquelle il vend (Leçon 8.2) et le bureau de vente.
+- **Avec le permis accordé et les cautions prêtes :** les contrats privés avec acomptes garantis (Leçon 8.3).
+- **Ensuite :** « chantier lancé » au démarrage et, une fois la structure terminée, des visites de chantier casque sur la tête.
+
+**Les supports.** Son architecte lui a préparé les plans cotés de chaque typologie (2 et 3 chambres et les attiques) et la notice descriptive. Les images 3D, le dossier PDF et la visite virtuelle, il les a commandés à une entreprise de marketing de son secteur ; celles de votre province, vous les trouverez dans les entreprises potentielles de cette leçon. Chaque annonce porte le classement énergétique du projet et rien qu'il ne puisse tenir : la publicité engage.
+
+**Le prix, complet dès la première annonce.** La Ley 10/2025 oblige à donner le prix final complet dès la première annonce, sans prix d'appel ; chaque annonce de Nicolás indique donc le prix du logement, l'IVA à 10 %, l'AJD que l'acheteur paie dans son acte (dans la Communauté valencienne, 1,4 %, annexe B) et le total. Un logement au prix moyen est annoncé avec ses 111.027,86 €, les 11.102,79 € d'IVA (122.130,65 € IVA comprise), l'AJD et le total. La commission de l'agence, c'est lui qui la paie, et l'annonce précise que l'acheteur n'en paie aucune. Ce qui ne figure pas dans l'annonce, il ne le facturera pas ensuite.
+
+**Avant d'annoncer.** Il a déposé au bureau de vente la documentation du RD 515/1989 (la liste, dans la Leçon 8.3) et, au service de la consommation de sa communauté, il s'est renseigné sur les registres de réclamations et les exigences régionales.
+
+**Sa politique de prix.** Les prix de départ sont ceux de son étude de marché (Leçon 2.2). La révision, celle de l'exemple de la leçon : augmenter de 2–3 % en atteignant 30 % et 60 % de vendu. Il l'a écrite avant le lancement, pour s'y tenir.
+
+### Résumé
+
+La vente commence avec l'achat du terrain et suit les étapes de la promotion. Chaque annonce porte le classement énergétique et le prix final complet, avec ses impôts et ses frais : ce que vous annoncez fait partie du contrat.
+
+### Votre checklist
+
+- Documentation du RD 515/1989 au bureau de vente
+- Classement énergétique dans la publicité
+- Politique de révision des prix fixée
+
 ## Leçon 8.2 — Canal de vente
+
+> **Où en sommes-nous :** vous avez déjà les supports, les canaux et la politique de prix (Leçon 8.1). Vous décidez maintenant qui vend vos logements : une équipe propre, des agences partenaires ou les deux.
 
 - **Équipe propre :** directeur commercial, commerciaux, service client. Plus de contrôle et de marge ; coût fixe.
 - **Agences partenaires :**
@@ -69,7 +103,35 @@
   - En Catalogne, dans la Communauté valencienne et aux Canaries, vérifiez que l'agence est inscrite au **registre régional obligatoire**.
 - **Mixte :** bureau propre + réseau d'agences. Le plus courant.
 
+### Exemple : Nicolás, le promoteur
+
+Le plus courant est le système mixte, bureau propre et réseau d'agences. Mais Nicolás n'a qu'une seule promotion de 18 logements, et une équipe propre, même si elle donne plus de contrôle et de marge, est un coût fixe. Il a choisi de vendre avec une agence immobilière de son secteur. Je vous raconte comment il l'a choisie et ce qu'il a signé avec elle.
+
+**D'abord, la trouver.** Il a cherché des agences qui connaissaient son secteur et son acheteur : résidence principale, 2 et 3 chambres. Celles de votre province, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon et, à la fin du module, auprès du COAPI de votre province. Il en a rencontré plusieurs et en a choisi une.
+
+**Inscrite au registre.** Il construit dans la Communauté valencienne, l'une des trois communautés où le registre des agents est obligatoire ; avant de signer quoi que ce soit, il a donc vérifié que l'agence était inscrite au **registre régional des agents** (vous l'avez aussi à la fin du module).
+
+**Le contrat de collaboration, par écrit**, avec ce que demande la leçon :
+
+- **Commission :** dans la fourchette habituelle en logement standard (2,5–3 %). C'est lui qui la paie, pas l'acheteur, et il l'a budgétée dans la commercialisation de son Modèle 2 : 3 % des ventes, 59.955,04 €.
+- **Date d'exigibilité :** à l'acte de chaque logement, quand il encaisse.
+- **Exclusivité :** l'agence vend sa promotion en exclusivité, car c'est la seule avec laquelle il travaille.
+- **Prix minimaux :** ceux de sa politique de prix (Leçon 8.1). En dessous, rien sans sa signature.
+- **Usage de la marque :** l'agence annonce avec la marque et les supports de la promotion, et toujours avec le prix final complet de chaque logement (Leçon 8.1).
+
+**Comment ils travaillent.** L'agence tient le bureau de vente, les visites et le téléphone. Nicolás gère les réservations, les contrats, les garanties et le suivi de chaque acheteur (Leçons 8.3 et 8.4).
+
+### Résumé
+
+Vous pouvez vendre avec une équipe propre, avec des agences partenaires ou avec les deux, ce qui est le plus courant. Avec une agence, signez par écrit la commission, sa date d'exigibilité, l'exclusivité, les prix minimaux et l'usage de la marque et, en Catalogne, dans la Communauté valencienne et aux Canaries, vérifiez qu'elle est inscrite au registre régional.
+
+### Votre checklist
+
+- Contrats de collaboration avec des agences immatriculées
+
 ## Leçon 8.3 — Réservation et contrat privé
+
+> **Où en sommes-nous :** vos logements sont annoncés (Leçon 8.1) et vous avez l'agence qui les vend (Leçon 8.2). Le premier acheteur arrive : ce que vous devez lui remettre avant qu'il ne paie quoi que ce soit, comment se fait la réservation, ce que contient le contrat privé et comment vous garantissez ce que vous encaissez.
 
 - **Obligation d'informer et documents à remettre à l'acheteur d'un logement :**
   - Dans la Communauté valencienne, l'obligation d'informer l'acheteur de **logements neufs à prix libre** est régie principalement par :
@@ -92,6 +154,17 @@
   - **Livre de l'immeuble :** document qui rassemble le projet, les procès-verbaux de réception, la liste des intervenants de l'ouvrage et le manuel d'utilisation et d'entretien de l'immeuble.
   - **Assurance décennale dommages :** police souscrite par le promoteur qui couvre pendant 10 ans les dommages structurels de l'immeuble (fondations, poutres, planchers, murs porteurs).
   - **Bulletins des installations et contrats :** certificats des installations d'électricité, d'eau, de gaz et de télécommunications permettant d'ouvrir les contrats de fourniture, ainsi que les statuts de la copropriété s'ils sont déjà rédigés.
+- **Qui s'occupe de quoi** (à qui demander chaque document des deux listes ci-dessus) :
+  - **Vous (le promoteur) :** l'identification de votre société (raison sociale, adresse et données du Registre du commerce), les conditions économiques (prix total, impôts et modalités de paiement) et la remise de l'ensemble à l'acheteur.
+  - **Auteur du projet (votre architecte) :** les plans de situation et du logement, avec la surface utile et construite, et la notice descriptive.
+  - **Mairie :** le permis de construire et, à la fin, le permis de première occupation ou la déclaration responsable (Leçon 9.3).
+  - **Registre de la propriété :** la nota simple, avec la propriété du terrain et ses charges.
+  - **Banque ou assureur :** l'aval bancaire ou l'assurance-caution individuelle de chaque acheteur ; la banque, en outre, le compte spécial.
+  - **Technicien compétent :** le certificat de performance énergétique, qui est enregistré auprès de l'IVACE.
+  - **Directeur des travaux :** la documentation de l'ouvrage exécuté, avec laquelle vous complétez le Livre de l'immeuble (Leçon 9.4).
+  - **Assureur décennal :** la police d'assurance décennale, que vous souscrivez.
+  - **Installateurs agréés :** les certificats des installations d'électricité, d'eau, de gaz et de télécommunications.
+  - **Notaire :** l'acte de déclaration d'ouvrage neuf et de division horizontale, qui contient les statuts de la copropriété (Leçon 9.2).
 - **Réservation :**
   - Montant : 3.000–10.000 €.
   - C'est déjà une somme versée d'avance : **elle doit être garantie** (DA 1.ª LOE).
@@ -131,7 +204,50 @@
 - **Enregistrez** pour chaque acheteur chaque paiement, garantie, incident et modification contractuelle.
 - **Coordonnez** la documentation avec les avocats, la banque et l'assureur des sommes versées d'avance.
 
+### Exemple : Nicolás, le promoteur
+
+Nicolás construit à Alicante : son cas est celui de cette leçon, la Communauté valencienne. Je vous raconte comment il a vendu ses logements.
+
+**Avant d'encaisser un euro, les garanties.** Il n'a pas signé la première réservation avant que la ligne de cautions de sa banque (Module 5) et le compte spécial, où entre tout ce qu'il encaisse, soient opérationnels. Chaque acheteur reçoit sa caution individuelle, pour ce qu'il a versé plus les intérêts légaux.
+
+**Ce qu'il remet à chaque acheteur avant de signer**, gratuitement et par écrit :
+
+- L'identification de sa SPE : raison sociale, adresse et données du Registre du commerce.
+- Les plans de situation et du logement, avec les parties communes et la surface utile et construite, mesurées par son architecte selon le critère légal valencien.
+- La notice descriptive.
+- La copie du permis de construire et la nota simple du Registre de la propriété.
+- Le prix total avec l'IVA à 10 % et l'AJD, et les modalités de paiement.
+- Les données de sa caution et du compte spécial.
+
+Et il lui dit ce qu'il recevra avec l'acte : la première occupation, le certificat énergétique enregistré auprès de l'IVACE, le Livre de l'immeuble, l'assurance décennale et les bulletins (Module 9).
+
+**Les chiffres, dans le Modèle 5.** Avec 18 logements à 111.027,86 € en moyenne hors IVA (122.130,65 € IVA comprise) :
+
+- **Réservation :** 6.000 €, avec un délai pour signer le contrat privé et, par écrit, ce que devient l'argent s'il n'est pas signé.
+- **Contrat privé :** 10 % du prix : 6.213,06 € IVA comprise, réservation déduite.
+- **Pendant les travaux :** encore 10 %, en 18 échéances de 678,50 €.
+- **À l'acte :** 97.704,52 €, les 80 % restants.
+
+Avant la livraison, il encaisse 24.426,13 € par logement : **439.670,33 € de sommes versées d'avance** sur toute la promotion, qu'il doit garantir par une caution ou une assurance ; lui les garantit par les cautions de sa banque.
+
+**Le contrat.** Il est parti du modèle de l'association de promoteurs de son secteur, et son avocat et le notaire qu'il a choisi au Module 1 l'ont relu ; les cabinets et les notaires, vous les trouverez dans les entreprises potentielles de cette leçon. Il comporte l'IVA détaillée, le permis, la date de livraison, le droit de résoudre le contrat en l'absence de livraison dans les délais, le libre choix du notaire et aucun des frais qui ne peuvent pas être mis à la charge de l'acheteur.
+
+**Blanchiment.** Il a rédigé sa procédure selon les lignes directrices du SEPBLAC : DNI ou NIE, bénéficiaire effectif si une société achète, origine des fonds, tout par banque et rien en espèces, et la documentation conservée 10 ans.
+
+### Résumé
+
+Avant d'encaisser quoi que ce soit, remettez à l'acheteur l'information obligatoire et garantissez chaque euro par une caution ou une assurance et un compte spécial : la réservation est déjà une somme versée d'avance. Le contrat privé fixe le prix, les paiements, les garanties, la livraison et les frais, et à chaque vente vous appliquez la prévention du blanchiment.
+
+### Votre checklist
+
+- Modèle 5 · Plan de ventes et d'encaissements (inclus) rempli avec la politique de prix et de paiements
+- Ligne de garanties et compte spécial opérationnels avant d'encaisser la première réservation
+- Modèle de contrat privé relu par un avocat ou un notaire
+- Procédure de prévention du blanchiment
+
 ## Leçon 8.4 — CRM et options
+
+> **Où en sommes-nous :** vous signez déjà des réservations et des contrats privés avec les sommes versées d'avance garanties (Leçon 8.3). Vous suivez maintenant chaque prospect et chaque acheteur jusqu'à l'acte : le CRM, le contact pendant le chantier, les options et le suivi des ventes.
 
 - **CRM :** chaque prospect avec son origine, la typologie recherchée, le budget, le financement, le statut et la prochaine action.
 - **Contact avec les acheteurs pendant le chantier :**
@@ -149,6 +265,41 @@
   - **Annulations :** appliquez le contrat (remboursement par la garantie si le manquement est le vôtre ; pénalité convenue s'il vient de l'acheteur).
   - **Substitutions (cession de contrat) :** seulement avec votre accord, par écrit, et avec une nouvelle garantie au nom du cessionnaire.
   - Ouvrez un **dossier individuel par acheteur** dès la réservation : c'est la base du dossier de livraison.
+
+### Exemple : Nicolás, le promoteur
+
+Les premières réservations signées, Nicolás avait besoin de savoir à tout moment où en était la vente. Je vous raconte comment il s'est organisé.
+
+**Le CRM, dès le premier prospect.** Chaque contact que lui transmet l'agence ou qui arrive par le site est enregistré avec son origine, la typologie recherchée, son budget, son financement, son statut et la prochaine action. Chaque semaine, il le passe en revue avec l'agence : logements réservés, vendus et disponibles.
+
+**Les préventes de la banque.** Sa banque lui demandait 70–90 % des logements avec contrat privé et acompte : 13 sur 18 (Leçon 5.1). Son Modèle 5 lui donne un rythme de 2 logements par mois, 9 mois pour tout vendre ; avec le CRM, il a suivi les préventes semaine après semaine jusqu'à atteindre les 13. Les ventes figurent aussi dans le rapport mensuel qu'il envoie à sa banque (Leçon 7.4).
+
+**Un dossier par acheteur.** Dès la réservation, chaque acheteur a le sien : identification, contrat privé, caution, paiements, incidents et avenants. Ce sera la base du dossier de livraison (Module 10).
+
+**Le contact pendant le chantier :**
+
+- Un accueil, avec un interlocuteur attitré : lui-même.
+- Une photo ou une vidéo de l'avancement chaque mois, et un message à chaque étape : structure, toiture, finitions.
+- De 3 à 4 mois avant les finitions, le choix des options, avec un catalogue fermé (2-3 sols, cuisine améliorée, placards) avec prix et date butoir. Hors délai, il n'accepte aucun changement, et ceux qui sortent du catalogue, seulement s'ils sont faisables, sont autorisés par la maîtrise d'œuvre et consignés dans un avenant avec prix et délai (Leçon 8.3).
+- Un mois avant l'acte, la date et les documents. Avant cela, suffisamment tôt, il coordonne le prêt de chaque acheteur qui en a besoin (expertise, offre, signature).
+
+**Si un acheteur se retire.** Il applique le contrat : le remboursement par la garantie si le manquement était le sien, la pénalité convenue s'il vient de l'acheteur. Si un acheteur veut céder son contrat, il ne l'accepte que par écrit et avec la nouvelle garantie au nom de celui qui entre.
+
+### Résumé
+
+Le CRM vous dit chaque semaine ce qui est réservé, vendu et disponible, et quand vous atteignez les préventes de la banque. Tenez chaque acheteur informé pendant le chantier, fermez les options avec prix et date butoir et ouvrez dès la réservation un dossier par acheteur.
+
+### Votre checklist
+
+- CRM avec suivi de chaque acheteur
+- Préventes exigées par la banque atteintes
+- Dossier individuel de chaque acheteur
+
+## Résumé du module 8
+
+Vous avez lancé la promotion par étapes, avec le classement énergétique et le prix final complet dans chaque annonce ; vous avez choisi votre canal de vente et signé avec des agences inscrites ; vous avez remis à chaque acheteur l'information obligatoire et signé des réservations et des contrats privés avec chaque euro garanti ; et vous tenez un CRM et un dossier par acheteur.
+
+**Où vous devriez en être dans votre projet :** le plan commercial, la documentation légale de vente, les contrats privés avec garanties et le CRM en place, le Modèle 5 fait et les préventes exigées par la banque signées. Pendant que vous finissez de vendre, le chantier s'achève : vous passez au Module 9, où vous le régularisez.
 
 ## Checklist du module 8
 
