@@ -198,6 +198,10 @@ return [
                 ['name' => 'Sede Electrónica del Catastro', 'url' => 'https://www.sedecatastro.gob.es/', 'mention' => 'Catastro'],
             ],
         ],
+        // The instructor's index of the Libro del Edificio, in Word (materiales/, CourseFiles «libro-edificio»).
+        '9.4' => [
+            'templates' => true,
+        ],
         '10.1' => [
             'companies' => ['acabados', 'limpieza_mantenimiento'],
         ],

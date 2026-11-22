@@ -178,7 +178,7 @@ La plantilla original se construyó hacia 2002. La versión del curso está revi
 
 - "Varios" con IVA no sumaba las acometidas (en el ejemplo, 278,87 €). El total con IVA del ejemplo es 354.781,50 €.
 - El quinto pago del suelo no calculaba el coste de su aval.
-- El cash-flow perdía pagos cuando dos caían en el mismo mes (por ejemplo, dos disposiciones del préstamo). Tampoco sumaba las acometidas en el total de los 4 años, y solo pagaba el ITP o el AJD del suelo si eran exactamente el 8 % o el 1 %.
+- El cash-flow perdía pagos cuando dos caían en el mismo mes (por ejemplo, dos disposiciones del préstamo). Tampoco sumaba las acometidas en el total de los 4 años, y solo pagaba el ITP/AJD del suelo si eran exactamente el 8 % o el 1 %.
 - La liquidación del IVA del cash-flow estaba enlazada a mano para el calendario del ejemplo. Ahora se calcula sola cada trimestre.
 - Había errores visibles (#VALUE! y #DIV/0!) y controles «O.K.» que fallaban por decimales.
 - El control de calidad de la obra estaba fijo al 1,5 % dentro de una fórmula. Ahora es un dato (Datos de Partida D102).

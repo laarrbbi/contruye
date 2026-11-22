@@ -30,6 +30,12 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lección 11.1 | «Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el Libro del Edificio» | WhatsApp |
 | Lección 11.5 | Plusvalía: «al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora» (antes «autoliquídala en 30 días hábiles por cada venta») | WhatsApp |
 | Quiz del Módulo 5 (P6) y examen final (P10) | La respuesta correcta de las preventas pasa a «70–90 %», como dice ahora la lección 5.1 | Consecuencia de la lección 5.1 |
+| Lección 4.3 | El punto que marcó con un recuadro rojo: «Escritura de declaración de obra nueva y división horizontal (Módulo 9), salvo que se trate de una vivienda unifamiliar aislada y solo se declare la obra nueva porque no hay fincas que dividir», con su explicación del préstamo promotor (la entidad pide solvencia del promotor, garantías de cobro y el proyecto) y de la hipoteca del comprador (no se formaliza mientras siga la anotación «en construcción»), en lugar de «la necesitas para que el banco inscriba la hipoteca sobre el edificio futuro» | Su comentario a la captura, que el propietario reenvió el 21/11 |
+| Lección 9.2 | División horizontal: «Va en la misma escritura que la obra nueva: la de declaración de obra nueva y división horizontal, que se otorga al principio de la obra (Lección 10.3)» (antes «Normalmente en la misma escritura que la obra nueva terminada») | Sus textos de la 10.3 y de la 4.3 |
+| Lección 9.4 y Módulo 9 | Su Word «Libro del Edificio», tal cual, para descargar en la sección «Plantilla» del Módulo 9 y bajo la lección (`materiales/modulo_09/`); en el índice de la lección, «unidad de ocupación» donde ponía «unidad de actuación» (errata: todo el índice habla de unidades de ocupación). El documento se titula «Libro del Edificio existente»; es el índice del Libro del Edificio, el mismo para un edificio nuevo | Word «Libro del Edificio» |
+| Lecciones 10.3 y 11.1 | Remiten a la Lección 9.4 al nombrar el Libro del Edificio | Consecuencia de la 9.4 |
+| Módulo 10 («Dónde ir») y test del Módulo 10 (P4) | Fuera la fila «Banco del promotor · Certificado de deuda por vivienda y carta de pago o de subrogación». La P4 («El certificado de deuda de cada finca lo emite») pregunta ahora qué se presenta en notaría para la escritura final de obra, con su lista de la 10.3 | Su corrección de la 10.3 |
+| Módulos 11 y 12, test del Módulo 11 (P6) | «No procede la autoliquidación de la plusvalía municipal para la promotora» donde el curso decía lo contrario: «Dónde ir» del Módulo 11 (queda «Cambio de titular del IBI»), su checklist (fuera «Plusvalía autoliquidada en plazo en cada venta») y el Módulo 12. La P6 («Plazo para autoliquidar la plusvalía») pregunta ahora si procede | Su corrección de la 11.5 |
 
 ## Del propietario
 
@@ -42,6 +48,9 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lección 2.4 | Navarra y País Vasco: «normativa propia» (sin «foral») |
 | Lección 2.5 | Forma de pago: al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles. En lugar de la exclusividad, la opción de compra, «formalízala mediante un contrato de compraventa con opción de compra» (con su «i» en la plataforma). Checklist: «Opción de compra y condiciones suspensivas negociadas» |
 | Lección 4.1 | Junto a las autorizaciones sectoriales, qué son y que forman parte de esta licencia, con la referencia a la Lección 4.2 |
+| Lección 8.3 | Se queda el texto de la Comunitat Valenciana y se añade una línea para quien promueve en otra comunidad: las referencias valencianas cambian; el Real Decreto 515/1989, la Ley 12/2023 y la LOE son estatales |
+| Lecciones 2.3 y 2.5, Financials y la calculadora de la web | «ITP/AJD» en lugar de «ITP o AJD». Las plantillas Excel del profesor no se tocan (dicen «ITP o AJD» en dos notas) |
+| Lecciones 2.3 y 2.5 | En español lo que estaba en inglés: «controlador de gestión» en lugar de «Controller» (texto de costes del profesor) y «flujo de caja» en lugar de «cash-flow» |
 
 ## Estructura que pide el propietario: el Módulo 1 como muestra
 
@@ -91,17 +100,14 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
 
 ## Para confirmar con el profesor (no se ha cambiado)
 
-1. **Plusvalía.** La lección 11.5 dice ya que no procede la autoliquidación para la promotora, pero siguen diciendo lo contrario: Módulo 11 («Leyes que aplican»: «la paga el promotor como vendedor»; «Dónde ir»: «Autoliquidación de la plusvalía (30 días hábiles desde cada venta)»; la tabla de la lección 11.1; la checklist: «Plusvalía autoliquidada en plazo en cada venta»), Módulo 12 («una autoliquidación por cada venta», su checklist), Módulo 10 («Dónde ir»: «datos para la plusvalía de cada vivienda»), el quiz del Módulo 11 (P6: plazo para autoliquidarla) y el examen (P21). ¿Se cambian todos?
-2. **Lección 10.3.** Sigue en «Dónde ir» del Módulo 10 la fila «Banco del promotor · Certificado de deuda por vivienda y carta de pago o de subrogación», y el quiz del Módulo 10 (P4) pregunta quién emite el certificado de deuda.
-3. **Lección 9.3.** Tras la nota de la cédula, la frase sigue diciendo que la mantienen 8 comunidades y que la emite el organismo autonómico o insular. El quiz del Módulo 9 (P7) pregunta por la declaración responsable de Madrid, que estaba en el párrafo quitado (sigue en el Anexo B).
-4. **Lección 5.1.** Se ha quitado «el suelo» y se ha dejado «Hipoteca sobre la obra futura (escritura de obra nueva en construcción)», que coincide con su texto de la 10.3. Si quería quitar la línea entera, se quita.
-5. **Lección 9.4.** El documento se titula «Libro del Edificio existente»; en la lección va como «Índice del Libro del Edificio». ¿Es el índice del edificio nuevo? Y dice «Historia de las intervenciones en cada unidad de actuación»: ¿es «unidad de ocupación», como el resto del índice?
-6. **Lección 8.3.** El texto está escrito para la Comunitat Valenciana (Ley 8/2004, LOTUP, IVACE). Va como está; un alumno de otra comunidad lee esas referencias.
-7. **Lección 4.3.** La captura con el recuadro rojo en «Escritura de declaración de obra nueva en construcción (Módulo 9)» llegó sin indicación. No se ha cambiado.
+Las tres preguntas para el profesor del 22/11; lo demás de la lista anterior está resuelto (arriba).
+
+1. **Plusvalía.** Aplicado que no procede la autoliquidación para la promotora. ¿La promotora paga la plusvalía en la venta de cada vivienda nueva, aunque no la autoliquide? El curso dice que la paga el promotor como vendedor y que no la puede repercutir (Módulo 8, «Leyes que aplican» y la tabla de la 11.1 del Módulo 11, Módulo 12, «Dónde ir» del Módulo 10, test del Módulo 11 P5, examen P21).
+2. **Hipoteca y escritura de obra nueva.** Su comentario de la 4.3 dice que la escritura no es para que el banco inscriba la hipoteca. Siguen diciéndolo la 5.1 («Hipoteca sobre la obra futura (escritura de obra nueva en construcción)», que él dejó al quitar «sobre suelo»), la 9.2 («Sirve para que el banco hipoteque la obra futura») y el test del Módulo 9 (P9).
+3. **Cédula de habitabilidad.** Dice que es lo mismo que la licencia de primera ocupación (así en la Comunitat Valenciana). El curso dice que en ocho comunidades la da la comunidad autónoma, aparte: Módulo 9 (cabecera, «Leyes que aplican», «Dónde ir», la 9.3, la checklist), Módulo 10, Anexos A y B, test del Módulo 9 (P6, P7) y examen (P25). ¿Se quita en todo el curso?
 
 ## Notas del propietario que faltan por aplicar
 
-- Lección 2.2: «poner lo que hay en el audio» (precio de venta) y «en lugar de poner electores…»: falta el audio.
-- Lección 2.3: «ITP/AJD en medio o» y «todo lo que pones en francés»: falta saber a qué se refieren.
-- Lección 2.5: «meter ejemplo del vocal»: falta el audio.
+- Lecciones 2.2 (precio de venta y «en lugar de poner electores») y 2.5 («meter ejemplo del vocal»): los cuatro audios llegaron el 22/11 y faltan por transcribir.
 - Lección 2.3: el coste de construcción editable en la administración, con fecha: es una función de la plataforma, no un cambio del texto.
+- El ejemplo de Nicolás con números: todos los valores del ejemplo del profesional en la plantilla Números gordos del solar (construcción 660 €/m², suelo 45 €/m² de techo, precio de venta el que da la plantilla), en la Comunitat Valenciana (Alicante), calculado con las plantillas.

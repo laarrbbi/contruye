@@ -10,7 +10,13 @@ quien ha comprado el extra (acceso `financials`), y figura con su candado en las
 curso. Una prueba en `CourseResourcesTest` debe comprobar que se descarga byte a byte igual al de
 esta carpeta.
 
-**Ahora no hay ninguno.** Los tres que llegaron sueltos el 11/11/2026 los trae el paquete v5:
+**Ahora hay uno:**
+
+| Archivo | Llegó | Dónde se ofrece | SHA-256 |
+|---|---|---|---|
+| `modulo_09/Libro_del_Edificio.docx` | Con las correcciones del profesor del 19/11/2026 (WhatsApp, «Libro del Edificio.docx»), reenviado por el propietario | Módulo 9, sección «Plantilla» (clave `libro-edificio`), y bajo la Lección 9.4, que lleva el mismo índice como texto | `a42a4125d824acbf…` |
+
+Los tres que llegaron sueltos el 11/11/2026 los trae el paquete v5:
 
 | Llegó aquí como | Ahora, en el paquete v5 | Qué se sirve |
 |---|---|---|

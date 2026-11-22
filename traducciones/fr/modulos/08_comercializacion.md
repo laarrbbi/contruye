@@ -77,6 +77,7 @@
     - Ley 12/2023 por el derecho a la vivienda (article 31).
     - Ley 38/1999 de Ordenación de la Edificación (LOE).
     - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (publicité véridique et calcul des surfaces).
+  - Si votre promotion se trouve dans une autre communauté autonome, vérifiez sa réglementation : les références valenciennes de cette leçon (Ley 8/2004, LOTUP, IVACE) changent ; le Real Decreto 515/1989, la Ley 12/2023 et la LOE sont des textes de l'État et s'appliquent dans toute l'Espagne.
   - Le promoteur ou le vendeur doit tenir à la disposition de l'acheteur, et lui remettre, une documentation spécifique répartie en deux phases.
 - **1. Information obligatoire avant de signer ou de verser des sommes d'avance (phase commerciale).** Avant la signature d'une réservation, d'arrhes ou d'un contrat de vente, le promoteur doit fournir, gratuitement et clairement :
   - **Identification du promoteur :** nom ou raison sociale, adresse et données d'immatriculation au Registre du commerce.

@@ -77,6 +77,7 @@
     - Ley 12/2023, on the right to housing (article 31).
     - Ley 38/1999 de Ordenación de la Edificación (LOE).
     - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (truthful advertising and how areas are measured).
+  - If your development is in another autonomous community, check its rules: the Valencian references in this lesson (Ley 8/2004, LOTUP, IVACE) change; Real Decreto 515/1989, Ley 12/2023 and the LOE are national and apply throughout Spain.
   - The developer or seller must keep specific documentation available to the buyer and hand it over to them, in two phases.
 - **1. Compulsory information before signing or paying any money on account (sales phase).** Before reservations, deposit agreements (*arras*) or the sale contract are signed, the developer must provide, free of charge and clearly:
   - **Identification of the developer:** name or company name, address and registration details at the Companies Registry.

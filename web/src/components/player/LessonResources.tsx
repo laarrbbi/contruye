@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { ArrowUpRight, Calculator, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import type { LearnModule, LessonResourcesView } from '@/api/learn'
+import type { CourseFile, LearnModule, LessonResourcesView } from '@/api/learn'
 import { CompanyDirectory } from '@/components/directory/CompanyDirectory'
 import { PartnerList } from './PartnerList'
 import { SectionTitle } from './SectionTitle'
@@ -30,17 +30,24 @@ export function LessonResources({
   lessonId,
   module,
   resources,
+  files = [],
 }: {
   slug: string
   lessonId: number
   module: LearnModule
   resources: LessonResourcesView
+  /** The module's own downloads (CourseFiles, `access` module): with its templates, on its «Plantilla» page. */
+  files?: CourseFile[]
 }) {
   const { t } = useTranslation()
   const partners = module.is_locked ? [] : module.partners.filter((partner) => resources.partners.includes(partner.category))
   const companies = !module.is_locked && resources.companies.length > 0 && resources.companies_count > 0
 
-  const templateTitles = [...(module.template ? [module.template.title] : []), ...(module.professional_templates ?? []).map((tpl) => tpl.title)]
+  const templateTitles = [
+    ...(module.template ? [module.template.title] : []),
+    ...(module.professional_templates ?? []).map((tpl) => tpl.title),
+    ...files.map((file) => t(`documents.files.${file.key}`)),
+  ]
   const templates = !!resources.templates && !module.is_locked && templateTitles.length > 0
 
   if (!templates && resources.links.length === 0 && partners.length === 0 && !companies) return null

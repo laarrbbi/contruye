@@ -92,7 +92,9 @@
   8. **Acta de comprobación del replanteo** firmada por director de obra, director de ejecución y constructor. Fija la fecha de inicio del plazo de obra.
   9. **Cartel de obra** según la ordenanza (número de licencia, promotor, técnicos, constructor, plazos).
   10. Comunicación de inicio al ayuntamiento si la ordenanza la pide.
-- **Escritura de declaración de obra nueva en construcción** (Módulo 9): la necesitas para que el banco inscriba la hipoteca sobre el edificio futuro.
+- **Escritura de declaración de obra nueva y división horizontal** (Módulo 9), salvo que se trate de una vivienda unifamiliar aislada y solo se declare la obra nueva porque no hay fincas que dividir.
+  - El promotor puede obtener, en su caso, financiación externa, es decir, un préstamo promotor para el desarrollo de la promoción. La documentación que solicitará la entidad de crédito es relativa a la solvencia del promotor y garantías de cobro, así como del proyecto a desarrollar.
+  - Por lo que respecta al préstamo hipotecario a conceder al comprador, la entidad de crédito no concede hipoteca alguna hasta que no esté inscrita en el Registro la escritura final de obra; es decir, mientras siga inscrita la anotación de "en construcción", no se formaliza hipoteca a la compra.
 - ⚠️ **Error típico:** empezar el vaciado antes de la comunicación de apertura. Es una infracción grave en prevención.
 
 - **Organiza la dirección facultativa antes de empezar:** designa por escrito al arquitecto director de obra, al arquitecto técnico director de ejecución, al coordinador de seguridad y salud, a los técnicos especialistas y al control de calidad, con el alcance de cada uno.

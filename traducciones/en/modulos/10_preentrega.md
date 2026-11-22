@@ -20,7 +20,6 @@
 |---|---|
 | **Contractor** | Snags fixed on time (charged to the retention if it does not comply) |
 | **Notary** | Signing calendar, draft deed, provision for costs |
-| **The developer's bank** | Debt certificate for each home and redemption or take-over letter |
 | **The buyers' banks** | Signing date for each mortgage |
 | **Town hall** | Cadastral values and data for each home's plusvalía |
 
@@ -69,7 +68,7 @@
 - **At the start of the works,** the building is first documented by executing before a notary the corresponding public deed of "Declaration of New Building and Horizontal Division" (*Declaración de Obra Nueva y División Horizontal*), which is filed at the Land Registry for registration. The Registry registers it with the note "Under construction" (*En construcción*).
 - **When the works are finished,** the **Final Completion Deed** (*Escritura Final de Obra*) is executed and filed at the Land Registry for registration. It is registered as a completed new building, and the "under construction" note disappears.
 - **For the Final Completion Deed,** the following documents must be presented at the notary's:
-  1. The Building Book in digital form (it must expressly include the handover record of the works).
+  1. The Building Book in digital form (it must expressly include the handover record of the works). Its index, in Lesson 9.4.
   2. Final completion certificate.
   3. Ten-year insurance.
   4. First occupation licence.

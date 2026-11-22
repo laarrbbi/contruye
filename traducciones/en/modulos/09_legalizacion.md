@@ -68,7 +68,7 @@
   - Describes the building and each private unit (home, commercial unit, garage, storeroom) with number, floor, area, boundaries and **participation share**.
   - Common elements.
   - The owners' association's **statutes** (use of terraces, pool, sharing of costs, prohibited uses).
-  - Normally in the same deed as the completed new building.
+  - It goes in the same deed as the new building: the deed declaring the new building and the horizontal division, which is executed at the start of the works (Lesson 10.3).
 - **After registration:** each home is a separate registered property and can be sold and mortgaged on its own. The bank spreads the development loan's mortgage across the properties.
 - **Cost:** notary and registry per official scale, AJD (Annex B) on the value of the new building and the horizontal division. **It cannot be passed on to a consumer buyer.**
 
@@ -92,7 +92,7 @@
   4. Installation and test certificates.
   5. Use and maintenance instructions for the building and its installations.
   6. Maintenance plan with the compulsory inspections (lift, PCI, thermal, electrical).
-- **Index of the Building Book:**
+- **Index of the Building Book** (**Instructor's template · Building Book**, included, in Word to fill in):
   - **Part I. Characteristics of the building.**
     - For the building as a whole:
       - Description: site plan; photographs of the façades; characteristics of the foundations and structure; characteristics of the envelope and partitions; characteristics of the roof; description and layout of the installations; characteristics of the coverings; energy performance and efficiency of the building; performance against noise and vibration.
@@ -102,7 +102,7 @@
       - List of the occupancy units.
     - For each occupancy unit:
       - Identification and description of the units.
-      - History of the interventions in each action unit.
+      - History of the interventions in each occupancy unit.
   - **Part II. Rules and instructions for use, upkeep and maintenance.**
     - Use and maintenance manual.
     - Log of maintenance and repair operations.

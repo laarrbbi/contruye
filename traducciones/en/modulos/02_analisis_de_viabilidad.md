@@ -99,7 +99,7 @@
 
 ## Lesson 2.3 — Costs, precisely
 
-- **Land:** price + non-recoverable ITP or AJD + notary + registry + topographic survey + geotechnical study + lawyers + finance cost of the land + urbanisation charges.
+- **Land:** price + non-recoverable ITP/AJD + notary + registry + topographic survey + geotechnical study + lawyers + finance cost of the land + urbanisation charges.
 - **Residual method:** `Maximum land price = Revenue − all other costs − target profit`. The land is worth what the project can afford to pay.
 - **Construction (material execution cost, 2025-2026, above ground):**
   - Standard: 900–1.100 €/m² built
@@ -154,13 +154,13 @@ The cost structure of a property development is divided into the following headi
 
 The breakdown of development costs.
 
-When you start a property project, you must take into account all the costs involved in creating it. Here the **Controller** is the person in charge of supervising and defining the management control policies, analysing results against the budgets, spotting deviations and proposing corrections.
+When you start a property project, you must take into account all the costs involved in creating it. Here the **management controller** is the person in charge of supervising and defining the management control policies, analysing results against the budgets, spotting deviations and proposing corrections.
 
 They also supervise and define the management control policies, reviewing the budgets and identifying possible deviations.
 
 In turn, they organise the proper flow between the financial data and the control system.
 
-In this case, the Controller must take part in drawing up management's plans and ideas, so as to be able to anticipate on the basis of the information gathered.
+In this case, the management controller must take part in drawing up management's plans and ideas, so as to be able to anticipate on the basis of the information gathered.
 
 Applying this control involves putting in place a set of actions, procedures, techniques and processes that make up what is called the control system.
 
@@ -349,7 +349,7 @@ Within sales and marketing costs we can distinguish different types:
 - **Acquiring the plot:**
   1. Final checks on signing day: that day's *nota simple*, IBI and debt certificates.
   2. Public deed of sale.
-  3. Tax returns: ITP or AJD on your community's form 600, within its deadline (usually 30 working days); IVA charged by the seller if the sale is subject to IVA.
+  3. Tax returns: ITP/AJD on your community's form 600, within its deadline (usually 30 working days); IVA charged by the seller if the sale is subject to IVA.
   4. Registration at the Land Registry.
   5. Cancellation or regularisation of the agreed encumbrances, and actual taking of possession.
 

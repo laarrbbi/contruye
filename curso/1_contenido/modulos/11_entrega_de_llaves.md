@@ -26,13 +26,13 @@
 | **Banco** | Cuenta de la comunidad |
 | **Distribuidora y comercializadoras** | Altas de luz por vivienda (con CIE y primera ocupación o cédula) |
 | **Empresa de aguas** | Altas de agua por vivienda |
-| **Ayuntamiento** | Autoliquidación de la plusvalía (30 días hábiles desde cada venta) y cambio de titular del IBI |
+| **Ayuntamiento** | Cambio de titular del IBI |
 | **Colegio de Administradores de Fincas** | Administrador para la comunidad |
 
 ## Lección 11.1 — La escritura de compraventa
 
 - **Contenido:** partes, finca registral y descripción, precio y forma de pago (con los pagos anteriores identificados), cargas (libre de cargas o con subrogación elegida por el comprador), manifestaciones (decenal, licencias, certificado energético, cédula), gastos.
-- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio**.
+- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio** (Lección 9.4).
 - **Quién paga qué:**
 
 | Gasto | Comprador | Promotor |
@@ -96,7 +96,6 @@
 
 - [ ] Escrituras firmadas y cobro de cada vivienda
 - [ ] Parte del préstamo promotor cancelada o subrogada en cada firma
-- [ ] Plusvalía autoliquidada en plazo en cada venta
 - [ ] Junta constitutiva, NIF, cuenta y fondo de reserva
 - [ ] Contratos de mantenimiento de la comunidad
 - [ ] Altas de suministros

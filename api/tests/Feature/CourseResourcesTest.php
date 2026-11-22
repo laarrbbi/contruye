@@ -134,6 +134,24 @@ it('hands out the professional\'s land database to Module 1\'s owners, as delive
     $this->actingAs(owner($course, null))->get($url('base-datos-suelo'))->assertOk();
 });
 
+it('hands out the instructor\'s Libro del Edificio to Module 9\'s owners, from materiales/ as delivered', function () {
+    [$course, $phase1] = resourcesCourse();
+    $phase9 = Module::factory()->create(['course_id' => $course->id, 'order' => 9, 'kind' => 'phase']);
+    $url = "/api/courses/{$course->slug}/files/libro-edificio";
+
+    // Byte for byte the file in materiales/ (sent with the corrections of 19/11/2026).
+    $response = $this->actingAs(owner($course, $phase9))->get($url)->assertOk();
+    expect($response->headers->get('content-disposition'))->toContain('Libro_del_Edificio.docx')
+        ->and(hash_file('sha256', $response->getFile()->getPathname()))
+        ->toBe(hash_file('sha256', base_path('../materiales/modulo_09/Libro_del_Edificio.docx')));
+
+    // Another module's owner does not get it, and sees it locked with Module 9.
+    $first = owner($course, $phase1);
+    $this->actingAs($first)->get($url)->assertForbidden();
+    $files = collect($this->actingAs($first)->getJson("/api/courses/{$course->slug}/learn")->assertOk()->json('data.course.files'))->keyBy('key');
+    expect($files['libro-edificio'])->toMatchArray(['access' => 'module', 'module' => 9, 'is_locked' => true]);
+});
+
 it('gives the professional\'s feasibility guide, over the corrected template, to buyers of the extra only, with the legal parameters in force', function () {
     [$course, , $phase2, $financials] = resourcesCourse();
     LegalParameter::query()->where('code', 'IVA_GENERAL')->update(['value' => 0.22]);

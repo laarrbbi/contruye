@@ -178,7 +178,7 @@ The original model was built around 2002. The course's version has been reviewed
 
 - "Sundries" with IVA left out the connections (278,87 € in the example). The example's total with IVA is 354.781,50 €.
 - The fifth land payment did not calculate the cost of its guarantee.
-- The cash flow lost payments when two fell in the same month (for example, two loan drawdowns). It also left the connections out of the 4-year total, and it only paid the ITP or AJD on the land if they were exactly 8 % or 1 %.
+- The cash flow lost payments when two fell in the same month (for example, two loan drawdowns). It also left the connections out of the 4-year total, and it only paid the ITP/AJD on the land if they were exactly 8 % or 1 %.
 - The cash flow's IVA settlement was linked by hand to the example's calendar. Now it is calculated by itself every quarter.
 - There were visible errors (#VALUE! and #DIV/0!) and «O.K.» checks that failed because of decimals.
 - The quality control of the works was fixed at 1,5 % inside a formula. Now it is an input (Datos de Partida D102).

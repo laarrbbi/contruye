@@ -160,7 +160,7 @@
 
 ### Ejemplo: Nicolás, el promotor
 
-A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
+A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas en Alicante, en la Comunitat Valenciana, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
 
 **Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias. Con esa ficha mira cada solar con el mismo filtro.
 
@@ -168,7 +168,9 @@ A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoci
 
 **El solar que le llegó.** Un administrador de fincas le habló de un solar de 344 m² en suelo urbano consolidado, con servicios. Ese mismo día lo dio de alta en su **base de datos de gestión de suelo**, con su propietario y con quien se lo había traído.
 
-**El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Son los datos del ejemplo del profesional que trae la plantilla, y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
+**El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Con el suelo a 45 € el m² de techo, el solar sale por 71.392,05 €.
+
+Con una construcción de 660 €/m², licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 1.259,70 € el m²: unos 113.373 € una vivienda tipo de 90 m², sin IVA, y 1.998.501,45 € toda la promoción. El suelo es el 3,6 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos y los precios del ejemplo del profesional que trae la plantilla (hoy la construcción es más cara: mira la Lección 2.3), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
 
 Los números le encajan, pero todavía no compra: primero comprueba en el planeamiento que de verdad se puede construir eso (Lección 1.2).
 
@@ -362,7 +364,7 @@ Hay una vía más rápida, en línea: CIRCE / PAE.
 
 **Después, la opción de compra.** El propietario es un particular. Como a Nicolás todavía le faltan la viabilidad (Módulo 2) y la financiación, no compra directamente: firma una **opción de compra en la notaría** y la **inscribe en el Registro de la Propiedad**, para que valga frente a terceros. Paga una prima y se asegura el plazo que necesita (la lección habla de una prima del 3-10 % por un plazo de 6-24 meses). La notaría la podrás encontrar en la lista que te hemos dado: el Colegio Notarial de tu provincia, al final del módulo.
 
-**Los gastos, en la Plantilla 1.** Como vende un particular, la compra pagará el **ITP** de su comunidad (Anexo B) y no IVA. Notaría y registro, en torno al 0,5 % del precio; pidió presupuesto a la notaría para afinarlo. La plusvalía municipal la paga el vendedor. Lo metió todo en la **Plantilla 1 · Compra del solar**, con su comunidad autónoma.
+**Los gastos, en la Plantilla 1.** Como vende un particular, la compra paga el **ITP** de la Comunitat Valenciana (el 9 %, Anexo B) y no IVA: 6.425,28 € sobre los 71.392,05 € del solar. Notaría y registro, en torno al 0,5 % del precio: 356,96 €; pidió presupuesto a la notaría para afinarlo. Con 3.000 € de due diligence, tasación y estudios, la **Plantilla 1 · Compra del solar** le da un coste del solar de 81.174,29 € (51,17 € por m² de techo): el dinero que necesita el día de la compra. La plusvalía municipal la paga el vendedor.
 
 **Dónde está ahora.** Tiene el solar asegurado a nombre de su SPE, con la opción de compra inscrita. Con eso pasa al Módulo 2, a decidir con números si la promoción se hace.
 
@@ -542,7 +544,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 ## Lección 2.3 — Costes con precisión
 
-- **Suelo:** precio + ITP o AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
+- **Suelo:** precio + ITP/AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
 - **Método residual:** `Precio máximo del suelo = Ingresos − resto de costes − beneficio objetivo`. El suelo vale lo que el proyecto permite pagar.
 - **Construcción (coste de ejecución material, 2025-2026, sobre rasante):**
   - Estándar: 900–1.100 €/m² construido
@@ -577,7 +579,7 @@ Consulta en el **Anexo A**, columna **Fase 1**: Registro de la Propiedad, Catast
 
 - **Imprevistos (contingencias):** reserva un 3–5 % del coste de construcción desde la primera CRP.
 - **Gastos jurídicos** (abogados, notaría, registro) y de **estructura societaria**: inclúyelos aunque parezcan pequeños.
-- Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y cash-flow), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
+- Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y flujo de caja), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
 - **Un estudio previo completo, resuelto:** la **Guía de análisis de viabilidad** del profesional (22 viviendas, con sus notas de calendario) va con la plantilla profesional, en el extra del final del curso.
 
 ### Estructura de costes de una promoción inmobiliaria
@@ -597,13 +599,13 @@ La estructura de costes de una promoción inmobiliaria se divide en los siguient
 
 La distribución de los costes de promoción.
 
-A la hora de iniciar un proyecto inmobiliario, se deben de considerar todos aquellos costes que participan en la creación del mismo. En este caso el **Controller** es la persona encargada de supervisar y definir las políticas de control de gestión, analizando los resultados respecto a los presupuestos, observando las desviaciones y proponiendo correcciones.
+A la hora de iniciar un proyecto inmobiliario, se deben de considerar todos aquellos costes que participan en la creación del mismo. En este caso el **controlador de gestión** es la persona encargada de supervisar y definir las políticas de control de gestión, analizando los resultados respecto a los presupuestos, observando las desviaciones y proponiendo correcciones.
 
 Además, esta se encarga de supervisar y definir las políticas de control de gestión visualizando los presupuestos y apreciando las posibles desviaciones.
 
 A su vez se encarga de organizar el flujo adecuado entre los datos económicos y el sistema de control.
 
-El Controller en este caso, debe de participar en la elaboración de los planes e ideas de la dirección con el objetivo de poder anticiparse en base a la información que se recoja.
+El controlador de gestión en este caso, debe de participar en la elaboración de los planes e ideas de la dirección con el objetivo de poder anticiparse en base a la información que se recoja.
 
 La aplicación de este control conlleva la implantación de un conjunto de acciones, procedimientos, técnicas y procesos que configuran lo que se denomina el sistema de control.
 
@@ -785,14 +787,14 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
   - **Poderes** notariales para quien gestiona y **garantías** que piden los bancos (avales personales).
   - Revisa la **fiscalidad** de la compra y de la promoción antes de firmar.
 - **Aprobación de la inversión:**
-  - Prepara una **memoria de inversión**: solar, producto, CRP, cash-flow, sensibilidades, riesgos, calendario y financiación.
+  - Prepara una **memoria de inversión**: solar, producto, CRP, flujo de caja, sensibilidades, riesgos, calendario y financiación.
   - La aprueba el comité de inversión o la **junta de socios**. En una sociedad de capital, comprar un activo que supere el 25 % del activo del balance es competencia de la junta general (art. 160.f LSC).
   - Fija **presupuesto, rentabilidad mínima, calendario y financiación** aprobados.
   - Fija **hitos de control y criterios de salida o renegociación**. Ejemplos: licencia no concedida en X meses; preventas por debajo del 30 % en Y meses; licitación de obra más de un 8 % por encima del presupuesto.
 - **Adquisición del solar:**
   1. Comprobaciones finales el día de la firma: nota simple del día, certificados de IBI y de deudas.
   2. Escritura pública de compraventa.
-  3. Liquidación de impuestos: ITP o AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
+  3. Liquidación de impuestos: ITP/AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
   4. Inscripción en el Registro de la Propiedad.
   5. Cancelación o regularización de las cargas pactadas y toma de posesión efectiva.
 
@@ -1099,7 +1101,9 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   8. **Acta de comprobación del replanteo** firmada por director de obra, director de ejecución y constructor. Fija la fecha de inicio del plazo de obra.
   9. **Cartel de obra** según la ordenanza (número de licencia, promotor, técnicos, constructor, plazos).
   10. Comunicación de inicio al ayuntamiento si la ordenanza la pide.
-- **Escritura de declaración de obra nueva en construcción** (Módulo 9): la necesitas para que el banco inscriba la hipoteca sobre el edificio futuro.
+- **Escritura de declaración de obra nueva y división horizontal** (Módulo 9), salvo que se trate de una vivienda unifamiliar aislada y solo se declare la obra nueva porque no hay fincas que dividir.
+  - El promotor puede obtener, en su caso, financiación externa, es decir, un préstamo promotor para el desarrollo de la promoción. La documentación que solicitará la entidad de crédito es relativa a la solvencia del promotor y garantías de cobro, así como del proyecto a desarrollar.
+  - Por lo que respecta al préstamo hipotecario a conceder al comprador, la entidad de crédito no concede hipoteca alguna hasta que no esté inscrita en el Registro la escritura final de obra; es decir, mientras siga inscrita la anotación de "en construcción", no se formaliza hipoteca a la compra.
 - ⚠️ **Error típico:** empezar el vaciado antes de la comunicación de apertura. Es una infracción grave en prevención.
 
 - **Organiza la dirección facultativa antes de empezar:** designa por escrito al arquitecto director de obra, al arquitecto técnico director de ejecución, al coordinador de seguridad y salud, a los técnicos especialistas y al control de calidad, con el alcance de cada uno.
@@ -1755,6 +1759,7 @@ Anexo A, columna **Fase 7**: OCT, laboratorios y Colegio de Aparejadores.
     - Ley 12/2023 por el derecho a la vivienda (artículo 31).
     - Ley 38/1999 de Ordenación de la Edificación (LOE).
     - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (publicidad veraz y cómputo de superficies).
+  - Si tu promoción está en otra comunidad autónoma, comprueba su normativa: las referencias valencianas de esta lección (Ley 8/2004, LOTUP, IVACE) cambian; el Real Decreto 515/1989, la Ley 12/2023 y la LOE son estatales y valen en toda España.
   - El promotor o vendedor debe tener a disposición del comprador y entregarle una documentación específica dividida en dos fases.
 - **1. Información obligatoria antes de firmar o entregar cantidades a cuenta (fase comercial).** Antes de firmar reservas, arras o contrato de compraventa, el promotor debe facilitar de forma gratuita y clara:
   - **Identificación del promotor:** nombre o razón social, domicilio y datos de inscripción en el Registro Mercantil.
@@ -1951,7 +1956,7 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   - Describe el edificio y cada elemento privativo (vivienda, local, garaje, trastero) con número, planta, superficie, linderos y **cuota de participación**.
   - Elementos comunes.
   - **Estatutos** de la comunidad (uso de terrazas, piscina, distribución de gastos, prohibición de usos).
-  - Normalmente en la misma escritura que la obra nueva terminada.
+  - Va en la misma escritura que la obra nueva: la de declaración de obra nueva y división horizontal, que se otorga al principio de la obra (Lección 10.3).
 - **Tras la inscripción:** cada vivienda tiene finca registral propia y se puede vender e hipotecar por separado. El banco distribuye la hipoteca del préstamo promotor entre las fincas.
 - **Coste:** notaría y registro según arancel, AJD (Anexo B) sobre el valor de la obra nueva y de la división horizontal. **No se puede repercutir al comprador consumidor.**
 
@@ -1975,7 +1980,7 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
   4. Certificados de instalaciones y de ensayos.
   5. Instrucciones de uso y mantenimiento del edificio y sus instalaciones.
   6. Plan de mantenimiento con revisiones obligatorias (ascensor, PCI, térmicas, eléctricas).
-- **Índice del Libro del Edificio:**
+- **Índice del Libro del Edificio** (**Plantilla del profesor · Libro del Edificio**, incluida, en Word para rellenar):
   - **Parte I. Características del edificio.**
     - Del conjunto del edificio:
       - Descripción: plano del emplazamiento; fotografías de las fachadas; características de cimentación y estructura; características de cerramiento y particiones; características de la cubierta; descripción y trazado de las instalaciones; características de los revestimientos; comportamiento y eficiencia energética del edificio; características ante ruido y vibraciones.
@@ -1985,7 +1990,7 @@ Anexo A, columna **Fase 8**: COAPI, registro autonómico de agentes (donde exist
       - Relación de las unidades de ocupación.
     - De cada unidad de ocupación:
       - Identificación y descripción de las unidades.
-      - Historia de las intervenciones en cada unidad de actuación.
+      - Historia de las intervenciones en cada unidad de ocupación.
   - **Parte II. Normas e instrucciones de uso, conservación y mantenimiento.**
     - Manual de uso y mantenimiento.
     - Registro de operaciones de mantenimiento y reparación.
@@ -2079,7 +2084,6 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 |---|---|
 | **Constructor** | Corrección de repasos en plazo (con cargo a la retención si no cumple) |
 | **Notaría** | Calendario de firmas, minuta de escritura, provisión de fondos |
-| **Banco del promotor** | Certificado de deuda por vivienda y carta de pago o de subrogación |
 | **Bancos de los compradores** | Fecha de firma de cada hipoteca |
 | **Ayuntamiento** | Valores catastrales y datos para la plusvalía de cada vivienda |
 
@@ -2128,7 +2132,7 @@ Anexo A, columna **Fase 9**: ayuntamiento, organismo de la cédula (donde existe
 - **Al principio de la obra,** se documenta inicialmente mediante la elevación a público de la correspondiente escritura de "Declaración de Obra Nueva y División Horizontal" y se presenta en el Registro de la Propiedad para su inscripción. El Registro la inscribe con la anotación de "En construcción".
 - **Al finalizar la obra** se formaliza la **Escritura Final de Obra** y se presenta en el Registro de la Propiedad para su inscripción. Se inscribe como obra nueva terminada, desapareciendo la anotación de "en construcción".
 - **Para la Escritura Final de Obra,** hay que presentar en notaría la siguiente documentación:
-  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra).
+  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra). Su índice, en la Lección 9.4.
   2. Certificado final de obra.
   3. Seguro decenal.
   4. Licencia de primera ocupación.
@@ -2163,8 +2167,8 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 **P3.** El comprador consumidor tiene derecho a elegir:
 - A) Al arquitecto · B) Al constructor · C) **La notaría** ✅ · D) La fecha del replanteo
 
-**P4.** El certificado de deuda de cada finca lo emite:
-- A) El ayuntamiento · B) El notario · C) **El banco del préstamo promotor** ✅ · D) El Registro
+**P4.** Para la escritura final de obra hay que presentar en notaría, entre otros documentos:
+- A) El certificado de deuda de cada vivienda, emitido por el banco · B) **El Libro del Edificio en medio digital, con el acta de recepción de la obra** ✅ · C) Solo la licencia de obras · D) El contrato privado de cada comprador
 
 **P5.** Con qué antelación mínima debe recibir el comprador la documentación de su hipoteca (FEIN) según la Ley 5/2019:
 - A) El mismo día · B) **10 días naturales** ✅ · C) Un año · D) No hay plazo
@@ -2210,13 +2214,13 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 | **Banco** | Cuenta de la comunidad |
 | **Distribuidora y comercializadoras** | Altas de luz por vivienda (con CIE y primera ocupación o cédula) |
 | **Empresa de aguas** | Altas de agua por vivienda |
-| **Ayuntamiento** | Autoliquidación de la plusvalía (30 días hábiles desde cada venta) y cambio de titular del IBI |
+| **Ayuntamiento** | Cambio de titular del IBI |
 | **Colegio de Administradores de Fincas** | Administrador para la comunidad |
 
 ## Lección 11.1 — La escritura de compraventa
 
 - **Contenido:** partes, finca registral y descripción, precio y forma de pago (con los pagos anteriores identificados), cargas (libre de cargas o con subrogación elegida por el comprador), manifestaciones (decenal, licencias, certificado energético, cédula), gastos.
-- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio**.
+- Al comprador de vivienda, en la firma en notaría de la compraventa, se le entrega el **Libro del Edificio** (Lección 9.4).
 - **Quién paga qué:**
 
 | Gasto | Comprador | Promotor |
@@ -2280,7 +2284,6 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 
 - [ ] Escrituras firmadas y cobro de cada vivienda
 - [ ] Parte del préstamo promotor cancelada o subrogada en cada firma
-- [ ] Plusvalía autoliquidada en plazo en cada venta
 - [ ] Junta constitutiva, NIF, cuenta y fondo de reserva
 - [ ] Contratos de mantenimiento de la comunidad
 - [ ] Altas de suministros
@@ -2308,8 +2311,8 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 **P5.** La plusvalía municipal en la venta de vivienda nueva a un consumidor la paga:
 - A) El comprador · B) **El promotor, sin poder repercutirla** ✅ · C) La comunidad · D) Nadie
 
-**P6.** Plazo para autoliquidar la plusvalía en una venta:
-- A) 1 año · B) **30 días hábiles** ✅ · C) 6 meses · D) No hay plazo
+**P6.** En la venta de una vivienda de obra nueva, la autoliquidación de la plusvalía municipal por la promotora:
+- A) Se presenta en 30 días hábiles desde cada venta · B) **No procede, al ser obra nueva** ✅ · C) Se presenta en 6 meses · D) Se presenta una sola vez, al terminar todas las ventas
 
 **P7.** Los plazos de garantía de la LOE empiezan:
 - A) En la entrega de cada vivienda · B) **En la recepción de la obra sin reservas (o en la subsanación de las reservas)** ✅ · C) En la licencia · D) En la escritura de obra nueva
@@ -2411,7 +2414,7 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
   - Declaración anual (modelo 200) y pagos fraccionados (modelo 202).
   - En Navarra y País Vasco, normativa foral.
 - **IVA:** trimestral (303) y resumen anual (390). Si alquilas viviendas que no has vendido, regulariza el IVA deducido (el alquiler de vivienda está exento).
-- **Plusvalía municipal:** una autoliquidación por cada venta. Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
+- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
 - **IBI:** de las viviendas que sigan siendo tuyas a 1 de enero.
 
 ## Lección 12.4 — Cierre de la SPE
@@ -2670,7 +2673,7 @@ La plantilla original se construyó hacia 2002. La versión del curso está revi
 
 - "Varios" con IVA no sumaba las acometidas (en el ejemplo, 278,87 €). El total con IVA del ejemplo es 354.781,50 €.
 - El quinto pago del suelo no calculaba el coste de su aval.
-- El cash-flow perdía pagos cuando dos caían en el mismo mes (por ejemplo, dos disposiciones del préstamo). Tampoco sumaba las acometidas en el total de los 4 años, y solo pagaba el ITP o el AJD del suelo si eran exactamente el 8 % o el 1 %.
+- El cash-flow perdía pagos cuando dos caían en el mismo mes (por ejemplo, dos disposiciones del préstamo). Tampoco sumaba las acometidas en el total de los 4 años, y solo pagaba el ITP/AJD del suelo si eran exactamente el 8 % o el 1 %.
 - La liquidación del IVA del cash-flow estaba enlazada a mano para el calendario del ejemplo. Ahora se calcula sola cada trimestre.
 - Había errores visibles (#VALUE! y #DIV/0!) y controles «O.K.» que fallaban por decimales.
 - El control de calidad de la obra estaba fijo al 1,5 % dentro de una fórmula. Ahora es un dato (Datos de Partida D102).

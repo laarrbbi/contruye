@@ -26,13 +26,13 @@
 | **Banque** | Compte de la copropriété |
 | **Distributeur et fournisseurs** | Ouverture de l'électricité par logement (avec CIE et première occupation ou cédula) |
 | **Compagnie des eaux** | Ouverture de l'eau par logement |
-| **Mairie** | Autoliquidation de la plus-value (30 jours ouvrables à compter de chaque vente) et changement de redevable de l'IBI |
+| **Mairie** | Changement de redevable de l'IBI |
 | **Ordre des administrateurs de biens** | Syndic pour la copropriété |
 
 ## Leçon 11.1 — L'acte de vente
 
 - **Contenu :** parties, lot inscrit et description, prix et modalités de paiement (avec les paiements antérieurs identifiés), charges (libre de charges ou avec reprise du prêt choisie par l'acheteur), déclarations (décennale, permis, certificat énergétique, cédula), frais.
-- Lors de la signature de la vente chez le notaire, l'acheteur du logement reçoit le **Livre de l'immeuble**.
+- Lors de la signature de la vente chez le notaire, l'acheteur du logement reçoit le **Livre de l'immeuble** (Leçon 9.4).
 - **Qui paie quoi :**
 
 | Frais | Acheteur | Promoteur |
@@ -96,7 +96,6 @@
 
 - [ ] Actes signés et encaissement de chaque logement
 - [ ] Part du prêt promoteur remboursée ou transférée à chaque signature
-- [ ] Plus-value municipale autoliquidée dans les délais à chaque vente
 - [ ] Assemblée constitutive, NIF, compte et fonds de réserve
 - [ ] Contrats d'entretien de la copropriété
 - [ ] Ouvertures des contrats de fourniture

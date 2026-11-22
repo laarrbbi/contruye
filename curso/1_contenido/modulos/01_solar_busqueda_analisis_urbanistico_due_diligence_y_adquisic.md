@@ -79,7 +79,7 @@
 
 ### Ejemplo: Nicolás, el promotor
 
-A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
+A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas en Alicante, en la Comunitat Valenciana, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
 
 **Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias. Con esa ficha mira cada solar con el mismo filtro.
 
@@ -87,7 +87,9 @@ A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoci
 
 **El solar que le llegó.** Un administrador de fincas le habló de un solar de 344 m² en suelo urbano consolidado, con servicios. Ese mismo día lo dio de alta en su **base de datos de gestión de suelo**, con su propietario y con quien se lo había traído.
 
-**El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Son los datos del ejemplo del profesional que trae la plantilla, y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
+**El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Con el suelo a 45 € el m² de techo, el solar sale por 71.392,05 €.
+
+Con una construcción de 660 €/m², licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 1.259,70 € el m²: unos 113.373 € una vivienda tipo de 90 m², sin IVA, y 1.998.501,45 € toda la promoción. El suelo es el 3,6 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos y los precios del ejemplo del profesional que trae la plantilla (hoy la construcción es más cara: mira la Lección 2.3), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
 
 Los números le encajan, pero todavía no compra: primero comprueba en el planeamiento que de verdad se puede construir eso (Lección 1.2).
 
@@ -281,7 +283,7 @@ Hay una vía más rápida, en línea: CIRCE / PAE.
 
 **Después, la opción de compra.** El propietario es un particular. Como a Nicolás todavía le faltan la viabilidad (Módulo 2) y la financiación, no compra directamente: firma una **opción de compra en la notaría** y la **inscribe en el Registro de la Propiedad**, para que valga frente a terceros. Paga una prima y se asegura el plazo que necesita (la lección habla de una prima del 3-10 % por un plazo de 6-24 meses). La notaría la podrás encontrar en la lista que te hemos dado: el Colegio Notarial de tu provincia, al final del módulo.
 
-**Los gastos, en la Plantilla 1.** Como vende un particular, la compra pagará el **ITP** de su comunidad (Anexo B) y no IVA. Notaría y registro, en torno al 0,5 % del precio; pidió presupuesto a la notaría para afinarlo. La plusvalía municipal la paga el vendedor. Lo metió todo en la **Plantilla 1 · Compra del solar**, con su comunidad autónoma.
+**Los gastos, en la Plantilla 1.** Como vende un particular, la compra paga el **ITP** de la Comunitat Valenciana (el 9 %, Anexo B) y no IVA: 6.425,28 € sobre los 71.392,05 € del solar. Notaría y registro, en torno al 0,5 % del precio: 356,96 €; pidió presupuesto a la notaría para afinarlo. Con 3.000 € de due diligence, tasación y estudios, la **Plantilla 1 · Compra del solar** le da un coste del solar de 81.174,29 € (51,17 € por m² de techo): el dinero que necesita el día de la compra. La plusvalía municipal la paga el vendedor.
 
 **Dónde está ahora.** Tiene el solar asegurado a nombre de su SPE, con la opción de compra inscrita. Con eso pasa al Módulo 2, a decidir con números si la promoción se hace.
 

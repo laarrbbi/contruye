@@ -82,7 +82,7 @@
   - Declaración anual (modelo 200) y pagos fraccionados (modelo 202).
   - En Navarra y País Vasco, normativa foral.
 - **IVA:** trimestral (303) y resumen anual (390). Si alquilas viviendas que no has vendido, regulariza el IVA deducido (el alquiler de vivienda está exento).
-- **Plusvalía municipal:** una autoliquidación por cada venta. Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
+- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
 - **IBI:** de las viviendas que sigan siendo tuyas a 1 de enero.
 
 ## Lección 12.4 — Cierre de la SPE

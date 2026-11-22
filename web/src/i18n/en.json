@@ -1552,6 +1552,7 @@
       "directorio-partners": "Directory of partners by province (Excel)",
       "curso-pdf": "The whole course as a PDF",
       "base-datos-suelo": "Professional's template · Land management database",
+      "libro-edificio": "Instructor's template · Building Book (index, in Word)",
       "guia-analisis-viabilidad": "The professional's feasibility analysis guide (22 homes), over the corrected template"
     },
     "needsFullAccess": "With full access",
@@ -1897,7 +1898,7 @@
       "ajdTerm": "If a company sells",
       "ajd": "you pay the VAT ({{vat}}), which you advance and a developer company (SL) recovers, and the Stamp Duty (AJD) of the region.",
       "costTerm": "Cost of the plot (excl. VAT)",
-      "cost": "price + ITP or AJD + notary and registry + municipal capital gains tax if you take it on + due diligence, valuation and studies.",
+      "cost": "price + ITP/AJD + notary and registry + municipal capital gains tax if you take it on + due diligence, valuation and studies.",
       "perM2Term": "Land cost per m²",
       "perM2": "cost of the plot excl. VAT ÷ m² of floor area the buildability allows."
     },

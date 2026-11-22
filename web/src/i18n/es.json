@@ -1552,6 +1552,7 @@
       "directorio-partners": "Directorio de partners por provincia (Excel)",
       "curso-pdf": "El curso completo en PDF",
       "base-datos-suelo": "Plantilla del profesional · Base de datos de gestión de suelo",
+      "libro-edificio": "Plantilla del profesor · Libro del Edificio (índice, en Word)",
       "guia-analisis-viabilidad": "Guía de análisis de viabilidad del profesional (22 viviendas), sobre la plantilla corregida"
     },
     "needsFullAccess": "Con el acceso completo",
@@ -1897,7 +1898,7 @@
       "ajdTerm": "Si vende una empresa",
       "ajd": "pagas el IVA ({{vat}}), que adelantas y una SL promotora recupera, y el impuesto de Actos Jurídicos Documentados (AJD) de la comunidad.",
       "costTerm": "Coste del solar (sin IVA)",
-      "cost": "precio + ITP o AJD + notaría y registro + plusvalía si la asumes + due diligence, tasación y estudios.",
+      "cost": "precio + ITP/AJD + notaría y registro + plusvalía si la asumes + due diligence, tasación y estudios.",
       "perM2Term": "Repercusión del suelo",
       "perM2": "coste del solar sin IVA ÷ m² de techo que permite la edificabilidad."
     },

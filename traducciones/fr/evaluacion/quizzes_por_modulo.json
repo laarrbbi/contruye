@@ -2487,26 +2487,26 @@
       },
       {
         "numero": 4,
-        "pregunta": "Le certificat de dette de chaque lot est délivré par :",
+        "pregunta": "Pour l'acte de fin de travaux, il faut présenter chez le notaire, entre autres documents :",
         "opciones": [
           {
             "letra": "A",
-            "texto": "La mairie",
+            "texto": "Le certificat de dette de chaque logement, délivré par la banque",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "Le notaire",
-            "correcta": false
-          },
-          {
-            "letra": "C",
-            "texto": "La banque du prêt promoteur",
+            "texto": "Le Livre de l'immeuble sur support numérique, avec le procès-verbal de réception de l'ouvrage",
             "correcta": true
           },
           {
+            "letra": "C",
+            "texto": "Seulement le permis de construire",
+            "correcta": false
+          },
+          {
             "letra": "D",
-            "texto": "Le Registre",
+            "texto": "Le contrat privé de chaque acheteur",
             "correcta": false
           }
         ]
@@ -2754,26 +2754,26 @@
       },
       {
         "numero": 6,
-        "pregunta": "Délai pour autoliquider la plus-value lors d'une vente :",
+        "pregunta": "Lors de la vente d'un logement neuf, l'autoliquidation de la plus-value municipale par le promoteur :",
         "opciones": [
           {
             "letra": "A",
-            "texto": "1 an",
+            "texto": "Se dépose dans les 30 jours ouvrables suivant chaque vente",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "30 jours ouvrables",
+            "texto": "Ne s'applique pas, s'agissant d'un ouvrage neuf",
             "correcta": true
           },
           {
             "letra": "C",
-            "texto": "6 mois",
+            "texto": "Se dépose dans les 6 mois",
             "correcta": false
           },
           {
             "letra": "D",
-            "texto": "Pas de délai",
+            "texto": "Se dépose en une seule fois, à la fin de toutes les ventes",
             "correcta": false
           }
         ]

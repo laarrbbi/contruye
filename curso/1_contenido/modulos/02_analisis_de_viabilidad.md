@@ -99,7 +99,7 @@
 
 ## Lección 2.3 — Costes con precisión
 
-- **Suelo:** precio + ITP o AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
+- **Suelo:** precio + ITP/AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
 - **Método residual:** `Precio máximo del suelo = Ingresos − resto de costes − beneficio objetivo`. El suelo vale lo que el proyecto permite pagar.
 - **Construcción (coste de ejecución material, 2025-2026, sobre rasante):**
   - Estándar: 900–1.100 €/m² construido
@@ -134,7 +134,7 @@
 
 - **Imprevistos (contingencias):** reserva un 3–5 % del coste de construcción desde la primera CRP.
 - **Gastos jurídicos** (abogados, notaría, registro) y de **estructura societaria**: inclúyelos aunque parezcan pequeños.
-- Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y cash-flow), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
+- Para meter todo esto con método usa la **Plantilla 2 · Viabilidad rápida y método residual** (incluida): ventas, costes por partida, margen y precio máximo del suelo. Si quieres el detalle mes a mes (coste por capítulos, préstamo y flujo de caja), el extra del final del curso es la plantilla profesional completa (sección **FINANCIALS**).
 - **Un estudio previo completo, resuelto:** la **Guía de análisis de viabilidad** del profesional (22 viviendas, con sus notas de calendario) va con la plantilla profesional, en el extra del final del curso.
 
 ### Estructura de costes de una promoción inmobiliaria
@@ -154,13 +154,13 @@ La estructura de costes de una promoción inmobiliaria se divide en los siguient
 
 La distribución de los costes de promoción.
 
-A la hora de iniciar un proyecto inmobiliario, se deben de considerar todos aquellos costes que participan en la creación del mismo. En este caso el **Controller** es la persona encargada de supervisar y definir las políticas de control de gestión, analizando los resultados respecto a los presupuestos, observando las desviaciones y proponiendo correcciones.
+A la hora de iniciar un proyecto inmobiliario, se deben de considerar todos aquellos costes que participan en la creación del mismo. En este caso el **controlador de gestión** es la persona encargada de supervisar y definir las políticas de control de gestión, analizando los resultados respecto a los presupuestos, observando las desviaciones y proponiendo correcciones.
 
 Además, esta se encarga de supervisar y definir las políticas de control de gestión visualizando los presupuestos y apreciando las posibles desviaciones.
 
 A su vez se encarga de organizar el flujo adecuado entre los datos económicos y el sistema de control.
 
-El Controller en este caso, debe de participar en la elaboración de los planes e ideas de la dirección con el objetivo de poder anticiparse en base a la información que se recoja.
+El controlador de gestión en este caso, debe de participar en la elaboración de los planes e ideas de la dirección con el objetivo de poder anticiparse en base a la información que se recoja.
 
 La aplicación de este control conlleva la implantación de un conjunto de acciones, procedimientos, técnicas y procesos que configuran lo que se denomina el sistema de control.
 
@@ -342,14 +342,14 @@ En relación a los costes de comercialización podemos distinguir diferentes tip
   - **Poderes** notariales para quien gestiona y **garantías** que piden los bancos (avales personales).
   - Revisa la **fiscalidad** de la compra y de la promoción antes de firmar.
 - **Aprobación de la inversión:**
-  - Prepara una **memoria de inversión**: solar, producto, CRP, cash-flow, sensibilidades, riesgos, calendario y financiación.
+  - Prepara una **memoria de inversión**: solar, producto, CRP, flujo de caja, sensibilidades, riesgos, calendario y financiación.
   - La aprueba el comité de inversión o la **junta de socios**. En una sociedad de capital, comprar un activo que supere el 25 % del activo del balance es competencia de la junta general (art. 160.f LSC).
   - Fija **presupuesto, rentabilidad mínima, calendario y financiación** aprobados.
   - Fija **hitos de control y criterios de salida o renegociación**. Ejemplos: licencia no concedida en X meses; preventas por debajo del 30 % en Y meses; licitación de obra más de un 8 % por encima del presupuesto.
 - **Adquisición del solar:**
   1. Comprobaciones finales el día de la firma: nota simple del día, certificados de IBI y de deudas.
   2. Escritura pública de compraventa.
-  3. Liquidación de impuestos: ITP o AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
+  3. Liquidación de impuestos: ITP/AJD con el modelo 600 de tu comunidad, en su plazo (habitualmente 30 días hábiles); IVA repercutido por el vendedor si tributa por IVA.
   4. Inscripción en el Registro de la Propiedad.
   5. Cancelación o regularización de las cargas pactadas y toma de posesión efectiva.
 

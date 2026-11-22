@@ -178,7 +178,7 @@ Le modèle original a été construit vers 2002. La version de la formation a é
 
 - « Divers » TTC n'additionnait pas les raccordements (278,87 € dans l'exemple). Le total TTC de l'exemple est de 354.781,50 €.
 - Le cinquième paiement du terrain ne calculait pas le coût de sa garantie.
-- Le cash-flow perdait des paiements quand deux tombaient le même mois (par exemple, deux tirages du prêt). Il n'additionnait pas non plus les raccordements dans le total des 4 ans, et ne payait l'ITP ou l'AJD du terrain que s'ils valaient exactement 8 % ou 1 %.
+- Le cash-flow perdait des paiements quand deux tombaient le même mois (par exemple, deux tirages du prêt). Il n'additionnait pas non plus les raccordements dans le total des 4 ans, et ne payait l'ITP/AJD du terrain que s'ils valaient exactement 8 % ou 1 %.
 - La liquidation de l'IVA du cash-flow était liée à la main au calendrier de l'exemple. Elle se calcule désormais d'elle-même chaque trimestre.
 - Il y avait des erreurs visibles (#VALUE! et #DIV/0!) et des contrôles « O.K. » qui échouaient à cause des décimales.
 - Le contrôle qualité des travaux était fixé à 1,5 % dans une formule. C'est désormais une donnée (Datos de Partida D102).

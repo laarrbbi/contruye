@@ -2487,26 +2487,26 @@
    },
    {
     "numero": 4,
-    "pregunta": "El certificado de deuda de cada finca lo emite:",
+    "pregunta": "Para la escritura final de obra hay que presentar en notaría, entre otros documentos:",
     "opciones": [
      {
       "letra": "A",
-      "texto": "El ayuntamiento",
+      "texto": "El certificado de deuda de cada vivienda, emitido por el banco",
       "correcta": false
      },
      {
       "letra": "B",
-      "texto": "El notario",
-      "correcta": false
-     },
-     {
-      "letra": "C",
-      "texto": "El banco del préstamo promotor",
+      "texto": "El Libro del Edificio en medio digital, con el acta de recepción de la obra",
       "correcta": true
      },
      {
+      "letra": "C",
+      "texto": "Solo la licencia de obras",
+      "correcta": false
+     },
+     {
       "letra": "D",
-      "texto": "El Registro",
+      "texto": "El contrato privado de cada comprador",
       "correcta": false
      }
     ]
@@ -2754,26 +2754,26 @@
    },
    {
     "numero": 6,
-    "pregunta": "Plazo para autoliquidar la plusvalía en una venta:",
+    "pregunta": "En la venta de una vivienda de obra nueva, la autoliquidación de la plusvalía municipal por la promotora:",
     "opciones": [
      {
       "letra": "A",
-      "texto": "1 año",
+      "texto": "Se presenta en 30 días hábiles desde cada venta",
       "correcta": false
      },
      {
       "letra": "B",
-      "texto": "30 días hábiles",
+      "texto": "No procede, al ser obra nueva",
       "correcta": true
      },
      {
       "letra": "C",
-      "texto": "6 meses",
+      "texto": "Se presenta en 6 meses",
       "correcta": false
      },
      {
       "letra": "D",
-      "texto": "No hay plazo",
+      "texto": "Se presenta una sola vez, al terminar todas las ventas",
       "correcta": false
      }
     ]

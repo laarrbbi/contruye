@@ -5,8 +5,8 @@ namespace App\Support\Course;
 /**
  * The files of the course a student can download, by key. Each is served as
  * delivered, never altered, from the package (curso/) or, for the
- * instructor's templates sent outside it, from materiales/ (`source`; none at
- * the moment: package v5 brought them all), behind the gate its `access` names:
+ * instructor's templates sent outside it, from materiales/ (`source`: the
+ * index of the Libro del Edificio, 21/11/2026), behind the gate its `access` names:
  * - `financials`: a student who bought the extra (the Financials module);
  * - `full`: a student with the whole course;
  * - `module`: the owners of the phase module numbered `module`.
@@ -51,6 +51,16 @@ final class CourseFiles
             'path' => '2_plantilla_financiera/excel_corregido/Plantilla_simplificada_corregida.xlsx',
             'name' => 'Plantilla_simplificada_corregida.xlsx',
             'access' => 'financials',
+        ],
+        // Module 9: the instructor's index of the Libro del Edificio, in Word for the promoter
+        // to fill in (sent with his corrections of 19/11/2026, outside a package: materiales/,
+        // as delivered). Lesson 9.4 carries the same index as text.
+        'libro-edificio' => [
+            'path' => 'modulo_09/Libro_del_Edificio.docx',
+            'name' => 'Libro_del_Edificio.docx',
+            'access' => 'module',
+            'module' => 9,
+            'source' => 'materiales',
         ],
         'directorio-partners' => [
             'path' => '1_contenido/datos/partners_por_provincia.xlsx',

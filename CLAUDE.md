@@ -37,7 +37,8 @@ text goes inside an existing lesson.
 Templates the instructor sends outside a package go, unchanged, in **`materiales/`** (its
 `LEEME.md` lists each file, where it is offered and its checksum); `CourseFiles` serves them to the
 owners of their module (that module's «Plantilla» page) or, for the extra's material, to its buyers.
-It is empty now: the three that came loose on 11/11/2026 are in package v5.
+It holds one now: the instructor's Word index of the Libro del Edificio (Module 9, key `libro-edificio`,
+also offered under Lesson 9.4); the three that came loose on 11/11/2026 are in package v5.
 
 ## Running it
 

@@ -82,7 +82,7 @@
   - Annual return (form 200) and payments on account (form 202).
   - In Navarra and País Vasco, foral rules.
 - **IVA:** quarterly (303) and annual summary (390). If you rent out homes you have not sold, adjust the IVA you deducted (renting a home is exempt).
-- **Municipal plusvalía:** one self-assessment for each sale. Choose the more favourable method (objective or actual). If there is no increase in value, there is no tax.
+- **Municipal plusvalía:** as it is a new build, the developer does not have to self-assess the municipal plusvalía (Lesson 11.5). Choose the more favourable method (objective or actual). If there is no increase in value, there is no tax.
 - **IBI:** on the homes that are still yours on 1 January.
 
 ## Lesson 12.4 — Closing the SPE

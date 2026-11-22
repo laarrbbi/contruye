@@ -20,7 +20,6 @@
 |---|---|
 | **Constructor** | Corrección de repasos en plazo (con cargo a la retención si no cumple) |
 | **Notaría** | Calendario de firmas, minuta de escritura, provisión de fondos |
-| **Banco del promotor** | Certificado de deuda por vivienda y carta de pago o de subrogación |
 | **Bancos de los compradores** | Fecha de firma de cada hipoteca |
 | **Ayuntamiento** | Valores catastrales y datos para la plusvalía de cada vivienda |
 
@@ -69,7 +68,7 @@
 - **Al principio de la obra,** se documenta inicialmente mediante la elevación a público de la correspondiente escritura de "Declaración de Obra Nueva y División Horizontal" y se presenta en el Registro de la Propiedad para su inscripción. El Registro la inscribe con la anotación de "En construcción".
 - **Al finalizar la obra** se formaliza la **Escritura Final de Obra** y se presenta en el Registro de la Propiedad para su inscripción. Se inscribe como obra nueva terminada, desapareciendo la anotación de "en construcción".
 - **Para la Escritura Final de Obra,** hay que presentar en notaría la siguiente documentación:
-  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra).
+  1. Libro del Edificio en medio digital (debe contener expresamente el acta de recepción de la obra). Su índice, en la Lección 9.4.
   2. Certificado final de obra.
   3. Seguro decenal.
   4. Licencia de primera ocupación.

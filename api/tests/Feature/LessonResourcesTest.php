@@ -62,7 +62,7 @@ it('offers a module\'s templates only under a lesson that names one', function (
     $lessons = packageLessons();
     $offering = array_keys(array_filter(config('lesson_resources.lessons'), fn (array $entry) => $entry['templates'] ?? false));
 
-    expect($offering)->toEqualCanonicalizing(['1.1', '1.4', '2.3']);
+    expect($offering)->toEqualCanonicalizing(['1.1', '1.4', '2.3', '9.4']);
     foreach ($offering as $number) {
         expect(str_contains($lessons[$number], 'Plantilla'))->toBeTrue("Lección {$number} names no template");
     }

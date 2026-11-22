@@ -68,7 +68,7 @@
   - Describe el edificio y cada elemento privativo (vivienda, local, garaje, trastero) con número, planta, superficie, linderos y **cuota de participación**.
   - Elementos comunes.
   - **Estatutos** de la comunidad (uso de terrazas, piscina, distribución de gastos, prohibición de usos).
-  - Normalmente en la misma escritura que la obra nueva terminada.
+  - Va en la misma escritura que la obra nueva: la de declaración de obra nueva y división horizontal, que se otorga al principio de la obra (Lección 10.3).
 - **Tras la inscripción:** cada vivienda tiene finca registral propia y se puede vender e hipotecar por separado. El banco distribuye la hipoteca del préstamo promotor entre las fincas.
 - **Coste:** notaría y registro según arancel, AJD (Anexo B) sobre el valor de la obra nueva y de la división horizontal. **No se puede repercutir al comprador consumidor.**
 
@@ -92,7 +92,7 @@
   4. Certificados de instalaciones y de ensayos.
   5. Instrucciones de uso y mantenimiento del edificio y sus instalaciones.
   6. Plan de mantenimiento con revisiones obligatorias (ascensor, PCI, térmicas, eléctricas).
-- **Índice del Libro del Edificio:**
+- **Índice del Libro del Edificio** (**Plantilla del profesor · Libro del Edificio**, incluida, en Word para rellenar):
   - **Parte I. Características del edificio.**
     - Del conjunto del edificio:
       - Descripción: plano del emplazamiento; fotografías de las fachadas; características de cimentación y estructura; características de cerramiento y particiones; características de la cubierta; descripción y trazado de las instalaciones; características de los revestimientos; comportamiento y eficiencia energética del edificio; características ante ruido y vibraciones.
@@ -102,7 +102,7 @@
       - Relación de las unidades de ocupación.
     - De cada unidad de ocupación:
       - Identificación y descripción de las unidades.
-      - Historia de las intervenciones en cada unidad de actuación.
+      - Historia de las intervenciones en cada unidad de ocupación.
   - **Parte II. Normas e instrucciones de uso, conservación y mantenimiento.**
     - Manual de uso y mantenimiento.
     - Registro de operaciones de mantenimiento y reparación.

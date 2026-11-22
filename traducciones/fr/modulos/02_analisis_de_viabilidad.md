@@ -99,7 +99,7 @@
 
 ## Leçon 2.3 — Des coûts précis
 
-- **Terrain :** prix + ITP ou AJD non récupérable + notaire + registre + relevé topographique + géotechnique + avocats + coût financier du terrain + charges d'aménagement.
+- **Terrain :** prix + ITP/AJD non récupérable + notaire + registre + relevé topographique + géotechnique + avocats + coût financier du terrain + charges d'aménagement.
 - **Méthode résiduelle :** `Prix maximal du terrain = Recettes − autres coûts − bénéfice visé`. Le terrain vaut ce que le projet permet de payer.
 - **Construction (coût d'exécution matérielle, 2025-2026, hors sous-sol) :**
   - Standard : 900–1.100 €/m² construit
@@ -349,7 +349,7 @@ Pour les coûts de commercialisation, on peut distinguer plusieurs types :
 - **Acquisition du terrain :**
   1. Vérifications finales le jour de la signature : nota simple du jour, certificats d'IBI et de dettes.
   2. Acte authentique de vente.
-  3. Liquidation des impôts : ITP ou AJD avec le formulaire 600 de votre communauté, dans le délai (habituellement 30 jours ouvrables) ; IVA facturée par le vendeur si l'opération y est soumise.
+  3. Liquidation des impôts : ITP/AJD avec le formulaire 600 de votre communauté, dans le délai (habituellement 30 jours ouvrables) ; IVA facturée par le vendeur si l'opération y est soumise.
   4. Inscription au Registre de la propriété.
   5. Mainlevée ou régularisation des charges convenues et prise de possession effective.
 

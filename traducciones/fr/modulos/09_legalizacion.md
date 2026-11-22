@@ -68,7 +68,7 @@
   - Décrit l'immeuble et chaque partie privative (logement, local, garage, cave) avec numéro, étage, surface, limites et **quote-part**.
   - Parties communes.
   - **Statuts** de la copropriété (usage des terrasses, de la piscine, répartition des charges, usages interdits).
-  - En général dans le même acte que l'ouvrage neuf achevé.
+  - Elle figure dans le même acte que l'ouvrage neuf : l'acte de déclaration d'ouvrage neuf et de division horizontale, qui est signé au démarrage du chantier (Leçon 10.3).
 - **Après l'inscription :** chaque logement a son propre numéro au Registre et peut être vendu et hypothéqué séparément. La banque répartit l'hypothèque du prêt promoteur entre les lots.
 - **Coût :** notaire et registre selon le tarif, AJD (annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. **Il ne peut pas être répercuté sur l'acheteur consommateur.**
 
@@ -92,7 +92,7 @@
   4. Certificats des installations et des essais.
   5. Instructions d'utilisation et d'entretien de l'immeuble et de ses installations.
   6. Plan d'entretien avec les vérifications obligatoires (ascenseur, PCI, thermique, électricité).
-- **Sommaire du Livre de l'immeuble :**
+- **Sommaire du Livre de l'immeuble** (**Modèle du formateur · Livre de l'immeuble**, inclus, en Word à remplir) :
   - **Partie I. Caractéristiques de l'immeuble.**
     - Pour l'ensemble de l'immeuble :
       - Description : plan de situation ; photographies des façades ; caractéristiques des fondations et de la structure ; caractéristiques de l'enveloppe et des cloisons ; caractéristiques de la toiture ; description et tracé des installations ; caractéristiques des revêtements ; comportement et performance énergétiques de l'immeuble ; caractéristiques face au bruit et aux vibrations.
@@ -102,7 +102,7 @@
       - Liste des unités d'occupation.
     - Pour chaque unité d'occupation :
       - Identification et description des unités.
-      - Historique des interventions dans chaque unité d'intervention.
+      - Historique des interventions dans chaque unité d'occupation.
   - **Partie II. Règles et instructions d'utilisation, de conservation et d'entretien.**
     - Manuel d'utilisation et d'entretien.
     - Registre des opérations d'entretien et de réparation.

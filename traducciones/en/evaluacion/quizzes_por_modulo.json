@@ -2487,26 +2487,26 @@
       },
       {
         "numero": 4,
-        "pregunta": "The debt certificate for each property is issued by:",
+        "pregunta": "For the Final Completion Deed, the documents to be presented at the notary's include:",
         "opciones": [
           {
             "letra": "A",
-            "texto": "The town hall",
+            "texto": "The debt certificate for each home, issued by the bank",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "The notary",
-            "correcta": false
-          },
-          {
-            "letra": "C",
-            "texto": "The bank of the development loan",
+            "texto": "The Building Book in digital form, with the handover record of the works",
             "correcta": true
           },
           {
+            "letra": "C",
+            "texto": "Only the building licence",
+            "correcta": false
+          },
+          {
             "letra": "D",
-            "texto": "The Land Registry",
+            "texto": "Each buyer's private contract",
             "correcta": false
           }
         ]
@@ -2754,26 +2754,26 @@
       },
       {
         "numero": 6,
-        "pregunta": "Deadline to self-assess the plusvalía on a sale:",
+        "pregunta": "On the sale of a new-build home, the developer's self-assessment of the municipal plusvalía:",
         "opciones": [
           {
             "letra": "A",
-            "texto": "1 year",
+            "texto": "Is filed within 30 working days of each sale",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "30 working days",
+            "texto": "Does not apply, as it is a new build",
             "correcta": true
           },
           {
             "letra": "C",
-            "texto": "6 months",
+            "texto": "Is filed within 6 months",
             "correcta": false
           },
           {
             "letra": "D",
-            "texto": "There is no deadline",
+            "texto": "Is filed only once, when all the sales are finished",
             "correcta": false
           }
         ]

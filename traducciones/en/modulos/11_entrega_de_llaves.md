@@ -26,13 +26,13 @@
 | **Bank** | The owners' association's account |
 | **Distributor and retailers** | Electricity contracts for each home (with the CIE and first occupation or cédula) |
 | **Water company** | Water contracts for each home |
-| **Town hall** | Self-assessment of the plusvalía (30 working days from each sale) and change of IBI taxpayer |
+| **Town hall** | Change of IBI taxpayer |
 | **Association of Property Managers** | A property manager for the owners' association |
 
 ## Lesson 11.1 — The deed of sale
 
 - **Contents:** parties, registered property and description, price and payment terms (with earlier payments identified), encumbrances (free of encumbrances, or with the take-over chosen by the buyer), statements (ten-year insurance, licences, energy certificate, cédula), costs.
-- At the signing of the sale at the notary's, the home buyer is given the **Building Book**.
+- At the signing of the sale at the notary's, the home buyer is given the **Building Book** (Lesson 9.4).
 - **Who pays what:**
 
 | Cost | Buyer | Developer |
@@ -96,7 +96,6 @@
 
 - [ ] Deeds signed and each home paid for
 - [ ] Share of the development loan cancelled or taken over at each signing
-- [ ] Plusvalía self-assessed on time for each sale
 - [ ] Founding meeting, NIF, bank account and reserve fund
 - [ ] Maintenance contracts for the owners' association
 - [ ] Utility contracts set up

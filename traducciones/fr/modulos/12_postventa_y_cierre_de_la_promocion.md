@@ -82,7 +82,7 @@
   - Déclaration annuelle (formulaire 200) et acomptes (formulaire 202).
   - En Navarre et au Pays basque, réglementation forale.
 - **IVA :** trimestrielle (303) et récapitulatif annuel (390). Si vous louez des logements invendus, régularisez l'IVA déduite (la location de logements est exonérée).
-- **Plus-value municipale :** une autoliquidation par vente. Choisissez la méthode la plus favorable (objective ou réelle). Sans hausse de valeur, pas d'impôt.
+- **Plus-value municipale :** s'agissant d'un ouvrage neuf, l'autoliquidation de la plus-value municipale ne s'applique pas au promoteur (Leçon 11.5). Choisissez la méthode la plus favorable (objective ou réelle). Sans hausse de valeur, pas d'impôt.
 - **IBI :** pour les logements qui vous appartiennent encore au 1 janvier.
 
 ## Leçon 12.4 — Clôture de la SPE

@@ -92,7 +92,9 @@
   8. **Procès-verbal de vérification de l'implantation** signé par le directeur des travaux, le directeur de l'exécution et le constructeur. Il fixe la date de départ du délai des travaux.
   9. **Panneau de chantier** selon l'ordonnance (numéro de permis, promoteur, techniciens, constructeur, délais).
   10. Déclaration de démarrage à la mairie si l'ordonnance l'exige.
-- **Acte de déclaration d'ouvrage neuf en construction** (Module 9) : il vous le faut pour que la banque inscrive l'hypothèque sur l'immeuble futur.
+- **Acte de déclaration d'ouvrage neuf et de division horizontale** (Module 9), sauf s'il s'agit d'une maison individuelle isolée et que l'on ne déclare que l'ouvrage neuf, parce qu'il n'y a pas de lots à diviser.
+  - Le promoteur peut obtenir, le cas échéant, un financement externe, c'est-à-dire un prêt promoteur pour la réalisation de la promotion. La documentation que demandera l'établissement de crédit porte sur la solvabilité du promoteur et les garanties de remboursement, ainsi que sur le projet à réaliser.
+  - Quant au prêt hypothécaire à accorder à l'acheteur, l'établissement de crédit n'accorde aucune hypothèque tant que l'acte de fin de travaux n'est pas inscrit au Registre ; autrement dit, tant que la mention « en construction » reste inscrite, aucune hypothèque n'est formalisée pour l'achat.
 - ⚠️ **Erreur typique :** commencer les terrassements avant la déclaration d'ouverture. C'est une infraction grave en matière de prévention.
 
 - **Organisez la maîtrise d'œuvre avant de commencer :** désignez par écrit l'architecte directeur des travaux, l'architecte technique directeur de l'exécution, le coordinateur sécurité et santé, les techniciens spécialisés et le contrôle qualité, avec la mission de chacun.

@@ -20,7 +20,6 @@
 |---|---|
 | **Constructeur** | Levée des réserves dans les délais (sur la retenue s'il ne s'exécute pas) |
 | **Notaire** | Calendrier des signatures, projet d'acte, provision pour frais |
-| **Banque du promoteur** | Certificat de dette par logement et quittance ou documents de reprise du prêt |
 | **Banques des acheteurs** | Date de signature de chaque prêt |
 | **Mairie** | Valeurs cadastrales et données pour la plus-value de chaque logement |
 
@@ -69,7 +68,7 @@
 - **Au démarrage du chantier,** l'ouvrage est d'abord documenté par la signature devant notaire de l'acte correspondant de « Déclaration d'ouvrage neuf et division horizontale », que l'on présente au Registre de la propriété pour inscription. Le Registre l'inscrit avec la mention « En construction ».
 - **À la fin du chantier,** on signe l'**acte de fin de travaux** (Escritura Final de Obra), que l'on présente au Registre de la propriété pour inscription. L'ouvrage est inscrit comme ouvrage neuf achevé et la mention « en construction » disparaît.
 - **Pour l'acte de fin de travaux,** il faut remettre au notaire les documents suivants :
-  1. Livre de l'immeuble sur support numérique (il doit contenir expressément le procès-verbal de réception de l'ouvrage).
+  1. Livre de l'immeuble sur support numérique (il doit contenir expressément le procès-verbal de réception de l'ouvrage). Son sommaire, dans la Leçon 9.4.
   2. Certificat de fin de chantier.
   3. Assurance décennale.
   4. Permis de première occupation.

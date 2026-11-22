@@ -77,6 +77,7 @@
     - Ley 12/2023 por el derecho a la vivienda (artículo 31).
     - Ley 38/1999 de Ordenación de la Edificación (LOE).
     - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (publicidad veraz y cómputo de superficies).
+  - Si tu promoción está en otra comunidad autónoma, comprueba su normativa: las referencias valencianas de esta lección (Ley 8/2004, LOTUP, IVACE) cambian; el Real Decreto 515/1989, la Ley 12/2023 y la LOE son estatales y valen en toda España.
   - El promotor o vendedor debe tener a disposición del comprador y entregarle una documentación específica dividida en dos fases.
 - **1. Información obligatoria antes de firmar o entregar cantidades a cuenta (fase comercial).** Antes de firmar reservas, arras o contrato de compraventa, el promotor debe facilitar de forma gratuita y clara:
   - **Identificación del promotor:** nombre o razón social, domicilio y datos de inscripción en el Registro Mercantil.

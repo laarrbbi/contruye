@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Boxes, Calculator, ClipboardCheck, CircleCheck, 
 import { useUser } from '@/api/auth'
 import {
   attachmentUrl,
+  moduleFiles,
   reflexSheetUrl,
   sendProgress,
   useLearn,
@@ -372,7 +373,13 @@ export function PlayerPage() {
 
       {/* Under the text: the websites the lesson names and the partners it calls on. */}
       {!currentLesson.is_locked && currentModule && lessonText?.resources && (
-        <LessonResources slug={data.course.slug} lessonId={currentLesson.id} module={currentModule} resources={lessonText.resources} />
+        <LessonResources
+          slug={data.course.slug}
+          lessonId={currentLesson.id}
+          module={currentModule}
+          resources={lessonText.resources}
+          files={currentModule.kind === 'phase' ? moduleFiles(data, currentModule.order) : []}
+        />
       )}
 
       {/* The module's objective, laws and where to go: after the lesson, not

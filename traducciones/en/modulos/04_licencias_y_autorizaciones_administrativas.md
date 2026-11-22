@@ -92,7 +92,9 @@
   8. **Setting-out verification record** (*acta de comprobación del replanteo*) signed by the works director, the director of works execution and the contractor. It sets the start date of the construction period.
   9. **Site board** as the by-law requires (licence number, developer, professionals, contractor, deadlines).
   10. Notification of the start to the town hall if the by-law asks for it.
-- **Deed declaring the new building under construction** (Module 9): you need it so the bank can register the mortgage on the future building.
+- **Deed declaring the new building and the horizontal division** (Module 9), unless it is a detached single-family house and only the new building is declared because there are no separate units to divide.
+  - The developer may, where appropriate, obtain external financing, that is, a developer loan to carry out the development. The documents the lender will ask for concern the developer's solvency and repayment guarantees, as well as the project to be developed.
+  - As for the mortgage loan to be granted to the buyer, the lender will not grant any mortgage until the Final Completion Deed is registered at the Land Registry; that is, while the "under construction" note is still registered, no mortgage is signed on the purchase.
 - ⚠️ **Typical mistake:** starting the excavation before the opening notification. It is a serious breach of health and safety rules.
 
 - **Organise the site supervision team before starting:** appoint in writing the architect as works director, the technical architect as director of works execution, the health and safety coordinator, the specialist professionals and the quality control, with the scope of each.

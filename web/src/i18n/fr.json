@@ -1552,6 +1552,7 @@
       "directorio-partners": "Annuaire des partenaires par province (Excel)",
       "curso-pdf": "La formation complète en PDF",
       "base-datos-suelo": "Modèle du professionnel · Base de données de gestion foncière",
+      "libro-edificio": "Modèle du formateur · Livre de l'immeuble (sommaire, en Word)",
       "guia-analisis-viabilidad": "Guide d'analyse de viabilité du professionnel (22 logements), sur le modèle corrigé"
     },
     "needsFullAccess": "Avec l'accès complet",
@@ -1897,7 +1898,7 @@
       "ajdTerm": "Si une entreprise vend",
       "ajd": "vous payez la TVA ({{vat}}), que vous avancez et qu'une société de promotion (SL) récupère, et l'impôt sur les actes juridiques documentés (AJD) de la communauté.",
       "costTerm": "Coût du terrain (hors TVA)",
-      "cost": "prix + ITP ou AJD + notaire et registre + plus-value si vous la prenez en charge + due diligence, expertise et études.",
+      "cost": "prix + ITP/AJD + notaire et registre + plus-value si vous la prenez en charge + due diligence, expertise et études.",
       "perM2Term": "Coût du sol par m²",
       "perM2": "coût du terrain hors TVA ÷ m² de plancher permis par la constructibilité."
     },
