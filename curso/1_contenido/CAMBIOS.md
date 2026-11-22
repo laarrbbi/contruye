@@ -36,6 +36,8 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lecciones 10.3 y 11.1 | Remiten a la Lección 9.4 al nombrar el Libro del Edificio | Consecuencia de la 9.4 |
 | Módulo 10 («Dónde ir») y test del Módulo 10 (P4) | Fuera la fila «Banco del promotor · Certificado de deuda por vivienda y carta de pago o de subrogación». La P4 («El certificado de deuda de cada finca lo emite») pregunta ahora qué se presenta en notaría para la escritura final de obra, con su lista de la 10.3 | Su corrección de la 10.3 |
 | Módulos 11 y 12, test del Módulo 11 (P6) | «No procede la autoliquidación de la plusvalía municipal para la promotora» donde el curso decía lo contrario: «Dónde ir» del Módulo 11 (queda «Cambio de titular del IBI»), su checklist (fuera «Plusvalía autoliquidada en plazo en cada venta») y el Módulo 12. La P6 («Plazo para autoliquidar la plusvalía») pregunta ahora si procede | Su corrección de la 11.5 |
+| Lección 2.2 | «Cómo calcular el precio de venta de la promoción» (antes «Cómo sacar el precio de venta»: la promoción incluye viviendas, garajes y trasteros). El punto 1, «Estudio de mercado pormenorizado»: las promociones en venta en un radio de 1-3 km, con la técnica de simulación; anota los m² construidos y útiles, el €/m², la tipología y las calidades (memoria de calidades); en sus webs, planos y memoria de calidades, y si no ponen precio, en la caseta de ventas o a la promotora | Notas de voz del 22/11 |
+| Lección 2.5 | Forma de pago: «al contado, aplazado con opción de compra o parte del precio en permuta de inmuebles» (fuera «con aval» y «plazos», que había puesto la nota del propietario). La opción de compra, gratuita o a cambio de una cantidad pactada (por ejemplo un 3 %) según vaya el mercado, que se pierde si no se compra; en su plazo se terminan los estudios, la financiación y el proyecto. El ejemplo de Nicolás y «Quién se encarga» lo siguen | Notas de voz del 22/11 |
 
 ## Del propietario
 
@@ -128,6 +130,13 @@ Las tres preguntas para el profesor del 22/11; lo demás de la lista anterior es
 
 ## Notas del propietario que faltan por aplicar
 
-- Lecciones 2.2 (precio de venta y «en lugar de poner electores») y 2.5 («meter ejemplo del vocal»): los cuatro audios llegaron el 22/11 y faltan por transcribir.
+- Lecciones 2.2 y 2.5: los cuatro audios del 22/11, transcritos. Casi todo lo que dicen ya estaba aplicado con las notas del propietario; lo que faltaba está arriba («Notas de voz del 22/11») y lo que queda por decidir, en «De las notas de voz: para decidir».
 - Lección 2.3: el coste de construcción editable en la administración, con fecha: es una función de la plataforma, no un cambio del texto.
 - El ejemplo de Nicolás con números: todos los valores del ejemplo del profesional en la plantilla Números gordos del solar (construcción 660 €/m², suelo 45 €/m² de techo, precio de venta el que da la plantilla), en la Comunitat Valenciana (Alicante), calculado con las plantillas.
+
+## De las notas de voz: para decidir (no se ha cambiado)
+
+1. **Lección 2.2, precios escriturados (Registradores y Notarios).** Se quitó de la lista con la nota del propietario. En el audio el profesor primero dice que lo quitaría y luego: «no lo quites, se puede comparar con los precios… lo ponemos más abajo»; explica que el Colegio de Registradores da mapas de calor con valores medios por zona, que sirven para ciertas cosas pero no para saber cuánto vale una vivienda concreta. Sigue en la tabla «Dónde ir» del módulo. ¿Se añade como último punto, con esa explicación?
+2. **Lección 2.2, estudio de la demanda.** Dice que él hacía estudios de demanda, no solo de oferta: población nacional e internacional, residentes o no, edades, de qué vive la zona, renta per cápita, actividad económica y si la población crece o baja. ¿Se añade?
+3. **Lección 2.3, coste de ejecución material.** Dice que 900–1.100 €/m² «está mal»: hoy la media-alta va por 1.400 €/m², el lujo desde 1.400 y subiendo, «casi por 1.600». Faltan las cifras exactas de cada tramo; el propietario quiere además que se puedan cambiar en la administración.
+4. **Módulo 4, licencia y ECUV.** Dice que para una promoción hace falta siempre licencia (la declaración responsable no la admiten todos los ayuntamientos y es para obras pequeñas), que sin licencia no se empieza, que mucha de la lentitud viene de proyectos mal planteados y que en la Comunitat Valenciana hay entidades colaboradoras urbanísticas (ECUV) que revisan el proyecto en plazos cortos (en su caso, unos tres meses). La 4.1 ya dice lo de la licencia; las ECUV no salen. ¿Se añaden, con sus palabras?

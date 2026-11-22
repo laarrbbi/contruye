@@ -97,8 +97,8 @@ Le CRP retranche des recettes hors IVA tous les coûts de la promotion, du terra
   - Construite : utile + murs (≈ utile × 1,15–1,20).
   - Construite avec parties communes : + quote-part des halls, escaliers, ascenseurs (≈ utile × 1,25–1,35). C'est celle que l'on affiche en général.
   - Prise en compte : celle qui compte dans la constructibilité selon votre PGOU.
-- **Comment établir le prix de vente :**
-  1. **Étude de marché :** regardez ce qu'il y a autour et qui sont vos concurrents. Visitez les promotions en vente dans un rayon de 1-3 km et simulez un achat (technique du client mystère). Notez le €/m², la typologie et les prestations.
+- **Comment calculer le prix de vente de la promotion :**
+  1. **Étude de marché détaillée :** regardez ce qu'il y a autour et qui sont vos concurrents. Visitez les promotions en vente dans un rayon de 1-3 km et simulez un achat (technique du client mystère). Notez les m² construits et utiles, le €/m², la typologie et les prestations (memoria de calidades). Leurs sites web présentent souvent les plans et le descriptif des prestations ; s'ils n'affichent pas les prix, demandez-les au bureau de vente ou au promoteur.
   2. Lisez les rapports trimestriels de Tinsa, Sociedad de Tasación, Gloval et des cabinets de conseil (CBRE, JLL, Savills, Colliers).
   3. Appliquez une décote de 3-5 % sur l'offre concurrente pour vos premières ventes sur plan.
 - **Mix produit indicatif :**
@@ -461,8 +461,10 @@ La marge sur ventes (minimum 15 %), le ROE et le TRI vous disent si l'opération
 > **Où en sommes-nous :** avec le GO de la Leçon 2.4, vous bouclez l'opération : vous négociez avec le propriétaire, vous organisez la société et les associés, vous approuvez l'investissement et vous achetez le terrain.
 
 - **Négociation avec le propriétaire du terrain :**
-  - Prix, modalités de paiement (comptant, différé avec caution, avec option d'achat, une partie du prix sous forme d'échange de biens immobiliers), délais.
+  - Prix et modalités de paiement : comptant, différé avec option d'achat ou une partie du prix sous forme d'échange de biens immobiliers.
   - **Option d'achat** et délai suffisant pour mener les études et obtenir le financement : formalisez-la par un contrat de vente avec option d'achat.
+    - Elle peut être **gratuite** ou consentie contre une **somme convenue** (un pourcentage du prix, par exemple 3 %). Quand on vend peu, le propriétaire l'accorde souvent gratuitement ; quand le marché va bien, il demande cette somme, que vous perdez si vous n'achetez pas au final : elle le dédommage d'avoir immobilisé le terrain pour vous.
+    - Pendant ce délai, vous terminez les études, obtenez le financement et préparez le projet. Si cela aboutit, vous levez l'option et achetez ; sinon, vous n'achetez pas et le propriétaire garde son terrain.
   - **Conditions suspensives :** faisabilité d'urbanisme, registrale, technique et financière ; obtention du permis.
   - Formules : vente directe, option d'achat, **échange (permuta)** contre des logements futurs ou **apport du terrain** à la société contre des parts.
 - **Structure juridique et sociétaire :**
@@ -483,7 +485,7 @@ La marge sur ventes (minimum 15 %), le ROE et le TRI vous disent si l'opération
   4. Inscription au Registre de la propriété.
   5. Mainlevée ou régularisation des charges convenues et prise de possession effective.
 - **Qui s'occupe de quoi** (à qui demander chaque point des listes ci-dessus) :
-  - **Vous :** la négociation avec le propriétaire (prix, modalités de paiement, délais) et la note d'investissement.
+  - **Vous :** la négociation avec le propriétaire (prix et modalités de paiement) et la note d'investissement.
   - **Avocat :** il examine le contrat de vente avec option d'achat et les conditions suspensives, et rédige le pacte d'associés.
   - **Cabinet de conseil ou conseiller fiscal :** les apports des associés (capital ou prêt d'associé) et la fiscalité de l'achat et de la promotion.
   - **Notaire :** les procurations notariées et l'acte authentique de vente.
@@ -498,7 +500,7 @@ La marge sur ventes (minimum 15 %), le ROE et le TRI vous disent si l'opération
 
 Avec le GO, Nicolás a bouclé l'opération. Je vous raconte dans quel ordre.
 
-**Ce qu'il a négocié avec le propriétaire.** Il l'avait verrouillé dans l'option d'achat de la Leçon 1.4 : le prix, 71.392,05 € ; les modalités de paiement, avec option d'achat, et un délai suffisant pour mener les études et obtenir le financement, ce que demande la leçon. Par écrit, les conditions suspensives de faisabilité d'urbanisme, registrale et technique : si l'une d'elles n'était pas remplie, il n'achetait pas.
+**Ce qu'il a négocié avec le propriétaire.** Il l'avait verrouillé dans l'option d'achat de la Leçon 1.4 : le prix, 71.392,05 € ; les modalités de paiement, différé avec option d'achat, et un délai suffisant pour mener les études et obtenir le financement, ce que demande la leçon. Par écrit, les conditions suspensives de faisabilité d'urbanisme, registrale et technique : si l'une d'elles n'était pas remplie, il n'achetait pas.
 
 **La structure.** Sa SPE existe déjà (Leçon 1.4) : une société nouvelle, dédiée à cette seule promotion, ce que la leçon appelle SPV, qui isole le risque. Avec son cabinet de conseil, il a décidé comment entrent les fonds propres (capital ou prêt d'associé) et a vérifié la fiscalité avant de signer : l'achat paie l'ITP, parce que c'est un particulier qui vend, et les ventes porteront 10 % d'IVA. Il a signé le **pacte d'associés** de sa SPE avec ce que demande la leçon : majorités renforcées, répartition des rôles, apports complémentaires en cas de dérive, blocage, sortie et répartition des résultats. Il sait que la banque lui demandera des cautions personnelles (Leçon 5.1).
 

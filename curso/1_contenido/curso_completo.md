@@ -542,8 +542,8 @@ La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suel
   - Construida: útil + muros (≈ útil × 1,15–1,20).
   - Construida con comunes: + parte de portales, escaleras, ascensores (≈ útil × 1,25–1,35). Es la que se suele anunciar.
   - Computable: la que cuenta para la edificabilidad según tu PGOU.
-- **Cómo sacar el precio de venta:**
-  1. **Estudio de mercado:** mira qué hay alrededor y quién es tu competencia. Recorre las promociones en venta en 1-3 km y simula la compra (técnica de simulación). Anota €/m², tipología y calidades.
+- **Cómo calcular el precio de venta de la promoción:**
+  1. **Estudio de mercado pormenorizado:** mira qué hay alrededor y quién es tu competencia. Recorre las promociones en venta en un radio de 1-3 km y simula la compra (técnica de simulación). Anota los m² construidos y útiles, el €/m², la tipología y las calidades (memoria de calidades). En sus webs suele haber planos y memoria de calidades; si no ponen precio, pídelo en la caseta de ventas o a la promotora.
   2. Lee los informes trimestrales de Tinsa, Sociedad de Tasación, Gloval y los de consultoras (CBRE, JLL, Savills, Colliers).
   3. Aplica descuento del 3-5 % sobre la oferta de la competencia para tus primeras ventas sobre plano.
 - **Mix de producto orientativo:**
@@ -906,8 +906,10 @@ El margen sobre ventas (mínimo 15 %), el ROE y la TIR te dicen si la operación
 > **Dónde estamos:** con el GO de la Lección 2.4, cierras la operación: negocias con el propietario, ordenas la sociedad y los socios, apruebas la inversión y compras el solar.
 
 - **Negociación con el propietario del solar:**
-  - Precio, forma de pago (al contado, aplazado con aval, con opción de compra, parte del precio en permuta de inmuebles), plazos.
+  - Precio y forma de pago: al contado, aplazado con opción de compra o parte del precio en permuta de inmuebles.
   - **Opción de compra** y plazo suficiente para hacer los estudios y conseguir financiación: formalízala mediante un contrato de compraventa con opción de compra.
+    - Puede ser **gratuita** o a cambio de una **cantidad pactada** (un porcentaje del precio, por ejemplo un 3 %). Cuando se vende poco, el propietario suele darla gratis; cuando el mercado va bien, pide esa cantidad, que pierdes si al final no compras: le compensa por tener el solar inmovilizado para ti.
+    - En ese plazo terminas los estudios, consigues la financiación y preparas el proyecto. Si sale, ejerces la opción y compras; si no, no compras y el propietario sigue con su solar.
   - **Condiciones suspensivas:** viabilidad urbanística, registral, técnica y financiera; obtención de licencia.
   - Fórmulas: compraventa directa, opción de compra, **permuta** por viviendas futuras o **aportación del suelo** a la sociedad a cambio de participaciones.
 - **Estructura jurídica y societaria:**
@@ -928,7 +930,7 @@ El margen sobre ventas (mínimo 15 %), el ROE y la TIR te dicen si la operación
   4. Inscripción en el Registro de la Propiedad.
   5. Cancelación o regularización de las cargas pactadas y toma de posesión efectiva.
 - **Quién se encarga de cada cosa** (a quién pides cada cosa de las listas de arriba):
-  - **Tú:** la negociación con el propietario (precio, forma de pago, plazos) y la memoria de inversión.
+  - **Tú:** la negociación con el propietario (precio y forma de pago) y la memoria de inversión.
   - **Abogado:** revisa el contrato de compraventa con opción de compra y las condiciones suspensivas, y redacta el pacto de socios.
   - **Asesoría o asesor fiscal:** las aportaciones de los socios (capital o préstamo de socio) y la fiscalidad de la compra y de la promoción.
   - **Notaría:** los poderes notariales y la escritura pública de compraventa.
@@ -943,7 +945,7 @@ El margen sobre ventas (mínimo 15 %), el ROE y la TIR te dicen si la operación
 
 Con el GO, Nicolás cerró la operación. Te cuento en qué orden.
 
-**Lo negociado con el propietario.** Lo dejó atado en la opción de compra de la Lección 1.4: el precio, 71.392,05 €; la forma de pago, con opción de compra, y un plazo suficiente para hacer los estudios y conseguir financiación, que es lo que pide la lección. Por escrito, las condiciones suspensivas de viabilidad urbanística, registral y técnica: si alguna fallaba, no compraba.
+**Lo negociado con el propietario.** Lo dejó atado en la opción de compra de la Lección 1.4: el precio, 71.392,05 €; la forma de pago, aplazado con opción de compra, y un plazo suficiente para hacer los estudios y conseguir financiación, que es lo que pide la lección. Por escrito, las condiciones suspensivas de viabilidad urbanística, registral y técnica: si alguna fallaba, no compraba.
 
 **La estructura.** Su SPE ya existe (Lección 1.4): una sociedad nueva solo para esta promoción, lo que la lección llama SPV, que aísla el riesgo. Con su asesoría decidió cómo entran los fondos propios (capital o préstamo de socio) y revisó la fiscalidad antes de firmar: la compra paga ITP, porque vende un particular, y las ventas llevarán el 10 % de IVA. Firmó el **pacto de socios** de su SPE con lo que pide la lección: mayorías reforzadas, reparto de funciones, aportaciones adicionales si hay desviaciones, bloqueo, salida y reparto de resultados. Sabe que el banco le pedirá avales personales (Lección 5.1).
 

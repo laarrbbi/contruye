@@ -97,8 +97,8 @@ The CRP takes away from the revenue without IVA all the costs of the development
   - Built: usable + walls (≈ usable × 1,15–1,20).
   - Built including common areas: + a share of entrance halls, stairs and lifts (≈ usable × 1,25–1,35). This is the one usually advertised.
   - Computable: the one that counts towards buildability under your PGOU.
-- **How to get the sale price:**
-  1. **Market study:** look at what is around you and who your competition is. Visit the developments on sale within 1-3 km and simulate a purchase (mystery shopping). Note €/m², unit type and specification.
+- **How to calculate the sale price of the development:**
+  1. **Detailed market study:** look at what is around you and who your competition is. Visit the developments on sale within a radius of 1-3 km and simulate a purchase (mystery shopping). Note the m² built and usable, the €/m², the unit type and the specification (memoria de calidades). Their websites usually show the plans and the specification; if they don't give prices, ask at the sales office or the developer.
   2. Read the quarterly reports of Tinsa, Sociedad de Tasación, Gloval and the consultancies (CBRE, JLL, Savills, Colliers).
   3. Apply a 3-5 % discount to the competition's asking prices for your first off-plan sales.
 - **Indicative product mix:**
@@ -461,8 +461,10 @@ The margin on sales (minimum 15 %), the ROE and the IRR (TIR) tell you whether t
 > **Where we are:** with the GO from Lesson 2.4, you close the deal: you negotiate with the owner, put the company and the partners in order, approve the investment and buy the plot.
 
 - **Negotiating with the plot's owner:**
-  - Price, payment terms (cash, deferred with a guarantee, with an option to buy, part of the price in a property swap), deadlines.
+  - Price and payment terms: cash, deferred with an option to buy, or part of the price in a property swap.
   - **Option to buy** and enough time to do the studies and get financing: formalise it with a sale contract with a purchase option.
+    - It can be **free** or in exchange for an **agreed amount** (a percentage of the price, for example 3 %). When little is selling, the owner usually grants it free; when the market is good, he asks for that amount, which you lose if in the end you don't buy: it compensates him for keeping the plot tied up for you.
+    - During that time you finish the studies, get the financing and prepare the project. If it works out, you exercise the option and buy; if not, you don't buy and the owner keeps his plot.
   - **Conditions precedent:** planning, registry, technical and financial feasibility; obtaining the licence.
   - Formulas: direct sale, option to buy, **swap** for future homes, or **contribution of the land** to the company in exchange for shares.
 - **Legal and corporate structure:**
@@ -483,7 +485,7 @@ The margin on sales (minimum 15 %), the ROE and the IRR (TIR) tell you whether t
   4. Registration at the Land Registry.
   5. Cancellation or regularisation of the agreed encumbrances, and actual taking of possession.
 - **Who handles what** (whom you ask for each item in the lists above):
-  - **You:** the negotiation with the owner (price, payment terms, deadlines) and the investment memorandum.
+  - **You:** the negotiation with the owner (price and payment terms) and the investment memorandum.
   - **Lawyer:** reviews the sale contract with a purchase option and the conditions precedent, and drafts the shareholders' agreement.
   - **Advisory firm or tax adviser:** the partners' contributions (capital or shareholder loan) and the tax treatment of the purchase and of the development.
   - **Notary:** the notarial powers of attorney and the public deed of sale.
@@ -498,7 +500,7 @@ The margin on sales (minimum 15 %), the ROE and the IRR (TIR) tell you whether t
 
 With the GO, Nicolás closed the deal. Let me tell you in what order.
 
-**What he negotiated with the owner.** He had it tied up in the option to buy from Lesson 1.4: the price, 71.392,05 €; the payment terms, with an option to buy, and enough time to do the studies and get financing, which is what the lesson asks for. In writing, the conditions precedent of planning, registry and technical feasibility: if any of them failed, he would not buy.
+**What he negotiated with the owner.** He had it tied up in the option to buy from Lesson 1.4: the price, 71.392,05 €; the payment terms, deferred with an option to buy, and enough time to do the studies and get financing, which is what the lesson asks for. In writing, the conditions precedent of planning, registry and technical feasibility: if any of them failed, he would not buy.
 
 **The structure.** His SPE already exists (Lesson 1.4): a new company just for this development, what the lesson calls an SPV, which ring-fences the risk. With his advisory firm he decided how the equity goes in (capital or shareholder loan) and reviewed the tax treatment before signing: the purchase pays ITP, because a private individual is selling, and the sales will carry 10 % IVA. He signed his SPE's **shareholders' agreement** with what the lesson asks for: reinforced majorities, division of roles, additional contributions if there are overruns, deadlock, exit and distribution of profits. He knows the bank will ask him for personal guarantees (Lesson 5.1).
 
