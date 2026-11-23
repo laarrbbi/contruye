@@ -9,11 +9,11 @@
 | Rule | Why it matters to you |
 |---|---|
 | LOE, arts. 12-14 | Duties of the works director, the director of works execution, and the control bodies and laboratories |
-| CTE, Part I, art. 7 and annex II | Acceptance control of products, execution control, control of the finished building; record of the checks |
+| CTE, Part I, art. 7 and annex II | Control of products on receipt, execution control, control of the finished building; record of the checks |
 | RD 410/2010 | Requirements for quality control bodies and testing laboratories (responsible declaration to the CCAA) |
 | Structural Code (Código Estructural, RD 470/2021) | Control of concrete and steel |
 | Decreto 462/1971 | Orders and attendance book |
-| RD 1627/1997, art. 13 | The safety coordinator's incidents book |
+| RD 1627/1997, art. 13 | The safety coordinator's incident book |
 | Construction contract | Valuations, variations, penalties |
 
 ## Where to go
@@ -23,22 +23,22 @@
 | **Site supervision team** (works director + director of works execution) | Site instructions, monthly valuations, quality control |
 | **Accredited laboratory** | Tests on concrete, steel, watertightness |
 | **OCT** | Inspection reports and the final report the insurer needs |
-| **The bank's valuer** | Check of each valuation before the loan is drawn |
+| **The bank's valuer** | Check of each valuation before the loan is drawn down |
 | **The developer's project manager** (in-house or external) | Control of cost, time and variations |
 
 ## Lesson 7.1 — The site supervision team
 
 > **Where we are:** while the contractor puts up the building (Module 6), you make sure the works come in on time, on budget and with the quality documented. You start with the people who direct them: the site supervision team.
 
-| Role | Qualification on housing | What they do |
+| Role | Qualification for housing | What they do |
 |---|---|---|
 | Works director | Architect | Directs the technical development, answers design queries, signs the CFO |
 | Director of works execution | Technical architect | Controls execution, the quality of materials and tests, measures and **certifies** the work, signs the CFO |
-| Safety coordinator during the works | Qualified professional | Approves the safety plan, coordinates the companies, keeps the incidents book |
+| Safety coordinator during the works | Qualified professional | Approves the safety plan, coordinates the companies, keeps the incident book |
 
 - **Tools:**
   - Orders and attendance book: every visit and every instruction in writing.
-  - Incidents book (safety).
+  - Incident book (safety).
   - Minutes of the weekly meeting.
   - Monthly report to the developer.
 - **Require in the contract** a minimum number of visits and that site queries are answered within 48-72 h.
@@ -51,11 +51,11 @@ Nicolás is not a technical person. His way of controlling the works starts with
 
 - **Works director:** the architect from the practice that did the massing study and the design (Module 3). Directs the technical development, answers design queries and will sign the CFO.
 - **Director of works execution:** the technical architect he hired through their professional association. Controls the execution, the materials and the tests, and every month measures and certifies the work.
-- **Health and safety coordinator:** the one he also hired in Module 3. Approved the safety plan before starting (Lesson 4.3), coordinates the companies and keeps the incidents book.
+- **Health and safety coordinator:** the one he also hired in Module 3. Approved the safety plan before starting (Lesson 4.3), coordinates the companies and keeps the incident book.
 
-**Visits and answers, in the contract.** In the written contracts he signed with them (Lesson 3.1) he included a minimum number of visits and that they answer site queries within 48-72 h.
+**Visits and answers, in the contract.** In the written contracts he signed with them (Lesson 3.1) he included a minimum number of visits and a requirement to answer site queries within 48-72 h.
 
-**Everything in writing.** Every visit and every instruction goes in the **orders and attendance book**; safety matters go in the **incidents book**. Both were issued at the start (Module 4). Every week he goes to the site, to the meeting with the site supervision team and the contractor's site manager, and every meeting produces minutes. Every month he receives the site supervision team's monthly report.
+**Everything in writing.** Every visit and every instruction goes in the **orders and attendance book**; safety matters go in the **incident book**. Both were issued at the start (Module 4). Every week he goes to the site, to the meeting with the site supervision team and the contractor's site manager, and every meeting produces minutes. Every month he receives the site supervision team's monthly report.
 
 **He is the project manager.** He did not hire an external one: he handles the control of cost, time and variations himself, which is what the "Where to go" table calls an in-house project manager. For the technical side he relies on his director of works execution.
 
@@ -96,7 +96,7 @@ For Nicolás, the OCT is not a formality: no OCT, no ten-year insurance, and no 
 
 **The OCT, from the design.** It is the one that reviewed his design in Module 3 (the D0 report) and the one his ten-year insurer asked for. On site it inspected at the points the lesson sets: the foundations, the structure (the reinforcement, before pouring) and the roofs. With no basement, there were no basements to review. At the end it will give the insurer its closing report. You have the OCTs the lesson mentions among this lesson's websites.
 
-**The laboratory, according to the plan.** The quality control plan goes in his construction design (Lesson 3.3), and he had it approved before the first pour. With that plan, the accredited laboratory takes test specimens from each batch and crushes them at 28 days, some series also at 7 to get an early reading; checks that the steel arrives with the manufacturer's certificate, and does the watertightness and building services tests. You have the laboratories in your province at the end of the module.
+**The laboratory, according to the plan.** The quality control plan goes in his construction design (Lesson 3.3), and he had it approved before the first pour. With that plan, the accredited laboratory takes test specimens from each batch and crushes them at 28 days, some series also at 7 to get an early reading; checks that the steel arrives with the manufacturer's certificate, and does the watertightness and building services tests. You will find the laboratories in your province at the end of the module.
 
 **His quality folder.** In it go the concrete delivery notes, the test reports and the certificates of the CE-marked products. The OCT is going to ask him for them, and later the Building Book will need them (Module 9). Every OCT report goes into the folder on the day it arrives.
 
@@ -142,13 +142,13 @@ The OCT is not required by law but by the insurer: it reviews the design and the
 - **Three figures to look at every month:** **budgeted** cost, **committed** cost (contracted + orders + approved variations) and **actual** cost (certified and paid).
 - **New rates (*precios contradictorios*):** the price of a unit of work that was not in the budget. Agreed in writing before it is carried out.
 - Control **retentions, advances and payments**, and also taxes, fees, interest and overheads.
-- Update the **forecast of final cost and cash** every month.
+- Update the **forecast of final cost and cash flow** every month.
 - **Who handles what** (whom you ask for each item in the list above):
   - **Director of works execution:** measures and certifies the work every month.
   - **Contractor:** agrees with you, in writing and before the work is done, the price of each variation and of each new rate.
   - **Site supervision team:** signs with you the written order for each variation.
   - **The bank's valuer:** checks each valuation before you draw down the loan.
-  - **You (developer, or your project manager):** you check each valuation against the budget by chapter, apply the 5 % retention, pay on time, look at the three figures every month and update the forecast of final cost and cash, with retentions, advances, payments, taxes, fees, interest and overheads.
+  - **You (developer, or your project manager):** you check each valuation against the budget by chapter, apply the 5 % retention, pay on time, look at the three figures every month and update the forecast of final cost and cash flow, with retentions, advances, payments, taxes, fees, interest and overheads.
 
 ### Example: Nicolás, the developer
 
@@ -156,15 +156,15 @@ For cost, Nicolás has used **Template 4 · Construction cost control** since th
 
 **His control budget.** The one in the turnkey contract, by chapter: 2.221.086 €. And, as the lesson asks, he adds a contingency reserve of 3-5 %.
 
-**Every month, the same circuit:**
+**Every month, the same cycle:**
 
 1. His director of works execution measures and certifies the month's work.
 2. Nicolás checks the valuation against the budget by chapter, in the template.
-3. He applies the 5 % retention in his contract.
+3. He applies the 5 % retention set in his contract.
 4. The bank's valuer checks the progress, and the bank releases the loan money.
-5. He pays the contractor on time, at 60 days at most.
+5. He pays the contractor on time, within 60 days at most.
 
-**Halfway through the works.** With 40 % of the works carried out, he has 907.474 € certified to date. Retained so far, 5 %: 45.373,70 €, which he will not return until one year after handover (Lesson 5.4). Payable to the contractor so far, including IVA and less the retention: 952.847,70 €.
+**Halfway through the works.** With 40 % of the works carried out, he has 907.474 € certified to date. Retained so far, 5 %: 45.373,70 €, which he will not return until one year after acceptance of the works (Lesson 5.4). Payable to the contractor so far, including IVA and less the retention: 952.847,70 €.
 
 **The deviation: +2 %.** His forecast of final cost comes to 2.255.989 €: 34.903 € more than contracted. The template tells him where it comes from:
 
@@ -173,15 +173,15 @@ For cost, Nicolás has used **Template 4 · Construction cost control** since th
 - Masonry: +10.577 €.
 - Finishes: +15.865 €.
 
-**What he does, as the lesson says.** A 2 % deviation fits within his contingency reserve, but he does not let it run:
+**What he does, as the lesson says.** A 2 % deviation fits within his contingency reserve, but he does not let it slide:
 
 - Nothing is built without a written order signed by him and by the site supervision team, with the price agreed beforehand; the same with each new rate (*precio contradictorio*). Each variation updates his cost at completion.
-- What weighs most, the finishes, has not been done yet: he does not accept specification upgrades under sales pressure (in the table, +2–5 %) and keeps the specification frozen (Lesson 6.4).
-- Every month he reconciles the budgeted, committed and actual cost, and updates the forecast of final cost and cash.
+- The heaviest item, the finishes, has not been done yet: he does not accept specification upgrades under sales pressure (in the table, +2–5 %) and keeps the specification frozen (Lesson 6.4).
+- Every month he reconciles the budgeted, committed and actual cost, and updates the forecast of final cost and cash flow.
 
 ### Summary
 
-Every month you check the valuation by chapter, apply the 5 % retention and pay on time once the bank's valuer has checked it. No variation without a written order and a price agreed beforehand, and the forecast of final cost, up to date.
+Every month you check the valuation by chapter, apply the 5 % retention and pay on time once the bank's valuer has checked it. No variation without a written order and a price agreed beforehand, and the forecast of final cost kept up to date.
 
 ### Your checklist
 
@@ -214,18 +214,18 @@ Every month you check the valuation by chapter, apply the 5 % retention and pay 
 | Updated margin | Forecast revenue − forecast total cost |
 | Sales | Units sold and paid for against the plan |
 
-- **Delays:** anticipate the usual ones (supplies, weather, permits, incidents) and take corrective action. Document every **extension of time** in writing: it affects penalties, the loan and the buyers.
+- **Delays:** anticipate the usual ones (supplies, weather, permits, unforeseen events) and take corrective action. Document every **extension of time** in writing: it affects penalties, the loan and the buyers.
 - **Financial and sales follow-up during the works:**
-  - Meet the loan's drawdown conditions and support each valuation before the bank and its valuer.
+  - Meet the loan's drawdown conditions and justify each valuation to the bank and its valuer.
   - Update the forecasts of sales, collections and debt repayment.
-  - Coordinate the handover calendar with sales.
+  - Coordinate the handover calendar with the sales team.
   - Keep control of liquidity until the final settlement of the development.
 - **Who handles what** (whom you ask for each item in the list above):
   - **Contractor:** prepares the programme and updates it; its site manager attends the weekly meeting.
   - **Site supervision team:** approves the programme and attends the site, cost and building services meetings.
   - **Installers:** the fortnightly building services meeting, with the site supervision team.
   - **The bank and its valuer:** check each valuation before each drawdown of the loan.
-  - **Sales:** coordinates the handover calendar with you.
+  - **Sales team:** coordinates the handover calendar with you.
   - **You (developer, or your project manager):** you check the programme every week, prepare the monthly report with its KPIs, document every extension of time, meet the loan's drawdown conditions, update the forecasts of sales, collections and debt repayment, and keep control of liquidity.
 
 ### Example: Nicolás, the developer
@@ -245,9 +245,9 @@ Nicolás has 20 months of works (Template 3), and the interest on the loan and t
 - **Updated margin:** it falls by the 34.903 € of the deviation and, with the figures in his Template 2, is still well above the usual 15 % minimum (Module 2).
 - **Sales:** the units sold and paid for against his plan in Template 5 (Module 8), 2 homes a month.
 
-**Delays, in writing.** He has the typical ones in mind: supplies, weather, permits and incidents. If an extension of time is needed, he documents it in writing, because it affects the penalties in his contract, the loan and his buyers.
+**Delays, in writing.** He has the typical ones in mind: supplies, weather, permits and unforeseen events. If an extension of time is needed, he documents it in writing, because it affects the penalties in his contract, the loan and his buyers.
 
-**The bank and sales.** He meets the loan's drawdown conditions and supports each valuation before the bank and its valuer. He updates the forecasts of sales, collections and debt repayment, and coordinates the handover calendar with the estate agency that sells the homes for him (Module 8). And he will keep control of liquidity until the final settlement of the development.
+**The bank and sales.** He meets the loan's drawdown conditions and justifies each valuation to the bank and its valuer. He updates the forecasts of sales, collections and debt repayment, and coordinates the handover calendar with the estate agency that sells the homes for him (Module 8). And he will keep control of liquidity until the final settlement of the development.
 
 ### Summary
 
@@ -263,7 +263,7 @@ The contractor prepares the programme, the site supervision team approves it and
 
 You have set up the control of your works: the site supervision team with its books and reports; the OCT and the laboratory, with the quality documentation and the non-conformities closed; every valuation checked with its retention; every variation signed before it is carried out; the weekly programme and the monthly report.
 
-**Where you should be in your project:** with a control system with valuations, signed variations, monthly report and complete quality documentation, and Template 4 up to date with each valuation. With that you move on to Module 8, sales, which runs in parallel with the works: you sell off plan the homes the bank requires and the rest before handover.
+**Where you should be in your project:** with a control system in place, with valuations, signed variations, a monthly report and complete quality documentation, and Template 4 up to date with each valuation. With that you move on to Module 8, sales, which runs in parallel with the works: you sell off plan the homes the bank requires and the rest before handover.
 
 ## Module 7 checklist
 

@@ -166,7 +166,7 @@
       "opciones": [
         {
           "letra": "A",
-          "texto": "Preliminary design",
+          "texto": "Outline design",
           "correcta": false
         },
         {
@@ -296,12 +296,12 @@
       "opciones": [
         {
           "letra": "A",
-          "texto": "Positive",
+          "texto": "Means approval",
           "correcta": false
         },
         {
           "letra": "B",
-          "texto": "Negative (art. 11.4 TRLSRU)",
+          "texto": "Means refusal (art. 11.4 TRLSRU)",
           "correcta": true
         },
         {
@@ -379,7 +379,7 @@
         },
         {
           "letra": "B",
-          "texto": "Handover of the works without reservations (or once the reservations are remedied)",
+          "texto": "Acceptance of the works without reservations (or once the reservations are remedied)",
           "correcta": true
         },
         {
@@ -431,7 +431,7 @@
         },
         {
           "letra": "B",
-          "texto": "The private units with their share and the common elements",
+          "texto": "The private units with their participation share and the common elements",
           "correcta": true
         },
         {
@@ -526,33 +526,33 @@
     },
     {
       "numero": 21,
-      "pregunta": "The municipal plusvalía on the sale of a new home to a consumer:",
+      "pregunta": "The municipal plusvalía on the sale of a new home to a consumer is paid by:",
       "opciones": [
         {
           "letra": "A",
-          "texto": "Is paid by the buyer",
+          "texto": "The buyer",
           "correcta": false
         },
         {
           "letra": "B",
-          "texto": "By the owners' association",
+          "texto": "The owners' association",
           "correcta": false
         },
         {
           "letra": "C",
-          "texto": "By the developer, who cannot pass it on",
+          "texto": "The developer, who cannot pass it on",
           "correcta": true
         },
         {
           "letra": "D",
-          "texto": "By nobody",
+          "texto": "Nobody",
           "correcta": false
         }
       ]
     },
     {
       "numero": 22,
-      "pregunta": "IS rate of a newly created entity in its first two periods with a positive tax base:",
+      "pregunta": "IS rate of a newly created entity in its first two tax periods with a positive tax base:",
       "opciones": [
         {
           "letra": "A",
@@ -604,7 +604,7 @@
     },
     {
       "numero": 24,
-      "pregunta": "PEC without IVA:",
+      "pregunta": "PEC excluding IVA:",
       "opciones": [
         {
           "letra": "A",
@@ -630,7 +630,7 @@
     },
     {
       "numero": 25,
-      "pregunta": "Communities that still have the certificate of habitability in 2026:",
+      "pregunta": "Autonomous communities that still have the certificate of habitability in 2026:",
       "opciones": [
         {
           "letra": "A",
@@ -760,7 +760,7 @@
     },
     {
       "numero": 30,
-      "pregunta": "A safety coordinator during the works is compulsory when:",
+      "pregunta": "A health and safety coordinator during the works is compulsory when:",
       "opciones": [
         {
           "letra": "A",
@@ -864,7 +864,7 @@
     },
     {
       "numero": 34,
-      "pregunta": "In the usual payment plan, the amount paid at the deed is:",
+      "pregunta": "In the usual payment plan, the amount paid on signing the deed is:",
       "opciones": [
         {
           "letra": "A",
@@ -935,7 +935,7 @@
         },
         {
           "letra": "D",
-          "texto": "The safety coordinator",
+          "texto": "The health and safety coordinator",
           "correcta": false
         }
       ]
@@ -1034,7 +1034,7 @@
         },
         {
           "letra": "C",
-          "texto": "Can be dissolved or kept in reserve, knowing that the LOE warranties are still running",
+          "texto": "Can be extinguished or kept in reserve, knowing that the LOE warranties are still running",
           "correcta": true
         },
         {

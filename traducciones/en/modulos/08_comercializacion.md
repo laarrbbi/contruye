@@ -2,7 +2,7 @@
 
 > **Objective:** sell off-plan the homes the bank requires, and the rest before handover, complying with consumer law, anti-money-laundering rules and the guarantees.
 > **Duration:** 110 min · **Result:** sales plan, legal sales documentation, private contracts with guarantees and CRM.
-> **Where we are:** sales run alongside everything before: they start with the land purchase, and the private contracts with advance payments come with the licence and the guarantees (Lesson 8.1). You sell off-plan the homes the bank requires and the rest before handover.
+> **Where we are:** sales run alongside everything that came before: they start with the land purchase, and the private contracts with advance payments come with the licence and the guarantees (Lesson 8.1). You sell off-plan the homes the bank requires and the rest before handover.
 
 ## Laws that apply
 
@@ -11,12 +11,12 @@
 | **RD 515/1989**, consumer information on the sale of homes | What you must have available for the buyer: drawings, specification, total price, payment terms, registry details, licence |
 | **TRLGDCU (RDL 1/2007)**, art. 61 | Advertising is binding: what you advertise is part of the contract |
 | **Ley 10/2025** (amendment to art. 20 TRLGDCU) | The consumer must know the full final price and all the costs that are to be passed on to them |
-| **TRLGDCU, art. 89.3** | Unfair terms: **you cannot charge the buyer** the municipal plusvalía, the costs of the new building and horizontal division, the developer's mortgage and its cancellation, or the connections to the general utilities; **nor force them to take over** your loan |
+| **TRLGDCU, art. 89.3** | Unfair terms: **you cannot charge the buyer** the municipal plusvalía, the costs of the new-building declaration and the horizontal division, the developer's mortgage and its cancellation, or the connections to the general utilities; **nor force them to take over** your loan |
 | **LOE, DA 1.ª** | Individual guarantee and special account for everything collected before handover |
 | **Ley 12/2023**, art. 31 | Minimum information for the buyer in a home purchase |
 | **RD 390/2021** | The energy rating must appear in the advertising |
 | **Ley 10/2010** (money laundering) | The developer is an obliged entity: identify the buyer and the beneficial owner, verify the origin of the funds, keep records for 10 years |
-| **Ley 7/2012** (amended by Ley 11/2021) | Cash payments banned from 1.000 € when one party is a business |
+| **Ley 7/2012** (amended by Ley 11/2021) | Cash payments of 1.000 € or more banned when one party is a business |
 | Regional laws | Compulsory register of estate agents in Cataluña, the Comunitat Valenciana and Canarias (Annex A); regional consumer rules on housing |
 | **Ley 5/2019** | The buyer's mortgage: information, deadlines and costs |
 
@@ -50,7 +50,7 @@
 - **Compulsory in every advert:** the design's energy rating, and nothing you cannot deliver (advertising is binding).
 - **Comply with the rules on consumers and users:** this is very important, because the reform of article 20 of the Ley General para la Defensa de los Consumidores y Usuarios, introduced by Ley 10/2025, reinforces something very clear: the consumer must know the full final price and all the costs that are to be passed on to them. In other words: no more "teaser" prices, last-minute surprises or hidden commissions.
   - On 28/12/2025, Ley 10/2025, of 26 December, regulating customer service, came into force, and it marked a turning point for property advertising in Spain. Although formally it falls within the customer service rules, its real impact is much wider, because it makes direct changes to the Ley General para la Defensa de los Consumidores y Usuarios. The result is new obligations that bear squarely on prices, fees, rentals and online reputation.
-  - **Adverts with a fixed, all-in price from the very start.** The law sets a clear requirement: the consumer must know the full final price from the first advert. This means that the advertising must show, as a requirement, the real price of the property, the applicable taxes (IVA, ITP, AJD, as appropriate), the agency's fees when they fall on the consumer, and any other compulsory cost associated with the transaction.
+  - **Adverts with a fixed, all-in price from the very start.** The law sets a clear requirement: the consumer must know the full final price from the first advert. This means that the advertising must show the real price of the property, the applicable taxes (IVA, ITP, AJD, as appropriate), the agency's fees when they fall on the consumer, and any other compulsory cost associated with the transaction.
   - So-called "drip pricing" is expressly prohibited, that is, advertising an initial amount and adding costs later on. Common practices, such as mentioning the commission only during the viewing, will become illegal.
   - **More protection, and not only for buyers.** One of the most significant new features is the broader concept of customer. Legal protection is no longer limited to the buyer: it also covers the seller, the tenant and anyone who is offered a property service, even if no contract is signed in the end. From the moment there is a commercial offer, the obligations of information, clarity and transparency arise.
   - Ley 10/2025 also places limits on the use of algorithms and automatic pricing systems in emergencies, such as fires, floods or natural disasters. This measure particularly affects holiday and short-term lets, where tools of this kind are common.
@@ -78,7 +78,7 @@ Nicolás started selling on the day he bought the plot, with the lesson's table 
 
 **The price, in full from the first advert.** Ley 10/2025 requires the full final price from the first advert, with no teaser prices, so each of Nicolás's adverts gives the price of the home, the IVA at 10 %, the AJD the buyer pays on their deed (in the Comunitat Valenciana, 1,4 %, Annex B) and the total. A home at the average price is advertised with its 229.732,57 €, the 22.973,26 € of IVA (252.705,83 € with IVA), the AJD and the total. He pays the agency's commission, and the advert says that the buyer pays none. What is not in the advert, he will not charge later.
 
-**Before advertising.** He left the RD 515/1989 documentation in the sales office (the list is in Lesson 8.3), and at his community's consumer office he found out about the complaint forms and the regional requirements.
+**Before advertising.** He left the RD 515/1989 documentation in the sales office (the list is in Lesson 8.3), and at his autonomous community's consumer office he found out about the complaint forms and the regional requirements.
 
 **His pricing policy.** The opening prices are those of his market study (Lesson 2.2). The review is the one in the lesson's example: raise them 2–3 % on reaching 30 % and 60 % sold. He wrote it down before the launch, so as to stick to it.
 
@@ -99,22 +99,22 @@ Sales start with the land purchase and follow the development's milestones. Ever
 - **In-house team:** sales director, sales staff, customer service. More control and margin; a fixed cost.
 - **Collaborating agencies:**
   - Usual commission: 2,5–3 % on standard homes, 3–5 % at the top end.
-  - Written collaboration agreement: commission, when it is earned (at the deed or in stages), exclusivity, minimum prices, use of the brand.
+  - Written collaboration agreement: commission, when it is earned (on signing the deed or in stages), exclusivity, minimum prices, use of the brand.
   - In Cataluña, the Comunitat Valenciana and Canarias, check that the agency is on the **compulsory regional register**.
-- **Mixed:** your own office + a network of agencies. The most common.
+- **Mixed:** your own office + a network of agencies. This is the most common.
 
 ### Example: Nicolás, the developer
 
-The most common is the mixed system, your own office plus a network of agencies. But Nicolás has a single development of 18 homes, and an in-house team, although it gives more control and margin, is a fixed cost. He chose to sell through an estate agency in his area. Let me tell you how he chose it and what he signed with it.
+The most common option is the mixed system, your own office plus a network of agencies. But Nicolás has a single development of 18 homes, and an in-house team, although it gives more control and margin, is a fixed cost. He chose to sell through an estate agency in his area. Let me tell you how he chose it and what he signed with it.
 
-**First, finding it.** He looked for agencies that knew his area and his buyer: first home, 2 and 3 bedrooms. You will find the ones in your province in the list we have given you: among the potential companies for this lesson and, at the end of the module, through your province's COAPI. He spoke to several and chose one.
+**First, finding it.** He looked for agencies that knew his area and his buyer: first-home buyers of 2- and 3-bedroom homes. You will find the ones in your province in the list we have given you: among the potential companies for this lesson and, at the end of the module, through your province's COAPI. He spoke to several and chose one.
 
-**On the register.** He is building in the Comunitat Valenciana, one of the three communities with a compulsory register of agents, so before signing anything he checked that the agency was on the **regional register of agents** (you also have it at the end of the module).
+**On the register.** He is building in the Comunitat Valenciana, one of the three autonomous communities with a compulsory register of agents, so before signing anything he checked that the agency was on the **regional register of agents** (you also have it at the end of the module).
 
 **The collaboration agreement, in writing**, with what the lesson asks for:
 
 - **Commission:** within the usual range for standard homes (2,5–3 %). He pays it, not the buyer, and he has it budgeted under sales and marketing in his Template 2: 3 % of sales, 124.055,59 €.
-- **When it is earned:** at the deed of each home, when he gets paid.
+- **When it is earned:** on signing the deed of each home, when he gets paid.
 - **Exclusivity:** the agency sells his development exclusively, because it is the only one he works with.
 - **Minimum prices:** those of his pricing policy (Lesson 8.1). Nothing below them without his signature.
 - **Use of the brand:** the agency advertises with the development's brand and materials, and always with the full final price of each home (Lesson 8.1).
@@ -139,19 +139,19 @@ You can sell with an in-house team, with collaborating agencies or with both, wh
     - Ley 12/2023, on the right to housing (article 31).
     - Ley 38/1999 de Ordenación de la Edificación (LOE).
     - Ley 8/2004 de la Vivienda de la Comunitat Valenciana (truthful advertising and how areas are measured).
-  - If your development is in another autonomous community, check its rules: the Valencian references in this lesson (Ley 8/2004, LOTUP, IVACE) change; Real Decreto 515/1989, Ley 12/2023 and the LOE are national and apply throughout Spain.
+  - If your development is in another autonomous community, check its rules: the Valencian references in this lesson (Ley 8/2004, LOTUP, IVACE) are different; Real Decreto 515/1989, Ley 12/2023 and the LOE are national and apply throughout Spain.
   - The developer or seller must keep specific documentation available to the buyer and hand it over to them, in two phases.
 - **1. Compulsory information before signing or paying any money on account (sales phase).** Before reservations, deposit agreements (*arras*) or the sale contract are signed, the developer must provide, free of charge and clearly:
-  - **Identification of the developer:** name or company name, address and registration details at the Companies Registry.
+  - **Identification of the developer:** name or company name, address and registration details in the Companies Registry.
   - **Plans and areas:** a general plan of the home's location and a detailed plan of the home (including common areas and appurtenances such as a garage or storeroom), expressly stating the **usable and built area** (in the Comunitat Valenciana the legal criterion of Ley 8/2004 for measuring areas must be followed).
   - **Specification:** a detailed description of the materials used in the construction, thermal and acoustic insulation, installations and finishes.
   - **Legal and planning status:** a copy of the planning authorisations and licences (building licence), and proof of ownership of the land and of existing encumbrances (the registry *nota simple*).
   - **Financial terms:** total price of the home and its appurtenances, with the taxes shown separately (on new builds **IVA** applies, usually at 10 %, plus **stamp duty on documented legal acts (Impuesto de Actos Jurídicos Documentados, AJD)** in the Comunitat Valenciana), payment terms and, if taking over the mortgage is offered, the loan terms.
   - **Guarantees for advance payments (in off-plan sales):** if the buyer pays money on account before the building is finished, the developer is obliged by law (first additional provision of the LOE) to give them an individual **bank guarantee or surety insurance** guaranteeing the refund of the amounts paid plus statutory interest if the works do not start or are not handed over on time, and must also pay that money into a special bank account.
 - **2. Documents to hand over with the home (handover and deed phase).** When the public deed is signed and the keys are handed over, the buyer must receive:
-  - **First occupation licence or responsible declaration:** in the Comunitat Valenciana (under the Valencian planning rules, LOTUP), this document certifies that the finished building complies with the rules and is fit to be lived in; it is essential to contract the permanent water and electricity supplies.
+  - **First occupation licence or responsible declaration:** in the Comunitat Valenciana (under the Valencian planning rules, LOTUP), this document certifies that the finished building complies with the rules and is fit to be lived in; it is essential for signing the permanent water and electricity supply contracts.
   - **Energy efficiency certificate (CEE):** registered with the competent body of the Generalitat Valenciana (IVACE), with its energy label.
-  - **Building Book:** the document that brings together the design, the handover records, the list of parties involved in the works and the property's use and maintenance manual.
+  - **Building Book:** the document that brings together the design, the acceptance records, the list of parties involved in the works and the property's use and maintenance manual.
   - **Ten-year damage insurance:** a policy taken out by the developer that covers structural damage to the building for 10 years (foundations, beams, floor slabs, load-bearing walls).
   - **Installation certificates and contracts:** certificates for the electricity, water, gas and telecoms installations so the utilities can be connected, together with the owners' association's statutes if they have already been drawn up.
 - **Who handles what** (whom you ask for each document in the two lists above):
@@ -159,7 +159,7 @@ You can sell with an in-house team, with collaborating agencies or with both, wh
   - **Designer (your architect):** the plans of the location and of the home, with the usable and built area, and the specification.
   - **Town hall:** the building licence and, at the end, the first occupation licence or the responsible declaration (Lesson 9.3).
   - **Land Registry:** the *nota simple*, with the ownership of the land and its encumbrances.
-  - **Bank or insurer:** each buyer's individual bank guarantee or surety insurance; the bank, also, the special account.
+  - **Bank or insurer:** each buyer's individual bank guarantee or surety insurance; from the bank, also the special account.
   - **Qualified professional:** the energy efficiency certificate, which is registered with the IVACE.
   - **Works director:** the documentation of the works as built, with which you complete the Building Book (Lesson 9.4).
   - **Ten-year insurer:** the ten-year damage insurance policy, which you take out.
@@ -174,7 +174,7 @@ You can sell with an in-house team, with collaborating agencies or with both, wh
   1. Parties identified (DNI/NIE; beneficial owner if a company).
   2. Home: number, floor, usable and built areas, appurtenances (garage, storeroom), plan and specification as appendices.
   3. Total price with **IVA 10 % shown separately** (IGIC in Canarias, IPSI in Ceuta and Melilla).
-  4. Payment calendar.
+  4. Payment schedule.
   5. **Details of the guarantee** (individual bank guarantee or surety insurance) and of the **special account**.
   6. Building licence (number and date).
   7. Expected handover date and the consequences of delay.
@@ -201,7 +201,7 @@ You can sell with an in-house team, with collaborating agencies or with both, wh
 - ⚠️ **Typical mistakes:** collecting the reservation without a guarantee; charging the plusvalía to the buyer (the clause is void); promising a specification in the advertising that you later change.
 
 - **Changes the buyers ask for:** accept them only if they are technically feasible, the site supervision team authorises them and they go into an appendix with price and deadline.
-- **Record** every payment, guarantee, incident and contract change for each buyer.
+- **Record** every payment, guarantee, issue and contract change for each buyer.
 - **Coordinate** the documents with the lawyers, the bank and the insurer of the advance payments.
 
 ### Example: Nicolás, the developer
@@ -226,7 +226,7 @@ And he tells them what they will receive with the deed: first occupation, the en
 - **Reservation:** 6.000 €, with a deadline to sign the private contract and, in writing, what happens to the money if it is not signed.
 - **Private contract:** 10 % of the price: 19.270,58 € with IVA, after deducting the reservation.
 - **During the works:** another 10 %, in 18 instalments of 1.403,92 €.
-- **At the deed:** 202.164,66 €, the remaining 80 %.
+- **On signing the deed:** 202.164,66 €, the remaining 80 %.
 
 Before handover he collects 50.541,17 € per home: **909.740,98 € of advance payments** across the whole development, which he has to guarantee with a bank guarantee or insurance; he guarantees them with his bank's guarantees.
 
@@ -245,7 +245,7 @@ Before collecting anything, give the buyer the compulsory information and guaran
 - Private contract template reviewed by a lawyer or notary
 - Anti-money-laundering procedure
 
-## Lesson 8.4 — CRM and extras
+## Lesson 8.4 — CRM and options
 
 > **Where we are:** you are now signing reservations and private contracts with the advance payments guaranteed (Lesson 8.3). Now you follow each prospect and each buyer through to the deed: the CRM, keeping in touch during the works, the options and the sales follow-up.
 
@@ -274,13 +274,13 @@ With the first reservations signed, Nicolás needed to know at every moment how 
 
 **The bank's pre-sales.** His bank required 70–90 % of the homes with a private contract and an advance payment: 13 of the 18 (Lesson 5.1). His Template 5 gives him a pace of 2 homes a month, 9 months to sell everything; with the CRM he followed the pre-sales week by week until he reached the 13. Sales also go in the monthly report he sends his bank (Lesson 7.4).
 
-**A file for each buyer.** From the reservation, each buyer has their own: identification, private contract, guarantee, payments, incidents and appendices. It will be the basis of the handover file (Module 10).
+**A file for each buyer.** From the reservation, each buyer has their own: identification, private contract, guarantee, payments, issues and appendices. It will be the basis of the handover file (Module 10).
 
 **Keeping in touch during the works:**
 
 - A welcome, with a named contact: himself.
 - A photo or video of progress every month, and an update at each milestone: structure, roof, finishes.
-- 3 to 4 months before the finishes, the choice of options, with a closed catalogue (2-3 floor finishes, upgraded kitchen, wardrobes) with price and deadline. He accepts no changes after the deadline, and those outside the catalogue, only if they are feasible, are authorised by the site supervision team and go into an appendix with price and deadline (Lesson 8.3).
+- 3 to 4 months before the finishes, the choice of options, with a closed catalogue (2-3 floor finishes, upgraded kitchen, wardrobes) with price and deadline. He accepts no changes after the deadline, and those outside the catalogue only if they are feasible, the site supervision team authorises them and they go into an appendix with price and deadline (Lesson 8.3).
 - One month before the deed, the date and the documents. Before that, in good time, he coordinates the mortgage of each buyer who needs one (valuation, offer, signing).
 
 **If a buyer pulls out.** He applies the contract: the refund through the guarantee if the breach were his, the agreed penalty if it is the buyer's. If a buyer wants to assign their contract, he only accepts it in writing and with the new guarantee in the name of the incoming buyer.

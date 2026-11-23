@@ -2,7 +2,7 @@
 
 > **Objective:** handle warranty claims in an orderly way and close the deal financially, for tax and at company level.
 > **Duration:** 90 min · **Result:** after-sales service running, final account settled with the contractor, taxes closed and SPE wound up or kept in reserve.
-> **Where we are:** with the keys handed over (Module 11), you handle the buyers' guarantees and close the development financially, for tax and as a company.
+> **Where we are:** with the keys handed over (Module 11), you deal with the buyers' warranty claims and close the development financially, for tax and as a company.
 
 ## Laws that apply
 
@@ -25,7 +25,7 @@
 | **AEAT or foral tax authority** | IS (form 200), IVA (303 and 390), deregistration (036) |
 | **Companies Registry** | Filing of accounts, dissolution, extinction |
 | **Notary** | Deeds cancelling the mortgage and extinguishing the company |
-| **CCAA's Consumer Arbitration Board** (*Junta Arbitral de Consumo*) | Arbitration of buyers' claims |
+| **CCAA's Consumer Arbitration Board** (*Junta Arbitral de Consumo*) | Arbitration of buyers' complaints |
 
 ## Lesson 12.1 — Handing over to the owners' association
 
@@ -37,7 +37,7 @@
   - Maintenance contracts in force (lift, PCI, doors, landscaping).
   - The initial reserve fund, if you have provided one.
   - Keys and remotes for the common areas.
-- Sign a handover record.
+- Sign a transfer record.
 
 - **Organise the maintenance from the start** for the lifts, equipment, pool, gardens and other common services, and hand over the minute book (it is validated at the Land Registry, art. 19 LPH).
 
@@ -45,7 +45,7 @@
 
 With the 18 homes handed over, the building no longer belonged to Nicolás: it belonged to its owners. Let me tell you how he handed it over to the owners' association.
 
-**What he handed over.** He met the chair and the property manager and handed over to them, against a signed **handover record**:
+**What he handed over.** He met the chair and the property manager and handed over to them, against a signed **transfer record**:
 
 - The complete **Building Book** (Lesson 9.4).
 - The documents for the common areas and the installations.
@@ -61,24 +61,24 @@ If your owners' association does not have a property manager yet, you will find 
 
 ### Summary
 
-When the handovers are finished, you hand over to the owners' association the Building Book, the documents for the common areas and installations, the maintenance contracts, the reserve fund if you have provided one, the keys and the minute book, and you sign a handover record. And leave the maintenance organised from the start.
+When the handovers are finished, you hand over to the owners' association the Building Book, the documents for the common areas and installations, the maintenance contracts, the reserve fund if you have provided one, the keys and the minute book, and you sign a transfer record. And leave the maintenance organised from the start.
 
 ### Your checklist
 
-- Handover record to the owners' association
+- Transfer record to the owners' association
 
 ## Lesson 12.2 — The after-sales service
 
 > **Where we are:** the building is now in the hands of the owners' association (Lesson 12.1). From now on you handle the buyers' warranties with an orderly after-sales service.
 
 - **Protocol:**
-  1. A single channel (form or email) with an incident number.
+  1. A single channel (form or email) with a claim number.
   2. Response within 48-72 h (good practice, not a legal deadline).
-  3. Technical visit and classification by **nature** (finishing 1 year, habitability 3 years, structure 10 years, or misuse) and by **urgency** (urgent within 24 h if there are leaks, a loss of supply or a risk to people).
+  3. Technical visit and classification by **nature** (finishes 1 year, habitability 3 years, structure 10 years, or misuse) and by **urgency** (urgent within 24 h if there are leaks, a loss of supply or a risk to people).
   4. Instruction to the contractor or the trade responsible, in writing, with photos and a deadline.
-  5. If they do not respond: repair it yourself and charge the cost on (retention).
+  5. If they do not respond: repair it yourself and pass on the cost (charged to the warranty retention).
   6. Close-out signed by the owner.
-- **Most frequent incidents:**
+- **Most frequent claims:**
 
 | Type | Usual cause |
 |---|---|
@@ -89,21 +89,21 @@ When the handovers are finished, you hand over to the owners' association the Bu
 | Damp in basements | Waterproofing |
 | Condensation | Insufficient ventilation or misuse |
 
-- **Structural damage:** notify the ten-year insurer as soon as you know.
+- **Structural damage:** notify the ten-year insurer as soon as you know of it.
 - **Limitation:** the buyer has 2 years from when the damage appears to bring a claim (art. 18 LOE). You have the same period, from when you pay, to recover from the party responsible.
 
 - **Warranty periods and claim periods are not the same thing:**
-  - Warranty (art. 17.1 LOE): 1, 3 and 10 years from handover of the works without reservations, or from when the reservations are remedied.
+  - Warranty (art. 17.1 LOE): 1, 3 and 10 years from acceptance of the works without reservations, or from when the reservations are remedied.
   - Limitation of the action (art. 18 LOE): 2 years from when the damage occurs.
   - On top of that there are contractual warranties and the action for breach of contract (art. 1964 CC: 5 years).
 - **Who handles what** (who does each step of the protocol and of the lists above):
-  - **You (the developer):** the single channel with an incident number, the response within 48-72 h, the written instruction with photos and a deadline and, if no one responds, the repair charged to the retention. You are the one liable towards the buyer.
-  - **Your professional:** the technical visit and the classification of each incident by nature and by urgency.
+  - **You (the developer):** the single channel with a claim number, the response within 48-72 h, the written instruction with photos and a deadline and, if no one responds, the repair charged to the warranty retention. You are the one liable towards the buyer.
+  - **Your technical adviser:** the technical visit and the classification of each claim by nature and by urgency.
   - **Contractor or trade responsible:** the repair, within the deadline in the instruction.
   - **Ten-year insurer:** structural damage, as soon as you know of it.
-  - **The owner:** signs the close-out of each incident.
+  - **The owner:** signs the close-out of each claim.
   - **Parties to the building process** (designer, works director, director of works execution, contractor): you recover what you have paid from the party responsible, within 2 years from when you pay.
-  - **CCAA's Consumer Arbitration Board:** the arbitration of buyers' claims.
+  - **CCAA's Consumer Arbitration Board:** the arbitration of buyers' complaints.
 
 ### Example: Nicolás, the developer
 
@@ -111,22 +111,22 @@ With the building handed over, Nicolás was left with the warranties. Let me tel
 
 **The protocol.** He had defined it in the warranty file (Lesson 9.5) and explained it to each buyer at the handover:
 
-1. A single channel, an email address, which gives each incident a number.
+1. A single channel, an email address, which gives each claim a number.
 2. Response within 48-72 h. It is good practice, not a legal deadline.
-3. A technical visit from his technical architect, who classifies each incident by nature (finishing, 1 year; habitability, 3 years; structure, 10 years; or misuse) and by urgency: within 24 h if there are leaks, a loss of supply or a risk to people.
+3. A technical visit from his technical architect, who classifies each claim by nature (finishes, 1 year; habitability, 3 years; structure, 10 years; or misuse) and by urgency: within 24 h if there are leaks, a loss of supply or a risk to people.
 4. A written instruction to the contractor or the trade responsible, with photos and a deadline.
-5. If they do not respond, he repairs it himself and pays for it from the retention, which he still holds: 5 % of each valuation, until one year after handover (Lesson 5.4).
+5. If they do not respond, he repairs it himself and pays for it from the warranty retention, which he still holds: 5 % of each valuation, until one year after acceptance (Lesson 5.4).
 6. Close-out signed by the owner.
 
-**The first incidents.** They were among the most frequent in the table: adjustments to doors and windows. None was urgent, and the contractor fixed them within the deadline of his written instruction. You will find the trades in your province (finishes, installations, cleaning and maintenance) in the list we have given you: among the potential companies for this lesson.
+**The first claims.** They were among the most frequent in the table: adjustments to doors and windows. None was urgent, and the contractor fixed them within the deadline of his written instruction. You will find the trades in your province (finishes, installations, cleaning and maintenance) in the list we have given you: among the potential companies for this lesson.
 
-**If one day there is structural damage.** He will notify the **ten-year insurer** as soon as he knows. And he is clear about the periods: the buyer has 2 years from when the damage appears to bring a claim, and he has the same period, from when he pays, to recover from the party responsible. He does not confuse them with the warranty periods, which are 1, 3 and 10 years from handover.
+**If one day there is structural damage.** He will notify the **ten-year insurer** as soon as he knows. And he is clear about the periods: the buyer has 2 years from when the damage appears to bring a claim, and he has the same period, from when he pays, to recover from the party responsible. He does not confuse them with the warranty periods, which are 1, 3 and 10 years from acceptance of the works.
 
-**If a buyer is not satisfied.** They can take their claim to arbitration at the **Consumer Arbitration Board** of the Comunitat Valenciana. You have your community's at the end of the module.
+**If a buyer is not satisfied.** They can take their complaint to arbitration at the **Consumer Arbitration Board** of the Comunitat Valenciana. You have your autonomous community's at the end of the module.
 
 ### Summary
 
-Each incident follows a protocol: a single channel, a quick response, a visit and classification by nature and urgency, a written instruction to the party responsible and a signed close-out. Structural damage goes to the ten-year insurer, and do not confuse the warranty periods (1, 3 and 10 years) with the claim period (2 years).
+Each claim follows a protocol: a single channel, a quick response, a visit and classification by nature and urgency, a written instruction to the party responsible and a signed close-out. Structural damage goes to the ten-year insurer, and do not confuse the warranty periods (1, 3 and 10 years) with the claim period (2 years).
 
 ### Your checklist
 
@@ -139,9 +139,9 @@ Each incident follows a protocol: a single channel, a quick response, a visit an
 - **Final account with the contractor:** approve the final valuation and settle the contract (retentions, penalties, extras). Release the retention when its period ends.
 - **Close the accounts** with professionals, suppliers and vendors, and settle outstanding invoices and warranties.
 - **Reconcile** sales revenue, costs, interest and overheads.
-- **Actual return:** compare it with the approved CRP (deviations in cost, time and sales). Run Template 2 again with the actual figures (or the professional model in FINANCIALS, if you have the extra).
+- **Actual return:** compare it with the approved CRP (deviations in cost, time and sales). Run Template 2 again with the actual figures (or the professional template in FINANCIALS, if you have the extra).
 
-- **Accounting:** every cost has been capitalised as **inventory** (development in progress → finished building). At each deed the sale is recognised and the proportional cost is written off.
+- **Accounting:** every cost has been capitalised as **inventory** (development in progress → finished building). With each deed the sale is recognised and the proportional cost is taken out of inventory.
 - **Finance costs:** if the development lasts more than a year, the interest on the development loan is capitalised as an additional cost of the inventory.
 - **Corporate income tax (IS):**
   - 2026 rates: general 25 %; newly created 15 %; small company 23 %; micro-company 19 % / 21 % (Ley 7/2024).
@@ -162,7 +162,7 @@ Each incident follows a protocol: a single channel, a quick response, a visit an
 
 With after-sales under way, Nicolás sat down with his advisory firm, the one from Lesson 1.4, to close the numbers. Let me tell you how he did it.
 
-**The final account with the contractor.** His technical architect, as director of works execution, measured and certified the work, and Nicolás approved the final valuation. The works came to 2.255.989 €, 34.903 € (2 %) above the 2.221.086 € contracted: the deviation he had already seen coming halfway through the works with Template 4 (Lesson 7.3). He settled the contract with its retentions and its extras, and noted the date for releasing the retention: one year after handover (Lesson 5.4).
+**The final account with the contractor.** His technical architect, as director of works execution, measured and certified the work, and Nicolás approved the final valuation. The works came to 2.255.989 €, 34.903 € (2 %) above the 2.221.086 € contracted: the deviation he had already seen coming halfway through the works with Template 4 (Lesson 7.3). He settled the contract with its retentions and its extras, and noted the date for releasing the retention: one year after acceptance (Lesson 5.4).
 
 **The accounts.** He closed the accounts with his professionals, suppliers and vendors, and settled the outstanding invoices and warranties. With his advisory firm he reconciled the sales revenue, the costs, the interest and the overheads.
 
@@ -172,12 +172,12 @@ With after-sales under way, Nicolás sat down with his advisory firm, the one fr
 - **Cost of the works:** 34.903 € more (+2 %).
 - **Time and finance cost:** he signed the deeds within the 4 months planned, and the actual finance cost was 139.210,64 €, a little less than the 165.407,45 € he had put in the CRP.
 
-**The accounting.** All the costs had been capitalised as inventory: development in progress and, at the end, finished building. At each deed, the advisory firm recognised the sale and wrote off the proportional cost. As the development lasted more than a year, the interest on the development loan was capitalised as an additional cost of the inventory.
+**The accounting.** All the costs had been capitalised as inventory: development in progress and, at the end, finished building. With each deed, the advisory firm recognised the sale and took the proportional cost out of inventory. As the development lasted more than a year, the interest on the development loan was capitalised as an additional cost of the inventory.
 
 **The taxes, with the Tax Agency:**
 
 - **IVA:** the IVA charged on the whole development, 413.518,63 € according to his Template 5, declared quarter by quarter on the 303 and summarised on the 390. He does not rent out any home, so he has no IVA to adjust.
-- **Corporate income tax:** the annual return (form 200) and the payments on account (form 202). The rate, among those the lesson gives, was applied by his advisory firm according to his company.
+- **Corporate income tax:** the annual return (form 200) and the payments on account (form 202). His advisory firm applied the rate, from among those the lesson gives, that fits his company.
 - **Municipal plusvalía,** at the town hall: as Lesson 11.5 says, on each sale where the land had increased in value he paid it, and on those where it had not, he declared it all the same.
 
 ### Summary
@@ -224,7 +224,7 @@ Settle the final account with the contractor, close the accounts and reconcile; 
   - **Notary:** the deed of extinction.
   - **Companies Registry:** the registration of the extinction and, for as long as the company continues, the filing of accounts.
   - **AEAT or foral tax authority:** deregistration (form 036).
-  - **You, with your team:** the lessons-learned meeting, the file archived with its periods, closing the temporary contracts and reviewing the deviations.
+  - **You, with your team:** the lessons-learned meeting, the file archived with its retention periods, closing the temporary contracts and reviewing the deviations.
 
 ### Example: Nicolás, the developer
 
@@ -242,12 +242,12 @@ With that report, Nicolás is already looking at plots for his second developmen
 
 ### Summary
 
-Before winding up the SPE, bring the development loan, the contractor, the suppliers and the taxes to zero. Then you decide: extinction (general meeting, liquidator, balance sheet, deed, Companies Registry and deregistration) or reserve, knowing that extinction does not erase the warranties. Close with the lessons learned and the file archived with its periods.
+Before winding up the SPE, pay off the development loan, settle your accounts with the contractor and the suppliers, and pay all your taxes. Then you decide: extinction (general meeting, liquidator, balance sheet, deed, Companies Registry and deregistration) or reserve, knowing that extinction does not erase the warranties. Close with the lessons learned and the file archived with its retention periods.
 
 ### Your checklist
 
 - Development loan cancelled at the Land Registry
-- Decision on the SPE: dissolution or reserve
+- Decision on the SPE: extinction or reserve
 - Lessons-learned report
 - File archived with its retention periods
 
@@ -255,16 +255,16 @@ Before winding up the SPE, bring the development loan, the contractor, the suppl
 
 You have handed over the building to the owners' association, set up an after-sales service with its protocol, settled the final account with the contractor, closed the accounts and taxes, compared the actual return with the approved CRP and decided what to do with your SPE, with the file archived and the lessons learned in writing.
 
-**Where you should be in your project:** with the after-sales service running, the final account with the contractor settled, the taxes closed and the SPE wound up or in reserve. It is the end of the development: you started in Module 1 with no plot and no company, and you finish with the homes sold, conveyed by deed and handed over, and their warranties under way. Your lessons-learned report is the starting point for the next one, which starts again in Module 1.
+**Where you should be in your project:** with the after-sales service running, the final account with the contractor settled, the taxes closed and the SPE wound up or in reserve. It is the end of the development: you started in Module 1 with no plot and no company, and you finish with the homes sold, conveyed by deed and handed over, and their warranties in place. Your lessons-learned report is the starting point for the next one, which starts again in Module 1.
 
 ## Module 12 checklist
 
-- [ ] Handover record to the owners' association
+- [ ] Transfer record to the owners' association
 - [ ] After-sales protocol running
 - [ ] Final account settled with the contractor
 - [ ] Development loan cancelled at the Land Registry
 - [ ] IS, IVA and plusvalías paid
-- [ ] Decision on the SPE: dissolution or reserve
+- [ ] Decision on the SPE: extinction or reserve
 - [ ] Lessons-learned report
 - [ ] File archived with its retention periods
 - [ ] Actual return compared with the approved CRP

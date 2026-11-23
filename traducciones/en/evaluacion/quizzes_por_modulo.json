@@ -84,7 +84,7 @@
       },
       {
         "numero": 4,
-        "pregunta": "A private individual sells you a plot. The purchase is taxed with:",
+        "pregunta": "A private individual sells you a plot. The purchase is subject to:",
         "opciones": [
           {
             "letra": "A",
@@ -403,7 +403,7 @@
       },
       {
         "numero": 6,
-        "pregunta": "Why is the CRP drawn up without IVA?",
+        "pregunta": "Why is the CRP drawn up excluding IVA?",
         "opciones": [
           {
             "letra": "A",
@@ -540,7 +540,7 @@
     "preguntas": [
       {
         "numero": 1,
-        "pregunta": "The LOE defines the developer in its article:",
+        "pregunta": "The LOE defines the developer in article:",
         "opciones": [
           {
             "letra": "A",
@@ -596,7 +596,7 @@
         "opciones": [
           {
             "letra": "A",
-            "texto": "The preliminary design",
+            "texto": "The outline design",
             "correcta": false
           },
           {
@@ -618,7 +618,7 @@
       },
       {
         "numero": 4,
-        "pregunta": "The health and safety plan is written by:",
+        "pregunta": "The health and safety plan is drawn up by:",
         "opciones": [
           {
             "letra": "A",
@@ -793,7 +793,7 @@
           },
           {
             "letra": "D",
-            "texto": "The developer decides so",
+            "texto": "The developer so decides",
             "correcta": false
           }
         ]
@@ -816,7 +816,7 @@
           },
           {
             "letra": "B",
-            "texto": "Tax on constructions, installations and works (Impuesto sobre Construcciones, Instalaciones y Obras)",
+            "texto": "Tax on Constructions, Installations and Works (Impuesto sobre Construcciones, Instalaciones y Obras)",
             "correcta": true
           },
           {
@@ -873,7 +873,7 @@
           },
           {
             "letra": "C",
-            "texto": "It is deemed refused: silence is negative (art. 11.4 TRLSRU)",
+            "texto": "It is deemed refused: silence means refusal (art. 11.4 TRLSRU)",
             "correcta": true
           },
           {
@@ -1166,7 +1166,7 @@
           },
           {
             "letra": "C",
-            "texto": "Handover of the works without reservations (or once the reservations are remedied)",
+            "texto": "Acceptance of the works without reservations (or once the reservations are remedied)",
             "correcta": true
           },
           {
@@ -1192,7 +1192,7 @@
           },
           {
             "letra": "C",
-            "texto": "Refunded if the Euríbor rises",
+            "texto": "Refunded if the Euribor rises",
             "correcta": false
           },
           {
@@ -1239,7 +1239,7 @@
           },
           {
             "letra": "B",
-            "texto": "5 % until one year after handover",
+            "texto": "5 % until one year after acceptance",
             "correcta": true
           },
           {
@@ -1445,7 +1445,7 @@
       },
       {
         "numero": 5,
-        "pregunta": "The handover record starts:",
+        "pregunta": "The acceptance record starts:",
         "opciones": [
           {
             "letra": "A",
@@ -1480,7 +1480,7 @@
           },
           {
             "letra": "B",
-            "texto": "Handover is deemed tacit",
+            "texto": "The works are deemed tacitly accepted",
             "correcta": true
           },
           {
@@ -1738,7 +1738,7 @@
       },
       {
         "numero": 6,
-        "pregunta": "The incidents book is kept by:",
+        "pregunta": "The incident book is kept by:",
         "opciones": [
           {
             "letra": "A",
@@ -1804,7 +1804,7 @@
           },
           {
             "letra": "C",
-            "texto": "The contractor, and approved by the site supervision team",
+            "texto": "The contractor, with the approval of the site supervision team",
             "correcta": true
           },
           {
@@ -1884,7 +1884,7 @@
           },
           {
             "letra": "B",
-            "texto": "When you have the licence and the individual guarantee and the special account are in place",
+            "texto": "Once you have the licence, and the individual guarantee and the special account are in place",
             "correcta": true
           },
           {
@@ -2040,7 +2040,7 @@
           },
           {
             "letra": "B",
-            "texto": "Be entered in the regional register of estate agents",
+            "texto": "Be on the regional register of estate agents",
             "correcta": true
           },
           {
@@ -2409,7 +2409,7 @@
     "preguntas": [
       {
         "numero": 1,
-        "pregunta": "The pre-handover sheet is signed between:",
+        "pregunta": "The pre-handover sheet is signed by:",
         "opciones": [
           {
             "letra": "A",
@@ -2496,7 +2496,7 @@
           },
           {
             "letra": "B",
-            "texto": "The Building Book in digital form, with the handover record of the works",
+            "texto": "The Building Book in digital form, with the acceptance record of the works",
             "correcta": true
           },
           {
@@ -2513,7 +2513,7 @@
       },
       {
         "numero": 5,
-        "pregunta": "Minimum notice with which the buyer must receive their mortgage documents (FEIN) under Ley 5/2019:",
+        "pregunta": "Under Ley 5/2019, how far in advance, at least, must the buyer receive their mortgage documents (FEIN)?",
         "opciones": [
           {
             "letra": "A",
@@ -2789,7 +2789,7 @@
           },
           {
             "letra": "B",
-            "texto": "At handover of the works without reservations (or once the reservations are remedied)",
+            "texto": "At acceptance of the works without reservations (or once the reservations are remedied)",
             "correcta": true
           },
           {
@@ -3073,7 +3073,7 @@
       },
       {
         "numero": 8,
-        "pregunta": "Dissolving the SPE:",
+        "pregunta": "Extinguishing the SPE:",
         "opciones": [
           {
             "letra": "A",
@@ -3158,7 +3158,7 @@
     "preguntas": [
       {
         "numero": 1,
-        "pregunta": "The simplified model is:",
+        "pregunta": "The simplified template is:",
         "opciones": [
           {
             "letra": "A",
@@ -3184,11 +3184,11 @@
       },
       {
         "numero": 2,
-        "pregunta": "If Excel warns of a \"circular reference\" when you open the model:",
+        "pregunta": "If Excel warns of a \"circular reference\" when you open the template:",
         "opciones": [
           {
             "letra": "A",
-            "texto": "The model is wrong",
+            "texto": "The template is wrong",
             "correcta": false
           },
           {
@@ -3210,7 +3210,7 @@
       },
       {
         "numero": 3,
-        "pregunta": "In the model, the land's \"API, VARIOS\" is entered as:",
+        "pregunta": "In the template, the land's \"API, VARIOS\" is entered as:",
         "opciones": [
           {
             "letra": "A",
@@ -3288,7 +3288,7 @@
       },
       {
         "numero": 6,
-        "pregunta": "The model's design fees depend on:",
+        "pregunta": "The template's design fees depend on:",
         "opciones": [
           {
             "letra": "A",
@@ -3340,7 +3340,7 @@
       },
       {
         "numero": 8,
-        "pregunta": "Before using the model for a 2026 development you must check:",
+        "pregunta": "Before using the template for a 2026 development you must check:",
         "opciones": [
           {
             "letra": "A",
@@ -3349,7 +3349,7 @@
           },
           {
             "letra": "B",
-            "texto": "The autonomous community where the site is, that «Parámetros legales» is up to date, and current quotes for fees, OCT and ten-year insurance",
+            "texto": "The autonomous community where the plot is, that «Parámetros legales» is up to date, and current quotes for fees, OCT and ten-year insurance",
             "correcta": true
           },
           {

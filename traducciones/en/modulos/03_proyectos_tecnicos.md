@@ -34,23 +34,23 @@
 
 | Party | LOE article | What they do |
 |---|---|---|
-| Developer | 9 | Decides, finances, commissions. Takes out the insurance. Jointly liable with the other parties towards the buyers (art. 17.3) |
-| Designer | 10 | Writes the design. For housing: an architect |
+| Developer | 9 | Decides, finances, commissions. Takes out the insurance. Jointly and severally liable with the other parties towards the buyers (art. 17.3) |
+| Designer | 10 | Draws up the design. For housing: an architect |
 | Contractor | 11 | Builds according to the design and the instructions of the site supervision team |
 | Works director | 12 | Directs the technical development. For housing: an architect |
-| Director of works execution | 13 | Controls the physical execution and quality. For housing: a technical architect |
+| Director of works execution | 13 | Supervises the physical execution and the quality. For housing: a technical architect |
 | Quality control bodies and laboratories | 14 | Tests and technical assistance |
 | Product suppliers | 15 | Manufacturers and distributors |
 | Owners and users | 16 | Maintain and use the building according to the manual |
 
 - **Hire each professional in writing:** scope, fees, deadlines, minimum site visits, professional liability (RC) insurance.
-- ⚠️ **Typical mistake:** buying a "cheap" design and then paying the difference in variations during the works.
+- ⚠️ **Typical mistake:** commissioning a "cheap" design and then paying the difference in variations during the works.
 
 ### Example: Nicolás, the developer
 
 With the plot in his SPE's name, Nicolás put together his technical team. Let me tell you how.
 
-**He is the developer.** He is first in the table: he decides, finances, commissions and takes out the insurance, and he is jointly liable with the other parties towards the buyers. That is why he chose each professional calmly and hired them all in writing.
+**He is the developer.** He is first in the table: he decides, finances, commissions and takes out the insurance, and he is jointly and severally liable with the other parties towards the buyers. That is why he took his time choosing each professional and hired them all in writing.
 
 **The architect.** For housing, the designer and the works director have to be architects. He stayed with the architecture practice in his area that did his massing study (Lesson 1.2) and his fit study (Lesson 2.2): it does the design and the works direction. The structural and building services engineering is coordinated by the architect. You will find the architecture practices and engineering firms in your province in the list we have given you: among the potential companies for this lesson.
 
@@ -74,16 +74,16 @@ The LOE says what each party does and who is liable. As the developer you choose
 
 - Contracts signed with the architect, technical architect, CSS and engineers
 
-## Lesson 3.2 — The Building Code (CTE)
+## Lesson 3.2 — The Technical Building Code (CTE)
 
-> **Where we are:** you now have the team hired (Lesson 3.1). Now you go over the technical requirements your design has to meet: the Building Code (CTE) and the compulsory rules that sit outside it.
+> **Where we are:** you now have the team hired (Lesson 3.1). Now you go over the technical requirements your design has to meet: the Technical Building Code (CTE) and the compulsory rules that sit outside it.
 
 | Basic document | What it governs |
 |---|---|
 | DB SE (+ SE-AE, SE-C, SE-A, SE-F, SE-M) | Structural safety, actions, foundations, steel, masonry, timber |
 | DB SI | Fire: evacuation, fire resistance, installations |
 | DB SUA | Safety in use and accessibility. SUA 9: an accessible lift when more than two storeys must be climbed from the accessible entrance or there are more than 12 homes on storeys without an accessible entrance |
-| DB HE | Energy: HE0 consumption, HE1 envelope, HE2 thermal installations (RITE), HE3 lighting, HE4 renewables for domestic hot water (ACS), HE5 minimum renewable power generation in large new buildings (threshold of 1.000 m² built; check with your designer whether your building falls in), HE6 electric vehicle charging infrastructure |
+| DB HE | Energy: HE0 consumption, HE1 envelope, HE2 thermal installations (RITE), HE3 lighting, HE4 renewables for domestic hot water (ACS), HE5 minimum renewable power generation in large new buildings (threshold of 1.000 m² built; check with your designer whether your building falls within it), HE6 electric vehicle charging infrastructure |
 | DB HR | Noise |
 | DB HS | Health and hygiene: damp, waste, air quality, water, drainage, radon (HS6) |
 
@@ -100,7 +100,7 @@ With the team hired, Nicolás went over with his architect what the CTE and the 
 
 **The lift.** His building is B+5: from the entrance more than two storeys must be climbed, so DB SUA (SUA 9) requires an accessible lift. It was already in the fit study (Lesson 2.2).
 
-**Energy.** DB HE applies in full: envelope, thermal installations, lighting, renewables for hot water and electric vehicle charging. For HE5, the lesson gives a threshold of 1.000 m² built and his building has 1.586,49 m²: he asked the architect to confirm whether it falls in, as the lesson advises.
+**Energy.** DB HE applies in full: envelope, thermal installations, lighting, renewables for hot water and electric vehicle charging. For HE5, the lesson gives a threshold of 1.000 m² built and his building has 1.586,49 m²: he asked the architect to confirm whether the building falls within it, as the lesson advises.
 
 **Radon.** It has no basement, but he checked with the architect whether his municipality is in appendix B of DB HS.
 
@@ -119,8 +119,8 @@ The CTE sets in its basic documents what the building must meet (structure, fire
 > **Where we are:** you have the team (Lesson 3.1) and you know what the CTE requires of your building (Lesson 3.2). Now the design moves forward in stages: outline design, basic design to apply for the licence and construction design to build.
 
 1. **Preliminary study / outline design** (2-4 weeks): massing, unit types, number of homes. Not endorsed. Used to settle the mix with the sales team.
-2. **Basic design** (4-8 weeks): defines the building and shows compliance with the planning rules and the basic requirements of the CTE. Most municipalities grant the licence on it (some ask for the construction design). Endorsing the basic design is voluntary unless the town hall requires it.
-3. **Construction design** (a further 6-12 weeks): full construction detail. **Compulsory endorsement** (RD 1000/2010). It is what you contract with the builder and what you need to start the works.
+2. **Basic design** (4-8 weeks): defines the building and shows compliance with the planning rules and the basic requirements of the CTE. In most municipalities it is what you apply for the licence with (some ask for the construction design). Endorsing the basic design is voluntary unless the town hall requires it.
+3. **Construction design** (a further 6-12 weeks): full construction detail. **Compulsory endorsement** (RD 1000/2010). It is the basis of your contract with the builder and what you need to start the works.
 - **Contents of the construction design:**
   - Descriptive and construction report, and report of compliance with the CTE
   - Drawings: plans, elevations, sections, structure, building services, details
@@ -180,7 +180,7 @@ The design moves forward in stages: the outline design settles the mix, the basi
 
 ### Your checklist
 
-- Preliminary design validated against the sales mix
+- Outline design validated against the sales mix
 - Basic design (endorsed by the professional body if the town hall requires it)
 - Design review by the OCT (D0 report)
 - Pre-review by the ten-year insurer
@@ -198,7 +198,7 @@ The design moves forward in stages: the outline design settles the mix, the basi
 - **Health and safety coordinator:**
   - At design stage: compulsory if several designers take part.
   - During the works: compulsory if more than one company takes part, or a company and self-employed workers, or several self-employed workers. On a development, always.
-  - Appointed by the developer. Keeps the **incidents book**.
+  - Appointed by the developer. Keeps the **incident book**.
 - **Liability:** a serious accident can end in criminal liability (arts. 316-318 of the Criminal Code). Appoint the coordinator in writing and check that they visit the site.
 
 ### Example: Nicolás, the developer
@@ -209,11 +209,11 @@ Nicolás's construction design was still missing health and safety. Let me tell 
 
 **Who writes it.** A qualified professional appointed by the developer. Nicolás appointed in writing the health and safety coordinator he hired through the Association of Technical Architects (Lesson 3.1). At design stage one was already required, because several designers take part: the architect, the engineering firms and the ICT professional.
 
-**The coordinator on site.** During the works it is compulsory too: with the contractor, subcontractors and self-employed workers will come in, and on a development there is always a coordinator. Nicolás appoints them, in writing. They will keep the **incidents book**, which is obtained from the professional association at the start (Module 4).
+**The coordinator on site.** During the works it is compulsory too: along with the contractor, subcontractors and self-employed workers will come onto the site, and on a development there is always a coordinator. Nicolás appoints them, in writing. They will keep the **incident book**, which is obtained from the professional association at the start (Module 4).
 
 **The plan, once there is a contractor.** Each contractor will draw up its health and safety plan before starting, and the coordinator during the works will approve it. It comes with the construction contract (Module 5).
 
-**Liability.** A serious accident can end in criminal liability. That is why he put the appointment in writing and included the coordinator's minimum site visits in their contract (Lesson 3.1): that way he can check that they go.
+**Liability.** A serious accident can end in criminal liability. That is why he put the appointment in writing and included the coordinator's minimum site visits in their contract (Lesson 3.1): so that he can check that they actually visit.
 
 **Endorsement.** With the health and safety study included, the architect took the construction design to the **Official Association of Architects**, which checks identity, qualification, insurance and that the design is complete. It contains everything on the list in Lesson 3.3: the geotechnical study, waste management, the ICT and the energy efficiency certificate.
 
@@ -237,7 +237,7 @@ You have put together your technical team and hired it in writing, gone over wha
 
 - [ ] Contracts signed with the architect, technical architect, CSS and engineers
 - [ ] Geotechnical study
-- [ ] Preliminary design validated against the sales mix
+- [ ] Outline design validated against the sales mix
 - [ ] Basic design (endorsed by the professional body if the town hall requires it)
 - [ ] Construction design endorsed, with ESS, waste management, ICT and energy efficiency
 - [ ] Design review by the OCT (D0 report)

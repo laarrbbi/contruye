@@ -89,7 +89,7 @@ Throughout the course we follow **Nicolás**, who has just started out in proper
 
 **The 10-minute filter.** He ran it through the **Plot rough numbers** template: with the zone's buildability, it comes to 1.586,49 m² of floor area in B+5 (ground floor plus five), which gives 18 homes, 2 of them penthouses. With the land at 45 € per m² of floor area, the plot comes to 71.392,05 €.
 
-With construction at today's price, 1.400 €/m² for his upper-mid specification (Lesson 2.3), licences, design work and other costs (40 % on top of construction) and a profit of 30 % on cost, the template tells him he needs to sell at 2.606,50 € per m²: about 234.585 € for a typical 90 m² home, excluding IVA, and 4.135.186,19 € for the whole development. The land is 1,7 % of revenue, well below the 30 % the filter sets. These are the figures of the professional's example that comes with the template, except for construction, which he put at today's price (the example comes with a price from years ago), and the building you will watch go up in 3D learning. He also asked himself the filter's other two questions: it is open-market housing, with no protected-housing reserve, and nothing needs demolishing and no one needs moving out.
+With construction at today's price, 1.400 €/m² for his upper-mid specification (Lesson 2.3), licences, design work and other costs (40 % on top of construction) and a profit of 30 % on cost, the template tells him he needs to sell at 2.606,50 € per m²: about 234.585 € for a typical 90 m² home, excluding IVA, and 4.135.186,19 € for the whole development. The land is 1,7 % of revenue, well below the 30 % the filter sets. These are the figures of the professional's example that comes with the template, except for construction, which he put at today's price (the example comes with a price from years ago), and the building is the one you will watch go up in 3D learning. He also asked himself the filter's other two questions: it is open-market housing, with no protected-housing reserve, and nothing needs demolishing and no one needs moving out.
 
 The numbers work for him, but he is not buying yet: first he checks in the planning documents that this can really be built (Lesson 1.2).
 
@@ -187,7 +187,7 @@ From the PGOU and the zone sheet you work out the plot's parameters; the archite
 - ⚠️ **Typical mistakes:** relying only on the seller's old *nota simple*; not asking for the IBI certificate; buying with occupants and no exit plan.
 
 - **Utility connections and services:** confirm with the companies (water, sewerage, electricity, telecoms) that there is capacity and where the connection point is. If the distribution company requires a transformer station or a network reinforcement, it can mean tens of thousands of euros and months of delay.
-- **Contracts in force on the property:** leases, third-party options, rights of first refusal and pre-emption, litigation.
+- **Contracts in force on the property:** leases, third-party options, rights of first refusal and redemption (*tanteo y retracto*), litigation.
 - **Registered, cadastral and actual area:** compare all three.
 
 - **Who handles what** (whom you ask for each check in the lists above):
@@ -198,7 +198,7 @@ From the PGOU and the zone sheet you work out the plot's parameters; the archite
   - **Lawyer** (usually a planning lawyer): reviews the *nota simple* and the encumbrances, the tenants or occupants, the contracts in force on the property, and the regularisation if the Cadastre, the Registry and reality do not match.
   - **Surveyor:** the topographic survey (actual area, levels, boundaries).
   - **Geotechnical laboratory:** the preliminary geotechnical study.
-  - **Architect or engineering firm:** the demolition (project, asbestos with a company entered in the RERA, waste with an authorised waste manager), contaminated land, and easements for watercourses, coasts, roads, railways and airports.
+  - **Architect or engineering firm:** the demolition (project, asbestos with a company registered in the RERA, waste with an authorised waste manager), contaminated land, and easements for watercourses, coasts, roads, railways and airports.
   - **Utility companies:** the capacity of the connections and the connection point.
   - **You:** the €/m²t against the market and the preliminary CRP (Module 2).
 
@@ -245,14 +245,14 @@ Due diligence looks at the plot from four sides (legal, tax, technical and finan
   - **Option to buy:** you pay a premium (3-10 %) for a period (6-24 months). Register it at the Land Registry so it holds against third parties.
   - **Purchase subject to a condition precedent:** e.g. subject to obtaining the licence. Set a long-stop date and what happens to the money paid.
   - **Penitential deposit (*arras penitenciales*, art. 1454 CC):** if you pull out you lose the deposit; if the seller pulls out they pay you back double.
-  - **Swap of the plot for future building:** the owner receives flats. Both deliveries are subject to IVA: go through the tax carefully with your adviser.
+  - **Swap of the plot for future building:** the owner receives flats. Both supplies are subject to IVA: go through the tax carefully with your adviser.
 - **Tax on buying the plot:**
 
 | Seller and type of land | Tax | Recoverable? |
 |---|---|---|
 | A business sells **buildable land** (a plot) | IVA 21 % + AJD on the deed (Annex B) | IVA yes, it is deducted. AJD no |
 | A business sells **non-buildable** (rural) land | Exempt from IVA → ITP. It can waive the exemption: IVA with reverse charge + AJD | With the waiver, IVA yes |
-| A business sells a **used building** to be demolished | Second delivery, exempt → ITP, or waiver of the exemption: IVA + AJD (some CCAA charge a higher AJD on a waiver) | With the waiver, IVA yes |
+| A business sells a **used building** to be demolished | Second supply, exempt → ITP, or waiver of the exemption: IVA + AJD (some CCAA charge a higher AJD on a waiver) | With the waiver, IVA yes |
 | A **private individual** sells | The community's ITP (Annex B). No AJD | No |
 
 - **Costs of the purchase:**
@@ -262,7 +262,7 @@ Due diligence looks at the plot from four sides (legal, tax, technical and finan
   - Municipal plusvalía (IIVTNU): paid by the seller.
 - **The SPE (special-purpose company):**
   - One SL per development: it ring-fences the risks, keeps the accounts tidy, and makes it easier for partners to come in and to close.
-  - Minimum capital of an SL: 1 € since Ley 18/2022. Until it reaches 3.000 €, it must put 20 % of its profit into the legal reserve, and the shareholders are jointly liable if it is wound up without covering 3.000 €. No bank will finance an SL with no real equity.
+  - Minimum capital of an SL: 1 € since Ley 18/2022. Until it reaches 3.000 €, it must put 20 % of its profit into the legal reserve, and the shareholders are jointly and severally liable if it is wound up without covering 3.000 €. No bank will finance an SL with no real equity.
   - Steps: company name (Central Companies Registry) → bank account and contribution → deed before a notary → provisional NIF (AEAT, form 036) → registration at the provincial Companies Registry → final NIF. Fast track: CIRCE / PAE.
   - In Navarra and País Vasco, IS and IVA are managed by the foral tax authority.
 - ⚠️ **Typical mistakes:** buying in your own name and then contributing the land to the company (taxed twice); paying ITP when the seller could have waived the exemption and charged deductible IVA.
@@ -283,7 +283,7 @@ There is a faster route, online: CIRCE / PAE.
 
 **Then, the option to buy.** The owner is a private individual. As Nicolás still needs the feasibility study (Module 2) and the financing, he does not buy outright: he signs an **option to buy at the notary's** and **registers it at the Land Registry**, so that it holds against third parties. He pays a premium and secures the time he needs (the lesson talks of a premium of 3-10 % for a period of 6-24 months). You will find the notary in the list we have given you: the Notarial Association of your province, at the end of the module.
 
-**The costs, in Template 1.** As the seller is a private individual, the purchase pays the **ITP** of the Comunitat Valenciana (9 %, Annex B), not IVA: 6.425,28 € on the plot's 71.392,05 €. Notary and Land Registry, around 0,5 % of the price: 356,96 €; he asked the notary for a quote to refine it. With 3.000 € for due diligence, valuation and studies, **Template 1 · Site purchase** gives him a plot cost of 81.174,29 € (51,17 € per m² of floor area): the money he needs on the day of the purchase. The seller pays the municipal plusvalía.
+**The costs, in Template 1.** As the seller is a private individual, the purchase is subject to the **ITP** of the Comunitat Valenciana (9 %, Annex B), not to IVA: 6.425,28 € on the plot's 71.392,05 €. Notary and Land Registry, around 0,5 % of the price: 356,96 €; he asked the notary for a quote to refine it. With 3.000 € for due diligence, valuation and studies, **Template 1 · Site purchase** gives him a plot cost of 81.174,29 € (51,17 € per m² of floor area): the money he needs on the day of the purchase. The seller pays the municipal plusvalía.
 
 **Where he is now.** He has the plot secured in his SPE's name, with the option to buy registered. With that he moves on to Module 2, to decide with numbers whether the development goes ahead.
 

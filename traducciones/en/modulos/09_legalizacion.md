@@ -2,20 +2,20 @@
 
 > **Objective:** turn the finished works into homes that can be conveyed, mortgaged and lived in.
 > **Duration:** 105 min · **Result:** first occupation (and cédula where required), deed of completed new building and horizontal division registered, Building Book.
-> **Where we are:** with the works finished and handed over (Module 6), you legalise them: first occupation, the deed of completed new building and horizontal division, and the Building Book, so that each home can be sold by deed, mortgaged and lived in.
+> **Where we are:** with the works finished and accepted (Module 6), you legalise them: first occupation, the deed of completed new building and horizontal division, and the Building Book, so that each home can be sold by deed, mortgaged and lived in.
 
 ## Laws that apply
 
 | Rule | Why it matters to you |
 |---|---|
-| **TRLSRU, art. 28** | Requirements for the deed and registration of a new building under construction and completed |
-| **RD 1093/1997** | Rules for registering planning acts at the Land Registry |
-| **LOE, arts. 7 and 20** | Building Book; ten-year insurance to execute the deed and register |
-| **LPH (Ley 49/1960)**, art. 5 | Founding title of the horizontal property: shares and statutes |
+| **TRLSRU, art. 28** | Requirements for the deed and registration of a new building, under construction or completed |
+| **RD 1093/1997** | Rules for registering planning acts in the Land Registry |
+| **LOE, arts. 7 and 20** | Building Book; ten-year insurance, required for the deed and its registration |
+| **LPH (Ley 49/1960)**, art. 5 | Constitutive title of the horizontal property: participation shares and statutes |
 | Regional planning and housing law | Licence or responsible declaration of first occupation; certificate of habitability where it still exists (Annex B) |
 | **RD 390/2021** | Energy efficiency certificate of the finished building and the regional register |
 | **TRLCI (RDL 1/2004)** | Entering the new building in the Cadastre |
-| REBT, RITE, ICT, RIPCI | Certificates of the installations, registered |
+| REBT, RITE, ICT, RIPCI | Registered installation certificates |
 
 ## Where to go
 
@@ -32,7 +32,7 @@
 
 ## Lesson 9.1 — Technical documentation at completion
 
-> **Where we are:** the works are finished and handed over (Module 6). Before applying for anything, you gather the technical documentation at completion, carry out the final inspection and commission the installations.
+> **Where we are:** the works are finished and accepted (Module 6). Before applying for anything, you gather the technical documentation at completion, carry out the final inspection and commission the installations.
 
 | Document | Who issues it |
 |---|---|
@@ -41,7 +41,7 @@
 | Installation certificates registered with Industry | Authorised installers |
 | ICT completion certificate and installer's certificate | Telecoms professional and installer |
 | Final OCT report and final ten-year policy | OCT and insurer |
-| Waste management certificates | Authorised manager |
+| Waste management certificates | Authorised waste manager |
 | List of controls and tests | Director of works execution |
 | As-built drawings | Site supervision team |
 
@@ -67,15 +67,15 @@
 
 ### Example: Nicolás, the developer
 
-With the handover record signed, Nicolás did not go to the town hall or the notary until he had all the completion papers. Let me tell you how he gathered them.
+With the acceptance record signed, Nicolás did not go to the town hall or the notary until he had all the completion papers. Let me tell you how he gathered them.
 
 **First, the final inspection.** He went through the 18 homes and the common areas with his architect (works director), his technical architect (director of works execution) and the contractor's site manager, with the design, the licence and the specification in hand: the same specification he gave his buyers, because the advertising binds him (Lesson 8.1). They noted every defect and every snag on a list; the contractor fixed them and the director of works execution checked that they were closed out.
 
-**Tests and commissioning.** The installers tested the common installations and those of each home, and commissioned the lift and the equipment. He had applied in good time to the distributor for the permanent electricity connection, because it takes months (Lesson 9.3 warns of it).
+**Tests and commissioning.** The installers tested the common installations and those of each home, and commissioned the lift and the equipment. He had applied in good time to the distribution company for the permanent electricity connection, because it takes months (Lesson 9.3 warns of it).
 
 **The papers, each from whoever issues it** (the lesson's table):
 
-- The **CFO**, signed by his architect and his technical architect and endorsed at the **Associations of Architects and Technical Architects** (1 to 2 weeks).
+- The **CFO**, signed by his architect and his technical architect and endorsed by the **Associations of Architects and Technical Architects** (1 to 2 weeks).
 - The installation certificates, from the authorised installers, registered with the **CCAA's Industry Service** (1 to 4 weeks).
 - The **energy efficiency certificate** of the finished building, which his architect signed as the qualified professional, entered in the **regional register of energy certificates**: in the Comunitat Valenciana, the IVACE (Lesson 8.3).
 - The ICT completion certificate, from the telecoms professional and the installer.
@@ -88,7 +88,7 @@ You have your province's Industry Service and register of energy certificates at
 
 ### Summary
 
-Before applying for first occupation or going to the notary, check the whole of the works against the design, test and commission the installations, and gather each document signed by whoever issues it: the endorsed CFO, the installations and the energy certificate registered, and the OCT's final report with the final ten-year policy.
+Before applying for first occupation or going to the notary, check the whole of the works against the design, test and commission the installations, and gather each document signed by whoever issues it: the endorsed CFO, the registered installations and energy certificate, and the OCT's final report with the final ten-year policy.
 
 ### Your checklist
 
@@ -109,7 +109,7 @@ Before applying for first occupation or going to the notary, check the whole of 
   - Ten-year insurance (art. 20 LOE).
   - Energy efficiency certificate.
   - Building Book, where the regional law requires it for registration.
-- **Horizontal division (founding title, art. 5 LPH):**
+- **Horizontal division (constitutive title, art. 5 LPH):**
   - Describes the building and each private unit (home, commercial unit, garage, storeroom) with number, floor, area, boundaries and **participation share**.
   - Common elements.
   - The owners' association's **statutes** (use of terraces, pool, sharing of costs, prohibited uses).
@@ -129,18 +129,18 @@ Nicolás signed the deed declaring the new building and the horizontal division 
 
 **What he took to the notary.** What the lesson asks for the completed new building, with the six documents of Lesson 10.3:
 
-1. The Building Book in digital form, with the handover record of the works (Lesson 9.4).
+1. The Building Book in digital form, with the acceptance record of the works (Lesson 9.4).
 2. The endorsed final completion certificate (Lesson 9.1).
 3. The ten-year insurance: without it, the notary does not authorise the completed new building and the registrar does not register it.
 4. The first occupation licence (I tell you how he got it in Lesson 9.3).
 5. The energy efficiency certificate.
 6. The georeferenced areas, which his architect prepared for him with the surveyor from Lesson 1.3.
 
-**Signing and registration.** He signed the Final Completion Deed at his notary's, who filed it at the **Land Registry** (15 working days, extendable). It was registered as a completed new building and the "under construction" note disappeared. From that day each of his 18 homes is a registered property in its own right. You will find the notary and the lawyer in the list we have given you, among the potential companies for this lesson.
+**Signing and registration.** He signed the Final Completion Deed at his notary's office, which filed it with the **Land Registry** (15 working days, extendable). It was registered as a completed new building and the "under construction" note disappeared. From that day each of his 18 homes is a registered property in its own right. You will find the notary and the lawyer in the list we have given you, among the potential companies for this lesson.
 
 **The Cadastre.** The entry of the new building is reported by the notary and the registrar; if not, form 902-N is filed. Nicolás checked on the Cadastre's online office (*Sede Electrónica del Catastro*) that it had been done (it can take 1 to 6 months).
 
-**What he pays.** The notary and the registry, per official scale, and his community's AJD (Annex B) on the value of the new building and the horizontal division. They are his costs: he does not pass them on to his buyers. And he gives each of them the energy label of the finished building.
+**What he pays.** The notary and the registry, per official scale, and his autonomous community's AJD (Annex B) on the value of the new building and the horizontal division. They are his costs: he does not pass them on to his buyers. And he gives each of them the energy label of the finished building.
 
 ### Summary
 
@@ -158,15 +158,15 @@ The completed new building is declared at the notary's with the final completion
 - **First occupation (town hall):** certifies that the building matches the licence and can be used.
   - Usual documents: CFO, installation certificates, energy certificate, photos, Cadastre entry or proof of filing, certificate of the utility connections, final ICIO assessment.
 - **Who handles what** (whom you ask for each document in the list above):
-  - **Works director and director of works execution:** the CFO, endorsed at their associations.
+  - **Works director and director of works execution:** the CFO, endorsed by their professional associations.
   - **Authorised installers:** the installation certificates, registered with the CCAA's Industry Service.
   - **Qualified professional:** the energy certificate, entered in the regional register of energy certificates.
   - **Cadastre:** the entry of the new building or proof of it (the notary and the registrar report it; if not, form 902-N).
   - **Utility companies:** the certificate of the utility connections.
   - **Town hall:** the final ICIO assessment, which you pay.
-  - **You (the developer):** the photos, and the application, with everything on this list, at the town hall.
+  - **You (the developer):** the photos, and the application at the town hall, with everything on this list.
 - **Certificate of habitability (*cédula de habitabilidad*):** it is the same document as the first occupation licence; they are not different acts or documents. For subsequent transfers it would be a second occupation licence. In 2026 it still exists in **Cataluña, Navarra, Canarias, Extremadura, Illes Balears, La Rioja, Asturias and Región de Murcia**. It is issued by the regional or island body and is usually needed to sign permanent utility contracts and to sell.
-- ⚠️ **Typical mistakes:** applying for first occupation with unregistered installations; not having the permanent electricity connection done (the distributor takes months); forgetting the cédula in the communities that require it.
+- ⚠️ **Typical mistakes:** applying for first occupation with unregistered installations; not having the permanent electricity connection done (the distribution company takes months); forgetting the cédula in the autonomous communities that require it.
 
 ### Example: Nicolás, the developer
 
@@ -184,7 +184,7 @@ With the completion papers gathered (Lesson 9.1), Nicolás went for first occupa
 - The certificate of the utility connections, with the permanent electricity connection already done.
 - The final ICIO assessment, which he paid at the town hall itself.
 
-**The time it takes.** For the licence, 1 to 3 months, according to the "Where to go" table. Nicolás had allowed for it in his programme, because without first occupation there is no Final Completion Deed (Lesson 9.2), and in the Comunitat Valenciana his buyers need it to contract permanent water and electricity (Lesson 8.3).
+**The time it takes.** For the licence, 1 to 3 months, according to the "Where to go" table. Nicolás had allowed for it in his programme, because without first occupation there is no Final Completion Deed (Lesson 9.2), and in the Comunitat Valenciana his buyers need it to sign up for permanent water and electricity (Lesson 8.3).
 
 You have the town hall and the rest of your province's institutions for this phase at the end of the module.
 
@@ -255,7 +255,7 @@ Nicolás did not start the Building Book from scratch: he used the **Instructor'
 
 **Part III, accidents and emergencies**, for the building as a whole and for each home.
 
-**Handing it over.** He kept a copy in digital form with the handover record, for the notary (Lesson 10.3). The complete Book is for the owners' association, its chair or its property manager; he gives each buyer the part for their home at the signing of the sale (Lesson 11.1). Before that, he checked with his architect what his autonomous community's decree adds.
+**Handing it over.** He kept a copy in digital form with the acceptance record, for the notary (Lesson 10.3). The complete Book is for the owners' association, its chair or its property manager; he gives each buyer the part for their home at the signing of the sale (Lesson 11.1). Before that, he checked with his architect what his autonomous community's decree adds.
 
 ### Summary
 
@@ -267,7 +267,7 @@ The Building Book is compulsory: it brings together the design with its changes,
 
 ## Lesson 9.5 — Warranty file
 
-> **Where we are:** you have the Building Book complete (Lesson 9.4). To close the legalisation you prepare the warranty file: the ten-year insurance, the warranties for equipment and materials, the liabilities of each party and how you will deal with incidents after handover.
+> **Where we are:** you have the Building Book complete (Lesson 9.4). To close the legalisation you prepare the warranty file: the ten-year insurance, the warranties for equipment and materials, the liabilities of each party and how you will deal with claims after handover.
 
 - **Complete the ten-year insurance:** final policy after the OCT's final report.
 - **Collect the warranties** for installations, equipment and materials (aerothermal heat pumps, lift, windows, waterproofing).
@@ -277,17 +277,17 @@ The Building Book is compulsory: it brings together the design with its changes,
 
 ### Example: Nicolás, the developer
 
-Before handing over the keys, Nicolás wanted to have in a single file whom to call if something goes wrong. Let me tell you what he put in it.
+Before handing over the keys, Nicolás wanted to have in a single file whom to call if something went wrong. Let me tell you what he put in it.
 
 **The ten-year insurance.** The final policy, which the insurer issued him after the OCT's final report (Lesson 9.1). Its number and the insurer go on the certificate each buyer will receive (Lesson 10.2).
 
-**The warranties for equipment and materials.** He asked the contractor for them at the handover of the works: those for the lift, the windows, the waterproofing and the rest of the equipment, each with its manufacturer or its installer and its period.
+**The warranties for equipment and materials.** He asked the contractor for them when he accepted the works: those for the lift, the windows, the waterproofing and the rest of the equipment, each with its manufacturer or its installer and its period.
 
-**Who is liable for what.** The list of parties with their written contracts: the architect and the technical architect of the site supervision team, the health and safety coordinator, the contractor, the OCT and the laboratory. Next to it, the legal warranty periods, counted from handover without reservations (Lesson 5.2): 1 year for finishes, the contractor's; 3 years for habitability and 10 for the structure, every party's according to their role. Nicolás, as developer, is liable towards the buyer for all of them, jointly and severally for the 3 and 10-year ones.
+**Who is liable for what.** The list of parties with their written contracts: the architect and the technical architect of the site supervision team, the health and safety coordinator, the contractor, the OCT and the laboratory. Next to it, the legal warranty periods, counted from acceptance of the works without reservations (Lesson 5.2): 1 year for finishes, borne by the contractor; 3 years for habitability and 10 for the structure, borne by every party according to their role. Nicolás, as developer, is liable towards the buyer for all of them, jointly and severally for the 3- and 10-year ones.
 
 **For whom.** One file for the owners' association, with the common areas and the common installations, and another for each buyer, with what concerns their home, which is added to the file he opened at the reservation (Lesson 8.4).
 
-**The claims procedure.** He left it in writing for after handover: a single channel, each incident with its number, its classification by warranty period and the written instruction to the contractor or the party responsible. If they do not respond, he repairs it himself and charges it to the 5 % retention on each valuation, which he keeps until one year after handover (Lesson 5.4). He will put it into practice in Module 12.
+**The claims procedure.** He left it in writing for after handover: a single channel, each claim with its number, its classification by warranty period and the written instruction to the contractor or the party responsible. If they do not respond, he repairs it himself and charges it to the 5 % retention on each valuation, which he keeps until one year after acceptance (Lesson 5.4). He will put it into practice in Module 12.
 
 ### Summary
 
