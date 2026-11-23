@@ -1,11 +1,11 @@
-# الملحق A — دليل الشركاء حسب المحافظة وحسب المرحلة
+# الملحق A — دليل الشركاء حسب المقاطعة وحسب المرحلة
 
-> **كيف تستخدمه:** ابحث عن محافظتك. لكل مرحلة تجد المؤسسة أو نوع الشريك، والغرض الذي تحتاجه من أجله.
-> تتغيّر أسماء الهيئات المهنية والمؤسسات أحيانًا: تأكّد منها في محرّكات البحث الرسمية أدناه قبل التوجّه إليها.
+> **كيف تستخدمه:** ابحث عن مقاطعتك. لكل مرحلة تجد المؤسسة أو نوع الشريك، والغرض الذي تحتاجه من أجله.
+> تتغيّر أسماء الهيئات المهنية والمؤسسات أحيانًا: تأكّد منها في مواقع البحث الرسمية أدناه قبل التوجّه إليها.
 
-## محرّكات البحث الرسمية (صالحة في كل إسبانيا)
+## مواقع البحث الرسمية (صالحة في كل إسبانيا)
 
-| تحتاج إلى | محرّك البحث |
+| تحتاج إلى | موقع البحث |
 |---|---|
 | السجل العقاري للأرض (Registro de la Propiedad)، ومستخرجات notas simples | registradores.org |
 | موثّق | notariado.org |
@@ -13,7 +13,7 @@
 | هيئة المهندسين المعماريين (Colegio de Arquitectos) | cscae.com (Consejo Superior de Colegios de Arquitectos) |
 | هيئة المهندسين المعماريين التقنيين (Colegio de Aparejadores y Arquitectos Técnicos) | arquitectura-tecnica.com (CGATE) |
 | هيئة الوكلاء العقاريين (Colegio de Agentes de la Propiedad Inmobiliaria) | consejocoapis.org |
-| هيئة مسيّري العقارات (Colegio de Administradores de Fincas) | cgcafe.org |
+| هيئة مديري العقارات (Colegio de Administradores de Fincas) | cgcafe.org |
 | هيئة وسطاء التأمين (Colegio de Mediadores de Seguros) | consejo general de los colegios de mediadores de seguros |
 | شركات التقييم المعتمدة | Registro de entidades del Banco de España (bde.es) |
 | المزادات | subastas.boe.es · الموقع الإلكتروني لـ AEAT · الموقع الإلكتروني للضمان الاجتماعي |

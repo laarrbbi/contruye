@@ -1,8 +1,8 @@
-# الملحق B — الضرائب والتعمير حسب المنطقة ذات الحكم الذاتي
+# الملحق B — الضرائب والتخطيط العمراني حسب المنطقة ذاتية الحكم
 
 > النسب العامة السارية في 2026 حسب الإدارات الضريبية الجهوية والأدلة الضريبية المطّلع عليها في أكتوبر 2026. توجد نسب مخفّضة (الشباب، والأسر الكبيرة، والمسكن الرئيسي) وشرائح حسب القيمة: **تأكّد منها لدى الإدارة الضريبية لمنطقتك قبل التوقيع**.
 
-| CCAA | ITP (الشراء من فرد) | AJD (العقود الخاضعة لـ IVA) | ضريبة البيع | السكن الأول | شهادة الصلاحية للسكن (cédula) | قانون التعمير |
+| CCAA | ITP (الشراء من فرد) | AJD (العقود الموثّقة الخاضعة لـ IVA) | ضريبة البيع | السكن الأول | شهادة الصلاحية للسكن (cédula) | قانون التخطيط العمراني |
 |---|---|---|---|---|---|---|
 | Andalucía | 7 % | 1,2 % | ضريبة القيمة المضافة (IVA) 10 % | تصريح مسؤول بالسكن لدى البلدية (LISTA) | لا | Ley 7/2021 de Impulso para la Sostenibilidad del Territorio de Andalucía (LISTA) |
 | Aragón | 8–10 % (تصاعدي) | 1,5 % | ضريبة القيمة المضافة (IVA) 10 % | رخصة أو تصريح مسؤول بالسكن الأول (البلدية) | لا | Texto Refundido de la Ley de Urbanismo de Aragón (Decreto Legislativo 1/2014) |
@@ -18,17 +18,17 @@
 | Galicia | 8 % | 1,5 % | ضريبة القيمة المضافة (IVA) 10 % | إشعار مسبق بالسكن الأول (البلدية، Ley 2/2016) | لا | Ley 2/2016 del Suelo de Galicia |
 | Comunidad de Madrid | 6 % | 0,75 % | ضريبة القيمة المضافة (IVA) 10 % | تصريح مسؤول بالسكن الأول (البلدية، Ley 1/2020) | لا | Ley 9/2001 del Suelo de la Comunidad de Madrid |
 | Región de Murcia | 7,75 % | 1,5 % | ضريبة القيمة المضافة (IVA) 10 % | رخصة أو تصريح مسؤول بالسكن الأول (البلدية) | شهادة الصلاحية للسكن (cédula)، المنطقة ذات الحكم الذاتي | Ley 13/2015 de Ordenación Territorial y Urbanística de la Región de Murcia |
-| Comunidad Foral de Navarra | 6 % | 0,5 % | ضريبة القيمة المضافة (IVA) 10 % (تسيّرها Hacienda Foral) | رخصة السكن الأول (البلدية) | شهادة الصلاحية للسكن (cédula)، Gobierno de Navarra | Texto Refundido de la Ley Foral de Ordenación del Territorio y Urbanismo (Decreto Foral Legislativo 1/2017) |
-| País Vasco | 4 % (حتى 7 % للأسس المرتفعة، حسب الإقليم) | 0,5 % | ضريبة القيمة المضافة (IVA) 10 % (تسيّرها Diputación Foral) | رخصة السكن الأول (البلدية) | لا | Ley 2/2006 de Suelo y Urbanismo del País Vasco |
+| Comunidad Foral de Navarra | 6 % | 0,5 % | ضريبة القيمة المضافة (IVA) 10 % (تسيّرها الإدارة الضريبية الإقليمية الخاصة، Hacienda Foral) | رخصة السكن الأول (البلدية) | شهادة الصلاحية للسكن (cédula)، Gobierno de Navarra | Texto Refundido de la Ley Foral de Ordenación del Territorio y Urbanismo (Decreto Foral Legislativo 1/2017) |
+| País Vasco | 4 % (حتى 7 % للأوعية المرتفعة، حسب الإقليم) | 0,5 % | ضريبة القيمة المضافة (IVA) 10 % (تسيّرها الإدارة الضريبية الإقليمية الخاصة، Diputación Foral) | رخصة السكن الأول (البلدية) | لا | Ley 2/2006 de Suelo y Urbanismo del País Vasco |
 | La Rioja | 7 % | 1 % | ضريبة القيمة المضافة (IVA) 10 % | رخصة السكن الأول (البلدية) | شهادة الصلاحية للسكن (cédula)، Gobierno de La Rioja | Ley 5/2006 de Ordenación del Territorio y Urbanismo de La Rioja |
-| Ciudad Autónoma de Ceuta | السعر الوطني مع تخفيض بنسبة 50 % في سبتة (تأكّد منه) | السعر الوطني مع تخفيض بنسبة 50 % (تأكّد منه) | IPSI بدلًا من IVA (تأكّد من النسبة لدى المدينة ذات الحكم الذاتي) | رخصة السكن الأول (المدينة ذات الحكم الذاتي) | لا | Plan General de Ordenación Urbana de Ceuta + legislación estatal (TRLSRU) |
-| Ciudad Autónoma de Melilla | السعر الوطني مع تخفيض بنسبة 50 % في مليلية (تأكّد منه) | السعر الوطني مع تخفيض بنسبة 50 % (تأكّد منه) | IPSI بدلًا من IVA (تأكّد من النسبة لدى المدينة ذات الحكم الذاتي) | رخصة السكن الأول (المدينة ذات الحكم الذاتي) | لا | Plan General de Ordenación Urbana de Melilla + legislación estatal (TRLSRU) |
+| Ciudad Autónoma de Ceuta | النسبة الوطنية مع تخفيض قدره 50 % في سبتة (تأكّد منها) | النسبة الوطنية مع تخفيض قدره 50 % (تأكّد منها) | IPSI بدلًا من IVA (تأكّد من النسبة لدى المدينة ذات الحكم الذاتي) | رخصة السكن الأول (المدينة ذات الحكم الذاتي) | لا | Plan General de Ordenación Urbana de Ceuta + التشريع الوطني (TRLSRU) |
+| Ciudad Autónoma de Melilla | النسبة الوطنية مع تخفيض قدره 50 % في مليلية (تأكّد منها) | النسبة الوطنية مع تخفيض قدره 50 % (تأكّد منها) | IPSI بدلًا من IVA (تأكّد من النسبة لدى المدينة ذات الحكم الذاتي) | رخصة السكن الأول (المدينة ذات الحكم الذاتي) | لا | Plan General de Ordenación Urbana de Melilla + التشريع الوطني (TRLSRU) |
 
 **تذكّر:**
 - **ITP و AJD لا يجتمعان** في البيع نفسه: إذا كانت العملية خاضعة لـ IVA تدفع AJD؛ وإذا كان البائع فردًا، تدفع ITP.
 - **IVA على بيع المسكن الجديد:** 10 % (4 % في السكن المدعوم ذي النظام الخاص). تطبّق Canarias ضريبة IGIC، وتطبّق Ceuta و Melilla ضريبة IPSI.
-- لدى **Navarra و País Vasco** ضرائب IS و IVA و ITP خاصة بهما: يجب أن يعرف مستشارك هذه القواعد.
-- **ICIO و IIVTNU** ضريبتان بلديتان: راجع القرار الجبائي لكل بلدية.
+- لدى **Navarra و País Vasco** ضرائب IS و IVA و ITP إقليمية خاصة بهما (forales): يجب أن يعرف مستشارك هذا التشريع.
+- **ICIO و IIVTNU** ضريبتان بلديتان: راجع القرار الضريبي لكل بلدية.
 
 ---
 
