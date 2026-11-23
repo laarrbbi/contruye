@@ -51,6 +51,7 @@
   4. Informe técnico (arquitecto municipal) e informe jurídico.
   5. Resolución. Si es favorable, la licencia fija plazos de inicio y terminación y condiciones.
   6. Si se deniega: recurso de reposición (1 mes, potestativo) o contencioso-administrativo (2 meses).
+- **Por qué se alarga y cómo acortarlo:** muchas veces la lentitud de la administración viene de proyectos mal planteados, con deficiencias por incumplimiento normativo o estructural o del Código Técnico de la Edificación: un equipo de arquitectura solvente te ahorra meses. En la Comunitat Valenciana, muchos ayuntamientos tienen convenio con **entidades colaboradoras urbanísticas (ECUV)**, que revisan el proyecto en plazos cortos: cuando llega al ayuntamiento revisado por una ECUV, el ayuntamiento se ahorra esa comprobación. Con una ECUV la licencia puede salir en unos tres meses, según el proyecto (más si aparece, por ejemplo, un problema de inundabilidad).
 - **Silencio administrativo:** en obra nueva **es negativo** (art. 11.4 TRLSRU). Si pasa el plazo sin resolución no puedes empezar.
 - **ICIO:**
   - Base: coste real y efectivo de la ejecución material. No incluye IVA, tasas, honorarios profesionales ni beneficio del contratista (art. 102.1 TRLRHL).
@@ -68,7 +69,7 @@ Con el proyecto del Módulo 3, Nicolás fue a por la licencia. Te cuento cómo l
 
 **La solicitud, completa.** La presentó en la **sede electrónica del ayuntamiento** con todo lo de la lección: la solicitud, el proyecto, el estudio de seguridad y salud (no el básico: su obra pasa de los 450.759,08 € de la Lección 3.4), el estudio de gestión de residuos y lo que su ordenanza pide al solicitar: el justificante de tasas e ICIO y la fianza de residuos. Autorizaciones sectoriales no le hacían falta (Lección 4.2).
 
-**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 52.354,17 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
+**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 111.054,30 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
 
 **Después, esperar sin moverse.** Si el ayuntamiento le hubiera requerido algo, tenía 10 días para subsanar; por eso lo presentó completo: cada requerimiento añade semanas. Vinieron el informe técnico del arquitecto municipal y el jurídico (la tabla «Dónde ir» habla de 1-6 meses según el municipio), y mientras tanto no entró ni una máquina en el solar: en obra nueva el silencio es negativo. La resolución llegó favorable, con sus plazos y condiciones (Lección 4.4).
 

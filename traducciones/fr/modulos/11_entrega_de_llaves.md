@@ -26,7 +26,7 @@
 | **Banque** | Compte de la copropriété |
 | **Distributeur et fournisseurs** | Ouverture de l'électricité par logement (avec CIE et première occupation ou cédula) |
 | **Compagnie des eaux** | Ouverture de l'eau par logement |
-| **Mairie** | Changement de redevable de l'IBI |
+| **Mairie** | Plus-value municipale de chaque vente (vous la payez s'il y a une hausse de valeur du terrain ; sinon, il convient de la déclarer) et changement de redevable de l'IBI |
 | **Ordre des administrateurs de biens** | Syndic pour la copropriété |
 
 ## Leçon 11.1 — L'acte de vente
@@ -64,7 +64,7 @@ L'acte de fin de travaux inscrit et le calendrier arrêté, les signatures ont c
 - **Sa banque :** l'AJD, le notaire, le registre et la gestion du prêt.
 - **Nicolás :** l'original de l'acte ; l'ouvrage neuf et la division horizontale ; les branchements généraux aux réseaux.
 
-**Le prêt promoteur.** À chaque acte, la banque de Nicolás a remboursé la part du prêt promoteur de ce logement avec ce que Nicolás a encaissé à la signature (Leçon 11.3). Ainsi, à la signature du dernier des 18, le prêt de 1.065.609,45 € de son Modèle 3 était soldé, dans les 4 mois qu'il avait prévus jusqu'aux actes de vente.
+**Le prêt promoteur.** À chaque acte, la banque de Nicolás a remboursé la part du prêt promoteur de ce logement avec ce que Nicolás a encaissé à la signature (Leçon 11.3). Ainsi, à la signature du dernier des 18, le prêt de 2.153.510,70 € de son Modèle 3 était soldé, dans les 4 mois qu'il avait prévus jusqu'aux actes de vente.
 
 **Où il est allé.** Chez son notaire et chez celui que chaque acheteur a choisi. Si un acheteur vous demande un notaire ou une banque de votre province, vous les avez dans les entreprises potentielles de cette leçon.
 
@@ -149,9 +149,9 @@ La copropriété en place, Nicolás avait deux choses à boucler pour chaque log
 
 **L'encaissement final.** À chaque acte, l'acheteur a payé le montant restant dû de son décompte de liquidation (Leçon 10.3), par chèque de banque nominatif ou virement confirmé chez le notaire (Leçon 11.1). Pour un logement au prix moyen, selon son Modèle 5 :
 
-- Prix IVA comprise : 122.130,65 €.
-- Encaissé avant la livraison (réservation, contrat privé et échéances) : 24.426,13 €.
-- Encaissé à l'acte : **97.704,52 €**.
+- Prix IVA comprise : 252.705,83 €.
+- Encaissé avant la livraison (réservation, contrat privé et échéances) : 50.541,17 €.
+- Encaissé à l'acte : **202.164,66 €**.
 
 Les acheteurs qui empruntaient ont payé avec l'argent de leur banque, lors de la même signature. Les 18 actes encaissés ainsi, les logements étaient entièrement payés et il ne restait qu'à remettre les clés (Leçon 11.4).
 
@@ -208,7 +208,7 @@ La possession se remet avec une visite finale, un procès-verbal signé (date, �
 - **Impôts de la vente :** l'acheteur liquide l'AJD avec le formulaire 600 de sa communauté dans le délai régional (habituellement 30 jours ouvrables) ; beaucoup de notaires s'en chargent. Vous déclarez l'IVA facturée dans votre formulaire 303.
 - **Registre :** le notaire envoie une copie électronique au Registre de la propriété le jour même ; on présente ensuite la copie avec l'impôt acquitté et le lot est inscrit au nom de l'acheteur.
 - **Cadastre :** notaire et registre communiquent le changement de propriétaire ; aucune déclaration n'est nécessaire.
-- **Plus-value municipale :** s'agissant d'un ouvrage neuf, le promoteur n'a pas à autoliquider la plus-value municipale.
+- **Plus-value municipale (IIVTNU) :** lors de la vente de chaque logement, le promoteur est en général tenu de la payer, dès lors qu'il existe une hausse de valeur du terrain. S'il justifie qu'il n'y a pas eu de hausse, l'impôt n'est pas exigible (même s'il convient de le déclarer auprès de l'organisme compétent).
 - **Fournitures :** ouvertures ou changements de titulaire au nom de l'acheteur.
 - **Documentation :** remettez ce qui revient à l'acheteur et au syndic de la copropriété.
 - **Qui s'occupe de quoi** (qui fait chaque démarche de la liste ci-dessus) :
@@ -216,7 +216,7 @@ La possession se remet avec une visite finale, un procès-verbal signé (date, �
   - **Notaire :** il envoie la copie électronique au Registre de la propriété le jour même de la signature.
   - **Registre de la propriété :** avec la copie et l'impôt acquitté, il inscrit le logement au nom de l'acheteur.
   - **Notaire et Registre :** ils communiquent au Cadastre le changement de propriétaire ; personne ne dépose de déclaration.
-  - **Vous (le promoteur) :** vous déclarez l'IVA facturée dans votre formulaire 303 et remettez la documentation à l'acheteur et au syndic. La plus-value municipale, vous ne l'autoliquidez pas : s'agissant d'un ouvrage neuf, le promoteur n'a pas à procéder à l'autoliquidation.
+  - **Vous (le promoteur) :** vous déclarez l'IVA facturée dans votre formulaire 303 et remettez la documentation à l'acheteur et au syndic. Et la plus-value municipale de chaque vente : vous la payez s'il y a une hausse de valeur du terrain ; s'il n'y en a pas, elle n'est pas exigible, mais il convient de la déclarer auprès de l'organisme compétent.
 
 ### Exemple : Nicolás, le promoteur
 
@@ -229,7 +229,7 @@ Les clés remises, il restait à Nicolás les démarches de chaque signature. Je
 **Ce qu'a fait Nicolás :**
 
 - Il a déclaré l'IVA facturée dans chaque acte dans son formulaire 303 du trimestre, auprès de l'administration fiscale (Agencia Tributaria).
-- Pour la plus-value municipale, rien à autoliquider : s'agissant d'un ouvrage neuf, le promoteur n'a pas à autoliquider la plus-value municipale.
+- La plus-value municipale de chaque vente : avec son cabinet de conseil, il a vérifié s'il y avait une hausse de valeur du terrain. Si c'était le cas, il l'a payée ; sinon, l'impôt n'était pas exigible, mais il l'a tout de même déclarée auprès de l'organisme compétent.
 - Il a remis à chaque acheteur et au syndic de la copropriété la documentation qui leur revenait.
 - Il a vérifié, logement par logement, que l'acte était inscrit et les fournitures au nom de son acheteur.
 
@@ -237,11 +237,12 @@ Quand le dernier des 18 a été inscrit, la promotion était vendue, passée par
 
 ### Résumé
 
-Après la signature, l'acheteur liquide l'AJD et met les fournitures à son nom ; le notaire envoie l'acte au Registre, qui l'inscrit et, avec le notaire, informe le Cadastre. Vous déclarez l'IVA facturée et remettez la documentation. S'agissant d'un ouvrage neuf, le promoteur n'a pas à autoliquider la plus-value municipale.
+Après la signature, l'acheteur liquide l'AJD et met les fournitures à son nom ; le notaire envoie l'acte au Registre, qui l'inscrit et, avec le notaire, informe le Cadastre. Vous déclarez l'IVA facturée, remettez la documentation et payez la plus-value municipale de chaque vente s'il y a une hausse de valeur du terrain (s'il n'y en a pas, elle n'est pas exigible, même s'il convient de la déclarer).
 
 ### Votre checklist
 
 - Actes déposés au Registre et fournitures au nom de chaque acheteur
+- Plus-value municipale de chaque vente payée, ou déclarée s'il n'y a pas de hausse de valeur
 
 ## Résumé du module 11
 
@@ -258,6 +259,7 @@ Vous avez signé l'acte de chaque logement et encaissé ce qui restait dû, en r
 - [ ] Ouvertures des contrats de fourniture
 - [ ] Procès-verbaux de livraison signés
 - [ ] Actes déposés au Registre et fournitures au nom de chaque acheteur
+- [ ] Plus-value municipale de chaque vente payée, ou déclarée s'il n'y a pas de hausse de valeur
 
 ## Partenaires dans votre province
 

@@ -76,7 +76,7 @@ Nicolás a commencé à vendre le jour où il a acheté le terrain, avec le tabl
 
 **Les supports.** Son architecte lui a préparé les plans cotés de chaque typologie (2 et 3 chambres et les attiques) et la notice descriptive. Les images 3D, le dossier PDF et la visite virtuelle, il les a commandés à une entreprise de marketing de son secteur ; celles de votre province, vous les trouverez dans les entreprises potentielles de cette leçon. Chaque annonce porte le classement énergétique du projet et rien qu'il ne puisse tenir : la publicité engage.
 
-**Le prix, complet dès la première annonce.** La Ley 10/2025 oblige à donner le prix final complet dès la première annonce, sans prix d'appel ; chaque annonce de Nicolás indique donc le prix du logement, l'IVA à 10 %, l'AJD que l'acheteur paie dans son acte (dans la Communauté valencienne, 1,4 %, annexe B) et le total. Un logement au prix moyen est annoncé avec ses 111.027,86 €, les 11.102,79 € d'IVA (122.130,65 € IVA comprise), l'AJD et le total. La commission de l'agence, c'est lui qui la paie, et l'annonce précise que l'acheteur n'en paie aucune. Ce qui ne figure pas dans l'annonce, il ne le facturera pas ensuite.
+**Le prix, complet dès la première annonce.** La Ley 10/2025 oblige à donner le prix final complet dès la première annonce, sans prix d'appel ; chaque annonce de Nicolás indique donc le prix du logement, l'IVA à 10 %, l'AJD que l'acheteur paie dans son acte (dans la Communauté valencienne, 1,4 %, annexe B) et le total. Un logement au prix moyen est annoncé avec ses 229.732,57 €, les 22.973,26 € d'IVA (252.705,83 € IVA comprise), l'AJD et le total. La commission de l'agence, c'est lui qui la paie, et l'annonce précise que l'acheteur n'en paie aucune. Ce qui ne figure pas dans l'annonce, il ne le facturera pas ensuite.
 
 **Avant d'annoncer.** Il a déposé au bureau de vente la documentation du RD 515/1989 (la liste, dans la Leçon 8.3) et, au service de la consommation de sa communauté, il s'est renseigné sur les registres de réclamations et les exigences régionales.
 
@@ -113,7 +113,7 @@ Le plus courant est le système mixte, bureau propre et réseau d'agences. Mais 
 
 **Le contrat de collaboration, par écrit**, avec ce que demande la leçon :
 
-- **Commission :** dans la fourchette habituelle en logement standard (2,5–3 %). C'est lui qui la paie, pas l'acheteur, et il l'a budgétée dans la commercialisation de son Modèle 2 : 3 % des ventes, 59.955,04 €.
+- **Commission :** dans la fourchette habituelle en logement standard (2,5–3 %). C'est lui qui la paie, pas l'acheteur, et il l'a budgétée dans la commercialisation de son Modèle 2 : 3 % des ventes, 124.055,59 €.
 - **Date d'exigibilité :** à l'acte de chaque logement, quand il encaisse.
 - **Exclusivité :** l'agence vend sa promotion en exclusivité, car c'est la seule avec laquelle il travaille.
 - **Prix minimaux :** ceux de sa politique de prix (Leçon 8.1). En dessous, rien sans sa signature.
@@ -221,14 +221,14 @@ Nicolás construit à Alicante : son cas est celui de cette leçon, la Communaut
 
 Et il lui dit ce qu'il recevra avec l'acte : la première occupation, le certificat énergétique enregistré auprès de l'IVACE, le Livre de l'immeuble, l'assurance décennale et les bulletins (Module 9).
 
-**Les chiffres, dans le Modèle 5.** Avec 18 logements à 111.027,86 € en moyenne hors IVA (122.130,65 € IVA comprise) :
+**Les chiffres, dans le Modèle 5.** Avec 18 logements à 229.732,57 € en moyenne hors IVA (252.705,83 € IVA comprise) :
 
 - **Réservation :** 6.000 €, avec un délai pour signer le contrat privé et, par écrit, ce que devient l'argent s'il n'est pas signé.
-- **Contrat privé :** 10 % du prix : 6.213,06 € IVA comprise, réservation déduite.
-- **Pendant les travaux :** encore 10 %, en 18 échéances de 678,50 €.
-- **À l'acte :** 97.704,52 €, les 80 % restants.
+- **Contrat privé :** 10 % du prix : 19.270,58 € IVA comprise, réservation déduite.
+- **Pendant les travaux :** encore 10 %, en 18 échéances de 1.403,92 €.
+- **À l'acte :** 202.164,66 €, les 80 % restants.
 
-Avant la livraison, il encaisse 24.426,13 € par logement : **439.670,33 € de sommes versées d'avance** sur toute la promotion, qu'il doit garantir par une caution ou une assurance ; lui les garantit par les cautions de sa banque.
+Avant la livraison, il encaisse 50.541,17 € par logement : **909.740,98 € de sommes versées d'avance** sur toute la promotion, qu'il doit garantir par une caution ou une assurance ; lui les garantit par les cautions de sa banque.
 
 **Le contrat.** Il est parti du modèle de l'association de promoteurs de son secteur, et son avocat et le notaire qu'il a choisi au Module 1 l'ont relu ; les cabinets et les notaires, vous les trouverez dans les entreprises potentielles de cette leçon. Il comporte l'IVA détaillée, le permis, la date de livraison, le droit de résoudre le contrat en l'absence de livraison dans les délais, le libre choix du notaire et aucun des frais qui ne peuvent pas être mis à la charge de l'acheteur.
 

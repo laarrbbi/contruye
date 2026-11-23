@@ -81,7 +81,7 @@
 
 A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas en Alicante, en la Comunitat Valenciana, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
 
-**Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias. Con esa ficha mira cada solar con el mismo filtro.
+**Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias-altas. Con esa ficha mira cada solar con el mismo filtro.
 
 **Después, a buscar.** Empezó por el canal más rentable, su red propia. Visitó a los **notarios** y a los **administradores de fincas** de su zona, que son los primeros en saber de una herencia o de un propietario que quiere vender, y les dejó su ficha de producto: qué busca, dónde y para qué. A los agentes de suelo los sacó de la lista que te hemos dado: las agencias inmobiliarias de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Mientras tanto, seguía la sección de suelo de Idealista y Fotocasa.
 
@@ -89,7 +89,7 @@ A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoci
 
 **El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Con el suelo a 45 € el m² de techo, el solar sale por 71.392,05 €.
 
-Con una construcción de 660 €/m², licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 1.259,70 € el m²: unos 113.373 € una vivienda tipo de 90 m², sin IVA, y 1.998.501,45 € toda la promoción. El suelo es el 3,6 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos y los precios del ejemplo del profesional que trae la plantilla (hoy la construcción es más cara: mira la Lección 2.3), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
+Con la construcción a precio de hoy, 1.400 €/m² para sus calidades medias-altas (Lección 2.3), licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 2.606,50 € el m²: unos 234.585 € una vivienda tipo de 90 m², sin IVA, y 4.135.186,19 € toda la promoción. El suelo es el 1,7 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos del ejemplo del profesional que trae la plantilla, salvo la construcción, que puso a precio de hoy (el ejemplo trae un precio de hace años), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
 
 Los números le encajan, pero todavía no compra: primero comprueba en el planeamiento que de verdad se puede construir eso (Lección 1.2).
 

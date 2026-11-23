@@ -59,7 +59,7 @@ With the plot in his SPE's name, Nicolás put together his technical team. Let m
 **The contracts.** He signed one with each professional (the architect, the technical architect, the health and safety coordinator and each engineering firm) with what the lesson asks for:
 
 - the scope of the work;
-- the fees, which he compared with the item in his CRP (8 % of construction: 83.766,67 €, Lesson 2.3);
+- the fees, which he compared with the item in his CRP (8 % of construction: 177.686,88 €, Lesson 2.3);
 - the deadlines;
 - the minimum site visits;
 - each one's professional liability (RC) insurance.
@@ -160,7 +160,7 @@ With the geotechnical study done, Nicolás's architect got going on the design. 
 
 **Before drawing.** Nicolás asked the surveyor from Lesson 1.3 for the **georeferenced** topographic survey, which also helps him align Cadastre and Land Registry, and asked the water, sewerage, electricity, gas and telecoms companies about their networks. There were no buildings to demolish (Lesson 1.1).
 
-**The outline design.** He gave the architect his brief: 18 homes with 2 and 3 bedrooms, 2 of them penthouses, a mid-range specification, a lift and no basement. Within a few weeks (the lesson talks of 2-4) he had the outline design, which is not endorsed, and he validated it against his sales mix from Lesson 2.2. Before moving on to the basic design he fitted the design to his target cost: the 1.259,70 €/m² sale price and the construction in his CRP.
+**The outline design.** He gave the architect his brief: 18 homes with 2 and 3 bedrooms, 2 of them penthouses, an upper-mid specification, a lift and no basement. Within a few weeks (the lesson talks of 2-4) he had the outline design, which is not endorsed, and he validated it against his sales mix from Lesson 2.2. Before moving on to the basic design he fitted the design to his target cost: the 2.606,50 €/m² sale price and the construction in his CRP.
 
 **The basic design.** It defines the building and shows compliance with the planning rules and the CTE: it is the one he will apply for the licence with (Module 4). He asked at the planning department whether his town hall requires it to be endorsed, because if not, it is voluntary. His plot has no easements (Lesson 1.3), so he did not need preliminary reports from sectoral bodies.
 
@@ -205,7 +205,7 @@ The design moves forward in stages: the outline design settles the mix, the basi
 
 Nicolás's construction design was still missing health and safety. Let me tell you how he sorted it out.
 
-**Study or basic study?** The table requires the full study from a PEM of 450.759,08 €, and his works are well above that: the construction in his CRP stands at 1.047.083,40 € (Lesson 2.3). He needs the **health and safety study**, not the basic one.
+**Study or basic study?** The table requires the full study from a PEM of 450.759,08 €, and his works are well above that: the construction in his CRP stands at 2.221.086 € (Lesson 2.3). He needs the **health and safety study**, not the basic one.
 
 **Who writes it.** A qualified professional appointed by the developer. Nicolás appointed in writing the health and safety coordinator he hired through the Association of Technical Architects (Lesson 3.1). At design stage one was already required, because several designers take part: the architect, the engineering firms and the ICT professional.
 

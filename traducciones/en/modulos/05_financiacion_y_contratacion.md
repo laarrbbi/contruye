@@ -60,14 +60,14 @@ With the licence granted, Nicolás went after the money to build. Let me tell yo
 
 **First, to the bank.** He took to his bank what the lesson asks for: the licence, the construction design, the budget, the programme and the CRP from his Template 2. You will find the banks in the list we have given you: among the potential companies for this lesson and, at the end of the module, the banks present in your province. The bank's **valuation company** valued the development on the finished-building hypothesis (the value for the LTV) and, with the valuation, the bank gave him its **binding offer**.
 
-**Then, Template 3.** With the offer he filled in **Template 3 · Developer loan**, starting from the total cost in his Template 2, 1.522.299,21 €:
+**Then, Template 3.** With the offer he filled in **Template 3 · Developer loan**, starting from the total cost in his Template 2, 3.076.443,85 €:
 
-- The bank finances 70 %: **1.065.609,45 €**. His equity is 30 %, 456.689,76 €, and the plot, already paid for, counts within it.
-- Interest at 4,5 % a year and an arrangement fee of 0,75 %: 7.992,07 €.
-- 20 months of works, during which he draws down against valuations, and 4 more months until the sale deeds: 39.960,35 € of interest during the works (on half the loan, because it is drawn down little by little) and 15.984,14 € until the deeds.
+- The bank finances 70 %: **2.153.510,70 €**. His equity is 30 %, 922.933,16 €, and the plot, already paid for, counts within it.
+- Interest at 4,5 % a year and an arrangement fee of 0,75 %: 16.151,33 €.
+- 20 months of works, during which he draws down against valuations, and 4 more months until the sale deeds: 80.756,65 € of interest during the works (on half the loan, because it is drawn down little by little) and 32.302,66 € until the deeds.
 - Valuation, notary and registry: 10.000 €.
 
-Total finance cost: **73.936,57 €**, around 5 % of the cost, a little less than the 79.940,06 € he had put in Template 2.
+Total finance cost: **139.210,64 €**, around 5 % of the cost, a little less than the 165.407,45 € he had put in Template 2.
 
 **The pre-sales.** The bank requires 70–90 % of the homes with a private contract and an advance payment: with 18 homes, **13 at least**. You will see how he sells them in Module 8; every euro he collects will be guaranteed and will go into the special account (Lesson 5.2).
 
@@ -122,11 +122,11 @@ Towards his buyers, Nicolás is liable over the three periods in the table (1, 3
 
 **Through a broker.** He went back to the insurance broker who arranged the ten-year insurer's pre-review (Module 3) and asked him for the policies compared. You will find the insurers in the list we have given you: among the potential companies for this lesson and, at the end of the module, the Association of Insurance Brokers of your province.
 
-**The ten-year insurance.** He takes it out himself, as the developer, and its beneficiaries are the successive owners of the homes. The insurer requires an OCT from the design stage, and Nicolás already had its D0 report (Module 3). The cost, 0,8 to 1,5 % of his construction of 1.047.083,40 €: between 8.376,67 € and 15.706,25 €, part of the 31.412,50 € for insurance, OCT, quality control and others in his Template 2.
+**The ten-year insurance.** He takes it out himself, as the developer, and its beneficiaries are the successive owners of the homes. The insurer requires an OCT from the design stage, and Nicolás already had its D0 report (Module 3). The cost, 0,8 to 1,5 % of his construction of 2.221.086 €: between 17.768,69 € and 33.316,29 €, part of the 66.632,58 € for insurance, OCT, quality control and others in his Template 2.
 
 **The TRC and the RC.** Contractors' all risks covers damage to the works during construction: the law does not require it, the bank does. Third-party liability covers damage to third parties during the works: it is advisable and the bank normally requires it. He took out both through the broker.
 
-**The advance payments.** Before collecting the first reservation (Module 8), he opened the **special account** at his bank, separate, available only for the construction. Each buyer will have their own guarantee, from the bank's guarantee line (Lesson 5.1). With his collections plan (Template 5, Module 8), each one will have paid him 24.426,13 € in advance before handover: 439.670,33 € across the 18 homes, guaranteed with statutory interest.
+**The advance payments.** Before collecting the first reservation (Module 8), he opened the **special account** at his bank, separate, available only for the construction. Each buyer will have their own guarantee, from the bank's guarantee line (Lesson 5.1). With his collections plan (Template 5, Module 8), each one will have paid him 50.541,17 € in advance before handover: 909.740,98 € across the 18 homes, guaranteed with statutory interest.
 
 **What Nicolás does not do.** The lesson says what is compulsory; skipping it would be illegal. Nicolás never:
 
@@ -187,7 +187,7 @@ You have the Companies Registry, the REA, the AEAT and Social Security among thi
 
 **The bids, chapter by chapter.** He did not look at the total: he compared each chapter, looking for underpriced or missing items, and in each bid he reviewed the exclusions, the own resources and the company's employment, health and safety, tax and insurance documents. If one had come in 15-20 % below the average, he would have gone over it with a magnifying glass: it usually means mistakes, worse materials or a company that will run out of cash.
 
-**The one he chose.** He went with the one that had similar finished work, healthy accounts, its own team and a complete bid in every chapter: **1.047.083,40 €** for the whole works, what he had put in his Template 2 (660 €/m²). He hires it in Lesson 5.4.
+**The one he chose.** He went with the one that had similar finished work, healthy accounts, its own team and a complete bid in every chapter: **2.221.086 €** for the whole works, what he had put in his Template 2 (1.400 €/m²). He hires it in Lesson 5.4.
 
 ### Summary
 
@@ -238,7 +238,7 @@ Prepare tender documents so that they all bid for the same thing, invite 3-5 con
 
 With the contractor chosen, Nicolás signed the construction contract. Let me tell you how he closed it.
 
-**Fixed price, turnkey.** He chose the usual and advisable option: **1.047.083,40 €** for the whole works. He could do so because his construction design is very well defined and was reviewed by the OCT (Module 3): with an incomplete design, every gap would have become a variation.
+**Fixed price, turnkey.** He chose the usual and advisable option: **2.221.086 €** for the whole works. He could do so because his construction design is very well defined and was reviewed by the OCT (Module 3): with an incomplete design, every gap would have become a variation.
 
 **Clause by clause, with his lawyer.** He went through it with a lawyer; you will find the law firms and contractors in your province in the list we have given you, among the potential companies for this lesson. What he looked at most carefully:
 

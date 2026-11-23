@@ -76,7 +76,7 @@ Nicolás started selling on the day he bought the plot, with the lesson's table 
 
 **The materials.** His architect prepared the dimensioned plans of each unit type (2 and 3 bedrooms and the penthouses) and the specification. He commissioned the renders, the PDF brochure and the virtual tour from a marketing company in his area; you will find the ones in your province among the potential companies for this lesson. Every advert carries the design's energy rating and nothing he will not deliver: advertising is binding.
 
-**The price, in full from the first advert.** Ley 10/2025 requires the full final price from the first advert, with no teaser prices, so each of Nicolás's adverts gives the price of the home, the IVA at 10 %, the AJD the buyer pays on their deed (in the Comunitat Valenciana, 1,4 %, Annex B) and the total. A home at the average price is advertised with its 111.027,86 €, the 11.102,79 € of IVA (122.130,65 € with IVA), the AJD and the total. He pays the agency's commission, and the advert says that the buyer pays none. What is not in the advert, he will not charge later.
+**The price, in full from the first advert.** Ley 10/2025 requires the full final price from the first advert, with no teaser prices, so each of Nicolás's adverts gives the price of the home, the IVA at 10 %, the AJD the buyer pays on their deed (in the Comunitat Valenciana, 1,4 %, Annex B) and the total. A home at the average price is advertised with its 229.732,57 €, the 22.973,26 € of IVA (252.705,83 € with IVA), the AJD and the total. He pays the agency's commission, and the advert says that the buyer pays none. What is not in the advert, he will not charge later.
 
 **Before advertising.** He left the RD 515/1989 documentation in the sales office (the list is in Lesson 8.3), and at his community's consumer office he found out about the complaint forms and the regional requirements.
 
@@ -113,7 +113,7 @@ The most common is the mixed system, your own office plus a network of agencies.
 
 **The collaboration agreement, in writing**, with what the lesson asks for:
 
-- **Commission:** within the usual range for standard homes (2,5–3 %). He pays it, not the buyer, and he has it budgeted under sales and marketing in his Template 2: 3 % of sales, 59.955,04 €.
+- **Commission:** within the usual range for standard homes (2,5–3 %). He pays it, not the buyer, and he has it budgeted under sales and marketing in his Template 2: 3 % of sales, 124.055,59 €.
 - **When it is earned:** at the deed of each home, when he gets paid.
 - **Exclusivity:** the agency sells his development exclusively, because it is the only one he works with.
 - **Minimum prices:** those of his pricing policy (Lesson 8.1). Nothing below them without his signature.
@@ -221,14 +221,14 @@ Nicolás is building in Alicante: his case is the one in this lesson, the Comuni
 
 And he tells them what they will receive with the deed: first occupation, the energy certificate registered with the IVACE, the Building Book, the ten-year insurance and the installation certificates (Module 9).
 
-**The numbers, in Template 5.** With 18 homes at an average of 111.027,86 € excluding IVA (122.130,65 € with IVA):
+**The numbers, in Template 5.** With 18 homes at an average of 229.732,57 € excluding IVA (252.705,83 € with IVA):
 
 - **Reservation:** 6.000 €, with a deadline to sign the private contract and, in writing, what happens to the money if it is not signed.
-- **Private contract:** 10 % of the price: 6.213,06 € with IVA, after deducting the reservation.
-- **During the works:** another 10 %, in 18 instalments of 678,50 €.
-- **At the deed:** 97.704,52 €, the remaining 80 %.
+- **Private contract:** 10 % of the price: 19.270,58 € with IVA, after deducting the reservation.
+- **During the works:** another 10 %, in 18 instalments of 1.403,92 €.
+- **At the deed:** 202.164,66 €, the remaining 80 %.
 
-Before handover he collects 24.426,13 € per home: **439.670,33 € of advance payments** across the whole development, which he has to guarantee with a bank guarantee or insurance; he guarantees them with his bank's guarantees.
+Before handover he collects 50.541,17 € per home: **909.740,98 € of advance payments** across the whole development, which he has to guarantee with a bank guarantee or insurance; he guarantees them with his bank's guarantees.
 
 **The contract.** He started from the template of the developers' association in his area, and it was reviewed by his lawyer and by the notary he chose in Module 1; you will find the law firms and the notaries among the potential companies for this lesson. It shows the IVA separately, the licence, the handover date, the right to terminate if he does not deliver on time, the free choice of notary and none of the costs that cannot be charged to the buyer.
 

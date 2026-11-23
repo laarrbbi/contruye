@@ -2754,26 +2754,26 @@
       },
       {
         "numero": 6,
-        "pregunta": "On the sale of a new-build home, the developer's self-assessment of the municipal plusvalía:",
+        "pregunta": "On the sale of each new home, the developer pays the municipal plusvalía:",
         "opciones": [
           {
             "letra": "A",
-            "texto": "Is filed within 30 working days of each sale",
+            "texto": "Always, whether or not the land has increased in value",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "Does not apply, as it is a new build",
+            "texto": "Whenever the land has increased in value",
             "correcta": true
           },
           {
             "letra": "C",
-            "texto": "Is filed within 6 months",
+            "texto": "Never, as it is a new build",
             "correcta": false
           },
           {
             "letra": "D",
-            "texto": "Is filed only once, when all the sales are finished",
+            "texto": "Only if the buyer is not a consumer",
             "correcta": false
           }
         ]

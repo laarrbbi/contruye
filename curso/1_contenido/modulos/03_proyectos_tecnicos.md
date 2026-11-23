@@ -59,7 +59,7 @@ Con el solar a nombre de su SPE, Nicolás formó su equipo técnico. Te cuento c
 **Los contratos.** Firmó uno con cada técnico (el arquitecto, el arquitecto técnico, el coordinador de seguridad y salud y cada ingeniería) con lo que pide la lección:
 
 - el alcance del trabajo;
-- los honorarios, que comparó con la partida de su CRP (el 8 % de la construcción: 83.766,67 €, Lección 2.3);
+- los honorarios, que comparó con la partida de su CRP (el 8 % de la construcción: 177.686,88 €, Lección 2.3);
 - los plazos;
 - las visitas mínimas de obra;
 - el seguro de RC profesional de cada uno.
@@ -160,7 +160,7 @@ Con el geotécnico hecho, el arquitecto de Nicolás se puso con el proyecto. Te 
 
 **Antes de dibujar.** Nicolás pidió al topógrafo de la Lección 1.3 el topográfico **georreferenciado**, que le sirve también para coordinar Catastro y Registro, y consultó a las compañías de agua, saneamiento, electricidad, gas y telecomunicaciones por sus redes. No había edificios que derribar (Lección 1.1).
 
-**El anteproyecto.** Le dio al arquitecto su programa de necesidades: 18 viviendas de 2 y 3 dormitorios, 2 de ellas áticos, calidades medias, ascensor y sin sótano. En unas semanas (la lección habla de 2-4) tuvo el anteproyecto, que no se visa, y lo validó con su mix comercial de la Lección 2.2. Antes de pasar a básico ajustó el diseño a su coste objetivo: los 1.259,70 €/m² de venta y la construcción de su CRP.
+**El anteproyecto.** Le dio al arquitecto su programa de necesidades: 18 viviendas de 2 y 3 dormitorios, 2 de ellas áticos, calidades medias-altas, ascensor y sin sótano. En unas semanas (la lección habla de 2-4) tuvo el anteproyecto, que no se visa, y lo validó con su mix comercial de la Lección 2.2. Antes de pasar a básico ajustó el diseño a su coste objetivo: los 2.606,50 €/m² de venta y la construcción de su CRP.
 
 **El proyecto básico.** Define el edificio y justifica la normativa urbanística y el CTE: es con el que pedirá la licencia (Módulo 4). Preguntó en urbanismo si su ayuntamiento exige visarlo, porque si no, es voluntario. Su solar no tiene servidumbres (Lección 1.3), así que no le hicieron falta informes previos de organismos sectoriales.
 
@@ -205,7 +205,7 @@ El proyecto avanza por fases: el anteproyecto cierra el mix, el básico sirve pa
 
 Al proyecto de ejecución de Nicolás le faltaba la seguridad y salud. Te cuento cómo la resolvió.
 
-**¿Estudio o estudio básico?** La tabla pide el estudio completo a partir de 450.759,08 € de PEM, y su obra pasa de largo: la construcción de su CRP está en 1.047.083,40 € (Lección 2.3). Lleva el **estudio de seguridad y salud**, no el básico.
+**¿Estudio o estudio básico?** La tabla pide el estudio completo a partir de 450.759,08 € de PEM, y su obra pasa de largo: la construcción de su CRP está en 2.221.086 € (Lección 2.3). Lleva el **estudio de seguridad y salud**, no el básico.
 
 **Quién lo redacta.** Un técnico competente que designa el promotor. Nicolás designó por escrito al coordinador de seguridad y salud que contrató a través del Colegio de Aparejadores (Lección 3.1). En proyecto ya hacía falta, porque intervienen varios proyectistas: el arquitecto, las ingenierías y el técnico de la ICT.
 

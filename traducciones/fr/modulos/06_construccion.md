@@ -219,7 +219,7 @@ Les installations se coordonnent dès le projet et chacune respecte son règleme
 
 Les installations en place, le chantier de Nicolás est entré dans les finitions. C'est ce que verront ses acheteurs, et c'est là qu'il est le plus difficile de dire non. Je vous raconte comment il s'y est pris.
 
-**Les finitions, celles de la notice.** Des prestations moyennes, pour la résidence principale : cloisons en brique, grès cérame au sol, faïences, peinture, menuiserie intérieure, placards et la cuisine avec ses meubles. Tout comme le dit la notice descriptive des contrats avec ses acheteurs.
+**Les finitions, celles de la notice.** Des prestations moyen-haut de gamme, pour la résidence principale : cloisons en brique, grès cérame au sol, faïences, peinture, menuiserie intérieure, placards et la cuisine avec ses meubles. Tout comme le dit la notice descriptive des contrats avec ses acheteurs.
 
 **La notice, figée.** Il a suivi le conseil de la leçon : on ne touche pas à la notice descriptive. Si un acheteur lui demande un changement, la réponse est la même pour tous : chaque changement commercial en cours de chantier est un avenant, avec ordre écrit et prix convenu avant (Leçon 7.3).
 

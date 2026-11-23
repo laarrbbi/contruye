@@ -219,7 +219,7 @@ Las instalaciones se coordinan desde el proyecto y cada una cumple su reglamento
 
 Con las instalaciones dentro, la obra de Nicolás entró en los acabados. Es lo que verán sus compradores, y donde más cuesta decir que no. Te cuento cómo lo llevó.
 
-**Los acabados, los de la memoria.** Calidades medias, para primera vivienda: tabiquería cerámica, gres porcelánico en los suelos, alicatados, pintura, carpintería interior, armarios y la cocina con sus muebles. Todo como dice la memoria de calidades de los contratos con sus compradores.
+**Los acabados, los de la memoria.** Calidades medias-altas, para primera vivienda: tabiquería cerámica, gres porcelánico en los suelos, alicatados, pintura, carpintería interior, armarios y la cocina con sus muebles. Todo como dice la memoria de calidades de los contratos con sus compradores.
 
 **La memoria, congelada.** Siguió el consejo de la lección: la memoria de calidades no se toca. Si un comprador le pide un cambio, la respuesta es la misma para todos: cada cambio comercial a mitad de obra es un modificado, con orden escrita y precio pactado antes (Lección 7.3).
 

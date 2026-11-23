@@ -60,14 +60,14 @@ Le permis accordé, Nicolás est allé chercher l'argent pour construire. Je vou
 
 **D'abord, à la banque.** Il a apporté à sa banque ce que demande la leçon : le permis, le projet d'exécution, le budget, le planning et le CRP de son modèle 2. Les banques, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon et, à la fin du module, les banques présentes dans votre province. La **société d'expertise** de la banque a expertisé la promotion en hypothèse d'immeuble achevé (la valeur retenue pour le LTV) et, avec l'expertise, la banque lui a remis son **offre ferme**.
 
-**Ensuite, le modèle 3.** Avec l'offre, il a rempli le **modèle 3 · Prêt promoteur**, en partant du coût total de son modèle 2, 1.522.299,21 € :
+**Ensuite, le modèle 3.** Avec l'offre, il a rempli le **modèle 3 · Prêt promoteur**, en partant du coût total de son modèle 2, 3.076.443,85 € :
 
-- La banque finance 70 % : **1.065.609,45 €**. Ses fonds propres représentent 30 %, 456.689,76 €, et le terrain, déjà payé, y est compté.
-- Taux de 4,5 % par an et frais de dossier de 0,75 % : 7.992,07 €.
-- 20 mois de travaux, pendant lesquels il tire selon les situations, et 4 mois de plus jusqu'aux actes de vente : 39.960,35 € d'intérêts pendant les travaux (sur la moitié du prêt, parce que les tirages se font peu à peu) et 15.984,14 € jusqu'aux actes.
+- La banque finance 70 % : **2.153.510,70 €**. Ses fonds propres représentent 30 %, 922.933,16 €, et le terrain, déjà payé, y est compté.
+- Taux de 4,5 % par an et frais de dossier de 0,75 % : 16.151,33 €.
+- 20 mois de travaux, pendant lesquels il tire selon les situations, et 4 mois de plus jusqu'aux actes de vente : 80.756,65 € d'intérêts pendant les travaux (sur la moitié du prêt, parce que les tirages se font peu à peu) et 32.302,66 € jusqu'aux actes.
 - Expertise, notaire et registre : 10.000 €.
 
-Coût financier total : **73.936,57 €**, environ 5 % du coût, un peu moins que les 79.940,06 € qu'il avait mis dans le modèle 2.
+Coût financier total : **139.210,64 €**, environ 5 % du coût, un peu moins que les 165.407,45 € qu'il avait mis dans le modèle 2.
 
 **Les préventes.** La banque exige 70–90 % des logements avec contrat privé et acompte : sur 18 logements, **13 au minimum**. Comment il les vend, vous le verrez au Module 8 ; chaque euro qu'il encaissera sera garanti et ira sur le compte spécial (Leçon 5.2).
 
@@ -122,11 +122,11 @@ Envers ses acheteurs, Nicolás répond sur les trois durées du tableau (1, 3 et
 
 **Avec un courtier.** Il est retourné voir le courtier en assurances qui lui avait obtenu le pré-examen de l'assureur décennal (Module 3) et lui a demandé les polices comparées. Les assureurs, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon et, à la fin du module, le Collège des intermédiaires d'assurance de votre province.
 
-**La décennale.** C'est lui qui la souscrit, en tant que promoteur, et ses bénéficiaires sont les propriétaires successifs des logements. L'assureur exige un OCT dès le projet, et Nicolás avait déjà son rapport D0 (Module 3). Le coût, de 0,8 à 1,5 % de sa construction de 1.047.083,40 € : entre 8.376,67 € et 15.706,25 €, une partie des 31.412,50 € d'assurances, OCT, contrôle qualité et autres de son modèle 2.
+**La décennale.** C'est lui qui la souscrit, en tant que promoteur, et ses bénéficiaires sont les propriétaires successifs des logements. L'assureur exige un OCT dès le projet, et Nicolás avait déjà son rapport D0 (Module 3). Le coût, de 0,8 à 1,5 % de sa construction de 2.221.086 € : entre 17.768,69 € et 33.316,29 €, une partie des 66.632,58 € d'assurances, OCT, contrôle qualité et autres de son modèle 2.
 
 **La TRC et la RC.** La tous risques chantier couvre les dommages à l'ouvrage pendant l'exécution : ce n'est pas la loi qui l'exige, c'est la banque. La responsabilité civile couvre les dommages aux tiers pendant les travaux : elle est recommandée et la banque l'exige normalement. Il a souscrit les deux par l'intermédiaire du courtier.
 
-**Les sommes versées d'avance.** Avant d'encaisser la première réservation (Module 8), il a ouvert dans sa banque le **compte spécial**, séparé, utilisable uniquement pour la construction. Chaque acheteur aura sa caution, tirée de la ligne de cautions de la banque (Leçon 5.1). Avec son plan d'encaissements (modèle 5, Module 8), chacun lui aura avancé 24.426,13 € avant la livraison : 439.670,33 € pour les 18 logements, garantis avec l'intérêt légal.
+**Les sommes versées d'avance.** Avant d'encaisser la première réservation (Module 8), il a ouvert dans sa banque le **compte spécial**, séparé, utilisable uniquement pour la construction. Chaque acheteur aura sa caution, tirée de la ligne de cautions de la banque (Leçon 5.1). Avec son plan d'encaissements (modèle 5, Module 8), chacun lui aura avancé 50.541,17 € avant la livraison : 909.740,98 € pour les 18 logements, garantis avec l'intérêt légal.
 
 **Ce que Nicolás ne fait pas.** La leçon dit ce qui est obligatoire ; s'en affranchir serait illégal. Nicolás ne s'autorise jamais à :
 
@@ -187,7 +187,7 @@ Le Registre du commerce, le REA, l'AEAT et la Sécurité sociale, vous les avez 
 
 **Les offres, chapitre par chapitre.** Il n'a pas regardé le total : il a comparé chaque chapitre, en cherchant les postes sous-évalués ou manquants, et a examiné dans chaque offre les exclusions, les moyens propres et les documents sociaux, de prévention, fiscaux et d'assurance de l'entreprise. Si l'une était arrivée 15-20 % sous la moyenne, il l'aurait examinée à la loupe : cela signifie souvent des erreurs, de moins bons matériaux ou une entreprise qui manquera de trésorerie.
 
-**L'élue.** Il a retenu celle qui avait des chantiers similaires terminés, des comptes sains, son équipe propre et une offre complète dans tous les chapitres : **1.047.083,40 €** pour l'ensemble des travaux, ce qu'il avait mis dans son modèle 2 (660 €/m²). Il contractualise avec elle dans la Leçon 5.4.
+**L'élue.** Il a retenu celle qui avait des chantiers similaires terminés, des comptes sains, son équipe propre et une offre complète dans tous les chapitres : **2.221.086 €** pour l'ensemble des travaux, ce qu'il avait mis dans son modèle 2 (1.400 €/m²). Il contractualise avec elle dans la Leçon 5.4.
 
 ### Résumé
 
@@ -238,7 +238,7 @@ Préparez un dossier pour que toutes chiffrent la même chose, consultez 3-5 ent
 
 L'entreprise choisie, Nicolás a signé le contrat de travaux. Je vous raconte comment il l'a bouclé.
 
-**À prix forfaitaire, clé en main.** Il a choisi la formule habituelle et conseillée : **1.047.083,40 €** pour l'ensemble des travaux. Il a pu le faire parce que son projet d'exécution est très bien défini et que l'OCT l'a revu (Module 3) : avec un projet incomplet, chaque lacune serait devenue un avenant.
+**À prix forfaitaire, clé en main.** Il a choisi la formule habituelle et conseillée : **2.221.086 €** pour l'ensemble des travaux. Il a pu le faire parce que son projet d'exécution est très bien défini et que l'OCT l'a revu (Module 3) : avec un projet incomplet, chaque lacune serait devenue un avenant.
 
 **Clause par clause, avec son avocat.** Il l'a revu avec un avocat ; les cabinets et les entreprises de construction de votre province, vous les trouverez dans la liste que nous vous avons donnée, dans les entreprises potentielles de cette leçon. Ce qu'il a examiné avec le plus de soin :
 

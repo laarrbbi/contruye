@@ -76,7 +76,7 @@ With the option to buy registered, Nicolás got down to his CRP. Let me tell you
 
 **The tool.** So as not to leave out any item, he opened **Template 2 · Quick feasibility and residual method**, which comes with these lines (you have it in Lesson 2.3). He entered what he already knew: Comunitat Valenciana; plot without IVA, because a private individual is selling; 1.586,49 m² built and 18 homes. In each item he left the percentage the template comes with. He is still missing two figures: the sale price, which he works out in Lesson 2.2, and the construction cost, which he refines in Lesson 2.3.
 
-**His yardstick.** He noted down the table of weights, to compare each item with once he has it: construction, between 45 and 55 % of revenue; profit before tax, between 15 and 25 %. And the rule: below a 15 % margin on sales, the risk is not worth it. He already knows the land weighs little: in the rough numbers it was 3,6 % of revenue (Lesson 1.1), well below the table's 15–30 %, because these are the prices of the professional's example.
+**His yardstick.** He noted down the table of weights, to compare each item with once he has it: construction, between 45 and 55 % of revenue; profit before tax, between 15 and 25 %. And the rule: below a 15 % margin on sales, the risk is not worth it. He already knows the land weighs little: in the rough numbers it was 1,7 % of revenue (Lesson 1.1), well below the table's 15–30 %, because the land price is the one in the professional's example.
 
 ### Summary
 
@@ -101,6 +101,7 @@ The CRP takes away from the revenue without IVA all the costs of the development
   1. **Detailed market study:** look at what is around you and who your competition is. Visit the developments on sale within a radius of 1-3 km and simulate a purchase (mystery shopping). Note the m² built and usable, the €/m², the unit type and the specification (memoria de calidades). Their websites usually show the plans and the specification; if they don't give prices, ask at the sales office or the developer.
   2. Read the quarterly reports of Tinsa, Sociedad de Tasación, Gloval and the consultancies (CBRE, JLL, Savills, Colliers).
   3. Apply a 3-5 % discount to the competition's asking prices for your first off-plan sales.
+  4. **You can also compare with the prices recorded in deeds** in the area (the Registry Statistics of the Association of Registrars, with its heat maps, and the Notaries' Statistics Portal): they are real sale prices, not asking prices, and they are used above all for valuations. They give average values by area, not home by home: they are useful as a reference, but not for knowing what a particular home is worth (a penthouse is not worth the same as a ground-floor flat). In new build, your price is set by your competition.
 - **Indicative product mix:**
 
 | Unit type | % | Note |
@@ -119,6 +120,7 @@ The CRP takes away from the revenue without IVA all the costs of the development
   - **Absorption:** homes sold per month per comparable development, and the total selling period.
   - **Future supply:** developments in the area with a licence granted or in process (ask at the town hall and look at the architects' association's statistics on endorsed designs).
   - **Buyer profile** and demand by unit type and size.
+  - **Demand study**, in broad terms (it is a whole field of study in itself): who lives in the area (Spanish or foreign population, resident or not, by age), what people there live on (the area's economic activity and per capita income) and whether the population is growing or shrinking.
   - **Separate prices** for the home, the garage and the storeroom.
   - Always check advertised prices against real transactions.
 
@@ -132,9 +134,9 @@ Nicolás's CRP was missing its first line, the revenue. Let me tell you how he w
 
 **What is moving in the area.** He also measured the other things the lesson asks for: the absorption of the comparable developments, the future supply (he asked at the town hall's planning department and looked at the Association of Architects' statistics on endorsed designs) and the buyer profile.
 
-**The mix, with the architect.** With what the area wants, and not with what he liked, he settled the mix: 2-bedroom homes, the most in demand, and 3-bedroom ones for families, with a mid-range specification, for first-home buyers.
+**The mix, with the architect.** With what the area wants, and not with what he liked, he settled the mix: 2-bedroom homes, the most in demand, and 3-bedroom ones for families, with an upper-mid specification, for first-home buyers.
 
-**His price.** He applied the 3-5 % discount on the competition's asking prices that the lesson recommends for the first off-plan sales. It comes to **1.259,70 € per m² built, without IVA**: the same as the rough numbers required (Lesson 1.1). Over 18 homes, an average price of 111.027,86 € without IVA (122.130,64 € with 10 % IVA) and sales of 1.998.501,45 €. He entered it in Template 2.
+**His price.** He applied the 3-5 % discount on the competition's asking prices that the lesson recommends for the first off-plan sales. It comes to **2.606,50 € per m² built, without IVA**: the same as the rough numbers required (Lesson 1.1). Over 18 homes, an average price of 229.732,57 € without IVA (252.705,82 € with 10 % IVA) and sales of 4.135.186,19 €. He entered it in Template 2.
 
 ### Summary
 
@@ -371,22 +373,22 @@ With the revenue in Template 2, Nicolás went after the costs. Let me tell you w
 
 **The land.** He had it from Lesson 1.4: 81.174,29 € in Template 1, with ITP, notary, registry, due diligence, valuation and studies. In Template 2 the plot goes in with its 9 % ITP: 77.817,33 €. The template itself warns that this is without notary or registry, and that it is refined with Template 1.
 
-**The construction.** He asked two local contractors for prices, because they vary by province (firm quotes, from three contractors, come in Lesson 5.3). In the example, construction is at 660 €/m², the figure in the professional's example: 1.047.083,40 €. It is cheaper than today's: the lesson gives 900–1.100 €/m² for standard construction in 2025-2026. In your development, put in the price your contractors give you.
+**The construction.** He asked two local contractors for prices, because they vary by province (firm quotes, from three contractors, come in Lesson 5.3). They quoted him 1.400 €/m², which is what the lesson's table gives for an upper-mid specification: 2.221.086 €. In your development, put in the price your contractors give you.
 
-**The ICIO and fees, in the by-law.** At the town hall he asked for the tax by-law for the ICIO and fees ("Where to go" table): the exact rate in his municipality and what it is calculated on. He did not put it on the PEM without reading it, which is one of the typical mistakes. With the by-law in front of him, he left licences, ICIO and fees at the 5 % of construction that the template comes with: 52.354,17 €.
+**The ICIO and fees, in the by-law.** At the town hall he asked for the tax by-law for the ICIO and fees ("Where to go" table): the exact rate in his municipality and what it is calculated on. He did not put it on the PEM without reading it, which is one of the typical mistakes. With the by-law in front of him, he left licences, ICIO and fees at the 5 % of construction that the template comes with: 111.054,30 €.
 
 **The rest, with the template's percentages:**
 
-- Professional fees, 8 % of construction: 83.766,67 €.
-- Insurance, OCT, quality control and others, 3 %: 31.412,50 €.
+- Professional fees, 8 % of construction: 177.686,88 €.
+- Insurance, OCT, quality control and others, 3 %: 66.632,58 €.
 - External works and utility connections: 50.000 €. He did not forget them: it is another typical mistake.
-- Sales and marketing, 3 % of sales: 59.955,04 €.
-- Finance costs, 4 % of sales: 79.940,06 €. He will refine them with the bank (Lesson 5.1).
-- Overheads, 2 % of sales: 39.970,03 €.
+- Sales and marketing, 3 % of sales: 124.055,59 €.
+- Finance costs, 4 % of sales: 165.407,45 €. He will refine them with the bank (Lesson 5.1).
+- Overheads, 2 % of sales: 82.703,72 €.
 
-In total, **1.444.481,87 € of costs excluding land**. Contingencies do not have a line of their own in the template: he tests them in the scenarios of Lesson 2.4, with the works 5 % and 10–15 % more expensive.
+In total, **2.998.626,52 € of costs excluding land**. Contingencies do not have a line of their own in the template: he tests them in the scenarios of Lesson 2.4, with the works 5 % and 10–15 % more expensive.
 
-**The residual method.** With a target margin of 18 % of sales, the template applies the lesson's formula: from the sales it takes away the costs excluding land and the profit he is after, and what is left is what he can pay for the plot with its ITP. The **maximum plot price comes to 178.247,08 €**. The owner is asking 71.392,05 €.
+**The residual method.** With a target margin of 18 % of sales, the template applies the lesson's formula: from the sales it takes away the costs excluding land and the profit he is after, and what is left is what he can pay for the plot with its ITP. The **maximum plot price comes to 359.840,51 €**. The owner is asking 71.392,05 €.
 
 ### Summary
 
@@ -429,23 +431,23 @@ Each cost goes into the CRP with its benchmark: the land with everything you do 
 
 With Template 2 complete, it was time for Nicolás to decide. Let me tell you how he did it.
 
-**The margin on sales.** His CRP, without IVA: sales, 1.998.501,45 €; total cost of the development, 1.522.299,21 €; profit before tax, 476.202,24 €. The margin is the profit divided by the revenue: 476.202,24 € ÷ 1.998.501,45 € = 24 %. It clears the 15 % minimum comfortably.
+**The margin on sales.** His CRP, without IVA: sales, 4.135.186,19 €; total cost of the development, 3.076.443,85 €; profit before tax, 1.058.742,33 €. The margin is the profit divided by the revenue: 1.058.742,33 € ÷ 4.135.186,19 € = 26 %. It clears the 15 % minimum comfortably and is slightly above the 15–25 % in the table of weights (Lesson 2.1), because his land is very cheap.
 
-**The land.** He pays 45 € of land per m² built. The residual method lets him pay up to 178.247,08 € for the plot; the owner is asking 71.392,05 €, 106.855,03 € below the maximum.
+**The land.** He pays 45 € of land per m² built. The residual method lets him pay up to 359.840,51 € for the plot; the owner is asking 71.392,05 €, 288.448,46 € below the maximum.
 
 **The three scenarios.** The optimistic one is his CRP as it stands: sales at 100 % of the price and construction with no overruns. For the other two he went back to Template 2 and moved the sale price and the construction cost as the table says:
 
-- **Base** (sales at 95 %, construction +5 %): profit of 324.539,59 €, a 17 % margin.
-- **Pessimistic** (sales at 90 %, construction +10 %): profit of 172.876,94 €, 9,6 %. The template does not calculate the 6 months' delay: with the loan the bank is offering him, it means 23.976,21 € more in interest (4,5 % a year on 1.065.609,45 €, for half a year). He still makes no loss.
-- **The table's extreme** (sales at 85 %, construction +15 % and the delay): the profit falls to 21.214,28 € before that interest, so he ends up breaking even. He will keep an eye on it with the exit milestones in his investment memorandum (Lesson 2.5).
+- **Base** (sales at 95 %, construction +5 %): profit of 741.768,37 €, a 19 % margin.
+- **Pessimistic** (sales at 90 %, construction +10 %): profit of 424.794,42 €, 11,4 %. The template does not calculate the 6 months' delay: with the loan the bank is offering him, it means 48.453,99 € more in interest (4,5 % a year on 2.153.510,70 €, for half a year). He still makes no loss.
+- **The table's extreme** (sales at 85 %, construction +15 % and the delay): the profit falls to 107.820,46 € before that interest; after paying it he is left with 59.366,47 €: almost breaking even. He will keep an eye on it with the exit milestones in his investment memorandum (Lesson 2.5).
 
 **The calendar.** The IRR (TIR) depends on time, and Template 2 does not go month by month. With his advisory firm he built the monthly cash flow: when he pays for the plot, the designs and each construction valuation, and when he collects the sales, with 20 months of works and 4 more until the sale deeds. From it he worked out the project IRR and the equity IRR. The professional template in the extra has it month by month (Lesson 2.3).
 
-**The equity.** He had with his bank the preliminary conversation in the "Where to go" table: indicative terms and what it will ask of him in pre-sales. With a loan of 70 % of the cost, his equity is 30 %: 456.689,76 €, and the land already paid for counts. He will close it with Template 3 (Lesson 5.1). You have the banks in your province at the end of the module.
+**The equity.** He had with his bank the preliminary conversation in the "Where to go" table: indicative terms and what it will ask of him in pre-sales. With a loan of 70 % of the cost, his equity is 30 %: 922.933,16 €, and the land already paid for counts. He will close it with Template 3 (Lesson 5.1). You have the banks in your province at the end of the module.
 
 **The tax, for the ROE.** The ROE is on the net profit, after corporate income tax. His SPE is new: on the lesson's list it would be entitled to the 15 % for a newly created entity, and he had his advisory firm confirm it.
 
-**GO.** A 24 % margin, land well below the maximum and a pessimistic case that still makes a profit: Nicolás decides to go ahead with the development, knowing that at the table's worst extreme he breaks even. Next, buying (Lesson 2.5).
+**GO.** A 26 % margin, land well below the maximum and a pessimistic case that still makes a profit: Nicolás decides to go ahead with the development, knowing that at the table's worst extreme he almost breaks even. Next, buying (Lesson 2.5).
 
 ### Summary
 
@@ -504,7 +506,7 @@ With the GO, Nicolás closed the deal. Let me tell you in what order.
 
 **The structure.** His SPE already exists (Lesson 1.4): a new company just for this development, what the lesson calls an SPV, which ring-fences the risk. With his advisory firm he decided how the equity goes in (capital or shareholder loan) and reviewed the tax treatment before signing: the purchase pays ITP, because a private individual is selling, and the sales will carry 10 % IVA. He signed his SPE's **shareholders' agreement** with what the lesson asks for: reinforced majorities, division of roles, additional contributions if there are overruns, deadlock, exit and distribution of profits. He knows the bank will ask him for personal guarantees (Lesson 5.1).
 
-**The investment memorandum.** It covered the plot, his product, the CRP, the cash flow, the three scenarios, the risks, the calendar and the financing. He set a budget of 1.522.299,21 €, a minimum return of a 15 % margin on sales, his calendar and his financing. And the control milestones and exit criteria, with the lesson's examples and a deadline for each: licence not granted, pre-sales below 30 % and construction tender more than 8 % over budget. It was approved by his SPE's **shareholders' meeting**.
+**The investment memorandum.** It covered the plot, his product, the CRP, the cash flow, the three scenarios, the risks, the calendar and the financing. He set a budget of 3.076.443,85 €, a minimum return of a 15 % margin on sales, his calendar and his financing. And the control milestones and exit criteria, with the lesson's examples and a deadline for each: licence not granted, pre-sales below 30 % and construction tender more than 8 % over budget. It was approved by his SPE's **shareholders' meeting**.
 
 **The purchase.** With the investment approved, he exercised his option:
 

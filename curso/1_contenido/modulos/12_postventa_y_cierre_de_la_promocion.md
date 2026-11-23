@@ -149,7 +149,7 @@ Cada incidencia sigue un protocolo: canal único, respuesta rápida, visita y cl
   - Declaración anual (modelo 200) y pagos fraccionados (modelo 202).
   - En Navarra y País Vasco, normativa foral.
 - **IVA:** trimestral (303) y resumen anual (390). Si alquilas viviendas que no has vendido, regulariza el IVA deducido (el alquiler de vivienda está exento).
-- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
+- **Plusvalía municipal:** la pagas en cada venta si hay incremento de valor del terreno (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa, aunque conviene declararlo.
 - **IBI:** de las viviendas que sigan siendo tuyas a 1 de enero.
 - **Quién se encarga de cada cosa** (quién hace cada cosa de la lista de arriba):
   - **Director de ejecución:** mide y certifica, también la obra de la certificación final (Lección 7.3).
@@ -162,23 +162,23 @@ Cada incidencia sigue un protocolo: canal único, respuesta rápida, visita y cl
 
 Con la postventa en marcha, Nicolás se sentó con su asesoría, la de la Lección 1.4, a cerrar los números. Te cuento cómo lo hizo.
 
-**La liquidación con la constructora.** Su arquitecto técnico, como director de ejecución, midió y certificó la obra, y Nicolás aprobó la certificación final. La obra terminó en 1.063.537 €, 16.454 € (un 2 %) por encima de los 1.047.083 € contratados: la desviación que ya había visto venir a mitad de obra con la Plantilla 4 (Lección 7.3). Liquidó el contrato con sus retenciones y sus extras, y apuntó la fecha para devolver la retención: un año después de la recepción (Lección 5.4).
+**La liquidación con la constructora.** Su arquitecto técnico, como director de ejecución, midió y certificó la obra, y Nicolás aprobó la certificación final. La obra terminó en 2.255.989 €, 34.903 € (un 2 %) por encima de los 2.221.086 € contratados: la desviación que ya había visto venir a mitad de obra con la Plantilla 4 (Lección 7.3). Liquidó el contrato con sus retenciones y sus extras, y apuntó la fecha para devolver la retención: un año después de la recepción (Lección 5.4).
 
 **Las cuentas.** Cerró cuentas con sus técnicos, suministradores y proveedores, y resolvió las facturas y garantías pendientes. Con la asesoría concilió los ingresos por ventas, los costes, los intereses y los gastos generales.
 
-**La rentabilidad real.** Volvió a calcular la Plantilla 2 con los datos reales y la comparó con la CRP aprobada, que daba un beneficio antes de impuestos de 476.202,24 €:
+**La rentabilidad real.** Volvió a calcular la Plantilla 2 con los datos reales y la comparó con la CRP aprobada, que daba un beneficio antes de impuestos de 1.058.742,33 €:
 
 - **Ventas:** las 18 viviendas, vendidas y escrituradas al precio de su plan de ventas (Plantilla 5).
-- **Coste de la obra:** 16.454 € más (+2 %).
-- **Plazo y coste financiero:** firmó las escrituras en los 4 meses previstos, y el coste financiero real fue de 73.936,57 €, algo menos de los 79.940,06 € que había puesto en la CRP.
+- **Coste de la obra:** 34.903 € más (+2 %).
+- **Plazo y coste financiero:** firmó las escrituras en los 4 meses previstos, y el coste financiero real fue de 139.210,64 €, algo menos de los 165.407,45 € que había puesto en la CRP.
 
 **La contabilidad.** Todos los costes estaban activados como existencias: promoción en curso y, al final, edificio terminado. En cada escritura, la asesoría reconoció la venta y dio de baja el coste proporcional. Como la promoción duró más de un año, los intereses del préstamo promotor se activaron como mayor coste de las existencias.
 
 **Los impuestos, en la Agencia Tributaria:**
 
-- **IVA:** el repercutido de toda la promoción, 199.850,15 € según su Plantilla 5, declarado trimestre a trimestre en el 303 y resumido en el 390. No alquila ninguna vivienda, así que no tiene IVA que regularizar.
+- **IVA:** el repercutido de toda la promoción, 413.518,63 € según su Plantilla 5, declarado trimestre a trimestre en el 303 y resumido en el 390. No alquila ninguna vivienda, así que no tiene IVA que regularizar.
 - **Impuesto sobre Sociedades:** la declaración anual (modelo 200) y los pagos fraccionados (modelo 202). El tipo, de los que da la lección, se lo aplicó su asesoría según su sociedad.
-- **Plusvalía municipal:** como dice la Lección 11.5, al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- **Plusvalía municipal,** en el ayuntamiento: como dice la Lección 11.5, en cada venta con incremento de valor del terreno la pagó, y en las que no lo hubo, la declaró igualmente.
 
 ### Resumen
 

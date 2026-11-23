@@ -59,7 +59,7 @@ Le terrain au nom de sa SPE, Nicolás a formé son équipe technique. Je vous ra
 **Les contrats.** Il en a signé un avec chaque technicien (l'architecte, l'architecte technique, le coordinateur sécurité et santé et chaque bureau d'études), avec ce que demande la leçon :
 
 - le périmètre de la mission ;
-- les honoraires, qu'il a comparés avec le poste de son CRP (8 % de la construction : 83.766,67 €, Leçon 2.3) ;
+- les honoraires, qu'il a comparés avec le poste de son CRP (8 % de la construction : 177.686,88 €, Leçon 2.3) ;
 - les délais ;
 - les visites minimales de chantier ;
 - l'assurance de RC professionnelle de chacun.
@@ -160,7 +160,7 @@ L'étude géotechnique faite, l'architecte de Nicolás s'est mis au projet. Je v
 
 **Avant de dessiner.** Nicolás a demandé au topographe de la Leçon 1.3 le relevé topographique **géoréférencé**, qui lui sert aussi à mettre en cohérence Cadastre et Registre, et il a interrogé les compagnies d'eau, d'assainissement, d'électricité, de gaz et de télécommunications sur leurs réseaux. Il n'y avait pas de bâtiments à démolir (Leçon 1.1).
 
-**L'avant-projet.** Il a remis à l'architecte son programme des besoins : 18 logements de 2 et 3 chambres, dont 2 attiques, des prestations moyennes, un ascenseur et pas de sous-sol. En quelques semaines (la leçon parle de 2-4), il a eu l'avant-projet, qui n'est pas visé, et l'a validé avec son mix commercial de la Leçon 2.2. Avant de passer au projet de base, il a ajusté la conception à son coût cible : les 1.259,70 €/m² de vente et la construction de son CRP.
+**L'avant-projet.** Il a remis à l'architecte son programme des besoins : 18 logements de 2 et 3 chambres, dont 2 attiques, des prestations moyen-haut de gamme, un ascenseur et pas de sous-sol. En quelques semaines (la leçon parle de 2-4), il a eu l'avant-projet, qui n'est pas visé, et l'a validé avec son mix commercial de la Leçon 2.2. Avant de passer au projet de base, il a ajusté la conception à son coût cible : les 2.606,50 €/m² de vente et la construction de son CRP.
 
 **Le projet de base.** Il définit l'immeuble et justifie les règles d'urbanisme et le CTE : c'est avec lui qu'il demandera le permis (Module 4). Il a demandé au service de l'urbanisme si sa mairie exige de le faire viser, car sinon le visa est facultatif. Son terrain n'a pas de servitudes (Leçon 1.3) : il n'a donc pas eu besoin d'avis préalables d'organismes sectoriels.
 
@@ -205,7 +205,7 @@ Le projet avance par phases : l'avant-projet arrête le mix, le projet de base s
 
 Il manquait au projet d'exécution de Nicolás la sécurité et la santé. Je vous raconte comment il l'a réglée.
 
-**Étude ou étude simplifiée ?** Le tableau exige l'étude complète à partir de 450.759,08 € de PEM, et son chantier les dépasse de loin : la construction de son CRP s'élève à 1.047.083,40 € (Leçon 2.3). Il lui faut l'**étude de sécurité et de santé**, et non l'étude simplifiée.
+**Étude ou étude simplifiée ?** Le tableau exige l'étude complète à partir de 450.759,08 € de PEM, et son chantier les dépasse de loin : la construction de son CRP s'élève à 2.221.086 € (Leçon 2.3). Il lui faut l'**étude de sécurité et de santé**, et non l'étude simplifiée.
 
 **Qui la rédige.** Un technicien compétent désigné par le promoteur. Nicolás a désigné par écrit le coordinateur sécurité et santé qu'il avait engagé par l'intermédiaire de l'ordre des architectes techniques (Leçon 3.1). Il le fallait déjà en phase de conception, parce que plusieurs concepteurs interviennent : l'architecte, les bureaux d'études et le technicien de l'ICT.
 

@@ -115,7 +115,7 @@ With the homes snagged, Nicolás prepared a folder for each of the 18. Let me te
 - The **utility details**: the CIE of the electrical installation, the CUPS of each home and its water meter.
 - The **owners' association details**: the statutes in his horizontal division deed, each home's share and the property manager he was going to propose to the meeting (Lesson 11.2).
 
-**Before calling anyone in, the payments.** In his CRM (Module 8) he checked that each buyer had made what their contract required. For a home at the average price, according to his Template 5: the reservation of 6.000 €, the rest of the 10 % on signing the private contract (6.213,06 €) and the 18 instalments of 678,50 € during the works. In total, 24.426,13 € with IVA. He also went over which payments, taxes and costs fall to each party; you will see them in Lesson 11.1.
+**Before calling anyone in, the payments.** In his CRM (Module 8) he checked that each buyer had made what their contract required. For a home at the average price, according to his Template 5: the reservation of 6.000 €, the rest of the 10 % on signing the private contract (19.270,58 €) and the 18 instalments of 1.403,92 € during the works. In total, 50.541,17 € with IVA. He also went over which payments, taxes and costs fall to each party; you will see them in Lesson 11.1.
 
 **The handover file.** He completed each folder with the registry identification of the home, the access cards and codes, the association's rules with the expected service charges and the inspection record from Lesson 10.1, with its incidents and commitments to fix them. And during the visit he explained to each buyer how the equipment, the HVAC and the ventilation work.
 
@@ -167,7 +167,7 @@ With the folders prepared, Nicolás went back to his notary, the one he chose in
 
 **The signings, three or four weeks before.** He offered his notary to each buyer, without imposing it, because choosing the notary is a consumer right. With each buyer's notary and with the banks of the buyers with a mortgage he confirmed the dates and closed the signing calendar. He reminded those buyers of the deadlines: their bank's documents, at least 10 calendar days beforehand, and the preliminary record before the notary, at least the day before.
 
-**A settlement statement for each buyer.** For a home at the average price: price, 122.130,65 € with IVA; payments received, 24.426,13 € with IVA; amount outstanding, 97.704,52 €, which he will collect at the deed (Lesson 11.3).
+**A settlement statement for each buyer.** For a home at the average price: price, 252.705,83 € with IVA; payments received, 50.541,17 € with IVA; amount outstanding, 202.164,66 €, which he will collect at the deed (Lesson 11.3).
 
 **Money laundering.** The developer is an obliged entity. Nicolás asked each buyer for their DNI or NIE, the documents on the origin of their funds and the proof of their earlier payments, and told them they would pay by named cheque or bank transfer: nothing in cash above the legal limit. You will find the notaries in your province in the list we have given you: among the potential companies for this lesson and, at the end of the module, through the Notarial Association.
 

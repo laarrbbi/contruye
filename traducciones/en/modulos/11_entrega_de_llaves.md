@@ -26,7 +26,7 @@
 | **Bank** | The owners' association's account |
 | **Distributor and retailers** | Electricity contracts for each home (with the CIE and first occupation or cédula) |
 | **Water company** | Water contracts for each home |
-| **Town hall** | Change of IBI taxpayer |
+| **Town hall** | Municipal plusvalía on each sale (you pay it if the land has increased in value; if not, it is advisable to declare it) and change of IBI taxpayer |
 | **Association of Property Managers** | A property manager for the owners' association |
 
 ## Lesson 11.1 — The deed of sale
@@ -64,7 +64,7 @@ With the Final Completion Deed registered and the calendar closed, the signings 
 - **Their bank:** the AJD, the notary, the registry and the agency for the mortgage.
 - **Nicolás:** the original deed; the new building and the horizontal division; the general utility connections.
 
-**The development loan.** With each deed, Nicolás's bank cancelled that home's share of the development loan with what Nicolás collected at the signing (Lesson 11.3). So, on signing the last of the 18, the loan of 1.065.609,45 € in his Template 3 was at zero, within the 4 months he had allowed until the sale deeds.
+**The development loan.** With each deed, Nicolás's bank cancelled that home's share of the development loan with what Nicolás collected at the signing (Lesson 11.3). So, on signing the last of the 18, the loan of 2.153.510,70 € in his Template 3 was at zero, within the 4 months he had allowed until the sale deeds.
 
 **Where he went.** To his notary and to the one each buyer chose. If a buyer asks you for a notary or a bank in your province, you have them among the potential companies for this lesson.
 
@@ -149,9 +149,9 @@ With the owners' association up and running, Nicolás had two things to close fo
 
 **The final payment.** At each deed, the buyer paid the amount outstanding on their settlement statement (Lesson 10.3), by named banker's draft or a transfer confirmed at the notary's (Lesson 11.1). For a home at the average price, according to his Template 5:
 
-- Price with IVA: 122.130,65 €.
-- Collected before handover (reservation, private contract and instalments): 24.426,13 €.
-- Collected at the deed: **97.704,52 €**.
+- Price with IVA: 252.705,83 €.
+- Collected before handover (reservation, private contract and instalments): 50.541,17 €.
+- Collected at the deed: **202.164,66 €**.
 
 The buyers with a mortgage paid with their bank's money, at the same signing. With the 18 deeds collected in this way, the homes were paid for in full and all that was left was handing over the keys (Lesson 11.4).
 
@@ -208,7 +208,7 @@ Possession is handed over with a final visit, a signed record (date, condition, 
 - **Taxes on the sale:** the buyer pays the AJD on their community's form 600 within the regional deadline (usually 30 working days); many notaries handle it. You declare the IVA charged on your form 303.
 - **Registry:** the notary sends an electronic copy to the Land Registry the same day; then the copy with the tax paid is filed and registered in the buyer's name.
 - **Cadastre:** the notary and the registry report the change of owner; no declaration needs filing.
-- **Municipal plusvalía:** as it is a new build, the developer does not have to self-assess the municipal plusvalía.
+- **Municipal plusvalía (IIVTNU):** on the sale of each home, the developer is, as a rule, obliged to pay it, provided the land has increased in value. If the developer proves that there has been no increase, the tax is not due (although it is advisable to declare it to the competent body).
 - **Utilities:** new contracts or changes of holder into the buyer's name.
 - **Documents:** hand over what belongs to the buyer and to the owners' association's property manager.
 - **Who handles what** (who does each formality on the list above):
@@ -216,7 +216,7 @@ Possession is handed over with a final visit, a signed record (date, condition, 
   - **Notary:** sends the electronic copy to the Land Registry on the day of signing.
   - **Land Registry:** with the copy and the tax paid, registers the home in the buyer's name.
   - **Notary and Registry:** report the change of owner to the Cadastre; no one files a declaration.
-  - **You (the developer):** you declare the IVA charged on your form 303 and hand over the documents to the buyer and to the property manager. You do not self-assess the municipal plusvalía: as it is a new build, the developer does not have to self-assess it.
+  - **You (the developer):** you declare the IVA charged on your form 303 and hand over the documents to the buyer and to the property manager. And the municipal plusvalía on each sale: you pay it if the land has increased in value; if it has not, it is not due, but it is advisable to declare it to the competent body.
 
 ### Example: Nicolás, the developer
 
@@ -229,7 +229,7 @@ With the keys handed over, Nicolás was left with the formalities of each signin
 **What Nicolás did:**
 
 - He declared the IVA charged on each deed on his quarterly form 303, with the Tax Agency.
-- On the municipal plusvalía, nothing to self-assess: as it is a new build, the developer does not have to self-assess the municipal plusvalía.
+- The municipal plusvalía on each sale: with his advisory firm he checked whether the land had increased in value. If it had, he paid it; if not, the tax was not due, but he declared it to the competent body all the same.
 - He handed over to each buyer and to the owners' association's property manager the documents that belonged to them.
 - He checked, home by home, that the deed was registered and the utilities were in its buyer's name.
 
@@ -237,11 +237,12 @@ When the last of the 18 was registered, the development was sold, conveyed by de
 
 ### Summary
 
-After signing, the buyer pays the AJD and puts the utilities in their name; the notary sends the deed to the Registry, which registers it and, with the notary, notifies the Cadastre. You declare the IVA charged and hand over the documents. As it is a new build, the developer does not have to self-assess the municipal plusvalía.
+After signing, the buyer pays the AJD and puts the utilities in their name; the notary sends the deed to the Registry, which registers it and, with the notary, notifies the Cadastre. You declare the IVA charged, hand over the documents and pay the municipal plusvalía on each sale if the land has increased in value (if it has not, it is not due, although it is advisable to declare it).
 
 ### Your checklist
 
 - Deeds lodged at the Land Registry and utilities in each buyer's name
+- Municipal plusvalía on each sale paid, or declared if there is no increase in value
 
 ## Module 11 summary
 
@@ -258,6 +259,7 @@ You have signed the deed of each home and collected what was outstanding, cancel
 - [ ] Utility contracts set up
 - [ ] Handover records signed
 - [ ] Deeds lodged at the Land Registry and utilities in each buyer's name
+- [ ] Municipal plusvalía on each sale paid, or declared if there is no increase in value
 
 ## Partners in your province
 

@@ -219,7 +219,7 @@ The building services are coordinated from the design and each one meets its reg
 
 With the building services in, Nicolás's works moved on to the finishes. It is what his buyers will see, and where it is hardest to say no. Let me tell you how he handled it.
 
-**The finishes, as in the specification.** A mid-range specification, for first-home buyers: ceramic partitions, porcelain tile floors, wall tiling, paint, internal joinery, wardrobes and the kitchen with its units. All as the specification (*memoria de calidades*) in the contracts with his buyers says.
+**The finishes, as in the specification.** An upper-mid specification, for first-home buyers: ceramic partitions, porcelain tile floors, wall tiling, paint, internal joinery, wardrobes and the kitchen with its units. All as the specification (*memoria de calidades*) in the contracts with his buyers says.
 
 **The specification, frozen.** He followed the lesson's tip: the specification is not touched. If a buyer asks him for a change, the answer is the same for everyone: every sales change halfway through the works is a variation, with a written order and the price agreed beforehand (Lesson 7.3).
 

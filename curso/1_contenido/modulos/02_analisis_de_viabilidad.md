@@ -76,7 +76,7 @@ Con la opción de compra inscrita, Nicolás se puso con su CRP. Te cuento cómo 
 
 **La herramienta.** Para no dejarse ninguna partida abrió la **Plantilla 2 · Viabilidad rápida y método residual**, que trae estas líneas (la tienes en la Lección 2.3). Metió lo que ya sabía: Comunitat Valenciana; solar sin IVA, porque vende un particular; 1.586,49 m² construidos y 18 viviendas. En cada partida dejó el porcentaje que trae la plantilla. Le faltan dos datos: el precio de venta, que saca en la Lección 2.2, y el coste de construcción, que afina en la Lección 2.3.
 
-**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 3,6 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque son los precios del ejemplo del profesional.
+**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 1,7 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque el precio del suelo es el del ejemplo del profesional.
 
 ### Resumen
 
@@ -101,6 +101,7 @@ La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suel
   1. **Estudio de mercado pormenorizado:** mira qué hay alrededor y quién es tu competencia. Recorre las promociones en venta en un radio de 1-3 km y simula la compra (técnica de simulación). Anota los m² construidos y útiles, el €/m², la tipología y las calidades (memoria de calidades). En sus webs suele haber planos y memoria de calidades; si no ponen precio, pídelo en la caseta de ventas o a la promotora.
   2. Lee los informes trimestrales de Tinsa, Sociedad de Tasación, Gloval y los de consultoras (CBRE, JLL, Savills, Colliers).
   3. Aplica descuento del 3-5 % sobre la oferta de la competencia para tus primeras ventas sobre plano.
+  4. **También puedes comparar con los precios escriturados** de la zona (Estadística Registral del Colegio de Registradores, con sus mapas de calor, y Portal Estadístico del Notariado): son precios reales de venta, no de oferta, y sirven sobre todo para tasar. Dan valores medios por zona, no vivienda por vivienda: te valen de referencia, pero no para saber cuánto vale una vivienda concreta (no vale lo mismo un ático que un bajo). En obra nueva, tu precio lo marca tu competencia.
 - **Mix de producto orientativo:**
 
 | Tipología | % | Nota |
@@ -119,6 +120,7 @@ La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suel
   - **Absorción:** viviendas vendidas al mes por promoción comparable y plazo total de comercialización.
   - **Oferta futura:** promociones con licencia concedida o en trámite en la zona (pregunta en el ayuntamiento y mira la estadística de visados del colegio de arquitectos).
   - **Perfil del comprador** y demanda por tipología y superficie.
+  - **Estudio de la demanda**, a grandes rasgos (es todo un campo de estudio): quién vive en la zona (población nacional o extranjera, residente o no, por edades), de qué vive (su actividad económica y la renta per cápita) y si la población crece o disminuye.
   - **Precio por separado** de vivienda, garaje y trastero.
   - Contrasta siempre los precios anunciados con operaciones reales.
 
@@ -132,9 +134,9 @@ A la CRP de Nicolás le faltaba la primera línea, los ingresos. Te cuento cómo
 
 **Lo que se mueve en la zona.** Midió también lo demás que pide la lección: la absorción de las promociones comparables, la oferta futura (preguntó en urbanismo del ayuntamiento y miró la estadística de visados del Colegio de Arquitectos) y el perfil del comprador.
 
-**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias, para primera vivienda.
+**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias-altas, para primera vivienda.
 
-**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **1.259,70 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 111.027,86 € sin IVA (122.130,64 € con el 10 % de IVA) y unas ventas de 1.998.501,45 €. Lo metió en la Plantilla 2.
+**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **2.606,50 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 229.732,57 € sin IVA (252.705,82 € con el 10 % de IVA) y unas ventas de 4.135.186,19 €. Lo metió en la Plantilla 2.
 
 ### Resumen
 
@@ -371,22 +373,22 @@ Con los ingresos en la Plantilla 2, Nicolás fue a por los costes. Te cuento de 
 
 **El suelo.** Lo tenía de la Lección 1.4: 81.174,29 € en la Plantilla 1, con ITP, notaría, registro, due diligence, tasación y estudios. En la Plantilla 2 el solar entra con su ITP del 9 %: 77.817,33 €. La propia plantilla avisa de que va sin notaría ni registro, y de que eso se afina con la Plantilla 1.
 
-**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). En el ejemplo, la construcción va a 660 €/m², la del ejemplo del profesional: 1.047.083,40 €. Es más barata que la de hoy: la lección da 900–1.100 €/m² para la construcción estándar en 2025-2026. En tu promoción, pon el precio que te den tus constructoras.
+**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). Le dieron 1.400 €/m², lo que da la tabla de la lección para unas calidades medias-altas: 2.221.086 €. En tu promoción, pon el precio que te den tus constructoras.
 
-**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 52.354,17 €.
+**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 111.054,30 €.
 
 **El resto, con los porcentajes de la plantilla:**
 
-- Honorarios técnicos, 8 % de la construcción: 83.766,67 €.
-- Seguros, OCT, control de calidad y otros, 3 %: 31.412,50 €.
+- Honorarios técnicos, 8 % de la construcción: 177.686,88 €.
+- Seguros, OCT, control de calidad y otros, 3 %: 66.632,58 €.
 - Urbanización y acometidas: 50.000 €. No las olvidó: es otro error típico.
-- Comercialización, 3 % de las ventas: 59.955,04 €.
-- Gastos financieros, 4 % de las ventas: 79.940,06 €. Los afinará con el banco (Lección 5.1).
-- Gastos generales, 2 % de las ventas: 39.970,03 €.
+- Comercialización, 3 % de las ventas: 124.055,59 €.
+- Gastos financieros, 4 % de las ventas: 165.407,45 €. Los afinará con el banco (Lección 5.1).
+- Gastos generales, 2 % de las ventas: 82.703,72 €.
 
-En total, **1.444.481,87 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
+En total, **2.998.626,52 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
 
-**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 178.247,08 €**. El propietario pide 71.392,05 €.
+**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 359.840,51 €**. El propietario pide 71.392,05 €.
 
 ### Resumen
 
@@ -429,23 +431,23 @@ Cada coste entra en la CRP con su referencia: el suelo con todo lo que no recupe
 
 Con la Plantilla 2 completa, a Nicolás le tocaba decidir. Te cuento cómo lo hizo.
 
-**El margen sobre ventas.** Su CRP, sin IVA: ventas, 1.998.501,45 €; coste total de la promoción, 1.522.299,21 €; beneficio antes de impuestos, 476.202,24 €. El margen es el beneficio entre los ingresos: 476.202,24 € ÷ 1.998.501,45 € = 24 %. Pasa con holgura del mínimo del 15 %.
+**El margen sobre ventas.** Su CRP, sin IVA: ventas, 4.135.186,19 €; coste total de la promoción, 3.076.443,85 €; beneficio antes de impuestos, 1.058.742,33 €. El margen es el beneficio entre los ingresos: 1.058.742,33 € ÷ 4.135.186,19 € = 26 %. Pasa con holgura del mínimo del 15 % y queda algo por encima del 15–25 % de la tabla de pesos (Lección 2.1), porque su suelo es muy barato.
 
-**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 178.247,08 € por el solar; el propietario pide 71.392,05 €, 106.855,03 € por debajo del máximo.
+**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 359.840,51 € por el solar; el propietario pide 71.392,05 €, 288.448,46 € por debajo del máximo.
 
 **Los tres escenarios.** El optimista es su CRP tal cual: ventas al 100 % del precio y obra sin desvíos. Para los otros dos volvió a la Plantilla 2 y movió el precio de venta y el coste de construcción como dice la tabla:
 
-- **Base** (ventas al 95 %, obra +5 %): beneficio de 324.539,59 €, un margen del 17 %.
-- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 172.876,94 €, un 9,6 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 23.976,21 € más de intereses (el 4,5 % anual sobre 1.065.609,45 €, medio año). Sigue sin pérdidas.
-- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 21.214,28 € antes de esos intereses, así que se queda en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
+- **Base** (ventas al 95 %, obra +5 %): beneficio de 741.768,37 €, un margen del 19 %.
+- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 424.794,42 €, un 11,4 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 48.453,99 € más de intereses (el 4,5 % anual sobre 2.153.510,70 €, medio año). Sigue sin pérdidas.
+- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 107.820,46 € antes de esos intereses; después de pagarlos le quedan 59.366,47 €: casi en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
 
 **El calendario.** La TIR depende del tiempo, y la Plantilla 2 no va mes a mes. Con su asesoría montó el flujo de caja mensual: cuándo paga el solar, los proyectos y cada certificación de obra, y cuándo cobra las ventas, con 20 meses de obra y 4 más hasta las escrituras de venta. De ahí sacó la TIR del proyecto y la del equity. La plantilla profesional del extra lo trae mes a mes (Lección 2.3).
 
-**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 456.689,76 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
+**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 922.933,16 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
 
 **El impuesto, para el ROE.** El ROE va sobre el beneficio neto, después del Impuesto sobre Sociedades. Su SPE es nueva: en la lista de la lección le correspondería el 15 % de entidad de nueva creación, y se lo hizo confirmar a su asesoría.
 
-**GO.** Margen del 24 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda en tablas. Lo siguiente, comprar (Lección 2.5).
+**GO.** Margen del 26 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda casi en tablas. Lo siguiente, comprar (Lección 2.5).
 
 ### Resumen
 
@@ -504,7 +506,7 @@ Con el GO, Nicolás cerró la operación. Te cuento en qué orden.
 
 **La estructura.** Su SPE ya existe (Lección 1.4): una sociedad nueva solo para esta promoción, lo que la lección llama SPV, que aísla el riesgo. Con su asesoría decidió cómo entran los fondos propios (capital o préstamo de socio) y revisó la fiscalidad antes de firmar: la compra paga ITP, porque vende un particular, y las ventas llevarán el 10 % de IVA. Firmó el **pacto de socios** de su SPE con lo que pide la lección: mayorías reforzadas, reparto de funciones, aportaciones adicionales si hay desviaciones, bloqueo, salida y reparto de resultados. Sabe que el banco le pedirá avales personales (Lección 5.1).
 
-**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 1.522.299,21 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
+**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 3.076.443,85 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
 
 **La compra.** Con la inversión aprobada, ejerció su opción:
 

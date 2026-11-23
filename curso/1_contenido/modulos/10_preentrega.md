@@ -115,7 +115,7 @@ Con las viviendas repasadas, Nicolás preparó una carpeta para cada una de las 
 - Los **datos para suministros**: el CIE de la instalación eléctrica, el CUPS de cada vivienda y su contador de agua.
 - Los **datos de la comunidad**: los estatutos de su escritura de división horizontal, la cuota de cada vivienda y el administrador de fincas que iba a proponer a la junta (Lección 11.2).
 
-**Antes de convocar a nadie, los pagos.** En su CRM (Módulo 8) comprobó que cada comprador había cumplido lo de su contrato. En una vivienda de precio medio, según su Plantilla 5: la reserva de 6.000 €, el resto del 10 % a la firma del contrato privado (6.213,06 €) y las 18 cuotas de 678,50 € durante la obra. En total, 24.426,13 € con IVA. Repasó también qué pagos, impuestos y gastos corresponden a cada parte; los verás en la Lección 11.1.
+**Antes de convocar a nadie, los pagos.** En su CRM (Módulo 8) comprobó que cada comprador había cumplido lo de su contrato. En una vivienda de precio medio, según su Plantilla 5: la reserva de 6.000 €, el resto del 10 % a la firma del contrato privado (19.270,58 €) y las 18 cuotas de 1.403,92 € durante la obra. En total, 50.541,17 € con IVA. Repasó también qué pagos, impuestos y gastos corresponden a cada parte; los verás en la Lección 11.1.
 
 **El expediente de entrega.** Completó cada carpeta con la identificación registral de la vivienda, las tarjetas y códigos de acceso, las normas de la comunidad con las cuotas previstas y el acta de inspección de la Lección 10.1, con sus incidencias y compromisos de subsanación. Y en la visita explicó a cada comprador cómo funcionan los equipos, la climatización y la ventilación.
 
@@ -167,7 +167,7 @@ Con las carpetas preparadas, Nicolás volvió a su notaría, la que eligió en l
 
 **Las firmas, tres o cuatro semanas antes.** Ofreció su notaría a cada comprador, sin imponerla, porque elegir notario es un derecho del consumidor. Con la notaría de cada uno y con los bancos de los compradores con hipoteca confirmó las fechas y cerró el calendario de firmas. A esos compradores les recordó los plazos: la documentación de su banco, al menos 10 días naturales antes, y el acta previa ante notario, al menos el día anterior.
 
-**Una nota de liquidación por comprador.** En una vivienda de precio medio: precio, 122.130,65 € con IVA; pagos recibidos, 24.426,13 € con IVA; importe pendiente, 97.704,52 €, lo que cobrará en la escritura (Lección 11.3).
+**Una nota de liquidación por comprador.** En una vivienda de precio medio: precio, 252.705,83 € con IVA; pagos recibidos, 50.541,17 € con IVA; importe pendiente, 202.164,66 €, lo que cobrará en la escritura (Lección 11.3).
 
 **El blanqueo.** El promotor es sujeto obligado. Nicolás pidió a cada comprador su DNI o NIE, la documentación del origen de sus fondos y los justificantes de sus pagos anteriores, y le avisó de que pagaría con cheque nominativo o transferencia: nada en efectivo por encima del límite legal. Las notarías de tu provincia las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, en el Colegio Notarial.
 

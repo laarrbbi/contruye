@@ -154,7 +154,7 @@ L'OCT n'est pas exigé par la loi, mais par l'assureur : il revoit le projet et 
 
 Pour le coût, Nicolás utilise le **modèle 4 · Contrôle des coûts du chantier** dès la première situation. Je vous raconte où il en était à mi-chantier.
 
-**Son budget de contrôle.** Celui du contrat clé en main, par chapitres : 1.047.083 €. Et, comme le demande la leçon, il y ajoute une réserve pour imprévus de 3-5 %.
+**Son budget de contrôle.** Celui du contrat clé en main, par chapitres : 2.221.086 €. Et, comme le demande la leçon, il y ajoute une réserve pour imprévus de 3-5 %.
 
 **Chaque mois, le même circuit :**
 
@@ -164,14 +164,14 @@ Pour le coût, Nicolás utilise le **modèle 4 · Contrôle des coûts du chanti
 4. L'expert de la banque vérifie l'avancement, et la banque débloque l'argent du prêt.
 5. Il paie l'entreprise dans les délais, à 60 jours au maximum.
 
-**À mi-chantier.** Avec 40 % des travaux exécutés, le cumul certifié à l'origine s'élève à 427.809 €. Retenu à ce jour, 5 % : 21.390,45 €, qu'il ne restituera qu'un an après la réception (Leçon 5.4). À payer à l'entreprise à ce jour, IVA comprise et retenue déduite : 449.199,45 €.
+**À mi-chantier.** Avec 40 % des travaux exécutés, le cumul certifié à l'origine s'élève à 907.474 €. Retenu à ce jour, 5 % : 45.373,70 €, qu'il ne restituera qu'un an après la réception (Leçon 5.4). À payer à l'entreprise à ce jour, IVA comprise et retenue déduite : 952.847,70 €.
 
-**La dérive : +2 %.** La prévision de coût final ressort à 1.063.537 € : 16.454 € de plus que le montant contracté. Le modèle lui dit d'où elle vient :
+**La dérive : +2 %.** La prévision de coût final ressort à 2.255.989 € : 34.903 € de plus que le montant contracté. Le modèle lui dit d'où elle vient :
 
-- Terrassements : +997 €.
-- Fondations : +2.992 €.
-- Maçonnerie : +4.986 €.
-- Finitions : +7.479 €.
+- Terrassements : +2.115 €.
+- Fondations : +6.346 €.
+- Maçonnerie : +10.577 €.
+- Finitions : +15.865 €.
 
 **Ce qu'il fait, comme le dit la leçon.** Un écart de 2 % tient dans sa réserve pour imprévus, mais il ne le laisse pas filer :
 
@@ -239,10 +239,10 @@ Nicolás a 20 mois de travaux (modèle 3), et de ce délai dépendent les intér
 **Le rapport mensuel.** Il le prépare avec les KPI de la leçon et l'envoie à la banque. Voici où il en était à mi-chantier :
 
 - **Avancement physique :** 40 % des travaux exécutés.
-- **Avancement économique :** le certifié par rapport au contracté, 427.809 € sur 1.047.083 €.
+- **Avancement économique :** le certifié par rapport au contracté, 907.474 € sur 2.221.086 €.
 - **Écart de délai :** les jours par rapport au planning.
-- **Coût à terminaison :** 1.063.537 €.
-- **Marge actualisée :** elle baisse des 16.454 € de la dérive et, avec les chiffres de son modèle 2, reste très au-dessus des 15 % minimum habituels (Module 2).
+- **Coût à terminaison :** 2.255.989 €.
+- **Marge actualisée :** elle baisse des 34.903 € de la dérive et, avec les chiffres de son modèle 2, reste très au-dessus des 15 % minimum habituels (Module 2).
 - **Ventes :** les unités vendues et encaissées par rapport à son plan du modèle 5 (Module 8), 2 logements par mois.
 
 **Les retards, par écrit.** Il a anticipé les retards typiques : approvisionnements, météo, autorisations et incidents. S'il faut une prolongation de délai, il la documente par écrit, parce qu'elle a des effets sur les pénalités de son contrat, sur le prêt et sur ses acheteurs.

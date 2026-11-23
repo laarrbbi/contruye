@@ -115,7 +115,7 @@ Les logements repris, Nicolás a préparé un dossier pour chacun des 18. Je vou
 - Les **données pour les fournitures** : le CIE de l'installation électrique, le CUPS de chaque logement et son compteur d'eau.
 - Les **données de la copropriété** : les statuts de son acte de division horizontale, la quote-part de chaque logement et le syndic qu'il allait proposer à l'assemblée (Leçon 11.2).
 
-**Avant de convoquer qui que ce soit, les paiements.** Dans son CRM (Module 8), il a vérifié que chaque acheteur avait honoré ce que prévoyait son contrat. Pour un logement au prix moyen, selon son Modèle 5 : la réservation de 6.000 €, le reste des 10 % à la signature du contrat privé (6.213,06 €) et les 18 échéances de 678,50 € pendant les travaux. Au total, 24.426,13 € IVA comprise. Il a aussi fait le point sur les paiements, impôts et frais qui incombent à chaque partie ; vous les verrez dans la Leçon 11.1.
+**Avant de convoquer qui que ce soit, les paiements.** Dans son CRM (Module 8), il a vérifié que chaque acheteur avait honoré ce que prévoyait son contrat. Pour un logement au prix moyen, selon son Modèle 5 : la réservation de 6.000 €, le reste des 10 % à la signature du contrat privé (19.270,58 €) et les 18 échéances de 1.403,92 € pendant les travaux. Au total, 50.541,17 € IVA comprise. Il a aussi fait le point sur les paiements, impôts et frais qui incombent à chaque partie ; vous les verrez dans la Leçon 11.1.
 
 **Le dossier de livraison.** Il a complété chaque dossier avec l'identification registrale du logement, les badges et codes d'accès, les règles de la copropriété avec les charges prévues et le procès-verbal d'inspection de la Leçon 10.1, avec ses réserves et engagements de reprise. Et lors de la visite, il a expliqué à chaque acheteur comment fonctionnent les équipements, la climatisation et la ventilation.
 
@@ -167,7 +167,7 @@ Les dossiers préparés, Nicolás est retourné chez son notaire, celui qu'il a 
 
 **Les signatures, trois ou quatre semaines avant.** Il a proposé son notaire à chaque acheteur, sans l'imposer, car choisir le notaire est un droit du consommateur. Avec le notaire de chacun et avec les banques des acheteurs qui empruntent, il a confirmé les dates et arrêté le calendrier des signatures. À ces acheteurs, il a rappelé les délais : les documents de leur banque, au moins 10 jours calendaires avant, et l'acte préalable devant notaire, au plus tard la veille.
 
-**Un décompte de liquidation par acheteur.** Pour un logement au prix moyen : prix, 122.130,65 € IVA comprise ; paiements reçus, 24.426,13 € IVA comprise ; montant restant dû, 97.704,52 €, ce qu'il encaissera à l'acte (Leçon 11.3).
+**Un décompte de liquidation par acheteur.** Pour un logement au prix moyen : prix, 252.705,83 € IVA comprise ; paiements reçus, 50.541,17 € IVA comprise ; montant restant dû, 202.164,66 €, ce qu'il encaissera à l'acte (Leçon 11.3).
 
 **Le blanchiment.** Le promoteur est assujetti. Nicolás a demandé à chaque acheteur son DNI ou NIE, les justificatifs de l'origine de ses fonds et les preuves de ses paiements antérieurs, et l'a prévenu qu'il paierait par chèque nominatif ou virement : rien en espèces au-delà de la limite légale. Les notaires de votre province, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon et, à la fin du module, à la Chambre des notaires.
 

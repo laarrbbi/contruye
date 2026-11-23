@@ -154,7 +154,7 @@ El OCT no lo exige la ley, sino la aseguradora: revisa el proyecto y la obra y e
 
 Para el coste, Nicolás usa la **Plantilla 4 · Control de costes de obra** desde la primera certificación. Te cuento cómo la tenía a mitad de obra.
 
-**Su presupuesto de control.** El del contrato llave en mano, por capítulos: 1.047.083 €. Y, como pide la lección, le suma una reserva de imprevistos del 3-5 %.
+**Su presupuesto de control.** El del contrato llave en mano, por capítulos: 2.221.086 €. Y, como pide la lección, le suma una reserva de imprevistos del 3-5 %.
 
 **Cada mes, el mismo circuito:**
 
@@ -164,14 +164,14 @@ Para el coste, Nicolás usa la **Plantilla 4 · Control de costes de obra** desd
 4. El tasador del banco verifica el avance, y el banco libera el dinero del préstamo.
 5. Paga a la constructora en plazo, como mucho a 60 días.
 
-**A mitad de obra.** Con el 40 % de la obra ejecutada, lleva certificados a origen 427.809 €. Retenido hasta hoy, el 5 %: 21.390,45 €, que no devolverá hasta un año después de la recepción (Lección 5.4). A pagar a la constructora hasta hoy, con IVA y menos la retención: 449.199,45 €.
+**A mitad de obra.** Con el 40 % de la obra ejecutada, lleva certificados a origen 907.474 €. Retenido hasta hoy, el 5 %: 45.373,70 €, que no devolverá hasta un año después de la recepción (Lección 5.4). A pagar a la constructora hasta hoy, con IVA y menos la retención: 952.847,70 €.
 
-**La desviación: +2 %.** La previsión de coste final le sale en 1.063.537 €: 16.454 € más que lo contratado. La plantilla le dice de dónde viene:
+**La desviación: +2 %.** La previsión de coste final le sale en 2.255.989 €: 34.903 € más que lo contratado. La plantilla le dice de dónde viene:
 
-- Movimiento de tierras: +997 €.
-- Cimentación: +2.992 €.
-- Albañilería: +4.986 €.
-- Acabados: +7.479 €.
+- Movimiento de tierras: +2.115 €.
+- Cimentación: +6.346 €.
+- Albañilería: +10.577 €.
+- Acabados: +15.865 €.
 
 **Lo que hace, como dice la lección.** Un 2 % cabe en su reserva de imprevistos, pero no lo deja correr:
 
@@ -239,10 +239,10 @@ Nicolás tiene 20 meses de obra (Plantilla 3), y de ese plazo dependen los inter
 **El informe mensual.** Lo prepara con los KPIs de la lección y lo envía al banco. Así iba a mitad de obra:
 
 - **Avance físico:** el 40 % de la obra ejecutada.
-- **Avance económico:** lo certificado frente a lo contratado, 427.809 € de 1.047.083 €.
+- **Avance económico:** lo certificado frente a lo contratado, 907.474 € de 2.221.086 €.
 - **Desviación de plazo:** los días frente al planning.
-- **Coste a fin de obra:** 1.063.537 €.
-- **Margen actualizado:** baja en los 16.454 € de la desviación y, con los números de su Plantilla 2, sigue muy por encima del 15 % mínimo habitual (Módulo 2).
+- **Coste a fin de obra:** 2.255.989 €.
+- **Margen actualizado:** baja en los 34.903 € de la desviación y, con los números de su Plantilla 2, sigue muy por encima del 15 % mínimo habitual (Módulo 2).
 - **Ventas:** las unidades vendidas y cobradas frente a su plan de la Plantilla 5 (Módulo 8), 2 viviendas al mes.
 
 **Los retrasos, por escrito.** Tiene previstos los típicos: suministros, clima, permisos e incidencias. Si hace falta una ampliación de plazo, la documenta por escrito, porque afecta a las penalidades de su contrato, al préstamo y a sus compradores.

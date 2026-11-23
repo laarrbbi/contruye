@@ -76,7 +76,7 @@ L'option d'achat inscrite, Nicolás s'est attelé à son CRP. Je vous raconte co
 
 **L'outil.** Pour n'oublier aucun poste, il a ouvert le **modèle 2 · Viabilité rapide et méthode résiduelle**, qui contient ces lignes (vous l'avez dans la Leçon 2.3). Il y a saisi ce qu'il savait déjà : Communauté valencienne ; terrain hors IVA, parce que c'est un particulier qui vend ; 1.586,49 m² construits et 18 logements. Pour chaque poste, il a laissé le pourcentage que propose le modèle. Il lui manque deux données : le prix de vente, qu'il obtient dans la Leçon 2.2, et le coût de construction, qu'il affine dans la Leçon 2.3.
 
-**Son étalon.** Il a noté le tableau des poids pour comparer chaque poste quand il l'aura : la construction, entre 45 et 55 % des recettes ; le résultat avant impôts, entre 15 et 25 %. Et la règle : en dessous de 15 % de marge sur les ventes, le risque ne vaut pas la peine. Du terrain, il sait déjà qu'il pèse peu : dans les grands chiffres, il représentait 3,6 % des recettes (Leçon 1.1), très en dessous des 15–30 % du tableau, parce que ce sont les prix de l'exemple du professionnel.
+**Son étalon.** Il a noté le tableau des poids pour comparer chaque poste quand il l'aura : la construction, entre 45 et 55 % des recettes ; le résultat avant impôts, entre 15 et 25 %. Et la règle : en dessous de 15 % de marge sur les ventes, le risque ne vaut pas la peine. Du terrain, il sait déjà qu'il pèse peu : dans les grands chiffres, il représentait 1,7 % des recettes (Leçon 1.1), très en dessous des 15–30 % du tableau, parce que le prix du terrain est celui de l'exemple du professionnel.
 
 ### Résumé
 
@@ -101,6 +101,7 @@ Le CRP retranche des recettes hors IVA tous les coûts de la promotion, du terra
   1. **Étude de marché détaillée :** regardez ce qu'il y a autour et qui sont vos concurrents. Visitez les promotions en vente dans un rayon de 1-3 km et simulez un achat (technique du client mystère). Notez les m² construits et utiles, le €/m², la typologie et les prestations (memoria de calidades). Leurs sites web présentent souvent les plans et le descriptif des prestations ; s'ils n'affichent pas les prix, demandez-les au bureau de vente ou au promoteur.
   2. Lisez les rapports trimestriels de Tinsa, Sociedad de Tasación, Gloval et des cabinets de conseil (CBRE, JLL, Savills, Colliers).
   3. Appliquez une décote de 3-5 % sur l'offre concurrente pour vos premières ventes sur plan.
+  4. **Vous pouvez aussi comparer avec les prix des actes signés** du secteur (Statistique du Registre du Colegio de Registradores, avec ses cartes de chaleur, et Portail statistique du notariat) : ce sont des prix de vente réels, pas des prix d'annonce, utiles surtout pour l'expertise. Ils donnent des valeurs moyennes par secteur, pas logement par logement : ils vous servent de référence, mais pas pour savoir ce que vaut un logement précis (un attique ne vaut pas la même chose qu'un rez-de-chaussée). Dans le neuf, c'est votre concurrence qui fixe votre prix.
 - **Mix produit indicatif :**
 
 | Typologie | % | Note |
@@ -119,6 +120,7 @@ Le CRP retranche des recettes hors IVA tous les coûts de la promotion, du terra
   - **Absorption :** logements vendus par mois et par promotion comparable, et durée totale de commercialisation.
   - **Offre future :** promotions avec permis accordé ou en cours dans le secteur (demandez à la mairie et consultez la statistique des visas de l'ordre des architectes).
   - **Profil de l'acheteur** et demande par typologie et surface.
+  - **Étude de la demande**, dans les grandes lignes (c'est un domaine d'étude à part entière) : qui vit dans le secteur (population nationale ou étrangère, résidente ou non, par tranche d'âge), de quoi elle vit (son activité économique et le revenu par habitant) et si la population augmente ou diminue.
   - **Prix séparé** du logement, du garage et de la cave.
   - Confrontez toujours les prix affichés aux transactions réelles.
 
@@ -132,9 +134,9 @@ Il manquait au CRP de Nicolás sa première ligne, les recettes. Je vous raconte
 
 **Ce qui bouge dans le secteur.** Il a aussi mesuré le reste de ce que demande la leçon : l'absorption des promotions comparables, l'offre future (il s'est renseigné au service de l'urbanisme de la mairie et a consulté la statistique des visas de l'ordre des architectes) et le profil de l'acheteur.
 
-**Le mix, avec l'architecte.** Avec ce que demande le secteur, et non avec ce qui lui plaisait à lui, il a arrêté le mix : des logements de 2 chambres, les plus demandés, et de 3 chambres pour les familles, avec des prestations moyennes, pour la résidence principale.
+**Le mix, avec l'architecte.** Avec ce que demande le secteur, et non avec ce qui lui plaisait à lui, il a arrêté le mix : des logements de 2 chambres, les plus demandés, et de 3 chambres pour les familles, avec des prestations moyen-haut de gamme, pour la résidence principale.
 
-**Son prix.** Il a appliqué la décote de 3-5 % sur l'offre concurrente que conseille la leçon pour les premières ventes sur plan. Il obtient **1.259,70 € le m² construit, hors IVA** : celui-là même que lui demandaient les grands chiffres (Leçon 1.1). Sur 18 logements, un prix moyen de 111.027,86 € hors IVA (122.130,64 € avec 10 % d'IVA) et des ventes de 1.998.501,45 €. Il l'a saisi dans le modèle 2.
+**Son prix.** Il a appliqué la décote de 3-5 % sur l'offre concurrente que conseille la leçon pour les premières ventes sur plan. Il obtient **2.606,50 € le m² construit, hors IVA** : celui-là même que lui demandaient les grands chiffres (Leçon 1.1). Sur 18 logements, un prix moyen de 229.732,57 € hors IVA (252.705,82 € avec 10 % d'IVA) et des ventes de 4.135.186,19 €. Il l'a saisi dans le modèle 2.
 
 ### Résumé
 
@@ -371,22 +373,22 @@ Les recettes dans le modèle 2, Nicolás est passé aux coûts. Je vous raconte 
 
 **Le terrain.** Il l'avait de la Leçon 1.4 : 81.174,29 € dans le modèle 1, avec ITP, notaire, registre, due diligence, expertise et études. Dans le modèle 2, le terrain entre avec son ITP de 9 % : 77.817,33 €. Le modèle lui-même prévient qu'il ne comprend ni notaire ni registre, et que cela s'affine avec le modèle 1.
 
-**La construction.** Il a demandé des prix à deux entreprises de construction locales, parce qu'ils varient selon la province (les devis fermes, à trois, arrivent dans la Leçon 5.3). Dans l'exemple, la construction est à 660 €/m², celle de l'exemple du professionnel : 1.047.083,40 €. Elle est moins chère que celle d'aujourd'hui : la leçon donne 900–1.100 €/m² pour la construction standard en 2025-2026. Dans votre promotion, mettez le prix que vous donneront vos entreprises.
+**La construction.** Il a demandé des prix à deux entreprises de construction locales, parce qu'ils varient selon la province (les devis fermes, à trois, arrivent dans la Leçon 5.3). Elles lui ont proposé 1.400 €/m², ce que donne le tableau de la leçon pour des prestations moyen-haut de gamme : 2.221.086 €. Dans votre promotion, mettez le prix que vous donneront vos entreprises.
 
-**L'ICIO et les taxes, dans l'ordonnance.** À la mairie, il a demandé l'ordonnance fiscale de l'ICIO et des taxes (tableau « Où s'adresser ») : le taux exact de sa commune et la base sur laquelle il se calcule. Il ne l'a pas calculé sur le PEM sans la lire, ce qui est l'une des erreurs typiques. L'ordonnance en main, il a laissé permis, ICIO et taxes à 5 % de la construction, comme le propose le modèle : 52.354,17 €.
+**L'ICIO et les taxes, dans l'ordonnance.** À la mairie, il a demandé l'ordonnance fiscale de l'ICIO et des taxes (tableau « Où s'adresser ») : le taux exact de sa commune et la base sur laquelle il se calcule. Il ne l'a pas calculé sur le PEM sans la lire, ce qui est l'une des erreurs typiques. L'ordonnance en main, il a laissé permis, ICIO et taxes à 5 % de la construction, comme le propose le modèle : 111.054,30 €.
 
 **Le reste, avec les pourcentages du modèle :**
 
-- Honoraires techniques, 8 % de la construction : 83.766,67 €.
-- Assurances, OCT, contrôle qualité et autres, 3 % : 31.412,50 €.
+- Honoraires techniques, 8 % de la construction : 177.686,88 €.
+- Assurances, OCT, contrôle qualité et autres, 3 % : 66.632,58 €.
 - Viabilisation et raccordements : 50.000 €. Il ne les a pas oubliés : c'est une autre erreur typique.
-- Commercialisation, 3 % des ventes : 59.955,04 €.
-- Frais financiers, 4 % des ventes : 79.940,06 €. Il les affinera avec la banque (Leçon 5.1).
-- Frais généraux, 2 % des ventes : 39.970,03 €.
+- Commercialisation, 3 % des ventes : 124.055,59 €.
+- Frais financiers, 4 % des ventes : 165.407,45 €. Il les affinera avec la banque (Leçon 5.1).
+- Frais généraux, 2 % des ventes : 82.703,72 €.
 
-Au total, **1.444.481,87 € de coûts hors terrain**. Les imprévus n'ont pas de ligne propre dans le modèle : il les teste dans les scénarios de la Leçon 2.4, avec des travaux 5 % puis 10–15 % plus chers.
+Au total, **2.998.626,52 € de coûts hors terrain**. Les imprévus n'ont pas de ligne propre dans le modèle : il les teste dans les scénarios de la Leçon 2.4, avec des travaux 5 % puis 10–15 % plus chers.
 
-**La méthode résiduelle.** Avec une marge visée de 18 % des ventes, le modèle applique la formule de la leçon : des ventes, il retranche les coûts hors terrain et le bénéfice visé, et ce qui reste est ce qu'il peut payer pour le terrain avec son ITP. Le **prix maximal du terrain ressort à 178.247,08 €**. Le propriétaire en demande 71.392,05 €.
+**La méthode résiduelle.** Avec une marge visée de 18 % des ventes, le modèle applique la formule de la leçon : des ventes, il retranche les coûts hors terrain et le bénéfice visé, et ce qui reste est ce qu'il peut payer pour le terrain avec son ITP. Le **prix maximal du terrain ressort à 359.840,51 €**. Le propriétaire en demande 71.392,05 €.
 
 ### Résumé
 
@@ -429,23 +431,23 @@ Chaque coût entre dans le CRP avec sa référence : le terrain avec tout ce que
 
 Le modèle 2 complet, c'était à Nicolás de décider. Je vous raconte comment il s'y est pris.
 
-**La marge sur ventes.** Son CRP, hors IVA : ventes, 1.998.501,45 € ; coût total de la promotion, 1.522.299,21 € ; résultat avant impôts, 476.202,24 €. La marge, c'est le résultat divisé par les recettes : 476.202,24 € ÷ 1.998.501,45 € = 24 %. Elle dépasse largement le minimum de 15 %.
+**La marge sur ventes.** Son CRP, hors IVA : ventes, 4.135.186,19 € ; coût total de la promotion, 3.076.443,85 € ; résultat avant impôts, 1.058.742,33 €. La marge, c'est le résultat divisé par les recettes : 1.058.742,33 € ÷ 4.135.186,19 € = 26 %. Elle dépasse largement le minimum de 15 % et se situe un peu au-dessus des 15–25 % du tableau des poids (Leçon 2.1), parce que son terrain est très bon marché.
 
-**Le terrain.** Il paie une incidence foncière de 45 € par m² construit. La méthode résiduelle lui permet de payer jusqu'à 178.247,08 € pour le terrain ; le propriétaire en demande 71.392,05 €, soit 106.855,03 € de moins que le maximum.
+**Le terrain.** Il paie une incidence foncière de 45 € par m² construit. La méthode résiduelle lui permet de payer jusqu'à 359.840,51 € pour le terrain ; le propriétaire en demande 71.392,05 €, soit 288.448,46 € de moins que le maximum.
 
 **Les trois scénarios.** L'optimiste, c'est son CRP tel quel : ventes à 100 % du prix et travaux sans dérive. Pour les deux autres, il est revenu au modèle 2 et a fait varier le prix de vente et le coût de construction comme l'indique le tableau :
 
-- **Central** (ventes à 95 %, travaux +5 %) : bénéfice de 324.539,59 €, une marge de 17 %.
-- **Pessimiste** (ventes à 90 %, travaux +10 %) : bénéfice de 172.876,94 €, soit 9,6 %. Les 6 mois de retard, le modèle ne les calcule pas : avec le prêt que lui propose la banque, ce sont 23.976,21 € d'intérêts en plus (4,5 % par an sur 1.065.609,45 €, pendant six mois). Il reste sans perte.
-- **L'extrême du tableau** (ventes à 85 %, travaux +15 % et le retard) : le bénéfice tombe à 21.214,28 € avant ces intérêts, si bien qu'il est à l'équilibre. Il le surveillera avec les jalons de sortie de sa note d'investissement (Leçon 2.5).
+- **Central** (ventes à 95 %, travaux +5 %) : bénéfice de 741.768,37 €, une marge de 19 %.
+- **Pessimiste** (ventes à 90 %, travaux +10 %) : bénéfice de 424.794,42 €, soit 11,4 %. Les 6 mois de retard, le modèle ne les calcule pas : avec le prêt que lui propose la banque, ce sont 48.453,99 € d'intérêts en plus (4,5 % par an sur 2.153.510,70 €, pendant six mois). Il reste sans perte.
+- **L'extrême du tableau** (ventes à 85 %, travaux +15 % et le retard) : le bénéfice tombe à 107.820,46 € avant ces intérêts ; après les avoir payés, il lui reste 59.366,47 € : il est presque à l'équilibre. Il le surveillera avec les jalons de sortie de sa note d'investissement (Leçon 2.5).
 
 **Le calendrier.** Le TRI (TIR) dépend du temps, et le modèle 2 ne va pas mois par mois. Avec son cabinet de conseil, il a monté le flux de trésorerie mensuel : quand il paie le terrain, les projets et chaque situation de travaux, et quand il encaisse les ventes, avec 20 mois de travaux et 4 de plus jusqu'aux actes de vente. Il en a tiré le TRI du projet et celui des fonds propres. Le modèle professionnel de l'extra le fait mois par mois (Leçon 2.3).
 
-**Les fonds propres.** Il a eu avec sa banque l'échange préalable du tableau « Où s'adresser » : conditions indicatives et ce qu'elle lui demandera en préventes. Avec un prêt de 70 % du coût, ses fonds propres représentent 30 % : 456.689,76 €, et le terrain payé compte. Il le bouclera avec le modèle 3 (Leçon 5.1). Les banques de votre province, vous les trouverez à la fin du module.
+**Les fonds propres.** Il a eu avec sa banque l'échange préalable du tableau « Où s'adresser » : conditions indicatives et ce qu'elle lui demandera en préventes. Avec un prêt de 70 % du coût, ses fonds propres représentent 30 % : 922.933,16 €, et le terrain payé compte. Il le bouclera avec le modèle 3 (Leçon 5.1). Les banques de votre province, vous les trouverez à la fin du module.
 
 **L'impôt, pour le ROE.** Le ROE se calcule sur le résultat net, après l'impôt sur les sociétés. Sa SPE est nouvelle : dans la liste de la leçon, le taux de 15 % des entités nouvellement créées lui correspondrait, et il l'a fait confirmer par son cabinet de conseil.
 
-**GO.** Marge de 24 %, terrain très en dessous du maximum et un scénario pessimiste qui gagne encore : Nicolás décide de faire la promotion, en sachant que dans le pire extrême du tableau il est à l'équilibre. Prochaine étape : acheter (Leçon 2.5).
+**GO.** Marge de 26 %, terrain très en dessous du maximum et un scénario pessimiste qui gagne encore : Nicolás décide de faire la promotion, en sachant que dans le pire extrême du tableau il est presque à l'équilibre. Prochaine étape : acheter (Leçon 2.5).
 
 ### Résumé
 
@@ -504,7 +506,7 @@ Avec le GO, Nicolás a bouclé l'opération. Je vous raconte dans quel ordre.
 
 **La structure.** Sa SPE existe déjà (Leçon 1.4) : une société nouvelle, dédiée à cette seule promotion, ce que la leçon appelle SPV, qui isole le risque. Avec son cabinet de conseil, il a décidé comment entrent les fonds propres (capital ou prêt d'associé) et a vérifié la fiscalité avant de signer : l'achat paie l'ITP, parce que c'est un particulier qui vend, et les ventes porteront 10 % d'IVA. Il a signé le **pacte d'associés** de sa SPE avec ce que demande la leçon : majorités renforcées, répartition des rôles, apports complémentaires en cas de dérive, blocage, sortie et répartition des résultats. Il sait que la banque lui demandera des cautions personnelles (Leçon 5.1).
 
-**La note d'investissement.** Il y a réuni le terrain, son produit, le CRP, le flux de trésorerie, les trois scénarios, les risques, le calendrier et le financement. Il a fixé un budget de 1.522.299,21 €, une rentabilité minimale de 15 % de marge sur les ventes, son calendrier et son financement. Et les jalons de contrôle et critères de sortie, avec les exemples de la leçon et un délai pour chacun : permis non accordé, préventes inférieures à 30 % et appel d'offres des travaux plus de 8 % au-dessus du budget. Elle a été approuvée par l'**assemblée des associés** de sa SPE.
+**La note d'investissement.** Il y a réuni le terrain, son produit, le CRP, le flux de trésorerie, les trois scénarios, les risques, le calendrier et le financement. Il a fixé un budget de 3.076.443,85 €, une rentabilité minimale de 15 % de marge sur les ventes, son calendrier et son financement. Et les jalons de contrôle et critères de sortie, avec les exemples de la leçon et un délai pour chacun : permis non accordé, préventes inférieures à 30 % et appel d'offres des travaux plus de 8 % au-dessus du budget. Elle a été approuvée par l'**assemblée des associés** de sa SPE.
 
 **L'achat.** L'investissement approuvé, il a levé son option :
 

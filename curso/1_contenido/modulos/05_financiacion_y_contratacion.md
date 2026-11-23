@@ -60,14 +60,14 @@ Con la licencia concedida, Nicolás fue a por el dinero para construir. Te cuent
 
 **Primero, al banco.** Llevó a su banco lo que pide la lección: la licencia, el proyecto de ejecución, el presupuesto, el planning y la CRP de su Plantilla 2. Los bancos los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, la banca con presencia en tu provincia. La **sociedad de tasación** del banco tasó la promoción en hipótesis de edificio terminado (el valor para el LTV) y, con la tasación, el banco le dio su **oferta vinculante**.
 
-**Después, la Plantilla 3.** Con la oferta rellenó la **Plantilla 3 · Préstamo promotor**, partiendo del coste total de su Plantilla 2, 1.522.299,21 €:
+**Después, la Plantilla 3.** Con la oferta rellenó la **Plantilla 3 · Préstamo promotor**, partiendo del coste total de su Plantilla 2, 3.076.443,85 €:
 
-- El banco financia el 70 %: **1.065.609,45 €**. Sus fondos propios son el 30 %, 456.689,76 €, y el solar, ya pagado, cuenta dentro de ellos.
-- Interés del 4,5 % anual y comisión de apertura del 0,75 %: 7.992,07 €.
-- 20 meses de obra, en los que dispone por certificaciones, y 4 meses más hasta las escrituras de venta: 39.960,35 € de intereses durante la obra (sobre la mitad del préstamo, porque se dispone poco a poco) y 15.984,14 € hasta las escrituras.
+- El banco financia el 70 %: **2.153.510,70 €**. Sus fondos propios son el 30 %, 922.933,16 €, y el solar, ya pagado, cuenta dentro de ellos.
+- Interés del 4,5 % anual y comisión de apertura del 0,75 %: 16.151,33 €.
+- 20 meses de obra, en los que dispone por certificaciones, y 4 meses más hasta las escrituras de venta: 80.756,65 € de intereses durante la obra (sobre la mitad del préstamo, porque se dispone poco a poco) y 32.302,66 € hasta las escrituras.
 - Tasación, notaría y registro: 10.000 €.
 
-Coste financiero total: **73.936,57 €**, alrededor del 5 % del coste, algo menos de los 79.940,06 € que había puesto en la Plantilla 2.
+Coste financiero total: **139.210,64 €**, alrededor del 5 % del coste, algo menos de los 165.407,45 € que había puesto en la Plantilla 2.
 
 **Las preventas.** El banco exige el 70–90 % de las viviendas con contrato privado y anticipo: con 18 viviendas, **13 como mínimo**. Cómo las vende lo verás en el Módulo 8; cada euro que cobre irá garantizado y a la cuenta especial (Lección 5.2).
 
@@ -122,11 +122,11 @@ Frente a sus compradores responde Nicolás en los tres plazos de la tabla (1, 3 
 
 **Con un corredor.** Volvió al corredor de seguros que le hizo la prerrevisión de la aseguradora decenal (Módulo 3) y le pidió las pólizas comparadas. Las aseguradoras las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, el Colegio de Mediadores de Seguros de tu provincia.
 
-**El decenal.** Lo contrata él, como promotor, y sus beneficiarios son los propietarios sucesivos de las viviendas. La aseguradora exige un OCT desde el proyecto, y Nicolás ya tenía su informe D0 (Módulo 3). El coste, del 0,8 al 1,5 % de su construcción de 1.047.083,40 €: entre 8.376,67 € y 15.706,25 €, una parte de los 31.412,50 € de seguros, OCT, control de calidad y otros de su Plantilla 2.
+**El decenal.** Lo contrata él, como promotor, y sus beneficiarios son los propietarios sucesivos de las viviendas. La aseguradora exige un OCT desde el proyecto, y Nicolás ya tenía su informe D0 (Módulo 3). El coste, del 0,8 al 1,5 % de su construcción de 2.221.086 €: entre 17.768,69 € y 33.316,29 €, una parte de los 66.632,58 € de seguros, OCT, control de calidad y otros de su Plantilla 2.
 
 **El TRC y la RC.** El todo riesgo construcción cubre los daños a la obra durante la ejecución: no lo exige la ley, lo exige el banco. La responsabilidad civil cubre los daños a terceros durante la obra: es recomendable y el banco normalmente la exige. Contrató las dos con el corredor.
 
-**Las cantidades a cuenta.** Antes de cobrar la primera reserva (Módulo 8), abrió en su banco la **cuenta especial**, separada, solo disponible para la construcción. Cada comprador tendrá su aval, de la línea de avales del banco (Lección 5.1). Con su plan de cobros (Plantilla 5, Módulo 8), cada uno le habrá adelantado 24.426,13 € antes de la entrega: 439.670,33 € entre las 18 viviendas, garantizados con el interés legal.
+**Las cantidades a cuenta.** Antes de cobrar la primera reserva (Módulo 8), abrió en su banco la **cuenta especial**, separada, solo disponible para la construcción. Cada comprador tendrá su aval, de la línea de avales del banco (Lección 5.1). Con su plan de cobros (Plantilla 5, Módulo 8), cada uno le habrá adelantado 50.541,17 € antes de la entrega: 909.740,98 € entre las 18 viviendas, garantizados con el interés legal.
 
 **Lo que Nicolás no hace.** La lección dice qué es obligatorio; saltárselo sería ilegal. Nicolás nunca:
 
@@ -187,7 +187,7 @@ El Registro Mercantil, el REA, la AEAT y la Seguridad Social los tienes en las w
 
 **Las ofertas, capítulo a capítulo.** No miró el total: comparó cada capítulo, buscando partidas infravaloradas o que faltaran, y revisó en cada oferta las exclusiones, los medios propios y la documentación laboral, preventiva, fiscal y de seguros de la empresa. Si una hubiera venido un 15-20 % por debajo de la media, la habría mirado con lupa: suele significar errores, materiales peores o una empresa que se quedará sin caja.
 
-**La elegida.** Se quedó con la que tenía obra parecida terminada, las cuentas sanas, su equipo propio y la oferta completa en todos los capítulos: **1.047.083,40 €** por toda la obra, lo que había puesto en su Plantilla 2 (660 €/m²). La contrata en la Lección 5.4.
+**La elegida.** Se quedó con la que tenía obra parecida terminada, las cuentas sanas, su equipo propio y la oferta completa en todos los capítulos: **2.221.086 €** por toda la obra, lo que había puesto en su Plantilla 2 (1.400 €/m²). La contrata en la Lección 5.4.
 
 ### Resumen
 
@@ -238,7 +238,7 @@ Prepara un pliego para que todas oferten lo mismo, invita a 3-5 constructoras y 
 
 Con la constructora elegida, Nicolás firmó el contrato de obra. Te cuento cómo lo cerró.
 
-**A precio cerrado, llave en mano.** Eligió lo habitual y aconsejable: **1.047.083,40 €** por toda la obra. Pudo hacerlo porque su proyecto de ejecución está muy bien definido y lo revisó el OCT (Módulo 3): con un proyecto incompleto, cada laguna habría sido un modificado.
+**A precio cerrado, llave en mano.** Eligió lo habitual y aconsejable: **2.221.086 €** por toda la obra. Pudo hacerlo porque su proyecto de ejecución está muy bien definido y lo revisó el OCT (Módulo 3): con un proyecto incompleto, cada laguna habría sido un modificado.
 
 **Cláusula a cláusula, con su abogado.** Lo revisó con un abogado; los despachos y las constructoras de tu provincia los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. Lo que miró con más cuidado:
 

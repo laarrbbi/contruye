@@ -149,7 +149,7 @@ Chaque désordre suit un protocole : canal unique, réponse rapide, visite et cl
   - Déclaration annuelle (formulaire 200) et acomptes (formulaire 202).
   - En Navarre et au Pays basque, réglementation forale.
 - **IVA :** trimestrielle (303) et récapitulatif annuel (390). Si vous louez des logements invendus, régularisez l'IVA déduite (la location de logements est exonérée).
-- **Plus-value municipale :** s'agissant d'un ouvrage neuf, l'autoliquidation de la plus-value municipale ne s'applique pas au promoteur (Leçon 11.5). Choisissez la méthode la plus favorable (objective ou réelle). Sans hausse de valeur, pas d'impôt.
+- **Plus-value municipale :** vous la payez à chaque vente s'il y a une hausse de valeur du terrain (Leçon 11.5). Choisissez la méthode la plus favorable (objective ou réelle). Sans hausse de valeur, pas d'impôt, même s'il convient de la déclarer.
 - **IBI :** pour les logements qui vous appartiennent encore au 1 janvier.
 - **Qui s'occupe de quoi** (qui fait chaque élément de la liste ci-dessus) :
   - **Directeur de l'exécution :** il mesure et certifie, y compris l'ouvrage de la situation finale (Leçon 7.3).
@@ -162,23 +162,23 @@ Chaque désordre suit un protocole : canal unique, réponse rapide, visite et cl
 
 Le service après-vente en place, Nicolás s'est assis avec son cabinet de conseil, celui de la Leçon 1.4, pour clôturer les chiffres. Je vous raconte comment il s'y est pris.
 
-**Le décompte avec le constructeur.** Son architecte technique, en tant que directeur de l'exécution, a mesuré et certifié l'ouvrage, et Nicolás a approuvé la situation finale. L'ouvrage s'est terminé à 1.063.537 €, 16.454 € (2 %) au-dessus des 1.047.083 € contractés : l'écart qu'il avait déjà vu venir à mi-chantier avec le Modèle 4 (Leçon 7.3). Il a soldé le contrat avec ses retenues et ses suppléments, et noté la date de restitution de la retenue : un an après la réception (Leçon 5.4).
+**Le décompte avec le constructeur.** Son architecte technique, en tant que directeur de l'exécution, a mesuré et certifié l'ouvrage, et Nicolás a approuvé la situation finale. L'ouvrage s'est terminé à 2.255.989 €, 34.903 € (2 %) au-dessus des 2.221.086 € contractés : l'écart qu'il avait déjà vu venir à mi-chantier avec le Modèle 4 (Leçon 7.3). Il a soldé le contrat avec ses retenues et ses suppléments, et noté la date de restitution de la retenue : un an après la réception (Leçon 5.4).
 
 **Les comptes.** Il a soldé les comptes avec ses techniciens, fournisseurs et prestataires, et réglé les factures et garanties en suspens. Avec le cabinet, il a rapproché les recettes des ventes, les coûts, les intérêts et les frais généraux.
 
-**La rentabilité réelle.** Il a recalculé le Modèle 2 avec les données réelles et l'a comparé au CRP approuvé, qui donnait un bénéfice avant impôts de 476.202,24 € :
+**La rentabilité réelle.** Il a recalculé le Modèle 2 avec les données réelles et l'a comparé au CRP approuvé, qui donnait un bénéfice avant impôts de 1.058.742,33 € :
 
 - **Ventes :** les 18 logements, vendus et passés par acte au prix de son plan de ventes (Modèle 5).
-- **Coût de l'ouvrage :** 16.454 € de plus (+2 %).
-- **Délai et coût financier :** il a signé les actes dans les 4 mois prévus, et le coût financier réel a été de 73.936,57 €, un peu moins que les 79.940,06 € qu'il avait inscrits dans le CRP.
+- **Coût de l'ouvrage :** 34.903 € de plus (+2 %).
+- **Délai et coût financier :** il a signé les actes dans les 4 mois prévus, et le coût financier réel a été de 139.210,64 €, un peu moins que les 165.407,45 € qu'il avait inscrits dans le CRP.
 
 **La comptabilité.** Tous les coûts étaient inscrits en stocks : promotion en cours et, à la fin, immeuble achevé. À chaque acte, le cabinet a comptabilisé la vente et sorti le coût correspondant. Comme la promotion a duré plus d'un an, les intérêts du prêt promoteur ont été incorporés au coût des stocks.
 
 **Les impôts, auprès de l'administration fiscale (Agencia Tributaria) :**
 
-- **IVA :** l'IVA facturée sur toute la promotion, 199.850,15 € selon son Modèle 5, déclarée trimestre après trimestre dans le 303 et récapitulée dans le 390. Il ne loue aucun logement ; il n'a donc pas d'IVA à régulariser.
+- **IVA :** l'IVA facturée sur toute la promotion, 413.518,63 € selon son Modèle 5, déclarée trimestre après trimestre dans le 303 et récapitulée dans le 390. Il ne loue aucun logement ; il n'a donc pas d'IVA à régulariser.
 - **Impôt sur les sociétés :** la déclaration annuelle (formulaire 200) et les acomptes (formulaire 202). Le taux, parmi ceux que donne la leçon, c'est son cabinet qui le lui a appliqué selon sa société.
-- **Plus-value municipale :** comme le dit la Leçon 11.5, s'agissant d'un ouvrage neuf, l'autoliquidation de la plus-value municipale ne s'applique pas au promoteur.
+- **Plus-value municipale,** à la mairie : comme le dit la Leçon 11.5, il l'a payée pour chaque vente avec une hausse de valeur du terrain et, pour celles où il n'y en a pas eu, il l'a tout de même déclarée.
 
 ### Résumé
 

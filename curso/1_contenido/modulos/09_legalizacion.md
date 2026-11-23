@@ -115,6 +115,7 @@ Antes de pedir la primera ocupación o ir a la notaría, revisa toda la obra fre
   - **Estatutos** de la comunidad (uso de terrazas, piscina, distribución de gastos, prohibición de usos).
   - Va en la misma escritura que la obra nueva: la de declaración de obra nueva y división horizontal, que se otorga al principio de la obra (Lección 10.3).
 - **Tras la inscripción:** cada vivienda tiene finca registral propia y se puede vender e hipotecar por separado. El banco distribuye la hipoteca del préstamo promotor entre las fincas.
+- **Préstamo del promotor y préstamo del comprador:** la escritura de declaración de obra nueva y división horizontal declara y legaliza oficialmente la edificación, inscribe el edificio y cada finca independiente en el Registro de la Propiedad y actualiza el Catastro. Por eso la exige el sistema financiero para conceder préstamos hipotecarios. No confundas el préstamo hipotecario al promotor, que permite distribuir el préstamo entre cada vivienda resultante, con el préstamo hipotecario al comprador final: a este no se le concede hipoteca hasta que la obra nueva esté legalmente finalizada.
 - **Coste:** notaría y registro según arancel, AJD (Anexo B) sobre el valor de la obra nueva y de la división horizontal. **No se puede repercutir al comprador consumidor.**
 
 - **Regulariza** en la escritura las superficies, anexos y elementos comunes si lo construido difiere del proyecto inicial, y comprueba que las fincas resultantes coinciden con planos y títulos.

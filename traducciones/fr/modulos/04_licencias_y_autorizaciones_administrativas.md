@@ -51,6 +51,7 @@
   4. Avis technique (architecte municipal) et avis juridique.
   5. Décision. Si elle est favorable, le permis fixe les délais de démarrage et d'achèvement et les conditions.
   6. En cas de refus : recours gracieux (1 mois, facultatif) ou recours contentieux (2 mois).
+- **Pourquoi les délais s'allongent et comment les raccourcir :** bien souvent, la lenteur de l'administration vient de projets mal conçus, qui présentent des défauts de conformité à la réglementation, des défauts structurels ou des manquements au Code technique de la construction : une équipe d'architecture solide vous fait gagner des mois. Dans la Communauté valencienne, beaucoup de mairies ont une convention avec des **entités collaboratrices d'urbanisme (ECUV)**, qui examinent le projet dans des délais courts : quand il arrive à la mairie déjà examiné par une ECUV, la mairie fait l'économie de cette vérification. Avec une ECUV, le permis peut être délivré en trois mois environ, selon le projet (davantage si surgit, par exemple, un problème d'inondabilité).
 - **Silence administratif :** pour une construction neuve, **il vaut rejet** (art. 11.4 TRLSRU). Si le délai passe sans décision, vous ne pouvez pas commencer.
 - **ICIO :**
   - Assiette : coût réel et effectif de l'exécution matérielle. Elle n'inclut ni l'IVA, ni les taxes, ni les honoraires, ni le bénéfice de l'entreprise (art. 102.1 TRLRHL).
@@ -68,7 +69,7 @@ Avec le projet du Module 3, Nicolás est allé chercher le permis. Je vous racon
 
 **La demande, complète.** Il l'a déposée sur le **guichet électronique de la mairie** avec tout ce que liste la leçon : la demande, le projet, l'étude de sécurité et de santé (pas l'étude simplifiée : son chantier dépasse les 450.759,08 € de la Leçon 3.4), l'étude de gestion des déchets et ce que son ordonnance exige au dépôt : le justificatif des taxes et de l'ICIO et la caution déchets. Il n'avait pas besoin d'autorisations sectorielles (Leçon 4.2).
 
-**L'ICIO.** Il l'a liquidé à la **gestion fiscale de la mairie** : le taux de son ordonnance (4 % au maximum) sur le coût réel et effectif de l'exécution matérielle, sans l'IVA, les taxes, les honoraires ni le bénéfice de l'entreprise. Dans le modèle 2, il avait prévu 52.354,17 € pour permis, ICIO et taxes. La liquidation définitive arrivera à la fin, sur le coût réel : c'est pourquoi il garde chaque facture du chantier.
+**L'ICIO.** Il l'a liquidé à la **gestion fiscale de la mairie** : le taux de son ordonnance (4 % au maximum) sur le coût réel et effectif de l'exécution matérielle, sans l'IVA, les taxes, les honoraires ni le bénéfice de l'entreprise. Dans le modèle 2, il avait prévu 111.054,30 € pour permis, ICIO et taxes. La liquidation définitive arrivera à la fin, sur le coût réel : c'est pourquoi il garde chaque facture du chantier.
 
 **Ensuite, attendre sans bouger.** Si la mairie lui avait demandé une pièce, il aurait eu 10 jours pour régulariser ; c'est pourquoi il a déposé un dossier complet : chaque demande de pièce ajoute des semaines. Sont arrivés l'avis technique de l'architecte municipal et l'avis juridique (le tableau « Où s'adresser » parle de 1-6 mois selon la commune), et pendant ce temps pas une seule machine n'est entrée sur le terrain : pour une construction neuve, le silence vaut rejet. La décision a été favorable, avec ses délais et ses conditions (Leçon 4.4).
 

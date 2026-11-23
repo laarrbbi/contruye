@@ -154,7 +154,7 @@ The OCT is not required by law but by the insurer: it reviews the design and the
 
 For cost, Nicolás has used **Template 4 · Construction cost control** since the first valuation. Let me tell you how it stood halfway through the works.
 
-**His control budget.** The one in the turnkey contract, by chapter: 1.047.083 €. And, as the lesson asks, he adds a contingency reserve of 3-5 %.
+**His control budget.** The one in the turnkey contract, by chapter: 2.221.086 €. And, as the lesson asks, he adds a contingency reserve of 3-5 %.
 
 **Every month, the same circuit:**
 
@@ -164,14 +164,14 @@ For cost, Nicolás has used **Template 4 · Construction cost control** since th
 4. The bank's valuer checks the progress, and the bank releases the loan money.
 5. He pays the contractor on time, at 60 days at most.
 
-**Halfway through the works.** With 40 % of the works carried out, he has 427.809 € certified to date. Retained so far, 5 %: 21.390,45 €, which he will not return until one year after handover (Lesson 5.4). Payable to the contractor so far, including IVA and less the retention: 449.199,45 €.
+**Halfway through the works.** With 40 % of the works carried out, he has 907.474 € certified to date. Retained so far, 5 %: 45.373,70 €, which he will not return until one year after handover (Lesson 5.4). Payable to the contractor so far, including IVA and less the retention: 952.847,70 €.
 
-**The deviation: +2 %.** His forecast of final cost comes to 1.063.537 €: 16.454 € more than contracted. The template tells him where it comes from:
+**The deviation: +2 %.** His forecast of final cost comes to 2.255.989 €: 34.903 € more than contracted. The template tells him where it comes from:
 
-- Earthworks: +997 €.
-- Foundations: +2.992 €.
-- Masonry: +4.986 €.
-- Finishes: +7.479 €.
+- Earthworks: +2.115 €.
+- Foundations: +6.346 €.
+- Masonry: +10.577 €.
+- Finishes: +15.865 €.
 
 **What he does, as the lesson says.** A 2 % deviation fits within his contingency reserve, but he does not let it run:
 
@@ -239,10 +239,10 @@ Nicolás has 20 months of works (Template 3), and the interest on the loan and t
 **The monthly report.** He prepares it with the lesson's KPIs and sends it to the bank. This is how it stood halfway through the works:
 
 - **Physical progress:** 40 % of the works carried out.
-- **Financial progress:** certified against contracted, 427.809 € of 1.047.083 €.
+- **Financial progress:** certified against contracted, 907.474 € of 2.221.086 €.
 - **Time deviation:** the days against the programme.
-- **Cost at completion:** 1.063.537 €.
-- **Updated margin:** it falls by the 16.454 € of the deviation and, with the figures in his Template 2, is still well above the usual 15 % minimum (Module 2).
+- **Cost at completion:** 2.255.989 €.
+- **Updated margin:** it falls by the 34.903 € of the deviation and, with the figures in his Template 2, is still well above the usual 15 % minimum (Module 2).
 - **Sales:** the units sold and paid for against his plan in Template 5 (Module 8), 2 homes a month.
 
 **Delays, in writing.** He has the typical ones in mind: supplies, weather, permits and incidents. If an extension of time is needed, he documents it in writing, because it affects the penalties in his contract, the loan and his buyers.

@@ -51,6 +51,7 @@
   4. Technical report (municipal architect) and legal report.
   5. Decision. If favourable, the licence sets the start and completion deadlines and conditions.
   6. If refused: appeal for reconsideration (1 month, optional) or judicial review (2 months).
+- **Why it takes so long and how to shorten it:** the administration's slowness often comes from poorly conceived designs, with deficiencies due to regulatory or structural non-compliance or non-compliance with the Building Code (CTE): a reliable architecture team saves you months. In the Comunitat Valenciana, many town halls have an agreement with **urban planning collaborating entities (ECUV)** (*entidades colaboradoras urbanísticas*), which review the design within short deadlines: when it reaches the town hall already reviewed by an ECUV, the town hall is spared that check. With an ECUV the licence can come through in about three months, depending on the design (longer if, for example, a flood-risk problem comes up).
 - **Administrative silence:** on new build **it is negative** (art. 11.4 TRLSRU). If the deadline passes with no decision, you cannot start.
 - **ICIO:**
   - Base: the actual cost of the physical execution. It does not include IVA, fees, professional fees or the contractor's profit (art. 102.1 TRLRHL).
@@ -68,7 +69,7 @@ With the design from Module 3, Nicolás went after the licence. Let me tell you 
 
 **The application, complete.** He filed it through the **town hall's e-office** with everything in the lesson: the application, the design, the health and safety study (not the basic one: his works exceed the 450.759,08 € of Lesson 3.4), the waste management study and what his by-law requires on application: proof of payment of the fees and ICIO and the waste deposit. He did not need any sectoral authorisations (Lesson 4.2).
 
-**The ICIO.** He paid it at the **town hall's tax office**: his by-law's rate (4 % at most) on the actual cost of the physical execution, without IVA, fees, professional fees or the contractor's profit. In Template 2 he had set aside 52.354,17 € for licences, ICIO and fees. The final assessment will come at completion, on the actual cost: that is why he keeps every invoice from the works.
+**The ICIO.** He paid it at the **town hall's tax office**: his by-law's rate (4 % at most) on the actual cost of the physical execution, without IVA, fees, professional fees or the contractor's profit. In Template 2 he had set aside 111.054,30 € for licences, ICIO and fees. The final assessment will come at completion, on the actual cost: that is why he keeps every invoice from the works.
 
 **Then, waiting without moving.** If the town hall had asked him for something, he would have had 10 days to correct it; that is why he filed it complete: every request adds weeks. The technical report from the municipal architect and the legal report came in (the "Where to go" table talks of 1-6 months depending on the municipality), and in the meantime not a single machine entered the plot: on new build, silence is negative. The decision came back favourable, with its deadlines and conditions (Lesson 4.4).
 

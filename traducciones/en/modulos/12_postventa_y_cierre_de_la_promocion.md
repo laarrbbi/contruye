@@ -149,7 +149,7 @@ Each incident follows a protocol: a single channel, a quick response, a visit an
   - Annual return (form 200) and payments on account (form 202).
   - In Navarra and País Vasco, foral rules.
 - **IVA:** quarterly (303) and annual summary (390). If you rent out homes you have not sold, adjust the IVA you deducted (renting a home is exempt).
-- **Municipal plusvalía:** as it is a new build, the developer does not have to self-assess the municipal plusvalía (Lesson 11.5). Choose the more favourable method (objective or actual). If there is no increase in value, there is no tax.
+- **Municipal plusvalía:** you pay it on each sale if the land has increased in value (Lesson 11.5). Choose the more favourable method (objective or actual). If there is no increase in value, there is no tax, although it is advisable to declare it.
 - **IBI:** on the homes that are still yours on 1 January.
 - **Who handles what** (who does each thing on the list above):
   - **Director of works execution:** measures and certifies, including the work in the final valuation (Lesson 7.3).
@@ -162,23 +162,23 @@ Each incident follows a protocol: a single channel, a quick response, a visit an
 
 With after-sales under way, Nicolás sat down with his advisory firm, the one from Lesson 1.4, to close the numbers. Let me tell you how he did it.
 
-**The final account with the contractor.** His technical architect, as director of works execution, measured and certified the work, and Nicolás approved the final valuation. The works came to 1.063.537 €, 16.454 € (2 %) above the 1.047.083 € contracted: the deviation he had already seen coming halfway through the works with Template 4 (Lesson 7.3). He settled the contract with its retentions and its extras, and noted the date for releasing the retention: one year after handover (Lesson 5.4).
+**The final account with the contractor.** His technical architect, as director of works execution, measured and certified the work, and Nicolás approved the final valuation. The works came to 2.255.989 €, 34.903 € (2 %) above the 2.221.086 € contracted: the deviation he had already seen coming halfway through the works with Template 4 (Lesson 7.3). He settled the contract with its retentions and its extras, and noted the date for releasing the retention: one year after handover (Lesson 5.4).
 
 **The accounts.** He closed the accounts with his professionals, suppliers and vendors, and settled the outstanding invoices and warranties. With his advisory firm he reconciled the sales revenue, the costs, the interest and the overheads.
 
-**The actual return.** He ran Template 2 again with the actual figures and compared it with the approved CRP, which gave a profit before tax of 476.202,24 €:
+**The actual return.** He ran Template 2 again with the actual figures and compared it with the approved CRP, which gave a profit before tax of 1.058.742,33 €:
 
 - **Sales:** the 18 homes, sold and conveyed by deed at the price in his sales plan (Template 5).
-- **Cost of the works:** 16.454 € more (+2 %).
-- **Time and finance cost:** he signed the deeds within the 4 months planned, and the actual finance cost was 73.936,57 €, a little less than the 79.940,06 € he had put in the CRP.
+- **Cost of the works:** 34.903 € more (+2 %).
+- **Time and finance cost:** he signed the deeds within the 4 months planned, and the actual finance cost was 139.210,64 €, a little less than the 165.407,45 € he had put in the CRP.
 
 **The accounting.** All the costs had been capitalised as inventory: development in progress and, at the end, finished building. At each deed, the advisory firm recognised the sale and wrote off the proportional cost. As the development lasted more than a year, the interest on the development loan was capitalised as an additional cost of the inventory.
 
 **The taxes, with the Tax Agency:**
 
-- **IVA:** the IVA charged on the whole development, 199.850,15 € according to his Template 5, declared quarter by quarter on the 303 and summarised on the 390. He does not rent out any home, so he has no IVA to adjust.
+- **IVA:** the IVA charged on the whole development, 413.518,63 € according to his Template 5, declared quarter by quarter on the 303 and summarised on the 390. He does not rent out any home, so he has no IVA to adjust.
 - **Corporate income tax:** the annual return (form 200) and the payments on account (form 202). The rate, among those the lesson gives, was applied by his advisory firm according to his company.
-- **Municipal plusvalía:** as Lesson 11.5 says, as it is a new build, the developer does not have to self-assess the municipal plusvalía.
+- **Municipal plusvalía,** at the town hall: as Lesson 11.5 says, on each sale where the land had increased in value he paid it, and on those where it had not, he declared it all the same.
 
 ### Summary
 

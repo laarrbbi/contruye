@@ -76,7 +76,7 @@ Nicolás empezó a vender el día en que compró el solar, con la tabla de hitos
 
 **Los materiales.** Su arquitecto le preparó los planos acotados de cada tipología (2 y 3 dormitorios y los áticos) y la memoria de calidades. Los renders, el dossier en PDF y el tour virtual los encargó a una empresa de marketing de su zona; las de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Cada anuncio lleva la calificación energética de proyecto y nada que no vaya a cumplir: la publicidad es vinculante.
 
-**El precio, completo desde el primer anuncio.** La Ley 10/2025 obliga a dar el precio final completo desde el primer anuncio, sin precios gancho, así que cada anuncio de Nicolás da el precio de la vivienda, el IVA del 10 %, el AJD que el comprador paga en su escritura (en la Comunitat Valenciana, el 1,4 %, Anexo B) y el total. Una vivienda del precio medio se anuncia con sus 111.027,86 €, los 11.102,79 € de IVA (122.130,65 € con IVA), el AJD y el total. La comisión de la agencia la paga él, y el anuncio dice que el comprador no paga ninguna. Lo que no está en el anuncio, no lo cobrará después.
+**El precio, completo desde el primer anuncio.** La Ley 10/2025 obliga a dar el precio final completo desde el primer anuncio, sin precios gancho, así que cada anuncio de Nicolás da el precio de la vivienda, el IVA del 10 %, el AJD que el comprador paga en su escritura (en la Comunitat Valenciana, el 1,4 %, Anexo B) y el total. Una vivienda del precio medio se anuncia con sus 229.732,57 €, los 22.973,26 € de IVA (252.705,83 € con IVA), el AJD y el total. La comisión de la agencia la paga él, y el anuncio dice que el comprador no paga ninguna. Lo que no está en el anuncio, no lo cobrará después.
 
 **Antes de anunciar.** Dejó en la oficina de ventas la documentación del RD 515/1989 (la lista, en la Lección 8.3), y en la oficina de consumo de su comunidad se informó de las hojas de reclamaciones y los requisitos autonómicos.
 
@@ -113,7 +113,7 @@ Lo más habitual es el sistema mixto, oficina propia y red de agencias. Pero Nic
 
 **El contrato de colaboración, por escrito**, con lo que pide la lección:
 
-- **Comisión:** dentro de lo habitual en vivienda estándar (2,5–3 %). La paga él, no el comprador, y la tiene presupuestada en la comercialización de su Plantilla 2: el 3 % de las ventas, 59.955,04 €.
+- **Comisión:** dentro de lo habitual en vivienda estándar (2,5–3 %). La paga él, no el comprador, y la tiene presupuestada en la comercialización de su Plantilla 2: el 3 % de las ventas, 124.055,59 €.
 - **Cuándo se devenga:** a la escritura de cada vivienda, cuando él cobra.
 - **Exclusividad:** la agencia vende en exclusiva su promoción, porque es la única con la que trabaja.
 - **Precios mínimos:** los de su política de precios (Lección 8.1). Por debajo, nada sin su firma.
@@ -221,14 +221,14 @@ Nicolás construye en Alicante: su caso es el de esta lección, la Comunitat Val
 
 Y le dice qué recibirá con la escritura: primera ocupación, certificado energético registrado en el IVACE, Libro del Edificio, seguro decenal y boletines (Módulo 9).
 
-**Los números, en la Plantilla 5.** Con 18 viviendas a 111.027,86 € de media sin IVA (122.130,65 € con IVA):
+**Los números, en la Plantilla 5.** Con 18 viviendas a 229.732,57 € de media sin IVA (252.705,83 € con IVA):
 
 - **Reserva:** 6.000 €, con plazo para firmar el contrato privado y, por escrito, qué pasa con el dinero si no se firma.
-- **Contrato privado:** el 10 % del precio: 6.213,06 € con IVA, descontada la reserva.
-- **Durante la obra:** otro 10 %, en 18 cuotas de 678,50 €.
-- **En la escritura:** 97.704,52 €, el 80 % restante.
+- **Contrato privado:** el 10 % del precio: 19.270,58 € con IVA, descontada la reserva.
+- **Durante la obra:** otro 10 %, en 18 cuotas de 1.403,92 €.
+- **En la escritura:** 202.164,66 €, el 80 % restante.
 
-Antes de la entrega cobra 24.426,13 € por vivienda: **439.670,33 € de cantidades a cuenta** en toda la promoción, que tiene que garantizar con aval o seguro; él las garantiza con los avales de su banco.
+Antes de la entrega cobra 50.541,17 € por vivienda: **909.740,98 € de cantidades a cuenta** en toda la promoción, que tiene que garantizar con aval o seguro; él las garantiza con los avales de su banco.
 
 **El contrato.** Partió del modelo de la asociación de promotores de su zona, y lo revisaron su abogado y la notaría que eligió en el Módulo 1; los despachos y las notarías los podrás encontrar en las empresas potenciales de esta lección. Lleva el IVA desglosado, la licencia, la fecha de entrega, el derecho a resolver si no entrega en plazo, la libre elección de notario y ningún gasto de los que no se le pueden cargar.
 

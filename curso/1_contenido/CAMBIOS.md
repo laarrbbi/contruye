@@ -38,6 +38,8 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Módulos 11 y 12, test del Módulo 11 (P6) | «No procede la autoliquidación de la plusvalía municipal para la promotora» donde el curso decía lo contrario: «Dónde ir» del Módulo 11 (queda «Cambio de titular del IBI»), su checklist (fuera «Plusvalía autoliquidada en plazo en cada venta») y el Módulo 12. La P6 («Plazo para autoliquidar la plusvalía») pregunta ahora si procede | Su corrección de la 11.5 |
 | Lección 2.2 | «Cómo calcular el precio de venta de la promoción» (antes «Cómo sacar el precio de venta»: la promoción incluye viviendas, garajes y trasteros). El punto 1, «Estudio de mercado pormenorizado»: las promociones en venta en un radio de 1-3 km, con la técnica de simulación; anota los m² construidos y útiles, el €/m², la tipología y las calidades (memoria de calidades); en sus webs, planos y memoria de calidades, y si no ponen precio, en la caseta de ventas o a la promotora | Notas de voz del 22/11 |
 | Lección 2.5 | Forma de pago: «al contado, aplazado con opción de compra o parte del precio en permuta de inmuebles» (fuera «con aval» y «plazos», que había puesto la nota del propietario). La opción de compra, gratuita o a cambio de una cantidad pactada (por ejemplo un 3 %) según vaya el mercado, que se pierde si no se compra; en su plazo se terminan los estudios, la financiación y el proyecto. El ejemplo de Nicolás y «Quién se encarga» lo siguen | Notas de voz del 22/11 |
+| Lección 11.5, Módulos 11 y 12, test del Módulo 11 (P6) | Plusvalía municipal: «el promotor, por lo general, está obligado a pagarla, siempre que exista incremento de valor del terreno; si acredita que no ha existido incremento, el impuesto no se devenga (aunque conviene declararlo ante el organismo competente)». Sustituye a «al ser obra nueva, no procede la autoliquidación». Vuelven la fila del ayuntamiento en «Dónde ir» del Módulo 11 y el paso de su checklist («Plusvalía municipal de cada venta pagada, o declarada si no hay incremento de valor»); la P6 pregunta cuándo la paga («siempre que exista incremento de valor del terreno») | Su respuesta del 22/11 |
+| Lección 9.2 | «Préstamo del promotor y préstamo del comprador»: la escritura de declaración de obra nueva y división horizontal declara y legaliza la edificación, inscribe el edificio y cada finca y actualiza el Catastro; la exige el sistema financiero para conceder préstamos hipotecarios; el préstamo al promotor se distribuye entre las viviendas y al comprador no se le concede hipoteca hasta que la obra nueva esté legalmente finalizada. Se quedan como estaban la 5.1 («Hipoteca sobre la obra futura»), la 9.2 («Sirve para que el banco hipoteque la obra futura») y la P9 del test del Módulo 9 | Su respuesta del 22/11 |
 
 ## Del propietario
 
@@ -53,6 +55,8 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lección 8.3 | Se queda el texto de la Comunitat Valenciana y se añade una línea para quien promueve en otra comunidad: las referencias valencianas cambian; el Real Decreto 515/1989, la Ley 12/2023 y la LOE son estatales |
 | Lecciones 2.3 y 2.5, Financials y la calculadora de la web | «ITP/AJD» en lugar de «ITP o AJD». Las plantillas Excel del profesor no se tocan (dicen «ITP o AJD» en dos notas) |
 | Lecciones 2.3 y 2.5 | En español lo que estaba en inglés: «controlador de gestión» en lugar de «Controller» (texto de costes del profesor) y «flujo de caja» en lugar de «cash-flow» |
+| Lección 2.2 (notas de voz) | Vuelven los precios escriturados, como último punto del precio de venta y con la explicación del profesor (valores medios por zona, sirven para tasar y de referencia; en obra nueva el precio lo marca la competencia). Y el estudio de la demanda, por encima, como pidió el propietario (quién vive en la zona, de qué vive, si la población crece) (23/11) |
+| Lección 4.1 (notas de voz) | «Por qué se alarga y cómo acortarlo»: proyectos mal planteados y las entidades colaboradoras urbanísticas (ECUV) de la Comunitat Valenciana, con unos tres meses según el proyecto (23/11) |
 
 ## Estructura que pide el propietario: el Módulo 1 como muestra
 
@@ -79,9 +83,8 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
     suelo urbano consolidado, 1.586,49 m² de techo en B+5, 18 viviendas, 2 áticos), el mismo edificio que
     se construye en el Aprendizaje 3D. Las demás cifras son las de las lecciones y de la tabla «Dónde ir»
     del módulo (nota simple ≈ 9 €, certificación 2-10 días, informe urbanístico 1-3 meses, prima 3-10 %
-    por 6-24 meses, notaría y registro en torno al 0,5 % de la Plantilla 1); ninguna más: los precios de
-    ese ejemplo son de 2002 (660 €/m² de construcción, frente a los 900–1.100 €/m² de la Lección 2.3), y
-    para seguir el ejemplo en el Módulo 2 hacen falta los del profesor.
+    por 6-24 meses, notaría y registro en torno al 0,5 % de la Plantilla 1); ninguna más, salvo la construcción
+    (abajo, «Las cifras de Nicolás»).
   - Antes de la checklist del módulo, «Resumen del Módulo 1» con «Dónde deberías estar en tu proyecto».
   - **Traducciones:** esta segunda versión está solo en español, a la espera de que la apruebe el
     propietario. Mientras, en los demás idiomas las cuatro lecciones del Módulo 1 se leen en español (el
@@ -95,16 +98,20 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
   y plazos cambian según el municipio y la comunidad («revísalos con tu gestor o tu abogado»); en la
   5.2, «Lo que Nicolás no hace» (lo que la lección dice que es obligatorio).
   - **Las cifras de Nicolás** son las de las plantillas del curso calculadas en la plataforma, con los
-    datos del ejemplo del profesional en Números gordos del solar (construcción 660 €/m², suelo
-    45 €/m² de techo, precio de venta el que da la plantilla) en Alicante: Plantilla 1 (ITP 9 %,
-    coste del solar 81.174,29 €), Plantilla 2 (ventas 1.998.501,45 €, coste 1.522.299,21 €,
-    beneficio 476.202,24 €, 24 %; escenarios de la 2.4: base 17 %, pesimista 9,6 %), Plantilla 3
-    (préstamo 1.065.609,45 €, coste financiero 73.936,57 €), Plantilla 4 (a mitad de obra,
-    desviación +16.454 €, +2 %), Plantilla 5 (cantidades a cuenta 439.670,33 €); en las demás
-    partidas, los valores que trae cada plantilla. Los precios son los de ese ejemplo, más bajos que
-    los de hoy, y el ejemplo lo dice (Lección 2.3).
-  - **Lo que espera al profesor no entra en el ejemplo:** si la promotora paga la plusvalía, la
-    hipoteca y la escritura de obra nueva en construcción, la cédula de habitabilidad.
+    datos del ejemplo del profesional en Números gordos del solar (suelo 45 €/m² de techo, precio de
+    venta el que da la plantilla) en Alicante, salvo la construcción: desde el 23/11, a 1.400 €/m², el
+    coste de hoy que da el profesor en las notas de voz para calidades media-alta (dentro del tramo
+    1.100–1.400 €/m² de la Lección 2.3), con lo que las calidades de Nicolás son medias-altas. Antes iba
+    a los 660 €/m² del ejemplo, un precio de 2002. Con eso la plantilla da un precio de venta de
+    2.606,50 €/m², en línea con los 2.600 €/m² que el profesor cita para una zona de Alicante. Plantilla 1
+    (ITP 9 %, coste del solar 81.174,29 €), Plantilla 2 (ventas 4.135.186,19 €, coste 3.076.443,85 €,
+    beneficio 1.058.742,33 €, 26 %; escenarios de la 2.4: base 19 %, pesimista 11,4 %, el extremo casi
+    en tablas), Plantilla 3 (préstamo 2.153.510,70 €, coste financiero 139.210,64 €), Plantilla 4 (a
+    mitad de obra, desviación +34.903 €, +2 %), Plantilla 5 (cantidades a cuenta 909.740,98 €); en las
+    demás partidas, los valores que trae cada plantilla. El suelo sigue siendo el del ejemplo, muy barato
+    (el 1,7 % de las ventas, frente al 15–30 % de la tabla de pesos), y el ejemplo lo dice.
+  - **La plusvalía y la hipoteca** entran ya en el ejemplo con las respuestas del profesor (11.5 y 12);
+    la cédula de habitabilidad, no, hasta que se decida (abajo).
   - **Traducciones:** los bloques nuevos, en los cinco idiomas.
 - **En la plataforma** (sin tocar el texto): las referencias «Lección 4.2», «Módulo 9» llevan a esa
   lección; las plantillas salen bajo la lección que las nombra; al terminar cada módulo, su resumen, la
@@ -120,23 +127,25 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
 - «Info_Docs» está escrito al comprador («a tu disposición», «entregarte», «si entregas», «debes recibir»); en el curso, que habla al promotor, pasa a «del comprador», «entregarle», «si el comprador entrega», «el comprador debe recibir».
 - Mayúsculas y comillas como en el resto del curso; los títulos de los documentos, en frase normal; las fórmulas de honorarios, en letra de código; las listas, con las mismas palabras.
 
-## Para confirmar con el profesor (no se ha cambiado)
+## Respuestas del profesor (22-23/11)
 
-Las tres preguntas para el profesor del 22/11; lo demás de la lista anterior está resuelto (arriba).
+1. **Plusvalía:** aplicada (arriba).
+2. **Hipoteca y escritura de obra nueva:** aplicada (arriba). La escritura sí la exige el banco para los préstamos hipotecarios; lo que se distingue es el préstamo al promotor del préstamo al comprador.
+3. **Cédula de habitabilidad: falta decidir (no se ha cambiado).** Responde que «la nomenclatura es igual en todo el Reino de España», que las competencias en vivienda y urbanismo son de las comunidades autónomas (y de Ceuta y Melilla), que la licencia de primera ocupación la otorgan los ayuntamientos y que todas las comunidades la exigen. Pero su Anexo B pone, comunidad por comunidad, que en ocho la cédula de habitabilidad la expide otro organismo, aparte de la licencia del ayuntamiento: Cataluña (Agència de l'Habitatge de Catalunya), Illes Balears (Consell Insular), Navarra, La Rioja, Asturias, Extremadura, Región de Murcia y Canarias. Si se aplica su respuesta, se quita eso de los Módulos 9 y 10, los Anexos A y B, el test del Módulo 9 (P6) y el examen; el propietario decide.
 
-1. **Plusvalía.** Aplicado que no procede la autoliquidación para la promotora. ¿La promotora paga la plusvalía en la venta de cada vivienda nueva, aunque no la autoliquide? El curso dice que la paga el promotor como vendedor y que no la puede repercutir (Módulo 8, «Leyes que aplican» y la tabla de la 11.1 del Módulo 11, Módulo 12, «Dónde ir» del Módulo 10, test del Módulo 11 P5, examen P21).
-2. **Hipoteca y escritura de obra nueva.** Su comentario de la 4.3 dice que la escritura no es para que el banco inscriba la hipoteca. Siguen diciéndolo la 5.1 («Hipoteca sobre la obra futura (escritura de obra nueva en construcción)», que él dejó al quitar «sobre suelo»), la 9.2 («Sirve para que el banco hipoteque la obra futura») y el test del Módulo 9 (P9).
-3. **Cédula de habitabilidad.** Dice que es lo mismo que la licencia de primera ocupación (así en la Comunitat Valenciana). El curso dice que en ocho comunidades la da la comunidad autónoma, aparte: Módulo 9 (cabecera, «Leyes que aplican», «Dónde ir», la 9.3, la checklist), Módulo 10, Anexos A y B, test del Módulo 9 (P6, P7) y examen (P25). ¿Se quita en todo el curso?
+## Para preguntar al profesor
+
+- **Lección 2.3, los tramos del coste de construcción:** en las notas de voz dice que 900–1.100 €/m² «está mal» y que hoy la media-alta va por 1.400 €/m² y el lujo «casi por 1.600». Faltan los tres tramos exactos (estándar, media-alta, lujo) y el del sótano para la tabla de la lección.
 
 ## Notas del propietario que faltan por aplicar
 
-- Lecciones 2.2 y 2.5: los cuatro audios del 22/11, transcritos. Casi todo lo que dicen ya estaba aplicado con las notas del propietario; lo que faltaba está arriba («Notas de voz del 22/11») y lo que queda por decidir, en «De las notas de voz: para decidir».
 - Lección 2.3: el coste de construcción editable en la administración, con fecha: es una función de la plataforma, no un cambio del texto.
-- El ejemplo de Nicolás con números: todos los valores del ejemplo del profesional en la plantilla Números gordos del solar (construcción 660 €/m², suelo 45 €/m² de techo, precio de venta el que da la plantilla), en la Comunitat Valenciana (Alicante), calculado con las plantillas.
 
-## De las notas de voz: para decidir (no se ha cambiado)
+## De las notas de voz (22/11): decidido el 23/11
 
-1. **Lección 2.2, precios escriturados (Registradores y Notarios).** Se quitó de la lista con la nota del propietario. En el audio el profesor primero dice que lo quitaría y luego: «no lo quites, se puede comparar con los precios… lo ponemos más abajo»; explica que el Colegio de Registradores da mapas de calor con valores medios por zona, que sirven para ciertas cosas pero no para saber cuánto vale una vivienda concreta. Sigue en la tabla «Dónde ir» del módulo. ¿Se añade como último punto, con esa explicación?
-2. **Lección 2.2, estudio de la demanda.** Dice que él hacía estudios de demanda, no solo de oferta: población nacional e internacional, residentes o no, edades, de qué vive la zona, renta per cápita, actividad económica y si la población crece o baja. ¿Se añade?
-3. **Lección 2.3, coste de ejecución material.** Dice que 900–1.100 €/m² «está mal»: hoy la media-alta va por 1.400 €/m², el lujo desde 1.400 y subiendo, «casi por 1.600». Faltan las cifras exactas de cada tramo; el propietario quiere además que se puedan cambiar en la administración.
-4. **Módulo 4, licencia y ECUV.** Dice que para una promoción hace falta siempre licencia (la declaración responsable no la admiten todos los ayuntamientos y es para obras pequeñas), que sin licencia no se empieza, que mucha de la lentitud viene de proyectos mal planteados y que en la Comunitat Valenciana hay entidades colaboradoras urbanísticas (ECUV) que revisan el proyecto en plazos cortos (en su caso, unos tres meses). La 4.1 ya dice lo de la licencia; las ECUV no salen. ¿Se añaden, con sus palabras?
+Los cuatro audios, transcritos: casi todo lo que dicen ya estaba aplicado con las notas del propietario; lo que faltaba está arriba («Notas de voz del 22/11»). De lo que quedaba por decidir, el propietario respondió el 23/11:
+
+1. **Precios escriturados (2.2):** sí, como último punto. Aplicado.
+2. **Estudio de la demanda (2.2):** sí, explicado por encima. Aplicado.
+3. **Coste de construcción (2.3):** el ejemplo de Nicolás pasa a 1.400 €/m² (arriba, «Las cifras de Nicolás»). La tabla de la lección espera los tramos del profesor («Para preguntar al profesor»).
+4. **ECUV (4.1):** sí. Aplicado.

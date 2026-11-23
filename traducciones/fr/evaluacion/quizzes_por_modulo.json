@@ -2754,26 +2754,26 @@
       },
       {
         "numero": 6,
-        "pregunta": "Lors de la vente d'un logement neuf, l'autoliquidation de la plus-value municipale par le promoteur :",
+        "pregunta": "Lors de la vente de chaque logement neuf, le promoteur paie la plus-value municipale :",
         "opciones": [
           {
             "letra": "A",
-            "texto": "Se dépose dans les 30 jours ouvrables suivant chaque vente",
+            "texto": "Toujours, qu'il y ait ou non une hausse de valeur du terrain",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "Ne s'applique pas, s'agissant d'un ouvrage neuf",
+            "texto": "Dès lors qu'il existe une hausse de valeur du terrain",
             "correcta": true
           },
           {
             "letra": "C",
-            "texto": "Se dépose dans les 6 mois",
+            "texto": "Jamais, s'agissant d'un ouvrage neuf",
             "correcta": false
           },
           {
             "letra": "D",
-            "texto": "Se dépose en une seule fois, à la fin de toutes les ventes",
+            "texto": "Seulement si l'acheteur n'est pas un consommateur",
             "correcta": false
           }
         ]

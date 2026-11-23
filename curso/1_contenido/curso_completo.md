@@ -162,7 +162,7 @@
 
 A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoción. No es un gran grupo: ha montado una SL normal para construir viviendas libres y venderlas en Alicante, en la Comunitat Valenciana, y en cada paso elige la opción más clásica. Te cuento cómo empezó.
 
-**Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias. Con esa ficha mira cada solar con el mismo filtro.
+**Primero, su producto.** Antes de mirar un solo solar, Nicolás escribió su ficha de producto en una página: vivienda libre para primera vivienda, con viviendas de 2 dormitorios (las más demandadas) y de 3 para familias (Lección 2.2), y calidades medias-altas. Con esa ficha mira cada solar con el mismo filtro.
 
 **Después, a buscar.** Empezó por el canal más rentable, su red propia. Visitó a los **notarios** y a los **administradores de fincas** de su zona, que son los primeros en saber de una herencia o de un propietario que quiere vender, y les dejó su ficha de producto: qué busca, dónde y para qué. A los agentes de suelo los sacó de la lista que te hemos dado: las agencias inmobiliarias de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Mientras tanto, seguía la sección de suelo de Idealista y Fotocasa.
 
@@ -170,7 +170,7 @@ A lo largo del curso seguimos a **Nicolás**, que acaba de empezar en la promoci
 
 **El filtro de los 10 minutos.** Lo pasó por la plantilla **Números gordos del solar**: con la edificabilidad de la zona salen 1.586,49 m² de techo en B+5, que dan 18 viviendas, 2 de ellas áticos. Con el suelo a 45 € el m² de techo, el solar sale por 71.392,05 €.
 
-Con una construcción de 660 €/m², licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 1.259,70 € el m²: unos 113.373 € una vivienda tipo de 90 m², sin IVA, y 1.998.501,45 € toda la promoción. El suelo es el 3,6 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos y los precios del ejemplo del profesional que trae la plantilla (hoy la construcción es más cara: mira la Lección 2.3), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
+Con la construcción a precio de hoy, 1.400 €/m² para sus calidades medias-altas (Lección 2.3), licencias, proyectos y otros (un 40 % sobre la construcción) y un beneficio del 30 % sobre el coste, la plantilla le dice que necesita vender a 2.606,50 € el m²: unos 234.585 € una vivienda tipo de 90 m², sin IVA, y 4.135.186,19 € toda la promoción. El suelo es el 1,7 % de los ingresos, muy lejos del 30 % que marca el filtro. Son los datos del ejemplo del profesional que trae la plantilla, salvo la construcción, que puso a precio de hoy (el ejemplo trae un precio de hace años), y el edificio que verás crecer en el Aprendizaje 3D. Se hizo también las otras dos preguntas del filtro: es vivienda libre, sin reserva de protegida, y no hay que derribar ni desalojar a nadie.
 
 Los números le encajan, pero todavía no compra: primero comprueba en el planeamiento que de verdad se puede construir eso (Lección 1.2).
 
@@ -521,7 +521,7 @@ Con la opción de compra inscrita, Nicolás se puso con su CRP. Te cuento cómo 
 
 **La herramienta.** Para no dejarse ninguna partida abrió la **Plantilla 2 · Viabilidad rápida y método residual**, que trae estas líneas (la tienes en la Lección 2.3). Metió lo que ya sabía: Comunitat Valenciana; solar sin IVA, porque vende un particular; 1.586,49 m² construidos y 18 viviendas. En cada partida dejó el porcentaje que trae la plantilla. Le faltan dos datos: el precio de venta, que saca en la Lección 2.2, y el coste de construcción, que afina en la Lección 2.3.
 
-**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 3,6 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque son los precios del ejemplo del profesional.
+**Su vara de medir.** Se apuntó la tabla de pesos para comparar cada partida cuando la tenga: la construcción, entre el 45 y el 55 % de los ingresos; el beneficio antes de impuestos, entre el 15 y el 25 %. Y la regla: por debajo del 15 % de margen sobre ventas, el riesgo no compensa. Del suelo ya sabe que pesa poco: en los números gordos era el 1,7 % de los ingresos (Lección 1.1), muy por debajo del 15–30 % de la tabla, porque el precio del suelo es el del ejemplo del profesional.
 
 ### Resumen
 
@@ -546,6 +546,7 @@ La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suel
   1. **Estudio de mercado pormenorizado:** mira qué hay alrededor y quién es tu competencia. Recorre las promociones en venta en un radio de 1-3 km y simula la compra (técnica de simulación). Anota los m² construidos y útiles, el €/m², la tipología y las calidades (memoria de calidades). En sus webs suele haber planos y memoria de calidades; si no ponen precio, pídelo en la caseta de ventas o a la promotora.
   2. Lee los informes trimestrales de Tinsa, Sociedad de Tasación, Gloval y los de consultoras (CBRE, JLL, Savills, Colliers).
   3. Aplica descuento del 3-5 % sobre la oferta de la competencia para tus primeras ventas sobre plano.
+  4. **También puedes comparar con los precios escriturados** de la zona (Estadística Registral del Colegio de Registradores, con sus mapas de calor, y Portal Estadístico del Notariado): son precios reales de venta, no de oferta, y sirven sobre todo para tasar. Dan valores medios por zona, no vivienda por vivienda: te valen de referencia, pero no para saber cuánto vale una vivienda concreta (no vale lo mismo un ático que un bajo). En obra nueva, tu precio lo marca tu competencia.
 - **Mix de producto orientativo:**
 
 | Tipología | % | Nota |
@@ -564,6 +565,7 @@ La CRP resta de los ingresos sin IVA todos los costes de la promoción, del suel
   - **Absorción:** viviendas vendidas al mes por promoción comparable y plazo total de comercialización.
   - **Oferta futura:** promociones con licencia concedida o en trámite en la zona (pregunta en el ayuntamiento y mira la estadística de visados del colegio de arquitectos).
   - **Perfil del comprador** y demanda por tipología y superficie.
+  - **Estudio de la demanda**, a grandes rasgos (es todo un campo de estudio): quién vive en la zona (población nacional o extranjera, residente o no, por edades), de qué vive (su actividad económica y la renta per cápita) y si la población crece o disminuye.
   - **Precio por separado** de vivienda, garaje y trastero.
   - Contrasta siempre los precios anunciados con operaciones reales.
 
@@ -577,9 +579,9 @@ A la CRP de Nicolás le faltaba la primera línea, los ingresos. Te cuento cómo
 
 **Lo que se mueve en la zona.** Midió también lo demás que pide la lección: la absorción de las promociones comparables, la oferta futura (preguntó en urbanismo del ayuntamiento y miró la estadística de visados del Colegio de Arquitectos) y el perfil del comprador.
 
-**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias, para primera vivienda.
+**El mix, con el arquitecto.** Con lo que pide la zona, y no con lo que le gustaba a él, cerró el mix: viviendas de 2 dormitorios, las más demandadas, y de 3 para familias, con calidades medias-altas, para primera vivienda.
 
-**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **1.259,70 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 111.027,86 € sin IVA (122.130,64 € con el 10 % de IVA) y unas ventas de 1.998.501,45 €. Lo metió en la Plantilla 2.
+**Su precio.** Aplicó el descuento del 3-5 % sobre la oferta de la competencia que aconseja la lección para las primeras ventas sobre plano. Le sale **2.606,50 € el m² construido, sin IVA**: el mismo que le pedían los números gordos (Lección 1.1). En 18 viviendas, un precio medio de 229.732,57 € sin IVA (252.705,82 € con el 10 % de IVA) y unas ventas de 4.135.186,19 €. Lo metió en la Plantilla 2.
 
 ### Resumen
 
@@ -816,22 +818,22 @@ Con los ingresos en la Plantilla 2, Nicolás fue a por los costes. Te cuento de 
 
 **El suelo.** Lo tenía de la Lección 1.4: 81.174,29 € en la Plantilla 1, con ITP, notaría, registro, due diligence, tasación y estudios. En la Plantilla 2 el solar entra con su ITP del 9 %: 77.817,33 €. La propia plantilla avisa de que va sin notaría ni registro, y de que eso se afina con la Plantilla 1.
 
-**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). En el ejemplo, la construcción va a 660 €/m², la del ejemplo del profesional: 1.047.083,40 €. Es más barata que la de hoy: la lección da 900–1.100 €/m² para la construcción estándar en 2025-2026. En tu promoción, pon el precio que te den tus constructoras.
+**La construcción.** Pidió precio a dos constructoras locales, porque varía por provincia (los presupuestos cerrados, a tres, llegan en la Lección 5.3). Le dieron 1.400 €/m², lo que da la tabla de la lección para unas calidades medias-altas: 2.221.086 €. En tu promoción, pon el precio que te den tus constructoras.
 
-**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 52.354,17 €.
+**El ICIO y las tasas, en la ordenanza.** En el ayuntamiento pidió la ordenanza fiscal del ICIO y de las tasas (tabla «Dónde ir»): el tipo exacto de su municipio y sobre qué se calcula. No lo puso sobre el PEM sin mirarla, que es uno de los errores típicos. Con la ordenanza delante, dejó licencias, ICIO y tasas en el 5 % sobre la construcción que trae la plantilla: 111.054,30 €.
 
 **El resto, con los porcentajes de la plantilla:**
 
-- Honorarios técnicos, 8 % de la construcción: 83.766,67 €.
-- Seguros, OCT, control de calidad y otros, 3 %: 31.412,50 €.
+- Honorarios técnicos, 8 % de la construcción: 177.686,88 €.
+- Seguros, OCT, control de calidad y otros, 3 %: 66.632,58 €.
 - Urbanización y acometidas: 50.000 €. No las olvidó: es otro error típico.
-- Comercialización, 3 % de las ventas: 59.955,04 €.
-- Gastos financieros, 4 % de las ventas: 79.940,06 €. Los afinará con el banco (Lección 5.1).
-- Gastos generales, 2 % de las ventas: 39.970,03 €.
+- Comercialización, 3 % de las ventas: 124.055,59 €.
+- Gastos financieros, 4 % de las ventas: 165.407,45 €. Los afinará con el banco (Lección 5.1).
+- Gastos generales, 2 % de las ventas: 82.703,72 €.
 
-En total, **1.444.481,87 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
+En total, **2.998.626,52 € de costes sin suelo**. Los imprevistos no tienen línea propia en la plantilla: los prueba en los escenarios de la Lección 2.4, con la obra un 5 % y un 10–15 % más cara.
 
-**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 178.247,08 €**. El propietario pide 71.392,05 €.
+**El método residual.** Con un margen objetivo del 18 % de las ventas, la plantilla aplica la fórmula de la lección: a las ventas les quita los costes sin suelo y el beneficio que busca, y lo que queda es lo que puede pagar por el solar con su ITP. El **precio máximo del solar le sale en 359.840,51 €**. El propietario pide 71.392,05 €.
 
 ### Resumen
 
@@ -874,23 +876,23 @@ Cada coste entra en la CRP con su referencia: el suelo con todo lo que no recupe
 
 Con la Plantilla 2 completa, a Nicolás le tocaba decidir. Te cuento cómo lo hizo.
 
-**El margen sobre ventas.** Su CRP, sin IVA: ventas, 1.998.501,45 €; coste total de la promoción, 1.522.299,21 €; beneficio antes de impuestos, 476.202,24 €. El margen es el beneficio entre los ingresos: 476.202,24 € ÷ 1.998.501,45 € = 24 %. Pasa con holgura del mínimo del 15 %.
+**El margen sobre ventas.** Su CRP, sin IVA: ventas, 4.135.186,19 €; coste total de la promoción, 3.076.443,85 €; beneficio antes de impuestos, 1.058.742,33 €. El margen es el beneficio entre los ingresos: 1.058.742,33 € ÷ 4.135.186,19 € = 26 %. Pasa con holgura del mínimo del 15 % y queda algo por encima del 15–25 % de la tabla de pesos (Lección 2.1), porque su suelo es muy barato.
 
-**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 178.247,08 € por el solar; el propietario pide 71.392,05 €, 106.855,03 € por debajo del máximo.
+**El suelo.** Paga una repercusión de 45 € por m² construido. El método residual le deja pagar hasta 359.840,51 € por el solar; el propietario pide 71.392,05 €, 288.448,46 € por debajo del máximo.
 
 **Los tres escenarios.** El optimista es su CRP tal cual: ventas al 100 % del precio y obra sin desvíos. Para los otros dos volvió a la Plantilla 2 y movió el precio de venta y el coste de construcción como dice la tabla:
 
-- **Base** (ventas al 95 %, obra +5 %): beneficio de 324.539,59 €, un margen del 17 %.
-- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 172.876,94 €, un 9,6 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 23.976,21 € más de intereses (el 4,5 % anual sobre 1.065.609,45 €, medio año). Sigue sin pérdidas.
-- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 21.214,28 € antes de esos intereses, así que se queda en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
+- **Base** (ventas al 95 %, obra +5 %): beneficio de 741.768,37 €, un margen del 19 %.
+- **Pesimista** (ventas al 90 %, obra +10 %): beneficio de 424.794,42 €, un 11,4 %. Los 6 meses de retraso no los calcula la plantilla: con el préstamo que le ofrece el banco, son 48.453,99 € más de intereses (el 4,5 % anual sobre 2.153.510,70 €, medio año). Sigue sin pérdidas.
+- **El extremo de la tabla** (ventas al 85 %, obra +15 % y el retraso): el beneficio baja a 107.820,46 € antes de esos intereses; después de pagarlos le quedan 59.366,47 €: casi en tablas. Lo vigilará con los hitos de salida de su memoria de inversión (Lección 2.5).
 
 **El calendario.** La TIR depende del tiempo, y la Plantilla 2 no va mes a mes. Con su asesoría montó el flujo de caja mensual: cuándo paga el solar, los proyectos y cada certificación de obra, y cuándo cobra las ventas, con 20 meses de obra y 4 más hasta las escrituras de venta. De ahí sacó la TIR del proyecto y la del equity. La plantilla profesional del extra lo trae mes a mes (Lección 2.3).
 
-**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 456.689,76 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
+**Los fondos propios.** Tuvo con su banco la conversación previa de la tabla «Dónde ir»: condiciones orientativas y lo que le pedirá en preventas. Con un préstamo del 70 % del coste, sus fondos propios son el 30 %: 922.933,16 €, y el suelo pagado cuenta. Lo cerrará con la Plantilla 3 (Lección 5.1). La banca de tu provincia la tienes al final del módulo.
 
 **El impuesto, para el ROE.** El ROE va sobre el beneficio neto, después del Impuesto sobre Sociedades. Su SPE es nueva: en la lista de la lección le correspondería el 15 % de entidad de nueva creación, y se lo hizo confirmar a su asesoría.
 
-**GO.** Margen del 24 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda en tablas. Lo siguiente, comprar (Lección 2.5).
+**GO.** Margen del 26 %, suelo muy por debajo del máximo y un pesimista que todavía gana: Nicolás decide hacer la promoción, sabiendo que en el peor extremo de la tabla se queda casi en tablas. Lo siguiente, comprar (Lección 2.5).
 
 ### Resumen
 
@@ -949,7 +951,7 @@ Con el GO, Nicolás cerró la operación. Te cuento en qué orden.
 
 **La estructura.** Su SPE ya existe (Lección 1.4): una sociedad nueva solo para esta promoción, lo que la lección llama SPV, que aísla el riesgo. Con su asesoría decidió cómo entran los fondos propios (capital o préstamo de socio) y revisó la fiscalidad antes de firmar: la compra paga ITP, porque vende un particular, y las ventas llevarán el 10 % de IVA. Firmó el **pacto de socios** de su SPE con lo que pide la lección: mayorías reforzadas, reparto de funciones, aportaciones adicionales si hay desviaciones, bloqueo, salida y reparto de resultados. Sabe que el banco le pedirá avales personales (Lección 5.1).
 
-**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 1.522.299,21 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
+**La memoria de inversión.** Recogió el solar, su producto, la CRP, el flujo de caja, los tres escenarios, los riesgos, el calendario y la financiación. Fijó un presupuesto de 3.076.443,85 €, una rentabilidad mínima del 15 % de margen sobre ventas, su calendario y su financiación. Y los hitos de control y criterios de salida, con los ejemplos de la lección y un plazo para cada uno: licencia no concedida, preventas por debajo del 30 % y licitación de obra más de un 8 % por encima del presupuesto. La aprobó la **junta de socios** de su SPE.
 
 **La compra.** Con la inversión aprobada, ejerció su opción:
 
@@ -1093,7 +1095,7 @@ Con el solar a nombre de su SPE, Nicolás formó su equipo técnico. Te cuento c
 **Los contratos.** Firmó uno con cada técnico (el arquitecto, el arquitecto técnico, el coordinador de seguridad y salud y cada ingeniería) con lo que pide la lección:
 
 - el alcance del trabajo;
-- los honorarios, que comparó con la partida de su CRP (el 8 % de la construcción: 83.766,67 €, Lección 2.3);
+- los honorarios, que comparó con la partida de su CRP (el 8 % de la construcción: 177.686,88 €, Lección 2.3);
 - los plazos;
 - las visitas mínimas de obra;
 - el seguro de RC profesional de cada uno.
@@ -1194,7 +1196,7 @@ Con el geotécnico hecho, el arquitecto de Nicolás se puso con el proyecto. Te 
 
 **Antes de dibujar.** Nicolás pidió al topógrafo de la Lección 1.3 el topográfico **georreferenciado**, que le sirve también para coordinar Catastro y Registro, y consultó a las compañías de agua, saneamiento, electricidad, gas y telecomunicaciones por sus redes. No había edificios que derribar (Lección 1.1).
 
-**El anteproyecto.** Le dio al arquitecto su programa de necesidades: 18 viviendas de 2 y 3 dormitorios, 2 de ellas áticos, calidades medias, ascensor y sin sótano. En unas semanas (la lección habla de 2-4) tuvo el anteproyecto, que no se visa, y lo validó con su mix comercial de la Lección 2.2. Antes de pasar a básico ajustó el diseño a su coste objetivo: los 1.259,70 €/m² de venta y la construcción de su CRP.
+**El anteproyecto.** Le dio al arquitecto su programa de necesidades: 18 viviendas de 2 y 3 dormitorios, 2 de ellas áticos, calidades medias-altas, ascensor y sin sótano. En unas semanas (la lección habla de 2-4) tuvo el anteproyecto, que no se visa, y lo validó con su mix comercial de la Lección 2.2. Antes de pasar a básico ajustó el diseño a su coste objetivo: los 2.606,50 €/m² de venta y la construcción de su CRP.
 
 **El proyecto básico.** Define el edificio y justifica la normativa urbanística y el CTE: es con el que pedirá la licencia (Módulo 4). Preguntó en urbanismo si su ayuntamiento exige visarlo, porque si no, es voluntario. Su solar no tiene servidumbres (Lección 1.3), así que no le hicieron falta informes previos de organismos sectoriales.
 
@@ -1239,7 +1241,7 @@ El proyecto avanza por fases: el anteproyecto cierra el mix, el básico sirve pa
 
 Al proyecto de ejecución de Nicolás le faltaba la seguridad y salud. Te cuento cómo la resolvió.
 
-**¿Estudio o estudio básico?** La tabla pide el estudio completo a partir de 450.759,08 € de PEM, y su obra pasa de largo: la construcción de su CRP está en 1.047.083,40 € (Lección 2.3). Lleva el **estudio de seguridad y salud**, no el básico.
+**¿Estudio o estudio básico?** La tabla pide el estudio completo a partir de 450.759,08 € de PEM, y su obra pasa de largo: la construcción de su CRP está en 2.221.086 € (Lección 2.3). Lleva el **estudio de seguridad y salud**, no el básico.
 
 **Quién lo redacta.** Un técnico competente que designa el promotor. Nicolás designó por escrito al coordinador de seguridad y salud que contrató a través del Colegio de Aparejadores (Lección 3.1). En proyecto ya hacía falta, porque intervienen varios proyectistas: el arquitecto, las ingenierías y el técnico de la ICT.
 
@@ -1370,6 +1372,7 @@ Anexo A, columna **Fase 3**: Colegio de Arquitectos, Colegio de Aparejadores, la
   4. Informe técnico (arquitecto municipal) e informe jurídico.
   5. Resolución. Si es favorable, la licencia fija plazos de inicio y terminación y condiciones.
   6. Si se deniega: recurso de reposición (1 mes, potestativo) o contencioso-administrativo (2 meses).
+- **Por qué se alarga y cómo acortarlo:** muchas veces la lentitud de la administración viene de proyectos mal planteados, con deficiencias por incumplimiento normativo o estructural o del Código Técnico de la Edificación: un equipo de arquitectura solvente te ahorra meses. En la Comunitat Valenciana, muchos ayuntamientos tienen convenio con **entidades colaboradoras urbanísticas (ECUV)**, que revisan el proyecto en plazos cortos: cuando llega al ayuntamiento revisado por una ECUV, el ayuntamiento se ahorra esa comprobación. Con una ECUV la licencia puede salir en unos tres meses, según el proyecto (más si aparece, por ejemplo, un problema de inundabilidad).
 - **Silencio administrativo:** en obra nueva **es negativo** (art. 11.4 TRLSRU). Si pasa el plazo sin resolución no puedes empezar.
 - **ICIO:**
   - Base: coste real y efectivo de la ejecución material. No incluye IVA, tasas, honorarios profesionales ni beneficio del contratista (art. 102.1 TRLRHL).
@@ -1387,7 +1390,7 @@ Con el proyecto del Módulo 3, Nicolás fue a por la licencia. Te cuento cómo l
 
 **La solicitud, completa.** La presentó en la **sede electrónica del ayuntamiento** con todo lo de la lección: la solicitud, el proyecto, el estudio de seguridad y salud (no el básico: su obra pasa de los 450.759,08 € de la Lección 3.4), el estudio de gestión de residuos y lo que su ordenanza pide al solicitar: el justificante de tasas e ICIO y la fianza de residuos. Autorizaciones sectoriales no le hacían falta (Lección 4.2).
 
-**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 52.354,17 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
+**El ICIO.** Lo liquidó en **gestión tributaria del ayuntamiento**: el tipo de su ordenanza (como mucho, el 4 %) sobre el coste real y efectivo de la ejecución material, sin IVA, tasas, honorarios ni beneficio del contratista. En la Plantilla 2 había previsto 111.054,30 € para licencias, ICIO y tasas. La liquidación definitiva llegará al terminar, con el coste real: por eso guarda cada factura de la obra.
 
 **Después, esperar sin moverse.** Si el ayuntamiento le hubiera requerido algo, tenía 10 días para subsanar; por eso lo presentó completo: cada requerimiento añade semanas. Vinieron el informe técnico del arquitecto municipal y el jurídico (la tabla «Dónde ir» habla de 1-6 meses según el municipio), y mientras tanto no entró ni una máquina en el solar: en obra nueva el silencio es negativo. La resolución llegó favorable, con sus plazos y condiciones (Lección 4.4).
 
@@ -1669,14 +1672,14 @@ Con la licencia concedida, Nicolás fue a por el dinero para construir. Te cuent
 
 **Primero, al banco.** Llevó a su banco lo que pide la lección: la licencia, el proyecto de ejecución, el presupuesto, el planning y la CRP de su Plantilla 2. Los bancos los podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, la banca con presencia en tu provincia. La **sociedad de tasación** del banco tasó la promoción en hipótesis de edificio terminado (el valor para el LTV) y, con la tasación, el banco le dio su **oferta vinculante**.
 
-**Después, la Plantilla 3.** Con la oferta rellenó la **Plantilla 3 · Préstamo promotor**, partiendo del coste total de su Plantilla 2, 1.522.299,21 €:
+**Después, la Plantilla 3.** Con la oferta rellenó la **Plantilla 3 · Préstamo promotor**, partiendo del coste total de su Plantilla 2, 3.076.443,85 €:
 
-- El banco financia el 70 %: **1.065.609,45 €**. Sus fondos propios son el 30 %, 456.689,76 €, y el solar, ya pagado, cuenta dentro de ellos.
-- Interés del 4,5 % anual y comisión de apertura del 0,75 %: 7.992,07 €.
-- 20 meses de obra, en los que dispone por certificaciones, y 4 meses más hasta las escrituras de venta: 39.960,35 € de intereses durante la obra (sobre la mitad del préstamo, porque se dispone poco a poco) y 15.984,14 € hasta las escrituras.
+- El banco financia el 70 %: **2.153.510,70 €**. Sus fondos propios son el 30 %, 922.933,16 €, y el solar, ya pagado, cuenta dentro de ellos.
+- Interés del 4,5 % anual y comisión de apertura del 0,75 %: 16.151,33 €.
+- 20 meses de obra, en los que dispone por certificaciones, y 4 meses más hasta las escrituras de venta: 80.756,65 € de intereses durante la obra (sobre la mitad del préstamo, porque se dispone poco a poco) y 32.302,66 € hasta las escrituras.
 - Tasación, notaría y registro: 10.000 €.
 
-Coste financiero total: **73.936,57 €**, alrededor del 5 % del coste, algo menos de los 79.940,06 € que había puesto en la Plantilla 2.
+Coste financiero total: **139.210,64 €**, alrededor del 5 % del coste, algo menos de los 165.407,45 € que había puesto en la Plantilla 2.
 
 **Las preventas.** El banco exige el 70–90 % de las viviendas con contrato privado y anticipo: con 18 viviendas, **13 como mínimo**. Cómo las vende lo verás en el Módulo 8; cada euro que cobre irá garantizado y a la cuenta especial (Lección 5.2).
 
@@ -1731,11 +1734,11 @@ Frente a sus compradores responde Nicolás en los tres plazos de la tabla (1, 3 
 
 **Con un corredor.** Volvió al corredor de seguros que le hizo la prerrevisión de la aseguradora decenal (Módulo 3) y le pidió las pólizas comparadas. Las aseguradoras las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, el Colegio de Mediadores de Seguros de tu provincia.
 
-**El decenal.** Lo contrata él, como promotor, y sus beneficiarios son los propietarios sucesivos de las viviendas. La aseguradora exige un OCT desde el proyecto, y Nicolás ya tenía su informe D0 (Módulo 3). El coste, del 0,8 al 1,5 % de su construcción de 1.047.083,40 €: entre 8.376,67 € y 15.706,25 €, una parte de los 31.412,50 € de seguros, OCT, control de calidad y otros de su Plantilla 2.
+**El decenal.** Lo contrata él, como promotor, y sus beneficiarios son los propietarios sucesivos de las viviendas. La aseguradora exige un OCT desde el proyecto, y Nicolás ya tenía su informe D0 (Módulo 3). El coste, del 0,8 al 1,5 % de su construcción de 2.221.086 €: entre 17.768,69 € y 33.316,29 €, una parte de los 66.632,58 € de seguros, OCT, control de calidad y otros de su Plantilla 2.
 
 **El TRC y la RC.** El todo riesgo construcción cubre los daños a la obra durante la ejecución: no lo exige la ley, lo exige el banco. La responsabilidad civil cubre los daños a terceros durante la obra: es recomendable y el banco normalmente la exige. Contrató las dos con el corredor.
 
-**Las cantidades a cuenta.** Antes de cobrar la primera reserva (Módulo 8), abrió en su banco la **cuenta especial**, separada, solo disponible para la construcción. Cada comprador tendrá su aval, de la línea de avales del banco (Lección 5.1). Con su plan de cobros (Plantilla 5, Módulo 8), cada uno le habrá adelantado 24.426,13 € antes de la entrega: 439.670,33 € entre las 18 viviendas, garantizados con el interés legal.
+**Las cantidades a cuenta.** Antes de cobrar la primera reserva (Módulo 8), abrió en su banco la **cuenta especial**, separada, solo disponible para la construcción. Cada comprador tendrá su aval, de la línea de avales del banco (Lección 5.1). Con su plan de cobros (Plantilla 5, Módulo 8), cada uno le habrá adelantado 50.541,17 € antes de la entrega: 909.740,98 € entre las 18 viviendas, garantizados con el interés legal.
 
 **Lo que Nicolás no hace.** La lección dice qué es obligatorio; saltárselo sería ilegal. Nicolás nunca:
 
@@ -1796,7 +1799,7 @@ El Registro Mercantil, el REA, la AEAT y la Seguridad Social los tienes en las w
 
 **Las ofertas, capítulo a capítulo.** No miró el total: comparó cada capítulo, buscando partidas infravaloradas o que faltaran, y revisó en cada oferta las exclusiones, los medios propios y la documentación laboral, preventiva, fiscal y de seguros de la empresa. Si una hubiera venido un 15-20 % por debajo de la media, la habría mirado con lupa: suele significar errores, materiales peores o una empresa que se quedará sin caja.
 
-**La elegida.** Se quedó con la que tenía obra parecida terminada, las cuentas sanas, su equipo propio y la oferta completa en todos los capítulos: **1.047.083,40 €** por toda la obra, lo que había puesto en su Plantilla 2 (660 €/m²). La contrata en la Lección 5.4.
+**La elegida.** Se quedó con la que tenía obra parecida terminada, las cuentas sanas, su equipo propio y la oferta completa en todos los capítulos: **2.221.086 €** por toda la obra, lo que había puesto en su Plantilla 2 (1.400 €/m²). La contrata en la Lección 5.4.
 
 ### Resumen
 
@@ -1847,7 +1850,7 @@ Prepara un pliego para que todas oferten lo mismo, invita a 3-5 constructoras y 
 
 Con la constructora elegida, Nicolás firmó el contrato de obra. Te cuento cómo lo cerró.
 
-**A precio cerrado, llave en mano.** Eligió lo habitual y aconsejable: **1.047.083,40 €** por toda la obra. Pudo hacerlo porque su proyecto de ejecución está muy bien definido y lo revisó el OCT (Módulo 3): con un proyecto incompleto, cada laguna habría sido un modificado.
+**A precio cerrado, llave en mano.** Eligió lo habitual y aconsejable: **2.221.086 €** por toda la obra. Pudo hacerlo porque su proyecto de ejecución está muy bien definido y lo revisó el OCT (Módulo 3): con un proyecto incompleto, cada laguna habría sido un modificado.
 
 **Cláusula a cláusula, con su abogado.** Lo revisó con un abogado; los despachos y las constructoras de tu provincia los podrás encontrar en la lista que te hemos dado, en las empresas potenciales de esta lección. Lo que miró con más cuidado:
 
@@ -2150,7 +2153,7 @@ Las instalaciones se coordinan desde el proyecto y cada una cumple su reglamento
 
 Con las instalaciones dentro, la obra de Nicolás entró en los acabados. Es lo que verán sus compradores, y donde más cuesta decir que no. Te cuento cómo lo llevó.
 
-**Los acabados, los de la memoria.** Calidades medias, para primera vivienda: tabiquería cerámica, gres porcelánico en los suelos, alicatados, pintura, carpintería interior, armarios y la cocina con sus muebles. Todo como dice la memoria de calidades de los contratos con sus compradores.
+**Los acabados, los de la memoria.** Calidades medias-altas, para primera vivienda: tabiquería cerámica, gres porcelánico en los suelos, alicatados, pintura, carpintería interior, armarios y la cocina con sus muebles. Todo como dice la memoria de calidades de los contratos con sus compradores.
 
 **La memoria, congelada.** Siguió el consejo de la lección: la memoria de calidades no se toca. Si un comprador le pide un cambio, la respuesta es la misma para todos: cada cambio comercial a mitad de obra es un modificado, con orden escrita y precio pactado antes (Lección 7.3).
 
@@ -2425,7 +2428,7 @@ El OCT no lo exige la ley, sino la aseguradora: revisa el proyecto y la obra y e
 
 Para el coste, Nicolás usa la **Plantilla 4 · Control de costes de obra** desde la primera certificación. Te cuento cómo la tenía a mitad de obra.
 
-**Su presupuesto de control.** El del contrato llave en mano, por capítulos: 1.047.083 €. Y, como pide la lección, le suma una reserva de imprevistos del 3-5 %.
+**Su presupuesto de control.** El del contrato llave en mano, por capítulos: 2.221.086 €. Y, como pide la lección, le suma una reserva de imprevistos del 3-5 %.
 
 **Cada mes, el mismo circuito:**
 
@@ -2435,14 +2438,14 @@ Para el coste, Nicolás usa la **Plantilla 4 · Control de costes de obra** desd
 4. El tasador del banco verifica el avance, y el banco libera el dinero del préstamo.
 5. Paga a la constructora en plazo, como mucho a 60 días.
 
-**A mitad de obra.** Con el 40 % de la obra ejecutada, lleva certificados a origen 427.809 €. Retenido hasta hoy, el 5 %: 21.390,45 €, que no devolverá hasta un año después de la recepción (Lección 5.4). A pagar a la constructora hasta hoy, con IVA y menos la retención: 449.199,45 €.
+**A mitad de obra.** Con el 40 % de la obra ejecutada, lleva certificados a origen 907.474 €. Retenido hasta hoy, el 5 %: 45.373,70 €, que no devolverá hasta un año después de la recepción (Lección 5.4). A pagar a la constructora hasta hoy, con IVA y menos la retención: 952.847,70 €.
 
-**La desviación: +2 %.** La previsión de coste final le sale en 1.063.537 €: 16.454 € más que lo contratado. La plantilla le dice de dónde viene:
+**La desviación: +2 %.** La previsión de coste final le sale en 2.255.989 €: 34.903 € más que lo contratado. La plantilla le dice de dónde viene:
 
-- Movimiento de tierras: +997 €.
-- Cimentación: +2.992 €.
-- Albañilería: +4.986 €.
-- Acabados: +7.479 €.
+- Movimiento de tierras: +2.115 €.
+- Cimentación: +6.346 €.
+- Albañilería: +10.577 €.
+- Acabados: +15.865 €.
 
 **Lo que hace, como dice la lección.** Un 2 % cabe en su reserva de imprevistos, pero no lo deja correr:
 
@@ -2510,10 +2513,10 @@ Nicolás tiene 20 meses de obra (Plantilla 3), y de ese plazo dependen los inter
 **El informe mensual.** Lo prepara con los KPIs de la lección y lo envía al banco. Así iba a mitad de obra:
 
 - **Avance físico:** el 40 % de la obra ejecutada.
-- **Avance económico:** lo certificado frente a lo contratado, 427.809 € de 1.047.083 €.
+- **Avance económico:** lo certificado frente a lo contratado, 907.474 € de 2.221.086 €.
 - **Desviación de plazo:** los días frente al planning.
-- **Coste a fin de obra:** 1.063.537 €.
-- **Margen actualizado:** baja en los 16.454 € de la desviación y, con los números de su Plantilla 2, sigue muy por encima del 15 % mínimo habitual (Módulo 2).
+- **Coste a fin de obra:** 2.255.989 €.
+- **Margen actualizado:** baja en los 34.903 € de la desviación y, con los números de su Plantilla 2, sigue muy por encima del 15 % mínimo habitual (Módulo 2).
 - **Ventas:** las unidades vendidas y cobradas frente a su plan de la Plantilla 5 (Módulo 8), 2 viviendas al mes.
 
 **Los retrasos, por escrito.** Tiene previstos los típicos: suministros, clima, permisos e incidencias. Si hace falta una ampliación de plazo, la documenta por escrito, porque afecta a las penalidades de su contrato, al préstamo y a sus compradores.
@@ -2668,7 +2671,7 @@ Nicolás empezó a vender el día en que compró el solar, con la tabla de hitos
 
 **Los materiales.** Su arquitecto le preparó los planos acotados de cada tipología (2 y 3 dormitorios y los áticos) y la memoria de calidades. Los renders, el dossier en PDF y el tour virtual los encargó a una empresa de marketing de su zona; las de tu provincia las podrás encontrar en las empresas potenciales de esta lección. Cada anuncio lleva la calificación energética de proyecto y nada que no vaya a cumplir: la publicidad es vinculante.
 
-**El precio, completo desde el primer anuncio.** La Ley 10/2025 obliga a dar el precio final completo desde el primer anuncio, sin precios gancho, así que cada anuncio de Nicolás da el precio de la vivienda, el IVA del 10 %, el AJD que el comprador paga en su escritura (en la Comunitat Valenciana, el 1,4 %, Anexo B) y el total. Una vivienda del precio medio se anuncia con sus 111.027,86 €, los 11.102,79 € de IVA (122.130,65 € con IVA), el AJD y el total. La comisión de la agencia la paga él, y el anuncio dice que el comprador no paga ninguna. Lo que no está en el anuncio, no lo cobrará después.
+**El precio, completo desde el primer anuncio.** La Ley 10/2025 obliga a dar el precio final completo desde el primer anuncio, sin precios gancho, así que cada anuncio de Nicolás da el precio de la vivienda, el IVA del 10 %, el AJD que el comprador paga en su escritura (en la Comunitat Valenciana, el 1,4 %, Anexo B) y el total. Una vivienda del precio medio se anuncia con sus 229.732,57 €, los 22.973,26 € de IVA (252.705,83 € con IVA), el AJD y el total. La comisión de la agencia la paga él, y el anuncio dice que el comprador no paga ninguna. Lo que no está en el anuncio, no lo cobrará después.
 
 **Antes de anunciar.** Dejó en la oficina de ventas la documentación del RD 515/1989 (la lista, en la Lección 8.3), y en la oficina de consumo de su comunidad se informó de las hojas de reclamaciones y los requisitos autonómicos.
 
@@ -2705,7 +2708,7 @@ Lo más habitual es el sistema mixto, oficina propia y red de agencias. Pero Nic
 
 **El contrato de colaboración, por escrito**, con lo que pide la lección:
 
-- **Comisión:** dentro de lo habitual en vivienda estándar (2,5–3 %). La paga él, no el comprador, y la tiene presupuestada en la comercialización de su Plantilla 2: el 3 % de las ventas, 59.955,04 €.
+- **Comisión:** dentro de lo habitual en vivienda estándar (2,5–3 %). La paga él, no el comprador, y la tiene presupuestada en la comercialización de su Plantilla 2: el 3 % de las ventas, 124.055,59 €.
 - **Cuándo se devenga:** a la escritura de cada vivienda, cuando él cobra.
 - **Exclusividad:** la agencia vende en exclusiva su promoción, porque es la única con la que trabaja.
 - **Precios mínimos:** los de su política de precios (Lección 8.1). Por debajo, nada sin su firma.
@@ -2813,14 +2816,14 @@ Nicolás construye en Alicante: su caso es el de esta lección, la Comunitat Val
 
 Y le dice qué recibirá con la escritura: primera ocupación, certificado energético registrado en el IVACE, Libro del Edificio, seguro decenal y boletines (Módulo 9).
 
-**Los números, en la Plantilla 5.** Con 18 viviendas a 111.027,86 € de media sin IVA (122.130,65 € con IVA):
+**Los números, en la Plantilla 5.** Con 18 viviendas a 229.732,57 € de media sin IVA (252.705,83 € con IVA):
 
 - **Reserva:** 6.000 €, con plazo para firmar el contrato privado y, por escrito, qué pasa con el dinero si no se firma.
-- **Contrato privado:** el 10 % del precio: 6.213,06 € con IVA, descontada la reserva.
-- **Durante la obra:** otro 10 %, en 18 cuotas de 678,50 €.
-- **En la escritura:** 97.704,52 €, el 80 % restante.
+- **Contrato privado:** el 10 % del precio: 19.270,58 € con IVA, descontada la reserva.
+- **Durante la obra:** otro 10 %, en 18 cuotas de 1.403,92 €.
+- **En la escritura:** 202.164,66 €, el 80 % restante.
 
-Antes de la entrega cobra 24.426,13 € por vivienda: **439.670,33 € de cantidades a cuenta** en toda la promoción, que tiene que garantizar con aval o seguro; él las garantiza con los avales de su banco.
+Antes de la entrega cobra 50.541,17 € por vivienda: **909.740,98 € de cantidades a cuenta** en toda la promoción, que tiene que garantizar con aval o seguro; él las garantiza con los avales de su banco.
 
 **El contrato.** Partió del modelo de la asociación de promotores de su zona, y lo revisaron su abogado y la notaría que eligió en el Módulo 1; los despachos y las notarías los podrás encontrar en las empresas potenciales de esta lección. Lleva el IVA desglosado, la licencia, la fecha de entrega, el derecho a resolver si no entrega en plazo, la libre elección de notario y ningún gasto de los que no se le pueden cargar.
 
@@ -3064,6 +3067,7 @@ Antes de pedir la primera ocupación o ir a la notaría, revisa toda la obra fre
   - **Estatutos** de la comunidad (uso de terrazas, piscina, distribución de gastos, prohibición de usos).
   - Va en la misma escritura que la obra nueva: la de declaración de obra nueva y división horizontal, que se otorga al principio de la obra (Lección 10.3).
 - **Tras la inscripción:** cada vivienda tiene finca registral propia y se puede vender e hipotecar por separado. El banco distribuye la hipoteca del préstamo promotor entre las fincas.
+- **Préstamo del promotor y préstamo del comprador:** la escritura de declaración de obra nueva y división horizontal declara y legaliza oficialmente la edificación, inscribe el edificio y cada finca independiente en el Registro de la Propiedad y actualiza el Catastro. Por eso la exige el sistema financiero para conceder préstamos hipotecarios. No confundas el préstamo hipotecario al promotor, que permite distribuir el préstamo entre cada vivienda resultante, con el préstamo hipotecario al comprador final: a este no se le concede hipoteca hasta que la obra nueva esté legalmente finalizada.
 - **Coste:** notaría y registro según arancel, AJD (Anexo B) sobre el valor de la obra nueva y de la división horizontal. **No se puede repercutir al comprador consumidor.**
 
 - **Regulariza** en la escritura las superficies, anexos y elementos comunes si lo construido difiere del proyecto inicial, y comprueba que las fincas resultantes coinciden con planos y títulos.
@@ -3422,7 +3426,7 @@ Con las viviendas repasadas, Nicolás preparó una carpeta para cada una de las 
 - Los **datos para suministros**: el CIE de la instalación eléctrica, el CUPS de cada vivienda y su contador de agua.
 - Los **datos de la comunidad**: los estatutos de su escritura de división horizontal, la cuota de cada vivienda y el administrador de fincas que iba a proponer a la junta (Lección 11.2).
 
-**Antes de convocar a nadie, los pagos.** En su CRM (Módulo 8) comprobó que cada comprador había cumplido lo de su contrato. En una vivienda de precio medio, según su Plantilla 5: la reserva de 6.000 €, el resto del 10 % a la firma del contrato privado (6.213,06 €) y las 18 cuotas de 678,50 € durante la obra. En total, 24.426,13 € con IVA. Repasó también qué pagos, impuestos y gastos corresponden a cada parte; los verás en la Lección 11.1.
+**Antes de convocar a nadie, los pagos.** En su CRM (Módulo 8) comprobó que cada comprador había cumplido lo de su contrato. En una vivienda de precio medio, según su Plantilla 5: la reserva de 6.000 €, el resto del 10 % a la firma del contrato privado (19.270,58 €) y las 18 cuotas de 1.403,92 € durante la obra. En total, 50.541,17 € con IVA. Repasó también qué pagos, impuestos y gastos corresponden a cada parte; los verás en la Lección 11.1.
 
 **El expediente de entrega.** Completó cada carpeta con la identificación registral de la vivienda, las tarjetas y códigos de acceso, las normas de la comunidad con las cuotas previstas y el acta de inspección de la Lección 10.1, con sus incidencias y compromisos de subsanación. Y en la visita explicó a cada comprador cómo funcionan los equipos, la climatización y la ventilación.
 
@@ -3474,7 +3478,7 @@ Con las carpetas preparadas, Nicolás volvió a su notaría, la que eligió en l
 
 **Las firmas, tres o cuatro semanas antes.** Ofreció su notaría a cada comprador, sin imponerla, porque elegir notario es un derecho del consumidor. Con la notaría de cada uno y con los bancos de los compradores con hipoteca confirmó las fechas y cerró el calendario de firmas. A esos compradores les recordó los plazos: la documentación de su banco, al menos 10 días naturales antes, y el acta previa ante notario, al menos el día anterior.
 
-**Una nota de liquidación por comprador.** En una vivienda de precio medio: precio, 122.130,65 € con IVA; pagos recibidos, 24.426,13 € con IVA; importe pendiente, 97.704,52 €, lo que cobrará en la escritura (Lección 11.3).
+**Una nota de liquidación por comprador.** En una vivienda de precio medio: precio, 252.705,83 € con IVA; pagos recibidos, 50.541,17 € con IVA; importe pendiente, 202.164,66 €, lo que cobrará en la escritura (Lección 11.3).
 
 **El blanqueo.** El promotor es sujeto obligado. Nicolás pidió a cada comprador su DNI o NIE, la documentación del origen de sus fondos y los justificantes de sus pagos anteriores, y le avisó de que pagaría con cheque nominativo o transferencia: nada en efectivo por encima del límite legal. Las notarías de tu provincia las podrás encontrar en la lista que te hemos dado: en las empresas potenciales de esta lección y, al final del módulo, en el Colegio Notarial.
 
@@ -3564,7 +3568,7 @@ Anexo A, columna **Fase 10**: Colegio Notarial y banca.
 | **Banco** | Cuenta de la comunidad |
 | **Distribuidora y comercializadoras** | Altas de luz por vivienda (con CIE y primera ocupación o cédula) |
 | **Empresa de aguas** | Altas de agua por vivienda |
-| **Ayuntamiento** | Cambio de titular del IBI |
+| **Ayuntamiento** | Plusvalía municipal de cada venta (la pagas si hay incremento de valor del terreno; si no, conviene declararlo) y cambio de titular del IBI |
 | **Colegio de Administradores de Fincas** | Administrador para la comunidad |
 
 ## Lección 11.1 — La escritura de compraventa
@@ -3602,7 +3606,7 @@ Con la escritura final de obra inscrita y el calendario cerrado, empezaron las f
 - **Su banco:** el AJD, la notaría, el registro y la gestoría de la hipoteca.
 - **Nicolás:** la matriz de la escritura; la obra nueva y la división horizontal; las acometidas generales de suministros.
 
-**El préstamo promotor.** Con cada escritura, el banco de Nicolás canceló la parte del préstamo promotor de esa vivienda con lo que Nicolás cobró en la firma (Lección 11.3). Así, al firmar la última de las 18, el préstamo de 1.065.609,45 € de su Plantilla 3 quedó a cero, dentro de los 4 meses que había previsto hasta las escrituras de venta.
+**El préstamo promotor.** Con cada escritura, el banco de Nicolás canceló la parte del préstamo promotor de esa vivienda con lo que Nicolás cobró en la firma (Lección 11.3). Así, al firmar la última de las 18, el préstamo de 2.153.510,70 € de su Plantilla 3 quedó a cero, dentro de los 4 meses que había previsto hasta las escrituras de venta.
 
 **Dónde fue.** A su notaría y a la que eligió cada comprador. Si un comprador te pide una notaría o un banco de tu provincia, los tienes en las empresas potenciales de esta lección.
 
@@ -3687,9 +3691,9 @@ Con la comunidad en marcha, Nicolás tenía dos cosas que cerrar en cada viviend
 
 **El cobro final.** En cada escritura, el comprador pagó el importe pendiente de su nota de liquidación (Lección 10.3), con cheque bancario nominativo o transferencia confirmada en la notaría (Lección 11.1). En una vivienda de precio medio, según su Plantilla 5:
 
-- Precio con IVA: 122.130,65 €.
-- Cobrado antes de la entrega (reserva, contrato privado y cuotas): 24.426,13 €.
-- Cobrado en la escritura: **97.704,52 €**.
+- Precio con IVA: 252.705,83 €.
+- Cobrado antes de la entrega (reserva, contrato privado y cuotas): 50.541,17 €.
+- Cobrado en la escritura: **202.164,66 €**.
 
 Los compradores con hipoteca pagaron con el dinero de su banco, en la misma firma. Con las 18 escrituras cobradas así, las viviendas estaban pagadas del todo y solo quedaba entregar las llaves (Lección 11.4).
 
@@ -3746,7 +3750,7 @@ La posesión se entrega con una visita final, un acta firmada (fecha, estado, co
 - **Impuestos de la compraventa:** el comprador liquida el AJD con el modelo 600 de su comunidad en el plazo autonómico (habitualmente 30 días hábiles); muchas notarías lo gestionan. Tú declaras el IVA repercutido en tu modelo 303.
 - **Registro:** la notaría envía copia electrónica al Registro de la Propiedad el mismo día; después se presenta la copia con el impuesto liquidado y se inscribe a nombre del comprador.
 - **Catastro:** notaría y registro comunican el cambio de titular; no hace falta presentar declaración.
-- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- **Plusvalía municipal (IIVTNU):** en la venta de cada vivienda, el promotor, por lo general, está obligado a pagarla, siempre que exista incremento de valor del terreno. Si acredita que no ha existido incremento, el impuesto no se devenga (aunque conviene declararlo ante el organismo competente).
 - **Suministros:** altas o cambios de titularidad a nombre del comprador.
 - **Documentación:** entrega lo que corresponda al comprador y al administrador de la comunidad.
 - **Quién se encarga de cada cosa** (quién hace cada trámite de la lista de arriba):
@@ -3754,7 +3758,7 @@ La posesión se entrega con una visita final, un acta firmada (fecha, estado, co
   - **Notaría:** envía la copia electrónica al Registro de la Propiedad el mismo día de la firma.
   - **Registro de la Propiedad:** con la copia y el impuesto liquidado, inscribe la vivienda a nombre del comprador.
   - **Notaría y Registro:** comunican al Catastro el cambio de titular; nadie presenta declaración.
-  - **Tú (el promotor):** declaras el IVA repercutido en tu modelo 303 y entregas la documentación al comprador y al administrador. La plusvalía municipal no la autoliquidas: al ser obra nueva, no procede la autoliquidación para la promotora.
+  - **Tú (el promotor):** declaras el IVA repercutido en tu modelo 303 y entregas la documentación al comprador y al administrador. Y la plusvalía municipal de cada venta: la pagas si hay incremento de valor del terreno; si no lo hay, no se devenga, pero conviene declararlo ante el organismo competente.
 
 ### Ejemplo: Nicolás, el promotor
 
@@ -3767,7 +3771,7 @@ Con las llaves entregadas, a Nicolás le quedaban los trámites de cada firma. T
 **Lo que hizo Nicolás:**
 
 - Declaró el IVA repercutido en cada escritura en su modelo 303 del trimestre, en la Agencia Tributaria.
-- De la plusvalía municipal, nada que autoliquidar: al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- La plusvalía municipal de cada venta: con su asesoría comprobó si había incremento de valor del terreno. Si lo había, la pagó; si no, el impuesto no se devengaba, pero la declaró igualmente ante el organismo competente.
 - Entregó a cada comprador y al administrador de la comunidad la documentación que les correspondía.
 - Fue comprobando, vivienda por vivienda, que la escritura quedaba inscrita y los suministros a nombre de su comprador.
 
@@ -3775,11 +3779,12 @@ Cuando la última de las 18 quedó inscrita, la promoción estaba vendida, escri
 
 ### Resumen
 
-Después de la firma, el comprador liquida el AJD y pone los suministros a su nombre; la notaría manda la escritura al Registro, que la inscribe y, con la notaría, avisa al Catastro. Tú declaras el IVA repercutido y entregas la documentación. Al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+Después de la firma, el comprador liquida el AJD y pone los suministros a su nombre; la notaría manda la escritura al Registro, que la inscribe y, con la notaría, avisa al Catastro. Tú declaras el IVA repercutido, entregas la documentación y pagas la plusvalía municipal de cada venta si hay incremento de valor del terreno (si no lo hay, no se devenga, aunque conviene declararlo).
 
 ### Tu checklist
 
 - Escrituras presentadas en el Registro y suministros a nombre de cada comprador
+- Plusvalía municipal de cada venta pagada, o declarada si no hay incremento de valor
 
 ## Resumen del Módulo 11
 
@@ -3796,6 +3801,7 @@ Has firmado la escritura de cada vivienda y has cobrado lo pendiente, cancelando
 - [ ] Altas de suministros
 - [ ] Actas de entrega firmadas
 - [ ] Escrituras presentadas en el Registro y suministros a nombre de cada comprador
+- [ ] Plusvalía municipal de cada venta pagada, o declarada si no hay incremento de valor
 
 ## Partners en tu provincia
 
@@ -3818,8 +3824,8 @@ Anexo A, columna **Fase 11**: distribuidora eléctrica, servicio de aguas, Coleg
 **P5.** La plusvalía municipal en la venta de vivienda nueva a un consumidor la paga:
 - A) El comprador · B) **El promotor, sin poder repercutirla** ✅ · C) La comunidad · D) Nadie
 
-**P6.** En la venta de una vivienda de obra nueva, la autoliquidación de la plusvalía municipal por la promotora:
-- A) Se presenta en 30 días hábiles desde cada venta · B) **No procede, al ser obra nueva** ✅ · C) Se presenta en 6 meses · D) Se presenta una sola vez, al terminar todas las ventas
+**P6.** En la venta de cada vivienda nueva, la promotora paga la plusvalía municipal:
+- A) Siempre, haya o no incremento de valor del terreno · B) **Siempre que exista incremento de valor del terreno** ✅ · C) Nunca, al ser obra nueva · D) Solo si el comprador no es consumidor
 
 **P7.** Los plazos de garantía de la LOE empiezan:
 - A) En la entrega de cada vivienda · B) **En la recepción de la obra sin reservas (o en la subsanación de las reservas)** ✅ · C) En la licencia · D) En la escritura de obra nueva
@@ -3988,7 +3994,7 @@ Cada incidencia sigue un protocolo: canal único, respuesta rápida, visita y cl
   - Declaración anual (modelo 200) y pagos fraccionados (modelo 202).
   - En Navarra y País Vasco, normativa foral.
 - **IVA:** trimestral (303) y resumen anual (390). Si alquilas viviendas que no has vendido, regulariza el IVA deducido (el alquiler de vivienda está exento).
-- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa.
+- **Plusvalía municipal:** la pagas en cada venta si hay incremento de valor del terreno (Lección 11.5). Elige el método más favorable (objetivo o real). Si no hay incremento de valor, no tributa, aunque conviene declararlo.
 - **IBI:** de las viviendas que sigan siendo tuyas a 1 de enero.
 - **Quién se encarga de cada cosa** (quién hace cada cosa de la lista de arriba):
   - **Director de ejecución:** mide y certifica, también la obra de la certificación final (Lección 7.3).
@@ -4001,23 +4007,23 @@ Cada incidencia sigue un protocolo: canal único, respuesta rápida, visita y cl
 
 Con la postventa en marcha, Nicolás se sentó con su asesoría, la de la Lección 1.4, a cerrar los números. Te cuento cómo lo hizo.
 
-**La liquidación con la constructora.** Su arquitecto técnico, como director de ejecución, midió y certificó la obra, y Nicolás aprobó la certificación final. La obra terminó en 1.063.537 €, 16.454 € (un 2 %) por encima de los 1.047.083 € contratados: la desviación que ya había visto venir a mitad de obra con la Plantilla 4 (Lección 7.3). Liquidó el contrato con sus retenciones y sus extras, y apuntó la fecha para devolver la retención: un año después de la recepción (Lección 5.4).
+**La liquidación con la constructora.** Su arquitecto técnico, como director de ejecución, midió y certificó la obra, y Nicolás aprobó la certificación final. La obra terminó en 2.255.989 €, 34.903 € (un 2 %) por encima de los 2.221.086 € contratados: la desviación que ya había visto venir a mitad de obra con la Plantilla 4 (Lección 7.3). Liquidó el contrato con sus retenciones y sus extras, y apuntó la fecha para devolver la retención: un año después de la recepción (Lección 5.4).
 
 **Las cuentas.** Cerró cuentas con sus técnicos, suministradores y proveedores, y resolvió las facturas y garantías pendientes. Con la asesoría concilió los ingresos por ventas, los costes, los intereses y los gastos generales.
 
-**La rentabilidad real.** Volvió a calcular la Plantilla 2 con los datos reales y la comparó con la CRP aprobada, que daba un beneficio antes de impuestos de 476.202,24 €:
+**La rentabilidad real.** Volvió a calcular la Plantilla 2 con los datos reales y la comparó con la CRP aprobada, que daba un beneficio antes de impuestos de 1.058.742,33 €:
 
 - **Ventas:** las 18 viviendas, vendidas y escrituradas al precio de su plan de ventas (Plantilla 5).
-- **Coste de la obra:** 16.454 € más (+2 %).
-- **Plazo y coste financiero:** firmó las escrituras en los 4 meses previstos, y el coste financiero real fue de 73.936,57 €, algo menos de los 79.940,06 € que había puesto en la CRP.
+- **Coste de la obra:** 34.903 € más (+2 %).
+- **Plazo y coste financiero:** firmó las escrituras en los 4 meses previstos, y el coste financiero real fue de 139.210,64 €, algo menos de los 165.407,45 € que había puesto en la CRP.
 
 **La contabilidad.** Todos los costes estaban activados como existencias: promoción en curso y, al final, edificio terminado. En cada escritura, la asesoría reconoció la venta y dio de baja el coste proporcional. Como la promoción duró más de un año, los intereses del préstamo promotor se activaron como mayor coste de las existencias.
 
 **Los impuestos, en la Agencia Tributaria:**
 
-- **IVA:** el repercutido de toda la promoción, 199.850,15 € según su Plantilla 5, declarado trimestre a trimestre en el 303 y resumido en el 390. No alquila ninguna vivienda, así que no tiene IVA que regularizar.
+- **IVA:** el repercutido de toda la promoción, 413.518,63 € según su Plantilla 5, declarado trimestre a trimestre en el 303 y resumido en el 390. No alquila ninguna vivienda, así que no tiene IVA que regularizar.
 - **Impuesto sobre Sociedades:** la declaración anual (modelo 200) y los pagos fraccionados (modelo 202). El tipo, de los que da la lección, se lo aplicó su asesoría según su sociedad.
-- **Plusvalía municipal:** como dice la Lección 11.5, al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- **Plusvalía municipal,** en el ayuntamiento: como dice la Lección 11.5, en cada venta con incremento de valor del terreno la pagó, y en las que no lo hubo, la declaró igualmente.
 
 ### Resumen
 

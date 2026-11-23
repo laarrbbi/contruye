@@ -26,7 +26,7 @@
 | **Banco** | Cuenta de la comunidad |
 | **Distribuidora y comercializadoras** | Altas de luz por vivienda (con CIE y primera ocupación o cédula) |
 | **Empresa de aguas** | Altas de agua por vivienda |
-| **Ayuntamiento** | Cambio de titular del IBI |
+| **Ayuntamiento** | Plusvalía municipal de cada venta (la pagas si hay incremento de valor del terreno; si no, conviene declararlo) y cambio de titular del IBI |
 | **Colegio de Administradores de Fincas** | Administrador para la comunidad |
 
 ## Lección 11.1 — La escritura de compraventa
@@ -64,7 +64,7 @@ Con la escritura final de obra inscrita y el calendario cerrado, empezaron las f
 - **Su banco:** el AJD, la notaría, el registro y la gestoría de la hipoteca.
 - **Nicolás:** la matriz de la escritura; la obra nueva y la división horizontal; las acometidas generales de suministros.
 
-**El préstamo promotor.** Con cada escritura, el banco de Nicolás canceló la parte del préstamo promotor de esa vivienda con lo que Nicolás cobró en la firma (Lección 11.3). Así, al firmar la última de las 18, el préstamo de 1.065.609,45 € de su Plantilla 3 quedó a cero, dentro de los 4 meses que había previsto hasta las escrituras de venta.
+**El préstamo promotor.** Con cada escritura, el banco de Nicolás canceló la parte del préstamo promotor de esa vivienda con lo que Nicolás cobró en la firma (Lección 11.3). Así, al firmar la última de las 18, el préstamo de 2.153.510,70 € de su Plantilla 3 quedó a cero, dentro de los 4 meses que había previsto hasta las escrituras de venta.
 
 **Dónde fue.** A su notaría y a la que eligió cada comprador. Si un comprador te pide una notaría o un banco de tu provincia, los tienes en las empresas potenciales de esta lección.
 
@@ -149,9 +149,9 @@ Con la comunidad en marcha, Nicolás tenía dos cosas que cerrar en cada viviend
 
 **El cobro final.** En cada escritura, el comprador pagó el importe pendiente de su nota de liquidación (Lección 10.3), con cheque bancario nominativo o transferencia confirmada en la notaría (Lección 11.1). En una vivienda de precio medio, según su Plantilla 5:
 
-- Precio con IVA: 122.130,65 €.
-- Cobrado antes de la entrega (reserva, contrato privado y cuotas): 24.426,13 €.
-- Cobrado en la escritura: **97.704,52 €**.
+- Precio con IVA: 252.705,83 €.
+- Cobrado antes de la entrega (reserva, contrato privado y cuotas): 50.541,17 €.
+- Cobrado en la escritura: **202.164,66 €**.
 
 Los compradores con hipoteca pagaron con el dinero de su banco, en la misma firma. Con las 18 escrituras cobradas así, las viviendas estaban pagadas del todo y solo quedaba entregar las llaves (Lección 11.4).
 
@@ -208,7 +208,7 @@ La posesión se entrega con una visita final, un acta firmada (fecha, estado, co
 - **Impuestos de la compraventa:** el comprador liquida el AJD con el modelo 600 de su comunidad en el plazo autonómico (habitualmente 30 días hábiles); muchas notarías lo gestionan. Tú declaras el IVA repercutido en tu modelo 303.
 - **Registro:** la notaría envía copia electrónica al Registro de la Propiedad el mismo día; después se presenta la copia con el impuesto liquidado y se inscribe a nombre del comprador.
 - **Catastro:** notaría y registro comunican el cambio de titular; no hace falta presentar declaración.
-- **Plusvalía municipal:** al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- **Plusvalía municipal (IIVTNU):** en la venta de cada vivienda, el promotor, por lo general, está obligado a pagarla, siempre que exista incremento de valor del terreno. Si acredita que no ha existido incremento, el impuesto no se devenga (aunque conviene declararlo ante el organismo competente).
 - **Suministros:** altas o cambios de titularidad a nombre del comprador.
 - **Documentación:** entrega lo que corresponda al comprador y al administrador de la comunidad.
 - **Quién se encarga de cada cosa** (quién hace cada trámite de la lista de arriba):
@@ -216,7 +216,7 @@ La posesión se entrega con una visita final, un acta firmada (fecha, estado, co
   - **Notaría:** envía la copia electrónica al Registro de la Propiedad el mismo día de la firma.
   - **Registro de la Propiedad:** con la copia y el impuesto liquidado, inscribe la vivienda a nombre del comprador.
   - **Notaría y Registro:** comunican al Catastro el cambio de titular; nadie presenta declaración.
-  - **Tú (el promotor):** declaras el IVA repercutido en tu modelo 303 y entregas la documentación al comprador y al administrador. La plusvalía municipal no la autoliquidas: al ser obra nueva, no procede la autoliquidación para la promotora.
+  - **Tú (el promotor):** declaras el IVA repercutido en tu modelo 303 y entregas la documentación al comprador y al administrador. Y la plusvalía municipal de cada venta: la pagas si hay incremento de valor del terreno; si no lo hay, no se devenga, pero conviene declararlo ante el organismo competente.
 
 ### Ejemplo: Nicolás, el promotor
 
@@ -229,7 +229,7 @@ Con las llaves entregadas, a Nicolás le quedaban los trámites de cada firma. T
 **Lo que hizo Nicolás:**
 
 - Declaró el IVA repercutido en cada escritura en su modelo 303 del trimestre, en la Agencia Tributaria.
-- De la plusvalía municipal, nada que autoliquidar: al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+- La plusvalía municipal de cada venta: con su asesoría comprobó si había incremento de valor del terreno. Si lo había, la pagó; si no, el impuesto no se devengaba, pero la declaró igualmente ante el organismo competente.
 - Entregó a cada comprador y al administrador de la comunidad la documentación que les correspondía.
 - Fue comprobando, vivienda por vivienda, que la escritura quedaba inscrita y los suministros a nombre de su comprador.
 
@@ -237,11 +237,12 @@ Cuando la última de las 18 quedó inscrita, la promoción estaba vendida, escri
 
 ### Resumen
 
-Después de la firma, el comprador liquida el AJD y pone los suministros a su nombre; la notaría manda la escritura al Registro, que la inscribe y, con la notaría, avisa al Catastro. Tú declaras el IVA repercutido y entregas la documentación. Al ser obra nueva, no procede la autoliquidación de la plusvalía municipal para la promotora.
+Después de la firma, el comprador liquida el AJD y pone los suministros a su nombre; la notaría manda la escritura al Registro, que la inscribe y, con la notaría, avisa al Catastro. Tú declaras el IVA repercutido, entregas la documentación y pagas la plusvalía municipal de cada venta si hay incremento de valor del terreno (si no lo hay, no se devenga, aunque conviene declararlo).
 
 ### Tu checklist
 
 - Escrituras presentadas en el Registro y suministros a nombre de cada comprador
+- Plusvalía municipal de cada venta pagada, o declarada si no hay incremento de valor
 
 ## Resumen del Módulo 11
 
@@ -258,6 +259,7 @@ Has firmado la escritura de cada vivienda y has cobrado lo pendiente, cancelando
 - [ ] Altas de suministros
 - [ ] Actas de entrega firmadas
 - [ ] Escrituras presentadas en el Registro y suministros a nombre de cada comprador
+- [ ] Plusvalía municipal de cada venta pagada, o declarada si no hay incremento de valor
 
 ## Partners en tu provincia
 

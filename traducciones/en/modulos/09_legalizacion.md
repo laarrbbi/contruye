@@ -115,6 +115,7 @@ Before applying for first occupation or going to the notary, check the whole of 
   - The owners' association's **statutes** (use of terraces, pool, sharing of costs, prohibited uses).
   - It goes in the same deed as the new building: the deed declaring the new building and the horizontal division, which is executed at the start of the works (Lesson 10.3).
 - **After registration:** each home is a separate registered property and can be sold and mortgaged on its own. The bank spreads the development loan's mortgage across the properties.
+- **The developer's loan and the buyer's loan:** the deed declaring the new building and the horizontal division officially declares and legalises the building, registers the building and each separate property in the Land Registry and updates the Cadastre. That is why the financial system requires it before granting mortgage loans. Do not confuse the developer's mortgage loan, which allows the loan to be spread across each resulting home, with the end buyer's mortgage loan: the buyer is not granted a mortgage until the new building is legally completed.
 - **Cost:** notary and registry per official scale, AJD (Annex B) on the value of the new building and the horizontal division. **It cannot be passed on to a consumer buyer.**
 
 - **Regularise** in the deed the areas, appurtenances and common elements if what was built differs from the original design, and check that the resulting properties match the drawings and titles.

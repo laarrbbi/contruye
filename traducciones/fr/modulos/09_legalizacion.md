@@ -115,6 +115,7 @@ Avant de demander la première occupation ou d'aller chez le notaire, passez tou
   - **Statuts** de la copropriété (usage des terrasses, de la piscine, répartition des charges, usages interdits).
   - Elle figure dans le même acte que l'ouvrage neuf : l'acte de déclaration d'ouvrage neuf et de division horizontale, qui est signé au démarrage du chantier (Leçon 10.3).
 - **Après l'inscription :** chaque logement a son propre numéro au Registre et peut être vendu et hypothéqué séparément. La banque répartit l'hypothèque du prêt promoteur entre les lots.
+- **Prêt du promoteur et prêt de l'acheteur :** l'acte de déclaration d'ouvrage neuf et de division horizontale déclare et légalise officiellement la construction, inscrit l'immeuble et chaque lot indépendant au Registre de la propriété et met à jour le Cadastre. C'est pourquoi le système financier l'exige pour accorder des prêts hypothécaires. Ne confondez pas le prêt hypothécaire au promoteur, qui permet de répartir le prêt entre chacun des logements obtenus, avec le prêt hypothécaire à l'acheteur final : celui-ci n'obtient aucune hypothèque tant que l'ouvrage neuf n'est pas légalement achevé.
 - **Coût :** notaire et registre selon le tarif, AJD (annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. **Il ne peut pas être répercuté sur l'acheteur consommateur.**
 
 - **Régularisez** dans l'acte les surfaces, annexes et parties communes si l'ouvrage diffère du projet initial, et vérifiez que les lots obtenus correspondent aux plans et aux titres.
