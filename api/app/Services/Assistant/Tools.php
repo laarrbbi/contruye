@@ -47,7 +47,7 @@ final class Tools
         $tools = [
             [
                 'name' => self::SEARCH,
-                'description' => 'Busca en el contenido del curso que el alumno puede leer: lecciones, textos de los módulos (leyes que aplican, dónde ir), checklists y documentos del curso. Devuelve documentos numerados a continuación de los que ya tienes. La consulta, en español y con las palabras del sector.',
+                'description' => 'Busca en el contenido del curso que el alumno puede leer: lecciones, textos de los módulos (leyes que aplican, dónde ir), checklists, documentos del curso, las plantillas de sus módulos (qué calculan, sus casillas, cada fórmula y el ejemplo de Nicolás con sus cifras) y las oficinas de su provincia en cada fase (Anexo A). Devuelve documentos numerados a continuación de los que ya tienes. La consulta, en español y con las palabras del sector.',
                 'inputSchema' => [
                     'type' => 'object',
                     'properties' => ['consulta' => ['type' => 'string', 'description' => 'Qué buscar, en español: «nota simple», «seguro decenal», «licencia de primera ocupación»…']],

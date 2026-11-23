@@ -13,6 +13,7 @@ use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\NewsletterSubscriber;
+use App\Models\Province;
 use App\Models\User;
 use App\Services\Assistant\Availability;
 use App\Services\Assistant\Credits;
@@ -96,7 +97,7 @@ it('indexes the course with who may read each piece, and nothing but the course 
     [, $one, $two] = assistantCourse();
 
     $chunks = AssistantChunk::query()->where('locale', 'es')->get();
-    expect($chunks->pluck('source_type')->unique()->diff(['lesson', 'module', 'checklist', 'document']))->toBeEmpty()
+    expect($chunks->pluck('source_type')->unique()->diff(['lesson', 'module', 'checklist', 'document', 'template', 'province']))->toBeEmpty()
         ->and($chunks->firstWhere(fn ($c) => str_contains($c->text, 'zafiro'))->only(['access', 'module_id']))->toBe(['access' => 'module', 'module_id' => $one->id])
         ->and($chunks->firstWhere(fn ($c) => str_contains($c->text, 'rubí'))->access)->toBe('free')
         ->and($chunks->firstWhere(fn ($c) => str_contains($c->text, 'ópalo'))->access)->toBe('full')
@@ -492,6 +493,17 @@ it('tells the model the student\'s language', function () {
     ask(assistantStudent($course, $one), 'Что такое nota simple?', [], 'ru')->assertCreated();
 
     expect(FakeLlm::lastUserText($fake->requests[0]))->toContain('idioma="ruso"');
+});
+
+it('tells the model the student\'s province, whose offices the documents bring', function () {
+    [$course, $one] = assistantCourse();
+    $fake = openAssistant()->push(FakeLlm::text('En tu provincia.'));
+    $student = assistantStudent($course, $one);
+    $student->forceFill(['province_id' => Province::query()->where('code', 3)->value('id')])->save();
+
+    ask($student, '¿Dónde pido la nota simple?')->assertCreated();
+
+    expect(FakeLlm::lastUserText($fake->requests[0]))->toMatch('/<alumno idioma="español" modulos="1" provincia="[^"]+"\/>/');
 });
 
 it('shows the owner readiness, costs and traces, and lets them grant credits', function () {

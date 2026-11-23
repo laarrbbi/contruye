@@ -6,6 +6,7 @@ use App\Models\AssistantConversation;
 use App\Models\AssistantMessage;
 use App\Models\AssistantTrace;
 use App\Models\Course;
+use App\Models\Province;
 use App\Models\User;
 use App\Support\Markdown;
 use App\Support\Protection\ContentFingerprint;
@@ -338,7 +339,7 @@ final class Assistant
     }
 
     /**
-     * The question as the model receives it: who asks (language, modules),
+     * The question as the model receives it: who asks (language, modules, province),
      * the pieces of the course found for it, the question. The question is
      * the student's text, always inside its own tag, never instructions.
      *
@@ -349,8 +350,11 @@ final class Assistant
         $orders = $course->modules()->whereIn('id', $scope->modules)->orderBy('order')->get()
             ->map(fn ($m) => $m->isFinancials() ? 'Financials' : (string) $m->order)->implode(', ');
         $language = self::LANGUAGES[$locale] ?? 'español';
+        // The province the student gave: the offices of Anexo A found for the question are those of it.
+        $province = $scope->province === null ? null : Province::query()->find($scope->province)?->localizedName($locale);
+        $where = $province === null ? '' : ' provincia="'.htmlspecialchars($province, ENT_QUOTES).'"';
 
-        return "<alumno idioma=\"{$language}\" modulos=\"".($scope->admin ? 'todos (administrador)' : ($orders === '' ? 'ninguno; solo las lecciones gratuitas' : $orders))."\"/>\n\n"
+        return "<alumno idioma=\"{$language}\" modulos=\"".($scope->admin ? 'todos (administrador)' : ($orders === '' ? 'ninguno; solo las lecciones gratuitas' : $orders))."\"{$where}/>\n\n"
             .($docs === [] ? "<documentos>Ningún documento del curso coincide con la pregunta.</documentos>\n\n" : "<documentos>\n".$this->documents($docs, 1)."\n</documentos>\n\n")
             ."<pregunta>\n{$question}\n</pregunta>";
     }

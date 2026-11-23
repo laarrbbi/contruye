@@ -21,11 +21,23 @@ pregunta → disponibilidad → una pregunta a la vez → filtro de entrada → 
   cada módulo (leyes, dónde ir, partners de la provincia), los checklists y los documentos del
   curso, en los seis idiomas, cada trozo con quién puede leerlo. **Nunca** los cuestionarios ni el
   examen final, ni la estrategia comercial. Se reconstruye en cada despliegue (`deploy/deploy.sh`,
-  `deploy/vercel/build.sh`).
+  `deploy/vercel/build.sh`). Además:
+  - **Las siete plantillas del curso** (`TemplateKnowledge`), en español y detrás de la puerta de
+    su módulo: qué calcula cada una, sus casillas de entrada (con el ejemplo de la plantilla y la
+    nota de la casilla), cada resultado con su fórmula y lo que lee cada casilla de la fórmula, y
+    el ejemplo del curso: lo que Nicolás, el promotor de los «Ejemplo» de las lecciones, mete en
+    ella y lo que le sale (`config/assistant_examples.php`; los escenarios de la Lección 2.4 en la
+    Plantilla 2). Esas cifras son las que dan las lecciones: `AssistantIndexTest` falla si una no
+    está en la lección que el ejemplo nombra. La base de datos de suelo es solo una descarga.
+  - **Las oficinas de cada provincia, fase a fase** (Anexo A, `province_guides`), en cada idioma
+    traducido: cada trozo es de una provincia y solo llega a los alumnos de esa provincia
+    (la que eligieron en su primera visita) y de ese módulo; el administrador sin provincia los ve
+    todos. Al modelo se le dice la provincia del alumno (`<alumno … provincia="…">`).
 - **La búsqueda** (`Retriever`): BM25 sobre MySQL, en el idioma del alumno y en español, quedándose
   solo con lo que el alumno puede leer: la misma puerta que el reproductor (`Scope`: los módulos
-  comprados, las lecciones gratuitas; los documentos según su acceso). Ningún servicio externo de
-  *embeddings* ve el curso. El modelo puede buscar otra vez con su herramienta, en español.
+  comprados, las lecciones gratuitas; los documentos según su acceso; las oficinas, su provincia).
+  Ningún servicio externo de *embeddings* ve el curso. El modelo puede buscar otra vez con su
+  herramienta, en español.
 - **Dos modelos** (`Router`, `config/assistant.php`): Claude Haiku 5.5 para la mayoría de las
   preguntas (1 crédito) y Claude Opus 5.5 para un análisis, una comparación, varios escenarios o
   una pregunta larga con muchas cifras (5 créditos). El pequeño puede pasarle la pregunta al grande

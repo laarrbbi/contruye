@@ -91,7 +91,7 @@ final class TemplateCatalog
      * module (by its order) and lesson they go with, their Excel file and,
      * for the one with a calculator, its template and dictionary.
      *
-     * @return array<string, array{id: string, title: string, module_order: int, lesson: string, excel: string, template: string|null, inputs: string|null}>
+     * @return array<string, array{id: string, title: string, module_order: int, lesson: string, excel: string, template: string|null, inputs: string|null, use: string}>
      */
     public function professionals(): array
     {
@@ -106,6 +106,7 @@ final class TemplateCatalog
                 'excel' => $entry['excel'],
                 'template' => $entry['plantilla'],
                 'inputs' => $entry['entradas'],
+                'use' => (string) ($entry['uso'] ?? ''),
             ];
         }
 
@@ -155,6 +156,17 @@ final class TemplateCatalog
     public function calculatorDictionary(array $calculator): array
     {
         return $this->source->json(self::BASE.'/plantillas_pequenas/'.$calculator['inputs']);
+    }
+
+    /**
+     * A calculator's template as the package delivers it: its sheets, cells and formulas.
+     *
+     * @param  array{template: string}  $calculator
+     * @return array<string, mixed>
+     */
+    public function calculatorTemplate(array $calculator): array
+    {
+        return $this->source->json(self::BASE.'/plantillas_pequenas/'.$calculator['template']);
     }
 
     /** @param  array{excel: string}  $calculator */

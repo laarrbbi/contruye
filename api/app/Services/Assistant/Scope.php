@@ -10,7 +10,8 @@ use App\Models\User;
  * player (AuthorizesCourseAccess). Admins read everything. The assistant
  * never answers from a piece outside this scope, and the frequent-question
  * cache is keyed by it, so an answer built from a module never reaches
- * someone who has not bought it.
+ * someone who has not bought it. The student's province picks the offices of
+ * the province directory (Anexo A) they read: only their own.
  */
 final class Scope
 {
@@ -20,17 +21,19 @@ final class Scope
         public readonly bool $enrolled,
         public readonly bool $full,
         public readonly array $modules,
+        public readonly ?int $province = null,
     ) {}
 
     public static function for(User $user, Course $course): self
     {
+        $province = $user->province_id === null ? null : (int) $user->province_id;
         if ($user->isAdmin()) {
-            return new self(true, true, true, $course->modules()->pluck('id')->map(fn ($id) => (int) $id)->sort()->values()->all());
+            return new self(true, true, true, $course->modules()->pluck('id')->map(fn ($id) => (int) $id)->sort()->values()->all(), $province);
         }
 
         $modules = $user->accessibleModuleIds($course)->map(fn ($id) => (int) $id)->sort()->values()->all();
 
-        return new self(false, $modules !== [] || $user->hasFullAccessTo($course), $user->hasFullAccessTo($course), $modules);
+        return new self(false, $modules !== [] || $user->hasFullAccessTo($course), $user->hasFullAccessTo($course), $modules, $province);
     }
 
     /**
@@ -39,12 +42,12 @@ final class Scope
      *
      * @param  list<int>  $modules
      */
-    public static function make(bool $admin, bool $enrolled, bool $full, array $modules): self
+    public static function make(bool $admin, bool $enrolled, bool $full, array $modules, ?int $province = null): self
     {
         $modules = array_values(array_unique(array_map('intval', $modules)));
         sort($modules);
 
-        return new self($admin, $enrolled, $full, $modules);
+        return new self($admin, $enrolled, $full, $modules, $province);
     }
 
     /** Whether this student may use the assistant at all: a student of the course, or an admin. */
@@ -59,9 +62,18 @@ final class Scope
         return $this->admin ? 'admin' : ($this->full ? 'full' : 'modules');
     }
 
-    /** @param array{access: string, module_id: ?int} $chunk */
+    /**
+     * A piece of one province's offices goes only to a student of that province
+     * (an admin without a province reads them all); every piece, also by its access.
+     *
+     * @param  array{access: string, module_id: ?int, province_id?: ?int}  $chunk
+     */
     public function allows(array $chunk): bool
     {
+        $province = $chunk['province_id'] ?? null;
+        if ($province !== null && ($this->province === null ? ! $this->admin : (int) $province !== $this->province)) {
+            return false;
+        }
         if ($this->admin) {
             return true;
         }
@@ -77,6 +89,7 @@ final class Scope
 
     public function signature(): string
     {
-        return ($this->admin ? 'a' : '').($this->full ? 'f' : '').($this->enrolled ? 'e' : '').':'.implode(',', $this->modules);
+        return ($this->admin ? 'a' : '').($this->full ? 'f' : '').($this->enrolled ? 'e' : '').':'.implode(',', $this->modules)
+            .($this->province === null ? '' : ':p'.$this->province);
     }
 }

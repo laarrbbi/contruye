@@ -67,7 +67,7 @@ final class Retriever
             $chunks = AssistantChunk::query()->whereIn('id', $ids)->get()->keyBy('id');
             foreach ($ids as $id) {
                 $chunk = $chunks[$id] ?? null;
-                if ($chunk === null || ! $scope->allows(['access' => $chunk->access, 'module_id' => $chunk->module_id])) {
+                if ($chunk === null || ! $scope->allows(['access' => $chunk->access, 'module_id' => $chunk->module_id, 'province_id' => $chunk->province_id])) {
                     continue;
                 }
                 $found[] = [

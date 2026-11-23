@@ -136,8 +136,12 @@ makes that work lives in `docker/mysql-test/`.
   `app/Services/Assistant`, `config/assistant.php`, `docs/asistente-ia.md`): the course's AI
   assistant on the Claude API (official PHP SDK; Haiku 5.5 small, Opus 5.5 large, a router, the
   small one can hand over). RAG over the course index (`assistant:index`; never quizzes or the
-  exam), filtered by the player's gate (`Scope`); tools with the student's rights only (search,
-  templates of owned modules, legal parameters); a guard on both sides; monthly credits in an
+  exam), filtered by the player's gate (`Scope`); the index also holds the seven templates
+  (`TemplateKnowledge`: cells, every formula, Nicolás's worked example from
+  `config/assistant_examples.php`, whose figures `AssistantIndexTest` finds in the lessons)
+  behind their module's gate, and the Anexo A offices of each province, which reach only that
+  province's students; tools with the student's rights only (search, templates of owned modules,
+  legal parameters); a guard on both sides; monthly credits in an
   append-only ledger; a frequent-question cache keyed by scope and version; a daily budget; a
   trace for every question (`/admin/assistant`). Students get a version only when
   `ASSISTANT_ENABLED`, the key, and `assistant:eval` passed for that prompt, models and index;

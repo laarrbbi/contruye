@@ -8,7 +8,9 @@ use App\Models\ContentBlock;
 use App\Models\Course;
 use App\Models\CourseDocument;
 use App\Models\Module;
+use App\Models\ProvinceGuide;
 use App\Models\Setting;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -18,7 +20,11 @@ use Illuminate\Support\Facades\DB;
  *   extra), anyone for a free lesson (`free`);
  * - a module's own texts (laws that apply, where to go, partners in your
  *   province) and its checklist: its owners;
- * - the course documents: as the player gates them (`enrolled` or `full`).
+ * - the course documents: as the player gates them (`enrolled` or `full`);
+ * - each template (TemplateKnowledge: what it calculates, its inputs, its
+ *   formulas, Nicolás's run of it), in Spanish: its module's owners;
+ * - the province directory (Anexo A), each province's offices phase by
+ *   phase: the owners of that phase's module, of that province only (Scope).
  * Never the quizzes or the final exam (their answers stay with QuizController),
  * never the owner's commercial strategy (it is not published).
  *
@@ -31,6 +37,8 @@ final class Indexer
     private const SETTING = 'assistant.index';
 
     /** @return array{version: string, chunks: int, built_at: string} */
+    public function __construct(private readonly TemplateKnowledge $templates) {}
+
     public function rebuild(): array
     {
         $course = self::course();
@@ -53,7 +61,7 @@ final class Indexer
         });
 
         $state = [
-            'version' => substr(hash('sha256', json_encode(array_map(fn (array $p) => [$p['locale'], $p['access'], $p['module_id'], $p['title'], $p['text']], $pieces))), 0, 16),
+            'version' => substr(hash('sha256', json_encode(array_map(fn (array $p) => [$p['locale'], $p['access'], $p['module_id'], $p['province_id'], $p['title'], $p['text']], $pieces))), 0, 16),
             'chunks' => count($pieces),
             'built_at' => now()->toIso8601String(),
         ];
@@ -131,6 +139,9 @@ final class Indexer
             }
         }
 
+        $this->templatePieces($course, $modules, $pieces);
+        $this->provincePieces($course, $modules, $locales, $pieces);
+
         foreach (CourseDocument::query()->where('course_id', $course->id)->orderBy('order')->get() as $document) {
             foreach ($locales as $locale) {
                 $text = $document->{'body_'.$locale};
@@ -147,8 +158,65 @@ final class Indexer
         return $pieces;
     }
 
+    /**
+     * Each template of the package whose module the course has, as its module's owners read it: in Spanish.
+     *
+     * @param  Collection<int, Module>  $modules
+     * @param  list<array<string, mixed>>  $pieces
+     */
+    private function templatePieces(Course $course, $modules, array &$pieces): void
+    {
+        $byOrder = $modules->reject->isFinancials()->keyBy('order');
+        foreach ($this->templates->cards() as $index => $card) {
+            $module = $byOrder->get($card['module_order']);
+            if ($module === null) {
+                continue;
+            }
+            $title = $this->moduleLabel($module).' · '.$card['title'];
+            foreach ($this->split($card['text']) as $part) {
+                $pieces[] = $this->piece('es', 'template', $index + 1, $module->id, null, 'module', $title, "/learn/{$course->slug}/modules/{$module->id}/plantilla", $part);
+            }
+        }
+    }
+
+    private const WHERE = ['es' => 'dónde ir', 'en' => 'where to go', 'fr' => 'où s\'adresser', 'ar' => 'إلى أين تتوجّه', 'ru' => 'куда обращаться', 'uk' => 'куди звертатися'];
+
+    /**
+     * The province directory (Anexo A): for each province, the offices of each
+     * phase, in every language its rows are translated into, for the owners of
+     * that phase's module in that province.
+     *
+     * @param  Collection<int, Module>  $modules
+     * @param  list<string>  $locales
+     * @param  list<array<string, mixed>>  $pieces
+     */
+    private function provincePieces(Course $course, $modules, array $locales, array &$pieces): void
+    {
+        $byOrder = $modules->reject->isFinancials()->keyBy('order');
+        foreach (ProvinceGuide::query()->orderBy('province_id')->get() as $guide) {
+            foreach ($locales as $locale) {
+                [$data, $language] = $guide->localizedData($locale);
+                if ($language !== $locale) {
+                    continue;
+                }
+                $name = trim((string) ($data['prov'] ?? '')).' ('.trim((string) ($data['ccaa'] ?? $guide->ccaa)).')';
+                foreach ($byOrder as $order => $module) {
+                    $rows = array_filter(array_map(fn ($row) => is_array($row) ? implode(': ', array_filter(array_map('trim', array_map('strval', $row)))) : '', $guide->phaseRows((int) $order, $data)));
+                    if ($rows === []) {
+                        continue;
+                    }
+                    $label = $this->moduleLabel($module, $locale);
+                    $text = "**{$name} · {$label}, ".(self::WHERE[$locale] ?? self::WHERE['es'])."**\n".implode("\n", array_map(fn (string $row) => '- '.$row, $rows));
+                    foreach ($this->split($text) as $part) {
+                        $pieces[] = $this->piece($locale, 'province', $guide->id, $module->id, null, 'module', "{$label} · Anexo A · {$name}", "/learn/{$course->slug}/modules/{$module->id}/partners", $part, (int) $guide->province_id);
+                    }
+                }
+            }
+        }
+    }
+
     /** @return array<string, mixed> */
-    private function piece(string $locale, string $type, int $sourceId, ?int $moduleId, ?int $lessonId, string $access, string $title, ?string $path, string $text): array
+    private function piece(string $locale, string $type, int $sourceId, ?int $moduleId, ?int $lessonId, string $access, string $title, ?string $path, string $text, ?int $provinceId = null): array
     {
         return [
             'locale' => $locale,
@@ -156,6 +224,7 @@ final class Indexer
             'source_id' => $sourceId,
             'module_id' => $moduleId,
             'lesson_id' => $lessonId,
+            'province_id' => $provinceId,
             'access' => $access,
             'title' => mb_substr($title, 0, 255),
             'path' => $path,
