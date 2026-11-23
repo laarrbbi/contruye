@@ -167,14 +167,16 @@ final class Indexer
     private function templatePieces(Course $course, $modules, array &$pieces): void
     {
         $byOrder = $modules->reject->isFinancials()->keyBy('order');
+        $financials = $modules->first->isFinancials();
         foreach ($this->templates->cards() as $index => $card) {
-            $module = $byOrder->get($card['module_order']);
+            $module = ($card['financials'] ?? false) ? $financials : $byOrder->get($card['module_order']);
             if ($module === null) {
                 continue;
             }
             $title = $this->moduleLabel($module).' · '.$card['title'];
+            $path = $module->isFinancials() ? "/learn/{$course->slug}/financials" : "/learn/{$course->slug}/modules/{$module->id}/plantilla";
             foreach ($this->split($card['text']) as $part) {
-                $pieces[] = $this->piece('es', 'template', $index + 1, $module->id, null, 'module', $title, "/learn/{$course->slug}/modules/{$module->id}/plantilla", $part);
+                $pieces[] = $this->piece('es', 'template', $index + 1, $module->id, null, 'module', $title, $path, $part);
             }
         }
     }
@@ -262,13 +264,14 @@ final class Indexer
         $paragraphs = preg_split('/\n\s*\n/', trim(str_replace("\r", '', $text))) ?: [];
 
         foreach ($paragraphs as $paragraph) {
-            $pieces = mb_strlen($paragraph) > $limit ? (preg_split('/\n/', $paragraph) ?: [$paragraph]) : [$paragraph];
-            foreach ($pieces as $piece) {
+            // A paragraph longer than a piece goes line by line; its lines stay one block (a list stays a list).
+            $lines = mb_strlen($paragraph) > $limit ? (preg_split('/\n/', $paragraph) ?: [$paragraph]) : [$paragraph];
+            foreach ($lines as $line => $piece) {
                 if ($current !== '' && mb_strlen($current) + mb_strlen($piece) + 2 > $limit) {
                     $parts[] = $current;
                     $current = '';
                 }
-                $current = $current === '' ? $piece : $current."\n\n".$piece;
+                $current = $current === '' ? $piece : $current.($line === 0 ? "\n\n" : "\n").$piece;
             }
         }
         if (trim($current) !== '') {

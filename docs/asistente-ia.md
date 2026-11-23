@@ -29,6 +29,11 @@ pregunta → disponibilidad → una pregunta a la vez → filtro de entrada → 
     ella y lo que le sale (`config/assistant_examples.php`; los escenarios de la Lección 2.4 en la
     Plantilla 2). Esas cifras son las que dan las lecciones: `AssistantIndexTest` falla si una no
     está en la lección que el ejemplo nombra. La base de datos de suelo es solo una descarga.
+  - **La plantilla profesional (el extra)**, detrás de la puerta de Financials: sus 275 casillas de
+    entrada por sección, con su etiqueta, tipo, unidad, valor de la plantilla y nota, lo que devuelve
+    (el coste por partidas, el préstamo, el coeficiente de paso, el calendario y su aviso E79) y el
+    ejemplo de 24 viviendas que carga su calculadora, con el resumen que dio el motor. El asistente
+    la explica; la calcula el alumno en la página Financials.
   - **Las oficinas de cada provincia, fase a fase** (Anexo A, `province_guides`), en cada idioma
     traducido: cada trozo es de una provincia y solo llega a los alumnos de esa provincia
     (la que eligieron en su primera visita) y de ese módulo; el administrador sin provincia los ve

@@ -27,9 +27,10 @@ final class TemplateKnowledge
     }
 
     /**
-     * One card per template of the package: its key, the module (by order) whose owners may read it, its title and text.
+     * One card per template of the package: its key, the module (by order) whose owners may read it, its title and text;
+     * the professional template (the extra) goes to the Financials module (`financials`).
      *
-     * @return list<array{key: string, module_order: int, title: string, text: string}>
+     * @return list<array{key: string, module_order: int|null, financials?: bool, title: string, text: string}>
      */
     public function cards(): array
     {
@@ -52,8 +53,100 @@ final class TemplateKnowledge
                 ]
                 : $this->calculatorCard($id, $calculator, $professional);
         }
+        $cards[] = $this->professionalTemplateCard();
 
         return $cards;
+    }
+
+    /**
+     * The professional template, the Financials extra: what it calculates, its
+     * inputs by section (the package's dictionary), what it gives back, and the
+     * package's own example with the summary the engine gave
+     * (config/assistant_examples.php). For the extra's owners: no module order,
+     * the Financials module's gate.
+     *
+     * @return array{key: string, module_order: null, financials: true, title: string, text: string}
+     */
+    private function professionalTemplateCard(): array
+    {
+        $dictionary = $this->catalog()->professionalDictionary();
+        $inputs = [];
+        foreach ($dictionary['entradas'] ?? [] as $input) {
+            $inputs[$input['hoja'].'!'.strtoupper((string) $input['celda'])] = $input;
+        }
+
+        $parts = ['**Plantilla profesional (extra)** (Financials). El modelo financiero completo del profesional, corregido: '
+            .'el coste de la promoción por partidas, su financiación y su calendario mes a mes. Es el extra del curso: la tiene quien lo compró. '
+            .'Se rellena y se calcula en la página Financials, con los parámetros legales vigentes, y se descarga en Excel; '
+            .'la herramienta de cálculo del asistente no la calcula. '.trim((string) ($dictionary['regla'] ?? ''))];
+
+        $sections = [];
+        foreach ($inputs as $input) {
+            $sections[(string) $input['seccion']][] = $input;
+        }
+        foreach ($sections as $section => $list) {
+            $sheets = implode('», «', array_values(array_unique(array_map(fn (array $input) => (string) $input['hoja'], $list))));
+            $lines = ["**Entradas · {$section}** (hoja «{$sheets}»):"];
+            foreach ($list as $input) {
+                $lines[] = '- '.$this->professionalInput($input);
+            }
+            $parts[] = implode("\n", $lines);
+        }
+
+        $parts[] = '**Lo que devuelve:** el coste de la promoción por partidas (terreno, construcción, urbanización, proyectos, licencias, varios, '
+            .'gestión, gastos del préstamo hipotecario y de la financiación externa), cada una neta, con IVA, su IVA y su % del total; el préstamo '
+            .'hipotecario; el coeficiente de paso (el coste total entre la suma de suelo, construcción y urbanización netos de gastos); la hoja '
+            .'«3ª Coste Total Promoción» en su vista simplificada; y el calendario mes a mes, con el aviso de Datos de Partida E79 junto al mes cero '
+            .'cuando un pago cae fuera de los 48 meses del flujo de caja.';
+
+        $example = (array) config('assistant_examples.professional', []);
+        if ($example !== []) {
+            $given = [];
+            foreach ($this->catalog()->professionalExample() as $sheet => $cells) {
+                foreach ((array) $cells as $cell => $value) {
+                    $input = $inputs[$sheet.'!'.strtoupper((string) $cell)] ?? null;
+                    $given[] = $cell.' «'.($input['etiqueta'] ?? $cell).'» = '.$this->professionalValue($value, $input);
+                }
+            }
+            $lines = ['**'.$example['label'].'** (el que carga la calculadora de Financials con «Cargar el ejemplo de 24 viviendas»). '
+                .'Lo que mete: '.implode('; ', $given).'. Las demás casillas conservan el valor de la plantilla.',
+                'Lo que le sale (neto · con IVA · IVA · % del total):'];
+            foreach ((array) $example['results'] as $concept => [$net, $gross, $vat, $share]) {
+                $lines[] = "- {$concept}: {$net} · {$gross} · {$vat} · {$share}";
+            }
+            $lines[] = "Préstamo hipotecario: {$example['loan']}. Coeficiente de paso: {$example['coefficient']}. ".($example['note'] ?? '');
+            $parts[] = implode("\n", $lines);
+        }
+
+        return ['key' => 'profesional', 'module_order' => null, 'financials' => true, 'title' => 'Plantilla profesional (extra)', 'text' => implode("\n\n", $parts)];
+    }
+
+    /** One input of the professional template: cell, label, type and unit, the template's value, its note. */
+    private function professionalInput(array $input): string
+    {
+        $type = trim((string) $input['tipo']);
+        $kind = str_starts_with($type, 'lista:') ? 'lista: '.str_replace('/', ' / ', trim(substr($type, 6))) : $type;
+        $about = $kind.(trim((string) $input['unidad']) === '' ? '' : ', '.trim((string) $input['unidad']));
+        $default = $input['defecto'] ?? null;
+        if (($input['defecto_es_formula'] ?? false) === true) {
+            $about .= '; si no se rellena, la calcula la plantilla';
+        } elseif ($default !== null && $default !== '' && $default !== 0 && $default !== 0.0) {
+            $about .= '; valor de la plantilla: '.$this->professionalValue($default, $input);
+        }
+        $note = trim((string) ($input['nota'] ?? ''));
+
+        return strtoupper((string) $input['celda']).' · '.trim((string) $input['etiqueta'])." ({$about})".($note === '' ? '' : '. '.rtrim($note, '.'));
+    }
+
+    /** A value of the professional template as the course writes it: a date dd/mm/aaaa, a percentage, a number. */
+    private function professionalValue(mixed $value, ?array $input): string
+    {
+        $type = (string) ($input['tipo'] ?? '');
+        if ($type === 'fecha' && is_numeric($value)) {
+            return (new \DateTimeImmutable('1899-12-30'))->modify('+'.(int) $value.' days')->format('d/m/Y');
+        }
+
+        return $this->value($value, $type);
     }
 
     /**

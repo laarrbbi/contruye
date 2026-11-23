@@ -99,6 +99,26 @@ it('gives the templates only to the owners of their module', function () {
         ->and(foundFor(indexedStudent($course), $course, $query))->toContain('B32 · Precio máximo del solar');
 });
 
+it('gives the professional template, with the package example, only to the owners of the extra', function () {
+    [$course] = indexedCourse();
+    $financials = Module::factory()->for($course)->create(['order' => 13, 'kind' => 'financials']);
+    app(Indexer::class)->rebuild();
+
+    $pieces = AssistantChunk::query()->where('source_type', 'template')->where('module_id', $financials->id)->orderBy('id')->get();
+    expect($pieces)->not->toBeEmpty()
+        ->and($pieces->pluck('access')->unique()->all())->toBe(['module'])
+        ->and($pieces->first()->path)->toBe("/learn/{$course->slug}/financials")
+        ->and($pieces->pluck('text')->implode("\n"))
+        ->toContain('E9 · VIVIENDA: coste de construcción por m² (numero, €/m²)')
+        ->toContain('C9 «VIVIENDA: nº de unidades» = 24')
+        ->toContain('D79 «Mes cero (inicio de la promoción)» = 01/01/2027')
+        ->toContain('- TOTAL: 6.097.401 € · 6.918.553,32 €');
+
+    $query = 'plantilla profesional garaje vinculado coste de construcción por m²';
+    expect(foundFor(indexedStudent($course, $financials), $course, $query))->toContain('GARAJE VINCULADO')
+        ->and(foundFor(indexedStudent($course), $course, $query))->not->toContain('GARAJE VINCULADO');
+});
+
 it('quotes in the course example only figures its lessons give', function () {
     $lessons = [];
     foreach (CourseSource::fromConfig()->modules() as $module) {

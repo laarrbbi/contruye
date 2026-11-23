@@ -99,4 +99,32 @@ return [
             ],
         ],
     ],
+
+    /*
+     * The professional template (the Financials extra) with the package's own
+     * example, the one its calculator loads («Cargar el ejemplo de 24
+     * viviendas»: curso/2_plantilla_financiera/pruebas/escenario_24_viviendas.json,
+     * in the Comunitat Valenciana). Its inputs are read from the package; the
+     * summary is what the engine gave, rows as `resumen` names them: neto, con
+     * IVA, IVA and share of the total. The financial templates' service tests
+     * check the same total (financials/test/calculadora.test.js).
+     */
+    'professional' => [
+        'label' => 'El ejemplo del paquete: 24 viviendas en la Comunitat Valenciana',
+        'note' => 'Calculado con el motor de la plataforma y los parámetros legales vigentes el 23/11/2026.',
+        'results' => [
+            'Terreno' => ['1.346.819,09 €', '1.620.369,10 €', '273.550,01 €', '22,1 %'],
+            'Construcción' => ['3.041.651,10 €', '3.345.236,30 €', '303.585,20 €', '49,9 %'],
+            'Urbanización' => ['91.800 €', '111.078 €', '19.278 €', '1,5 %'],
+            'Proyectos' => ['382.130,41 €', '462.377,79 €', '80.247,39 €', '6,3 %'],
+            'Licencias' => ['215.064 €', '215.064 €', '0 €', '3,5 %'],
+            'Varios' => ['142.089,14 €', '146.732,65 €', '4.643,51 €', '2,3 %'],
+            'Gestión' => ['653.292,96 €', '790.484,49 €', '137.191,52 €', '10,7 %'],
+            'Gastos préstamo hipotecario' => ['224.554,29 €', '227.210,98 €', '2.656,69 €', '3,7 %'],
+            'Gastos financiación externa' => ['0 €', '0 €', '0 €', '0 %'],
+            'TOTAL' => ['6.097.401 €', '6.918.553,32 €', '821.152,32 €', '100 %'],
+        ],
+        'loan' => '4.877.920,80 €',
+        'coefficient' => '1,3996',
+    ],
 ];

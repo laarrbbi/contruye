@@ -139,8 +139,9 @@ makes that work lives in `docker/mysql-test/`.
   exam), filtered by the player's gate (`Scope`); the index also holds the seven templates
   (`TemplateKnowledge`: cells, every formula, Nicolás's worked example from
   `config/assistant_examples.php`, whose figures `AssistantIndexTest` finds in the lessons)
-  behind their module's gate, and the Anexo A offices of each province, which reach only that
-  province's students; tools with the student's rights only (search, templates of owned modules,
+  behind their module's gate, the professional template (inputs, results, the 24-home example)
+  behind the extra's, and the Anexo A offices of each province, which reach only that province's
+  students; tools with the student's rights only (search, templates of owned modules,
   legal parameters); a guard on both sides; monthly credits in an
   append-only ledger; a frequent-question cache keyed by scope and version; a daily budget; a
   trace for every question (`/admin/assistant`). Students get a version only when
