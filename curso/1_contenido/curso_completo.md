@@ -600,10 +600,10 @@ El arquitecto te da el encaje y las superficies que vendes; el estudio de mercad
 - **Suelo:** precio + ITP/AJD no recuperable + notaría + registro + topográfico + geotecnia + abogados + coste financiero del suelo + cargas de urbanización.
 - **Método residual:** `Precio máximo del suelo = Ingresos − resto de costes − beneficio objetivo`. El suelo vale lo que el proyecto permite pagar.
 - **Construcción (coste de ejecución material, 2025-2026, sobre rasante):**
-  - Estándar: 900–1.100 €/m² construido
-  - Media-alta: 1.100–1.400 €/m²
-  - Lujo: desde 1.400 €/m²
-  - Sótano (bajo rasante): 500–800 €/m²
+  - Estándar: 1.050–1.250 €/m² construido
+  - Media-alta: 1.250–1.600 €/m²
+  - Lujo: desde 1.600 €/m²
+  - Sótano (bajo rasante): 550–900 €/m²
   - Pide siempre precio a constructoras locales: varía por provincia.
 - **Presupuestos:**
   - **PEM** (ejecución material): lo calcula el arquitecto en el proyecto.
@@ -1013,7 +1013,7 @@ Anexo A, columna **Fase 2**: tasadoras, banca con presencia en tu provincia, Col
 - A) Precio de mercado × edificabilidad · B) **Ingresos − resto de costes − beneficio objetivo** ✅ · C) Coste de obra × 2 · D) Valor catastral × coeficiente
 
 **P5.** Coste de ejecución material de vivienda estándar (2025-2026):
-- A) 300–500 €/m² · B) 600–800 €/m² · C) **900–1.100 €/m²** ✅ · D) 2.000 €/m²
+- A) 300–500 €/m² · B) 600–800 €/m² · C) **1.050–1.250 €/m²** ✅ · D) 2.000 €/m²
 
 **P6.** ¿Por qué la CRP se hace sin IVA?
 - A) Porque el IVA no existe en obra nueva · B) **Porque el promotor recupera el IVA soportado al repercutir el de las ventas** ✅ · C) Porque lo paga el banco · D) Por costumbre

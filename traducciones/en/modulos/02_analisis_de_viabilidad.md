@@ -155,10 +155,10 @@ The architect gives you the fit study and the areas you sell; the market study, 
 - **Land:** price + non-recoverable ITP/AJD + notary + registry + topographic survey + geotechnical study + lawyers + finance cost of the land + urbanisation charges.
 - **Residual method:** `Maximum land price = Revenue − all other costs − target profit`. The land is worth what the project can afford to pay.
 - **Construction (material execution cost, 2025-2026, above ground):**
-  - Standard: 900–1.100 €/m² built
-  - Upper-mid: 1.100–1.400 €/m²
-  - Luxury: from 1.400 €/m²
-  - Basement (below ground): 500–800 €/m²
+  - Standard: 1.050–1.250 €/m² built
+  - Upper-mid: 1.250–1.600 €/m²
+  - Luxury: from 1.600 €/m²
+  - Basement (below ground): 550–900 €/m²
   - Always ask local contractors for prices: they vary by province.
 - **Budgets:**
   - **PEM** (material execution budget): the architect calculates it in the design.

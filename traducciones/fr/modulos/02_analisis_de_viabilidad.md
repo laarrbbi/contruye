@@ -155,10 +155,10 @@ L'architecte vous donne l'implantation et les surfaces que vous vendez ; l'étud
 - **Terrain :** prix + ITP/AJD non récupérable + notaire + registre + relevé topographique + géotechnique + avocats + coût financier du terrain + charges d'aménagement.
 - **Méthode résiduelle :** `Prix maximal du terrain = Recettes − autres coûts − bénéfice visé`. Le terrain vaut ce que le projet permet de payer.
 - **Construction (coût d'exécution matérielle, 2025-2026, hors sous-sol) :**
-  - Standard : 900–1.100 €/m² construit
-  - Moyen-haut de gamme : 1.100–1.400 €/m²
-  - Luxe : à partir de 1.400 €/m²
-  - Sous-sol (niveaux enterrés) : 500–800 €/m²
+  - Standard : 1.050–1.250 €/m² construit
+  - Moyen-haut de gamme : 1.250–1.600 €/m²
+  - Luxe : à partir de 1.600 €/m²
+  - Sous-sol (niveaux enterrés) : 550–900 €/m²
   - Demandez toujours des prix à des entreprises locales : ils varient selon la province.
 - **Budgets :**
   - **PEM** (exécution matérielle) : l'architecte le calcule dans le projet.

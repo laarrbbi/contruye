@@ -57,6 +57,7 @@ cambios. El que se descarga en la plataforma es `pdf/curso_sin_evaluacion.pdf`.
 | Lecciones 2.3 y 2.5 | En español lo que estaba en inglés: «controlador de gestión» en lugar de «Controller» (texto de costes del profesor) y «flujo de caja» en lugar de «cash-flow» |
 | Lección 2.2 (notas de voz) | Vuelven los precios escriturados, como último punto del precio de venta y con la explicación del profesor (valores medios por zona, sirven para tasar y de referencia; en obra nueva el precio lo marca la competencia). Y el estudio de la demanda, por encima, como pidió el propietario (quién vive en la zona, de qué vive, si la población crece) (23/11) |
 | Lección 4.1 (notas de voz) | «Por qué se alarga y cómo acortarlo»: proyectos mal planteados y las entidades colaboradoras urbanísticas (ECUV) de la Comunitat Valenciana, con unos tres meses según el proyecto (23/11) |
+| Lección 2.3 y test del Módulo 2 (P5) | El coste de ejecución material con las cifras de hoy que da el profesor en las notas de voz (la media-alta va por 1.400 €/m², el lujo casi por 1.600 €/m²) y los demás tramos en la misma proporción (×8/7, redondeado a 50 €): estándar 1.050–1.250 €/m², media-alta 1.250–1.600 €/m², lujo desde 1.600 €/m², sótano 550–900 €/m² (antes 900–1.100, 1.100–1.400, desde 1.400 y 500–800). La P5 del test del Módulo 2 da como respuesta 1.050–1.250 €/m² (23/11) |
 
 ## Estructura que pide el propietario: el Módulo 1 como muestra
 
@@ -101,7 +102,7 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
     datos del ejemplo del profesional en Números gordos del solar (suelo 45 €/m² de techo, precio de
     venta el que da la plantilla) en Alicante, salvo la construcción: desde el 23/11, a 1.400 €/m², el
     coste de hoy que da el profesor en las notas de voz para calidades media-alta (dentro del tramo
-    1.100–1.400 €/m² de la Lección 2.3), con lo que las calidades de Nicolás son medias-altas. Antes iba
+    de media-alta de la Lección 2.3, hoy 1.250–1.600 €/m²), con lo que las calidades de Nicolás son medias-altas. Antes iba
     a los 660 €/m² del ejemplo, un precio de 2002. Con eso la plantilla da un precio de venta de
     2.606,50 €/m², en línea con los 2.600 €/m² que el profesor cita para una zona de Alicante. Plantilla 1
     (ITP 9 %, coste del solar 81.174,29 €), Plantilla 2 (ventas 4.135.186,19 €, coste 3.076.443,85 €,
@@ -131,11 +132,11 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
 
 1. **Plusvalía:** aplicada (arriba).
 2. **Hipoteca y escritura de obra nueva:** aplicada (arriba). La escritura sí la exige el banco para los préstamos hipotecarios; lo que se distingue es el préstamo al promotor del préstamo al comprador.
-3. **Cédula de habitabilidad: falta decidir (no se ha cambiado).** Responde que «la nomenclatura es igual en todo el Reino de España», que las competencias en vivienda y urbanismo son de las comunidades autónomas (y de Ceuta y Melilla), que la licencia de primera ocupación la otorgan los ayuntamientos y que todas las comunidades la exigen. Pero su Anexo B pone, comunidad por comunidad, que en ocho la cédula de habitabilidad la expide otro organismo, aparte de la licencia del ayuntamiento: Cataluña (Agència de l'Habitatge de Catalunya), Illes Balears (Consell Insular), Navarra, La Rioja, Asturias, Extremadura, Región de Murcia y Canarias. Si se aplica su respuesta, se quita eso de los Módulos 9 y 10, los Anexos A y B, el test del Módulo 9 (P6) y el examen; el propietario decide.
+3. **Cédula de habitabilidad: se queda como estaba** (decisión del propietario del 23/11). Responde que «la nomenclatura es igual en todo el Reino de España», que las competencias en vivienda y urbanismo son de las comunidades autónomas (y de Ceuta y Melilla), que la licencia de primera ocupación la otorgan los ayuntamientos y que todas las comunidades la exigen. Pero su Anexo B pone, comunidad por comunidad, que en ocho la cédula de habitabilidad la expide otro organismo, aparte de la licencia del ayuntamiento: Cataluña (Agència de l'Habitatge de Catalunya), Illes Balears (Consell Insular), Navarra, La Rioja, Asturias, Extremadura, Región de Murcia y Canarias. El propietario decide mantener lo que dice el Anexo B en esas ocho comunidades.
 
 ## Para preguntar al profesor
 
-- **Lección 2.3, los tramos del coste de construcción:** en las notas de voz dice que 900–1.100 €/m² «está mal» y que hoy la media-alta va por 1.400 €/m² y el lujo «casi por 1.600». Faltan los tres tramos exactos (estándar, media-alta, lujo) y el del sótano para la tabla de la lección.
+Nada pendiente: los tramos de la 2.3 los fijó el propietario el 23/11 con las cifras del profesor («Del propietario»).
 
 ## Notas del propietario que faltan por aplicar
 
@@ -147,5 +148,5 @@ Los cuatro audios, transcritos: casi todo lo que dicen ya estaba aplicado con la
 
 1. **Precios escriturados (2.2):** sí, como último punto. Aplicado.
 2. **Estudio de la demanda (2.2):** sí, explicado por encima. Aplicado.
-3. **Coste de construcción (2.3):** el ejemplo de Nicolás pasa a 1.400 €/m² (arriba, «Las cifras de Nicolás»). La tabla de la lección espera los tramos del profesor («Para preguntar al profesor»).
+3. **Coste de construcción (2.3):** el ejemplo de Nicolás pasa a 1.400 €/m² (arriba, «Las cifras de Nicolás»). La tabla de la lección, con sus cifras y los demás tramos en la misma proporción («Del propietario»).
 4. **ECUV (4.1):** sí. Aplicado.

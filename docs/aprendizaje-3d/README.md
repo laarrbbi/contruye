@@ -30,6 +30,10 @@ primera ocupación y la cédula; en el 10, los dos pasos quitados de la notaría
 guionizar esos módulos, esas citas se cambian por el texto corregido (`curso/1_contenido/CAMBIOS.md`). Los
 títulos de las lecciones 4.3, 9.2 y 9.3 también han cambiado.
 
+**23/11/2026.** También han cambiado la tabla de costes de la 2.3 (estándar 1.050–1.250 €/m²,
+media-alta 1.250–1.600, lujo desde 1.600, sótano 550–900), el precio de venta de la 2.2, la forma de pago
+de la 2.5 y la plusvalía (11.5 y 12), y las cifras del ejemplo de Nicolás, que construye a 1.400 €/m².
+
 ## Los módulos
 
 | Módulo | Lecciones | Pasos | Guion |
