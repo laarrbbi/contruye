@@ -1,11 +1,11 @@
 # ANNEX A — DIRECTORY OF PARTNERS BY PROVINCE AND BY PHASE
 
 > **How to use it:** find your province. For each phase you have the institution or the type of partner, and what you need it for.
-> The names of professional bodies and public agencies sometimes change: confirm them in the official search engines below before you go.
+> The names of professional bodies and public agencies sometimes change: confirm them in the official directories below before you go.
 
-## Official search engines (valid throughout Spain)
+## Official directories (valid throughout Spain)
 
-| You need | Search engine |
+| You need | Directory |
 |---|---|
 | The plot's Land Registry (Registro de la Propiedad), notas simples | registradores.org |
 | A notary | notariado.org |
