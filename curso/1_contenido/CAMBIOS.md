@@ -87,9 +87,10 @@ Bloques nuevos, aparte del texto del profesor, que no cambia:
     por 6-24 meses, notaría y registro en torno al 0,5 % de la Plantilla 1); ninguna más, salvo la construcción
     (abajo, «Las cifras de Nicolás»).
   - Antes de la checklist del módulo, «Resumen del Módulo 1» con «Dónde deberías estar en tu proyecto».
-  - **Traducciones:** esta segunda versión está solo en español, a la espera de que la apruebe el
-    propietario. Mientras, en los demás idiomas las cuatro lecciones del Módulo 1 se leen en español (el
-    reproductor lo dice); el resto del módulo sigue traducido.
+  - **Traducciones:** en los cinco idiomas desde el 22/11, cuando el propietario aprobó el modelo. El
+    23/11 se comprobó que las 51 lecciones de los 12 módulos tienen, en los seis idiomas, su texto propio
+    con «Dónde estamos», el ejemplo de Nicolás, el resumen y la checklist (salvo las 2.1, 6.4 y 7.1, que
+    no cierran ningún paso), y que los 12 resúmenes de módulo están en todos.
 - **En los Módulos 2 a 12** (22/11, con el modelo del Módulo 1 aprobado por el propietario): en cada
   lección, «Dónde estamos» al empezar y, debajo de la lección, «Ejemplo: Nicolás, el promotor»,
   «Resumen» y «Tu checklist» (los pasos de la checklist del módulo que cierra cada lección, con sus
