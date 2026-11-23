@@ -28,7 +28,7 @@
 
 ## Leçon 7.1 — La maîtrise d'œuvre
 
-> **Où en sommes-nous :** pendant que l'entreprise de construction élève l'immeuble (Module 6), vous contrôlez que le chantier se termine dans les délais, dans le coût et avec la qualité documentée. Vous commencez par ceux qui le dirigent : la maîtrise d'œuvre.
+> **Où en sommes-nous :** pendant que l'entreprise de construction élève l'immeuble (Module 6), vous veillez à ce que le chantier se termine dans les délais, dans le budget et avec la qualité documentée. Vous commencez par ceux qui le dirigent : la maîtrise d'œuvre.
 
 | Rôle | Qualification pour le logement | Ce qu'il fait |
 |---|---|---|
@@ -50,7 +50,7 @@ Nicolás n'est pas technicien. Sa façon de contrôler le chantier commence par 
 **Sa maîtrise d'œuvre.**
 
 - **Directeur des travaux :** l'architecte du cabinet qui a fait l'étude de volumétrie et le projet (Module 3). Il dirige le volet technique, répond aux questions sur le projet et signera le CFO.
-- **Directeur de l'exécution :** l'architecte technique qu'il a engagé par l'intermédiaire de son ordre. Il contrôle l'exécution, les matériaux et les essais, et chaque mois il mesure et certifie les travaux.
+- **Directeur de l'exécution :** l'architecte technique qu'il a engagé par l'intermédiaire de l'Ordre des architectes techniques. Il contrôle l'exécution, les matériaux et les essais, et chaque mois il mesure et certifie les travaux.
 - **Coordinateur sécurité et santé :** celui qu'il a aussi engagé au Module 3. Il a approuvé le plan de sécurité avant le démarrage (Leçon 4.3), coordonne les entreprises et conserve le registre des incidents.
 
 **Visites et réponses, dans le contrat.** Dans les contrats écrits qu'il a signés avec eux (Leçon 3.1), il a prévu un nombre minimal de visites et une réponse aux questions de chantier sous 48-72 h.
@@ -63,7 +63,7 @@ S'il vous manque l'un de ces techniciens, les cabinets d'architecture et les bur
 
 ### Résumé
 
-La maîtrise d'œuvre dirige et contrôle le chantier : le directeur des travaux, le directeur de l'exécution, qui de plus certifie, et le coordinateur de sécurité. Tout reste par écrit dans ses registres, comptes rendus et rapports, et vous inscrivez dans son contrat des visites minimales et des délais de réponse.
+La maîtrise d'œuvre dirige et contrôle le chantier : le directeur des travaux, le directeur de l'exécution, qui en outre certifie les travaux, et le coordinateur de sécurité. Tout est consigné par écrit dans ses registres, comptes rendus et rapports, et vous inscrivez dans leurs contrats un nombre minimal de visites et des délais de réponse.
 
 ## Leçon 7.2 — L'OCT et le contrôle qualité
 
@@ -78,7 +78,7 @@ La maîtrise d'œuvre dirige et contrôle le chantier : le directeur des travaux
 - **Laboratoire de contrôle :** éprouvettes de chaque gâchée selon le plan de contrôle, résistance à 28 jours (certaines séries aussi à 7 jours pour anticiper), acier avec certificat du fabricant, essais d'étanchéité et des installations.
 - **Archivez tout :** bons de livraison du béton, procès-verbaux d'essais, certificats des produits marqués CE. L'OCT puis le Livre de l'immeuble vont les demander.
 
-- **Non-conformités :** enregistrez chacune (quoi, où, qui l'a détectée), ordonnez la reprise et clôturez-la avec une preuve (photo, essai, procès-verbal).
+- **Non-conformités :** enregistrez chacune d'elles (quoi, où, qui l'a détectée), ordonnez la reprise et clôturez-la avec une preuve (photo, essai, procès-verbal).
 - Conservez le **suivi des essais finaux** avec le reste de la documentation qualité.
 - **Qui s'occupe de quoi** (à qui demander chaque point de la liste ci-dessus) :
   - **Assureur décennal :** il exige l'OCT et reçoit son rapport de clôture.
@@ -94,11 +94,11 @@ La maîtrise d'œuvre dirige et contrôle le chantier : le directeur des travaux
 
 Pour Nicolás, l'OCT n'est pas une formalité : sans OCT, pas de décennale, et sans décennale, pas d'acte d'ouvrage neuf achevé. Je vous raconte comment il a géré la qualité de son chantier.
 
-**L'OCT, dès le projet.** C'est celui qui a revu son projet au Module 3 (le rapport D0) et celui qu'a demandé son assureur décennal. Sur le chantier, il a inspecté aux moments qu'indique la leçon : les fondations, la structure (les armatures, avant le bétonnage) et les toitures. Sans sous-sol, il n'y avait pas de sous-sols à vérifier. À la fin, il remettra à l'assureur son rapport de clôture. Les OCT que cite la leçon, vous les avez dans les sites de cette leçon.
+**L'OCT, dès le projet.** C'est celui qui a revu son projet au Module 3 (le rapport D0) et celui qu'a demandé son assureur décennal. Sur le chantier, il a inspecté aux moments qu'indique la leçon : les fondations, la structure (les armatures, avant le bétonnage) et les toitures. Sans sous-sol, il n'y avait pas de sous-sols à vérifier. À la fin, il remettra à l'assureur son rapport de clôture. Les OCT que cite la leçon, vous les trouverez dans les sites de cette leçon.
 
 **Le laboratoire, selon le plan.** Le plan de contrôle qualité figure dans son projet d'exécution (Leçon 3.3), et il l'avait fait approuver avant le premier bétonnage. Avec ce plan, le laboratoire accrédité prélève des éprouvettes de chaque gâchée et les écrase à 28 jours, certaines séries aussi à 7 pour anticiper ; il vérifie que l'acier arrive avec le certificat du fabricant, et il fait les essais d'étanchéité et des installations. Les laboratoires de votre province, vous les trouverez à la fin du module.
 
-**Son dossier qualité.** Y vont les bons de livraison du béton, les procès-verbaux d'essais et les certificats des produits marqués CE. L'OCT va les lui demander, puis le Livre de l'immeuble (Module 9). Chaque rapport de l'OCT entre dans le dossier le jour où il arrive.
+**Son dossier qualité.** Il y range les bons de livraison du béton, les procès-verbaux d'essais et les certificats des produits marqués CE. L'OCT va les lui demander, puis le Livre de l'immeuble (Module 9). Chaque rapport de l'OCT entre dans le dossier le jour où il arrive.
 
 **Les non-conformités, closes avec preuves.** Il tient un registre de chacune : ce que c'est, où elle se trouve et qui la détecte (le directeur de l'exécution, l'OCT ou le laboratoire). La maîtrise d'œuvre ordonne la reprise dans le registre des ordres, et Nicolás ne la considère pas comme close tant qu'il n'a pas la preuve : une photo, un essai ou un procès-verbal.
 
@@ -137,10 +137,10 @@ L'OCT n'est pas exigé par la loi, mais par l'assureur : il revoit le projet et 
 | Terrain (eau, roche, remblais) | +2–10 % |
 | Montée en gamme sous pression commerciale | +2–5 % |
 | Erreurs ou omissions du projet | +1–3 % |
-| Hausse des matériaux | variable |
+| Hausse du prix des matériaux | variable |
 
-- **Trois chiffres à regarder chaque mois :** coût **budgété**, coût **engagé** (contracté + commandes + avenants approuvés) et coût **réel** (certifié et payé).
-- **Prix nouveaux (precios contradictorios) :** prix d'une unité d'ouvrage absente du budget. Il se convient par écrit avant exécution.
+- **Trois chiffres à regarder chaque mois :** coût **budgété**, coût **engagé** (contrats signés + commandes + avenants approuvés) et coût **réel** (certifié et payé).
+- **Prix nouveaux (precios contradictorios) :** prix d'une unité d'ouvrage absente du budget. Il est convenu par écrit avant exécution.
 - Contrôlez les **retenues, acomptes et paiements**, ainsi que les impôts, honoraires, intérêts et frais généraux.
 - Mettez à jour chaque mois la **prévision de coût final et de trésorerie**.
 - **Qui s'occupe de quoi** (à qui demander chaque point de la liste ci-dessus) :
@@ -152,7 +152,7 @@ L'OCT n'est pas exigé par la loi, mais par l'assureur : il revoit le projet et 
 
 ### Exemple : Nicolás, le promoteur
 
-Pour le coût, Nicolás utilise le **modèle 4 · Contrôle des coûts du chantier** dès la première situation. Je vous raconte où il en était à mi-chantier.
+Pour le coût, Nicolás utilise le **Modèle 4 · Contrôle des coûts du chantier** dès la première situation. Je vous raconte où il en était à mi-chantier.
 
 **Son budget de contrôle.** Celui du contrat clé en main, par chapitres : 2.221.086 €. Et, comme le demande la leçon, il y ajoute une réserve pour imprévus de 3-5 %.
 
@@ -166,7 +166,7 @@ Pour le coût, Nicolás utilise le **modèle 4 · Contrôle des coûts du chanti
 
 **À mi-chantier.** Avec 40 % des travaux exécutés, le cumul certifié à l'origine s'élève à 907.474 €. Retenu à ce jour, 5 % : 45.373,70 €, qu'il ne restituera qu'un an après la réception (Leçon 5.4). À payer à l'entreprise à ce jour, IVA comprise et retenue déduite : 952.847,70 €.
 
-**La dérive : +2 %.** La prévision de coût final ressort à 2.255.989 € : 34.903 € de plus que le montant contracté. Le modèle lui dit d'où elle vient :
+**La dérive : +2 %.** La prévision de coût final ressort à 2.255.989 € : 34.903 € de plus que le montant du contrat. Le modèle lui dit d'où elle vient :
 
 - Terrassements : +2.115 €.
 - Fondations : +6.346 €.
@@ -201,16 +201,16 @@ Chaque mois, vous rapprochez la situation du budget par chapitres, vous applique
 |---|---|---|
 | Chantier | Hebdomadaire | Maîtrise d'œuvre, chef de chantier, project manager du promoteur |
 | Économique | Mensuelle | Promoteur, project manager, maîtrise d'œuvre |
-| Installations | Bimensuelle | Maîtrise d'œuvre et installateurs |
+| Installations | Tous les quinze jours | Maîtrise d'œuvre et installateurs |
 
 - **KPI du rapport mensuel :**
 
 | KPI | Formule |
 |---|---|
-| Avancement physique | Valeur exécutée ÷ valeur contractée |
-| Avancement économique | Certifié ÷ contracté |
+| Avancement physique | Valeur exécutée ÷ valeur du contrat |
+| Avancement économique | Certifié ÷ montant du contrat |
 | Écart de délai | Jours par rapport au planning |
-| Coût à terminaison | Contracté + avenants + provisions |
+| Coût à terminaison | Montant du contrat + avenants + provisions |
 | Marge actualisée | Recettes prévues − coût total prévu |
 | Ventes | Unités vendues et encaissées par rapport au plan |
 
@@ -223,27 +223,27 @@ Chaque mois, vous rapprochez la situation du budget par chapitres, vous applique
 - **Qui s'occupe de quoi** (à qui demander chaque point de la liste ci-dessus) :
   - **Constructeur :** il établit le planning et le met à jour ; son chef de chantier participe à la réunion hebdomadaire.
   - **Maîtrise d'œuvre :** elle approuve le planning et participe aux réunions de chantier, économique et des installations.
-  - **Installateurs :** la réunion bimensuelle des installations, avec la maîtrise d'œuvre.
+  - **Installateurs :** la réunion des installations, tous les quinze jours, avec la maîtrise d'œuvre.
   - **Banque et son expert :** ils vérifient chaque situation avant chaque tirage du prêt.
   - **Commercial :** il coordonne avec vous le calendrier des livraisons.
   - **Vous (promoteur, ou votre project manager) :** vous suivez le planning chaque semaine, vous préparez le rapport mensuel avec ses KPI, vous documentez chaque prolongation de délai, vous respectez les conditions de tirage du prêt, vous actualisez les prévisions de ventes, d'encaissements et de remboursement de la dette et vous tenez le contrôle de la trésorerie.
 
 ### Exemple : Nicolás, le promoteur
 
-Nicolás a 20 mois de travaux (modèle 3), et de ce délai dépendent les intérêts du prêt et la date de livraison à ses acheteurs. Je vous raconte comment il le surveille.
+Nicolás a 20 mois de travaux (Modèle 3), et de ce délai dépendent les intérêts du prêt et la date de livraison à ses acheteurs. Je vous raconte comment il le surveille.
 
 **Le planning.** L'entreprise l'a établi et la maîtrise d'œuvre l'a approuvé ; Nicolás le suit chaque semaine. Il a demandé qu'on lui indique le **chemin critique** : si une activité de ce chemin prend du retard, tout le chantier prend du retard.
 
-**Les réunions.** Chaque semaine, la réunion de chantier avec la maîtrise d'œuvre et le chef de chantier ; il y participe comme project manager. Chaque mois, la réunion économique, avec la maîtrise d'œuvre et le modèle 4 sous les yeux. Et tous les quinze jours, la maîtrise d'œuvre se réunit avec les installateurs.
+**Les réunions.** Chaque semaine, la réunion de chantier avec la maîtrise d'œuvre et le chef de chantier ; il y participe comme project manager. Chaque mois, la réunion économique, avec la maîtrise d'œuvre et le Modèle 4 sous les yeux. Et tous les quinze jours, la maîtrise d'œuvre se réunit avec les installateurs.
 
 **Le rapport mensuel.** Il le prépare avec les KPI de la leçon et l'envoie à la banque. Voici où il en était à mi-chantier :
 
 - **Avancement physique :** 40 % des travaux exécutés.
-- **Avancement économique :** le certifié par rapport au contracté, 907.474 € sur 2.221.086 €.
+- **Avancement économique :** le montant certifié par rapport au montant du contrat, 907.474 € sur 2.221.086 €.
 - **Écart de délai :** les jours par rapport au planning.
 - **Coût à terminaison :** 2.255.989 €.
-- **Marge actualisée :** elle baisse des 34.903 € de la dérive et, avec les chiffres de son modèle 2, reste très au-dessus des 15 % minimum habituels (Module 2).
-- **Ventes :** les unités vendues et encaissées par rapport à son plan du modèle 5 (Module 8), 2 logements par mois.
+- **Marge actualisée :** elle baisse des 34.903 € de la dérive et, avec les chiffres de son Modèle 2, reste très au-dessus des 15 % minimum habituels (Module 2).
+- **Ventes :** les unités vendues et encaissées par rapport au plan de son Modèle 5 (Module 8), 2 logements par mois.
 
 **Les retards, par écrit.** Il a anticipé les retards typiques : approvisionnements, météo, autorisations et incidents. S'il faut une prolongation de délai, il la documente par écrit, parce qu'elle a des effets sur les pénalités de son contrat, sur le prêt et sur ses acheteurs.
 
@@ -263,7 +263,7 @@ Le planning, c'est le constructeur qui l'établit, la maîtrise d'œuvre qui l'a
 
 Vous avez mis en place le contrôle de votre chantier : la maîtrise d'œuvre avec ses registres et ses rapports ; l'OCT et le laboratoire, avec la documentation qualité et les non-conformités closes ; chaque situation vérifiée avec sa retenue ; chaque avenant signé avant d'être exécuté ; le planning de chaque semaine et le rapport mensuel.
 
-**Où vous devriez en être dans votre projet :** un système de contrôle avec situations de travaux, avenants signés, rapport mensuel et documentation qualité complète, et le modèle 4 à jour à chaque situation. Avec cela, vous passez au Module 8, la vente, qui se déroule en parallèle du chantier : vous vendez sur plan les logements qu'exige la banque, et le reste avant la livraison.
+**Où vous devriez en être dans votre projet :** un système de contrôle avec situations de travaux, avenants signés, rapport mensuel et documentation qualité complète, et le Modèle 4 à jour à chaque situation. Avec cela, vous passez au Module 8, la vente, qui se déroule en parallèle du chantier : vous vendez sur plan les logements qu'exige la banque, et le reste avant la livraison.
 
 ## Checklist du module 7
 

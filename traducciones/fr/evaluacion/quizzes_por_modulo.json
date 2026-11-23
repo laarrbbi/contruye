@@ -32,7 +32,7 @@
       },
       {
         "numero": 2,
-        "pregunta": "Quel document du Registre de la propriété vous indique les charges d'un terrain ?",
+        "pregunta": "Quel document du Registre foncier vous indique les charges d'un terrain ?",
         "opciones": [
           {
             "letra": "A",
@@ -816,7 +816,7 @@
           },
           {
             "letra": "B",
-            "texto": "Impôt sur les constructions, installations et travaux (Impuesto sobre Construcciones, Instalaciones y Obras)",
+            "texto": "Impôt sur les constructions, installations et ouvrages (Impuesto sobre Construcciones, Instalaciones y Obras)",
             "correcta": true
           },
           {
@@ -1182,17 +1182,17 @@
         "opciones": [
           {
             "letra": "A",
-            "texto": "Aller sur le compte général",
+            "texto": "Être versées sur le compte général",
             "correcta": false
           },
           {
             "letra": "B",
-            "texto": "Être garanties par un aval ou une assurance-caution individuelle et déposées sur un compte spécial",
+            "texto": "Être garanties par une caution ou une assurance-caution individuelle et déposées sur un compte spécial",
             "correcta": true
           },
           {
             "letra": "C",
-            "texto": "Être restituées si l'Euríbor monte",
+            "texto": "Être restituées si l'Euribor monte",
             "correcta": false
           },
           {
@@ -1575,7 +1575,7 @@
       },
       {
         "numero": 10,
-        "pregunta": "Les terres propres d'excavation :",
+        "pregunta": "Les terres d'excavation non polluées :",
         "opciones": [
           {
             "letra": "A",
@@ -1875,7 +1875,7 @@
     "preguntas": [
       {
         "numero": 1,
-        "pregunta": "Quand pouvez-vous commencer à encaisser des acomptes ?",
+        "pregunta": "Quand pouvez-vous commencer à encaisser des sommes versées d'avance ?",
         "opciones": [
           {
             "letra": "A",
@@ -1953,7 +1953,7 @@
       },
       {
         "numero": 4,
-        "pregunta": "L'aval ou l'assurance-caution protège l'acheteur contre :",
+        "pregunta": "La caution ou l'assurance-caution protège l'acheteur contre :",
         "opciones": [
           {
             "letra": "A",
@@ -1967,7 +1967,7 @@
           },
           {
             "letra": "C",
-            "texto": "La perte de ses acomptes si le logement n'est pas terminé ou pas livré à temps",
+            "texto": "La perte des sommes qu'il a versées d'avance si le logement n'est pas terminé ou pas livré à temps",
             "correcta": true
           },
           {
@@ -2298,7 +2298,7 @@
       },
       {
         "numero": 7,
-        "pregunta": "Dans la Communauté de Madrid, la première occupation se demande par :",
+        "pregunta": "Dans la Communauté de Madrid, la première occupation passe par :",
         "opciones": [
           {
             "letra": "A",
@@ -2513,7 +2513,7 @@
       },
       {
         "numero": 5,
-        "pregunta": "Délai minimal dans lequel l'acheteur doit recevoir les documents de son prêt (FEIN) selon la Ley 5/2019 :",
+        "pregunta": "Combien de temps à l'avance, au minimum, l'acheteur doit-il recevoir les documents de son prêt (FEIN) selon la Ley 5/2019 ?",
         "opciones": [
           {
             "letra": "A",
@@ -2969,7 +2969,7 @@
       },
       {
         "numero": 4,
-        "pregunta": "La radiation du prêt promoteur au Registre se fait par :",
+        "pregunta": "La radiation de l'hypothèque du prêt promoteur au Registre se fait par :",
         "opciones": [
           {
             "letra": "A",
@@ -3004,7 +3004,7 @@
           },
           {
             "letra": "B",
-            "texto": "Le promoteur répare et répercute le coût au constructeur",
+            "texto": "Le promoteur répare et répercute le coût sur le constructeur",
             "correcta": true
           },
           {
@@ -3073,7 +3073,7 @@
       },
       {
         "numero": 8,
-        "pregunta": "Dissoudre la SPE :",
+        "pregunta": "L'extinction de la SPE :",
         "opciones": [
           {
             "letra": "A",
@@ -3092,7 +3092,7 @@
           },
           {
             "letra": "D",
-            "texto": "Est fait par l'AEAT",
+            "texto": "Est faite par l'AEAT",
             "correcta": false
           }
         ]

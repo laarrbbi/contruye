@@ -2,7 +2,7 @@
 
 | # | Document | À quoi il sert |
 |---|---|---|
-| 1 | Modèle de compte de résultat du promoteur (CRP) | La structure du Module 2 pour porter le coût du modèle jusqu'aux ventes, à la marge et à la méthode résiduelle |
+| 1 | Modèle de compte de résultat du promoteur (CRP) | La structure du Module 2 pour passer du coût du modèle aux ventes, à la marge et à la méthode résiduelle |
 | 2 | Checklist de due diligence du terrain | Juridique, fiscale, technique, sectorielle |
 | 3 | Modèle de demande de note d'urbanisme | Lettre à la mairie |
 | 4 | Comparatif des offres des entreprises de construction | Par chapitres, avec les écarts |
@@ -19,11 +19,11 @@
 | 15 | Rapport mensuel de chantier | Coût, délai, ventes |
 | 16 | Annuaire des partenaires par province | L'Annexe A en Excel filtrable |
 | 17 | Manuel de prévention du blanchiment pour les promoteurs | Procédure et formulaires |
-| 18 | **Modèle 1 · Achat du terrain** (inclus) | ITP ou IVA + AJD par communauté, notaire, coût du terrain et charge foncière par mètre carré construit (Module 1) |
+| 18 | **Modèle 1 · Achat du terrain** (inclus) | ITP ou IVA + AJD par communauté, notaire, coût du terrain et incidence foncière (Module 1) |
 | 19 | **Modèle 2 · Viabilité rapide et méthode résiduelle** (inclus) | Ventes, coûts, marge et prix maximal du terrain (Module 2) |
 | 20 | **Modèle 3 · Prêt promoteur** (inclus) | Montant, commission, intérêts et coût financier (Module 5) |
 | 21 | **Modèle 4 · Contrôle des coûts du chantier** (inclus) | Budget, montant certifié, prévision et écarts par chapitre (Module 7) |
-| 22 | **Modèle 5 · Plan de ventes et d'encaissements** (inclus) | Réservation, contrat, paiements différés, acte et acomptes (Module 8) |
+| 22 | **Modèle 5 · Plan de ventes et d'encaissements** (inclus) | Réservation, contrat, paiements différés, acte et sommes versées d'avance (Module 8) |
 | 23 | **Modèle du professionnel · Base de données de gestion foncière** (inclus) | Terrains, propriétaires, clients et apporteurs, avec listes déroulantes et fiche du terrain (Module 1) |
-| 24 | **Modèle du professionnel · Grands chiffres du terrain** (inclus) | Prix du terrain par incidence foncière, coût, prix de vente et bénéfice sur une feuille (Module 1) |
+| 24 | **Modèle du professionnel · Les grands chiffres du terrain** (inclus) | Prix du terrain par incidence foncière, coût, prix de vente et bénéfice sur une feuille (Module 1) |
 | Extra | **Modèle financier professionnel complet** (payant, à la fin du cours) | `PLANTILLA_LIBRE_corregida.xlsx`, 18 feuilles : coût, prêt, gestion, modalités de paiement, cash-flow et synthèse. Comprend la version simplifiée avec l'exemple réel du professionnel et le **Guide d'analyse de viabilité** : une étude préalable complète résolue (22 logements) |

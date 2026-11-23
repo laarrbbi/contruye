@@ -32,7 +32,7 @@
     },
     {
       "numero": 2,
-      "pregunta": "Premier document du Registre de la propriété avant d'acheter :",
+      "pregunta": "Premier document du Registre foncier (Registro de la Propiedad) avant d'acheter :",
       "opciones": [
         {
           "letra": "A",
@@ -62,7 +62,7 @@
       "opciones": [
         {
           "letra": "A",
-          "texto": "IVA 21 %",
+          "texto": "L'IVA à 21 %",
           "correcta": false
         },
         {
@@ -192,12 +192,12 @@
       "opciones": [
         {
           "letra": "A",
-          "texto": "Un impôt d'État de 4 %",
+          "texto": "Un impôt d'État à 4 %",
           "correcta": false
         },
         {
           "letra": "B",
-          "texto": "Un impôt municipal, avec un maximum de 4 %",
+          "texto": "Un impôt municipal, plafonné à 4 %",
           "correcta": true
         },
         {
@@ -228,7 +228,7 @@
         },
         {
           "letra": "C",
-          "texto": "Les immeubles de logements (sauf l'autopromoteur de sa propre maison individuelle)",
+          "texto": "Les immeubles de logements (sauf le particulier qui construit sa propre maison individuelle)",
           "correcta": true
         },
         {
@@ -292,7 +292,7 @@
     },
     {
       "numero": 12,
-      "pregunta": "Silence administratif sur un permis de construire neuf :",
+      "pregunta": "Silence administratif sur un permis de construire d'ouvrage neuf :",
       "opciones": [
         {
           "letra": "A",
@@ -519,18 +519,18 @@
         },
         {
           "letra": "D",
-          "texto": "Moitié-moitié",
+          "texto": "À parts égales",
           "correcta": false
         }
       ]
     },
     {
       "numero": 21,
-      "pregunta": "La plus-value municipale lors de la vente d'un logement neuf à un consommateur :",
+      "pregunta": "La plus-value municipale lors de la vente d'un logement neuf à un consommateur est payée :",
       "opciones": [
         {
           "letra": "A",
-          "texto": "Est payée par l'acheteur",
+          "texto": "Par l'acheteur",
           "correcta": false
         },
         {
@@ -691,7 +691,7 @@
         },
         {
           "letra": "B",
-          "texto": "RITI, RITS et réseaux (fibre, coaxial et paires) jusqu'à chaque logement",
+          "texto": "RITI, RITS et réseaux (fibre, câble coaxial et paires de cuivre) jusqu'à chaque logement",
           "correcta": true
         },
         {
@@ -708,7 +708,7 @@
     },
     {
       "numero": 28,
-      "pregunta": "Les sommes encaissées d'avance avant la livraison doivent :",
+      "pregunta": "Les sommes versées d'avance avant la livraison doivent :",
       "opciones": [
         {
           "letra": "A",
@@ -987,7 +987,7 @@
         },
         {
           "letra": "D",
-          "texto": "Seule la banque l'est",
+          "texto": "Seule la banque a des obligations",
           "correcta": false
         }
       ]
@@ -1034,7 +1034,7 @@
         },
         {
           "letra": "C",
-          "texto": "Peut être dissoute ou mise en réserve, sachant que les garanties de la LOE restent en vigueur",
+          "texto": "Peut faire l'objet d'une extinction ou être mise en réserve, sachant que les garanties de la LOE restent en vigueur",
           "correcta": true
         },
         {

@@ -8,11 +8,11 @@
 > Le manuel de terrain d'un promoteur résidentiel en Espagne. Il suit les 12 phases réelles d'une opération et, à chacune, vous dit quelle loi s'applique, à quelle institution vous adresser, ce que vous demandez, ce que l'on vous remet, combien de temps cela prend et quelles erreurs coûtent de l'argent.
 >
 > **Origine du contenu**
-> La séquence des phases et des tâches suit le document *Fases para el desarrollo de una promoción de viviendas* (les phases d'une promotion de logements), avec l'aimable autorisation de Nicolás Cabañas Yuste, complétée par le cadre juridique, les institutions et les modèles financiers.
+> La séquence des phases et des tâches suit le document *Fases para el desarrollo de una promoción de viviendas* (phases du développement d'une promotion de logements), avec l'aimable autorisation de Nicolás Cabañas Yuste, complété par le cadre juridique, les institutions et les modèles financiers.
 >
 > **Comment l'utiliser**
 > - Chaque module commence par le tableau **Lois applicables** et le tableau **Où s'adresser**.
-> - Les leçons sont des points pratiques : étapes, documents, chiffres et erreurs typiques.
+> - Les leçons se présentent sous forme de points pratiques : étapes, documents, chiffres et erreurs typiques.
 > - Chaque module se termine par une **checklist**, les **partenaires de votre province** et un **quiz**.
 > - L'**Annexe A** contient l'annuaire des 52 provinces, avec les partenaires de chaque phase.
 > - L'**Annexe B** contient la fiscalité de chaque communauté autonome.
@@ -20,7 +20,7 @@
 > - Le module 1 comprend en outre deux **modèles du professionnel** : la base de données de gestion foncière et les grands chiffres du terrain (*números gordos*).
 > - À la fin, la section **FINANCIALS** présente l'**extra facultatif** : le modèle financier professionnel complet, corrigé et à jour des impôts, celui-là même avec lequel la plateforme calcule.
 
-> **Avertissement juridique.** Les chiffres de marché sont indicatifs (2025-2026). Les taux régionaux et les règles d'urbanisme changent : vérifiez-les toujours au bulletin officiel ou sur le site électronique de l'organisme avant de signer. Ce cours ne remplace pas le conseil d'un avocat, d'un conseiller fiscal ou d'un technicien inscrit à son ordre.
+> **Avertissement juridique pour l'élève.** Les chiffres de marché sont indicatifs (2025-2026). Les taux régionaux et les règles d'urbanisme changent : vérifiez-les toujours au bulletin officiel ou sur le site électronique de l'organisme avant de signer. Ce cours ne remplace pas le conseil d'un avocat, d'un conseiller fiscal ou d'un technicien inscrit à son ordre.
 
 ---
 
@@ -48,7 +48,7 @@
 | 6 | Construction | Immeuble achevé et réceptionné |
 | 7 | Contrôle du chantier | Chantier dans les délais, dans le budget et avec une qualité documentée |
 | 8 | Commercialisation | Les préventes qu'exige la banque, et le stock vendu |
-| 9 | Légalisation | Première occupation, ouvrage neuf et division horizontale inscrits |
+| 9 | Régularisation | Première occupation, ouvrage neuf et division horizontale inscrits |
 | 10 | Pré-livraison | Logements sans défauts et notaire prêt |
 | 11 | Remise des clés | Actes signés, paiements encaissés et copropriété constituée |
 | 12 | Après-vente et clôture | Garanties gérées et SPE clôturée |
@@ -57,9 +57,9 @@
 
 | Norme | À quoi elle vous sert |
 |---|---|
-| **RDL 7/2015**, Texto Refundido de la Ley de Suelo y Rehabilitación Urbana (TRLSRU) | Situations du sol, devoirs du promoteur, silence négatif en matière de travaux (art. 11.4), conditions d'inscription de l'ouvrage neuf (art. 28) |
+| **RDL 7/2015**, Texto Refundido de la Ley de Suelo y Rehabilitación Urbana (TRLSRU) | Situations du sol, devoirs du promoteur, silence valant rejet pour les travaux (art. 11.4), conditions d'inscription de l'ouvrage neuf (art. 28) |
 | **Loi régionale d'urbanisme** + PGOU de la commune | Ce que vous pouvez construire et comment, permis, délais. Voir l'Annexe B |
-| **Ley 38/1999**, de Ordenación de la Edificación (LOE) | Intervenants, responsabilités, garanties de 1-3-10 ans, assurance décennale, acomptes (DA 1.ª) |
+| **Ley 38/1999**, de Ordenación de la Edificación (LOE) | Intervenants, responsabilités, garanties de 1-3-10 ans, assurance décennale, sommes versées d'avance (DA 1.ª) |
 | **RD 314/2006**, Código Técnico de la Edificación (CTE), mis à jour par le RD 732/2019 et le RD 450/2022 | Exigences techniques de l'immeuble |
 | **RD 470/2021**, Código Estructural | Béton et acier (remplace l'EHE-08 et l'EAE) |
 | **RD 997/2002**, Norma de Construcción Sismorresistente (NCSE-02) | Calcul sismique (il n'est pas dans le CTE) |

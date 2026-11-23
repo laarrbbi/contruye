@@ -2,7 +2,7 @@
 
 > **Objectif :** transformer le chantier terminé en logements que l'on peut vendre par acte, hypothéquer et habiter.
 > **Durée :** 105 min · **Résultat :** première occupation (et cédula là où elle est exigée), acte d'ouvrage neuf achevé et division horizontale inscrits, Livre de l'immeuble.
-> **Où en sommes-nous :** le chantier terminé et réceptionné (module 6), vous le régularisez : première occupation, acte d'ouvrage neuf achevé et division horizontale, et Livre de l'immeuble, pour que chaque logement puisse être vendu par acte, hypothéqué et habité.
+> **Où en sommes-nous :** le chantier terminé et réceptionné (Module 6), vous le régularisez : première occupation, acte d'ouvrage neuf achevé et division horizontale, et Livre de l'immeuble, pour que chaque logement puisse être vendu par acte, hypothéqué et habité.
 
 ## Lois applicables
 
@@ -12,7 +12,7 @@
 | **RD 1093/1997** | Règles d'inscription des actes d'urbanisme au Registre |
 | **LOE, art. 7 et 20** | Livre de l'immeuble ; assurance décennale pour l'acte et l'inscription |
 | **LPH (Ley 49/1960)**, art. 5 | Titre constitutif de la propriété horizontale : quotes-parts et statuts |
-| Loi régionale d'urbanisme et de logement | Permis ou déclaration responsable de première occupation ; cédula de habitabilidad là où elle subsiste (annexe B) |
+| Loi régionale d'urbanisme et de logement | Permis ou déclaration responsable de première occupation ; cédula de habitabilidad là où elle subsiste (Annexe B) |
 | **RD 390/2021** | Certificat de performance énergétique de l'immeuble achevé et registre régional |
 | **TRLCI (RDL 1/2004)** | Intégration de l'ouvrage neuf au Cadastre |
 | REBT, RITE, ICT, RIPCI | Certificats des installations enregistrés |
@@ -27,7 +27,7 @@
 | **Mairie** | Permis ou déclaration responsable de première occupation | 1-3 mois (la déclaration responsable prend effet immédiatement, avec contrôle a posteriori) |
 | **Organisme régional ou insulaire** (dans les 8 CCAA qui la maintiennent) | Cédula de habitabilidad de chaque logement | 1-2 mois |
 | **Notaire** | Acte de déclaration d'ouvrage neuf achevé et de division horizontale | 1-3 semaines |
-| **Registre de la propriété** | Inscription : chaque logement devient un lot distinct | 15 jours ouvrables (prorogeables) |
+| **Registre foncier (Registro de la Propiedad)** | Inscription : chaque logement devient un lot distinct | 15 jours ouvrables (prorogeables) |
 | **Cadastre** | Intégration de l'ouvrage neuf (notaire et registraire la communiquent ; sinon, formulaire 902-N) | 1-6 mois |
 
 ## Leçon 9.1 — Documentation technique de fin de chantier
@@ -75,14 +75,14 @@ Le procès-verbal de réception signé, Nicolás n'est allé ni à la mairie ni 
 
 **Les papiers, chacun auprès de celui qui le délivre** (le tableau de la leçon) :
 
-- Le **CFO**, signé par son architecte et son architecte technique et visé aux **Ordres des architectes et des architectes techniques** (de 1 à 2 semaines).
+- Le **CFO**, signé par son architecte et son architecte technique et visé par les **Ordres des architectes et des architectes techniques** (de 1 à 2 semaines).
 - Les certificats des installations, des installateurs agréés, enregistrés auprès du **Service de l'Industrie de la CCAA** (de 1 à 4 semaines).
 - Le **certificat de performance énergétique** de l'immeuble achevé, signé par son architecte en tant que technicien compétent, inscrit au **registre régional des certificats énergétiques** : dans la Communauté valencienne, l'IVACE (Leçon 8.3).
 - Le certificat de fin de travaux de l'ICT, du technicien des télécommunications et de l'installateur.
-- Le **rapport final de l'OCT**. Avec lui, l'assureur lui a émis la **police décennale définitive**, par l'intermédiaire de son courtier.
+- Le **rapport final de l'OCT**. Avec lui, l'assureur lui a délivré la **police décennale définitive**, par l'intermédiaire de son courtier.
 - Les certificats du gestionnaire de déchets, la liste des contrôles et essais du directeur de l'exécution et les plans de récolement de la maîtrise d'œuvre.
 
-Le service de l'Industrie et le registre des certificats énergétiques de votre province, vous les avez à la fin du module.
+Le Service de l'Industrie et le registre des certificats énergétiques de votre province, vous les avez à la fin du module.
 
 **Tout, dans un dossier.** Plans, certificats, essais, manuels, fiches techniques et garanties des fabricants : c'est la base du Livre de l'immeuble (Leçon 9.4). Avec cela, il peut déjà demander la première occupation et préparer l'acte de fin de travaux.
 
@@ -100,7 +100,7 @@ Avant de demander la première occupation ou d'aller chez le notaire, passez tou
 
 ## Leçon 9.2 — Déclaration d'ouvrage neuf et division horizontale
 
-> **Où en sommes-nous :** vous avez la documentation technique de fin de chantier (Leçon 9.1). Vous la portez maintenant chez le notaire et au Registre de la propriété : l'ouvrage neuf achevé et la division horizontale, pour que chaque logement devienne un lot.
+> **Où en sommes-nous :** vous avez la documentation technique de fin de chantier (Leçon 9.1). Vous la portez maintenant chez le notaire et au Registre foncier : l'ouvrage neuf achevé et la division horizontale, pour que chaque logement devienne un lot.
 
 - **Ouvrage neuf en construction** (au démarrage) : permis + certificat du technicien attestant que la description est conforme au projet. Il permet à la banque d'hypothéquer la construction future.
 - **Ouvrage neuf achevé** (ou procès-verbal d'achèvement), art. 28 TRLSRU. Il vous faut :
@@ -115,15 +115,15 @@ Avant de demander la première occupation ou d'aller chez le notaire, passez tou
   - **Statuts** de la copropriété (usage des terrasses, de la piscine, répartition des charges, usages interdits).
   - Elle figure dans le même acte que l'ouvrage neuf : l'acte de déclaration d'ouvrage neuf et de division horizontale, qui est signé au démarrage du chantier (Leçon 10.3).
 - **Après l'inscription :** chaque logement a son propre numéro au Registre et peut être vendu et hypothéqué séparément. La banque répartit l'hypothèque du prêt promoteur entre les lots.
-- **Prêt du promoteur et prêt de l'acheteur :** l'acte de déclaration d'ouvrage neuf et de division horizontale déclare et légalise officiellement la construction, inscrit l'immeuble et chaque lot indépendant au Registre de la propriété et met à jour le Cadastre. C'est pourquoi le système financier l'exige pour accorder des prêts hypothécaires. Ne confondez pas le prêt hypothécaire au promoteur, qui permet de répartir le prêt entre chacun des logements obtenus, avec le prêt hypothécaire à l'acheteur final : celui-ci n'obtient aucune hypothèque tant que l'ouvrage neuf n'est pas légalement achevé.
-- **Coût :** notaire et registre selon le tarif, AJD (annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. **Il ne peut pas être répercuté sur l'acheteur consommateur.**
+- **Prêt du promoteur et prêt de l'acheteur :** l'acte de déclaration d'ouvrage neuf et de division horizontale déclare et régularise officiellement la construction, inscrit l'immeuble et chaque lot indépendant au Registre foncier et met à jour le Cadastre. C'est pourquoi le système financier l'exige pour accorder des prêts hypothécaires. Ne confondez pas le prêt hypothécaire au promoteur, qui permet de répartir le prêt entre chacun des logements obtenus, avec le prêt hypothécaire à l'acheteur final : celui-ci n'obtient pas de prêt hypothécaire tant que l'ouvrage neuf n'est pas légalement achevé.
+- **Coût :** notaire et registre selon le tarif, AJD (Annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. **Il ne peut pas être répercuté sur l'acheteur consommateur.**
 
 - **Régularisez** dans l'acte les surfaces, annexes et parties communes si l'ouvrage diffère du projet initial, et vérifiez que les lots obtenus correspondent aux plans et aux titres.
 - **Étiquette énergétique :** obtenez-la et remettez-la aux acheteurs ; elle est obligatoire dans l'offre et dans la vente (RD 390/2021).
 
 ### Exemple : Nicolás, le promoteur
 
-Nicolás a signé l'acte de déclaration d'ouvrage neuf et de division horizontale au démarrage du chantier (Leçon 4.3), et le Registre de la propriété l'a inscrit avec la mention « en construction » (Leçon 10.3). Il comprenait déjà l'immeuble et ses 18 logements, chacun avec son numéro, son étage, sa surface, ses limites et sa quote-part, les parties communes et les statuts de la copropriété, qu'il avait préparés avec son avocat. Le chantier terminé, c'est le tour de l'acte de fin de travaux. Je vous raconte comment il l'a fait.
+Nicolás a signé l'acte de déclaration d'ouvrage neuf et de division horizontale au démarrage du chantier (Leçon 4.3), et le Registre foncier l'a inscrit avec la mention « en construction » (Leçon 10.3). Il comprenait déjà l'immeuble et ses 18 logements, chacun avec son numéro, son étage, sa surface, ses limites et sa quote-part, les parties communes et les statuts de la copropriété, qu'il avait préparés avec son avocat. Le chantier terminé, c'est au tour de l'acte de fin de travaux. Je vous raconte comment il l'a fait.
 
 **D'abord, vérifier.** Avec son architecte, il a vérifié que ce qui a été construit correspond au projet et que les lots obtenus concordent avec les plans et les titres. Il n'y avait ni surfaces, ni annexes, ni parties communes à régulariser.
 
@@ -131,16 +131,16 @@ Nicolás a signé l'acte de déclaration d'ouvrage neuf et de division horizonta
 
 1. Le Livre de l'immeuble sur support numérique, avec le procès-verbal de réception de l'ouvrage (Leçon 9.4).
 2. Le certificat de fin de chantier visé (Leçon 9.1).
-3. L'assurance décennale : sans elle, ni le notaire n'autorise ni le registraire n'inscrit l'ouvrage neuf achevé.
+3. L'assurance décennale : sans elle, le notaire ne reçoit pas l'acte et le registraire n'inscrit pas l'ouvrage neuf achevé.
 4. Le permis de première occupation (je vous raconte comment il l'a obtenu dans la Leçon 9.3).
 5. Le certificat de performance énergétique.
 6. Les surfaces géoréférencées, que lui a préparées son architecte avec le topographe de la Leçon 1.3.
 
-**La signature et l'inscription.** Il a signé l'acte de fin de travaux chez son notaire, qui l'a présenté au **Registre de la propriété** (15 jours ouvrables, prorogeables). Il a été inscrit comme ouvrage neuf achevé et la mention « en construction » a disparu. Depuis ce jour, chacun de ses 18 logements est un lot inscrit au Registre à part entière. Le notaire et l'avocat, vous les trouverez dans la liste que nous vous avons donnée, dans les entreprises potentielles de cette leçon.
+**La signature et l'inscription.** Il a signé l'acte de fin de travaux chez son notaire, qui l'a présenté au **Registre foncier** (15 jours ouvrables, prorogeables). Il a été inscrit comme ouvrage neuf achevé et la mention « en construction » a disparu. Depuis ce jour, chacun de ses 18 logements est un lot inscrit au Registre à part entière. Le notaire et l'avocat, vous les trouverez dans la liste que nous vous avons donnée, dans les entreprises potentielles de cette leçon.
 
 **Le Cadastre.** L'intégration de l'ouvrage neuf est communiquée par le notaire et le registraire ; sinon, on présente le formulaire 902-N. Nicolás a vérifié sur le site électronique du Cadastre (Sede Electrónica del Catastro) qu'elle était faite (cela peut prendre de 1 à 6 mois).
 
-**Ce qu'il paie lui-même.** Le notaire et le registre, selon le tarif, et l'AJD de sa communauté (annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. Ce sont ses frais : il ne les répercute pas sur ses acheteurs. Et l'étiquette énergétique de l'immeuble achevé, il la remet à chacun.
+**Ce qu'il paie lui-même.** Le notaire et le registre, selon le tarif, et l'AJD de sa communauté (Annexe B) sur la valeur de l'ouvrage neuf et de la division horizontale. Ce sont ses frais : il ne les répercute pas sur ses acheteurs. Et l'étiquette énergétique de l'immeuble achevé, il la remet à chacun.
 
 ### Résumé
 
@@ -153,7 +153,7 @@ L'ouvrage neuf achevé se déclare chez le notaire avec le certificat de fin de 
 
 ## Leçon 9.3 — Permis de première occupation
 
-> **Où en sommes-nous :** dans la Leçon 9.2, vous avez vu que l'acte d'ouvrage neuf achevé a besoin de la première occupation. Vous la demandez maintenant à la mairie : elle atteste que l'immeuble est conforme au permis et peut être utilisé.
+> **Où en sommes-nous :** dans la Leçon 9.2, vous avez vu que l'acte d'ouvrage neuf achevé exige la première occupation. Vous la demandez maintenant à la mairie : elle atteste que l'immeuble est conforme au permis et peut être utilisé.
 
 - **Première occupation (mairie) :** atteste que l'immeuble est conforme au permis et peut être utilisé.
   - Pièces habituelles : CFO, certificats des installations, certificat énergétique, photos, intégration au Cadastre ou justificatif, certificat des branchements, liquidation définitive de l'ICIO.
@@ -165,7 +165,7 @@ L'ouvrage neuf achevé se déclare chez le notaire avec le certificat de fin de 
   - **Compagnies de distribution :** le certificat des branchements.
   - **Mairie :** la liquidation définitive de l'ICIO, que vous payez.
   - **Vous (le promoteur) :** les photos et la demande, avec tout ce qui figure sur cette liste, à la mairie.
-- **Cédula de habitabilidad :** c'est le même document que le permis de première occupation ; il ne s'agit pas d'actes ou de documents distincts. Pour les transmissions ultérieures, ce serait un permis de deuxième occupation. En 2026, elle subsiste en **Catalogne, Navarre, Canaries, Estrémadure, Baléares, La Rioja, Asturies et Région de Murcie**. Elle est délivrée par l'organisme régional ou insulaire et elle est généralement nécessaire pour souscrire les contrats de fourniture définitifs et pour vendre.
+- **Cédula de habitabilidad :** c'est le même document que le permis de première occupation ; il ne s'agit pas d'actes ou de documents distincts. Pour les transmissions ultérieures, ce serait un permis de deuxième occupation. En 2026, elle subsiste dans les communautés suivantes : **Catalogne, Navarre, Canaries, Estrémadure, Baléares, La Rioja, Asturies et Région de Murcie**. Elle est délivrée par l'organisme régional ou insulaire et elle est généralement nécessaire pour souscrire les contrats de fourniture définitifs et pour vendre.
 - ⚠️ **Erreurs typiques :** demander la première occupation avec des installations non enregistrées ; ne pas avoir le branchement électrique définitif (le distributeur met des mois) ; oublier la cédula dans les communautés qui l'exigent.
 
 ### Exemple : Nicolás, le promoteur
@@ -277,13 +277,13 @@ Le Livre de l'immeuble est obligatoire : il rassemble le projet avec ses modific
 
 ### Exemple : Nicolás, le promoteur
 
-Avant de remettre les clés, Nicolás a voulu avoir dans un seul dossier qui appeler si quelque chose ne va pas. Je vous raconte ce qu'il y a mis.
+Avant de remettre les clés, Nicolás a voulu un seul dossier qui lui dise qui appeler en cas de problème. Je vous raconte ce qu'il y a mis.
 
-**L'assurance décennale.** La police définitive, que l'assureur lui a émise après le rapport final de l'OCT (Leçon 9.1). Son numéro et l'assureur figurent sur le certificat que recevra chaque acheteur (Leçon 10.2).
+**L'assurance décennale.** La police définitive, que l'assureur lui a délivrée après le rapport final de l'OCT (Leçon 9.1). Son numéro et le nom de l'assureur figurent sur le certificat que recevra chaque acheteur (Leçon 10.2).
 
 **Les garanties des équipements et matériaux.** Il les a demandées au constructeur à la réception de l'ouvrage : celles de l'ascenseur, des menuiseries, des étanchéités et des autres équipements, chacune avec son fabricant ou son installateur et sa durée.
 
-**Qui répond de quoi.** La liste des intervenants avec leurs contrats écrits : l'architecte et l'architecte technique de la maîtrise d'œuvre, le coordinateur de sécurité et de santé, l'entreprise de construction, l'OCT et le laboratoire. À côté, les délais de garantie légaux, comptés à partir de la réception sans réserves (Leçon 5.2) : 1 an pour les finitions, à la charge du constructeur ; 3 ans pour l'habitabilité et 10 pour la structure, à la charge de tous les intervenants selon leur intervention. Nicolás, en tant que promoteur, répond envers l'acheteur dans tous les cas, solidairement pour ceux de 3 et 10 ans.
+**Qui répond de quoi.** La liste des intervenants avec leurs contrats écrits : l'architecte et l'architecte technique de la maîtrise d'œuvre, le coordinateur de sécurité et de santé, l'entreprise de construction, l'OCT et le laboratoire. À côté, les délais de garantie légaux, comptés à partir de la réception sans réserves (Leçon 5.2) : 1 an pour les finitions, à la charge du constructeur ; 3 ans pour l'habitabilité et 10 pour la structure, à la charge de tous les intervenants selon leur intervention. Nicolás, en tant que promoteur, répond envers l'acheteur pour tous ces délais, solidairement pour ceux de 3 et 10 ans.
 
 **Pour qui.** Un dossier pour la copropriété, avec les parties communes et les installations générales, et un autre par acheteur, avec ce qui concerne son logement, qui s'ajoute au dossier ouvert à la réservation (Leçon 8.4).
 
@@ -319,4 +319,4 @@ Vous avez rassemblé la documentation technique de fin de chantier et mis en ser
 
 ## Partenaires dans votre province
 
-Annexe A, colonne **Phase 9** : mairie, organisme de la cédula (là où il existe), Chambre des notaires, Registre de la propriété, registre des certificats énergétiques et service de l'Industrie.
+Annexe A, colonne **Phase 9** : mairie, organisme de la cédula (là où il existe), Chambre des notaires, Registre foncier, registre des certificats énergétiques et Service de l'Industrie.

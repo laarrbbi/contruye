@@ -1,16 +1,16 @@
 # Financials — extra : le modèle financier professionnel
 
 > **Objectif :** savoir remplir, lire et défendre le modèle financier professionnel de la formation : coût par chapitres, prêt, gestion, échéancier de paiement, cash-flow et synthèse.
-> **Durée :** 120 min · **Outil :** `PLANTILLA_LIBRE_corregida.xlsx` et sa version simplifiée, les mêmes que celles calculées sur la plateforme · **Accès :** extra optionnel payant à la fin de la formation · **Complète :** les modèles 2, 3, 4 et 5 des modules 2, 5, 7 et 8.
+> **Durée :** 120 min · **Outil :** `PLANTILLA_LIBRE_corregida.xlsx` et sa version simplifiée, les mêmes que celles calculées sur la plateforme · **Accès :** extra optionnel payant à la fin de la formation · **Complète :** les Modèles 2, 3, 4 et 5 des modules 2, 5, 7 et 8.
 
 ## D'où vient le modèle
 
 - C'est le **modèle d'un professionnel du secteur**, avec ses formules. Nous l'avons revu cellule par cellule : il est **corrigé** (leçon F.8) et les impôts, qui dans l'original étaient ceux de 2002, viennent d'une nouvelle feuille, **Parámetros legales** (paramètres légaux), avec les taux en vigueur.
-- Il est conçu pour une promotion de **logement libre en régime de coopérative** (*vivienda libre en régimen de cooperativa*) : les associés achètent au coût, la société de gestion (*gestora*) perçoit un pourcentage de gestion et le financement est un prêt hypothécaire auquel les associés sont subrogés (*subrogación*).
+- Il est conçu pour une promotion de **logement libre en régime de coopérative** (*vivienda libre en régimen de cooperativa*) : les associés achètent à prix coûtant, la société de gestion (*gestora*) perçoit un pourcentage de gestion et le financement est un prêt hypothécaire dans lequel les associés sont subrogés (*subrogación*).
 - **Deux fichiers :**
   - **PLANTILLA_LIBRE_corregida.xlsx** : le modèle complet. 18 feuilles (les 17 de l'original plus « Parámetros legales ») et environ 31.000 formules liées.
   - **Guia_Analisis_de_Viabilidad_corregida.xlsx** : le même modèle avec un exemple complet du professionnel (22 logements) et ses notes dans les cellules. C'est une étude préalable : vous verrez l'avertissement de calendrier, car son exemple comporte des paiements avant le premier mois du cash-flow (leçon F.8).
-  - **Modèle simplifié d'analyse de faisabilité** (*Plantilla simplificada de Análisis de Viabilidad*) : la feuille de synthèse du modèle complet (« 3ª Coste Total Promoción ») avec un exemple réel : 1 logement de 200 m².
+  - **Modèle simplifié d'étude de faisabilité** (*Plantilla simplificada de Análisis de Viabilidad*) : la feuille de synthèse du modèle complet (« 3ª Coste Total Promoción ») avec un exemple réel : 1 logement de 200 m².
 - **Calcul itératif :** le modèle contient des références circulaires voulues (leçon F.7). Le fichier corrigé a déjà le calcul itératif activé (100 itérations, écart maximal 0,001). Si Excel signale une « référence circulaire », vérifiez-le dans *Fichier → Options → Formules → Activer le calcul itératif*. Dans LibreOffice, recalculez plusieurs fois (Ctrl+Maj+F9) jusqu'à ce que les montants ne changent plus. Sur la plateforme, c'est déjà réglé.
 
 ## Plan du modèle
@@ -24,8 +24,8 @@
 | 3 | **3ª Construcción** (construction) | Situations de travaux (*certificaciones*) mois par mois selon la courbe de chantier, retenue, OCT et assurance décennale |
 | 3 | **3ª Urbanización** (viabilisation) | Comme la construction, pour la viabilisation |
 | 3 | **3ª Proyectos** (études et projets) | Honoraires : études, projets de base et d'exécution, installations, sécurité, directions, contrôle qualité |
-| 3 | Direcciones | Répartition dans le temps des directions de chantier (*direcciones facultativas*) et de la sécurité |
-| 3 | **3ª Licencias y Varios** (licences et divers) | Taxes, ICIO, première occupation, frais juridiques, raccordements, assurances, audits, garanties des sommes versées d'avance (*cantidades a cuenta*) |
+| 3 | Direcciones | Répartition dans le temps de la maîtrise d'œuvre (*direcciones facultativas*) et de la sécurité |
+| 3 | **3ª Licencias y Varios** (licences et divers) | Taxes, ICIO, première occupation, frais juridiques, raccordements, assurances, audits, cautions des sommes versées d'avance (*cantidades a cuenta*) |
 | 3 | **3ª Préstamo hipotecario** (prêt hypothécaire) | Tirages, intérêts, retenue et frais de constitution |
 | 3 | **3ª Gestión** (gestion) | Honoraires de gestion et recrutement des associés |
 | 3 | 3ª Pólizas de Crédito | Jusqu'à trois lignes de crédit de financement externe |
@@ -33,7 +33,7 @@
 | 5 | Estudio Económico | L'étude économique complète |
 | 5 | 4º Auxiliar1 · **5º Forma de Pago** (échéancier de paiement) | Apports, mensualités et prêt de chaque associé |
 | 6 | **6ª Cash-flow** | Encaissements et décaissements sur 48 mois, par poste et par année |
-| 7 | **8º Resumen** (synthèse) | Coût, surfaces, apport, mensualité et hypothèque par type de logement |
+| 7 | **8º Resumen** (synthèse) | Coût, surfaces, apport, mensualité et prêt hypothécaire par type de logement |
 
 - **Règle d'usage :** on ne remplit que les données de départ (et, si besoin, les montants manuels des projets et les lignes de crédit). Tout le reste est calculé.
 
@@ -41,22 +41,22 @@
 
 | Bloc | Cellules | Ce que vous saisissez | Attention |
 |---|---|---|---|
-| Surfaces par élément | C9:E16 | Unités, m² construits moyens et **coût de construction au m²** des logements, garages, débarras, terrasses, locaux, autres | Dans l'original, elle s'appelait « PVP CONSTRUCCIÓN » ; c'est un **coût**, pas un prix de vente. Déjà corrigé : elle s'appelle désormais « COSTE CONSTRUCCIÓN » |
+| Surfaces par élément | C9:E16 | Unités, m² construits moyens et **coût de construction au m²** des logements, garages, caves, terrasses, locaux, autres | Dans l'original, l'intitulé était « PVP CONSTRUCCIÓN » ; c'est un **coût**, pas un prix de vente. Déjà corrigé : il indique désormais « COSTE CONSTRUCCIÓN » |
 | Types de logement | B22:C45 | Jusqu'à 24 types : nombre de logements et m² utiles | La somme des logements doit être égale à C9. Le modèle calcule lui-même les m² construits |
-| Éléments liés | C51:E74 | m² de garage, de débarras et de terrasse de chaque type | Ils comptent pour la **tranche d'honoraires** du projet |
+| Éléments liés | C51:E74 | m² de garage, de cave et de terrasse de chaque type | Ils comptent pour la **tranche d'honoraires** du projet |
 | Terrain | D79:D83 | Mois zéro, soumis à l'IVA ? (SI/NO), intérêt du paiement différé, prix, API et divers | **API et divers est un % du prix**, pas un montant |
 | Échéancier du terrain | C86:E92 | Dates, montants et s'ils sont garantis par une caution | Écrivez SI / NO sans accent |
-| Construction | D96:D101 | Mois de début, délai de paiement en jours, intérêt du paiement différé, retenue, caution, mois de chantier (1-24) | Les mois de chantier choisissent la courbe des situations de travaux |
+| Construction | D96:D101 | Mois de début, délai de paiement en jours, intérêt du paiement différé, retenue, caution, mois de chantier (1-24) | Le nombre de mois de chantier détermine la courbe des situations de travaux |
 | Viabilisation | D108:D116 | Montant, début, paiement, retenue, caution, mois, contrôle qualité et sécurité | |
 | Typologie | D121 | `bloque` ou `chalets` (immeuble collectif ou maisons) | Change les tarifs de l'OCT et de l'assurance décennale |
-| Licences | D126:D131 | Taxe de *cédula*, sondages/palissades, taxe de licence, ICIO, première occupation, IAE | Tous sont un **% du montant de construction** |
-| Frais juridiques | D133 | AJD de l'acte de construction neuve et de division horizontale | |
+| Licences | D126:D131 | Taxe de *cédula*, sondages/palissades, taxe de licence, ICIO, première occupation, IAE | Tous s'expriment en **% du montant de construction** |
+| Frais juridiques | D133 | AJD de l'ouvrage neuf et de la division horizontale | |
 | Raccordements et divers | D135:D142 | Eau, électricité, gaz, téléphone, ordures, conseil d'administration de la coopérative (*consejo rector*) | Une formule est proposée par défaut ; vous pouvez la remplacer |
 | Prêt hypothécaire | D146:D154 | % du prêt, taux, retenue, premier tirage, dates, commission, AJD | Le prêt est un **% du coût total** |
 | Gestion | D157:D159 | % de gestion, mois, début | |
 | Associés | C163:F180 | Associés recrutés chaque mois (36 mois) | |
 | Apports et mensualités | C184:D186 | Apport en % **ou** en montant fixe, nombre de mensualités | Remplissez l'un des deux apports, pas les deux |
-| Répartition du coût | C207:C214 | % du coût affecté au logement, au garage, au débarras… | Par défaut dans le modèle : logement 90 %, garage 7 %, débarras 3 % |
+| Répartition du coût | C207:C214 | % du coût affecté au logement, au garage, à la cave… | Par défaut dans le modèle : logement 90 %, garage 7 %, cave 3 % |
 
 - **Pourcentages en valeur décimale :** 0,05 = 5 %.
 
@@ -74,7 +74,7 @@
   - Les projets de lotissement (*parcelación*), de compensation (*compensación*) et de viabilisation se saisissent à la main s'il y en a.
 - **3ª Licencias y Varios :**
   - Taxes, ICIO et première occupation (% de la construction).
-  - Frais juridiques (notaire, registre et AJD de l'acte de construction neuve et de division horizontale).
+  - Frais juridiques (notaire, registre et AJD de l'ouvrage neuf et de la division horizontale).
   - Raccordements, fournitures, loyers, audits et assurances.
   - L'**assurance des sommes versées d'avance** (*cantidades a cuenta*) par les associés.
 - **3ª Gestión :** % de gestion sur le coût, plus le recrutement des associés.
@@ -101,7 +101,7 @@ La feuille « 3ª Coste Total Promoción » (le modèle simplifié) résume tout
   - **Terrain 53.100 €** = 50.000 € de terrain + 50 € de notaire + 50 € de registre + 500 € d'AJD (1 %) + 2.500 € d'API et divers (5 %).
   - **Construction 180.935,33 €** = 163.400 € de montant + 8.600 € de retenue + 3.606,07 € d'OCT + 5.329,26 € d'assurance décennale.
   - **Études et projets 38.754,09 €** = 9.015,18 € d'études topographique et géotechnique + 6.536 € de projet de base + 4.902 € d'exécution + 4.902 € + 4.902 € de directions + 4.597,74 € de rapports techniques + 2.580 € de contrôle qualité + 193,60 € de projets d'installations + 193,60 € de direction de l'ingénieur des installations + 865,85 € de sécurité et hygiène + 66,11 € de manuel d'entretien.
-  - **Divers 18.484,05 €** = 6.696,75 € de frais juridiques + 240,40 € de raccordements + 48,08 € de fournitures + 2.524,25 € de salle d'assemblées + 7.212,15 € d'audits + 1.762,42 € d'assurances.
+  - **Divers 18.484,05 €** = 6.696,75 € de frais juridiques + 240,40 € de raccordements + 48,08 € de fournitures + 2.524,25 € de salle des assemblées + 7.212,15 € d'audits + 1.762,42 € d'assurances.
   - **Gestion 15.358,89 €** = 13.853,89 € de gestion de la promotion + 1.505 € de recrutement des associés.
   - **Frais du prêt 8.164,29 €** = 6.969,71 € de constitution + 1.194,58 € d'intérêts de différé.
 - **Indicateurs :**
@@ -114,9 +114,9 @@ La feuille « 3ª Coste Total Promoción » (le modèle simplifié) résume tout
 
 - **Montant :** % du coût total (D146). Dans l'exemple, 80 %.
 - **Premier tirage :** par défaut, 80 % du prix du terrain (D149). Le reste se tire au rythme des situations de travaux.
-- **Intérêts :** calculés au jour sur les sommes tirées et payés chaque trimestre. Les **intérêts de différé** (*intereses de carencia*) sont un coût de la promotion.
+- **Intérêts :** calculés jour par jour sur les sommes tirées et payés chaque trimestre. Les **intérêts de différé** (*intereses de carencia*) sont un coût de la promotion.
 - **Retenue (D148) :** part du prêt que la banque retient jusqu'à la fin du chantier.
-- **Constitution :** notaire et registre (selon barèmes), commission d'ouverture, AJD de la garantie et expertises.
+- **Constitution :** notaire et registre (selon barèmes), frais de dossier, AJD de la garantie et expertises.
 - **Lignes de crédit** (*pólizas de crédito*) : jusqu'à trois, avec leur plafond, leur taux, leurs dates et leurs frais. Elles couvrent les creux de trésorerie.
 
 ## Leçon F.5 — Gestion, associés et échéancier de paiement
@@ -126,11 +126,11 @@ La feuille « 3ª Coste Total Promoción » (le modèle simplifié) résume tout
 - **Échéancier de l'associé** (feuille 5º) :
   - **apport** (en % ou en montant fixe) ;
   - **mensualités** jusqu'à la livraison ;
-  - **hypothèque** à laquelle il est subrogé dans l'acte.
+  - **prêt hypothécaire** repris par subrogation dans l'acte.
   - Les sommes versées d'avance sont assurées : le coût de l'assurance va dans « Divers » (*Varios*).
 - **Synthèse par type** (feuille 8º) :
   - coût de chaque type de logement avec ses éléments liés, selon la répartition de C207:C214 ;
-  - avec l'apport, la mensualité et l'hypothèque de chaque associé.
+  - avec l'apport, la mensualité et le prêt hypothécaire de chaque associé.
 
 ## Leçon F.6 — Cash-flow et étude économique
 
@@ -162,22 +162,22 @@ Le modèle original a été construit vers 2002. La version de la formation a é
 |---|---|---|
 | IVA des travaux de logement et de la vente | 7 % | 10 % |
 | IVA général (honoraires, notaire, OCT, expertises…) | 16 % | 21 % |
-| Impôt sur l'achat du terrain | AJD 1 % ou ITP 8 % fixes | AJD ou ITP de la communauté que vous choisissez dans Datos de Partida (annexe B) |
+| Impôt sur l'achat du terrain | AJD 1 % ou ITP 8 % fixes | AJD ou ITP de la communauté que vous choisissez dans Datos de Partida (Annexe B) |
 | AJD de la déclaration d'ouvrage neuf et de la division horizontale | 1 % | AJD de votre communauté |
 | AJD du prêt hypothécaire | Donnée | 0 % : depuis 2018, c'est la banque qui le paie |
-| Taxe sur les primes d'assurance (assurance décennale) | 6 % | 8 % |
-| Intérêts des sommes versées à l'avance | 6 % | Taux d'intérêt légal (3,25 %) |
+| Impôt sur les primes d'assurance (assurance décennale) | 6 % | 8 % |
+| Intérêts des sommes versées d'avance | 6 % | Taux d'intérêt légal (3,25 %) |
 | Montants en pesetas (barèmes, timbres, taxes) | Pesetas | Les mêmes montants en euros |
 
 - CONSTRUYE met cette feuille à jour quand la loi change. Sur la plateforme, elle s'applique d'elle-même à tous les modèles.
 - **Continuez à demander des devis actuels** pour ce que la loi ne fixe pas : honoraires, OCT, assurance décennale, expertises et les coûts de 2002 que le modèle propose par défaut.
 - L'ITP et l'AJD sont les taux généraux de chaque communauté. Si la vôtre a des tranches ou des taux réduits, confirmez-le avec votre conseiller.
-- **Postes de coopérative** (recrutement des associés, conseil d'administration, local des assemblées) : ils ne s'appliquent pas à un promoteur. Laissez-les à 0.
+- **Postes de coopérative** (recrutement des associés, conseil d'administration, salle des assemblées) : ils ne s'appliquent pas à un promoteur. Laissez-les à 0.
 
 **Erreurs de l'original déjà corrigées**
 
 - « Divers » TTC n'additionnait pas les raccordements (278,87 € dans l'exemple). Le total TTC de l'exemple est de 354.781,50 €.
-- Le cinquième paiement du terrain ne calculait pas le coût de sa garantie.
+- Le cinquième paiement du terrain ne calculait pas le coût de sa caution.
 - Le cash-flow perdait des paiements quand deux tombaient le même mois (par exemple, deux tirages du prêt). Il n'additionnait pas non plus les raccordements dans le total des 4 ans, et ne payait l'ITP/AJD du terrain que s'ils valaient exactement 8 % ou 1 %.
 - La liquidation de l'IVA du cash-flow était liée à la main au calendrier de l'exemple. Elle se calcule désormais d'elle-même chaque trimestre.
 - Il y avait des erreurs visibles (#VALUE! et #DIV/0!) et des contrôles « O.K. » qui échouaient à cause des décimales.
@@ -200,10 +200,10 @@ Le modèle original a été construit vers 2002. La version de la formation a é
 ## Checklist de Financials
 
 - [ ] Calcul itératif activé (le fichier corrigé l'a déjà ; déjà actif sur la plateforme)
-- [ ] Surfaces, modèles et éléments rattachés remplis et cohérents avec la fiche produit
+- [ ] Surfaces, types de logement et éléments liés remplis et cohérents avec la fiche produit
 - [ ] Coût de construction par m² issu de devis réels
-- [ ] Terrain, permis et prêt avec les bonnes unités (montants et pourcentages)
+- [ ] Terrain, licences et prêt avec les bonnes unités (montants et pourcentages)
 - [ ] Calendrier : dates d'achat, de chantier, de viabilisation, de tirages et de gestion
-- [ ] Synthèse vérifiée : chapitres, incidences, coefficient de passage et prêt
+- [ ] Synthèse vérifiée : chapitres, coûts unitaires, coefficient de passage et prêt
 - [ ] Cash-flow sans cumul négatif (ou ligne de crédit prévue)
 - [ ] Communauté autonome du terrain choisie et date de révision de « Parámetros legales » vérifiée (Leçon F.8)

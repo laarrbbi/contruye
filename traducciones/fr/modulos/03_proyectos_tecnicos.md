@@ -1,7 +1,7 @@
 # Projets techniques
 
-> **Objectif :** disposer d'un projet qui obtient le permis, que l'on peut construire au prix prévu et que l'assureur décennal accepte.
-> **Durée :** 110 min · **Résultat :** projet de base et projet d'exécution, avec étude de sécurité et de santé, géotechnique et gestion des déchets.
+> **Objectif :** disposer d'un projet qui obtienne le permis, que l'on puisse construire au prix prévu et que l'assureur décennal accepte.
+> **Durée :** 110 min · **Résultat :** projet de base et projet d'exécution, avec l'étude de sécurité et de santé, l'étude géotechnique et la gestion des déchets.
 > **Où en sommes-nous :** avec le GO du module 2, vous commandez les projets techniques : l'architecte et son équipe transforment l'étude d'implantation en projet de base, avec lequel vous demandez le permis, et en projet d'exécution, avec lequel on construit. Rien ne se construit encore.
 
 ## Lois applicables
@@ -16,14 +16,14 @@
 | RD 1627/1997 | Étude ou étude simplifiée de sécurité et de santé |
 | RD 105/2008 | Étude de gestion des déchets intégrée au projet |
 | RD 390/2021 | Certificat de performance énergétique du projet |
-| Réglementation régionale d'accessibilité et d'habitabilité | Surfaces minimales, accessibilité, parfois plus exigeantes que le CTE |
+| Réglementation régionale d'accessibilité et d'habitabilité | Surfaces minimales, accessibilité ; parfois plus exigeante que le CTE |
 
 ## Où s'adresser
 
 | Institution | Ce que vous demandez | Ce que l'on vous remet |
 |---|---|---|
-| **Ordre officiel des architectes** (annexe A) | Liste d'architectes, visa du projet | Le visa (vérifie l'identité, l'habilitation, l'assurance et que le projet est complet) |
-| **Ordre des architectes techniques (aparejadores)** (annexe A) | Directeur de l'exécution et coordinateur sécurité et santé | Professionnels inscrits et visa de leurs travaux |
+| **Ordre des architectes** (Annexe A) | Liste d'architectes, visa du projet | Le visa (vérifie l'identité, l'habilitation, l'assurance et que le projet est complet) |
+| **Ordre des architectes techniques (aparejadores)** (Annexe A) | Directeur de l'exécution et coordinateur sécurité et santé | Professionnels inscrits et visa de leurs travaux |
 | **Laboratoire de géotechnique** inscrit au registre de la CCAA | Étude géotechnique (CTE DB SE-C) | Type de fondations, niveau de la nappe, contraintes admissibles |
 | **OCT** | Revue du projet | Rapport D0 pour l'assureur décennal |
 | **Assureur décennal** (via un courtier) | Pré-examen du risque | Conditions de l'assurance avant de figer le projet |
@@ -48,11 +48,11 @@
 
 ### Exemple : Nicolás, le promoteur
 
-Le terrain au nom de sa SPE, Nicolás a formé son équipe technique. Je vous raconte comment.
+Le terrain acquis au nom de sa SPE, Nicolás a formé son équipe technique. Je vous raconte comment.
 
 **C'est lui, le promoteur.** Il est le premier du tableau : il décide, finance, commande et souscrit les assurances, et il répond solidairement avec les autres intervenants envers les acheteurs. C'est pourquoi il a choisi chaque technicien sans précipitation et a tout contractualisé par écrit.
 
-**L'architecte.** Pour le logement, le concepteur et le directeur des travaux doivent être architectes. Il a continué avec le cabinet d'architecture de son secteur qui lui avait fait l'étude de volumétrie (Leçon 1.2) et l'implantation (Leçon 2.2) : il réalise le projet et la direction des travaux. Les bureaux d'études de structure et d'installations, c'est l'architecte qui les coordonne. Les cabinets d'architecture et les bureaux d'études de votre province, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon.
+**L'architecte.** Pour le logement, le concepteur et le directeur des travaux doivent être architectes. Il a continué avec le cabinet d'architecture de son secteur qui lui avait fait l'étude de volumétrie (Leçon 1.2) et l'étude d'implantation (Leçon 2.2) : il réalise le projet et la direction des travaux. Les bureaux d'études de structure et d'installations, c'est l'architecte qui les coordonne. Les cabinets d'architecture et les bureaux d'études de votre province, vous les trouverez dans la liste que nous vous avons donnée : dans les entreprises potentielles de cette leçon.
 
 **L'architecte technique et le coordinateur.** Pour la direction de l'exécution, qu'assure un architecte technique dans le logement, et pour la coordination sécurité et santé, il s'est adressé à l'**ordre des architectes techniques (aparejadores)** de sa province, qui lui a fourni des professionnels inscrits (tableau « Où s'adresser »). Celui de votre province, vous le trouverez à la fin du module.
 
@@ -92,13 +92,13 @@ La LOE dit ce que fait chaque intervenant et qui répond. En tant que promoteur,
 
 ### Exemple : Nicolás, le promoteur
 
-L'équipe engagée, Nicolás a passé en revue avec son architecte ce que le CTE et les règles extérieures exigent de son immeuble. Je vous raconte ce qui le concernait.
+L'équipe engagée, Nicolás a passé en revue avec son architecte ce que le CTE et les règles hors CTE exigent de son immeuble. Je vous raconte ce qui le concernait.
 
 **Le sol, d'abord.** Les fondations se calculent avec le DB SE-C, et pour cela il faut l'étude géotechnique. Nicolás l'a commandée à un **laboratoire de géotechnique inscrit au registre de la Communauté valencienne** (tableau « Où s'adresser »), avant l'avant-projet (Leçon 3.3). Le laboratoire lui donne le type de fondations, le niveau de la nappe et les contraintes admissibles. Les laboratoires de votre province, vous les trouverez à la fin du module.
 
 **Le séisme.** Alicante est l'une des provinces que le tableau du module signale pour la NCSE-02, la norme parasismique. Elle ne fait pas partie du CTE, mais elle est obligatoire : l'architecte et le bureau d'études de structure l'intègrent au calcul, avec le Código Estructural.
 
-**L'ascenseur.** Son immeuble est en B+5 : depuis l'entrée, il faut franchir plus de deux niveaux, si bien que le DB SUA (SUA 9) lui impose un ascenseur accessible. Il figurait déjà dans l'implantation (Leçon 2.2).
+**L'ascenseur.** Son immeuble est en B+5 : depuis l'entrée, il faut franchir plus de deux niveaux, si bien que le DB SUA (SUA 9) lui impose un ascenseur accessible. Il figurait déjà dans l'étude d'implantation (Leçon 2.2).
 
 **L'énergie.** Le DB HE s'applique en entier : enveloppe, installations thermiques, éclairage, renouvelables pour l'eau chaude et recharge des véhicules électriques. Pour le HE5, la leçon donne un seuil de 1.000 m² construits et son immeuble en compte 1.586,49 : il a demandé à l'architecte de confirmer s'il est concerné, comme le conseille la leçon.
 
@@ -108,7 +108,7 @@ L'équipe engagée, Nicolás a passé en revue avec son architecte ce que le CTE
 
 ### Résumé
 
-Le CTE fixe dans ses documents de base ce que l'immeuble doit respecter (structure, incendie, accessibilité, énergie, bruit et salubrité), et des règles extérieures sont aussi obligatoires. Passez-les en revue avec votre architecte avant de concevoir : le sol, le séisme, l'ascenseur, l'énergie et le radon.
+Le CTE fixe dans ses documents de base ce que l'immeuble doit respecter (structure, incendie, accessibilité, énergie, bruit et salubrité), et des règles extérieures au CTE sont aussi obligatoires. Passez-les en revue avec votre architecte avant de concevoir : le sol, le séisme, l'ascenseur, l'énergie et le radon.
 
 ### Votre checklist
 
@@ -145,10 +145,10 @@ Le CTE fixe dans ses documents de base ce que l'immeuble doit respecter (structu
 - **Relevés et études techniques avant l'avant-projet :**
   - Relevé topographique **géoréférencé** (il sert aussi à mettre en cohérence Cadastre et Registre, Ley 13/2015).
   - Étude géotechnique du terrain.
-  - Recherche de pollution, de remblais ou de réseaux enterrés le cas échéant.
+  - Recherche de pollution, de remblais ou d'installations enterrées le cas échéant.
   - Inspection des bâtiments existants et plan de démolition.
   - Consultation des compagnies sur les réseaux d'eau, d'assainissement, d'électricité, de gaz et de télécommunications.
-  - Accès, cotes, drainage et conditions de l'environnement.
+  - Accès, cotes, drainage et conditions des abords.
 - **Programme des besoins :** nombre de logements et surfaces par typologie, orientation, vues, intimité, performance énergétique, garages, caves, ascenseurs, cours et parties communes.
 - **Conception à coût cible :** ajustez la conception aux prix de vente et aux coûts du CRP avant de passer au projet de base.
 - **Au stade du projet de base,** demandez les avis préalables des organismes sectoriels quand il le faut.
@@ -162,7 +162,7 @@ L'étude géotechnique faite, l'architecte de Nicolás s'est mis au projet. Je v
 
 **L'avant-projet.** Il a remis à l'architecte son programme des besoins : 18 logements de 2 et 3 chambres, dont 2 attiques, des prestations moyen-haut de gamme, un ascenseur et pas de sous-sol. En quelques semaines (la leçon parle de 2-4), il a eu l'avant-projet, qui n'est pas visé, et l'a validé avec son mix commercial de la Leçon 2.2. Avant de passer au projet de base, il a ajusté la conception à son coût cible : les 2.606,50 €/m² de vente et la construction de son CRP.
 
-**Le projet de base.** Il définit l'immeuble et justifie les règles d'urbanisme et le CTE : c'est avec lui qu'il demandera le permis (Module 4). Il a demandé au service de l'urbanisme si sa mairie exige de le faire viser, car sinon le visa est facultatif. Son terrain n'a pas de servitudes (Leçon 1.3) : il n'a donc pas eu besoin d'avis préalables d'organismes sectoriels.
+**Le projet de base.** Il définit l'immeuble et justifie le respect des règles d'urbanisme et du CTE : c'est avec lui qu'il demandera le permis (Module 4). Il a demandé au service de l'urbanisme si sa mairie exige de le faire viser, car sinon le visa est facultatif. Son terrain n'a pas de servitudes (Leçon 1.3) : il n'a donc pas eu besoin d'avis préalables d'organismes sectoriels.
 
 **Le projet d'exécution.** L'architecte a coordonné architecture, structure, électricité, climatisation, plomberie et assainissement avec les bureaux d'études, et a préparé les métrés, le budget et le dossier pour lancer l'appel d'offres des travaux (Module 5). Les bureaux d'études de votre province, vous les trouverez dans la liste que nous vous avons donnée, dans les entreprises potentielles de cette leçon.
 
@@ -187,7 +187,7 @@ Le projet avance par phases : l'avant-projet arrête le mix, le projet de base s
 
 ## Leçon 3.4 — Sécurité et santé dans le projet
 
-> **Où en sommes-nous :** le projet d'exécution est presque prêt (Leçon 3.3). Il lui manque la sécurité et la santé : quel document il faut pour votre chantier, qui le rédige et qui coordonne.
+> **Où en sommes-nous :** le projet d'exécution est presque prêt (Leçon 3.3). Il lui manque le volet sécurité et santé : quel document il faut pour votre chantier, qui le rédige et qui coordonne.
 
 | Document | Quand | Qui le rédige |
 |---|---|---|
@@ -203,11 +203,11 @@ Le projet avance par phases : l'avant-projet arrête le mix, le projet de base s
 
 ### Exemple : Nicolás, le promoteur
 
-Il manquait au projet d'exécution de Nicolás la sécurité et la santé. Je vous raconte comment il l'a réglée.
+Il manquait au projet d'exécution de Nicolás le volet sécurité et santé. Je vous raconte comment il l'a réglé.
 
 **Étude ou étude simplifiée ?** Le tableau exige l'étude complète à partir de 450.759,08 € de PEM, et son chantier les dépasse de loin : la construction de son CRP s'élève à 2.221.086 € (Leçon 2.3). Il lui faut l'**étude de sécurité et de santé**, et non l'étude simplifiée.
 
-**Qui la rédige.** Un technicien compétent désigné par le promoteur. Nicolás a désigné par écrit le coordinateur sécurité et santé qu'il avait engagé par l'intermédiaire de l'ordre des architectes techniques (Leçon 3.1). Il le fallait déjà en phase de conception, parce que plusieurs concepteurs interviennent : l'architecte, les bureaux d'études et le technicien de l'ICT.
+**Qui la rédige.** Un technicien compétent désigné par le promoteur. Nicolás a désigné par écrit le coordinateur sécurité et santé qu'il avait engagé par l'intermédiaire de l'ordre des architectes techniques (Leçon 3.1). Il en fallait déjà un en phase de conception, parce que plusieurs concepteurs interviennent : l'architecte, les bureaux d'études et le technicien de l'ICT.
 
 **Le coordinateur sur le chantier.** En phase d'exécution aussi, il est obligatoire : avec l'entreprise générale arriveront des sous-traitants et des indépendants, et dans une promotion il y a toujours un coordinateur. C'est Nicolás qui le désigne, par écrit. Il conservera le **registre des incidents**, que l'on demande à l'ordre au démarrage (Module 4).
 
@@ -215,7 +215,7 @@ Il manquait au projet d'exécution de Nicolás la sécurité et la santé. Je vo
 
 **La responsabilité.** Un accident grave peut aboutir à une responsabilité pénale. C'est pourquoi il a fait la désignation par écrit et a inscrit dans le contrat du coordinateur ses visites minimales de chantier (Leçon 3.1) : il peut ainsi vérifier qu'il s'y rend.
 
-**Le visa.** L'étude de sécurité et de santé intégrée, l'architecte a déposé le projet d'exécution à l'**Ordre officiel des architectes**, qui vérifie l'identité, l'habilitation, l'assurance et que le projet est complet. Il contient tout ce que liste la Leçon 3.3 : l'étude géotechnique, la gestion des déchets, l'ICT et le certificat de performance énergétique.
+**Le visa.** L'étude de sécurité et de santé intégrée, l'architecte a déposé le projet d'exécution à l'**Ordre des architectes**, qui vérifie l'identité, l'habilitation, l'assurance et que le projet est complet. Il contient tout ce que liste la Leçon 3.3 : l'étude géotechnique, la gestion des déchets, l'ICT et le certificat de performance énergétique.
 
 **Où il en est maintenant.** Il a le projet de base pour demander le permis et le projet d'exécution visé, avec le rapport D0 de l'OCT et les conditions de l'assureur décennal. Il passe au Module 4 : le permis de construire.
 
@@ -231,7 +231,7 @@ Selon la taille du chantier, votre projet comporte une étude ou une étude simp
 
 Vous avez formé votre équipe technique et l'avez engagée par écrit, vous avez passé en revue ce que le CTE exige de votre immeuble et commandé l'étude géotechnique, vous avez mené le projet à travers ses phases avec la revue de l'OCT et le pré-examen de l'assureur décennal, et vous avez réglé la sécurité et la santé du projet.
 
-**Où vous devriez en être dans votre projet :** le projet de base et le projet d'exécution, avec l'étude de sécurité et de santé, la géotechnique et la gestion des déchets, et le projet d'exécution visé. Avec cela, vous passez au Module 4, où vous demandez le permis de construire.
+**Où vous devriez en être dans votre projet :** le projet de base et le projet d'exécution, avec l'étude de sécurité et de santé, l'étude géotechnique et la gestion des déchets, et le projet d'exécution visé. Avec cela, vous passez au Module 4, où vous demandez le permis de construire.
 
 ## Checklist du module 3
 
