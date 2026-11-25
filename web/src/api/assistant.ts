@@ -17,7 +17,8 @@ export interface AssistantStatus {
   /** An admin trying it before it opens to students. */
   preview?: boolean
   course?: string
-  credits: { balance: number; monthly: number; resets_at: string; small: number; large: number } | null
+  /** The balance, and what an answer costs by the model that gives it (the cascade, cheapest first). */
+  credits: { balance: number; monthly: number; resets_at: string; small: number; medium?: number; large?: number } | null
   max_question_chars?: number
 }
 
@@ -34,7 +35,7 @@ export interface AssistantMessage {
   /** The answer as HTML (server-rendered Markdown, raw HTML stripped, the reader's fingerprint in it). */
   html: string | null
   sources: AssistantSource[]
-  /** small | large | escalated | cache, or blocked | refusal | error. */
+  /** small | medium | large | cache, or blocked | refusal | error. */
   route: string | null
   created_at: string | null
 }
@@ -139,7 +140,9 @@ export interface AdminAssistantOverview {
   configured: boolean
   enabled: boolean
   launched: boolean
-  models: Record<'small' | 'large', { id: string; effort: string; credits: number }>
+  /** The tiers of the cascade, cheapest first, and each one's model. */
+  cascade: string[]
+  models: Record<string, { id: string; effort: string; credits: number; price: { input: number; output: number } }>
   prompt_version: string
   index: { version: string | null; chunks: number; built_at: string | null }
   eval: {
@@ -148,7 +151,13 @@ export interface AdminAssistantOverview {
   }
   budget: { daily_usd: number; spent_today_usd: number }
   credits: { monthly: Record<string, number> }
-  last_30_days: { questions: number; cost_usd: number; by_route: { route: string; count: number; cost_usd: number; credits: number }[] }
+  last_30_days: {
+    questions: number
+    cost_usd: number
+    /** Questions a model handed to the next one of the cascade. */
+    escalated: number
+    by_route: { route: string; count: number; cost_usd: number; credits: number; avg_cost_usd: number; tokens: { input: number; cached: number; output: number } }[]
+  }
   evals: { id: number; passed: boolean; score: number; total: number; passed_count: number; prompt_version: string; models: string; index_version: string; ran_at: string | null }[]
 }
 

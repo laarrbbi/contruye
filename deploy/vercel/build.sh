@@ -29,8 +29,10 @@ export APP_ENV=local APP_DEBUG=false DB_CONNECTION=sqlite DB_DATABASE="$DB" \
   php artisan migrate --force --seed
   php artisan db:seed --class=DemoShowcaseSeeder --force
   php artisan db:seed --class=PreviewVideoSeeder --force
-  # Nicolás's index of the demo course (the preview has no key: it stays «Pronto»).
+  # Nicolás's index of the demo course (the preview has no key: it stays «Pronto»),
+  # and its search checked on it (no model): a warning in this log, never a failed preview.
   php artisan assistant:index
+  php artisan assistant:retrieval --failed || echo "⚠ Nicolás: the search loses pieces of the course (see the cases above)."
 )
 
 echo "▸ The key this deployment signs its cookies with (new on every deploy)"

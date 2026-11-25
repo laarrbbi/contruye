@@ -12,6 +12,7 @@ use App\Models\ProvinceGuide;
 use App\Models\Setting;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Lang;
 
 /**
  * The course cut in pieces for the assistant, in every language the course
@@ -24,7 +25,12 @@ use Illuminate\Support\Facades\DB;
  * - each template (TemplateKnowledge: what it calculates, its inputs, its
  *   formulas, Nicolás's run of it), in Spanish: its module's owners;
  * - the province directory (Anexo A), each province's offices phase by
- *   phase: the owners of that phase's module, of that province only (Scope).
+ *   phase: the owners of that phase's module, of that province only (Scope);
+ * - the websites each lesson names, at their checked official addresses:
+ *   whoever may read the lesson; and the glossary of taxes and institutions
+ *   (the «i» beside each in the text): every student.
+ * Each text is cut by Chunker into pieces that read on their own, and each
+ * piece's words are kept with where they stand (title, heading, lines).
  * Never the quizzes or the final exam (their answers stay with QuizController),
  * never the owner's commercial strategy (it is not published).
  *
@@ -51,8 +57,8 @@ final class Indexer
             foreach ($pieces as $piece) {
                 $chunk = AssistantChunk::query()->create($piece + ['length' => count(Tokenizer::terms($piece['text']))]);
                 $rows = [];
-                foreach (Tokenizer::counts($piece['title'].' '.$piece['text']) as $term => $tf) {
-                    $rows[] = ['locale' => $piece['locale'], 'term' => $term, 'chunk_id' => $chunk->id, 'tf' => min($tf, 65535)];
+                foreach (self::zones($piece['title'], $piece['text']) as $term => [$tf, $title, $lead]) {
+                    $rows[] = ['locale' => $piece['locale'], 'term' => $term, 'chunk_id' => $chunk->id, 'tf' => min($tf, 65535), 'title_tf' => min($title, 255), 'lead_tf' => min($lead, 255)];
                 }
                 foreach (array_chunk($rows, 500) as $batch) {
                     DB::table('assistant_postings')->insert($batch);
@@ -68,6 +74,35 @@ final class Indexer
         Setting::setValue(self::SETTING, $state);
 
         return $state;
+    }
+
+    /**
+     * A piece's words and where each stands: in its lines (how many times), in
+     * the title of its lesson or text («El OCT y el control de calidad»), and
+     * in its own headings and bold openings («- **ICIO:**», «**La caducidad.**»).
+     * A question is asked with the words that say what a piece is about, and
+     * the lines below them often do not repeat them: the search weighs the
+     * three apart (Retriever, config assistant.retrieval.weights).
+     *
+     * @return array<string, array{0: int, 1: int, 2: int}> term => [in the text, in the title, in a heading or opening]
+     */
+    public static function zones(string $title, string $text): array
+    {
+        $zones = [];
+        foreach (Tokenizer::counts($text) as $term => $n) {
+            $zones[$term] = [$n, 0, 0];
+        }
+        foreach (Tokenizer::counts($title) as $term => $n) {
+            $zones[$term] ??= [0, 0, 0];
+            $zones[$term][1] = $n;
+        }
+        preg_match_all('/^[ \t>]*(?:(?:[-*+]|\d+[.)])\s+)?(?:⚠️\s*)?(?:#{1,4}\s+(.+)|\*\*([^*\n]{1,160})\*\*)/mu', $text, $m);
+        foreach (Tokenizer::counts(implode(' ', array_merge($m[1], $m[2]))) as $term => $n) {
+            $zones[$term] ??= [0, 0, 0];
+            $zones[$term][2] = $n;
+        }
+
+        return $zones;
     }
 
     /** The index's version, or «none» before the first build. */
@@ -139,8 +174,10 @@ final class Indexer
             }
         }
 
+        $this->linkPieces($course, $modules, $pieces);
         $this->templatePieces($course, $modules, $pieces);
         $this->provincePieces($course, $modules, $locales, $pieces);
+        $this->glossaryPieces($locales, $pieces);
 
         foreach (CourseDocument::query()->where('course_id', $course->id)->orderBy('order')->get() as $document) {
             foreach ($locales as $locale) {
@@ -156,6 +193,69 @@ final class Indexer
         }
 
         return $pieces;
+    }
+
+    /**
+     * The websites each lesson names, at their checked official addresses
+     * (config/lesson_resources.php, what the player lists under the lesson):
+     * for whoever may read the lesson, in Spanish, as their names are. With
+     * them in an answer's documents, the assistant can give the address (the
+     * guard lets through only the links the documents carry).
+     *
+     * @param  Collection<int, Module>  $modules
+     * @param  list<array<string, mixed>>  $pieces
+     */
+    private function linkPieces(Course $course, $modules, array &$pieces): void
+    {
+        $resources = (array) config('lesson_resources.lessons', []);
+        foreach ($modules as $module) {
+            foreach ($module->lessons as $lesson) {
+                $number = preg_match('/^Lección ([\dF]+\.\d+)/u', (string) $lesson->title_es, $m) === 1 ? $m[1] : null;
+                $links = $number === null ? [] : (array) ($resources[$number]['links'] ?? []);
+                if ($links === []) {
+                    continue;
+                }
+                $lines = array_map(fn (array $link) => '- '.$link['name'].(($link['mention'] ?? '') !== '' && ! str_contains((string) $link['name'], (string) $link['mention']) ? ' («'.$link['mention'].'» en la lección)' : '').': '.$link['url'], $links);
+                $text = "**Páginas web oficiales que nombra la Lección {$number}** (la web de cada organismo o empresa, con su dirección comprobada):\n".implode("\n", $lines);
+                foreach ($this->split($text) as $part) {
+                    $pieces[] = $this->piece('es', 'links', $lesson->id, $module->id, $lesson->id, $lesson->is_free_preview ? 'free' : ($module->isFinancials() ? 'financials' : 'module'),
+                        $this->moduleLabel($module).' · '.$lesson->title_es.' · Páginas web oficiales', "/learn/{$course->slug}/lessons/{$lesson->id}", $part);
+                }
+            }
+        }
+    }
+
+    private const GLOSSARY = ['es' => 'Glosario', 'en' => 'Glossary', 'fr' => 'Glossaire', 'ar' => 'مسرد المصطلحات', 'ru' => 'Глоссарий', 'uk' => 'Глосарій'];
+
+    /**
+     * The taxes and institutions the course names, as the «i» beside them
+     * explains each (config/glossary.php, lang/<locale>/glossary.php), in every
+     * language: what a student asks first («¿qué es el ICIO?»), in two lines.
+     *
+     * @param  list<string>  $locales
+     * @param  list<array<string, mixed>>  $pieces
+     */
+    private function glossaryPieces(array $locales, array &$pieces): void
+    {
+        $terms = (array) config('glossary.terms', []);
+        foreach ($locales as $locale) {
+            $entries = Lang::get('glossary', [], $locale);
+            if (! is_array($entries)) {
+                continue;
+            }
+            $n = 0;
+            foreach ($terms as $key => $term) {
+                $n++;
+                $entry = $entries[$key] ?? null;
+                if (! is_array($entry) || blank($entry['text'] ?? null)) {
+                    continue;
+                }
+                $written = (string) ($term['match'][0] ?? $key);
+                $name = (string) ($entry['name'] ?? $written);
+                $text = '**'.$written.'**'.($name !== $written ? ' ('.$name.')' : '').': '.$entry['text'];
+                $pieces[] = $this->piece($locale, 'glossary', $n, null, null, 'enrolled', (self::GLOSSARY[$locale] ?? 'Glosario').' · '.$written, null, $text);
+            }
+        }
     }
 
     /**
@@ -250,34 +350,12 @@ final class Indexer
     }
 
     /**
-     * Paragraphs packed into pieces of about `retrieval.chunk_chars`, never
-     * cutting a paragraph unless it is longer than that on its own (then at
-     * its lines).
+     * A text cut into pieces of about `retrieval.chunk_chars`, each readable on its own (Chunker).
      *
      * @return list<string>
      */
     private function split(string $text): array
     {
-        $limit = (int) config('assistant.retrieval.chunk_chars');
-        $parts = [];
-        $current = '';
-        $paragraphs = preg_split('/\n\s*\n/', trim(str_replace("\r", '', $text))) ?: [];
-
-        foreach ($paragraphs as $paragraph) {
-            // A paragraph longer than a piece goes line by line; its lines stay one block (a list stays a list).
-            $lines = mb_strlen($paragraph) > $limit ? (preg_split('/\n/', $paragraph) ?: [$paragraph]) : [$paragraph];
-            foreach ($lines as $line => $piece) {
-                if ($current !== '' && mb_strlen($current) + mb_strlen($piece) + 2 > $limit) {
-                    $parts[] = $current;
-                    $current = '';
-                }
-                $current = $current === '' ? $piece : $current.($line === 0 ? "\n\n" : "\n").$piece;
-            }
-        }
-        if (trim($current) !== '') {
-            $parts[] = $current;
-        }
-
-        return array_values(array_filter(array_map('trim', $parts), fn (string $p) => $p !== ''));
+        return Chunker::split($text, (int) config('assistant.retrieval.chunk_chars'));
     }
 }

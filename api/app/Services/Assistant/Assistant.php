@@ -19,9 +19,15 @@ use Illuminate\Support\Str;
  *
  *   availability → one question at a time → input guard → frequent-question
  *   cache → credits → router → retrieval (only what the student may read) →
- *   the model, with its tools (search, templates, legal parameters, and for
- *   the small model a hand-over to the large one) → output guard →
- *   citations → credits spent → trace → cache.
+ *   the cascade of models, cheapest first, each with its tools (search,
+ *   templates, legal parameters, and a hand-over to the next one) and its own
+ *   budget of history, tool rounds and output → output guard → citations →
+ *   credits spent → trace → cache.
+ *
+ * What a question costs is, above all, which model answers it (the small one
+ * costs a fortieth of the large one): so the guard and the cache answer
+ * without any, the router starts almost everything at the small one, and a
+ * model that hands a question over stops there, for the price of that try.
  *
  * Every question leaves a trace, whatever happens to it: blocked by the
  * guard, answered from the cache, refused by the model, failed. The trace
@@ -37,7 +43,7 @@ final class Assistant
     private const LANGUAGES = ['es' => 'español', 'en' => 'inglés', 'fr' => 'francés', 'ar' => 'árabe', 'ru' => 'ruso', 'uk' => 'ucraniano'];
 
     /** The routes whose answers are the model's (or the cache's): the ones the conversation keeps as history. */
-    private const ANSWERED = ['small', 'large', 'escalated', 'cache'];
+    private const ANSWERED = ['small', 'medium', 'large', 'escalated', 'cache'];
 
     public function __construct(
         private readonly Llm $llm,
@@ -94,8 +100,8 @@ final class Assistant
     public function respond(Scope $scope, Course $course, string $question, string $locale, array $history = [], ?int $balance = null): array
     {
         $result = [
-            'route' => 'small', 'status' => 'ok', 'text' => '', 'sources' => [], 'model' => null, 'credits' => 0,
-            'usage' => ['input' => 0, 'output' => 0, 'cache_read' => 0, 'cache_write' => 0], 'cost' => 0.0,
+            'route' => Router::cascade()[0], 'status' => 'ok', 'text' => '', 'sources' => [], 'model' => null, 'credits' => 0,
+            'usage' => ['input' => 0, 'output' => 0, 'cache_read' => 0, 'cache_write' => 0], 'cost' => 0.0, 'rounds' => 0,
             'chunks' => [], 'tools' => [], 'flags' => [], 'error' => null, 'used_template' => false,
         ];
 
@@ -108,27 +114,30 @@ final class Assistant
         $routing = $this->router->route($checked['text']);
         $tier = $routing['tier'];
         $result['flags'] = [...$result['flags'], ...array_map(fn (string $r) => 'route:'.$r, $routing['reasons'])];
-        if ($balance !== null && $tier === 'large' && $balance < Credits::cost('large')) {
-            $tier = 'small';
+        // A question enters no higher than the student's credits reach.
+        while ($balance !== null && $balance < Credits::cost($tier) && ($lower = Router::previous($tier)) !== null) {
+            $tier = $lower;
             $result['flags'][] = 'downgraded';
         }
-        $canEscalate = $tier === 'small' && ($balance === null || $balance >= Credits::cost('large'));
 
         // The pieces of the course that go with the question, before the model sees it.
         $docs = $this->tools->search($checked['text'], $locale, $scope, []);
         $result['chunks'] = array_map(fn (array $d) => ['id' => $d['id'], 'score' => $d['score']], $docs);
-
-        $messages = [...$this->historyMessages($history), ['role' => 'user', 'content' => $this->turn($checked['text'], $locale, $scope, $course, $docs)]];
+        $turn = $this->turn($checked['text'], $locale, $scope, $course, $docs);
         $context = array_map(fn (array $d) => $d['text'], $docs);
 
-        $run = $this->run($tier, $canEscalate, $messages, $docs, $context, $scope, $course, $locale, $result);
-        if ($run['escalate'] ?? false) {
-            $result = $run['result'];
-            $result['flags'][] = 'escalated';
-            $run = $this->run('large', false, $messages, $docs, $context, $scope, $course, $locale, $result);
-            if ($run['result']['route'] === 'large') {
-                $run['result']['route'] = 'escalated';
+        // The cascade: a model that hands the question over stops, and the next one starts afresh.
+        for (; ;) {
+            $next = Router::next($tier);
+            $canEscalate = $next !== null && ($balance === null || $balance >= Credits::cost($next));
+            $messages = [...$this->historyMessages($history, $tier), ['role' => 'user', 'content' => $turn]];
+            $run = $this->run($tier, $canEscalate, $messages, $docs, $context, $scope, $course, $locale, $result);
+            if (! ($run['escalate'] ?? false) || $next === null) {
+                break;
             }
+            $result = $run['result'];
+            $result['flags'] = [...$result['flags'], 'escalated', "handover:{$tier}>{$next}"];
+            $tier = $next;
         }
         $result = $run['result'];
         if ($result['status'] !== 'ok') {
@@ -138,7 +147,7 @@ final class Assistant
         $guarded = $this->guard->answer($run['text'], $run['context'], Guard::passages(Prompt::template()));
         $result['flags'] = [...$result['flags'], ...$guarded['flags']];
         if ($guarded['block'] !== null) {
-            return ['status' => 'blocked', 'text' => self::refusal('answer', $locale), 'credits' => Credits::cost($result['route'] === 'escalated' ? 'large' : $result['route'])] + $result;
+            return ['status' => 'blocked', 'text' => self::refusal('answer', $locale), 'credits' => Credits::cost($result['route'])] + $result;
         }
         if (trim($guarded['text']) === '') {
             return ['status' => 'error', 'error' => 'empty', 'text' => self::refusal('error', $locale)] + $result;
@@ -146,7 +155,7 @@ final class Assistant
 
         [$text, $sources] = $this->cite($guarded['text'], $run['docs']);
 
-        return ['text' => $text, 'sources' => $sources, 'credits' => Credits::cost($result['route'] === 'escalated' ? 'large' : $result['route'])] + $result;
+        return ['text' => $text, 'sources' => $sources, 'credits' => Credits::cost($result['route'])] + $result;
     }
 
     /** @return array{conversation: AssistantConversation, question: AssistantMessage, answer: AssistantMessage, balance: int, spent: int} */
@@ -161,7 +170,7 @@ final class Assistant
         $hit = $cacheKey === null ? null : $this->cache->get($cacheKey);
 
         $balance = $this->credits->balance($user, $scope);
-        if ($hit === null && $checked['block'] === null && $balance < Credits::cost('small')) {
+        if ($hit === null && $checked['block'] === null && $balance < Credits::cost(Router::cascade()[0])) {
             $this->trace(['user_id' => $user->id, 'conversation_id' => $conversation?->id, 'route' => 'refused', 'status' => 'blocked', 'flags' => ['no_credits']], $started);
 
             throw new AssistantUnavailable('no_credits');
@@ -214,8 +223,9 @@ final class Assistant
     }
 
     /**
-     * The model's turn(s): tool calls run until it answers, the small model's
-     * hand-over stops it so the large one starts afresh.
+     * One model's turn(s): its tool calls run until it answers; its hand-over
+     * stops it, so the next model of the cascade starts afresh. Each tier
+     * within its own budget (config assistant.models.<tier>).
      *
      * @param  list<array<string, mixed>>  $messages
      * @param  list<array<string, mixed>>  $docs
@@ -232,29 +242,37 @@ final class Assistant
             'effort' => (string) $config['effort'],
             'max_tokens' => (int) $config['max_tokens'],
             'fallbacks' => (bool) $config['fallbacks'],
+            // The stable prefix (tools, instructions) is cached for every tier; the question and its
+            // documents too where a second round is the rule (a round re-sends everything).
+            'cache_turn' => (bool) ($config['cache_turn'] ?? false),
             'system' => [['type' => 'text', 'text' => Prompt::make()->system(), 'cacheControl' => ['type' => 'ephemeral']]],
             'tools' => $this->tools->definitions($canEscalate),
             'messages' => $messages,
         ];
         $result['route'] = $tier;
-        $maxRounds = (int) config('assistant.max_tool_rounds');
+        $maxRounds = min((int) config('assistant.max_tool_rounds'), (int) ($config['tool_rounds'] ?? PHP_INT_MAX));
         $text = '';
 
         for ($round = 0; ; $round++) {
+            // The tier has spent its tool rounds: this call carries the tools switched off, so the
+            // model answers with what it has gathered instead of asking for a tool nobody would run.
+            $last = $round >= $maxRounds;
             try {
-                $reply = $this->llm->send($request);
+                $reply = $this->llm->send($last ? ['tools_off' => true] + $request : $request);
             } catch (LlmError $e) {
-                // The large model busy or unreachable: the small one answers instead, once.
-                if ($tier === 'large' && $e->retryable && ! in_array('fallback_small', $result['flags'], true)) {
-                    $result['flags'][] = 'fallback_small';
+                // A model busy or unreachable: the one below it answers instead, once.
+                $lower = Router::previous($tier);
+                if ($lower !== null && $e->retryable && ! in_array('fallback', $result['flags'], true)) {
+                    $result['flags'] = [...$result['flags'], 'fallback', 'fallback_'.$lower];
 
-                    return $this->run('small', false, $messages, $docs, $context, $scope, $course, $locale, $result);
+                    return $this->run($lower, false, $messages, $docs, $context, $scope, $course, $locale, $result);
                 }
 
                 return ['result' => ['status' => 'error', 'error' => $e->kind, 'text' => self::refusal('error', $locale), 'credits' => 0] + $result, 'text' => '', 'docs' => $docs, 'context' => $context];
             }
 
             $result['model'] = $reply->model;
+            $result['rounds'] = ($result['rounds'] ?? 0) + 1;
             foreach ($reply->usage as $kind => $tokens) {
                 $result['usage'][$kind] += $tokens;
             }
@@ -267,20 +285,18 @@ final class Assistant
                 $result['flags'][] = 'max_tokens';
             }
 
-            $calls = $reply->toolCalls();
+            if ($last) {
+                $result['flags'][] = 'tool_rounds';
+            }
+            $calls = $last ? [] : $reply->toolCalls();
             if ($reply->stopReason !== 'tool_use' || $calls === []) {
                 $text = $reply->text();
                 break;
             }
-            if ($tier === 'small' && $canEscalate && in_array(Tools::ESCALATE, array_column($calls, 'name'), true)) {
-                $result['tools'][] = ['name' => Tools::ESCALATE, 'ok' => true];
+            if ($canEscalate && in_array(Tools::ESCALATE, array_column($calls, 'name'), true)) {
+                $result['tools'][] = ['name' => Tools::ESCALATE, 'ok' => true, 'from' => $tier];
 
                 return ['result' => $result, 'text' => '', 'docs' => $docs, 'context' => $context, 'escalate' => true];
-            }
-            if ($round >= $maxRounds) {
-                $result['flags'][] = 'tool_rounds';
-                $text = $reply->text();
-                break;
             }
 
             $results = [];
@@ -322,6 +338,11 @@ final class Assistant
                 array_push($docs, ...$found);
 
                 return [$this->documents($found, $from), false, ['name' => $call['name'], 'ok' => true, 'found' => count($found)]];
+
+            case Tools::CELLS:
+                $run = $this->tools->cells($call['input'], $course, $scope);
+
+                return [$run['content'], $run['error'], ['name' => $call['name'], 'ok' => ! $run['error'], 'plantilla' => mb_substr((string) ($call['input']['plantilla'] ?? ''), 0, 40)]];
 
             case Tools::TEMPLATE:
                 $run = $this->tools->template($call['input'], $course, $scope);
@@ -420,18 +441,40 @@ final class Assistant
     }
 
     /**
+     * The conversation that goes with the question, within the tier's budget
+     * (`history_chars`): the latest exchange always, whole (the question may be
+     * «recalcúlalo con 1.500 €/m²»), and earlier ones while they fit, newest
+     * first. A long conversation does not make every further question dearer.
+     *
      * @param  list<array{role: string, content: string}>  $history
      * @return list<array{role: string, content: string}>
      */
-    private function historyMessages(array $history): array
+    private function historyMessages(array $history, string $tier): array
     {
-        return array_map(fn (array $m) => [
+        $messages = array_map(fn (array $m) => [
             'role' => $m['role'],
             'content' => $m['role'] === 'user'
                 ? '<pregunta>'.$this->guard->question($m['content'])['text'].'</pregunta>'
                 // Earlier citations named documents this turn does not carry.
                 : trim(preg_replace('/\s?\[\d{1,2}(?:\s*,\s*\d{1,2})*\]/', '', $m['content']) ?? $m['content']),
         ], $history);
+
+        $budget = (int) config("assistant.models.{$tier}.history_chars", 0);
+        if ($budget <= 0) {
+            return $messages;
+        }
+        $kept = [];
+        $used = 0;
+        foreach (array_reverse(array_chunk($messages, 2)) as $index => $pair) {
+            $size = array_sum(array_map(fn (array $m) => mb_strlen($m['content']), $pair));
+            if ($index > 0 && $used + $size > $budget) {
+                break;
+            }
+            $used += $size;
+            array_unshift($kept, ...$pair);
+        }
+
+        return $kept;
     }
 
     /**
@@ -459,7 +502,7 @@ final class Assistant
             'latency_ms' => (int) ((hrtime(true) - $started) / 1_000_000),
             'chunks' => $data['chunks'] ?? [],
             'tools' => $data['tools'] ?? [],
-            'flags' => array_values(array_unique($data['flags'] ?? [])),
+            'flags' => array_values(array_unique([...($data['flags'] ?? []), ...(($data['rounds'] ?? 0) > 1 ? ['rounds:'.$data['rounds']] : [])])),
             'error' => isset($data['error']) ? mb_substr((string) $data['error'], 0, 255) : null,
         ]);
     }

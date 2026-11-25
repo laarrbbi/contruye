@@ -6,8 +6,10 @@ use App\Support\Financials\TemplateCatalog;
 
 /**
  * The system prompt (resources/assistant/system.md) with the assistant's
- * name, a canary and the catalogue of the course's templates (their input
- * cells, from each template's own dictionary). It is the stable, cached
+ * name, a canary and the list of the course's calculators (which there are
+ * and of which module; their input cells are not here but behind the
+ * ver_plantilla tool and in the templates' cards of the index, so a question
+ * that calculates nothing does not carry them). It is the stable, cached
  * prefix of every request: nothing in it changes from one question to the
  * next. Its version (a hash of the template, the catalogue and the name)
  * goes into every trace and into the evaluation gate: a new wording is a new
@@ -48,7 +50,7 @@ final class Prompt
         return 'CNRY-'.substr(hash('sha256', 'assistant-canary|'.config('app.key')), 0, 12);
     }
 
-    /** The calculators the assistant can run: the five small templates and the professional's «números gordos». */
+    /** The calculators the assistant can run, one line each: the five small templates and the professional's «números gordos». */
     public function catalogue(): string
     {
         return self::$catalogues[(string) config('curso.path')] ??= $this->buildCatalogue();
@@ -60,20 +62,12 @@ final class Prompt
         $lines = [];
         foreach ($keys as $key) {
             $template = $this->catalog->calculator($key);
-            if ($template === null) {
-                continue;
+            if ($template !== null) {
+                $lines[] = "- «{$key}»: {$template['title']} (Módulo {$template['module_order']})";
             }
-            $dictionary = $this->catalog->calculatorDictionary($template);
-            $lines[] = "## plantilla «{$key}»: {$template['title']} (Módulo {$template['module_order']})";
-            foreach ($dictionary['entradas'] as $input) {
-                $default = is_scalar($input['defecto'] ?? null) ? (string) $input['defecto'] : '';
-                $unit = ($input['unidad'] ?? '') !== '' ? ', '.$input['unidad'] : '';
-                $lines[] = "- {$input['celda']}: {$input['etiqueta']} ({$input['tipo']}{$unit}; ejemplo {$default})";
-            }
-            $lines[] = '';
         }
 
-        return trim(implode("\n", $lines));
+        return implode("\n", $lines);
     }
 
     /** The instructions as written, before the name, the canary and the catalogue go in. */

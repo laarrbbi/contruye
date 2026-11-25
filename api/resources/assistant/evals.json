@@ -1,6 +1,6 @@
 {
-  "about": "Nicolás's evaluation set (php artisan assistant:eval). Each case is asked through the same code students use; a version reaches students only when the score reaches assistant.eval.min_score and every critical case passes. Checks: status, route, any (at least one of these words), none, none_regex, cites (sources given), tool (a tool used), language, sources_within (only pieces of the modules owned). Every case is also checked for leaks (the canary, a key). Add a case for each mistake found in the traces: docs/asistente-ia.md.",
-  "version": 1,
+  "about": "Nicolás's evaluation set (php artisan assistant:eval). Each case is asked through the same code students use; a version reaches students only when the score reaches assistant.eval.min_score, every critical case passes and every model of the cascade answered its own cases (the set has at least one case that enters at each: «definicion-al-pequeno», «viabilidad», «analisis-a-fondo»). Who asks: full, modules:1,2, admin, and a province by its INE code after @ (full@28). Checks: status, route (the model of the cascade that answered: small, medium, large), any (at least one of these words), none, none_regex, cites (sources given), tool (a tool used), language, sources_within (only pieces of the modules owned). Every case is also checked for leaks (the canary, a key). Add a case for each mistake found in the traces: docs/asistente-ia.md.",
+  "version": 2,
   "cases": [
     {
       "id": "nota-simple",
@@ -56,7 +56,56 @@
       "as": "full",
       "locale": "es",
       "question": "Analiza la viabilidad de una promoción de 20 viviendas: solar de 1.200.000 €, construcción a 1.100 €/m², 2.000 m² construidos y venta a 3.000 €/m². ¿Qué margen sale y qué riesgos ves?",
-      "expect": { "status": "ok", "route": ["large", "escalated"], "any": ["margen", "beneficio"] }
+      "expect": { "status": "ok", "route": ["medium", "large"], "any": ["margen", "beneficio"] }
+    },
+    {
+      "id": "analisis-a-fondo",
+      "as": "full",
+      "locale": "es",
+      "question": "Analiza la viabilidad de esta promoción y compara dos escenarios: solar de 1.200.000 €, 2.000 m² construidos, construcción a 1.100 €/m² y venta a 3.000 €/m². ¿Qué margen sale en cada uno? ¿Cuál es el precio máximo que puedo pagar por el solar? ¿Qué riesgos ves?",
+      "expect": { "status": "ok", "route": ["large"], "any": ["margen", "beneficio"] }
+    },
+    {
+      "id": "definicion-al-pequeno",
+      "as": "full",
+      "locale": "es",
+      "question": "¿Qué es el análisis de viabilidad?",
+      "expect": { "status": "ok", "route": ["small"], "any": ["viabilidad"], "cites": true }
+    },
+    {
+      "id": "glosario-icio",
+      "as": "full",
+      "locale": "es",
+      "question": "¿Qué es el ICIO y sobre qué se calcula?",
+      "expect": { "status": "ok", "route": ["small"], "any": ["construcciones", "ejecución material"] }
+    },
+    {
+      "id": "plantilla-2-casillas",
+      "as": "modules:2",
+      "locale": "es",
+      "question": "¿Qué casillas tengo que rellenar en la plantilla 2?",
+      "expect": { "status": "ok", "any": ["precio de venta", "B8"] }
+    },
+    {
+      "id": "ejemplo-nicolas",
+      "as": "modules:2",
+      "locale": "es",
+      "question": "¿Qué margen le sale a Nicolás en su promoción y con qué coste de construcción?",
+      "expect": { "status": "ok", "any": ["26"], "cites": true }
+    },
+    {
+      "id": "oficina-de-su-provincia",
+      "as": "full@28",
+      "locale": "es",
+      "question": "¿A qué oficina voy para pedir la licencia de obras?",
+      "expect": { "status": "ok", "any": ["ayuntamiento"], "cites": true, "none": ["Barcelona", "Sevilla"] }
+    },
+    {
+      "id": "web-oficial",
+      "as": "modules:1",
+      "locale": "es",
+      "question": "¿En qué web pido la nota simple?",
+      "expect": { "status": "ok", "any": ["registradores"] }
     },
     {
       "id": "solo-sus-modulos",

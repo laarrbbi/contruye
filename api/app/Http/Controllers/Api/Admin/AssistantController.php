@@ -12,6 +12,7 @@ use App\Services\Assistant\Availability;
 use App\Services\Assistant\Credits;
 use App\Services\Assistant\Indexer;
 use App\Services\Assistant\Prompt;
+use App\Services\Assistant\Router;
 use Carbon\CarbonImmutable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -31,10 +32,19 @@ class AssistantController extends Controller
     public function show(): JsonResponse
     {
         $since = CarbonImmutable::now(config('app.business_timezone'))->subDays(29)->startOfDay()->utc();
+        // By route: how many, what they cost, and where the tokens went (what was read from the
+        // prompt cache is billed at a tenth or a twentieth of the rest of the input).
         $byRoute = AssistantTrace::query()->where('created_at', '>=', $since)
-            ->select('route', DB::raw('count(*) as n'), DB::raw('sum(cost_usd) as cost'), DB::raw('sum(credits) as credits'))
+            ->select('route', DB::raw('count(*) as n'), DB::raw('sum(cost_usd) as cost'), DB::raw('sum(credits) as credits'),
+                DB::raw('sum(input_tokens) as input'), DB::raw('sum(output_tokens) as output'),
+                DB::raw('sum(cache_read_tokens) as cache_read'), DB::raw('sum(cache_write_tokens) as cache_write'))
             ->groupBy('route')->get()
-            ->map(fn ($row) => ['route' => $row->route, 'count' => (int) $row->n, 'cost_usd' => round((float) $row->cost, 4), 'credits' => (int) $row->credits]);
+            ->map(fn ($row) => [
+                'route' => $row->route, 'count' => (int) $row->n, 'cost_usd' => round((float) $row->cost, 4), 'credits' => (int) $row->credits,
+                'avg_cost_usd' => (int) $row->n === 0 ? 0.0 : round((float) $row->cost / (int) $row->n, 5),
+                'tokens' => ['input' => (int) $row->input + (int) $row->cache_read + (int) $row->cache_write, 'cached' => (int) $row->cache_read, 'output' => (int) $row->output],
+            ]);
+        $cascade = Router::cascade();
         $eval = $this->availability->lastEval();
         $index = Indexer::state();
 
@@ -43,10 +53,12 @@ class AssistantController extends Controller
             'configured' => $this->availability->configured(),
             'enabled' => $this->availability->enabled(),
             'launched' => $this->availability->launched(),
-            'models' => [
-                'small' => ['id' => config('assistant.models.small.id'), 'effort' => config('assistant.models.small.effort'), 'credits' => Credits::cost('small')],
-                'large' => ['id' => config('assistant.models.large.id'), 'effort' => config('assistant.models.large.effort'), 'credits' => Credits::cost('large')],
-            ],
+            // The cascade, cheapest first: who answers, how hard it thinks, what an answer costs the student.
+            'cascade' => $cascade,
+            'models' => collect($cascade)->mapWithKeys(fn (string $tier) => [$tier => [
+                'id' => config("assistant.models.{$tier}.id"), 'effort' => config("assistant.models.{$tier}.effort"), 'credits' => Credits::cost($tier),
+                'price' => ['input' => (float) config("assistant.models.{$tier}.price.input"), 'output' => (float) config("assistant.models.{$tier}.price.output")],
+            ]])->all(),
             'prompt_version' => Prompt::make()->version(),
             'index' => ['version' => $index['version'] ?? null, 'chunks' => $index['chunks'] ?? 0, 'built_at' => $index['built_at'] ?? null],
             'eval' => [
@@ -66,6 +78,8 @@ class AssistantController extends Controller
                 'questions' => (int) $byRoute->sum('count'),
                 'cost_usd' => round((float) $byRoute->sum('cost_usd'), 4),
                 'by_route' => $byRoute->values(),
+                // Questions a model handed to the next one of the cascade.
+                'escalated' => AssistantTrace::query()->where('created_at', '>=', $since)->whereJsonContains('flags', 'escalated')->count(),
             ],
             'evals' => AssistantEvalRun::query()->latest('ran_at')->latest('id')->limit(10)->get()->map(fn (AssistantEvalRun $run) => [
                 'id' => $run->id,

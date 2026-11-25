@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\DB;
  *   index), the student is enrolled, and the day's budget is not spent.
  *
  * The version key is what the evaluation gate and the answer cache follow:
- * a new prompt wording, another model or a rebuilt index is a new version,
- * which students get only once `php artisan assistant:eval` passes for it.
+ * a new prompt wording, another model or effort, a tier's budget, a tool's
+ * description, the router's thresholds, the search's settings or a rebuilt
+ * index is a new version, which students get only once
+ * `php artisan assistant:eval` passes for it.
  */
 final class Availability
 {
@@ -68,17 +70,25 @@ final class Availability
     {
         return hash('sha256', implode('|', [
             Prompt::make()->version(),
-            config('assistant.models.small.id'), config('assistant.models.small.effort'),
-            config('assistant.models.large.id'), config('assistant.models.large.effort'),
+            self::models(),
+            // Everything else that decides what a model receives and how far it may go: where a
+            // question enters the cascade, each tier's budget, the tools as the model reads them,
+            // which pieces of the course go with it. (Prices and credits change no answer.)
+            json_encode([
+                config('assistant.router'),
+                collect((array) config('assistant.retrieval'))->except(['file', 'min_recall'])->all(),
+                array_map(fn (string $tier) => collect((array) config("assistant.models.{$tier}"))->except(['id', 'effort', 'price', 'credits'])->all(), Router::cascade()),
+                (int) config('assistant.max_tool_rounds'),
+                app(Tools::class)->definitions(true),
+            ]),
             Indexer::version(),
         ]));
     }
 
-    /** The models as a trace and an evaluation run name them. */
+    /** The models of the cascade as a trace and an evaluation run name them. */
     public static function models(): string
     {
-        return config('assistant.models.small.id').'/'.config('assistant.models.small.effort')
-            .' + '.config('assistant.models.large.id').'/'.config('assistant.models.large.effort');
+        return implode(' + ', array_map(fn (string $tier) => config("assistant.models.{$tier}.id").'/'.config("assistant.models.{$tier}.effort"), Router::cascade()));
     }
 
     public function evalPassed(): bool

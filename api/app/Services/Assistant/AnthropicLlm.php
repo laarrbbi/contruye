@@ -16,13 +16,22 @@ use Anthropic\Core\Exceptions\RateLimitException;
  *
  * - The system prompt and the tools are the stable prefix, cached (prompt
  *   caching, the breakpoint on the last system block); the question and the
- *   pieces of the course retrieved for it come after.
- * - The large model (Claude Opus 5.5) opts into server-side fallbacks
- *   (`fallbacks: "default"`, beta server-side-fallback-2026-07-01): when a
- *   safety classifier declines, the API retries on the model Anthropic
- *   recommends. The small one (Claude Haiku 5.5) has none: its refusal comes
- *   back as stop reason «refusal» and the assistant says so.
- * - Thinking is adaptive (the default on both models); effort sets its depth.
+ *   pieces of the course retrieved for it come after. A tier that asks for
+ *   it (`cache_turn`) also caches the conversation as it grows, with the
+ *   top-level automatic breakpoint: its tool rounds re-read what they sent
+ *   before instead of paying for it again.
+ * - The medium and large models (Claude Sonnet 5.5, Claude Opus 5.5) opt
+ *   into server-side fallbacks (`fallbacks: "default"`, beta
+ *   server-side-fallback-2026-07-01): when a safety classifier declines, the
+ *   API retries on the model Anthropic recommends. The small one (Claude
+ *   Haiku 5.5) has none: its refusal comes back as stop reason «refusal» and
+ *   the assistant says so.
+ * - A tier that has spent its tool rounds is asked once more with
+ *   `tool_choice: none`: it answers with what it gathered, and no call ends in
+ *   a tool request nobody runs.
+ * - Thinking is adaptive (the default on the three models); effort sets its
+ *   depth, and is the same on every request of a tier (a change of effort
+ *   would start its cache over).
  */
 final class AnthropicLlm implements Llm
 {
@@ -38,6 +47,16 @@ final class AnthropicLlm implements Llm
             'system' => $request['system'],
             'tools' => $request['tools'] === [] ? null : $request['tools'],
         ];
+        // Automatic caching of the conversation so far (one of the four breakpoints): the next tool
+        // round re-reads the question and its documents instead of paying for them again.
+        if ($request['cache_turn'] ?? false) {
+            $params['cacheControl'] = ['type' => 'ephemeral'];
+        }
+        // The tier's last round: the tools stay defined (the conversation holds their calls, and the
+        // cached prefix is the same) but the model may not call one, so it answers with what it has.
+        if ($request['tools_off'] ?? false) {
+            $params['toolChoice'] = ['type' => 'none'];
+        }
         if ($request['fallbacks']) {
             $params['fallbacks'] = 'default';
             $params['betas'] = ['server-side-fallback-2026-07-01'];

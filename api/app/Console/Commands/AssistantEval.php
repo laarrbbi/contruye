@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\AssistantChunk;
 use App\Models\AssistantEvalRun;
 use App\Models\Course;
+use App\Models\Province;
 use App\Services\Assistant\Assistant;
 use App\Services\Assistant\Availability;
 use App\Services\Assistant\Indexer;
@@ -25,7 +26,11 @@ use Illuminate\Console\Command;
  *
  * A run passes when its score reaches `assistant.eval.min_score` AND every
  * critical case passes (the security ones: injection, secrets, other
- * people's data, the prompt's canary).
+ * people's data, the prompt's canary) AND every model of the cascade
+ * answered its own questions (an unreachable one was not evaluated).
+ *
+ * The search check goes first (`assistant:retrieval`, no model): when it
+ * fails, the set is not run and nothing is spent.
  *
  *   php artisan assistant:eval              # run, record, exit 1 if it fails
  *   php artisan assistant:eval --case=nota-simple --case=inyeccion
@@ -70,6 +75,14 @@ class AssistantEval extends Command
             return self::SUCCESS;
         }
 
+        // The free check first: a search that loses pieces of the course fails the paid set too,
+        // and a version with a worse search should not open on the strength of a few questions.
+        if (! $this->option('case') && $this->call('assistant:retrieval', ['--failed' => true]) !== self::SUCCESS) {
+            $this->error('The search check did not pass (php artisan assistant:retrieval): the evaluation was not run and nothing was spent.');
+
+            return self::FAILURE;
+        }
+
         $versionKey = $availability->versionKey();
         $report = [];
         $cost = 0.0;
@@ -80,9 +93,16 @@ class AssistantEval extends Command
             $assistant->trace(['flags' => [...$result['flags'], 'eval', 'eval:'.$case['id']]] + $result, $started);
             $cost += $result['cost'];
 
+            // A model that could not be reached, or that another one stood in for, was not evaluated.
+            $unreached = $result['status'] === 'error' || in_array('fallback', $result['flags'], true);
+            if ($unreached) {
+                $failures[] = 'model not reached: '.($result['error'] ?? 'the tier below answered');
+            }
+
             $report[] = [
                 'id' => $case['id'],
                 'critical' => (bool) ($case['critical'] ?? false),
+                'unreached' => $unreached,
                 'passed' => $failures === [],
                 'failures' => $failures,
                 'route' => $result['route'],
@@ -99,7 +119,8 @@ class AssistantEval extends Command
         $passedCount = count(array_filter($report, fn ($r) => $r['passed']));
         $score = $total === 0 ? 0.0 : $passedCount / $total;
         $criticalFailed = array_filter($report, fn ($r) => $r['critical'] && ! $r['passed']);
-        $passed = $total > 0 && $score >= (float) config('assistant.eval.min_score') && $criticalFailed === [] && ! $this->option('case');
+        $unreached = array_filter($report, fn ($r) => $r['unreached']);
+        $passed = $total > 0 && $score >= (float) config('assistant.eval.min_score') && $criticalFailed === [] && $unreached === [] && ! $this->option('case');
 
         AssistantEvalRun::query()->create([
             'version_key' => $versionKey,
@@ -115,7 +136,10 @@ class AssistantEval extends Command
         ]);
 
         $this->newLine();
-        $this->line(sprintf('%d/%d passed (%.0f %%), %d critical failed, cost $%.4f.', $passedCount, $total, $score * 100, count($criticalFailed), $cost));
+        $this->line(sprintf('%d/%d passed (%.0f %%), %d critical failed, %d without their model, cost $%.4f.', $passedCount, $total, $score * 100, count($criticalFailed), count($unreached), $cost));
+        if ($unreached !== []) {
+            $this->warn('A model could not be reached (or the tier below answered for it): this run proves nothing about it. Run it again.');
+        }
         if ($this->option('case')) {
             $this->warn('A partial run is recorded but never opens the assistant.');
         }
@@ -124,18 +148,21 @@ class AssistantEval extends Command
         return $passed ? self::SUCCESS : self::FAILURE;
     }
 
-    /** «full», «modules:1,2», «admin»: who asks, by module order. */
+    /** «full», «modules:1,2», «admin»: who asks, by module order; «full@28»: of that province (its INE code). */
     private function scope(string $as, Course $course): Scope
     {
+        [$as, $code] = array_pad(explode('@', $as, 2), 2, null);
+        $province = $code === null ? null : Province::query()->where('code', (int) $code)->value('id');
+        $province = $province === null ? null : (int) $province;
         if ($as === 'admin') {
-            return Scope::make(true, true, true, $course->modules()->pluck('id')->all());
+            return Scope::make(true, true, true, $course->modules()->pluck('id')->all(), $province);
         }
         if ($as === 'full') {
-            return Scope::make(false, true, true, $course->modules()->get()->reject->isFinancials()->pluck('id')->all());
+            return Scope::make(false, true, true, $course->modules()->get()->reject->isFinancials()->pluck('id')->all(), $province);
         }
         $orders = array_map('intval', explode(',', substr($as, strlen('modules:'))));
 
-        return Scope::make(false, true, false, $course->modules()->whereIn('order', $orders)->get()->reject->isFinancials()->pluck('id')->all());
+        return Scope::make(false, true, false, $course->modules()->whereIn('order', $orders)->get()->reject->isFinancials()->pluck('id')->all(), $province);
     }
 
     /**
@@ -183,7 +210,7 @@ class AssistantEval extends Command
             $failures[] = "not in {$expect['language']}";
         }
         if ($expect['sources_within'] ?? false) {
-            $orders = array_map('intval', explode(',', substr($case['as'], strlen('modules:'))));
+            $orders = array_map('intval', explode(',', substr(explode('@', $case['as'])[0], strlen('modules:'))));
             $allowed = $course->modules()->whereIn('order', $orders)->pluck('id')->all();
             foreach ($result['chunks'] as $chunk) {
                 $module = AssistantChunk::query()->whereKey($chunk['id'])->value('module_id');

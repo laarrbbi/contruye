@@ -10,7 +10,10 @@ namespace App\Services\Assistant;
 interface Llm
 {
     /**
-     * @param  array{tier: string, model: string, effort: string, max_tokens: int, fallbacks: bool, system: list<array<string, mixed>>, tools: list<array<string, mixed>>, messages: list<array<string, mixed>>}  $request
+     * `cache_turn`: cache the conversation so far, for the tier's next round.
+     * `tools_off`: the model must answer now, with no further tool call.
+     *
+     * @param  array{tier: string, model: string, effort: string, max_tokens: int, fallbacks: bool, cache_turn?: bool, tools_off?: bool, system: list<array<string, mixed>>, tools: list<array<string, mixed>>, messages: list<array<string, mixed>>}  $request
      *
      * @throws LlmError
      */

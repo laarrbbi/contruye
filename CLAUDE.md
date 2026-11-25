@@ -134,19 +134,29 @@ makes that work lives in `docker/mysql-test/`.
   menu (the account menu once signed in).
 - Nicolás IA (`/nicolas-ia`, `AssistantPage`, «Pronto» in the menu until it opens;
   `app/Services/Assistant`, `config/assistant.php`, `docs/asistente-ia.md`): the course's AI
-  assistant on the Claude API (official PHP SDK; Haiku 5.5 small, Opus 5.5 large, a router, the
-  small one can hand over). RAG over the course index (`assistant:index`; never quizzes or the
-  exam), filtered by the player's gate (`Scope`); the index also holds the seven templates
-  (`TemplateKnowledge`: cells, every formula, Nicolás's worked example from
-  `config/assistant_examples.php`, whose figures `AssistantIndexTest` finds in the lessons)
-  behind their module's gate, the professional template (inputs, results, the 24-home example)
-  behind the extra's, and the Anexo A offices of each province, which reach only that province's
-  students; tools with the student's rights only (search, templates of owned modules,
-  legal parameters); a guard on both sides; monthly credits in an
-  append-only ledger; a frequent-question cache keyed by scope and version; a daily budget; a
-  trace for every question (`/admin/assistant`). Students get a version only when
-  `ASSISTANT_ENABLED`, the key, and `assistant:eval` passed for that prompt, models and index;
-  admins can try it once the key is set. Tests use `Tests\Support\FakeLlm`, never the network.
+  assistant on the Claude API (official PHP SDK). A cascade of three models, the cheapest that can
+  answer first: Haiku 5.5 (1 credit), Sonnet 5.5 (3), Opus 5.5 (5); the `Router` picks where a
+  question enters (almost all at the small one), a model hands a question up with
+  `consultar_al_experto`, the student pays only the model that answered, and each tier has its own
+  budget of history, tool rounds and output (`assistant.models`). What a question costs and why:
+  the doc's «Lo que cuesta una respuesta». RAG over the course index (`assistant:index`; never
+  quizzes or the exam), BM25 (`Retriever`, `Tokenizer`, `Chunker`) filtered by the player's gate
+  (`Scope`); the index also holds the seven templates (`TemplateKnowledge`: cells, every formula,
+  Nicolás's worked example from `config/assistant_examples.php`, whose figures
+  `AssistantIndexTest` finds in the lessons) behind their module's gate, the professional template
+  (inputs, results, the 24-home example) behind the extra's, the Anexo A offices of each province,
+  which reach only that province's students, the glossary and each lesson's official websites.
+  `assistant:retrieval` checks the search on `resources/assistant/retrieval.json` with no model
+  (both deploys run it; `AssistantCourseSearchTest` runs it on the real course and checks the
+  whole course is indexed in the six languages): a question the search answers badly becomes a
+  case there. Tools with the student's rights only (search, a template's cells and its calculation
+  for owned modules, legal parameters); a guard on both sides; monthly credits in an append-only
+  ledger; a frequent-question cache keyed by scope and version; a daily budget; a trace for every
+  question (`/admin/assistant`, with the cost and tokens of each route). Students get a version
+  only when `ASSISTANT_ENABLED`, the key, and `assistant:eval` passed for it (the search check
+  first, then every model of the cascade answering its own cases); a version is the prompt, the
+  tools, the models and their budgets, the router, the search settings and the index. Admins can
+  try it once the key is set. Tests use `Tests\Support\FakeLlm`, never the network.
 - Aprendizaje 3D (`/learn/<slug>/mundo-3d`, `World3DPage`, `components/world3d/`,
   `config/course_world.php`, `CourseWorldController`, `docs/aprendizaje-3d.md`): a three.js town with
   the institutions the course sends the promoter to and, in the middle, the plot where the course's

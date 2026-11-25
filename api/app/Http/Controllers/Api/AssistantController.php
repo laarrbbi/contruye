@@ -10,6 +10,7 @@ use App\Services\Assistant\AssistantUnavailable;
 use App\Services\Assistant\Availability;
 use App\Services\Assistant\Credits;
 use App\Services\Assistant\Indexer;
+use App\Services\Assistant\Router;
 use App\Services\Assistant\Scope;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -59,8 +60,8 @@ class AssistantController extends Controller
                 'balance' => $this->credits->peek($user, $scope),
                 'monthly' => Credits::allowance($scope->tier()),
                 'resets_at' => Credits::resetsAt()->toIso8601String(),
-                'small' => Credits::cost('small'),
-                'large' => Credits::cost('large'),
+                // What an answer costs by the model that gives it, cheapest first.
+                ...collect(Router::cascade())->mapWithKeys(fn (string $tier) => [$tier => Credits::cost($tier)])->all(),
             ] : null,
             'max_question_chars' => (int) config('assistant.limits.max_question_chars'),
         ]]);

@@ -11,7 +11,7 @@ import { Switch } from '@/components/ui/switch'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { cn, intlLocale } from '@/lib/utils'
 
-const ROUTES = ['small', 'large', 'escalated', 'cache', 'blocked', 'refused', 'unavailable'] as const
+const ROUTES = ['small', 'medium', 'large', 'cache', 'blocked', 'refused', 'unavailable'] as const
 
 function money(value: number, locale: string) {
   return new Intl.NumberFormat(intlLocale(locale), { style: 'currency', currency: 'USD', maximumFractionDigits: 4 }).format(value)
@@ -45,7 +45,7 @@ export function AdminAssistantPage() {
     { done: data.eval.passed, label: t('admin.assistant.checks.eval') },
     {
       done: data.budget.spent_today_usd < data.budget.daily_usd,
-      label: t('admin.assistant.checks.budget', { spent: data.budget.spent_today_usd.toFixed(2), budget: data.budget.daily_usd.toFixed(0) }),
+      label: t('admin.assistant.checks.budget', { spent: money(data.budget.spent_today_usd, i18n.language), budget: money(data.budget.daily_usd, i18n.language) }),
     },
   ]
 
@@ -76,11 +76,14 @@ export function AdminAssistantPage() {
         <section className="rounded-lg border bg-card p-5">
           <h2 className="font-semibold">{t('admin.assistant.models')}</h2>
           <dl className="mt-3 space-y-3 text-sm">
-            {(['small', 'large'] as const).map((tier) => (
+            {data.cascade.map((tier) => (
               <div key={tier}>
-                <dt className="text-muted-foreground">{t(`admin.assistant.${tier}`)}</dt>
+                <dt className="text-muted-foreground">{t(`admin.assistant.${tier}`, tier)}</dt>
                 <dd className="font-medium">
                   <span dir="ltr">{data.models[tier].id}</span> · {data.models[tier].effort} · {t('admin.assistant.creditsEach', { count: data.models[tier].credits })}
+                  <span className="block text-xs font-normal text-muted-foreground" dir="ltr">
+                    {t('admin.assistant.pricePerMillion', { input: money(data.models[tier].price.input, i18n.language), output: money(data.models[tier].price.output, i18n.language) })}
+                  </span>
                 </dd>
               </div>
             ))}
@@ -96,12 +99,45 @@ export function AdminAssistantPage() {
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
           <Stat label={t('admin.assistant.questions')} value={String(data.last_30_days.questions)} />
           <Stat label={t('admin.assistant.cost')} value={money(data.last_30_days.cost_usd, i18n.language)} />
-          {data.last_30_days.by_route
-            .filter((row) => row.route === 'cache' || row.route === 'large')
-            .map((row) => (
-              <Stat key={row.route} label={t(`admin.assistant.routes.${row.route}`, row.route)} value={String(row.count)} />
-            ))}
+          <Stat label={t('admin.assistant.routes.cache')} value={String(data.last_30_days.by_route.find((row) => row.route === 'cache')?.count ?? 0)} />
+          <Stat label={t('admin.assistant.handedOver')} value={String(data.last_30_days.escalated)} />
         </div>
+        {/* Where the money goes: almost all of it is which model answers. */}
+        {data.last_30_days.by_route.some((row) => row.cost_usd > 0) && (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>{t('admin.assistant.route')}</TableHead>
+                <TableHead className="text-end">{t('admin.assistant.questions')}</TableHead>
+                <TableHead className="text-end">{t('admin.assistant.cost')}</TableHead>
+                <TableHead className="text-end">{t('admin.assistant.avgCost')}</TableHead>
+                <TableHead className="text-end">{t('admin.assistant.tokensIn')}</TableHead>
+                <TableHead className="text-end">{t('admin.assistant.tokensOut')}</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {data.last_30_days.by_route
+                .filter((row) => row.cost_usd > 0)
+                .map((row) => (
+                  <TableRow key={row.route}>
+                    <TableCell>{t(`admin.assistant.routes.${row.route}`, row.route)}</TableCell>
+                    <TableCell className="text-end tabular-nums">{row.count}</TableCell>
+                    <TableCell className="text-end tabular-nums">{money(row.cost_usd, i18n.language)}</TableCell>
+                    <TableCell className="text-end tabular-nums" dir="ltr">
+                      {money(row.avg_cost_usd, i18n.language)}
+                    </TableCell>
+                    <TableCell className="text-end tabular-nums">
+                      {row.tokens.input.toLocaleString(i18n.language)}
+                      {row.tokens.input > 0 && (
+                        <span className="block text-xs text-muted-foreground">{t('admin.assistant.fromCache', { percent: Math.round((100 * row.tokens.cached) / row.tokens.input) })}</span>
+                      )}
+                    </TableCell>
+                    <TableCell className="text-end tabular-nums">{row.tokens.output.toLocaleString(i18n.language)}</TableCell>
+                  </TableRow>
+                ))}
+            </TableBody>
+          </Table>
+        )}
       </section>
 
       <section className="space-y-3">

@@ -63,15 +63,16 @@ final class Scope
     }
 
     /**
-     * A piece of one province's offices goes only to a student of that province
-     * (an admin without a province reads them all); every piece, also by its access.
+     * A piece of one province's offices goes only to whoever gave that province
+     * (an admin too: with none set, none; 52 provinces' offices at once are
+     * noise, not an answer); every piece, also by its access.
      *
      * @param  array{access: string, module_id: ?int, province_id?: ?int}  $chunk
      */
     public function allows(array $chunk): bool
     {
         $province = $chunk['province_id'] ?? null;
-        if ($province !== null && ($this->province === null ? ! $this->admin : (int) $province !== $this->province)) {
+        if ($province !== null && (int) $province !== $this->province) {
             return false;
         }
         if ($this->admin) {

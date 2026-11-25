@@ -164,8 +164,8 @@ it('gives a student the offices of their own province, in the modules they have'
         // Another province sees its own; a student who gave none, none.
         ->and(foundFor(indexedStudent($course, $one, $madrid), $course, 'catastro palabra de control coral jade'))->toContain('jade')->not->toContain('coral')
         ->and(foundFor(indexedStudent($course, $one), $course, 'catastro palabra de control coral jade'))->not->toContain('coral')->not->toContain('jade')
-        // An admin with no province reads them all; with one, that one.
-        ->and(foundFor(indexedStudent($course, admin: true), $course, 'catastro palabra de control coral jade'))->toContain('coral')->toContain('jade')
+        // An admin like anyone: with no province, no offices; with one, that one's.
+        ->and(foundFor(indexedStudent($course, admin: true), $course, 'catastro palabra de control coral jade'))->not->toContain('coral')->not->toContain('jade')
         ->and(foundFor(indexedStudent($course, province: $madrid, admin: true), $course, 'catastro palabra de control coral jade'))->toContain('jade')->not->toContain('coral');
 
     // Two provinces never share a cached answer.

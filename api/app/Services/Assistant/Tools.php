@@ -12,10 +12,11 @@ use Throwable;
 
 /**
  * What the model may do besides writing, each with the student's rights and
- * no more: search what the student may read, calculate with a template of a
- * module the student owns (the package's engine, the legal parameters in
- * force), read the legal parameters, and, for the small model, hand a hard
- * question to the large one. Nothing here reads an account, an order, a user
+ * no more: search what the student may read, read the input cells of a
+ * template of a module the student owns and calculate with it (the package's
+ * engine, the legal parameters in force), read the legal parameters, and, for
+ * a model that is not the last of the cascade, hand a hard question to the
+ * next one. Nothing here reads an account, an order, a user
  * or a setting: the model has no way to reach anyone's data.
  */
 final class Tools
@@ -23,6 +24,8 @@ final class Tools
     public const SEARCH = 'buscar_en_el_curso';
 
     public const TEMPLATE = 'calcular_plantilla';
+
+    public const CELLS = 'ver_plantilla';
 
     public const LEGAL = 'parametros_legales';
 
@@ -58,7 +61,7 @@ final class Tools
             ],
             [
                 'name' => self::TEMPLATE,
-                'description' => 'Calcula con una plantilla del curso de un módulo que el alumno tiene, con el motor de la plataforma y los parámetros legales vigentes. Devuelve la hoja calculada: cada fila con su concepto y su valor. Las casillas que no indiques conservan el ejemplo de la plantilla.',
+                'description' => 'Calcula con una plantilla del curso de un módulo que el alumno tiene, con el motor de la plataforma y los parámetros legales vigentes. Devuelve la hoja calculada: cada fila con su concepto y su valor. Las casillas que no indiques conservan el ejemplo de la plantilla. Solo acepta las casillas de entrada de esa plantilla: si no las tienes en un documento, pídelas antes con ver_plantilla.',
                 'inputSchema' => [
                     'type' => 'object',
                     'properties' => [
@@ -83,6 +86,17 @@ final class Tools
                 'strict' => true,
             ],
             [
+                'name' => self::CELLS,
+                'description' => 'Las casillas de entrada de una plantilla del curso de un módulo que el alumno tiene: cada casilla con su etiqueta, su tipo, su unidad y el ejemplo que trae. Úsala antes de calcular_plantilla cuando no tengas esas casillas en un documento.',
+                'inputSchema' => [
+                    'type' => 'object',
+                    'properties' => ['plantilla' => ['type' => 'string', 'enum' => $this->calculatorKeys(), 'description' => 'La plantilla: «1» a «5», o «numeros_gordos_solar».']],
+                    'required' => ['plantilla'],
+                    'additionalProperties' => false,
+                ],
+                'strict' => true,
+            ],
+            [
                 'name' => self::LEGAL,
                 'description' => 'Los parámetros legales vigentes que aplican las plantillas: IVA general y reducido, AJD del préstamo, interés legal y, por comunidad autónoma, el ITP y el AJD. Los mantiene al día el equipo de CONSTRUYE.',
                 'inputSchema' => ['type' => 'object', 'properties' => new \stdClass, 'required' => [], 'additionalProperties' => false],
@@ -93,7 +107,7 @@ final class Tools
         if ($canEscalate) {
             $tools[] = [
                 'name' => self::ESCALATE,
-                'description' => 'Pasa la pregunta a un modelo más capaz cuando pide un análisis a fondo, un cálculo de viabilidad con varios pasos o una comparación compleja. No escribas tú la respuesta si la usas.',
+                'description' => 'Pasa la pregunta a un modelo más capaz, que cuesta más al alumno. Úsala solo cuando la pregunta pide un análisis a fondo, un cálculo de viabilidad con varios pasos encadenados o una comparación compleja que no puedes resolver bien con los documentos y tus herramientas; una definición, un trámite o un cálculo con una plantilla los respondes tú. No escribas tú la respuesta si la usas.',
                 'inputSchema' => [
                     'type' => 'object',
                     'properties' => ['motivo' => ['type' => 'string', 'description' => 'Por qué la pregunta necesita al experto, en una frase.']],
@@ -111,11 +125,37 @@ final class Tools
      * Search what the student may read, in Spanish and in their language.
      *
      * @param  list<int>  $exclude
-     * @return list<array{id: int, title: string, path: ?string, text: string, access: string, module_id: ?int, score: float}>
+     * @return list<array{id: int, title: string, path: ?string, text: string, access: string, module_id: ?int, kind: string, score: float}>
      */
-    public function search(string $query, string $locale, Scope $scope, array $exclude): array
+    public function search(string $query, string $locale, Scope $scope, array $exclude, ?int $limit = null): array
     {
-        return $this->retriever->search($query, $locale, $scope, (int) config('assistant.retrieval.top_k'), $exclude);
+        return $this->retriever->search($query, $locale, $scope, $limit ?? (int) config('assistant.retrieval.top_k'), $exclude, self::namedTemplates($query));
+    }
+
+    /**
+     * The templates a question names, as the titles of their cards say them:
+     * «plantilla 2», «Template 2», «Modèle 2», «Шаблон 2», «القالب 2»; the
+     * «números gordos»; the professional template.
+     *
+     * @return list<string>
+     */
+    public static function namedTemplates(string $question): array
+    {
+        $plain = mb_strtolower(Tokenizer::plain($question));
+        $named = [];
+        if (preg_match_all('/(?:plantilla|template|modele|шаблон\p{L}*|(?:ال)?(?:قالب|نموذج))\s*(?:n[ºo°.]?\s*)?([1-5])(?!\d)/u', $plain, $m) > 0) {
+            foreach ($m[1] as $number) {
+                $named[] = "Plantilla {$number} ·";
+            }
+        }
+        if (preg_match('/numeros gordos|rough (?:numbers|figures)|grands chiffres|крупных цифрах|великих цифрах|الأرقام التقريبية/u', $plain) === 1) {
+            $named[] = 'Números gordos';
+        }
+        if (preg_match('/(?:plantilla|modelo) (?:financier[ao] )?profesional|professional (?:financial )?(?:template|model)|modele (?:financier )?professionnel|профессиональн\p{L}* (?:финансов\p{L}* )?(?:модел|шаблон)|професійн\p{L}* (?:фінансов\p{L}* )?(?:модел|шаблон)|(?:النموذج|القالب) (?:المالي )?(?:الاحترافي|المهني)/u', $plain) === 1) {
+            $named[] = 'Plantilla profesional';
+        }
+
+        return array_values(array_unique($named));
     }
 
     /**
@@ -127,14 +167,9 @@ final class Tools
     public function template(array $input, Course $course, Scope $scope): array
     {
         $key = (string) ($input['plantilla'] ?? '');
-        $template = $this->catalog()->calculator($key);
+        [$template, $refused] = $this->owned($key, $course, $scope);
         if ($template === null) {
-            return ['content' => "No existe la plantilla «{$key}».", 'error' => true];
-        }
-
-        $module = $course->includedModules()->where('order', $template['module_order'])->first();
-        if ($module === null || ! ($scope->admin || in_array((int) $module->id, $scope->modules, true))) {
-            return ['content' => "El alumno no tiene el Módulo {$template['module_order']}: esta plantilla es de ese módulo y no se puede calcular para él.", 'error' => true];
+            return ['content' => $refused, 'error' => true];
         }
 
         $dictionary = $this->catalog()->calculatorDictionary($template);
@@ -148,7 +183,8 @@ final class Tools
             $cell = strtoupper(trim((string) ($pair['celda'] ?? '')));
             $entry = $inputs[$cell] ?? null;
             if ($entry === null) {
-                return ['content' => "La casilla {$cell} no es una entrada de la plantilla «{$key}».", 'error' => true];
+                // With the cells it does take, so the next call is the right one.
+                return ['content' => "La casilla {$cell} no es una entrada de la plantilla «{$key}». Sus casillas de entrada:\n".$this->cellLines($dictionary), 'error' => true];
             }
             $value = $this->typed($entry, (string) ($pair['valor'] ?? ''));
             if ($value === null) {
@@ -184,6 +220,58 @@ final class Tools
         )).'; el resto, el ejemplo de la plantilla';
 
         return ['content' => "Plantilla «{$key}» · {$template['title']}, calculada con {$used}:\n".$this->sheet($cells), 'error' => false];
+    }
+
+    /**
+     * The input cells of a template of a module the student owns: what the
+     * model needs to fill before it calculates, asked for when it is needed
+     * instead of sent with every question.
+     *
+     * @param  array<string, mixed>  $input
+     * @return array{content: string, error: bool}
+     */
+    public function cells(array $input, Course $course, Scope $scope): array
+    {
+        $key = (string) ($input['plantilla'] ?? '');
+        [$template, $refused] = $this->owned($key, $course, $scope);
+        if ($template === null) {
+            return ['content' => $refused, 'error' => true];
+        }
+
+        return ['content' => "Plantilla «{$key}» · {$template['title']} (Módulo {$template['module_order']}). Casillas de entrada (las que no indiques conservan el ejemplo):\n"
+            .$this->cellLines($this->catalog()->calculatorDictionary($template)), 'error' => false];
+    }
+
+    /**
+     * A calculator by its key, if the student owns its module; else why not.
+     *
+     * @return array{0: ?array<string, mixed>, 1: string}
+     */
+    private function owned(string $key, Course $course, Scope $scope): array
+    {
+        $template = $this->catalog()->calculator($key);
+        if ($template === null) {
+            return [null, "No existe la plantilla «{$key}»."];
+        }
+        $module = $course->includedModules()->where('order', $template['module_order'])->first();
+        if ($module === null || ! ($scope->admin || in_array((int) $module->id, $scope->modules, true))) {
+            return [null, "El alumno no tiene el Módulo {$template['module_order']}: esta plantilla es de ese módulo y no se puede calcular para él."];
+        }
+
+        return [$template, ''];
+    }
+
+    /** @param array<string, mixed> $dictionary */
+    private function cellLines(array $dictionary): string
+    {
+        $lines = [];
+        foreach ($dictionary['entradas'] as $input) {
+            $default = is_scalar($input['defecto'] ?? null) ? (string) $input['defecto'] : '';
+            $unit = ($input['unidad'] ?? '') !== '' ? ', '.$input['unidad'] : '';
+            $lines[] = "- {$input['celda']}: {$input['etiqueta']} ({$input['tipo']}{$unit}; ejemplo {$default})";
+        }
+
+        return implode("\n", $lines);
     }
 
     /** @return array{content: string, error: bool} */

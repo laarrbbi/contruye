@@ -209,7 +209,7 @@ export function AssistantChat({ status }: { status: AssistantStatus }) {
                 <span className="font-medium tabular-nums text-foreground">{t('assistantChat.credits', { count: status.credits.balance })}</span>
                 {renews && <> · {t('assistantChat.renews', { date: renews })}</>}
                 {' · '}
-                {t('assistantChat.cost', { small: status.credits.small, large: status.credits.large })}
+                {t('assistantChat.cost', { small: status.credits.small, medium: status.credits.medium ?? status.credits.small, large: status.credits.large ?? status.credits.medium ?? status.credits.small })}
               </p>
             )}
             {draft.length > max * 0.8 && (

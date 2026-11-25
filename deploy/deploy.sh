@@ -104,6 +104,11 @@ fi
 "$PHP" artisan up
 trap - ERR
 
+step "Nicolás: the search check on the index just built (no model, no cost)"
+# The questions of resources/assistant/retrieval.json: each must bring the piece of the
+# course it names. A failure does not stop the deploy; the evaluation below will not run on it.
+"$PHP" artisan assistant:retrieval --failed || printf '\033[33mThe search loses pieces of the course: see the cases above and docs/asistente-ia.md.\033[0m\n'
+
 if [ "$(env_get ASSISTANT_ENABLED)" = "true" ]; then
   step "Nicolás: the evaluation set, if this version has not passed it yet (calls the model)"
   # A failure keeps students on «Pronto» for this version; the site stays up.
