@@ -12,6 +12,7 @@ use App\Support\Markdown;
 use App\Support\Protection\ContentFingerprint;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 /**
@@ -260,6 +261,8 @@ final class Assistant
             try {
                 $reply = $this->llm->send($last ? ['tools_off' => true] + $request : $request);
             } catch (LlmError $e) {
+                // What the API said, for whoever has to fix it (never the question, never the key).
+                Log::warning('Nicolás: the model call failed', ['tier' => $tier, 'model' => $request['model'], 'kind' => $e->kind, 'detail' => $e->getMessage()]);
                 // A model busy or unreachable: the one below it answers instead, once.
                 $lower = Router::previous($tier);
                 if ($lower !== null && $e->retryable && ! in_array('fallback', $result['flags'], true)) {

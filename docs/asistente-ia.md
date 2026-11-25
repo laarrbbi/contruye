@@ -223,7 +223,9 @@ días.
    que usan los alumnos y comprobadas una a una. Pasa con el 90 %, todos los casos críticos y **los
    tres modelos contestando lo suyo**: hay al menos un caso que entra por cada nivel, y si uno no
    responde (o contesta por él el de debajo), esa pasada no vale. Antes de gastar nada lanza la
-   comprobación de la búsqueda; si falla, no llama al modelo.
+   comprobación de la búsqueda; si falla, no llama al modelo. Si un caso sale como «model not
+   reached», el motivo que dio la API (tipo de error, mensaje e identificador de la petición) está
+   en el registro del servidor (`storage/logs`), sin la petición ni la clave.
    Llama al modelo real: por la estimación de arriba, en torno a 0,20 $; al final dice lo que
    costó de verdad.
    **Una versión nueva** —otra redacción de las instrucciones o de una herramienta, otro modelo u

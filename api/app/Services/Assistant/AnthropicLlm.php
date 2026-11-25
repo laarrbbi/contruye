@@ -29,6 +29,9 @@ use Anthropic\Core\Exceptions\RateLimitException;
  * - A tier that has spent its tool rounds is asked once more with
  *   `tool_choice: none`: it answers with what it gathered, and no call ends in
  *   a tool request nobody runs.
+ * - A request the API turns down comes back as an LlmError with what the API
+ *   said (type, message, request id), which the assistant writes to the log:
+ *   the first thing to read when an evaluation fails with «model not reached».
  * - Thinking is adaptive (the default on the three models); effort sets its
  *   depth, and is the same on every request of a tier (a change of effort
  *   would start its cache over).
@@ -67,11 +70,11 @@ final class AnthropicLlm implements Llm
         } catch (AuthenticationException) {
             throw new LlmError('The assistant\'s API key was refused.', false, 'auth');
         } catch (BadRequestException $e) {
-            throw new LlmError('The request to the model was refused: '.$e->type?->value, false, 'bad_request');
+            throw new LlmError('The request to the model was refused: '.self::describe($e), false, 'bad_request');
         } catch (RateLimitException) {
             throw new LlmError('The model is rate limited.', true, 'rate_limit');
         } catch (APIStatusException $e) {
-            throw new LlmError('The model answered with an error: '.($e->type?->value ?? 'unknown'), true, 'status');
+            throw new LlmError('The model answered with an error: '.self::describe($e), true, 'status');
         } catch (APIConnectionException) {
             throw new LlmError('The model could not be reached.', true, 'connection');
         }
@@ -97,6 +100,24 @@ final class AnthropicLlm implements Llm
                 'cache_write' => (int) ($response->usage->cacheCreationInputTokens ?? 0),
             ],
         );
+    }
+
+    /**
+     * What the API said about a request it turned down: the error's type, its message and the
+     * request id, for the server's log (a refused request cannot be fixed without them). Only
+     * what came back: never the request, which carries the key.
+     */
+    public static function describe(APIStatusException $e): string
+    {
+        $text = trim(sprintf('%s (%s)%s%s',
+            $e->getType() ?? 'unknown',
+            $e->status ?? '?',
+            ($message = $e->getAPIMessage()) ? ': '.$message : '',
+            ($id = $e->getRequestID()) ? " [request {$id}]" : '',
+        ));
+
+        // Nothing shaped like a key leaves here, whatever the API echoed.
+        return mb_substr((string) preg_replace('/sk-ant-[A-Za-z0-9_\-]+/', 'sk-ant-…', $text), 0, 500);
     }
 
     private function client(): Client

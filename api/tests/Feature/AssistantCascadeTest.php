@@ -1,5 +1,6 @@
 <?php
 
+use Anthropic\Core\Exceptions\BadRequestException;
 use App\Models\AssistantConversation;
 use App\Models\AssistantEvalRun;
 use App\Models\AssistantTrace;
@@ -8,6 +9,7 @@ use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\User;
+use App\Services\Assistant\AnthropicLlm;
 use App\Services\Assistant\Availability;
 use App\Services\Assistant\Indexer;
 use App\Services\Assistant\Llm;
@@ -15,6 +17,9 @@ use App\Services\Assistant\LlmError;
 use App\Services\Assistant\Prompt;
 use App\Services\Assistant\Router;
 use App\Services\Assistant\Tools;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Facades\Log;
 use Tests\Support\FakeLlm;
 
 /*
@@ -265,4 +270,28 @@ it('runs the free search check before the paid evaluation, and counts a model th
     expect(app(Availability::class)->launched())->toBeTrue();
     unlink($evals);
     unlink($search);
+});
+
+it('keeps what the API said about a refused request for the log, and never the key', function () {
+    // The SDK's own exception, as a 400 from the API builds it.
+    $request = new Request('POST', 'https://api.anthropic.com/v1/messages', ['x-api-key' => 'sk-ant-api03-SECRETSECRETSECRET0000']);
+    $response = new Response(400, ['request-id' => 'req_011CascadeTest'], json_encode(['type' => 'error', 'error' => [
+        'type' => 'invalid_request_error', 'message' => 'tool_choice: unexpected value (sk-ant-api03-SECRETSECRETSECRET0000)',
+    ]]));
+    $detail = AnthropicLlm::describe(new BadRequestException($request, $response));
+    expect($detail)->toContain('invalid_request_error (400)')->toContain('tool_choice: unexpected value')->toContain('[request req_011CascadeTest]')
+        ->not->toContain('SECRETSECRET');
+
+    // A call that fails is written to the log with that, and the student is told to try again, at no credits.
+    [$course] = cascadeCourse();
+    Log::spy();
+    cascadeOpen()->push(new LlmError('The request to the model was refused: '.$detail, false, 'bad_request'));
+    $answer = cascadeAsk(cascadeStudent($course), '¿Qué es la nota simple?')->assertCreated();
+
+    Log::shouldHaveReceived('warning')->once()->withArgs(fn (string $message, array $context) => $context['tier'] === 'small'
+        && $context['kind'] === 'bad_request' && str_contains($context['detail'], 'tool_choice: unexpected value') && ! str_contains(json_encode($context), 'SECRETSECRET'));
+    $trace = AssistantTrace::query()->sole();
+    expect($answer->json('data.credits.spent'))->toBe(0)
+        ->and($trace->status)->toBe('error')
+        ->and($trace->error)->toBe('bad_request');
 });
